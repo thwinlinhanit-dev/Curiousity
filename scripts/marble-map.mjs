@@ -245,6 +245,13 @@ function main() {
     topics: map,
   }, null, 1));
 
+  // Small committed index so the UI can badge and filter matched lessons
+  // without fetching anything (95 ids ≈ 2 KB).
+  fs.writeFileSync(path.join(OUT, "matched.json"), JSON.stringify({
+    count: Object.keys(map).length,
+    ids: Object.keys(map).sort(),
+  }));
+
   const matched = Object.keys(map).length;
   console.log(`marble-map: ${matched}/${app.length} app lessons matched (${report.exact} exact, ${report.fuzzy} fuzzy), ${linked} prerequisite links resolved to app lessons`);
   console.log("by ladder:", Object.entries(report.byLadder).filter(([, v]) => v.matched).map(([k, v]) => `${k} ${v.matched}/${v.total}`).join(", "));

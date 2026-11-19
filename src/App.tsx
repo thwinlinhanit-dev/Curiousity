@@ -1,5 +1,6 @@
 import { lazy, Suspense, useEffect, useMemo, useState } from "react";
 import catalog from "../content/catalog.json";
+import marbleIndex from "../content/marble/matched.json";
 import TopicPage from "./pages/TopicPage";
 import ProgressPanel from "./components/ProgressPanel";
 import { ensureGraph, getGraph, initProgress, setActiveLadder, topicStatus } from "./state/progress";
@@ -29,6 +30,10 @@ const DATASETS = [
   ["timeline", "Timeline"], ["infographics", "Infographics"], ["resources", "Resources"], ["credits", "Credits & licences"],
 ];
 
+// Lessons cross-checked against curriculum standards (Marble Skill Taxonomy).
+const MARBLE_IDS = new Set(marbleIndex.ids);
+const hasStandards = (id: string) => MARBLE_IDS.has(id);
+
 const params = () => new URLSearchParams(window.location.search);
 // Human-readable names for the raw keys the corpus uses internally.
 const ladderName = (key: string) => catalog.ladders.find((l) => l.key === key)?.short ?? key;
@@ -50,6 +55,7 @@ export default function App() {
   const [course, setCourse] = useState<CourseIndex | null>(null);
   const [slug, setSlug] = useState<string | null>(() => params().get("t"));
   const [query, setQuery] = useState("");
+  const [stdOnly, setStdOnly] = useState(false);
   const [globalSearch, setGlobalSearch] = useState("");
   const [mapView, setMapView] = useState(false);
   const [, setTick] = useState(0);
@@ -106,7 +112,10 @@ export default function App() {
     go(null, { ladder: key, course: c });
   };
 
-  const topics = useMemo(() => (course?.topics ?? []).filter((x) => x.title.toLowerCase().includes(query.toLowerCase())), [course, query]);
+  const topics = useMemo(() => (course?.topics ?? [])
+    .filter((x) => x.title.toLowerCase().includes(query.toLowerCase()))
+    .filter((x) => (stdOnly ? hasStandards(x.id) : true)), [course, query, stdOnly]);
+  const courseStandards = useMemo(() => (course?.topics ?? []).filter((x) => hasStandards(x.id)).length, [course]);
   const searchResults = useMemo(() => {
     const q = globalSearch.trim().toLowerCase();
     if (q.length < 2) return [];
@@ -155,6 +164,10 @@ export default function App() {
         {catalog.ladders.length} subjects · {catalog.ladders.reduce((n, l) => n + l.topics, 0)} topics from the Teddy Rook corpus.
         Figures you can play, pause and take apart — with real generators, answer checking and one shared progress engine.
       </p>
+      <p style={{ color: "var(--ink-3)", fontSize: "var(--fs-0)", maxWidth: 620 }}>
+        {marbleIndex.count} lessons are cross-checked against curriculum standards (NGSS, UK NC, ACARA, Ontario…) —
+        look for the <span className="std-badge">standards</span> tag in a topic list.
+      </p>
       <div className="global-search">
         <input value={globalSearch} onChange={(e) => setGlobalSearch(e.target.value)} placeholder="Search all 5,105 topics and the library…" aria-label="Search everything" />
         {searchResults.length > 0 && <ul>
@@ -202,6 +215,11 @@ export default function App() {
       <div className="view-toggle" role="group" aria-label="View">
         <button className={!mapView ? "chip active" : "chip"} aria-pressed={!mapView} onClick={() => setMapView(false)}>List</button>
         <button className={mapView ? "chip active" : "chip"} aria-pressed={mapView} onClick={() => setMapView(true)}>Skill map</button>
+        {courseStandards > 0 && (
+          <button className={stdOnly ? "chip active" : "chip"} aria-pressed={stdOnly} onClick={() => setStdOnly((v) => !v)}>
+            Standards only ({courseStandards})
+          </button>
+        )}
       </div>
       {mapView && <SkillMap ladder={ladder} courses={currentLadder?.courseKeys.map((k) => ({ key: k, title: courseName(k), short: courseShort(k) })) ?? []} selected={courseKey} onSelect={(c) => { setActiveLadder(ladder, c); go(null, { course: c }); }} />}
 
@@ -210,8 +228,13 @@ export default function App() {
         {topics.map((topic, i) => {
           const st = topicStatus(topic.id);
           const label = st.passed ? t("status.mastered") : st.status === "due" ? t("status.reviewDue") : st.status === "learning" ? t("status.underWay") : t("status.notStarted");
-          return <li key={topic.id}><button onClick={() => go(topic.slug)}>{i + 1}. {topic.title}</button>
-            <span className={`status-chip status-${label.replace(/ /g, "-")}`}>{label}</span></li>;
+          return <li key={topic.id}>
+            <span className="topic-label">
+              <button onClick={() => go(topic.slug)}>{(course?.topics.findIndex((t) => t.id === topic.id) ?? i) + 1}. {topic.title}</button>
+              {hasStandards(topic.id) && <span className="std-badge" title="Cross-checked against curriculum standards">standards</span>}
+            </span>
+            <span className={`status-chip status-${label.replace(/ /g, "-")}`}>{label}</span>
+          </li>;
         })}
       </ol>
       <IdeaBox />

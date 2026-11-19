@@ -89,6 +89,9 @@ dialog.review-session { position: fixed; inset: 0; margin: auto; width: min(620p
 .dataset-detail dl { display: grid; grid-template-columns: 130px 1fr; gap: 2px var(--sp-3); font-size: 12px; margin: var(--sp-2) 0 0; }
 .dataset-detail dt { font-family: var(--font-mono); color: var(--ink-3); }
 .dataset-detail dd { margin: 0; word-break: break-word; }
+.dataset-detail h4 { font-family: var(--font-display); font-size: var(--fs-1); margin: var(--sp-3) 0 var(--sp-1); }
+.dataset-detail section > ul, .dataset-detail section > ol { padding-left: var(--sp-5); margin: var(--sp-1) 0; }
+.infographic { display: block; max-width: 100%; height: auto; margin: var(--sp-2) 0; border: 1px solid var(--rule); border-radius: var(--radius); }
 
 .classify-bins { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--sp-3); margin-top: var(--sp-3); }
 .classify-bins > div { border: 1px solid var(--rule); border-radius: var(--radius); padding: var(--sp-2); background: var(--paper-2); }
@@ -242,3 +245,22 @@ dialog.review-session { position: fixed; inset: 0; margin: auto; width: min(620p
 .pt-detail dt { font-family: var(--font-mono); color: var(--ink-3); }
 .pt-detail dd { margin: 0; word-break: break-word; }
 @media (max-width: 640px) { .pt-detail dl { grid-template-columns: 1fr; } }
+
+/* Cross-checked marker (Marble standards data). */
+.std-badge {
+  display: inline-block;
+  margin-left: var(--sp-2);
+  padding: 0 6px;
+  border: 1px solid color-mix(in oklab, var(--signal) 45%, var(--rule));
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  vertical-align: 1px;
+  white-space: nowrap;
+}
+.topic-label { display: flex; align-items: baseline; gap: var(--sp-2); min-width: 0; flex: 1 1 auto; flex-wrap: wrap; }
+.topic-list ol li { flex-wrap: nowrap; }
+.topic-list .status-chip { flex: 0 0 auto; }
