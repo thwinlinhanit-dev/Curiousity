@@ -1,0 +1,99 @@
+{
+  "id": "chem.atomic-radius",
+  "slug": "atomic-radius",
+  "ladder": "chemistry",
+  "course": "chem",
+  "unit": "periodic",
+  "title": "Atomic Radius",
+  "short": "Atoms get bigger down a group as shells are added, and smaller across a period as more protons pull on the same shell.",
+  "trouble": "Students expect atoms to grow across a period because they have more electrons, missing the stronger pull of more protons on the same shell.",
+  "prereqs": [
+    "chem.periodic-table-organization"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-periodic",
+    "ch-coulomb"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Atoms are not all the same size. Cesium atoms are more than four times as wide as fluorine atoms. Two things decide the size: how many shells the electrons use, and how strongly the nucleus pulls on them. Both come from <a href=\"/chemistry/chemistry/periodic-table-organization/\">Groups, Periods and Families</a>."
+      },
+      {
+        "t": "key",
+        "html": "Atoms get <b>larger down a group</b>, because each period adds a shell farther out. Atoms get <b>smaller across a period</b> (left to right), because each step adds a proton that pulls the same outer shell in more tightly. So the largest atoms are at the lower left and the smallest at the upper right."
+      },
+      {
+        "t": "why",
+        "html": "Opposite charges attract more strongly when the charges are bigger and when they are closer (Coulomb's law). Across a period, the outer electrons stay in the same shell while the nuclear charge grows by one each step. The inner electrons shield the outer ones from the nucleus, but the added electrons go into the same outer shell, where they shield each other very little. So the pull on the outer shell grows, and the atom shrinks. Down a group, the new shell is much farther out and more inner electrons shield it, which outweighs the extra protons."
+      },
+      {
+        "t": "viz",
+        "name": "ch-coulomb",
+        "opts": {
+          "mode": "atom",
+          "a": "Na",
+          "b": "Cl"
+        },
+        "cap": "Sodium and chlorine, both in period 3. Chlorine has 17 protons pulling on its third shell, sodium only 11, so chlorine is smaller."
+      },
+      {
+        "t": "viz",
+        "name": "ch-periodic",
+        "opts": {
+          "mode": "trend",
+          "prop": "radius"
+        },
+        "cap": "Covalent radius across the table: big at the lower left, small at the upper right."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Across a period",
+        "q": "Which is larger, a magnesium atom or a sulfur atom?",
+        "steps": [
+          "Both are in period 3: their outer electrons are in shell 3.",
+          "Sulfur has 16 protons, magnesium 12. The bigger nuclear charge pulls sulfur's shell in closer.",
+          "Magnesium is larger (measured radii: Mg 141 pm, S 105 pm)."
+        ],
+        "a": "Magnesium"
+      },
+      {
+        "t": "ex",
+        "title": "Down a group",
+        "q": "Rank lithium, sodium and potassium from smallest to largest.",
+        "steps": [
+          "All are in group 1. Each one down adds a shell: Li uses shell 2, Na shell 3, K shell 4.",
+          "Smallest to largest: Li < Na < K."
+        ],
+        "a": "Li < Na < K"
+      },
+      {
+        "t": "mistake",
+        "html": "Expecting atoms to grow across a period because they have more electrons. More electrons does not mean more room: the new electrons go into the same shell, while the extra protons pull that whole shell inward. Check with the periodic table: across a row the shell number stays the same, and the nuclear charge goes up."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 6.5 Periodic Variations in Element Properties"
+      },
+      {
+        "name": "B. Cordero et al., \"Covalent radii revisited,\" Dalton Transactions 2008, 2832 (radius values)"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-PS1-1"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

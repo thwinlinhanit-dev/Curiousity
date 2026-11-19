@@ -1,0 +1,110 @@
+{
+  "id": "mech.motion-from-acceleration",
+  "slug": "motion-from-acceleration",
+  "ladder": "physics",
+  "course": "mech",
+  "unit": "kinematics",
+  "title": "Velocity and Position from Acceleration",
+  "short": "Integrate a(t) once for v(t) and again for x(t), using the starting values to fix the constants.",
+  "trouble": "Students forget the constants of integration, losing the starting velocity or position.",
+  "prereqs": [
+    "mech.acceleration-derivative",
+    "calc1.initial-value-antiderivatives"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-graph",
+    "ftc"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Newton's second law hands us the acceleration, not the position. So the usual job in mechanics runs the other way from <a href=\"/physics/mechanics/acceleration-derivative/\">Acceleration as a Derivative</a>: start from $a(t)$ and work back to $v(t)$ and $x(t)$. That is antidifferentiation, and as in <a href=\"/math/calculus-1/initial-value-antiderivatives/\">Antiderivatives with Initial Conditions</a>, each step brings a constant that the starting conditions decide."
+      },
+      {
+        "t": "key",
+        "html": "$$\\role{velocity}{v}(t) = \\role[initial velocity]{velocity}{v_0} + \\int_0^t \\role{acceleration}{a}(t')\\,dt', \\qquad \\role{position}{x}(t) = \\role[starting position]{position}{x_0} + \\int_0^t \\role{velocity}{v}(t')\\,dt'.$$ The area under the $a$–$t$ graph from 0 to $t$ is the change in velocity; the area under the $v$–$t$ graph is the change in position."
+      },
+      {
+        "t": "why",
+        "html": "The fundamental theorem of calculus says $\\int_0^t \\dfrac{dv}{dt'}\\,dt' = v(t) - v(0)$. Since $dv/dt = a$, the integral of the acceleration is the <i>change</i> in velocity, and adding the starting velocity gives the velocity itself. In pictures: each thin strip of the $a$–$t$ graph has area $a\\,\\Delta t$, the small change in velocity during that sliver of time; adding up the strips gives the total change."
+      },
+      {
+        "t": "viz",
+        "name": "ph-graph",
+        "opts": {
+          "fn": "6 - 2*x",
+          "domain": [
+            0,
+            5
+          ],
+          "xlab": "t",
+          "ylab": "a",
+          "xunit": "s",
+          "yunit": "m/s²",
+          "tool": "area",
+          "a": 0,
+          "b": 2,
+          "task": "Move the right edge of the shading. The area is the change in velocity; area below the axis counts as negative."
+        },
+        "cap": "$a(t) = 6 - 2t$. The shaded area from 0 to $t$ is $\\Delta v = 6t - t^2$ (in m/s). After 3 s the area starts to subtract."
+      },
+      {
+        "t": "ex",
+        "title": "Velocity from acceleration",
+        "q": "A cart has $a(t) = 6t - 4$ (m/s², s). At $t = 0$ its velocity is $2\\ \\text{m/s}$. Find $v(t)$ and $v(2)$.",
+        "steps": [
+          "Antidifferentiate: $v(t) = 3t^2 - 4t + C_1$.",
+          "At $t = 0$: $v(0) = C_1 = 2$, so $v(t) = 3t^2 - 4t + 2$.",
+          "$v(2) = 12 - 8 + 2 = 6\\ \\text{m/s}$."
+        ],
+        "a": "$v(t) = 3t^2 - 4t + 2$; $v(2) = 6\\ \\text{m/s}$."
+      },
+      {
+        "t": "ex",
+        "title": "Position, with both constants",
+        "q": "The same cart starts at $x_0 = -1\\ \\text{m}$. Where is it at $t = 2\\ \\text{s}$?",
+        "steps": [
+          "Antidifferentiate $v(t)$: $x(t) = t^3 - 2t^2 + 2t + C_2$.",
+          "At $t = 0$: $C_2 = x_0 = -1$, so $x(t) = t^3 - 2t^2 + 2t - 1$.",
+          "$x(2) = 8 - 8 + 4 - 1 = 3\\ \\text{m}$.",
+          "Check by area: $\\int_0^2 v\\,dt = [t^3 - 2t^2 + 2t]_0^2 = 4\\ \\text{m}$, and $-1 + 4 = 3\\ \\text{m}$."
+        ],
+        "a": "$x(2) = 3\\ \\text{m}$."
+      },
+      {
+        "t": "mistake",
+        "html": "Dropping the constants of integration. If you write $v(t) = 3t^2 - 4t$ for the cart, you have silently assumed it started from rest; the 2 m/s it already had disappears, and every later velocity and position is off. Check: substitute $t = 0$ into your $v(t)$ and $x(t)$. You must get back the starting velocity and position."
+      },
+      {
+        "t": "ex",
+        "title": "A fading push",
+        "q": "A car starts from rest at $x = 0$ with $a(t) = 4e^{-t/2}$ (m/s², s). How fast is it going at $t = 4\\ \\text{s}$?",
+        "steps": [
+          "$$v(t) = \\int_0^t 4e^{-t'/2}\\,dt' = \\left[-8e^{-t'/2}\\right]_0^t = 8\\left(1 - e^{-t/2}\\right)$$",
+          "$v(4) = 8(1 - e^{-2}) = 8(0.8647) = 6.92\\ \\text{m/s}$.",
+          "As $t \\to \\infty$ the speed approaches 8 m/s, the total area under the $a$–$t$ curve."
+        ],
+        "a": "$v(4) \\approx 6.92\\ \\text{m/s}$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 1, 3.6 Finding Velocity and Displacement from Acceleration"
+      },
+      {
+        "name": "OpenStax Calculus Volume 1, 4.10 Antiderivatives"
+      },
+      {
+        "name": "MIT OpenCourseWare 8.01 Classical Mechanics (scope and sequence)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

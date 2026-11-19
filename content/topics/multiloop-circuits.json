@@ -1,0 +1,191 @@
+{
+  "id": "em.multiloop-circuits",
+  "slug": "multiloop-circuits",
+  "course": "em",
+  "courseTitle": "Electricity and Magnetism",
+  "unit": "circuits",
+  "unitTitle": "Current and Circuits",
+  "title": "Multi-Loop Circuits",
+  "short": "Write junction and loop equations and solve them as a system.",
+  "trouble": "Students flip a current's direction midway when an answer comes out negative, instead of keeping the sign as the true direction.",
+  "prereqs": [
+    "phys2.internal-resistance",
+    "alg2.three-variable-systems"
+  ],
+  "xp": 3,
+  "viz": [
+    "ph-circuit"
+  ],
+  "figureArchetype": "CircuitFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "When a circuit has two batteries in different branches, you cannot reduce it to one equivalent resistor. Instead you use Kirchhoff's two rules, which you met in <a href=\"/physics/physics-2/internal-resistance/\">Physics 2</a>, to write one equation per unknown current, and solve them together, as in <a href=\"/math/algebra-2/three-variable-systems/\">systems in three variables</a>."
+      },
+      {
+        "t": "key",
+        "html": "<b>Junction rule:</b> the current into a junction equals the current out. <b>Loop rule:</b> around any closed loop, the changes in potential add to zero.\n        <br>Guess a direction for each branch current and keep it. If a current comes out negative, it flows the other way; the sign is part of the answer."
+      },
+      {
+        "t": "why",
+        "html": "The junction rule is conservation of charge: in a steady current, charge cannot pile up at a junction. The loop rule says potential is a property of a place: walk around a loop and you are back where you started, at the same potential, so the rises and drops must cancel."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Crossing…",
+          "in the direction of",
+          "Change in V"
+        ],
+        "rows": [
+          [
+            "a resistor",
+            "the assumed current",
+            "$-IR$"
+          ],
+          [
+            "a resistor",
+            "against the assumed current",
+            "$+IR$"
+          ],
+          [
+            "a battery",
+            "from − to +",
+            "$+\\varepsilon$"
+          ],
+          [
+            "a battery",
+            "from + to −",
+            "$-\\varepsilon$"
+          ]
+        ],
+        "cap": "Signs for the loop rule (conventional current)."
+      },
+      {
+        "t": "viz",
+        "name": "ph-circuit",
+        "opts": {
+          "circuit": [
+            {
+              "type": "V",
+              "a": "B",
+              "b": "TL",
+              "value": 12,
+              "label": "ε₁"
+            },
+            {
+              "type": "R",
+              "a": "TL",
+              "b": "TM",
+              "value": 2,
+              "label": "R₁"
+            },
+            {
+              "type": "R",
+              "a": "TM",
+              "b": "B",
+              "value": 4,
+              "label": "R₃"
+            },
+            {
+              "type": "R",
+              "a": "TR",
+              "b": "TM",
+              "value": 3,
+              "label": "R₂"
+            },
+            {
+              "type": "V",
+              "a": "B",
+              "b": "TR",
+              "value": 6,
+              "label": "ε₂"
+            }
+          ],
+          "layout": {
+            "TL": [
+              0,
+              0
+            ],
+            "TM": [
+              2,
+              0
+            ],
+            "TR": [
+              4,
+              0
+            ],
+            "B": [
+              2,
+              2
+            ]
+          },
+          "hide": [
+            "dots"
+          ]
+        },
+        "cap": "The circuit of the first example, solved: the labels give the size of the current in each branch."
+      },
+      {
+        "t": "p",
+        "html": "Build two-battery circuits of your own, and watch the meters, in the <a href=\"/science-lab/circuits/\">Circuit Builder</a> in the Science Lab."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Two batteries, three branches",
+        "q": "In the circuit above, $\\varepsilon_1 = 12\\ \\text{V}$ and $\\varepsilon_2 = 6.0\\ \\text{V}$ (both with + toward the top), $R_1 = 2.0\\ \\Omega$, $R_2 = 3.0\\ \\Omega$, $R_3 = 4.0\\ \\Omega$. Find all three currents.",
+        "steps": [
+          "Guess: $I_1$ rightward through $R_1$, $I_2$ leftward through $R_2$, $I_3$ down through $R_3$. Junction at the top: $I_3 = I_1 + I_2$.",
+          "Left loop, going up through $\\varepsilon_1$: $12 - 2I_1 - 4I_3 = 0$. Right loop: $6 - 3I_2 - 4I_3 = 0$.",
+          "So $I_1 = 6 - 2I_3$ and $I_2 = 2 - \\tfrac{4}{3}I_3$. Put them into the junction rule: $I_3 = 8 - \\tfrac{10}{3}I_3$, so $I_3 = \\tfrac{24}{13} = 1.85\\ \\text{A}$.",
+          "$I_1 = 6 - \\tfrac{48}{13} = \\tfrac{30}{13} = 2.31\\ \\text{A}$ and $I_2 = 2 - \\tfrac{32}{13} = -\\tfrac{6}{13} = -0.462\\ \\text{A}$.",
+          "$I_2$ is negative: current actually flows <i>into</i> the + terminal of $\\varepsilon_2$. The stronger battery is charging the weaker one."
+        ],
+        "a": "$I_1 = 2.31\\ \\text{A}$, $I_2 = -0.462\\ \\text{A}$, $I_3 = 1.85\\ \\text{A}$"
+      },
+      {
+        "t": "ex",
+        "title": "Checking with energy",
+        "q": "Show that the energy bookkeeping balances for the same circuit.",
+        "steps": [
+          "$\\varepsilon_1$ delivers $\\varepsilon_1 I_1 = 12 \\times 2.31 = 27.7\\ \\text{W}$.",
+          "$\\varepsilon_2$ <i>absorbs</i> $\\varepsilon_2|I_2| = 6.0 \\times 0.462 = 2.77\\ \\text{W}$ (it is being charged).",
+          "The resistors turn $I_1^2R_1 + I_2^2R_2 + I_3^2R_3 = 24.9\\ \\text{W}$ into heat, which is exactly $27.7 - 2.77$."
+        ],
+        "a": "It balances: $27.7\\ \\text{W} = 24.9\\ \\text{W} + 2.77\\ \\text{W}$"
+      },
+      {
+        "t": "ex",
+        "title": "A potential difference, two ways",
+        "q": "Find the potential difference across $R_3$, then check it along a different path.",
+        "steps": [
+          "Directly: $V_3 = I_3R_3 = \\tfrac{24}{13}(4.0) = 7.38\\ \\text{V}$.",
+          "Along the right branch instead: from the bottom junction, go up through $\\varepsilon_2$ from − to +, a rise of $6.0\\ \\text{V}$. Then cross $R_2$ to the top junction. The real current in $R_2$ flows the other way (toward $\\varepsilon_2$, since $I_2 < 0$), so walking against it is another rise of $|I_2|R_2 = 1.38\\ \\text{V}$.",
+          "Total: $6.0 + 1.38 = 7.38\\ \\text{V}$, the same. Potential depends only on the place, not on the path you walk."
+        ],
+        "a": "$V_3 \\approx 7.38\\ \\text{V}$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Flipping a current's direction partway through.</b> When $I_2$ comes out negative, it is tempting to redraw the arrow and rewrite some equations with the new direction while keeping others. That mixes two different unknowns and gives wrong numbers. Keep every equation with the directions you first assumed, solve, and read the sign at the end: negative just means \"the other way\". Check by putting your currents back into every loop equation."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 2, 10.3 Kirchhoff's Rules"
+      },
+      {
+        "name": "MIT OpenCourseWare, 8.02 Physics II: Electricity and Magnetism"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

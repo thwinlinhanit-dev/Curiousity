@@ -1,0 +1,145 @@
+{
+  "id": "disc.special-graphs",
+  "slug": "special-graphs",
+  "ladder": "math",
+  "course": "disc",
+  "unit": "graphs",
+  "title": "Complete, Bipartite and Cycle Graphs",
+  "short": "Kₙ has n(n − 1)/2 edges, K(m, n) has mn, and the cycle Cₙ has n.",
+  "trouble": "Students count the edges of Kₙ as n(n − 1), counting each edge once from each end.",
+  "prereqs": [
+    "disc.graph-basics",
+    "stat.combinations"
+  ],
+  "xp": 1,
+  "viz": [
+    "disc-graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A few graphs come up so often that they have names. Knowing their edge counts and degrees saves time, and each count is a small exercise in the <a href=\"/math/discrete-math/graph-basics/\">handshake lemma</a> or in <a href=\"/math/probability-and-statistics/combinations/\">combinations</a>."
+      },
+      {
+        "t": "key",
+        "html": "The <b>complete graph</b> $K_{n}$ joins every pair of its $n$ vertices: $\\frac{n(n-1)}{2}$ edges, every degree $n - 1$. The <b>complete bipartite graph</b> $K_{m,n}$ has two sides of $m$ and $n$ vertices, with every vertex joined to every vertex on the other side and none on its own: $mn$ edges. The <b>cycle</b> $C_{n}$ ($n \\ge 3$) is a ring of $n$ vertices with $n$ edges; the <b>path</b> $P_{n}$ is $n$ vertices in a row with $n - 1$ edges."
+      },
+      {
+        "t": "why",
+        "html": "An edge of $K_{n}$ is a choice of two endpoints, so there are $\\binom{n}{2} = \\frac{n(n-1)}{2}$ of them. The handshake lemma agrees: $n$ vertices of degree $n - 1$ give a degree sum of $n(n - 1)$, which is twice the number of edges. In $K_{m,n}$ an edge is one choice from each side, so the product rule gives $mn$."
+      },
+      {
+        "t": "viz",
+        "name": "disc-graph",
+        "opts": {
+          "graph": "K5",
+          "mode": "degrees"
+        },
+        "cap": "$K_{5}$: every vertex has degree $4$, and there are $\\frac{5 \\cdot 4}{2} = 10$ edges."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Graph",
+          "vertices",
+          "edges",
+          "degrees"
+        ],
+        "rows": [
+          [
+            "$K_{n}$",
+            "$n$",
+            "$\\frac{n(n-1)}{2}$",
+            "all $n - 1$"
+          ],
+          [
+            "$K_{m,n}$",
+            "$m + n$",
+            "$mn$",
+            "$n$ on one side, $m$ on the other"
+          ],
+          [
+            "$C_{n}$",
+            "$n$",
+            "$n$",
+            "all $2$"
+          ],
+          [
+            "$P_{n}$",
+            "$n$",
+            "$n - 1$",
+            "$1$ at the two ends, $2$ inside"
+          ]
+        ],
+        "cap": "The named graphs at a glance."
+      },
+      {
+        "t": "p",
+        "html": "Each row passes the handshake test. For $K_{m,n}$: $m$ vertices of degree $n$ and $n$ vertices of degree $m$ give a degree sum of $2mn$, twice the edge count. For $P_{n}$: $1 + 1 + 2(n - 2) = 2(n - 1)$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Edges of a complete graph",
+        "q": "How many edges does $K_{10}$ have?",
+        "steps": [
+          "Choose the two endpoints: $\\binom{10}{2} = \\frac{10 \\cdot 9}{2} = 45$."
+        ],
+        "a": "$45$"
+      },
+      {
+        "t": "ex",
+        "title": "Working backward",
+        "q": "A complete graph has $66$ edges. How many vertices does it have?",
+        "steps": [
+          "$\\frac{n(n - 1)}{2} = 66$, so $n(n - 1) = 132$.",
+          "Two consecutive integers with product $132$: $12 \\cdot 11$. So $n = 12$."
+        ],
+        "a": "$12$"
+      },
+      {
+        "t": "ex",
+        "title": "Which are bipartite?",
+        "q": "A graph is <b>bipartite</b> when its vertices split into two sides with every edge going between the sides. Are $C_{6}$, $C_{5}$ and $K_{2,4}$ bipartite?",
+        "steps": [
+          "$C_{6}$: color the vertices alternately around the ring; six is even, so the last vertex differs from the first. Bipartite.",
+          "$C_{5}$: alternating around a ring of five ends with two neighbors on the same side. Not bipartite.",
+          "$K_{2,4}$: bipartite by definition, with its two sides."
+        ],
+        "a": "$C_{6}$ and $K_{2,4}$ yes; $C_{5}$ no"
+      },
+      {
+        "t": "viz",
+        "name": "disc-graph",
+        "opts": {
+          "graph": "K33",
+          "mode": "degrees",
+          "layout": "given"
+        },
+        "cap": "$K_{3,3}$: two sides of three, $3 \\cdot 3 = 9$ edges, and no edges inside a side."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Counting the edges of $K_{n}$ as $n(n - 1)$.</b> Adding up \"each vertex is joined to $n - 1$ others\" counts every edge twice, once from each end. Check: for $K_{3}$, a triangle, the formula must give $3$, not $6$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Oscar Levin, Discrete Mathematics: An Open Introduction (3rd ed.), section \"Definitions\" in the graph theory chapter (complete, bipartite and cycle graphs)"
+      },
+      {
+        "name": "MIT OpenCourseWare 6.042J Mathematics for Computer Science (Lehman, Leighton and Meyer), chapter \"Simple Graphs\" (special graphs, bipartite graphs)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

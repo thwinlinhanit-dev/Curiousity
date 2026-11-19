@@ -1,0 +1,109 @@
+{
+  "id": "alg2.complex-fractions",
+  "slug": "complex-fractions",
+  "ladder": "math",
+  "course": "alg2",
+  "unit": "rational",
+  "title": "Complex Fractions",
+  "short": "Simplify fractions that contain fractions.",
+  "trouble": "",
+  "prereqs": [
+    "alg2.add-subtract-rational"
+  ],
+  "xp": 3,
+  "viz": [],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A complex fraction has fractions inside its numerator or denominator, like $\\dfrac{1 - \\frac{4}{x^2}}{1 + \\frac{2}{x}}$. You can untangle it with tools from <a href=\"/math/algebra-2/add-subtract-rational/\">Adding and Subtracting Rational Expressions</a> and <a href=\"/math/algebra-2/multiply-divide-rational/\">Multiplying and Dividing Rational Expressions</a>."
+      },
+      {
+        "t": "key",
+        "html": "Find the LCD of all the small fractions. Multiply the top and the bottom of the big fraction by it; every small denominator cancels. Then factor and simplify. (Another way: combine the top into one fraction, the bottom into one fraction, then divide.)"
+      },
+      {
+        "t": "why",
+        "html": "Multiplying the numerator and the denominator by the same nonzero expression is multiplying by 1, so the value doesn't change. Choosing the LCD makes every small fraction's denominator cancel at once, leaving a plain rational expression."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Clear with the LCD",
+        "q": "Simplify $\\dfrac{1 - \\frac{4}{x^2}}{1 + \\frac{2}{x}}$.",
+        "steps": [
+          "The small denominators are $x^2$ and $x$; the LCD is $x^2$.",
+          "Multiply top and bottom by $x^2$: $\\frac{x^2 - 4}{x^2 + 2x}$.",
+          "Factor and cancel: $\\frac{(x - 2)(x + 2)}{x(x + 2)} = \\frac{x - 2}{x}$."
+        ],
+        "a": "$\\frac{x - 2}{x}$"
+      },
+      {
+        "t": "ex",
+        "title": "Combine, then divide",
+        "q": "Simplify $\\dfrac{\\frac{1}{x} - \\frac{1}{5}}{x - 5}$.",
+        "steps": [
+          "Combine the top: $\\frac{5 - x}{5x}$.",
+          "Divide by $x - 5$: $\\frac{5 - x}{5x(x - 5)}$.",
+          "$5 - x = -(x - 5)$, so this is $-\\frac{1}{5x}$."
+        ],
+        "a": "$-\\frac{1}{5x}$"
+      },
+      {
+        "t": "ex",
+        "title": "A difference quotient",
+        "q": "Simplify $\\dfrac{\\frac{1}{x + 3} - \\frac{1}{x}}{3}$.",
+        "steps": [
+          "Combine the top over $x(x + 3)$: $\\frac{x - (x + 3)}{x(x + 3)} = \\frac{-3}{x(x + 3)}$.",
+          "Divide by 3."
+        ],
+        "a": "$-\\frac{1}{x(x + 3)}$. (Expressions like this one appear in calculus.)"
+      },
+      {
+        "t": "mistake",
+        "html": "Multiplying only the small fractions by the LCD, or only the top of the big fraction. Whatever you multiply the numerator by, you must multiply the denominator by too. Check your answer by putting a number such as $x = 1$ into both the original and the simplified form."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "fns": [
+            "(1 - 4/x^2)/(1 + 2/x)",
+            {
+              "f": "(x - 2)/x",
+              "dash": true
+            }
+          ],
+          "xmin": -6,
+          "xmax": 6,
+          "ymin": -6,
+          "ymax": 6,
+          "table": [
+            -3,
+            -1,
+            1,
+            2,
+            4
+          ]
+        },
+        "cap": "$f$ is the original complex fraction and $g$ is the simplified form $\\frac{x - 2}{x}$. The two graphs lie on top of each other (the original has holes where $x = 0$ or $x = -2$)."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Intermediate Algebra 2e, Section 7.3 Simplify Complex Rational Expressions"
+      },
+      {
+        "name": "Common Core State Standards, A-APR.D.7"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

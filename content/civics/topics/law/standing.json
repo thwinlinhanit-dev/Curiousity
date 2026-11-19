@@ -1,0 +1,132 @@
+{
+  "id": "law.standing",
+  "slug": "standing",
+  "ladder": "civics",
+  "course": "law",
+  "unit": "justiciability",
+  "title": "Standing",
+  "short": "To have standing a plaintiff must show (1) an injury in fact that is concrete, particularized and actual or imminent, (2) caused by the defendant's conduct and (3) likely to be redressed by a favorable ruling (Lujan v. Defenders of Wildlife, 1992).",
+  "trouble": "Students think caring deeply about an issue gives standing. A general interest shared by all citizens is not enough; the plaintiff needs a personal, concrete injury.",
+  "prereqs": [
+    "law.case-or-controversy"
+  ],
+  "xp": 3,
+  "viz": [
+    "cv-sort",
+    "cv-case"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The first <a href=\"/american-history/intro-to-law/case-or-controversy/\">justiciability</a> question is about the plaintiff. Many people may care about a law or a government action. Only some may sue over it. The doctrine that sorts them is <b>standing</b>."
+      },
+      {
+        "t": "key",
+        "html": "To have standing a plaintiff must show (1) an <b>injury in fact</b> that is <b>concrete</b>, <b>particularized</b> and <b>actual or imminent</b>; (2) <b>causation</b>: the injury is fairly traceable to the defendant's conduct; and (3) <b>redressability</b>: a favorable ruling is likely to fix it. (<i>Lujan v. Defenders of Wildlife</i>, 1992.)"
+      },
+      {
+        "t": "viz",
+        "name": "cv-sort",
+        "opts": {
+          "bins": [
+            "Injury in fact",
+            "Causation",
+            "Redressability"
+          ],
+          "shuffle": true,
+          "reveal": true,
+          "cards": [
+            {
+              "text": "The factory's smoke blows onto my farm and kills my crops.",
+              "bin": 0
+            },
+            {
+              "text": "The smoke comes from this factory, not from a distant fire.",
+              "bin": 1
+            },
+            {
+              "text": "An order limiting the factory's emissions would protect my next crop.",
+              "bin": 2
+            },
+            {
+              "text": "I lost \\$4,000 when the city refused my permit.",
+              "bin": 0
+            },
+            {
+              "text": "Ordering the city to reconsider could lead to the permit.",
+              "bin": 2
+            }
+          ]
+        },
+        "cap": "Which element does each statement help prove?"
+      },
+      {
+        "t": "why",
+        "html": "Standing ties a lawsuit to a person with a <b>personal stake</b>, which keeps courts deciding concrete disputes rather than policy questions in the abstract. A harm shared equally by every citizen, such as an interest in the government obeying the law, is a <b>generalized grievance</b>; the remedy for it lies with voters and their representatives. So, as a rule, being a federal taxpayer does not by itself give standing to challenge how money is spent (the Court has recognized only a narrow exception for some religion-clause claims). The test has three parts because each closes a gap: the plaintiff must be hurt, by this defendant, in a way the court can help. In <i>Spokeo, Inc. v. Robins</i> (2016) the Court held that the injury must be <b>concrete</b> as well as particularized: a bare procedural violation of a statute, divorced from any real harm, is not enough."
+      },
+      {
+        "t": "ex",
+        "title": "Lujan",
+        "q": "Members of wildlife groups said they had visited habitats of endangered species abroad and intended to return \"someday.\" They challenged a rule that limited a federal consultation duty to actions in the United States. Did they have standing?",
+        "steps": [
+          "Injury in fact must be actual or imminent.",
+          "\"Someday\" intentions, without concrete plans, are not imminent.",
+          "The Court (7–2 in the judgment) held they lacked standing."
+        ],
+        "a": "No: no imminent injury in fact."
+      },
+      {
+        "t": "ex",
+        "title": "Which element fails?",
+        "q": "A driver sues a car maker, alleging that the maker's ad campaign raised gas prices nationwide, so she pays more at the pump. Assume she does pay more. Which element is weakest?",
+        "steps": [
+          "Injury: higher prices are concrete and personal. Present.",
+          "Causation: gas prices depend on many independent actors (producers, markets, sellers). Tracing her higher price to one company's ads is speculative.",
+          "Redressability falls with it: stopping the ads would not likely lower her price."
+        ],
+        "a": "Causation (and so redressability)."
+      },
+      {
+        "t": "viz",
+        "name": "cv-case",
+        "opts": {
+          "id": "lujan",
+          "hide": [
+            "holding"
+          ],
+          "interactive": false
+        },
+        "cap": "Lujan v. Defenders of Wildlife (1992), the source of the three-part test."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking caring deeply about an issue gives standing. A general interest shared by all citizens is not enough, however sincere or strong; the plaintiff needs a <b>personal, concrete injury</b>. Check each element against the plaintiff's own situation: what happened to <i>this</i> person, caused by <i>this</i> defendant, fixable by <i>this</i> court?"
+      },
+      {
+        "t": "try"
+      },
+      {
+        "t": "note",
+        "html": "This is an educational course, not legal advice."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Grokipedia, \"Standing (law)\"",
+        "url": "https://grokipedia.com/page/Standing_(law)"
+      },
+      {
+        "name": "Grokipedia, \"Lujan v. Defenders of Wildlife\"",
+        "url": "https://grokipedia.com/page/Lujan_v._Defenders_of_Wildlife"
+      },
+      {
+        "name": "Grokipedia, \"Case or Controversy Clause\"",
+        "url": "https://grokipedia.com/page/Case_or_Controversy_Clause"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

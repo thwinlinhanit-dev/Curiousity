@@ -1,0 +1,82 @@
+{
+  "id": "pre.matrix-basics",
+  "slug": "matrix-basics",
+  "ladder": "math",
+  "course": "pre",
+  "unit": "matrices",
+  "title": "Matrices and Matrix Arithmetic",
+  "short": "Add matrices and multiply them by numbers.",
+  "trouble": "",
+  "prereqs": [
+    "alg2.three-variable-systems"
+  ],
+  "xp": 1,
+  "viz": [],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "When you solved <a href=\"/math/algebra-2/three-variable-systems/\">systems in three variables</a>, most of the writing was the same letters over and over. Only the numbers mattered. A <b>matrix</b> is a rectangular table that keeps just the numbers, and it turns out to be useful far beyond systems: in graphics, statistics and economics."
+      },
+      {
+        "t": "key",
+        "html": "An $m \\times n$ matrix has $m$ rows and $n$ columns. The entry in row $i$, column $j$ is $a_{ij}$. Matrices of the <b>same size</b> add and subtract entry by entry, and a number (a <b>scalar</b>) multiplies every entry: $$k\\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix} = \\begin{bmatrix} ka & kb \\\\ kc & kd \\end{bmatrix}.$$"
+      },
+      {
+        "t": "why",
+        "html": "Think of a matrix as a table of data, say the number of small, medium and large shirts (columns) at two stores (rows). Next week's delivery is another table of the same shape. The new stock is found by adding matching entries; there is nothing sensible to add across different positions, and tables of different shapes cannot be matched at all. Doubling every order doubles every entry, which is scalar multiplication."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Size and entries",
+        "q": "For $A = \\begin{bmatrix} 2 & -1 & 0 \\\\ 5 & 3 & 4 \\end{bmatrix}$, give the size and $a_{21}$.",
+        "steps": [
+          "$2$ rows and $3$ columns: $A$ is $2 \\times 3$ (rows first).",
+          "$a_{21}$ is row $2$, column $1$: $5$."
+        ],
+        "a": "$2 \\times 3$; $a_{21} = 5$"
+      },
+      {
+        "t": "ex",
+        "title": "Adding and scaling",
+        "q": "Let $A = \\begin{bmatrix} 1 & 4 \\\\ -2 & 0 \\end{bmatrix}$ and $B = \\begin{bmatrix} 3 & -1 \\\\ 5 & 2 \\end{bmatrix}$. Find $A + B$ and $2A - B$.",
+        "steps": [
+          "$$A + B = \\begin{bmatrix} 1 + 3 & 4 - 1 \\\\ -2 + 5 & 0 + 2 \\end{bmatrix} = \\begin{bmatrix} 4 & 3 \\\\ 3 & 2 \\end{bmatrix}.$$",
+          "$2A = \\begin{bmatrix} 2 & 8 \\\\ -4 & 0 \\end{bmatrix}$, so $2A - B = \\begin{bmatrix} 2 - 3 & 8 + 1 \\\\ -4 - 5 & 0 - 2 \\end{bmatrix}$."
+        ],
+        "a": "$A + B = \\begin{bmatrix} 4 & 3 \\\\ 3 & 2 \\end{bmatrix}$, $2A - B = \\begin{bmatrix} -1 & 9 \\\\ -9 & -2 \\end{bmatrix}$"
+      },
+      {
+        "t": "ex",
+        "title": "A matrix equation",
+        "q": "Solve $$X + \\begin{bmatrix} 3 & 1 \\\\ 0 & -2 \\end{bmatrix} = \\begin{bmatrix} 5 & 1 \\\\ -4 & 6 \\end{bmatrix}.$$",
+        "steps": [
+          "Subtract the known matrix from both sides, entry by entry.",
+          "$X = \\begin{bmatrix} 5 - 3 & 1 - 1 \\\\ -4 - 0 & 6 - (-2) \\end{bmatrix}$."
+        ],
+        "a": "$X = \\begin{bmatrix} 2 & 0 \\\\ -4 & 8 \\end{bmatrix}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Reading the size or an entry in the wrong order. Size and position are always <b>row first, then column</b>: a $2 \\times 3$ matrix is two rows long and three columns wide, and $a_{21}$ is in the second row. Also, matrices of different sizes cannot be added; there is no \"missing entry is zero\" rule."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Precalculus 2e, Section 9.5 Matrices and Matrix Operations"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, N-VM.C.7"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

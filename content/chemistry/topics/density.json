@@ -1,0 +1,110 @@
+{
+  "id": "chem.density",
+  "slug": "density",
+  "ladder": "chemistry",
+  "course": "chem",
+  "unit": "matter",
+  "title": "Density",
+  "short": "Density is mass per unit volume; use it to find a mass, a volume or the identity of a substance.",
+  "trouble": "Students think a bigger or heavier object must be denser, or that cutting a block in half halves its density.",
+  "prereqs": [
+    "chem.si-prefixes",
+    "g6.unit-rate",
+    "g6.one-step-multiply-divide"
+  ],
+  "xp": 2,
+  "viz": [
+    "ratiotable"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Why does a steel ship float while a steel bolt sinks? Why does oil float on water? The answer is <b>density</b>, a <a href=\"/math/grade-6/unit-rate/\">Unit Rates</a> that compares how much matter is packed into a space."
+      },
+      {
+        "t": "key",
+        "html": "Density is mass per unit volume: $d = \\dfrac{m}{V}$, usually in $\\text{g/cm}^3$ for solids and $\\text{g/mL}$ for liquids ($1\\ \\text{mL} = 1\\ \\text{cm}^3$). Density is a property of the <b>substance</b>, not of the object, so it can identify what something is made of."
+      },
+      {
+        "t": "why",
+        "html": "Each substance packs its particles a certain way, and each particle has a certain mass. Take more of the substance and you take more particles and more space in the same proportion, so the ratio of mass to volume stays the same. Cut a gold bar in half: each half has half the mass and half the volume, and the same density, $19.3\\ \\text{g/cm}^3$. An object floats on a liquid when its average density is less than the liquid's: a ship's hull encloses lots of air, so its average density is less than water's."
+      },
+      {
+        "t": "viz",
+        "name": "ratiotable",
+        "opts": {
+          "a": 27,
+          "b": 10,
+          "names": [
+            "mass",
+            "volume"
+          ],
+          "units": [
+            "g",
+            "cm³"
+          ],
+          "max": 6,
+          "task": {
+            "b": 40
+          }
+        },
+        "cap": "Aluminum: every 10 cm³ has a mass of 27 g, so its density is 2.7 g/cm³. Find the mass of 40 cm³."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Finding the density",
+        "q": "A metal block has a mass of $89.6\\ \\text{g}$ and a volume of $10.0\\ \\text{cm}^3$. What is its density, and which metal could it be?",
+        "steps": [
+          "$d = \\dfrac{89.6\\ \\text{g}}{10.0\\ \\text{cm}^3} = 8.96\\ \\text{g/cm}^3$",
+          "Copper has a density of $8.96\\ \\text{g/cm}^3$ (iron 7.87, aluminum 2.70)."
+        ],
+        "a": "$8.96\\ \\text{g/cm}^3$: probably copper."
+      },
+      {
+        "t": "ex",
+        "title": "Finding a mass",
+        "q": "Ethanol has a density of $0.789\\ \\text{g/mL}$. What is the mass of $250\\ \\text{mL}$?",
+        "steps": [
+          "Rearrange $d = \\dfrac{m}{V}$ (as in <a href=\"/math/grade-6/one-step-multiply-divide/\">One-Step Equations with Multiplying and Dividing</a>): $m = d \\times V$.",
+          "$m = 0.789\\ \\dfrac{\\text{g}}{\\text{mL}} \\times 250\\ \\text{mL} = 197\\ \\text{g}$"
+        ],
+        "a": "about $197\\ \\text{g}$"
+      },
+      {
+        "t": "ex",
+        "title": "Water displacement",
+        "q": "A stone with mass $40.5\\ \\text{g}$ raises the water in a cylinder from $25.0\\ \\text{mL}$ to $40.0\\ \\text{mL}$. Find its density.",
+        "steps": [
+          "The stone pushes aside its own volume of water: $$V = 40.0 - 25.0 = 15.0\\ \\text{mL} = 15.0\\ \\text{cm}^3.$$",
+          "$d = \\dfrac{40.5}{15.0} = 2.70\\ \\text{g/cm}^3$"
+        ],
+        "a": "$2.70\\ \\text{g/cm}^3$"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking a bigger or heavier object must be denser, or that cutting a block in half halves its density. A large log is heavier than a small pebble, yet the log floats and the pebble sinks. Density compares mass with volume, so check that you divided, not just compared masses."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 1.4 Measurements"
+      },
+      {
+        "name": "Next Generation Science Standards, MS-PS1-2"
+      },
+      {
+        "name": "CRC Handbook of Chemistry and Physics, densities of the elements"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

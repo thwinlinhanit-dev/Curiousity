@@ -1,0 +1,151 @@
+{
+  "id": "sym.replacement-intro",
+  "slug": "replacement-intro",
+  "ladder": "logic",
+  "course": "sym",
+  "unit": "replacement",
+  "title": "Rules of Replacement",
+  "short": "A replacement rule says two forms are equivalent, so either can replace the other anywhere, even inside a line, in either direction.",
+  "trouble": "Learners treat replacement rules like inference rules and use them only on whole lines, or treat inference rules like replacement rules and use them on parts.",
+  "prereqs": [
+    "sym.proof-strategy",
+    "sym.de-morgan"
+  ],
+  "xp": 2,
+  "viz": [
+    "lg-proof"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The eight rules of inference are not enough on their own. From $\\neg (p \\land q)$ and $p$ you should be able to get $\\neg q$, but no rule of inference fits: the first premise is a negation, not a disjunction. What you need is a way to rewrite $\\neg (p \\land q)$ as the equivalent $\\neg p \\lor \\neg q$ (<a href=\"/logic/symbolic-logic/de-morgan/\">De Morgan's Laws</a>). That is what rules of replacement do."
+      },
+      {
+        "t": "key",
+        "html": "A rule of replacement says two forms are logically equivalent, written with \"::\" between them. Either form may replace the other <b>anywhere</b>, even inside a line, and in <b>either direction</b>. A rule of inference, by contrast, works only on whole lines and only in one direction."
+      },
+      {
+        "t": "why",
+        "html": "If two formulas are equivalent, they have the same truth value in every row. Swapping one for the other inside a larger formula therefore never changes the value of the larger formula either: the connectives around it see exactly the same truth value as before. That is why replacement may happen inside a line. Inference rules have no such guarantee: $p \\land q$ implies $p$, but $p$ does not imply $p \\land q$, and replacing one with the other inside $(p \\land q) \\to r$ could turn a truth into a falsehood."
+      },
+      {
+        "t": "table",
+        "head": [
+          "",
+          "Rules of inference",
+          "Rules of replacement"
+        ],
+        "rows": [
+          [
+            "Examples",
+            "MP, MT, HS, DS, CD, Simp, Conj, Add",
+            "DM, Com, Assoc, Dist, DN, Trans, Impl, Equiv, Exp, Taut"
+          ],
+          [
+            "Based on",
+            "valid argument forms",
+            "logical equivalences"
+          ],
+          [
+            "Apply to",
+            "whole lines only",
+            "any part of a line"
+          ],
+          [
+            "Direction",
+            "one way",
+            "both ways"
+          ]
+        ],
+        "cap": "Two kinds of rules."
+      },
+      {
+        "t": "viz",
+        "name": "lg-proof",
+        "opts": {
+          "premises": [
+            "¬(p ∧ q)",
+            "p"
+          ],
+          "conclusion": "¬q",
+          "lines": [
+            {
+              "f": "¬p ∨ ¬q",
+              "j": "DM 1",
+              "note": "Replacement: rewrite line 1 with an equivalent form."
+            },
+            {
+              "f": "¬¬p",
+              "j": "DN 2",
+              "note": "DS needs the exact negation of ¬p."
+            },
+            {
+              "f": "¬q",
+              "j": "DS 3, 4"
+            }
+          ],
+          "steps": true,
+          "goalLine": true
+        },
+        "cap": "Replacement makes room for an inference rule."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Inside a line",
+        "q": "May DM turn $\\neg (p \\land q) \\to r$ into $(\\neg p \\lor \\neg q) \\to r$?",
+        "steps": [
+          "DM is a rule of replacement.",
+          "It replaces the antecedent with an equivalent formula."
+        ],
+        "a": "Yes. Replacement works on parts of lines."
+      },
+      {
+        "t": "ex",
+        "title": "Not allowed",
+        "q": "May Simp turn $(p \\land q) \\to r$ into $p \\to r$?",
+        "steps": [
+          "Simp is a rule of inference, so it needs a whole line that is a conjunction.",
+          "Here the conjunction is only the antecedent.",
+          "In fact the result does not follow: $(p \\land q) \\to r$ can be true while $p \\to r$ is false (try $p$ T, $q$ F, $r$ F)."
+        ],
+        "a": "No."
+      },
+      {
+        "t": "ex",
+        "title": "Either direction",
+        "q": "May DN turn $\\neg \\neg s \\lor t$ into $s \\lor t$? And back?",
+        "steps": [
+          "DN says $p$ :: $\\neg \\neg p$.",
+          "Replacement may go from right to left or left to right."
+        ],
+        "a": "Yes, both ways."
+      },
+      {
+        "t": "mistake",
+        "html": "Treating the two kinds of rules alike: using replacement rules only on whole lines (they are allowed anywhere), or using inference rules on parts (never allowed). Before you apply a rule, ask which kind it is. If it has \"::\", it may go anywhere; if it says \"infer\", it needs whole lines."
+      },
+      {
+        "t": "p",
+        "html": "The next four lessons give the ten replacement rules in small groups. With all eighteen rules together, the system can prove every valid argument of statement logic, a fact you will meet again in <a href=\"/logic/symbolic-logic/soundness-completeness/\">Soundness and Completeness</a>."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Patrick J. Hurley and Lori Watson, A Concise Introduction to Logic, 13th ed., section 7.3, Rules of Replacement I"
+      },
+      {
+        "name": "Irving M. Copi, Carl Cohen and Victor Rodych, Introduction to Logic, 15th ed., chapter on the method of deduction, the rule of replacement"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,128 @@
+{
+  "id": "g6.equivalent-ratios",
+  "slug": "equivalent-ratios",
+  "ladder": "math",
+  "course": "g6",
+  "unit": "ratios",
+  "title": "Equivalent Ratios and Ratio Tables",
+  "short": "Multiply both quantities by the same number to keep the ratio.",
+  "trouble": "Students add the same amount to both quantities, thinking 2:3 equals 4:5.",
+  "prereqs": [
+    "g6.ratio-language"
+  ],
+  "xp": 1,
+  "viz": [
+    "ratiotable"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A shade of orange paint uses 2 cans of red for every 3 cans of yellow (a <a href=\"/math/grade-6/ratio-language/\">ratio</a> of $2 : 3$). To paint a bigger wall you make more batches. Two batches use 4 cans of red and 6 cans of yellow; three batches use 6 and 9."
+      },
+      {
+        "t": "key",
+        "html": "Multiply (or divide) <b>both</b> numbers of a ratio by the <b>same</b> number to get an equivalent ratio: $2 : 3 = 4 : 6 = 6 : 9 = 8 : 12$. Equivalent ratios describe the same mix."
+      },
+      {
+        "t": "why",
+        "html": "Multiplying both numbers by 3 is the same as making 3 batches. Each batch still has 2 cans of red for 3 cans of yellow, so the color does not change. It is the same idea as <a href=\"/math/grade-4/equivalent-fractions-multiply/\">equivalent fractions</a>: $\\frac{2}{3} = \\frac{4}{6}$ because both the top and the bottom were multiplied by 2."
+      },
+      {
+        "t": "viz",
+        "name": "ratiotable",
+        "opts": {
+          "a": 2,
+          "b": 3,
+          "names": [
+            "red",
+            "yellow"
+          ],
+          "units": [
+            "cans",
+            "cans"
+          ],
+          "max": 6,
+          "pins": [
+            1,
+            2
+          ],
+          "task": {
+            "a": 8
+          }
+        },
+        "cap": "Move the marker by whole batches and add columns to the table. Then try <b>What if we add instead?</b> to see why adding the same amount to both does not keep the mix."
+      },
+      {
+        "t": "table",
+        "head": [
+          "batches",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "rows": [
+          [
+            "red (cans)",
+            "2",
+            "4",
+            "6",
+            "8",
+            "10"
+          ],
+          [
+            "yellow (cans)",
+            "3",
+            "6",
+            "9",
+            "12",
+            "15"
+          ]
+        ],
+        "cap": "A ratio table: every column is the same mix."
+      },
+      {
+        "t": "ex",
+        "title": "Scale up",
+        "q": "A lemonade uses 3 scoops of mix for every 4 cups of water. How many cups of water go with 15 scoops?",
+        "steps": [
+          "Find the multiplier: $15 = 3 \\times 5$, so this is 5 batches.",
+          "Multiply the water by the same 5: $4 \\times 5 = 20$.",
+          "Check: $3 : 4$ and $15 : 20$ are equivalent, since both numbers were multiplied by 5."
+        ],
+        "a": "20 cups of water."
+      },
+      {
+        "t": "ex",
+        "title": "Scale down, then up",
+        "q": "A paint uses 6 cans of red for every 9 cans of yellow. How many cans of yellow go with 10 cans of red?",
+        "steps": [
+          "10 is not a whole-number multiple of 6, so first make the ratio smaller.",
+          "Divide both numbers by 3: $6 : 9 = 2 : 3$.",
+          "Now $10 = 2 \\times 5$, so multiply both parts of $2 : 3$ by 5: $10 : 15$."
+        ],
+        "a": "15 cans of yellow."
+      },
+      {
+        "t": "mistake",
+        "html": "Adding the same amount to both numbers does <b>not</b> make an equivalent ratio. $2 : 3$ and $4 : 5$ look alike, but in $2 : 3$ the red is $\\frac{2}{3}$ of the yellow, and in $4 : 5$ it is $\\frac{4}{5}$ of the yellow, a redder orange. Quick check: an equivalent ratio has one multiplier that works for both numbers. $2 \\times 2 = 4$, but $3 \\times 2 = 6$, not 5."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Prealgebra 2e, section 5.6 Ratios and Rate"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 6.RP.A.3a: tables of equivalent ratios"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

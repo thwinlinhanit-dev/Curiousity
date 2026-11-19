@@ -1,0 +1,132 @@
+{
+  "id": "calc4.parametric-surfaces",
+  "slug": "parametric-surfaces",
+  "ladder": "math",
+  "course": "calc4",
+  "unit": "surface-integrals",
+  "title": "Parametric Surfaces",
+  "short": "r(u, v) describes a surface with two parameters.",
+  "trouble": "",
+  "prereqs": [
+    "calc3.vector-functions",
+    "calc3.quadric-surfaces"
+  ],
+  "xp": 2,
+  "viz": [
+    "surface"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A curve is traced by one parameter; a surface needs two. Just as $\\mathbf{r}(t)$ describes a <a href=\"/math/calculus-3/vector-functions/\">curve in space</a>, a function $\\mathbf{r}(u, v)$ of two parameters sweeps out a surface. This lets us describe the <a href=\"/math/calculus-3/quadric-surfaces/\">quadric surfaces</a> and many others in a form that is ready for integration."
+      },
+      {
+        "t": "key",
+        "html": "A <b>parametric surface</b> is given by $\\mathbf{r}(u, v) = \\langle x(u, v), y(u, v), z(u, v) \\rangle$ for $(u, v)$ in a region $D$ of the $uv$-plane. Its <b>tangent vectors</b> are $\\mathbf{r}_u$ and $\\mathbf{r}_v$, and\n  $$\\mathbf{N} = \\mathbf{r}_u \\times \\mathbf{r}_v$$\n  is a <b>normal vector</b>. The surface is smooth where $\\mathbf{N} \\ne \\mathbf{0}$."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Surface",
+          "Parametrization",
+          "Parameters"
+        ],
+        "rows": [
+          [
+            "graph $z = f(x, y)$",
+            "$\\langle u, v, f(u, v) \\rangle$",
+            "$(u, v)$ in the domain"
+          ],
+          [
+            "cylinder $x^2 + y^2 = a^2$",
+            "$\\langle a\\cos u, a\\sin u, v \\rangle$",
+            "${}0 \\le u \\le 2\\pi$"
+          ],
+          [
+            "sphere $x^2 + y^2 + z^2 = a^2$",
+            "$\\langle a\\sin u\\cos v, a\\sin u\\sin v, a\\cos u \\rangle$",
+            "${}0 \\le u \\le \\pi$, ${}0 \\le v \\le 2\\pi$"
+          ],
+          [
+            "cone $z = \\sqrt{x^2 + y^2}$",
+            "$\\langle v\\cos u, v\\sin u, v \\rangle$",
+            "$v \\ge 0$"
+          ],
+          [
+            "plane through $P_0$ spanned by $\\mathbf{a}$, $\\mathbf{b}$",
+            "$P_0 + u\\mathbf{a} + v\\mathbf{b}$",
+            "all $u$, $v$"
+          ]
+        ]
+      },
+      {
+        "t": "why",
+        "html": "<b>Why $\\mathbf{r}_u \\times \\mathbf{r}_v$ is normal:</b> holding $v$ fixed and letting $u$ vary traces a curve on the surface (a \"$u$-curve\"), and $\\mathbf{r}_u$ is its tangent vector. Likewise $\\mathbf{r}_v$ is tangent to a $v$-curve. Both lie in the tangent plane, so their cross product is perpendicular to it. If they are parallel (or one is zero), the cross product vanishes and the grid of curves collapses there, as at the tip of a cone."
+      },
+      {
+        "t": "viz",
+        "name": "param3d",
+        "opts": {
+          "surface": true,
+          "x": "sin(u)*cos(v)",
+          "y": "sin(u)*sin(v)",
+          "z": "cos(u)",
+          "u0": 0,
+          "u1": "pi",
+          "v0": 0,
+          "v1": "2pi",
+          "u": 1,
+          "v": 0.8
+        },
+        "cap": "The unit sphere $\\langle \\sin u\\cos v, \\sin u\\sin v, \\cos u \\rangle$ with the $u$-curve (a meridian) and the $v$-curve (a circle of latitude) through a point. The tangent vectors $\\mathbf{r}_u$ and $\\mathbf{r}_v$ point along them."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A plane",
+        "q": "Parametrize the plane through $(1, 0, 2)$ spanned by $\\langle 1, 1, 0 \\rangle$ and $\\langle 0, 1, -1 \\rangle$, and find a normal vector.",
+        "steps": [
+          "$\\mathbf{r}(u, v) = \\langle 1 + u, u + v, 2 - v \\rangle$.",
+          "$\\mathbf{r}_u = \\langle 1, 1, 0 \\rangle$, $\\mathbf{r}_v = \\langle 0, 1, -1 \\rangle$, and $\\mathbf{r}_u \\times \\mathbf{r}_v = \\langle -1, 1, 1 \\rangle$.",
+          "So the plane is $-(x - 1) + y + (z - 2) = 0$, that is, $-x + y + z = 1$."
+        ],
+        "a": "$\\langle 1 + u, u + v, 2 - v \\rangle$, normal $\\langle -1, 1, 1 \\rangle$"
+      },
+      {
+        "t": "ex",
+        "title": "A cone",
+        "q": "Find $\\mathbf{r}_u \\times \\mathbf{r}_v$ for the cone $\\langle v\\cos u, v\\sin u, v \\rangle$. Where is it not smooth?",
+        "steps": [
+          "$\\mathbf{r}_u = \\langle -v\\sin u, v\\cos u, 0 \\rangle$, $\\mathbf{r}_v = \\langle \\cos u, \\sin u, 1 \\rangle$.",
+          "$\\mathbf{r}_u \\times \\mathbf{r}_v = \\langle v\\cos u, v\\sin u, -v \\rangle$.",
+          "This is $\\mathbf{0}$ only when $v = 0$: the vertex, where the cone comes to a point."
+        ],
+        "a": "$\\langle v\\cos u, v\\sin u, -v \\rangle$; not smooth at the vertex"
+      },
+      {
+        "t": "ex",
+        "title": "Recognizing a surface",
+        "q": "What surface is $\\mathbf{r}(u, v) = \\langle 2\\cos u, 2\\sin u, v \\rangle$?",
+        "steps": [
+          "$x^2 + y^2 = 4\\cos^2 u + 4\\sin^2 u = 4$ for every $u$, while $z = v$ can be anything.",
+          "It is the cylinder of radius ${}2$ around the $z$-axis."
+        ],
+        "a": "the cylinder $x^2 + y^2 = 4$"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 3, 6.6 Surface Integrals"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

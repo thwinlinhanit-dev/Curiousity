@@ -1,0 +1,141 @@
+{
+  "id": "cplx.exponential-form",
+  "slug": "exponential-form",
+  "ladder": "math",
+  "course": "cplx",
+  "unit": "complex-numbers",
+  "title": "Euler's Formula and Exponential Form",
+  "short": "e^(iθ) = cos θ + i sin θ, so z = re^(iθ); multiplying multiplies the lengths and adds the angles.",
+  "trouble": "Students find the angle with tan⁻¹(b/a) and land in the wrong quadrant: −1 − i has angle −3π/4 (or 5π/4), not π/4.",
+  "prereqs": [
+    "cplx.modulus-conjugate",
+    "pre.de-moivre",
+    "calc2.known-series"
+  ],
+  "xp": 2,
+  "viz": [
+    "complexplane"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/math/precalculus/de-moivre/\">Precalculus</a> you wrote $z = r(\\cos\\theta + i\\sin\\theta)$ and found that multiplying complex numbers multiplies their moduli and adds their angles. Calculus gives that rule a short name. The Maclaurin series from <a href=\"/math/calculus-2/known-series/\">known series</a> work for complex inputs too, and they explain why $\\cos\\theta + i\\sin\\theta$ deserves to be written as a power of $e$."
+      },
+      {
+        "t": "key",
+        "html": "<b>Euler's formula:</b> $e^{i\\theta} = \\cos\\theta + i\\sin\\theta$. Every nonzero complex number has an <b>exponential form</b> $z = re^{i\\theta}$ with $r = |z|$ and $\\theta$ an argument (angle) of $z$. Then\n      $$re^{i\\alpha} \\cdot se^{i\\beta} = rs\\,e^{i(\\alpha + \\beta)}, \\qquad \\frac{re^{i\\alpha}}{se^{i\\beta}} = \\frac{r}{s}e^{i(\\alpha - \\beta)}, \\qquad \\left(re^{i\\theta}\\right)^n = r^ne^{in\\theta}.$$"
+      },
+      {
+        "t": "why",
+        "html": "Put $i\\theta$ into $e^{x} = \\sum \\frac{x^n}{n!}$. The powers of $i$ cycle $1, i, -1, -i$, so the even terms are real and the odd terms carry an $i$:\n      $$e^{i\\theta} = \\left(1 - \\frac{\\theta^2}{2!} + \\frac{\\theta^4}{4!} - \\cdots\\right) + i\\left(\\theta - \\frac{\\theta^3}{3!} + \\frac{\\theta^5}{5!} - \\cdots\\right) = \\cos\\theta + i\\sin\\theta.$$\n      The product rule is the angle-sum formulas in disguise: $(\\cos\\alpha + i\\sin\\alpha)(\\cos\\beta + i\\sin\\beta) = \\cos(\\alpha + \\beta) + i\\sin(\\alpha + \\beta)$, which is exactly what $e^{i\\alpha}e^{i\\beta} = e^{i(\\alpha + \\beta)}$ says."
+      },
+      {
+        "t": "p",
+        "html": "Exponential form is the natural way to multiply, divide and take powers; the form $a + bi$ is the natural way to add. Most problems switch between the two. Going from $re^{i\\theta}$ to $a + bi$ is direct: $a = r\\cos\\theta$ and $b = r\\sin\\theta$. Going the other way needs care with the angle, as the first example shows. Two special values are worth knowing by heart: $e^{i\\pi} = -1$ and $e^{2\\pi i} = 1$. The second says that a full turn brings you back, so the angle of a complex number is only defined up to adding $2\\pi k$; the next lesson deals with that."
+      },
+      {
+        "t": "table",
+        "head": [
+          "$z$",
+          "$1$",
+          "$i$",
+          "$-1$",
+          "$-i$",
+          "$1 + i$",
+          "$1 + \\sqrt{3}\\,i$"
+        ],
+        "rows": [
+          [
+            "$re^{i\\theta}$",
+            "$e^{0}$",
+            "$e^{\\pi i/2}$",
+            "$e^{\\pi i}$",
+            "$e^{-\\pi i/2}$",
+            "$\\sqrt{2}e^{\\pi i/4}$",
+            "$2e^{\\pi i/3}$"
+          ]
+        ],
+        "cap": "A few numbers in both forms."
+      },
+      {
+        "t": "viz",
+        "name": "complexplane",
+        "opts": {
+          "z": [
+            1,
+            1
+          ],
+          "w": [
+            0,
+            2
+          ],
+          "op": "mul",
+          "ops": [
+            "mul",
+            "div",
+            "pow"
+          ],
+          "polar": true,
+          "range": 5
+        },
+        "cap": "Multiplying: the lengths multiply and the angles add. Try $w = i$ (length 1, angle $\\frac{\\pi}{2}$): multiplying by $i$ turns $z$ a quarter turn."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Rectangular to exponential",
+        "q": "Write $z = -1 - i$ in the form $re^{i\\theta}$ with $-\\pi < \\theta \\le \\pi$.",
+        "steps": [
+          "$r = |z| = \\sqrt{1 + 1} = \\sqrt{2}$.",
+          "The point $(-1, -1)$ is in quadrant III. The reference angle is $\\tan^{-1}\\left|\\frac{-1}{-1}\\right| = \\frac{\\pi}{4}$.",
+          "In quadrant III, measured the short way from the positive real axis, $\\theta = -\\pi + \\frac{\\pi}{4} = -\\frac{3\\pi}{4}$.",
+          "$z = \\sqrt{2}\\,e^{-3\\pi i/4}$. Check: $\\sqrt{2}\\left(\\cos\\frac{3\\pi}{4} - i\\sin\\frac{3\\pi}{4}\\right) = \\sqrt{2}\\left(-\\frac{\\sqrt{2}}{2} - \\frac{\\sqrt{2}}{2}i\\right) = -1 - i$."
+        ],
+        "a": "$\\sqrt{2}\\,e^{-3\\pi i/4}$"
+      },
+      {
+        "t": "ex",
+        "title": "A product",
+        "q": "Compute $\\left(2e^{\\pi i/6}\\right)\\left(3e^{\\pi i/3}\\right)$ in the form $a + bi$.",
+        "steps": [
+          "Multiply lengths: $2 \\cdot 3 = 6$. Add angles: $\\frac{\\pi}{6} + \\frac{\\pi}{3} = \\frac{\\pi}{2}$.",
+          "$6e^{\\pi i/2} = 6\\left(\\cos\\frac{\\pi}{2} + i\\sin\\frac{\\pi}{2}\\right) = 6i$."
+        ],
+        "a": "$6i$"
+      },
+      {
+        "t": "ex",
+        "title": "A power",
+        "q": "Compute $(1 + i)^{8}$.",
+        "steps": [
+          "$1 + i = \\sqrt{2}\\,e^{\\pi i/4}$.",
+          "$(1 + i)^8 = (\\sqrt{2})^8 e^{8\\pi i/4} = 16e^{2\\pi i}$.",
+          "$e^{2\\pi i} = 1$, so the answer is $16$. Multiplying out eight factors would take much longer."
+        ],
+        "a": "$16$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Taking the angle straight from $\\tan^{-1}\\frac{b}{a}$.</b> A calculator's $\\tan^{-1}$ only returns angles between $-\\frac{\\pi}{2}$ and $\\frac{\\pi}{2}$, so for points on the left half of the plane it points the wrong way: for $-1 - i$ it gives $\\frac{\\pi}{4}$, the angle of $1 + i$. Always locate the quadrant first. The correct angle is $-\\frac{3\\pi}{4}$ (or $\\frac{5\\pi}{4}$, the same direction). Check by converting back: $\\sqrt{2}e^{i\\pi/4} = 1 + i$, not $-1 - i$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Beck, Marchesi, Pixton and Sabalka, A First Course in Complex Analysis, chapter 1 (Complex Numbers)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.04, Complex Variables with Applications (Spring 2018), course notes: complex algebra and the complex plane"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

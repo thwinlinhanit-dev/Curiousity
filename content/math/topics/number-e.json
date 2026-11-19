@@ -1,0 +1,121 @@
+{
+  "id": "alg2.number-e",
+  "slug": "number-e",
+  "ladder": "math",
+  "course": "alg2",
+  "unit": "exponential-log",
+  "title": "The Number e and Continuous Growth",
+  "short": "Compounding more often approaches A = Peʳᵗ.",
+  "trouble": "",
+  "prereqs": [
+    "alg2.compound-interest"
+  ],
+  "xp": 2,
+  "viz": [
+    "exponential"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/math/algebra-2/compound-interest/\">Compound Interest</a>, compounding more often gave a little more money. What if a bank compounded every month, every day, every second, without limit? The answer leads to one of the most important numbers in mathematics."
+      },
+      {
+        "t": "key",
+        "html": "As $n$ grows, $\\left(1 + \\frac{1}{n}\\right)^n$ approaches $e \\approx 2.71828$. Compounding continuously at rate $r$ for $t$ years gives $$A = Pe^{rt}.$$ The function $e^x$ is the natural exponential function."
+      },
+      {
+        "t": "why",
+        "html": "With rate $r$ compounded $n$ times a year, $\\left(1 + \\frac{r}{n}\\right)^{nt}$. Write $m = \\frac{n}{r}$: this becomes $\\left[\\left(1 + \\frac{1}{m}\\right)^{m}\\right]^{rt}$. As $n$ grows, $m$ grows, and the inner bracket approaches $e$. So the limit of ever-more-frequent compounding is $e^{rt}$. The values settle down because each extra split of the year adds less and less."
+      },
+      {
+        "t": "table",
+        "head": [
+          "$n$",
+          "1",
+          "2",
+          "12",
+          "365",
+          "1,000,000"
+        ],
+        "rows": [
+          [
+            "value",
+            "2",
+            "2.25",
+            "2.6130",
+            "2.7146",
+            "2.7183"
+          ]
+        ],
+        "cap": "$\\left(1 + \\frac{1}{n}\\right)^n$ as $n$ grows"
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "fns": [
+            "(1 + 1/x)^x",
+            {
+              "f": "e",
+              "dash": true,
+              "color": "gold"
+            }
+          ],
+          "trace": {
+            "x": 5
+          },
+          "xmin": 0,
+          "xmax": 60,
+          "ymin": 1.5,
+          "ymax": 3
+        },
+        "cap": "$f(x) = \\left(1 + \\frac{1}{x}\\right)^x$ creeps up toward the dashed line $y = e$ but never passes it."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Continuous compounding",
+        "q": "\\$500 grows at 4% per year, compounded continuously, for 10 years. Find the balance.",
+        "steps": [
+          "$A = 500e^{0.04 \\cdot 10} = 500e^{0.4}$.",
+          "$e^{0.4} \\approx 1.49182$, so $A \\approx 745.91$."
+        ],
+        "a": "about \\$745.91"
+      },
+      {
+        "t": "ex",
+        "title": "Continuous versus monthly",
+        "q": "Compare with monthly compounding for the same account.",
+        "steps": [
+          "Monthly: $500\\left(1 + \\frac{0.04}{12}\\right)^{120} \\approx 745.42$."
+        ],
+        "a": "Continuous gives about \\$0.50 more: the most any compounding could give."
+      },
+      {
+        "t": "note",
+        "html": "$e$ shows up far beyond banking. The function $e^x$ is the one whose rate of growth at every moment equals its current value, which is why it describes continuous growth and decay, and why calculus uses it constantly. Like $\\pi$, $e$ is irrational: its decimals never end or repeat."
+      },
+      {
+        "t": "mistake",
+        "html": "Typing $e^{0.4}$ as $e \\cdot 0.4$ or using $e \\approx 3$. Use your calculator's $e^x$ key, and keep the rate as a decimal ($4\\% = 0.04$). A quick estimate: $e^{0.4}$ should be between $1.4$ and $1.5$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Algebra 2e, Section 6.1 Exponential Functions (the number e)"
+      },
+      {
+        "name": "Common Core State Standards, F-LE.A.4"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

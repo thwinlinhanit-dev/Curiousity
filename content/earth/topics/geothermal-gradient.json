@@ -1,0 +1,90 @@
+{
+  "id": "geology.geothermal-gradient",
+  "slug": "geothermal-gradient",
+  "ladder": "earth",
+  "course": "geology",
+  "unit": "earth-interior",
+  "title": "Heat Flow and the Geothermal Gradient",
+  "short": "Temperature rises about 25 °C per kilometer in the upper crust, fed by heat left from Earth's formation and by radioactive decay.",
+  "trouble": "Students carry the crust's rate all the way down, which would make the center about 160,000 °C; the gradient is steep only near the surface, and the center is about 5,000 to 6,000 °C.",
+  "prereqs": [
+    "earthsci.half-life"
+  ],
+  "xp": 2,
+  "viz": [
+    "es-interior"
+  ],
+  "figureArchetype": "CollisionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Deep mines are hot. The deepest gold mines in South Africa reach about 4 km, where the rock is around 60 °C and the tunnels must be cooled. Temperature rising with depth, the <b>geothermal gradient</b>, is the first clue that Earth is a heat engine. In <a href=\"/earth-and-space/earth-science/half-life/\">Half-Life and Absolute Age</a> you met radioactive atoms; they are part of the story."
+      },
+      {
+        "t": "why",
+        "html": "Heat flows from hot to cold. Earth's interior is hot for two reasons: <b>leftover heat</b> from the collisions and sinking iron that built the planet, and <b>radioactive decay</b> of uranium, thorium and potassium, which keeps adding heat. That heat must leak out through the crust. Rock conducts heat poorly, so a steady flow needs a steep temperature drop across it, the way a thick blanket keeps a big difference between your skin and the air. The rule for conduction is $q = k\\,\\dfrac{\\Delta T}{\\Delta z}$: heat flow $q$ equals the rock's conductivity $k$ times the gradient."
+      },
+      {
+        "t": "key",
+        "html": "Temperature rises about $25^\\circ\\text{C}$ per km in the upper crust: $T = T_0 + g z$. The gradient is steep only near the surface. Deeper down, the mantle slowly convects and carries heat far better, so the temperature climbs gently, reaching about 5,000 to 6,000 °C at the center."
+      },
+      {
+        "t": "viz",
+        "name": "es-interior",
+        "opts": {
+          "mode": "geotherm",
+          "maxDepth": 6371
+        },
+        "cap": "Estimated temperatures down to the center, against the straight line you would get by keeping the crust's gradient all the way down."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Temperature in a well",
+        "q": "The surface is $15^\\circ\\text{C}$ and the gradient is $25^\\circ\\text{C/km}$. How hot is the rock at the bottom of a well 3 km deep?",
+        "steps": [
+          "Warming: $25 \\times 3 = 75^\\circ\\text{C}$.",
+          "$T = 15 + 75 = 90^\\circ\\text{C}$."
+        ],
+        "a": "About $90^\\circ\\text{C}$."
+      },
+      {
+        "t": "ex",
+        "title": "Heat flow through the crust",
+        "q": "Granite conducts heat with $k = 3.0\\,\\text{W/(m·K)}$. The gradient is $25^\\circ\\text{C/km}$. How much heat flows out through each square meter?",
+        "steps": [
+          "Write the gradient in SI units: $25^\\circ\\text{C/km} = 0.025\\,\\text{K/m}$ (a change of 1 °C is a change of 1 K).",
+          "$q = 3.0 \\times 0.025 = 0.075\\,\\text{W/m}^2 = 75\\,\\text{mW/m}^2$.",
+          "That is tiny next to sunlight (about $240\\,\\text{W/m}^2$ absorbed on average), but over all of Earth it adds up to roughly 45 terawatts, and it drives volcanoes, earthquakes and moving plates."
+        ],
+        "a": "$75\\,\\text{mW/m}^2$."
+      },
+      {
+        "t": "mistake",
+        "html": "A common slip is to carry the crust's gradient all the way down: $15 + 25 \\times 6,371 \\approx 160,000^\\circ\\text{C}$ at the center, hotter than the Sun's surface. The real center is about 5,000 to 6,000 °C. The gradient is steep only where heat must squeeze through rock by conduction. Check any straight-line estimate against what the deep rock is doing: the mantle is solid but flows, and flowing rock carries heat."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e, section 14.6, Conduction"
+      },
+      {
+        "name": "OpenStax, Astronomy 2e, section 8.1, The Global Perspective"
+      },
+      {
+        "name": "NGSS HS-ESS2-3 (nextgenscience.org)"
+      },
+      {
+        "name": "MIT OpenCourseWare, 12.001 Introduction to Geology"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

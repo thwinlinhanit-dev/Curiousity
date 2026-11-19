@@ -1,0 +1,166 @@
+{
+  "id": "astro.planet-families",
+  "slug": "planet-families",
+  "course": "astro",
+  "courseTitle": "Astronomy",
+  "unit": "solar-system",
+  "unitTitle": "The Solar System",
+  "title": "Planet Densities: Rock or Gas?",
+  "short": "A planet's mass and radius give its average density, about 4 to 5.5 g/cm³ for rocky planets and 0.7 to 1.6 g/cm³ for the giants.",
+  "trouble": "Students think the biggest planets must be the densest.",
+  "prereqs": [
+    "earthsci.solar-system-objects",
+    "earthsci.density",
+    "g8.volume-spheres",
+    "g8.scientific-operations"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-cosmic"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/earth-and-space/earth-science/solar-system-objects/\">Planets, Moons and Small Bodies</a> you sorted the planets into small rocky ones near the Sun and giants farther out. One number tells the two families apart and reveals what each planet is made of, even ones no spacecraft has landed on: its average <a href=\"/earth-and-space/earth-science/density/\">density</a>."
+      },
+      {
+        "t": "why",
+        "html": "Density is mass divided by volume, $\\rho = \\frac{M}{V}$. We can measure both from far away. A planet's mass comes from the orbits of its moons or of passing spacecraft (see <a href=\"/physics/astronomy/weighing-with-orbits/\">weighing with orbits</a>), and its radius from its angular size and distance. A planet is close to a sphere, so $V = \\frac{4}{3}\\pi r^3$ (<a href=\"/math/pre-algebra/volume-spheres/\">volume of spheres</a>). Then we compare with known materials: water is $1$ g/cm³, rock about $3$, iron about $8$, and hydrogen and helium far less. A planet's average density tells the mix."
+      },
+      {
+        "t": "key",
+        "html": "Average density $= \\dfrac{M}{\\frac{4}{3}\\pi r^3}$. Rocky (terrestrial) planets come out at about $4$ to $5.5$ g/cm³: rock with iron cores. The giants come out at about $0.7$ to $1.6$ g/cm³: mostly hydrogen and helium (Jupiter, Saturn) or ices (Uranus, Neptune) around small dense cores."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Planet",
+          "Mass (Earths)",
+          "Radius (km)",
+          "Density (g/cm³)",
+          "Family"
+        ],
+        "rows": [
+          [
+            "Mercury",
+            "0.055",
+            "2,440",
+            "5.43",
+            "rocky"
+          ],
+          [
+            "Venus",
+            "0.815",
+            "6,052",
+            "5.24",
+            "rocky"
+          ],
+          [
+            "Earth",
+            "1",
+            "6,371",
+            "5.51",
+            "rocky"
+          ],
+          [
+            "Mars",
+            "0.107",
+            "3,390",
+            "3.93",
+            "rocky"
+          ],
+          [
+            "Jupiter",
+            "318",
+            "69,911",
+            "1.33",
+            "gas giant"
+          ],
+          [
+            "Saturn",
+            "95",
+            "58,232",
+            "0.69",
+            "gas giant"
+          ],
+          [
+            "Uranus",
+            "14.5",
+            "25,362",
+            "1.27",
+            "ice giant"
+          ],
+          [
+            "Neptune",
+            "17.1",
+            "24,622",
+            "1.64",
+            "ice giant"
+          ]
+        ],
+        "cap": "The planets' masses, radii and average densities (NASA planetary fact sheets)."
+      },
+      {
+        "t": "viz",
+        "name": "ph-cosmic",
+        "opts": {
+          "mode": "scale",
+          "view": "planets"
+        },
+        "cap": "The eight planets drawn to the same scale. The giants are huge, but much less dense."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Earth's density",
+        "q": "Earth's mass is $5.97 \\times 10^{24}$ kg and its radius $6371$ km. Find its average density.",
+        "steps": [
+          "Radius in meters: $6.371 \\times 10^{6}$ m.",
+          "$V = \\frac{4}{3}\\pi (6.371 \\times 10^{6})^3 = 1.083 \\times 10^{21}\\ \\text{m}^3$ (<a href=\"/math/pre-algebra/scientific-operations/\">scientific notation</a> keeps this manageable).",
+          "$\\rho = \\frac{5.97 \\times 10^{24}}{1.083 \\times 10^{21}} = 5510$ kg/m³ $= 5.51$ g/cm³.",
+          "Surface rocks are only about $2.7$ to $3$ g/cm³, so the inside must be denser: Earth has an iron core."
+        ],
+        "a": "$5.51$ g/cm³."
+      },
+      {
+        "t": "ex",
+        "title": "A planet that floats",
+        "q": "Saturn's mass is $5.68 \\times 10^{26}$ kg and its radius $58{,}232$ km. Find its density.",
+        "steps": [
+          "$V = \\frac{4}{3}\\pi (5.8232 \\times 10^{7})^3 = 8.27 \\times 10^{23}\\ \\text{m}^3$.",
+          "$\\rho = \\frac{5.68 \\times 10^{26}}{8.27 \\times 10^{23}} = 687$ kg/m³ $= 0.69$ g/cm³.",
+          "Less than water: in a big enough ocean, Saturn would float."
+        ],
+        "a": "$0.69$ g/cm³."
+      },
+      {
+        "t": "mistake",
+        "html": "It is tempting to think the biggest planets must be the densest. The opposite is true: Jupiter is 318 times Earth's mass but about 1300 times its volume, so it is only a quarter as dense. Density compares mass with volume; size alone tells nothing. Check: Earth, a small planet, is the densest of all."
+      },
+      {
+        "t": "note",
+        "html": "Earth's density is a little higher than it would be uncompressed, because its own weight squeezes the deep rock and iron. The Moon, at $3.34$ g/cm³, has only a small iron core."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Astronomy 2e, section 7.2, Composition and Structure of Planets"
+      },
+      {
+        "name": "NASA Planetary Fact Sheet (masses, radii, densities)"
+      },
+      {
+        "name": "NGSS MS-ESS1-3"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

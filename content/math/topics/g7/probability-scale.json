@@ -1,0 +1,115 @@
+{
+  "id": "g7.probability-scale",
+  "slug": "probability-scale",
+  "ladder": "math",
+  "course": "g7",
+  "unit": "probability",
+  "title": "Probability from 0 to 1",
+  "short": "0 is impossible, 1 is certain, 1/2 is as likely as not.",
+  "trouble": "",
+  "prereqs": [
+    "g6.percent-meaning"
+  ],
+  "xp": 1,
+  "viz": [
+    "numberline"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "How likely is rain tomorrow? Rolling a 6? Probability puts a number on chance. Like a <a href=\"/math/grade-6/percent-meaning/\">percent</a>, it can be written as a fraction, a decimal or a percent."
+      },
+      {
+        "t": "key",
+        "html": "A probability is a number from $0$ to $1$. $0$ means impossible, $1$ means certain, and $\\frac{1}{2}$ means as likely as not. Numbers near $0$ are unlikely; numbers near $1$ are likely."
+      },
+      {
+        "t": "why",
+        "html": "A probability tells what fraction of the time an event happens in the long run. An event that never happens has a fraction of $0$; one that always happens has a fraction of $1$; one that happens half the time has $\\frac{1}{2}$. Nothing can happen less than never or more than always, so a probability is never below $0$ or above $1$ (above $100\\%$)."
+      },
+      {
+        "t": "viz",
+        "name": "numberline",
+        "opts": {
+          "min": 0,
+          "max": 1,
+          "step": 1,
+          "sub": 4,
+          "labels": "frac",
+          "reduce": true,
+          "points": [
+            {
+              "v": "1/10",
+              "label": "unlikely",
+              "color": "orange"
+            },
+            {
+              "v": "1/2",
+              "label": "even chance",
+              "color": "purple"
+            },
+            {
+              "v": "9/10",
+              "label": "likely",
+              "color": "teal"
+            }
+          ],
+          "value": false
+        },
+        "cap": "The probability scale runs from $0$ (impossible) to $1$ (certain). Unlikely events sit near $0$, likely ones near $1$, and an even chance is $\\frac{1}{2}$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "An impossible event",
+        "q": "What is the probability of rolling a 7 on a number cube numbered 1 to 6?",
+        "steps": [
+          "No face shows 7, so it can never happen."
+        ],
+        "a": "$0$, impossible"
+      },
+      {
+        "t": "ex",
+        "title": "Reading a probability",
+        "q": "The chance of rain tomorrow is $0.85$. Describe it.",
+        "steps": [
+          "$0.85$ is close to $1$.",
+          "Rain is likely, but not certain."
+        ],
+        "a": "Likely"
+      },
+      {
+        "t": "ex",
+        "title": "Not a probability",
+        "q": "Which of these cannot be a probability: $0$, $\\frac{3}{7}$, $1.2$, $45\\%$?",
+        "steps": [
+          "$1.2$ is more than $1$: more than \"certain,\" which is impossible.",
+          "The others are between $0$ and $1$."
+        ],
+        "a": "$1.2$"
+      },
+      {
+        "t": "note",
+        "html": "$\\frac{1}{2}$, $0.5$ and $50\\%$ are three names for the same probability. Use whichever is easiest to compare."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Prealgebra 2e, Section 5.5 Averages and Probability"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 7.SP.C.5"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

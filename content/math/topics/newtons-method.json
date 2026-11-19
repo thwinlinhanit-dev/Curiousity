@@ -1,0 +1,149 @@
+{
+  "id": "calc1.newtons-method",
+  "slug": "newtons-method",
+  "ladder": "math",
+  "course": "calc1",
+  "unit": "applications",
+  "title": "Newton's Method",
+  "short": "Use tangent lines to approach a root.",
+  "trouble": "",
+  "prereqs": [
+    "calc1.linear-approximation"
+  ],
+  "xp": 2,
+  "viz": [
+    "secant",
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Most equations, like $x^3 - 2x - 5 = 0$, have no neat formula for their solutions. <a href=\"/math/calculus-1/linear-approximation/\">Linear Approximation and Differentials</a> suggests a strategy: replace the curve by its tangent line, whose zero is easy to find, and repeat."
+      },
+      {
+        "t": "key",
+        "html": "<b>Newton's method.</b> Start with a guess $x_0$ near a root of $f$. Repeat $$x_{n+1} = x_n - \\frac{f(x_n)}{f'(x_n)}.$$ Each new guess is where the tangent line at the old guess crosses the $x$-axis. Near a simple root, the number of correct digits roughly doubles each step."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "fns": [
+            "x^2-2",
+            {
+              "f": "4x-6",
+              "color": "red",
+              "label": "T₀"
+            },
+            {
+              "f": "3x-4.25",
+              "color": "orange",
+              "label": "T₁"
+            }
+          ],
+          "points": [
+            [
+              2,
+              2
+            ],
+            [
+              1.5,
+              0
+            ],
+            [
+              1.4167,
+              0
+            ]
+          ],
+          "xmin": 0.8,
+          "xmax": 2.3,
+          "ymin": -2,
+          "ymax": 3,
+          "zoom": true
+        },
+        "cap": "Solving $x^2 - 2 = 0$ from $x_0 = 2$: the tangent $T_0$ at $x_0$ hits the axis at $1.5$; the tangent $T_1$ there hits it at $1.41\\overline{6}$, already close to $\\sqrt{2} = 1.41421\\ldots$"
+      },
+      {
+        "t": "why",
+        "html": "The tangent line at $x_n$ is $y = f(x_n) + f'(x_n)(x - x_n)$. Setting $y = 0$ and solving gives $x = x_n - \\frac{f(x_n)}{f'(x_n)}$. Near a root the curve and its tangent line are almost the same, so the tangent's zero lands close to the curve's zero. The error after a step is roughly proportional to the square of the error before it, which is why the method converges so fast."
+      },
+      {
+        "t": "ex",
+        "title": "Square root of 2",
+        "q": "Use two steps of Newton's method on $f(x) = x^2 - 2$ from $x_0 = 2$.",
+        "steps": [
+          "$f'(x) = 2x$, so $x_{n+1} = x_n - \\frac{x_n^2 - 2}{2x_n} = \\frac{x_n^2 + 2}{2x_n}$.",
+          "$x_1 = \\frac{4 + 2}{4} = \\frac{3}{2}$.",
+          "$x_2 = \\frac{9/4 + 2}{3} = \\frac{17}{12} \\approx 1.416667$."
+        ],
+        "a": "$x_2 = \\frac{17}{12}$, within $0.003$ of $\\sqrt{2}$."
+      },
+      {
+        "t": "ex",
+        "title": "A cubic",
+        "q": "Apply one step of Newton's method to $x^3 - 2x - 5 = 0$ from $x_0 = 2$.",
+        "steps": [
+          "$f(2) = 8 - 4 - 5 = -1$; $f'(x) = 3x^2 - 2$, so $f'(2) = 10$.",
+          "$x_1 = 2 - \\frac{-1}{10} = 2.1$.",
+          "(A second step gives $x_2 \\approx 2.0946$; the root is $2.09455\\ldots$)"
+        ],
+        "a": "$x_1 = 2.1$"
+      },
+      {
+        "t": "table",
+        "head": [
+          "$n$",
+          "$x_n$",
+          "error $lvert x_n - sqrt{2} \rvert$"
+        ],
+        "rows": [
+          [
+            "0",
+            "2",
+            "0.59"
+          ],
+          [
+            "1",
+            "1.5",
+            "0.086"
+          ],
+          [
+            "2",
+            "1.416666667",
+            "0.0025"
+          ],
+          [
+            "3",
+            "1.414215686",
+            "0.0000021"
+          ],
+          [
+            "4",
+            "1.414213562",
+            "about $10^{-12}$"
+          ]
+        ],
+        "cap": "Newton's method for $\\sqrt{2}$: the error is roughly squared at each step, so the correct digits double."
+      },
+      {
+        "t": "p",
+        "html": "In practice you stop when two successive guesses agree to the accuracy you need. The method needs $f'(x_n) \\ne 0$, and it works best when the starting guess is already near the root; a quick sketch or the <a href=\"/math/calculus-1/intermediate-value-theorem/\">The Intermediate Value Theorem</a> is a good way to find one."
+      },
+      {
+        "t": "mistake",
+        "html": "Starting where $f'(x_0) = 0$: the tangent is horizontal and never crosses the axis, so $x_1$ cannot be computed. A start near such a point sends $x_1$ far away. The method can also cycle or head to a different root. Check: if the guesses jump around instead of settling, choose a better starting point (a graph helps)."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 1, 4.9 Newton's Method"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

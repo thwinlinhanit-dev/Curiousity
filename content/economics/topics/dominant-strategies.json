@@ -1,0 +1,81 @@
+{
+  "id": "micro.dominant-strategies",
+  "slug": "dominant-strategies",
+  "ladder": "economics",
+  "course": "micro",
+  "unit": "imperfect-competition",
+  "title": "Payoff Matrices and Dominant Strategies",
+  "short": "A dominant strategy is a player's best choice no matter what the other player does.",
+  "trouble": "Students compare payoffs across players (my 5 against your 3) instead of comparing one player's own payoffs across that player's choices.",
+  "prereqs": [
+    "micro.monopoly-sources"
+  ],
+  "xp": 2,
+  "viz": [
+    "ec-payoff"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "When an industry has only a few firms (an <b>oligopoly</b>), each firm's best choice depends on what the others do. A monopoly (<a href=\"/economics/microeconomics/monopoly-sources/\">Monopoly and Barriers to Entry</a>) has no rivals to watch; an oligopolist does. Game theory is the tool for that. Try it in the Game Theory course's <a href=\"/business/game-theory/dominance/\">Dominance and the Prisoner's Dilemma</a> chapter, where you can play these games against bots."
+      },
+      {
+        "t": "key",
+        "html": "A <b>game</b> has players, strategies and payoffs. A <b>payoff matrix</b> lists one cell for each pair of strategies, with the <b>row player's payoff first</b>: (row, column). A player has a <b>dominant strategy</b> if one strategy gives them a higher payoff than their other strategies <b>whatever the other player does</b>."
+      },
+      {
+        "t": "why",
+        "html": "To check for a dominant strategy, put yourself in one player's shoes and compare only that player's own payoffs. For the row player: fix a column (one choice by the other player), compare the row player's payoffs going down that column, and see which row is better. Repeat for the other column. If the same row wins both times, it's dominant. Comparing my payoff with yours answers a different question, \"who does better?\", which doesn't matter to my choice."
+      },
+      {
+        "t": "viz",
+        "name": "ec-payoff",
+        "opts": {
+          "preset": "cartel",
+          "underline": true
+        },
+        "cap": "Two firms in a cartel each choose to keep the agreement or cheat. Tap each player's better payoff for each choice of the other player, then press Check."
+      },
+      {
+        "t": "ex",
+        "title": "Find the dominant strategy",
+        "q": "Two gas stations choose prices. If both charge High, each earns \\$500. If both charge Low, each earns \\$300. If one charges Low and the other High, the low-price station earns \\$700 and the other \\$100. Does Station A (rows) have a dominant strategy?",
+        "steps": [
+          "If B charges High: A earns \\$500 with High and \\$700 with Low. Low is better.",
+          "If B charges Low: A earns \\$100 with High and \\$300 with Low. Low is better.",
+          "Low is better either way: <b>Low is A's dominant strategy</b> (and, by symmetry, B's)."
+        ],
+        "a": "Yes: charge Low."
+      },
+      {
+        "t": "ex",
+        "title": "Only one player has one",
+        "q": "Payoffs (A, B): A Up/B Left (4, 3), A Up/B Right (2, 1), A Down/B Left (3, 0), A Down/B Right (1, 2). Who has a dominant strategy?",
+        "steps": [
+          "A: against Left, Up gives 4 vs 3; against Right, Up gives 2 vs 1. <b>Up is dominant.</b>",
+          "B: against Up, Left gives 3 vs 1; against Down, Left gives 0 vs 2. B's best choice depends on A: <b>no dominant strategy</b>.",
+          "B can still reason: A will play Up, so B should play Left."
+        ],
+        "a": "A (Up); B has none."
+      },
+      {
+        "t": "mistake",
+        "html": "Comparing payoffs across players (\"my 5 is more than your 3\") instead of comparing one player's own payoffs across that player's choices. Check: when deciding for the row player, look only at first numbers, and only down a column; for the column player, look only at second numbers, across a row."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, 10.2 Oligopoly"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.01 Principles of Microeconomics (scope and sequence)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

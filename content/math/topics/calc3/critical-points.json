@@ -1,0 +1,105 @@
+{
+  "id": "calc3.critical-points",
+  "slug": "critical-points",
+  "ladder": "math",
+  "course": "calc3",
+  "unit": "optimization",
+  "title": "Local Extrema and the Second Derivative Test",
+  "short": "Use D = fxx·fyy − (fxy)² to classify critical points.",
+  "trouble": "Students forget that D < 0 means a saddle, or reach a conclusion when D = 0.",
+  "prereqs": [
+    "calc3.higher-partials",
+    "calc3.gradient"
+  ],
+  "xp": 3,
+  "viz": [
+    "surface"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In one variable, <a href=\"/math/calculus-1/critical-points-extrema/\">local extremes</a> happen where $f'(x) = 0$, and the second derivative test tells a valley from a peak. Surfaces have one new kind of flat spot: a <b>saddle point</b>, like the middle of a horse's saddle or a mountain pass, which is a low point in one direction and a high point in another."
+      },
+      {
+        "t": "key",
+        "html": "If $f$ has a local maximum or minimum at an interior point $(a, b)$ where it is differentiable, then $\\nabla f(a, b) = \\mathbf{0}$: a <b>critical point</b>. To classify it, compute\n  $$D = f_{xx}f_{yy} - (f_{xy})^2 \\text{ at } (a, b).$$\n  $D > 0$ and $f_{xx} > 0$: local minimum. $D > 0$ and $f_{xx} < 0$: local maximum. $D < 0$: saddle point. $D = 0$: the test says nothing."
+      },
+      {
+        "t": "why",
+        "html": "<b>Why $\\nabla f = \\mathbf{0}$:</b> if $f$ is largest at $(a, b)$ among nearby points, then in particular the trace $f(x, b)$ is largest at $x = a$, so $f_x(a, b) = 0$; likewise $f_y(a, b) = 0$.<br>\n  <b>Why $D$:</b> near a critical point, the second-order approximation is $f \\approx f(a, b) + \\frac{1}{2}(Ah^2 + 2Bhk + Ck^2)$ with $A = f_{xx}$, $B = f_{xy}$, $C = f_{yy}$ and steps $h$, $k$. Completing the square (for $A \\ne 0$):\n  $$Ah^2 + 2Bhk + Ck^2 = A\\left(h + \\frac{B}{A}k\\right)^2 + \\frac{AC - B^2}{A}k^2.$$\n  If $AC - B^2 > 0$, both terms have the sign of $A$ for every nonzero step: a bowl ($A > 0$) or a dome ($A < 0$). If $AC - B^2 < 0$, the two terms have opposite signs, so some steps go up and others go down: a saddle."
+      },
+      {
+        "t": "viz",
+        "name": "surface",
+        "opts": {
+          "f": "x^3 - 3x + y^2",
+          "xmin": -2,
+          "xmax": 2,
+          "ymin": -1.6,
+          "ymax": 1.6,
+          "contours": 12,
+          "slice": "y",
+          "at": 0
+        },
+        "cap": "$f(x, y) = x^3 - 3x + y^2$ has a local minimum at $(1, 0)$ and a saddle at $(-1, 0)$. The slice $y = 0$ shows the trace $x^3 - 3x$: a valley at $x = 1$ and a peak at $x = -1$. But in the $y$-direction both points sit at the bottom of $y^2$; at $(-1, 0)$ that makes a saddle."
+      },
+      {
+        "t": "p",
+        "html": "Critical points also include points where a partial derivative does not exist, such as the tip of the cone $f(x, y) = \\sqrt{x^2 + y^2}$, which is a minimum even though $\\nabla f$ is undefined there. And not every critical point is an extreme value: at a saddle the tangent plane is horizontal, but the surface rises above it in some directions and falls below it in others. In applications, critical points mark equilibria, such as the lowest energy state of a physical system, and the test decides whether such an equilibrium is stable (a minimum of the energy) or not."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A quadratic",
+        "q": "Find and classify the critical points of $f(x, y) = x^2 + xy + y^2 - 3x$.",
+        "steps": [
+          "$f_x = 2x + y - 3 = 0$ and $f_y = x + 2y = 0$. From the second, $x = -2y$; then $-4y + y = 3$, so $y = -1$, $x = 2$.",
+          "$f_{xx} = 2$, $f_{yy} = 2$, $f_{xy} = 1$, so $D = 4 - 1 = 3 > 0$ with $f_{xx} > 0$.",
+          "Local minimum at $(2, -1)$, with value ${}4 - 2 + 1 - 6 = -3$."
+        ],
+        "a": "local minimum $-3$ at $(2, -1)$"
+      },
+      {
+        "t": "ex",
+        "title": "A minimum and a saddle",
+        "q": "Classify the critical points of $f(x, y) = x^3 - 3x + y^2$.",
+        "steps": [
+          "$f_x = 3x^2 - 3 = 0$ gives $x = \\pm 1$; $f_y = 2y = 0$ gives $y = 0$.",
+          "$f_{xx} = 6x$, $f_{yy} = 2$, $f_{xy} = 0$, so $D = 12x$.",
+          "At $(1, 0)$: $D = 12 > 0$, $f_{xx} = 6 > 0$: local minimum. At $(-1, 0)$: $D = -12 < 0$: saddle point."
+        ],
+        "a": "minimum at $(1, 0)$, saddle at $(-1, 0)$"
+      },
+      {
+        "t": "ex",
+        "title": "Two critical points",
+        "q": "Classify the critical points of $f(x, y) = x^3 + y^3 - 3xy$.",
+        "steps": [
+          "$f_x = 3x^2 - 3y = 0$ and $f_y = 3y^2 - 3x = 0$, so $y = x^2$ and $x = y^2 = x^4$: $x = 0$ or $x = 1$.",
+          "$f_{xx} = 6x$, $f_{yy} = 6y$, $f_{xy} = -3$.",
+          "$(0, 0)$: $D = 0 - 9 < 0$, a saddle. $(1, 1)$: $D = 36 - 9 = 27 > 0$ and $f_{xx} = 6 > 0$, a local minimum."
+        ],
+        "a": "saddle at $(0, 0)$, minimum at $(1, 1)$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Misreading $D$.</b> When $D < 0$ the point is a saddle, whatever the sign of $f_{xx}$; $f_{xx}$ only matters when $D > 0$. When $D = 0$, do not conclude anything: $x^4 + y^4$, $-x^4 - y^4$ and $x^4 - y^4$ all have $D = 0$ at the origin, and they have a minimum, a maximum and a saddle there. Look at the function itself in that case."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 3, 4.7 Maxima/Minima Problems"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,115 @@
+{
+  "id": "usgeo.time-zone-math",
+  "slug": "time-zone-math",
+  "ladder": "geog",
+  "course": "usgeo",
+  "unit": "climate-time",
+  "title": "What Time Is It There?",
+  "short": "Count the zones between two places and add hours going east or subtract going west.",
+  "trouble": "Students add when they should subtract. Going west, clocks are earlier: subtract one hour for each zone you cross.",
+  "prereqs": [
+    "usgeo.time-zones",
+    "g3.elapsed-time"
+  ],
+  "xp": 2,
+  "viz": [
+    "gg-timezones"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": {
+    "kind": "worked-example",
+    "q": "In January, it is 4:30 p.m. in Seattle. What time is it in Atlanta?",
+    "a": "7:30 p.m.",
+    "steps": [
+      "Seattle is Pacific; Atlanta is Eastern.",
+      "Pacific to Mountain to Central to Eastern: 3 zones east.",
+      "East is later, so add 3 hours: 4:30 p.m. + 3 = 7:30 p.m."
+    ],
+    "title": "Going east"
+  },
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You know the <a href=\"/geography/us-geography/time-zones/\">six time zones</a>. Now use them to figure out the time somewhere else. You will use what you know about <a href=\"/math/grade-3/elapsed-time/\">elapsed time</a>."
+      },
+      {
+        "t": "key",
+        "html": "Count the zones between the two places. Going <b>east</b>, <b>add</b> one hour for each zone. Going <b>west</b>, <b>subtract</b> one hour for each zone."
+      },
+      {
+        "t": "viz",
+        "name": "gg-timezones",
+        "opts": {
+          "us": true,
+          "cities": [
+            {
+              "n": "Atlanta",
+              "lon": -84.39,
+              "lat": 33.75,
+              "utc": -5
+            },
+            {
+              "n": "Denver",
+              "lon": -104.99,
+              "lat": 39.74,
+              "utc": -7
+            },
+            {
+              "n": "Seattle",
+              "lon": -122.33,
+              "lat": 47.61,
+              "utc": -8
+            }
+          ],
+          "utc": 1020
+        },
+        "cap": "Atlanta, Denver and Seattle. Slide the time and watch all three clocks move together."
+      },
+      {
+        "t": "why",
+        "html": "Why does this work? All the clocks move together: when one gains an hour, they all do. The zones only shift the starting point. So the difference between two places stays the same all day: Denver is always 2 hours behind Atlanta (when both follow the same daylight saving rules)."
+      },
+      {
+        "t": "ex",
+        "title": "Going east",
+        "q": "In January, it is 4:30 p.m. in Seattle. What time is it in Atlanta?",
+        "steps": [
+          "Seattle is Pacific; Atlanta is Eastern.",
+          "Pacific to Mountain to Central to Eastern: 3 zones east.",
+          "East is later, so add 3 hours: 4:30 p.m. + 3 = 7:30 p.m."
+        ],
+        "a": "7:30 p.m."
+      },
+      {
+        "t": "ex",
+        "title": "A flight west",
+        "q": "A plane leaves Chicago at 10:00 a.m. and flies 4 hours to Los Angeles. What time is it in Los Angeles when it lands?",
+        "steps": [
+          "On Chicago's clock, it lands at 10:00 a.m. + 4 hours = 2:00 p.m.",
+          "Los Angeles is 2 zones west of Chicago (Central to Mountain to Pacific).",
+          "Subtract 2 hours: 12:00 noon."
+        ],
+        "a": "12:00 noon in Los Angeles."
+      },
+      {
+        "t": "mistake",
+        "html": "The most common slip is adding when you should subtract. Check yourself with the Sun: the Sun rises in the East first, so the East is always <b>ahead</b>. If your answer makes a western city later than an eastern one, flip it."
+      },
+      {
+        "t": "note",
+        "html": "In this topic, problems say \"in January\" so that every state is on standard time. In summer, Arizona and Hawaii do not change their clocks; the next topic shows what that does."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Grokipedia, Time in the United States",
+        "url": "https://grokipedia.com/page/Time_in_the_United_States"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

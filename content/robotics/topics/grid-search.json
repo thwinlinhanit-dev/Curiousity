@@ -1,0 +1,72 @@
+{
+  "id": "rbmobile.grid-search",
+  "slug": "grid-search",
+  "ladder": "robotics",
+  "course": "rbmobile",
+  "unit": "plan",
+  "title": "Shortest Paths on a Grid",
+  "short": "Breadth-first search explores in rings and finds the fewest moves; Dijkstra's algorithm does the same with costs.",
+  "trouble": "Students count the cells on the path including the start, so they are off by one.",
+  "prereqs": [
+    "rbmobile.occupancy-grids",
+    "disc.shortest-paths"
+  ],
+  "xp": 3,
+  "viz": [
+    "rb-astar"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Given a grid map, how does a robot find the shortest way around the walls?"
+      },
+      {
+        "t": "key",
+        "html": "<b>Breadth-first search</b> (BFS) spreads out from the start one ring at a time, like ripples in a pond. The first time it reaches the goal, it has found a path with the fewest moves. <b>Dijkstra's algorithm</b> does the same when moves have different costs, always growing from the closest unfinished cell."
+      },
+      {
+        "t": "viz",
+        "name": "rb-astar",
+        "opts": {
+          "algo": "bfs"
+        },
+        "cap": "Run the search step by step. Every cell in a ring is the same number of moves from the start."
+      },
+      {
+        "t": "why",
+        "html": "BFS never reaches a cell by a long path before a short one, because it finishes each ring before starting the next. That guarantee is why it finds the shortest path. The cost is that it searches in every direction, even away from the goal."
+      },
+      {
+        "t": "ex",
+        "title": "No walls",
+        "q": "From (0, 0) to (4, 3), moving up, down, left or right.",
+        "steps": [
+          "Every path needs 4 moves across and 3 up."
+        ],
+        "a": "7 moves."
+      },
+      {
+        "t": "mistake",
+        "html": "Counting cells on the path, including the start, instead of moves. Seven moves visit eight cells."
+      },
+      {
+        "t": "note",
+        "html": "The Math Ladder's shortest-paths topic covers Dijkstra's algorithm on general graphs."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Peter E. Hart, Nils J. Nilsson and Bertram Raphael, A Formal Basis for the Heuristic Determination of Minimum Cost Paths, IEEE Transactions on Systems Science and Cybernetics (1968)"
+      },
+      {
+        "name": "Roland Siegwart, Illah R. Nourbakhsh and Davide Scaramuzza, Introduction to Autonomous Mobile Robots, 2nd ed. (MIT Press, 2011)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

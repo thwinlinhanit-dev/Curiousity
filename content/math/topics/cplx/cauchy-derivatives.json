@@ -1,0 +1,162 @@
+{
+  "id": "cplx.cauchy-derivatives",
+  "slug": "cauchy-derivatives",
+  "ladder": "math",
+  "course": "cplx",
+  "unit": "integration",
+  "title": "Cauchy's Formula for Derivatives",
+  "short": "∮_C f(z)/(z − a)^(n + 1) dz = 2πi f⁽ⁿ⁾(a)/n!, so an analytic function has derivatives of every order.",
+  "trouble": "Students take the power n + 1 as the order of the derivative, or leave out the n!.",
+  "prereqs": [
+    "cplx.cauchy-integral-formula"
+  ],
+  "xp": 3,
+  "viz": [
+    "cplx-contour"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/math/complex-analysis/cauchy-integral-formula/\">Cauchy's formula</a> writes $f(a)$ as an integral in which $a$ appears only in the simple factor $\\frac{1}{z - a}$. Differentiating under the integral sign with respect to $a$ is then easy, and it gives formulas for every derivative. As a consequence, an analytic function automatically has derivatives of all orders."
+      },
+      {
+        "t": "key",
+        "html": "If $f$ is analytic on and inside $C$ and $a$ is inside $C$, then for $n = 0, 1, 2, \\ldots$\n      $$f^{(n)}(a) = \\frac{n!}{2\\pi i}\\oint_C \\frac{f(z)}{(z - a)^{n + 1}}\\,dz, \\qquad\\text{that is,}\\qquad \\oint_C \\frac{f(z)}{(z - a)^{n + 1}}\\,dz = \\frac{2\\pi i}{n!}f^{(n)}(a).$$\n      The power in the denominator is <b>one more</b> than the order of the derivative."
+      },
+      {
+        "t": "why",
+        "html": "Differentiate $f(a) = \\frac{1}{2\\pi i}\\oint \\frac{f(z)}{z - a}dz$ with respect to $a$: $\\frac{d}{da}(z - a)^{-1} = (z - a)^{-2}$, then $2(z - a)^{-3}$, then $3!\\,(z - a)^{-4}$, and so on, giving $n!\\,(z - a)^{-(n + 1)}$ after $n$ steps. Moving the derivative inside the integral is justified because the integrand is a smooth function of $a$ on the contour. Since the right side exists for every $n$, so does $f^{(n)}(a)$: one complex derivative on an open set brings all the others with it."
+      },
+      {
+        "t": "viz",
+        "name": "cplx-contour",
+        "opts": {
+          "f": "exp(2*z)/(z-1)^3",
+          "contour": {
+            "type": "circle",
+            "c": [
+              1,
+              0
+            ],
+            "r": 1.2
+          },
+          "window": {
+            "x": [
+              -1.5,
+              3.5
+            ],
+            "y": [
+              -2,
+              2
+            ]
+          }
+        },
+        "cap": "$\\frac{e^{2z}}{(z - 1)^3}$: a pole of order 3 at $1$. The integral is $\\frac{2\\pi i}{2!}\\cdot(e^{2z})''\\big|_{z = 1} = 4\\pi e^2\\,i \\approx 92.85i$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A second derivative",
+        "q": "Compute $\\displaystyle\\oint_{|z| = 2} \\frac{e^{2z}}{(z - 1)^3}\\,dz$.",
+        "steps": [
+          "$n + 1 = 3$, so $n = 2$; $f(z) = e^{2z}$ and $a = 1$ is inside.",
+          "$f''(z) = 4e^{2z}$, so $f''(1) = 4e^2$.",
+          "$\\frac{2\\pi i}{2!}\\cdot 4e^2 = 4\\pi e^2\\,i$."
+        ],
+        "a": "$4\\pi e^2\\,i$"
+      },
+      {
+        "t": "ex",
+        "title": "A cosine",
+        "q": "Compute $\\displaystyle\\oint_{|z| = 1} \\frac{\\cos z}{z^{3}}\\,dz$.",
+        "steps": [
+          "$n = 2$, $f = \\cos$, $a = 0$: $f''(0) = -\\cos 0 = -1$.",
+          "$\\frac{2\\pi i}{2}\\cdot(-1) = -\\pi i$."
+        ],
+        "a": "$-\\pi i$"
+      },
+      {
+        "t": "ex",
+        "title": "A polynomial",
+        "q": "Compute $\\displaystyle\\oint_{|z - i| = 1} \\frac{z^4}{(z - i)^3}\\,dz$.",
+        "steps": [
+          "$n = 2$: $f(z) = z^4$, $f''(z) = 12z^2$, $f''(i) = -12$.",
+          "$\\frac{2\\pi i}{2!}(-12) = -12\\pi i$."
+        ],
+        "a": "$-12\\pi i$"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Denominator",
+          "$n$",
+          "Integral equals"
+        ],
+        "rows": [
+          [
+            "$z - a$",
+            "$0$",
+            "$2\\pi i\\,f(a)$"
+          ],
+          [
+            "$(z - a)^2$",
+            "$1$",
+            "$2\\pi i\\,f'(a)$"
+          ],
+          [
+            "$(z - a)^3$",
+            "$2$",
+            "$\\pi i\\,f''(a)$"
+          ],
+          [
+            "$(z - a)^4$",
+            "$3$",
+            "$\\frac{\\pi i}{3}f'''(a)$"
+          ]
+        ],
+        "cap": "The first few cases of $\\oint_C \\frac{f(z)}{(z - a)^{n + 1}}dz = \\frac{2\\pi i}{n!}f^{(n)}(a)$."
+      },
+      {
+        "t": "note",
+        "html": "Compare with real calculus, where $f(x) = x|x|$ has a first derivative but no second at $0$. Nothing like that can happen for analytic functions: once $f'$ exists on an open set, $f''$, $f'''$ and all the rest exist there too, and each is analytic."
+      },
+      {
+        "t": "ex",
+        "title": "A product on top",
+        "q": "Compute $\\displaystyle\\oint_{|z| = 3}\\frac{z\\,e^{z}}{(z - 2)^2}\\,dz$.",
+        "steps": [
+          "$n = 1$ with $f(z) = ze^z$ and $a = 2$, inside the circle.",
+          "$f'(z) = e^z + ze^z$, so $f'(2) = 3e^2$.",
+          "The integral is $\\frac{2\\pi i}{1!}\\cdot 3e^2 = 6\\pi e^2\\,i$."
+        ],
+        "a": "$6\\pi e^2\\,i$"
+      },
+      {
+        "t": "note",
+        "html": "The same formula gives Taylor coefficients: the coefficient of $(z - a)^n$ in the Taylor series of $f$ is $\\frac{f^{(n)}(a)}{n!} = \\frac{1}{2\\pi i}\\oint_C\\frac{f(z)}{(z - a)^{n + 1}}dz$. So integrals of this kind are really asking for one Taylor coefficient, which is often the quickest way to compute them."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Taking the power $n + 1$ as the order of the derivative, or dropping $n!$.</b> In $\\oint \\frac{f(z)}{(z - a)^4}dz$ the derivative is $f'''$ (order $3$, not $4$), and the factor is $\\frac{2\\pi i}{3!} = \\frac{\\pi i}{3}$. A quick check with $f(z) = (z - a)^3$: the integrand is $\\frac{1}{z - a}$, the integral is $2\\pi i$, and the formula gives $\\frac{2\\pi i}{3!}\\cdot 3! = 2\\pi i$. Only the right $n$ and the $n!$ make that work."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Beck, Marchesi, Pixton and Sabalka, A First Course in Complex Analysis, chapter 5 (Consequences of Cauchy's Theorem)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.04, Complex Variables with Applications (Spring 2018), course notes: Cauchy's integral formula"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

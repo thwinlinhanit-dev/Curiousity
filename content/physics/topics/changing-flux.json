@@ -1,0 +1,95 @@
+{
+  "id": "em.changing-flux",
+  "slug": "changing-flux",
+  "ladder": "physics",
+  "course": "em",
+  "unit": "induction",
+  "title": "Magnetic Flux That Changes",
+  "short": "Φ = ∫B · dA can change because B, the area or the angle changes with time.",
+  "trouble": "Students forget that turning a loop changes the flux even in a steady field.",
+  "prereqs": [
+    "phys2.magnetic-flux",
+    "calc1.definite-integral"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-induction"
+  ],
+  "figureArchetype": "FieldFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/physics/physics-2/magnetic-flux/\">Magnetic flux</a>, $\\Phi_B = BA\\cos\\theta$, counts how much field passes through a loop. Faraday's law, next, says that what matters for induction is how fast the flux <i>changes</i>. So before using it, we need to see every way flux can change, and how to find it when the field is not uniform."
+      },
+      {
+        "t": "key",
+        "html": "$$\\Phi_B = \\int \\vec{B}\\cdot d\\vec{A}\\qquad(\\text{webers: } 1\\ \\text{Wb} = 1\\ \\text{T·m}^2)$$\n        For a uniform field and a flat loop, $\\Phi_B = BA\\cos\\theta$ with $\\theta$ from the normal. The flux changes when $B$ changes, when the area changes, or when the angle changes."
+      },
+      {
+        "t": "why",
+        "html": "The dot product picks out the part of $\\vec{B}$ that crosses the surface, exactly as for <a href=\"/physics/electricity-and-magnetism/electric-flux/\">electric flux</a>. When $\\vec{B}$ varies across the loop, the loop must be cut into strips where it is nearly constant, and the strips added with <a href=\"/math/calculus-1/definite-integral/\">an integral</a>. Each of the three factors can change in time: a magnet moving closer changes $B$, a sliding rod changes $A$, and a spinning coil changes $\\theta$, even in a perfectly steady field."
+      },
+      {
+        "t": "viz",
+        "name": "ph-induction",
+        "opts": {
+          "mode": "flux",
+          "angle": 30
+        },
+        "cap": "Flux through a tilted loop in a uniform field. Turn the loop: the flux is largest when the field goes straight through and zero when the loop is edge-on."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A tilted loop",
+        "q": "A square loop $10\\ \\text{cm}$ on a side sits in a uniform $0.40\\ \\text{T}$ field, with its normal at $60^\\circ$ to the field. Find the flux.",
+        "steps": [
+          "$A = (0.10)^2 = 0.010\\ \\text{m}^2$.",
+          "$\\Phi = BA\\cos 60^\\circ = (0.40)(0.010)(0.50) = 2.00\\ \\text{mWb}$."
+        ],
+        "a": "$\\Phi = 2.00\\ \\text{mWb}$"
+      },
+      {
+        "t": "ex",
+        "title": "Turning in a steady field",
+        "q": "The same loop is turned until its normal is at $90^\\circ$ to the field. How much did the flux change?",
+        "steps": [
+          "At $90^\\circ$, $\\cos 90^\\circ = 0$: no field passes through.",
+          "$\\Delta\\Phi = 0 - 2.00\\ \\text{mWb} = -2.00\\ \\text{mWb}$, even though $B$ never changed."
+        ],
+        "a": "$\\Delta\\Phi = -2.00\\ \\text{mWb}$"
+      },
+      {
+        "t": "ex",
+        "title": "Beside a long wire",
+        "q": "A long wire carries $20\\ \\text{A}$. A rectangular loop in the same plane has sides of $20\\ \\text{cm}$ parallel to the wire, at $2.0$ and $10\\ \\text{cm}$ from it. Find the flux.",
+        "steps": [
+          "The field $\\dfrac{\\mu_0 I}{2\\pi r}$ is stronger near the wire, so use strips parallel to the wire, of area $(0.20)\\,dr$, each with one value of $B$.",
+          "$$\\Phi = \\int_{0.02}^{0.10}\\frac{\\mu_0 I}{2\\pi r}(0.20)\\,dr = \\frac{\\mu_0 I(0.20)}{2\\pi}\\ln 5 = (2 \\times 10^{-7})(20)(0.20)\\ln 5$$",
+          "$\\Phi = 1.29 \\times 10^{-6}\\ \\text{Wb}$, about $1.29\\ \\mu\\text{Wb}$."
+        ],
+        "a": "$\\Phi \\approx 1.29\\ \\mu\\text{Wb}$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>\"A steady field cannot change the flux.\"</b> It can, if the loop turns: $\\cos\\theta$ changes even though $B$ does not. That is exactly how a generator works, spinning coils in the steady field of a magnet. Check by listing all three factors in $BA\\cos\\theta$ and asking which of them is changing."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 2, 13.1 Faraday's Law"
+      },
+      {
+        "name": "MIT OpenCourseWare, 8.02 Physics II: Electricity and Magnetism"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

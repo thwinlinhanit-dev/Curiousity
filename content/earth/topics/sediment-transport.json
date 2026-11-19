@@ -1,0 +1,99 @@
+{
+  "id": "geology.sediment-transport",
+  "slug": "sediment-transport",
+  "ladder": "earth",
+  "course": "geology",
+  "unit": "sedimentary",
+  "title": "How Flowing Water Moves Sediment",
+  "short": "Faster water moves bigger grains; the Hjulström diagram shows when a grain is picked up, carried or dropped.",
+  "trouble": "Students think the smallest grains are always the easiest to pick up; sticky clay takes faster water to erode than sand does, though once lifted it stays afloat in very slow water.",
+  "prereqs": [
+    "geology.grain-size",
+    "earthsci.erosion-deposition"
+  ],
+  "xp": 2,
+  "viz": [
+    "es-sediment"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/earth-and-space/earth-science/erosion-deposition/\">Erosion and Deposition</a> you saw that fast water carries sediment and slow water drops it. Here we make that precise, using the <a href=\"/earth-and-space/geology/grain-size/\">grain sizes</a> from the last lesson. In 1935 Filip Hjulström plotted, for each grain size, how fast a river must flow to pick grains up and how slow it must get before they settle. His diagram has three fields: <b>erosion</b>, <b>transport</b> and <b>deposition</b>."
+      },
+      {
+        "t": "why",
+        "html": "Moving water drags on a grain. For sand and gravel, bigger grains are heavier, so they need faster water to lift. You might expect the curve to keep falling for smaller grains, but it turns back up: silt and clay particles stick together and pack into a smooth bed that the current slides over, so it takes fast water to tear them loose. Settling is different. A tiny grain sinks very slowly, because its weight shrinks faster than the drag on it: by Stokes' law, $v = \\dfrac{(\\rho_s - \\rho_w) g d^2}{18\\mu}$, so halving the size cuts the settling speed by four. Once lifted, clay stays suspended in water that barely moves."
+      },
+      {
+        "t": "key",
+        "html": "Faster water moves bigger grains, but the easiest grains to erode are fine-to-medium sand (about 0.1 to 0.5 mm). Clay is hard to erode but, once moving, settles so slowly that almost any current keeps it suspended."
+      },
+      {
+        "t": "viz",
+        "name": "es-sediment",
+        "opts": {
+          "mode": "hjulstrom",
+          "point": {
+            "d": 0.01,
+            "v": 50
+          }
+        },
+        "cap": "The Hjulström diagram. Drag the point: grain size across, flow speed up. Which field does it fall in?"
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Picked up or dropped?",
+        "q": "Water flowing at 5 cm/s passes over loose gravel 20 mm across. What happens to the gravel?",
+        "steps": [
+          "On the diagram, 20 mm gravel needs about 130 cm/s to be lifted from the bed, and moving gravel drops out below about 90 cm/s.",
+          "5 cm/s is far below both, so the point lies in the deposition field: the gravel stays put (or drops, if it was moving)."
+        ],
+        "a": "It is deposited; nothing moves it."
+      },
+      {
+        "t": "ex",
+        "title": "How slowly silt settles",
+        "q": "A quartz silt grain 10 μm across ($d = 1 \\times 10^{-5}\\,\\text{m}$, $\\rho_s = 2,650\\,\\text{kg/m}^3$) settles in water ($\\rho_w = 1,000$, $\\mu = 0.001\\,\\text{Pa·s}$). How fast?",
+        "steps": [
+          "$v = \\dfrac{(2,650 - 1,000)(9.8)(10^{-5})^2}{18 \\times 0.001} = \\dfrac{1,650 \\times 9.8 \\times 10^{-10}}{0.018}$.",
+          "$v \\approx 9.0 \\times 10^{-5}\\,\\text{m/s} = 0.09\\,\\text{mm/s}$: about 3 hours to sink one meter."
+        ],
+        "a": "About $0.09\\,\\text{mm/s}$."
+      },
+      {
+        "t": "mistake",
+        "html": "It is tempting to assume the smallest grains are always the easiest to pick up. Sticky clay and silt need faster water to erode than sand does. Check on the diagram: the erosion curve dips lowest near 0.2 to 0.5 mm and rises on both sides."
+      },
+      {
+        "t": "viz",
+        "name": "es-sediment",
+        "opts": {
+          "mode": "stream",
+          "flow": 60
+        },
+        "cap": "A river slowing as it enters a lake drops gravel first, then sand, and carries silt and clay far out."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e, section 12.7, Motion of an Object in a Viscous Fluid"
+      },
+      {
+        "name": "MIT OpenCourseWare, 12.110 Sedimentary Geology"
+      },
+      {
+        "name": "NGSS HS-ESS2-5 (nextgenscience.org)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

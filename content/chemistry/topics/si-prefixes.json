@@ -1,0 +1,149 @@
+{
+  "id": "chem.si-prefixes",
+  "slug": "si-prefixes",
+  "ladder": "chemistry",
+  "course": "chem",
+  "unit": "matter",
+  "title": "SI Units and Metric Prefixes",
+  "short": "Each prefix is a power of ten: 1 km = 10³ m and 1 mg = 10⁻³ g.",
+  "trouble": "Students move the decimal point the wrong way, writing 2.5 km = 0.0025 m, or mix up milli- (10⁻³) and micro- (10⁻⁶).",
+  "prereqs": [
+    "g5.multiply-divide-powers-of-ten",
+    "g8.scientific-notation"
+  ],
+  "xp": 1,
+  "viz": [
+    "ch-convert"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Scientists around the world use one system of units, the SI (from the French Système International). Its base units include the meter (m), kilogram (kg), second (s), kelvin (K) and mole (mol). To describe very large or small amounts, SI adds a <b>prefix</b>, and each prefix is just a power of ten, the same powers you used in <a href=\"/math/grade-5/multiply-divide-powers-of-ten/\">Multiplying and Dividing by Powers of 10</a> and <a href=\"/math/pre-algebra/scientific-notation/\">Scientific Notation</a>."
+      },
+      {
+        "t": "key",
+        "html": "A prefix stands for a power of ten: replace it with that power. $2.5\\ \\text{km} = 2.5 \\times 10^{3}\\ \\text{m} = 2500\\ \\text{m}$. Converting to a <b>smaller</b> unit gives a <b>bigger</b> number."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Prefix",
+          "Symbol",
+          "Factor",
+          "Example"
+        ],
+        "rows": [
+          [
+            "giga",
+            "G",
+            "$10^{9}$",
+            "1 GB"
+          ],
+          [
+            "mega",
+            "M",
+            "$10^{6}$",
+            "1 MW"
+          ],
+          [
+            "kilo",
+            "k",
+            "$10^{3}$",
+            "1 km = 1000 m"
+          ],
+          [
+            "deci",
+            "d",
+            "$10^{-1}$",
+            "1 dL = 0.1 L"
+          ],
+          [
+            "centi",
+            "c",
+            "$10^{-2}$",
+            "1 cm = 0.01 m"
+          ],
+          [
+            "milli",
+            "m",
+            "$10^{-3}$",
+            "1 mg = 0.001 g"
+          ],
+          [
+            "micro",
+            "μ",
+            "$10^{-6}$",
+            "1 μm"
+          ],
+          [
+            "nano",
+            "n",
+            "$10^{-9}$",
+            "1 nm"
+          ]
+        ],
+        "cap": "The prefixes used most in chemistry. Note that m is milli as a prefix but meter as a unit."
+      },
+      {
+        "t": "why",
+        "html": "A prefix is a multiplier glued to a unit. \"k\" means \"times 1000\", so a kilometer is 1000 meters, just as a dozen eggs is 12 eggs. When you measure the same length with smaller units, you need more of them: 1 km is 1000 m, and 1 m is 100 cm. So a number grows when its unit shrinks, and the amount itself never changes."
+      },
+      {
+        "t": "viz",
+        "name": "ch-convert",
+        "opts": {
+          "mode": "prefix",
+          "v": 2.5,
+          "from": "k",
+          "to": "m",
+          "unit": "m"
+        },
+        "cap": "The prefix ladder: each step is a power of ten. Moving to a smaller unit moves the decimal point to the right."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Milligrams to grams",
+        "q": "Convert $350\\ \\text{mg}$ to grams.",
+        "steps": [
+          "Milli means $10^{-3}$, so $350\\ \\text{mg} = 350 \\times 10^{-3}\\ \\text{g}$.",
+          "$350 \\times 10^{-3} = 0.350$",
+          "Grams are bigger than milligrams, so the number got smaller, as it should."
+        ],
+        "a": "$0.350\\ \\text{g}$"
+      },
+      {
+        "t": "ex",
+        "title": "Between two prefixes",
+        "q": "Convert $1.5\\ \\text{mg}$ to micrograms (μg).",
+        "steps": [
+          "Go through the base unit: $1.5\\ \\text{mg} = 1.5 \\times 10^{-3}\\ \\text{g}$.",
+          "$1\\ \\mu\\text{g} = 10^{-6}\\ \\text{g}$, so divide by $10^{-6}$: $\\dfrac{1.5 \\times 10^{-3}}{10^{-6}} = 1.5 \\times 10^{3}$.",
+          "Micrograms are smaller, so the number is bigger: $1500\\ \\mu\\text{g}$."
+        ],
+        "a": "$1500\\ \\mu\\text{g}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Moving the decimal point the wrong way, as in $2.5\\ \\text{km} = 0.0025\\ \\text{m}$, or mixing up milli- ($10^{-3}$) with micro- ($10^{-6}$). Check: a kilometer is a long walk and a meter is a stride, so there must be many meters in 2.5 km. A smaller unit always means a larger number."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 1.4 Measurements"
+      },
+      {
+        "name": "NIST, The International System of Units (SI), SI prefixes"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

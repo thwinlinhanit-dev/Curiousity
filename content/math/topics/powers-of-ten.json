@@ -1,0 +1,118 @@
+{
+  "id": "g5.powers-of-ten",
+  "slug": "powers-of-ten",
+  "ladder": "math",
+  "course": "g5",
+  "unit": "place-value",
+  "title": "Powers of 10",
+  "short": "10³ means 10 × 10 × 10 = 1,000.",
+  "trouble": "Children read 10³ as 10 × 3 = 30.",
+  "prereqs": [
+    "g5.tenths-relationship"
+  ],
+  "xp": 1,
+  "viz": [
+    "placevalue"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You know that each place is <a href=\"/math/grade-5/tenths-relationship/\">ten times the place to its right</a>: one, ten, hundred, thousand. Writing $10 \\times 10 \\times 10 \\times 10$ for ten thousand takes a while, so there is a short way: an exponent."
+      },
+      {
+        "t": "key",
+        "html": "$10^{3}$ means $10 \\times 10 \\times 10 = 1{,}000$. The small raised number, the <b>exponent</b>, says how many 10s are multiplied. $10^{n}$ is a 1 followed by $n$ zeros."
+      },
+      {
+        "t": "why",
+        "html": "Each time you multiply by 10, every digit moves one place to the left and a 0 fills the ones place. Start with 1 and multiply by 10 three times: $10$, then $100$, then $1{,}000$. Three factors of 10, three zeros."
+      },
+      {
+        "t": "viz",
+        "name": "placevalue",
+        "opts": {
+          "n": "1",
+          "hi": 6,
+          "lo": 0,
+          "shift": true,
+          "edit": false,
+          "expanded": "mult"
+        },
+        "cap": "Press &ldquo;× 10&rdquo; again and again. Each press is one more factor of 10, and the 1 moves one place left."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Power",
+          "Product",
+          "Value"
+        ],
+        "rows": [
+          [
+            "$10^{1}$",
+            "$10$",
+            "$10$"
+          ],
+          [
+            "$10^{2}$",
+            "$10 \\times 10$",
+            "$100$"
+          ],
+          [
+            "$10^{3}$",
+            "$10 \\times 10 \\times 10$",
+            "$1{,}000$"
+          ],
+          [
+            "$10^{4}$",
+            "$10 \\times 10 \\times 10 \\times 10$",
+            "$10{,}000$"
+          ]
+        ],
+        "cap": "Powers of ten"
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Value of a power",
+        "q": "What is $10^{5}$?",
+        "steps": [
+          "Five 10s multiplied: $10 \\times 10 \\times 10 \\times 10 \\times 10$.",
+          "That is a 1 with five zeros."
+        ],
+        "a": "$100{,}000$"
+      },
+      {
+        "t": "ex",
+        "title": "A number times a power of ten",
+        "q": "What is $6 \\times 10^{3}$?",
+        "steps": [
+          "$10^{3} = 1{,}000$.",
+          "$6 \\times 1{,}000 = 6{,}000$: the 6 moves three places left."
+        ],
+        "a": "$6{,}000$"
+      },
+      {
+        "t": "mistake",
+        "html": "Reading $10^{3}$ as $10 \\times 3 = 30$. The exponent is not a factor; it counts factors. Check: $10^{3}$ must be bigger than $10^{2} = 100$, and 30 is not."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Prealgebra 2e, 10.5 Integer Exponents and Scientific Notation (powers of ten)"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 5.NBT.A.2: use whole-number exponents to denote powers of 10"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,136 @@
+{
+  "id": "from-scratch.crystal-radio",
+  "slug": "crystal-radio",
+  "ladder": "inventors",
+  "course": "from-scratch",
+  "unit": "signals",
+  "title": "A Crystal Radio with No Battery",
+  "short": "A coil and capacitor pick one station; a diode turns its radio wave back into sound you can hear in a sensitive earphone.",
+  "trouble": "Builders use ordinary earbuds, which are far too hungry for current, or a short antenna indoors far from any AM station.",
+  "prereqs": [
+    "from-scratch.hand-generator"
+  ],
+  "xp": 3,
+  "viz": [
+    "fs-radio"
+  ],
+  "figureArchetype": "WaveFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "By 1900, inventors in several countries were sending messages by radio waves, which Heinrich Hertz had shown in the 1880s. Receiving them took a <b>detector</b>, something that could turn a fast radio wave into a current you could hear. In India in the 1890s, Jagadish Chandra Bose used crystals of galena (lead ore) touched by a fine wire. In 1906 the American engineer Greenleaf Whittier Pickard patented a detector made of silicon. Thousands of people built crystal sets at home, fiddling a fine wire, the \"cat's whisker,\" across the crystal to find a sensitive spot."
+      },
+      {
+        "t": "key",
+        "html": "A crystal radio has no battery. A long <b>antenna</b> catches a tiny bit of a station's radio energy. A <b>coil</b> and a <b>capacitor</b> form a tuned circuit that rings at one frequency, $f = \\dfrac{1}{2\\pi\\sqrt{LC}}$, so it passes one station and rejects the others. A <b>diode</b> (the crystal) lets current through one way only, and a sensitive <b>earphone</b> follows the slow changes in the signal's strength, which are the sound."
+      },
+      {
+        "t": "p",
+        "html": "An AM station sends a fast wave, hundreds of thousands to over a million times a second (540 to 1700 kHz in North America). The sound is carried in how its strength rises and falls. That is <b>amplitude modulation</b>. Your ear can't follow the fast wave, and an earphone fed the whole wave would hear nothing, because its pushes and pulls cancel out. The diode removes one half, and what is left rises and falls with the sound."
+      },
+      {
+        "t": "viz",
+        "name": "fs-radio",
+        "opts": {
+          "c": 150
+        },
+        "cap": "Turn the tuning capacitor. The green curve shows what the tuned circuit lets through; the strips below show the wave before and after the diode."
+      },
+      {
+        "t": "why",
+        "html": "Why does more capacitance mean a lower frequency? A coil and capacitor pass energy back and forth, like a swing. A bigger capacitor holds more charge and takes longer to fill and empty, so each swing takes longer: a lower frequency. Four times the capacitance halves the frequency."
+      },
+      {
+        "t": "h",
+        "text": "Let's think it through"
+      },
+      {
+        "t": "ex",
+        "title": "Where does it tune?",
+        "q": "A 240 µH coil with the capacitor at 365 pF. What frequency?",
+        "steps": [
+          "$LC = 240 \\times 10^{-6} \\times 365 \\times 10^{-12} \\approx 8.76 \\times 10^{-14}$.",
+          "$\\sqrt{LC} \\approx 2.96 \\times 10^{-7}$ s.",
+          "$f = 1 \\div (2\\pi \\times 2.96 \\times 10^{-7}) \\approx 538\\,000$ Hz."
+        ],
+        "a": "About 538 kHz, the bottom of the AM band. At about 40 pF the same coil tunes near 1,620 kHz, the top."
+      },
+      {
+        "t": "ex",
+        "title": "How long is the wave?",
+        "q": "A station broadcasts at 1,000 kHz. What is its wavelength?",
+        "steps": [
+          "$\\lambda = c/f = 3 \\times 10^8 \\div 1\\,000\\,000$."
+        ],
+        "a": "300 meters. AM waves are long, which is why a long antenna wire helps."
+      },
+      {
+        "t": "mistake",
+        "html": "Using ordinary earbuds. They need far more current than a crystal set can give. You need a high-impedance crystal (piezo) earphone."
+      },
+      {
+        "t": "h",
+        "text": "Build it: a crystal radio"
+      },
+      {
+        "t": "note",
+        "html": "<div class=\"fs-parts\"><b>Parts (about \\$15 to \\$30)</b><ul><li>A germanium diode, type 1N34A (about \\$1). Germanium works with weaker signals than ordinary silicon diodes.</li><li>A high-impedance crystal (piezoelectric) earphone (about \\$3 to \\$5)</li><li>A variable tuning capacitor of about 365 pF (about \\$5 to \\$15, or salvaged from an old radio by a grown-up)</li><li>About 30 meters of thin magnet wire or insulated hookup wire (about 22 to 26 gauge) for the coil</li><li>A cardboard tube about 4 to 5 cm across, such as a paper-towel tube</li><li>For the antenna: 15 to 30 meters of insulated wire; for the ground: a metal tent stake or rod and a few meters of wire</li><li>Alligator-clip leads, tape, and a board to mount it on</li></ul></div>"
+      },
+      {
+        "t": "note",
+        "html": "<div class=\"fs-steps\"><b>Step by step</b><ol><li>Wind the coil: about 90 to 100 turns side by side on the tube, all one direction, tight and neat. Tape both ends. (This gives roughly 250 to 300 µH, about right for a 365 pF capacitor.) Sand or strip the ends.</li><li>Put up the antenna with a grown-up: run the wire as high and long as you can reach from the ground, for example along a fence or between two trees in your yard. Keep it well away from power lines.</li><li>Push the metal stake into damp soil and attach the ground wire.</li><li>Connect the coil and the capacitor side by side (in parallel). Clip the antenna to one end of this pair and the ground to the other.</li><li>Connect the diode from the antenna end to one earphone lead. Connect the other earphone lead to the ground end.</li><li>Put in the earphone, in a quiet room, and turn the capacitor slowly. Listen for a faint voice or music. Strong local AM stations come in best, especially at night.</li></ol></div>"
+      },
+      {
+        "t": "h",
+        "text": "What to look for"
+      },
+      {
+        "t": "list",
+        "items": [
+          "A faint station that grows and fades as you tune. Nothing but the station's own power drives the earphone.",
+          "A longer, higher antenna makes it louder. A good ground helps too.",
+          "Near a strong station you may hear it everywhere on the dial; far from stations you may hear nothing at all. Both are normal."
+        ]
+      },
+      {
+        "t": "h",
+        "text": "Troubleshooting"
+      },
+      {
+        "t": "list",
+        "items": [
+          "<b>Silence?</b> Check that the earphone is a crystal (piezo) type. Check the diode connections and that coil ends are sanded or stripped.",
+          "<b>One station everywhere?</b> The tuning is too broad. Try connecting the antenna to a point a few turns along the coil instead of the end (tap the coil).",
+          "<b>Very faint?</b> Make the antenna longer and higher (still within reach from the ground and far from power lines), and listen at night."
+        ]
+      },
+      {
+        "t": "h",
+        "text": "Iterate like the radio pioneers"
+      },
+      {
+        "t": "list",
+        "items": [
+          "Add taps to the coil every 10 turns (twist a small loop and scrape it bare) and try each one. Record which tap and capacitor setting finds each station.",
+          "Calculate where each station should tune with $f = 1/(2\\pi\\sqrt{LC})$, then check with your radio.",
+          "Pioneers hunted for the best crystal spot with a cat's whisker. Today the 1N34A diode does that job. Find out what a germanium diode has in common with a galena crystal."
+        ]
+      },
+      {
+        "t": "note",
+        "html": "<div class=\"fs-safe\"><b>Safety</b><ul><li>Never put an antenna anywhere near power lines, and never throw a wire toward one. Keep the antenna where a grown-up can reach it from the ground; do not climb trees or roofs to string it.</li><li>Disconnect the antenna from the radio and take it down if thunderstorms are around. Never use the radio during a storm.</li><li>Never connect any part of the radio to a wall outlet, house wiring or the ground pin of a plug.</li><li>A grown-up does the cutting and stripping of wire, and any work with a craft knife.</li><li>Keep the small diode, earphone and other small parts away from young children.</li></ul></div>"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Grokipedia, Crystal radio",
+        "url": "https://grokipedia.com/page/Crystal_radio"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

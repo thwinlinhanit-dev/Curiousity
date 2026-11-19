@@ -1,0 +1,122 @@
+{
+  "id": "phys2.photoelectric-effect",
+  "slug": "photoelectric-effect",
+  "ladder": "physics",
+  "course": "phys2",
+  "unit": "quantum",
+  "title": "The Photoelectric Effect",
+  "short": "An electron escapes a metal only if a single photon brings more than the work function: Kₘₐₓ = hf − φ.",
+  "trouble": "Students think brighter light should give the electrons more energy, or that dim light just needs more time to work.",
+  "prereqs": [
+    "phys2.photons"
+  ],
+  "xp": 3,
+  "viz": [
+    "ph-photon"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Shine light on a clean metal and electrons can fly off. The wave picture of light predicted that any color would work if it were bright enough, and that dim light would need time to build up energy. Experiments said otherwise, and in 1905 Einstein explained why with <a href=\"/physics/physics-2/photons/\">Photons</a>."
+      },
+      {
+        "t": "key",
+        "html": "Each electron absorbs <b>one</b> photon. It escapes only if $hf$ exceeds the metal's <b>work function</b> $\\phi$, and the fastest electrons leave with $$K_{\\max} = hf - \\phi.$$ The threshold frequency is $f_0 = \\phi/h$ (threshold wavelength $\\lambda_0 = hc/\\phi$). The stopping voltage is $V_s = K_{\\max}/e$."
+      },
+      {
+        "t": "viz",
+        "name": "ph-photon",
+        "opts": {
+          "mode": "photoelectric",
+          "lambda": 400,
+          "metal": "sodium",
+          "task": "Make the light red and very bright. Do any electrons come out? Then try dim violet light."
+        },
+        "cap": "One photon, one electron. Below the threshold no electrons leave, however bright the light."
+      },
+      {
+        "t": "why",
+        "html": "The work function is the least energy it takes to pull an electron free, like the cost of climbing out of a well. A photon hands over all its energy $hf$ at once. If $hf < \\phi$, the electron falls back, and more photons don't help, since an electron essentially never gets two at once. If $hf > \\phi$, the extra becomes kinetic energy. Brighter light means more photons, so more electrons, but each one still gets the same $hf$."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Metal",
+          "Work function $\\phi$"
+        ],
+        "rows": [
+          [
+            "cesium",
+            "2.14 eV"
+          ],
+          [
+            "potassium",
+            "2.29 eV"
+          ],
+          [
+            "sodium",
+            "2.36 eV"
+          ],
+          [
+            "zinc",
+            "4.3 eV"
+          ],
+          [
+            "copper",
+            "4.7 eV"
+          ]
+        ],
+        "cap": "Typical values; they depend on the surface."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking brighter light should give electrons more energy, or that dim light just needs more time. The kinetic energy depends only on the frequency, and when $f > f_0$ electrons come out at once, even in very dim light. Check: intensity never appears in $K_{\\max} = hf - \\phi$."
+      },
+      {
+        "t": "ex",
+        "title": "Light on sodium",
+        "q": "Light of $400\\ \\text{nm}$ falls on sodium ($\\phi = 2.36\\ \\text{eV}$). Find $K_{\\max}$ and the stopping voltage.",
+        "steps": [
+          "Photon energy: $E = \\dfrac{1240}{400} = 3.10\\ \\text{eV}$.",
+          "$K_{\\max} = 3.10 - 2.36 = 0.74\\ \\text{eV}$.",
+          "A stopping voltage of $0.74\\ \\text{V}$ turns back even the fastest electrons."
+        ],
+        "a": "$K_{\\max} = 0.74\\ \\text{eV}$, $V_s = 0.74\\ \\text{V}$"
+      },
+      {
+        "t": "ex",
+        "title": "Threshold wavelength",
+        "q": "Find the longest wavelength that can free electrons from zinc ($\\phi = 4.3\\ \\text{eV}$).",
+        "steps": [
+          "At threshold all the photon's energy goes into escaping: $\\dfrac{hc}{\\lambda_0} = \\phi$.",
+          "$\\lambda_0 = \\dfrac{1240\\ \\text{eV·nm}}{4.3\\ \\text{eV}} = 288\\ \\text{nm}$.",
+          "That is ultraviolet, so visible light, however bright, frees no electrons from zinc."
+        ],
+        "a": "About $290\\ \\text{nm}$"
+      },
+      {
+        "t": "viz",
+        "name": "ph-photon",
+        "opts": {
+          "mode": "graph",
+          "metal": "sodium"
+        },
+        "cap": "$K_{\\max}$ against frequency is a straight line. Its slope is Planck's constant $h$ for every metal; only the threshold changes."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Physics 2e, Section 29.2: The Photoelectric Effect"
+      },
+      {
+        "name": "OpenStax University Physics Volume 3, Section 6.2: Photoelectric Effect"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

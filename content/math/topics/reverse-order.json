@@ -1,0 +1,111 @@
+{
+  "id": "calc3.reverse-order",
+  "slug": "reverse-order",
+  "ladder": "math",
+  "course": "calc3",
+  "unit": "multiple-integrals",
+  "title": "Reversing the Order of Integration",
+  "short": "Redraw the region and describe it the other way.",
+  "trouble": "Students swap the limits without redrawing the region.",
+  "prereqs": [
+    "calc3.general-regions"
+  ],
+  "xp": 3,
+  "viz": [],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Sometimes the inner integral is impossible as written: $\\int e^{y^2}\\,dy$ and $\\int \\sin(x^2)\\,dx$ have no elementary antiderivative. But the region of integration can be sliced the other way. If you can describe a <a href=\"/math/calculus-3/general-regions/\">general region</a> with vertical slices, you can usually describe it with horizontal ones, and the integral may become easy."
+      },
+      {
+        "t": "key",
+        "html": "To reverse the order: <b>draw the region</b> from the given limits, then describe the same region with slices in the other direction. The new outer limits are the full range of the new outer variable; the new inner limits are the boundary curves solved for the inner variable."
+      },
+      {
+        "t": "why",
+        "html": "The value of a double integral depends only on the function and the region, not on how you slice it: both orders add up $f\\,dA$ over exactly the same points. So any correct description of the region gives the same number. Swapping the limits mechanically does not describe the same region, which is why the picture is essential."
+      },
+      {
+        "t": "viz",
+        "name": "calc3-region",
+        "opts": {
+          "I": {
+            "lo": "x",
+            "hi": "1",
+            "a": 0,
+            "b": 1,
+            "loT": "y = x",
+            "hiT": "y = 1"
+          },
+          "II": {
+            "lo": "0",
+            "hi": "y",
+            "c": 0,
+            "d": 1,
+            "loT": "x = 0",
+            "hiT": "x = y"
+          },
+          "order": "dydx",
+          "xmin": -0.3,
+          "xmax": 1.4,
+          "ymin": -0.3,
+          "ymax": 1.25
+        },
+        "cap": "The triangle ${}0 \\le x \\le 1$, $x \\le y \\le 1$. Vertical slices run from $y = x$ up to $y = 1$; switch to horizontal slices and they run from $x = 0$ to $x = y$, for ${}0 \\le y \\le 1$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "An impossible inner integral",
+        "q": "Evaluate $\\displaystyle\\int_0^1\\int_x^1 e^{y^2}\\,dy\\,dx$.",
+        "steps": [
+          "The region: ${}0 \\le x \\le 1$, $x \\le y \\le 1$, the triangle with vertices $(0, 0)$, $(0, 1)$, $(1, 1)$.",
+          "Horizontally: ${}0 \\le y \\le 1$ and ${}0 \\le x \\le y$.",
+          "$\\int_0^1\\int_0^y e^{y^2}\\,dx\\,dy = \\int_0^1 ye^{y^2}\\,dy$: the inner integral produced the factor $y$.",
+          "With $u = y^2$: $\\frac{1}{2}\\left[e^{y^2}\\right]_0^1 = \\frac{e - 1}{2}$."
+        ],
+        "a": "$\\frac{e - 1}{2}$"
+      },
+      {
+        "t": "ex",
+        "title": "Just the limits",
+        "q": "Reverse the order in $\\displaystyle\\int_0^4\\int_{\\sqrt{y}}^{2} f(x, y)\\,dx\\,dy$.",
+        "steps": [
+          "Region: ${}0 \\le y \\le 4$, and $x$ from the curve $x = \\sqrt{y}$ (that is, $y = x^2$) to the line $x = 2$.",
+          "It is the region under the parabola $y = x^2$ for ${}0 \\le x \\le 2$.",
+          "Vertically: ${}0 \\le x \\le 2$ and ${}0 \\le y \\le x^2$."
+        ],
+        "a": "$\\displaystyle\\int_0^2\\int_0^{x^2} f(x, y)\\,dy\\,dx$"
+      },
+      {
+        "t": "ex",
+        "title": "A root",
+        "q": "Evaluate $\\displaystyle\\int_0^1\\int_{\\sqrt{y}}^1 \\sqrt{x^3 + 1}\\,dx\\,dy$.",
+        "steps": [
+          "Region: ${}0 \\le x \\le 1$, ${}0 \\le y \\le x^2$.",
+          "$$\\int_0^1\\int_0^{x^2} \\sqrt{x^3 + 1}\\,dy\\,dx = \\int_0^1 x^2\\sqrt{x^3 + 1}\\,dx.$$",
+          "With $u = x^3 + 1$: $\\frac{1}{3}\\int_1^2 \\sqrt{u}\\,du = \\frac{2}{9}\\left(2\\sqrt{2} - 1\\right)$."
+        ],
+        "a": "$\\frac{2}{9}\\left(2\\sqrt{2} - 1\\right)$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Swapping the limits without redrawing the region.</b> Turning $\\int_0^1\\int_x^1 \\ldots\\,dy\\,dx$ into $\\int_x^1\\int_0^1 \\ldots\\,dx\\,dy$ leaves an $x$ in the outer limits; turning it into $\\int_0^1\\int_x^1 \\ldots\\,dx\\,dy$ describes a different region. Sketch first, read the extreme values of the new outer variable off the picture, then solve each boundary curve for the new inner variable. Check: both orders give the same area when you integrate ${}1$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 3, 5.2 Double Integrals over General Regions"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

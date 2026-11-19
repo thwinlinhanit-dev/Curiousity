@@ -1,0 +1,95 @@
+{
+  "id": "num.secant-method",
+  "slug": "secant-method",
+  "ladder": "math",
+  "course": "num",
+  "unit": "roots",
+  "title": "The Secant Method",
+  "short": "Replace f′ with the slope through the last two points; it needs no derivative, and its order is about 1.618.",
+  "trouble": "Students keep a pair that brackets the root, as in bisection. The secant method always uses the two most recent points, which need not bracket it.",
+  "prereqs": [
+    "num.newton-convergence"
+  ],
+  "xp": 2,
+  "viz": [
+    "num-roots"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/math/numerical-analysis/newton-convergence/\">Newton's method</a> needs the derivative $f'$, which may be costly or unavailable. The secant method replaces the tangent with the line through the two most recent points: $$x_{n+1} = x_n - f(x_n)\\frac{x_n - x_{n-1}}{f(x_n) - f(x_{n-1})}.$$"
+      },
+      {
+        "t": "key",
+        "html": "The secant method needs two starting values, uses one new function value per step and no derivative, and near a simple root converges with order $\\frac{1 + \\sqrt{5}}{2} \\approx 1.618$. Each step uses the two <b>newest</b> points, whether or not they bracket the root."
+      },
+      {
+        "t": "why",
+        "html": "The fraction is $1/(\\text{slope of the secant line})$, a difference quotient standing in for $f'(x_n)$. A Taylor argument like Newton's gives $e_{n+1} \\approx Ce_ne_{n-1}$: the error is the product of the last two errors. If $e_{n+1} \\approx Ke_n^{p}$, substituting into that relation forces $p^{2} = p + 1$, whose positive root is the golden ratio $1.618\\ldots$. Per evaluation of $f$, this beats Newton's method whenever $f'$ costs about as much as $f$: two Newton evaluations give order 2, so one gives order $\\sqrt{2} \\approx 1.414$."
+      },
+      {
+        "t": "ex",
+        "title": "Secant steps for √2",
+        "q": "Apply the secant method to $f(x) = x^{2} - 2$ with $x_0 = 1$, $x_1 = 2$.",
+        "steps": [
+          "$f(1) = -1$, $f(2) = 2$: $x_2 = 2 - 2 \\cdot \\frac{2 - 1}{2 - (-1)} = \\frac{4}{3} \\approx 1.3333$.",
+          "$f(\\frac{4}{3}) = -\\frac{2}{9}$. Use $x_1 = 2$ and $x_2 = \\frac{4}{3}$: $x_3 = \\frac{4}{3} - \\left(-\\frac{2}{9}\\right)\\frac{4/3 - 2}{-2/9 - 2} = \\frac{7}{5} = 1.4$.",
+          "Then $x_4 \\approx 1.414634$ and $x_5 \\approx 1.4142114$: errors $1.4 \\times 10^{-2}$, $4.2 \\times 10^{-4}$, $2.1 \\times 10^{-6}$, the exponent growing by a factor of about 1.6 each step."
+        ],
+        "a": "$x_3 = 1.4$, $x_5 \\approx 1.4142114$"
+      },
+      {
+        "t": "viz",
+        "name": "num-roots",
+        "opts": {
+          "f": "x^2-2",
+          "method": "secant",
+          "x0": 1,
+          "x1": 2,
+          "steps": 2,
+          "window": [
+            0.5,
+            2.5,
+            -2,
+            3
+          ],
+          "task": "Step the secant method. Which two points does each new line pass through?"
+        },
+        "cap": "Each orange line passes through the two most recent points and crosses the axis at the next iterate."
+      },
+      {
+        "t": "ex",
+        "title": "Keeping a bracket is a different method",
+        "q": "From the same start, the student keeps whichever pair brackets the root (the method called regula falsi). Compare.",
+        "steps": [
+          "Both get $x_2 = \\frac{4}{3}$ and $x_3 = 1.4$.",
+          "Regula falsi keeps $2$ (where $f > 0$) as one end forever: $x_4 \\approx 1.41176$, $x_5 \\approx 1.41379$, errors $2.4 \\times 10^{-3}$ and $4.2 \\times 10^{-4}$.",
+          "The secant method reached $2.1 \\times 10^{-6}$ at $x_5$. Keeping the bracket is safer but only linear here."
+        ],
+        "a": "the secant method is much faster here"
+      },
+      {
+        "t": "p",
+        "html": "In practice the secant method is a good choice when $f'$ is expensive or unknown and a reasonable starting pair is available. Stop when $|x_{n+1} - x_n|$ is below your tolerance. Watch for $f(x_n) = f(x_{n-1})$: then the secant line is flat and the formula divides by zero, just as Newton's method fails when $f'(x_n) = 0$."
+      },
+      {
+        "t": "mistake",
+        "html": "Keeping a pair that brackets the root, as in bisection. The secant method always drops the oldest point and keeps the two newest, even if both lie on the same side of the root. That is what gives it order 1.618; it also means it has no guarantee and can fail like Newton's method from a poor start."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Tobin A. Driscoll and Richard J. Braun, Fundamentals of Numerical Computation (University of Delaware, free online edition): chapter \"Roots of nonlinear equations\", section \"Interpolation-based methods\" (the secant method)"
+      },
+      {
+        "name": "Autar Kaw, Holistic Numerical Methods (University of South Florida): Nonlinear Equations, \"Secant Method\""
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

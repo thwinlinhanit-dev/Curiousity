@@ -1,0 +1,112 @@
+{
+  "id": "cplx.deformation",
+  "slug": "deformation",
+  "ladder": "math",
+  "course": "cplx",
+  "unit": "integration",
+  "title": "Deforming Contours",
+  "short": "An integral does not change when the contour slides across places where f is analytic, so ∮ dz/(z − a)ⁿ around a is 2πi for n = 1 and 0 for every other integer n.",
+  "trouble": "Students expect ∮ dz/(z − a)² to be 2πi like the case n = 1, but (z − a)⁻² has an antiderivative, so the integral is 0.",
+  "prereqs": [
+    "cplx.cauchy-theorem"
+  ],
+  "xp": 3,
+  "viz": [
+    "cplx-contour"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/math/complex-analysis/cauchy-theorem/\">Cauchy's theorem</a> says integrals vanish when nothing bad is inside. When something bad is inside, the same theorem still helps: it lets us slide and shrink the contour freely, as long as we never drag it across a point where $f$ fails to be analytic. Then any contour around a point can be replaced by a tiny circle around it, where the integral is easy."
+      },
+      {
+        "t": "key",
+        "html": "If $C_1$ can be deformed continuously into $C_2$ through a region where $f$ is analytic, then $\\oint_{C_1} f\\,dz = \\oint_{C_2} f\\,dz$. In particular, for any simple closed contour $C$ traced counterclockwise with $a$ inside,\n      $$\\oint_C \\frac{dz}{(z - a)^n} = \\begin{cases} 2\\pi i, & n = 1, \\\\ 0, & n = 2, 3, \\ldots \\end{cases}$$\n      and if $a$ is outside $C$, the integral is $0$ for every $n$."
+      },
+      {
+        "t": "why",
+        "html": "Take a big contour $C$ and a small circle $c$ around $a$, both counterclockwise. Cut the ring between them with two close parallel slits; the boundary of the slit ring is a single closed contour (along $C$, in along one slit, around $c$ clockwise, out along the other slit), and $f$ is analytic inside it. By Cauchy's theorem its integral is $0$. The two slits cancel (same path, opposite directions), leaving $\\oint_C f\\,dz - \\oint_c f\\,dz = 0$. For $(z - a)^{-n}$ on the small circle, the <a href=\"/math/complex-analysis/contour-integrals/\">circle computation</a> gives $2\\pi i$ for $n = 1$ and $0$ otherwise."
+      },
+      {
+        "t": "viz",
+        "name": "cplx-contour",
+        "opts": {
+          "f": "1/z^2+1/(z-1)",
+          "contour": {
+            "type": "rect",
+            "x0": -1.5,
+            "x1": 2.5,
+            "y0": -1.5,
+            "y1": 1.5
+          },
+          "window": {
+            "x": [
+              -3,
+              4
+            ],
+            "y": [
+              -2.5,
+              2.5
+            ]
+          }
+        },
+        "cap": "$f(z) = \\frac{1}{z^2} + \\frac{1}{z - 1}$ around a rectangle. Drag its corners: the value is $2\\pi i$ when it encloses $1$ (whatever it does with $0$, since $\\frac{1}{z^2}$ contributes nothing), and $0$ when it encloses neither."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A square instead of a circle",
+        "q": "Compute $\\displaystyle\\oint_C \\frac{5\\,dz}{z - i}$, where $C$ is the square with corners $\\pm 2 \\pm 2i$, counterclockwise.",
+        "steps": [
+          "The only bad point is $i$, inside the square.",
+          "Shrink the square to a small circle around $i$ without crossing $i$: the integral of $\\frac{1}{z - i}$ is $2\\pi i$.",
+          "Times $5$: $10\\pi i$."
+        ],
+        "a": "$10\\pi i$"
+      },
+      {
+        "t": "ex",
+        "title": "A square power",
+        "q": "Compute $\\displaystyle\\oint_{|z| = 4} \\frac{dz}{(z + 1)^2}$.",
+        "steps": [
+          "$-1$ is inside, but the power is $2$.",
+          "$\\frac{1}{(z + 1)^2}$ has the antiderivative $-\\frac{1}{z + 1}$ away from $-1$, so the integral is $0$."
+        ],
+        "a": "$0$"
+      },
+      {
+        "t": "ex",
+        "title": "Partial fractions",
+        "q": "Compute $\\displaystyle\\oint_{|z| = 2} \\frac{dz}{z(z - 3)}$ and $\\displaystyle\\oint_{|z| = 4} \\frac{dz}{z(z - 3)}$.",
+        "steps": [
+          "$\\frac{1}{z(z - 3)} = \\frac{1}{3}\\left(\\frac{1}{z - 3} - \\frac{1}{z}\\right)$.",
+          "On $|z| = 2$ only $0$ is inside: $\\frac{1}{3}(0 - 2\\pi i) = -\\frac{2\\pi i}{3}$.",
+          "On $|z| = 4$ both are inside: $\\frac{1}{3}(2\\pi i - 2\\pi i) = 0$."
+        ],
+        "a": "$-\\frac{2\\pi i}{3}$ and $0$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Expecting $\\oint \\frac{dz}{(z - a)^2}$ to be $2\\pi i$ like the case $n = 1$.</b> Only the power $-1$ survives a trip around $a$. Every other power has an antiderivative $\\frac{(z - a)^{1 - n}}{1 - n}$ that is single-valued away from $a$, so its closed integrals are $0$. Check by parametrizing: $\\int_0^{2\\pi} ir^{1 - n}e^{i(1 - n)t}\\,dt$ is $0$ unless $n = 1$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Beck, Marchesi, Pixton and Sabalka, A First Course in Complex Analysis, chapter 4 (Integration)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.04, Complex Variables with Applications (Spring 2018), course notes: line integrals and Cauchy's theorem"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

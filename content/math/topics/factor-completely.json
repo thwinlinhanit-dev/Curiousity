@@ -1,0 +1,93 @@
+{
+  "id": "alg1.factor-completely",
+  "slug": "factor-completely",
+  "ladder": "math",
+  "course": "alg1",
+  "unit": "factoring",
+  "title": "Factoring Completely",
+  "short": "Take out the GCF first, then keep factoring until nothing more factors.",
+  "trouble": "Students stop after one step, leaving x² − 4 inside a product.",
+  "prereqs": [
+    "alg1.factor-ax2-bx-c",
+    "alg1.factor-special-products",
+    "alg1.factor-grouping"
+  ],
+  "xp": 3,
+  "viz": [],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A polynomial is <b>factored completely</b> when none of its factors (other than numbers and monomials) can be factored again. It usually takes more than one step, using the tools you now have: <a href=\"/math/algebra-1/factor-gcf/\">the GCF</a>, <a href=\"/math/algebra-1/factor-ax2-bx-c/\">trinomials</a>, <a href=\"/math/algebra-1/factor-special-products/\">special products</a> and <a href=\"/math/algebra-1/factor-grouping/\">grouping</a>."
+      },
+      {
+        "t": "list",
+        "items": [
+          "<b>GCF first.</b> Take out the greatest common factor, if it is not $1$.",
+          "<b>Count the terms</b> of what is left. Two terms: a difference of squares? Three terms: a perfect square, or a trinomial to factor with two numbers or the ac method. Four terms: grouping.",
+          "<b>Look at every factor again.</b> Can any of them be factored further?",
+          "<b>Check</b> by multiplying back."
+        ]
+      },
+      {
+        "t": "why",
+        "html": "Taking out the GCF first makes everything smaller and easier: $3x^2 - 12$ hides the pattern, but $3(x^2 - 4)$ shows a difference of squares at once. And a factor like $(x^2 - 4)$ left inside a product is not finished, because it splits into $(x + 2)(x - 2)$. Factoring completely matters later, when the factors give the solutions of equations."
+      },
+      {
+        "t": "key",
+        "html": "GCF first, then the pattern for the number of terms, then check each factor again until nothing more factors."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "GCF, then difference of squares",
+        "q": "Factor $3x^3 - 12x$ completely.",
+        "steps": [
+          "GCF $3x$: $3x(x^2 - 4)$.",
+          "$x^2 - 4$ is a difference of squares: $(x + 2)(x - 2)$."
+        ],
+        "a": "$3x(x + 2)(x - 2)$"
+      },
+      {
+        "t": "ex",
+        "title": "GCF, then a trinomial",
+        "q": "Factor $2x^2 - 8x - 42$ completely.",
+        "steps": [
+          "GCF $2$: $2(x^2 - 4x - 21)$.",
+          "Numbers with product $-21$ and sum $-4$: $-7$ and $3$."
+        ],
+        "a": "$2(x - 7)(x + 3)$"
+      },
+      {
+        "t": "ex",
+        "title": "Twice a difference of squares",
+        "q": "Factor $x^4 - 16$ completely.",
+        "steps": [
+          "$x^4 - 16 = (x^2)^2 - 4^2 = (x^2 + 4)(x^2 - 4)$.",
+          "$x^2 - 4 = (x + 2)(x - 2)$; $x^2 + 4$ is a sum of squares and stays."
+        ],
+        "a": "$(x^2 + 4)(x + 2)(x - 2)$"
+      },
+      {
+        "t": "mistake",
+        "html": "Stopping after one step, as in $3x^3 - 12x = 3x(x^2 - 4)$. That is correct but not complete: $x^2 - 4$ still factors. After every step, look at each factor and ask whether it matches a pattern."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Elementary Algebra 2e, section 7.5 General Strategy for Factoring Polynomials"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, A-SSE.A.2"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

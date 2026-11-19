@@ -1,0 +1,96 @@
+{
+  "id": "astrophys.mass-luminosity",
+  "slug": "mass-luminosity",
+  "ladder": "physics",
+  "course": "astrophys",
+  "unit": "stellar-structure",
+  "title": "The Mass–Luminosity Relation",
+  "short": "On the main sequence L ∝ M^3.5 roughly, so lifetimes go as M^(−2.5).",
+  "trouble": "Students think a star twice as massive is twice as luminous.",
+  "prereqs": [
+    "astrophys.energy-transport",
+    "astro.main-sequence-lifetime"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-hr"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Binary stars (see <a href=\"/physics/astrophysics/visual-binaries/\">masses from visual binaries</a>) let astronomers measure masses, and for main-sequence stars a striking pattern appears: luminosity rises very steeply with mass. That explains the <a href=\"/physics/astronomy/main-sequence-lifetime/\">main-sequence lifetimes</a> you met before, and it follows from <a href=\"/physics/astrophysics/energy-transport/\">energy transport</a>."
+      },
+      {
+        "t": "why",
+        "html": "Energy diffuses out by radiation. The luminosity is roughly the radiant energy stored, which grows as $T^4$, times the volume, divided by the time it takes to random-walk out, $R^2/(\\ell c)$. With the mean free path $\\ell = 1/(\\kappa\\rho)$ (opacity $\\kappa$), $\\rho \\sim M/R^3$ and $T \\sim GM\\mu m_p/(kR)$ from <a href=\"/physics/astrophysics/central-conditions/\">the central-conditions estimate</a>: $$L \\sim \\frac{aT^4R^3 \\cdot \\ell c}{R^2} \\sim \\frac{ac}{\\kappa}\\,\\frac{T^4R^4}{M} \\propto \\frac{(M/R)^4R^4}{M} = M^3.$$ The radius cancels. Opacity that changes with temperature and density steepens this a little, so on the main sequence roughly $L \\propto M^{3.5}$."
+      },
+      {
+        "t": "key",
+        "html": "For main-sequence stars, roughly $L/L_\\odot \\approx (M/M_\\odot)^{3.5}$. A star's fuel is proportional to $M$, so its lifetime goes as $M/L \\propto M^{-2.5}$: about $10\\text{ Gyr} \\times (M/M_\\odot)^{-2.5}$."
+      },
+      {
+        "t": "viz",
+        "name": "ph-hr",
+        "opts": {
+          "mode": "mass-luminosity"
+        },
+        "cap": "Luminosity against mass for main-sequence stars on log axes. The slope is about 3.5 for Sun-like and moderately massive stars; it is less steep for the smallest and the most massive stars."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A two-solar-mass star",
+        "q": "Find the luminosity and main-sequence lifetime of a $2\\,M_\\odot$ star.",
+        "steps": [
+          "$L = 2^{3.5} = 11.3\\,L_\\odot$.",
+          "$t = 10\\text{ Gyr} \\times 2^{-2.5} = 10/5.66$ Gyr."
+        ],
+        "a": "About $11\\,L_\\odot$ and 1.8 Gyr: twice the fuel, burned eleven times as fast."
+      },
+      {
+        "t": "ex",
+        "title": "A massive star",
+        "q": "Repeat for $10\\,M_\\odot$.",
+        "steps": [
+          "$L = 10^{3.5} \\approx 3200\\,L_\\odot$.",
+          "$t = 10 \\times 10^{-2.5}$ Gyr $= 0.032$ Gyr."
+        ],
+        "a": "About 3,200 $L_\\odot$ and 32 million years. (Very massive stars fall below the $M^{3.5}$ line, but the trend holds.)"
+      },
+      {
+        "t": "ex",
+        "title": "Dating a cluster",
+        "q": "A cluster's main-sequence turnoff is at $2.0\\,M_\\odot$. About how old is it?",
+        "steps": [
+          "The turnoff stars are just ending their lives: $t = 10 \\times 2.0^{-2.5}$ Gyr."
+        ],
+        "a": "About 1.8 billion years."
+      },
+      {
+        "t": "note",
+        "html": "The relation is a rough guide. Below about half a solar mass it is shallower (stars there are partly or fully convective), and above about 50 solar masses luminosity rises only about in proportion to mass, because those stars approach the limit in the <a href=\"/physics/astrophysics/eddington-limit/\">next topic</a>. The smallest stars, near 0.08 solar masses, shine at about a thousandth of the Sun's luminosity or less and will last for trillions of years."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking a star twice as massive is twice as luminous. Mass sets the central temperature and how easily energy escapes, and luminosity responds steeply: twice the mass gives about $2^{3.5} \\approx 11$ times the luminosity. So massive stars, despite having more fuel, die far sooner. Check: the most massive stars live only a few million years, while the smallest red dwarfs will outlast the present age of the universe."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Astronomy 2e, section 18.2 (Measuring Stellar Masses) and section 22.1 (Evolution from the Main Sequence to Red Giants)"
+      },
+      {
+        "name": "MIT OpenCourseWare 8.282J Introduction to Astronomy (Spring 2006)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,95 @@
+{
+  "id": "lifesci.population-growth",
+  "slug": "population-growth",
+  "ladder": "bio",
+  "course": "lifesci",
+  "unit": "populations",
+  "title": "How Populations Grow",
+  "short": "A population grows when more individuals are added (by birth or arrival) than are lost (by death or leaving). With plenty of resources it can grow faster and faster.",
+  "trouble": "Students think a population grows by the same number each year. When each individual adds offspring, the growth itself grows: the larger the population, the more it adds.",
+  "prereqs": [
+    "lifesci.levels-ecology"
+  ],
+  "xp": 2,
+  "viz": [
+    "bi-population"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A <a href=\"/biology/life-science/levels-ecology/\">population</a> is all the members of one species in an area. Its size changes in only four ways: individuals are born, arrive, die or leave. Keep track of those four numbers and you can predict the next count."
+      },
+      {
+        "t": "key",
+        "html": "Change in a population = (births + arrivals) − (deaths + departures). With plenty of food and space, each individual adds offspring, so a larger population adds more each year: the growth itself grows. Graphed, this <b>exponential growth</b> makes a J-shaped curve."
+      },
+      {
+        "t": "ex",
+        "title": "Count the changes",
+        "q": "A herd of 200 deer has 60 fawns born in a year. 15 deer arrive from a nearby forest, 35 die and 10 leave. How many deer are there at the end of the year?",
+        "steps": [
+          "Added: 60 + 15 = 75.",
+          "Lost: 35 + 10 = 45.",
+          "Change: 75 − 45 = +30.",
+          "New size: 200 + 30 = 230."
+        ],
+        "a": "230 deer."
+      },
+      {
+        "t": "why",
+        "html": "Imagine pond plants that double every week. Start with 10. After one week there are 20 (10 added), then 40 (20 added), then 80 (40 added). The number <i>added</i> each week doubles too, because every plant makes new ones. That is why unchecked growth starts slowly and then shoots up."
+      },
+      {
+        "t": "viz",
+        "name": "bi-population",
+        "opts": {
+          "model": "doubling",
+          "gens": 6,
+          "N0": 1
+        },
+        "cap": "Bacteria doubling each generation: 1, 2, 4, 8 … The added amount grows each time."
+      },
+      {
+        "t": "ex",
+        "title": "Growth that grows",
+        "q": "A population of 100 mice grows by 50% each year while food is plentiful. How many mice after 2 years?",
+        "steps": [
+          "Year 1: 50% of 100 is 50, so 100 + 50 = 150.",
+          "Year 2: 50% of 150 is 75, so 150 + 75 = 225.",
+          "Notice the gain went from 50 to 75."
+        ],
+        "a": "225 mice."
+      },
+      {
+        "t": "viz",
+        "name": "bi-population",
+        "opts": {
+          "model": "exp",
+          "N0": 20,
+          "r": 0.4,
+          "T": 10,
+          "K": 1000
+        },
+        "cap": "Exponential growth: the J-curve. Drag the growth rate."
+      },
+      {
+        "t": "mistake",
+        "html": "Students think a population grows by the same number each year, like adding 50 every time. That is only true when the number of new births stays fixed. When each individual adds offspring, the gain grows with the population. Check: compare the gains from one year to the next. If they grow, the growth is exponential."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Next Generation Science Standards, MS-LS2-1 (Ecosystems: Interactions, Energy, and Dynamics)"
+      },
+      {
+        "name": "OpenStax, Concepts of Biology, 19.2 Population Growth and Regulation (exponential growth)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,90 @@
+{
+  "id": "disc.nested-quantifiers",
+  "slug": "nested-quantifiers",
+  "ladder": "math",
+  "course": "disc",
+  "unit": "logic",
+  "title": "Nested Quantifiers",
+  "short": "The order of ∀ and ∃ matters: ∀x ∃y (y > x) is true for real numbers, but ∃y ∀x (y > x) is false.",
+  "trouble": "Students swap the order of mixed quantifiers as if it changed nothing.",
+  "prereqs": [
+    "disc.negating-quantifiers"
+  ],
+  "xp": 3,
+  "viz": [],
+  "figureArchetype": "LessonFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Most definitions in mathematics use two quantifiers at once: \"for every $x$ there is a $y$ such that…\" With <a href=\"/math/discrete-math/negating-quantifiers/\">negation of quantifiers</a> in hand, this lesson shows how to read, decide and negate such statements, and why the order of the quantifiers matters."
+      },
+      {
+        "t": "key",
+        "html": "Read quantifiers from left to right: each one is decided after the ones before it, so a later variable may depend on an earlier one. $\\forall x\\, \\exists y\\, P(x, y)$ says each $x$ has its own partner $y$. $\\exists y\\, \\forall x\\, P(x, y)$ says one single $y$ works for every $x$, which is a much stronger claim."
+      },
+      {
+        "t": "why",
+        "html": "Think of a game. In $\\forall x\\, \\exists y\\, (y > x)$ over the real numbers, an opponent picks $x$, and then you pick $y$: you answer $y = x + 1$ and always win, so the statement is true. In $\\exists y\\, \\forall x\\, (y > x)$ you must commit to $y$ first, and the opponent then picks $x = y$ and wins. So that statement is false. Swapping two quantifiers of the same kind changes nothing ($\\forall x\\, \\forall y$ is the same as $\\forall y\\, \\forall x$), but swapping a $\\forall$ with an $\\exists$ can change everything."
+      },
+      {
+        "t": "p",
+        "html": "A table of $P(x, y)$ makes this visible. Rows are values of $x$, columns are values of $y$, on the domain $\\{1, 2, 3\\}$: $$\\begin{array}{c|ccc} P(x, y) & y = 1 & y = 2 & y = 3 \\\\ \\hline x = 1 & \\mathrm{F} & \\mathrm{T} & \\mathrm{F} \\\\ x = 2 & \\mathrm{T} & \\mathrm{F} & \\mathrm{F} \\\\ x = 3 & \\mathrm{F} & \\mathrm{F} & \\mathrm{T} \\end{array}$$ $\\forall x\\, \\exists y\\, P(x, y)$ asks for a T in every <b>row</b>: true. $\\exists y\\, \\forall x\\, P(x, y)$ asks for a <b>column</b> of all T's: false."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Deciding over the real numbers",
+        "q": "Decide $\\forall x\\, \\exists y\\, (x + y = 0)$ and $\\exists y\\, \\forall x\\, (x + y = x)$ over the real numbers.",
+        "steps": [
+          "First statement: for any $x$, choose $y = -x$. Then $x + y = 0$. The choice depends on $x$, which is allowed: <b>true</b>.",
+          "Second statement: we need one $y$ that works for every $x$. Try $y = 0$: $x + 0 = x$ for every $x$. <b>True</b>.",
+          "Both are true, but for different reasons: the first needed a $y$ for each $x$, the second found a single $y$."
+        ],
+        "a": "true, true"
+      },
+      {
+        "t": "ex",
+        "title": "Negating a nested statement",
+        "q": "The domain is the students in a class, and $F(x, y)$ means \"$x$ is friends with $y$.\" Negate \"Every student has a friend in the class.\"",
+        "steps": [
+          "In symbols: $\\forall x\\, \\exists y\\, F(x, y)$.",
+          "Move the negation through both quantifiers, switching each: $\\exists x\\, \\forall y\\, \\neg F(x, y)$.",
+          "In words: \"Some student is friends with nobody in the class.\""
+        ],
+        "a": "$\\exists x\\, \\forall y\\, \\neg F(x, y)$"
+      },
+      {
+        "t": "ex",
+        "title": "When the order matters",
+        "q": "Over the real numbers, decide $\\forall x\\, \\exists y\\, (xy = 1)$.",
+        "steps": [
+          "We need a partner $y$ for every $x$. For $x \\ne 0$, $y = \\frac{1}{x}$ works.",
+          "But $x = 0$ has no partner: $0 \\cdot y = 0$ for every $y$.",
+          "One $x$ without a partner makes the statement <b>false</b>. (Over the nonzero real numbers it would be true.)"
+        ],
+        "a": "false"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Swapping mixed quantifiers as if nothing changed.</b> \"Every lock has a key that opens it\" ($\\forall$ lock $\\exists$ key) is not \"there is a key that opens every lock\" ($\\exists$ key $\\forall$ lock); the second describes a master key. Check: say the statement as a game. Whoever is named first moves first, and the later player may react to that choice."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Oscar Levin, Discrete Mathematics: An Open Introduction (3rd ed.), section \"Mathematical Statements\" (nested quantifiers)"
+      },
+      {
+        "name": "MIT OpenCourseWare 6.042J Mathematics for Computer Science (Lehman, Leighton and Meyer), chapter \"Logical Formulas\""
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

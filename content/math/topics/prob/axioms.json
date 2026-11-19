@@ -1,0 +1,110 @@
+{
+  "id": "prob.axioms",
+  "slug": "axioms",
+  "ladder": "math",
+  "course": "prob",
+  "unit": "foundations",
+  "title": "The Axioms of Probability",
+  "short": "Every probability rule follows from three: P(A) ≥ 0, P(S) = 1, and the probabilities of disjoint events add.",
+  "trouble": "Students accept an assignment of probabilities that adds to more than 1, or add P(A) + P(B) for events that overlap.",
+  "prereqs": [
+    "stat.addition-rule"
+  ],
+  "xp": 1,
+  "viz": [
+    "prob-square"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/math/probability-and-statistics/addition-rule/\">the addition rule</a> you met rules such as $$P(A \\cup B) = P(A) + P(B) - P(A \\cap B)$$ and $P(A^{c}) = 1 - P(A)$. They feel like separate facts, but each one follows from three short statements. Probability as a branch of mathematics starts from these three axioms, set down by Andrey Kolmogorov in 1933, and every rule in this course is built on them."
+      },
+      {
+        "t": "p",
+        "html": "A <b>sample space</b> $S$ is the set of all outcomes of an experiment, and an <b>event</b> is a set of outcomes (a subset of $S$). We write $A^{c}$ for the complement of $A$ (some books write $A'$), and call events <b>disjoint</b> (or mutually exclusive) when they share no outcome."
+      },
+      {
+        "t": "key",
+        "html": "A <b>probability</b> assigns to each event $A$ a number $P(A)$ so that\n  <br>1. $P(A) \\ge 0$ for every event $A$;\n  <br>2. $P(S) = 1$;\n  <br>3. if $A_1, A_2, \\ldots$ are pairwise disjoint, then $P(A_1 \\cup A_2 \\cup \\cdots) = \\sum_{i} P(A_i)$."
+      },
+      {
+        "t": "why",
+        "html": "Every familiar rule is a short consequence.\n  <br><b>Complement:</b> $A$ and $A^{c}$ are disjoint and together make $S$, so axioms 3 and 2 give $P(A) + P(A^{c}) = 1$. With $A = S$ this also shows $P(\\varnothing) = 0$.\n  <br><b>Bigger events are more likely:</b> if $A \\subseteq B$, then $B$ is the disjoint union of $A$ and $B \\cap A^{c}$, so $P(B) = P(A) + P(B \\cap A^{c}) \\ge P(A)$. In particular $P(A) \\le P(S) = 1$.\n  <br><b>Addition rule:</b> $A \\cup B$ is the disjoint union of $A$ and $B \\cap A^{c}$, while $B$ is the disjoint union of $A \\cap B$ and $B \\cap A^{c}$. Subtracting, $$P(A \\cup B) = P(A) + P(B) - P(A \\cap B)$$"
+      },
+      {
+        "t": "viz",
+        "name": "prob-square",
+        "opts": {
+          "layout": "free",
+          "pA": "2/5",
+          "pB": "1/2",
+          "pAB": "1/4",
+          "labels": {
+            "A": "A",
+            "B": "B"
+          }
+        },
+        "cap": "The sample space as a unit square: each event is a region and its probability is its area. Drag the edges and watch the readout keep every rule true."
+      },
+      {
+        "t": "p",
+        "html": "The square is a good mental model: area is never negative (axiom 1), the whole square has area 1 (axiom 2), and areas of regions that do not overlap add (axiom 3). It also makes two bounds easy to see. An overlap fits inside each event, so $P(A \\cap B) \\le \\min(P(A), P(B))$. And a union is never bigger than the whole square or than the two areas together, so $P(A \\cup B) \\le \\min(1,\\ P(A) + P(B))$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Finding a missing probability",
+        "q": "A spinner lands on red, blue, green or yellow. $P(\\text{red}) = 0.15$, $P(\\text{blue}) = 0.3$ and $P(\\text{green}) = 0.25$. Find $P(\\text{yellow})$.",
+        "steps": [
+          "The four outcomes are disjoint and together they make up $S$.",
+          "By axioms 3 and 2, their probabilities add to 1.",
+          "$$P(\\text{yellow}) = 1 - (0.15 + 0.3 + 0.25) = 0.3$$"
+        ],
+        "a": "$0.3$"
+      },
+      {
+        "t": "ex",
+        "title": "How much must two events overlap?",
+        "q": "$P(A) = 0.7$ and $P(B) = 0.6$. What is the smallest possible value of $P(A \\cap B)$?",
+        "steps": [
+          "By the addition rule, $$P(A \\cap B) = P(A) + P(B) - P(A \\cup B)$$",
+          "$P(A \\cup B)$ is at most 1, so $P(A \\cap B) \\ge 0.7 + 0.6 - 1 = 0.3$.",
+          "The value $0.3$ is reached when $A \\cup B$ is the whole sample space."
+        ],
+        "a": "$0.3$: the events must overlap at least that much."
+      },
+      {
+        "t": "ex",
+        "title": "Spotting an impossible claim",
+        "q": "Someone reports $P(A) = 0.4$, $P(B) = 0.5$ and $P(A \\cap B) = 0.45$. Is this possible?",
+        "steps": [
+          "$A \\cap B \\subseteq A$, so $P(A \\cap B) \\le P(A) = 0.4$.",
+          "$0.45 > 0.4$ breaks that rule."
+        ],
+        "a": "No: an overlap can never be more likely than either event."
+      },
+      {
+        "t": "mistake",
+        "html": "Two common slips. First, a list of probabilities for outcomes that cannot happen together must add to exactly 1; a list adding to $1.1$ is not a probability model. Second, adding $P(A) + P(B)$ for events that overlap: if each of Saturday and Sunday has a $0.6$ chance of rain, the chance of rain on the weekend is not $1.2$. Check: any answer above 1 is wrong, and the addition rule needs the overlap subtracted."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Grinstead and Snell, Introduction to Probability (2nd revised edition, American Mathematical Society; free from Dartmouth College), chapter 1 (Discrete Probability Distributions), section 1.2, the properties of a distribution function"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.05, Introduction to Probability and Statistics (Spring 2014), readings on probability terminology and the rules of probability"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

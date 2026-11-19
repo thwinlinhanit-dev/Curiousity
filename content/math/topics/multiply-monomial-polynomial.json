@@ -1,0 +1,101 @@
+{
+  "id": "alg1.multiply-monomial-polynomial",
+  "slug": "multiply-monomial-polynomial",
+  "ladder": "math",
+  "course": "alg1",
+  "unit": "polynomials",
+  "title": "Multiplying by a Monomial",
+  "short": "Distribute and use exponent rules on each term.",
+  "trouble": "Students multiply the monomial by the first term only.",
+  "prereqs": [
+    "alg1.polynomial-basics",
+    "g7.expand-factor-linear"
+  ],
+  "xp": 1,
+  "viz": [
+    "areamodel"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "To multiply a monomial by a polynomial, use the <a href=\"/math/grade-7/expand-factor-linear/\">distributive property</a> together with the <a href=\"/math/pre-algebra/exponent-properties/\">product rule for exponents</a>. It is the building block for all polynomial multiplication."
+      },
+      {
+        "t": "why",
+        "html": "The distributive property says $a(b + c) = ab + ac$: a rectangle of width $a$ and length $b + c$ splits into two rectangles, $ab$ and $ac$. With variables, each product multiplies coefficients and adds exponents of the same base, because $x^2 \\cdot x^3$ is two factors of $x$ times three more, $x^5$."
+      },
+      {
+        "t": "viz",
+        "name": "areamodel",
+        "opts": {
+          "a": "2x",
+          "b": "x^2+3x+4",
+          "x": 3
+        },
+        "cap": "$2x(x^2 + 3x + 4)$ as one long rectangle cut into three parts: $2x^3$, $6x^2$ and $8x$."
+      },
+      {
+        "t": "key",
+        "html": "Multiply the monomial by <em>every</em> term inside the parentheses: multiply the coefficients, add the exponents, and keep each sign."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Distribute a monomial",
+        "q": "Multiply $-3x^2(2x^2 - 5x + 1)$.",
+        "steps": [
+          "$-3x^2 \\cdot 2x^2 = -6x^4$.",
+          "$-3x^2 \\cdot (-5x) = 15x^3$.",
+          "$-3x^2 \\cdot 1 = -3x^2$."
+        ],
+        "a": "$-6x^4 + 15x^3 - 3x^2$"
+      },
+      {
+        "t": "ex",
+        "title": "Two variables",
+        "q": "Multiply $4ab(3a - 2b)$.",
+        "steps": [
+          "$4ab \\cdot 3a = 12a^2b$ and $4ab \\cdot (-2b) = -8ab^2$."
+        ],
+        "a": "$12a^2b - 8ab^2$"
+      },
+      {
+        "t": "ex",
+        "title": "Two products, then combine",
+        "q": "Simplify $2x(x - 4) - 3(x^2 + 1)$.",
+        "steps": [
+          "First product: $2x(x - 4) = 2x^2 - 8x$.",
+          "Second product: the factor is $-3$, sign included: $-3(x^2 + 1) = -3x^2 - 3$.",
+          "Combine like terms: $2x^2 - 3x^2 - 8x - 3 = -x^2 - 8x - 3$.",
+          "Check with $x = 1$: $2(-3) - 3(2) = -12$, and $-1 - 8 - 3 = -12$."
+        ],
+        "a": "$-x^2 - 8x - 3$"
+      },
+      {
+        "t": "p",
+        "html": "Keep this picture in mind: multiplying turns side lengths into an area. In the next unit you will run it backward, starting from the area $6x^2 + 9x$ and finding the sides $3x$ and $2x + 3$. That is factoring."
+      },
+      {
+        "t": "mistake",
+        "html": "Multiplying the monomial by the first term only, as in $2x(x^2 + 3x + 4) = 2x^3 + 3x + 4$. The area model shows three pieces, so there must be three products. Check with $x = 1$: $2(1 + 3 + 4) = 16$, while $2 + 3 + 4 = 9$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Elementary Algebra 2e, section 6.3 Multiply Polynomials"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, A-APR.A.1"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

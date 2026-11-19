@@ -1,0 +1,102 @@
+{
+  "id": "weather.stefan-boltzmann",
+  "slug": "stefan-boltzmann",
+  "ladder": "earth",
+  "course": "weather",
+  "unit": "energy",
+  "title": "Hotter Things Glow Much More",
+  "short": "The energy a surface gives off grows with the fourth power of its temperature in kelvins: E = σT⁴.",
+  "trouble": "Students expect doubling the temperature to double the glow; doubling the temperature in kelvins multiplies it by 16.",
+  "prereqs": [
+    "weather.radiation-wavelength"
+  ],
+  "xp": 2,
+  "viz": [
+    "es-energy"
+  ],
+  "figureArchetype": "WaveFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Wien's law (<a href=\"/earth-and-space/weather-and-climate/radiation-wavelength/\">sunlight in, infrared out</a>) tells you the color of an object's glow. This lesson answers the other question: <b>how much</b> energy does it give off? The answer climbs astonishingly fast with temperature."
+      },
+      {
+        "t": "key",
+        "html": "Each square meter of a surface at temperature $T$ (in kelvins) gives off $$E = \\sigma T^4, \\qquad \\sigma = 5.67 \\times 10^{-8}\\ \\text{W m}^{-2}\\,\\text{K}^{-4}$$ This is the <b>Stefan–Boltzmann law</b> for a perfect emitter (a \"blackbody\"). Double the kelvin temperature and the energy goes up $2^4 = 16$ times."
+      },
+      {
+        "t": "why",
+        "html": "Two effects multiply. A hotter surface sends out more light at every wavelength, and its peak moves to shorter wavelengths, where each bit of light carries more energy. Adding up the whole spectrum gives a fourth power. You can see it in a fire: embers that look only a little hotter than others glow far brighter. The ground, water and clouds are close to perfect emitters in the infrared, so $\\sigma T^4$ describes them well."
+      },
+      {
+        "t": "ex",
+        "title": "Earth's glow",
+        "q": "How much infrared does a square meter of ground at 15 °C give off?",
+        "steps": [
+          "Kelvins: $T = 15 + 273 = 288$ K.",
+          "$T^4 = 288^4 \\approx 6.88 \\times 10^{9}$ K⁴.",
+          "$E = 5.67 \\times 10^{-8} \\times 6.88 \\times 10^{9} \\approx 390$ W/m²: about as much as four bright 100-watt bulbs, from every square meter of ground, day and night."
+        ],
+        "a": "About 390 W/m²"
+      },
+      {
+        "t": "ex",
+        "title": "Twice as hot",
+        "q": "A hot plate at 600 K is compared with a cool plate at 300 K. How many times as much energy does each square meter of the hot plate give off?",
+        "steps": [
+          "The ratio is $(T_2/T_1)^4 = (600/300)^4 = 2^4$.",
+          "$2^4 = 16$. No need to compute either energy separately."
+        ],
+        "a": "16 times as much"
+      },
+      {
+        "t": "ex",
+        "title": "A warmer day",
+        "q": "A sidewalk warms from 10 °C to 20 °C. By what factor does its infrared glow grow?",
+        "steps": [
+          "Use kelvins: 283 K and 293 K. (Using Celsius would say \"twice as hot\", which is wrong.)",
+          "Ratio: $(293/283)^4 \\approx 1.035^4 \\approx 1.15$.",
+          "The glow grows about 15%, not 16 times."
+        ],
+        "a": "About 1.15 times"
+      },
+      {
+        "t": "mistake",
+        "html": "Expecting doubling the temperature to double the glow. The energy goes as $T^4$, so doubling the kelvin temperature multiplies it by 16, and tripling it by 81. A second trap is to double the Celsius temperature: 10 °C to 20 °C is only a 3.5% rise in kelvins. Check: always put kelvins into $T^4$."
+      },
+      {
+        "t": "viz",
+        "name": "es-energy",
+        "opts": {
+          "mode": "spectrum",
+          "temps": [
+            288,
+            330
+          ],
+          "wien": true
+        },
+        "cap": "The glow of a surface at 288 K and at 330 K. A rise of only 42 K (about 15%) makes the area under the curve, the total energy, about 72% bigger."
+      },
+      {
+        "t": "note",
+        "html": "The fourth power is why Earth's temperature is so steady. If Earth warms a little, it gives off a lot more infrared, which pulls it back. A 1% rise in kelvin temperature raises the glow by about 4%. This is the strongest of all climate feedbacks, and it is a stabilizing one."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, University Physics Volume 2, 1.6 Mechanisms of Heat Transfer (radiation)"
+      },
+      {
+        "name": "OpenStax, College Physics 2e, 14.7 Radiation"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-ESS2-4"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

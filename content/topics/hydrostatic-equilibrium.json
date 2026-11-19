@@ -1,0 +1,104 @@
+{
+  "id": "astrophys.hydrostatic-equilibrium",
+  "slug": "hydrostatic-equilibrium",
+  "course": "astrophys",
+  "courseTitle": "Astrophysics",
+  "unit": "stellar-structure",
+  "unitTitle": "How Stars Work",
+  "title": "Hydrostatic Equilibrium",
+  "short": "In a star, pressure balances gravity layer by layer: dP/dr = −Gm(r)ρ/r².",
+  "trouble": "Students think a star's gas is held up by its solid core.",
+  "prereqs": [
+    "mech.shell-theorem",
+    "phys2.pressure-depth"
+  ],
+  "xp": 3,
+  "viz": [
+    "ph-star"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A star is a ball of hot gas that neither collapses under its own weight nor flies apart. Every layer is in balance: the pressure underneath pushes up exactly as hard as gravity and the pressure above push down. You know this idea from <a href=\"/physics/physics-2/pressure-depth/\">pressure and depth</a> in a lake, $\\Delta P = \\rho g\\,\\Delta h$. In a star, $g$ changes with depth, and the <a href=\"/physics/mechanics/shell-theorem/\">shell theorem</a> tells us how."
+      },
+      {
+        "t": "why",
+        "html": "Take a thin slab of gas at radius $r$, with area $A$ and thickness $dr$. Its mass is $\\rho A\\,dr$. By the shell theorem, only the mass $m(r)$ inside radius $r$ pulls on it, as if all of that mass sat at the center: the weight is $Gm(r)\\rho A\\,dr/r^2$, pointing inward. The pressure below, $P(r)$, pushes out on the slab's lower face; the pressure above, $P(r + dr)$, pushes in on its upper face. Balance: $$\\big[P(r) - P(r + dr)\\big]A = \\frac{Gm(r)\\rho A\\,dr}{r^2}.$$ Divide by $A\\,dr$ and let $dr \\to 0$."
+      },
+      {
+        "t": "key",
+        "html": "<b>Hydrostatic equilibrium</b>: $$\\frac{dP}{dr} = -\\frac{Gm(r)\\,\\rho(r)}{r^2}.$$ Pressure must fall with radius, steeply where gravity and density are large. Hot gas pressure, not a solid core, holds a star up."
+      },
+      {
+        "t": "viz",
+        "name": "ph-star",
+        "opts": {
+          "mode": "balance"
+        },
+        "cap": "A thin layer of gas inside a star. The pressure from below is larger than the pressure from above by just enough to hold up the layer's weight."
+      },
+      {
+        "t": "h",
+        "text": "Integrating it"
+      },
+      {
+        "t": "p",
+        "html": "For a model star of uniform density, $m(r) = Mr^3/R^3$ and $\\rho = 3M/(4\\pi R^3)$, so $dP/dr = -\\dfrac{3GM^2}{4\\pi R^6}\\,r$. Integrating from the surface, where $P = 0$, inward gives $P(r) = P_c\\,(1 - r^2/R^2)$ with $$P_c = \\frac{3GM^2}{8\\pi R^4}.$$ Real stars are much denser at the center, so their central pressures are higher."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "The pressure gradient inside the Sun",
+        "q": "Halfway out in the Sun, $m(r) \\approx 0.97\\,M_\\odot$ and $\\rho \\approx 1300$ kg/m³. How fast does pressure fall with radius there?",
+        "steps": [
+          "$$g = \\frac{Gm}{r^2} = \\frac{(6.67 \\times 10^{-11})(1.93 \\times 10^{30})}{(3.48 \\times 10^{8})^2}$$",
+          "$g \\approx 1060$ m/s², about 110 times Earth's surface gravity.",
+          "$|dP/dr| = \\rho g = 1300 \\times 1060 \\approx 1.4 \\times 10^{6}$ Pa/m."
+        ],
+        "a": "About $1.4 \\times 10^{6}$ Pa per meter, roughly 14 atmospheres for each meter you go down."
+      },
+      {
+        "t": "ex",
+        "title": "A uniform Sun",
+        "q": "Estimate the Sun's central pressure as if its density were uniform.",
+        "steps": [
+          "$P_c = 3GM^2/(8\\pi R^4)$ with $M = 1.99 \\times 10^{30}$ kg and $R = 6.96 \\times 10^{8}$ m.",
+          "$$P_c = \\frac{3(6.67 \\times 10^{-11})(3.96 \\times 10^{60})}{8\\pi(2.35 \\times 10^{35})}$$",
+          "$\\approx 1.3 \\times 10^{14}$ Pa."
+        ],
+        "a": "About $10^{14}$ Pa, a billion atmospheres. Solar models, with a dense core, give about $2.5 \\times 10^{16}$ Pa."
+      },
+      {
+        "t": "ex",
+        "title": "Scaling",
+        "q": "Star B has twice the mass and twice the radius of star A, with the same structure. Compare their central pressures.",
+        "steps": [
+          "$P_c \\propto M^2/R^4$.",
+          "$(2)^2/(2)^4 = 4/16$."
+        ],
+        "a": "$P_{c,B} = \\tfrac14 P_{c,A}$: the bigger star is less squeezed in its middle."
+      },
+      {
+        "t": "mistake",
+        "html": "Picturing a star held up by a solid core, like a planet. The Sun is gas (plasma) all the way to the center, where the density is about 150 times water's and still a gas, because it is so hot. What holds every layer up is the pressure difference across it, which comes from hot, dense gas. Check the logic: if there were no pressure gradient, nothing would stop the layers from falling inward in a free-fall time of under an hour."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Astronomy 2e, section 16.3 (The Solar Interior: Theory)"
+      },
+      {
+        "name": "MIT OpenCourseWare 8.282J Introduction to Astronomy (Spring 2006)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

@@ -1,0 +1,119 @@
+{
+  "id": "chem.mole-concept",
+  "slug": "mole-concept",
+  "ladder": "chemistry",
+  "course": "chem",
+  "unit": "mole",
+  "title": "The Mole",
+  "short": "A mole is 6.022 × 10²³ particles, a count chosen so that a mole of atoms has a mass in grams equal to its atomic mass.",
+  "trouble": "Students think a mole of any substance has the same mass, or confuse a mole with a molecule.",
+  "prereqs": [
+    "chem.average-atomic-mass",
+    "g8.scientific-operations"
+  ],
+  "xp": 1,
+  "viz": [
+    "ch-convert"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Atoms are far too small to count one by one, so chemists count them by weighing, the way a bank counts coins by weighing a bag. The counting unit is the <b>mole</b>. It connects the atomic masses from <a href=\"/chemistry/chemistry/average-atomic-mass/\">Average Atomic Mass</a> to grams you can measure, and its numbers are written in <a href=\"/math/pre-algebra/scientific-operations/\">scientific notation</a>."
+      },
+      {
+        "t": "key",
+        "html": "One <b>mole</b> (mol) is $6.022 \\times 10^{23}$ particles (Avogadro's number, $N_A$), just as a dozen is 12. The number was chosen so that one mole of atoms has a mass in grams equal to the atomic mass in u: 1 mol of carbon atoms is 12.01 g, and 1 mol of iron atoms is 55.85 g."
+      },
+      {
+        "t": "why",
+        "html": "An atomic mass unit is tiny: $1\\ \\text{u} \\approx 1.66 \\times 10^{-24}\\ \\text{g}$. If you take $6.022 \\times 10^{23}$ atoms, each of mass $m$ u, the total is $m \\times 1.66 \\times 10^{-24} \\times 6.022 \\times 10^{23}\\ \\text{g} \\approx m\\ \\text{g}$, because those two numbers multiply to almost exactly 1. So the mole turns \"u per atom\" into \"grams per mole\" with the same number. Since 2019 the SI defines the mole by fixing $N_A$ at exactly $6.02214076 \\times 10^{23}$; problems here round it to 6.022."
+      },
+      {
+        "t": "viz",
+        "name": "ch-convert",
+        "opts": {
+          "start": {
+            "v": 2.5,
+            "unit": "mol",
+            "sub": "Cu"
+          },
+          "factors": [
+            {
+              "n": [
+                6.022e+23,
+                "atoms",
+                "Cu"
+              ],
+              "d": [
+                1,
+                "mol",
+                "Cu"
+              ]
+            }
+          ],
+          "target": "atoms Cu"
+        },
+        "cap": "Avogadro’s number as a conversion factor: moles cancel, leaving atoms."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Moles to atoms",
+        "q": "How many atoms are in $2.50\\ \\text{mol}$ of copper?",
+        "steps": [
+          "$2.50\\ \\text{mol} \\times 6.022 \\times 10^{23}\\ \\dfrac{\\text{atoms}}{\\text{mol}}$",
+          "$= 15.06 \\times 10^{23} = 1.51 \\times 10^{24}$ atoms"
+        ],
+        "a": "$1.51 \\times 10^{24}$ atoms"
+      },
+      {
+        "t": "ex",
+        "title": "Atoms to moles",
+        "q": "A sample contains $3.011 \\times 10^{23}$ molecules of water. How many moles is that?",
+        "steps": [
+          "$$\\dfrac{3.011 \\times 10^{23}}{6.022 \\times 10^{23}\\ \\text{per mol}} = 0.5000\\ \\text{mol}$$"
+        ],
+        "a": "$0.500\\ \\text{mol}$"
+      },
+      {
+        "t": "ex",
+        "title": "Atoms inside molecules",
+        "q": "How many moles of hydrogen atoms are in $3.0\\ \\text{mol}$ of $\\mathrm{H_2O}$?",
+        "steps": [
+          "Each $\\mathrm{H_2O}$ molecule has 2 H atoms, so each mole of water has 2 mol of H atoms.",
+          "$3.0 \\times 2 = 6.0\\ \\text{mol}$ of H atoms."
+        ],
+        "a": "$6.0\\ \\text{mol}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking a mole of any substance has the same mass, or confusing a mole with a molecule. A mole is a <b>count</b>: a mole of iron and a mole of aluminum have the same number of atoms but different masses (55.85 g and 26.98 g), just as a dozen bowling balls outweighs a dozen golf balls."
+      },
+      {
+        "t": "note",
+        "html": "How big is $6.022 \\times 10^{23}$? Counting one atom per second, a mole would take about $1.9 \\times 10^{16}$ years, more than a million times the age of the universe. Yet a mole of water is only 18 g, a little more than a tablespoon."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 3.1 Formula Mass and the Mole Concept"
+      },
+      {
+        "name": "NIST, CODATA Fundamental Physical Constants (the Avogadro constant, exact since 2019)"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-PS1-7 (mathematical representations of conservation of atoms and mass)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

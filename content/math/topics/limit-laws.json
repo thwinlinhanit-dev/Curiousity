@@ -1,0 +1,86 @@
+{
+  "id": "ra.limit-laws",
+  "slug": "limit-laws",
+  "ladder": "math",
+  "course": "ra",
+  "unit": "sequences",
+  "title": "Proving the Limit Laws",
+  "short": "If aₙ → a and bₙ → b, then aₙ + bₙ → a + b and aₙbₙ → ab; the proofs split ε between the two pieces and use that convergent sequences are bounded.",
+  "trouble": "Students use one N for both sequences without taking N = max(N₁, N₂), or forget to bound |aₙ| in the product proof.",
+  "prereqs": [
+    "ra.divergence"
+  ],
+  "xp": 3,
+  "viz": [],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/math/calculus-1/limit-laws/\">Calculus 1</a> you used the limit laws freely. Now we prove them from the definition, which shows how ε-proofs combine. You will need <a href=\"/math/real-analysis/divergence/\">boundedness</a> for the product."
+      },
+      {
+        "t": "key",
+        "html": "If $a_n \\to a$ and $b_n \\to b$, then $a_n + b_n \\to a + b$, $c\\,a_n \\to ca$, $a_n b_n \\to ab$, and $\\frac{a_n}{b_n} \\to \\frac{a}{b}$ when $b \\ne 0$. The proofs split $\\varepsilon$ between the pieces (\"$\\frac{\\varepsilon}{2}$ each\") and use $N = \\max(N_1, N_2)$ so that both estimates hold at once."
+      },
+      {
+        "t": "why",
+        "html": "<b>Sum.</b> Let $\\varepsilon > 0$. Choose $N_1$ with $|a_n - a| < \\frac{\\varepsilon}{2}$ for $n \\ge N_1$, and $N_2$ with $|b_n - b| < \\frac{\\varepsilon}{2}$ for $n \\ge N_2$. For $n \\ge N = \\max(N_1, N_2)$, the triangle inequality gives $|(a_n + b_n) - (a + b)| \\le |a_n - a| + |b_n - b| < \\varepsilon$. $\\blacksquare$ <b>Product.</b> Add and subtract $a_n b$: $$a_n b_n - ab = a_n(b_n - b) + b(a_n - a).$$ Since $(a_n)$ converges it is bounded, say $|a_n| \\le M$ with $M > 0$. Choose $N$ so that $|b_n - b| < \\frac{\\varepsilon}{2M}$ and $|a_n - a| < \\frac{\\varepsilon}{2|b| + 1}$ for $n \\ge N$. Then $|a_n b_n - ab| < M\\frac{\\varepsilon}{2M} + |b|\\frac{\\varepsilon}{2|b| + 1} < \\varepsilon$. $\\blacksquare$ (The $+1$ avoids dividing by $0$ when $b = 0$.)"
+      },
+      {
+        "t": "p",
+        "html": "<b>Quotient.</b> It is enough to show $\\frac{1}{b_n} \\to \\frac{1}{b}$, then use the product law. Since $b_n \\to b \\ne 0$, eventually $|b_n - b| < \\frac{|b|}{2}$, and then $|b_n| > \\frac{|b|}{2}$ by the reverse triangle inequality. So $\\left|\\frac{1}{b_n} - \\frac{1}{b}\\right| = \\frac{|b - b_n|}{|b_n||b|} < \\frac{2}{b^{2}}|b_n - b|$, which can be made smaller than any $\\varepsilon$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Splitting $\\varepsilon$ with numbers",
+        "q": "Suppose $|a_n - a| \\le \\frac{3}{n}$ and $|b_n - b| \\le \\frac{5}{n}$. For $\\varepsilon = 0.1$, find $N_1$, $N_2$ and $N$ as in the sum proof.",
+        "steps": [
+          "Each piece must be less than $\\frac{\\varepsilon}{2} = 0.05$.",
+          "$\\frac{3}{n} < 0.05$ means $n > 60$, so $N_1 = 61$; $\\frac{5}{n} < 0.05$ means $n > 100$, so $N_2 = 101$."
+        ],
+        "a": "$N_1 = 61$, $N_2 = 101$, $N = 101$."
+      },
+      {
+        "t": "ex",
+        "title": "Using the laws",
+        "q": "If $a_n \\to 3$ and $b_n \\to -2$, find $\\lim \\frac{a_n b_n - a_n^{2}}{b_n + 4}$.",
+        "steps": [
+          "The denominator tends to $2 \\ne 0$, so the quotient law applies.",
+          "The numerator tends to $3(-2) - 9 = -15$."
+        ],
+        "a": "$-\\frac{15}{2}$"
+      },
+      {
+        "t": "ex",
+        "title": "The step that protects a denominator",
+        "q": "Suppose $b_n \\to -4$. Explain why eventually $|b_n| > 2$, and bound $\\left|\\frac{1}{b_n} - \\left(-\\frac{1}{4}\\right)\\right|$ in terms of $|b_n + 4|$.",
+        "steps": [
+          "With $\\varepsilon = 2 = \\frac{|b|}{2}$ there is an $N$ with $|b_n + 4| < 2$ for $n \\ge N$. By the reverse triangle inequality, $|b_n| \\ge 4 - |b_n + 4| > 2$.",
+          "Then $\\left|\\frac{1}{b_n} + \\frac{1}{4}\\right| = \\frac{|b_n + 4|}{4|b_n|} < \\frac{|b_n + 4|}{8}$."
+        ],
+        "a": "For $n \\ge N$: $\\left|\\frac{1}{b_n} + \\frac{1}{4}\\right| < \\frac{1}{8}|b_n + 4|$, which goes to $0$."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Using one $N$ for two sequences.</b> \"Choose $N$ so that $|a_n - a| < \\frac{\\varepsilon}{2}$ and $|b_n - b| < \\frac{\\varepsilon}{2}$\" is fine only after saying why one $N$ serves both: take the larger of the two. In the product proof, the slip is forgetting to bound $|a_n|$: the factor $a_n$ changes with $n$, so \"$|a_n||b_n - b|$ is small\" needs $|a_n| \\le M$ first."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Jiří Lebl, Basic Analysis I: Introduction to Real Analysis, section 2.2 (facts about limits of sequences)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.100A Real Analysis, lecture notes on the algebra of limits"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

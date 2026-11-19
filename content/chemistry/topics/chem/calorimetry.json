@@ -1,0 +1,91 @@
+{
+  "id": "chem.calorimetry",
+  "slug": "calorimetry",
+  "ladder": "chemistry",
+  "course": "chem",
+  "unit": "energy",
+  "title": "Calorimetry",
+  "short": "In an insulated cup, the heat lost by the hot object equals the heat gained by the cold one.",
+  "trouble": "Students drop the minus sign in q lost = −q gained, or pair the metal's mass with water's specific heat.",
+  "prereqs": [
+    "chem.specific-heat",
+    "g8.variables-both-sides"
+  ],
+  "xp": 3,
+  "viz": [
+    "ch-calorimeter"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Put a hot object into cool water inside an insulated cup and wait. Energy is conserved, so what one loses, the other gains. With <a href=\"/chemistry/chemistry/specific-heat/\">q = mcΔT</a> for each and an equation with <a href=\"/math/pre-algebra/variables-both-sides/\">the unknown on both sides</a>, you can find a specific heat or a final temperature."
+      },
+      {
+        "t": "key",
+        "html": "In an insulated calorimeter no heat escapes, so $$q_{\\text{lost}} + q_{\\text{gained}} = 0, \\quad\\text{or}\\quad -q_{\\text{hot}} = q_{\\text{cold}}$$ The hot object's $q$ is negative (it loses heat) and the cold object's $q$ is positive."
+      },
+      {
+        "t": "why",
+        "html": "Energy cannot be created or destroyed. If the cup lets no heat in or out, every joule that leaves the hot metal must end up in the water. Each object follows its own $q = mc\\Delta T$, with its own mass, specific heat and temperature change, and both end at the same final temperature."
+      },
+      {
+        "t": "viz",
+        "name": "ch-calorimeter",
+        "opts": {
+          "mode": "cup",
+          "metal": "Fe",
+          "m1": 50,
+          "T1": 95,
+          "m2": 100,
+          "T2": 22
+        },
+        "cap": "A hot iron block in a cup of water. The bars show the heat lost by the iron and gained by the water: always equal in size and opposite in sign."
+      },
+      {
+        "t": "ex",
+        "title": "Finding a specific heat",
+        "q": "A $50.0\\ \\text{g}$ metal block at $95.0^\\circ\\text{C}$ is dropped into $100.0\\ \\text{g}$ of water at $22.0^\\circ\\text{C}$. Both end at $25.7^\\circ\\text{C}$. What is the metal's specific heat?",
+        "steps": [
+          "Water: $$q = 100.0 \\times 4.184 \\times (25.7 - 22.0) = 1{,}548\\ \\text{J}$$ gained.",
+          "Metal: $q = -1{,}548\\ \\text{J}$, with $\\Delta T = 25.7 - 95.0 = -69.3^\\circ\\text{C}$.",
+          "$$c = \\dfrac{q}{m\\Delta T} = \\dfrac{-1{,}548}{50.0 \\times (-69.3)} = 0.447\\ \\text{J/(g·°C)}$$ close to iron's 0.449."
+        ],
+        "a": "$0.447\\ \\text{J/(g·°C)}$: probably iron."
+      },
+      {
+        "t": "ex",
+        "title": "Finding the final temperature",
+        "q": "A $100.0\\ \\text{g}$ copper block ($c = 0.385$) at $90.0^\\circ\\text{C}$ goes into $200.0\\ \\text{g}$ of water at $20.0^\\circ\\text{C}$. What is the final temperature?",
+        "steps": [
+          "Heat lost = heat gained: $$-100.0(0.385)(T_f - 90.0) = 200.0(4.184)(T_f - 20.0)$$",
+          "Expand: $$3{,}465 - 38.5\\,T_f = 836.8\\,T_f - 16{,}736$$",
+          "Collect: $20{,}201 = 875.3\\,T_f$, so $T_f = 23.1^\\circ\\text{C}$."
+        ],
+        "a": "$23.1^\\circ\\text{C}$: the water's large heat capacity keeps it near where it started."
+      },
+      {
+        "t": "mistake",
+        "html": "Dropping the minus sign in $q_{\\text{lost}} = -q_{\\text{gained}}$, which leads to a negative specific heat or an impossible final temperature, or pairing the metal's mass with water's specific heat. Check: the final temperature must lie between the two starting temperatures, and every $q = mc\\Delta T$ must use one object's own $m$, $c$ and $\\Delta T$."
+      },
+      {
+        "t": "note",
+        "html": "Explore heat flowing to equilibrium in <a href=\"/science-lab/thermodynamics/zeroth-law/\">Temperature and the Zeroth Law</a>."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 5.2 Calorimetry"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-PS3-4"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

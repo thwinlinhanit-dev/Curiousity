@@ -1,0 +1,116 @@
+{
+  "id": "g5.coordinate-plane",
+  "slug": "coordinate-plane",
+  "ladder": "math",
+  "course": "g5",
+  "unit": "coordinate-plane",
+  "title": "Points on the Coordinate Plane",
+  "short": "Go across by x, then up by y.",
+  "trouble": "Children swap the coordinates, plotting (2, 5) at (5, 2).",
+  "prereqs": [
+    "g3.fractions-number-line"
+  ],
+  "xp": 1,
+  "viz": [
+    "geoboard"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You have placed <a href=\"/math/grade-3/fractions-number-line/\">numbers on a number line</a>. Put two number lines together, one across and one up, crossing at 0, and every point on a flat grid gets its own address. That is the <b>coordinate plane</b>."
+      },
+      {
+        "t": "key",
+        "html": "An ordered pair $(x, y)$ tells you how to reach a point from the origin $(0, 0)$: go $x$ units across along the x-axis, then $y$ units up. The order matters: $(2, 5)$ and $(5, 2)$ are different points."
+      },
+      {
+        "t": "why",
+        "html": "One number line can only describe positions along a line. A flat grid needs two directions, so a point needs two numbers. Everyone agrees to give the across number first and the up number second, so an ordered pair means the same point to everyone."
+      },
+      {
+        "t": "viz",
+        "name": "g5-grid",
+        "opts": {
+          "xmax": 8,
+          "ymax": 8,
+          "drag": [
+            0,
+            0
+          ],
+          "task": {
+            "x": 2,
+            "y": 5
+          }
+        },
+        "cap": "Drag the red point (or use the arrow keys) to $(2, 5)$. Press &ldquo;Show the path&rdquo; to see the trip: across first, then up."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Plot a point",
+        "q": "Plot $(4, 3)$.",
+        "steps": [
+          "Start at the origin $(0, 0)$.",
+          "The first number is 4: go 4 units right along the x-axis.",
+          "The second number is 3: go 3 units up. Mark the point."
+        ],
+        "a": "the point 4 across and 3 up"
+      },
+      {
+        "t": "ex",
+        "title": "Read a point",
+        "q": "A point is 6 units right of the origin and 1 unit up. What are its coordinates?",
+        "steps": [
+          "Across comes first: 6.",
+          "Up comes second: 1."
+        ],
+        "a": "$(6, 1)$"
+      },
+      {
+        "t": "viz",
+        "name": "g5-grid",
+        "opts": {
+          "xmax": 8,
+          "ymax": 8,
+          "points": [
+            {
+              "x": 2,
+              "y": 5,
+              "label": "A"
+            },
+            {
+              "x": 5,
+              "y": 2,
+              "label": "B",
+              "color": "orange"
+            }
+          ],
+          "coords": true,
+          "walk": true
+        },
+        "cap": "$A = (2, 5)$ and $B = (5, 2)$ use the same numbers in a different order, so they are different points."
+      },
+      {
+        "t": "mistake",
+        "html": "Swapping the coordinates and plotting $(2, 5)$ at $(5, 2)$. Remember &ldquo;across, then up,&rdquo; like walking along a hallway before taking the stairs. Check: the first number should match the x-axis below the point."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Prealgebra 2e, 11.1 Use the Rectangular Coordinate System"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 5.G.A.1: use a pair of perpendicular number lines to define a coordinate system"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

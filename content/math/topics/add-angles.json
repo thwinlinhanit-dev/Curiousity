@@ -1,0 +1,195 @@
+{
+  "id": "g4.add-angles",
+  "slug": "add-angles",
+  "ladder": "math",
+  "course": "g4",
+  "unit": "geometry",
+  "title": "Adding Angles",
+  "short": "Angles that fit together add; find a missing part.",
+  "trouble": "",
+  "prereqs": [
+    "g4.measure-angles"
+  ],
+  "xp": 2,
+  "viz": [
+    "angle"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You can <a href=\"/math/grade-4/measure-angles/\">measure an angle with a protractor</a>. When a ray splits an angle into two parts, the measures behave like lengths: the parts add up to the whole."
+      },
+      {
+        "t": "key",
+        "html": "If ray BC is inside $\\angle ABD$, then $\\angle ABC + \\angle CBD = \\angle ABD$. To find a missing part, subtract the known part from the whole. Remember the wholes you know: a right angle is $90^\\circ$ and a straight angle is $180^\\circ$."
+      },
+      {
+        "t": "why",
+        "html": "Angle measures count one-degree turns. Turning $35^\\circ$ and then $50^\\circ$ more in the same direction is $85^\\circ$ of turning in all, as long as the two angles sit side by side with no gap and no overlap."
+      },
+      {
+        "t": "viz",
+        "name": "g4-geo",
+        "opts": {
+          "w": 10,
+          "h": 5,
+          "grid": "none",
+          "label": "Angle ABD split by ray BC into a 35 degree part and a 50 degree part",
+          "items": [
+            {
+              "t": "ray",
+              "a": [
+                5,
+                0.9
+              ],
+              "dir": 0,
+              "len": 4.1,
+              "color": "ink",
+              "dots": false
+            },
+            {
+              "t": "ray",
+              "a": [
+                5,
+                0.9
+              ],
+              "dir": 35,
+              "len": 4.1,
+              "color": "ink",
+              "dots": false
+            },
+            {
+              "t": "ray",
+              "a": [
+                5,
+                0.9
+              ],
+              "dir": 85,
+              "len": 4.1,
+              "color": "ink",
+              "dots": false
+            },
+            {
+              "t": "angle",
+              "at": [
+                5,
+                0.9
+              ],
+              "a1": 0,
+              "a2": 35,
+              "r": 1.05,
+              "color": "red",
+              "label": "35°"
+            },
+            {
+              "t": "angle",
+              "at": [
+                5,
+                0.9
+              ],
+              "a1": 35,
+              "a2": 85,
+              "r": 1.45,
+              "color": "blue",
+              "label": "50°"
+            },
+            {
+              "t": "pt",
+              "at": [
+                5,
+                0.9
+              ],
+              "name": "B",
+              "pos": "s"
+            },
+            {
+              "t": "pt",
+              "at": [
+                8.6,
+                0.9
+              ],
+              "name": "A",
+              "pos": "se"
+            },
+            {
+              "t": "pt",
+              "at": [
+                7.95,
+                2.96
+              ],
+              "name": "C",
+              "pos": "ne"
+            },
+            {
+              "t": "pt",
+              "at": [
+                5.31,
+                4.49
+              ],
+              "name": "D",
+              "pos": "ne"
+            }
+          ]
+        },
+        "cap": "$\\angle ABC = 35^\\circ$ and $\\angle CBD = 50^\\circ$, so $\\angle ABD = 85^\\circ$."
+      },
+      {
+        "t": "viz",
+        "name": "angle",
+        "opts": {
+          "mode": "supp",
+          "deg": 65
+        },
+        "cap": "Two angles that make a straight line always add to $180^\\circ$. Drag the green ray and watch both change."
+      },
+      {
+        "t": "ex",
+        "title": "Add the parts",
+        "q": "$\\angle ABC = 35^\\circ$ and $\\angle CBD = 50^\\circ$. Find $\\angle ABD$.",
+        "steps": [
+          "The parts sit side by side, so add.",
+          "$35^\\circ + 50^\\circ = 85^\\circ$."
+        ],
+        "a": "$85^\\circ$"
+      },
+      {
+        "t": "ex",
+        "title": "A missing part of a right angle",
+        "q": "A right angle is split into two parts. One part is $28^\\circ$. What is the other?",
+        "steps": [
+          "The whole is $90^\\circ$.",
+          "$90 - 28 = 62$. Check: $28 + 62 = 90$."
+        ],
+        "a": "$62^\\circ$"
+      },
+      {
+        "t": "ex",
+        "title": "On a straight line",
+        "q": "Two angles make a straight line. One is $115^\\circ$. What is the other?",
+        "steps": [
+          "A straight angle is $180^\\circ$.",
+          "$180 - 115 = 65$."
+        ],
+        "a": "$65^\\circ$"
+      },
+      {
+        "t": "mistake",
+        "html": "Adding when you should subtract (or the other way around). Ask which angle is the whole: the whole is the biggest one, made of the others. Missing part = whole minus known part."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 4, 4.MD.C.7 (recognize angle measure as additive and solve addition and subtraction problems to find unknown angles)"
+      },
+      {
+        "name": "OpenStax Prealgebra 2e, section 9.3 Use Properties of Angles, Triangles, and the Pythagorean Theorem"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

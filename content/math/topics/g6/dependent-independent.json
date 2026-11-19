@@ -1,0 +1,124 @@
+{
+  "id": "g6.dependent-independent",
+  "slug": "dependent-independent",
+  "ladder": "math",
+  "course": "g6",
+  "unit": "equations",
+  "title": "Dependent and Independent Variables",
+  "short": "One quantity changes because of another; show it with tables, graphs and equations.",
+  "trouble": "Students put the dependent variable on the horizontal axis.",
+  "prereqs": [
+    "g6.write-solve-equations",
+    "g6.ratio-graphs"
+  ],
+  "xp": 2,
+  "viz": [
+    "ratiotable",
+    "geoboard"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Many quantities change together: the more hours you work, the more you earn. You have seen pairs like these in <a href=\"/math/grade-6/ratio-graphs/\">ratio graphs</a>, and you can now <a href=\"/math/grade-6/write-solve-equations/\">write equations</a> for them."
+      },
+      {
+        "t": "key",
+        "html": "The <b>independent variable</b> is the one that changes on its own or that we choose. The <b>dependent variable</b> changes because of it. An equation like $d = 50t$ gives the dependent variable ($d$) from the independent one ($t$). On a graph, the independent variable goes on the horizontal axis."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "fns": [
+            {
+              "f": "50x",
+              "from": 0,
+              "label": "d = 50t"
+            }
+          ],
+          "table": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "xmin": -0.5,
+          "xmax": 5,
+          "ymin": -20,
+          "ymax": 260,
+          "xlabel": "t",
+          "ylabel": "d",
+          "zoom": false,
+          "trace": true
+        },
+        "cap": "A car at 50 miles per hour: time $t$ (hours) across, distance $d$ (miles) up. Drag the point along the line."
+      },
+      {
+        "t": "why",
+        "html": "A table, a graph and an equation are three views of the same pairs. The table lists some pairs, the graph shows all of them as a line, and the equation is the rule that makes every pair. Putting the independent variable across the bottom lets you read the graph like a story: as time goes on (to the right), distance goes up."
+      },
+      {
+        "t": "table",
+        "head": [
+          "$t$ (hours)",
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "rows": [
+          [
+            "$d$ (miles)",
+            "0",
+            "50",
+            "100",
+            "150",
+            "200"
+          ]
+        ],
+        "cap": "Each hour adds 50 miles: $d = 50t$."
+      },
+      {
+        "t": "ex",
+        "title": "Which is which?",
+        "q": "A plant grows 3 cm each week. Let $w$ be the number of weeks and $g$ the growth in cm. Which variable is dependent? Write an equation.",
+        "steps": [
+          "The growth depends on how many weeks have passed, so $g$ is dependent and $w$ is independent.",
+          "Each week adds 3 cm: $g = 3w$."
+        ],
+        "a": "$g$ is dependent; $g = 3w$."
+      },
+      {
+        "t": "ex",
+        "title": "A starting amount",
+        "q": "A pool already has 50 gallons and fills at 20 gallons per minute. Write an equation for the gallons $G$ after $m$ minutes, and find $G$ when $m = 6$.",
+        "steps": [
+          "Start with 50 and add 20 for each minute: $G = 20m + 50$.",
+          "When $m = 6$: $G = 20(6) + 50 = 170$."
+        ],
+        "a": "$G = 20m + 50$; 170 gallons."
+      },
+      {
+        "t": "mistake",
+        "html": "Putting the dependent variable on the horizontal axis. Quick check: ask \"which one changes <i>because of</i> the other?\" That one is dependent and goes up the side. Time is almost always independent."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Prealgebra 2e, section 11.2 Graphing Linear Equations"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 6.EE.C.9: dependent and independent variables in tables, graphs and equations"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

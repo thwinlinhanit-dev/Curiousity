@@ -1,0 +1,117 @@
+{
+  "id": "g7.proportional-graphs",
+  "slug": "proportional-graphs",
+  "ladder": "math",
+  "course": "g7",
+  "unit": "proportional",
+  "title": "Proportional Graphs",
+  "short": "A proportional graph is a straight line through the origin.",
+  "trouble": "Students accept any straight line as proportional, even one that misses (0, 0).",
+  "prereqs": [
+    "g7.proportional-tables",
+    "g6.ratio-graphs"
+  ],
+  "xp": 1,
+  "viz": [
+    "graph",
+    "ratiotable"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In Grade 6 you <a href=\"/math/grade-6/ratio-graphs/\">graphed ratio tables</a> and saw the points line up toward $(0, 0)$. That picture is the test for proportional relationships, and it has two parts."
+      },
+      {
+        "t": "key",
+        "html": "A graph shows a proportional relationship when it is a <b>straight line</b> (or points on one) <b>and</b> it passes through the origin, $(0, 0)$."
+      },
+      {
+        "t": "why",
+        "html": "A proportional relationship is $y = kx$. Put in $x = 0$: $y = k \\cdot 0 = 0$, so $(0, 0)$ is always on the graph. And each step of 1 to the right adds the same amount, $k$, to $y$, so the graph never bends. A line like $y = 2x + 3$ is straight, but it starts at $(0, 3)$, and the extra 3 breaks the \"same ratio\" rule."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "fns": [
+            {
+              "f": "k*x",
+              "color": "blue"
+            },
+            {
+              "f": "0.5*x+3",
+              "color": "red",
+              "dash": true
+            }
+          ],
+          "params": {
+            "k": [
+              0.25,
+              3,
+              1.5,
+              0.25
+            ]
+          },
+          "xmin": -1,
+          "xmax": 10,
+          "ymin": -1,
+          "ymax": 14,
+          "zoom": false
+        },
+        "cap": "The blue line $f(x) = kx$ always passes through the origin; move the slider to change $k$. The dashed red line is straight but starts at $(0, 3)$, so it is not proportional."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Points through the origin",
+        "q": "A graph shows the points $(0, 0)$, $(2, 3)$, $(4, 6)$ and $(6, 9)$ on one straight line. Is it proportional?",
+        "steps": [
+          "The points line up, and the line passes through $(0, 0)$.",
+          "Check the ratios: $\\frac{3}{2} = \\frac{6}{4} = \\frac{9}{6} = 1.5$. They match, so $y = 1.5x$."
+        ],
+        "a": "Yes, proportional, with $k = 1.5$"
+      },
+      {
+        "t": "ex",
+        "title": "Straight, but misses the origin",
+        "q": "A straight line passes through $(0, 2)$ and $(3, 8)$. Is it proportional?",
+        "steps": [
+          "At $x = 0$ the line is at $y = 2$, not $0$.",
+          "So it is not proportional. Check the ratio at $(3, 8)$: $\\frac{8}{3}$. At a third point, $(6, 14)$, it is $\\frac{14}{6} = \\frac{7}{3}$. The ratios differ."
+        ],
+        "a": "No"
+      },
+      {
+        "t": "ex",
+        "title": "Through the origin, but curved",
+        "q": "A square's area $A$ is graphed against its side $s$: the points $(0, 0)$, $(1, 1)$, $(2, 4)$, $(3, 9)$. Is area proportional to side length?",
+        "steps": [
+          "The graph starts at the origin, but it curves upward.",
+          "$\\frac{1}{1} = 1$, $\\frac{4}{2} = 2$, $\\frac{9}{3} = 3$: the ratio grows, so it is not proportional."
+        ],
+        "a": "No"
+      },
+      {
+        "t": "mistake",
+        "html": "Accepting any straight line. A proportional graph must pass through $(0, 0)$, because zero of one quantity goes with zero of the other. Check by looking where the line crosses the $y$-axis: if it is not at $0$, the relationship is not proportional."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Prealgebra 2e, Section 11.2 Graphing Linear Equations"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 7.RP.A.2a"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

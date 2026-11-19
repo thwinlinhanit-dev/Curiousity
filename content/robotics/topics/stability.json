@@ -1,0 +1,92 @@
+{
+  "id": "rbctrl.stability",
+  "slug": "stability",
+  "ladder": "robotics",
+  "course": "rbctrl",
+  "unit": "response",
+  "title": "Stability and Tuning",
+  "short": "Too much gain overshoots and can oscillate or diverge; tune P first, then D, then a little I.",
+  "trouble": "Students keep raising the gain to go faster and are surprised when the robot starts to shake.",
+  "prereqs": [
+    "rbctrl.pid-step",
+    "rbctrl.first-order-response"
+  ],
+  "xp": 3,
+  "viz": [
+    "rb-pid"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Turn up the gain to go faster, and at some point the robot starts to shake, then to swing wildly. Feedback can make things worse."
+      },
+      {
+        "t": "key",
+        "html": "A system is <b>stable</b> if its error dies out. Too much gain or too much delay makes it <b>overshoot</b>, then <b>oscillate</b>, and finally <b>diverge</b>. A common hand-tuning order: raise $K_p$ until it oscillates, back off; add $K_d$ to damp; add a little $K_i$ last for the leftover error."
+      },
+      {
+        "t": "viz",
+        "name": "rb-pid",
+        "opts": {
+          "mode": "pid",
+          "kp": 8,
+          "ki": 0,
+          "kd": 0
+        },
+        "cap": "Start with a large $K_p$ and watch the overshoot. Add $K_d$ to calm it."
+      },
+      {
+        "t": "why",
+        "html": "Each correction takes time to show up in the measurement. A big correction based on old news overshoots, and the next correction overshoots back. A simple model shows it: if each step corrects $K$ times the error, the new error is $(1 - K)$ times the old. That shrinks only if $0 < K < 2$."
+      },
+      {
+        "t": "ex",
+        "title": "Does it settle?",
+        "q": "Each step: new error $= (1 - K) \\times$ old. With $K = 1.5$ and starting error 8?",
+        "steps": [
+          "$1 - 1.5 = -0.5$.",
+          "Errors: 8, −4, 2, −1, 0.5…"
+        ],
+        "a": "Yes: it flips sign each step but shrinks."
+      },
+      {
+        "t": "ex",
+        "title": "And with K = 2.5?",
+        "q": "Same start.",
+        "steps": [
+          "$1 - 2.5 = -1.5$.",
+          "Errors: 8, −12, 18, −27…"
+        ],
+        "a": "No: it grows. Unstable."
+      },
+      {
+        "t": "mistake",
+        "html": "Raising the gain to go faster and being surprised when the robot shakes. Faster response and calm response pull against each other."
+      },
+      {
+        "t": "note",
+        "html": "<div class=\"rb-safe\"><b>Safety while tuning.</b> Tune a new controller with the robot on a stand or the arm unloaded, at low power, with the power switch in reach. An unstable loop can swing hard.</div>"
+      },
+      {
+        "t": "note",
+        "html": "The <a href=\"/science-lab/book-cart/\">Book Cart</a> in the Science Lab balances a chain of books on a moving cart, a classic hard control problem."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Karl J. Åström and Richard M. Murray, Feedback Systems: An Introduction for Scientists and Engineers, 2nd ed. (Princeton University Press), free online edition",
+        "url": "https://www.cds.caltech.edu/~murray/amwiki/"
+      },
+      {
+        "name": "MIT OpenCourseWare, 2.12 Introduction to Robotics (Fall 2005)",
+        "url": "https://ocw.mit.edu/courses/2-12-introduction-to-robotics-fall-2005/"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

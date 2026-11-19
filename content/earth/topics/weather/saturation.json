@@ -1,0 +1,136 @@
+{
+  "id": "weather.saturation",
+  "slug": "saturation",
+  "ladder": "earth",
+  "course": "weather",
+  "unit": "water-vapor",
+  "title": "Water Vapor and Saturation",
+  "short": "Air is saturated when vapor condenses as fast as water evaporates; the saturation amount climbs steeply with temperature.",
+  "trouble": "Students picture air as a sponge that \"holds\" water; saturation depends on temperature, not on the air, and would happen even with no air at all.",
+  "prereqs": [
+    "earthsci.water-cycle",
+    "chem.temperature-scales"
+  ],
+  "xp": 2,
+  "viz": [
+    "es-humidity"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In the <a href=\"/earth-and-space/earth-science/water-cycle/\">water cycle</a>, water evaporates, travels as invisible vapor and condenses into clouds. This unit measures that vapor. Meteorologists count it by the pressure the vapor molecules add to the air, the <b>vapor pressure</b> $e$, in hectopascals. Temperatures here are in Celsius (see <a href=\"/chemistry/chemistry/temperature-scales/\">temperature scales</a>)."
+      },
+      {
+        "t": "key",
+        "html": "Air is <b>saturated</b> when water evaporates and condenses at the same rate, so the amount of vapor stops changing. The vapor pressure at saturation, $e_s$, depends only on the <b>temperature</b>, and it climbs steeply: it roughly doubles for every 10 °C of warming (about 6 to 7% per degree)."
+      },
+      {
+        "t": "why",
+        "html": "Picture the surface of a puddle. Water molecules jiggle, and the fastest ones break free into the air: evaporation. Meanwhile vapor molecules flying around hit the surface and stick: condensation. Evaporation depends on how warm the water is; condensation depends on how many vapor molecules there are. When the two rates match, the vapor stops increasing: saturation. Notice what is missing: the nitrogen and oxygen of the air play no part. A sealed jar of water with all the air pumped out reaches the same saturation vapor pressure. Warmer water sends molecules off faster, so it takes more vapor to balance them."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Temperature",
+          "Saturation vapor pressure"
+        ],
+        "rows": [
+          [
+            "−10 °C",
+            "2.9 hPa"
+          ],
+          [
+            "0 °C",
+            "6.1 hPa"
+          ],
+          [
+            "5 °C",
+            "8.7 hPa"
+          ],
+          [
+            "10 °C",
+            "12.3 hPa"
+          ],
+          [
+            "15 °C",
+            "17.0 hPa"
+          ],
+          [
+            "20 °C",
+            "23.4 hPa"
+          ],
+          [
+            "25 °C",
+            "31.7 hPa"
+          ],
+          [
+            "30 °C",
+            "42.5 hPa"
+          ],
+          [
+            "35 °C",
+            "56.3 hPa"
+          ]
+        ],
+        "cap": "Saturation vapor pressure over liquid water (from the Magnus formula, rounded). Each 10 °C step roughly doubles it near freezing, a little less in hot air."
+      },
+      {
+        "t": "viz",
+        "name": "es-humidity",
+        "opts": {
+          "T": 25,
+          "Td": 10
+        },
+        "cap": "The blue curve is saturation. Drag the air sample: anywhere below the curve the air can take more vapor; on the curve it is saturated; vapor beyond the curve condenses."
+      },
+      {
+        "t": "ex",
+        "title": "Room for more vapor?",
+        "q": "Air at 20 °C has a vapor pressure of 15.0 hPa. Is it saturated? How much more vapor pressure could it reach?",
+        "steps": [
+          "From the table, saturation at 20 °C is 23.4 hPa.",
+          "15.0 hPa is below that, so the air is not saturated; more water can evaporate into it.",
+          "It could gain $23.4 - 15.0 = 8.4$ hPa before evaporation and condensation balance."
+        ],
+        "a": "Not saturated; 8.4 hPa more"
+      },
+      {
+        "t": "ex",
+        "title": "Cooling past saturation",
+        "q": "Air at 25 °C has a vapor pressure of 23.4 hPa. Overnight it cools to 15 °C. What happens to the vapor?",
+        "steps": [
+          "At 20 °C the saturation pressure is 23.4 hPa, so the air becomes saturated when it cools to 20 °C.",
+          "At 15 °C saturation is only 17.0 hPa, so the vapor pressure can't stay at 23.4.",
+          "About $23.4 - 17.0 = 6.4$ hPa worth of vapor condenses into dew or fog."
+        ],
+        "a": "It saturates at 20 °C; below that, vapor condenses"
+      },
+      {
+        "t": "mistake",
+        "html": "Picturing air as a sponge that \"holds\" water, with warm air holding more. Saturation depends on the temperature of the water and vapor, not on the air; it would happen with no air at all. Saying \"warm air can hold more water\" gives the right numbers, but the cause is the temperature, not the air. Check: in a vacuum jar at 20 °C, water still evaporates until the vapor pressure reaches 23.4 hPa."
+      },
+      {
+        "t": "note",
+        "html": "Another way to count vapor is the mass of vapor in each kilogram of air. At sea level, saturated air holds about 3.8 g/kg at 0 °C, 7.6 g/kg at 10 °C, 14.7 g/kg at 20 °C and 27 g/kg at 30 °C: the same steep climb."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e, 13.6 Humidity, Evaporation, and Boiling"
+      },
+      {
+        "name": "NOAA National Weather Service, JetStream online school for weather: Humidity"
+      },
+      {
+        "name": "Bohren and Albrecht, Atmospheric Thermodynamics (1998), chapter 5, on saturation and the \"air holds water\" picture"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

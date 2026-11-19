@@ -1,0 +1,86 @@
+{
+  "id": "physsci.ohms-law",
+  "slug": "ohms-law",
+  "ladder": "physics",
+  "course": "physsci",
+  "unit": "electricity",
+  "title": "Ohm's Law",
+  "short": "Voltage equals current times resistance: V = IR.",
+  "trouble": "Students think a resistor's resistance changes when the current through it changes.",
+  "prereqs": [
+    "physsci.circuits-intro",
+    "g6.one-step-multiply-divide"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-circuit"
+  ],
+  "figureArchetype": "FieldFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Push harder and more <a href=\"/physics/physical-science/current-voltage/\">current</a> flows; put something in the way and less flows. The \"something in the way\" is <b>resistance</b>. A bulb filament or a resistor resists the flow, turning electrical energy into heat and light. Solving the law is a <a href=\"/math/grade-6/one-step-multiply-divide/\">one-step equation</a>, in any <a href=\"/physics/physical-science/circuits-intro/\">complete circuit</a>."
+      },
+      {
+        "t": "key",
+        "html": "<b>Ohm's law:</b> $$\\role{voltage}{V} = \\role{current}{I}\\,\\role{resistance}{R}$$ Voltage (V) = current (A) × resistance in ohms (Ω). So $I = \\dfrac{V}{R}$ and $R = \\dfrac{V}{I}$."
+      },
+      {
+        "t": "why",
+        "html": "For many materials, doubling the voltage doubles the current: current and voltage are proportional. The resistance is the constant ratio $\\dfrac{V}{I}$, a property of the resistor itself, set by its material, length and thickness. A thin, long wire has more resistance than a short, thick one, just as a narrow pipe lets less water through."
+      },
+      {
+        "t": "viz",
+        "name": "ph-circuit",
+        "opts": {
+          "circuit": "V(12) series(A1, R1:4)",
+          "show": [
+            "meters"
+          ],
+          "edit": true
+        },
+        "cap": "A 12 V battery and a 4 Ω resistor: the ammeter reads 3 A. Click the resistor to change its resistance and watch the current change."
+      },
+      {
+        "t": "ex",
+        "title": "Find the current",
+        "q": "A 12 V battery is connected to a 4 Ω resistor. Find the current.",
+        "steps": [
+          "$I = \\dfrac{V}{R} = \\dfrac{12\\,\\mathrm{V}}{4\\,\\Omega} = 3\\,\\mathrm{A}$."
+        ],
+        "a": "3 A"
+      },
+      {
+        "t": "ex",
+        "title": "Find the resistance",
+        "q": "A lamp draws 0.5 A from a 6 V supply. What is its resistance?",
+        "steps": [
+          "$R = \\dfrac{V}{I} = \\dfrac{6\\,\\mathrm{V}}{0.5\\,\\mathrm{A}} = 12\\,\\Omega$."
+        ],
+        "a": "12 Ω"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking a resistor's resistance changes when the current through it changes. For an ordinary resistor, if you double the voltage, the current doubles too, and $R = \\dfrac{V}{I}$ stays the same. Resistance depends on the resistor, not on what you connect it to. (A bulb filament is an exception in one way: its resistance rises as it heats up.)"
+      },
+      {
+        "t": "p",
+        "html": "Measure currents and voltages yourself in the <a href=\"/science-lab/circuits/\">Circuit Builder</a>."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e, 20.2 Ohm's Law: Resistance and Simple Circuits"
+      },
+      {
+        "name": "OpenStax, College Physics 2e, 20.3 Resistance and Resistivity"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

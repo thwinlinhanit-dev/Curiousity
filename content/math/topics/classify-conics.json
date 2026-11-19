@@ -1,0 +1,110 @@
+{
+  "id": "pre.classify-conics",
+  "slug": "classify-conics",
+  "ladder": "math",
+  "course": "pre",
+  "unit": "conics",
+  "title": "Identifying Conics from Equations",
+  "short": "Complete the square to name and graph any conic.",
+  "trouble": "",
+  "prereqs": [
+    "pre.hyperbolas",
+    "pre.parabolas-conics"
+  ],
+  "xp": 3,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Circles, ellipses, parabolas and hyperbolas all have equations of the form $Ax^2 + Cy^2 + Dx + Ey + F = 0$ once you multiply everything out. Given such an equation, you can name the conic at a glance, then <a href=\"/math/geometry/circle-completing-square/\">complete the square</a> to find its center or vertex and match a standard form from <a href=\"/math/precalculus/parabolas-conics/\">parabolas</a>, <a href=\"/math/precalculus/ellipses/\">ellipses</a> or <a href=\"/math/precalculus/hyperbolas/\">hyperbolas</a>."
+      },
+      {
+        "t": "key",
+        "html": "For $Ax^2 + Cy^2 + Dx + Ey + F = 0$ (a genuine conic, not a degenerate one): $A = C$: <b>circle</b>; $A$ and $C$ the same sign: <b>ellipse</b>; opposite signs: <b>hyperbola</b>; only one squared term: <b>parabola</b>. If there is an $xy$ term, use $B^2 - 4AC$: negative for an ellipse, zero for a parabola, positive for a hyperbola."
+      },
+      {
+        "t": "why",
+        "html": "Completing the square only shifts the curve; it never changes the coefficients of $x^2$ and $y^2$. So those coefficients already tell you which standard form you will reach: two squares added (ellipse or circle), two squares subtracted (hyperbola), or one square (parabola). The $xy$ term rotates the curve, and $B^2 - 4AC$ is the combination that rotation does not change."
+      },
+      {
+        "t": "viz",
+        "name": "pre-conic",
+        "opts": {
+          "types": [
+            "ellipse",
+            "hyperbola",
+            "parabola"
+          ],
+          "type": "ellipse",
+          "a": 4,
+          "b": 2,
+          "s": 0.8
+        },
+        "cap": "Switch between the three conics and compare how each is defined by distances."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "An ellipse",
+        "q": "Identify $4x^2 + 9y^2 - 16x + 18y - 11 = 0$ and find its center.",
+        "steps": [
+          "$A = 4$ and $C = 9$ have the same sign and are different: an ellipse.",
+          "Group and factor: $4(x^2 - 4x) + 9(y^2 + 2y) = 11$.",
+          "Complete the squares, adding $4 \\cdot 4 = 16$ and $9 \\cdot 1 = 9$ to both sides: $4(x - 2)^2 + 9(y + 1)^2 = 36$.",
+          "Divide by $36$: $\\frac{(x - 2)^2}{9} + \\frac{(y + 1)^2}{4} = 1$."
+        ],
+        "a": "Ellipse with center $(2, -1)$"
+      },
+      {
+        "t": "ex",
+        "title": "A hyperbola",
+        "q": "Identify $x^2 - y^2 + 4x + 2y - 1 = 0$ and find its center.",
+        "steps": [
+          "$A = 1$, $C = -1$: opposite signs, a hyperbola.",
+          "$$(x^2 + 4x + 4) - (y^2 - 2y + 1) = 1 + 4 - 1.$$",
+          "$(x + 2)^2 - (y - 1)^2 = 4$."
+        ],
+        "a": "Hyperbola with center $(-2, 1)$, opening left and right"
+      },
+      {
+        "t": "ex",
+        "title": "A parabola",
+        "q": "Identify $y^2 - 4y - 8x + 20 = 0$ and find its vertex.",
+        "steps": [
+          "Only $y$ is squared: a parabola.",
+          "$y^2 - 4y + 4 = 8x - 20 + 4$, so $(y - 2)^2 = 8x - 16 = 8(x - 2)$."
+        ],
+        "a": "Parabola with vertex $(2, 2)$, opening right"
+      },
+      {
+        "t": "mistake",
+        "html": "Completing the square inside a factored group but adding the wrong amount to the other side. In $4(x^2 - 4x + 4)$ the $+4$ inside the parentheses is really $+16$, because it is multiplied by $4$. Add $16$ to the other side, not $4$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Precalculus 2e, Section 10.1 The Ellipse"
+      },
+      {
+        "name": "OpenStax Precalculus 2e, Section 10.2 The Hyperbola"
+      },
+      {
+        "name": "OpenStax Precalculus 2e, Section 10.3 The Parabola"
+      },
+      {
+        "name": "OpenStax Precalculus 2e, Section 10.4 Rotation of Axes"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,100 @@
+{
+  "id": "calc3.double-integral-applications",
+  "slug": "double-integral-applications",
+  "ladder": "math",
+  "course": "calc3",
+  "unit": "multiple-integrals",
+  "title": "Mass, Center of Mass and Probability",
+  "short": "Integrate density over a region.",
+  "trouble": "",
+  "prereqs": [
+    "calc3.general-regions"
+  ],
+  "xp": 3,
+  "viz": [],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A double integral adds up \"something per unit area\" over a region. If that something is density, you get mass; weight it by position and you get the balance point. You did this in <a href=\"/math/calculus-2/center-of-mass/\">one dimension</a> with thin rods; now the objects are thin plates (laminas), and the same integrals measure probability for two random variables."
+      },
+      {
+        "t": "key",
+        "html": "For a plate on $D$ with density $\\rho(x, y)$ (mass per unit area):\n  $$m = \\iint_D \\rho\\,dA, \\qquad \\bar{x} = \\frac{1}{m}\\iint_D x\\rho\\,dA, \\qquad \\bar{y} = \\frac{1}{m}\\iint_D y\\rho\\,dA.$$\n  Moments of inertia: $I_x = \\iint_D y^2\\rho\\,dA$, $I_y = \\iint_D x^2\\rho\\,dA$. For a joint density $f(x, y)$, $P((X, Y) \\in E) = \\iint_E f\\,dA$, and $\\iint f\\,dA = 1$ over all outcomes."
+      },
+      {
+        "t": "why",
+        "html": "Chop the plate into small pieces. A piece of area $\\Delta A$ near $(x, y)$ has mass about $\\rho(x, y)\\,\\Delta A$; adding the pieces gives the mass. The balance point is a weighted average of positions, each piece weighted by its mass, just as the average of numbers weights each by how often it occurs: $\\bar{x} = \\frac{\\sum x\\,\\Delta m}{\\sum \\Delta m}$. Probability works the same way, with \"probability per unit area\" in place of mass per unit area."
+      },
+      {
+        "t": "viz",
+        "name": "calc3-region",
+        "opts": {
+          "I": {
+            "lo": "0",
+            "hi": "1 - x",
+            "a": 0,
+            "b": 1,
+            "loT": "y = 0",
+            "hiT": "y = 1 − x"
+          },
+          "xmin": -0.3,
+          "xmax": 1.4,
+          "ymin": -0.3,
+          "ymax": 1.25
+        },
+        "cap": "The triangle of the first example, sliced vertically: each slice runs from $y = 0$ to $y = 1 - x$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Mass and center of mass",
+        "q": "A plate covers the triangle with vertices $(0, 0)$, $(1, 0)$, $(0, 1)$, with density $\\rho = y$. Find its mass and center of mass.",
+        "steps": [
+          "$$m = \\int_0^1\\int_0^{1 - x} y\\,dy\\,dx = \\int_0^1 \\frac{(1 - x)^2}{2}dx = \\frac{1}{6}.$$",
+          "$\\iint x\\rho\\,dA = \\int_0^1 x\\frac{(1 - x)^2}{2}dx = \\frac{1}{24}$, so $\\bar{x} = \\frac{1/24}{1/6} = \\frac{1}{4}$.",
+          "$$\\iint y\\rho\\,dA = \\int_0^1\\int_0^{1 - x} y^2\\,dy\\,dx = \\int_0^1 \\frac{(1 - x)^3}{3}dx = \\frac{1}{12},$$ so $\\bar{y} = \\frac{1}{2}$.",
+          "The plate is heavier near the top, so $\\bar{y} = \\frac{1}{2}$ is above the centroid of the triangle ($\\frac{1}{3}$)."
+        ],
+        "a": "$m = \\frac{1}{6}$, center $\\left(\\frac{1}{4}, \\frac{1}{2}\\right)$"
+      },
+      {
+        "t": "ex",
+        "title": "A probability",
+        "q": "Waiting times $X$ and $Y$ (minutes) have joint density $f(x, y) = 6e^{-2x - 3y}$ for $x, y \\ge 0$. Find $P(X \\le 1, Y \\le 1)$.",
+        "steps": [
+          "$$P = \\int_0^1\\int_0^1 6e^{-2x}e^{-3y}\\,dy\\,dx = \\left(\\int_0^1 2e^{-2x}dx\\right)\\left(\\int_0^1 3e^{-3y}dy\\right).$$",
+          "$= \\left(1 - e^{-2}\\right)\\left(1 - e^{-3}\\right) \\approx 0.82$."
+        ],
+        "a": "$\\left(1 - e^{-2}\\right)\\left(1 - e^{-3}\\right) \\approx 0.82$"
+      },
+      {
+        "t": "ex",
+        "title": "Making a density",
+        "q": "For which $k$ is $f(x, y) = k(x + y)$ a joint density on the unit square?",
+        "steps": [
+          "Total probability: $$\\int_0^1\\int_0^1 (x + y)\\,dy\\,dx = \\int_0^1 \\left(x + \\frac{1}{2}\\right)dx = 1.$$",
+          "So $k \\cdot 1 = 1$ and $k = 1$."
+        ],
+        "a": "$k = 1$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Dividing by the area instead of the mass.</b> With a variable density, $\\bar{x} = \\frac{\\iint x\\rho\\,dA}{\\iint \\rho\\,dA}$; dividing by the area gives the geometric centroid only when $\\rho$ is constant. Check: the center of mass must move toward the heavy part of the plate, as $\\bar{y}$ did in the example."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 3, 5.6 Calculating Centers of Mass and Moments of Inertia"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

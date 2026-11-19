@@ -1,0 +1,210 @@
+{
+  "id": "usgeo.regions",
+  "slug": "regions",
+  "ladder": "geog",
+  "course": "usgeo",
+  "unit": "the-us",
+  "title": "Regions of the United States",
+  "short": "The U.S. Census Bureau groups the states into four regions: the Northeast, the Midwest, the South and the West.",
+  "trouble": "Students expect one official way to divide the country. Many books use five regions (adding a Southeast and a Southwest); this ladder uses the Census Bureau's four regions and nine divisions.",
+  "prereqs": [
+    "usgeo.fifty-states"
+  ],
+  "xp": 1,
+  "viz": [
+    "gg-map",
+    "gg-sort"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Fifty states are a lot to learn at once. Geographers make it easier by grouping states that are near each other into <b>regions</b>."
+      },
+      {
+        "t": "key",
+        "html": "The U.S. Census Bureau divides the states into four regions: the <b>Northeast</b>, the <b>Midwest</b>, the <b>South</b> and the <b>West</b>. Inside them are nine smaller <b>divisions</b>, such as New England and the Pacific."
+      },
+      {
+        "t": "viz",
+        "name": "gg-map",
+        "opts": {
+          "map": "us",
+          "cats": {
+            "CT": 0,
+            "ME": 0,
+            "MA": 0,
+            "NH": 0,
+            "RI": 0,
+            "VT": 0,
+            "NJ": 0,
+            "NY": 0,
+            "PA": 0,
+            "IL": 1,
+            "IN": 1,
+            "MI": 1,
+            "OH": 1,
+            "WI": 1,
+            "IA": 1,
+            "KS": 1,
+            "MN": 1,
+            "MO": 1,
+            "NE": 1,
+            "ND": 1,
+            "SD": 1,
+            "DE": 2,
+            "FL": 2,
+            "GA": 2,
+            "MD": 2,
+            "NC": 2,
+            "SC": 2,
+            "VA": 2,
+            "WV": 2,
+            "DC": 2,
+            "AL": 2,
+            "KY": 2,
+            "MS": 2,
+            "TN": 2,
+            "AR": 2,
+            "LA": 2,
+            "OK": 2,
+            "TX": 2,
+            "AZ": 3,
+            "CO": 3,
+            "ID": 3,
+            "MT": 3,
+            "NV": 3,
+            "NM": 3,
+            "UT": 3,
+            "WY": 3,
+            "AK": 3,
+            "CA": 3,
+            "HI": 3,
+            "OR": 3,
+            "WA": 3
+          },
+          "catNames": [
+            "Northeast",
+            "Midwest",
+            "South",
+            "West"
+          ],
+          "legend": "Census regions"
+        },
+        "cap": "The Census Bureau's four regions."
+      },
+      {
+        "t": "why",
+        "html": "Why group states? States near each other often share land, weather, history and ways of making a living. Grouping them lets you learn a few at a time and compare one part of the country with another. The Census Bureau uses its regions to report facts about people, so many maps and charts use them too."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Region",
+          "Divisions",
+          "States"
+        ],
+        "rows": [
+          [
+            "Northeast",
+            "New England; Middle Atlantic",
+            "9"
+          ],
+          [
+            "Midwest",
+            "East North Central; West North Central",
+            "12"
+          ],
+          [
+            "South",
+            "South Atlantic; East South Central; West South Central",
+            "16 and D.C."
+          ],
+          [
+            "West",
+            "Mountain; Pacific",
+            "13"
+          ]
+        ],
+        "cap": "9 + 12 + 16 + 13 = 50 states."
+      },
+      {
+        "t": "ex",
+        "title": "Which region?",
+        "q": "Is Maryland in the Northeast or the South?",
+        "steps": [
+          "Maryland is just south of Pennsylvania, on Chesapeake Bay.",
+          "The Census Bureau puts it in the South Atlantic division.",
+          "So, by the Census Bureau, Maryland is in the South."
+        ],
+        "a": "The South."
+      },
+      {
+        "t": "mistake",
+        "html": "Students expect one official way to divide the country. There isn't one. Many textbooks use five regions, adding a Southeast and a Southwest, and some put Maryland or Delaware in the Northeast. This ladder uses the Census Bureau's four regions and nine divisions. Delaware, Maryland, West Virginia, Kentucky, Oklahoma and Texas surprise people: all are in the South."
+      },
+      {
+        "t": "viz",
+        "name": "gg-sort",
+        "opts": {
+          "bins": [
+            "Northeast",
+            "Midwest",
+            "South",
+            "West"
+          ],
+          "cards": [
+            {
+              "text": "Delaware",
+              "bin": 2
+            },
+            {
+              "text": "Pennsylvania",
+              "bin": 0
+            },
+            {
+              "text": "Missouri",
+              "bin": 1
+            },
+            {
+              "text": "Texas",
+              "bin": 2
+            },
+            {
+              "text": "Montana",
+              "bin": 3
+            },
+            {
+              "text": "Ohio",
+              "bin": 1
+            },
+            {
+              "text": "West Virginia",
+              "bin": 2
+            },
+            {
+              "text": "New Jersey",
+              "bin": 0
+            }
+          ],
+          "reveal": true
+        },
+        "cap": "Sort the tricky states into their Census regions."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "U.S. Census Bureau, Census Regions and Divisions of the United States (list of states by region and division)",
+        "url": "https://www2.census.gov/geo/docs/maps-data/maps/reg_div.txt"
+      },
+      {
+        "name": "Natural Earth (public domain map data): admin-1 states, rivers, lakes and physical regions, drawn by the Geography Ladder's map kit"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

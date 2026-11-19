@@ -1,0 +1,95 @@
+{
+  "id": "g6.volume-fractional-edges",
+  "slug": "volume-fractional-edges",
+  "ladder": "math",
+  "course": "g6",
+  "unit": "geometry",
+  "title": "Volume with Fractional Edge Lengths",
+  "short": "Pack a prism with small cubes to see that V = lwh still works.",
+  "trouble": "",
+  "prereqs": [
+    "g5.volume-of-prism",
+    "g5.multiply-fractions"
+  ],
+  "xp": 2,
+  "viz": [
+    "volume"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You found the volume of a box by counting <a href=\"/math/grade-5/volume-of-prism/\">layers of unit cubes</a>: $V = \\ell wh$. When the edges are fractions, the cubes do not fit exactly, but smaller cubes do."
+      },
+      {
+        "t": "key",
+        "html": "$V = \\ell \\times w \\times h$ works for fraction edge lengths too: a box $2\\frac{1}{2}$ by 1 by $1\\frac{1}{2}$ has volume $\\frac{5}{2} \\times 1 \\times \\frac{3}{2} = \\frac{15}{4} = 3\\frac{3}{4}$ cubic units."
+      },
+      {
+        "t": "viz",
+        "name": "volume",
+        "opts": {
+          "l": 5,
+          "w": 2,
+          "h": 3,
+          "unit": "1/2",
+          "max": 6
+        },
+        "cap": "A box built from cubes with $\\frac{1}{2}$-unit edges: 5 by 2 by 3 small cubes. Drag to turn it."
+      },
+      {
+        "t": "why",
+        "html": "Fill the box with cubes whose edges are $\\frac{1}{2}$ unit. Eight of them make one unit cube (2 by 2 by 2), so each is $\\frac{1}{8}$ of a cubic unit. Along the edges fit $5$, $2$ and $3$ small cubes, so $5 \\times 2 \\times 3 = 30$ small cubes fill the box: $30 \\times \\frac{1}{8} = \\frac{30}{8} = 3\\frac{3}{4}$. Multiplying the edges, using <a href=\"/math/grade-5/multiply-fractions/\">fraction multiplication</a>, gives the same number."
+      },
+      {
+        "t": "ex",
+        "title": "Multiply the edges",
+        "q": "Find the volume of a box $2\\frac{1}{2}$ ft by 1 ft by $1\\frac{1}{2}$ ft.",
+        "steps": [
+          "Write mixed numbers as fractions: $\\frac{5}{2}$, $1$, $\\frac{3}{2}$.",
+          "$\\frac{5}{2} \\times 1 \\times \\frac{3}{2} = \\frac{15}{4}$.",
+          "$\\frac{15}{4} = 3\\frac{3}{4}$."
+        ],
+        "a": "$3\\frac{3}{4}$ cubic feet"
+      },
+      {
+        "t": "ex",
+        "title": "Count small cubes",
+        "q": "How many cubes with $\\frac{1}{2}$-inch edges fill a box 3 in by 2 in by $1\\frac{1}{2}$ in?",
+        "steps": [
+          "Along each edge: $3 \\times 2 = 6$, $2 \\times 2 = 4$, $1\\frac{1}{2} \\times 2 = 3$.",
+          "$6 \\times 4 \\times 3 = 72$ small cubes.",
+          "Check: $72 \\times \\frac{1}{8} = 9$, and $3 \\times 2 \\times 1\\frac{1}{2} = 9$ cubic inches."
+        ],
+        "a": "72 cubes"
+      },
+      {
+        "t": "ex",
+        "title": "A cube",
+        "q": "Find the volume of a cube with edges $\\frac{3}{2}$ m.",
+        "steps": [
+          "$\\frac{3}{2} \\times \\frac{3}{2} \\times \\frac{3}{2} = \\frac{27}{8}$."
+        ],
+        "a": "$\\frac{27}{8} = 3\\frac{3}{8}$ cubic meters"
+      },
+      {
+        "t": "mistake",
+        "html": "Multiplying mixed numbers piece by piece: $2\\frac{1}{2} \\times 1\\frac{1}{2}$ is not $2 \\times 1$ plus $\\frac{1}{2} \\times \\frac{1}{2}$. Quick check: change mixed numbers to fractions first, and estimate. $2\\frac{1}{2} \\times 1\\frac{1}{2}$ is between $2 \\times 1 = 2$ and $3 \\times 2 = 6$; the true value is $3\\frac{3}{4}$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Prealgebra 2e, section 9.6 Solve Geometry Applications: Volume and Surface Area"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 6.G.A.2: volume with fractional edge lengths"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,161 @@
+{
+  "id": "trad.square-inferences",
+  "slug": "square-inferences",
+  "ladder": "logic",
+  "course": "trad",
+  "unit": "opposition",
+  "title": "Inferences on the Square",
+  "short": "Given the truth value of one corner, work out each other corner as true, false or undetermined.",
+  "trouble": "Learners force a value when the right answer is \"undetermined\", especially for the corners linked only by subalternation or subcontrariety.",
+  "prereqs": [
+    "trad.subalternation"
+  ],
+  "xp": 3,
+  "viz": [
+    "lg-square"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Now put the four relations of the <a href=\"/logic/traditional-logic/subalternation/\">square</a> to work. Given that one corner is true or false, you can work out each of the other three as true, false or <b>undetermined</b>."
+      },
+      {
+        "t": "key",
+        "html": "Start with the contradictory: it always gets the opposite value. Then use the contraries (not both true), subcontraries (not both false) and subalterns (truth down, falsity up) from both the given corner and its contradictory. Whatever is still unsettled is undetermined."
+      },
+      {
+        "t": "why",
+        "html": "Four of the eight starting cases settle every corner: A true, E true, I false and O false. Each is a strong claim (all, none, not even one, not even one is not), and it pins down the whole square. The other four, A false, E false, I true and O true, are weak claims: they fit the mixed case where some S are P and some are not, and also one extreme case, so two corners stay undetermined."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Given",
+          "A",
+          "E",
+          "I",
+          "O"
+        ],
+        "rows": [
+          [
+            "A true",
+            "T",
+            "F",
+            "T",
+            "F"
+          ],
+          [
+            "E true",
+            "F",
+            "T",
+            "F",
+            "T"
+          ],
+          [
+            "I true",
+            "?",
+            "F",
+            "T",
+            "?"
+          ],
+          [
+            "O true",
+            "F",
+            "?",
+            "?",
+            "T"
+          ],
+          [
+            "A false",
+            "F",
+            "?",
+            "?",
+            "T"
+          ],
+          [
+            "E false",
+            "?",
+            "F",
+            "T",
+            "?"
+          ],
+          [
+            "I false",
+            "F",
+            "T",
+            "F",
+            "T"
+          ],
+          [
+            "O false",
+            "T",
+            "F",
+            "T",
+            "F"
+          ]
+        ],
+        "cap": "The traditional square: T true, F false, ? undetermined."
+      },
+      {
+        "t": "viz",
+        "name": "lg-square",
+        "opts": {
+          "s": "climbers",
+          "p": "hikers",
+          "given": {
+            "O": false
+          },
+          "mode": "fill"
+        },
+        "cap": "O is false. Tap each empty pill to set T, F or ?, then Check."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A weak starting point",
+        "q": "\"All climbers are hikers\" is false. Find E, I and O.",
+        "steps": [
+          "O is the contradictory of A, so O is true.",
+          "E: A is false, and contraries can both be false, so A says nothing about E; O (true) is the subaltern of E, and truth does not flow up. E is undetermined.",
+          "I: falsity does not flow down from A; O is true, and subcontraries can both be true. I is undetermined."
+        ],
+        "a": "E ?, I ?, O true"
+      },
+      {
+        "t": "ex",
+        "title": "A strong starting point",
+        "q": "\"Some dancers are golfers\" is false. Find A, E and O.",
+        "steps": [
+          "E is the contradictory of I: true.",
+          "Falsity flows up from I to A: A is false.",
+          "I and O cannot both be false, so O is true (also, truth flows down from E)."
+        ],
+        "a": "A false, E true, O true"
+      },
+      {
+        "t": "mistake",
+        "html": "Forcing a value when the honest answer is \"undetermined\", especially for corners linked only by subalternation or subcontrariety. Check by building a world: if one situation makes the corner true and another makes it false, while the given value holds in both, it is undetermined."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Patrick J. Hurley, A Concise Introduction to Logic, 4.5 The Traditional Square of Opposition"
+      },
+      {
+        "name": "Aristotle, On Interpretation 7"
+      },
+      {
+        "name": "Stanford Encyclopedia of Philosophy, \"The Traditional Square of Opposition\""
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

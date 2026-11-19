@@ -1,0 +1,106 @@
+{
+  "id": "chem.titration",
+  "slug": "titration",
+  "ladder": "chemistry",
+  "course": "chem",
+  "unit": "acids-bases",
+  "title": "Titration",
+  "short": "Add base drop by drop until it exactly uses up the acid, then work out the acid's concentration.",
+  "trouble": "Students use M₁V₁ = M₂V₂ for an acid such as H₂SO₄ that gives two H⁺, ignoring the 1 : 2 mole ratio.",
+  "prereqs": [
+    "chem.neutralization",
+    "chem.molarity",
+    "chem.mole-ratios"
+  ],
+  "xp": 3,
+  "viz": [
+    "ch-titration"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/chemistry/chemistry/neutralization/\">Neutralization</a> becomes a measuring tool when one of the solutions has a known <a href=\"/chemistry/chemistry/molarity/\">Molarity</a>. A titration counts the moles of an unknown acid by finding exactly how much base it takes, using a <a href=\"/chemistry/chemistry/mole-ratios/\">mole ratio</a>."
+      },
+      {
+        "t": "key",
+        "html": "In a titration, base of known molarity is added from a buret until it has exactly used up the acid: the <b>equivalence point</b>, shown by an indicator's color change. Then moles of base $= M_b V_b$, the mole ratio gives moles of acid, and $M_a = \\text{moles of acid} / V_a$."
+      },
+      {
+        "t": "why",
+        "html": "Molarity times volume counts moles, so reading a buret is a way to count particles. At the equivalence point, the moles of $\\mathrm{OH}^{-}$ added match the moles of $\\mathrm{H}^{+}$ the acid can give. For an acid with one $\\mathrm{H}^{+}$ that means equal moles; for $\\mathrm{H}_{2}\\mathrm{SO}_{4}$, with two, the base needed is twice the moles of acid."
+      },
+      {
+        "t": "viz",
+        "name": "ch-titration",
+        "opts": {
+          "acid": {
+            "type": "strong",
+            "C": 0.1,
+            "V": 25
+          },
+          "base": {
+            "C": 0.1
+          },
+          "vol": 12.5,
+          "ind": "phenolphthalein"
+        },
+        "cap": "A titration curve. The pH rises slowly, then jumps steeply at the equivalence point, where the indicator changes color. Drag to add base."
+      },
+      {
+        "t": "ex",
+        "title": "Finding a concentration",
+        "q": "A $25.0\\ \\text{mL}$ sample of HCl needs $18.6\\ \\text{mL}$ of $0.100\\ \\text{M}$ NaOH to reach the endpoint. What is the molarity of the acid?",
+        "steps": [
+          "Moles of NaOH: $0.100 \\times 0.0186\\ \\text{L} = 1.86 \\times 10^{-3}\\ \\text{mol}$.",
+          "HCl and NaOH react 1 : 1, so moles of HCl $= 1.86 \\times 10^{-3}$.",
+          "$$M = \\dfrac{1.86 \\times 10^{-3}\\ \\text{mol}}{0.0250\\ \\text{L}} = 0.0744\\ \\text{M}$$"
+        ],
+        "a": "$0.0744\\ \\text{M}$."
+      },
+      {
+        "t": "ex",
+        "title": "An acid with two protons",
+        "q": "$20.0\\ \\text{mL}$ of $\\mathrm{H}_{2}\\mathrm{SO}_{4}$ needs $24.0\\ \\text{mL}$ of $0.150\\ \\text{M}$ NaOH. What is the molarity of the acid?",
+        "steps": [
+          "Moles of NaOH: $0.150 \\times 0.0240 = 3.60 \\times 10^{-3}\\ \\text{mol}$.",
+          "$$\\mathrm{H}_{2}\\mathrm{SO}_{4} + 2\\mathrm{NaOH} \\to \\mathrm{Na}_{2}\\mathrm{SO}_{4} + 2\\mathrm{H}_{2}\\mathrm{O}$$ so moles of acid $= 3.60 \\times 10^{-3} \\div 2 = 1.80 \\times 10^{-3}$.",
+          "$M = 1.80 \\times 10^{-3} \\div 0.0200 = 0.0900\\ \\text{M}$."
+        ],
+        "a": "$0.0900\\ \\text{M}$."
+      },
+      {
+        "t": "ex",
+        "title": "How much base?",
+        "q": "What volume of $0.100\\ \\text{M}$ NaOH reaches the equivalence point with $25.0\\ \\text{mL}$ of $0.0800\\ \\text{M}$ $\\mathrm{H}_{2}\\mathrm{SO}_{4}$?",
+        "steps": [
+          "Moles of acid: $0.0800 \\times 0.0250 = 2.00 \\times 10^{-3}\\ \\text{mol}$; NaOH needed: $4.00 \\times 10^{-3}\\ \\text{mol}$.",
+          "Volume: $$4.00 \\times 10^{-3} \\div 0.100 = 0.0400\\ \\text{L} = 40.0\\ \\text{mL}$$"
+        ],
+        "a": "$40.0\\ \\text{mL}$."
+      },
+      {
+        "t": "mistake",
+        "html": "Using $M_1V_1 = M_2V_2$ for an acid such as $\\mathrm{H}_{2}\\mathrm{SO}_{4}$ that gives two $\\mathrm{H}^{+}$. That shortcut assumes a 1 : 1 ratio, so it gives twice the true acid concentration here. Always go through moles and the mole ratio from the balanced equation."
+      },
+      {
+        "t": "note",
+        "html": "For a weak acid titrated with a strong base, the equivalence point lies above pH 7; <a href=\"/chemistry/general-chemistry-2/weak-titration-curves/\">Weak Acid–Strong Base Titration Curves</a> explains why. Titrate drop by drop in <a href=\"/science-lab/chem-lab/\">Mixing Lab</a>."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 14.7 Acid-Base Titrations"
+      },
+      {
+        "name": "OpenStax Chemistry 2e, 4.5 Quantitative Chemical Analysis"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

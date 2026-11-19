@@ -1,0 +1,108 @@
+{
+  "id": "la.cramers-rule",
+  "slug": "cramers-rule",
+  "ladder": "math",
+  "course": "la",
+  "unit": "determinants",
+  "title": "Cramer's Rule and the Adjugate",
+  "short": "Solve small systems and invert with determinants.",
+  "trouble": "",
+  "prereqs": [
+    "la.determinant-properties",
+    "la.matrix-inverse"
+  ],
+  "xp": 3,
+  "viz": [],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Determinants give a formula for each unknown of a square system and for each entry of an <a href=\"/math/linear-algebra/matrix-inverse/\">inverse</a>. These formulas are rarely the fastest way to compute, but they show exactly how the answer depends on the data, which matters in theory and in hand calculations with symbols."
+      },
+      {
+        "t": "p",
+        "html": "For an $n \\times n$ invertible $A$ and a vector $\\mathbf{b}$, let $A_i(\\mathbf{b})$ be $A$ with column $i$ replaced by $\\mathbf{b}$."
+      },
+      {
+        "t": "key",
+        "html": "<b>Cramer's rule.</b> The unique solution of $A\\mathbf{x} = \\mathbf{b}$ has $x_i = \\dfrac{\\det A_i(\\mathbf{b})}{\\det A}$. <b>Adjugate formula.</b> $A^{-1} = \\dfrac{1}{\\det A}\\operatorname{adj} A$, where $\\operatorname{adj} A$ is the <b>transpose</b> of the matrix of cofactors: its $(i, j)$ entry is $C_{ji}$."
+      },
+      {
+        "t": "why",
+        "html": "Let $I_i(\\mathbf{x})$ be the identity with column $i$ replaced by $\\mathbf{x}$. Expanding along row $i$ shows $\\det I_i(\\mathbf{x}) = x_i$. Now $A\\,I_i(\\mathbf{x})$ has columns $A\\mathbf{e}_1, \\dots, A\\mathbf{x}, \\dots, A\\mathbf{e}_n$, which are the columns of $A$ except that column $i$ is $A\\mathbf{x} = \\mathbf{b}$. So $A\\,I_i(\\mathbf{x}) = A_i(\\mathbf{b})$. Take determinants with the <a href=\"/math/linear-algebra/determinant-properties/\">product rule</a>: $\\det A \\cdot x_i = \\det A_i(\\mathbf{b})$. Divide by $\\det A$. Applying this to $A\\mathbf{x} = \\mathbf{e}_j$ (column $j$ of $A^{-1}$) gives the adjugate formula."
+      },
+      {
+        "t": "ex",
+        "title": "Cramer for a 2 × 2 system",
+        "q": "Solve $3x - 2y = 4$, $5x + y = 11$.",
+        "steps": [
+          "$\\det A = \\begin{vmatrix} 3 & -2 \\\\ 5 & 1 \\end{vmatrix} = 3 + 10 = 13$.",
+          "$\\det A_1(\\mathbf{b})$ $= \\begin{vmatrix} 4 & -2 \\\\ 11 & 1 \\end{vmatrix}$ $= 4 + 22$ $= 26$, so $x = \\frac{26}{13} = 2$.",
+          "$\\det A_2(\\mathbf{b})$ $= \\begin{vmatrix} 3 & 4 \\\\ 5 & 11 \\end{vmatrix}$ $= 33 - 20$ $= 13$, so $y = \\frac{13}{13} = 1$.",
+          "Check: $3(2) - 2(1) = 4$ ✓ and $5(2) + 1 = 11$ ✓."
+        ],
+        "a": "$(x, y) = (2, 1)$"
+      },
+      {
+        "t": "ex",
+        "title": "One entry of an inverse",
+        "q": "For $A = \\begin{bmatrix} 1 & 2 & 0 \\\\ 0 & 1 & 3 \\\\ 2 & 0 & 1 \\end{bmatrix}$, find the entry of $A^{-1}$ in row 1, column 3.",
+        "steps": [
+          "$\\det A$ $= 1\\begin{vmatrix} 1 & 3 \\\\ 0 & 1 \\end{vmatrix} - 2\\begin{vmatrix} 0 & 3 \\\\ 2 & 1 \\end{vmatrix} + 0$ $= 1 - 2(-6)$ $= 13$.",
+          "Entry $(1, 3)$ of $\\operatorname{adj} A$ is the cofactor $C_{31}$ (indices swapped): $C_{31} = (+1)\\begin{vmatrix} 2 & 0 \\\\ 1 & 3 \\end{vmatrix} = 6$.",
+          "So $(A^{-1})_{13} = \\frac{6}{13}$."
+        ],
+        "a": "$\\frac{6}{13}$"
+      },
+      {
+        "t": "p",
+        "html": "For a $2 \\times 2$ matrix the adjugate is the familiar swap-and-negate: $\\operatorname{adj}\\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}$ $= \\begin{bmatrix} d & -b \\\\ -c & a \\end{bmatrix}$, which is where the $2 \\times 2$ inverse formula comes from."
+      },
+      {
+        "t": "mistake",
+        "html": "Using $C_{ij}$ instead of $C_{ji}$ in position $(i, j)$: the adjugate is the <b>transpose</b> of the cofactor matrix. Check: multiply $A$ by your adjugate; you should get $(\\det A)I$."
+      },
+      {
+        "t": "viz",
+        "name": "linesystem",
+        "opts": {
+          "lines": [
+            "3x - 2y = 4",
+            "5x + y = 11"
+          ],
+          "probe": [
+            2,
+            1
+          ],
+          "xmin": -3,
+          "xmax": 6,
+          "ymin": -4,
+          "ymax": 6
+        },
+        "cap": "The system from the first example: the lines cross at $(2, 1)$, the point Cramer's rule found."
+      },
+      {
+        "t": "p",
+        "html": "Cramer's rule also explains how sensitive a solution can be. Every unknown is a ratio with $\\det A$ in the denominator. When $\\det A$ is tiny compared with the entries, small changes in $\\mathbf{b}$ can cause big swings in $\\mathbf{x}$: in the picture, the two lines are nearly parallel, and nudging one of them slides the crossing point far along the other."
+      },
+      {
+        "t": "note",
+        "html": "For an $n \\times n$ system, Cramer's rule needs $n + 1$ determinants. Row reduction is far cheaper for anything beyond small systems, so use Cramer for theory, $2 \\times 2$ cases and systems with letters in them. One theoretical payoff: every entry of $A^{-1}$ is a polynomial in the entries of $A$ divided by $\\det A$, so the inverse changes smoothly as long as $\\det A$ stays away from $0$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Lay, Lay and McDonald, Linear Algebra and Its Applications, §3.3 Cramer's Rule, Volume, and Linear Transformations"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.06 Linear Algebra (Gilbert Strang, Spring 2010), Lecture 20: Cramer's Rule, Inverse Matrix, and Volume"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

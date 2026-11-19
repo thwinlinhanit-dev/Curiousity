@@ -1,0 +1,116 @@
+{
+  "id": "de.growth-cooling",
+  "slug": "growth-cooling",
+  "ladder": "math",
+  "course": "de",
+  "unit": "first-order-models",
+  "title": "Growth, Decay and Newton's Law of Cooling",
+  "short": "Rate proportional to amount, or to the temperature difference.",
+  "trouble": "Students forget the surrounding temperature and model the temperature itself as decaying to 0.",
+  "prereqs": [
+    "de.linear-first-order",
+    "alg2.exponential-log-models"
+  ],
+  "xp": 2,
+  "viz": [
+    "slopefield"
+  ],
+  "figureArchetype": "FieldFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "When a quantity changes at a rate proportional to its size, $A' = kA$, the solution is $A = A_0e^{kt}$, the <a href=\"/math/algebra-2/exponential-log-models/\">exponential model</a> you already know. Newton's law of cooling is the same idea with one change: the rate is proportional to the <i>difference</i> between an object's temperature and its surroundings."
+      },
+      {
+        "t": "key",
+        "html": "<b>Growth and decay:</b> $A' = kA$ gives $A = A_0e^{kt}$; doubling time or half-life $= \\frac{\\ln 2}{|k|}$.<br><b>Newton's law of cooling:</b> $T' = -k(T - T_s)$ with $k > 0$ gives $$T(t) = T_s + (T_0 - T_s)e^{-kt}.$$ The temperature approaches the surrounding temperature $T_s$, not 0."
+      },
+      {
+        "t": "why",
+        "html": "Let $D = T - T_s$, the gap to room temperature. Since $T_s$ is constant, $D' = T' = -kD$: the gap decays exponentially, $D = D_0e^{-kt}$. Exponential decay means equal time steps multiply the gap by the same factor, so you can often use a ratio from the data instead of computing $k$. At $T = T_s$ the rate is 0: the room temperature is the equilibrium."
+      },
+      {
+        "t": "p",
+        "html": "Where do the half-life and doubling-time formulas come from? Set $A_0e^{kt} = 2A_0$ and take logarithms: $kt = \\ln 2$, so the doubling time is $\\frac{\\ln 2}{k}$, the same no matter when you start counting. For decay ($k < 0$) the same step with $\\frac{1}{2}$ gives the half-life $\\frac{\\ln 2}{|k|}$. In cooling problems you rarely need $k$ itself: two temperature readings tell you the factor by which the gap shrinks over a known time, and that factor repeats."
+      },
+      {
+        "t": "ex",
+        "title": "Half-life",
+        "q": "A sample of 160 mg decays with a half-life of 8 years. How much remains after 24 years, and what is $k$?",
+        "steps": [
+          "24 years is 3 half-lives: $160 \\cdot \\left(\\frac{1}{2}\\right)^{3} = 20$.",
+          "$e^{-8k} = \\frac{1}{2}$ gives $k = \\frac{\\ln 2}{8} \\approx 0.0866$ per year."
+        ],
+        "a": "20 mg; $k \\approx 0.0866$ per year"
+      },
+      {
+        "t": "ex",
+        "title": "Cooling coffee",
+        "q": "Coffee at 90°C sits in a 20°C room. After 10 minutes it is 60°C. What is it after 20 minutes?",
+        "steps": [
+          "The gap starts at 70 and is 40 after 10 minutes: a factor $\\frac{40}{70} = \\frac{4}{7}$ per 10 minutes.",
+          "After 20 minutes the gap is $70\\left(\\frac{4}{7}\\right)^{2} = \\frac{160}{7} \\approx 22.9$.",
+          "$T = 20 + 22.9$."
+        ],
+        "a": "about 42.9°C"
+      },
+      {
+        "t": "ex",
+        "title": "When will it reach a temperature?",
+        "q": "For the same coffee, when is it 30°C?",
+        "steps": [
+          "The gap must shrink from 70 to 10: $70\\left(\\frac{4}{7}\\right)^{t/10} = 10$.",
+          "$\\frac{t}{10}\\ln\\frac{4}{7} = \\ln\\frac{1}{7}$, so $t = 10\\cdot\\frac{\\ln 7}{\\ln(7/4)}$."
+        ],
+        "a": "$t \\approx 34.8$ minutes"
+      },
+      {
+        "t": "mistake",
+        "html": "Writing $T' = -kT$ forgets the room: it predicts the coffee cools toward 0°C. The rate must be zero when $T = T_s$, so the model needs $T - T_s$. A quick check: plug $T = T_s$ into your equation; you should get $T' = 0$. Also note that $T_s$ may be larger than $T_0$: a cold drink warms toward room temperature by the same law."
+      },
+      {
+        "t": "viz",
+        "name": "slopefield",
+        "opts": {
+          "f": "-0.3*(y - 20)",
+          "point": [
+            0,
+            90
+          ],
+          "curves": [
+            [
+              0,
+              5
+            ],
+            [
+              0,
+              50
+            ]
+          ],
+          "xmin": 0,
+          "xmax": 15,
+          "ymin": 0,
+          "ymax": 100
+        },
+        "cap": "The direction field of $T' = -0.3(T - 20)$ ($t$ in minutes across, temperature up). Every solution, hot or cold, flattens out at the room temperature 20°C."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 1, 6.8 Exponential Growth and Decay"
+      },
+      {
+        "name": "Paul's Online Math Notes, Differential Equations: Modeling with First Order Differential Equations"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.03SC Differential Equations (Fall 2011), Unit I: First Order Differential Equations"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

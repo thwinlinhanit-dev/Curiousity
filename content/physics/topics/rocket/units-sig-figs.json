@@ -1,0 +1,78 @@
+{
+  "id": "rocket.units-sig-figs",
+  "slug": "units-sig-figs",
+  "ladder": "physics",
+  "course": "rocket",
+  "unit": "tools",
+  "title": "Units and Significant Figures",
+  "short": "Change feet to meters and miles to feet with conversion factors, and keep only as many digits as the measurement deserves.",
+  "trouble": "Students flip a conversion factor upside down, or copy every calculator digit into the answer.",
+  "prereqs": [
+    "phys1.dimensional-analysis",
+    "alg1.units-quantities"
+  ],
+  "xp": 2,
+  "viz": [
+    "rocket-units"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "note",
+        "html": "<b>From the story.</b> Homer Hickam's account of the Rocket Boys gives heights in feet and miles: their best rocket, flown in May 1960, rose nearly four miles. A NASA engineer would want that in meters, and wouldn't trust a digit more than the measurement could give. (More in <a href=\"/october-sky/\">October Sky</a>.)"
+      },
+      {
+        "t": "p",
+        "html": "Every measurement is a number <em>and</em> a unit. To change units, multiply by a fraction equal to 1, such as $\\dfrac{0.3048\\ \\text{m}}{1\\ \\text{ft}}$, written so the old unit cancels. You can chain as many of these as you need: miles to feet to meters."
+      },
+      {
+        "t": "key",
+        "html": "Conversion factors: $1\\ \\text{ft} = 0.3048\\ \\text{m}$ and $1\\ \\text{in} = 2.54\\ \\text{cm}$ (both exact), $1\\ \\text{mi} = 5{,}280\\ \\text{ft}$. Put the unit you want to remove on the bottom.<br>Significant figures: count from the first nonzero digit; trailing zeros count only with a decimal point. A product or quotient keeps as many significant figures as its least precise factor."
+      },
+      {
+        "t": "viz",
+        "name": "rocket-units",
+        "cap": "The same height read two ways: feet on the left, meters on the right. The number changes; the height doesn't."
+      },
+      {
+        "t": "ex",
+        "title": "Four miles high",
+        "q": "Express $4\\ \\text{mi}$ in meters.",
+        "steps": [
+          "$4\\ \\text{mi} \\times \\dfrac{5{,}280\\ \\text{ft}}{1\\ \\text{mi}} = 21{,}120\\ \\text{ft}$.",
+          "$21{,}120\\ \\text{ft} \\times \\dfrac{0.3048\\ \\text{m}}{1\\ \\text{ft}} \\approx 6{,}437\\ \\text{m}$, about $6.4\\ \\text{km}$."
+        ],
+        "a": "$\\approx 6{,}440\\ \\text{m}$"
+      },
+      {
+        "t": "ex",
+        "title": "How many digits?",
+        "q": "A baseline is paced off as $150\\ \\text{m}$ (2 significant figures) and the tangent of the angle is $1.428$. Report the height.",
+        "steps": [
+          "$150 \\times 1.428 = 214.2$.",
+          "The baseline has only 2 significant figures, so the height is $210\\ \\text{m}$. Writing 214.2 m claims a precision the pacing never had."
+        ],
+        "a": "$210\\ \\text{m}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Turning a factor upside down: $4\\ \\text{mi} \\times \\dfrac{1\\ \\text{mi}}{5{,}280\\ \\text{ft}}$ leaves miles squared per foot. Check that the units cancel before you multiply."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Smithsonian Air & Space, “The Big Creek Missile Agency” (Homer Hickam's account of the Rocket Boys)",
+        "url": "https://www.smithsonianmag.com/air-space-magazine/the-big-creek-missile-agency-85069719/"
+      },
+      {
+        "name": "OpenStax, College Physics 2e (Rice University): motion, forces, energy and momentum"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,81 @@
+{
+  "id": "geology.epicenter",
+  "slug": "epicenter",
+  "ladder": "earth",
+  "course": "geology",
+  "unit": "earthquakes",
+  "title": "Finding the Epicenter",
+  "short": "Draw a circle of the right distance around each of three stations; the epicenter is where all three circles meet.",
+  "trouble": "Students think two stations are enough; two circles usually cross at two points, and a third station picks the right one.",
+  "prereqs": [
+    "geology.locating-earthquakes",
+    "g8.distance-between-points"
+  ],
+  "xp": 2,
+  "viz": [
+    "es-seismic"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/earth-and-space/geology/locating-earthquakes/\">The S−P gap</a> tells one station how far away an earthquake was, but not in which direction. All it knows is that the epicenter (the point on the surface above the focus) lies somewhere on a circle around the station. With <a href=\"/math/pre-algebra/distance-between-points/\">the distance formula</a>, three circles pin it down."
+      },
+      {
+        "t": "why",
+        "html": "Two circles usually cross at two points, so two stations leave two possible epicenters. The two points are mirror images across the line joining the stations. A third station's circle passes through only one of them, and that is the epicenter. To check a candidate point by hand, compute its distance to the third station with $d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$ and compare it with that station's measured distance. Real networks use dozens of stations and solve for depth and start time too, but this is the core idea, called trilateration (GPS works the same way)."
+      },
+      {
+        "t": "key",
+        "html": "Each station gives a circle of the right distance. Two circles cross at two points; the third circle picks the one that is the epicenter."
+      },
+      {
+        "t": "viz",
+        "name": "es-seismic",
+        "opts": {
+          "mode": "locate"
+        },
+        "cap": "Draw the circles one at a time: one gives a ring, two give two crossing points, three pick the epicenter."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Pick the right point",
+        "q": "Station 3 is at $(100, 40)$ on a grid in km and is 50 km from the quake. The circles of stations 1 and 2 cross at $P(60, 10)$ and $Q(-20, 70)$. Which is the epicenter?",
+        "steps": [
+          "Distance from station 3 to $P$: $\\sqrt{(60 - 100)^2 + (10 - 40)^2} = \\sqrt{1,600 + 900} = 50\\,\\text{km}$. It matches.",
+          "Distance to $Q$: $\\sqrt{(-120)^2 + 30^2} \\approx 124\\,\\text{km}$. It doesn't.",
+          "So the epicenter is $P(60, 10)$."
+        ],
+        "a": "$P(60, 10)$."
+      },
+      {
+        "t": "ex",
+        "title": "From gaps to circles",
+        "q": "Three stations record S−P gaps of 10, 15 and 20 s. What are the radii of their circles (8.4 km per second)?",
+        "steps": [
+          "$10 \\times 8.4 = 84\\,\\text{km}$; $15 \\times 8.4 = 126\\,\\text{km}$; $20 \\times 8.4 = 168\\,\\text{km}$.",
+          "The station with the shortest gap is closest to the quake."
+        ],
+        "a": "84, 126 and 168 km."
+      },
+      {
+        "t": "mistake",
+        "html": "It is easy to think two stations are enough. Two circles usually cross at two points, and both fit the two stations equally well. Check by sketching: the third circle is what breaks the tie."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "USGS Earthquake Hazards Program, Earthquake Magnitude, Energy Release, and Shaking Intensity"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

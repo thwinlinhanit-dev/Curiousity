@@ -1,0 +1,99 @@
+{
+  "id": "aa.tower-law",
+  "slug": "tower-law",
+  "ladder": "math",
+  "course": "aa",
+  "unit": "fields",
+  "title": "Degrees and the Tower Law",
+  "short": "For fields F ⊆ K ⊆ L, [L : F] = [L : K][K : F]; so [ℚ(√2, √3) : ℚ] = 4, and the cube root of 2 lies in no extension of ℚ whose degree is a power of 2.",
+  "trouble": "Students add degrees instead of multiplying them, or count [ℚ(√2, √8) : ℚ] as 4 though √8 = 2√2 is already in ℚ(√2).",
+  "prereqs": [
+    "aa.minimal-polynomials",
+    "la.dimension-rank"
+  ],
+  "xp": 3,
+  "viz": [
+    "aa-lattice"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Degrees of <a href=\"/math/abstract-algebra/minimal-polynomials/\">field extensions</a> multiply along a chain of fields, the same way <a href=\"/math/linear-algebra/dimension-rank/\">dimensions</a> would if you built a basis in two stages. This simple rule settles questions that puzzled mathematicians for two thousand years."
+      },
+      {
+        "t": "why",
+        "html": "<b>Tower law.</b> If $F \\subseteq K \\subseteq L$ are fields with finite degrees, then $$[L : F] = [L : K]\\,[K : F].$$ <b>Proof.</b> Let $u_{1}, \\dots, u_{m}$ be a basis of $L$ over $K$ and $v_{1}, \\dots, v_{n}$ a basis of $K$ over $F$. Every $x \\in L$ is $\\sum_{i} c_{i}u_{i}$ with $c_{i} \\in K$, and each $c_{i} = \\sum_{j} a_{ij}v_{j}$ with $a_{ij} \\in F$; so the $mn$ products $u_{i}v_{j}$ span $L$ over $F$. If $\\sum a_{ij}u_{i}v_{j} = 0$, group as $\\sum_{i}(\\sum_{j} a_{ij}v_{j})u_{i} = 0$: independence of the $u_{i}$ over $K$ makes each inner sum $0$, and independence of the $v_{j}$ over $F$ makes every $a_{ij} = 0$. So the $u_{i}v_{j}$ are a basis. $\\square$"
+      },
+      {
+        "t": "p",
+        "html": "<b>Consequence.</b> If $\\alpha \\in L$, then $F \\subseteq F(\\alpha) \\subseteq L$, so the degree of $\\alpha$ divides $[L : F]$. For example, $\\sqrt{2} \\notin \\mathbb{Q}(\\sqrt[3]{2})$, because $2$ does not divide $3$."
+      },
+      {
+        "t": "viz",
+        "name": "aa-lattice",
+        "opts": {
+          "group": "field",
+          "a": 2,
+          "b": 3
+        },
+        "cap": "The subfields of $\\mathbb{Q}(\\sqrt{2}, \\sqrt{3})$: three quadratic fields in the middle, each of degree 2 over $\\mathbb{Q}$ and of degree 2 under the top."
+      },
+      {
+        "t": "ex",
+        "title": "Two square roots",
+        "q": "Find $[\\mathbb{Q}(\\sqrt{2}, \\sqrt{3}) : \\mathbb{Q}]$.",
+        "steps": [
+          "$[\\mathbb{Q}(\\sqrt{2}) : \\mathbb{Q}] = 2$.",
+          "Is $\\sqrt{3} \\in \\mathbb{Q}(\\sqrt{2})$? If $\\sqrt{3} = a + b\\sqrt{2}$ with rational $a, b$, squaring gives $3 = a^{2} + 2b^{2} + 2ab\\sqrt{2}$, so $ab = 0$. If $b = 0$, $\\sqrt{3} = a$ is rational; if $a = 0$, $\\sqrt{3/2} = b$ is rational. Both are impossible.",
+          "So $x^{2} - 3$ stays irreducible over $\\mathbb{Q}(\\sqrt{2})$, and $[\\mathbb{Q}(\\sqrt{2}, \\sqrt{3}) : \\mathbb{Q}(\\sqrt{2})] = 2$."
+        ],
+        "a": "$2 \\cdot 2 = 4$."
+      },
+      {
+        "t": "ex",
+        "title": "Coprime degrees",
+        "q": "Find $[\\mathbb{Q}(\\sqrt[3]{2}, \\sqrt{3}) : \\mathbb{Q}]$.",
+        "steps": [
+          "$\\sqrt[3]{2}$ has degree $3$ and $\\sqrt{3}$ has degree $2$, and both divide the total degree, so $6$ divides it.",
+          "Adjoining $\\sqrt{3}$ to $\\mathbb{Q}(\\sqrt[3]{2})$ at most doubles the degree, so the total is at most $3 \\cdot 2 = 6$."
+        ],
+        "a": "$6$."
+      },
+      {
+        "t": "ex",
+        "title": "Doubling the cube",
+        "q": "Show that $\\sqrt[3]{2}$ cannot be constructed with straightedge and compass.",
+        "steps": [
+          "Each construction step solves at most a quadratic equation, so a constructible number lies in a tower $\\mathbb{Q} = K_{0} \\subset K_{1} \\subset \\cdots \\subset K_{r}$ with each step of degree $2$; the top has degree $2^{r}$.",
+          "$\\sqrt[3]{2}$ has degree $3$ (its minimal polynomial is $x^{3} - 2$), and $3$ does not divide $2^{r}$."
+        ],
+        "a": "Not constructible: the ancient problem of doubling the cube is impossible."
+      },
+      {
+        "t": "mistake",
+        "html": "Adding degrees instead of multiplying, or forgetting to check whether the new element is already in the field. $[\\mathbb{Q}(\\sqrt{2}, \\sqrt{8}) : \\mathbb{Q}] = 2$, not $4$: $\\sqrt{8} = 2\\sqrt{2}$ is already in $\\mathbb{Q}(\\sqrt{2})$, so the second step has degree $1$."
+      },
+      {
+        "t": "key",
+        "html": "$[L : F] = [L : K][K : F]$: bases multiply. The degree of any element divides the degree of the field containing it; $[\\mathbb{Q}(\\sqrt{2}, \\sqrt{3}) : \\mathbb{Q}] = 4$, and degree-3 numbers like $\\sqrt[3]{2}$ are not constructible."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Thomas W. Judson, Abstract Algebra: Theory and Applications (open textbook), chapter 21, Fields (sections 21.1 and 21.3, Geometric Constructions)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.702 Algebra II (Spring 2011), lecture notes on field degrees and constructions"
+      },
+      {
+        "name": "John A. Beachy and William D. Blair, Abstract Algebra, online study guide (Northern Illinois University), section 6.2, Finite and Algebraic Extensions"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

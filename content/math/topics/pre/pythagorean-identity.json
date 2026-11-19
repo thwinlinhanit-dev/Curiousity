@@ -1,0 +1,108 @@
+{
+  "id": "pre.pythagorean-identity",
+  "slug": "pythagorean-identity",
+  "ladder": "math",
+  "course": "pre",
+  "unit": "angles-unit-circle",
+  "title": "The Pythagorean Identity",
+  "short": "sin²θ + cos²θ = 1, and finding one value from another.",
+  "trouble": "Students find the size of cos θ but forget to choose its sign from the quadrant.",
+  "prereqs": [
+    "pre.six-trig-functions"
+  ],
+  "xp": 2,
+  "viz": [
+    "unitcircle"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Every point $(\\cos\\theta, \\sin\\theta)$ lies on the <a href=\"/math/precalculus/unit-circle-sine-cosine/\">unit circle</a>, and the unit circle has the equation $x^2 + y^2 = 1$. Put those two facts together and you get the most used identity in trigonometry."
+      },
+      {
+        "t": "key",
+        "html": "$$\\role[y-coordinate squared]{output}{\\sin^2\\theta} + \\role[x-coordinate squared]{input}{\\cos^2\\theta} = 1 \\quad \\text{for every angle } \\theta.$$ To find one value from the other, solve for its square, take the square root, and choose the sign from the quadrant."
+      },
+      {
+        "t": "why",
+        "html": "Substitute $x = \\cos\\theta$ and $y = \\sin\\theta$ into $x^2 + y^2 = 1$. It is the Pythagorean theorem for the right triangle with hypotenuse $1$ inside the circle. Dividing the identity by $\\cos^2\\theta$ gives a second form, $\\tan^2\\theta + 1 = \\sec^2\\theta$; dividing by $\\sin^2\\theta$ gives $1 + \\cot^2\\theta = \\csc^2\\theta$."
+      },
+      {
+        "t": "note",
+        "html": "$\\sin^2\\theta$ means $(\\sin\\theta)^2$: find the sine, then square it."
+      },
+      {
+        "t": "viz",
+        "name": "unitcircle",
+        "opts": {
+          "angle": 120,
+          "units": "deg",
+          "snap": 5,
+          "graph": "none",
+          "signs": true,
+          "roleLinks": {
+            "Angle": "angle"
+          }
+        },
+        "cap": "Wherever you turn, the blue and red segments are the legs of a right triangle with hypotenuse $1$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A rational answer",
+        "q": "$\\sin\\theta = \\frac{3}{5}$ and $\\theta$ is in Quadrant II. Find $\\cos\\theta$.",
+        "steps": [
+          "$\\cos^2\\theta = 1 - \\left(\\frac{3}{5}\\right)^2 = 1 - \\frac{9}{25} = \\frac{16}{25}$.",
+          "So $\\cos\\theta = \\pm\\frac{4}{5}$.",
+          "In Quadrant II, $x < 0$, so cosine is negative."
+        ],
+        "a": "$\\cos\\theta = -\\frac{4}{5}$"
+      },
+      {
+        "t": "ex",
+        "title": "A radical answer",
+        "q": "$\\cos\\theta = \\frac{1}{3}$ with $\\frac{3\\pi}{2} < \\theta < 2\\pi$. Find $\\sin\\theta$.",
+        "steps": [
+          "$\\sin^2\\theta = 1 - \\frac{1}{9} = \\frac{8}{9}$, so $\\sin\\theta = \\pm\\frac{\\sqrt{8}}{3} = \\pm\\frac{2\\sqrt{2}}{3}$.",
+          "$\\theta$ is in Quadrant IV, where $y < 0$."
+        ],
+        "a": "$\\sin\\theta = -\\frac{2\\sqrt{2}}{3}$"
+      },
+      {
+        "t": "ex",
+        "title": "Starting from tangent",
+        "q": "$\\tan\\theta = 2$ and $\\theta$ is in Quadrant III. Find $\\sec\\theta$.",
+        "steps": [
+          "Use $\\tan^2\\theta + 1 = \\sec^2\\theta$: $\\sec^2\\theta = 4 + 1 = 5$, so $\\sec\\theta = \\pm\\sqrt{5}$.",
+          "In Quadrant III cosine is negative, and secant has the same sign as cosine."
+        ],
+        "a": "$\\sec\\theta = -\\sqrt{5}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Finding the right size and forgetting the sign: the square root only tells you $\\pm$. Always ask where the angle is. A quick sketch of the terminal side shows whether $x$ (cosine) and $y$ (sine) are positive or negative."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Precalculus 2e, Section 5.2 Unit Circle: Sine and Cosine Functions"
+      },
+      {
+        "name": "OpenStax Precalculus 2e, Section 5.3 The Other Trigonometric Functions"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, F-TF.C.8"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

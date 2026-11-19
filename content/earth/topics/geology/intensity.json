@@ -1,0 +1,114 @@
+{
+  "id": "geology.intensity",
+  "slug": "intensity",
+  "ladder": "earth",
+  "course": "geology",
+  "unit": "earthquakes",
+  "title": "Intensity and Ground Shaking",
+  "short": "Intensity measures the shaking at one place on the Modified Mercalli scale; it depends on distance, depth and soft ground, not only on magnitude.",
+  "trouble": "Students think an earthquake has a single intensity; each quake has one magnitude but many intensities, strongest near the epicenter and on soft, wet ground.",
+  "prereqs": [
+    "geology.moment-magnitude"
+  ],
+  "xp": 2,
+  "viz": [
+    "es-seismic"
+  ],
+  "figureArchetype": "WaveFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/earth-and-space/geology/moment-magnitude/\">Magnitude</a> measures an earthquake at its source: one number per quake. People, though, feel shaking where they are, and that varies from place to place. <b>Intensity</b> describes the shaking at a location, on the Modified Mercalli Intensity scale, from I (not felt) to XII (near-total destruction), written in Roman numerals."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Intensity",
+          "What happens (abbreviated)"
+        ],
+        "rows": [
+          [
+            "II",
+            "noticed by only a few people at rest"
+          ],
+          [
+            "IV",
+            "noticed indoors by many; dishes and windows rattle"
+          ],
+          [
+            "VI",
+            "felt by everyone; some furniture moves; slight damage"
+          ],
+          [
+            "VIII",
+            "considerable damage to ordinary buildings; chimneys and walls fall"
+          ],
+          [
+            "X",
+            "most masonry and frame buildings destroyed"
+          ]
+        ],
+        "cap": "Selected Modified Mercalli intensities (paraphrased from USGS)."
+      },
+      {
+        "t": "why",
+        "html": "Shaking depends on more than magnitude. Waves spread out and lose energy with <b>distance</b>, so shaking fades away from the epicenter. A shallow quake shakes the surface harder than a deep one. And the <b>ground</b> matters: waves slow down and grow taller entering soft sediment, which can slosh like jelly, and waterlogged sand can lose its strength and flow (liquefaction). Building design matters too. USGS maps of shaking combine instrument recordings with thousands of \"Did You Feel It?\" reports from the public."
+      },
+      {
+        "t": "key",
+        "html": "An earthquake has one magnitude but many intensities. Intensity is highest near the epicenter, for shallow quakes, and on soft, wet ground."
+      },
+      {
+        "t": "viz",
+        "name": "es-seismic",
+        "opts": {
+          "mode": "intensity",
+          "basin": true
+        },
+        "cap": "Shaking intensity around an epicenter. Turn the soft-sediment basin on and off."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Near or far",
+        "q": "A magnitude 6.5 quake strikes. Town A, on bedrock, is 15 km away; town B, also on bedrock, is 90 km away. Which shakes harder?",
+        "steps": [
+          "Same earthquake, same ground: distance decides.",
+          "Town A, closer to the source, has the higher intensity."
+        ],
+        "a": "Town A."
+      },
+      {
+        "t": "ex",
+        "title": "Soft ground",
+        "q": "In 1985 a magnitude 8 earthquake struck about 350 km from Mexico City, yet the city suffered terrible damage. Why?",
+        "steps": [
+          "Much of the city sits on soft sediment of an old lake bed.",
+          "The sediment amplified the shaking, especially for buildings of certain heights, raising the intensity far above that of nearby areas on firmer ground."
+        ],
+        "a": "Soft lake-bed sediment amplified the shaking."
+      },
+      {
+        "t": "mistake",
+        "html": "It is natural to think an earthquake has a single intensity, the way it has one magnitude. Intensity is different at every place. Check the words: magnitude is about the quake; intensity is about where you are."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "USGS Earthquake Hazards Program, The Modified Mercalli Intensity Scale"
+      },
+      {
+        "name": "USGS Earthquake Hazards Program, Earthquake Magnitude, Energy Release, and Shaking Intensity"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

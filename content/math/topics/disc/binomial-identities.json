@@ -1,0 +1,101 @@
+{
+  "id": "disc.binomial-identities",
+  "slug": "binomial-identities",
+  "ladder": "math",
+  "course": "disc",
+  "unit": "counting",
+  "title": "Pascal's Identity and Counting Arguments",
+  "short": "Prove an identity by counting one set in two ways: C(n, k) = C(n − 1, k − 1) + C(n − 1, k), and each row of Pascal's triangle adds to 2ⁿ.",
+  "trouble": "Students check an identity for one value of n and call it proved.",
+  "prereqs": [
+    "stat.combinations",
+    "alg2.binomial-theorem",
+    "disc.power-sets-products"
+  ],
+  "xp": 2,
+  "viz": [
+    "disc-encode"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The numbers $\\binom{n}{k}$ fill <a href=\"/math/algebra-2/binomial-theorem/\">Pascal's triangle</a>, and you have used them to count <a href=\"/math/probability-and-statistics/combinations/\">combinations</a>. They satisfy many identities. Algebra can prove them, but a counting argument usually explains <i>why</i> they hold, using nothing but <a href=\"/math/discrete-math/power-sets-products/\">subsets</a>."
+      },
+      {
+        "t": "key",
+        "html": "A <b>combinatorial proof</b> shows two expressions are equal by showing they count the same set in two different ways. Examples: <b>Pascal's identity</b> $\\binom{n}{k} = \\binom{n-1}{k-1} + \\binom{n-1}{k}$; the row sum $\\binom{n}{0} + \\binom{n}{1} + \\cdots + \\binom{n}{n} = 2^{n}$; symmetry $\\binom{n}{k} = \\binom{n}{n-k}$."
+      },
+      {
+        "t": "why",
+        "html": "For Pascal's identity, count groups of $k$ people chosen from $n$, one of whom is Ana. Every group either contains Ana or does not. With Ana: choose her partners, $\\binom{n-1}{k-1}$ ways. Without Ana: choose all $k$ from the other $n - 1$, $\\binom{n-1}{k}$ ways. These cases are disjoint and cover everything, so the sum rule gives $\\binom{n}{k}$ on the left. The same idea in a grid: the number of shortest paths to a point is the number arriving from the left plus the number arriving from below."
+      },
+      {
+        "t": "viz",
+        "name": "disc-encode",
+        "opts": {
+          "mode": "paths",
+          "m": 5,
+          "n": 4,
+          "counts": true,
+          "identity": true
+        },
+        "cap": "Each point shows how many shortest paths reach it from the corner. Click a point to see Pascal's identity there: the count is the sum of the two counts before it."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Using Pascal's identity",
+        "q": "Given $\\binom{9}{3} = 84$ and $\\binom{9}{4} = 126$, find $\\binom{10}{4}$.",
+        "steps": [
+          "Pascal: $\\binom{10}{4} = \\binom{9}{3} + \\binom{9}{4}$.",
+          "$84 + 126 = 210$."
+        ],
+        "a": "$210$"
+      },
+      {
+        "t": "ex",
+        "title": "The row sum, two ways",
+        "q": "Show that $\\binom{n}{0} + \\binom{n}{1} + \\cdots + \\binom{n}{n} = 2^{n}$.",
+        "steps": [
+          "Count the subsets of an $n$-element set. By size: there are $\\binom{n}{k}$ subsets of size $k$, and adding over $k$ gives the left side.",
+          "By decisions: each element is in or out, so there are $2^{n}$ subsets.",
+          "Same set, two counts: they are equal. (The binomial theorem gives the same result from $(1 + 1)^{n}$.)"
+        ],
+        "a": "Both sides count the subsets of an $n$-element set."
+      },
+      {
+        "t": "ex",
+        "title": "Committees with a chair",
+        "q": "Show that $k\\binom{n}{k} = n\\binom{n-1}{k-1}$.",
+        "steps": [
+          "Count committees of $k$ people from $n$, with one member named chair.",
+          "Committee first, then chair: $\\binom{n}{k}$ committees, then $k$ choices of chair.",
+          "Chair first, then the rest: $n$ choices of chair, then $\\binom{n-1}{k-1}$ ways to fill the other seats."
+        ],
+        "a": "Both sides count committees with a chair."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Checking one value of $n$ and calling it proved.</b> Verifying $\\binom{5}{2} = \\binom{4}{1} + \\binom{4}{2}$ ($10 = 4 + 6$) is a good sanity check, but an identity claims something for every $n$ and $k$. Check: a proof must work for general $n$ and $k$; a counting argument does this by describing one set and two ways to count it, with no specific numbers."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Oscar Levin, Discrete Mathematics: An Open Introduction (3rd ed.), sections \"Binomial Coefficients\" and \"Combinatorial Proofs\""
+      },
+      {
+        "name": "MIT OpenCourseWare 6.042J Mathematics for Computer Science (Lehman, Leighton and Meyer), chapter \"Cardinality Rules\" (combinatorial proof)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

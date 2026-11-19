@@ -1,0 +1,111 @@
+{
+  "id": "de.predator-prey-pendulum",
+  "slug": "predator-prey-pendulum",
+  "ladder": "math",
+  "course": "de",
+  "unit": "systems",
+  "title": "Predator–Prey and the Pendulum",
+  "short": "Study classic nonlinear models in the phase plane.",
+  "trouble": "",
+  "prereqs": [
+    "de.linearization"
+  ],
+  "xp": 3,
+  "viz": [
+    "phaseplane"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Two classic nonlinear systems show what <a href=\"/math/differential-equations/linearization/\">linearization</a> can and cannot tell us: rabbits and foxes, and a swinging pendulum."
+      },
+      {
+        "t": "key",
+        "html": "<b>Lotka–Volterra:</b> $x' = x(a - by)$ (prey), $y' = y(-c + dx)$ (predators). Coexistence equilibrium $\\left(\\frac{c}{d}, \\frac{a}{b}\\right)$; its linearization is a center with angular frequency $\\sqrt{ac}$, and the populations cycle on closed orbits.<br><b>Pendulum:</b> $\\theta'' + \\frac{g}{L}\\sin\\theta = 0$, or $\\theta' = \\omega$, $\\omega' = -\\frac{g}{L}\\sin\\theta$. Hanging down $(0, 0)$ is a center (a spiral sink with damping); balanced upright $(\\pi, 0)$ is a saddle. Small swings have period $2\\pi\\sqrt{L/g}$."
+      },
+      {
+        "t": "why",
+        "html": "For Lotka–Volterra, $J = \\begin{bmatrix} a - by & -bx \\\\ dy & -c + dx \\end{bmatrix}$; at $\\left(\\frac{c}{d}, \\frac{a}{b}\\right)$ the diagonal vanishes and $J = \\begin{bmatrix} 0 & -\\frac{bc}{d} \\\\ \\frac{ad}{b} & 0 \\end{bmatrix}$, with eigenvalues $\\pm i\\sqrt{ac}$. A center alone is inconclusive, but this model has a conserved quantity, $dx - c\\ln x + by - a\\ln y$, constant along trajectories, so the orbits are closed. For the pendulum, $J = \\begin{bmatrix} 0 & 1 \\\\ -\\frac{g}{L}\\cos\\theta & 0 \\end{bmatrix}$; at $\\theta = \\pi$, $\\cos\\theta = -1$ gives $\\Delta < 0$, a saddle."
+      },
+      {
+        "t": "ex",
+        "title": "Coexistence",
+        "q": "Find the coexistence equilibrium of $x' = x(2 - 0.5y)$, $y' = y(-3 + 0.25x)$.",
+        "steps": [
+          "$2 - 0.5y = 0$ gives $y = 4$; $-3 + 0.25x = 0$ gives $x = 12$."
+        ],
+        "a": "$(12, 4)$: 12 prey and 4 predators (in thousands, say)"
+      },
+      {
+        "t": "ex",
+        "title": "The cycle's period",
+        "q": "For that model, estimate the period of small oscillations around $(12, 4)$.",
+        "steps": [
+          "$ac = 2\\cdot 3 = 6$, so the angular frequency is $\\sqrt{6}$.",
+          "Period $\\approx \\frac{2\\pi}{\\sqrt{6}}$."
+        ],
+        "a": "about 2.57 time units"
+      },
+      {
+        "t": "ex",
+        "title": "A damped pendulum",
+        "q": "Classify $(0, 0)$ and $(\\pi, 0)$ for $\\theta' = \\omega$, $\\omega' = -4\\sin\\theta - \\omega$.",
+        "steps": [
+          "$J = \\begin{bmatrix} 0 & 1 \\\\ -4\\cos\\theta & -1 \\end{bmatrix}$.",
+          "At $(0, 0)$: $\\tau = -1$, $\\Delta = 4$, $\\tau^{2} - 4\\Delta = -15 < 0$: spiral sink.",
+          "At $(\\pi, 0)$: $\\Delta = -4 < 0$: saddle."
+        ],
+        "a": "hanging down: spiral sink (it swings and settles); upright: saddle (unstable)"
+      },
+      {
+        "t": "mistake",
+        "html": "Concluding from a linear center that a nonlinear system cycles, or that it does not. For Lotka–Volterra the closed orbits come from the conserved quantity, not from the linearization; add a little crowding term to the prey and the center becomes a spiral sink."
+      },
+      {
+        "t": "viz",
+        "name": "phaseplane",
+        "opts": {
+          "P": "x*(2 - 0.5*y)",
+          "Q": "y*(-3 + 0.25*x)",
+          "point": [
+            8,
+            3
+          ],
+          "range": 16,
+          "presets": false
+        },
+        "cap": "Lotka–Volterra trajectories are closed loops around $(12, 4)$: prey rise, then predators rise, then prey fall, then predators fall. Press Run and watch the time strip: the predator peaks lag the prey peaks."
+      },
+      {
+        "t": "viz",
+        "name": "phaseplane",
+        "opts": {
+          "P": "y",
+          "Q": "-4*sin(x) - 0.5*y",
+          "point": [
+            -3,
+            3
+          ],
+          "range": 7,
+          "presets": false
+        },
+        "cap": "A damped pendulum ($x = \\theta$, $y = \\omega$). Swings spiral into the hanging positions $\\theta = 0, \\pm 2\\pi$; the saddles at $\\theta = \\pm\\pi$ separate swings that go over the top from those that do not."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Paul's Online Math Notes, Differential Equations: Phase Plane"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.03SC Differential Equations (Fall 2011), Unit IV: First-order Systems"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

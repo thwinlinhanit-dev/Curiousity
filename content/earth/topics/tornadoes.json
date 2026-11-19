@@ -1,0 +1,135 @@
+{
+  "id": "weather.tornadoes",
+  "slug": "tornadoes",
+  "ladder": "earth",
+  "course": "weather",
+  "unit": "storms",
+  "title": "Supercells and Tornadoes",
+  "short": "Winds that change with height can set a storm's updraft spinning; tornadoes are rated by their damage on the Enhanced Fujita scale.",
+  "trouble": "Students think tornadoes avoid cities, rivers or valleys; they can cross any of them.",
+  "prereqs": [
+    "weather.thunderstorms"
+  ],
+  "xp": 2,
+  "viz": [
+    "es-storms"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Most <a href=\"/earth-and-space/weather-and-climate/thunderstorms/\">thunderstorms</a> never make a tornado. The ones that do are usually <b>supercells</b>: long-lived storms whose whole updraft rotates. The rotation comes from the wind itself, changing with height."
+      },
+      {
+        "t": "key",
+        "html": "When the wind changes speed or direction with height (<b>wind shear</b>), the air near the ground rolls like a pencil between your hands. A strong updraft tilts that roll upright, and the storm's updraft starts to rotate: a <b>mesocyclone</b>, the mark of a supercell. A few supercells then produce a tornado, a violently rotating column of air touching the ground. Tornadoes are rated <b>after</b> they pass, from the damage they did, on the <b>Enhanced Fujita (EF) scale</b>, EF0 to EF5."
+      },
+      {
+        "t": "why",
+        "html": "Shear makes spin: if the wind 1 km up blows much faster than the wind at the ground, the air between rolls over, making invisible horizontal tubes of spin. The updraft lifts the middle of a tube, bending it into an upside-down U with one rotating column on each side; one of them is drawn into the updraft. A rotating updraft lasts longer and grows stronger, because shear also keeps the downdraft from smothering it. Why some supercells make tornadoes and others don't is still an active research question."
+      },
+      {
+        "t": "viz",
+        "name": "es-storms",
+        "opts": {
+          "mode": "supercell",
+          "shear": 0.8,
+          "wind": 150
+        },
+        "cap": "A supercell: wind shear turns into rotation as the updraft tilts it upright. The table rates a tornado on the EF scale from estimated winds."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Rating",
+          "3-second gust (mph)",
+          "About (km/h)",
+          "Typical damage"
+        ],
+        "rows": [
+          [
+            "EF0",
+            "65–85",
+            "105–137",
+            "shingles off, branches broken"
+          ],
+          [
+            "EF1",
+            "86–110",
+            "138–177",
+            "roofs badly stripped, mobile homes overturned"
+          ],
+          [
+            "EF2",
+            "111–135",
+            "178–217",
+            "roofs torn off well-built houses"
+          ],
+          [
+            "EF3",
+            "136–165",
+            "218–266",
+            "whole stories of well-built houses destroyed"
+          ],
+          [
+            "EF4",
+            "166–200",
+            "267–322",
+            "well-built houses leveled"
+          ],
+          [
+            "EF5",
+            "over 200",
+            "over 322",
+            "strong frame houses swept away"
+          ]
+        ],
+        "cap": "The Enhanced Fujita scale (NOAA Storm Prediction Center). Winds are estimated from damage."
+      },
+      {
+        "t": "ex",
+        "title": "Rate the tornado",
+        "q": "A damage survey estimates a tornado's strongest gusts at 145 mph. What is its EF rating?",
+        "steps": [
+          "EF3 covers 136 to 165 mph.",
+          "145 mph is in that range: EF3."
+        ],
+        "a": "EF3"
+      },
+      {
+        "t": "ex",
+        "title": "From km/h",
+        "q": "Another survey estimates 190 km/h. Convert to mph (1 mph ≈ 1.609 km/h) and rate it.",
+        "steps": [
+          "$190 \\div 1.609 \\approx 118$ mph.",
+          "118 mph falls in 111–135: EF2."
+        ],
+        "a": "About 118 mph: EF2"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking tornadoes avoid cities, rivers, lakes or valleys. Tornadoes have crossed all of them, including the downtowns of large cities and wide rivers. Cities seem to be hit less often only because they cover a small share of the land. Check: there is no known terrain that blocks a tornado."
+      },
+      {
+        "t": "note",
+        "html": "The United States has more tornadoes than any other country, about 1,200 in a typical year (NOAA)."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "NOAA: Storm Prediction Center, The Enhanced Fujita Scale"
+      },
+      {
+        "name": "NOAA: National Severe Storms Laboratory, Severe Weather 101: Tornadoes"
+      },
+      {
+        "name": "NOAA National Weather Service, JetStream online school for weather: Tornadoes"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,139 @@
+{
+  "id": "la.least-squares",
+  "slug": "least-squares",
+  "ladder": "math",
+  "course": "la",
+  "unit": "orthogonality",
+  "title": "Least Squares",
+  "short": "Solve AᵀAx̂ = Aᵀb to fit data.",
+  "trouble": "Students solve Ax = b directly when it has no solution.",
+  "prereqs": [
+    "la.orthogonal-projections",
+    "alg1.lines-of-fit-residuals"
+  ],
+  "xp": 3,
+  "viz": [
+    "scatter"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Real data rarely fit a model exactly. In <a href=\"/math/algebra-1/lines-of-fit-residuals/\">Algebra 1</a> you drew a line of fit and looked at residuals; here we find the best line exactly. In matrix language: $A\\mathbf{x} = \\mathbf{b}$ has no solution, so we look for the $\\hat{\\mathbf{x}}$ that makes $A\\hat{\\mathbf{x}}$ as close as possible to $\\mathbf{b}$. <a href=\"/math/linear-algebra/orthogonal-projections/\">Projection</a> gives the answer."
+      },
+      {
+        "t": "key",
+        "html": "A <b>least-squares solution</b> of $A\\mathbf{x} = \\mathbf{b}$ minimizes $\\lVert\\mathbf{b} - A\\mathbf{x}\\rVert$. The least-squares solutions are exactly the solutions of the <b>normal equations</b> $$A^{T}A\\hat{\\mathbf{x}} = A^{T}\\mathbf{b}.$$ When the columns of $A$ are independent, $\\hat{\\mathbf{x}} = (A^{T}A)^{-1}A^{T}\\mathbf{b}$ is unique."
+      },
+      {
+        "t": "why",
+        "html": "$A\\mathbf{x}$ ranges over $\\operatorname{Col} A$, so the closest $A\\mathbf{x}$ to $\\mathbf{b}$ is the projection $\\hat{\\mathbf{b}}$ of $\\mathbf{b}$ onto $\\operatorname{Col} A$. The leftover $\\mathbf{b} - A\\hat{\\mathbf{x}}$ must be orthogonal to $\\operatorname{Col} A$, so it lies in $(\\operatorname{Col} A)^{\\perp} = \\operatorname{Nul} A^{T}$ (from <a href=\"/math/linear-algebra/orthogonal-complements/\">orthogonal complements</a>): $A^{T}(\\mathbf{b} - A\\hat{\\mathbf{x}}) = \\mathbf{0}$. Rearranged, that is $A^{T}A\\hat{\\mathbf{x}} = A^{T}\\mathbf{b}$. No orthogonal basis is needed: the normal equations do the projection for us."
+      },
+      {
+        "t": "viz",
+        "name": "la-proj",
+        "opts": {
+          "y": [
+            1,
+            2,
+            3.5
+          ],
+          "w1": [
+            1,
+            0,
+            0.5
+          ],
+          "w2": [
+            0,
+            1,
+            0.5
+          ],
+          "edit": true,
+          "names": {
+            "y": "b",
+            "yhat": "Ax̂",
+            "z": "b − Ax̂",
+            "W": "Col A",
+            "w1": "a₁",
+            "w2": "a₂"
+          }
+        },
+        "cap": "$\\mathbf{b}$ is not in $\\operatorname{Col} A$ (the plane). The best we can do is $A\\hat{\\mathbf{x}}$, its projection; the residual $\\mathbf{b} - A\\hat{\\mathbf{x}}$ is perpendicular to the plane."
+      },
+      {
+        "t": "ex",
+        "title": "An inconsistent system",
+        "q": "Find the least-squares solution of $A\\mathbf{x} = \\mathbf{b}$ with $A = \\begin{bmatrix} 1 & 0 \\\\ 1 & 1 \\\\ 1 & 3 \\end{bmatrix}$, $\\mathbf{b} = \\begin{bmatrix} 3 \\\\ 0 \\\\ 8 \\end{bmatrix}$.",
+        "steps": [
+          "$A^{T}A = \\begin{bmatrix} 3 & 4 \\\\ 4 & 10 \\end{bmatrix}$ and $A^{T}\\mathbf{b} = \\begin{bmatrix} 11 \\\\ 24 \\end{bmatrix}$.",
+          "Solve $\\begin{bmatrix} 3 & 4 \\\\ 4 & 10 \\end{bmatrix}\\hat{\\mathbf{x}} = \\begin{bmatrix} 11 \\\\ 24 \\end{bmatrix}$: the determinant is $30 - 16 = 14$, and $\\hat{\\mathbf{x}}$ $= \\frac{1}{14}\\begin{bmatrix} 10 & -4 \\\\ -4 & 3 \\end{bmatrix}\\begin{bmatrix} 11 \\\\ 24 \\end{bmatrix}$ $= \\begin{bmatrix} 1 \\\\ 2 \\end{bmatrix}$.",
+          "$A\\hat{\\mathbf{x}} = \\begin{bmatrix} 1 \\\\ 3 \\\\ 7 \\end{bmatrix}$, residual $\\mathbf{b} - A\\hat{\\mathbf{x}} = \\begin{bmatrix} 2 \\\\ -3 \\\\ 1 \\end{bmatrix}$. Check: it is orthogonal to both columns ($2 - 3 + 1 = 0$ and $0 - 3 + 3 = 0$).",
+          "Least-squares error: $\\sqrt{4 + 9 + 1} = \\sqrt{14}$."
+        ],
+        "a": "$\\hat{\\mathbf{x}} = (1, 2)$"
+      },
+      {
+        "t": "ex",
+        "title": "Fitting a line",
+        "q": "Find the least-squares line $y = \\beta_0 + \\beta_1x$ through $(0, 1)$, $(1, 1)$, $(2, 3)$, $(3, 3)$.",
+        "steps": [
+          "Each point gives an equation $\\beta_0 + \\beta_1x_i = y_i$. The <b>design matrix</b> has a column of $1$s and a column of $x$'s: $X = \\begin{bmatrix} 1 & 0 \\\\ 1 & 1 \\\\ 1 & 2 \\\\ 1 & 3 \\end{bmatrix}$, $\\mathbf{y} = \\begin{bmatrix} 1 \\\\ 1 \\\\ 3 \\\\ 3 \\end{bmatrix}$.",
+          "$X^{T}X = \\begin{bmatrix} 4 & 6 \\\\ 6 & 14 \\end{bmatrix}$ and $X^{T}\\mathbf{y} = \\begin{bmatrix} 8 \\\\ 16 \\end{bmatrix}$.",
+          "Solve: determinant $56 - 36 = 20$; $\\boldsymbol{\\beta}$ $= \\frac{1}{20}\\begin{bmatrix} 14 & -6 \\\\ -6 & 4 \\end{bmatrix}\\begin{bmatrix} 8 \\\\ 16 \\end{bmatrix}$ $= \\begin{bmatrix} \\frac{4}{5} \\\\ \\frac{4}{5} \\end{bmatrix}$.",
+          "The line is $y = 0.8 + 0.8x$. Its residuals $(0.2, -0.6, 0.6, -0.2)$ add up to $0$, as they always do when the model has an intercept."
+        ],
+        "a": "$y = 0.8 + 0.8x$"
+      },
+      {
+        "t": "viz",
+        "name": "scatter",
+        "opts": {
+          "points": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              3
+            ]
+          ],
+          "fit": true,
+          "residuals": true,
+          "squares": true,
+          "editable": true
+        },
+        "cap": "The least-squares line makes the total area of the residual squares as small as possible. Drag a point and watch it refit."
+      },
+      {
+        "t": "mistake",
+        "html": "Trying to solve $A\\mathbf{x} = \\mathbf{b}$ directly when it is inconsistent, for example by row reducing $[\\,A \\mid \\mathbf{b}\\,]$, finding a $0 = c$ row, and stopping, or by solving just two of the equations and ignoring the rest. Multiply by $A^{T}$ first and solve the normal equations. Check: the residual $\\mathbf{b} - A\\hat{\\mathbf{x}}$ must be orthogonal to every column of $A$."
+      },
+      {
+        "t": "p",
+        "html": "This is exactly ordinary least squares (OLS) in statistics and economics. With many explanatory variables, the design matrix $X$ gets one column per variable, and the estimate is $\\hat{\\boldsymbol{\\beta}} = (X^{T}X)^{-1}X^{T}\\mathbf{y}$. The Teddy Rook Book <a href=\"/business/econometrics/\">Econometrics course</a> builds on this formula, starting with <a href=\"/business/econometrics/simple-regression/\">fitting a line</a> and <a href=\"/business/econometrics/multiple-regression/\">multiple regression</a>."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Margalit and Rabinoff, Interactive Linear Algebra (Georgia Tech), §6.5 The Method of Least Squares"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.06 Linear Algebra (Gilbert Strang, Spring 2010), Lecture 16: Projection Matrices and Least Squares"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

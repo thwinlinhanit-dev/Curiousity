@@ -1,0 +1,136 @@
+{
+  "id": "geo.polygon-symmetry",
+  "slug": "polygon-symmetry",
+  "ladder": "math",
+  "course": "geo",
+  "unit": "rigid-motions",
+  "title": "Symmetries of Polygons",
+  "short": "Find the rotations and reflections that carry a polygon onto itself.",
+  "trouble": "Students count a 360° turn but miss rotations like 72° for a regular pentagon.",
+  "prereqs": [
+    "geo.define-rigid-motions"
+  ],
+  "xp": 2,
+  "viz": [
+    "transform",
+    "shapes"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A <b>symmetry</b> of a figure is a rigid motion that carries the figure onto itself, so afterward it looks exactly the same. With the precise rotations and reflections from <a href=\"/math/geometry/define-rigid-motions/\">Precise Definitions of Rigid Motions</a>, we can find every symmetry of a polygon."
+      },
+      {
+        "t": "why",
+        "html": "In a regular polygon with $n$ sides, the vertices sit equally spaced on a circle around the center. Turning by one \"vertex step,\" $\\frac{360^\\circ}{n}$, moves every vertex onto the next one, so the polygon lands on itself. Any multiple of that step works too, and nothing in between does. Each line through the center and a vertex (or the midpoint of a side) is a mirror line, giving $n$ reflections in all."
+      },
+      {
+        "t": "viz",
+        "name": "shapes",
+        "cap": "Step through the shapes with lines of symmetry shown. Use \"Turn it\" to test rotations.",
+        "opts": {
+          "gallery": [
+            "pentagon",
+            "square",
+            "rectangle",
+            "parallelogram",
+            "hexagon"
+          ],
+          "show": [
+            "symmetry"
+          ],
+          "turn": true,
+          "drag": false
+        }
+      },
+      {
+        "t": "table",
+        "head": [
+          "Shape",
+          "Lines of symmetry",
+          "Rotations that work (less than $360^\\circ$)"
+        ],
+        "rows": [
+          [
+            "regular $n$-gon",
+            "$n$",
+            "multiples of $\\frac{360^\\circ}{n}$"
+          ],
+          [
+            "square",
+            "4",
+            "$90^\\circ$, $180^\\circ$, $270^\\circ$"
+          ],
+          [
+            "rectangle (not a square)",
+            "2",
+            "$180^\\circ$"
+          ],
+          [
+            "rhombus (not a square)",
+            "2",
+            "$180^\\circ$"
+          ],
+          [
+            "parallelogram (no right angles, sides unequal)",
+            "0",
+            "$180^\\circ$"
+          ],
+          [
+            "isosceles trapezoid",
+            "1",
+            "none"
+          ],
+          [
+            "kite (not a rhombus)",
+            "1",
+            "none"
+          ]
+        ],
+        "cap": "Symmetries of common polygons. Every figure also has the \"do nothing\" symmetry, a turn of $0^\\circ$ or $360^\\circ$."
+      },
+      {
+        "t": "key",
+        "html": "A regular polygon with $n$ sides has $n$ lines of symmetry and is carried onto itself by rotations of $\\frac{360^\\circ}{n}$ and its multiples."
+      },
+      {
+        "t": "ex",
+        "title": "A regular pentagon",
+        "q": "List every rotation between $0^\\circ$ and $360^\\circ$ that carries a regular pentagon onto itself.",
+        "steps": [
+          "One vertex step is $\\frac{360^\\circ}{5} = 72^\\circ$.",
+          "Its multiples below $360^\\circ$: $72^\\circ$, $144^\\circ$, $216^\\circ$, $288^\\circ$."
+        ],
+        "a": "$72^\\circ$, $144^\\circ$, $216^\\circ$, $288^\\circ$"
+      },
+      {
+        "t": "ex",
+        "title": "A rectangle",
+        "q": "Describe all the symmetries of a $2$ by $5$ rectangle.",
+        "steps": [
+          "Reflections: the line through the midpoints of the long sides and the line through the midpoints of the short sides. The diagonals are <i>not</i> mirror lines: folding along one does not match the corners.",
+          "Rotations: $180^\\circ$ about the center swaps opposite corners. A $90^\\circ$ turn would put a long side where a short side was, so it fails."
+        ],
+        "a": "Two reflections and the $180^\\circ$ rotation (plus doing nothing)."
+      },
+      {
+        "t": "mistake",
+        "html": "Counting only the full turn, or only \"nice\" angles like $90^\\circ$ and $180^\\circ$. A regular pentagon has no $90^\\circ$ symmetry, but it does have $72^\\circ$. Always divide $360^\\circ$ by the number of sides, then list the multiples."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Contemporary Mathematics, 10.5 Tessellations"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, High School Geometry, G-CO.A.3"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

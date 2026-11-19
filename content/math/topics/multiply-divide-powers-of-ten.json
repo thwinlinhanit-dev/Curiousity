@@ -1,0 +1,98 @@
+{
+  "id": "g5.multiply-divide-powers-of-ten",
+  "slug": "multiply-divide-powers-of-ten",
+  "ladder": "math",
+  "course": "g5",
+  "unit": "place-value",
+  "title": "Multiplying and Dividing by Powers of 10",
+  "short": "Digits shift one place for each factor of 10.",
+  "trouble": "Children \"add a zero\" to a decimal, writing 2.5 × 10 = 2.50.",
+  "prereqs": [
+    "g5.powers-of-ten"
+  ],
+  "xp": 2,
+  "viz": [
+    "placevalue"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You have seen that a <a href=\"/math/grade-5/powers-of-ten/\">power of 10</a> like $10^{2}$ is $100$. Multiplying or dividing by 10, 100 or 1,000 is quick, because of how place value works."
+      },
+      {
+        "t": "key",
+        "html": "Multiplying by 10 moves every digit one place to the <b>left</b>; dividing by 10 moves every digit one place to the <b>right</b>. For 100 or $10^{2}$, move two places; for 1,000 or $10^{3}$, three. Fill any empty places between the digits and the point with zeros."
+      },
+      {
+        "t": "why",
+        "html": "Multiplying by 10 makes each digit worth 10 times as much, so each digit moves into the place that is worth 10 times as much: the place to its left. The decimal point stays put; the digits move. It looks as if the point moved the other way, and you can think of it that way too."
+      },
+      {
+        "t": "viz",
+        "name": "placevalue",
+        "opts": {
+          "n": "2.5",
+          "hi": 3,
+          "lo": -3,
+          "shift": true,
+          "edit": false
+        },
+        "cap": "Press &ldquo;× 10&rdquo;: the 2 and the 5 slide one place left, so $2.5$ becomes $25$. Press &ldquo;÷ 10&rdquo; to slide them back."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Multiply a decimal by 100",
+        "q": "Find $3.6 \\times 100$.",
+        "steps": [
+          "100 is $10^{2}$, so each digit moves two places left.",
+          "The 3 (ones) becomes 3 hundreds; the 6 (tenths) becomes 6 tens.",
+          "The ones place is now empty, so write 0."
+        ],
+        "a": "$360$"
+      },
+      {
+        "t": "ex",
+        "title": "Divide by 1,000",
+        "q": "Find $47 \\div 1{,}000$.",
+        "steps": [
+          "Each digit moves three places right.",
+          "The 4 (tens) becomes 4 hundredths; the 7 (ones) becomes 7 thousandths.",
+          "The tenths place is empty: write 0."
+        ],
+        "a": "$0.047$"
+      },
+      {
+        "t": "ex",
+        "title": "Using an exponent",
+        "q": "Find $0.52 \\times 10^{3}$.",
+        "steps": [
+          "$10^{3} = 1{,}000$: move three places left.",
+          "$0.52 \\to 5.2 \\to 52 \\to 520$."
+        ],
+        "a": "$520$"
+      },
+      {
+        "t": "mistake",
+        "html": "&ldquo;Adding a zero&rdquo; to a decimal, like writing $2.5 \\times 10 = 2.50$. A zero at the end of a decimal changes nothing: $2.50$ is still two and a half. Check: multiplying by 10 must give a bigger number. $2.5 \\times 10 = 25$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Prealgebra 2e, 5.2 Decimal Operations (multiplying and dividing by powers of ten)"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 5.NBT.A.2: patterns in the number of zeros and in the placement of the decimal point"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

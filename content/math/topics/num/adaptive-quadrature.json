@@ -1,0 +1,106 @@
+{
+  "id": "num.adaptive-quadrature",
+  "slug": "adaptive-quadrature",
+  "ladder": "math",
+  "course": "num",
+  "unit": "numerical-calculus",
+  "title": "Adaptive Integration",
+  "short": "Compare Simpson's rule on an interval with Simpson's rule on its two halves; the difference divided by 15 estimates the error, and only the intervals that fail the test are split.",
+  "trouble": "Students split every interval when only the ones that fail the error test need it.",
+  "prereqs": [
+    "num.composite-rules",
+    "num.richardson"
+  ],
+  "xp": 3,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Many integrands are easy almost everywhere and hard in a few places: a spike, a corner, a steep start. Spreading panels evenly wastes effort on the easy parts. Adaptive integration puts small panels only where they are needed, and it decides where by using <a href=\"/math/numerical-analysis/richardson/\">Richardson's idea</a> on <a href=\"/math/numerical-analysis/composite-rules/\">Simpson's rule</a> as an error estimate."
+      },
+      {
+        "t": "list",
+        "items": [
+          "On $[a, b]$ compute $S_1$, Simpson's rule on the whole interval, and $S_2$, Simpson's rule on each half, added.",
+          "Estimate the error of $S_2$ by $\\frac{|S_2 - S_1|}{15}$.",
+          "If it is at most the tolerance for this interval, accept $S_2 + \\frac{S_2 - S_1}{15}$ (or simply $S_2$).",
+          "Otherwise split the interval in two, give each half half the tolerance, and repeat on each half."
+        ]
+      },
+      {
+        "t": "key",
+        "html": "Simpson's error is about $Ch^{4}$, so halving $h$ divides it by 16 and $S_2 - S_1 \\approx 15 \\times (\\text{error of } S_2)$. Only the intervals that fail the test are split, so the panels end up small exactly where the integrand is hard."
+      },
+      {
+        "t": "why",
+        "html": "If $S_1 \\approx I + Ch^{4}$, then $S_2 \\approx I + C\\frac{h^{4}}{16}$ (the constant $C$ involves $f^{(4)}$, nearly the same on a small interval). Subtracting, $S_2 - S_1 \\approx -\\frac{15}{16}Ch^{4} = -15\\,(S_2 - I)$, so $I - S_2 \\approx \\frac{S_2 - S_1}{15}$. The estimate costs only two new function values, since $S_2$ reuses the three points of $S_1$. Halving the tolerance with each split keeps the total error within the original tolerance."
+      },
+      {
+        "t": "ex",
+        "title": "The estimate can be exact",
+        "q": "For $\\int_0^2 x^{4}\\,dx = 6.4$, compute $S_1$, $S_2$ and the estimate.",
+        "steps": [
+          "$S_1 = \\frac{2}{6}[0 + 4(1) + 16] = \\frac{20}{3} \\approx 6.66667$.",
+          "$S_2 = \\frac{1}{6}[0 + 4(0.0625) + 1] + \\frac{1}{6}[1 + 4(5.0625) + 16] = \\frac{1.25 + 37.25}{6} \\approx 6.41667$.",
+          "Estimate: $\\frac{S_2 - S_1}{15} = \\frac{-0.25}{15} \\approx -0.016667$. True error of $S_2$: $6.4 - 6.41667 = -0.016667$. Identical, because $f^{(4)}$ is constant."
+        ],
+        "a": "$-0.016667$, the exact error"
+      },
+      {
+        "t": "ex",
+        "title": "Accept or split?",
+        "q": "On a subinterval with tolerance $10^{-5}$, Simpson gives $S_1 = 0.433012$ and $S_2 = 0.433188$. Accept?",
+        "steps": [
+          "$\\frac{|S_2 - S_1|}{15} = \\frac{0.000176}{15} \\approx 1.2 \\times 10^{-5}$.",
+          "That exceeds $10^{-5}$: split into two halves, each with tolerance $5 \\times 10^{-6}$."
+        ],
+        "a": "split"
+      },
+      {
+        "t": "ex",
+        "title": "Where the work goes",
+        "q": "Adaptive Simpson on $\\int_0^1\\sqrt{x}\\,dx$ with a tight tolerance: where do the small panels end up?",
+        "steps": [
+          "$\\sqrt{x}$ has an infinite slope at $0$, so its derivatives are huge near $0$ and Simpson's error there is large.",
+          "Intervals near $0$ keep failing the test and get split again and again; on $[\\frac{1}{2}, 1]$ one or two panels pass at once.",
+          "The panels shrink geometrically toward $0$. A uniform grid fine enough for $0$ would waste thousands of function values on the easy part."
+        ],
+        "a": "clustered near 0"
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "f": "sqrt(x)",
+          "xmin": -0.05,
+          "xmax": 1.05,
+          "ymin": -0.1,
+          "ymax": 1.1,
+          "zoom": false
+        },
+        "cap": "The integrand √x: steep at 0, gentle elsewhere. An adaptive rule splits the panels near 0 and leaves the rest coarse."
+      },
+      {
+        "t": "mistake",
+        "html": "Splitting every interval when only the failing ones need it. That turns adaptive integration back into a uniform rule and wastes the function values the method was built to save. Each interval passes or fails on its own error estimate and its own share of the tolerance."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Tobin A. Driscoll and Richard J. Braun, Fundamentals of Numerical Computation (University of Delaware, free online edition): chapter \"Piecewise interpolation\", section \"Adaptive integration\""
+      },
+      {
+        "name": "MIT OpenCourseWare 18.330, Introduction to Numerical Analysis: lecture notes on adaptive quadrature"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

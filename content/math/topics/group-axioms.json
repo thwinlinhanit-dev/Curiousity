@@ -1,0 +1,149 @@
+{
+  "id": "aa.group-axioms",
+  "slug": "group-axioms",
+  "ladder": "math",
+  "course": "aa",
+  "unit": "groups",
+  "title": "The Group Axioms",
+  "short": "A group is a set with an associative operation, an identity and an inverse for every element; decide which axiom fails for examples like ℤ under subtraction or ℤₙ under multiplication.",
+  "trouble": "Students forget to check closure, or count ℤₙ under multiplication as a group although 0 (and every number sharing a factor with n) has no inverse.",
+  "prereqs": [
+    "aa.binary-operations",
+    "nt.modular-inverses",
+    "la.matrix-inverse"
+  ],
+  "xp": 2,
+  "viz": [
+    "aa-cayley"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A group is the simplest structure in which every equation $a \\ast x = b$ can be solved, the way you solve $3 + x = 7$ or $3x = 7$. Solving needs exactly three tools besides <a href=\"/math/abstract-algebra/binary-operations/\">a binary operation</a>: regrouping, a neutral element, and a way to undo."
+      },
+      {
+        "t": "p",
+        "html": "<b>Definition.</b> A <b>group</b> is a set $G$ with a binary operation $\\ast$ such that"
+      },
+      {
+        "t": "list",
+        "items": [
+          "<b>(associativity)</b> $(a \\ast b) \\ast c = a \\ast (b \\ast c)$ for all $a, b, c \\in G$;",
+          "<b>(identity)</b> there is $e \\in G$ with $e \\ast a = a \\ast e = a$ for all $a \\in G$;",
+          "<b>(inverses)</b> for each $a \\in G$ there is $a^{-1} \\in G$ with $a \\ast a^{-1} = a^{-1} \\ast a = e$."
+        ]
+      },
+      {
+        "t": "p",
+        "html": "Closure is built into \"binary operation on $G$\", but when you test an example, check it first. A group is <b>abelian</b> if also $a \\ast b = b \\ast a$ always. The number of elements $|G|$ is the <b>order</b> of $G$. We usually write $ab$ for $a \\ast b$; for abelian groups like $\\mathbb{Z}$ we often write $a + b$, $0$ and $-a$ instead."
+      },
+      {
+        "t": "why",
+        "html": "Here is why these axioms are the right ones. To solve $ax = b$, multiply on the left by $a^{-1}$: $$a^{-1}(ax) = a^{-1}b \\;\\Rightarrow\\; (a^{-1}a)x = a^{-1}b \\;\\Rightarrow\\; ex = a^{-1}b \\;\\Rightarrow\\; x = a^{-1}b.$$ The steps use inverses, associativity, inverses again and the identity, in that order. Remove any axiom and some equation stops being solvable."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Set and operation",
+          "Group?",
+          "Reason"
+        ],
+        "rows": [
+          [
+            "$\\mathbb{Z}$, $+$",
+            "yes",
+            "identity $0$, inverse $-a$"
+          ],
+          [
+            "$\\mathbb{Q} \\setminus \\{0\\}$, $\\times$",
+            "yes",
+            "identity $1$, inverse $1/a$"
+          ],
+          [
+            "invertible $2 \\times 2$ real matrices, $\\times$",
+            "yes (not abelian)",
+            "$\\det(AB) = \\det A \\det B \\ne 0$; <a href=\"/math/linear-algebra/matrix-inverse/\">inverses</a>"
+          ],
+          [
+            "$\\mathbb{Z}$, $-$",
+            "no",
+            "$(5 - 3) - 1 \\ne 5 - (3 - 1)$"
+          ],
+          [
+            "$\\mathbb{N}$, $+$",
+            "no",
+            "$1$ has no inverse"
+          ],
+          [
+            "$\\mathbb{Z}_{6}$, $\\times$ mod $6$",
+            "no",
+            "$0$ and $2$ have no inverse"
+          ]
+        ],
+        "cap": "Examples and non-examples. In the last row, $2x \\equiv 1 \\pmod 6$ has no solution, as you saw with modular inverses."
+      },
+      {
+        "t": "ex",
+        "title": "A finite group from a table",
+        "q": "Is $\\{1, 2, 3, 4\\}$ a group under multiplication mod $5$?",
+        "steps": [
+          "Closure: no product of two of these is a multiple of $5$, so every product lies in the set.",
+          "Associativity is inherited from multiplication of integers.",
+          "Identity: $1$. Inverses: $1 \\cdot 1 = 1$, $2 \\cdot 3 = 6 \\equiv 1$, $4 \\cdot 4 = 16 \\equiv 1$."
+        ],
+        "a": "Yes. It is the group $U(5)$ of the next lesson."
+      },
+      {
+        "t": "ex",
+        "title": "A strange-looking group",
+        "q": "On $\\mathbb{Z}$ let $a \\ast b = a + b + 1$. Find the identity and the inverse of $a$.",
+        "steps": [
+          "Associativity: both $(a \\ast b) \\ast c$ and $a \\ast (b \\ast c)$ equal $a + b + c + 2$.",
+          "Identity: $a \\ast u = a + u + 1 = a$ forces $u = -1$. Check: $(-1) \\ast a = a$ too.",
+          "Inverse: $a \\ast y = a + y + 1 = -1$ gives $y = -a - 2$.",
+          "Check with $a = 4$: $4 \\ast (-6) = 4 - 6 + 1 = -1$, the identity."
+        ],
+        "a": "$e = -1$ and $a^{-1} = -a - 2$."
+      },
+      {
+        "t": "viz",
+        "name": "aa-cayley",
+        "opts": {
+          "group": "U",
+          "n": 10,
+          "mode": "inverse",
+          "modes": [
+            "inverse",
+            "product"
+          ]
+        },
+        "cap": "The group $U(10) = \\{1, 3, 7, 9\\}$ under multiplication mod 10. Each row contains the identity $1$ exactly once, in the column of that row's inverse."
+      },
+      {
+        "t": "mistake",
+        "html": "Forgetting closure, or forgetting that every element needs an inverse. $\\mathbb{Z}_{n}$ under multiplication always fails, because $0 \\cdot y = 0 \\ne 1$; and when $n$ is not prime, numbers sharing a factor with $n$ fail too. Also remember that the inverse must combine with $a$ to give the <i>identity</i> of the operation, which need not be $0$ or $1$ (it was $-1$ above)."
+      },
+      {
+        "t": "key",
+        "html": "A group is a set with an associative operation, an identity, and an inverse for each element; closure must hold too. These are exactly the tools needed to solve $ax = b$, with the unique answer $x = a^{-1}b$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Thomas W. Judson, Abstract Algebra: Theory and Applications (open textbook), chapter 3, Groups (section 3.2, Definitions and Examples)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.701 Algebra I (Fall 2010), lecture notes on groups (Artin, Algebra, chapter 2)"
+      },
+      {
+        "name": "John A. Beachy and William D. Blair, Abstract Algebra, online study guide (Northern Illinois University), section 3.1, Definition of a Group"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

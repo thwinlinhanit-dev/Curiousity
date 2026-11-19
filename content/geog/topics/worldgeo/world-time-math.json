@@ -1,0 +1,130 @@
+{
+  "id": "worldgeo.world-time-math",
+  "slug": "world-time-math",
+  "ladder": "geog",
+  "course": "worldgeo",
+  "unit": "time",
+  "title": "Time Around the World",
+  "short": "Use UTC offsets to find the time somewhere else: subtract your offset to get UTC, then add the other place's offset.",
+  "trouble": "Students forget that some offsets are not whole hours (India is UTC+5:30, Nepal UTC+5:45) or that the answer may fall on a different day.",
+  "prereqs": [
+    "worldgeo.why-time-zones",
+    "usgeo.time-zone-math",
+    "g6.negatives-in-context"
+  ],
+  "xp": 3,
+  "viz": [
+    "gg-timezones"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You did time-zone math in <a href=\"/geography/us-geography/time-zone-math/\">What Time Is It There?</a> by counting zones. Around the world it is easier to use each place's <b>UTC offset</b>, the number of hours it is ahead of (+) or behind (−) UTC. You will need <a href=\"/math/grade-6/negatives-in-context/\">negative numbers</a>."
+      },
+      {
+        "t": "key",
+        "html": "To find the time somewhere else: <b>subtract your offset</b> to get UTC, then <b>add the other place's offset</b>. In one step: add the <b>difference</b> of the two offsets."
+      },
+      {
+        "t": "table",
+        "head": [
+          "City",
+          "Standard offset",
+          "City",
+          "Standard offset"
+        ],
+        "rows": [
+          [
+            "Los Angeles",
+            "UTC−8",
+            "Cairo",
+            "UTC+2"
+          ],
+          [
+            "New York",
+            "UTC−5",
+            "New Delhi",
+            "UTC+5:30"
+          ],
+          [
+            "London",
+            "UTC+0",
+            "Kathmandu",
+            "UTC+5:45"
+          ],
+          [
+            "Paris",
+            "UTC+1",
+            "Tokyo",
+            "UTC+9"
+          ]
+        ],
+        "cap": "Standard-time offsets. In summer, places with daylight saving time move their clocks one hour ahead."
+      },
+      {
+        "t": "why",
+        "html": "UTC is the shared reference clock. A place at UTC+9 is 9 hours ahead of it, so to get back to UTC you take 9 hours away; a place at UTC−5 is 5 hours behind, so you add 5. Once everything is in UTC, adding the second offset gives the other place's clock. Going through UTC means you never have to remember which way to count."
+      },
+      {
+        "t": "ex",
+        "title": "New York to Tokyo",
+        "q": "It is 8:00 p.m. on Monday in New York (UTC−5). What time is it in Tokyo (UTC+9)?",
+        "steps": [
+          "To UTC: 8:00 p.m. − (−5) = 8:00 p.m. + 5 hours = 1:00 a.m. Tuesday.",
+          "To Tokyo: 1:00 a.m. + 9 hours = 10:00 a.m. Tuesday.",
+          "Check: the difference is 9 − (−5) = 14 hours; 8 p.m. + 14 hours = 10 a.m. the next day."
+        ],
+        "a": "10:00 a.m. Tuesday."
+      },
+      {
+        "t": "ex",
+        "title": "A half-hour zone",
+        "q": "It is 9:00 a.m. in London (UTC+0). What time is it in New Delhi (UTC+5:30)?",
+        "steps": [
+          "London is on UTC, so UTC is 9:00 a.m.",
+          "Add 5 hours 30 minutes: 2:30 p.m."
+        ],
+        "a": "2:30 p.m."
+      },
+      {
+        "t": "viz",
+        "name": "gg-timezones",
+        "opts": {
+          "cities": [
+            "London",
+            "New Delhi",
+            "Kathmandu",
+            "Tokyo",
+            "New York"
+          ],
+          "utc": 540
+        },
+        "cap": "At 9:00 a.m. in London: look at the clocks for New Delhi and Kathmandu."
+      },
+      {
+        "t": "mistake",
+        "html": "Forgetting that some offsets are not whole hours (India UTC+5:30, Nepal UTC+5:45, Iran UTC+3:30) or that the answer can fall on a different day. After you add, ask: did I pass midnight? If the hour goes past 12 midnight it is the next day; if it goes back before midnight, it is the day before."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Time zone (Grokipedia)",
+        "url": "https://grokipedia.com/page/Time_zone"
+      },
+      {
+        "name": "Coordinated Universal Time (Grokipedia)",
+        "url": "https://grokipedia.com/page/Coordinated_Universal_Time"
+      },
+      {
+        "name": "C3 Framework for Social Studies State Standards (NCSS, 2013), Geography, Dimension 2, grades 6-8"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

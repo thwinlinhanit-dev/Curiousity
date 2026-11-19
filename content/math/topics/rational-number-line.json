@@ -1,0 +1,132 @@
+{
+  "id": "g6.rational-number-line",
+  "slug": "rational-number-line",
+  "ladder": "math",
+  "course": "g6",
+  "unit": "negatives",
+  "title": "Rational Numbers on the Number Line",
+  "short": "Place numbers like −2.5 and −3/4 on a number line.",
+  "trouble": "Students place −2.5 between −2 and −1, reading the line right to left like positive numbers.",
+  "prereqs": [
+    "g6.opposites"
+  ],
+  "xp": 2,
+  "viz": [
+    "numberline"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You can place <a href=\"/math/grade-6/opposites/\">opposites</a> of whole numbers. Fractions and decimals have opposites too, and they fill in the spaces between the negative integers."
+      },
+      {
+        "t": "key",
+        "html": "To place a negative fraction or decimal, find its opposite on the positive side, then reflect across 0. $-2.5$ is halfway between $-3$ and $-2$, because $2.5$ is halfway between 2 and 3."
+      },
+      {
+        "t": "viz",
+        "name": "g6-line",
+        "opts": {
+          "min": -4,
+          "max": 4,
+          "sub": 2,
+          "points": [
+            {
+              "v": -2.5,
+              "label": "−2.5",
+              "color": "blue"
+            },
+            {
+              "v": 2.5,
+              "label": "2.5",
+              "color": "red"
+            }
+          ],
+          "arcs": [
+            {
+              "from": 0,
+              "to": -2.5,
+              "label": "2.5",
+              "color": "blue"
+            },
+            {
+              "from": 0,
+              "to": 2.5,
+              "label": "2.5",
+              "color": "red"
+            }
+          ]
+        },
+        "cap": "Mirror images: 2.5 and −2.5 are the same distance from 0."
+      },
+      {
+        "t": "why",
+        "html": "$-2.5$ means \"2.5 units to the left of 0\". Walking left from 0, you pass $-1$, then $-2$, and then you still have half a unit to go. So $-2.5$ is past $-2$, halfway to $-3$. Going left, the numbers get smaller, so the farther left a number is, the more negative it is."
+      },
+      {
+        "t": "viz",
+        "name": "numberline",
+        "opts": {
+          "min": -3,
+          "max": 1,
+          "sub": 2,
+          "labels": "dec",
+          "points": [
+            {
+              "v": "-0.5",
+              "label": "A",
+              "drag": true
+            }
+          ],
+          "task": {
+            "target": "-2.5",
+            "point": 0,
+            "text": "Drag A to −2.5."
+          }
+        },
+        "cap": "Your turn on a line marked in halves."
+      },
+      {
+        "t": "ex",
+        "title": "A negative fraction",
+        "q": "Where is $-\\frac{3}{4}$?",
+        "steps": [
+          "$\\frac{3}{4}$ is between 0 and 1, three quarters of the way to 1.",
+          "Reflect: $-\\frac{3}{4}$ is between $-1$ and 0, three quarter-steps left of 0."
+        ],
+        "a": "Between $-1$ and 0, closer to $-1$."
+      },
+      {
+        "t": "ex",
+        "title": "Read a point",
+        "q": "A number line from $-2$ to 0 is cut into fourths. Point P is 3 small steps left of $-1$. What number is P?",
+        "steps": [
+          "Each small step is $\\frac{1}{4}$.",
+          "Three quarter-steps left of $-1$ means $\\frac{3}{4}$ farther from 0 than $-1$: that is $-1\\frac{3}{4}$."
+        ],
+        "a": "$-1\\frac{3}{4}$, or $-1.75$."
+      },
+      {
+        "t": "mistake",
+        "html": "Putting $-2.5$ between $-2$ and $-1$, as if you read the negative side from left to right like the positive side. Quick check: $-2.5$ is farther from 0 than $-2$ is (2.5 units against 2), so it must sit to the left of $-2$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Prealgebra 2e, section 3.1 Introduction to Integers"
+      },
+      {
+        "name": "OpenStax, Prealgebra 2e, section 7.1 Rational and Irrational Numbers"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 6.NS.C.6c: rational numbers on a number line"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

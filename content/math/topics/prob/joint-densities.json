@@ -1,0 +1,120 @@
+{
+  "id": "prob.joint-densities",
+  "slug": "joint-densities",
+  "ladder": "math",
+  "course": "prob",
+  "unit": "joint",
+  "title": "Joint Densities",
+  "short": "P((X, Y) ∈ R) = ∬_R f(x, y) dA; set up the limits for regions such as {x < y}.",
+  "trouble": "Students integrate over the whole support instead of the part where the event happens, or forget that f is 0 outside its support.",
+  "prereqs": [
+    "prob.geometric-probability",
+    "prob.joint-pmf",
+    "calc3.general-regions"
+  ],
+  "xp": 3,
+  "viz": [
+    "prob-region",
+    "surface"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "When $(X, Y)$ is not uniform, probability is still found by integrating, now with a density over a region of the plane. The limits come from sketching the region, exactly as in <a href=\"/math/calculus-3/general-regions/\">double integrals over general regions</a>. This generalizes <a href=\"/math/probability/geometric-probability/\">geometric probability</a> and the <a href=\"/math/probability/joint-pmf/\">joint pmf</a>."
+      },
+      {
+        "t": "key",
+        "html": "A <b>joint density</b> satisfies $f(x, y) \\ge 0$ and $\\iint f\\,dA = 1$, and for a region $R$, $$P((X, Y) \\in R) = \\iint_{R} f(x, y)\\,dA.$$ Integrate only where the event holds <i>and</i> $f > 0$."
+      },
+      {
+        "t": "why",
+        "html": "As in one dimension, $f(x, y)$ is probability per unit area: a small rectangle near $(x, y)$ with sides $\\Delta x$ and $\\Delta y$ has probability about $f(x, y)\\,\\Delta x\\,\\Delta y$. Adding over a region gives a double Riemann sum, whose limit is the double integral. Outside the support the density is 0, so those parts of the region add nothing. The work is in the limits: sketch the support and the event, then for each $x$ read off the range of $y$ that lies in both."
+      },
+      {
+        "t": "viz",
+        "name": "prob-region",
+        "opts": {
+          "support": "square",
+          "f": "x+y",
+          "event": "x+y<1",
+          "slices": "x",
+          "at": 0.4
+        },
+        "cap": "The density x plus y on the unit square, darker where it is larger, with the triangle where x plus y is less than 1. The slice shows the inner limits: y runs from 0 to 1 minus x."
+      },
+      {
+        "t": "viz",
+        "name": "surface",
+        "opts": {
+          "f": "x + y",
+          "xmin": 0,
+          "xmax": 1,
+          "ymin": 0,
+          "ymax": 1,
+          "contours": 8,
+          "slice": "none",
+          "n": 20
+        },
+        "cap": "The same joint density drawn as a surface: probability is the volume under it."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "The constant",
+        "q": "$f(x, y) = c(x + y)$ on the unit square. Find $c$.",
+        "steps": [
+          "$$\\int_{0}^{1}\\int_{0}^{1} (x + y)\\,dy\\,dx = \\int_{0}^{1} \\left(x + \\frac{1}{2}\\right)dx = 1$$",
+          "So $c = 1$."
+        ],
+        "a": "$c = 1$"
+      },
+      {
+        "t": "ex",
+        "title": "A triangle region",
+        "q": "With $f(x, y) = x + y$ on the unit square, find $P(X + Y < 1)$.",
+        "steps": [
+          "For each $x$ in $[0, 1]$, $y$ runs from 0 to $1 - x$.",
+          "Inner: $$\\int_{0}^{1 - x} (x + y)\\,dy = x(1 - x) + \\frac{(1 - x)^{2}}{2} = \\frac{1 - x^{2}}{2}$$",
+          "Outer: $\\int_{0}^{1} \\frac{1 - x^{2}}{2}\\,dx = \\frac{1}{2} \\cdot \\frac{2}{3} = \\frac{1}{3}$."
+        ],
+        "a": "$\\frac{1}{3}$"
+      },
+      {
+        "t": "ex",
+        "title": "A density on a triangle",
+        "q": "$f(x, y) = 2$ for $0 \\le x \\le y \\le 1$. Find $P(Y > 2X)$.",
+        "steps": [
+          "The event $y > 2x$ inside the triangle: $x$ from 0 to $\\frac{1}{2}$, and $y$ from $2x$ to 1 (then $y > x$ automatically).",
+          "$$\\int_{0}^{1/2}\\int_{2x}^{1} 2\\,dy\\,dx = \\int_{0}^{1/2} 2(1 - 2x)\\,dx = 1 - \\frac{1}{2} = \\frac{1}{2}$$"
+        ],
+        "a": "$\\frac{1}{2}$"
+      },
+      {
+        "t": "note",
+        "html": "Supports can be unbounded. If $f(x, y) = \\lambda\\mu e^{-\\lambda x - \\mu y}$ for $x, y > 0$ (two independent exponential times), then $$P(X < Y) = \\int_{0}^{\\infty}\\int_{x}^{\\infty} \\lambda\\mu e^{-\\lambda x - \\mu y}\\,dy\\,dx = \\int_{0}^{\\infty} \\lambda e^{-(\\lambda + \\mu)x}\\,dx = \\frac{\\lambda}{\\lambda + \\mu}:$$ the clock with the larger rate tends to ring first."
+      },
+      {
+        "t": "mistake",
+        "html": "Integrating over the whole support instead of the part where the event happens, or using limits that run outside the support, where $f = 0$. Check: sketch both regions; the limits must describe their overlap, and the answer must lie between 0 and 1."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "MIT OpenCourseWare 18.05, Introduction to Probability and Statistics (Spring 2014), readings on joint distributions and joint densities"
+      },
+      {
+        "name": "Grinstead and Snell, Introduction to Probability (2nd revised edition, American Mathematical Society; free from Dartmouth College), chapter 4 (Conditional Probability), section 4.2, continuous conditional probability"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,123 @@
+{
+  "id": "informal.objections",
+  "slug": "objections",
+  "ladder": "logic",
+  "course": "informal",
+  "unit": "evaluating",
+  "title": "Objections and Replies",
+  "short": "A strong case answers the best objection to it; an objection attacks a premise or the link from premises to conclusion.",
+  "trouble": "Learners answer a weak objection, or think an objection to one premise defeats a conclusion that has other, independent support.",
+  "prereqs": [
+    "informal.evaluate-argument"
+  ],
+  "xp": 2,
+  "viz": [
+    "lg-argmap"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Once you can <a href=\"/logic/informal-logic/evaluate-argument/\">evaluate an argument</a>, you can also make a case stronger by facing what can be said against it. An <b>objection</b> is a reason to doubt an argument; a <b>reply</b> answers it."
+      },
+      {
+        "t": "key",
+        "html": "An objection attacks either a <b>premise</b> (saying it is false) or the <b>link</b> (granting the premises but denying that the conclusion follows). A strong case answers the best objection, not the weakest."
+      },
+      {
+        "t": "why",
+        "html": "Knowing what an objection attacks tells you how much it can do. Knocking out one of several convergent premises weakens a case; knocking out one of two linked premises breaks it. And an objection to the link (\"even if that's all true…\") can defeat an argument with entirely true premises."
+      },
+      {
+        "t": "viz",
+        "name": "lg-argmap",
+        "opts": {
+          "nodes": [
+            {
+              "id": 1,
+              "text": "The class garden gets six hours of sun."
+            },
+            {
+              "id": 2,
+              "text": "Tomatoes grow well with six hours of sun."
+            },
+            {
+              "id": 3,
+              "text": "We should plant tomatoes in the class garden.",
+              "kind": "conclusion"
+            },
+            {
+              "id": 4,
+              "text": "Squirrels in the yard eat tomatoes.",
+              "kind": "objection"
+            },
+            {
+              "id": 5,
+              "text": "A simple net keeps squirrels out.",
+              "kind": "reply"
+            }
+          ],
+          "links": [
+            {
+              "from": [
+                1,
+                2
+              ],
+              "to": 3
+            },
+            {
+              "from": 4,
+              "to": 3,
+              "kind": "against"
+            },
+            {
+              "from": 5,
+              "to": 4,
+              "kind": "against"
+            }
+          ]
+        },
+        "cap": "An objection to the conclusion, and a reply that answers it."
+      },
+      {
+        "t": "ex",
+        "title": "What does it attack?",
+        "q": "Argument: \"The picnic should be at the park. P1: It has covered tables. P2: It is a short walk.\" Objection: \"Even if both are true, the park's fee is more than our budget.\"",
+        "steps": [
+          "Does the objection say P1 or P2 is false? No: it says \"even if both are true.\"",
+          "It says something else matters, so the conclusion does not follow."
+        ],
+        "a": "It attacks the link."
+      },
+      {
+        "t": "ex",
+        "title": "Does the case survive?",
+        "q": "Same argument. Objection: \"The covered tables were taken down last month.\"",
+        "steps": [
+          "This denies P1.",
+          "P1 and P2 are convergent: the short walk is still a separate reason.",
+          "The case is weaker but not gone."
+        ],
+        "a": "No, the conclusion keeps some support from P2."
+      },
+      {
+        "t": "mistake",
+        "html": "Answering a weak objection and calling the case closed, or thinking that knocking out one premise defeats a conclusion that has other, independent support. Check whether the premises are linked or convergent, and look for the strongest objection."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy, \"Informal Logic\""
+      },
+      {
+        "name": "OpenStax Introduction to Philosophy, 5.3 Arguments"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

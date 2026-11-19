@@ -1,0 +1,124 @@
+{
+  "id": "cupastry.bakers-percent",
+  "slug": "bakers-percent",
+  "ladder": "culinary",
+  "course": "cupastry",
+  "unit": "dough",
+  "title": "Baker's Percentages",
+  "short": "Every ingredient is written as a percent of the flour's weight: flour is 100%, water 65% means 650 g of water for 1,000 g of flour.",
+  "trouble": "Learners make the percents add up to 100; in baker's math the flour alone is 100%.",
+  "prereqs": [
+    "cufound.weighing",
+    "g6.percent-of-a-number"
+  ],
+  "xp": 2,
+  "viz": [
+    "cu-bakers"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Bakers write formulas, not recipes. Every ingredient is a percentage of the flour, so any batch size is one multiplication away."
+      },
+      {
+        "t": "key",
+        "html": "<b>Baker's percentage:</b> flour = <b>100%</b>; every other ingredient = its weight ÷ flour weight × 100. If there are two flours, their total is 100%. To make a batch, multiply each percent by the flour weight. To make a set amount of dough, flour weight = dough weight ÷ (total of all the percents ÷ 100)."
+      },
+      {
+        "t": "viz",
+        "name": "cu-bakers",
+        "opts": {
+          "preset": "lean"
+        },
+        "cap": "Pick a formula and a flour weight or dough weight, and every ingredient is worked out for you."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Ingredient",
+          "Baker's %",
+          "For 1,000 g flour"
+        ],
+        "rows": [
+          [
+            "Bread flour",
+            "100%",
+            "1,000 g"
+          ],
+          [
+            "Water",
+            "68%",
+            "680 g"
+          ],
+          [
+            "Salt",
+            "2%",
+            "20 g"
+          ],
+          [
+            "Instant yeast",
+            "1%",
+            "10 g"
+          ],
+          [
+            "Total",
+            "171%",
+            "1,710 g"
+          ]
+        ],
+        "cap": "A simple lean bread"
+      },
+      {
+        "t": "why",
+        "html": "The percents add up to more than 100%, and that is the point: they compare everything to flour, so you can see at a glance that one bread is wetter (higher water %) or saltier than another."
+      },
+      {
+        "t": "ex",
+        "title": "Ingredient from percent",
+        "q": "A formula has 2.2% salt. How much salt for 1,500 g of flour?",
+        "steps": [
+          "$1500 \\times 0.022 = 33$ g."
+        ],
+        "a": "33 g."
+      },
+      {
+        "t": "ex",
+        "title": "Flour from dough weight",
+        "q": "You need 1,800 g of the 171% dough above. How much flour?",
+        "steps": [
+          "$1800 \\div 1.71 \\approx 1052.6$ g."
+        ],
+        "a": "About 1,053 g of flour."
+      },
+      {
+        "t": "mistake",
+        "html": "Making the percents total 100. In baker's math only the flour is 100%."
+      },
+      {
+        "t": "note",
+        "html": "<div class=\"cu-box cu-drill\"><p class=\"cu-box-lab\"><span aria-hidden=\"true\">🏠</span> Practice at home</p><ul><li>Take a bread recipe written in cups, weigh each ingredient as you measure it, and rewrite it in baker's percentages.</li></ul></div>"
+      },
+      {
+        "t": "note",
+        "html": "<div class=\"cu-box cu-mp\"><p class=\"cu-box-lab\"><span aria-hidden=\"true\">🍲</span> In Meal Prep</p><ul><li><a href=\"/meal-prep/scratch/sandwich-bread/\">Sandwich bread</a>: a good first loaf</li><li><a href=\"/meal-prep/scratch/crusty-loaf/\">French bread and baguettes</a>: a lean dough</li></ul></div>"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Grokipedia, Baker percentage",
+        "url": "https://grokipedia.com/page/Baker_percentage"
+      },
+      {
+        "name": "The Culinary Institute of America, Culinary Arts (AOS) curriculum (course list)",
+        "url": "https://catalog.ciachef.edu/node/1273"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

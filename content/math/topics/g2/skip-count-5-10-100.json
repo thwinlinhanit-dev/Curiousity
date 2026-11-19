@@ -1,0 +1,110 @@
+{
+  "id": "g2.skip-count-5-10-100",
+  "slug": "skip-count-5-10-100",
+  "ladder": "math",
+  "course": "g2",
+  "unit": "place-value",
+  "title": "Skip Counting by 5s, 10s and 100s",
+  "short": "Count by fives, tens and hundreds within 1,000.",
+  "trouble": "",
+  "prereqs": [
+    "g2.place-value-hundreds"
+  ],
+  "xp": 1,
+  "viz": [
+    "hundredchart",
+    "numberline"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Skip counting means counting by the same jump each time. You already count by tens (<a href=\"/math/grade-1/count-by-tens/\">Counting by Tens</a>). Now count by 5s, 10s and 100s, starting from any number up to 1,000."
+      },
+      {
+        "t": "viz",
+        "name": "hundredchart",
+        "opts": {
+          "skip": 5
+        },
+        "cap": "Counting by 5s: every shaded number ends in 5 or 0."
+      },
+      {
+        "t": "why",
+        "html": "Adding 10 adds one more ten, so only the tens digit goes up by 1. Adding 100 adds one more hundred, so only the hundreds digit goes up. Adding 5 to a number that ends in 0 or 5 makes the ones digit flip: 0, 5, 0, 5."
+      },
+      {
+        "t": "viz",
+        "name": "numberline",
+        "opts": {
+          "min": 0,
+          "max": 1000,
+          "step": 100,
+          "hops": [
+            {
+              "from": 0,
+              "by": 100,
+              "n": 10
+            }
+          ],
+          "points": []
+        },
+        "cap": "Ten jumps of 100 reach 1,000."
+      },
+      {
+        "t": "ex",
+        "title": "Count by 10s across a hundred",
+        "q": "Count by 10s from 470.",
+        "steps": [
+          "470, 480, 490: only the tens digit changes.",
+          "10 more than 490 makes 10 tens, which is a new hundred.",
+          "So the next numbers are 500, 510, 520."
+        ],
+        "a": "470, 480, 490, 500, 510, 520"
+      },
+      {
+        "t": "ex",
+        "title": "Count by 100s",
+        "q": "Count by 100s from 160.",
+        "steps": [
+          "Only the hundreds digit changes.",
+          "160, 260, 360, 460, 560."
+        ],
+        "a": "160, 260, 360, 460, 560"
+      },
+      {
+        "t": "ex",
+        "title": "Count by 5s",
+        "q": "Count by 5s from 35.",
+        "steps": [
+          "The ones digit goes 5, 0, 5, 0.",
+          "35, 40, 45, 50, 55, 60."
+        ],
+        "a": "35, 40, 45, 50, 55, 60"
+      },
+      {
+        "t": "key",
+        "html": "Skip counting adds the same amount each time. Counting by 10s changes the tens digit; counting by 100s changes the hundreds digit."
+      },
+      {
+        "t": "mistake",
+        "html": "After 490, writing “4100.” The tens place can’t hold 10. When the tens reach 10, they make a new hundred: $490 + 10 = 500$."
+      },
+      {
+        "t": "note",
+        "html": "<b>Grown-up tip:</b> Count nickels by 5s and dimes by 10s, or count by 100s as you climb the stairs."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 2, standard 2.NBT.A.2 (count within 1000; skip-count by 5s, 10s and 100s)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

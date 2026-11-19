@@ -1,0 +1,101 @@
+{
+  "id": "gchem2.ph-solubility",
+  "slug": "ph-solubility",
+  "ladder": "chemistry",
+  "course": "gchem2",
+  "unit": "solubility",
+  "title": "pH and Solubility",
+  "short": "Salts with basic anions, such as hydroxides and carbonates, dissolve better in acid.",
+  "trouble": "Students expect pH to change the solubility of every salt, including those with neutral anions such as chloride.",
+  "prereqs": [
+    "gchem2.common-ion",
+    "gchem2.salt-solutions"
+  ],
+  "xp": 2,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Some salts dissolve far better in acid. The reason combines the <a href=\"/chemistry/general-chemistry-2/common-ion/\">common-ion idea</a> with <a href=\"/chemistry/general-chemistry-2/salt-solutions/\">ions that are weak bases</a>: acid removes a basic anion from the solution, and the solid dissolves to replace it."
+      },
+      {
+        "t": "key",
+        "html": "If a salt's anion is a weak base ($\\mathrm{OH^-}$, $\\mathrm{CO_3^{2-}}$, $\\mathrm{F^-}$, $\\mathrm{PO_4^{3-}}$, $\\mathrm{S^{2-}}$), lowering the pH raises its solubility. If the anion is the conjugate base of a strong acid ($\\mathrm{Cl^-}$, $\\mathrm{Br^-}$, $\\mathrm{I^-}$), pH has essentially no effect."
+      },
+      {
+        "t": "why",
+        "html": "For $\\mathrm{Mg(OH)_2(s) \\rightleftharpoons Mg^{2+} + 2OH^-}$, acid reacts with the hydroxide: $\\mathrm{OH^- + H_3O^+ \\to 2H_2O}$. That lowers $[\\mathrm{OH^-}]$, $Q$ falls below $K_{sp}$, and more solid dissolves. Carbonate reacts with acid to give $\\mathrm{HCO_3^-}$ and then $\\mathrm{CO_2}$ gas, which leaves entirely. But $\\mathrm{Cl^-}$ will not take a proton in water (HCl is strong), so acid cannot pull AgCl apart."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "f": "16.75-2*x",
+          "xmin": 9,
+          "xmax": 12.5,
+          "ymin": -8,
+          "ymax": -1,
+          "xlabel": "pH",
+          "ylabel": "log s of Mg(OH)₂",
+          "trace": true,
+          "zoom": false
+        },
+        "cap": "Molar solubility of $\\mathrm{Mg(OH)_2}$ against pH, from $s = K_{sp}/[\\mathrm{OH^-}]^2$. Each step of one pH unit lower lets 100 times more dissolve."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Magnesium hydroxide at two pH values",
+        "q": "$K_{sp}$ of $\\mathrm{Mg(OH)_2}$ is $5.6 \\times 10^{-12}$. Find its molar solubility in solutions buffered at pH 10.00 and pH 9.00.",
+        "steps": [
+          "At pH 10.00: pOH 4.00, $[\\mathrm{OH^-}] = 1.0 \\times 10^{-4}$ (fixed by the buffer). $$s = [\\mathrm{Mg^{2+}}] = \\dfrac{5.6 \\times 10^{-12}}{(1.0 \\times 10^{-4})^2} = 5.6 \\times 10^{-4}\\ \\text{M}$$",
+          "At pH 9.00: $[\\mathrm{OH^-}] = 1.0 \\times 10^{-5}$, so $s = \\dfrac{5.6 \\times 10^{-12}}{1.0 \\times 10^{-10}} = 0.056\\ \\text{M}$.",
+          "One pH unit lower, 100 times more dissolves (because $[\\mathrm{OH^-}]$ is squared)."
+        ],
+        "a": "$5.6 \\times 10^{-4}\\ \\text{M}$ and $0.056\\ \\text{M}$."
+      },
+      {
+        "t": "ex",
+        "title": "Which salts care about pH?",
+        "q": "Which become more soluble in acid: $\\mathrm{CaCO_3}$, AgCl, $\\mathrm{CaF_2}$, AgBr, $\\mathrm{Fe(OH)_3}$?",
+        "steps": [
+          "Basic anions: $\\mathrm{CO_3^{2-}}$, $\\mathrm{F^-}$ and $\\mathrm{OH^-}$. Those salts dissolve better in acid.",
+          "$\\mathrm{Cl^-}$ and $\\mathrm{Br^-}$ come from strong acids and do not react with $\\mathrm{H_3O^+}$."
+        ],
+        "a": "$\\mathrm{CaCO_3}$, $\\mathrm{CaF_2}$ and $\\mathrm{Fe(OH)_3}$."
+      },
+      {
+        "t": "p",
+        "html": "Tooth enamel is mostly hydroxyapatite, $\\mathrm{Ca_5(PO_4)_3OH}$. Acids made by mouth bacteria react with its hydroxide and phosphate ions and dissolve it. Fluoride swaps in for the hydroxide to form fluorapatite, which resists acid better. Limestone caves form the same way: rainwater with dissolved $\\mathrm{CO_2}$ is slightly acidic and slowly dissolves calcium carbonate."
+      },
+      {
+        "t": "note",
+        "html": "The same reasoning explains why some metal sulfides dissolve in acid and others do not: sulfide is a strong base, and acid pulls it out of solution as $\\mathrm{HS^-}$ and $\\mathrm{H_2S}$. Chemists separate metal ions this way by controlling the pH."
+      },
+      {
+        "t": "mistake",
+        "html": "Expecting pH to change the solubility of every salt, including chlorides, bromides and iodides. Only anions that are weak bases react with $\\mathrm{H_3O^+}$. Check: is the anion the partner of a strong acid? If so, pH does not matter."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 15.1 Precipitation and Dissolution"
+      },
+      {
+        "name": "OpenStax Chemistry 2e, Section 15.3 Coupled Equilibria"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

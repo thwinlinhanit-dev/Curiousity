@@ -1,0 +1,136 @@
+{
+  "id": "la.determinant-properties",
+  "slug": "determinant-properties",
+  "ladder": "math",
+  "course": "la",
+  "unit": "determinants",
+  "title": "Properties of Determinants",
+  "short": "Row operations change the determinant in predictable ways; det(AB) = det A det B.",
+  "trouble": "Students assume det(A + B) = det A + det B.",
+  "prereqs": [
+    "la.cofactor-expansion",
+    "la.echelon-form"
+  ],
+  "xp": 2,
+  "viz": [
+    "matrix2d"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/math/linear-algebra/cofactor-expansion/\">Cofactor expansion</a> is slow for big matrices. Row reduction from <a href=\"/math/linear-algebra/echelon-form/\">echelon form</a> is fast, and the determinant changes in a simple, predictable way under each row operation."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Row operation",
+          "Effect on the determinant"
+        ],
+        "rows": [
+          [
+            "Replacement: add a multiple of one row to another",
+            "No change"
+          ],
+          [
+            "Interchange: swap two rows",
+            "Multiplied by $-1$"
+          ],
+          [
+            "Scaling: multiply one row by $k$",
+            "Multiplied by $k$"
+          ]
+        ],
+        "cap": "How row operations change det A."
+      },
+      {
+        "t": "why",
+        "html": "Two facts about the determinant do the work: it is <b>linear in each row</b> (if you fix the other rows, it is a linear function of the remaining one) and it <b>changes sign when two rows are swapped</b>. Scaling a row by $k$ multiplies by $k$ by linearity. A matrix with two equal rows has determinant $0$, because swapping those rows changes nothing yet must flip the sign. Then replacement: $$\\det(\\ldots, \\mathbf{r}_i + c\\mathbf{r}_j, \\ldots) = \\det(\\ldots, \\mathbf{r}_i, \\ldots) + c\\det(\\ldots, \\mathbf{r}_j, \\ldots),$$ and the second determinant has row $\\mathbf{r}_j$ twice, so it is $0$. Geometrically, a replacement is a shear, and shears do not change area."
+      },
+      {
+        "t": "ex",
+        "title": "Determinant by row reduction",
+        "q": "Find $\\det C$ for $C = \\begin{bmatrix} 0 & 2 & 4 \\\\ 1 & 3 & 5 \\\\ 2 & 1 & -1 \\end{bmatrix}$.",
+        "steps": [
+          "$R_{1} \\leftrightarrow R_{2}$ to get a nonzero pivot: the determinant flips sign. $\\begin{bmatrix} 1 & 3 & 5 \\\\ 0 & 2 & 4 \\\\ 2 & 1 & -1 \\end{bmatrix}$",
+          "$R_{3} \\to R_{3} - 2R_{1}$ and then $R_{3} \\to R_{3} + \\frac{5}{2}R_{2}$ (replacements, no change): $\\begin{bmatrix} 1 & 3 & 5 \\\\ 0 & 2 & 4 \\\\ 0 & 0 & -1 \\end{bmatrix}$",
+          "Triangular, so its determinant is $1 \\cdot 2 \\cdot (-1) = -2$.",
+          "Undo the one swap: $\\det C = -(-2) = 2$."
+        ],
+        "a": "$2$"
+      },
+      {
+        "t": "p",
+        "html": "This gives a fast method for any size: row reduce to an echelon form $U$ using replacements and swaps only. If you made $r$ swaps, then $\\det A$ is $(-1)^{r}$ times the product of the diagonal entries of $U$. For a $20 \\times 20$ matrix that is a few thousand arithmetic steps instead of the $20!$ terms of cofactor expansion."
+      },
+      {
+        "t": "h",
+        "text": "Products, transposes and inverses"
+      },
+      {
+        "t": "list",
+        "items": [
+          "$\\det(AB) = (\\det A)(\\det B)$.",
+          "$\\det A^{T} = \\det A$, so everything said about rows holds for columns too.",
+          "$A$ is invertible exactly when $\\det A \\neq 0$, and then $\\det A^{-1} = \\dfrac{1}{\\det A}$ (from $\\det A \\cdot \\det A^{-1} = \\det I = 1$).",
+          "For an $n \\times n$ matrix, $\\det(kA) = k^{n}\\det A$: every one of the $n$ rows is scaled by $k$."
+        ]
+      },
+      {
+        "t": "ex",
+        "title": "Combining the rules",
+        "q": "$A$ and $B$ are $3 \\times 3$ with $\\det A = 2$ and $\\det B = -5$. Find $\\det(2A^{T}B^{-1})$.",
+        "steps": [
+          "$\\det(2A^{T}B^{-1}) = 2^{3}\\det(A^{T}B^{-1})$, since $2A^{T}B^{-1}$ is $3 \\times 3$.",
+          "$\\det(A^{T}B^{-1})$ $= \\det A^{T}\\cdot\\det B^{-1}$ $= 2 \\cdot \\left(-\\frac{1}{5}\\right)$ $= -\\frac{2}{5}$.",
+          "Total: $8 \\cdot \\left(-\\frac{2}{5}\\right) = -\\frac{16}{5}$."
+        ],
+        "a": "$-\\frac{16}{5}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Assuming $\\det(A + B) = \\det A + \\det B$. The determinant respects products, not sums. With $A = \\begin{bmatrix} 1 & 2 \\\\ 3 & 4 \\end{bmatrix}$ and $B = \\begin{bmatrix} 2 & 0 \\\\ 1 & 3 \\end{bmatrix}$: $\\det A + \\det B = -2 + 6 = 4$, but $A + B = \\begin{bmatrix} 3 & 2 \\\\ 4 & 7 \\end{bmatrix}$ has determinant $21 - 8 = 13$. Quick check: try $A = B = I_2$; then $\\det(2I) = 4$, not $2$."
+      },
+      {
+        "t": "viz",
+        "name": "matrix2d",
+        "opts": {
+          "m": [
+            [
+              1,
+              1.5
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "presets": false,
+          "eigen": false,
+          "vector": null,
+          "t": 0,
+          "task": "Press \"Apply A\": a shear slides the square into a parallelogram with the same base and height."
+        },
+        "cap": "A row replacement acts like a shear: the area, and so the determinant, does not change."
+      },
+      {
+        "t": "key",
+        "html": "Reduce to triangular form, multiply the diagonal, and correct for the operations: each swap flips the sign, each scaling by $k$ multiplies by $k$, replacements change nothing. And $\\det(AB) = \\det A\\det B$, $\\det A^{T} = \\det A$, $\\det A^{-1} = 1/\\det A$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Margalit and Rabinoff, Interactive Linear Algebra (Georgia Tech), §4.1 Determinants: Definition"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.06 Linear Algebra (Gilbert Strang, Spring 2010), Lecture 18: Properties of Determinants"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

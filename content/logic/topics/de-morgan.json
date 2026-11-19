@@ -1,0 +1,125 @@
+{
+  "id": "sym.de-morgan",
+  "slug": "de-morgan",
+  "ladder": "logic",
+  "course": "sym",
+  "unit": "truth-tables",
+  "title": "De Morgan's Laws",
+  "short": "¬(p ∧ q) is equivalent to ¬p ∨ ¬q, and ¬(p ∨ q) to ¬p ∧ ¬q: moving a negation inside flips ∧ and ∨.",
+  "trouble": "The scope of negation: learners distribute the ¬ but keep the same connective, writing ¬(p ∧ q) as ¬p ∧ ¬q.",
+  "prereqs": [
+    "sym.equivalence"
+  ],
+  "xp": 2,
+  "viz": [
+    "lg-truthtable"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Some equivalences (<a href=\"/logic/symbolic-logic/equivalence/\">Logical Equivalence</a>) come up so often that they have names. The most useful pair is De Morgan's laws, which tell you how to move a negation inside parentheses."
+      },
+      {
+        "t": "key",
+        "html": "$\\neg (p \\land q)$ is equivalent to $\\neg p \\lor \\neg q$, and $\\neg (p \\lor q)$ is equivalent to $\\neg p \\land \\neg q$. When the negation moves inside, it goes onto each part and the connective switches."
+      },
+      {
+        "t": "why",
+        "html": "\"Not both\" means at least one fails: $\\neg (p \\land q)$ is true when $p$ is false or $q$ is false, which is $\\neg p \\lor \\neg q$. \"Not either\" means neither holds: $\\neg (p \\lor q)$ is true only when $p$ is false and $q$ is false, which is $\\neg p \\land \\neg q$. In everyday words: it is not true that the bakery has both bread and muffins exactly when it lacks bread or lacks muffins."
+      },
+      {
+        "t": "viz",
+        "name": "lg-truthtable",
+        "opts": {
+          "formulas": [
+            "¬(p ∨ q)",
+            "¬p ∧ ¬q",
+            "¬p ∨ ¬q"
+          ],
+          "sub": true
+        },
+        "cap": "The first two columns match; the third, the common slip, does not."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Move the negation in",
+        "q": "Rewrite $\\neg (r \\land s)$ without a $\\neg$ in front of the parentheses.",
+        "steps": [
+          "Negate each part: $\\neg r$, $\\neg s$.",
+          "Switch $\\land$ to $\\lor$."
+        ],
+        "a": "$\\neg r \\lor \\neg s$"
+      },
+      {
+        "t": "ex",
+        "title": "Parts that are already negated",
+        "q": "Rewrite $\\neg (\\neg p \\lor q)$.",
+        "steps": [
+          "Negate each part: $\\neg \\neg p$ and $\\neg q$.",
+          "Switch $\\lor$ to $\\land$.",
+          "A double negation may be dropped: $\\neg \\neg p$ is equivalent to $p$."
+        ],
+        "a": "$p \\land \\neg q$"
+      },
+      {
+        "t": "ex",
+        "title": "Pull it out",
+        "q": "Write $\\neg p \\lor \\neg q$ as the negation of one formula.",
+        "steps": [
+          "Read De Morgan right to left.",
+          "Take the negations off, switch $\\lor$ to $\\land$, and negate the whole."
+        ],
+        "a": "$\\neg (p \\land q)$"
+      },
+      {
+        "t": "p",
+        "html": "Both laws come from one idea. A conjunction claims every part; to deny it you only need one part to fail, so the denial is a disjunction of failures. A disjunction claims at least one part; to deny it every part must fail, so the denial is a conjunction of failures. Once you see that, you will not need to memorize which way the connective switches."
+      },
+      {
+        "t": "ex",
+        "title": "In English",
+        "q": "Rewrite \"It is not the case that both the gate is open and the dog is outside\" without \"both\".",
+        "steps": [
+          "In symbols: $\\neg (g \\land d)$.",
+          "De Morgan gives $\\neg g \\lor \\neg d$."
+        ],
+        "a": "\"Either the gate is not open or the dog is not outside.\""
+      },
+      {
+        "t": "mistake",
+        "html": "Distributing the $\\neg$ but keeping the connective: writing $\\neg (p \\land q)$ as $\\neg p \\land \\neg q$. Check the row $p$ T, $q$ F: $\\neg (p \\land q)$ is T, but $\\neg p \\land \\neg q$ is F. The connective must switch. A quick memory aid: the negation \"flips\" both the parts and the connective."
+      },
+      {
+        "t": "list",
+        "items": [
+          "Negation over $\\land$: negate each part, switch to $\\lor$.",
+          "Negation over $\\lor$: negate each part, switch to $\\land$.",
+          "Cancel any double negation $\\neg \\neg p$ to $p$ if you like; they are equivalent.",
+          "Check one row with the truth table if you are unsure."
+        ]
+      },
+      {
+        "t": "p",
+        "html": "The same laws work with larger parts: $\\neg ((p \\to q) \\lor r)$ becomes $\\neg (p \\to q) \\land \\neg r$. And they apply in English: \"it is not the case that either the bus is late or the train is late\" says the bus is not late and the train is not late."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Patrick J. Hurley and Lori Watson, A Concise Introduction to Logic, 13th ed., section 6.3 and section 7.3 (De Morgan's rule)"
+      },
+      {
+        "name": "forall x: Calgary, an open introduction to formal logic (P. D. Magnus, Tim Button and others; Open Logic Project), chapter on equivalences"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,95 @@
+{
+  "id": "chem.molecular-polarity",
+  "slug": "molecular-polarity",
+  "ladder": "chemistry",
+  "course": "chem",
+  "unit": "bonding",
+  "title": "Polar and Nonpolar Molecules",
+  "short": "A molecule is polar when its bond dipoles do not cancel out.",
+  "trouble": "Students call CO₂ polar because its bonds are polar, missing that its two dipoles point in opposite directions and cancel.",
+  "prereqs": [
+    "chem.bond-polarity",
+    "chem.vsepr-shapes"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-vsepr"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A molecule can contain polar bonds (<a href=\"/chemistry/chemistry/bond-polarity/\">Polar and Nonpolar Bonds</a>) and still be nonpolar overall. Whether it is depends on its shape, from <a href=\"/chemistry/chemistry/vsepr-shapes/\">Molecular Shapes (VSEPR)</a>. Molecular polarity matters because it decides how molecules attract each other, which sets boiling points and what dissolves in what."
+      },
+      {
+        "t": "key",
+        "html": "Treat each bond dipole as an arrow pointing toward the more electronegative atom. Add the arrows. If they <b>cancel</b>, the molecule is <b>nonpolar</b>; if they leave a net arrow, it is <b>polar</b>. Symmetric shapes with identical outer atoms (linear $\\mathrm{CO_2}$, trigonal planar $\\mathrm{BF_3}$, tetrahedral $\\mathrm{CCl_4}$) are nonpolar."
+      },
+      {
+        "t": "why",
+        "html": "Bond dipoles add like forces in a tug-of-war. In $\\mathrm{CO_2}$ the two C=O dipoles are equal and point in exactly opposite directions, so they cancel. In $\\mathrm{H_2O}$ the molecule is bent, so the two O–H dipoles both point partly toward oxygen and add up: oxygen's side of the molecule is negative and the hydrogens' side positive. Change one outer atom and the symmetry breaks: $\\mathrm{CCl_4}$ is nonpolar, but $\\mathrm{CH_3Cl}$ is polar."
+      },
+      {
+        "t": "viz",
+        "name": "ch-vsepr",
+        "opts": {
+          "mol": "CO2",
+          "mode": "polarity"
+        },
+        "cap": "Carbon dioxide: two polar bonds pulling in opposite directions. The net dipole is zero."
+      },
+      {
+        "t": "viz",
+        "name": "ch-vsepr",
+        "opts": {
+          "mol": "H2O",
+          "mode": "polarity"
+        },
+        "cap": "Water: the bent shape lets the two bond dipoles add up to a net dipole toward oxygen."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Ammonia",
+        "q": "Is $\\mathrm{NH_3}$ polar?",
+        "steps": [
+          "N–H bonds are polar (N 3.04, H 2.20), with $\\delta^-$ on N.",
+          "The lone pair makes the molecule a pyramid, so all three dipoles tilt toward N.",
+          "They add up: polar."
+        ],
+        "a": "Polar"
+      },
+      {
+        "t": "ex",
+        "title": "Carbon tetrachloride",
+        "q": "Is $\\mathrm{CCl_4}$ polar?",
+        "steps": [
+          "Each C–Cl bond is polar (difference 0.61).",
+          "But the four bonds are identical and point to the corners of a tetrahedron.",
+          "They cancel: nonpolar."
+        ],
+        "a": "Nonpolar"
+      },
+      {
+        "t": "mistake",
+        "html": "Calling $\\mathrm{CO_2}$ polar because its bonds are polar. Polar bonds are needed for a polar molecule, but not enough: the shape must keep the dipoles from canceling. Check: draw the shape and ask whether you could spin or flip the molecule so that the dipole arrows exactly undo each other."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 7.6 Molecular Structure and Polarity"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-PS1-3 (bulk properties from the strength of electrical forces between particles)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

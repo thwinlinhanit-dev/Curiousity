@@ -1,0 +1,111 @@
+{
+  "key": "rbmobile",
+  "ladder": "robotics",
+  "title": "Mobile Robots and Navigation",
+  "short": "Navigation",
+  "after": [
+    "rbctrl",
+    "rbsense"
+  ],
+  "units": [
+    {
+      "key": "motion",
+      "title": "Driving and Dead Reckoning",
+      "blurb": "How two wheels steer a robot, and how it keeps track of where it is."
+    },
+    {
+      "key": "plan",
+      "title": "Maps and Paths",
+      "blurb": "Grids, shortest paths and the ideas behind SLAM."
+    }
+  ],
+  "topics": [
+    {
+      "id": "rbmobile.differential-drive",
+      "slug": "differential-drive",
+      "course": "rbmobile",
+      "unit": "motion",
+      "title": "Differential Drive",
+      "short": "Two wheels: v = (vR + vL)/2, ω = (vR − vL)/W, and the turning radius is v / ω.",
+      "prereqs": [
+        "rbmech.wheel-speed",
+        "rbctrl.p-control"
+      ],
+      "viz": [
+        "rb-diffdrive"
+      ]
+    },
+    {
+      "id": "rbmobile.odometry",
+      "slug": "odometry",
+      "course": "rbmobile",
+      "unit": "motion",
+      "title": "Odometry",
+      "short": "Update the pose each step: x += d cos θ, y += d sin θ, θ += Δθ.",
+      "prereqs": [
+        "rbmobile.differential-drive",
+        "rbsense.encoders",
+        "rbmech.coordinate-frames"
+      ],
+      "viz": [
+        "rb-diffdrive"
+      ]
+    },
+    {
+      "id": "rbmobile.occupancy-grids",
+      "slug": "occupancy-grids",
+      "course": "rbmobile",
+      "unit": "plan",
+      "title": "Occupancy Grids",
+      "short": "Cut the floor into cells: cell = floor(position / cell size); each cell is free, occupied or unknown.",
+      "prereqs": [
+        "rbmobile.odometry"
+      ],
+      "viz": []
+    },
+    {
+      "id": "rbmobile.grid-search",
+      "slug": "grid-search",
+      "course": "rbmobile",
+      "unit": "plan",
+      "title": "Shortest Paths on a Grid",
+      "short": "Breadth-first search explores in rings and finds the fewest moves; Dijkstra's algorithm does the same with costs.",
+      "prereqs": [
+        "rbmobile.occupancy-grids",
+        "disc.shortest-paths"
+      ],
+      "viz": [
+        "rb-astar"
+      ]
+    },
+    {
+      "id": "rbmobile.a-star",
+      "slug": "a-star",
+      "course": "rbmobile",
+      "unit": "plan",
+      "title": "A* Search",
+      "short": "A* adds a guess of the distance left, f = g + h, so it looks toward the goal first and still finds the shortest path.",
+      "prereqs": [
+        "rbmobile.grid-search"
+      ],
+      "viz": [
+        "rb-astar"
+      ]
+    },
+    {
+      "id": "rbmobile.slam-ideas",
+      "slug": "slam-ideas",
+      "course": "rbmobile",
+      "unit": "plan",
+      "title": "Drift, Landmarks and SLAM",
+      "short": "A heading error θ makes the position error grow like d sin θ; seeing known landmarks again pulls the estimate back.",
+      "prereqs": [
+        "rbmobile.odometry",
+        "rbsense.kalman-1d"
+      ],
+      "viz": [
+        "rb-diffdrive"
+      ]
+    }
+  ]
+}

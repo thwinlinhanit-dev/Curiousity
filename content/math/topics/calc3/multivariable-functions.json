@@ -1,0 +1,99 @@
+{
+  "id": "calc3.multivariable-functions",
+  "slug": "multivariable-functions",
+  "ladder": "math",
+  "course": "calc3",
+  "unit": "partials",
+  "title": "Functions of Several Variables",
+  "short": "Read surfaces and level curves of z = f(x, y).",
+  "trouble": "Students read level curves that are close together as a gentle slope.",
+  "prereqs": [
+    "calc3.quadric-surfaces"
+  ],
+  "xp": 1,
+  "viz": [
+    "surface"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "So far a function took one number and returned one number. Many quantities depend on two: the height of land depends on east-west and north-south position; the temperature on a metal plate depends on $x$ and $y$. A <b>function of two variables</b> $z = f(x, y)$ assigns one number to each point of a region of the plane, its <b>domain</b>. Its graph is a surface in space, like the <a href=\"/math/calculus-3/quadric-surfaces/\">quadric surfaces</a> you have met."
+      },
+      {
+        "t": "p",
+        "html": "Surfaces are hard to draw by hand, so we borrow an idea from hiking maps. Slice the graph with horizontal planes $z = k$ and drop each slice onto the $xy$-plane. Each curve $f(x, y) = k$ is a <b>level curve</b> (contour), and a family of them is a <b>contour map</b>."
+      },
+      {
+        "t": "key",
+        "html": "The level curve $f(x, y) = k$ collects every point where $f$ has the value $k$. If the levels are equally spaced in height, then level curves that are <b>close together</b> mean the surface is <b>steep</b> there, and curves far apart mean it is gentle."
+      },
+      {
+        "t": "why",
+        "html": "Neighboring contours differ by the same height step $\\Delta z$. If you must walk a horizontal distance $d$ to get from one to the next, the average slope along that walk is $\\frac{\\Delta z}{d}$. Same rise, shorter run: a bigger slope. This is the same rise-over-run idea as the slope of a line, measured on the map."
+      },
+      {
+        "t": "viz",
+        "name": "surface",
+        "opts": {
+          "f": "x^2 + y^2",
+          "view": "map",
+          "contours": 8,
+          "slice": "none"
+        },
+        "cap": "The contour map of $f(x, y) = x^2 + y^2$. The circles crowd together farther out, because the bowl gets steeper there. Switch to the 3-D view to see the same curves drawn on the surface."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Domain and range",
+        "q": "Find the domain and range of $f(x, y) = \\sqrt{9 - x^2 - y^2}$, and describe its graph.",
+        "steps": [
+          "The square root needs ${}9 - x^2 - y^2 \\ge 0$, that is $x^2 + y^2 \\le 9$: the closed disk of radius 3.",
+          "The quantity under the root runs from ${}0$ (on the edge) to ${}9$ (at the center), so $f$ runs from ${}0$ to ${}3$.",
+          "Squaring $z = \\sqrt{9 - x^2 - y^2}$ gives $x^2 + y^2 + z^2 = 9$ with $z \\ge 0$: the upper half of a sphere."
+        ],
+        "a": "domain: the disk $x^2 + y^2 \\le 9$; range $[0, 3]$; graph: a hemisphere"
+      },
+      {
+        "t": "ex",
+        "title": "Reading a contour map",
+        "q": "Describe the level curves of $f(x, y) = x^2 + y^2$ for $k = 1, 2, 3, 4$ and say where the surface is steepest.",
+        "steps": [
+          "$x^2 + y^2 = k$ is a circle of radius $\\sqrt{k}$: radii ${}1$, ${}1.41$, ${}1.73$, ${}2$.",
+          "The gaps between neighbors are ${}0.41$, ${}0.32$, ${}0.27$: they shrink as you move out.",
+          "Same height step, shorter gaps: the bowl is steeper farther from the origin."
+        ],
+        "a": "circles that crowd together outward; steeper away from the center"
+      },
+      {
+        "t": "ex",
+        "title": "The level curve through a point",
+        "q": "Which level curve of $f(x, y) = x^2 - 3xy$ passes through $(2, -1)$?",
+        "steps": [
+          "Evaluate $f$ there: ${}4 - 3(2)(-1) = 4 + 6 = 10$.",
+          "So the point is on the level curve $x^2 - 3xy = 10$."
+        ],
+        "a": "$k = 10$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Reading close level curves as a gentle slope.</b> On a contour map, crowded lines can look \"busy but flat\". They mean the opposite: the height changes by the same step over a shorter distance, so the ground is steep. Check: estimate rise over run between two neighboring curves."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 3, 4.1 Functions of Several Variables"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,112 @@
+{
+  "id": "trad.modus-ponens",
+  "slug": "modus-ponens",
+  "ladder": "logic",
+  "course": "trad",
+  "unit": "hypothetical",
+  "title": "Affirming the Antecedent (Modus Ponens)",
+  "short": "From \"If P, then Q\" and \"P\", conclude \"Q\".",
+  "trouble": "Learners reject a modus ponens because they doubt the first premise. Doubting a premise is a question about soundness; the form itself is valid.",
+  "prereqs": [
+    "trad.hypothetical-propositions"
+  ],
+  "xp": 1,
+  "viz": [
+    "lg-truthtable"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A <b>hypothetical syllogism</b> has a <a href=\"/logic/traditional-logic/hypothetical-propositions/\">hypothetical proposition</a> as a premise. The simplest is called <b>modus ponens</b> (Latin: \"the way that affirms\"), or affirming the antecedent."
+      },
+      {
+        "t": "table",
+        "head": [
+          "",
+          "Form",
+          "Example"
+        ],
+        "rows": [
+          [
+            "Premise",
+            "If P, then Q.",
+            "If the dog hears the doorbell, the dog barks."
+          ],
+          [
+            "Premise",
+            "P.",
+            "The dog hears the doorbell."
+          ],
+          [
+            "Conclusion",
+            "So Q.",
+            "So the dog barks."
+          ]
+        ],
+        "cap": "Modus ponens."
+      },
+      {
+        "t": "key",
+        "html": "From \"If P, then Q\" and \"P\", conclude \"Q\". Modus ponens is valid: whenever both premises are true, the conclusion is true."
+      },
+      {
+        "t": "why",
+        "html": "\"If P, then Q\" rules out exactly one situation: P true and Q false. The second premise says P is true. The only situation left is the one where Q is true too. A truth table lists every case at once. Write p for \"the dog hears the doorbell\" and q for \"the dog barks\"; the arrow → means \"if … then\". The only row where both premises are true has q true."
+      },
+      {
+        "t": "viz",
+        "name": "lg-truthtable",
+        "opts": {
+          "premises": [
+            "p → q",
+            "p"
+          ],
+          "conclusion": "q"
+        },
+        "cap": "Every row where both premises are true (only the first) has the conclusion true: valid."
+      },
+      {
+        "t": "h",
+        "text": "Worked example"
+      },
+      {
+        "t": "ex",
+        "title": "What follows?",
+        "q": "\"If Maya finishes her chores, then Maya goes to the movies. Maya finishes her chores.\" What follows?",
+        "steps": [
+          "The second premise affirms the antecedent.",
+          "By modus ponens, the consequent follows."
+        ],
+        "a": "Maya goes to the movies."
+      },
+      {
+        "t": "ex",
+        "title": "Order does not matter",
+        "q": "Is this modus ponens? \"The puddles freeze, since the temperature dropped below freezing, and if the temperature drops below freezing, the puddles freeze.\"",
+        "steps": [
+          "The conclusion comes first (\"since\" marks the premises), but the form is the same.",
+          "Premises: If P then Q; P. Conclusion: Q."
+        ],
+        "a": "yes: valid modus ponens"
+      },
+      {
+        "t": "mistake",
+        "html": "Rejecting a modus ponens because you doubt the first premise. \"If the moon is made of cheese, then mice can live on the moon; the moon is made of cheese; so mice can live on the moon\" is valid. Its premises are false, so it is unsound, but the form is fine. Doubting a premise is a question about soundness, not validity."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Patrick J. Hurley, A Concise Introduction to Logic, 6.6 Argument Forms and Fallacies"
+      },
+      {
+        "name": "Stanford Encyclopedia of Philosophy, \"Ancient Logic\" (the Stoic indemonstrables)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

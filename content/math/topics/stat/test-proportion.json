@@ -1,0 +1,91 @@
+{
+  "id": "stat.test-proportion",
+  "slug": "test-proportion",
+  "ladder": "math",
+  "course": "stat",
+  "unit": "inference",
+  "title": "Testing a Claim about a Proportion",
+  "short": "Carry out a one-proportion z test.",
+  "trouble": "Students write hypotheses about the sample statistic instead of the population parameter.",
+  "prereqs": [
+    "stat.significance-tests"
+  ],
+  "xp": 3,
+  "viz": [
+    "normal"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Now carry out a complete test for a proportion, using the <a href=\"/math/probability-and-statistics/significance-tests/\">logic of significance tests</a>. The steps are always the same: hypotheses, conditions, test statistic, p-value, conclusion in context."
+      },
+      {
+        "t": "key",
+        "html": "To test $H_0: p = p_0$: $$z = \\dfrac{\\hat{p} - p_0}{\\sqrt{\\dfrac{p_0(1 - p_0)}{n}}}.$$ The p-value is the area beyond z in the direction of $H_a$ (both tails if $H_a$ is $\\ne$). Conditions: a random sample, and $np_0 \\ge 10$ and $n(1 - p_0) \\ge 10$."
+      },
+      {
+        "t": "why",
+        "html": "The test asks how surprising $\\hat{p}$ would be <b>if $H_0$ were true</b>. In that world the true proportion is $p_0$, so the sampling distribution of $\\hat{p}$ is centered at $p_0$ with SD $\\sqrt{p_0(1 - p_0)/n}$, computed with $p_0$, not $\\hat{p}$. (A confidence interval has no claimed value to use, which is why it uses $\\hat{p}$.) The z-score measures how many of those SDs $\\hat{p}$ sits from $p_0$."
+      },
+      {
+        "t": "viz",
+        "name": "normal",
+        "opts": {
+          "mu": 0,
+          "sigma": 1,
+          "a": 1.85,
+          "b": 3,
+          "shade": "right",
+          "sliders": false,
+          "xlabel": "z under H₀"
+        },
+        "cap": "The one-sided p-value for z = 1.85 is the area to the right."
+      },
+      {
+        "t": "ex",
+        "title": "A complete test",
+        "q": "Last year 30% of students walked to school. This year, in a random sample of 200 students, 72 walk. Is there convincing evidence that the proportion has gone up? Use $\\alpha = 0.05$. ($P(Z < 1.85) = 0.9678$.)",
+        "steps": [
+          "Hypotheses: $H_0: p = 0.3$, $H_a: p > 0.3$, where $p$ is this year's proportion of all students who walk.",
+          "Conditions: random sample; $200(0.3) = 60$ and $200(0.7) = 140$ are at least 10.",
+          "$\\hat{p} = \\dfrac{72}{200} = 0.36$. SD under $H_0$: $\\sqrt{\\dfrac{0.3 \\times 0.7}{200}} \\approx 0.0324$.",
+          "$z = \\dfrac{0.36 - 0.3}{0.0324} \\approx 1.85$.",
+          "p-value: $$P(Z > 1.85) = 1 - 0.9678 = 0.0322$$",
+          "$0.0322 < 0.05$: reject $H_0$. There is convincing evidence that more than 30% of students walk this year."
+        ],
+        "a": "z ≈ 1.85, p-value ≈ 0.032: reject $H_0$."
+      },
+      {
+        "t": "ex",
+        "title": "A one-sided test the other way",
+        "q": "A seed company claims 85% of its seeds sprout. A gardener plants 400 and 328 sprout. Test the claim against $H_a: p < 0.85$ at $\\alpha = 0.05$. ($P(Z < -1.68) = 0.0465$.)",
+        "steps": [
+          "$\\hat{p} = \\dfrac{328}{400} = 0.82$. SD under $H_0$: $\\sqrt{\\dfrac{0.85 \\times 0.15}{400}} \\approx 0.01785$.",
+          "$z = \\dfrac{0.82 - 0.85}{0.01785} \\approx -1.68$.",
+          "p-value: $P(Z < -1.68) = 0.0465$, just below 0.05.",
+          "Reject $H_0$: there is convincing (though not overwhelming) evidence that fewer than 85% sprout."
+        ],
+        "a": "z ≈ −1.68, p-value ≈ 0.047."
+      },
+      {
+        "t": "mistake",
+        "html": "Writing the hypotheses about the sample statistic: \"$H_0: \\hat{p} = 0.3$.\" We already know $\\hat{p} = 0.36$; there is nothing to test about it. Hypotheses are always about the population parameter $p$. Check that your hypotheses use $p$ and the claimed value, never the sample result."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Introductory Statistics 2e, section 9.6 Hypothesis Testing of a Single Mean and Single Proportion"
+      },
+      {
+        "name": "OpenStax, Introductory Statistics 2e, section 9.3 Distribution Needed for Hypothesis Testing"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

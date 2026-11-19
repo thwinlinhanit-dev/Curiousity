@@ -1,0 +1,1052 @@
+{
+  "key": "gchem1",
+  "ladder": "chemistry",
+  "title": "General Chemistry 1",
+  "short": "Gen Chem 1",
+  "after": [
+    "chem",
+    "alg2"
+  ],
+  "units": [
+    {
+      "key": "composition",
+      "title": "Composition and Mass Spectra",
+      "blurb": "The mass laws that pointed to atoms, mass spectra, and formulas from chemical analysis."
+    },
+    {
+      "key": "quantum",
+      "title": "Light and the Quantum Atom",
+      "blurb": "Waves and photons, hydrogen's energy levels, quantum numbers and photoelectron spectra."
+    },
+    {
+      "key": "trends",
+      "title": "Explaining Periodic Trends",
+      "blurb": "Coulomb's law, shielding and effective nuclear charge explain each trend and its exceptions."
+    },
+    {
+      "key": "bonding",
+      "title": "Bonding and Molecular Structure",
+      "blurb": "Bond energy curves, lattice energy, formal charge, resonance, shapes, hybrid orbitals and molecular orbitals."
+    },
+    {
+      "key": "liquids-solids",
+      "title": "Liquids, Solids and Phase Changes",
+      "blurb": "Compare intermolecular forces, vapor pressure and phase diagrams, look inside crystals, and separate mixtures."
+    },
+    {
+      "key": "solutions",
+      "title": "Solutions and Colligative Properties",
+      "blurb": "Ions in solution, the energy of dissolving, more ways to state concentration, light absorption, and properties that depend only on the number of solute particles."
+    },
+    {
+      "key": "gases",
+      "title": "Gases in Depth",
+      "blurb": "Gas density, gas stoichiometry, mixtures of gases, molecular speeds and real gases."
+    },
+    {
+      "key": "solution-reactions",
+      "title": "Reactions in Solution",
+      "blurb": "Net ionic equations, solution stoichiometry, titrations, oxidation numbers and redox."
+    },
+    {
+      "key": "thermochemistry",
+      "title": "Thermochemistry",
+      "blurb": "Energy bookkeeping for reactions: the first law, enthalpy, calorimetry, Hess's law and enthalpies of formation."
+    }
+  ],
+  "topics": [
+    {
+      "id": "gchem1.mass-laws",
+      "slug": "mass-laws",
+      "course": "gchem1",
+      "unit": "composition",
+      "title": "Definite and Multiple Proportions",
+      "short": "A compound has a fixed mass ratio of elements; when two elements make several compounds, their mass ratios compare as small whole numbers.",
+      "prereqs": [
+        "chem.conservation-of-mass",
+        "chem.atomic-models",
+        "g6.equivalent-ratios"
+      ],
+      "viz": [
+        "ratiotable"
+      ]
+    },
+    {
+      "id": "gchem1.mass-spectra",
+      "slug": "mass-spectra",
+      "course": "gchem1",
+      "unit": "composition",
+      "title": "Mass Spectra of Elements",
+      "short": "Each peak is an isotope: its position gives the mass and its height gives the abundance.",
+      "prereqs": [
+        "chem.average-atomic-mass"
+      ],
+      "viz": [
+        "ch-massspec"
+      ]
+    },
+    {
+      "id": "gchem1.combustion-analysis",
+      "slug": "combustion-analysis",
+      "course": "gchem1",
+      "unit": "composition",
+      "title": "Combustion Analysis",
+      "short": "Burn a compound, weigh the CO₂ and H₂O, and work back to its empirical formula.",
+      "prereqs": [
+        "chem.empirical-formula",
+        "chem.mass-stoichiometry"
+      ],
+      "viz": [
+        "ch-convert"
+      ]
+    },
+    {
+      "id": "gchem1.mixture-composition",
+      "slug": "mixture-composition",
+      "course": "gchem1",
+      "unit": "composition",
+      "title": "Composition of Mixtures",
+      "short": "Use the measured mass of one element to find how much of each compound a mixture holds.",
+      "prereqs": [
+        "chem.percent-composition",
+        "alg1.systems-elimination"
+      ],
+      "viz": []
+    },
+    {
+      "id": "gchem1.light-waves",
+      "slug": "light-waves",
+      "course": "gchem1",
+      "unit": "quantum",
+      "title": "Wavelength, Frequency and the Spectrum",
+      "short": "Light's speed is its wavelength times its frequency: c = λν.",
+      "prereqs": [
+        "chem.emission-spectra",
+        "physsci.wave-speed",
+        "g8.scientific-operations",
+        "alg1.literal-equations"
+      ],
+      "viz": [
+        "ch-spectrum"
+      ]
+    },
+    {
+      "id": "gchem1.photons",
+      "slug": "photons",
+      "course": "gchem1",
+      "unit": "quantum",
+      "title": "Photons and the Photoelectric Effect",
+      "short": "Light comes in packets of energy E = hν, and only photons above a threshold frequency can free an electron from a metal.",
+      "prereqs": [
+        "gchem1.light-waves"
+      ],
+      "viz": [
+        "ch-spectrum"
+      ]
+    },
+    {
+      "id": "gchem1.hydrogen-spectrum",
+      "slug": "hydrogen-spectrum",
+      "course": "gchem1",
+      "unit": "quantum",
+      "title": "Hydrogen's Energy Levels",
+      "short": "Eₙ = −2.18 × 10⁻¹⁸ J / n², and each spectral line is a jump between two levels.",
+      "prereqs": [
+        "gchem1.photons",
+        "g7.add-subtract-rationals"
+      ],
+      "viz": [
+        "ch-spectrum"
+      ]
+    },
+    {
+      "id": "gchem1.spectroscopy-regions",
+      "slug": "spectroscopy-regions",
+      "course": "gchem1",
+      "unit": "quantum",
+      "title": "What Light Does to Molecules",
+      "short": "Microwaves set molecules rotating, infrared makes bonds vibrate, and visible and ultraviolet light move electrons to higher levels.",
+      "prereqs": [
+        "gchem1.photons"
+      ],
+      "viz": [
+        "ch-spectrum"
+      ]
+    },
+    {
+      "id": "gchem1.quantum-numbers",
+      "slug": "quantum-numbers",
+      "course": "gchem1",
+      "unit": "quantum",
+      "title": "Quantum Numbers",
+      "short": "The numbers n, l, mₗ and mₛ name an electron's shell, subshell, orbital and spin.",
+      "prereqs": [
+        "chem.orbitals-sublevels"
+      ],
+      "viz": [
+        "ch-orbitalbox"
+      ]
+    },
+    {
+      "id": "gchem1.orbital-diagrams",
+      "slug": "orbital-diagrams",
+      "course": "gchem1",
+      "unit": "quantum",
+      "title": "Orbital Diagrams and Magnetism",
+      "short": "Pauli's rule and Hund's rule place the arrows, and unpaired electrons make an atom paramagnetic.",
+      "prereqs": [
+        "gchem1.quantum-numbers",
+        "chem.electron-configuration"
+      ],
+      "viz": [
+        "ch-orbitalbox"
+      ]
+    },
+    {
+      "id": "gchem1.ion-configurations",
+      "slug": "ion-configurations",
+      "course": "gchem1",
+      "unit": "quantum",
+      "title": "Configurations of Ions and Exceptions",
+      "short": "Transition metals lose their 4s electrons first, and chromium and copper break the filling pattern.",
+      "prereqs": [
+        "gchem1.orbital-diagrams",
+        "chem.ion-charges"
+      ],
+      "viz": [
+        "ch-orbitalbox"
+      ]
+    },
+    {
+      "id": "gchem1.photoelectron-spectroscopy",
+      "slug": "photoelectron-spectroscopy",
+      "course": "gchem1",
+      "unit": "quantum",
+      "title": "Photoelectron Spectroscopy",
+      "short": "Each peak shows the energy needed to remove electrons from one subshell, and its height counts those electrons.",
+      "prereqs": [
+        "chem.electron-configuration",
+        "gchem1.photons"
+      ],
+      "viz": [
+        "ch-pes"
+      ]
+    },
+    {
+      "id": "gchem1.coulombs-law-atoms",
+      "slug": "coulombs-law-atoms",
+      "course": "gchem1",
+      "unit": "trends",
+      "title": "Coulomb's Law in Atoms",
+      "short": "The attraction between charges grows with the size of the charges and weakens with distance.",
+      "prereqs": [
+        "chem.ionization-energy",
+        "physsci.static-forces",
+        "alg2.variation"
+      ],
+      "viz": [
+        "ch-coulomb"
+      ]
+    },
+    {
+      "id": "gchem1.effective-nuclear-charge",
+      "slug": "effective-nuclear-charge",
+      "course": "gchem1",
+      "unit": "trends",
+      "title": "Shielding and Effective Nuclear Charge",
+      "short": "Core electrons screen the nucleus, so a valence electron feels roughly the protons minus the core electrons.",
+      "prereqs": [
+        "gchem1.coulombs-law-atoms",
+        "chem.electron-configuration"
+      ],
+      "viz": [
+        "ch-coulomb"
+      ]
+    },
+    {
+      "id": "gchem1.successive-ionization",
+      "slug": "successive-ionization",
+      "course": "gchem1",
+      "unit": "trends",
+      "title": "Successive Ionization Energies",
+      "short": "Each electron removed costs more, and a huge jump appears once the valence electrons are gone.",
+      "prereqs": [
+        "gchem1.effective-nuclear-charge"
+      ],
+      "viz": [
+        "ch-periodic"
+      ]
+    },
+    {
+      "id": "gchem1.trend-exceptions",
+      "slug": "trend-exceptions",
+      "course": "gchem1",
+      "unit": "trends",
+      "title": "Exceptions in Ionization Energy",
+      "short": "The dips at boron and oxygen come from starting a new subshell and from the first paired electron.",
+      "prereqs": [
+        "gchem1.effective-nuclear-charge",
+        "gchem1.orbital-diagrams"
+      ],
+      "viz": [
+        "ch-periodic",
+        "ch-pes"
+      ]
+    },
+    {
+      "id": "gchem1.ionic-radii",
+      "slug": "ionic-radii",
+      "course": "gchem1",
+      "unit": "trends",
+      "title": "Sizes of Ions",
+      "short": "Cations are smaller than their atoms and anions larger; in an isoelectronic series, more protons make a smaller ion.",
+      "prereqs": [
+        "gchem1.effective-nuclear-charge",
+        "chem.ion-charges"
+      ],
+      "viz": [
+        "ch-coulomb"
+      ]
+    },
+    {
+      "id": "gchem1.bond-potential-energy",
+      "slug": "bond-potential-energy",
+      "course": "gchem1",
+      "unit": "bonding",
+      "title": "Potential Energy and Bond Length",
+      "short": "Two bonded atoms settle at the distance where their potential energy is lowest.",
+      "prereqs": [
+        "chem.covalent-bonding",
+        "gchem1.coulombs-law-atoms"
+      ],
+      "viz": [
+        "ch-bondcurve"
+      ]
+    },
+    {
+      "id": "gchem1.lattice-energy",
+      "slug": "lattice-energy",
+      "course": "gchem1",
+      "unit": "bonding",
+      "title": "Lattice Energy",
+      "short": "Higher ion charges and smaller ions hold an ionic crystal together more tightly.",
+      "prereqs": [
+        "gchem1.coulombs-law-atoms",
+        "gchem1.ionic-radii",
+        "chem.ionic-bonding"
+      ],
+      "viz": [
+        "ch-coulomb",
+        "ch-crystal"
+      ]
+    },
+    {
+      "id": "gchem1.metals-alloys",
+      "slug": "metals-alloys",
+      "course": "gchem1",
+      "unit": "bonding",
+      "title": "Metals and Alloys",
+      "short": "Metals are cations in a sea of shared electrons; alloys mix in other atoms by substitution or in the gaps.",
+      "prereqs": [
+        "chem.bond-types-properties"
+      ],
+      "viz": [
+        "ch-crystal"
+      ]
+    },
+    {
+      "id": "gchem1.formal-charge",
+      "slug": "formal-charge",
+      "course": "gchem1",
+      "unit": "bonding",
+      "title": "Formal Charge",
+      "short": "Assign each atom its share of the electrons; the best Lewis structure has formal charges closest to zero.",
+      "prereqs": [
+        "chem.lewis-structures"
+      ],
+      "viz": [
+        "ch-lewis"
+      ]
+    },
+    {
+      "id": "gchem1.resonance",
+      "slug": "resonance",
+      "course": "gchem1",
+      "unit": "bonding",
+      "title": "Resonance",
+      "short": "When more than one Lewis structure fits, the real molecule is a blend with in-between bonds.",
+      "prereqs": [
+        "gchem1.formal-charge"
+      ],
+      "viz": [
+        "ch-lewis"
+      ]
+    },
+    {
+      "id": "gchem1.octet-exceptions",
+      "slug": "octet-exceptions",
+      "course": "gchem1",
+      "unit": "bonding",
+      "title": "Exceptions to the Octet Rule",
+      "short": "Odd-electron molecules, electron-poor boron and beryllium, and atoms past period 2 with more than eight electrons.",
+      "prereqs": [
+        "gchem1.formal-charge"
+      ],
+      "viz": [
+        "ch-lewis"
+      ]
+    },
+    {
+      "id": "gchem1.vsepr-five-six",
+      "slug": "vsepr-five-six",
+      "course": "gchem1",
+      "unit": "bonding",
+      "title": "Shapes with Five and Six Electron Groups",
+      "short": "The trigonal bipyramidal and octahedral families, and where their lone pairs go.",
+      "prereqs": [
+        "gchem1.octet-exceptions",
+        "chem.vsepr-shapes"
+      ],
+      "viz": [
+        "ch-vsepr"
+      ]
+    },
+    {
+      "id": "gchem1.hybridization",
+      "slug": "hybridization",
+      "course": "gchem1",
+      "unit": "bonding",
+      "title": "Hybrid Orbitals, Sigma and Pi Bonds",
+      "short": "sp, sp² and sp³ orbitals match two, three and four electron groups; a double bond is one σ bond and one π bond.",
+      "prereqs": [
+        "chem.vsepr-shapes",
+        "gchem1.quantum-numbers"
+      ],
+      "viz": [
+        "ch-vsepr"
+      ]
+    },
+    {
+      "id": "gchem1.molecular-orbitals",
+      "slug": "molecular-orbitals",
+      "course": "gchem1",
+      "unit": "bonding",
+      "title": "Molecular Orbital Diagrams",
+      "short": "Atomic orbitals combine into bonding and antibonding orbitals that give the bond order and the magnetism.",
+      "prereqs": [
+        "gchem1.hybridization",
+        "gchem1.orbital-diagrams"
+      ],
+      "viz": [
+        "ch-modiagram"
+      ]
+    },
+    {
+      "id": "gchem1.comparing-forces",
+      "slug": "comparing-forces",
+      "course": "gchem1",
+      "unit": "liquids-solids",
+      "title": "Comparing Intermolecular Forces",
+      "short": "Size, polarizability and shape set the strength of dispersion forces, which can outweigh dipole forces.",
+      "prereqs": [
+        "chem.imf-properties"
+      ],
+      "viz": [
+        "ch-imf"
+      ]
+    },
+    {
+      "id": "gchem1.vapor-pressure",
+      "slug": "vapor-pressure",
+      "course": "gchem1",
+      "unit": "liquids-solids",
+      "title": "Vapor Pressure and Boiling",
+      "short": "A liquid boils when its vapor pressure equals the pressure above it.",
+      "prereqs": [
+        "gchem1.comparing-forces",
+        "chem.gas-pressure"
+      ],
+      "viz": [
+        "ch-phasediagram"
+      ]
+    },
+    {
+      "id": "gchem1.clausius-clapeyron",
+      "slug": "clausius-clapeyron",
+      "course": "gchem1",
+      "unit": "liquids-solids",
+      "title": "The Clausius–Clapeyron Equation",
+      "short": "ln(P₂/P₁) = −(ΔH_vap/R)(1/T₂ − 1/T₁) links vapor pressure to temperature.",
+      "prereqs": [
+        "gchem1.vapor-pressure",
+        "alg2.number-e",
+        "alg2.log-properties"
+      ],
+      "viz": [
+        "graph"
+      ]
+    },
+    {
+      "id": "gchem1.phase-diagrams",
+      "slug": "phase-diagrams",
+      "course": "gchem1",
+      "unit": "liquids-solids",
+      "title": "Phase Diagrams",
+      "short": "Read the phase at any temperature and pressure, and find the triple point and the critical point.",
+      "prereqs": [
+        "gchem1.vapor-pressure",
+        "chem.heating-curves"
+      ],
+      "viz": [
+        "ch-phasediagram"
+      ]
+    },
+    {
+      "id": "gchem1.unit-cells",
+      "slug": "unit-cells",
+      "course": "gchem1",
+      "unit": "liquids-solids",
+      "title": "Crystal Structures and Unit Cells",
+      "short": "Count the atoms in simple, body-centered and face-centered cubic cells, and find a crystal's density.",
+      "prereqs": [
+        "gchem1.metals-alloys",
+        "chem.density",
+        "chem.mass-mole-conversions"
+      ],
+      "viz": [
+        "ch-crystal"
+      ]
+    },
+    {
+      "id": "gchem1.separations",
+      "slug": "separations",
+      "course": "gchem1",
+      "unit": "liquids-solids",
+      "title": "Separating Mixtures",
+      "short": "Distillation sorts by boiling point, and chromatography sorts by attraction to the paper or column.",
+      "prereqs": [
+        "gchem1.comparing-forces"
+      ],
+      "viz": [
+        "ch-imf"
+      ]
+    },
+    {
+      "id": "gchem1.electrolytes",
+      "slug": "electrolytes",
+      "course": "gchem1",
+      "unit": "solutions",
+      "title": "Electrolytes and Ions in Solution",
+      "short": "Strong electrolytes split completely into ions, weak electrolytes partly, and nonelectrolytes not at all.",
+      "prereqs": [
+        "chem.dissolving",
+        "chem.strong-weak-acids"
+      ],
+      "viz": [
+        "ch-particles"
+      ]
+    },
+    {
+      "id": "gchem1.ion-concentrations",
+      "slug": "ion-concentrations",
+      "course": "gchem1",
+      "unit": "solutions",
+      "title": "Concentrations of Ions",
+      "short": "One formula unit can release several ions: 0.20 M CaCl₂ is 0.40 M in Cl⁻.",
+      "prereqs": [
+        "gchem1.electrolytes",
+        "chem.molarity"
+      ],
+      "viz": [
+        "ch-beaker"
+      ]
+    },
+    {
+      "id": "gchem1.dissolution-energy",
+      "slug": "dissolution-energy",
+      "course": "gchem1",
+      "unit": "solutions",
+      "title": "The Energy of Dissolving",
+      "short": "Pulling solute apart and pulling solvent apart cost energy, forming new attractions releases it, and the total is ΔH of solution.",
+      "prereqs": [
+        "chem.dissolving",
+        "chem.exo-endo"
+      ],
+      "viz": [
+        "ch-energydiagram"
+      ]
+    },
+    {
+      "id": "gchem1.gas-solubility",
+      "slug": "gas-solubility",
+      "course": "gchem1",
+      "unit": "solutions",
+      "title": "Gas Solubility and Henry's Law",
+      "short": "More pressure dissolves more gas (C = kP), and warmer water holds less gas.",
+      "prereqs": [
+        "chem.solubility-curves",
+        "chem.gas-pressure"
+      ],
+      "viz": [
+        "ch-solubilitycurve"
+      ]
+    },
+    {
+      "id": "gchem1.concentration-units",
+      "slug": "concentration-units",
+      "course": "gchem1",
+      "unit": "solutions",
+      "title": "Molality, Mole Fraction and Parts per Million",
+      "short": "Other ways to state concentration, each suited to a different job.",
+      "prereqs": [
+        "chem.molarity"
+      ],
+      "viz": [
+        "ch-beaker"
+      ]
+    },
+    {
+      "id": "gchem1.converting-concentrations",
+      "slug": "converting-concentrations",
+      "course": "gchem1",
+      "unit": "solutions",
+      "title": "Converting Concentration Units",
+      "short": "Use the solution's density to switch between molarity, molality and mass percent.",
+      "prereqs": [
+        "gchem1.concentration-units",
+        "chem.density"
+      ],
+      "viz": [
+        "ch-convert"
+      ]
+    },
+    {
+      "id": "gchem1.beer-lambert",
+      "slug": "beer-lambert",
+      "course": "gchem1",
+      "unit": "solutions",
+      "title": "The Beer–Lambert Law",
+      "short": "Absorbance is proportional to concentration, A = εbc, so a calibration line reveals an unknown concentration.",
+      "prereqs": [
+        "gchem1.spectroscopy-regions",
+        "chem.molarity",
+        "alg1.linear-models-context"
+      ],
+      "viz": [
+        "graph"
+      ]
+    },
+    {
+      "id": "gchem1.raoults-law",
+      "slug": "raoults-law",
+      "course": "gchem1",
+      "unit": "solutions",
+      "title": "Vapor Pressure Lowering",
+      "short": "A nonvolatile solute lowers the solvent's vapor pressure: P = χ(solvent) × P°.",
+      "prereqs": [
+        "gchem1.concentration-units",
+        "gchem1.vapor-pressure"
+      ],
+      "viz": [
+        "ch-phasediagram"
+      ]
+    },
+    {
+      "id": "gchem1.freezing-boiling-points",
+      "slug": "freezing-boiling-points",
+      "course": "gchem1",
+      "unit": "solutions",
+      "title": "Freezing Point Depression and Boiling Point Elevation",
+      "short": "ΔT = iKm: dissolved particles lower the freezing point and raise the boiling point.",
+      "prereqs": [
+        "gchem1.raoults-law",
+        "gchem1.ion-concentrations"
+      ],
+      "viz": [
+        "ch-phasediagram"
+      ]
+    },
+    {
+      "id": "gchem1.osmotic-pressure",
+      "slug": "osmotic-pressure",
+      "course": "gchem1",
+      "unit": "solutions",
+      "title": "Osmotic Pressure",
+      "short": "Π = iMRT: water moves through a membrane toward the more concentrated side.",
+      "prereqs": [
+        "gchem1.freezing-boiling-points",
+        "chem.ideal-gas-law"
+      ],
+      "viz": [
+        "ch-particles"
+      ]
+    },
+    {
+      "id": "gchem1.molar-mass-colligative",
+      "slug": "molar-mass-colligative",
+      "course": "gchem1",
+      "unit": "solutions",
+      "title": "Molar Mass from Colligative Properties",
+      "short": "Measure ΔT or Π, find the moles of solute, then divide its mass by those moles.",
+      "prereqs": [
+        "gchem1.freezing-boiling-points",
+        "gchem1.osmotic-pressure"
+      ],
+      "viz": []
+    },
+    {
+      "id": "gchem1.gas-density",
+      "slug": "gas-density",
+      "course": "gchem1",
+      "unit": "gases",
+      "title": "Gas Density and Molar Mass",
+      "short": "d = PM/RT, so the density of a gas reveals its molar mass.",
+      "prereqs": [
+        "chem.ideal-gas-law"
+      ],
+      "viz": [
+        "ch-gasbox"
+      ]
+    },
+    {
+      "id": "gchem1.gas-stoichiometry",
+      "slug": "gas-stoichiometry",
+      "course": "gchem1",
+      "unit": "gases",
+      "title": "Gas Stoichiometry",
+      "short": "Use PV = nRT to turn a volume of gas into moles inside a stoichiometry problem.",
+      "prereqs": [
+        "chem.ideal-gas-law",
+        "chem.mass-stoichiometry"
+      ],
+      "viz": [
+        "ch-convert"
+      ]
+    },
+    {
+      "id": "gchem1.partial-pressures",
+      "slug": "partial-pressures",
+      "course": "gchem1",
+      "unit": "gases",
+      "title": "Partial Pressures and Mole Fractions",
+      "short": "Each gas in a mixture pushes as if it were alone: Pᵢ = χᵢ × P(total).",
+      "prereqs": [
+        "chem.ideal-gas-law",
+        "gchem1.concentration-units"
+      ],
+      "viz": [
+        "ch-gasbox"
+      ]
+    },
+    {
+      "id": "gchem1.molecular-speeds",
+      "slug": "molecular-speeds",
+      "course": "gchem1",
+      "unit": "gases",
+      "title": "Molecular Speeds and Effusion",
+      "short": "At one temperature every gas has the same average kinetic energy, so lighter molecules move faster and effuse faster: rate ∝ 1/√M.",
+      "prereqs": [
+        "chem.kinetic-molecular-theory",
+        "g8.square-roots"
+      ],
+      "viz": [
+        "ch-gasbox",
+        "ch-maxwell"
+      ]
+    },
+    {
+      "id": "gchem1.speed-distributions",
+      "slug": "speed-distributions",
+      "course": "gchem1",
+      "unit": "gases",
+      "title": "The Maxwell–Boltzmann Distribution",
+      "short": "Molecular speeds spread over a curve that flattens and shifts toward faster speeds as the temperature rises.",
+      "prereqs": [
+        "gchem1.molecular-speeds"
+      ],
+      "viz": [
+        "ch-maxwell"
+      ]
+    },
+    {
+      "id": "gchem1.real-gases",
+      "slug": "real-gases",
+      "course": "gchem1",
+      "unit": "gases",
+      "title": "Real Gases",
+      "short": "The particles' own volume and their attractions make real gases stray from PV = nRT at high pressure and low temperature.",
+      "prereqs": [
+        "chem.ideal-gas-law",
+        "gchem1.comparing-forces"
+      ],
+      "viz": [
+        "ch-gasbox"
+      ]
+    },
+    {
+      "id": "gchem1.net-ionic-equations",
+      "slug": "net-ionic-equations",
+      "course": "gchem1",
+      "unit": "solution-reactions",
+      "title": "Net Ionic Equations",
+      "short": "Write dissolved strong electrolytes as ions, then cancel the spectator ions.",
+      "prereqs": [
+        "gchem1.electrolytes",
+        "chem.precipitation-reactions"
+      ],
+      "viz": [
+        "ch-particles"
+      ]
+    },
+    {
+      "id": "gchem1.solution-stoichiometry",
+      "slug": "solution-stoichiometry",
+      "course": "gchem1",
+      "unit": "solution-reactions",
+      "title": "Solution Stoichiometry",
+      "short": "Molarity times volume gives moles, which go straight into a mole ratio.",
+      "prereqs": [
+        "chem.molarity",
+        "chem.limiting-reactant"
+      ],
+      "viz": [
+        "ch-convert",
+        "ch-limiting"
+      ]
+    },
+    {
+      "id": "gchem1.gravimetric-analysis",
+      "slug": "gravimetric-analysis",
+      "course": "gchem1",
+      "unit": "solution-reactions",
+      "title": "Gravimetric Analysis",
+      "short": "Weigh a precipitate to find how much of an ion a sample held.",
+      "prereqs": [
+        "gchem1.solution-stoichiometry",
+        "gchem1.net-ionic-equations"
+      ],
+      "viz": []
+    },
+    {
+      "id": "gchem1.titration-calculations",
+      "slug": "titration-calculations",
+      "course": "gchem1",
+      "unit": "solution-reactions",
+      "title": "Titration Calculations",
+      "short": "Use the volume at the equivalence point and the mole ratio to find a concentration, a molar mass or a percent purity.",
+      "prereqs": [
+        "gchem1.solution-stoichiometry",
+        "chem.titration"
+      ],
+      "viz": [
+        "ch-titration"
+      ]
+    },
+    {
+      "id": "gchem1.oxidation-numbers",
+      "slug": "oxidation-numbers",
+      "course": "gchem1",
+      "unit": "solution-reactions",
+      "title": "Oxidation Numbers",
+      "short": "Oxidation numbers are bookkeeping charges that track electrons; in a neutral compound they add to zero.",
+      "prereqs": [
+        "chem.ion-charges",
+        "chem.polyatomic-ions"
+      ],
+      "viz": []
+    },
+    {
+      "id": "gchem1.redox-reactions",
+      "slug": "redox-reactions",
+      "course": "gchem1",
+      "unit": "solution-reactions",
+      "title": "Oxidation and Reduction",
+      "short": "Oxidation is the loss of electrons and reduction is the gain; one never happens without the other.",
+      "prereqs": [
+        "gchem1.oxidation-numbers",
+        "chem.activity-series"
+      ],
+      "viz": [
+        "ch-cell"
+      ]
+    },
+    {
+      "id": "gchem1.balancing-redox",
+      "slug": "balancing-redox",
+      "course": "gchem1",
+      "unit": "solution-reactions",
+      "title": "Balancing Redox Reactions",
+      "short": "Split the reaction into half-reactions, balance atoms and charge with electrons, then add them back together.",
+      "prereqs": [
+        "gchem1.redox-reactions",
+        "chem.balancing-equations"
+      ],
+      "viz": [
+        "ch-eqbalance"
+      ]
+    },
+    {
+      "id": "gchem1.redox-titrations",
+      "slug": "redox-titrations",
+      "course": "gchem1",
+      "unit": "solution-reactions",
+      "title": "Redox Titrations",
+      "short": "Titrate with permanganate or another oxidizing agent, using the electron-balanced mole ratio.",
+      "prereqs": [
+        "gchem1.balancing-redox",
+        "gchem1.titration-calculations"
+      ],
+      "viz": [
+        "ch-titration"
+      ]
+    },
+    {
+      "id": "gchem1.first-law",
+      "slug": "first-law",
+      "course": "gchem1",
+      "unit": "thermochemistry",
+      "title": "The First Law and Sign Conventions",
+      "short": "ΔU = q + w: energy that enters the system counts as positive, and energy that leaves counts as negative.",
+      "prereqs": [
+        "chem.exo-endo",
+        "chem.calorimetry"
+      ],
+      "viz": [
+        "ch-energydiagram"
+      ]
+    },
+    {
+      "id": "gchem1.pv-work",
+      "slug": "pv-work",
+      "course": "gchem1",
+      "unit": "thermochemistry",
+      "title": "Pressure–Volume Work",
+      "short": "A gas that expands against an outside pressure does work on the surroundings: w = −PΔV.",
+      "prereqs": [
+        "gchem1.first-law",
+        "chem.ideal-gas-law"
+      ],
+      "viz": [
+        "ch-gasbox"
+      ]
+    },
+    {
+      "id": "gchem1.enthalpy-equations",
+      "slug": "enthalpy-equations",
+      "course": "gchem1",
+      "unit": "thermochemistry",
+      "title": "Enthalpy and Thermochemical Equations",
+      "short": "ΔH is the heat at constant pressure; it scales with the equation and changes sign when the reaction is reversed.",
+      "prereqs": [
+        "gchem1.first-law",
+        "chem.mole-ratios"
+      ],
+      "viz": [
+        "ch-energydiagram"
+      ]
+    },
+    {
+      "id": "gchem1.enthalpy-stoichiometry",
+      "slug": "enthalpy-stoichiometry",
+      "course": "gchem1",
+      "unit": "thermochemistry",
+      "title": "Heat from Amounts of Reactant",
+      "short": "Multiply moles by ΔH per mole of reaction, using the mole ratio to the substance you were given.",
+      "prereqs": [
+        "gchem1.enthalpy-equations",
+        "chem.mass-stoichiometry"
+      ],
+      "viz": [
+        "ch-convert"
+      ]
+    },
+    {
+      "id": "gchem1.heating-curve-calculations",
+      "slug": "heating-curve-calculations",
+      "course": "gchem1",
+      "unit": "thermochemistry",
+      "title": "Heat for Warming and Phase Changes Together",
+      "short": "Add mcΔT for each warming step and nΔH for each phase change along the way.",
+      "prereqs": [
+        "chem.heating-curves",
+        "chem.specific-heat"
+      ],
+      "viz": [
+        "ch-heatingcurve"
+      ]
+    },
+    {
+      "id": "gchem1.reaction-calorimetry",
+      "slug": "reaction-calorimetry",
+      "course": "gchem1",
+      "unit": "thermochemistry",
+      "title": "Calorimetry for Reactions",
+      "short": "Find ΔH from a temperature change: q(reaction) = −q(solution), divided by the moles that reacted.",
+      "prereqs": [
+        "chem.calorimetry",
+        "gchem1.enthalpy-stoichiometry"
+      ],
+      "viz": [
+        "ch-calorimeter"
+      ]
+    },
+    {
+      "id": "gchem1.bomb-calorimetry",
+      "slug": "bomb-calorimetry",
+      "course": "gchem1",
+      "unit": "thermochemistry",
+      "title": "Bomb Calorimetry",
+      "short": "At constant volume, the heat the calorimeter takes up, C(cal) × ΔT, measures the energy released by burning a sample.",
+      "prereqs": [
+        "gchem1.reaction-calorimetry"
+      ],
+      "viz": [
+        "ch-calorimeter"
+      ]
+    },
+    {
+      "id": "gchem1.hess-law",
+      "slug": "hess-law",
+      "course": "gchem1",
+      "unit": "thermochemistry",
+      "title": "Hess's Law",
+      "short": "Add chemical equations like algebra, and add their ΔH values the same way.",
+      "prereqs": [
+        "gchem1.enthalpy-equations"
+      ],
+      "viz": [
+        "ch-energydiagram"
+      ]
+    },
+    {
+      "id": "gchem1.enthalpy-of-formation",
+      "slug": "enthalpy-of-formation",
+      "course": "gchem1",
+      "unit": "thermochemistry",
+      "title": "Standard Enthalpies of Formation",
+      "short": "ΔH°(reaction) = Σ ΔH°f(products) − Σ ΔH°f(reactants).",
+      "prereqs": [
+        "gchem1.hess-law"
+      ],
+      "viz": [
+        "ch-energydiagram"
+      ]
+    },
+    {
+      "id": "gchem1.born-haber",
+      "slug": "born-haber",
+      "course": "gchem1",
+      "unit": "thermochemistry",
+      "title": "Born–Haber Cycles",
+      "short": "Add up the steps that build an ionic solid from its elements to find its lattice energy.",
+      "prereqs": [
+        "gchem1.hess-law",
+        "gchem1.lattice-energy",
+        "gchem1.successive-ionization"
+      ],
+      "viz": [
+        "ch-energydiagram"
+      ]
+    }
+  ]
+}

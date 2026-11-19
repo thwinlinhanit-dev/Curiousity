@@ -1,0 +1,141 @@
+{
+  "id": "disc.inclusion-exclusion",
+  "slug": "inclusion-exclusion",
+  "ladder": "math",
+  "course": "disc",
+  "unit": "counting",
+  "title": "Inclusion–Exclusion",
+  "short": "|A ∪ B ∪ C| = |A| + |B| + |C| − |A ∩ B| − |A ∩ C| − |B ∩ C| + |A ∩ B ∩ C|.",
+  "trouble": "Students subtract the pairwise overlaps but forget to add back the triple overlap.",
+  "prereqs": [
+    "disc.complement-counting",
+    "disc.set-operations"
+  ],
+  "xp": 3,
+  "viz": [
+    "venn"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The <a href=\"/math/discrete-math/complement-counting/\">complement</a> handles \"at least one\" when \"none\" is easy. When the sets overlap in complicated ways, we need a way to count a union without double counting. You met the two-set version with <a href=\"/math/discrete-math/set-operations/\">Venn diagrams</a>; here is the full idea."
+      },
+      {
+        "t": "key",
+        "html": "<b>Inclusion–exclusion:</b> $|A \\cup B| = |A| + |B| - |A \\cap B|$, and for three sets $$|A \\cup B \\cup C| = |A| + |B| + |C| - |A \\cap B| - |A \\cap C| - |B \\cap C| + |A \\cap B \\cap C|.$$ Add the single sets, subtract the pairs, add the triple."
+      },
+      {
+        "t": "why",
+        "html": "Check that every element of the union is counted exactly once. An element in exactly one set is added once. An element in exactly two sets, say $A$ and $B$, is added twice and subtracted once (by $|A \\cap B|$): net $1$. An element in all three is added $3$ times, subtracted $3$ times (once for each pair) and added back once by the triple term: net $3 - 3 + 1 = 1$. Without the last term, those elements would be counted zero times."
+      },
+      {
+        "t": "viz",
+        "name": "venn",
+        "opts": {
+          "sets": 3,
+          "labels": [
+            "A",
+            "B",
+            "C"
+          ],
+          "counts": {
+            "a": 10,
+            "b": 8,
+            "c": 7,
+            "ab": 4,
+            "ac": 3,
+            "bc": 2,
+            "abc": 1,
+            "n": 5
+          },
+          "shade": "A∪B∪C",
+          "presets": [
+            "A∪B∪C",
+            "A∩B∩C",
+            "A∩B",
+            "A′"
+          ]
+        },
+        "cap": "Three sets with the size of each region. Pick $A \\cup B \\cup C$ and compare the shaded total with the formula: the center region is the one the triple term rescues."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Element is in",
+          "singles",
+          "pairs",
+          "triple",
+          "total"
+        ],
+        "rows": [
+          [
+            "exactly one set",
+            "$+1$",
+            "$0$",
+            "$0$",
+            "$1$"
+          ],
+          [
+            "exactly two sets",
+            "$+2$",
+            "$-1$",
+            "$0$",
+            "$1$"
+          ],
+          [
+            "all three sets",
+            "$+3$",
+            "$-3$",
+            "$+1$",
+            "$1$"
+          ]
+        ],
+        "cap": "How often each element is counted by the three-set formula."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Divisibility",
+        "q": "How many integers from $1$ to $100$ are divisible by $2$, $3$ or $5$?",
+        "steps": [
+          "Singles: $$\\lfloor 100/2 \\rfloor + \\lfloor 100/3 \\rfloor + \\lfloor 100/5 \\rfloor = 50 + 33 + 20 = 103.$$",
+          "Pairs, using the least common multiples $6$, $10$, $15$: $16 + 10 + 6 = 32$.",
+          "Triple, multiples of $30$: $3$.",
+          "Total: $103 - 32 + 3 = 74$. So $100 - 74 = 26$ numbers are divisible by none of them."
+        ],
+        "a": "$74$"
+      },
+      {
+        "t": "ex",
+        "title": "A survey",
+        "q": "Of $60$ students, $30$ play soccer, $25$ play basketball and $20$ swim; $10$ do soccer and basketball, $8$ soccer and swimming, $6$ basketball and swimming, and $3$ do all three. How many do none of the three?",
+        "steps": [
+          "At least one: $30 + 25 + 20 - 10 - 8 - 6 + 3 = 54$.",
+          "None: $60 - 54 = 6$."
+        ],
+        "a": "$6$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Stopping after the pairs.</b> $|A| + |B| + |C| - |A \\cap B| - |A \\cap C| - |B \\cap C|$ misses every element in all three sets: they were added three times and subtracted three times. In the divisibility example that would give $71$ instead of $74$, losing $30$, $60$ and $90$. Check: test the formula on one element that lies in every set; it must be counted exactly once."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Oscar Levin, Discrete Mathematics: An Open Introduction (3rd ed.), section \"Advanced Counting Using PIE\""
+      },
+      {
+        "name": "MIT OpenCourseWare 6.042J Mathematics for Computer Science (Lehman, Leighton and Meyer), chapter \"Cardinality Rules\" (inclusion–exclusion)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,90 @@
+{
+  "id": "physsci.efficiency",
+  "slug": "efficiency",
+  "ladder": "physics",
+  "course": "physsci",
+  "unit": "energy",
+  "title": "Efficiency",
+  "short": "Efficiency is useful energy out divided by energy in, and it is always less than 100%.",
+  "trouble": "Students believe a well-built machine can put out more energy than it takes in.",
+  "prereqs": [
+    "physsci.energy-conservation-intro",
+    "physsci.work-intro",
+    "g6.percent-meaning"
+  ],
+  "xp": 1,
+  "viz": [
+    "ph-energy"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "No machine turns all of the energy you put in (by <a href=\"/physics/physical-science/work-intro/\">doing work</a> on it, or by plugging it in) into the form you want. A car engine, a light bulb and your own muscles all let some energy escape, mostly as heat. By <a href=\"/physics/physical-science/energy-conservation-intro/\">conservation of energy</a>, none of it vanishes; it just isn't useful. <b>Efficiency</b> is the useful share, as a <a href=\"/math/grade-6/percent-meaning/\">percent</a>."
+      },
+      {
+        "t": "key",
+        "html": "$$\\text{efficiency} = \\dfrac{\\text{useful energy out}}{\\text{energy in}} \\times 100\\%$$ It is always less than 100%, because some energy always leaves as heat, sound or other forms you didn't want."
+      },
+      {
+        "t": "why",
+        "html": "Energy in = useful energy out + wasted energy. Since the wasted part is never zero in a real machine (there is always some friction, resistance or heat loss), the useful part is always smaller than the input. A machine that put out more energy than it took in would be creating energy, which never happens."
+      },
+      {
+        "t": "viz",
+        "name": "ph-energy",
+        "opts": {
+          "scene": "ramp",
+          "mu": 0.15,
+          "mode": "bars"
+        },
+        "cap": "A block sliding down a ramp with friction. Some of the potential energy becomes kinetic energy and some becomes thermal energy (red-orange). The total stays the same, but only part of it is motion."
+      },
+      {
+        "t": "ex",
+        "title": "A motor",
+        "q": "An electric motor takes in 500 J and lifts a load, giving it 400 J of potential energy. Find its efficiency.",
+        "steps": [
+          "$\\text{efficiency} = \\dfrac{400}{500} \\times 100\\% = 80\\%$.",
+          "The other 100 J became heat and sound."
+        ],
+        "a": "80%"
+      },
+      {
+        "t": "ex",
+        "title": "Useful output",
+        "q": "A lamp is 25% efficient and uses 2,000 J. How much light energy does it give?",
+        "steps": [
+          "25% of 2,000 J: $0.25 \\times 2{,}000 = 500$ J of light.",
+          "The other 1,500 J heats the lamp and the room."
+        ],
+        "a": "500 J"
+      },
+      {
+        "t": "mistake",
+        "html": "Believing a well-built machine can put out more energy than it takes in. Better design can only cut the waste; it can't make energy. Check: if you get an efficiency over 100%, you have swapped \"in\" and \"out.\""
+      },
+      {
+        "t": "note",
+        "html": "Most gasoline car engines turn less than a third of their fuel's energy into motion; the rest leaves as heat through the radiator and the exhaust."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e, 7.6 Conservation of Energy"
+      },
+      {
+        "name": "OpenStax, College Physics 2e, 15.5 Applications of Thermodynamics: Heat Engines"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-PS3-3"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

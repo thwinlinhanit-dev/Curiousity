@@ -1,0 +1,107 @@
+{
+  "id": "pre.symmetry-periodicity",
+  "slug": "symmetry-periodicity",
+  "ladder": "math",
+  "course": "pre",
+  "unit": "angles-unit-circle",
+  "title": "Symmetry and Periodicity",
+  "short": "sin(−θ) = −sin θ, cos(−θ) = cos θ, and both repeat every 2π.",
+  "trouble": "",
+  "prereqs": [
+    "pre.reference-angles"
+  ],
+  "xp": 2,
+  "viz": [
+    "unitcircle",
+    "trigwave"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Two simple moves on the unit circle explain a lot about sine and cosine: reflecting across the $x$-axis, and going all the way around. Both build on <a href=\"/math/precalculus/reference-angles/\">reference angles</a>."
+      },
+      {
+        "t": "key",
+        "html": "$$\\sin(-\\theta) = -\\sin\\theta \\qquad \\cos(-\\theta) = \\cos\\theta \\qquad \\tan(-\\theta) = -\\tan\\theta$$ and, for every $\\theta$, $$\\sin(\\theta + 2\\pi) = \\sin\\theta, \\quad \\cos(\\theta + 2\\pi) = \\cos\\theta, \\quad \\tan(\\theta + \\pi) = \\tan\\theta.$$"
+      },
+      {
+        "t": "why",
+        "html": "<b>Symmetry.</b> The angle $-\\theta$ turns the same amount the other way, so its point is the reflection of $(x, y)$ across the $x$-axis: $(x, -y)$. The $x$-coordinate stays, so cosine is <b>even</b>; the $y$-coordinate flips, so sine is <b>odd</b>.<br><b>Periodicity.</b> Adding $2\\pi$ is one more full turn, which lands on the same point, so every value repeats. Adding only $\\pi$ sends $(x, y)$ to the opposite point $(-x, -y)$; both signs flip, and the ratio $\\frac{y}{x}$ does not change. That is why tangent repeats every $\\pi$."
+      },
+      {
+        "t": "viz",
+        "name": "trigwave",
+        "opts": {
+          "fn": "sin",
+          "use": [
+            "C"
+          ],
+          "C": 0,
+          "parent": true,
+          "task": "Slide the phase shift to $2\\pi$. What happens to the graph?",
+          "target": {
+            "C": "2pi"
+          }
+        },
+        "cap": "Shifting a sine graph by one period, $2\\pi$, lands it exactly on itself."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "An odd function",
+        "q": "Find $\\sin\\left(-\\frac{\\pi}{3}\\right)$.",
+        "steps": [
+          "Sine is odd: $\\sin\\left(-\\frac{\\pi}{3}\\right) = -\\sin\\frac{\\pi}{3}$.",
+          "$\\sin\\frac{\\pi}{3} = \\frac{\\sqrt{3}}{2}$."
+        ],
+        "a": "$-\\frac{\\sqrt{3}}{2}$"
+      },
+      {
+        "t": "ex",
+        "title": "Using the period",
+        "q": "Find $\\cos\\frac{17\\pi}{6}$.",
+        "steps": [
+          "$\\frac{17\\pi}{6} = \\frac{5\\pi}{6} + \\frac{12\\pi}{6} = \\frac{5\\pi}{6} + 2\\pi$: one full turn past $\\frac{5\\pi}{6}$.",
+          "So $\\cos\\frac{17\\pi}{6} = \\cos\\frac{5\\pi}{6}$.",
+          "$\\frac{5\\pi}{6}$ is in Quadrant II with reference angle $\\frac{\\pi}{6}$: $\\cos\\frac{5\\pi}{6} = -\\frac{\\sqrt{3}}{2}$."
+        ],
+        "a": "$-\\frac{\\sqrt{3}}{2}$"
+      },
+      {
+        "t": "ex",
+        "title": "Without knowing the angle",
+        "q": "If $\\cos\\theta = 0.6$, find $\\cos(-\\theta)$ and $\\cos(\\theta + \\pi)$.",
+        "steps": [
+          "Cosine is even: $\\cos(-\\theta) = 0.6$.",
+          "A half turn sends the point to the opposite side of the circle: $\\cos(\\theta + \\pi) = -0.6$."
+        ],
+        "a": "$0.6$ and $-0.6$"
+      },
+      {
+        "t": "mistake",
+        "html": "Writing $\\cos(-\\theta) = -\\cos\\theta$, treating every trig function like sine. Check with $\\theta = 0$: $\\cos 0 = 1$, and $\\cos(-0)$ is also $1$, not $-1$."
+      },
+      {
+        "t": "note",
+        "html": "A function with $f(x + p) = f(x)$ for all $x$ is <b>periodic</b>, and the smallest such $p > 0$ is its <b>period</b>: $2\\pi$ for sine and cosine, $\\pi$ for tangent."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Precalculus 2e, Section 5.3 The Other Trigonometric Functions"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, F-TF.A.4"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

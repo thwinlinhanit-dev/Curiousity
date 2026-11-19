@@ -1,0 +1,89 @@
+{
+  "id": "calc1.motion",
+  "slug": "motion",
+  "ladder": "math",
+  "course": "calc1",
+  "unit": "applications",
+  "title": "Position, Velocity and Acceleration",
+  "short": "Velocity is the derivative of position; acceleration is the derivative of velocity.",
+  "trouble": "Students think negative acceleration always means slowing down.",
+  "prereqs": [
+    "calc1.higher-derivatives",
+    "calc1.derivative-notation"
+  ],
+  "xp": 2,
+  "viz": [
+    "derivgraph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Calculus was invented to describe motion. With <a href=\"/math/calculus-1/higher-derivatives/\">Higher Derivatives</a> and the rate language of <a href=\"/math/calculus-1/derivative-notation/\">Leibniz Notation and Units</a>, position, velocity and acceleration become one function and its first two derivatives."
+      },
+      {
+        "t": "key",
+        "html": "For an object moving along a line with position $s(t)$: velocity $v(t) = s'(t)$, acceleration $a(t) = v'(t) = s''(t)$, and speed $= \\lvert v(t) \\rvert$. The object is at rest when $v = 0$, moves in the positive direction when $v > 0$, and <b>speeds up when $v$ and $a$ have the same sign</b>."
+      },
+      {
+        "t": "why",
+        "html": "Velocity is the rate of change of position, so it carries a sign: positive for forward, negative for backward. Speed is how fast, without direction. Acceleration is the rate of change of velocity. If $v$ and $a$ are both negative, the velocity is becoming more negative, so the object moves backward faster and faster: its speed grows. Speeding up means the size of $v$ grows, and that happens exactly when $a$ pushes in the same direction as $v$."
+      },
+      {
+        "t": "viz",
+        "name": "derivgraph",
+        "opts": {
+          "f": "x^3-6x^2+9x",
+          "x": 0.3,
+          "second": true,
+          "xmin": 0,
+          "xmax": 4.5,
+          "task": "Read the panels as position, velocity and acceleration. Find the times when velocity is 0, and when velocity and acceleration have the same sign."
+        },
+        "cap": "$s(t) = t^3 - 6t^2 + 9t$: velocity $3(t - 1)(t - 3)$ and acceleration $6t - 12$. Read $x$ as time $t$."
+      },
+      {
+        "t": "ex",
+        "title": "A full motion analysis",
+        "q": "A particle has position $s(t) = t^3 - 6t^2 + 9t$ (meters, $t \\ge 0$ in seconds). When is it at rest, when does it move backward, and when is it speeding up?",
+        "steps": [
+          "$v(t) = 3t^2 - 12t + 9 = 3(t - 1)(t - 3)$. At rest when $t = 1$ or $t = 3$.",
+          "Sign of $v$: positive on $[0, 1)$, negative on $(1, 3)$, positive after 3. So it moves backward on $(1, 3)$.",
+          "$a(t) = 6t - 12$: negative before $t = 2$, positive after.",
+          "Same signs: on $(1, 2)$ both are negative, and on $(3, \\infty)$ both are positive."
+        ],
+        "a": "At rest at $t = 1$ and $t = 3$; backward on $(1, 3)$; speeding up on $(1, 2)$ and $(3, \\infty)$."
+      },
+      {
+        "t": "ex",
+        "title": "Thrown straight up",
+        "q": "A ball's height is $s(t) = -16t^2 + 64t + 5$ feet. When is it highest, and how fast is it going when it passes 53 feet on the way down?",
+        "steps": [
+          "$v(t) = -32t + 64$, which is 0 at $t = 2$: the top of the flight, at $s(2) = 69$ ft.",
+          "$-16t^2 + 64t + 5 = 53$ gives $t^2 - 4t + 3 = 0$, so $t = 1$ (going up) or $t = 3$ (coming down).",
+          "$v(3) = -96 + 64 = -32$ ft/s."
+        ],
+        "a": "Highest at $t = 2$ s; at $t = 3$ s its velocity is $-32$ ft/s (speed 32 ft/s, falling)."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking negative acceleration always means slowing down. In the first example, on $(1, 2)$ the acceleration is negative and the particle speeds up, because it is already moving in the negative direction. Check by comparing signs: same signs, speeding up; opposite signs, slowing down."
+      },
+      {
+        "t": "note",
+        "html": "Total distance traveled is not always $\\lvert s(\\text{end}) - s(\\text{start}) \\rvert$: the object may turn around. Split the trip at the times when $v = 0$. We return to this in <a href=\"/math/calculus-1/net-change/\">Net Change and Total Distance</a>."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 1, 3.4 Derivatives as Rates of Change"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

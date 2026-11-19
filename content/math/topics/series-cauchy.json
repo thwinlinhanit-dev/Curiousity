@@ -1,0 +1,91 @@
+{
+  "id": "ra.series-cauchy",
+  "slug": "series-cauchy",
+  "ladder": "math",
+  "course": "ra",
+  "unit": "series",
+  "title": "Series and the Cauchy Criterion",
+  "short": "∑aₖ converges when its partial sums do; by the Cauchy criterion, blocks aₘ₊₁ + ⋯ + aₙ far out must be small, and in particular aₖ → 0.",
+  "trouble": "Students think aₖ → 0 is enough. The harmonic series has terms that go to 0, but every block 1/(n + 1) + ⋯ + 1/(2n) is at least 1/2.",
+  "prereqs": [
+    "ra.cauchy-sequences",
+    "calc2.series-partial-sums"
+  ],
+  "xp": 2,
+  "viz": [
+    "seriespartial"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A series $\\sum a_k$ is a sequence in disguise: its partial sums $s_n = a_1 + \\cdots + a_n$. You met partial sums in <a href=\"/math/calculus-2/series-partial-sums/\">Calculus 2</a>. Since we rarely know the sum of a series in advance, the right tool is the <a href=\"/math/real-analysis/cauchy-sequences/\">Cauchy condition</a>, which talks only about the terms."
+      },
+      {
+        "t": "key",
+        "html": "$\\sum a_k$ <b>converges</b> to $S$ when $s_n \\to S$. <b>Cauchy criterion:</b> $\\sum a_k$ converges if and only if for every $\\varepsilon > 0$ there is an $N$ with $|a_{m+1} + a_{m+2} + \\cdots + a_n| < \\varepsilon$ whenever $n > m \\ge N$. Taking $n = m + 1$ shows that a convergent series has $a_k \\to 0$."
+      },
+      {
+        "t": "why",
+        "html": "The block $a_{m+1} + \\cdots + a_n$ is exactly $s_n - s_m$. So \"far-out blocks are small\" is the statement \"the partial sums form a Cauchy sequence,\" which in $\\mathbb{R}$ is the same as \"the partial sums converge.\" The criterion is useful because blocks can often be estimated even when the sum is unknown, as in $\\sum \\frac{1}{k^{2}}$: comparing with the telescoping $\\frac{1}{k - 1} - \\frac{1}{k}$ gives $s_n - s_m < \\frac{1}{m}$, which is small for large $m$. So $\\sum \\frac{1}{k^{2}}$ converges, and we never needed its sum ($\\frac{\\pi^{2}}{6}$)."
+      },
+      {
+        "t": "p",
+        "html": "The same criterion explains the classic divergence. For the harmonic series, the block $\\frac{1}{n + 1} + \\cdots + \\frac{1}{2n}$ has $n$ terms, each at least $\\frac{1}{2n}$, so it is at least $\\frac{1}{2}$ no matter how far out it starts. The criterion fails for $\\varepsilon = \\frac{1}{2}$, so the series diverges even though its terms go to $0$."
+      },
+      {
+        "t": "viz",
+        "name": "seriespartial",
+        "opts": {
+          "a": "1/n^2",
+          "N": 12,
+          "limit": "pi^2/6",
+          "presets": true
+        },
+        "cap": "Partial sums of $\\sum \\frac{1}{k^{2}}$ settle down; switch to the harmonic series to see sums that keep creeping up."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A telescoping series",
+        "q": "Find $s_n$ and the sum for $\\sum_{k=1}^{\\infty} \\frac{1}{k(k + 1)}$, and the smallest $n$ with $S - s_n < 0.01$.",
+        "steps": [
+          "$\\frac{1}{k(k + 1)} = \\frac{1}{k} - \\frac{1}{k + 1}$, so the sum telescopes: $s_n = 1 - \\frac{1}{n + 1}$.",
+          "$s_n \\to 1$, so $S = 1$ and $S - s_n = \\frac{1}{n + 1}$.",
+          "$\\frac{1}{n + 1} < 0.01$ means $n + 1 > 100$, so $n \\ge 100$."
+        ],
+        "a": "$s_n = 1 - \\frac{1}{n + 1}$, $S = 1$, and $n = 100$ (or more)."
+      },
+      {
+        "t": "ex",
+        "title": "A geometric tail",
+        "q": "For $\\sum_{k=1}^{\\infty} \\left(\\frac{1}{2}\\right)^{k} = 1$, how many terms make the error less than $0.001$?",
+        "steps": [
+          "The tail after $n$ terms is $\\sum_{k > n} \\left(\\frac{1}{2}\\right)^{k} = \\left(\\frac{1}{2}\\right)^{n}$.",
+          "$\\frac{1}{2^{n}} < 0.001$ means $2^{n} > 1000$, so $n \\ge 10$ ($2^{10} = 1024$)."
+        ],
+        "a": "$10$ terms."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>\"The terms go to $0$, so the series converges.\"</b> That is the most common series error. $a_k \\to 0$ is necessary (it is the Cauchy criterion with blocks of one term), but not sufficient: $\\sum \\frac{1}{k}$ has terms going to $0$ and diverges, because long blocks do not get small. Use $a_k \\to 0$ only to prove <b>divergence</b>: if the terms do not go to $0$, the series diverges."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Jiří Lebl, Basic Analysis I: Introduction to Real Analysis, section 2.5 (series; Cauchy series)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.100A Real Analysis, lecture notes on series"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,144 @@
+{
+  "id": "arch.radiocarbon-method",
+  "slug": "radiocarbon-method",
+  "ladder": "egypt",
+  "course": "arch",
+  "unit": "dating",
+  "title": "Radiocarbon Dating",
+  "short": "Living things take in carbon-14, which decays at a known rate after death; measuring what is left dates plant and animal remains, after calibration.",
+  "trouble": "Students date stone with radiocarbon. It dates once-living things, like reeds, wood, seeds or linen.",
+  "prereqs": [
+    "arch.relative-absolute",
+    "hist.radiocarbon"
+  ],
+  "xp": 3,
+  "viz": [
+    "eg-timeline"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/egyptology/history/radiocarbon/\">Radiocarbon and Egyptian Dates</a> you saw how radiocarbon checks the historical chronology. Here is how the method works, step by step, and what it can and cannot date."
+      },
+      {
+        "t": "key",
+        "html": "Living plants take in carbon from the air, including a tiny, steady share of radioactive carbon-14; animals get it by eating plants. After death no new carbon-14 comes in, and what is there decays at a fixed rate: half of it is gone after about 5,730 years (the <b>half-life</b>). Measuring how much is left gives the time since death, which must then be <b>calibrated</b> into calendar years."
+      },
+      {
+        "t": "why",
+        "html": "Radioactive decay does not care about temperature, pressure or chemistry, so the clock runs at the same rate everywhere. After one half-life, half the carbon-14 is left; after two, a quarter; after three, an eighth. The fraction left therefore tells the age. Calibration is needed because the amount of carbon-14 in the air has varied over time; tree rings of known age, counted year by year, show how much, and a calibration curve (today IntCal20) converts a radiocarbon age to calendar years."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Half-lives passed",
+          "Fraction of carbon-14 left",
+          "Years (half-life 5,730)"
+        ],
+        "rows": [
+          [
+            "1",
+            "1/2",
+            "5,730"
+          ],
+          [
+            "2",
+            "1/4",
+            "11,460"
+          ],
+          [
+            "3",
+            "1/8",
+            "17,190"
+          ],
+          [
+            "about 0.8",
+            "about 0.58",
+            "about 4,500 (a sample from the pyramid age)"
+          ]
+        ],
+        "cap": "The radiocarbon clock."
+      },
+      {
+        "t": "ex",
+        "title": "Counting half-lives",
+        "q": "A piece of charcoal has 1/4 of the carbon-14 that living wood has. About how old is it?",
+        "steps": [
+          "1/4 = 1/2 × 1/2, so two half-lives have passed.",
+          "2 × 5,730 = 11,460 years.",
+          "That is far older than dynastic Egypt: it would come from a site of the last Ice Age, before farming."
+        ],
+        "a": "About 11,460 years."
+      },
+      {
+        "t": "ex",
+        "title": "A sample from the pyramid age",
+        "q": "Reed from a mortar joint in an Old Kingdom pyramid is about 4,550 years old. What fraction of its carbon-14 remains? (Use fraction left = (1/2)^(age ÷ 5,730).)",
+        "steps": [
+          "Age ÷ half-life = 4,550 ÷ 5,730 ≈ 0.794.",
+          "(1/2)^0.794 ≈ 0.577.",
+          "So a little less than 3/5 of the carbon-14 remains: less than one half-life has passed."
+        ],
+        "a": "About 0.58 (58%)."
+      },
+      {
+        "t": "h",
+        "text": "What it can date"
+      },
+      {
+        "t": "list",
+        "items": [
+          "Yes: wood and charcoal, seeds and grain, reed, papyrus, linen, basketry, bone, hair, leather: anything once alive.",
+          "No: stone, metal or the clay of a pot (though food residue or straw inside a pot may be datable).",
+          "Care: wood can be much older than the building it was used in (a beam reused, or the inner rings of an old tree). Short-lived plants, like seeds and reeds, are best."
+        ]
+      },
+      {
+        "t": "p",
+        "html": "The first test of the method, by Willard Libby and James Arnold in 1949, used wood from the tombs of Djoser and Sneferu, whose age was known from history. In 2010 a team led by Christopher Bronk Ramsey dated 211 short-lived plant samples from museum collections, tied to particular reigns; the results agreed well with the standard historical chronology and placed the start of the New Kingdom in the range c. 1570–1544 BC."
+      },
+      {
+        "t": "viz",
+        "name": "eg-timeline",
+        "opts": {
+          "from": -2800,
+          "to": -1400,
+          "dynasties": false,
+          "kings": [
+            "djoser",
+            "sneferu",
+            "ahmose1"
+          ],
+          "ask": [
+            "nk"
+          ]
+        },
+        "cap": "The 2010 study tested the dates of reigns like these with radiocarbon."
+      },
+      {
+        "t": "mistake",
+        "html": "Dating stone with radiocarbon. It dates once-living things: reeds, wood, seeds, linen. To date a stone building, date the organic material in it: reeds in mortar, wood in the roof, charcoal from the builders' fires."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Grokipedia, \"Radiocarbon dating\"",
+        "url": "https://grokipedia.com/page/Radiocarbon_dating"
+      },
+      {
+        "name": "C. Bronk Ramsey et al., \"Radiocarbon-Based Chronology for Dynastic Egypt,\" Science 328 (2010): 1554",
+        "url": "https://www.ltrr.arizona.edu/~tswetnam/CMATE/Ramsey%20et%20al%20Science%202010%20Egypt%20radiocarbon.pdf"
+      },
+      {
+        "name": "Grokipedia, \"Willard Libby\"",
+        "url": "https://grokipedia.com/page/Willard_Libby"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

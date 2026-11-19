@@ -1,0 +1,171 @@
+{
+  "id": "astrophys.cosmic-eras",
+  "slug": "cosmic-eras",
+  "ladder": "physics",
+  "course": "astrophys",
+  "unit": "cosmos",
+  "title": "Matter, Radiation and Dark Energy Through Time",
+  "short": "Matter thins as a⁻³, radiation as a⁻⁴, and dark energy stays constant, so each ruled in turn.",
+  "trouble": "Students think the mix of matter and radiation in the universe has always been the same.",
+  "prereqs": [
+    "astrophys.friedmann-equation"
+  ],
+  "xp": 3,
+  "viz": [
+    "astrophys-plot",
+    "ph-cosmic"
+  ],
+  "figureArchetype": "WaveFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The <a href=\"/physics/astrophysics/friedmann-equation/\">Friedmann equation</a> says the expansion rate is set by the density. But different ingredients dilute at different rates as the universe grows, so the mix changes over time, and each ingredient has its turn in charge."
+      },
+      {
+        "t": "why",
+        "html": "<b>Matter</b> (ordinary and dark): the mass in a region stays fixed while its volume grows as $a^3$, so $\\rho_m \\propto a^{-3}$. <b>Radiation</b> (photons, and neutrinos early on): the number per volume also falls as $a^{-3}$, but each photon's wavelength stretches as $a$, so its energy falls as $a^{-1}$: $\\rho_r \\propto a^{-4}$. <b>Dark energy</b>, in the simplest model a cosmological constant, has the same density at every time: $\\rho_\\Lambda$ = const. Today $\\Omega_r \\approx 9 \\times 10^{-5}$, $\\Omega_m \\approx 0.31$ and $\\Omega_\\Lambda \\approx 0.69$. Going back in time ($a$ smaller, $z$ larger) radiation grows fastest, so it ruled the earliest era; then matter; and now dark energy."
+      },
+      {
+        "t": "key",
+        "html": "$\\rho_r \\propto (1 + z)^4$, $\\rho_m \\propto (1 + z)^3$, $\\rho_\\Lambda$ constant. Radiation and matter were equal at $1 + z = \\Omega_m/\\Omega_r \\approx 3400$ (about 50,000 years after the Big Bang); matter and dark energy were equal at $z \\approx 0.3$, a few billion years ago. In the radiation era $a \\propto t^{1/2}$, in the matter era $a \\propto t^{2/3}$, and with dark energy in charge the expansion accelerates."
+      },
+      {
+        "t": "viz",
+        "name": "astrophys-plot",
+        "opts": {
+          "xmin": -6,
+          "xmax": 0.5,
+          "ymin": -4,
+          "ymax": 21,
+          "xpow": true,
+          "ypow": true,
+          "xlabel": "scale factor a (1 = today)",
+          "ylabel": "density ÷ today's critical density",
+          "bands": [
+            {
+              "from": -6,
+              "to": -3.537,
+              "label": "radiation era",
+              "color": "orange"
+            },
+            {
+              "from": -3.537,
+              "to": -0.116,
+              "label": "matter era",
+              "color": "blue"
+            },
+            {
+              "from": -0.116,
+              "to": 0.5,
+              "label": "Λ",
+              "color": "purple"
+            }
+          ],
+          "curves": [
+            {
+              "f": "log(0.00009) - 4x",
+              "label": "radiation",
+              "color": "orange",
+              "at": -4.7
+            },
+            {
+              "f": "log(0.31) - 3x",
+              "label": "matter",
+              "color": "blue",
+              "at": -1.9
+            },
+            {
+              "f": "log(0.69) + 0*x",
+              "label": "dark energy",
+              "color": "purple",
+              "at": -0.9
+            }
+          ],
+          "vlines": [
+            {
+              "x": -3.537,
+              "label": "z ≈ 3400"
+            }
+          ],
+          "cursor": {
+            "label": "Scale factor a",
+            "min": -6,
+            "max": 0.3,
+            "value": -3,
+            "step": 0.01,
+            "fmt": "pow",
+            "readout": [
+              {
+                "label": "redshift z",
+                "f": "10^(-x) - 1",
+                "sig": 3
+              },
+              {
+                "label": "radiation ÷ matter",
+                "f": "0.00009/0.31*10^(-x)",
+                "sig": 2
+              },
+              {
+                "label": "dark energy ÷ matter",
+                "f": "0.69/0.31*10^(3x)",
+                "sig": 2
+              }
+            ]
+          }
+        },
+        "cap": "The three densities against the scale factor on log–log axes: slopes $-4$, $-3$ and $0$. Where two lines cross, the two ingredients were equal; the highest line at any time is the one in charge. Drag the scale factor to compare them."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "When did matter take over?",
+        "q": "With $\\Omega_m = 0.31$ and $\\Omega_r = 9.0 \\times 10^{-5}$, find the redshift of matter–radiation equality.",
+        "steps": [
+          "$\\Omega_r(1 + z)^4 = \\Omega_m(1 + z)^3$ gives $1 + z = \\Omega_m/\\Omega_r$.",
+          "$1 + z = 0.31/9.0 \\times 10^{-5} = 3440$."
+        ],
+        "a": "$z \\approx 3400$."
+      },
+      {
+        "t": "ex",
+        "title": "When did dark energy take over?",
+        "q": "With $\\Omega_m = 0.31$ and $\\Omega_\\Lambda = 0.69$, find when the two densities were equal, and when the expansion began to speed up (when $\\Omega_\\Lambda = \\tfrac12\\Omega_m(1 + z)^3$).",
+        "steps": [
+          "Equal: $(1 + z)^3 = 0.69/0.31 = 2.23$, so $z = 0.31$.",
+          "Acceleration: $(1 + z)^3 = 2(0.69)/0.31 = 4.45$, so $z = 0.65$."
+        ],
+        "a": "The expansion started speeding up at $z \\approx 0.65$, roughly 6 billion years ago; dark energy outweighed matter from $z \\approx 0.3$."
+      },
+      {
+        "t": "ex",
+        "title": "Growth in the matter era",
+        "q": "During the matter era, $a \\propto t^{2/3}$. While the age of the universe grows by a factor of 8, how much do distances grow?",
+        "steps": [
+          "$a_2/a_1 = 8^{2/3}$."
+        ],
+        "a": "4 times."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking the mix of matter and radiation has always been what it is today. Radiation is now a tiny 0.009% of the total, but because its density grows as $(1 + z)^4$ going back, it outweighed matter before $z \\approx 3400$. Dark energy, now 69%, was negligible in the early universe. Check: the ratio $\\rho_r/\\rho_m = (\\Omega_r/\\Omega_m)(1 + z)$ was about 0.3 even at $z = 1100$, when the microwave background was released."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Astronomy 2e, section 29.3 (The Beginning of the Universe) and section 29.5 (What Is the Universe Really Made Of?)"
+      },
+      {
+        "name": "MIT OpenCourseWare 8.286 The Early Universe (Fall 2013)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

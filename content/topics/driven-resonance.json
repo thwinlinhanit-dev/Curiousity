@@ -1,0 +1,98 @@
+{
+  "id": "mech.driven-resonance",
+  "slug": "driven-resonance",
+  "course": "mech",
+  "courseTitle": "Mechanics with Calculus",
+  "unit": "oscillations",
+  "unitTitle": "Oscillations with Calculus",
+  "title": "Driven Oscillations and Resonance",
+  "short": "Pushing near the natural frequency builds a large amplitude, limited only by damping.",
+  "trouble": "Students think any repeated push makes the amplitude grow without limit.",
+  "prereqs": [
+    "mech.damped-oscillations"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-oscillator"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Push a swing at the right moment of each cycle and small pushes build a big swing. <a href=\"/physics/mechanics/damped-oscillations/\">Damped Oscillations</a> gives the losses that stop this growth. You can push a swing in rhythm in the <a href=\"/science-lab/pendulums/\">Pendulums and Resonance</a> lab."
+      },
+      {
+        "t": "why",
+        "html": "Add a driving force: $m\\ddot{x} + b\\dot{x} + kx = F_0\\cos\\omega t$. After the starting transient dies away (it decays like the damped motion), the system settles into motion at the <i>driving</i> frequency: $x = A\\cos(\\omega t - \\delta)$. Substituting and matching the cosine and sine terms gives $$A(\\omega) = \\dfrac{F_0/m}{\\sqrt{(\\omega_0^2 - \\omega^2)^2 + (b\\omega/m)^2}}, \\qquad \\omega_0 = \\sqrt{k/m}.$$ When $\\omega$ is near $\\omega_0$, the first term in the root nearly vanishes, and only damping keeps the amplitude finite."
+      },
+      {
+        "t": "key",
+        "html": "Driven near its natural frequency, a lightly damped oscillator responds strongly: at $\\omega = \\omega_0$, $A = \\dfrac{F_0}{b\\omega_0}$. Far below, $A \\approx F_0/k$ (just the static stretch); far above, the response is small. The ratio of the resonant amplitude to the static one is $Q = \\dfrac{m\\omega_0}{b}$: less damping, sharper and taller peak."
+      },
+      {
+        "t": "viz",
+        "name": "ph-oscillator",
+        "opts": {
+          "type": "spring",
+          "m": 1,
+          "k": 16,
+          "b": 0.4,
+          "drive": {
+            "F0": 1,
+            "w": 3.6
+          },
+          "show": [
+            "curve"
+          ],
+          "task": "Move the driving frequency through $\\omega_0 = 4\\ \\text{rad/s}$ and watch the steady amplitude on the resonance curve."
+        },
+        "cap": "A driven, damped spring: the steady amplitude against the driving frequency peaks near $\\omega_0 = \\sqrt{k/m} = 4\\ \\text{rad/s}$."
+      },
+      {
+        "t": "ex",
+        "title": "At resonance",
+        "q": "A $1\\ \\text{kg}$ mass on a spring ($k = 100\\ \\text{N/m}$, $b = 1\\ \\text{N·s/m}$) is driven by $F_0\\cos\\omega t$ with $F_0 = 2\\ \\text{N}$ at $\\omega = \\omega_0$. Find the steady amplitude and compare it with the static stretch.",
+        "steps": [
+          "$\\omega_0 = 10\\ \\text{rad/s}$, so $A = \\dfrac{F_0}{b\\omega_0} = \\dfrac{2}{1(10)} = 0.20\\ \\text{m}$.",
+          "Static stretch: $F_0/k = 0.02\\ \\text{m}$. Resonance multiplies it by $Q = m\\omega_0/b = 10$."
+        ],
+        "a": "$0.20\\ \\text{m}$, ten times the static stretch."
+      },
+      {
+        "t": "ex",
+        "title": "Off resonance",
+        "q": "Same system, driven at $\\omega = 8\\ \\text{rad/s}$. Find the amplitude.",
+        "steps": [
+          "$\\omega_0^2 - \\omega^2 = 100 - 64 = 36$ and $b\\omega/m = 8$.",
+          "$A = \\dfrac{2}{\\sqrt{36^2 + 8^2}} = \\dfrac{2}{36.9} = 0.054\\ \\text{m}$, about a quarter of the resonant value."
+        ],
+        "a": "About $0.054\\ \\text{m}$."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking any repeated push in rhythm makes the amplitude grow without limit. Each push adds energy, but a bigger swing also loses more energy per cycle to friction and air; the amplitude levels off where the two balance. Check the formula: at $\\omega = \\omega_0$ the amplitude is $F_0/(b\\omega_0)$, finite for any real damping $b > 0$."
+      },
+      {
+        "t": "note",
+        "html": "The timing matters as much as the size. Driven slowly, the mass moves in step with the force; driven fast, it moves opposite to it; at resonance the displacement lags the force by a quarter cycle, so the force is in step with the <i>velocity</i>. That is exactly when the force does the most positive work each cycle, as when you push a swing while it moves away from you."
+      },
+      {
+        "t": "note",
+        "html": "Resonance is useful (tuning a radio, a child on a swing) and sometimes a hazard, which is why engineers add damping to buildings and bridges and avoid natural frequencies near common driving frequencies, such as footsteps or machinery."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 1, 15.6 Forced Oscillations"
+      },
+      {
+        "name": "MIT OpenCourseWare 8.01 Classical Mechanics (scope and sequence)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

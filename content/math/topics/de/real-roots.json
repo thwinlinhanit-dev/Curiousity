@@ -1,0 +1,114 @@
+{
+  "id": "de.real-roots",
+  "slug": "real-roots",
+  "ladder": "math",
+  "course": "de",
+  "unit": "second-order",
+  "title": "Constant Coefficients: Distinct Real Roots",
+  "short": "Try y = e^(rt) and solve the characteristic equation.",
+  "trouble": "",
+  "prereqs": [
+    "de.second-order-intro"
+  ],
+  "xp": 2,
+  "viz": [],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "For constant coefficients, $ay'' + by' + cy = 0$, the derivatives of the unknown must cancel against the function itself. Exponentials are the functions whose derivatives are multiples of themselves, so we try $y = e^{rt}$, exactly as in <a href=\"/math/differential-equations/classify-des/\">checking a solution</a> and in <a href=\"/math/differential-equations/second-order-intro/\">superposition</a>."
+      },
+      {
+        "t": "key",
+        "html": "Substituting $y = e^{rt}$ gives the <b>characteristic equation</b> $$ar^{2} + br + c = 0.$$ If it has two distinct real roots $r_1 \\ne r_2$, the general solution is $y = c_1e^{r_1t} + c_2e^{r_2t}$."
+      },
+      {
+        "t": "why",
+        "html": "With $y = e^{rt}$: $y' = re^{rt}$ and $y'' = r^{2}e^{rt}$, so $ay'' + by' + cy$ $= (ar^{2} + br + c)e^{rt}$. Since $e^{rt} \\ne 0$, this is zero exactly when $r$ solves the characteristic equation. Two different roots give two solutions with $W = (r_2 - r_1)e^{(r_1 + r_2)t} \\ne 0$, so they are independent and superposition gives every solution."
+      },
+      {
+        "t": "ex",
+        "title": "A standard initial value problem",
+        "q": "Solve $y'' + y' - 6y = 0$, $y(0) = 1$, $y'(0) = 7$.",
+        "steps": [
+          "$r^{2} + r - 6 = (r - 2)(r + 3)$ $= 0$: $r = 2, -3$.",
+          "$y = c_1e^{2t} + c_2e^{-3t}$, $y' = 2c_1e^{2t} - 3c_2e^{-3t}$.",
+          "$c_1 + c_2 = 1$ and $2c_1 - 3c_2 = 7$, so $c_1 = 2$, $c_2 = -1$."
+        ],
+        "a": "$y = 2e^{2t} - e^{-3t}$"
+      },
+      {
+        "t": "ex",
+        "title": "A leading coefficient",
+        "q": "Solve $2y'' - 5y' + 2y = 0$, $y(0) = 0$, $y'(0) = 3$.",
+        "steps": [
+          "$2r^{2} - 5r + 2$ $= (2r - 1)(r - 2) = 0$: $r = \\frac{1}{2}, 2$.",
+          "$y = c_1e^{t/2} + c_2e^{2t}$; $c_1 + c_2 = 0$ and $\\frac{1}{2}c_1 + 2c_2 = 3$.",
+          "Substituting $c_1 = -c_2$: $\\frac{3}{2}c_2 = 3$, so $c_2 = 2$, $c_1 = -2$."
+        ],
+        "a": "$y = 2e^{2t} - 2e^{t/2}$"
+      },
+      {
+        "t": "ex",
+        "title": "A zero root",
+        "q": "Solve $y'' + 3y' = 0$, $y(0) = 4$, $y'(0) = -3$, and find $\\lim_{t\\to\\infty} y$.",
+        "steps": [
+          "$r^{2} + 3r = r(r + 3) = 0$: $r = 0, -3$. The root 0 gives the constant solution $e^{0t} = 1$.",
+          "$y = c_1 + c_2e^{-3t}$; $c_1 + c_2 = 4$ and $-3c_2 = -3$, so $c_2 = 1$, $c_1 = 3$."
+        ],
+        "a": "$y = 3 + e^{-3t} \\to 3$"
+      },
+      {
+        "t": "mistake",
+        "html": "Reading the roots with the wrong sign: $(r - 2)(r + 3) = 0$ means $r = 2$ and $r = -3$, so the solutions are $e^{2t}$ and $e^{-3t}$. A quick check: substitute one exponential back; $4 + 2 - 6 = 0$ confirms $r = 2$. Also keep both constants: $e^{2t} + e^{-3t}$ alone cannot match two arbitrary initial values."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "fns": [
+            {
+              "f": "2*e^(2x) - e^(-3x)",
+              "label": "y"
+            },
+            {
+              "f": "2*e^(2x)",
+              "dash": true,
+              "color": "teal",
+              "label": "2e^{2t}"
+            },
+            {
+              "f": "-e^(-3x)",
+              "dash": true,
+              "color": "orange",
+              "label": "-e^{-3t}"
+            }
+          ],
+          "xmin": -1,
+          "xmax": 1.2,
+          "ymin": -6,
+          "ymax": 12,
+          "xlabel": "t"
+        },
+        "cap": "The solution $2e^{2t} - e^{-3t}$ (solid) is the sum of its two exponential parts (dashed). For large $t$ the growing term $e^{2t}$ dominates; for negative $t$ the other one does."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 3, 7.1 Second-Order Linear Equations"
+      },
+      {
+        "name": "Paul's Online Math Notes, Differential Equations: Real Roots"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.03SC Differential Equations (Fall 2011), Unit II: Second Order Constant Coefficient Linear Equations"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

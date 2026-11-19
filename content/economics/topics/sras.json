@@ -1,0 +1,113 @@
+{
+  "id": "macro.sras",
+  "slug": "sras",
+  "ladder": "economics",
+  "course": "macro",
+  "unit": "ad-as",
+  "title": "Short-Run Aggregate Supply",
+  "short": "SRAS slopes up because wages and some prices are slow to adjust; input prices, productivity and supply shocks shift it.",
+  "trouble": "Students shift SRAS when the price level changes, or treat higher input costs as an increase in SRAS because the curve moves up.",
+  "prereqs": [
+    "macro.aggregate-demand",
+    "micro.supply-shifters"
+  ],
+  "xp": 2,
+  "viz": [
+    "ec-adas"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/economics/macroeconomics/aggregate-demand/\">Aggregate Demand</a> is half of the model. The other half is supply: how much real GDP firms produce at each price level. Its shifters echo <a href=\"/economics/microeconomics/supply-shifters/\">the shifters of supply for one good</a>, now for the whole economy."
+      },
+      {
+        "t": "key",
+        "html": "<b>Short-run aggregate supply (SRAS)</b> slopes up: a higher price level brings more output in the short run, because wages and some other input prices are slow to change. SRAS shifts with production costs: nominal wages, energy and other input prices, productivity, business taxes and subsidies, and supply shocks."
+      },
+      {
+        "t": "why",
+        "html": "Many costs are fixed in the short run by contracts and habit: wages are set for a year, rent for a lease. If the prices firms sell at rise while those costs stay put, each extra unit becomes more profitable, so firms produce more: an upward slope. When a cost itself changes, firms need a different price level to produce any given output, so the whole curve moves. Higher oil prices move SRAS up and to the left: at every price level, less output. That is a <b>decrease</b> in SRAS, even though the curve moved \"up.\""
+      },
+      {
+        "t": "viz",
+        "name": "ec-adas",
+        "opts": {
+          "mode": "shock",
+          "events": [
+            {
+              "label": "Oil prices rise",
+              "curve": "SRAS",
+              "dir": -1,
+              "why": "Energy costs more, so firms produce less at every price level"
+            },
+            {
+              "label": "Oil prices fall",
+              "curve": "SRAS",
+              "dir": 1,
+              "why": "Energy costs less"
+            },
+            {
+              "label": "Nominal wages rise",
+              "curve": "SRAS",
+              "dir": -1,
+              "why": "Labor costs more at every price level"
+            },
+            {
+              "label": "Productivity improves",
+              "curve": "SRAS",
+              "dir": 1,
+              "why": "Each worker produces more, so cost per unit falls"
+            }
+          ]
+        },
+        "cap": "Each supply shock shifts SRAS. Watch which way the price level and output move: always opposite ways."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Shift or movement?",
+        "q": "What happens to SRAS? (a) Nominal wages rise across the economy. (b) The price level rises while wages stay fixed. (c) A new technology lowers costs in many industries.",
+        "steps": [
+          "(a) A cost rises: SRAS shifts left (a decrease).",
+          "(b) The price level is on the axis: a movement up along SRAS.",
+          "(c) Lower costs per unit: SRAS shifts right (an increase)."
+        ],
+        "a": "(a) left; (b) movement along; (c) right"
+      },
+      {
+        "t": "ex",
+        "title": "Reading the shift",
+        "q": "After a drought, the SRAS curve moves up by 5 price-level points at every output. Is that an increase or a decrease in SRAS?",
+        "steps": [
+          "Read the shift sideways: at any given price level, firms now produce less.",
+          "So it is a decrease, a shift to the left."
+        ],
+        "a": "A decrease"
+      },
+      {
+        "t": "mistake",
+        "html": "Shifting SRAS when the price level changes, or calling higher input costs an \"increase\" in SRAS because the curve moves up. A price-level change is a movement along SRAS, and higher costs mean less output at each price level: a decrease. Check: read supply shifts horizontally."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Macroeconomics 3e, 10.2 Building a Model of Aggregate Demand and Aggregate Supply"
+      },
+      {
+        "name": "OpenStax Principles of Macroeconomics 3e, 10.3 Shifts in Aggregate Supply"
+      },
+      {
+        "name": "College Board, AP Macroeconomics Course and Exam Description (topic list)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

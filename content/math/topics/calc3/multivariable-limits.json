@@ -1,0 +1,107 @@
+{
+  "id": "calc3.multivariable-limits",
+  "slug": "multivariable-limits",
+  "ladder": "math",
+  "course": "calc3",
+  "unit": "partials",
+  "title": "Limits and Continuity",
+  "short": "A limit must agree along every path.",
+  "trouble": "Students check only straight-line paths and conclude a limit exists.",
+  "prereqs": [
+    "calc3.multivariable-functions",
+    "calc1.epsilon-delta"
+  ],
+  "xp": 3,
+  "viz": [
+    "surface"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In one variable, $x$ can approach $a$ from only two sides, and the <a href=\"/math/calculus-1/epsilon-delta/\">precise definition of a limit</a> asks for closeness on both. In the plane, a point can approach $(a, b)$ along infinitely many paths: straight lines from every direction, parabolas, spirals. A limit exists only if the function settles on <b>one</b> value no matter how you approach."
+      },
+      {
+        "t": "key",
+        "html": "$\\displaystyle\\lim_{(x, y) \\to (a, b)} f(x, y) = L$ means: for every $\\varepsilon > 0$ there is a $\\delta > 0$ such that $|f(x, y) - L| < \\varepsilon$ whenever ${}0 < \\sqrt{(x - a)^2 + (y - b)^2} < \\delta$.<br>\n  <b>To show a limit does not exist:</b> find two paths that give different values. <b>To show it exists:</b> squeeze it, often with polar coordinates $x = r\\cos\\theta$, $y = r\\sin\\theta$, where $(x, y) \\to (0, 0)$ means $r \\to 0$ for every $\\theta$."
+      },
+      {
+        "t": "why",
+        "html": "The definition talks about every point in a small disk around $(a, b)$, not about any particular path. If the limit is $L$, then any path into $(a, b)$ eventually stays inside the disk, so every path gives $L$. Turned around: two paths with different values make a limit impossible. But checking many paths can never prove a limit exists, because there are always paths you have not tried. A proof has to control all points at once, and a bound like $|f(x, y) - L| \\le C r$ does exactly that."
+      },
+      {
+        "t": "viz",
+        "name": "surface",
+        "opts": {
+          "f": "2x^2*y/(x^4+y^2)",
+          "xmin": -1,
+          "xmax": 1,
+          "ymin": -1,
+          "ymax": 1,
+          "n": 31,
+          "contours": 10,
+          "slice": "none",
+          "zmin": -1.1,
+          "zmax": 1.1
+        },
+        "cap": "$z = \\frac{2x^2y}{x^4 + y^2}$. Along every straight line into the origin the height goes to ${}0$, but a ridge of height ${}1$ follows the parabola $y = x^2$ right into the origin, and a valley of depth $-1$ follows $y = -x^2$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Lines disagree",
+        "q": "Show that $\\displaystyle\\lim_{(x, y) \\to (0, 0)} \\frac{xy}{x^2 + y^2}$ does not exist.",
+        "steps": [
+          "Along $y = mx$ (with $x \\ne 0$): $\\frac{x \\cdot mx}{x^2 + m^2x^2} = \\frac{m}{1 + m^2}$.",
+          "$m = 0$ (the $x$-axis) gives ${}0$; $m = 1$ gives $\\frac{1}{2}$.",
+          "Two paths, two values: no limit."
+        ],
+        "a": "does not exist"
+      },
+      {
+        "t": "ex",
+        "title": "Lines agree, but a parabola does not",
+        "q": "Does $\\displaystyle\\lim_{(x, y) \\to (0, 0)} \\frac{x^2y}{x^4 + y^2}$ exist?",
+        "steps": [
+          "Along $y = mx$: $\\frac{mx^3}{x^4 + m^2x^2} = \\frac{mx}{x^2 + m^2} \\to 0$ for every $m$ (and the $y$-axis gives ${}0$ too).",
+          "Along $y = x^2$: $\\frac{x^4}{x^4 + x^4} = \\frac{1}{2}$ for every $x \\ne 0$.",
+          "Different values on two paths, so the limit does not exist."
+        ],
+        "a": "does not exist"
+      },
+      {
+        "t": "ex",
+        "title": "A squeeze in polar coordinates",
+        "q": "Find $\\displaystyle\\lim_{(x, y) \\to (0, 0)} \\frac{x^2y}{x^2 + y^2}$.",
+        "steps": [
+          "With $x = r\\cos\\theta$, $y = r\\sin\\theta$: $\\frac{r^3\\cos^2\\theta\\sin\\theta}{r^2} = r\\cos^2\\theta\\sin\\theta$.",
+          "$|\\cos^2\\theta\\sin\\theta| \\le 1$, so $|f(x, y)| \\le r$.",
+          "As $(x, y) \\to (0, 0)$, $r \\to 0$, so $f \\to 0$ along every path at once."
+        ],
+        "a": "${}0$"
+      },
+      {
+        "t": "p",
+        "html": "Polynomials are continuous everywhere, and so are rational functions wherever the denominator is not zero; sums, products and compositions of continuous functions are continuous. For those, the limit is just the value: substitute."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Checking only straight lines.</b> In the second example every line gives ${}0$, yet the limit does not exist: the parabola $y = x^2$ gives $\\frac{1}{2}$. Agreement along lines is evidence, not proof. Either find a path that disagrees (try $y = x^2$ or $x = y^2$ when the powers in the denominator differ) or prove the limit with a bound that holds for all points near the origin."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 3, 4.2 Limits and Continuity"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

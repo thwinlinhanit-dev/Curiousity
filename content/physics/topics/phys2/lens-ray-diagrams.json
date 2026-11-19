@@ -1,0 +1,124 @@
+{
+  "id": "phys2.lens-ray-diagrams",
+  "slug": "lens-ray-diagrams",
+  "ladder": "physics",
+  "course": "phys2",
+  "unit": "geometric-optics",
+  "title": "Lenses and Ray Diagrams",
+  "short": "Converging and diverging lenses bend parallel rays toward or away from a focal point.",
+  "trouble": "Students think blocking half of a lens cuts off half of the image.",
+  "prereqs": [
+    "phys2.snells-law",
+    "phys2.mirror-ray-diagrams"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-rays"
+  ],
+  "figureArchetype": "OpticsFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A lens bends light twice, once at each surface, by <a href=\"/physics/physics-2/snells-law/\">Snell's Law</a>. A <b>converging</b> lens is thicker in the middle and brings parallel rays together at a focal point on the far side. A <b>diverging</b> lens is thinner in the middle and spreads parallel rays as if they came from a focal point on the near side. Ray diagrams work just as for <a href=\"/physics/physics-2/mirror-ray-diagrams/\">mirrors</a>, but the light goes through."
+      },
+      {
+        "t": "why",
+        "html": "Why does a thick-middled lens converge light? Near its edge, a lens is like a thin prism with its thick end toward the middle. A prism bends light toward its thicker part, so every part of the lens bends light toward the axis, and the edges, which are more steeply tilted, bend it most. That is just what it takes to bring parallel rays to one point."
+      },
+      {
+        "t": "key",
+        "html": "Principal rays for a lens: (1) parallel to the axis, then through the far focal point (converging) or as if from the near one (diverging); (2) straight through the center, undeflected; (3) through the near focal point (converging) or aimed at the far one (diverging), then out parallel. Real images form on the <b>far</b> side of the lens."
+      },
+      {
+        "t": "viz",
+        "name": "ph-rays",
+        "opts": {
+          "element": "converging",
+          "f": 10,
+          "dObj": 25,
+          "hObj": 5,
+          "lab": "/science-lab/optics/",
+          "task": "Cover the top half of the lens. Is any part of the image missing?"
+        },
+        "cap": "A converging lens. Cover half of it and the image stays whole, only dimmer."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Object (converging lens)",
+          "Image",
+          "Use"
+        ],
+        "rows": [
+          [
+            "beyond $2f$",
+            "real, inverted, smaller",
+            "camera, eye"
+          ],
+          [
+            "between $f$ and $2f$",
+            "real, inverted, larger",
+            "projector"
+          ],
+          [
+            "inside $f$",
+            "virtual, upright, larger",
+            "magnifying glass"
+          ]
+        ],
+        "cap": "A diverging lens always gives a virtual, upright, smaller image, on the same side as the object."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking that blocking half of a lens cuts off half of the image. Every point of the object sends light through the whole lens, so the open half still makes a complete image with half the light. Check: a camera with a smaller aperture still takes a whole picture, only a darker one."
+      },
+      {
+        "t": "ex",
+        "title": "A camera lens",
+        "q": "A camera lens has $f = 5.0\\ \\text{cm}$. Where is the image of a person $3.0\\ \\text{m}$ away, and what is it like?",
+        "steps": [
+          "The person is far beyond $2f = 10\\ \\text{cm}$.",
+          "The parallel ray and the center ray meet just beyond $F$ on the far side.",
+          "Real, inverted and much smaller, just past $5.0\\ \\text{cm}$: right where the sensor sits."
+        ],
+        "a": "Real, inverted, smaller, just beyond F"
+      },
+      {
+        "t": "ex",
+        "title": "A magnifying glass",
+        "q": "You hold a converging lens with $f = 10\\ \\text{cm}$ $6\\ \\text{cm}$ above a stamp. What do you see?",
+        "steps": [
+          "The stamp is inside $f$.",
+          "Rays leaving the lens spread apart; traced back, they meet on the stamp's side, farther away.",
+          "A virtual, upright, enlarged image: that is what a magnifier does."
+        ],
+        "a": "Virtual, upright, larger"
+      },
+      {
+        "t": "viz",
+        "name": "ph-rays",
+        "opts": {
+          "element": "diverging",
+          "f": -10,
+          "dObj": 20,
+          "hObj": 5
+        },
+        "cap": "A diverging lens: the rays spread, and traced back they meet on the object's side in a smaller upright image."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Physics 2e, Section 25.6: Image Formation by Lenses"
+      },
+      {
+        "name": "OpenStax University Physics Volume 3, Section 2.4: Thin Lenses"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

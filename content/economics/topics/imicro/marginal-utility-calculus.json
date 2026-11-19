@@ -1,0 +1,99 @@
+{
+  "id": "imicro.marginal-utility-calculus",
+  "slug": "marginal-utility-calculus",
+  "ladder": "economics",
+  "course": "imicro",
+  "unit": "preferences",
+  "title": "Marginal Utility as a Partial Derivative",
+  "short": "MUx = ∂U/∂x is the extra utility from a little more x with y held fixed.",
+  "trouble": "Students differentiate with respect to both goods at once, or set the other good to zero instead of holding it constant.",
+  "prereqs": [
+    "imicro.utility-functions",
+    "calc3.partial-derivatives"
+  ],
+  "xp": 2,
+  "viz": [
+    "surface"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/economics/microeconomics/marginal-utility/\">Total and Marginal Utility</a> marginal utility was the change in total utility from one more unit, read off a table. With a smooth utility function we can do better and find the rate at an exact bundle. The tool is the partial derivative from <a href=\"/math/calculus-3/partial-derivatives/\">Partial Derivatives</a>: change one good a little, hold the other fixed, and see how fast $U$ rises."
+      },
+      {
+        "t": "key",
+        "html": "$$MU_x = \\frac{\\partial U}{\\partial x}, \\qquad MU_y = \\frac{\\partial U}{\\partial y}.$$ $MU_x$ is the extra utility per unit of a small increase in $x$, with $y$ held where it is. A small change $\\Delta x$ raises utility by about $MU_x\\,\\Delta x$."
+      },
+      {
+        "t": "why",
+        "html": "The table version is a difference quotient, $\\Delta U/\\Delta x$ with $\\Delta x = 1$. Shrink the step and the quotient settles on a limit: $\\displaystyle \\lim_{h \\to 0} \\frac{U(x + h, y) - U(x, y)}{h}$. That limit is the partial derivative. Because $y$ stays fixed, you differentiate as if $y$ were a number: a factor of $y$ rides along, and a term with only $y$ in it drops out."
+      },
+      {
+        "t": "viz",
+        "name": "surface",
+        "opts": {
+          "f": "sqrt(x*y)",
+          "xmin": 0,
+          "xmax": 9,
+          "ymin": 0,
+          "ymax": 9,
+          "contours": 8,
+          "floor": true,
+          "slice": "y",
+          "at": 4,
+          "view": "3d"
+        },
+        "cap": "$U = \\sqrt{xy}$ cut by the plane $y = 4$. The trace is $U = 2\\sqrt{x}$, a curve in $x$ alone. Its slope at each $x$ is $MU_x$ at that bundle, and it flattens as $x$ grows: diminishing marginal utility of $x$."
+      },
+      {
+        "t": "ex",
+        "title": "A Cobb-Douglas utility",
+        "q": "$U(x, y) = x^{1/2}y^{1/2}$. Find $MU_x$ and $MU_y$ at $(4, 9)$.",
+        "steps": [
+          "Treat $y$ as a constant: $MU_x = \\tfrac{1}{2}x^{-1/2}y^{1/2} = \\dfrac{\\sqrt{y}}{2\\sqrt{x}}$.",
+          "Treat $x$ as a constant: $MU_y = \\tfrac{1}{2}x^{1/2}y^{-1/2} = \\dfrac{\\sqrt{x}}{2\\sqrt{y}}$.",
+          "At $(4, 9)$: $MU_x = \\dfrac{3}{2 \\cdot 2} = \\dfrac{3}{4}$ and $MU_y = \\dfrac{2}{2 \\cdot 3} = \\dfrac{1}{3}$.",
+          "So a little more $x$ (say 0.1 unit) adds about $0.075$ to utility, and a little more $y$ adds about $0.033$."
+        ],
+        "a": "$MU_x = 3/4$, $MU_y = 1/3$."
+      },
+      {
+        "t": "ex",
+        "title": "A product with a shift",
+        "q": "$U(x, y) = (x + 2)y$. Find $MU_x$ and $MU_y$ at $(3, 5)$.",
+        "steps": [
+          "$MU_x = y$ (the factor $y$ rides along; the derivative of $x + 2$ is 1).",
+          "$MU_y = x + 2$.",
+          "At $(3, 5)$: $MU_x = 5$ and $MU_y = 5$."
+        ],
+        "a": "$MU_x = MU_y = 5$."
+      },
+      {
+        "t": "mistake",
+        "html": "Differentiating with respect to both goods at once, or setting the other good to zero. For $U = x^{1/2}y^{1/2}$, setting $y = 0$ makes $U = 0$ for every $x$, so you would wrongly find $MU_x = 0$. The other good is held fixed at its actual value, not removed. Check: your $MU_x$ should usually still contain $y$, and plugging in the bundle should give a positive number when more of $x$ helps."
+      },
+      {
+        "t": "note",
+        "html": "Diminishing marginal utility, $\\partial^2 U/\\partial x^2 < 0$, is a property of the particular utility function, not of the preferences. $U = xy$ has constant $MU_x = y$, and $V = (xy)^2$ has rising $MU_x = 2xy^2$, yet both describe the same person. What survives every increasing transformation is the ratio of marginal utilities, the subject of <a href=\"/economics/intermediate-microeconomics/mrs/\">The Marginal Rate of Substitution</a>."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, ch. 6 Consumer Choices (marginal utility)"
+      },
+      {
+        "name": "OpenStax Calculus Volume 3, 4.3 Partial Derivatives"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.04 Intermediate Microeconomic Theory (course scope and lecture topics)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,147 @@
+{
+  "id": "gchem2.le-chatelier-quantitative",
+  "slug": "le-chatelier-quantitative",
+  "ladder": "chemistry",
+  "course": "gchem2",
+  "unit": "equilibrium",
+  "title": "Le Chatelier's Principle with Q and K",
+  "short": "Changes in concentration or volume move Q away from K; only a temperature change alters K itself.",
+  "trouble": "Students think a concentration change alters K, or that adding an inert gas at constant volume shifts the equilibrium.",
+  "prereqs": [
+    "gchem2.reaction-quotient",
+    "gchem2.kp-kc",
+    "chem.le-chatelier"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-equilibrium"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/chemistry/chemistry/le-chatelier/\">Le Chatelier’s principle</a> says an equilibrium shifts to undo a disturbance. With <a href=\"/chemistry/general-chemistry-2/reaction-quotient/\">Q and K</a> you can see why, and predict the direction every time: a disturbance either changes $Q$ (and the reaction runs until $Q = K$ again) or changes $K$ itself."
+      },
+      {
+        "t": "key",
+        "html": "Adding or removing a species, or changing the volume, changes $Q$ but not $K$. The reaction then runs in the direction that brings $Q$ back to $K$. Only a change in temperature changes $K$. Adding an inert gas at constant volume changes nothing. A catalyst changes nothing either."
+      },
+      {
+        "t": "why",
+        "html": "Halving the volume doubles every gas concentration. Each concentration in $Q$ is raised to its coefficient, so $Q$ is multiplied by $2^{\\Delta n}$. For $\\mathrm{N_2 + 3H_2 \\rightleftharpoons 2NH_3}$, $\\Delta n = -2$, so $Q$ drops to $\\tfrac{1}{4}$ of $K$ and the reaction moves forward, toward fewer moles of gas. An inert gas raises the total pressure but leaves each reacting gas's concentration (and partial pressure) unchanged, so $Q$ stays equal to $K$. Temperature is different: $K$ itself depends on it. For an exothermic reaction, $K$ gets smaller as $T$ rises."
+      },
+      {
+        "t": "viz",
+        "name": "ch-equilibrium",
+        "opts": {
+          "rxn": "N2+3H2<=>2NH3",
+          "c0": {
+            "N2": 1,
+            "H2": 3
+          },
+          "events": [
+            {
+              "t": 25,
+              "type": "volume",
+              "amt": 0.5
+            },
+            {
+              "t": 50,
+              "type": "inert",
+              "amt": 1
+            }
+          ],
+          "show": [
+            "Q"
+          ]
+        },
+        "cap": "At the first event the volume is halved: Q falls below K and more ammonia forms. At the second, an inert gas is added at constant volume: nothing shifts."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Compressing a gas equilibrium",
+        "q": "$\\mathrm{N_2O_4(g) \\rightleftharpoons 2NO_2(g)}$ is at equilibrium. The volume is suddenly halved. Which way does it shift?",
+        "steps": [
+          "Every concentration doubles. $Q = \\dfrac{[\\mathrm{NO_2}]^2}{[\\mathrm{N_2O_4}]}$ becomes $\\dfrac{(2)^2}{2} = 2$ times $K$.",
+          "$Q > K$: the reaction runs in reverse, toward $\\mathrm{N_2O_4}$, the side with fewer moles of gas."
+        ],
+        "a": "Toward $\\mathrm{N_2O_4}$."
+      },
+      {
+        "t": "ex",
+        "title": "Heating an exothermic reaction",
+        "q": "$\\mathrm{N_2(g) + 3H_2(g) \\rightleftharpoons 2NH_3(g)}$ has $\\Delta H^\\circ = -91.8\\ \\text{kJ}$. What does heating do to $K$ and to the amount of ammonia?",
+        "steps": [
+          "The forward reaction releases heat. Treat heat as a product: adding heat pushes the reaction backward.",
+          "In terms of $K$: for an exothermic reaction, $K$ decreases as $T$ rises (this follows from <a href=\"/chemistry/general-chemistry-2/free-energy-k/\">ΔG° = −RT ln K</a>). With a smaller $K$, the current $Q$ is now too large, so ammonia breaks down."
+        ],
+        "a": "$K$ falls and the mixture holds less ammonia. Industry still runs at about 400–450 °C because the reaction is too slow when cold: a compromise between yield and rate."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Change",
+          "Q or K?",
+          "Effect"
+        ],
+        "rows": [
+          [
+            "Add a reactant",
+            "$Q$ falls",
+            "shifts forward"
+          ],
+          [
+            "Remove a product",
+            "$Q$ falls",
+            "shifts forward"
+          ],
+          [
+            "Halve the volume",
+            "$Q \\times 2^{\\Delta n}$",
+            "toward fewer moles of gas"
+          ],
+          [
+            "Add inert gas, fixed V",
+            "no change",
+            "none"
+          ],
+          [
+            "Raise T, exothermic",
+            "$K$ falls",
+            "shifts in reverse"
+          ],
+          [
+            "Raise T, endothermic",
+            "$K$ rises",
+            "shifts forward"
+          ],
+          [
+            "Add a catalyst",
+            "no change",
+            "none (equilibrium is reached sooner)"
+          ]
+        ],
+        "cap": "What each disturbance does."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking a change in concentration changes $K$, or that an inert gas at constant volume shifts the equilibrium. Only temperature changes $K$. Check: ask what happens to each concentration in $Q$; if none changes, nothing shifts."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 13.3 Shifting Equilibria: Le Châtelier’s Principle"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

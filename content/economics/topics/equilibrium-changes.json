@@ -1,0 +1,93 @@
+{
+  "id": "micro.equilibrium-changes",
+  "slug": "equilibrium-changes",
+  "ladder": "economics",
+  "course": "micro",
+  "unit": "supply-demand",
+  "title": "When One Curve Shifts",
+  "short": "Decide which curve shifts and which way, then read the new equilibrium price and quantity.",
+  "trouble": "Students \"double shift\": the price rises, so supply increases, so the price falls. The price change is a movement along the curve that did not shift, not a second shift.",
+  "prereqs": [
+    "micro.shortage-surplus",
+    "micro.supply-shifters",
+    "micro.substitutes-complements"
+  ],
+  "xp": 2,
+  "viz": [
+    "ec-market"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Now let one curve move. You can tell which curve and which way (<a href=\"/economics/microeconomics/supply-shifters/\">What Shifts Supply</a>, <a href=\"/economics/microeconomics/substitutes-complements/\">Substitutes and Complements</a>), and you know a gap pushes the price (<a href=\"/economics/microeconomics/shortage-surplus/\">Shortages and Surpluses</a>). Put the pieces together in four steps."
+      },
+      {
+        "t": "key",
+        "html": "(1) Start at the equilibrium. (2) Decide which curve the event shifts. (3) Decide which way. (4) Find the new crossing. Demand up: $P$ and $Q$ both rise. Demand down: both fall. Supply up: $P$ falls and $Q$ rises. Supply down: $P$ rises and $Q$ falls."
+      },
+      {
+        "t": "why",
+        "html": "Take an increase in demand. At the old price, buyers now want more than sellers offer: a shortage. The price rises, and as it rises, sellers move <i>up along</i> the supply curve, offering more. The new equilibrium has a higher price and a higher quantity. The supply curve never moved; the higher price only moved sellers along it."
+      },
+      {
+        "t": "viz",
+        "name": "ec-market",
+        "opts": {
+          "demand": {
+            "a": 20,
+            "b": 2
+          },
+          "supply": {
+            "c": -4,
+            "d": 2
+          },
+          "shift": {
+            "D": 6
+          },
+          "money": true
+        },
+        "cap": "Step through a demand increase: the shift, the shortage at the old price, then the new equilibrium at a higher price and quantity. Supply stays put."
+      },
+      {
+        "t": "ex",
+        "title": "A bad harvest",
+        "q": "A freeze destroys part of the orange crop. What happens to the price and quantity of oranges?",
+        "steps": [
+          "The freeze affects sellers' ability to produce: <b>supply</b> shifts.",
+          "Fewer oranges at every price: supply <b>decreases</b> (left).",
+          "At the old price there is now a shortage, so the price rises, and buyers move up along demand, buying less."
+        ],
+        "a": "Price rises, quantity falls."
+      },
+      {
+        "t": "ex",
+        "title": "With numbers",
+        "q": "$Q_d = 20 - 2P$ and $Q_s = -4 + 2P$. Incomes rise and demand increases by 6 units at every price. Find the new equilibrium.",
+        "steps": [
+          "New demand: $Q_d = 26 - 2P$.",
+          "$26 - 2P = -4 + 2P$, so $30 = 4P$ and $P = 7.5$.",
+          "$Q = 26 - 2(7.5) = 11$. Both rose, from \\$6 and 8 units."
+        ],
+        "a": "$P = \\$7.50$, $Q = 11$."
+      },
+      {
+        "t": "mistake",
+        "html": "\"Double shifting\": the price rises, so supply increases, so the price falls… The higher price moves sellers <i>along</i> the supply curve; it doesn't shift it. A price is never a shifter in its own market. Check: name the one event and the one curve it shifts. Everything else that happens is a movement along the curve that did not shift."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, 3.3 Changes in Equilibrium Price and Quantity: The Four-Step Process"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.01 Principles of Microeconomics (scope and sequence)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

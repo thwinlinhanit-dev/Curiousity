@@ -1,0 +1,106 @@
+{
+  "id": "trad.everyday-syllogisms",
+  "slug": "everyday-syllogisms",
+  "ladder": "logic",
+  "course": "trad",
+  "unit": "everyday",
+  "title": "Syllogisms in Everyday Language",
+  "short": "Put each statement in standard form, find the three terms, arrange the syllogism, then test it by the rules or a Venn diagram.",
+  "trouble": "Learners test the argument before translating, or translate \"only\" the wrong way, which flips a valid argument into an invalid one.",
+  "prereqs": [
+    "trad.reducing-terms",
+    "trad.only-exceptives"
+  ],
+  "xp": 3,
+  "viz": [
+    "lg-syllogism",
+    "lg-venn3"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Arguments in conversation, ads and articles use everyday words. Testing them takes everything from this course so far: <a href=\"/logic/traditional-logic/translating-nonstandard/\">standard form</a>, <a href=\"/logic/traditional-logic/only-exceptives/\">\"only\"</a>, <a href=\"/logic/traditional-logic/reducing-terms/\">reducing terms</a>, and then a Venn diagram or the rules."
+      },
+      {
+        "t": "list",
+        "items": [
+          "Find the conclusion (indicator words help).",
+          "Translate each statement into standard form; watch \"only\", \"not every\" and verbs.",
+          "Reduce to three terms if needed.",
+          "Arrange in standard form and find the mood and figure.",
+          "Test with the rules or a Venn diagram."
+        ]
+      },
+      {
+        "t": "key",
+        "html": "Translate first, then test. Every judgment about validity is made on the standard-form version."
+      },
+      {
+        "t": "why",
+        "html": "Everyday wording hides the form. \"Only members may vote\" looks like it starts with the subject \"members\", but its standard form puts members in the predicate. If you test the wording instead of the meaning, you test the wrong argument. Translation is where most mistakes happen, so it gets its own step before any testing."
+      },
+      {
+        "t": "viz",
+        "name": "lg-venn3",
+        "opts": {
+          "terms": [
+            "volunteers",
+            "potters",
+            "knitters"
+          ],
+          "premises": [
+            "All knitters are volunteers",
+            "Some potters are knitters"
+          ],
+          "conclusion": "Some potters are volunteers",
+          "numbers": true
+        },
+        "cap": "Darii after translation: the X lands in region 5, inside the potter–volunteer overlap."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A hidden \"only\"",
+        "q": "Is this valid? \"Only people with a ticket can enter the gym. Some parents can enter the gym. So some parents are people with a ticket.\"",
+        "steps": [
+          "\"Only people with a ticket can enter\" → All people who can enter the gym are people with a ticket.",
+          "\"Some parents can enter\" → Some parents are people who can enter the gym.",
+          "Conclusion: Some parents are people with a ticket. Middle term: people who can enter the gym.",
+          "Standard form: All M are P / Some S are M / ∴ Some S are P. That is AII-1, Darii."
+        ],
+        "a": "valid"
+      },
+      {
+        "t": "ex",
+        "title": "Not every",
+        "q": "Is this valid? \"Not every birdwatcher is a skater. None of the skaters are drummers. Hence there are birdwatchers who are not drummers.\"",
+        "steps": [
+          "Translate: Some birdwatchers are not skaters (O). No skaters are drummers (E). Some birdwatchers are not drummers (O).",
+          "Two negative premises."
+        ],
+        "a": "invalid: exclusive premises"
+      },
+      {
+        "t": "mistake",
+        "html": "Testing before translating, or translating \"only\" the wrong way round. Reversing \"only\" turns \"All people who enter are ticket holders\" into \"All ticket holders enter\", and that flips a valid argument into an invalid one (or the reverse). Check: write the standard form of every line before you look for the middle term."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Patrick J. Hurley, A Concise Introduction to Logic, 5.5 Ordinary Language Arguments"
+      },
+      {
+        "name": "Patrick J. Hurley, A Concise Introduction to Logic, 4.7 Translating Ordinary Language Statements into Categorical Form"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

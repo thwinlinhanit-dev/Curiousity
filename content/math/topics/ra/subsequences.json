@@ -1,0 +1,106 @@
+{
+  "id": "ra.subsequences",
+  "slug": "subsequences",
+  "ladder": "math",
+  "course": "ra",
+  "unit": "sequences",
+  "title": "Subsequences and Subsequential Limits",
+  "short": "Every subsequence of a convergent sequence has the same limit, so two subsequences with different limits prove that a sequence diverges.",
+  "trouble": "Students treat any reordering of the terms as a subsequence. The indices must strictly increase: a₂, a₄, a₆, … is a subsequence; a₄, a₂, a₆, … is not.",
+  "prereqs": [
+    "ra.squeeze-order"
+  ],
+  "xp": 2,
+  "viz": [
+    "ra-epsband"
+  ],
+  "figureArchetype": "FieldFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A subsequence keeps some of the terms of a sequence, in their original order. Subsequences are the main tool for showing that a sequence does <b>not</b> converge, and they lead to the most important existence theorem about sequences in the next topic. They build on <a href=\"/math/real-analysis/squeeze-order/\">limits of sequences</a>."
+      },
+      {
+        "t": "key",
+        "html": "A <b>subsequence</b> of $(a_n)$ is $(a_{n_k})$ where $n_1 < n_2 < n_3 < \\cdots$ are positive integers. If $a_n \\to L$, every subsequence tends to $L$. So if two subsequences have different limits, $(a_n)$ diverges. A <b>subsequential limit</b> is a number some subsequence converges to."
+      },
+      {
+        "t": "why",
+        "html": "Strictly increasing indices satisfy $n_k \\ge k$ (induction: $n_1 \\ge 1$, and $n_{k+1} > n_k \\ge k$). If $a_n \\to L$ and $\\varepsilon > 0$, take $N$ with $|a_n - L| < \\varepsilon$ for $n \\ge N$. For $k \\ge N$ we have $n_k \\ge k \\ge N$, so $|a_{n_k} - L| < \\varepsilon$. $\\blacksquare$ The proof uses the increasing indices in an essential way: they guarantee that the subsequence moves out along the sequence."
+      },
+      {
+        "t": "viz",
+        "name": "ra-epsband",
+        "opts": {
+          "f": "(-1)^n*2n/(n+1)",
+          "nmax": 40,
+          "mode": "plain",
+          "sub": [
+            2,
+            0
+          ],
+          "ymin": -2.5,
+          "ymax": 2.5
+        },
+        "cap": "$a_n = (-1)^{n}\\frac{2n}{n + 1}$, with the even terms highlighted in purple: they approach $2$, while the odd terms approach $-2$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Two subsequences",
+        "q": "Show that $a_n = (-1)^{n}\\frac{2n}{n + 1}$ diverges.",
+        "steps": [
+          "Along even $n$: $a_{2k} = \\frac{4k}{2k + 1} \\to 2$.",
+          "Along odd $n$: $a_{2k+1} = -\\frac{2(2k + 1)}{2k + 2} \\to -2$."
+        ],
+        "a": "Two subsequences with different limits, so $(a_n)$ diverges."
+      },
+      {
+        "t": "ex",
+        "title": "All subsequential limits",
+        "q": "Find the set of subsequential limits of $a_n = \\cos\\left(\\frac{n\\pi}{3}\\right)$.",
+        "steps": [
+          "The values repeat with period $6$: $\\frac{1}{2}, -\\frac{1}{2}, -1, -\\frac{1}{2}, \\frac{1}{2}, 1$.",
+          "Each value occurs infinitely often, so each is the limit of a constant subsequence.",
+          "Any subsequence must eventually stay near one value (they are a fixed distance apart), so there are no others."
+        ],
+        "a": "$\\left\\{-1, -\\frac{1}{2}, \\frac{1}{2}, 1\\right\\}$"
+      },
+      {
+        "t": "ex",
+        "title": "A subsequence along a pattern",
+        "q": "Let $a_n = (-1)^{n}\\frac{3n + 1}{n + 2}$. Find the limit of $a_{4k+3}$ as $k \\to \\infty$, and decide whether $a_{3k}$ converges.",
+        "steps": [
+          "The index $4k + 3$ is always odd, so $a_{4k+3} = -\\frac{3(4k + 3) + 1}{(4k + 3) + 2} \\to -3$.",
+          "The index $3k$ is even for even $k$ and odd for odd $k$, so $a_{3k}$ itself has subsequences tending to $3$ and to $-3$: it diverges."
+        ],
+        "a": "$a_{4k+3} \\to -3$; $(a_{3k})$ diverges."
+      },
+      {
+        "t": "note",
+        "html": "The set of subsequential limits tells a lot. A bounded sequence converges exactly when this set has one element. In the next topic you will see that it is never empty for a bounded sequence, and two topics later its largest and smallest elements get names: lim sup and lim inf."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Reordering is not a subsequence.</b> $a_2, a_1, a_4, a_3, \\ldots$ uses every term but in a different order, so it is not a subsequence, and the theorem says nothing about it. The indices must strictly increase: $n_k = k^{2}$ and $n_k = 2k + 1$ are fine; $n_k = \\lceil \\frac{k}{2} \\rceil$ (which repeats indices) is not. A second slip: one subsequence converging does not make the whole sequence converge."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Jiří Lebl, Basic Analysis I: Introduction to Real Analysis, section 2.1 (subsequences)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.100A Real Analysis, lecture notes on subsequences"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

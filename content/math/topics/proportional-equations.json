@@ -1,0 +1,115 @@
+{
+  "id": "g7.proportional-equations",
+  "slug": "proportional-equations",
+  "ladder": "math",
+  "course": "g7",
+  "unit": "proportional",
+  "title": "Writing y = kx",
+  "short": "Turn a table or story into an equation.",
+  "trouble": "Students compute x/y instead of y/x and write the reciprocal as k.",
+  "prereqs": [
+    "g7.constant-of-proportionality"
+  ],
+  "xp": 2,
+  "viz": [
+    "ratiotable"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Once you know the <a href=\"/math/grade-7/constant-of-proportionality/\">constant of proportionality</a>, you can write the whole relationship as one short equation. It works for every row of the table at once."
+      },
+      {
+        "t": "key",
+        "html": "A proportional relationship can be written $y = kx$, where $k = \\frac{y}{x}$. Find $k$ from any pair, then write the equation."
+      },
+      {
+        "t": "why",
+        "html": "\"Proportional\" means each $y$ is $k$ times its $x$. The equation $y = kx$ says exactly that. It also lets you find a $y$ for any $x$, even one that is not in the table."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "f": "k*x",
+          "params": {
+            "k": [
+              0.5,
+              5,
+              3.5,
+              0.5
+            ]
+          },
+          "xmin": -1,
+          "xmax": 10,
+          "ymin": -2,
+          "ymax": 40,
+          "table": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "zoom": false
+        },
+        "cap": "Change $k$ and watch the table: every $y$-value is $k$ times its $x$-value, and the row for $x = 1$ shows $k$ itself."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "From a table",
+        "q": "$y$ is proportional to $x$. Write an equation. $$\\begin{array}{l|ccc} x & 2 & 5 & 8 \\\\ \\hline y & 7 & 17.5 & 28 \\end{array}$$",
+        "steps": [
+          "$k = \\frac{y}{x} = \\frac{7}{2} = 3.5$.",
+          "Check: $3.5 \\times 8 = 28$ ✓.",
+          "The equation is $y = 3.5x$."
+        ],
+        "a": "$y = 3.5x$"
+      },
+      {
+        "t": "ex",
+        "title": "From a story",
+        "q": "4 movie tickets cost \\$34. Let $c$ be the cost in dollars and $n$ the number of tickets. Write an equation for $c$ in terms of $n$.",
+        "steps": [
+          "Cost per ticket: $k = 34 \\div 4 = 8.5$.",
+          "Each ticket adds \\$8.50, so $c = 8.5n$.",
+          "Check: $8.5 \\times 4 = 34$ ✓."
+        ],
+        "a": "$c = 8.5n$"
+      },
+      {
+        "t": "ex",
+        "title": "Watch the order",
+        "q": "$x$: $6, 9, 15$ and $y$: $2, 3, 5$. Write $y = kx$.",
+        "steps": [
+          "$k = \\frac{y}{x} = \\frac{2}{6} = \\frac{1}{3}$. Here $y$ is smaller than $x$, so $k$ is less than 1.",
+          "The equation is $y = \\frac{1}{3}x$. Check: $\\frac{1}{3} \\times 15 = 5$ ✓."
+        ],
+        "a": "$y = \\frac{1}{3}x$"
+      },
+      {
+        "t": "mistake",
+        "html": "Dividing $x$ by $y$ and writing the reciprocal, like $y = 3x$ in the last example. Always check your equation with a row of the table: $3 \\times 6 = 18$, not $2$, so $y = 3x$ is wrong."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Prealgebra 2e, Section 11.2 Graphing Linear Equations"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 7.RP.A.2c"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

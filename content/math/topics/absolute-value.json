@@ -1,0 +1,92 @@
+{
+  "id": "ra.absolute-value",
+  "slug": "absolute-value",
+  "ladder": "math",
+  "course": "ra",
+  "unit": "real-numbers",
+  "title": "Absolute Value and the Triangle Inequality",
+  "short": "|x − a| < ε means x is within ε of a; |a + b| ≤ |a| + |b| and |a| − |b| ≤ |a − b| turn distances into bounds.",
+  "trouble": "Students write |a − b| ≤ |a| − |b| (backward) or treat |a + b| = |a| + |b| as always true. The reverse triangle inequality gives a lower bound: |a − b| ≥ |a| − |b|.",
+  "prereqs": [
+    "alg1.absolute-value-inequalities",
+    "disc.direct-proof"
+  ],
+  "xp": 2,
+  "viz": [],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Real analysis is the part of mathematics that proves why calculus works. Almost every proof in it measures how close two numbers are, and the tool for that is the absolute value. You solved inequalities like $|x - 3| < 2$ in <a href=\"/math/algebra-1/absolute-value-inequalities/\">Algebra 1</a>, and in <a href=\"/math/discrete-math/direct-proof/\">Discrete Math</a> you learned to write a direct proof. This course puts the two together."
+      },
+      {
+        "t": "key",
+        "html": "$|x - a|$ is the <b>distance</b> from $x$ to $a$, so $|x - a| < \\varepsilon$ means $a - \\varepsilon < x < a + \\varepsilon$. Two inequalities turn distances into bounds: the <b>triangle inequality</b> $|a + b| \\le |a| + |b|$, and the <b>reverse triangle inequality</b> $|a| - |b| \\le |a - b|$."
+      },
+      {
+        "t": "why",
+        "html": "Since $-|a| \\le a \\le |a|$ and $-|b| \\le b \\le |b|$, adding gives $-(|a| + |b|) \\le a + b \\le |a| + |b|$, which says exactly $|a + b| \\le |a| + |b|$. For the reverse version, write $a = (a - b) + b$ and apply the triangle inequality: $|a| \\le |a - b| + |b|$, so $|a| - |b| \\le |a - b|$. Swapping $a$ and $b$ gives $|b| - |a| \\le |a - b|$ too, so in fact $\\big||a| - |b|\\big| \\le |a - b|$."
+      },
+      {
+        "t": "p",
+        "html": "Analysts use these two facts in two directions. The triangle inequality gives an <b>upper bound</b> for a sum: if two quantities are each small, so is their sum. The reverse inequality gives a <b>lower bound</b>: a number close to $a$ cannot be much smaller in size than $|a|$. We will use the second one to keep denominators away from $0$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Unwrapping an absolute value",
+        "q": "Write the set of $x$ with $|x + 2| < 0.1$ as an interval.",
+        "steps": [
+          "$|x + 2| = |x - (-2)|$ is the distance from $x$ to $-2$.",
+          "So $-0.1 < x + 2 < 0.1$, that is, $-2.1 < x < -1.9$."
+        ],
+        "a": "$(-2.1, -1.9)$, an open interval because the inequality is strict."
+      },
+      {
+        "t": "ex",
+        "title": "Bounding a factor",
+        "q": "If $|x - 3| < 1$, how big can $|x + 3|$ be?",
+        "steps": [
+          "From $|x - 3| < 1$: $2 < x < 4$.",
+          "Then $5 < x + 3 < 7$, so $|x + 3| < 7$.",
+          "This is the step that makes $x^{2}$ continuous at $3$: $|x^{2} - 9| = |x - 3|\\,|x + 3| < 7|x - 3|$, which is small when $|x - 3|$ is."
+        ],
+        "a": "$|x + 3| < 7$, and no smaller bound works for every such $x$."
+      },
+      {
+        "t": "ex",
+        "title": "Keeping away from zero",
+        "q": "If $|x - 5| < 2$, show that $|x| > 3$.",
+        "steps": [
+          "Reverse triangle inequality: $|x| \\ge |5| - |x - 5|$.",
+          "Since $|x - 5| < 2$, we get $|x| > 5 - 2 = 3$."
+        ],
+        "a": "$|x| > 3$. (So $\\frac{1}{|x|} < \\frac{1}{3}$: a bound on a reciprocal, the kind the quotient law needs.)"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Running the inequality backward.</b> The tempting \"$|a - b| \\le |a| - |b|$\" is false: with $a = 1$ and $b = 2$, the left side is $1$ and the right side is $-1$. The difference of sizes is a <b>lower</b> bound for the size of the difference. And $|a + b| = |a| + |b|$ holds only when $a$ and $b$ have the same sign (or one is $0$). Check any inequality like these with $a = 1$, $b = -1$ and with $a = 1$, $b = 2$ before you use it."
+      },
+      {
+        "t": "note",
+        "html": "In a proof you will often see a chain like $|x^{2} - 9| = |x - 3||x + 3| \\le |x - 3|(|x - 3| + 6)$. The last step is the triangle inequality: $|x + 3| = |(x - 3) + 6| \\le |x - 3| + 6$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Jiří Lebl, Basic Analysis I: Introduction to Real Analysis, section 1.3 (absolute value)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.100A Real Analysis, lecture notes on the real numbers and absolute value"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

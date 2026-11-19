@@ -1,0 +1,82 @@
+{
+  "id": "g4.divide-with-remainders",
+  "slug": "divide-with-remainders",
+  "ladder": "math",
+  "course": "g4",
+  "unit": "division",
+  "title": "Division with Remainders",
+  "short": "Some totals do not split evenly; the leftover is the remainder.",
+  "trouble": "Children leave a remainder larger than the divisor.",
+  "prereqs": [
+    "g3.fact-families"
+  ],
+  "xp": 1,
+  "viz": [
+    "counters",
+    "arraygrid"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You know division facts from <a href=\"/math/grade-3/fact-families/\">fact families</a>: $24 \\div 4 = 6$ because $6 \\times 4 = 24$. But what about $23 \\div 4$? Some totals do not split evenly. The part left over is the <b>remainder</b>."
+      },
+      {
+        "t": "key",
+        "html": "To divide $23 \\div 4$, find the biggest multiple of 4 that fits in 23: $5 \\times 4 = 20$. The quotient is 5 and the remainder is $23 - 20 = 3$. Write $23 \\div 4 = 5$ R 3. The remainder is always <b>less than</b> the divisor."
+      },
+      {
+        "t": "why",
+        "html": "Make groups of 4 from 23 counters. After 5 groups you have used 20, and 3 are left. If 4 or more were left, you could make another group, so you were not done yet. That is why a remainder must be smaller than the divisor."
+      },
+      {
+        "t": "viz",
+        "name": "g4-groups",
+        "opts": {
+          "n": 23,
+          "size": 4,
+          "made": 4
+        },
+        "cap": "Four groups of 4 are made and 7 counters are left. Is that enough for another group? Press <b>Make a group</b>, then try other group sizes."
+      },
+      {
+        "t": "ex",
+        "title": "Find the quotient and remainder",
+        "q": "Divide $23 \\div 4$.",
+        "steps": [
+          "Count by 4s: 4, 8, 12, 16, 20, 24. 24 is too big, so stop at $20 = 5 \\times 4$.",
+          "Left over: $23 - 20 = 3$.",
+          "Check: $5 \\times 4 + 3 = 23$."
+        ],
+        "a": "$5$ R $3$"
+      },
+      {
+        "t": "ex",
+        "title": "Check a remainder",
+        "q": "Is $47 \\div 6 = 6$ R 11 correct?",
+        "steps": [
+          "$6 \\times 6 + 11 = 47$, so the numbers add up, but 11 is more than 6.",
+          "11 left over is enough for another group of 6: one more group, with $11 - 6 = 5$ left."
+        ],
+        "a": "No. $47 \\div 6 = 7$ R 5."
+      },
+      {
+        "t": "mistake",
+        "html": "Stopping too early and leaving a remainder that is as big as the divisor or bigger, like 6 R 11 for $47 \\div 6$. Always compare: if the remainder is not less than the divisor, make another group."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 4, 4.NBT.B.6 (find whole-number quotients and remainders)"
+      },
+      {
+        "name": "OpenStax Prealgebra 2e, section 1.5 Divide Whole Numbers"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

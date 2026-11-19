@@ -1,0 +1,107 @@
+{
+  "id": "prob.conditional-vs-joint",
+  "slug": "conditional-vs-joint",
+  "ladder": "math",
+  "course": "prob",
+  "unit": "conditioning",
+  "title": "Conditional or Joint?",
+  "short": "P(A ∩ B) is the chance that both happen; P(A ∣ B) is the chance of A among the outcomes where B happens. Read the question to see which one it asks for.",
+  "trouble": "Students answer with the joint probability P(A ∩ B) when the question asks \"of those with B, what fraction have A?\", or divide by the wrong event.",
+  "prereqs": [
+    "prob.axioms",
+    "stat.multiplication-rule"
+  ],
+  "xp": 2,
+  "viz": [
+    "prob-square"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Two probabilities are easy to mix up: the chance that A and B both happen, and the chance of A among the cases where B happens. You met both in <a href=\"/math/probability-and-statistics/multiplication-rule/\">the general multiplication rule</a>, $P(A \\cap B) = P(B)\\,P(A \\mid B)$. Most wrong answers in conditioning problems are right answers to the other question, so this lesson is about reading the question."
+      },
+      {
+        "t": "key",
+        "html": "$P(A \\cap B)$, the <b>joint</b> probability, is a share of <i>everything</i>. $P(A \\mid B) = \\frac{P(A \\cap B)}{P(B)}$, the <b>conditional</b> probability, is a share of <i>B</i>. Words like \"of those who\", \"among\", \"given\" and \"if\" name the group to divide by; \"both\" or \"and\" with no such phrase asks for the joint."
+      },
+      {
+        "t": "why",
+        "html": "Knowing that B happened rules out every outcome outside B, so B becomes the new sample space. To keep the total at 1, every probability inside B is rescaled by $\\frac{1}{P(B)}$. The part of A that survives is $A \\cap B$, so its new probability is $\\frac{P(A \\cap B)}{P(B)}$. The function $A \\mapsto P(A \\mid B)$ satisfies all three <a href=\"/math/probability/axioms/\">axioms</a>, so conditional probabilities obey every rule you know: complements, the addition rule, and so on."
+      },
+      {
+        "t": "viz",
+        "name": "prob-square",
+        "opts": {
+          "layout": "free",
+          "pA": "3/10",
+          "pB": "2/5",
+          "pAB": "1/5",
+          "labels": {
+            "A": "Rain",
+            "B": "Late"
+          },
+          "condition": "B"
+        },
+        "cap": "The joint probability is the overlap as a share of the whole square. Conditioning on Late stretches the Late region to fill the square, and the share that Rain covers there is the conditional probability."
+      },
+      {
+        "t": "p",
+        "html": "In the picture, the overlap has area $\\frac{1}{5}$ of the square: that is $P(\\text{Rain} \\cap \\text{Late})$. Inside the Late region (area $\\frac{2}{5}$) it covers half: that is $P(\\text{Rain} \\mid \\text{Late}) = \\frac{1/5}{2/5} = \\frac{1}{2}$. Same overlap, two different denominators."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "One table, three questions",
+        "q": "Of 200 students, 60 play a sport; 24 of those also have a part-time job; 56 students have a job in all. A student is picked at random. Find (a) the fraction who play a sport and have a job, (b) of the athletes, the fraction with a job, (c) of those with a job, the fraction who play a sport.",
+        "steps": [
+          "(a) No group is named, and \"and\" asks for both: $P(S \\cap J) = \\frac{24}{200} = \\frac{3}{25}$.",
+          "(b) \"Of the athletes\" divides by the 60 athletes: $P(J \\mid S) = \\frac{24}{60} = \\frac{2}{5}$.",
+          "(c) \"Of those with a job\" divides by the 56 workers: $P(S \\mid J) = \\frac{24}{56} = \\frac{3}{7}$."
+        ],
+        "a": "$\\frac{3}{25}$, $\\frac{2}{5}$ and $\\frac{3}{7}$: the same 24 students, three different denominators."
+      },
+      {
+        "t": "ex",
+        "title": "From percents",
+        "q": "Of a café's customers, 40% buy coffee and 15% buy both coffee and a pastry. Of the coffee buyers, what fraction buy a pastry?",
+        "steps": [
+          "The 15% is joint: a share of all customers. The question names the coffee buyers as the group.",
+          "$P(\\text{pastry} \\mid \\text{coffee}) = \\frac{0.15}{0.40} = \\frac{3}{8}$."
+        ],
+        "a": "$\\frac{3}{8}$"
+      },
+      {
+        "t": "ex",
+        "title": "Going the other way",
+        "q": "60% of a library's visitors are adults, and 25% of the adults borrow a DVD. What fraction of all visitors are adults who borrow a DVD?",
+        "steps": [
+          "25% is conditional (a share of the adults); the question asks for a share of everyone, a joint probability.",
+          "$$P(\\text{adult} \\cap \\text{DVD}) = P(\\text{adult})\\,P(\\text{DVD} \\mid \\text{adult}) = 0.6 \\times 0.25 = 0.15$$"
+        ],
+        "a": "$0.15$"
+      },
+      {
+        "t": "mistake",
+        "html": "Answering \"of those with B, what fraction have A?\" with the joint $P(A \\cap B)$, or dividing by the wrong event and giving $P(B \\mid A)$ instead of $P(A \\mid B)$. Check: name the group the question restricts to, and make sure it is your denominator. A conditional probability is never smaller than the joint one, since $P(B) \\le 1$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Grinstead and Snell, Introduction to Probability (2nd revised edition, American Mathematical Society; free from Dartmouth College), chapter 4 (Conditional Probability), section 4.1, discrete conditional probability"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.05, Introduction to Probability and Statistics (Spring 2014), readings on conditional probability, independence and Bayes' theorem"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,92 @@
+{
+  "id": "disc.unrolling-recurrences",
+  "slug": "unrolling-recurrences",
+  "ladder": "math",
+  "course": "disc",
+  "unit": "induction-recursion",
+  "title": "Solving Recurrences by Unrolling",
+  "short": "Substitute the rule into itself until a pattern appears, then check the closed form: aₙ = 2aₙ₋₁ + 1 with a₁ = 1 gives aₙ = 2ⁿ − 1.",
+  "trouble": "Students guess a formula from the first two terms and never check it against the recurrence.",
+  "prereqs": [
+    "disc.recurrence-models",
+    "alg2.geometric-series"
+  ],
+  "xp": 2,
+  "viz": [],
+  "figureArchetype": "LessonFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A <a href=\"/math/discrete-math/recurrence-models/\">recurrence</a> tells you how to get the next term, but computing $a_{100}$ step by step is slow. A <b>closed form</b> gives $a_{n}$ directly. For many first-order recurrences you can find one by substituting the rule into itself and recognizing a sum, often a <a href=\"/math/algebra-2/geometric-series/\">geometric series</a>."
+      },
+      {
+        "t": "key",
+        "html": "To <b>unroll</b> $a_{n} = c\\,a_{n-1} + d$: replace $a_{n-1}$ by $c\\,a_{n-2} + d$, then $a_{n-2}$ by $c\\,a_{n-3} + d$, and so on, until the pattern is clear and you reach the starting value. Then <b>check</b> the closed form by substituting it into the recurrence and the starting value (an induction proof)."
+      },
+      {
+        "t": "why",
+        "html": "Each substitution pushes the index down by one and adds one more term to a growing sum. After $j$ steps, $a_{n} = c^{j}a_{n-j} + d(c^{j-1} + \\cdots + c + 1)$. Going all the way to the start turns the sum into a geometric series with a known total. The check matters because \"the pattern is clear\" is a guess until it is verified; unrolling suggests the answer, and induction confirms it."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "The Tower of Hanoi, solved",
+        "q": "Solve $h_{n} = 2h_{n-1} + 1$ with $h_{1} = 1$.",
+        "steps": [
+          "Unroll: $$h_{n} = 2(2h_{n-2} + 1) + 1 = 4h_{n-2} + 2 + 1 = 8h_{n-3} + 4 + 2 + 1 = \\cdots$$",
+          "After reaching $h_{1}$: $$h_{n} = 2^{n-1}h_{1} + 2^{n-2} + \\cdots + 2 + 1 = 2^{n-1} + 2^{n-2} + \\cdots + 1.$$",
+          "The geometric sum is $2^{n} - 1$.",
+          "Check: $h_{1} = 2 - 1 = 1$, and $2(2^{n-1} - 1) + 1 = 2^{n} - 1$. It satisfies both."
+        ],
+        "a": "$h_{n} = 2^{n} - 1$"
+      },
+      {
+        "t": "ex",
+        "title": "Adding $n$ each time",
+        "q": "Solve $a_{n} = a_{n-1} + n$ with $a_{0} = 0$.",
+        "steps": [
+          "Unroll: $a_{n} = a_{n-2} + (n - 1) + n = \\cdots = a_{0} + 1 + 2 + \\cdots + n$.",
+          "So $a_{n} = \\frac{n(n + 1)}{2}$.",
+          "Check: $\\frac{(n-1)n}{2} + n = \\frac{n^{2} - n + 2n}{2} = \\frac{n(n + 1)}{2}$."
+        ],
+        "a": "$a_{n} = \\frac{n(n + 1)}{2}$"
+      },
+      {
+        "t": "ex",
+        "title": "A recurrence with subtraction",
+        "q": "Solve $a_{n} = 3a_{n-1} - 4$ with $a_{0} = 5$.",
+        "steps": [
+          "Unroll: $$a_{n} = 3^{n}a_{0} - 4(3^{n-1} + \\cdots + 3 + 1) = 5 \\cdot 3^{n} - 4 \\cdot \\frac{3^{n} - 1}{2}.$$",
+          "Simplify: $5 \\cdot 3^{n} - 2 \\cdot 3^{n} + 2 = 3 \\cdot 3^{n} + 2 = 3^{n+1} + 2$.",
+          "Check: $a_{0} = 3 + 2 = 5$, and $3(3^{n} + 2) - 4 = 3^{n+1} + 2$."
+        ],
+        "a": "$a_{n} = 3^{n+1} + 2$"
+      },
+      {
+        "t": "note",
+        "html": "A shortcut for $a_{n} = c\\,a_{n-1} + d$ with $c \\ne 1$: find the <b>fixed point</b> $p$ with $p = cp + d$, so $p = \\frac{d}{1 - c}$. Subtracting $p = cp + d$ from the recurrence gives $a_{n} - p = c(a_{n-1} - p)$: the distance from $p$ is multiplied by $c$ each step. So $a_{n} = p + c^{n}(a_{0} - p)$. In the last example $p = 2$ and $a_{0} - p = 3$, giving $2 + 3 \\cdot 3^{n}$ again."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Guessing a formula from the first two terms and never checking it.</b> Hanoi starts $1, 3$, which fits $2n - 1$; but the next term is $7$, not $5$. Two terms fit a straight line through them, whatever the sequence really is. Check: compute a third term (or more) from the recurrence, and substitute your formula into the recurrence itself."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Oscar Levin, Discrete Mathematics: An Open Introduction (3rd ed.), section \"Solving Recurrence Relations\" (iteration)"
+      },
+      {
+        "name": "MIT OpenCourseWare 6.042J Mathematics for Computer Science (Lehman, Leighton and Meyer), chapter \"Recurrences\" (plug and chug)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

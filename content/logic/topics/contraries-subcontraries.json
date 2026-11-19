@@ -1,0 +1,116 @@
+{
+  "id": "trad.contraries-subcontraries",
+  "slug": "contraries-subcontraries",
+  "ladder": "logic",
+  "course": "trad",
+  "unit": "opposition",
+  "title": "Contraries and Subcontraries",
+  "short": "A and E cannot both be true but can both be false; I and O cannot both be false but can both be true.",
+  "trouble": "Learners treat contraries as contradictories and conclude from \"A is false\" that E is true. Both can be false when some S are P and some are not.",
+  "prereqs": [
+    "trad.contradictories"
+  ],
+  "xp": 2,
+  "viz": [
+    "lg-square"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The <a href=\"/logic/traditional-logic/contradictories/\">diagonals</a> are the strongest link on the square. The top and bottom sides are weaker, and each is weak in its own way."
+      },
+      {
+        "t": "key",
+        "html": "<b>Contraries</b> (A and E) cannot both be true, but can both be false. <b>Subcontraries</b> (I and O) cannot both be false, but can both be true. (Traditional reading: the subject class has members.)"
+      },
+      {
+        "t": "why",
+        "html": "Picture a class where some members are P and some are not: some students swim and some do not. Then \"All students are swimmers\" and \"No students are swimmers\" are both false, and \"Some are\" and \"Some are not\" are both true. That mixed case is why contraries can both be false and subcontraries both true. But if there is at least one student, the A and the E cannot both be true (that student cannot be both a swimmer and not one), and the I and the O cannot both be false (that student is one or the other)."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Pair",
+          "Both true?",
+          "Both false?"
+        ],
+        "rows": [
+          [
+            "A and O (contradictories)",
+            "no",
+            "no"
+          ],
+          [
+            "A and E (contraries)",
+            "no",
+            "yes"
+          ],
+          [
+            "I and O (subcontraries)",
+            "yes",
+            "no"
+          ]
+        ],
+        "cap": "What each pair allows."
+      },
+      {
+        "t": "viz",
+        "name": "lg-square",
+        "opts": {
+          "s": "students",
+          "p": "swimmers",
+          "given": {
+            "A": false
+          },
+          "highlight": "contraries"
+        },
+        "cap": "If A is false, E is undetermined: contraries can both be false."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "From a true contrary",
+        "q": "\"All the students are swimmers\" is true. What about \"No students are swimmers\"?",
+        "steps": [
+          "A and E are contraries: they cannot both be true.",
+          "A is true, so E must be false."
+        ],
+        "a": "false"
+      },
+      {
+        "t": "ex",
+        "title": "From a false subcontrary",
+        "q": "\"Some students are swimmers\" is false. What about \"Some students are not swimmers\"?",
+        "steps": [
+          "I and O are subcontraries: they cannot both be false.",
+          "I is false, so O must be true."
+        ],
+        "a": "true"
+      },
+      {
+        "t": "mistake",
+        "html": "Treating contraries as contradictories and concluding from \"A is false\" that E is true. Both can be false when some S are P and some are not. Check by building the mixed case: if it makes both statements false, you cannot conclude anything from one being false."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Patrick J. Hurley, A Concise Introduction to Logic, 4.5 The Traditional Square of Opposition"
+      },
+      {
+        "name": "Aristotle, On Interpretation 7"
+      },
+      {
+        "name": "Stanford Encyclopedia of Philosophy, \"The Traditional Square of Opposition\""
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

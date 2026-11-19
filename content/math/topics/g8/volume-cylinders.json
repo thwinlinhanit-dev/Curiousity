@@ -1,0 +1,110 @@
+{
+  "id": "g8.volume-cylinders",
+  "slug": "volume-cylinders",
+  "ladder": "math",
+  "course": "g8",
+  "unit": "volume",
+  "title": "Volume of Cylinders",
+  "short": "V = πr²h: the base area times the height.",
+  "trouble": "Students use the diameter in place of the radius.",
+  "prereqs": [
+    "g7.circle-area",
+    "g7.volume-prisms"
+  ],
+  "xp": 2,
+  "viz": [
+    "volume"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You know the <a href=\"/math/grade-7/circle-area/\">area of a circle</a>, $\\pi r^{2}$, and the <a href=\"/math/grade-7/volume-prisms/\">volume of a prism</a>, base area times height. Put them together for a cylinder."
+      },
+      {
+        "t": "why",
+        "html": "A prism’s volume is a stack of copies of its base, one layer on top of another. A cylinder is a stack of circles, like a roll of coins. Each layer has area $\\pi r^{2}$, and there are $h$ units of layers, so $V = \\pi r^{2} \\cdot h$."
+      },
+      {
+        "t": "key",
+        "html": "$$V = \\pi r^{2} h$$ where $r$ is the radius of the base and $h$ is the height. Leave $\\pi$ in the answer for an exact value, or use $\\pi \\approx 3.14$ to estimate."
+      },
+      {
+        "t": "viz",
+        "name": "g8-solid",
+        "opts": {
+          "shape": "cylinder",
+          "r": 3,
+          "h": 5,
+          "unit": "cm"
+        },
+        "cap": "Change the radius and the height and watch the volume."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Radius and height",
+        "q": "Find the volume of a cylinder with radius 3 cm and height 5 cm.",
+        "steps": [
+          "Base area: $\\pi \\cdot 3^{2} = 9\\pi$.",
+          "Volume: $9\\pi \\cdot 5 = 45\\pi$.",
+          "$45 \\times 3.14 = 141.3$, so about 141 cubic centimeters."
+        ],
+        "a": "$45\\pi \\approx 141$ cm³"
+      },
+      {
+        "t": "ex",
+        "title": "Given the diameter",
+        "q": "A can has diameter 10 cm and height 4 cm. Find its volume.",
+        "steps": [
+          "The radius is half the diameter: $r = 5$.",
+          "$V = \\pi \\cdot 5^{2} \\cdot 4 = 100\\pi \\approx 314$."
+        ],
+        "a": "$100\\pi \\approx 314$ cm³"
+      },
+      {
+        "t": "ex",
+        "title": "Work backward",
+        "q": "A cylinder has volume $72\\pi$ and radius 3. Find its height.",
+        "steps": [
+          "$72\\pi = \\pi \\cdot 9 \\cdot h$.",
+          "Divide by $9\\pi$: $h = 8$."
+        ],
+        "a": "$8$"
+      },
+      {
+        "t": "viz",
+        "name": "g8-solid",
+        "opts": {
+          "shape": "cylinder",
+          "r": 5,
+          "h": 4,
+          "diam": true,
+          "sliders": false
+        },
+        "cap": "The can from Example 2. The label shows the diameter; the formula needs the radius, half of it."
+      },
+      {
+        "t": "mistake",
+        "html": "Using the diameter in place of the radius. With $d = 10$, using 10 gives $\\pi \\cdot 100 \\cdot 4 = 400\\pi$, four times too big, because squaring doubles the error twice. Halve the diameter first."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Prealgebra 2e, Section 9.6: Solve Geometry Applications: Volume and Surface Area"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 8, 8.G.C.9 (volumes of cones, cylinders and spheres)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

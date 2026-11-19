@@ -1,0 +1,103 @@
+{
+  "id": "geology.stream-flow",
+  "slug": "stream-flow",
+  "ladder": "earth",
+  "course": "geology",
+  "unit": "landscapes",
+  "title": "Stream Gradient and Discharge",
+  "short": "A stream's gradient is its drop per distance, and its discharge is width × depth × speed, in cubic meters per second.",
+  "trouble": "Students think a steep mountain stream is faster and carries more water than a big river downstream; the gentler river often flows faster on average and carries far more water.",
+  "prereqs": [
+    "earthsci.landforms",
+    "alg1.units-quantities"
+  ],
+  "xp": 2,
+  "viz": [
+    "es-landscape",
+    "es-topo"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Rivers do more work shaping the land than any other agent. Two numbers describe a stream: how steep it is and how much water it carries. In <a href=\"/earth-and-space/earth-science/landforms/\">Landforms Made by Water</a> you met valleys and floodplains; here we measure the water that makes them, keeping careful track of <a href=\"/math/algebra-1/units-quantities/\">units</a>."
+      },
+      {
+        "t": "why",
+        "html": "<b>Gradient</b> is the drop in elevation per distance along the channel, often in meters per kilometer: steep near the source, gentle near the mouth. <b>Discharge</b> is the volume of water passing a point each second. Think of the water crossing a gauging line in one second: it fills a box as wide as the channel ($w$), as deep as the water ($d$), and as long as the distance the water travels in that second ($v$). So $Q = w \\times d \\times v$, in cubic meters per second. Discharge grows downstream as tributaries join."
+      },
+      {
+        "t": "key",
+        "html": "Gradient = drop ÷ distance. Discharge $Q = w \\times d \\times v$ (cross-section area × average speed), in m³/s."
+      },
+      {
+        "t": "viz",
+        "name": "es-landscape",
+        "opts": {
+          "mode": "river",
+          "station": {
+            "width": 20,
+            "depth": 1.5,
+            "speed": 1.2
+          }
+        },
+        "cap": "A gauging station on a river. Change the width, depth and speed and watch the discharge."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Discharge at a gauge",
+        "q": "A river is 25 m wide and 2 m deep on average, flowing 1.2 m/s. Find its discharge.",
+        "steps": [
+          "Area: $25 \\times 2 = 50\\,\\text{m}^2$.",
+          "$Q = 50 \\times 1.2 = 60\\,\\text{m}^3/\\text{s}$, enough to fill an Olympic pool in under a minute."
+        ],
+        "a": "$60\\,\\text{m}^3/\\text{s}$."
+      },
+      {
+        "t": "ex",
+        "title": "Gradient",
+        "q": "A mountain stream drops 90 m in 3 km. A large river drops 30 m in 100 km. Compare their gradients.",
+        "steps": [
+          "Stream: $90 \\div 3 = 30\\,\\text{m/km}$.",
+          "River: $30 \\div 100 = 0.3\\,\\text{m/km}$, a hundred times gentler."
+        ],
+        "a": "30 m/km and 0.3 m/km."
+      },
+      {
+        "t": "note",
+        "html": "USGS gauging stations measure thousands of U.S. rivers around the clock. They record the water level (the stage) and turn it into discharge with a rating curve, built from many hands-on measurements of width, depth and speed."
+      },
+      {
+        "t": "viz",
+        "name": "es-topo",
+        "opts": {
+          "terrain": "valley",
+          "stream": true
+        },
+        "cap": "Contour lines bend upstream where they cross a stream; closely spaced contours along the channel mean a steep gradient."
+      },
+      {
+        "t": "mistake",
+        "html": "A steep, foaming mountain stream looks faster and mightier than a big, calm river downstream. In fact the river usually carries far more water, and its average speed is often as high or higher: the stream loses much of its energy to friction against boulders in a shallow, rough bed. Check with $Q = wdv$: a wide, deep channel wins easily."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "USGS Water Science School, Floods and Recurrence Intervals"
+      },
+      {
+        "name": "MIT OpenCourseWare, 12.001 Introduction to Geology"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

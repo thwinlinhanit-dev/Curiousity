@@ -1,0 +1,98 @@
+{
+  "id": "num.cubic-splines",
+  "slug": "cubic-splines",
+  "ladder": "math",
+  "course": "num",
+  "unit": "interpolation",
+  "title": "Cubic Splines",
+  "short": "Join cubic pieces that match values, slopes and second derivatives at the knots; a natural spline has second derivative 0 at both ends.",
+  "trouble": "Students match only values and slopes, which leaves the curvature jumping at the knots, or forget the two end conditions.",
+  "prereqs": [
+    "num.lagrange",
+    "num.lu-solve"
+  ],
+  "xp": 3,
+  "viz": [
+    "num-interp"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "One polynomial through many points can wiggle badly (see <a href=\"/math/numerical-analysis/runge-chebyshev/\">Runge's Phenomenon and Chebyshev Nodes</a>). A <b>spline</b> uses a separate low-degree polynomial on each interval between data points, like <a href=\"/math/numerical-analysis/lagrange/\">interpolation</a> done locally, and joins the pieces smoothly. Cubic pieces are the standard choice."
+      },
+      {
+        "t": "p",
+        "html": "Given knots $x_0 < x_1 < \\cdots < x_n$ and values $y_i$, a <b>cubic spline</b> $s$ is a cubic polynomial on each $[x_i, x_{i+1}]$, passes through every $(x_i, y_i)$, and has $s$, $s'$ and $s''$ continuous at every inside knot. A <b>natural</b> spline also has $s''(x_0) = s''(x_n) = 0$."
+      },
+      {
+        "t": "key",
+        "html": "$n$ cubic pieces have $4n$ coefficients. Interpolation gives $2n$ conditions and smoothness of $s'$ and $s''$ at the $n - 1$ inside knots gives $2(n - 1)$ more, leaving $2$: the end conditions. Writing $M_i = s''(x_i)$, equal spacing $h$ leads to the tridiagonal system $$M_{i-1} + 4M_i + M_{i+1} = \\frac{6}{h^{2}}(y_{i-1} - 2y_i + y_{i+1}).$$"
+      },
+      {
+        "t": "why",
+        "html": "On each interval $s$ is cubic, so $s''$ is linear: it is the straight line from $M_i$ to $M_{i+1}$, which makes $s''$ continuous automatically. Integrating twice and choosing the two constants so that $s(x_i) = y_i$ and $s(x_{i+1}) = y_{i+1}$ gives, with $h = x_{i+1} - x_i$, $$s(x) = M_i\\frac{(x_{i+1} - x)^{3}}{6h} + M_{i+1}\\frac{(x - x_i)^{3}}{6h} + \\left(\\frac{y_i}{h} - \\frac{M_ih}{6}\\right)(x_{i+1} - x) + \\left(\\frac{y_{i+1}}{h} - \\frac{M_{i+1}h}{6}\\right)(x - x_i).$$ Requiring $s'$ to match at each inside knot gives one equation per knot, the system above. It is diagonally dominant ($4 > 1 + 1$), so it can be solved by <a href=\"/math/numerical-analysis/lu-solve/\">LU</a> without pivoting in about $8n$ operations."
+      },
+      {
+        "t": "ex",
+        "title": "A natural spline through three points",
+        "q": "Find the natural cubic spline through $(0, 0)$, $(1, 1)$, $(2, 0)$, and evaluate it at $x = 0.5$.",
+        "steps": [
+          "Natural: $M_0 = M_2 = 0$. The one inside equation: $0 + 4M_1 + 0 = \\frac{6}{1}(0 - 2 + 0)$, so $M_1 = -3$.",
+          "On $[0, 1]$ the formula gives $s(x) = -3\\frac{x^{3}}{6} + (1 + \\frac{3}{6})x = -\\frac{x^{3}}{2} + \\frac{3}{2}x$.",
+          "Checks: $s(1) = 1$; $s'(x) = -\\frac{3}{2}x^{2} + \\frac{3}{2}$, so $s'(1) = 0$, as symmetry demands; $s''(0) = 0$.",
+          "$s(0.5) = -0.0625 + 0.75 = 0.6875$."
+        ],
+        "a": "$s(0.5) = 0.6875$"
+      },
+      {
+        "t": "ex",
+        "title": "Counting conditions",
+        "q": "A cubic spline passes through 5 points. Count unknowns and conditions.",
+        "steps": [
+          "4 intervals, 4 cubics: $16$ unknown coefficients.",
+          "Each piece matches the data at both ends: $8$ conditions. At the 3 inside knots, $s'$ and $s''$ must agree: $6$ more.",
+          "$14$ conditions for $16$ unknowns: 2 end conditions are needed (natural, clamped slopes, or \"not-a-knot\")."
+        ],
+        "a": "16 unknowns, 14 + 2 conditions"
+      },
+      {
+        "t": "ex",
+        "title": "Is it a spline?",
+        "q": "$s(x) = x^{3}$ on $[0, 1]$ and $s(x) = 1 + 3(x - 1) + 2(x - 1)^{2}$ on $[1, 2]$. Is $s$ a cubic spline?",
+        "steps": [
+          "Values at 1: $1$ and $1$. ✓ Slopes: $3x^{2} = 3$ and $3$. ✓",
+          "Second derivatives: $6x = 6$ on the left, $2 \\cdot 2 = 4$ on the right. ✗",
+          "Not a spline: the curvature jumps at $x = 1$. With $3(x - 1)^{2}$ instead of $2(x - 1)^{2}$ it would be."
+        ],
+        "a": "No"
+      },
+      {
+        "t": "viz",
+        "name": "num-interp",
+        "opts": {
+          "mode": "spline",
+          "task": "Drag the points. Watch the second derivative of each curve at the knots."
+        },
+        "cap": "Blue: the natural cubic spline; its second derivative (below) is continuous. Orange dashed: cubic pieces that match only values and slopes; their second derivative jumps."
+      },
+      {
+        "t": "mistake",
+        "html": "Matching only values and slopes at the knots. That leaves the second derivative, the curvature, jumping at every knot, which the eye notices as a kink in the bend. Also, do not forget the two end conditions; without them the system has two equations too few."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Tobin A. Driscoll and Richard J. Braun, Fundamentals of Numerical Computation (University of Delaware, free online edition): chapter \"Piecewise interpolation\", section \"Cubic splines\""
+      },
+      {
+        "name": "Autar Kaw, Holistic Numerical Methods (University of South Florida): Interpolation, \"Spline Method of Interpolation\""
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

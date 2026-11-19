@@ -1,0 +1,171 @@
+{
+  "id": "usgeo.landmarks",
+  "slug": "landmarks",
+  "ladder": "geog",
+  "course": "usgeo",
+  "unit": "parks",
+  "title": "Famous Landmarks",
+  "short": "Match landmarks to their states: the Statue of Liberty (New York), Mount Rushmore (South Dakota), the Golden Gate Bridge (California), the Gateway Arch (Missouri).",
+  "trouble": "Students confuse landmarks made by people with natural ones. Mount Rushmore is carved by people into a natural mountain; Old Faithful is a natural geyser.",
+  "prereqs": [
+    "usgeo.all-states"
+  ],
+  "xp": 1,
+  "viz": [
+    "gg-map",
+    "gg-sort"
+  ],
+  "figureArchetype": "PracticeFigure",
+  "practice": {
+    "kind": "worked-example",
+    "q": "The Statue of Liberty stands on Liberty Island in New York Harbor. Which state is the island part of?",
+    "a": "New York.",
+    "steps": [
+      "The island is in the harbor between New York City and New Jersey.",
+      "The water around it belongs to New Jersey, but the island itself is part of New York.",
+      "The Park Service runs it as a national monument."
+    ],
+    "title": "Where is it?"
+  },
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A <b>landmark</b> is something easy to see and recognize that helps people know where they are. Some are built by people; some are made by nature."
+      },
+      {
+        "t": "key",
+        "html": "Famous landmarks and their states: the <b>Statue of Liberty</b> (New York), <b>Mount Rushmore</b> (South Dakota), the <b>Golden Gate Bridge</b> (California), the <b>Gateway Arch</b> (Missouri), the <b>Space Needle</b> (Washington), the <b>Alamo</b> (Texas), <b>Old Faithful</b> (Wyoming) and <b>Niagara Falls</b> (New York)."
+      },
+      {
+        "t": "viz",
+        "name": "gg-map",
+        "opts": {
+          "map": "us",
+          "points": [
+            {
+              "lon": -74.04,
+              "lat": 40.69,
+              "label": "Statue of Liberty"
+            },
+            {
+              "lon": -103.46,
+              "lat": 43.88,
+              "label": "Mount Rushmore"
+            },
+            {
+              "lon": -122.48,
+              "lat": 37.82,
+              "label": "Golden Gate Bridge"
+            },
+            {
+              "lon": -90.18,
+              "lat": 38.62,
+              "label": "Gateway Arch"
+            },
+            {
+              "lon": -122.35,
+              "lat": 47.62,
+              "label": "Space Needle"
+            },
+            {
+              "lon": -98.49,
+              "lat": 29.43,
+              "label": "The Alamo"
+            },
+            {
+              "lon": -110.83,
+              "lat": 44.46,
+              "label": "Old Faithful"
+            },
+            {
+              "lon": -79.07,
+              "lat": 43.08,
+              "label": "Niagara Falls"
+            },
+            {
+              "lon": -80.65,
+              "lat": 28.57,
+              "label": "Kennedy Space Center"
+            }
+          ]
+        },
+        "cap": "Landmarks across the country."
+      },
+      {
+        "t": "why",
+        "html": "Why learn landmarks with states? Tying a picture you know to a place on the map gives your memory two hooks instead of one. If you remember the Gateway Arch stands in St. Louis on the Mississippi River, you also remember where Missouri is."
+      },
+      {
+        "t": "ex",
+        "title": "Where is it?",
+        "q": "The Statue of Liberty stands on Liberty Island in New York Harbor. Which state is the island part of?",
+        "steps": [
+          "The island is in the harbor between New York City and New Jersey.",
+          "The water around it belongs to New Jersey, but the island itself is part of New York.",
+          "The Park Service runs it as a national monument."
+        ],
+        "a": "New York."
+      },
+      {
+        "t": "mistake",
+        "html": "People mix up landmarks made by people with natural ones. <b>Mount Rushmore</b> is a natural mountain, but the four presidents' faces were <b>carved by people</b>, so the landmark is a human-made sculpture. <b>Old Faithful</b> is a <b>natural</b> geyser that shoots up hot water on its own. Ask: did nature make it, or did people build or carve it?"
+      },
+      {
+        "t": "viz",
+        "name": "gg-sort",
+        "opts": {
+          "bins": [
+            "Made by people",
+            "Made by nature"
+          ],
+          "cards": [
+            {
+              "text": "Golden Gate Bridge",
+              "bin": 0
+            },
+            {
+              "text": "Old Faithful",
+              "bin": 1
+            },
+            {
+              "text": "Mount Rushmore's faces",
+              "bin": 0
+            },
+            {
+              "text": "Niagara Falls",
+              "bin": 1
+            },
+            {
+              "text": "Gateway Arch",
+              "bin": 0
+            },
+            {
+              "text": "Devils Tower",
+              "bin": 1
+            }
+          ],
+          "reveal": true
+        },
+        "cap": "Sort the landmarks."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Grokipedia, Liberty Island",
+        "url": "https://grokipedia.com/page/Liberty_Island"
+      },
+      {
+        "name": "Grokipedia, List of national parks of the United States",
+        "url": "https://grokipedia.com/page/List_of_national_parks_of_the_United_States"
+      },
+      {
+        "name": "Natural Earth (public domain map data): admin-1 states, rivers, lakes and physical regions, drawn by the Geography Ladder's map kit"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

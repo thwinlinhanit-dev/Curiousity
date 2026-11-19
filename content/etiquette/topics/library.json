@@ -1,0 +1,145 @@
+{
+  "id": "young.library",
+  "slug": "library",
+  "ladder": "etiquette",
+  "course": "young",
+  "unit": "out",
+  "title": "At the Library",
+  "short": "At the library, use a whisper voice, handle books gently, and put books where the librarian asks.",
+  "trouble": "Children shelve books in any empty spot. Many libraries ask you to leave books on a cart so they go back in the right place.",
+  "prereqs": [
+    "young.inside-voice"
+  ],
+  "xp": 1,
+  "viz": [
+    "et-scene",
+    "et-sort"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The library is full of books for everyone to share. It is a place for an <a href=\"/etiquette/young-children/inside-voice/\">inside voice</a>, and even softer."
+      },
+      {
+        "t": "viz",
+        "name": "et-scene",
+        "opts": {
+          "big": true,
+          "speak": true,
+          "readme": "Read the question aloud, then let your child choose. Talk about why.",
+          "place": "library",
+          "people": [
+            {
+              "who": "leo",
+              "holds": "book"
+            },
+            {
+              "who": "priya",
+              "name": "Librarian"
+            }
+          ],
+          "say": [
+            [
+              1,
+              "Please put books on the cart."
+            ]
+          ],
+          "prompt": "Leo is done with a book. What should he do?",
+          "choices": [
+            {
+              "text": "Leo puts the book on the cart.",
+              "ok": true,
+              "mood": {
+                "1": "happy"
+              },
+              "outcome": "The librarian will put it back in just the right spot."
+            },
+            {
+              "text": "Leo pushes it into any empty spot on a shelf.",
+              "ok": false,
+              "outcome": "Now the next reader may never find it! The librarian asked for the cart."
+            }
+          ]
+        },
+        "cap": "Putting books where the librarian asks."
+      },
+      {
+        "t": "key",
+        "html": "At the library: use a <b>whisper voice</b>, handle books <b>gently</b>, and put books <b>where the librarian asks</b>."
+      },
+      {
+        "t": "why",
+        "html": "Other people are reading and thinking. Library books belong to everyone, so we keep them nice for the next reader."
+      },
+      {
+        "t": "p",
+        "html": "Your library card lets you take books home. Keep them in a safe spot, and bring them back on time so other kids can read them too."
+      },
+      {
+        "t": "ex",
+        "title": "Let's practice",
+        "q": "Hana wants to tell Sam about a funny book. They are at the library. How should she talk?",
+        "steps": [
+          "They are at the library.",
+          "Other people are reading.",
+          "Hana uses the softest voice."
+        ],
+        "a": "Hana whispers."
+      },
+      {
+        "t": "viz",
+        "name": "et-sort",
+        "opts": {
+          "bins": [
+            "Polite",
+            "Not polite"
+          ],
+          "cards": [
+            {
+              "text": "Whispering",
+              "bin": 0
+            },
+            {
+              "text": "Turning pages gently",
+              "bin": 0
+            },
+            {
+              "text": "Putting books on the cart",
+              "bin": 0
+            },
+            {
+              "text": "Folding down a page corner",
+              "bin": 1,
+              "why": "Use a bookmark."
+            },
+            {
+              "text": "Shouting to a friend",
+              "bin": 1,
+              "why": "Whisper in the library."
+            }
+          ],
+          "shuffle": true,
+          "reveal": true,
+          "big": true,
+          "readme": "Read each card aloud. Your child taps a card, then a group."
+        },
+        "cap": "Sort the cards: polite or not polite."
+      },
+      {
+        "t": "mistake",
+        "html": "Putting books back in any empty spot. Many libraries ask you to leave books on a cart, so they go back in the right place."
+      },
+      {
+        "t": "note",
+        "html": "<b>For the grown-up.</b> Give your child a bookmark of their own, and a special bag for library books. At home, keep library books in one spot so they come back clean and on time."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": []
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

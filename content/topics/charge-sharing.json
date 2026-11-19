@@ -1,0 +1,99 @@
+{
+  "id": "em.charge-sharing",
+  "slug": "charge-sharing",
+  "course": "em",
+  "courseTitle": "Electricity and Magnetism",
+  "unit": "conductors-capacitors",
+  "unitTitle": "Conductors, Capacitors and Dielectrics",
+  "title": "Connecting Conductors",
+  "short": "Connected conductors come to the same potential, so two spheres share charge in proportion to their radii.",
+  "trouble": "Students think two connected spheres end up with equal charges.",
+  "prereqs": [
+    "em.conductors",
+    "em.potential-from-field"
+  ],
+  "xp": 3,
+  "viz": [
+    "em-share"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A <a href=\"/physics/electricity-and-magnetism/conductors/\">conductor in equilibrium</a> has no field inside, so every point of it is at the same potential (<a href=\"/physics/electricity-and-magnetism/potential-from-field/\">ΔV = −∫E·dl</a> is zero along any path through the metal). Join two conductors with a wire and they become one conductor. Charge flows through the wire until the whole thing, both objects and the wire, sits at one potential."
+      },
+      {
+        "t": "key",
+        "html": "Connected conductors reach the <b>same potential</b>. For two spheres far apart, $V = kQ/R$ for each, so\n        $$\\frac{Q_1}{R_1} = \\frac{Q_2}{R_2}, \\qquad Q_1 = Q_{\\text{total}}\\frac{R_1}{R_1 + R_2}.$$\n        The charge divides in proportion to the radii, and the surface field $E = V/R$ is stronger on the <b>smaller</b> sphere."
+      },
+      {
+        "t": "why",
+        "html": "While the potentials differ, there is a field along the wire, and that field pushes charge from the higher-potential sphere toward the lower one. The flow stops only when the potentials match. A sphere's potential is $kQ/R$: a big sphere can hold more charge at the same potential, because its charge is spread over a larger surface farther from the center. So equal potentials mean $Q \\propto R$, not equal charges. At the surface, $E = kQ/R^2 = V/R$, so with $V$ shared, the small sphere's field is stronger."
+      },
+      {
+        "t": "viz",
+        "name": "em-share",
+        "opts": {
+          "R1": 2,
+          "R2": 6,
+          "q1": 8,
+          "q2": 0,
+          "connected": false,
+          "task": "Connect the wire and watch the charge move. Then change the radii."
+        },
+        "cap": "Two metal spheres. With the wire connected, both reach the same potential; the charge splits in proportion to the radii, and the smaller sphere ends up with the stronger surface field."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Sharing with an empty sphere",
+        "q": "A $2.0\\ \\text{cm}$ sphere holding $8.0\\ \\text{nC}$ is joined by a long wire to an uncharged $6.0\\ \\text{cm}$ sphere far away. Find the final charges, the potential and the surface fields.",
+        "steps": [
+          "$Q_1 : Q_2 = 2 : 6$ and $Q_1 + Q_2 = 8.0\\ \\text{nC}$, so $Q_1 = 8.0\\cdot\\dfrac{2}{8} = 2.0\\ \\text{nC}$ and $Q_2 = 6.0\\ \\text{nC}$.",
+          "$V = \\dfrac{kQ_1}{R_1} = \\dfrac{(8.99 \\times 10^{9})(2.0 \\times 10^{-9})}{0.020} = 899\\ \\text{V}$ (the same for both).",
+          "$E_1 = V/R_1 = 4.50 \\times 10^{4}\\ \\text{N/C}$ and $E_2 = V/R_2 = 1.50 \\times 10^{4}\\ \\text{N/C}$: three times stronger on the small sphere."
+        ],
+        "a": "$2.0\\ \\text{nC}$ and $6.0\\ \\text{nC}$"
+      },
+      {
+        "t": "ex",
+        "title": "Both spheres charged",
+        "q": "A $3.0\\ \\text{cm}$ sphere with $+10\\ \\text{nC}$ and a $5.0\\ \\text{cm}$ sphere with $-4.0\\ \\text{nC}$, far apart, are joined. How much charge flows through the wire?",
+        "steps": [
+          "Charge is conserved: the total is $10 + (-4.0) = 6.0\\ \\text{nC}$.",
+          "It splits $3 : 5$: $Q_1 = 6.0\\cdot\\dfrac{3}{8} = 2.25\\ \\text{nC}$ and $Q_2 = 6.0\\cdot\\dfrac{5}{8} = 3.75\\ \\text{nC}$.",
+          "Sphere 1 went from $10$ to $2.25\\ \\text{nC}$, so $7.75\\ \\text{nC}$ crossed the wire (in practice, electrons moved the other way)."
+        ],
+        "a": "$7.75\\ \\text{nC}$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>\"Connected spheres end up with equal charges.\"</b> Equal charges would give the smaller sphere the higher potential ($kQ/R$ with a smaller $R$), and charge would keep flowing. What the wire equalizes is potential. Check your answer by computing $Q/R$ for both spheres: the two values must match."
+      },
+      {
+        "t": "p",
+        "html": "The same reasoning explains why the field is strongest at sharp points of a charged conductor: a sharp tip behaves like a tiny sphere at the conductor's potential. That is how lightning rods and the needles in some air ionizers work, by concentrating the field at a point."
+      },
+      {
+        "t": "note",
+        "html": "\"Far apart\" matters. If the spheres were close, each one's charge would change the other's potential, and the split would no longer follow the simple ratio of the radii. The potentials would still end up equal."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 2, 7.5 Equipotential Surfaces and Conductors"
+      },
+      {
+        "name": "MIT OpenCourseWare, 8.02 Physics II: Electricity and Magnetism"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

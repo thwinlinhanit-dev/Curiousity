@@ -1,0 +1,117 @@
+{
+  "id": "la.quadratic-forms",
+  "slug": "quadratic-forms",
+  "ladder": "math",
+  "course": "la",
+  "unit": "symmetric-svd",
+  "title": "Quadratic Forms and Positive Definite Matrices",
+  "short": "xᵀAx > 0 for all x ≠ 0 exactly when all eigenvalues are positive.",
+  "trouble": "",
+  "prereqs": [
+    "la.spectral-theorem"
+  ],
+  "xp": 3,
+  "viz": [
+    "surface"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Expressions like $5x_1^{2} + 4x_1x_2 + 2x_2^{2}$ appear whenever we measure energy, variance or curvature. Every such expression is $\\mathbf{x}^{T}A\\mathbf{x}$ for a symmetric matrix $A$, and the <a href=\"/math/linear-algebra/spectral-theorem/\">spectral theorem</a> tells us exactly what it looks like."
+      },
+      {
+        "t": "p",
+        "html": "A <b>quadratic form</b> on $\\mathbb{R}^n$ is $Q(\\mathbf{x}) = \\mathbf{x}^{T}A\\mathbf{x}$ with $A$ symmetric. The diagonal entries of $A$ are the coefficients of the squares, and each cross term's coefficient is split evenly between two off-diagonal entries: $$5x_1^{2} + 4x_1x_2 + 2x_2^{2} = \\mathbf{x}^{T}\\begin{bmatrix} 5 & 2 \\\\ 2 & 2 \\end{bmatrix}\\mathbf{x}.$$"
+      },
+      {
+        "t": "key",
+        "html": "<b>Principal axes.</b> With $A = PDP^{T}$ and new coordinates $\\mathbf{y} = P^{T}\\mathbf{x}$, $Q = \\lambda_1y_1^{2} + \\cdots + \\lambda_ny_n^{2}$: no cross terms. So $Q$ is <b>positive definite</b> ($Q(\\mathbf{x}) > 0$ for all $\\mathbf{x} \\neq \\mathbf{0}$) exactly when every eigenvalue of $A$ is positive, <b>negative definite</b> when all are negative, and <b>indefinite</b> when there are eigenvalues of both signs."
+      },
+      {
+        "t": "why",
+        "html": "$\\mathbf{x}^{T}A\\mathbf{x}$ $= \\mathbf{x}^{T}PDP^{T}\\mathbf{x}$ $= (P^{T}\\mathbf{x})^{T}D(P^{T}\\mathbf{x})$ $= \\mathbf{y}^{T}D\\mathbf{y}$ $= \\sum \\lambda_iy_i^{2}$. Since $P$ is invertible, $\\mathbf{x} \\neq \\mathbf{0}$ exactly when $\\mathbf{y} \\neq \\mathbf{0}$. If every $\\lambda_i > 0$, the sum is positive for every nonzero $\\mathbf{y}$. If some $\\lambda_i \\leq 0$, choose $\\mathbf{y} = \\mathbf{e}_i$ to get $Q = \\lambda_i \\leq 0$. Geometrically, the eigenvectors are the axes of the level curves $Q = c$ (ellipses or hyperbolas)."
+      },
+      {
+        "t": "ex",
+        "title": "Classify a form",
+        "q": "Classify $Q = 5x_1^{2} + 4x_1x_2 + 2x_2^{2}$ and find its principal-axes form.",
+        "steps": [
+          "$A = \\begin{bmatrix} 5 & 2 \\\\ 2 & 2 \\end{bmatrix}$: trace $7$, determinant $6$, so $\\lambda^{2} - 7\\lambda + 6 = (\\lambda - 6)(\\lambda - 1)$.",
+          "Both eigenvalues positive: <b>positive definite</b>. Every level curve $Q = c > 0$ is an ellipse.",
+          "Unit eigenvectors: $\\frac{1}{\\sqrt{5}}(2, 1)$ for $6$ and $\\frac{1}{\\sqrt{5}}(-1, 2)$ for $1$. In those coordinates $Q = 6y_1^{2} + y_2^{2}$."
+        ],
+        "a": "Positive definite; $Q = 6y_1^2 + y_2^2$."
+      },
+      {
+        "t": "ex",
+        "title": "An indefinite form",
+        "q": "Classify $Q = x^{2} + 6xy + y^{2}$.",
+        "steps": [
+          "$A = \\begin{bmatrix} 1 & 3 \\\\ 3 & 1 \\end{bmatrix}$ has eigenvalues $4$ (along $(1, 1)$) and $-2$ (along $(1, -1)$).",
+          "One positive, one negative: <b>indefinite</b>. For example $Q(1, 1) = 8 > 0$ and $Q(1, -1) = -4 < 0$. The graph is a saddle."
+        ],
+        "a": "Indefinite."
+      },
+      {
+        "t": "viz",
+        "name": "surface",
+        "opts": {
+          "f": "a*x^2 + 2*b*x*y + c*y^2",
+          "params": {
+            "a": [
+              -3,
+              6,
+              5,
+              0.5
+            ],
+            "b": [
+              -4,
+              4,
+              2,
+              0.5
+            ],
+            "c": [
+              -3,
+              6,
+              2,
+              0.5
+            ]
+          },
+          "xmin": -2,
+          "xmax": 2,
+          "ymin": -2,
+          "ymax": 2,
+          "slice": "none",
+          "contours": 12
+        },
+        "cap": "The graph of $Q = ax^2 + 2bxy + cy^2$, the form of $\\begin{bmatrix} a & b \\\\ b & c \\end{bmatrix}$. Positive definite gives a bowl; change $b$ until $ac - b^2 < 0$ and it becomes a saddle."
+      },
+      {
+        "t": "p",
+        "html": "For a $2 \\times 2$ matrix $\\begin{bmatrix} a & b \\\\ b & c \\end{bmatrix}$ there is a shortcut: the product of the eigenvalues is $\\det A = ac - b^{2}$ and their sum is $a + c$. So $Q$ is positive definite exactly when $a > 0$ and $ac - b^{2} > 0$. This is the test behind the <a href=\"/math/calculus-3/critical-points/\">second derivative test</a> in multivariable calculus, where $A$ is the matrix of second partial derivatives."
+      },
+      {
+        "t": "p",
+        "html": "A positive semidefinite form ($Q \\geq 0$, with some eigenvalue $0$) is flat along the eigenvectors for $0$: its graph is a trough rather than a bowl. Every matrix of the form $A^{T}A$ is positive semidefinite, since $\\mathbf{x}^{T}A^{T}A\\mathbf{x} = \\lVert A\\mathbf{x}\\rVert^{2} \\geq 0$, and positive definite exactly when the columns of $A$ are independent. That fact is used in the next topic."
+      },
+      {
+        "t": "mistake",
+        "html": "Putting the whole cross-term coefficient in both off-diagonal spots. For $4x_1x_2$ the entries are $2$ and $2$, because $\\mathbf{x}^{T}A\\mathbf{x}$ picks up $a_{12}x_1x_2 + a_{21}x_2x_1$ $= 2a_{12}x_1x_2$. Check: multiply out $\\mathbf{x}^{T}A\\mathbf{x}$ with your matrix and compare."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Strang, Introduction to Linear Algebra (5th ed.), Chapter 6, Eigenvalues and Eigenvectors: positive definite matrices"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.06 Linear Algebra (Gilbert Strang, Spring 2010), Lecture 27: Positive Definite Matrices and Minima"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

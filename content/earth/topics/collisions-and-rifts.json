@@ -1,0 +1,87 @@
+{
+  "id": "geology.collisions-and-rifts",
+  "slug": "collisions-and-rifts",
+  "ladder": "earth",
+  "course": "geology",
+  "unit": "plate-tectonics",
+  "title": "Continental Collisions and Rifts",
+  "short": "Continents are too buoyant to sink far, so they crumple into high mountains when they meet and stretch into rift valleys when they split.",
+  "trouble": "Students expect continents to subduct like ocean floor; continental crust is too light to sink far, so collisions thicken it into ranges like the Himalayas.",
+  "prereqs": [
+    "geology.subduction-zones",
+    "geology.isostasy"
+  ],
+  "xp": 2,
+  "viz": [
+    "es-boundary"
+  ],
+  "figureArchetype": "CollisionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/earth-and-space/geology/subduction-zones/\">Ocean plates sink</a>; continents don't. When subduction swallows the ocean between two continents, they collide. And when a continent is pulled apart, it <a href=\"/earth-and-space/geology/isostasy/\">floats</a> lower and splits. Buoyancy explains both."
+      },
+      {
+        "t": "why",
+        "html": "Continental crust is about $2.7\\,\\text{g/cm}^3$, far lighter than the mantle ($3.3$). It can be dragged down a short way, but it bobs back up, so a collision crumples and stacks the crust instead. Shortening a belt of crust thickens it (in cross-section, width × thickness stays the same), and thick crust floats high, with a deep root: the Himalayas and the Tibetan Plateau rest on crust about 70 km thick, double the normal. Stretch a continent instead and the crust thins; thin crust sinks, faults drop long blocks, and hot mantle rises and melts, building a rift valley. Stretch far enough and the continent splits and the sea floods in."
+      },
+      {
+        "t": "key",
+        "html": "Continental crust is too buoyant to subduct, so collisions thicken it into high mountains with deep roots (only about 18% of the extra thickness shows as height). Stretching thins it into rift valleys and, eventually, new oceans."
+      },
+      {
+        "t": "viz",
+        "name": "es-boundary",
+        "opts": {
+          "type": "collision",
+          "modes": true
+        },
+        "cap": "A continent–continent collision. Switch to the rift view to see the opposite: a continent pulled apart."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Doubling the crust",
+        "q": "A belt of crust 400 km wide and 35 km thick is squeezed to 200 km wide. How thick does it become?",
+        "steps": [
+          "Width × thickness stays the same: $400 \\times 35 = 200 \\times H$.",
+          "$H = 70\\,\\text{km}$, as under Tibet."
+        ],
+        "a": "$70\\,\\text{km}$."
+      },
+      {
+        "t": "ex",
+        "title": "How high does it float?",
+        "q": "The crust thickens by 35 km. With crust $2.7$ and mantle $3.3$, how much higher does the surface stand?",
+        "steps": [
+          "The extra thickness splits into height $h$ and root $4.5h$: $h + 4.5h = 35$.",
+          "$5.5h = 35$, so $h \\approx 6.4\\,\\text{km}$; in reality erosion and weaker crust keep Tibet at about 5 km."
+        ],
+        "a": "About $6.4\\,\\text{km}$ in this simple model."
+      },
+      {
+        "t": "mistake",
+        "html": "It is tempting to expect continents to subduct like ocean floor. They are too light to sink far, which is why collisions build the highest mountains instead of trenches. Check with fossils: marine limestone at the top of Everest is old seafloor scraped up between India and Asia, not continent that sank and came back."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "USGS, This Dynamic Earth: The Story of Plate Tectonics (Kious and Tilling)"
+      },
+      {
+        "name": "NGSS HS-ESS2-1 (nextgenscience.org)"
+      },
+      {
+        "name": "OpenStax, Astronomy 2e, section 8.2, Earth's Crust"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

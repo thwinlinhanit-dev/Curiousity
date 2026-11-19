@@ -1,0 +1,615 @@
+{
+  "key": "astrophys",
+  "title": "Astrophysics",
+  "slug": "astrophysics",
+  "after": [
+    "astro",
+    "modern"
+  ],
+  "units": [
+    {
+      "key": "starlight",
+      "title": "Starlight",
+      "blurb": "Magnitudes and distances, dust, colors, the Planck function, and what spectral lines say about temperature."
+    },
+    {
+      "key": "binaries-exoplanets",
+      "title": "Binary Stars and Exoplanets",
+      "blurb": "Masses from orbits, radial-velocity curves, eclipses and transits, and planet temperatures."
+    },
+    {
+      "key": "stellar-structure",
+      "title": "How Stars Work",
+      "blurb": "Hydrostatic equilibrium, the virial theorem, fusion and tunneling, energy transport and the limits on stellar luminosity."
+    },
+    {
+      "key": "stellar-death",
+      "title": "Stellar Evolution and Compact Objects",
+      "blurb": "Evolutionary tracks, degenerate matter, white dwarfs and neutron stars, black holes, tides, accretion and gravitational waves."
+    },
+    {
+      "key": "cosmos",
+      "title": "Galaxies and Cosmology",
+      "blurb": "Rotation curves and dark matter, supermassive black holes, redshift and the scale factor, the Friedmann equation, the CMB and the first elements."
+    }
+  ],
+  "topics": [
+    {
+      "id": "astrophys.magnitude-equations",
+      "slug": "magnitude-equations",
+      "unit": "starlight",
+      "title": "Magnitude Arithmetic",
+      "prereqs": [
+        "astro.magnitudes",
+        "alg2.log-properties"
+      ],
+      "viz": [
+        "ph-cosmic"
+      ]
+    },
+    {
+      "id": "astrophys.distance-modulus",
+      "slug": "distance-modulus",
+      "unit": "starlight",
+      "title": "Absolute Magnitude and the Distance Modulus",
+      "prereqs": [
+        "astrophys.magnitude-equations"
+      ],
+      "viz": [
+        "ph-cosmic"
+      ]
+    },
+    {
+      "id": "astrophys.extinction",
+      "slug": "extinction",
+      "unit": "starlight",
+      "title": "Interstellar Dust: Extinction and Reddening",
+      "prereqs": [
+        "astrophys.distance-modulus"
+      ],
+      "viz": [
+        "astrophys-filters",
+        "ph-cosmic"
+      ]
+    },
+    {
+      "id": "astrophys.color-index",
+      "slug": "color-index",
+      "unit": "starlight",
+      "title": "Color Index and Temperature",
+      "prereqs": [
+        "astrophys.magnitude-equations"
+      ],
+      "viz": [
+        "astrophys-filters",
+        "ph-blackbody"
+      ]
+    },
+    {
+      "id": "astrophys.planck-function",
+      "slug": "planck-function",
+      "unit": "starlight",
+      "title": "The Planck Function",
+      "prereqs": [
+        "modern.planck-blackbody",
+        "calc2.improper-integrals"
+      ],
+      "viz": [
+        "ph-blackbody"
+      ]
+    },
+    {
+      "id": "astrophys.effective-temperature",
+      "slug": "effective-temperature",
+      "unit": "starlight",
+      "title": "Effective Temperature and Stellar Radii",
+      "prereqs": [
+        "astrophys.planck-function",
+        "astro.luminosity-radius-temperature"
+      ],
+      "viz": [
+        "ph-hr"
+      ]
+    },
+    {
+      "id": "astrophys.boltzmann-excitation",
+      "slug": "boltzmann-excitation",
+      "unit": "starlight",
+      "title": "Excitation and the Strength of Spectral Lines",
+      "prereqs": [
+        "astrophys.color-index",
+        "modern.hydrogen-series"
+      ],
+      "viz": [
+        "ph-spectrum"
+      ]
+    },
+    {
+      "id": "astrophys.ionization-sequence",
+      "slug": "ionization-sequence",
+      "unit": "starlight",
+      "title": "Ionization and the Spectral Sequence",
+      "prereqs": [
+        "astrophys.boltzmann-excitation",
+        "astro.spectral-classes"
+      ],
+      "viz": [
+        "ph-spectrum"
+      ]
+    },
+    {
+      "id": "astrophys.visual-binaries",
+      "slug": "visual-binaries",
+      "unit": "binaries-exoplanets",
+      "title": "Masses from Visual Binaries",
+      "prereqs": [
+        "astro.binary-stars",
+        "mech.kepler-third-from-newton"
+      ],
+      "viz": [
+        "ph-orbit"
+      ]
+    },
+    {
+      "id": "astrophys.spectroscopic-binaries",
+      "slug": "spectroscopic-binaries",
+      "unit": "binaries-exoplanets",
+      "title": "Spectroscopic Binaries",
+      "prereqs": [
+        "astrophys.visual-binaries",
+        "astro.doppler-light"
+      ],
+      "viz": [
+        "ph-orbit",
+        "ph-spectrum"
+      ]
+    },
+    {
+      "id": "astrophys.eclipsing-binaries",
+      "slug": "eclipsing-binaries",
+      "unit": "binaries-exoplanets",
+      "title": "Eclipsing Binaries",
+      "prereqs": [
+        "astrophys.spectroscopic-binaries"
+      ],
+      "viz": [
+        "astrophys-eclipse",
+        "ph-orbit"
+      ]
+    },
+    {
+      "id": "astrophys.exoplanet-transits",
+      "slug": "exoplanet-transits",
+      "unit": "binaries-exoplanets",
+      "title": "Exoplanet Transits",
+      "prereqs": [
+        "astro.exoplanets",
+        "astrophys.eclipsing-binaries"
+      ],
+      "viz": [
+        "astrophys-eclipse",
+        "ph-orbit"
+      ]
+    },
+    {
+      "id": "astrophys.exoplanet-wobble",
+      "slug": "exoplanet-wobble",
+      "unit": "binaries-exoplanets",
+      "title": "Exoplanet Masses from Wobbles",
+      "prereqs": [
+        "astrophys.spectroscopic-binaries"
+      ],
+      "viz": [
+        "ph-orbit"
+      ]
+    },
+    {
+      "id": "astrophys.planet-temperature",
+      "slug": "planet-temperature",
+      "unit": "binaries-exoplanets",
+      "title": "Planet Temperatures and the Habitable Zone",
+      "prereqs": [
+        "astrophys.exoplanet-transits",
+        "astrophys.effective-temperature"
+      ],
+      "viz": [
+        "ph-blackbody"
+      ]
+    },
+    {
+      "id": "astrophys.hydrostatic-equilibrium",
+      "slug": "hydrostatic-equilibrium",
+      "unit": "stellar-structure",
+      "title": "Hydrostatic Equilibrium",
+      "prereqs": [
+        "mech.shell-theorem",
+        "phys2.pressure-depth"
+      ],
+      "viz": [
+        "ph-star"
+      ]
+    },
+    {
+      "id": "astrophys.central-conditions",
+      "slug": "central-conditions",
+      "unit": "stellar-structure",
+      "title": "Estimating a Star's Center",
+      "prereqs": [
+        "astrophys.hydrostatic-equilibrium",
+        "phys2.kinetic-theory"
+      ],
+      "viz": [
+        "ph-star"
+      ]
+    },
+    {
+      "id": "astrophys.virial-theorem",
+      "slug": "virial-theorem",
+      "unit": "stellar-structure",
+      "title": "The Virial Theorem",
+      "prereqs": [
+        "astrophys.central-conditions",
+        "mech.orbital-energy"
+      ],
+      "viz": [
+        "ph-star"
+      ]
+    },
+    {
+      "id": "astrophys.kelvin-helmholtz",
+      "slug": "kelvin-helmholtz",
+      "unit": "stellar-structure",
+      "title": "Gravity as a Power Source",
+      "prereqs": [
+        "astrophys.virial-theorem"
+      ],
+      "viz": [
+        "ph-star"
+      ]
+    },
+    {
+      "id": "astrophys.fusion-chains",
+      "slug": "fusion-chains",
+      "unit": "stellar-structure",
+      "title": "The Proton–Proton Chain and the CNO Cycle",
+      "prereqs": [
+        "modern.q-values",
+        "astro.sun-fusion"
+      ],
+      "viz": [
+        "ph-nucleus"
+      ]
+    },
+    {
+      "id": "astrophys.fusion-tunneling",
+      "slug": "fusion-tunneling",
+      "unit": "stellar-structure",
+      "title": "Why Fusion Needs Tunneling",
+      "prereqs": [
+        "astrophys.fusion-chains",
+        "modern.tunneling",
+        "astrophys.central-conditions"
+      ],
+      "viz": [
+        "ph-quantum"
+      ]
+    },
+    {
+      "id": "astrophys.energy-transport",
+      "slug": "energy-transport",
+      "unit": "stellar-structure",
+      "title": "Radiation and Convection Inside Stars",
+      "prereqs": [
+        "astrophys.central-conditions"
+      ],
+      "viz": [
+        "ph-star"
+      ]
+    },
+    {
+      "id": "astrophys.mass-luminosity",
+      "slug": "mass-luminosity",
+      "unit": "stellar-structure",
+      "title": "The Mass–Luminosity Relation",
+      "prereqs": [
+        "astrophys.energy-transport",
+        "astro.main-sequence-lifetime"
+      ],
+      "viz": [
+        "ph-hr"
+      ]
+    },
+    {
+      "id": "astrophys.eddington-limit",
+      "slug": "eddington-limit",
+      "unit": "stellar-structure",
+      "title": "The Eddington Luminosity",
+      "prereqs": [
+        "astrophys.mass-luminosity",
+        "em.em-wave-energy"
+      ],
+      "viz": [
+        "ph-star"
+      ]
+    },
+    {
+      "id": "astrophys.solar-neutrinos",
+      "slug": "solar-neutrinos",
+      "unit": "stellar-structure",
+      "title": "Solar Neutrinos",
+      "prereqs": [
+        "astrophys.fusion-chains",
+        "modern.particle-families"
+      ],
+      "viz": []
+    },
+    {
+      "id": "astrophys.evolution-tracks",
+      "slug": "evolution-tracks",
+      "unit": "stellar-death",
+      "title": "Evolutionary Tracks",
+      "prereqs": [
+        "astrophys.mass-luminosity",
+        "astro.red-giants"
+      ],
+      "viz": [
+        "ph-hr"
+      ]
+    },
+    {
+      "id": "astrophys.degeneracy-pressure",
+      "slug": "degeneracy-pressure",
+      "unit": "stellar-death",
+      "title": "Electron Degeneracy Pressure",
+      "prereqs": [
+        "modern.exclusion-principle"
+      ],
+      "viz": [
+        "ph-quantum"
+      ]
+    },
+    {
+      "id": "astrophys.white-dwarf-mass-radius",
+      "slug": "white-dwarf-mass-radius",
+      "unit": "stellar-death",
+      "title": "The White Dwarf Mass–Radius Relation",
+      "prereqs": [
+        "astrophys.degeneracy-pressure",
+        "astro.red-giants"
+      ],
+      "viz": [
+        "astrophys-plot"
+      ]
+    },
+    {
+      "id": "astrophys.chandrasekhar-limit",
+      "slug": "chandrasekhar-limit",
+      "unit": "stellar-death",
+      "title": "The Chandrasekhar Limit",
+      "prereqs": [
+        "astrophys.white-dwarf-mass-radius",
+        "modern.relativistic-energy"
+      ],
+      "viz": []
+    },
+    {
+      "id": "astrophys.core-collapse",
+      "slug": "core-collapse",
+      "unit": "stellar-death",
+      "title": "Core-Collapse Supernovae",
+      "prereqs": [
+        "astrophys.chandrasekhar-limit",
+        "astro.supernovae"
+      ],
+      "viz": [
+        "ph-nucleus"
+      ]
+    },
+    {
+      "id": "astrophys.neutron-star-physics",
+      "slug": "neutron-star-physics",
+      "unit": "stellar-death",
+      "title": "Neutron Stars",
+      "prereqs": [
+        "astrophys.core-collapse",
+        "phys1.angular-momentum-conservation"
+      ],
+      "viz": [
+        "ph-rotation"
+      ]
+    },
+    {
+      "id": "astrophys.pulsar-spindown",
+      "slug": "pulsar-spindown",
+      "unit": "stellar-death",
+      "title": "Pulsar Spin-Down",
+      "prereqs": [
+        "astrophys.neutron-star-physics",
+        "mech.rotational-work-power"
+      ],
+      "viz": [
+        "astrophys-pulsar"
+      ]
+    },
+    {
+      "id": "astrophys.schwarzschild-radius",
+      "slug": "schwarzschild-radius",
+      "unit": "stellar-death",
+      "title": "The Schwarzschild Radius",
+      "prereqs": [
+        "astro.black-holes",
+        "mech.escape-speed"
+      ],
+      "viz": [
+        "ph-orbit"
+      ]
+    },
+    {
+      "id": "astrophys.gravitational-redshift",
+      "slug": "gravitational-redshift",
+      "unit": "stellar-death",
+      "title": "Gravitational Redshift and Time Dilation",
+      "prereqs": [
+        "astrophys.schwarzschild-radius",
+        "modern.time-dilation"
+      ],
+      "viz": [
+        "ph-relativity"
+      ]
+    },
+    {
+      "id": "astrophys.tidal-forces",
+      "slug": "tidal-forces",
+      "unit": "stellar-death",
+      "title": "Tidal Forces and the Roche Limit",
+      "prereqs": [
+        "mech.shell-theorem",
+        "calc1.linear-approximation"
+      ],
+      "viz": [
+        "ph-orbit"
+      ]
+    },
+    {
+      "id": "astrophys.accretion-power",
+      "slug": "accretion-power",
+      "unit": "stellar-death",
+      "title": "Accretion Power",
+      "prereqs": [
+        "astrophys.schwarzschild-radius",
+        "astrophys.neutron-star-physics"
+      ],
+      "viz": []
+    },
+    {
+      "id": "astrophys.gravitational-waves",
+      "slug": "gravitational-waves",
+      "unit": "stellar-death",
+      "title": "Gravitational Waves",
+      "prereqs": [
+        "astrophys.schwarzschild-radius"
+      ],
+      "viz": [
+        "astrophys-chirp"
+      ]
+    },
+    {
+      "id": "astrophys.rotation-curves",
+      "slug": "rotation-curves",
+      "unit": "cosmos",
+      "title": "Rotation Curves and Dark Matter",
+      "prereqs": [
+        "mech.shell-theorem",
+        "astro.dark-matter"
+      ],
+      "viz": [
+        "ph-orbit"
+      ]
+    },
+    {
+      "id": "astrophys.supermassive-black-holes",
+      "slug": "supermassive-black-holes",
+      "unit": "cosmos",
+      "title": "Supermassive Black Holes",
+      "prereqs": [
+        "astrophys.rotation-curves",
+        "astrophys.schwarzschild-radius"
+      ],
+      "viz": [
+        "astrophys-s2"
+      ]
+    },
+    {
+      "id": "astrophys.distance-ladder",
+      "slug": "distance-ladder",
+      "unit": "cosmos",
+      "title": "The Cosmic Distance Ladder",
+      "prereqs": [
+        "astrophys.distance-modulus",
+        "astro.standard-candles"
+      ],
+      "viz": [
+        "ph-cosmic"
+      ]
+    },
+    {
+      "id": "astrophys.redshift-scale-factor",
+      "slug": "redshift-scale-factor",
+      "unit": "cosmos",
+      "title": "Redshift and the Scale Factor",
+      "prereqs": [
+        "astro.hubble-law",
+        "modern.relativistic-doppler"
+      ],
+      "viz": [
+        "ph-cosmic"
+      ]
+    },
+    {
+      "id": "astrophys.hubble-time",
+      "slug": "hubble-time",
+      "unit": "cosmos",
+      "title": "Hubble's Law in Practice",
+      "prereqs": [
+        "astrophys.redshift-scale-factor",
+        "astro.age-of-universe"
+      ],
+      "viz": [
+        "ph-cosmic"
+      ]
+    },
+    {
+      "id": "astrophys.friedmann-equation",
+      "slug": "friedmann-equation",
+      "unit": "cosmos",
+      "title": "The Friedmann Equation and Critical Density",
+      "prereqs": [
+        "astrophys.hubble-time",
+        "mech.orbital-energy"
+      ],
+      "viz": [
+        "ph-cosmic"
+      ]
+    },
+    {
+      "id": "astrophys.cosmic-eras",
+      "slug": "cosmic-eras",
+      "unit": "cosmos",
+      "title": "Matter, Radiation and Dark Energy Through Time",
+      "prereqs": [
+        "astrophys.friedmann-equation"
+      ],
+      "viz": [
+        "astrophys-plot",
+        "ph-cosmic"
+      ]
+    },
+    {
+      "id": "astrophys.cmb",
+      "slug": "cmb",
+      "unit": "cosmos",
+      "title": "The Cosmic Microwave Background",
+      "prereqs": [
+        "astrophys.redshift-scale-factor",
+        "astrophys.planck-function"
+      ],
+      "viz": [
+        "ph-blackbody",
+        "ph-cosmic"
+      ]
+    },
+    {
+      "id": "astrophys.nucleosynthesis",
+      "slug": "nucleosynthesis",
+      "unit": "cosmos",
+      "title": "Big Bang Nucleosynthesis",
+      "prereqs": [
+        "astrophys.cmb",
+        "astrophys.fusion-chains"
+      ],
+      "viz": [
+        "astrophys-plot"
+      ]
+    }
+  ]
+}

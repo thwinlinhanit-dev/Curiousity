@@ -1,0 +1,123 @@
+{
+  "id": "trad.immediate-chains",
+  "slug": "immediate-chains",
+  "ladder": "logic",
+  "course": "trad",
+  "unit": "immediate",
+  "title": "Chains of Immediate Inference",
+  "short": "Combine conversion, obversion, contraposition and the square to decide whether one proposition follows from another.",
+  "trouble": "Learners lose track of which steps are valid for which form, or slip in an invalid conversion partway through the chain.",
+  "prereqs": [
+    "trad.contraposition",
+    "trad.square-inferences"
+  ],
+  "xp": 3,
+  "viz": [
+    "lg-venn3",
+    "lg-square"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The steps of <a href=\"/logic/traditional-logic/contraposition/\">contraposition</a>, obversion and conversion can be chained, and combined with the <a href=\"/logic/traditional-logic/square-inferences/\">square of opposition</a>. A chain lets you decide whether one statement follows from another even when the two look nothing alike."
+      },
+      {
+        "t": "key",
+        "html": "A chain is valid only if every step is valid for the form it is applied to: obversion for any form, conversion for E and I, contraposition for A and O (and, on the traditional reading only, subalternation and conversion by limitation)."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Step",
+          "Works on"
+        ],
+        "rows": [
+          [
+            "Obversion",
+            "A, E, I, O"
+          ],
+          [
+            "Conversion",
+            "E, I"
+          ],
+          [
+            "Contraposition",
+            "A, O"
+          ],
+          [
+            "Contradictory (square)",
+            "any form, any reading: it gives the opposite truth value"
+          ],
+          [
+            "Subalternation, limitation",
+            "traditional reading only"
+          ]
+        ],
+        "cap": "Check the form before every step."
+      },
+      {
+        "t": "why",
+        "html": "Each valid step produces a statement with the same meaning (or, for the traditional steps, one that is guaranteed true when the original is). Linking statements that each mean the same as the one before gives a last statement that means the same as the first. One invalid step anywhere breaks the guarantee, even if the remaining steps are fine."
+      },
+      {
+        "t": "viz",
+        "name": "lg-venn3",
+        "opts": {
+          "terms": [
+            "poets",
+            "campers"
+          ],
+          "circles": 2,
+          "props": [
+            "No poets are campers",
+            "All campers are non-poets"
+          ]
+        },
+        "cap": "The start and the end of a chain: same diagram, same meaning."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A two-step chain",
+        "q": "If \"No poets are campers\" is true, must \"All campers are non-poets\" be true?",
+        "steps": [
+          "Obvert the original (any form): \"All poets are non-campers\".",
+          "That is an A, so contraposition is allowed: \"All non-non-campers are non-poets\", that is, \"All campers are non-poets\"."
+        ],
+        "a": "yes, by obversion then contraposition"
+      },
+      {
+        "t": "ex",
+        "title": "A broken chain",
+        "q": "Does \"Some non-P are S\" follow from \"All S are P\"?",
+        "steps": [
+          "Obvert: \"No S are non-P\". Convert (E is fine): \"No non-P are S\".",
+          "That says no non-P are S, the opposite of what was asked.",
+          "No valid chain reaches \"Some non-P are S\"; in fact it is the contradictory of a statement that does follow."
+        ],
+        "a": "no"
+      },
+      {
+        "t": "mistake",
+        "html": "Losing track of the form and slipping in an invalid step, such as converting an A halfway through a chain. Check: write the letter of each line before choosing the next step."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Patrick J. Hurley, A Concise Introduction to Logic, 4.4 Conversion, Obversion, and Contraposition"
+      },
+      {
+        "name": "Patrick J. Hurley, A Concise Introduction to Logic, 4.6 Venn Diagrams and the Traditional Standpoint (conversion by limitation)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,99 @@
+{
+  "id": "calc2.series-estimates",
+  "slug": "series-estimates",
+  "ladder": "math",
+  "course": "calc2",
+  "unit": "sequences-series",
+  "title": "Estimating the Sum of a Series",
+  "short": "Bound the error of a partial sum.",
+  "trouble": "",
+  "prereqs": [
+    "calc2.integral-test",
+    "calc2.alternating-series"
+  ],
+  "xp": 3,
+  "viz": [
+    "seriespartial"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Knowing that a series converges is only half the story; you usually want its value. A computer adds up $S_N$, but how big is the leftover tail? The <a href=\"/math/calculus-2/integral-test/\">The Integral Test and p-Series</a> and the <a href=\"/math/calculus-2/alternating-series/\">alternating series test</a> both come with error bounds."
+      },
+      {
+        "t": "why",
+        "html": "Write $S = S_N + R_N$, where the remainder $R_N = a_{N+1} + a_{N+2} + \\cdots$ is a tail of the series. For $a_n = f(n)$ with $f$ positive and decreasing, the same rectangle picture as in the integral test traps the tail between two integrals:\n$$\\int_{N+1}^{\\infty} f(x)\\,dx \\le R_N \\le \\int_{N}^{\\infty} f(x)\\,dx.$$\nFor an alternating series with decreasing terms, $S$ always sits between consecutive partial sums, so $|R_N| \\le b_{N+1}$. For a tail you can compare with a geometric series, use the geometric sum."
+      },
+      {
+        "t": "key",
+        "html": "Integral bound: $\\int_{N+1}^{\\infty} f \\le R_N \\le \\int_N^{\\infty} f$. Alternating bound: $|R_N| \\le b_{N+1}$. Comparison: if $0 \\le a_n \\le b_n$, then $R_N \\le \\sum_{n=N+1}^{\\infty} b_n$."
+      },
+      {
+        "t": "ex",
+        "title": "Integral bounds",
+        "q": "Estimate $\\sum_{n=1}^{\\infty}\\frac{1}{n^{3}}$ using $S_{10}$, and bound the error.",
+        "steps": [
+          "$\\int_M^{\\infty}\\frac{dx}{x^{3}} = \\frac{1}{2M^{2}}$. So $\\frac{1}{2\\cdot 11^{2}} \\le R_{10} \\le \\frac{1}{2\\cdot 10^{2}}$, that is $0.00413 \\le R_{10} \\le 0.005$.",
+          "$S_{10} \\approx 1.19753$, so $1.20166 \\le S \\le 1.20253$.",
+          "Taking the middle, $S \\approx 1.2021$; the true value is about $1.2020569$."
+        ],
+        "a": "$S \\approx 1.202$, with error under $0.0005$ using the midpoint"
+      },
+      {
+        "t": "viz",
+        "name": "seriespartial",
+        "opts": {
+          "a": "1/n^3",
+          "start": 1,
+          "N": 10,
+          "maxN": 40,
+          "limit": "1.2020569"
+        },
+        "cap": "Partial sums of $\\sum\\frac{1}{n^{3}}$ creep up to about $1.202$. After 10 terms the gap is already less than $0.005$, just as the integral bound promised."
+      },
+      {
+        "t": "ex",
+        "title": "An alternating bound",
+        "q": "How close is $S_5$ to $\\sum_{n=0}^{\\infty}\\frac{(-1)^{n}}{n!}$?",
+        "steps": [
+          "The terms $\\frac{1}{n!}$ decrease to 0, so $|S - S_N| \\le b_{N+1}$.",
+          "$S_5$ uses $n = 0$ to $4$, so the first omitted term is $\\frac{1}{5!} = \\frac{1}{120} \\approx 0.0083$.",
+          "(The sum is $\\frac{1}{e} \\approx 0.3679$; $S_5 = 0.375$.)"
+        ],
+        "a": "Within $\\frac{1}{120}$"
+      },
+      {
+        "t": "ex",
+        "title": "How many terms?",
+        "q": "How many terms of $\\sum\\frac{1}{n^{2}}$ guarantee an error of at most $0.001$?",
+        "steps": [
+          "$R_N \\le \\int_N^{\\infty}\\frac{dx}{x^{2}} = \\frac{1}{N}$.",
+          "$\\frac{1}{N} \\le 0.001$ when $N \\ge 1000$.",
+          "So 1000 terms are enough. (Slowly converging series need many terms; this is why better methods matter.)"
+        ],
+        "a": "$N = 1000$"
+      },
+      {
+        "t": "mistake",
+        "html": "Using the alternating bound on a series that is not alternating, or off by one. For $\\sum\\frac{1}{n^{2}}$ the error after $N$ terms is not $a_{N+1}$; the tail is many terms, about $\\frac{1}{N}$ in total. And for alternating series the bound is the first term you left out, $b_{N+1}$, not the last one you used. Check which terms $S_N$ contains before writing the bound."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 2, Section 5.3: The Divergence and Integral Tests (remainder estimate)"
+      },
+      {
+        "name": "OpenStax Calculus Volume 2, Section 5.5: Alternating Series (remainder estimate)"
+      },
+      {
+        "name": "Paul’s Online Math Notes (Lamar University), Calculus II: Estimating the Value of a Series"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

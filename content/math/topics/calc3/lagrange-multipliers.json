@@ -1,0 +1,103 @@
+{
+  "id": "calc3.lagrange-multipliers",
+  "slug": "lagrange-multipliers",
+  "ladder": "math",
+  "course": "calc3",
+  "unit": "optimization",
+  "title": "Lagrange Multipliers",
+  "short": "At a constrained extreme, ∇f is parallel to ∇g.",
+  "trouble": "Students solve for λ but forget to check every solution of the system.",
+  "prereqs": [
+    "calc3.gradient-normals",
+    "calc3.absolute-extrema"
+  ],
+  "xp": 3,
+  "viz": [
+    "gradient"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Often you cannot go anywhere you like: you must stay on a curve or a surface. Maximize the area of a fence with a fixed length, or find the hottest point on a circular wire. That is <b>constrained optimization</b>: extremes of $f$ subject to $g(x, y) = k$. The key picture uses two facts you know: the <a href=\"/math/calculus-3/gradient-normals/\">gradient is perpendicular to level curves</a>, and a level curve of $f$ that crosses the constraint cannot mark an extreme."
+      },
+      {
+        "t": "key",
+        "html": "At a maximum or minimum of $f$ on the curve $g(x, y) = k$ (with $\\nabla g \\ne \\mathbf{0}$), the gradients are parallel:\n  $$\\nabla f = \\lambda\\nabla g, \\qquad g(x, y) = k.$$\n  Solve this system for $x$, $y$ and $\\lambda$ (the Lagrange multiplier), then evaluate $f$ at <b>every</b> solution and compare."
+      },
+      {
+        "t": "why",
+        "html": "Move along the constraint curve $\\mathbf{r}(t)$. If $f$ has its largest value on the curve at $\\mathbf{r}(t_0)$, then $\\frac{d}{dt}f(\\mathbf{r}(t)) = \\nabla f \\cdot \\mathbf{r}'(t)$ is ${}0$ at $t_0$: $\\nabla f$ is perpendicular to the curve. But $\\nabla g$ is also perpendicular to the curve, because the curve is a level curve of $g$. In the plane, two vectors perpendicular to the same direction are parallel, so $\\nabla f = \\lambda \\nabla g$. In pictures: at the extreme, the level curve of $f$ just <b>touches</b> the constraint curve without crossing it."
+      },
+      {
+        "t": "viz",
+        "name": "calc3-lagrange",
+        "opts": {
+          "f": "x*y",
+          "g": "x^2+y^2",
+          "curve": {
+            "x": "2cos(t)",
+            "y": "2sin(t)",
+            "t0": 0,
+            "t1": "2pi"
+          },
+          "t": 0.35,
+          "task": "Slide the point around the circle until $\\nabla f$ and $\\nabla g$ line up. Is $f$ largest or smallest there?"
+        },
+        "cap": "Level curves of $f = xy$ (hyperbolas) and the constraint $x^2 + y^2 = 4$ (blue). Where the bold level curve crosses the circle, you can still climb along the circle; where it only touches, you cannot."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A linear function on a circle",
+        "q": "Find the maximum and minimum of $f(x, y) = 3x + 4y$ on $x^2 + y^2 = 25$.",
+        "steps": [
+          "$\\nabla f = \\lambda\\nabla g$: ${}3 = 2\\lambda x$ and ${}4 = 2\\lambda y$. So $\\lambda \\ne 0$ and $(x, y) = \\frac{1}{2\\lambda}(3, 4)$: parallel to $\\langle 3, 4 \\rangle$.",
+          "On the circle of radius 5 that gives $(3, 4)$ and $(-3, -4)$.",
+          "$f(3, 4) = 25$ and $f(-3, -4) = -25$."
+        ],
+        "a": "maximum ${}25$, minimum $-25$"
+      },
+      {
+        "t": "ex",
+        "title": "Check every solution",
+        "q": "Find the extremes of $f(x, y) = xy$ on $x^2 + y^2 = 8$.",
+        "steps": [
+          "$y = 2\\lambda x$ and $x = 2\\lambda y$. Then $y = 4\\lambda^2 y$, so $y = 0$ or $\\lambda = \\pm\\frac{1}{2}$.",
+          "$y = 0$ forces $x = 0$, which is not on the circle. $\\lambda = \\frac{1}{2}$ gives $y = x$; $\\lambda = -\\frac{1}{2}$ gives $y = -x$.",
+          "Points: $(2, 2)$, $(-2, -2)$ with $f = 4$; $(2, -2)$, $(-2, 2)$ with $f = -4$."
+        ],
+        "a": "maximum ${}4$, minimum $-4$"
+      },
+      {
+        "t": "ex",
+        "title": "Closest point on a plane",
+        "q": "Find the point of the plane $x + 2y + 2z = 9$ closest to the origin.",
+        "steps": [
+          "Minimize the squared distance $f = x^2 + y^2 + z^2$ with $g = x + 2y + 2z = 9$.",
+          "$\\langle 2x, 2y, 2z \\rangle = \\lambda\\langle 1, 2, 2 \\rangle$, so $(x, y, z) = \\frac{\\lambda}{2}(1, 2, 2)$.",
+          "The constraint gives $\\frac{\\lambda}{2}(1 + 4 + 4) = 9$, so $\\frac{\\lambda}{2} = 1$: the point $(1, 2, 2)$, at distance ${}3$."
+        ],
+        "a": "$(1, 2, 2)$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Solving for $\\lambda$ and stopping.</b> The multiplier is a helper, not the answer. The system usually has several solutions; each is a candidate, and you must evaluate $f$ at all of them (as in the second example, where two give the maximum and two the minimum). Also watch for lost solutions: dividing an equation by $x$ or $y$ can throw away the case where that variable is ${}0$, so factor instead."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 3, 4.8 Lagrange Multipliers"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

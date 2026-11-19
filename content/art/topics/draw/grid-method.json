@@ -1,0 +1,103 @@
+{
+  "id": "draw.grid-method",
+  "slug": "grid-method",
+  "ladder": "art",
+  "course": "draw",
+  "unit": "measure",
+  "title": "The Grid Method",
+  "short": "Divide the picture and the paper into matching grids and copy one square at a time. Bigger squares on the paper enlarge the drawing.",
+  "trouble": "People draw a paper grid with a different shape (ratio) than the picture's grid, which stretches the drawing.",
+  "prereqs": [
+    "draw.proportion",
+    "g7.scale-drawings"
+  ],
+  "xp": 2,
+  "viz": [
+    "ar-proportion",
+    "ar-canvas"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The <b>grid method</b> copies a picture one square at a time. You draw a grid over the picture (or on a clear sheet laid on it) and a matching grid on your paper. Then you copy what is in each square into the matching square."
+      },
+      {
+        "t": "viz",
+        "name": "ar-proportion",
+        "opts": {
+          "mode": "grid",
+          "cells": 4,
+          "copied": true,
+          "draw": "cat"
+        },
+        "cap": "A small picture with a 4 by 4 grid, copied into a bigger 4 by 4 grid."
+      },
+      {
+        "t": "key",
+        "html": "Both grids need the <b>same number of rows and columns</b> and the <b>same shape of square</b>. Bigger squares on the paper enlarge the drawing by the same factor."
+      },
+      {
+        "t": "why",
+        "html": "A grid breaks one big, hard problem into many small, easy ones. Each square holds only a few lines, and their positions inside the square are easy to see: \"the ear starts halfway across the top.\" It is also a <a href=\"/math/grade-7/scale-drawings/\">scale drawing</a>: if each square is 3 times as wide, everything in the drawing is 3 times as wide."
+      },
+      {
+        "t": "ex",
+        "title": "Enlarging",
+        "q": "A photo has a grid of 2 cm squares. You draw a grid of 6 cm squares on your paper. The photo is 10 cm wide. How wide will your drawing be?",
+        "steps": [
+          "The scale factor is $6 \\div 2 = 3$.",
+          "The drawing is 3 times as wide as the photo.",
+          "$3 \\times 10 = 30$ cm."
+        ],
+        "a": "30 cm."
+      },
+      {
+        "t": "ex",
+        "title": "Counting squares",
+        "q": "A photo 8 cm wide and 12 cm tall gets a grid of 2 cm squares. How many squares are there?",
+        "steps": [
+          "Across: $8 \\div 2 = 4$ columns.",
+          "Down: $12 \\div 2 = 6$ rows.",
+          "$4 \\times 6 = 24$ squares."
+        ],
+        "a": "24 squares."
+      },
+      {
+        "t": "mistake",
+        "html": "People draw a paper grid with a different shape than the picture's grid, such as squares on the photo but rectangles on the paper. That stretches the drawing. Use squares on both, with the same number of rows and columns. Label the rows and columns so you do not lose your place."
+      },
+      {
+        "t": "viz",
+        "name": "ar-canvas",
+        "opts": {
+          "guide": "grid",
+          "grid": 4,
+          "height": 300,
+          "print": true,
+          "printTitle": "Grid, 4 across",
+          "colors": [
+            "#26221e",
+            "#7a7068"
+          ]
+        },
+        "cap": "Copy a simple picture square by square. Print the grid to use on paper; draw grid lines lightly so they erase."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Grokipedia, \"Drawing\"",
+        "url": "https://grokipedia.com/page/Drawing"
+      },
+      {
+        "name": "National Core Arts Standards, Visual Arts, Grades 6 to 8 (Creating: organize and develop artistic ideas and work)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

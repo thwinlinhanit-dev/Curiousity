@@ -1,0 +1,129 @@
+{
+  "id": "prob.mgf",
+  "slug": "mgf",
+  "ladder": "math",
+  "course": "prob",
+  "unit": "limit-theorems",
+  "title": "Moment Generating Functions",
+  "short": "M(t) = E[e^(tX)]; its derivatives at t = 0 give E[X], E[X²], …, and the MGF of a sum of independent variables is the product of their MGFs.",
+  "trouble": "Students read M″(0) as the variance. It is E[X²], and Var(X) = M″(0) − (M′(0))².",
+  "prereqs": [
+    "prob.continuous-expectation",
+    "prob.convolution",
+    "calc2.known-series"
+  ],
+  "xp": 3,
+  "viz": [],
+  "figureArchetype": "LessonFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A moment generating function packs all of a distribution's moments, $E[X], E[X^{2}], \\ldots$, into one function. It turns the hard <a href=\"/math/probability/convolution/\">convolution</a> of independent variables into a simple product, and it is the main tool for proving the central limit theorem. The key fact is the exponential series from <a href=\"/math/calculus-2/known-series/\">known series</a>, and the moments are the <a href=\"/math/probability/continuous-expectation/\">expected values of functions</a> you already compute."
+      },
+      {
+        "t": "key",
+        "html": "The <b>moment generating function</b> of $X$ is $M_X(t) = E\\left[e^{tX}\\right]$. Its derivatives at 0 are the moments: $M'(0) = E[X]$, $M''(0) = E[X^{2}]$, and so on, so $\\operatorname{Var}(X) = M''(0) - (M'(0))^{2}$. For independent $X$ and $Y$, $M_{X + Y}(t) = M_X(t)M_Y(t)$. Two variables with the same MGF (near $t = 0$) have the same distribution."
+      },
+      {
+        "t": "why",
+        "html": "Expand: $e^{tX} = 1 + tX + \\frac{t^{2}X^{2}}{2!} + \\cdots$, so by linearity $$M(t) = 1 + tE[X] + \\frac{t^{2}}{2!}E[X^{2}] + \\frac{t^{3}}{3!}E[X^{3}] + \\cdots,$$ and the $k$th derivative at $t = 0$ picks out $E[X^{k}]$. For independent $X$ and $Y$, $e^{t(X + Y)} = e^{tX}e^{tY}$ is a product of independent factors, whose expected value is the product of the expected values."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Distribution",
+          "$M(t)$",
+          "Mean",
+          "Variance"
+        ],
+        "rows": [
+          [
+            "Bernoulli($p$)",
+            "$1 - p + pe^{t}$",
+            "$p$",
+            "$p(1 - p)$"
+          ],
+          [
+            "Binomial($n, p$)",
+            "$(1 - p + pe^{t})^{n}$",
+            "$np$",
+            "$np(1 - p)$"
+          ],
+          [
+            "Poisson($\\lambda$)",
+            "$e^{\\lambda(e^{t} - 1)}$",
+            "$\\lambda$",
+            "$\\lambda$"
+          ],
+          [
+            "Exponential (rate $\\lambda$)",
+            "$\\frac{\\lambda}{\\lambda - t}$, $t < \\lambda$",
+            "$\\frac{1}{\\lambda}$",
+            "$\\frac{1}{\\lambda^{2}}$"
+          ],
+          [
+            "Normal $N(\\mu, \\sigma^{2})$",
+            "$e^{\\mu t + \\sigma^{2}t^{2}/2}$",
+            "$\\mu$",
+            "$\\sigma^{2}$"
+          ]
+        ],
+        "cap": "Moment generating functions worth recognizing."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A discrete MGF",
+        "q": "$M(t) = \\frac{1}{4}e^{-t} + \\frac{1}{2} + \\frac{1}{4}e^{2t}$. Find $E[X]$ and $\\operatorname{Var}(X)$.",
+        "steps": [
+          "This $X$ is $-1$, 0 or 2 with probabilities $\\frac{1}{4}, \\frac{1}{2}, \\frac{1}{4}$.",
+          "$M'(t) = -\\frac{1}{4}e^{-t} + \\frac{1}{2}e^{2t}$, so $E[X] = -\\frac{1}{4} + \\frac{1}{2} = \\frac{1}{4}$.",
+          "$M''(t) = \\frac{1}{4}e^{-t} + e^{2t}$, so $E[X^{2}] = \\frac{5}{4}$ and $\\operatorname{Var}(X) = \\frac{5}{4} - \\frac{1}{16} = \\frac{19}{16}$."
+        ],
+        "a": "$\\frac{1}{4}$ and $\\frac{19}{16}$"
+      },
+      {
+        "t": "ex",
+        "title": "The Poisson",
+        "q": "Find the mean and variance from $M(t) = e^{\\lambda(e^{t} - 1)}$.",
+        "steps": [
+          "$M'(t) = \\lambda e^{t}M(t)$, so $M'(0) = \\lambda$.",
+          "$M''(t) = \\lambda e^{t}M(t) + \\lambda e^{t}M'(t)$, so $M''(0) = \\lambda + \\lambda^{2}$.",
+          "$\\operatorname{Var}(X) = \\lambda + \\lambda^{2} - \\lambda^{2} = \\lambda$."
+        ],
+        "a": "Both are $\\lambda$."
+      },
+      {
+        "t": "ex",
+        "title": "Recognizing a sum",
+        "q": "$X$ and $Y$ are independent Poisson with means 2 and 3. Identify the distribution of $X + Y$.",
+        "steps": [
+          "$$M_{X + Y}(t) = e^{2(e^{t} - 1)}e^{3(e^{t} - 1)} = e^{5(e^{t} - 1)}$$",
+          "That is the Poisson MGF with $\\lambda = 5$, and an MGF determines the distribution."
+        ],
+        "a": "Poisson with mean 5, matching the convolution lesson with far less work."
+      },
+      {
+        "t": "mistake",
+        "html": "Reading $M''(0)$ as the variance. It is $E[X^{2}]$, the second moment about 0; the variance needs $(M'(0))^{2}$ subtracted. Check with a constant $X = 3$: $M(t) = e^{3t}$, $M''(0) = 9$, but the variance is 0."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Grinstead and Snell, Introduction to Probability (2nd revised edition, American Mathematical Society; free from Dartmouth College), chapter 10 (Generating Functions), sections 10.1 and 10.3, moment generating functions"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.440, Probability and Random Variables (Spring 2014), lecture notes on moment generating functions"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

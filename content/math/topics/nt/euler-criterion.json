@@ -1,0 +1,108 @@
+{
+  "id": "nt.euler-criterion",
+  "slug": "euler-criterion",
+  "ladder": "math",
+  "course": "nt",
+  "unit": "quadratic-residues",
+  "title": "The Legendre Symbol and Euler's Criterion",
+  "short": "For p ∤ a, (a/p) is 1 when a is a square mod p and −1 when it is not, and (a/p) ≡ a^((p − 1)/2) (mod p).",
+  "trouble": "Students read the Legendre symbol (a/p) as the fraction a ÷ p.",
+  "prereqs": [
+    "nt.quadratic-residues",
+    "nt.fermat-little"
+  ],
+  "xp": 3,
+  "viz": [
+    "nt-powers"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Listing squares works mod 11, but not mod a prime with 50 digits. Euler found a test that needs only one <a href=\"/math/number-theory/modular-powers/\">fast power</a>, and it comes straight from <a href=\"/math/number-theory/fermat-little/\">Fermat's theorem</a>."
+      },
+      {
+        "t": "p",
+        "html": "<b>The Legendre symbol.</b> For an odd prime $p$ and an integer $a$, $$\\left(\\frac{a}{p}\\right) = \\begin{cases} 1 & \\text{if } p \\nmid a \\text{ and } a \\text{ is a quadratic residue mod } p, \\\\ -1 & \\text{if } a \\text{ is a nonresidue mod } p, \\\\ 0 & \\text{if } p \\mid a. \\end{cases}$$ It looks like a fraction, but it is <b>not</b> division: it is a label, $1$, $-1$ or $0$."
+      },
+      {
+        "t": "p",
+        "html": "<b>Euler's criterion.</b> For an odd prime $p$, $$\\left(\\frac{a}{p}\\right) \\equiv a^{(p-1)/2} \\pmod{p}.$$"
+      },
+      {
+        "t": "why",
+        "html": "Suppose $p \\nmid a$ and let $b = a^{(p-1)/2}$. Then $b^{2} = a^{p-1} \\equiv 1$, so $b \\equiv \\pm 1$ (only $\\pm 1$ square to 1 mod a prime). Which sign? Take a <a href=\"/math/number-theory/primitive-roots/\">primitive root</a> $g$ and write $a \\equiv g^{k}$. The squares are exactly the <b>even</b> powers of $g$. And $b = g^{k(p-1)/2} \\equiv 1$ exactly when $p - 1 \\mid k\\frac{p-1}{2}$, that is, when $k$ is even. So $b \\equiv 1$ exactly for the residues."
+      },
+      {
+        "t": "viz",
+        "name": "nt-powers",
+        "opts": {
+          "mode": "criterion",
+          "n": 11
+        },
+        "cap": "Mod 11, the column $a^{5}$ is always $1$ or $-1$, and it is $1$ in exactly the rows where $a$ has a square root (1, 3, 4, 5, 9)."
+      },
+      {
+        "t": "ex",
+        "title": "A residue",
+        "q": "Find $\\left(\\frac{3}{11}\\right)$.",
+        "steps": [
+          "$\\frac{11 - 1}{2} = 5$, so compute $3^{5} = 243 = 22 \\cdot 11 + 1 \\equiv 1$.",
+          "So $\\left(\\frac{3}{11}\\right) = 1$. Indeed $5^{2} = 25 \\equiv 3 \\pmod{11}$."
+        ],
+        "a": "$1$."
+      },
+      {
+        "t": "ex",
+        "title": "A nonresidue",
+        "q": "Find $\\left(\\frac{2}{13}\\right)$.",
+        "steps": [
+          "$2^{6} = 64 = 4 \\cdot 13 + 12 \\equiv 12 \\equiv -1 \\pmod{13}$.",
+          "So $\\left(\\frac{2}{13}\\right) = -1$: 2 is not a square mod 13. (The squares mod 13 are $1, 4, 9, 3, 12, 10$.)"
+        ],
+        "a": "$-1$."
+      },
+      {
+        "t": "p",
+        "html": "<b>Multiplicativity.</b> Since $(ab)^{(p-1)/2} = a^{(p-1)/2} b^{(p-1)/2}$, Euler's criterion gives $$\\left(\\frac{ab}{p}\\right) = \\left(\\frac{a}{p}\\right)\\left(\\frac{b}{p}\\right).$$ This is the \"signs\" rule from the last lesson: two nonresidues multiply to a residue."
+      },
+      {
+        "t": "ex",
+        "title": "Splitting into factors",
+        "q": "Find $\\left(\\frac{6}{13}\\right)$.",
+        "steps": [
+          "$\\left(\\frac{6}{13}\\right) = \\left(\\frac{2}{13}\\right)\\left(\\frac{3}{13}\\right)$.",
+          "$\\left(\\frac{2}{13}\\right) = -1$ (above). $3^{6} = 729 = 56 \\cdot 13 + 1$, so $\\left(\\frac{3}{13}\\right) = 1$.",
+          "So $\\left(\\frac{6}{13}\\right) = -1$, and 6 is not among the squares mod 13."
+        ],
+        "a": "$-1$."
+      },
+      {
+        "t": "p",
+        "html": "Why this matters: deciding whether $a$ is a square by listing squares takes about $\\frac{p}{2}$ steps, hopeless for a 50-digit prime. Euler's criterion needs one <a href=\"/math/number-theory/modular-powers/\">repeated-squaring</a> computation of $a^{(p-1)/2}$, about 330 multiplications for a 50-digit $p$. It says <i>whether</i> a square root exists, though not what it is. Finding the root takes more work (the Tonelli–Shanks algorithm), and that is left for later."
+      },
+      {
+        "t": "mistake",
+        "html": "Reading $\\left(\\frac{a}{p}\\right)$ as the fraction $a \\div p$. $\\left(\\frac{3}{11}\\right)$ is not $0.27\\ldots$; it is $1$, because 3 is a square mod 11. Every Legendre symbol is $1$, $-1$ or $0$. Euler's power will come out as $1$ or $p - 1$, and $p - 1$ means $-1$."
+      },
+      {
+        "t": "key",
+        "html": "$\\left(\\frac{a}{p}\\right) = \\pm 1$ says whether $a$ is a square mod $p$, and Euler's criterion computes it: $\\left(\\frac{a}{p}\\right) \\equiv a^{(p-1)/2} \\pmod{p}$. The symbol is multiplicative in $a$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "William Stein, Elementary Number Theory: Primes, Congruences, and Secrets (Springer, 2009; free online edition), chapter 4, Quadratic Reciprocity (Euler's criterion)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.781 Theory of Numbers (Spring 2012), lecture notes on the Legendre symbol"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

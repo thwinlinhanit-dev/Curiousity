@@ -1,0 +1,98 @@
+{
+  "id": "gchem2.strong-titration-curves",
+  "slug": "strong-titration-curves",
+  "ladder": "chemistry",
+  "course": "gchem2",
+  "unit": "acids-bases",
+  "title": "Strong Acid–Strong Base Titration Curves",
+  "short": "Find the pH before, at and after the equivalence point.",
+  "trouble": "Students forget to add the two volumes together when they find concentrations after mixing.",
+  "prereqs": [
+    "gchem2.strong-acid-ph",
+    "gchem1.titration-calculations"
+  ],
+  "xp": 3,
+  "viz": [
+    "ch-titration"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/chemistry/general-chemistry-1/titration-calculations/\">titration calculations</a> you found the equivalence point. A titration curve shows the pH all the way through. For a strong acid and strong base, each point is a <a href=\"/chemistry/general-chemistry-2/strong-acid-ph/\">strong-acid or strong-base pH</a> after the neutralization."
+      },
+      {
+        "t": "key",
+        "html": "At each volume: find moles of acid and base, let them neutralize, and divide whatever is left over by the <b>total</b> volume. Before equivalence, leftover $\\mathrm{H_3O^+}$ sets the pH; at equivalence, the solution is neutral salt water, pH 7.00 at 25 °C; after it, leftover $\\mathrm{OH^-}$ sets the pH."
+      },
+      {
+        "t": "why",
+        "html": "$\\mathrm{H_3O^+ + OH^- \\to 2H_2O}$ goes to completion, so only the excess matters. Near equivalence, the excess is tiny and a single drop changes it by orders of magnitude, which is why the curve rises so steeply there. The salt formed, such as NaCl, does not react with water, so at equivalence the pH is that of pure water."
+      },
+      {
+        "t": "viz",
+        "name": "ch-titration",
+        "opts": {
+          "acid": {
+            "type": "strong",
+            "C": 0.1,
+            "V": 25
+          },
+          "base": {
+            "C": 0.1
+          },
+          "vol": 10
+        },
+        "cap": "25.0 mL of 0.100 M HCl titrated with 0.100 M NaOH. Drag the volume: the pH creeps up, jumps near 25 mL, then levels off."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Four points on the curve",
+        "q": "$25.0\\ \\text{mL}$ of $0.100\\ \\text{M}$ HCl is titrated with $0.100\\ \\text{M}$ NaOH. Find the pH after $0$, $10.0$, $25.0$ and $30.0\\ \\text{mL}$ of base.",
+        "steps": [
+          "0 mL: $[\\mathrm{H_3O^+}] = 0.100\\ \\text{M}$, pH 1.00.",
+          "10.0 mL: acid $2.50\\ \\text{mmol}$, base $1.00\\ \\text{mmol}$; $1.50\\ \\text{mmol}$ $\\mathrm{H_3O^+}$ left in $35.0\\ \\text{mL}$: $0.0429\\ \\text{M}$, pH 1.37.",
+          "25.0 mL: $2.50\\ \\text{mmol}$ of each, all neutralized. pH 7.00.",
+          "30.0 mL: $0.50\\ \\text{mmol}$ $\\mathrm{OH^-}$ left in $55.0\\ \\text{mL}$: $9.09 \\times 10^{-3}\\ \\text{M}$, pOH 2.04, pH 11.96."
+        ],
+        "a": "1.00, 1.37, 7.00, 11.96."
+      },
+      {
+        "t": "ex",
+        "title": "Equivalence volume",
+        "q": "How many mL of $0.150\\ \\text{M}$ NaOH reach equivalence with $20.0\\ \\text{mL}$ of $0.120\\ \\text{M}$ $\\mathrm{HNO_3}$?",
+        "steps": [
+          "Acid: $(20.0)(0.120) = 2.40\\ \\text{mmol}$.",
+          "Base needed: $2.40\\ \\text{mmol} \\div 0.150\\ \\text{M} = 16.0\\ \\text{mL}$."
+        ],
+        "a": "$16.0\\ \\text{mL}$."
+      },
+      {
+        "t": "p",
+        "html": "Why is the curve so flat at first and so steep near equivalence? The pH is a logarithm. Early on, adding base cuts the leftover acid by a small fraction, which barely moves its log. Near equivalence, a single drop can cut the leftover acid by a factor of 100 or more, and then switch the solution to excess base: the pH leaps several units. The point where an indicator changes color, the <b>end point</b>, is chosen to fall on that leap, so it lands within a drop of the true equivalence point."
+      },
+      {
+        "t": "mistake",
+        "html": "Forgetting to add the two volumes together. After mixing, the leftover acid or base is spread through acid volume plus base volume. Check: the concentration of the excess must be smaller than either starting concentration."
+      },
+      {
+        "t": "p",
+        "html": "Titrate an acid drop by drop yourself in the <a href=\"/science-lab/chem-lab/\">Mixing Lab</a>."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 14.7 Acid-Base Titrations"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

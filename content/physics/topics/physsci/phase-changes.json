@@ -1,0 +1,79 @@
+{
+  "id": "physsci.phase-changes",
+  "slug": "phase-changes",
+  "ladder": "physics",
+  "course": "physsci",
+  "unit": "energy",
+  "title": "Changes of State",
+  "short": "Melting and boiling take in energy without raising the temperature; freezing and condensing give it back.",
+  "trouble": "Students think the temperature keeps rising while ice melts or water boils.",
+  "prereqs": [
+    "chem.heat-temperature"
+  ],
+  "xp": 1,
+  "viz": [
+    "ph-thermal"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Put a pot of ice on the stove and watch a thermometer in it. The temperature climbs to 0 °C, then <b>stops</b> while the ice melts, even though the burner keeps adding <a href=\"/chemistry/chemistry/heat-temperature/\">heat</a>. Where does that energy go?"
+      },
+      {
+        "t": "key",
+        "html": "During melting and boiling, added energy breaks particles free from each other instead of making them move faster, so the temperature stays the same until the change is complete. Freezing and condensing give that same energy back. For water at sea level, melting happens at 0 °C and boiling at 100 °C."
+      },
+      {
+        "t": "why",
+        "html": "Temperature measures how fast the particles move on average. In ice, the molecules are held in place by attractions. To melt, they must be pulled partly free, which takes energy but does not speed them up. Once all the ice has melted, added energy goes back to speeding the molecules up, and the temperature rises again. Boiling works the same way, pulling molecules all the way apart into a gas."
+      },
+      {
+        "t": "viz",
+        "name": "ph-thermal",
+        "opts": {
+          "mode": "heating-curve",
+          "m": 1,
+          "T0": -20,
+          "T1": 120,
+          "q": 0.5
+        },
+        "cap": "The heating curve of 1 kg of water. The flat steps are melting (at 0 °C) and boiling (at 100 °C). Slide the heat added and watch the temperature pause at each step."
+      },
+      {
+        "t": "ex",
+        "title": "Reading a heating curve",
+        "q": "Ice at −10 °C is heated steadily until it becomes steam at 110 °C. Describe the temperature.",
+        "steps": [
+          "It rises from −10 °C to 0 °C (ice warming).",
+          "It stays at 0 °C while the ice melts.",
+          "It rises from 0 °C to 100 °C (water warming).",
+          "It stays at 100 °C while the water boils, then rises again (steam warming)."
+        ],
+        "a": "Two flat steps: at 0 °C and at 100 °C"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking the temperature keeps rising while ice melts or water boils. Turning up the stove under boiling water makes it boil faster, not hotter: it stays at 100 °C (at sea level). Check: on a heating curve, a phase change is a flat part."
+      },
+      {
+        "t": "note",
+        "html": "Melting 1 g of ice takes about 334 J; boiling away 1 g of water takes about 2,260 J. That is why steam can scald far worse than hot water at the same temperature: it releases all that extra energy as it condenses on skin."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e, 14.3 Phase Change and Latent Heat"
+      },
+      {
+        "name": "Next Generation Science Standards, MS-PS1-4"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

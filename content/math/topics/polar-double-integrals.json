@@ -1,0 +1,107 @@
+{
+  "id": "calc3.polar-double-integrals",
+  "slug": "polar-double-integrals",
+  "ladder": "math",
+  "course": "calc3",
+  "unit": "multiple-integrals",
+  "title": "Double Integrals in Polar Coordinates",
+  "short": "dA = r dr dθ.",
+  "trouble": "Students forget the extra factor r.",
+  "prereqs": [
+    "calc3.general-regions",
+    "calc3.cylindrical-spherical",
+    "calc2.polar-area"
+  ],
+  "xp": 3,
+  "viz": [
+    "polar"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Disks, rings and wedges are awkward in rectangular coordinates: the limits involve $\\sqrt{r^2 - x^2}$. In <a href=\"/math/calculus-3/cylindrical-spherical/\">polar coordinates</a> they are rectangles: $a \\le r \\le b$, $\\alpha \\le \\theta \\le \\beta$. You met polar area in <a href=\"/math/calculus-2/polar-area/\">Calculus 2</a>; now the integrand can be any function."
+      },
+      {
+        "t": "key",
+        "html": "$$\\iint_D f(x, y)\\,dA = \\int_\\alpha^\\beta\\int_{r_1(\\theta)}^{r_2(\\theta)} f(r\\cos\\theta, r\\sin\\theta)\\,r\\,dr\\,d\\theta.$$\n  The area element is $dA = r\\,dr\\,d\\theta$, with the extra factor $r$."
+      },
+      {
+        "t": "why",
+        "html": "Chop the region with circles ($r$ constant) and rays ($\\theta$ constant). A small piece is a \"polar rectangle\": $\\Delta r$ thick in the radial direction and, along the arc, $r\\,\\Delta\\theta$ long (arc length is radius times angle). Its area is about $(\\Delta r)(r\\,\\Delta\\theta) = r\\,\\Delta r\\,\\Delta\\theta$. Pieces far from the origin are bigger than pieces near it, even with the same $\\Delta r$ and $\\Delta\\theta$, and the factor $r$ accounts for that. (Exactly: the area between radii $r_1$ and $r_2$ is $\\frac{1}{2}(r_2^2 - r_1^2)\\Delta\\theta = \\bar{r}\\,\\Delta r\\,\\Delta\\theta$, with $\\bar{r}$ the middle radius.)"
+      },
+      {
+        "t": "viz",
+        "name": "calc3-region",
+        "opts": {
+          "polar": {
+            "lo": "1",
+            "hi": "2",
+            "a": 0,
+            "b": "pi/2",
+            "loT": "r = 1",
+            "hiT": "r = 2"
+          },
+          "xmin": -0.4,
+          "xmax": 2.4,
+          "ymin": -0.4,
+          "ymax": 2.4
+        },
+        "cap": "A quarter ring. The red polar box is $\\Delta r$ wide and $r\\,\\Delta\\theta$ long: sweep the ray outward and watch the boxes grow with $r$."
+      },
+      {
+        "t": "p",
+        "html": "When should you switch to polar? Look at both the region and the integrand. Disks, rings, sectors and regions bounded by curves like $r = 2\\cos\\theta$ have simple limits in polar form, and integrands built from $x^2 + y^2$ become functions of $r$ alone. The circle $x^2 + y^2 = 2x$ is $r^2 = 2r\\cos\\theta$, that is, $r = 2\\cos\\theta$ with $-\\frac{\\pi}{2} \\le \\theta \\le \\frac{\\pi}{2}$. Its area is $$\\int_{-\\pi/2}^{\\pi/2} \\int_0^{2\\cos\\theta} r\\,dr\\,d\\theta = \\int_{-\\pi/2}^{\\pi/2} 2\\cos^2\\theta\\,d\\theta = \\pi,$$ as it should be for a circle of radius ${}1$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Over a disk",
+        "q": "Evaluate $\\iint_D (x^2 + y^2)\\,dA$ over the disk $x^2 + y^2 \\le 4$.",
+        "steps": [
+          "$x^2 + y^2 = r^2$, and the disk is ${}0 \\le r \\le 2$, ${}0 \\le \\theta \\le 2\\pi$.",
+          "$$\\int_0^{2\\pi}\\int_0^2 r^2 \\cdot r\\,dr\\,d\\theta = \\int_0^{2\\pi} \\left[\\frac{r^4}{4}\\right]_0^2 d\\theta = \\int_0^{2\\pi} 4\\,d\\theta = 8\\pi.$$"
+        ],
+        "a": "${}8\\pi$"
+      },
+      {
+        "t": "ex",
+        "title": "A Gaussian",
+        "q": "Evaluate $\\iint_D e^{-(x^2 + y^2)}\\,dA$ over the disk of radius $R$.",
+        "steps": [
+          "$\\int_0^{2\\pi}\\int_0^R e^{-r^2}\\,r\\,dr\\,d\\theta$: the $r$ from $dA$ makes the substitution $u = r^2$ work.",
+          "$\\int_0^R e^{-r^2}r\\,dr = \\frac{1}{2}\\left(1 - e^{-R^2}\\right)$, so the integral is $\\pi\\left(1 - e^{-R^2}\\right)$.",
+          "As $R \\to \\infty$ this tends to $\\pi$, the famous fact behind $\\int_{-\\infty}^{\\infty} e^{-x^2}\\,dx = \\sqrt{\\pi}$."
+        ],
+        "a": "$\\pi\\left(1 - e^{-R^2}\\right)$"
+      },
+      {
+        "t": "ex",
+        "title": "Half a ring",
+        "q": "Evaluate $\\iint_D y\\,dA$ over the upper half of the ring ${}1 \\le x^2 + y^2 \\le 4$.",
+        "steps": [
+          "${}1 \\le r \\le 2$, ${}0 \\le \\theta \\le \\pi$, and $y = r\\sin\\theta$.",
+          "$$\\int_0^{\\pi}\\int_1^2 r\\sin\\theta \\cdot r\\,dr\\,d\\theta = \\left(\\int_1^2 r^2\\,dr\\right)\\left(\\int_0^{\\pi}\\sin\\theta\\,d\\theta\\right) = \\frac{7}{3} \\cdot 2 = \\frac{14}{3}.$$"
+        ],
+        "a": "$\\frac{14}{3}$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Forgetting the extra factor $r$.</b> Writing $dA = dr\\,d\\theta$ treats every polar box as the same size. Quick check: $\\int_0^{2\\pi}\\int_0^R dr\\,d\\theta = 2\\pi R$, which is a length, not the disk's area $\\pi R^2$; with the factor $r$ you get $\\pi R^2$. Also use the radius (${}2$), not $r^2$ (${}4$), as the upper limit for $r$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 3, 5.3 Double Integrals in Polar Coordinates"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

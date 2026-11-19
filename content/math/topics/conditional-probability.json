@@ -1,0 +1,153 @@
+{
+  "id": "stat.conditional-probability",
+  "slug": "conditional-probability",
+  "ladder": "math",
+  "course": "stat",
+  "unit": "probability-rules",
+  "title": "Conditional Probability",
+  "short": "P(A ∣ B) is the probability of A among the outcomes where B happened.",
+  "trouble": "Students confuse P(A ∣ B) with P(B ∣ A).",
+  "prereqs": [
+    "stat.addition-rule"
+  ],
+  "xp": 2,
+  "viz": [
+    "venn",
+    "tree"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "New information changes probabilities. If you know a family owns a dog, the chance it also owns a cat is a different question from the chance a random family owns a cat. Conditional probability makes that precise, and it reuses the <a href=\"/math/probability-and-statistics/addition-rule/\">Venn diagram picture</a>."
+      },
+      {
+        "t": "key",
+        "html": "The probability of A given B is $$P(A \\mid B) = \\dfrac{P(A \\cap B)}{P(B)},$$ the fraction of B's outcomes that are also in A. With counts: $P(A \\mid B) = \\frac{\\text{number in both}}{\\text{number in } B}$."
+      },
+      {
+        "t": "why",
+        "html": "\"Given B\" means we now know we are somewhere inside B. Everything outside B is ruled out, so B becomes the new sample space. Within it, the outcomes where A also happens are exactly $A \\cap B$. So the new probability is the size of $A \\cap B$ compared with the size of B, not with the whole sample space."
+      },
+      {
+        "t": "viz",
+        "name": "venn",
+        "opts": {
+          "sets": 2,
+          "labels": [
+            "D",
+            "C"
+          ],
+          "counts": {
+            "a": 60,
+            "b": 30,
+            "ab": 20,
+            "n": 90
+          },
+          "shade": "C|D",
+          "presets": [
+            "D∩C",
+            "C|D",
+            "D|C",
+            "D∪C"
+          ]
+        },
+        "cap": "200 households: D = owns a dog (80), C = owns a cat (50), 20 own both. \"C|D\" grays out everything outside D."
+      },
+      {
+        "t": "ex",
+        "title": "Counts",
+        "q": "Of 200 households, 80 own a dog, 50 own a cat, and 20 own both. A dog-owning household is chosen at random. What is the probability it also owns a cat?",
+        "steps": [
+          "Given \"dog,\" the sample space shrinks to the 80 dog owners.",
+          "Of those, 20 also own a cat.",
+          "$P(\\text{cat} \\mid \\text{dog}) = \\dfrac{20}{80} = \\dfrac{1}{4}$."
+        ],
+        "a": "$\\frac{1}{4}$"
+      },
+      {
+        "t": "ex",
+        "title": "The other direction",
+        "q": "Using the same households, find $P(\\text{dog} \\mid \\text{cat})$.",
+        "steps": [
+          "Given \"cat,\" use only the 50 cat owners.",
+          "Of those, 20 own a dog: $\\dfrac{20}{50} = \\dfrac{2}{5}$.",
+          "Same overlap, different condition, different answer: $\\frac{1}{4} \\ne \\frac{2}{5}$."
+        ],
+        "a": "$\\frac{2}{5}$"
+      },
+      {
+        "t": "ex",
+        "title": "With probabilities",
+        "q": "$P(B) = 0.4$ and $P(A \\cap B) = 0.1$. Find $P(A \\mid B)$.",
+        "steps": [
+          "Divide the probability of both by the probability of the condition.",
+          "$P(A \\mid B) = \\dfrac{0.1}{0.4} = 0.25$."
+        ],
+        "a": "$0.25$"
+      },
+      {
+        "t": "mistake",
+        "html": "Confusing $P(A \\mid B)$ with $P(B \\mid A)$. The probability that a person who tested positive is sick is not the probability that a sick person tests positive. Check what comes after the bar: that event is the condition, and its total goes in the denominator."
+      },
+      {
+        "t": "viz",
+        "name": "tree",
+        "opts": {
+          "tree": {
+            "kids": [
+              {
+                "label": "Dog",
+                "p": "2/5",
+                "kids": [
+                  {
+                    "label": "Cat",
+                    "p": "1/4"
+                  },
+                  {
+                    "label": "No cat",
+                    "p": "3/4"
+                  }
+                ]
+              },
+              {
+                "label": "No dog",
+                "p": "3/5",
+                "kids": [
+                  {
+                    "label": "Cat",
+                    "p": "1/4"
+                  },
+                  {
+                    "label": "No cat",
+                    "p": "3/4"
+                  }
+                ]
+              }
+            ]
+          },
+          "select": [
+            "Dog/Cat"
+          ]
+        },
+        "cap": "The second-level branches are conditional probabilities: given the first branch. Multiplying along a path gives P(both)."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Introductory Statistics 2e, section 3.1 Terminology"
+      },
+      {
+        "name": "OpenStax, Introductory Statistics 2e, section 3.3 Two Basic Rules of Probability"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, S-CP.A.3 (Understand the conditional probability of A given B)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

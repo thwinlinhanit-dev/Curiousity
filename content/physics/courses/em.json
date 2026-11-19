@@ -1,0 +1,807 @@
+{
+  "key": "em",
+  "ladder": "physics",
+  "title": "Electricity and Magnetism",
+  "short": "E and M",
+  "after": [
+    "mech",
+    "phys2",
+    "calc2"
+  ],
+  "units": [
+    {
+      "key": "fields-gauss",
+      "title": "Charges, Fields and Gauss's Law",
+      "blurb": "Fields of charge distributions by integration, electric flux, and Gauss's law for symmetric charges."
+    },
+    {
+      "key": "potential",
+      "title": "Electric Potential",
+      "blurb": "Potential from the field and the field from potential, potentials of charge distributions, and energy of charge systems."
+    },
+    {
+      "key": "conductors-capacitors",
+      "title": "Conductors, Capacitors and Dielectrics",
+      "blurb": "Sharing charge, capacitance from geometry, energy stored in fields, and dielectrics."
+    },
+    {
+      "key": "circuits",
+      "title": "Current and Circuits",
+      "blurb": "Drift velocity, resistance by integration, multi-loop circuits and RC circuits as differential equations."
+    },
+    {
+      "key": "magnetism",
+      "title": "Magnetic Fields",
+      "blurb": "Magnetic forces as cross products, crossed fields, torque on loops, and the fields of currents from Biot–Savart and Ampère."
+    },
+    {
+      "key": "induction",
+      "title": "Electromagnetic Induction",
+      "blurb": "Faraday's law with calculus, induced electric fields, inductance, and RL, LC and RLC circuits."
+    },
+    {
+      "key": "ac-maxwell",
+      "title": "AC Circuits and Maxwell's Equations",
+      "blurb": "Alternating current, reactance and impedance, resonance, displacement current, Maxwell's equations and light."
+    }
+  ],
+  "topics": [
+    {
+      "id": "em.charge-densities",
+      "slug": "charge-densities",
+      "course": "em",
+      "unit": "fields-gauss",
+      "title": "Charge Densities",
+      "short": "λ, σ and ρ describe charge spread along a line, over a surface or through a volume, so dq = λ dx.",
+      "prereqs": [
+        "phys2.charge-conservation",
+        "calc1.definite-integral"
+      ],
+      "viz": [
+        "ph-efield"
+      ]
+    },
+    {
+      "id": "em.field-of-rod",
+      "slug": "field-of-rod",
+      "course": "em",
+      "unit": "fields-gauss",
+      "title": "The Field of a Charged Rod",
+      "short": "Add up dE = k dq/r² as components to find the field of a charged rod.",
+      "prereqs": [
+        "em.charge-densities",
+        "phys2.field-superposition",
+        "calc1.substitution-definite"
+      ],
+      "viz": [
+        "em-pieces",
+        "ph-efield"
+      ]
+    },
+    {
+      "id": "em.field-of-ring-disk",
+      "slug": "field-of-ring-disk",
+      "course": "em",
+      "unit": "fields-gauss",
+      "title": "Fields of a Ring and a Disk",
+      "short": "On the axis of a ring E = kQz/(z² + R²)^(3/2), and a disk is built from rings.",
+      "prereqs": [
+        "em.field-of-rod"
+      ],
+      "viz": [
+        "em-pieces",
+        "ph-efield"
+      ]
+    },
+    {
+      "id": "em.electric-flux",
+      "slug": "electric-flux",
+      "course": "em",
+      "unit": "fields-gauss",
+      "title": "Electric Flux",
+      "short": "Φ_E = ∫E · dA counts the field passing through a surface, using the surface's normal.",
+      "prereqs": [
+        "phys2.field-superposition",
+        "phys2.magnetic-flux",
+        "calc1.definite-integral"
+      ],
+      "viz": [
+        "flux"
+      ]
+    },
+    {
+      "id": "em.gauss-law",
+      "slug": "gauss-law",
+      "course": "em",
+      "unit": "fields-gauss",
+      "title": "Gauss's Law",
+      "short": "The total flux through any closed surface equals q_enclosed/ε₀.",
+      "prereqs": [
+        "em.electric-flux"
+      ],
+      "viz": [
+        "ph-efield"
+      ]
+    },
+    {
+      "id": "em.gauss-spheres",
+      "slug": "gauss-spheres",
+      "course": "em",
+      "unit": "fields-gauss",
+      "title": "Gauss's Law with Spherical Symmetry",
+      "short": "Find the fields of point charges, charged shells and uniformly charged balls, inside and out.",
+      "prereqs": [
+        "em.gauss-law"
+      ],
+      "viz": [
+        "ph-efield"
+      ]
+    },
+    {
+      "id": "em.gauss-lines-planes",
+      "slug": "gauss-lines-planes",
+      "course": "em",
+      "unit": "fields-gauss",
+      "title": "Gauss's Law for Lines and Planes",
+      "short": "A long line gives E = λ/(2πε₀r) and a large sheet gives E = σ/(2ε₀), the same at every distance.",
+      "prereqs": [
+        "em.gauss-law"
+      ],
+      "viz": [
+        "ph-efield"
+      ]
+    },
+    {
+      "id": "em.conductors",
+      "slug": "conductors",
+      "course": "em",
+      "unit": "fields-gauss",
+      "title": "Conductors in Electrostatic Equilibrium",
+      "short": "Inside a conductor E = 0, excess charge sits on the surface, and just outside E = σ/ε₀.",
+      "prereqs": [
+        "em.gauss-spheres",
+        "em.gauss-lines-planes"
+      ],
+      "viz": [
+        "ph-efield"
+      ]
+    },
+    {
+      "id": "em.potential-from-field",
+      "slug": "potential-from-field",
+      "course": "em",
+      "unit": "potential",
+      "title": "Potential from the Field",
+      "short": "ΔV = −∫E · dl, so potential falls along the direction of the field.",
+      "prereqs": [
+        "em.gauss-spheres",
+        "phys2.electric-potential",
+        "calc1.ftc-evaluate"
+      ],
+      "viz": [
+        "ph-efield"
+      ]
+    },
+    {
+      "id": "em.potential-of-distributions",
+      "slug": "potential-of-distributions",
+      "course": "em",
+      "unit": "potential",
+      "title": "Potentials of Charge Distributions",
+      "short": "V = k∫dq/r adds up as a scalar for rods, rings and disks.",
+      "prereqs": [
+        "em.potential-from-field",
+        "em.field-of-ring-disk"
+      ],
+      "viz": [
+        "em-pieces",
+        "ph-efield"
+      ]
+    },
+    {
+      "id": "em.field-from-potential",
+      "slug": "field-from-potential",
+      "course": "em",
+      "unit": "potential",
+      "title": "Field from Potential",
+      "short": "E = −dV/dr, and in three dimensions E = −(∂V/∂x, ∂V/∂y, ∂V/∂z).",
+      "prereqs": [
+        "em.potential-from-field",
+        "calc3.partial-derivatives"
+      ],
+      "viz": [
+        "ph-efield",
+        "gradient"
+      ]
+    },
+    {
+      "id": "em.energy-of-charges",
+      "slug": "energy-of-charges",
+      "course": "em",
+      "unit": "potential",
+      "title": "Energy of a System of Charges",
+      "short": "Add kqᵢqⱼ/rᵢⱼ over every pair to find the energy needed to assemble the charges.",
+      "prereqs": [
+        "phys2.electric-potential-energy"
+      ],
+      "viz": [
+        "ph-efield"
+      ]
+    },
+    {
+      "id": "em.energy-conservation-charges",
+      "slug": "energy-conservation-charges",
+      "course": "em",
+      "unit": "potential",
+      "title": "Energy Conservation for Moving Charges",
+      "short": "A charge released near fixed charges trades potential energy for kinetic energy: qΔV + ΔK = 0.",
+      "prereqs": [
+        "em.energy-of-charges",
+        "em.potential-from-field"
+      ],
+      "viz": [
+        "ph-efield"
+      ]
+    },
+    {
+      "id": "em.charge-sharing",
+      "slug": "charge-sharing",
+      "course": "em",
+      "unit": "conductors-capacitors",
+      "title": "Connecting Conductors",
+      "short": "Connected conductors come to the same potential, so two spheres share charge in proportion to their radii.",
+      "prereqs": [
+        "em.conductors",
+        "em.potential-from-field"
+      ],
+      "viz": [
+        "em-share"
+      ]
+    },
+    {
+      "id": "em.capacitance-geometry",
+      "slug": "capacitance-geometry",
+      "course": "em",
+      "unit": "conductors-capacitors",
+      "title": "Capacitance from Geometry",
+      "short": "Find C with Gauss's law and ΔV for parallel-plate, cylindrical and spherical capacitors.",
+      "prereqs": [
+        "em.gauss-lines-planes",
+        "em.potential-from-field",
+        "phys2.capacitors"
+      ],
+      "viz": [
+        "ph-efield"
+      ]
+    },
+    {
+      "id": "em.field-energy",
+      "slug": "field-energy",
+      "course": "em",
+      "unit": "conductors-capacitors",
+      "title": "Energy Stored in the Electric Field",
+      "short": "The energy of a charged capacitor lives in its field, with density u = ½ε₀E².",
+      "prereqs": [
+        "em.capacitance-geometry",
+        "phys2.capacitor-energy"
+      ],
+      "viz": [
+        "ph-efield"
+      ]
+    },
+    {
+      "id": "em.dielectrics",
+      "slug": "dielectrics",
+      "course": "em",
+      "unit": "conductors-capacitors",
+      "title": "Dielectrics",
+      "short": "A dielectric weakens the field by κ and raises C to κC; with the battery connected Q grows, but disconnected V drops.",
+      "prereqs": [
+        "em.capacitance-geometry"
+      ],
+      "viz": [
+        "ph-efield"
+      ]
+    },
+    {
+      "id": "em.drift-velocity",
+      "slug": "drift-velocity",
+      "course": "em",
+      "unit": "circuits",
+      "title": "Current Density and Drift Velocity",
+      "short": "I = nqv_dA and J = I/A; electrons drift along at a fraction of a millimeter per second, even though a signal travels nearly at light speed.",
+      "prereqs": [
+        "phys2.current",
+        "em.charge-densities"
+      ],
+      "viz": [
+        "ph-circuit"
+      ]
+    },
+    {
+      "id": "em.resistance-integral",
+      "slug": "resistance-integral",
+      "course": "em",
+      "unit": "circuits",
+      "title": "Resistance of Tapered Conductors",
+      "short": "Add dR = ρ dx/A(x) along a conductor whose cross section changes.",
+      "prereqs": [
+        "phys2.resistivity",
+        "calc1.u-substitution"
+      ],
+      "viz": [
+        "em-taper"
+      ]
+    },
+    {
+      "id": "em.multiloop-circuits",
+      "slug": "multiloop-circuits",
+      "course": "em",
+      "unit": "circuits",
+      "title": "Multi-Loop Circuits",
+      "short": "Write junction and loop equations and solve them as a system.",
+      "prereqs": [
+        "phys2.internal-resistance",
+        "alg2.three-variable-systems"
+      ],
+      "viz": [
+        "ph-circuit"
+      ]
+    },
+    {
+      "id": "em.rc-charging",
+      "slug": "rc-charging",
+      "course": "em",
+      "unit": "circuits",
+      "title": "Charging a Capacitor",
+      "short": "The loop rule gives a differential equation whose solution is q = Cε(1 − e^(−t/RC)).",
+      "prereqs": [
+        "phys2.rc-circuits",
+        "calc2.separable-equations"
+      ],
+      "viz": [
+        "em-decay",
+        "ph-circuit",
+        "slopefield"
+      ]
+    },
+    {
+      "id": "em.rc-discharging",
+      "slug": "rc-discharging",
+      "course": "em",
+      "unit": "circuits",
+      "title": "Discharging and Energy in RC Circuits",
+      "short": "A capacitor discharges as q = Q₀e^(−t/RC), and all of its stored energy ends up as heat in the resistor.",
+      "prereqs": [
+        "em.rc-charging"
+      ],
+      "viz": [
+        "em-decay"
+      ]
+    },
+    {
+      "id": "em.lorentz-force",
+      "slug": "lorentz-force",
+      "course": "em",
+      "unit": "magnetism",
+      "title": "The Lorentz Force",
+      "short": "F = q(E + v × B), computed with cross products.",
+      "prereqs": [
+        "phys2.force-on-moving-charge",
+        "calc3.cross-product"
+      ],
+      "viz": [
+        "ph-magnetism",
+        "vectors3d"
+      ]
+    },
+    {
+      "id": "em.crossed-fields",
+      "slug": "crossed-fields",
+      "course": "em",
+      "unit": "magnetism",
+      "title": "Velocity Selectors and Mass Spectrometers",
+      "short": "Only charges with v = E/B pass straight through crossed fields, and the radius of the path then sorts them by mass-to-charge ratio.",
+      "prereqs": [
+        "em.lorentz-force",
+        "phys2.charged-particle-circles"
+      ],
+      "viz": [
+        "ph-magnetism"
+      ]
+    },
+    {
+      "id": "em.hall-effect",
+      "slug": "hall-effect",
+      "course": "em",
+      "unit": "magnetism",
+      "title": "The Hall Effect",
+      "short": "A current crossing a magnetic field pushes its carriers sideways, building a voltage that reveals their sign.",
+      "prereqs": [
+        "em.crossed-fields",
+        "em.drift-velocity"
+      ],
+      "viz": [
+        "ph-magnetism"
+      ]
+    },
+    {
+      "id": "em.force-on-wire-integral",
+      "slug": "force-on-wire-integral",
+      "course": "em",
+      "unit": "magnetism",
+      "title": "Force on a Current-Carrying Wire",
+      "short": "dF = I dl × B, integrated along bent wires.",
+      "prereqs": [
+        "em.lorentz-force",
+        "phys2.force-on-wire"
+      ],
+      "viz": [
+        "ph-magnetism"
+      ]
+    },
+    {
+      "id": "em.loop-torque",
+      "slug": "loop-torque",
+      "course": "em",
+      "unit": "magnetism",
+      "title": "Torque on a Current Loop",
+      "short": "A loop has magnetic moment μ = NIA, and τ = μ × B turns motors and meters.",
+      "prereqs": [
+        "em.force-on-wire-integral",
+        "mech.torque-cross-product"
+      ],
+      "viz": [
+        "ph-magnetism"
+      ]
+    },
+    {
+      "id": "em.biot-savart",
+      "slug": "biot-savart",
+      "course": "em",
+      "unit": "magnetism",
+      "title": "The Biot–Savart Law",
+      "short": "Each piece of current makes dB = (μ₀/4π) I dl × r̂/r².",
+      "prereqs": [
+        "em.force-on-wire-integral",
+        "phys2.field-of-wire"
+      ],
+      "viz": [
+        "ph-magnetism"
+      ]
+    },
+    {
+      "id": "em.loop-field",
+      "slug": "loop-field",
+      "course": "em",
+      "unit": "magnetism",
+      "title": "Fields of Loops and Arcs",
+      "short": "At the center of a loop B = μ₀I/(2R), and on the axis the field falls off with distance.",
+      "prereqs": [
+        "em.biot-savart"
+      ],
+      "viz": [
+        "ph-magnetism"
+      ]
+    },
+    {
+      "id": "em.amperes-law",
+      "slug": "amperes-law",
+      "course": "em",
+      "unit": "magnetism",
+      "title": "Ampère's Law",
+      "short": "∮B · dl = μ₀I_enclosed around any closed path.",
+      "prereqs": [
+        "em.biot-savart"
+      ],
+      "viz": [
+        "ph-magnetism"
+      ]
+    },
+    {
+      "id": "em.ampere-applications",
+      "slug": "ampere-applications",
+      "course": "em",
+      "unit": "magnetism",
+      "title": "Fields Inside Wires, Solenoids and Toroids",
+      "short": "Ampère's law gives B = μ₀Ir/(2πR²) inside a wire, μ₀nI in a solenoid and μ₀NI/(2πr) in a toroid.",
+      "prereqs": [
+        "em.amperes-law"
+      ],
+      "viz": [
+        "ph-magnetism"
+      ]
+    },
+    {
+      "id": "em.changing-flux",
+      "slug": "changing-flux",
+      "course": "em",
+      "unit": "induction",
+      "title": "Magnetic Flux That Changes",
+      "short": "Φ = ∫B · dA can change because B, the area or the angle changes with time.",
+      "prereqs": [
+        "phys2.magnetic-flux",
+        "calc1.definite-integral"
+      ],
+      "viz": [
+        "ph-induction"
+      ]
+    },
+    {
+      "id": "em.faraday-calculus",
+      "slug": "faraday-calculus",
+      "course": "em",
+      "unit": "induction",
+      "title": "Faraday's Law with Calculus",
+      "short": "ε = −dΦ/dt for loops that rotate, grow or sit in changing fields.",
+      "prereqs": [
+        "em.changing-flux",
+        "phys2.lenzs-law",
+        "calc1.chain-rule"
+      ],
+      "viz": [
+        "ph-induction"
+      ]
+    },
+    {
+      "id": "em.generators",
+      "slug": "generators",
+      "course": "em",
+      "unit": "induction",
+      "title": "Generators",
+      "short": "A coil of N turns spinning at ω in a field B makes ε = NBAω sin ωt.",
+      "prereqs": [
+        "em.faraday-calculus"
+      ],
+      "viz": [
+        "ph-induction"
+      ]
+    },
+    {
+      "id": "em.induced-electric-field",
+      "slug": "induced-electric-field",
+      "course": "em",
+      "unit": "induction",
+      "title": "Induced Electric Fields",
+      "short": "A changing magnetic field makes a curling electric field: ∮E · dl = −dΦ/dt, with or without a wire.",
+      "prereqs": [
+        "em.faraday-calculus",
+        "em.amperes-law"
+      ],
+      "viz": [
+        "ph-induction"
+      ]
+    },
+    {
+      "id": "em.magnetic-braking",
+      "slug": "magnetic-braking",
+      "course": "em",
+      "unit": "induction",
+      "title": "Induced Currents and Magnetic Forces",
+      "short": "The force on an induced current opposes the motion, so a rod on rails coasts to a stop or falls at a terminal speed.",
+      "prereqs": [
+        "em.faraday-calculus",
+        "phys2.motional-emf",
+        "mech.linear-drag"
+      ],
+      "viz": [
+        "ph-induction"
+      ]
+    },
+    {
+      "id": "em.inductance",
+      "slug": "inductance",
+      "course": "em",
+      "unit": "induction",
+      "title": "Self-Inductance",
+      "short": "ε = −L dI/dt, and a long solenoid has L = μ₀N²A/ℓ.",
+      "prereqs": [
+        "em.faraday-calculus",
+        "em.ampere-applications"
+      ],
+      "viz": [
+        "ph-induction"
+      ]
+    },
+    {
+      "id": "em.mutual-inductance",
+      "slug": "mutual-inductance",
+      "course": "em",
+      "unit": "induction",
+      "title": "Mutual Inductance and Transformers",
+      "short": "A changing current in one coil induces an emf in another, so a transformer gives V_s/V_p = N_s/N_p.",
+      "prereqs": [
+        "em.inductance"
+      ],
+      "viz": [
+        "ph-induction"
+      ]
+    },
+    {
+      "id": "em.rl-circuits",
+      "slug": "rl-circuits",
+      "course": "em",
+      "unit": "induction",
+      "title": "RL Circuits",
+      "short": "The current rises as I = (ε/R)(1 − e^(−Rt/L)), with time constant L/R.",
+      "prereqs": [
+        "em.inductance",
+        "em.rc-charging"
+      ],
+      "viz": [
+        "em-decay",
+        "ph-circuit"
+      ]
+    },
+    {
+      "id": "em.magnetic-energy",
+      "slug": "magnetic-energy",
+      "course": "em",
+      "unit": "induction",
+      "title": "Energy in Inductors and Magnetic Fields",
+      "short": "An inductor stores U = ½LI², with field energy density u = B²/(2μ₀).",
+      "prereqs": [
+        "em.inductance",
+        "em.field-energy"
+      ],
+      "viz": [
+        "ph-induction"
+      ]
+    },
+    {
+      "id": "em.lc-circuits",
+      "slug": "lc-circuits",
+      "course": "em",
+      "unit": "induction",
+      "title": "LC Oscillations",
+      "short": "Energy sloshes between the capacitor and the inductor at ω = 1/√(LC), like a mass on a spring.",
+      "prereqs": [
+        "em.magnetic-energy",
+        "em.rc-discharging",
+        "mech.shm-equation"
+      ],
+      "viz": [
+        "ph-circuit",
+        "springmass"
+      ]
+    },
+    {
+      "id": "em.rlc-circuits",
+      "slug": "rlc-circuits",
+      "course": "em",
+      "unit": "induction",
+      "title": "RLC Circuits",
+      "short": "Resistance damps LC oscillations, just as friction damps a mass on a spring.",
+      "prereqs": [
+        "em.lc-circuits",
+        "mech.damped-oscillations"
+      ],
+      "viz": [
+        "ph-circuit",
+        "springmass"
+      ]
+    },
+    {
+      "id": "em.ac-rms",
+      "slug": "ac-rms",
+      "course": "em",
+      "unit": "ac-maxwell",
+      "title": "Alternating Current and RMS Values",
+      "short": "V = V₀ sin ωt, and the rms value V₀/√2 gives the same average power as a steady voltage.",
+      "prereqs": [
+        "em.generators",
+        "phys2.resistor-power"
+      ],
+      "viz": [
+        "graph"
+      ]
+    },
+    {
+      "id": "em.reactance",
+      "slug": "reactance",
+      "course": "em",
+      "unit": "ac-maxwell",
+      "title": "Reactance of Capacitors and Inductors",
+      "short": "X_C = 1/(ωC) and X_L = ωL; current leads the voltage in a capacitor and lags it in an inductor.",
+      "prereqs": [
+        "em.ac-rms",
+        "em.inductance",
+        "phys2.capacitors"
+      ],
+      "viz": [
+        "ph-circuit"
+      ]
+    },
+    {
+      "id": "em.impedance",
+      "slug": "impedance",
+      "course": "em",
+      "unit": "ac-maxwell",
+      "title": "Impedance and Phasors",
+      "short": "In a series RLC circuit Z = √(R² + (X_L − X_C)²) and tan φ = (X_L − X_C)/R.",
+      "prereqs": [
+        "em.reactance"
+      ],
+      "viz": [
+        "ph-circuit"
+      ]
+    },
+    {
+      "id": "em.ac-resonance-power",
+      "slug": "ac-resonance-power",
+      "course": "em",
+      "unit": "ac-maxwell",
+      "title": "Resonance and Power in AC Circuits",
+      "short": "At ω₀ = 1/√(LC) the current peaks, and the average power is I_rms·V_rms·cos φ.",
+      "prereqs": [
+        "em.impedance",
+        "em.rlc-circuits"
+      ],
+      "viz": [
+        "ph-circuit"
+      ]
+    },
+    {
+      "id": "em.displacement-current",
+      "slug": "displacement-current",
+      "course": "em",
+      "unit": "ac-maxwell",
+      "title": "Displacement Current",
+      "short": "A changing electric field acts like a current in Ampère's law, which fills the gap of a charging capacitor.",
+      "prereqs": [
+        "em.amperes-law",
+        "em.rc-charging"
+      ],
+      "viz": [
+        "ph-magnetism"
+      ]
+    },
+    {
+      "id": "em.maxwells-equations",
+      "slug": "maxwells-equations",
+      "course": "em",
+      "unit": "ac-maxwell",
+      "title": "Maxwell's Equations",
+      "short": "Four laws in integral form hold all of electricity and magnetism.",
+      "prereqs": [
+        "em.displacement-current",
+        "em.gauss-law",
+        "em.induced-electric-field"
+      ],
+      "viz": [
+        "ph-magnetism"
+      ]
+    },
+    {
+      "id": "em.em-waves-maxwell",
+      "slug": "em-waves-maxwell",
+      "course": "em",
+      "unit": "ac-maxwell",
+      "title": "Electromagnetic Waves from Maxwell's Equations",
+      "short": "In empty space the fields travel as a wave at c = 1/√(μ₀ε₀), with E = cB.",
+      "prereqs": [
+        "em.maxwells-equations",
+        "phys2.em-waves"
+      ],
+      "viz": [
+        "ph-spectrum",
+        "ph-wave"
+      ]
+    },
+    {
+      "id": "em.em-wave-energy",
+      "slug": "em-wave-energy",
+      "course": "em",
+      "unit": "ac-maxwell",
+      "title": "Energy and Momentum of Light",
+      "short": "Intensity I = ½cε₀E₀² flows along the Poynting vector, and light presses on surfaces with pressure I/c.",
+      "prereqs": [
+        "em.em-waves-maxwell",
+        "em.magnetic-energy"
+      ],
+      "viz": [
+        "ph-wave"
+      ]
+    }
+  ]
+}

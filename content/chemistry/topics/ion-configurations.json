@@ -1,0 +1,94 @@
+{
+  "id": "gchem1.ion-configurations",
+  "slug": "ion-configurations",
+  "ladder": "chemistry",
+  "course": "gchem1",
+  "unit": "quantum",
+  "title": "Configurations of Ions and Exceptions",
+  "short": "Transition metals lose their 4s electrons first, and chromium and copper break the filling pattern.",
+  "trouble": "Students remove 3d electrons before 4s ones when they form Fe²⁺.",
+  "prereqs": [
+    "gchem1.orbital-diagrams",
+    "chem.ion-charges"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-orbitalbox"
+  ],
+  "figureArchetype": "FieldFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/chemistry/general-chemistry-1/orbital-diagrams/\">Orbital Diagrams and Magnetism</a> filled atoms. Ions add or remove electrons, as in <a href=\"/chemistry/chemistry/ion-charges/\">Predicting Ion Charges</a>. For main-group ions the result is usually a noble-gas configuration. Transition metals hold a surprise, and two atoms break the usual filling order."
+      },
+      {
+        "t": "key",
+        "html": "Main-group atoms lose or gain electrons in their outer s and p orbitals ($\\mathrm{Na^+}$ and $\\mathrm{Cl^-}$ both end up like a noble gas). <b>Transition metals lose their 4s electrons before their 3d electrons</b>: $\\mathrm{Fe}$ is $[\\text{Ar}]\\,4s^2 3d^6$, so $\\mathrm{Fe^{2+}}$ is $[\\text{Ar}]\\,3d^6$ and $\\mathrm{Fe^{3+}}$ is $[\\text{Ar}]\\,3d^5$. Two exceptions in the first row: Cr is $[\\text{Ar}]\\,4s^1 3d^5$ and Cu is $[\\text{Ar}]\\,4s^1 3d^{10}$."
+      },
+      {
+        "t": "why",
+        "html": "The filling order describes where each <i>added</i> electron goes as you build up the atoms one proton at a time, and 4s and 3d are very close in energy. Once the 3d orbitals hold electrons in a transition-metal atom, they sit lower in energy than 4s, and the 4s electrons, with $n = 4$, are the outermost. Ionization removes the electrons that are easiest to remove, which are the 4s ones. For Cr and Cu the two orbital sets are so close that moving one electron from 4s into 3d, to make a half-filled ($d^5$) or filled ($d^{10}$) set, gives a lower total energy."
+      },
+      {
+        "t": "viz",
+        "name": "ch-orbitalbox",
+        "opts": {
+          "Z": 26,
+          "mode": "ion",
+          "charge": 2
+        },
+        "cap": "Iron losing two electrons. They come from 4s, leaving all six 3d electrons in place."
+      },
+      {
+        "t": "ex",
+        "title": "Fe³⁺",
+        "q": "Write the configuration of $\\mathrm{Fe^{3+}}$ and count its unpaired electrons.",
+        "steps": [
+          "Fe: $[\\text{Ar}]\\,4s^2\\,3d^6$.",
+          "Remove three electrons: first both 4s electrons, then one 3d: $[\\text{Ar}]\\,3d^5$.",
+          "Five d electrons spread one per orbital (Hund): 5 unpaired."
+        ],
+        "a": "$[\\text{Ar}]\\,3d^5$; 5 unpaired."
+      },
+      {
+        "t": "ex",
+        "title": "Cu²⁺",
+        "q": "Write the configuration of $\\mathrm{Cu^{2+}}$.",
+        "steps": [
+          "Cu is an exception: $[\\text{Ar}]\\,4s^1\\,3d^{10}$.",
+          "Remove the 4s electron, then one 3d: $[\\text{Ar}]\\,3d^9$.",
+          "One unpaired electron, which is part of why copper(II) compounds are colored and paramagnetic."
+        ],
+        "a": "$[\\text{Ar}]\\,3d^9$"
+      },
+      {
+        "t": "ex",
+        "title": "A main-group ion",
+        "q": "Which noble gas has the same configuration as $\\mathrm{S^{2-}}$?",
+        "steps": [
+          "S has 16 electrons: $[\\text{Ne}]\\,3s^2\\,3p^4$.",
+          "$\\mathrm{S^{2-}}$ gains 2 electrons in 3p: $[\\text{Ne}]\\,3s^2\\,3p^6$, 18 electrons.",
+          "That is argon's configuration: $\\mathrm{S^{2-}}$, $\\mathrm{Cl^-}$, Ar, $\\mathrm{K^+}$ and $\\mathrm{Ca^{2+}}$ are isoelectronic."
+        ],
+        "a": "Argon."
+      },
+      {
+        "t": "mistake",
+        "html": "Removing 3d electrons before 4s ones, which makes $\\mathrm{Fe^{2+}}$ \"$[\\text{Ar}]\\,4s^2 3d^4$\". Experiments (magnetism, and spectra) show $\\mathrm{Fe^{2+}}$ is $[\\text{Ar}]\\,3d^6$. Check: for a first-row transition-metal ion with a charge of 2+ or more, the configuration has no 4s electrons; the number of d electrons is the group number minus the charge (iron, group 8: $8 - 2 = 6$)."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 6.4 Electronic Structure of Atoms (Electron Configurations)"
+      },
+      {
+        "name": "College Board, AP Chemistry Course and Exam Description (effective fall 2024), Unit 1: Atomic Structure and Properties"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

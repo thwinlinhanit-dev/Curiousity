@@ -1,0 +1,105 @@
+{
+  "id": "la.parametric-solutions",
+  "slug": "parametric-solutions",
+  "ladder": "math",
+  "course": "la",
+  "unit": "systems",
+  "title": "Free Variables and Parametric Solutions",
+  "short": "Write every solution in terms of the free variables.",
+  "trouble": "Students set free variables to 0 and report one solution as if it were all of them.",
+  "prereqs": [
+    "la.rref"
+  ],
+  "xp": 2,
+  "viz": [
+    "span"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "When the <a href=\"/math/linear-algebra/rref/\">reduced echelon form</a> has a column without a pivot, the system does not pin down every unknown. This topic is about describing <i>all</i> the solutions in that case, clearly and completely."
+      },
+      {
+        "t": "p",
+        "html": "An unknown whose column holds a pivot is a <b>basic variable</b>. The others are <b>free variables</b>. Each nonzero row of the RREF contains exactly one basic variable, so each row can be solved for its basic variable in terms of the free ones."
+      },
+      {
+        "t": "why",
+        "html": "Why may a free variable take any value? Its column has no pivot, so no row \"belongs\" to it: no equation forces its value. Whatever numbers you choose for the free variables, each pivot row then gives exactly one value for its basic variable. So every choice of the free variables gives one solution, and every solution arises this way."
+      },
+      {
+        "t": "ex",
+        "title": "One free variable",
+        "q": "The augmented matrix of a system in $x_1, x_2, x_3$ reduces to $\\left[\\begin{array}{ccc|c} 1 & 0 & -2 & 3 \\\\ 0 & 1 & 1 & -1 \\end{array}\\right]$. Describe all solutions.",
+        "steps": [
+          "Pivots are in columns 1 and 2, so $x_1, x_2$ are basic and $x_3$ is free. Call it $x_3 = t$.",
+          "Row 1 says $x_1 - 2x_3 = 3$, so $x_1 = 3 + 2t$.",
+          "Row 2 says $x_2 + x_3 = -1$, so $x_2 = -1 - t$.",
+          "All solutions: $(x_1, x_2, x_3)$ $= (3 + 2t,\\; -1 - t,\\; t)$ for every real $t$.",
+          "In vector form: $\\mathbf{x} = \\begin{bmatrix} 3 \\\\ -1 \\\\ 0 \\end{bmatrix} + t\\begin{bmatrix} 2 \\\\ -1 \\\\ 1 \\end{bmatrix}$, a line in $\\mathbb{R}^3$ through $(3, -1, 0)$ in the direction $(2, -1, 1)$.",
+          "Spot check with $t = 1$: $(5, -2, 1)$ gives $5 - 2 = 3$ ✓ and $-2 + 1 = -1$ ✓."
+        ],
+        "a": "$\\mathbf{x} = (3 + 2t,\\; -1 - t,\\; t)$"
+      },
+      {
+        "t": "ex",
+        "title": "Two free variables",
+        "q": "Describe all solutions of the system whose augmented matrix reduces to $\\left[\\begin{array}{cccc|c} 1 & 3 & 0 & -2 & 4 \\\\ 0 & 0 & 1 & 5 & -1 \\end{array}\\right]$ (unknowns $x_1, \\dots, x_4$).",
+        "steps": [
+          "Pivots in columns 1 and 3: $x_1, x_3$ are basic; $x_2 = s$ and $x_4 = t$ are free.",
+          "Row 1: $x_1 + 3x_2 - 2x_4 = 4$, so $x_1 = 4 - 3s + 2t$.",
+          "Row 2: $x_3 + 5x_4 = -1$, so $x_3 = -1 - 5t$.",
+          "$\\mathbf{x}$ $= \\begin{bmatrix} 4 \\\\ 0 \\\\ -1 \\\\ 0 \\end{bmatrix} + s\\begin{bmatrix} -3 \\\\ 1 \\\\ 0 \\\\ 0 \\end{bmatrix} + t\\begin{bmatrix} 2 \\\\ 0 \\\\ -5 \\\\ 1 \\end{bmatrix}$: a plane of solutions inside $\\mathbb{R}^4$."
+        ],
+        "a": "$(4 - 3s + 2t,\\; s,\\; -1 - 5t,\\; t)$"
+      },
+      {
+        "t": "viz",
+        "name": "linesystem",
+        "opts": {
+          "lines": [
+            "x + 2y = 4",
+            "2x + 4y = 8"
+          ],
+          "probe": [
+            0,
+            2
+          ],
+          "xmin": -6,
+          "xmax": 8,
+          "ymin": -4,
+          "ymax": 6,
+          "task": "Drag the probe along the line. Every point on it satisfies both equations."
+        },
+        "cap": "The two equations describe the same line. With $y = t$ free, the solutions are $(4 - 2t, t)$: one point for each $t$."
+      },
+      {
+        "t": "mistake",
+        "html": "Setting the free variables to $0$ and reporting that single point as \"the solution\". It is <i>a</i> solution (for the line above, $(4, 0)$), but the question asks for all of them, and there are infinitely many. Check: if your answer has no letter in it while some column had no pivot, something is missing."
+      },
+      {
+        "t": "note",
+        "html": "The constant vector (here $(3, -1, 0)$) is the solution with every free variable equal to $0$. The vectors multiplying the parameters will turn out to solve the system with all constants replaced by $0$. That pattern is coming soon, in <a href=\"/math/linear-algebra/homogeneous-systems/\">homogeneous systems</a>."
+      },
+      {
+        "t": "key",
+        "html": "Basic variables (pivot columns) are solved for; free variables (no pivot) are parameters that can be anything. The general solution writes every unknown in terms of the parameters, often as $\\mathbf{x} = \\mathbf{p} + t\\mathbf{v}$ (+ more terms for more free variables)."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Margalit and Rabinoff, Interactive Linear Algebra (Georgia Tech), §1.3 Parametric Form"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.06 Linear Algebra (Gilbert Strang, Spring 2010), Lecture 7: Solving Ax = 0: Pivot Variables, Special Solutions"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

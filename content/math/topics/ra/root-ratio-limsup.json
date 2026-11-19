@@ -1,0 +1,92 @@
+{
+  "id": "ra.root-ratio-limsup",
+  "slug": "root-ratio-limsup",
+  "ladder": "math",
+  "course": "ra",
+  "unit": "series",
+  "title": "Root and Ratio Tests with lim sup",
+  "short": "If lim sup |aₖ|^(1/k) < 1 the series converges absolutely, and if it is > 1 the series diverges; the root test works even when the ratios jump around.",
+  "trouble": "Students use lim and get stuck when the ratios or roots don't settle down, or read a lim sup of 1 as divergence. A value of 1 decides nothing.",
+  "prereqs": [
+    "ra.limsup-liminf",
+    "ra.absolute-convergence",
+    "calc2.ratio-root-tests"
+  ],
+  "xp": 3,
+  "viz": [],
+  "figureArchetype": "LessonFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The ratio and root tests from <a href=\"/math/calculus-2/ratio-root-tests/\">Calculus 2</a> used ordinary limits. Many series have ratios or roots that jump around and have no limit. Replacing \"lim\" by <a href=\"/math/real-analysis/limsup-liminf/\">lim sup</a> fixes the root test completely, and the proof is a comparison with a geometric series, using <a href=\"/math/real-analysis/absolute-convergence/\">absolute convergence</a>."
+      },
+      {
+        "t": "key",
+        "html": "<b>Root test.</b> Let $\\rho = \\limsup |a_k|^{1/k}$. If $\\rho < 1$, $\\sum a_k$ converges absolutely; if $\\rho > 1$, it diverges. <b>Ratio test.</b> If $\\limsup \\left|\\frac{a_{k+1}}{a_k}\\right| < 1$, the series converges absolutely; if $\\liminf \\left|\\frac{a_{k+1}}{a_k}\\right| > 1$, it diverges. A value of exactly $1$ decides nothing."
+      },
+      {
+        "t": "why",
+        "html": "Suppose $\\rho < 1$ and pick $r$ with $\\rho < r < 1$. Because the tail suprema of $|a_k|^{1/k}$ decrease to $\\rho$, eventually $|a_k|^{1/k} < r$, that is, $|a_k| < r^{k}$ for all $k \\ge K$. Comparing with the convergent geometric series $\\sum r^{k}$ gives absolute convergence. If $\\rho > 1$, then $|a_k|^{1/k} > 1$ for infinitely many $k$, so $|a_k| > 1$ infinitely often and $a_k \\not\\to 0$: divergence. $\\blacksquare$ The root test is stronger than the ratio test: whenever the ratio test decides, the root test agrees, but not conversely."
+      },
+      {
+        "t": "p",
+        "html": "Computing $\\limsup |a_k|^{1/k}$ usually comes down to three facts: $k^{1/k} \\to 1$ (so polynomial factors disappear), $c^{1/k} \\to 1$ for any constant $c > 0$, and $(r^{k})^{1/k} = r$. For instance $\\left(k^{5}\\left(\\frac{1}{3}\\right)^{k}\\right)^{1/k} = \\left(k^{1/k}\\right)^{5}\\cdot\\frac{1}{3} \\to \\frac{1}{3}$, so $\\sum k^{5}3^{-k}$ converges. When the terms follow different rules on different kinds of $k$, take the root of each kind; the lim sup is the largest of the limits you get."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Ratios that jump",
+        "q": "Let $a_k = 2^{-k + (-1)^{k}}$. Compute the lim sup and lim inf of the ratios, and $\\lim |a_k|^{1/k}$.",
+        "steps": [
+          "Even $k$: $a_k = 2^{-k+1}$, $a_{k+1} = 2^{-k-2}$, ratio $2^{-3} = \\frac{1}{8}$. Odd $k$: $a_k = 2^{-k-1}$, $a_{k+1} = 2^{-k}$, ratio $2$.",
+          "So $\\limsup$ of the ratios is $2$ and $\\liminf$ is $\\frac{1}{8}$: the ratio test cannot decide.",
+          "$|a_k|^{1/k} = 2^{-1 + (-1)^{k}/k} \\to \\frac{1}{2}$."
+        ],
+        "a": "Ratios: $2$ and $\\frac{1}{8}$; roots tend to $\\frac{1}{2} < 1$, so the series converges."
+      },
+      {
+        "t": "ex",
+        "title": "Two geometric series interleaved",
+        "q": "Let $a_k = \\left(\\frac{1}{2}\\right)^{k}$ for even $k$ and $a_k = \\left(\\frac{2}{3}\\right)^{k}$ for odd $k$. Find $\\limsup |a_k|^{1/k}$.",
+        "steps": [
+          "The $k$th roots are $\\frac{1}{2}$ (even $k$) and $\\frac{2}{3}$ (odd $k$)."
+        ],
+        "a": "$\\frac{2}{3} < 1$: the series converges absolutely."
+      },
+      {
+        "t": "ex",
+        "title": "A limit that involves $e$",
+        "q": "Find $\\lim |a_k|^{1/k}$ for $a_k = \\left(\\frac{k}{k + 1}\\right)^{k^{2}}$.",
+        "steps": [
+          "$|a_k|^{1/k} = \\left(\\frac{k}{k + 1}\\right)^{k} = \\left(1 + \\frac{1}{k}\\right)^{-k}$."
+        ],
+        "a": "$\\frac{1}{e} < 1$, so the series converges."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Using \"lim\" when it does not exist, or reading $1$ as divergence.</b> In the first example the ratios have no limit, and a student who insists on $\\lim \\frac{a_{k+1}}{a_k}$ gets stuck. Use lim sup. And when $\\limsup |a_k|^{1/k} = 1$, both $\\sum \\frac{1}{k}$ (divergent) and $\\sum \\frac{1}{k^{2}}$ (convergent) are possible: switch tests."
+      },
+      {
+        "t": "note",
+        "html": "The ratio test is easier to compute when the terms contain factorials, since $\\frac{(k + 1)!}{k!} = k + 1$ cancels so neatly. The price is that it needs the ratios to behave; the root test needs nothing but the size of the terms. When the ratios do have a limit, the roots have the same limit, so the two tests then agree."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Jiří Lebl, Basic Analysis I: Introduction to Real Analysis, section 2.6 (root test and ratio test)"
+      },
+      {
+        "name": "William F. Trench, Introduction to Real Analysis (Trinity University), section 4.3"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

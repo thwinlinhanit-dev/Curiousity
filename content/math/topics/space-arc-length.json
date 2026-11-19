@@ -1,0 +1,108 @@
+{
+  "id": "calc3.space-arc-length",
+  "slug": "space-arc-length",
+  "ladder": "math",
+  "course": "calc3",
+  "unit": "vector-functions",
+  "title": "Arc Length in Space",
+  "short": "L = ∫|r′(t)| dt.",
+  "trouble": "",
+  "prereqs": [
+    "calc3.vector-function-calculus",
+    "calc2.arc-length"
+  ],
+  "xp": 2,
+  "viz": [
+    "param3d"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In Calculus 2 you found the <a href=\"/math/calculus-2/arc-length/\">length of a curve</a> in the plane. In space the idea is the same, and the velocity vector makes it look natural: distance traveled is speed times time, and the speed of a moving point is the length of its velocity, $|\\mathbf{r}'(t)|$."
+      },
+      {
+        "t": "key",
+        "html": "The length of the curve $\\mathbf{r}(t)$, $a \\le t \\le b$, traced once, is\n  $$L = \\int_a^b |\\mathbf{r}'(t)|\\,dt = \\int_a^b \\sqrt{f'(t)^2 + g'(t)^2 + h'(t)^2}\\,dt.$$\n  The arc length function $s(t) = \\int_a^t |\\mathbf{r}'(u)|\\,du$ measures distance along the curve, and $\\frac{ds}{dt} = |\\mathbf{r}'(t)|$."
+      },
+      {
+        "t": "why",
+        "html": "Chop the time interval into small pieces of length $\\Delta t$. Over one piece the point moves about $\\mathbf{r}'(t)\\,\\Delta t$ (velocity times time), a straight step of length $|\\mathbf{r}'(t)|\\,\\Delta t$. Adding the steps gives a Riemann sum $\\sum |\\mathbf{r}'(t_i)|\\,\\Delta t$, which becomes the integral as $\\Delta t \\to 0$. Speed, not velocity: a length is never negative and does not care about direction."
+      },
+      {
+        "t": "viz",
+        "name": "param3d",
+        "opts": {
+          "x": "3cos(t)",
+          "y": "3sin(t)",
+          "z": "4t/3",
+          "t0": 0,
+          "t1": "2pi",
+          "t": 1,
+          "tangent": true,
+          "shadow": false
+        },
+        "cap": "A helix with constant speed. The readout shows the distance traveled since $t = 0$: it grows at the same rate at every moment, so arc length is simply speed × time here."
+      },
+      {
+        "t": "p",
+        "html": "Two facts are worth knowing. First, the length does not depend on how the curve is parametrized, as long as it is traced once: going twice as fast doubles $|\\mathbf{r}'(t)|$ but halves the time, and the substitution rule shows that the integral is unchanged. Second, the length is at least the straight-line distance between the endpoints, since $$|\\mathbf{r}(b) - \\mathbf{r}(a)| = \\left|\\int_a^b \\mathbf{r}'(t)\\,dt\\right| \\le \\int_a^b |\\mathbf{r}'(t)|\\,dt.$$ Equality holds only for a straight segment traced without turning back."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A helix",
+        "q": "Find the length of $\\mathbf{r}(t) = \\langle 3\\cos t, 3\\sin t, 4t \\rangle$ for ${}0 \\le t \\le 2\\pi$.",
+        "steps": [
+          "$\\mathbf{r}'(t) = \\langle -3\\sin t, 3\\cos t, 4 \\rangle$.",
+          "$$|\\mathbf{r}'(t)| = \\sqrt{9\\sin^2 t + 9\\cos^2 t + 16} = \\sqrt{25} = 5.$$",
+          "$L = \\int_0^{2\\pi} 5\\,dt = 10\\pi$."
+        ],
+        "a": "${}10\\pi$"
+      },
+      {
+        "t": "ex",
+        "title": "A perfect square under the root",
+        "q": "Find the length of $\\mathbf{r}(t) = \\left\\langle t, t^2, \\frac{2}{3}t^3 \\right\\rangle$ for ${}0 \\le t \\le 1$.",
+        "steps": [
+          "$\\mathbf{r}'(t) = \\langle 1, 2t, 2t^2 \\rangle$.",
+          "$|\\mathbf{r}'(t)|^2 = 1 + 4t^2 + 4t^4 = (1 + 2t^2)^2$, so $|\\mathbf{r}'(t)| = 1 + 2t^2$.",
+          "$L = \\int_0^1 (1 + 2t^2)\\,dt = 1 + \\frac{2}{3} = \\frac{5}{3}$."
+        ],
+        "a": "$\\frac{5}{3}$"
+      },
+      {
+        "t": "ex",
+        "title": "Measuring by arc length",
+        "q": "For the helix of the first example, where is the point after traveling a distance $\\frac{5\\pi}{2}$ from $t = 0$?",
+        "steps": [
+          "Speed ${}5$, so $s = 5t$ and $t = \\frac{s}{5}$.",
+          "$s = \\frac{5\\pi}{2}$ gives $t = \\frac{\\pi}{2}$.",
+          "$\\mathbf{r}\\left(\\frac{\\pi}{2}\\right) = (0, 3, 2\\pi)$."
+        ],
+        "a": "$(0, 3, 2\\pi)$"
+      },
+      {
+        "t": "p",
+        "html": "Rewriting a curve with $s$ in place of $t$, here $\\mathbf{r}(s) = \\left\\langle 3\\cos\\frac{s}{5}, 3\\sin\\frac{s}{5}, \\frac{4s}{5} \\right\\rangle$, gives a parametrization with speed exactly ${}1$. Arc length is the parameter the curve itself prefers, which is why curvature is defined with it."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Integrating the velocity instead of the speed.</b> $\\int_a^b \\mathbf{r}'(t)\\,dt = \\mathbf{r}(b) - \\mathbf{r}(a)$ is a displacement vector, not a length. You must take the length $|\\mathbf{r}'(t)|$ first, then integrate. Check: the arc length is never shorter than the straight-line distance $|\\mathbf{r}(b) - \\mathbf{r}(a)|$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 3, 3.3 Arc Length and Curvature"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

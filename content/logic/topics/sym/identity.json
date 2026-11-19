@@ -1,0 +1,154 @@
+{
+  "id": "sym.identity",
+  "slug": "identity",
+  "ladder": "logic",
+  "course": "sym",
+  "unit": "relations",
+  "title": "Identity",
+  "short": "a = b says a and b are the same object; identity lets us say \"only\", \"someone other than\" and \"the same\".",
+  "trouble": "Learners read a = b as \"a and b are alike\". Identity means one object with two names.",
+  "prereqs": [
+    "sym.relations"
+  ],
+  "xp": 2,
+  "viz": [
+    "lg-quantworld"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Identity is a special relation: $a = b$ says that $a$ and $b$ are the same object. With it we can say things that were out of reach before, like \"only\", \"someone else\" and \"the same\". It builds on the relations of <a href=\"/logic/symbolic-logic/relations/\">Relational Predicates</a>."
+      },
+      {
+        "t": "key",
+        "html": "$a = b$ says the names $a$ and $b$ refer to one and the same object; $a \\ne b$ (that is, $a \\ne b$) says they refer to different objects. Identity lets us translate \"only Ava\": $Fa \\land \\forall x(Fx \\to x = a)$, and \"someone other than Ava\": $\\exists x(Fx \\land x \\ne a)$."
+      },
+      {
+        "t": "why",
+        "html": "One object can have two names: \"Mark Twain\" and \"Samuel Clemens\" name one writer, and \"the morning star\" and \"the evening star\" name one planet. Identity records that. Because there is only one object, whatever is true of it under one name is true of it under the other; that is the idea behind the identity rule in <a href=\"/logic/symbolic-logic/identity-proofs/\">Proofs with Identity</a>. And because $x$ and $a$ can be compared, we can say \"anything that is $F$ is Ava\", which is what \"only Ava is $F$\" adds to $Fa$."
+      },
+      {
+        "t": "viz",
+        "name": "lg-quantworld",
+        "opts": {
+          "preds": {
+            "S": "sings"
+          },
+          "objects": [
+            {
+              "n": "a",
+              "label": "Ava",
+              "has": [
+                "S"
+              ]
+            },
+            {
+              "n": "b",
+              "label": "Ben",
+              "has": []
+            },
+            {
+              "n": "c",
+              "label": "Cleo",
+              "has": [
+                "S"
+              ]
+            }
+          ],
+          "sentences": [
+            "Sa ∧ ∀x(Sx → x = a)",
+            "∃x(Sx ∧ x ≠ a)",
+            "∀x(x ≠ a → ¬Sx)"
+          ],
+          "edit": true
+        },
+        "cap": "\"Only Ava sings\" is false here, because Cleo sings too. Edit Cleo to make it true."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Two names",
+        "q": "Let $a$: Ava; $t$: the team captain. Translate \"Ava is the team captain.\"",
+        "steps": [
+          "One person, two names."
+        ],
+        "a": "$a = t$"
+      },
+      {
+        "t": "ex",
+        "title": "Only",
+        "q": "Let $Sx$: $x$ sings. Translate \"Only Ava sings.\"",
+        "steps": [
+          "Two claims: Ava sings, and anyone who sings is Ava."
+        ],
+        "a": "$Sa \\land \\forall x(Sx \\to x = a)$"
+      },
+      {
+        "t": "ex",
+        "title": "Everyone except",
+        "q": "Translate \"Everyone except Ava sings.\"",
+        "steps": [
+          "Ava does not sing.",
+          "Everyone who is not Ava sings."
+        ],
+        "a": "$\\neg Sa \\land \\forall x(x \\ne a \\to Sx)$"
+      },
+      {
+        "t": "mistake",
+        "html": "Reading $a = b$ as \"$a$ and $b$ are alike\". Identity is not similarity: twins are alike, but they are two people, so $a \\ne b$. $a = b$ says there is only one thing, with two names. A check: if $a = b$, then whatever is true of $a$ must be true of $b$, with no exceptions."
+      },
+      {
+        "t": "p",
+        "html": "Identity also gives \"the\" a precise meaning. \"The team captain sings\" says there is exactly one team captain and that person sings; with identity you can write that out (see <a href=\"/logic/symbolic-logic/counting-identity/\">At Least, At Most and Exactly</a>). Names already pick out one object each, so with names a plain $a = t$ or $St$ is enough."
+      },
+      {
+        "t": "p",
+        "html": "Notice the shape of \"only Ava sings\": it is a conjunction, not a single quantifier. Leaving out $Sa$ would give $\\forall x(Sx \\to x = a)$, which says nobody but Ava sings but allows that Ava does not sing either. Most uses of \"only\" with a name need both parts."
+      },
+      {
+        "t": "table",
+        "head": [
+          "English",
+          "Symbols"
+        ],
+        "rows": [
+          [
+            "Ava is not Ben.",
+            "$a \\ne b$"
+          ],
+          [
+            "Someone other than Ava sings.",
+            "$\\exists x(Sx \\land x \\ne a)$"
+          ],
+          [
+            "Ava is the only singer.",
+            "$Sa \\land \\forall x(Sx \\to x = a)$"
+          ],
+          [
+            "Ava sings louder than anyone else.",
+            "$\\forall x(x \\ne a \\to Lax)$ with $Lxy$: $x$ sings louder than $y$"
+          ]
+        ],
+        "cap": "Identity in translations."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Patrick J. Hurley and Lori Watson, A Concise Introduction to Logic, 13th ed., section 8.7, Identity"
+      },
+      {
+        "name": "forall x: Calgary, an open introduction to formal logic (P. D. Magnus, Tim Button and others; Open Logic Project), chapter on identity"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

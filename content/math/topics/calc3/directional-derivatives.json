@@ -1,0 +1,98 @@
+{
+  "id": "calc3.directional-derivatives",
+  "slug": "directional-derivatives",
+  "ladder": "math",
+  "course": "calc3",
+  "unit": "partials",
+  "title": "Directional Derivatives",
+  "short": "The rate of change in the direction of a unit vector u.",
+  "trouble": "Students use a direction vector that is not unit length.",
+  "prereqs": [
+    "calc3.tangent-planes",
+    "calc3.dot-product-projections"
+  ],
+  "xp": 2,
+  "viz": [
+    "gradient"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The <a href=\"/math/calculus-3/partial-derivatives/\">partial derivatives</a> measure change heading east ($f_x$) or north ($f_y$). A hiker can head any way. The <b>directional derivative</b> $D_{\\mathbf{u}}f$ measures the rate of change of $f$ per unit of distance in the direction of a <b>unit</b> vector $\\mathbf{u}$, using the <a href=\"/math/calculus-3/dot-product-projections/\">dot product</a>."
+      },
+      {
+        "t": "key",
+        "html": "For a unit vector $\\mathbf{u} = \\langle u_1, u_2 \\rangle$:\n  $$D_{\\mathbf{u}}f(a, b) = f_x(a, b)\\,u_1 + f_y(a, b)\\,u_2 = \\nabla f(a, b) \\cdot \\mathbf{u},$$\n  where $\\nabla f = \\langle f_x, f_y \\rangle$. If a direction is given by a vector $\\mathbf{v}$ that is not unit length, use $\\mathbf{u} = \\frac{\\mathbf{v}}{|\\mathbf{v}|}$. For an angle $\\theta$, $\\mathbf{u} = \\langle \\cos\\theta, \\sin\\theta \\rangle$."
+      },
+      {
+        "t": "why",
+        "html": "Walk from $(a, b)$ in direction $\\mathbf{u}$: after distance $s$ you are at $x = a + su_1$, $y = b + su_2$. The <a href=\"/math/calculus-3/multivariable-chain-rule/\">chain rule</a> gives\n  $$\\frac{d}{ds}f(a + su_1, b + su_2) = f_x\\frac{dx}{ds} + f_y\\frac{dy}{ds} = f_x u_1 + f_y u_2.$$\n  This is a rate per unit of distance because $s$ is distance, and $s$ is distance only when $|\\mathbf{u}| = 1$. With a longer vector, the \"distance\" would really be a multiple of $s$ and the rate would be scaled by that multiple."
+      },
+      {
+        "t": "viz",
+        "name": "gradient",
+        "opts": {
+          "f": "x^2 + 2y^2",
+          "point": [
+            1,
+            0.5
+          ],
+          "dir": 45
+        },
+        "cap": "Turn the blue unit vector $u$ with the slider. The readout shows $D_{\\mathbf{u}}f = \\nabla f \\cdot \\mathbf{u}$: largest when $u$ lines up with the red gradient, zero when $u$ runs along the level curve."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Direction given by a vector",
+        "q": "Find $D_{\\mathbf{u}}f$ for $f(x, y) = x^2y + y^3$ at $(1, 2)$ in the direction of $\\mathbf{v} = \\langle 3, 4 \\rangle$.",
+        "steps": [
+          "$\\nabla f = \\langle 2xy, x^2 + 3y^2 \\rangle = \\langle 4, 13 \\rangle$ at $(1, 2)$.",
+          "$|\\mathbf{v}| = 5$, so $\\mathbf{u} = \\left\\langle \\frac{3}{5}, \\frac{4}{5} \\right\\rangle$.",
+          "$D_{\\mathbf{u}}f = \\frac{12}{5} + \\frac{52}{5} = \\frac{64}{5}$."
+        ],
+        "a": "$\\frac{64}{5}$"
+      },
+      {
+        "t": "ex",
+        "title": "Direction given by an angle",
+        "q": "Find the rate of change of $f(x, y) = xe^{y}$ at $(2, 0)$ in the direction $\\theta = \\frac{\\pi}{6}$.",
+        "steps": [
+          "$\\nabla f = \\langle e^y, xe^y \\rangle = \\langle 1, 2 \\rangle$ at $(2, 0)$.",
+          "$\\mathbf{u} = \\left\\langle \\frac{\\sqrt{3}}{2}, \\frac{1}{2} \\right\\rangle$, already a unit vector.",
+          "$D_{\\mathbf{u}}f = \\frac{\\sqrt{3}}{2} + 1$."
+        ],
+        "a": "$\\frac{\\sqrt{3}}{2} + 1 \\approx 1.87$"
+      },
+      {
+        "t": "ex",
+        "title": "Three variables",
+        "q": "Find the rate of change of $f(x, y, z) = xyz$ at $(1, 2, 3)$ toward $\\mathbf{v} = \\langle 2, -1, 2 \\rangle$.",
+        "steps": [
+          "$\\nabla f = \\langle yz, xz, xy \\rangle = \\langle 6, 3, 2 \\rangle$.",
+          "$|\\mathbf{v}| = 3$, so $D_{\\mathbf{u}}f = \\frac{1}{3}(12 - 3 + 4) = \\frac{13}{3}$."
+        ],
+        "a": "$\\frac{13}{3}$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Using a direction vector that is not unit length.</b> Dotting with $\\mathbf{v} = \\langle 3, 4 \\rangle$ itself in the first example gives ${}64$, five times too big, because $|\\mathbf{v}| = 5$. The direction is the same, but the rate per unit distance is not. Check: in the directions $\\langle 1, 0 \\rangle$ and $\\langle 0, 1 \\rangle$ your formula must give $f_x$ and $f_y$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 3, 4.6 Directional Derivatives and the Gradient"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

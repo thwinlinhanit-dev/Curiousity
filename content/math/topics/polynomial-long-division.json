@@ -1,0 +1,152 @@
+{
+  "id": "alg2.polynomial-long-division",
+  "slug": "polynomial-long-division",
+  "ladder": "math",
+  "course": "alg2",
+  "unit": "polynomials",
+  "title": "Polynomial Long Division",
+  "short": "Divide polynomials the way you divide numbers.",
+  "trouble": "Students skip a missing power instead of writing 0x², so the columns slip.",
+  "prereqs": [
+    "alg1.multiply-polynomials"
+  ],
+  "xp": 2,
+  "viz": [],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Dividing polynomials uses the same routine as long division of numbers: divide, multiply, subtract, bring down, repeat. You already <a href=\"/math/algebra-1/multiply-polynomials/\">multiply polynomials</a>; division runs that backwards."
+      },
+      {
+        "t": "key",
+        "html": "Divide the leading term of what is left by the leading term of the divisor. Multiply the whole divisor by that result, subtract, and repeat until what is left has a lower degree than the divisor. Then dividend $=$ divisor $\\times$ quotient $+$ remainder."
+      },
+      {
+        "t": "why",
+        "html": "Each step removes the highest power that is left. If you divide $2x^3$ by $x$ and get $2x^2$, then $2x^2$ times the divisor has the same leading term as the dividend, so subtracting makes that term disappear. The degree drops every round, so the process has to stop. It is exactly how $1234 \\div 11$ works, with powers of $x$ playing the role of hundreds, tens and ones. That is why every power needs its own column."
+      },
+      {
+        "t": "table",
+        "head": [
+          "| $x^3$",
+          "$x^2$",
+          "$x$",
+          "$1$"
+        ],
+        "rows": [
+          [
+            "dividend (with $0x^2$)",
+            "$2$",
+            "$0$",
+            "$-5$",
+            "$3$"
+          ],
+          [
+            "$2x^2(x - 2)$",
+            "$2$",
+            "$-4$",
+            "|"
+          ],
+          [
+            "subtract",
+            "| $4$",
+            "$-5$ |"
+          ],
+          [
+            "$4x(x - 2)$",
+            "| $4$",
+            "$-8$ |"
+          ],
+          [
+            "subtract",
+            "|",
+            "$3$",
+            "$3$"
+          ],
+          [
+            "$3(x - 2)$",
+            "|",
+            "$3$",
+            "$-6$"
+          ],
+          [
+            "remainder",
+            "|",
+            "| $9$"
+          ]
+        ],
+        "cap": "Line up the columns: $(2x^3 - 5x + 3) \\div (x - 2)$"
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A missing power",
+        "q": "Divide $(2x^3 - 5x + 3) \\div (x - 2)$.",
+        "steps": [
+          "Write $2x^3 + 0x^2 - 5x + 3$ so every power has a column.",
+          "$\\frac{2x^3}{x} = 2x^2$. Multiply: $2x^3 - 4x^2$. Subtract: $4x^2 - 5x$.",
+          "$\\frac{4x^2}{x} = 4x$. Multiply: $4x^2 - 8x$. Subtract: $3x + 3$.",
+          "$\\frac{3x}{x} = 3$. Multiply: $3x - 6$. Subtract: $9$."
+        ],
+        "a": "Quotient $2x^2 + 4x + 3$, remainder $9$"
+      },
+      {
+        "t": "ex",
+        "title": "A quadratic divisor",
+        "q": "Divide $(x^4 + 3x^2 + x + 5) \\div (x^2 + 1)$.",
+        "steps": [
+          "$\\frac{x^4}{x^2} = x^2$; $x^2(x^2 + 1) = x^4 + x^2$; subtract: $2x^2 + x + 5$.",
+          "$\\frac{2x^2}{x^2} = 2$; $2(x^2 + 1) = 2x^2 + 2$; subtract: $x + 3$.",
+          "$x + 3$ has degree 1, less than 2, so stop."
+        ],
+        "a": "Quotient $x^2 + 2$, remainder $x + 3$. Check: $(x^2 + 1)(x^2 + 2) + x + 3$ $= x^4 + 3x^2 + x + 5$."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "fns": [
+            "2x^3 - 5x + 3",
+            {
+              "f": "(x - 2)(2x^2 + 4x + 3)",
+              "dash": true
+            }
+          ],
+          "table": [
+            -1,
+            0,
+            1,
+            2,
+            3
+          ],
+          "xmin": -3,
+          "xmax": 3,
+          "ymin": -20,
+          "ymax": 25
+        },
+        "cap": "The dividend $f(x) = 2x^3 - 5x + 3$ and the product $g(x) = (x - 2)(2x^2 + 4x + 3)$ (dashed). At every $x$ the two curves are exactly 9 apart: the remainder."
+      },
+      {
+        "t": "mistake",
+        "html": "Skipping a missing power. In $2x^3 - 5x + 3$ there is no $x^2$ term; if you don't write $0x^2$, the $-5x$ slides into the $x^2$ column and every later step is off. Write a 0 for each missing power before you start, and check at the end that divisor $\\times$ quotient $+$ remainder gives back the dividend."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Algebra 2e, Section 5.4 Dividing Polynomials"
+      },
+      {
+        "name": "Common Core State Standards, A-APR.D.6"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

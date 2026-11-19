@@ -1,0 +1,124 @@
+{
+  "id": "calc3.backpropagation",
+  "slug": "backpropagation",
+  "ladder": "math",
+  "course": "calc3",
+  "unit": "optimization",
+  "title": "Backpropagation Is the Chain Rule",
+  "short": "Get every weight's derivative of a network's loss by working backward, one layer at a time.",
+  "trouble": "Students forget the ReLU switch on the way back (its derivative is 1 when the unit is on and 0 when it is off), or multiply by the weight itself instead of the input that the weight multiplies.",
+  "prereqs": [
+    "calc3.multivariable-chain-rule",
+    "calc3.minimizing-loss",
+    "alg2.ramp-functions"
+  ],
+  "xp": 3,
+  "viz": [
+    "calc3-backprop"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "To train a network by <a href=\"/math/calculus-3/gradient-descent/\">gradient descent</a>, you need the derivative of its loss with respect to every weight. Here is the smallest network that shows how, with one input $x$, one hidden <a href=\"/math/algebra-2/ramp-functions/\">ramp</a> unit and one output: $$z = wx + b, \\qquad h = \\operatorname{ReLU}(z), \\qquad \\hat{y} = vh + c, \\qquad L = (\\hat{y} - y)^{2},$$ for one data point $(x, y)$. The loss depends on the weights $w$, $b$, $v$ and $c$ through a chain of simple steps, so the tool is the <a href=\"/math/calculus-3/multivariable-chain-rule/\">chain rule</a>."
+      },
+      {
+        "t": "key",
+        "html": "<b>Backpropagation:</b> run the network forward and keep $z$, $h$, $\\hat{y}$ and $L$. Then go backward, multiplying by one local derivative per step: $$\\frac{\\partial L}{\\partial \\hat{y}} = 2(\\hat{y} - y), \\qquad \\frac{\\partial L}{\\partial h} = \\frac{\\partial L}{\\partial \\hat{y}}\\,v, \\qquad \\frac{\\partial L}{\\partial z} = \\frac{\\partial L}{\\partial h}\\,\\operatorname{ReLU}'(z),$$ where $\\operatorname{ReLU}'(z)$ is $1$ when the switch is on ($z > 0$) and $0$ when it is off. Each weight's derivative is the derivative at its node times what the weight multiplies: $$\\frac{\\partial L}{\\partial v} = \\frac{\\partial L}{\\partial \\hat{y}}\\,h, \\quad \\frac{\\partial L}{\\partial c} = \\frac{\\partial L}{\\partial \\hat{y}}, \\quad \\frac{\\partial L}{\\partial w} = \\frac{\\partial L}{\\partial z}\\,x, \\quad \\frac{\\partial L}{\\partial b} = \\frac{\\partial L}{\\partial z}.$$"
+      },
+      {
+        "t": "why",
+        "html": "Each formula is the chain rule along the one path from $L$ down to that weight, as in a tree diagram: $$\\frac{\\partial L}{\\partial w} = \\frac{\\partial L}{\\partial \\hat{y}} \\cdot \\frac{\\partial \\hat{y}}{\\partial h} \\cdot \\frac{\\partial h}{\\partial z} \\cdot \\frac{\\partial z}{\\partial w}.$$ Working backward, the shared front part of these products, such as $\\frac{\\partial L}{\\partial z}$, is computed once and reused for $w$ and $b$. In a network with millions of weights that reuse is the whole point: one backward pass costs about as much as a couple of forward passes, instead of one forward pass per weight."
+      },
+      {
+        "t": "viz",
+        "name": "calc3-backprop",
+        "opts": {
+          "x": 2,
+          "y": 3,
+          "w": 1,
+          "b": -1,
+          "v": 2,
+          "c": 0.5,
+          "stage": "start"
+        },
+        "cap": "Press Next step to run forward, then backward. Orange numbers are derivatives of the loss. After the last step, the table checks each one with a nudge, and Take a gradient step uses them to lower the loss."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "All four derivatives",
+        "q": "With $w = 1$, $b = -1$, $v = 2$, $c = 0.5$ and the data point $(x, y) = (2, 3)$, find $\\frac{\\partial L}{\\partial w}$, $\\frac{\\partial L}{\\partial b}$, $\\frac{\\partial L}{\\partial v}$ and $\\frac{\\partial L}{\\partial c}$.",
+        "steps": [
+          "Forward: $z = 1 \\cdot 2 - 1 = 1$, $h = \\operatorname{ReLU}(1) = 1$, $\\hat{y} = 2 \\cdot 1 + 0.5 = 2.5$, and $L = (2.5 - 3)^{2} = 0.25$.",
+          "Start at the loss: $\\frac{\\partial L}{\\partial \\hat{y}} = 2(2.5 - 3) = -1$. So $\\frac{\\partial L}{\\partial c} = -1$ and $\\frac{\\partial L}{\\partial v} = -1 \\cdot h = -1$.",
+          "Into the hidden unit: $\\frac{\\partial L}{\\partial h} = -1 \\cdot v = -2$. The switch is on ($z = 1 > 0$), so $\\frac{\\partial L}{\\partial z} = -2$.",
+          "Into the first layer: $\\frac{\\partial L}{\\partial w} = -2 \\cdot x = -4$ and $\\frac{\\partial L}{\\partial b} = -2$.",
+          "All four are negative: the prediction $2.5$ is too low, and raising any weight a little would raise it."
+        ],
+        "a": "$\\frac{\\partial L}{\\partial w} = -4$, $\\frac{\\partial L}{\\partial b} = -2$, $\\frac{\\partial L}{\\partial v} = -1$, $\\frac{\\partial L}{\\partial c} = -1$"
+      },
+      {
+        "t": "ex",
+        "title": "Check with a nudge",
+        "q": "Check $\\frac{\\partial L}{\\partial w} = -4$ numerically.",
+        "steps": [
+          "Nudge $w$ up: $w = 1.001$ gives $z = 1.002$, $\\hat{y} = 2.504$ and $L = (-0.496)^{2} = 0.246016$.",
+          "Nudge it down: $w = 0.999$ gives $\\hat{y} = 2.496$ and $L = 0.254016$.",
+          "$\\frac{0.246016 - 0.254016}{0.002} = -4$. ✓ This check costs two forward passes for each weight; backpropagation found all four derivatives in one backward pass."
+        ],
+        "a": "The nudge agrees: $-4$."
+      },
+      {
+        "t": "ex",
+        "title": "When the switch is off",
+        "q": "Same weights, but the data point is $(x, y) = (-1, 1)$.",
+        "steps": [
+          "Forward: $z = 1 \\cdot (-1) - 1 = -2$, so $h = 0$, $\\hat{y} = 0.5$ and $L = (0.5 - 1)^{2} = 0.25$.",
+          "$\\frac{\\partial L}{\\partial \\hat{y}} = -1$, so $\\frac{\\partial L}{\\partial c} = -1$, but $\\frac{\\partial L}{\\partial v} = -1 \\cdot 0 = 0$.",
+          "The switch is off: $\\operatorname{ReLU}'(-2) = 0$, so $\\frac{\\partial L}{\\partial z} = 0$ and $\\frac{\\partial L}{\\partial w} = \\frac{\\partial L}{\\partial b} = 0$.",
+          "Small changes to $w$ and $b$ leave $z$ negative and the output unchanged, so this example cannot teach them anything. Only $c$ learns from it."
+        ],
+        "a": "Only $\\frac{\\partial L}{\\partial c} = -1$ is not $0$."
+      },
+      {
+        "t": "p",
+        "html": "With more units the same rules run on vectors. For a layer $\\mathbf{h} = \\operatorname{ReLU}(W\\mathbf{x} + \\mathbf{b})$ the backward step is $$\\frac{\\partial L}{\\partial \\mathbf{z}} = \\frac{\\partial L}{\\partial \\mathbf{h}} \\odot \\operatorname{ReLU}'(\\mathbf{z}), \\qquad \\frac{\\partial L}{\\partial W} = \\frac{\\partial L}{\\partial \\mathbf{z}}\\,\\mathbf{x}^{T}, \\qquad \\frac{\\partial L}{\\partial \\mathbf{x}} = W^{T}\\frac{\\partial L}{\\partial \\mathbf{z}},$$ where $\\odot$ multiplies entry by entry. The last formula hands the signal to the layer before, which repeats the same steps. With many data points, average the gradients from each one. The network that trains itself in <a href=\"/math/linear-algebra/neural-network-layers/\">Neural Network Layers</a> works exactly this way."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Forgetting the switch.</b> On the way back, ReLU multiplies by $1$ if its unit was on and by $0$ if it was off. Skipping it gives a nonzero $\\frac{\\partial L}{\\partial w}$ for an off unit, as if a weight could change an output it does not reach. Check: if $z < 0$, the derivatives for $w$ and $b$ must be $0$."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Multiplying by the wrong thing.</b> $\\frac{\\partial z}{\\partial w} = x$: the derivative with respect to a weight uses the input that the weight multiplies, not the weight itself. Check with a nudge: change the weight by $0.001$ and see how much $L$ changes."
+      },
+      {
+        "t": "note",
+        "html": "At exactly $z = 0$ the ramp has a corner and no derivative. Software simply uses $0$ (or $1$) there, and it rarely matters; the practice problems avoid that point."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Calculus Volume 3, section 4.5 The Chain Rule"
+      },
+      {
+        "name": "Rumelhart, Hinton and Williams, \"Learning representations by back-propagating errors,\" Nature 323 (1986), 533-536"
+      },
+      {
+        "name": "Goodfellow, Bengio and Courville, Deep Learning (MIT Press, 2016), section 6.5 Back-Propagation and Other Differentiation Algorithms"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.065 Matrix Methods in Data Analysis, Signal Processing, and Machine Learning (Gilbert Strang, Spring 2018), Lecture 27: Backpropagation: Find Partial Derivatives"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

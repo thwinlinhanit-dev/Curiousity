@@ -1,0 +1,93 @@
+{
+  "id": "chem.percent-yield",
+  "slug": "percent-yield",
+  "ladder": "chemistry",
+  "course": "chem",
+  "unit": "stoichiometry",
+  "title": "Theoretical and Percent Yield",
+  "short": "Compare the product you actually got with the most the limiting reactant allows.",
+  "trouble": "Students divide the theoretical yield by the actual yield, or find the theoretical yield from the reactant in excess.",
+  "prereqs": [
+    "chem.limiting-reactant",
+    "g6.percent-meaning"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-limiting"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The product amount you found in <a href=\"/chemistry/chemistry/limiting-reactant/\">Limiting Reactant</a> is the most a reaction can give. Real reactions almost always give less. <a href=\"/math/grade-6/percent-meaning/\">A percent</a> compares the two."
+      },
+      {
+        "t": "key",
+        "html": "The <b>theoretical yield</b> is the amount of product the limiting reactant could make. The <b>actual yield</b> is what you collect. $$\\text{percent yield} = \\frac{\\text{actual yield}}{\\text{theoretical yield}} \\times 100\\%$$"
+      },
+      {
+        "t": "why",
+        "html": "Some reactant may not react, side reactions can make other products, and some product sticks to glassware or slips through a filter. All of these lower the actual yield, so the percent yield is normally below 100%. A result above 100% means something extra is being weighed, such as water left in a product that was not fully dried."
+      },
+      {
+        "t": "viz",
+        "name": "ch-limiting",
+        "opts": {
+          "eq": "N2 + 3H2 -> 2NH3",
+          "unit": "g",
+          "amounts": {
+            "N2": 28,
+            "H2": 8
+          },
+          "actual": 30
+        },
+        "cap": "$28.0\\ \\text{g}$ of nitrogen with $8.0\\ \\text{g}$ of hydrogen: nitrogen is limiting, so it sets the theoretical yield. The bar for the actual yield shows how much was collected."
+      },
+      {
+        "t": "ex",
+        "title": "From the two yields",
+        "q": "A reaction's theoretical yield of ammonia is $34.1\\ \\text{g}$. A student collects $30.0\\ \\text{g}$. What is the percent yield?",
+        "steps": [
+          "$\\dfrac{30.0}{34.1} \\times 100\\% = 88.0\\%$.",
+          "It is below 100%, as expected."
+        ],
+        "a": "$88.0\\%$."
+      },
+      {
+        "t": "ex",
+        "title": "From a reactant mass",
+        "q": "Heating $50.0\\ \\text{g}$ of $\\mathrm{CaCO}_{3}$ gives $25.2\\ \\text{g}$ of $\\mathrm{CaO}$. $$\\mathrm{CaCO}_{3} \\to \\mathrm{CaO} + \\mathrm{CO}_{2}$$ What is the percent yield? ($\\mathrm{CaCO}_{3}$ 100.09, $\\mathrm{CaO}$ 56.08 g/mol)",
+        "steps": [
+          "Theoretical yield: $50.0 \\div 100.09 = 0.4996\\ \\text{mol}$ of $\\mathrm{CaCO}_{3}$, which can make $0.4996\\ \\text{mol}$ of $\\mathrm{CaO}$.",
+          "$0.4996 \\times 56.08 = 28.0\\ \\text{g}$ of $\\mathrm{CaO}$.",
+          "Percent yield $= \\dfrac{25.2}{28.0} \\times 100\\% = 90.0\\%$."
+        ],
+        "a": "$90.0\\%$."
+      },
+      {
+        "t": "ex",
+        "title": "From a percent yield back to grams",
+        "q": "A process makes ammonia with a $75\\%$ yield. Its theoretical yield is $68.0\\ \\text{g}$. How many grams are actually collected?",
+        "steps": [
+          "$\\text{actual} = 0.75 \\times 68.0\\ \\text{g}$.",
+          "$\\text{actual} = 51\\ \\text{g}$."
+        ],
+        "a": "$51\\ \\text{g}$."
+      },
+      {
+        "t": "mistake",
+        "html": "Dividing the theoretical yield by the actual yield, which gives more than 100%, or working out the theoretical yield from the reactant in excess. Only the limiting reactant sets the theoretical yield. Check: the actual yield goes on top, and a percent yield above 100% is a warning sign."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 4.4 Reaction Yields"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

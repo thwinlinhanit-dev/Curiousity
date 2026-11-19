@@ -1,0 +1,104 @@
+{
+  "id": "astrophys.effective-temperature",
+  "slug": "effective-temperature",
+  "course": "astrophys",
+  "courseTitle": "Astrophysics",
+  "unit": "starlight",
+  "unitTitle": "Starlight",
+  "title": "Effective Temperature and Stellar Radii",
+  "short": "Use L = 4πR²σT_eff⁴ with real values to find the radii of dwarfs, giants and supergiants.",
+  "trouble": "Students forget to raise the temperature to the fourth power, or the radius to the second.",
+  "prereqs": [
+    "astrophys.planck-function",
+    "astro.luminosity-radius-temperature"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-hr"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You already know <a href=\"/physics/astronomy/luminosity-radius-temperature/\">L = 4πR²σT⁴</a>. Here you will use it with real stars and see just how different they are. A star is not a perfect blackbody, so astronomers define its <b>effective temperature</b> $T_{\\text{eff}}$: the temperature a blackbody of the same radius would need to give out the same total power."
+      },
+      {
+        "t": "why",
+        "html": "Each square meter of a blackbody surface radiates $\\sigma T^4$ (the area under the <a href=\"/physics/astrophysics/planck-function/\">Planck function</a>). A sphere of radius $R$ has $4\\pi R^2$ square meters. Multiply: $L = 4\\pi R^2\\sigma T_{\\text{eff}}^4$. That equation <i>defines</i> $T_{\\text{eff}}$ once $L$ and $R$ are measured. Dividing by the same equation for the Sun removes $4\\pi\\sigma$ and leaves a ratio form that is easy to use."
+      },
+      {
+        "t": "key",
+        "html": "$$\\frac{L}{L_\\odot} = \\left(\\frac{R}{R_\\odot}\\right)^{2}\\left(\\frac{T_{\\text{eff}}}{T_\\odot}\\right)^{4}, \\qquad \\frac{R}{R_\\odot} = \\sqrt{\\frac{L}{L_\\odot}}\\left(\\frac{T_\\odot}{T_{\\text{eff}}}\\right)^{2},$$ with $T_\\odot = 5772$ K."
+      },
+      {
+        "t": "viz",
+        "name": "ph-hr",
+        "opts": {
+          "mode": "radius",
+          "highlight": [
+            "Sun",
+            "Sirius B",
+            "Betelgeuse",
+            "Aldebaran",
+            "Proxima Centauri"
+          ]
+        },
+        "cap": "Dashed lines of constant radius run diagonally across the H–R diagram. Giants and supergiants sit above the main sequence because they are huge; white dwarfs sit below because they are tiny."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A red giant",
+        "q": "Aldebaran has $L \\approx 440\\,L_\\odot$ and $T_{\\text{eff}} \\approx 3900$ K. Find its radius.",
+        "steps": [
+          "$\\sqrt{440} = 21.0$.",
+          "$(5772/3900)^2 = (1.480)^2 = 2.19$.",
+          "$R = 21.0 \\times 2.19\\,R_\\odot \\approx 46\\,R_\\odot$."
+        ],
+        "a": "About $46\\,R_\\odot$: a cool star can be very luminous only by being very large."
+      },
+      {
+        "t": "ex",
+        "title": "A white dwarf",
+        "q": "Sirius B has $T_{\\text{eff}} \\approx 25{,}000$ K and $R \\approx 0.0084\\,R_\\odot$. Find its luminosity, and its radius in kilometers ($R_\\odot = 6.96 \\times 10^{5}$ km).",
+        "steps": [
+          "$L/L_\\odot = (0.0084)^2 (25{,}000/5772)^4 = (7.06 \\times 10^{-5})(352)$.",
+          "$L \\approx 0.025\\,L_\\odot$.",
+          "$R = 0.0084 \\times 6.96 \\times 10^{5}\\text{ km} \\approx 5800$ km."
+        ],
+        "a": "About $0.025\\,L_\\odot$ from a body smaller than Earth (radius 6,371 km), even though it is four times hotter than the Sun."
+      },
+      {
+        "t": "ex",
+        "title": "A red supergiant",
+        "q": "Betelgeuse has $L \\approx 1 \\times 10^{5}\\,L_\\odot$ and $T_{\\text{eff}} \\approx 3600$ K. How big is it?",
+        "steps": [
+          "$\\sqrt{10^{5}} = 316$; $(5772/3600)^2 = 2.57$.",
+          "$R \\approx 316 \\times 2.57\\,R_\\odot \\approx 810\\,R_\\odot$.",
+          "In kilometers, $810 \\times 6.96 \\times 10^{5} = 5.6 \\times 10^{8}$ km. Divide by $1.496 \\times 10^{8}$ km per AU: about $3.8$ AU."
+        ],
+        "a": "About 800 solar radii, roughly 4 AU. Put in the Sun's place, it would reach past Mars's orbit (1.5 AU) and most of the way to Jupiter's (5.2 AU). (Its luminosity and size are uncertain by tens of percent.)"
+      },
+      {
+        "t": "mistake",
+        "html": "Forgetting the powers. Temperature enters as the fourth power and radius as the square, so a star twice as hot as the Sun with the same radius is $2^4 = 16$ times as luminous, not 2 times; a star 10 times wider is 100 times as luminous at the same temperature. When solving for $R$, take the square root of $L$ but <i>square</i> the temperature ratio. Check your answer against the H–R diagram: cool and luminous must mean big."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Astronomy 2e, section 17.4 (Using Spectra to Measure Stellar Radius, Composition, and Motion) and section 18.3 (Diameters of Stars)"
+      },
+      {
+        "name": "NASA Goddard Space Flight Center, Sun Fact Sheet (NSSDCA)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

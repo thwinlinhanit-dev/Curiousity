@@ -1,0 +1,108 @@
+{
+  "id": "g8.triangle-angle-sum",
+  "slug": "triangle-angle-sum",
+  "ladder": "math",
+  "course": "g8",
+  "unit": "angles",
+  "title": "Triangle Angle Sum and Exterior Angles",
+  "short": "The angles of a triangle add to 180°.",
+  "trouble": "",
+  "prereqs": [
+    "g8.parallel-lines-transversal"
+  ],
+  "xp": 2,
+  "viz": [
+    "angle",
+    "geoboard"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You may have heard that a triangle’s angles add to $180^\\circ$. <a href=\"/math/pre-algebra/parallel-lines-transversal/\">Parallel lines and a transversal</a> show why it is true for every triangle."
+      },
+      {
+        "t": "why",
+        "html": "Draw a line through the top corner, parallel to the bottom side. Along that line, three angles sit side by side and make a straight angle, $180^\\circ$. The left one equals the triangle’s bottom-left angle, and the right one equals the bottom-right angle (alternate interior angles). The middle one is the triangle’s top angle. So the triangle’s three angles add to $180^\\circ$."
+      },
+      {
+        "t": "key",
+        "html": "The angles of every triangle add to $180^\\circ$. An <b>exterior angle</b> (between one side and the extension of the next) equals the sum of the two interior angles that are not next to it."
+      },
+      {
+        "t": "viz",
+        "name": "angle",
+        "opts": {
+          "mode": "triangle",
+          "pts": [
+            [
+              0,
+              0
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              2,
+              4
+            ]
+          ]
+        },
+        "cap": "Drag the corners: the sum stays $180^\\circ$. Tear off the corners to see them make a straight line."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "The third angle",
+        "q": "Two angles of a triangle measure $48^\\circ$ and $77^\\circ$. Find the third.",
+        "steps": [
+          "$180 - 48 - 77 = 55$."
+        ],
+        "a": "$55^\\circ$"
+      },
+      {
+        "t": "ex",
+        "title": "With algebra",
+        "q": "A triangle’s angles are $x^\\circ$, $2x^\\circ$ and $3x^\\circ$. Find them.",
+        "steps": [
+          "$x + 2x + 3x = 180$, so $6x = 180$ and $x = 30$.",
+          "The angles are $30^\\circ$, $60^\\circ$ and $90^\\circ$."
+        ],
+        "a": "$30^\\circ$, $60^\\circ$, $90^\\circ$"
+      },
+      {
+        "t": "ex",
+        "title": "An exterior angle",
+        "q": "A triangle has interior angles of $40^\\circ$ and $65^\\circ$. Find the exterior angle at the third corner.",
+        "steps": [
+          "The third interior angle is $180 - 40 - 65 = 75^\\circ$.",
+          "The exterior angle makes a straight line with it: $180 - 75 = 105^\\circ$.",
+          "Shortcut: $40 + 65 = 105$."
+        ],
+        "a": "$105^\\circ$"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking bigger triangles have bigger angle sums. A huge triangle and a tiny one both have angles adding to $180^\\circ$; size changes the sides, not the angle sum."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Prealgebra 2e, Section 9.3: Use Properties of Angles, Triangles, and the Pythagorean Theorem"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 8, 8.G.A.5"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

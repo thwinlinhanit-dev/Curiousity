@@ -1,0 +1,119 @@
+{
+  "id": "hsbio.cell-cycle",
+  "slug": "cell-cycle",
+  "ladder": "bio",
+  "course": "hsbio",
+  "unit": "division",
+  "title": "The Cell Cycle",
+  "short": "A cell spends most of its life in interphase (G1 growth, S DNA copying, G2 preparation), then divides in the mitotic phase. Checkpoints decide whether it goes on.",
+  "trouble": "Students think interphase is a resting phase. The cell is busy growing and copying its DNA; it is only \"resting\" from division.",
+  "prereqs": [
+    "hsbio.chromosomes"
+  ],
+  "xp": 2,
+  "viz": [
+    "bi-mitosis",
+    "bi-chart"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You started as one cell. You now have trillions, and many of them are still dividing to grow and to replace worn-out cells. Each of those cells follows the same repeating program, the <b>cell cycle</b>, built around the <a href=\"/biology/high-school-biology/chromosomes/\">chromosomes</a> it must copy and share out."
+      },
+      {
+        "t": "key",
+        "html": "A cell spends most of its life in <b>interphase</b>: <b>G1</b> (growth), <b>S</b> (DNA synthesis: copying the chromosomes) and <b>G2</b> (more growth and preparation). Then it divides in the <b>mitotic (M) phase</b>: mitosis and cytokinesis. <b>Checkpoints</b> decide whether it goes on."
+      },
+      {
+        "t": "viz",
+        "name": "bi-chart",
+        "opts": {
+          "kind": "bar",
+          "x": [
+            "G1",
+            "S",
+            "G2",
+            "M"
+          ],
+          "series": [
+            {
+              "name": "Hours (typical)",
+              "values": [
+                11,
+                8,
+                4,
+                1
+              ],
+              "color": 2
+            }
+          ],
+          "ylabel": "Hours",
+          "values": true,
+          "title": "A typical 24-hour cycle of a dividing human cell"
+        },
+        "cap": "Approximate times for a dividing human cell in culture. Mitosis is only about an hour; interphase is the rest."
+      },
+      {
+        "t": "list",
+        "items": [
+          "<b>G1</b>: the cell grows, makes proteins and organelles, and does its normal job.",
+          "<b>S</b>: every chromosome is copied, so each becomes two sister chromatids.",
+          "<b>G2</b>: the cell grows more, makes the proteins needed for division, and checks the copied DNA.",
+          "<b>M</b>: mitosis divides the nucleus; cytokinesis divides the cytoplasm.",
+          "<b>G0</b>: many cells, such as most nerve cells, leave the cycle and stop dividing, sometimes for good."
+        ]
+      },
+      {
+        "t": "why",
+        "html": "Interphase is when a cell does its real work, and it is also the preparation for division: a cell must double its DNA and roughly double its contents before it can split into two complete cells. Because each phase takes a fixed share of the cycle, you can estimate how long each lasts by counting. In a slide of dividing cells, the fraction of cells in a phase is about the fraction of time the cycle spends in it."
+      },
+      {
+        "t": "ex",
+        "title": "Time from a count",
+        "q": "In an onion root tip, 180 of 200 cells are in interphase and 20 are in mitosis. If the whole cycle takes 24 hours, about how long is mitosis?",
+        "steps": [
+          "Fraction in mitosis: $20 \\div 200 = 0.10$.",
+          "Time: $0.10 \\times 24 = 2.4$ hours."
+        ],
+        "a": "About $2.4$ hours"
+      },
+      {
+        "t": "ex",
+        "title": "Before and after S",
+        "q": "A cell with $2n = 6$ goes from G1 through S into G2. What happens to its chromosomes and chromatids?",
+        "steps": [
+          "In G1: 6 chromosomes, each a single chromatid: 6 chromatids.",
+          "S phase copies each one.",
+          "In G2: still 6 chromosomes (6 centromeres), now 12 chromatids."
+        ],
+        "a": "6 chromosomes throughout; chromatids go from 6 to 12."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking interphase is a resting phase. The cell is busy growing, working and copying its DNA. It is only \"resting\" from division, and the S phase in the middle of it is one of the most important steps of the whole cycle."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Concepts of Biology, 6.2 The Cell Cycle"
+      },
+      {
+        "name": "OpenStax, Biology 2e, 10.2 The Cell Cycle"
+      },
+      {
+        "name": "Grokipedia, Cell cycle",
+        "url": "https://grokipedia.com/page/Cell_cycle"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-LS1-4: Use a model to illustrate the role of cellular division (mitosis) and differentiation in producing and maintaining complex organisms"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

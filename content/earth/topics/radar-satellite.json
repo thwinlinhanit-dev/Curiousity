@@ -1,0 +1,92 @@
+{
+  "id": "weather.radar-satellite",
+  "slug": "radar-satellite",
+  "ladder": "earth",
+  "course": "weather",
+  "unit": "forecasting",
+  "title": "Radar and Satellite Images",
+  "short": "Visible images show sunlit clouds, infrared images show how cold cloud tops are, and radar shows where rain and snow are falling.",
+  "trouble": "Students think satellite pictures show rain; they show clouds, radar shows precipitation, and on infrared images the brightest clouds are the coldest, highest tops.",
+  "prereqs": [
+    "weather.instruments",
+    "weather.radiation-wavelength"
+  ],
+  "xp": 2,
+  "viz": [
+    "es-energy"
+  ],
+  "figureArchetype": "WaveFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Weather <a href=\"/earth-and-space/weather-and-climate/instruments/\">instruments</a> at stations see only one spot. Satellites and radar see whole regions at once. Reading their images uses the ideas from <a href=\"/earth-and-space/weather-and-climate/radiation-wavelength/\">sunlight in, infrared out</a>."
+      },
+      {
+        "t": "key",
+        "html": "<b>Visible</b> satellite images show sunlight reflected by clouds and the ground, so they go dark at night; thick clouds look brightest. <b>Infrared</b> images show the infrared each surface gives off, which tells its temperature; they work day and night, and they are usually drawn so that the <b>coldest, highest cloud tops look brightest</b>. <b>Radar</b> sends out microwave pulses and listens for echoes from raindrops, hail and snowflakes: it shows where precipitation is falling and how heavy it is, and Doppler radar also shows motion toward or away from the radar."
+      },
+      {
+        "t": "why",
+        "html": "Clouds and the ground glow in the infrared, mostly near 10 μm, where the air is fairly transparent (the atmospheric window). A satellite measuring that glow can work out the temperature of whatever it sees: warm ground, or a cloud top. Since air cools with height, a colder top is a higher one, so a bright spot on an infrared image is a tall storm. Radar works the other way around: it makes its own signal. A pulse travels out at the speed of light, bounces off precipitation and comes back; the delay gives the distance, $d = ct/2$, and the strength of the echo gives the size and number of the drops. Cloud droplets are far too small to give a strong echo, which is why radar shows rain but not most clouds."
+      },
+      {
+        "t": "viz",
+        "name": "es-energy",
+        "opts": {
+          "mode": "spectrum",
+          "temps": [
+            288,
+            220
+          ],
+          "bands": true
+        },
+        "cap": "The infrared glow of the ground (288 K) and of a cold storm top (220 K). Satellites read it through the window near 8 to 13 μm, where water vapor and CO₂ absorb little."
+      },
+      {
+        "t": "ex",
+        "title": "How far is the storm?",
+        "q": "A radar pulse returns 0.6 milliseconds after it was sent. How far away is the rain? ($c = 3 \\times 10^8$ m/s)",
+        "steps": [
+          "The pulse goes out and back, so the distance is half of $c \\times t$.",
+          "$d = 3 \\times 10^8 \\times 0.0006 \\div 2 = 90{,}000$ m.",
+          "The rain is about 90 km away."
+        ],
+        "a": "About 90 km"
+      },
+      {
+        "t": "ex",
+        "title": "How high is the cloud top?",
+        "q": "An infrared satellite reads a cloud top at −55 °C. The ground is 25 °C, and the air cools about 6.5 °C per km. About how high is the top?",
+        "steps": [
+          "Difference: $25 - (-55) = 80$ °C.",
+          "Height: $80 \\div 6.5 \\approx 12$ km: a towering thunderstorm."
+        ],
+        "a": "About 12 km"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking satellite pictures show rain. Satellites mostly show clouds, and plenty of clouds produce no rain; radar shows where precipitation is actually falling. On an infrared image, remember the colors: the brightest clouds are the <b>coldest</b>, highest tops. Check: a visible image of the same storm at night is black, while the infrared image still shows it."
+      },
+      {
+        "t": "note",
+        "html": "The U.S. radar network has about 160 Doppler radars (WSR-88D). The GOES weather satellites sit about 35,800 km above the equator, where an orbit takes exactly one day, so each one watches the same half of the planet all the time."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "NOAA National Weather Service, JetStream online school for weather: Remote sensing: radar and satellite imagery"
+      },
+      {
+        "name": "NOAA: GOES-R series: visible, infrared and water-vapor imagery"
+      },
+      {
+        "name": "NOAA National Weather Service: NEXRAD (WSR-88D) Doppler radar"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

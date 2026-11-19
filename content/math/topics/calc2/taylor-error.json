@@ -1,0 +1,100 @@
+{
+  "id": "calc2.taylor-error",
+  "slug": "taylor-error",
+  "ladder": "math",
+  "course": "calc2",
+  "unit": "power-series",
+  "title": "Taylor's Inequality",
+  "short": "Bound the error of a Taylor polynomial.",
+  "trouble": "",
+  "prereqs": [
+    "calc2.taylor-series"
+  ],
+  "xp": 3,
+  "viz": [
+    "taylor"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A <a href=\"/math/calculus-2/taylor-series/\">Taylor polynomial</a> is an approximation. How good is it? Taylor's inequality bounds the error using the next derivative, much as the <a href=\"/math/calculus-1/mean-value-theorem/\">Mean Value Theorem</a> bounds how far a function can move."
+      },
+      {
+        "t": "why",
+        "html": "Write $f(x) = T_n(x) + R_n(x)$. Taylor's theorem says the remainder has the form\n$$R_n(x) = \\frac{f^{(n+1)}(c)}{(n + 1)!}(x - a)^{n+1}$$\nfor some $c$ between $a$ and $x$: it looks just like the next term of the series, with the derivative taken at an unknown point. (For $n = 0$ this is the Mean Value Theorem.) You do not know $c$, but if you know a bound $M$ for $|f^{(n+1)}|$ on the whole interval, you get a guaranteed error bound."
+      },
+      {
+        "t": "key",
+        "html": "<b>Taylor's inequality:</b> if $|f^{(n+1)}(t)| \\le M$ for all $t$ between $a$ and $x$, then\n$$|\\role[error after degree n]{remainder}{R_n(x)}| \\le \\frac{\\role[bound on the next derivative]{constant}{M}}{(n + 1)!}|\\role[distance from the center a]{input}{x - a}|^{n+1}.$$\nIf $R_n(x) \\to 0$ as $n \\to \\infty$, the Taylor series converges to $f(x)$."
+      },
+      {
+        "t": "ex",
+        "title": "A sine estimate",
+        "q": "Bound the error when $T_3(x) = x - \\frac{x^{3}}{6}$ approximates $\\sin(0.5)$.",
+        "steps": [
+          "Every derivative of $\\sin$ is $\\pm\\sin$ or $\\pm\\cos$, so $M = 1$ works.",
+          "$|R_3(0.5)| \\le \\frac{1}{4!}(0.5)^{4} = \\frac{1}{384} \\approx 0.0026$.",
+          "(Actually $T_3(0.5) = 0.479167$ and $\\sin 0.5 = 0.479426$: the true error is $0.00026$, well inside the bound.)"
+        ],
+        "a": "At most $\\frac{1}{384}$"
+      },
+      {
+        "t": "ex",
+        "title": "How many terms for e?",
+        "q": "How many terms of $e = \\sum\\frac{1}{n!}$ guarantee an error less than $0.001$?",
+        "steps": [
+          "For $f(x) = e^{x}$ on $[0, 1]$, every derivative is at most $e < 3$, so $M = 3$.",
+          "$|R_n(1)| \\le \\frac{3}{(n + 1)!}$. Need $(n + 1)! > 3000$: $6! = 720$ is too small, $7! = 5040$ works.",
+          "So $n = 6$: $$\\begin{aligned} T_6(1) &= 1 + 1 + \\frac{1}{2} + \\cdots + \\frac{1}{720} \\\\ &\\approx 2.71806, \\end{aligned}$$ within $0.001$ of $e = 2.71828$."
+        ],
+        "a": "$n = 6$ (seven terms)"
+      },
+      {
+        "t": "viz",
+        "name": "taylor",
+        "opts": {
+          "f": "e^x",
+          "a": 0,
+          "n": 3,
+          "maxN": 12,
+          "x": 1,
+          "xmin": -3,
+          "xmax": 3,
+          "ymin": -1,
+          "ymax": 10
+        },
+        "cap": "Taylor polynomials of $e^{x}$ with a probe at $x = 1$. The readout shows the actual error; compare it with the bound $\\frac{3}{(n + 1)!}$ as you raise $n$."
+      },
+      {
+        "t": "mistake",
+        "html": "Choosing $M$ from the value at the center only. For $e^{x}$ on $[0, 2]$, $f^{(n+1)}(0) = 1$, but the bound must hold for every $t$ in the interval, and $e^{t}$ reaches $e^{2} \\approx 7.39$. Using $M = 1$ would understate the error. Find the largest value of $|f^{(n+1)}|$ on the whole interval between $a$ and $x$ (or a convenient number above it)."
+      },
+      {
+        "t": "ex",
+        "title": "Why the series for e^x works",
+        "q": "Show that $\\sum\\frac{x^{n}}{n!}$ equals $e^{x}$ for every $x$.",
+        "steps": [
+          "On the interval between 0 and $x$, $|f^{(n+1)}| \\le e^{|x|}$, so $|R_n(x)| \\le e^{|x|}\\frac{|x|^{n+1}}{(n + 1)!}$.",
+          "For fixed $x$, $\\frac{|x|^{n+1}}{(n + 1)!} \\to 0$ (factorials beat powers).",
+          "So $R_n(x) \\to 0$, and the series converges to $e^{x}$."
+        ],
+        "a": "$e^{x} = \\sum\\frac{x^{n}}{n!}$ for all $x$"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 2, Section 6.3: Taylor and Maclaurin Series (Taylor's theorem with remainder)"
+      },
+      {
+        "name": "Paul’s Online Math Notes (Lamar University), Calculus II: Taylor Series (remainder)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

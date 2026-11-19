@@ -1,0 +1,134 @@
+{
+  "id": "gchem2.salt-solutions",
+  "slug": "salt-solutions",
+  "ladder": "chemistry",
+  "course": "gchem2",
+  "unit": "acids-bases",
+  "title": "Acidic, Basic and Neutral Salts",
+  "short": "Ions from weak acids or weak bases react with water and shift the pH.",
+  "trouble": "Students think every salt solution is neutral because salts come from neutralization.",
+  "prereqs": [
+    "gchem2.ka-kb",
+    "gchem2.weak-base-ph"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-phscale"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A salt is made of ions, and some ions are weak acids or weak bases. Using <a href=\"/chemistry/general-chemistry-2/ka-kb/\">Ka × Kb = Kw</a> and the <a href=\"/chemistry/general-chemistry-2/weak-base-ph/\">weak-base method</a>, you can predict and compute the pH of a salt solution."
+      },
+      {
+        "t": "key",
+        "html": "Ions from strong acids and strong bases ($\\mathrm{Cl^-}$, $\\mathrm{NO_3^-}$, $\\mathrm{Na^+}$, $\\mathrm{K^+}$) do not change the pH. The conjugate base of a weak acid ($\\mathrm{F^-}$, $\\mathrm{CH_3COO^-}$, $\\mathrm{CN^-}$) makes the solution basic. The conjugate acid of a weak base ($\\mathrm{NH_4^+}$) makes it acidic, and so do small, highly charged metal ions such as $\\mathrm{Al^{3+}}$ and $\\mathrm{Fe^{3+}}$."
+      },
+      {
+        "t": "why",
+        "html": "$\\mathrm{Cl^-}$ is the conjugate base of HCl, a strong acid, so its $K_b$ is essentially zero: it does not take protons from water. $\\mathrm{CH_3COO^-}$ is the conjugate base of a weak acid, so its $K_b = K_w/K_a$ is small but real, and it makes a little $\\mathrm{OH^-}$. A metal ion such as $\\mathrm{Al^{3+}}$ is surrounded by water molecules; its strong positive charge pulls on their O–H bonds, and one of those waters can release a proton: $$\\mathrm{[Al(H_2O)_6]^{3+}} + \\mathrm{H_2O} \\rightleftharpoons \\mathrm{[Al(H_2O)_5(OH)]^{2+}} + \\mathrm{H_3O^+}$$"
+      },
+      {
+        "t": "viz",
+        "name": "ch-phscale",
+        "opts": {
+          "pH": 8.87,
+          "show": [
+            "conc",
+            "pOH",
+            "indicators"
+          ]
+        },
+        "cap": "0.10 M sodium acetate sits at pH 8.87: basic, though it came from a neutralization."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A basic salt",
+        "q": "Find the pH of $0.10\\ \\text{M}$ $\\mathrm{NaCH_3COO}$ ($K_a$ of acetic acid $= 1.8 \\times 10^{-5}$).",
+        "steps": [
+          "$\\mathrm{Na^+}$ is a spectator. Acetate is a weak base with $K_b = \\dfrac{1.0 \\times 10^{-14}}{1.8 \\times 10^{-5}} = 5.6 \\times 10^{-10}$.",
+          "$$[\\mathrm{OH^-}] = \\sqrt{(5.6 \\times 10^{-10})(0.10)} = 7.5 \\times 10^{-6}\\ \\text{M}$$; $\\text{pOH} = 5.13$.",
+          "$\\text{pH} = 14.00 - 5.13 = 8.87$."
+        ],
+        "a": "$\\text{pH} = 8.87$."
+      },
+      {
+        "t": "ex",
+        "title": "An acidic salt",
+        "q": "Find the pH of $0.20\\ \\text{M}$ $\\mathrm{NH_4Cl}$ ($K_b$ of $\\mathrm{NH_3} = 1.8 \\times 10^{-5}$).",
+        "steps": [
+          "$\\mathrm{Cl^-}$ is a spectator. $\\mathrm{NH_4^+}$ is a weak acid: $K_a = \\dfrac{1.0 \\times 10^{-14}}{1.8 \\times 10^{-5}} = 5.6 \\times 10^{-10}$.",
+          "$$[\\mathrm{H_3O^+}] = \\sqrt{(5.6 \\times 10^{-10})(0.20)} = 1.05 \\times 10^{-5}\\ \\text{M}$$",
+          "$\\text{pH} = 4.98$."
+        ],
+        "a": "$\\text{pH} = 4.98$."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Salt",
+          "Cation",
+          "Anion",
+          "Solution"
+        ],
+        "rows": [
+          [
+            "$\\mathrm{NaCl}$",
+            "neutral",
+            "neutral",
+            "neutral"
+          ],
+          [
+            "$\\mathrm{KF}$",
+            "neutral",
+            "weak base",
+            "basic"
+          ],
+          [
+            "$\\mathrm{NH_4NO_3}$",
+            "weak acid",
+            "neutral",
+            "acidic"
+          ],
+          [
+            "$\\mathrm{AlCl_3}$",
+            "acidic (hydrated ion)",
+            "neutral",
+            "acidic"
+          ],
+          [
+            "$\\mathrm{NH_4CN}$",
+            "weak acid, $K_a = 5.6 \\times 10^{-10}$",
+            "weak base, $K_b = 2.0 \\times 10^{-5}$",
+            "basic ($K_b > K_a$)"
+          ]
+        ],
+        "cap": "Sort each ion, then decide."
+      },
+      {
+        "t": "p",
+        "html": "For a salt whose cation and anion both react, compare the two constants: the ion with the larger $K$ wins. In $\\mathrm{NH_4CN}$, cyanide's $K_b$ is far larger than ammonium's $K_a$, so the solution is basic."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking every salt solution is neutral because salts come from neutralization. Neutralizing a weak acid with a strong base leaves the weak acid's conjugate base, which reacts with water. Check: ask for each ion, \"is it the partner of a weak acid or base?\""
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 14.4 Hydrolysis of Salts"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

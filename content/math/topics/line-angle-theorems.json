@@ -1,0 +1,139 @@
+{
+  "id": "geo.line-angle-theorems",
+  "slug": "line-angle-theorems",
+  "ladder": "math",
+  "course": "geo",
+  "unit": "proof",
+  "title": "Proving Theorems about Lines and Angles",
+  "short": "Prove vertical angles are equal and that parallel lines give equal angles, and their converses.",
+  "trouble": "Students use a parallel-line angle fact to prove lines are parallel, which reverses the logic.",
+  "prereqs": [
+    "geo.two-column-proofs",
+    "g8.parallel-lines-transversal"
+  ],
+  "xp": 3,
+  "viz": [
+    "angle",
+    "geoboard"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/math/pre-algebra/parallel-lines-transversal/\">Parallel Lines Cut by a Transversal</a> you saw that parallel lines cut by a transversal make pairs of equal angles. Now you will prove those facts with the tools from <a href=\"/math/geometry/two-column-proofs/\">Writing a Proof</a>, and also prove their converses, which run the other way."
+      },
+      {
+        "t": "h",
+        "text": "Vertical angles"
+      },
+      {
+        "t": "p",
+        "html": "<b>Vertical Angles Theorem:</b> vertical angles are congruent. <i>Proof:</i> When two lines cross, $\\angle 1$ and $\\angle 2$ form a linear pair, so $m\\angle 1 + m\\angle 2 = 180^\\circ$. Also $\\angle 2$ and $\\angle 3$ form a linear pair, so $m\\angle 2 + m\\angle 3 = 180^\\circ$. By substitution $m\\angle 1 + m\\angle 2 = m\\angle 2 + m\\angle 3$, and subtracting $m\\angle 2$ gives $m\\angle 1 = m\\angle 3$."
+      },
+      {
+        "t": "h",
+        "text": "Parallel lines"
+      },
+      {
+        "t": "why",
+        "html": "We accept one fact about parallel lines as a postulate: <b>if two parallel lines are cut by a transversal, corresponding angles are congruent</b>, along with its converse. Everything else follows. For example, an alternate interior angle is vertical to a corresponding angle, so it is congruent too: the Alternate Interior Angles Theorem is two short steps from the postulate."
+      },
+      {
+        "t": "viz",
+        "name": "angle",
+        "cap": "Drag the transversal and switch between the pairs. With parallel lines, each pair is either congruent or supplementary.",
+        "opts": {
+          "mode": "transversal",
+          "deg": 60
+        }
+      },
+      {
+        "t": "table",
+        "head": [
+          "Pair",
+          "Where the angles sit",
+          "With parallel lines"
+        ],
+        "rows": [
+          [
+            "Corresponding",
+            "same position at each crossing",
+            "congruent"
+          ],
+          [
+            "Alternate interior",
+            "between the lines, opposite sides of the transversal",
+            "congruent"
+          ],
+          [
+            "Alternate exterior",
+            "outside the lines, opposite sides",
+            "congruent"
+          ],
+          [
+            "Same-side interior",
+            "between the lines, same side",
+            "supplementary"
+          ]
+        ],
+        "cap": "Angle pairs formed by two parallel lines and a transversal."
+      },
+      {
+        "t": "ex",
+        "title": "Proving the Alternate Interior Angles Theorem",
+        "q": "<b>Given:</b> $\\ell \\parallel m$, cut by transversal $t$. <b>Prove:</b> $\\angle 3 \\cong \\angle 6$ (alternate interior angles).<div class=\"ml-viz\" data-viz=\"geo-fig\" data-opts='{\"pts\":{\"L1\":[0,3],\"L2\":[9,3],\"M1\":[0,0],\"M2\":[9,0],\"X1\":[5.33,3],\"X2\":[3.67,0],\"T1\":[2.8,-1.53],\"T2\":[6.2,4.53]},\"hide\":[\"L1\",\"L2\",\"M1\",\"M2\",\"X1\",\"X2\",\"T1\",\"T2\"],\"lines\":[[\"L1\",\"L2\",{\"arrow\":1}],[\"M1\",\"M2\",{\"arrow\":1}],[\"T1\",\"T2\"]],\"texts\":[[4.95,3.4,\"1\",{\"color\":\"blue\"}],[5.95,3.4,\"2\",{\"color\":\"blue\"}],[4.75,2.6,\"3\",{\"color\":\"red\"}],[5.75,2.6,\"4\",{\"color\":\"blue\"}],[3.3,0.4,\"5\",{\"color\":\"blue\"}],[4.3,0.4,\"6\",{\"color\":\"red\"}],[3.1,-0.4,\"7\",{\"color\":\"blue\"}],[4.1,-0.4,\"8\",{\"color\":\"blue\"}],[8.7,3.38,\"ℓ\",{\"it\":1}],[8.7,0.38,\"m\",{\"it\":1}],[6.45,4.5,\"t\",{\"it\":1}]],\"height\":220,\"label\":\"Parallel lines l and m cut by transversal t with angles numbered 1 to 8\"}' aria-label=\"Parallel lines l and m cut by transversal t with angles numbered 1 to 8\"></div>",
+        "steps": [
+          "1. $\\ell \\parallel m$ — Given.",
+          "2. $\\angle 2 \\cong \\angle 6$ — Corresponding Angles Postulate (both are above their line, right of $t$).",
+          "3. $\\angle 2 \\cong \\angle 3$ — Vertical Angles Theorem.",
+          "4. $\\angle 3 \\cong \\angle 6$ — Transitive Property of Congruence."
+        ],
+        "a": "Alternate interior angles are congruent."
+      },
+      {
+        "t": "ex",
+        "title": "Using a converse",
+        "q": "Now suppose we do not know whether $\\ell \\parallel m$. In the same numbering, $m\\angle 3 = (5x - 12)^\\circ$ and $m\\angle 6 = (3x + 20)^\\circ$. For what $x$ is $\\ell \\parallel m$?",
+        "steps": [
+          "If alternate interior angles are congruent, the lines are parallel (the converse). So set them equal: $5x - 12 = 3x + 20$.",
+          "$2x = 32$, so $x = 16$. Then both angles measure $68^\\circ$."
+        ],
+        "a": "$x = 16$ makes $\\ell \\parallel m$."
+      },
+      {
+        "t": "ex",
+        "title": "An angle chase",
+        "q": "$\\ell \\parallel m$ and $m\\angle 1 = 118^\\circ$. Find $m\\angle 6$.",
+        "steps": [
+          "$\\angle 1$ and $\\angle 5$ are corresponding, so $m\\angle 5 = 118^\\circ$.",
+          "$\\angle 5$ and $\\angle 6$ form a linear pair: $m\\angle 6 = 180 - 118 = 62^\\circ$."
+        ],
+        "a": "$62^\\circ$. The angles $\\angle 1$ and $\\angle 6$ are not one of the named pairs, so the chase took two steps."
+      },
+      {
+        "t": "key",
+        "html": "Parallel lines give congruent corresponding, alternate interior and alternate exterior angles, and supplementary same-side interior angles. The converses say the reverse: if one of those angle facts holds, the lines are parallel."
+      },
+      {
+        "t": "mistake",
+        "html": "Running the logic backward. To prove two lines are parallel, you cannot use \"parallel lines make congruent alternate interior angles\": that assumes what you want. Use the converse: \"if alternate interior angles are congruent, then the lines are parallel.\" Check by asking which part you know (angles or lines) and which part you want."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Euclid, <i>Elements</i>, Book I, Propositions 15, 27, 28 and 29"
+      },
+      {
+        "name": "OpenStax Contemporary Mathematics, 10.2 Angles"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, High School Geometry, G-CO.C.9"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

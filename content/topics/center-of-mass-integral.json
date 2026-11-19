@@ -1,0 +1,96 @@
+{
+  "id": "mech.center-of-mass-integral",
+  "slug": "center-of-mass-integral",
+  "course": "mech",
+  "courseTitle": "Mechanics with Calculus",
+  "unit": "dynamics",
+  "unitTitle": "Forces with Calculus",
+  "title": "Center of Mass by Integration",
+  "short": "x_cm = (1/M)∫x dm, with dm = λ dx for a rod whose density varies.",
+  "trouble": "Students forget to divide by the total mass, or integrate x without the density.",
+  "prereqs": [
+    "phys1.systems-center-of-mass",
+    "calc2.center-of-mass"
+  ],
+  "xp": 3,
+  "viz": [
+    "ph-rotation"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/physics/physics-1/systems-center-of-mass/\">Systems and Center of Mass</a> found the center of mass of a few separate objects as a mass-weighted average, $x_{\\text{cm}} = \\dfrac{\\sum m_ix_i}{\\sum m_i}$. A bat, a tapered beam or a rod of mixed materials is one continuous object. Slice it thin and the sums become the integrals of <a href=\"/math/calculus-2/center-of-mass/\">Moments and Centers of Mass</a>."
+      },
+      {
+        "t": "why",
+        "html": "Cut a rod lying on the $x$-axis into slices of width $dx$. If the linear density (mass per length) at $x$ is $\\lambda(x)$, the slice there has mass $dm = \\lambda(x)\\,dx$ and sits at position $x$. The weighted average over infinitely many thin slices is $$x_{\\text{cm}} = \\dfrac{\\int x\\,dm}{\\int dm} = \\dfrac{\\int_0^L x\\lambda(x)\\,dx}{\\int_0^L \\lambda(x)\\,dx}.$$ The bottom integral is just the total mass $M$."
+      },
+      {
+        "t": "key",
+        "html": "For a rod from $x = 0$ to $L$: $M = \\int_0^L \\lambda\\,dx$ and $x_{\\text{cm}} = \\dfrac{1}{M}\\int_0^L x\\lambda\\,dx$. Uniform rods balance at the middle; a rod that gets denser toward one end balances closer to that end."
+      },
+      {
+        "t": "viz",
+        "name": "ph-rotation",
+        "opts": {
+          "mode": "slices",
+          "density": "1 + 2*x",
+          "L": 1,
+          "task": "Darker slices are denser. See where the center of mass lands compared with the middle."
+        },
+        "cap": "A 1 m rod with $\\lambda = 1 + 2x$ kg/m: $M = 2\\ \\text{kg}$ and $x_{\\text{cm}} = \\dfrac{1/2 + 2/3}{2} = 0.583\\ \\text{m}$."
+      },
+      {
+        "t": "ex",
+        "title": "A tapered rod",
+        "q": "A rod of length $2\\ \\text{m}$ has $\\lambda(x) = 2 + 3x$ (kg/m). Find its mass and its center of mass.",
+        "steps": [
+          "$$M = \\int_0^2 (2 + 3x)\\,dx = \\left[2x + 1.5x^2\\right]_0^2 = 4 + 6 = 10\\ \\text{kg}$$",
+          "$$\\int_0^2 x(2 + 3x)\\,dx = \\left[x^2 + x^3\\right]_0^2 = 4 + 8 = 12\\ \\text{kg·m}$$",
+          "$x_{\\text{cm}} = 12/10 = 1.2\\ \\text{m}$, past the middle (1 m), toward the heavy end."
+        ],
+        "a": "$M = 10\\ \\text{kg}$, $x_{\\text{cm}} = 1.2\\ \\text{m}$."
+      },
+      {
+        "t": "ex",
+        "title": "A power-law density",
+        "q": "A rod of length $L$ has $\\lambda = kx^2$. Where is its center of mass?",
+        "steps": [
+          "$M = \\int_0^L kx^2\\,dx = \\tfrac{1}{3}kL^3$.",
+          "$\\int_0^L x \\cdot kx^2\\,dx = \\tfrac{1}{4}kL^4$.",
+          "$x_{\\text{cm}} = \\dfrac{kL^4/4}{kL^3/3} = \\tfrac{3}{4}L$. The constant $k$ cancels."
+        ],
+        "a": "$x_{\\text{cm}} = \\tfrac{3}{4}L$."
+      },
+      {
+        "t": "mistake",
+        "html": "Two slips: forgetting to divide by $M$ (then the \"position\" comes out in kg·m), or integrating $x\\,dx$ without the density (which finds the middle of a uniform rod whatever the real density is). Check the units: $\\int x\\lambda\\,dx$ is in kg·m, $M$ in kg, so $x_{\\text{cm}}$ is in meters. And check the range: the answer must lie between 0 and $L$, nearer the denser end."
+      },
+      {
+        "t": "note",
+        "html": "Why care where the center of mass is? Because the whole object's motion is simplest there: gravity acts as if it pulled at that one point, a thrown bat spins around it while it follows a clean parabola, and <a href=\"/physics/mechanics/system-of-particles/\">Newton's Second Law for a System</a> shows that the external forces alone decide how it accelerates. You'll also need $\\int x^2\\,dm$, a close cousin of $\\int x\\,dm$, for <a href=\"/physics/mechanics/moment-of-inertia-integral/\">Moment of Inertia by Integration</a>."
+      },
+      {
+        "t": "note",
+        "html": "The same idea works in two and three dimensions, one coordinate at a time: $y_{\\text{cm}} = \\dfrac{1}{M}\\int y\\,dm$. Symmetry often saves work: a uniform disk, ring or sphere has its center of mass at its geometric center."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 1, 9.6 Center of Mass"
+      },
+      {
+        "name": "OpenStax Calculus Volume 2, 2.6 Moments and Centers of Mass"
+      },
+      {
+        "name": "MIT OpenCourseWare 8.01 Classical Mechanics (scope and sequence)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

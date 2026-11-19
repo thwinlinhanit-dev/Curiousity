@@ -1,0 +1,103 @@
+{
+  "id": "g8.volume-spheres",
+  "slug": "volume-spheres",
+  "ladder": "math",
+  "course": "g8",
+  "unit": "volume",
+  "title": "Volume of Spheres",
+  "short": "V = (4/3)πr³.",
+  "trouble": "",
+  "prereqs": [
+    "g8.volume-cones"
+  ],
+  "xp": 2,
+  "viz": [
+    "volume"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A sphere has no flat base to stack, so the cylinder trick needs a twist. More than 2,000 years ago, Archimedes compared a sphere with a <a href=\"/math/pre-algebra/volume-cylinders/\">cylinder</a> and a <a href=\"/math/pre-algebra/volume-cones/\">cone</a> that just fit around it."
+      },
+      {
+        "t": "why",
+        "html": "A sphere of radius $r$ fits snugly in a cylinder of radius $r$ and height $2r$. That cylinder holds $\\pi r^{2} \\cdot 2r = 2\\pi r^{3}$, and a cone with the same base and height holds one third as much, $\\frac{2}{3}\\pi r^{3}$. Archimedes showed that the cone and the sphere together hold exactly as much as the cylinder. So the sphere holds $2\\pi r^{3} - \\frac{2}{3}\\pi r^{3} = \\frac{4}{3}\\pi r^{3}$: the cone, sphere and cylinder are in the ratio $1 : 2 : 3$."
+      },
+      {
+        "t": "viz",
+        "name": "g8-solid",
+        "opts": {
+          "mode": "archimedes",
+          "r": 3
+        },
+        "cap": "A cone, a sphere and a cylinder with the same radius and height $2r$. Change $r$; the ratio stays $1 : 2 : 3$."
+      },
+      {
+        "t": "key",
+        "html": "$$V = \\frac{4}{3}\\pi r^{3}$$ Cube the radius (not the diameter), then multiply by $\\frac{4}{3}\\pi$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "From the radius",
+        "q": "Find the volume of a sphere with radius 3 cm.",
+        "steps": [
+          "$r^{3} = 27$.",
+          "$V = \\frac{4}{3}\\pi \\cdot 27 = 36\\pi \\approx 113$."
+        ],
+        "a": "$36\\pi \\approx 113$ cm³"
+      },
+      {
+        "t": "ex",
+        "title": "From the diameter",
+        "q": "A ball has diameter 12 inches. Find its volume.",
+        "steps": [
+          "$r = 6$, so $r^{3} = 216$.",
+          "$V = \\frac{4}{3}\\pi \\cdot 216 = 288\\pi \\approx 904$."
+        ],
+        "a": "$288\\pi \\approx 904$ cubic inches"
+      },
+      {
+        "t": "ex",
+        "title": "Half a sphere",
+        "q": "A bowl is a hemisphere with radius 6 cm. How much can it hold?",
+        "steps": [
+          "A whole sphere: $\\frac{4}{3}\\pi \\cdot 216 = 288\\pi$.",
+          "Half of it: $144\\pi \\approx 452$."
+        ],
+        "a": "$144\\pi \\approx 452$ cm³"
+      },
+      {
+        "t": "ex",
+        "title": "Work backward",
+        "q": "A sphere has volume $36\\pi$. Find its radius.",
+        "steps": [
+          "$\\frac{4}{3}\\pi r^{3} = 36\\pi$. Divide by $\\pi$ and multiply by $\\frac{3}{4}$: $r^{3} = 27$.",
+          "$r = \\sqrt[3]{27} = 3$."
+        ],
+        "a": "$3$"
+      },
+      {
+        "t": "mistake",
+        "html": "Squaring the radius instead of cubing it, or cubing the diameter. Volume is three-dimensional, so the radius appears three times. With the diameter 12, cubing 12 instead of 6 makes the answer 8 times too big."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Prealgebra 2e, Section 9.6: Solve Geometry Applications: Volume and Surface Area"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 8, 8.G.C.9"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

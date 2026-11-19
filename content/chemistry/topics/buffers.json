@@ -1,0 +1,92 @@
+{
+  "id": "gchem2.buffers",
+  "slug": "buffers",
+  "ladder": "chemistry",
+  "course": "gchem2",
+  "unit": "acids-bases",
+  "title": "How Buffers Work",
+  "short": "A weak acid and its conjugate base use up added acid or base, so the pH barely moves.",
+  "trouble": "Students think a buffer keeps the pH from changing at all, or that a strong acid mixed with its salt makes a buffer.",
+  "prereqs": [
+    "gchem2.weak-acid-ph",
+    "gchem2.salt-solutions"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-buffer"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A buffer resists changes in pH. It is a mixture of a <a href=\"/chemistry/general-chemistry-2/weak-acid-ph/\">weak acid</a> and its conjugate base, in comparable amounts: exactly the kind of ions you met in <a href=\"/chemistry/general-chemistry-2/salt-solutions/\">salt solutions</a>. Blood, seawater and most lab reactions rely on buffers."
+      },
+      {
+        "t": "key",
+        "html": "The weak acid HA neutralizes added base, $\\mathrm{HA + OH^- \\to A^- + H_2O}$, and the conjugate base $\\mathrm{A^-}$ neutralizes added acid, $\\mathrm{A^- + H_3O^+ \\to HA + H_2O}$. Both reactions go essentially to completion, so the strong acid or base is replaced by a weak one and the pH changes only a little."
+      },
+      {
+        "t": "why",
+        "html": "The pH of a buffer depends on the ratio $[\\mathrm{A^-}]/[\\mathrm{HA}]$ (as the next lesson shows). Adding a little strong acid turns a little $\\mathrm{A^-}$ into HA: the ratio changes slightly, so the pH does too, but only slightly. In plain water, the same acid has nothing to react with, so it all stays as $\\mathrm{H_3O^+}$ and the pH crashes. A strong acid with its own salt (HCl with NaCl) cannot buffer: $\\mathrm{Cl^-}$ is too weak a base to take up added acid."
+      },
+      {
+        "t": "viz",
+        "name": "ch-buffer",
+        "opts": {
+          "mode": "bars",
+          "pKa": 4.74,
+          "nHA": 0.1,
+          "nA": 0.1,
+          "V": 1,
+          "adds": 0.01,
+          "water": true
+        },
+        "cap": "Add acid or base to the buffer and to plain water side by side. The buffer's bars trade places a little at a time; the water's pH swings wildly."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Adding acid to a buffer and to water",
+        "q": "A liter holds $0.10\\ \\text{mol}$ $\\mathrm{CH_3COOH}$ and $0.10\\ \\text{mol}$ $\\mathrm{CH_3COO^-}$ (pH 4.74). Add $0.010\\ \\text{mol}$ HCl. Find the new pH, and compare with adding the same HCl to a liter of pure water.",
+        "steps": [
+          "Neutralization: $\\mathrm{CH_3COO^- + H_3O^+ \\to CH_3COOH + H_2O}$. Acetate: $0.10 - 0.010 = 0.09\\ \\text{mol}$; acetic acid: $0.11\\ \\text{mol}$.",
+          "$\\text{pH} = 4.74 + \\log\\dfrac{0.09}{0.11} = 4.74 - 0.09 = 4.65$. A change of 0.09.",
+          "In water: $[\\mathrm{H_3O^+}] = 0.010\\ \\text{M}$, pH 2.00. A change of 5 units."
+        ],
+        "a": "The buffer goes to 4.65; water goes to 2.00."
+      },
+      {
+        "t": "ex",
+        "title": "Which mixtures are buffers?",
+        "q": "Which of these make a buffer: (a) HCl and NaCl; (b) $\\mathrm{NH_3}$ and $\\mathrm{NH_4Cl}$; (c) HF and NaF; (d) 0.20 mol $\\mathrm{CH_3COOH}$ with 0.10 mol NaOH?",
+        "steps": [
+          "(a) No: HCl is strong, and $\\mathrm{Cl^-}$ cannot take up acid.",
+          "(b) Yes: weak base plus its conjugate acid. (c) Yes: weak acid plus its conjugate base.",
+          "(d) Yes: the NaOH turns 0.10 mol of the acid into acetate, leaving 0.10 mol of each. A buffer can be made by half-neutralizing a weak acid."
+        ],
+        "a": "(b), (c) and (d)."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking a buffer keeps the pH from changing at all, or that a strong acid plus its salt makes a buffer. A buffer slows the change; enough acid or base will still overwhelm it. And it needs a <i>weak</i> acid with its conjugate base, so both partners can react."
+      },
+      {
+        "t": "note",
+        "html": "Blood is held near pH 7.4 mainly by the carbonic acid / hydrogen carbonate pair, with the lungs adjusting the amount of $\\mathrm{CO_2}$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 14.6 Buffers"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,112 @@
+{
+  "id": "trad.venn-syllogism",
+  "slug": "venn-syllogism",
+  "ladder": "logic",
+  "course": "trad",
+  "unit": "syllogisms",
+  "title": "Testing Syllogisms with Venn Diagrams",
+  "short": "Draw three circles, diagram both premises, and the syllogism is valid when the conclusion is already shown without drawing anything more.",
+  "trouble": "Learners diagram the conclusion too, then say the picture \"matches\". Only the premises are drawn; then you read the conclusion off the picture.",
+  "prereqs": [
+    "trad.figure",
+    "trad.venn-propositions"
+  ],
+  "xp": 2,
+  "viz": [
+    "lg-venn3"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A syllogism is about three classes, so its picture needs three circles: S on the left, P on the right, M below. They make eight regions. You already know how to <a href=\"/logic/traditional-logic/venn-propositions/\">diagram one proposition</a>; now you diagram two."
+      },
+      {
+        "t": "key",
+        "html": "Diagram <b>only the premises</b>. The syllogism is <b>valid</b> if the picture then already shows the conclusion, with nothing more drawn. If you would have to add something, it is invalid."
+      },
+      {
+        "t": "why",
+        "html": "A valid argument is one where the premises cannot be true while the conclusion is false. The diagram of the premises shows everything the premises say, and nothing more. If the conclusion is already in that picture, every situation that fits the premises fits the conclusion too, which is exactly validity. If the conclusion needs one more mark, then a situation fitting the premises but not the conclusion is possible."
+      },
+      {
+        "t": "viz",
+        "name": "lg-venn3",
+        "opts": {
+          "terms": [
+            "golfers",
+            "campers",
+            "bakers"
+          ],
+          "premises": [
+            "No bakers are campers",
+            "All golfers are bakers"
+          ],
+          "conclusion": "No golfers are campers",
+          "steps": true,
+          "numbers": true
+        },
+        "cap": "Celarent, EAE-1: step through the premises. The golfer–camper overlap ends up fully shaded, so the conclusion is shown."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A valid syllogism",
+        "q": "Test: \"No bakers are campers. All golfers are bakers. So no golfers are campers.\" (S = golfers, P = campers, M = bakers)",
+        "steps": [
+          "Premise 1: no bakers are campers. Shade the overlap of M and P (regions 5 and 6).",
+          "Premise 2: all golfers are bakers. Shade the part of S outside M (regions 1 and 2).",
+          "The conclusion says the overlap of S and P (regions 2 and 5) is empty. Both are already shaded."
+        ],
+        "a": "valid"
+      },
+      {
+        "t": "ex",
+        "title": "An invalid one with true statements",
+        "q": "Test: \"All squares are polygons. All squares are rectangles. So all rectangles are polygons.\" (S = rectangles, P = polygons, M = squares)",
+        "steps": [
+          "Premise 1 shades the part of M outside P (regions 4 and 7). Premise 2 shades the part of M outside S (regions 6 and 7).",
+          "The conclusion needs the part of S outside P (regions 1 and 4) empty. Region 4 is shaded, but region 1 is not.",
+          "Every statement is true, yet the picture does not show the conclusion."
+        ],
+        "a": "invalid"
+      },
+      {
+        "t": "viz",
+        "name": "lg-venn3",
+        "opts": {
+          "terms": [
+            "rectangles",
+            "polygons",
+            "squares"
+          ],
+          "premises": [
+            "All squares are polygons",
+            "All squares are rectangles"
+          ],
+          "conclusion": "All rectangles are polygons",
+          "numbers": true
+        },
+        "cap": "Region 1 stays open: the conclusion is not shown, so the form is invalid even though every statement is true."
+      },
+      {
+        "t": "mistake",
+        "html": "Diagramming the conclusion too, then saying the picture \"matches\". Only the premises are drawn; then you read the conclusion off the picture. Check: before reading, count your marks. There should be exactly one mark (or one pair of shaded regions) per premise."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Patrick J. Hurley, A Concise Introduction to Logic, 5.2 Venn Diagrams"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

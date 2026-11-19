@@ -1,0 +1,78 @@
+{
+  "id": "physsci.digital-signals",
+  "slug": "digital-signals",
+  "course": "physsci",
+  "courseTitle": "Physical Science",
+  "unit": "waves",
+  "unitTitle": "Waves, Sound and Light",
+  "title": "Analog and Digital Signals",
+  "short": "A digital signal sends information as separate values (0s and 1s), which can still be read exactly after some noise is added.",
+  "trouble": "Students think \"digital\" just means electronic, rather than sent as distinct values.",
+  "prereqs": [
+    "physsci.wave-parts"
+  ],
+  "xp": 1,
+  "viz": [
+    "ph-wave"
+  ],
+  "figureArchetype": "WaveFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A <a href=\"/physics/physical-science/wave-parts/\">wave</a> can carry information: a radio song, a phone call, a photo. There are two ways to code it. An <b>analog</b> signal copies the original smoothly, with every in-between value. A <b>digital</b> signal sends only a few separate values, usually just two: 0 and 1."
+      },
+      {
+        "t": "key",
+        "html": "A <b>digital</b> signal sends information as distinct values (bits, 0 or 1). Because there are only a few allowed values, the receiver can still read every bit exactly after some noise is added, and copies can be perfect. With $n$ bits you can send $2^n$ different values."
+      },
+      {
+        "t": "why",
+        "html": "Suppose 0 is sent as 0 volts and 1 as 5 volts. Noise on the way might turn 5 V into 4.3 V or 0 V into 0.6 V, but the receiver only asks \"closer to 0 or to 5?\" and recovers the exact bits. An analog signal has no such rule: every bit of noise becomes part of the signal, and copying a copy makes it worse each time."
+      },
+      {
+        "t": "viz",
+        "name": "ph-wave",
+        "opts": {
+          "mode": "digital",
+          "bits": 3,
+          "noise": 0.25
+        },
+        "cap": "An analog signal sampled into 3-bit numbers, sent as 0s and 1s with noise added, and read back exactly."
+      },
+      {
+        "t": "ex",
+        "title": "Count the values",
+        "q": "How many different values can a 4-bit signal send?",
+        "steps": [
+          "Each bit has 2 choices, so $2 \\times 2 \\times 2 \\times 2 = 2^4$.",
+          "$2^4 = 16$ values (0000 up to 1111)."
+        ],
+        "a": "16"
+      },
+      {
+        "t": "ex",
+        "title": "Read a noisy signal",
+        "q": "A receiver uses 0 V for 0 and 5 V for 1. It gets 4.6 V, 0.8 V, 4.1 V, 0.3 V. What bits were sent?",
+        "steps": [
+          "Anything closer to 5 V than to 0 V (above 2.5 V) is a 1; below is a 0.",
+          "4.6 → 1, 0.8 → 0, 4.1 → 1, 0.3 → 0."
+        ],
+        "a": "1010"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking \"digital\" just means electronic. An old analog radio is electronic too. Digital means the information is sent as separate, countable values rather than a smoothly varying wave. Check: can the signal only take a few set values? Then it is digital."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Next Generation Science Standards, MS-PS4-3: digitized signals are a more reliable way to encode and transmit information than analog signals"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

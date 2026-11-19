@@ -1,0 +1,129 @@
+{
+  "id": "la.existence-uniqueness",
+  "slug": "existence-uniqueness",
+  "ladder": "math",
+  "course": "la",
+  "unit": "systems",
+  "title": "When Solutions Exist and Are Unique",
+  "short": "Read the answer from the pivot positions.",
+  "trouble": "Students think a row of zeros always means no solution.",
+  "prereqs": [
+    "la.parametric-solutions"
+  ],
+  "xp": 2,
+  "viz": [],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Two questions come before solving: does a solution <b>exist</b> (is the system <b>consistent</b>)? And if so, is it <b>unique</b>? Once a matrix is in <a href=\"/math/linear-algebra/echelon-form/\">echelon form</a>, both answers can be read from the pivot positions, often without finishing the solution. This builds on <a href=\"/math/linear-algebra/parametric-solutions/\">free variables</a>."
+      },
+      {
+        "t": "h",
+        "text": "The theorem"
+      },
+      {
+        "t": "list",
+        "items": [
+          "A system is <b>consistent</b> exactly when the last column of the augmented matrix is <b>not</b> a pivot column, that is, when the echelon form has no row $\\left[\\,0\\ \\cdots\\ 0 \\mid b\\,\\right]$ with $b \\neq 0$.",
+          "If it is consistent, the solution is <b>unique</b> when every column of the coefficient matrix is a pivot column (no free variables), and there are <b>infinitely many</b> solutions when at least one variable is free."
+        ]
+      },
+      {
+        "t": "why",
+        "html": "A row $\\left[\\,0\\ 0\\ \\cdots\\ 0 \\mid b\\,\\right]$ stands for the equation $0x_1 + \\cdots + 0x_n = b$, which says $0 = b$. If $b \\neq 0$, no choice of unknowns makes it true, and since row operations keep the solution set, the original system has no solution either. If there is no such row, back substitution never gets stuck: give the free variables any values and solve upward. No free variables means one solution; any free variable means one solution for each of its infinitely many values."
+      },
+      {
+        "t": "ex",
+        "title": "Reading three echelon forms",
+        "q": "How many solutions? $$\\text{(a) } \\left[\\begin{array}{ccc|c} 1 & 4 & -2 & 3 \\\\ 0 & 2 & 1 & 5 \\\\ 0 & 0 & 3 & 6 \\end{array}\\right] \\quad \\text{(b) } \\left[\\begin{array}{ccc|c} 1 & 4 & -2 & 3 \\\\ 0 & 2 & 1 & 5 \\\\ 0 & 0 & 0 & 6 \\end{array}\\right] \\quad \\text{(c) } \\left[\\begin{array}{ccc|c} 1 & 4 & -2 & 3 \\\\ 0 & 2 & 1 & 5 \\\\ 0 & 0 & 0 & 0 \\end{array}\\right]$$",
+        "steps": [
+          "(a) No row of the form $[\\,0\\ 0\\ 0 \\mid b\\,]$. Pivots in all three variable columns: no free variables. <b>Exactly one</b> solution.",
+          "(b) Row 3 says $0 = 6$. <b>No solution.</b>",
+          "(c) Row 3 says $0 = 0$, which is always true; it just tells us one equation was redundant. Column 3 has no pivot, so $x_3$ is free: <b>infinitely many</b> solutions."
+        ],
+        "a": "(a) one, (b) none, (c) infinitely many."
+      },
+      {
+        "t": "ex",
+        "title": "A parameter in the system",
+        "q": "For which $h$ is the system with augmented matrix $\\left[\\begin{array}{cc|c} 1 & -3 & 2 \\\\ -2 & 6 & h \\end{array}\\right]$ consistent?",
+        "steps": [
+          "$R_2 \\to R_2 + 2R_1$ gives $\\left[\\begin{array}{cc|c} 1 & -3 & 2 \\\\ 0 & 0 & h + 4 \\end{array}\\right]$.",
+          "Row 2 says $0 = h + 4$. That is possible only when $h = -4$.",
+          "For $h = -4$ the second row is all zeros and $y$ is free, so there are infinitely many solutions. For every other $h$, none."
+        ],
+        "a": "Only $h = -4$."
+      },
+      {
+        "t": "mistake",
+        "html": "\"There is a row of zeros, so there is no solution.\" Not so. A row that is zero <b>everywhere, including after the bar</b>, says $0 = 0$: harmless. Only a row that is zero on the left and <b>nonzero after the bar</b> means no solution. Check: read the row aloud as an equation."
+      },
+      {
+        "t": "viz",
+        "name": "linesystem",
+        "opts": {
+          "editable": true,
+          "m": [
+            1,
+            -1
+          ],
+          "b": [
+            2,
+            1
+          ],
+          "xmin": -6,
+          "xmax": 6,
+          "ymin": -6,
+          "ymax": 6,
+          "target": "none",
+          "task": "Use the sliders to make the system have no solution. Then make it have infinitely many."
+        },
+        "cap": "Two lines: crossing (one solution), parallel (none), or the same line (infinitely many)."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Shape of the coefficient matrix ($m$ equations, $n$ unknowns)",
+          "What it tells you"
+        ],
+        "rows": [
+          [
+            "A pivot in every row",
+            "Consistent for <b>every</b> right-hand side"
+          ],
+          [
+            "A pivot in every column",
+            "At most one solution (unique if consistent)"
+          ],
+          [
+            "More unknowns than equations ($n > m$)",
+            "Some variable is free: never a unique solution"
+          ],
+          [
+            "More equations than unknowns ($m > n$)",
+            "Some right-hand sides give no solution"
+          ]
+        ],
+        "cap": "Consequences of the pivot positions."
+      },
+      {
+        "t": "key",
+        "html": "Look at the pivots. A pivot in the last (augmented) column means no solution. Otherwise there is a solution, and it is unique exactly when every variable column has a pivot."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Margalit and Rabinoff, Interactive Linear Algebra (Georgia Tech), §1.2 Row Reduction (consistency) and §1.3 Parametric Form"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.06 Linear Algebra (Gilbert Strang, Spring 2010), Lecture 8: Solving Ax = b: Row Reduced Form R"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

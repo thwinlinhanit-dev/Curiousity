@@ -1,0 +1,114 @@
+{
+  "id": "weather.dew-point",
+  "slug": "dew-point",
+  "ladder": "earth",
+  "course": "weather",
+  "unit": "water-vapor",
+  "title": "Dew Point",
+  "short": "The dew point is the temperature air must cool to for saturation; a higher dew point means more water vapor.",
+  "trouble": "Students use relative humidity to judge how muggy it feels; the dew point does that better, because it measures the actual amount of vapor.",
+  "prereqs": [
+    "weather.relative-humidity"
+  ],
+  "xp": 2,
+  "viz": [
+    "es-humidity"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Relative humidity (<a href=\"/earth-and-space/weather-and-climate/relative-humidity/\">RH</a>) shifts whenever the temperature changes. Forecasters prefer a number that stays put when the air warms or cools: the dew point. It measures the vapor itself, in degrees."
+      },
+      {
+        "t": "key",
+        "html": "The <b>dew point</b> $T_d$ is the temperature the air must cool to, with its vapor unchanged, to become saturated: $e_s(T_d) = e$. A higher dew point means more water vapor. The dew point can never be above the air temperature, and the <b>spread</b> $T - T_d$ tells how close the air is to saturation."
+      },
+      {
+        "t": "why",
+        "html": "Cool air without adding or removing vapor and $e$ stays the same, while the saturation pressure $e_s$ falls. At some temperature they meet; that is the dew point. Since $e_s$ depends only on temperature, knowing $T_d$ tells you $e$ exactly: the dew point is the vapor pressure written as a temperature. That is why it does not change from dawn to afternoon unless vapor is added or removed."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Temperature",
+          "0 °C",
+          "5 °C",
+          "10 °C",
+          "15 °C",
+          "20 °C",
+          "25 °C",
+          "30 °C"
+        ],
+        "rows": [
+          [
+            "$e_s$ (hPa)",
+            "6.1",
+            "8.7",
+            "12.3",
+            "17.0",
+            "23.4",
+            "31.7",
+            "42.5"
+          ]
+        ],
+        "cap": "Saturation vapor pressure. Read it backward to find a dew point."
+      },
+      {
+        "t": "ex",
+        "title": "From RH to dew point",
+        "q": "Air at 30 °C has a relative humidity of 55%. What is its dew point?",
+        "steps": [
+          "Vapor pressure: $e = 0.55 \\times 42.5 \\approx 23.4$ hPa.",
+          "Find the temperature whose saturation pressure is 23.4 hPa: the table gives 20 °C.",
+          "So $T_d \\approx 20$ °C, and the spread is $30 - 20 = 10$ °C."
+        ],
+        "a": "About 20 °C"
+      },
+      {
+        "t": "ex",
+        "title": "Will there be fog?",
+        "q": "At sunset the temperature is 18 °C and the dew point is 9 °C. The forecast low is 8 °C, on a clear, calm night. What should you expect by morning?",
+        "steps": [
+          "The air will cool below its dew point (8 °C is below 9 °C).",
+          "Once it reaches 9 °C it is saturated; further cooling condenses vapor.",
+          "Expect dew on the grass and likely patches of fog. If the dew point were below 0 °C, frost would form instead."
+        ],
+        "a": "Dew and likely fog"
+      },
+      {
+        "t": "mistake",
+        "html": "Using relative humidity to judge how muggy it feels. Sticky, muggy air is about how much vapor there is, which slows the evaporation of sweat. A winter morning at 100% RH (dew point 2 °C) feels crisp, while a summer afternoon at 32 °C and 50% RH (dew point about 20 °C) feels muggy. Check the dew point instead: the National Weather Service describes dew points below about 55 °F (13 °C) as dry and comfortable, 55 to 65 °F (13 to 18 °C) as sticky, and above 65 °F as oppressive."
+      },
+      {
+        "t": "viz",
+        "name": "es-humidity",
+        "opts": {
+          "T": 30,
+          "Td": 20
+        },
+        "cap": "Air at 30 °C with a dew point of 20 °C. Press \"Cool the air\": the sample slides left at the same height (same vapor) until it hits the curve at 20 °C, its dew point."
+      },
+      {
+        "t": "p",
+        "html": "<b>Dew, frost and fog.</b> On clear, calm nights the ground loses heat by infrared to the sky and cools fastest. When it reaches the dew point, dew forms on grass and cars. If the dew point is below 0 °C, vapor turns straight to ice: frost (the dew point is then called the frost point). When a layer of air near the ground cools to its dew point, droplets form in the air itself: fog. Fog is a cloud at ground level."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "NOAA National Weather Service: Relative Humidity and Dewpoint Temperature; Dew point vs humidity (NWS La Crosse)"
+      },
+      {
+        "name": "NOAA National Weather Service, JetStream online school for weather: Humidity and Fog"
+      },
+      {
+        "name": "OpenStax, College Physics 2e, 13.6 Humidity, Evaporation, and Boiling"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

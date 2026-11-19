@@ -1,0 +1,182 @@
+{
+  "id": "phys2.thermo-processes",
+  "slug": "thermo-processes",
+  "course": "phys2",
+  "courseTitle": "Physics 2: Fluids, Heat, Electricity, Light and Atoms",
+  "unit": "thermodynamics",
+  "unitTitle": "Thermodynamics",
+  "title": "Isobaric, Isochoric, Isothermal and Adiabatic Processes",
+  "short": "Each process holds one thing fixed, which decides how Q, W and ΔU split.",
+  "trouble": "Students think an isothermal process has no heat flow, mixing it up with an adiabatic one.",
+  "prereqs": [
+    "phys2.first-law"
+  ],
+  "xp": 3,
+  "viz": [
+    "ph-pv"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The <a href=\"/physics/physics-2/first-law/\">first law</a> $\\Delta U = Q + W$ holds for every process, but it has three unknowns. Real processes are often simple enough to fix one of them: the volume, the pressure, the temperature, or the heat. Each choice decides how the energy splits."
+      },
+      {
+        "t": "why",
+        "html": "For a monatomic ideal gas, $U = \\tfrac{3}{2}nRT = \\tfrac{3}{2}PV$. Hold $V$ fixed and no work is done, so all heat becomes internal energy. Hold $T$ fixed and $U$ cannot change, so $Q = -W$: heat must flow in to pay for the work. Allow no heat (insulate the gas, or act too fast for heat to flow) and $\\Delta U = W$: work done on the gas heats it, and a gas that does work cools. Hold $P$ fixed and both happen: heat raises $U$ and pays for the work."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Process",
+          "Held fixed",
+          "$W$ (on the gas)",
+          "$Q$",
+          "$\\Delta U$"
+        ],
+        "rows": [
+          [
+            "Isochoric",
+            "Volume",
+            "$0$",
+            "$\\Delta U$",
+            "$\\tfrac{3}{2}nR\\Delta T$"
+          ],
+          [
+            "Isobaric",
+            "Pressure",
+            "$-P\\Delta V$",
+            "$\\tfrac{5}{2}P\\Delta V$",
+            "$\\tfrac{3}{2}P\\Delta V$"
+          ],
+          [
+            "Isothermal",
+            "Temperature",
+            "minus the area",
+            "$-W$",
+            "$0$"
+          ],
+          [
+            "Adiabatic",
+            "No heat flow",
+            "$\\Delta U$",
+            "$0$",
+            "$W$"
+          ]
+        ],
+        "cap": "Monatomic ideal gas. Isothermal still has heat flow; adiabatic has none."
+      },
+      {
+        "t": "key",
+        "html": "Isochoric: $W = 0$. Isobaric: $W = -P\\Delta V$. Isothermal: $\\Delta U = 0$, so $Q = -W$. Adiabatic: $Q = 0$, so $\\Delta U = W$. Then use $\\Delta U = Q + W$ for whatever is left."
+      },
+      {
+        "t": "viz",
+        "name": "ph-pv",
+        "opts": {
+          "mode": "process",
+          "states": [
+            [
+              300,
+              2
+            ],
+            [
+              120,
+              5
+            ]
+          ],
+          "path": [
+            "isothermal"
+          ],
+          "show": [
+            "isotherms"
+          ]
+        },
+        "cap": "Isothermal expansion: heat flows in while the gas does work, so $T$ stays the same."
+      },
+      {
+        "t": "viz",
+        "name": "ph-pv",
+        "opts": {
+          "mode": "process",
+          "states": [
+            [
+              300,
+              2
+            ],
+            [
+              65,
+              5
+            ]
+          ],
+          "path": [
+            "adiabatic"
+          ],
+          "show": [
+            "isotherms"
+          ]
+        },
+        "cap": "Adiabatic expansion from the same start: no heat flows in, so the gas cools and its pressure drops faster."
+      },
+      {
+        "t": "p",
+        "html": "Both are in the <a href=\"/science-lab/thermodynamics/first-law/\">Energy and the First Law</a> chapter of the Science Lab, which writes $\\Delta U = Q - W$ with $W$ done <em>by</em> the gas."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Heating in a rigid tank",
+        "q": "How much heat warms $0.50\\,\\text{mol}$ of argon by $40\\,\\text{K}$ at constant volume?",
+        "steps": [
+          "Isochoric: $W = 0$, so $Q = \\Delta U = \\tfrac{3}{2}nR\\Delta T$.",
+          "$Q = \\tfrac{3}{2}(0.50)(8.31)(40) = 249\\,\\text{J}$."
+        ],
+        "a": "$249\\,\\text{J}$"
+      },
+      {
+        "t": "ex",
+        "title": "Expanding at constant pressure",
+        "q": "A monatomic ideal gas expands at $100\\,\\text{kPa}$ from $2.0\\,\\text{L}$ to $5.0\\,\\text{L}$. Find $W$, $\\Delta U$ and $Q$.",
+        "steps": [
+          "$W = -P\\Delta V = -(100\\,\\text{kPa})(3.0\\,\\text{L}) = -300\\,\\text{J}$.",
+          "$\\Delta U = \\tfrac{3}{2}P\\Delta V = +450\\,\\text{J}$ (from $U = \\tfrac{3}{2}PV$).",
+          "$Q = \\Delta U - W = 450 + 300 = 750\\,\\text{J}$."
+        ],
+        "a": "$W = -300\\,\\text{J}$, $\\Delta U = 450\\,\\text{J}$, $Q = 750\\,\\text{J}$"
+      },
+      {
+        "t": "ex",
+        "title": "A bicycle pump",
+        "q": "Air in a pump is compressed so quickly that no heat escapes, with $200\\,\\text{J}$ of work done on it. Find $\\Delta U$.",
+        "steps": [
+          "Adiabatic: $Q = 0$, so $\\Delta U = W = +200\\,\\text{J}$.",
+          "The internal energy rises, so the air gets hotter. That is why a pump's barrel warms up."
+        ],
+        "a": "$+200\\,\\text{J}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Mixing up isothermal and adiabatic. Isothermal means the <em>temperature</em> stays fixed, and that takes heat flow: heat in during expansion, out during compression. Adiabatic means <em>no heat</em> flows, so the temperature must change. Check: if $T$ is constant, ask where the heat went; if $Q = 0$, ask why $T$ changed."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e, section 15.2 The First Law of Thermodynamics and Some Simple Processes"
+      },
+      {
+        "name": "OpenStax, University Physics Volume 2, section 3.4 Thermodynamic Processes"
+      },
+      {
+        "name": "College Board, AP Physics 2 Course and Exam Description, Unit 9: Thermodynamics"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

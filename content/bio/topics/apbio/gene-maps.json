@@ -1,0 +1,113 @@
+{
+  "id": "apbio.gene-maps",
+  "slug": "gene-maps",
+  "ladder": "bio",
+  "course": "apbio",
+  "unit": "heredity",
+  "title": "Recombination Frequency and Gene Maps",
+  "short": "Recombination frequency = recombinant offspring ÷ total offspring. 1% equals one map unit; genes far apart recombine more, so frequencies give the order of genes on a chromosome.",
+  "trouble": "Students count parental types as recombinants, or think frequencies can pass 50%. Unlinked genes recombine 50% of the time, the most a test cross can show.",
+  "prereqs": [
+    "apbio.linked-genes"
+  ],
+  "xp": 3,
+  "viz": [
+    "bi-meiosis",
+    "bi-chart"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/biology/advanced-biology/linked-genes/\">Linked Genes</a> recombinants were rare. How rare depends on distance: two genes far apart on a chromosome have more room for a crossover between them. In 1913 Alfred Sturtevant, a student in Thomas Hunt Morgan's fruit fly lab, turned that idea into the first genetic map."
+      },
+      {
+        "t": "key",
+        "html": "$$\\text{recombination frequency} = \\frac{\\text{recombinant offspring}}{\\text{total offspring}}$$ A frequency of 1% is one <b>map unit</b> (one centimorgan). Genes farther apart recombine more, so frequencies give the order and spacing of genes. Unlinked genes recombine 50% of the time, the most a test cross can show."
+      },
+      {
+        "t": "viz",
+        "name": "apbio-genemap",
+        "opts": {
+          "genes": [
+            {
+              "name": "A",
+              "pos": 0
+            },
+            {
+              "name": "B",
+              "pos": 8
+            },
+            {
+              "name": "C",
+              "pos": 23
+            }
+          ]
+        },
+        "cap": "Tap two genes to read the distance between them."
+      },
+      {
+        "t": "why",
+        "html": "Crossovers happen at places along the chromosome that are, roughly, random. So the chance that one falls between two genes grows with the distance between them, much as the chance that a raindrop lands between two marks on a sidewalk grows with the gap. Why the 50% ceiling? Genes on different chromosomes give 50% recombinants by independent assortment. Genes very far apart on one chromosome usually have one or more crossovers between them, and that also mixes them as if at random: half the gametes end up recombinant, never more."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "From counts to map units",
+        "q": "In the fly test cross of the last lesson, 170 of 1,000 offspring were recombinant. How far apart are the genes?",
+        "steps": [
+          "Recombination frequency $= 170 / 1{,}000 = 0.17 = 17\\%$.",
+          "1% = 1 map unit."
+        ],
+        "a": "17 map units apart."
+      },
+      {
+        "t": "ex",
+        "title": "Ordering three genes",
+        "q": "Recombination frequencies: A–B 8%, B–C 15%, A–C 23%. What is the order of the genes?",
+        "steps": [
+          "The largest distance, A–C (23), must span the other two.",
+          "Check: 8 + 15 = 23, so B lies between A and C.",
+          "Map: A —8— B —15— C."
+        ],
+        "a": "A, B, C (or C, B, A: a map can be read from either end)."
+      },
+      {
+        "t": "ex",
+        "title": "Placing a fourth gene",
+        "q": "A fourth gene, D, shows 5% recombination with B and 13% with A. Where is it on the map A —8— B —15— C?",
+        "steps": [
+          "D is 5 map units from B, so it sits either 8 − 5 = 3 or 8 + 5 = 13 map units from A.",
+          "It is 13 from A, so it lies on the C side of B.",
+          "Prediction to test: D should be about 15 − 5 = 10 map units from C."
+        ],
+        "a": "Between B and C: A —8— B —5— D —10— C. Mapping uses many crosses, and each one checks the others."
+      },
+      {
+        "t": "mistake",
+        "html": "Two slips. Counting the parental types as recombinants: recombinants are the two <b>small</b> classes in a test cross, the new combinations. And expecting a frequency above 50%: no test cross shows more than 50% recombinants. If your number is above 50%, you probably used the parental classes. For genes far apart, add up short distances (A–B + B–C) to estimate the long one, since double crossovers make long distances come out too small."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Biology 2e, 13.1 Chromosomal Theory of Inheritance and Genetic Linkage (linkage maps)"
+      },
+      {
+        "name": "OpenStax, Biology for AP Courses, 13.1 Chromosomal Theory of Inheritance and Genetic Linkage"
+      },
+      {
+        "name": "NHGRI Talking Glossary: Genetic Map",
+        "url": "https://www.genome.gov/genetics-glossary/Genetic-Map"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

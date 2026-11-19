@@ -1,0 +1,104 @@
+{
+  "id": "gchem1.redox-titrations",
+  "slug": "redox-titrations",
+  "ladder": "chemistry",
+  "course": "gchem1",
+  "unit": "solution-reactions",
+  "title": "Redox Titrations",
+  "short": "Titrate with permanganate or another oxidizing agent, using the electron-balanced mole ratio.",
+  "trouble": "Students use a 1 : 1 ratio as in simple acid–base titrations, instead of the 5 : 1 ratio of Fe²⁺ to MnO₄⁻.",
+  "prereqs": [
+    "gchem1.balancing-redox",
+    "gchem1.titration-calculations"
+  ],
+  "xp": 3,
+  "viz": [
+    "ch-titration"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/chemistry/general-chemistry-1/titration-calculations/\">Titration Calculations</a> used acid–base reactions; any reaction that is fast and complete can be a titration. Potassium permanganate is a favorite: its deep purple $\\mathrm{MnO_4^-}$ turns into nearly colorless $\\mathrm{Mn^{2+}}$, so the first drop in excess leaves a lasting pink color, with no indicator needed. The mole ratio comes from <a href=\"/chemistry/general-chemistry-1/balancing-redox/\">Balancing Redox Reactions</a>."
+      },
+      {
+        "t": "key",
+        "html": "Use the <b>electron-balanced</b> equation for the mole ratio. With permanganate and iron(II), $$\\mathrm{MnO_4^-} + 5\\,\\mathrm{Fe^{2+}} + 8\\,\\mathrm{H^+} \\to \\mathrm{Mn^{2+}} + 5\\,\\mathrm{Fe^{3+}} + 4\\,\\mathrm{H_2O},$$ each mole of $\\mathrm{MnO_4^-}$ reacts with <b>5 moles</b> of $\\mathrm{Fe^{2+}}$, because each Mn gains 5 electrons and each Fe gives only 1. Dichromate takes 6 $\\mathrm{Fe^{2+}}$ per $\\mathrm{Cr_2O_7^{2-}}$."
+      },
+      {
+        "t": "why",
+        "html": "At the endpoint, the electrons the titrant can accept equal the electrons the analyte can give. Permanganate's manganese goes from $+7$ to $+2$, accepting 5 electrons; each iron(II) gives up 1. So it takes five iron ions to use up one permanganate ion. The balanced equation carries this electron count in its coefficients, which is why it must be balanced by the half-reaction method before you use its ratio."
+      },
+      {
+        "t": "viz",
+        "name": "ch-titration",
+        "opts": {
+          "mode": "redox",
+          "acid": {
+            "C": 0.0736,
+            "V": 25
+          },
+          "base": {
+            "C": 0.02
+          },
+          "vol": 18.4
+        },
+        "cap": "Iron(II) titrated with 0.0200 M permanganate. At 18.4 mL every $\\mathrm{Fe^{2+}}$ has been used, and the next drop leaves the purple color."
+      },
+      {
+        "t": "ex",
+        "title": "Iron(II) concentration",
+        "q": "$25.00\\ \\text{mL}$ of an $\\mathrm{Fe^{2+}}$ solution needs $18.40\\ \\text{mL}$ of $0.02000\\ \\text{M}\\ \\mathrm{KMnO_4}$. Find $[\\mathrm{Fe^{2+}}]$.",
+        "steps": [
+          "$$n_{\\mathrm{MnO_4^-}} = 0.01840 \\times 0.02000 = 3.680 \\times 10^{-4}\\ \\text{mol}$$",
+          "$n_{\\mathrm{Fe^{2+}}} = 5 \\times 3.680 \\times 10^{-4} = 1.840 \\times 10^{-3}\\ \\text{mol}$.",
+          "$M = 1.840 \\times 10^{-3}/0.02500 = 0.07360\\ \\text{M}$."
+        ],
+        "a": "$0.07360\\ \\text{M}$"
+      },
+      {
+        "t": "ex",
+        "title": "Iron in an ore",
+        "q": "A $0.4500\\ \\text{g}$ ore sample is dissolved and all its iron converted to $\\mathrm{Fe^{2+}}$, which needs $31.20\\ \\text{mL}$ of $0.02000\\ \\text{M}\\ \\mathrm{KMnO_4}$. Find the percent iron (Fe $55.85$).",
+        "steps": [
+          "$$n_{\\mathrm{MnO_4^-}} = 0.03120 \\times 0.02000 = 6.240 \\times 10^{-4}\\ \\text{mol}$$; $n_\\text{Fe} = 5 \\times 6.240 \\times 10^{-4} = 3.120 \\times 10^{-3}\\ \\text{mol}$.",
+          "Mass: $3.120 \\times 10^{-3} \\times 55.85 = 0.1743\\ \\text{g}$.",
+          "Percent: $0.1743/0.4500 \\times 100 = 38.7\\%$."
+        ],
+        "a": "$38.7\\%$ iron."
+      },
+      {
+        "t": "ex",
+        "title": "Standardizing permanganate",
+        "q": "$0.2010\\ \\text{g}$ of sodium oxalate, $\\mathrm{Na_2C_2O_4}$ ($134.00\\ \\text{g/mol}$), needs $29.85\\ \\text{mL}$ of $\\mathrm{KMnO_4}$: $$2\\,\\mathrm{MnO_4^-} + 5\\,\\mathrm{C_2O_4^{2-}} + 16\\,\\mathrm{H^+} \\to 2\\,\\mathrm{Mn^{2+}} + 10\\,\\mathrm{CO_2} + 8\\,\\mathrm{H_2O}$$ Find $[\\mathrm{KMnO_4}]$.",
+        "steps": [
+          "$$n_{\\mathrm{C_2O_4^{2-}}} = 0.2010/134.00 = 1.500 \\times 10^{-3}\\ \\text{mol}$$",
+          "$$n_{\\mathrm{MnO_4^-}} = \\tfrac{2}{5} \\times 1.500 \\times 10^{-3} = 6.000 \\times 10^{-4}\\ \\text{mol}$$",
+          "$M = 6.000 \\times 10^{-4}/0.02985 = 0.02010\\ \\text{M}$."
+        ],
+        "a": "$0.02010\\ \\text{M}$"
+      },
+      {
+        "t": "note",
+        "html": "Permanganate is usually standardized against a weighed primary standard such as sodium oxalate, because its solutions slowly change concentration on standing."
+      },
+      {
+        "t": "mistake",
+        "html": "Using a 1 : 1 ratio as in a simple acid–base titration. With permanganate and iron(II), that would give an iron concentration five times too small. Check: count electrons. Mn gains 5, Fe loses 1, so 5 Fe for every Mn."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 4.5 Quantitative Chemical Analysis"
+      },
+      {
+        "name": "College Board, AP Chemistry Course and Exam Description (effective fall 2024), Unit 4: Chemical Reactions"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

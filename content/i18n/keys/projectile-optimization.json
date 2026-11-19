@@ -1,0 +1,90 @@
+[
+  {
+    "key": "title",
+    "source": "Projectiles with Calculus"
+  },
+  {
+    "key": "short",
+    "source": "Use derivatives to find the highest point, the range and the launch angle that goes farthest."
+  },
+  {
+    "key": "trouble",
+    "source": "Students set the whole velocity, not just its vertical part, to zero at the top of the path."
+  },
+  {
+    "key": "block.0.html",
+    "source": "<a href=\"/physics/physics-1/projectile-angled/\">Launched at an Angle</a> split a launch into horizontal motion at constant velocity and vertical motion with $a = -g$. Calculus adds two powers: setting a derivative to zero finds the top of the path, and <a href=\"/math/calculus-1/optimization/\">Optimization</a> finds the angle that sends a ball farthest. Try it in the <a href=\"/science-lab/trebuchet/\">Trebuchet</a> lab after this lesson."
+  },
+  {
+    "key": "block.1.html",
+    "source": "With launch speed $v_0$ at angle $\\theta$ from level ground (no air resistance): $$x(t) = (v_0\\cos\\theta)t, \\qquad y(t) = (v_0\\sin\\theta)t - \\tfrac{1}{2}gt^2.$$"
+  },
+  {
+    "key": "block.2.html",
+    "source": "The highest point is where $\\dfrac{dy}{dt} = v_y = 0$: at $t = \\dfrac{v_0\\sin\\theta}{g}$, with height $H = \\dfrac{(v_0\\sin\\theta)^2}{2g}$. The range on level ground is $R = \\dfrac{v_0^2\\sin 2\\theta}{g}$, largest at $\\theta = 45^\\circ$. Launched from a height, the best angle is less than $45^\\circ$."
+  },
+  {
+    "key": "block.3.html",
+    "source": "The range comes from landing when $y = 0$ again: $t\\left(v_0\\sin\\theta - \\tfrac{1}{2}gt\\right) = 0$ gives $t = 2v_0\\sin\\theta/g$, and $R = v_0\\cos\\theta \\cdot 2v_0\\sin\\theta/g = v_0^2\\sin 2\\theta/g$. To maximize, differentiate with respect to the angle: $\\dfrac{dR}{d\\theta} = \\dfrac{2v_0^2\\cos 2\\theta}{g} = 0$ when $2\\theta = 90^\\circ$. The second derivative is negative there, so it's a maximum. Steeper throws stay up longer but move sideways slowly; flatter throws move sideways fast but land quickly. At $45^\\circ$ the trade is balanced."
+  },
+  {
+    "key": "block.4.cap",
+    "source": "At the apex the vertical velocity is zero but the horizontal velocity $v_0\\cos\\theta$ remains. Complementary angles give the same range on level ground."
+  },
+  {
+    "key": "block.5.q",
+    "source": "A ball is launched at $20\\ \\text{m/s}$ at $60^\\circ$. Find its maximum height and its speed there."
+  },
+  {
+    "key": "block.5.title",
+    "source": "Maximum height"
+  },
+  {
+    "key": "block.5.a",
+    "source": "$H \\approx 15.3\\ \\text{m}$; speed at the top $10\\ \\text{m/s}$."
+  },
+  {
+    "key": "block.5.step.0",
+    "source": "$v_y = 20\\sin 60^\\circ - 9.8t = 17.32 - 9.8t = 0$ at $t = 1.77\\ \\text{s}$."
+  },
+  {
+    "key": "block.5.step.1",
+    "source": "$H = \\dfrac{(17.32)^2}{2(9.8)} = 15.3\\ \\text{m}$."
+  },
+  {
+    "key": "block.5.step.2",
+    "source": "At the top only $v_y$ is zero; $v_x = 20\\cos 60^\\circ = 10\\ \\text{m/s}$, so the speed there is $10\\ \\text{m/s}$."
+  },
+  {
+    "key": "block.6.q",
+    "source": "From a height $h$, the range as a function of angle is messier, but the result of setting $dR/d\\theta = 0$ is $\\tan\\theta^* = \\dfrac{v_0}{\\sqrt{v_0^2 + 2gh}}$. Find $\\theta^*$ for $v_0 = 15\\ \\text{m/s}$ and $h = 20\\ \\text{m}$."
+  },
+  {
+    "key": "block.6.title",
+    "source": "Throwing from a cliff"
+  },
+  {
+    "key": "block.6.a",
+    "source": "$\\theta^* \\approx 31.1^\\circ$."
+  },
+  {
+    "key": "block.6.step.0",
+    "source": "$\\sqrt{v_0^2 + 2gh} = \\sqrt{225 + 392} = 24.84\\ \\text{m/s}$ (this is the landing speed)."
+  },
+  {
+    "key": "block.6.step.1",
+    "source": "$\\tan\\theta^* = 15/24.84 = 0.604$, so $\\theta^* = 31.1^\\circ$."
+  },
+  {
+    "key": "block.6.step.2",
+    "source": "The extra fall time rewards a flatter, faster-moving throw."
+  },
+  {
+    "key": "block.7.html",
+    "source": "Setting the whole velocity to zero at the top. If the ball stopped at the top it would fall straight down, and the path would come to a point instead of a smooth arch. Only $dy/dt$ is zero there; $dx/dt$ never changes. Check: the speed at the top equals $v_0\\cos\\theta$, the smallest speed of the flight but not zero (unless the throw was straight up)."
+  },
+  {
+    "key": "block.8.html",
+    "source": "Air drag lowers the best angle on level ground below $45^\\circ$ too, often to 35°–40° for a ball. The equations here leave drag out; the <a href=\"/physics/mechanics/quadratic-drag/\">Quadratic Drag</a> topic shows how big it is."
+  }
+]

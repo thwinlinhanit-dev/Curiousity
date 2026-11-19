@@ -1,0 +1,115 @@
+{
+  "id": "draw.light-direction",
+  "slug": "light-direction",
+  "ladder": "art",
+  "course": "draw",
+  "unit": "light",
+  "title": "Where the Light Comes From",
+  "short": "Choose one light source. Every lit side faces it, and every shadow side and cast shadow points away from it.",
+  "trouble": "People shade each object on a different side, as if there were several suns.",
+  "prereqs": [
+    "draw.value-scale"
+  ],
+  "xp": 1,
+  "viz": [
+    "ar-shade"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Before you shade anything, decide <b>where the light comes from</b>. Pick one light source, such as a window, a lamp or the sun, and keep it in the same place for the whole drawing."
+      },
+      {
+        "t": "viz",
+        "name": "ar-shade",
+        "opts": {
+          "form": "sphere",
+          "light": 135,
+          "parts": []
+        },
+        "cap": "A ball lit from the upper left. Drag in the picture to move the light and watch the shadows swing to the other side."
+      },
+      {
+        "t": "key",
+        "html": "With one light, every <b>lit side faces the light</b>, and every <b>shadow side and cast shadow points away</b> from it."
+      },
+      {
+        "t": "why",
+        "html": "Light travels in straight lines from its source. Surfaces turned toward it catch the light; surfaces turned away do not. An object also blocks light from the surface behind it, so its cast shadow falls on the side away from the light. When every object follows the same rule, the drawing feels like one real place."
+      },
+      {
+        "t": "viz",
+        "name": "draw-pics",
+        "opts": {
+          "kind": "lit",
+          "items": [
+            {
+              "form": "sphere",
+              "light": 140
+            },
+            {
+              "form": "cube",
+              "light": 140
+            },
+            {
+              "form": "cylinder",
+              "light": 40
+            }
+          ],
+          "caps": [
+            "lit from the upper left",
+            "lit from the upper left",
+            "lit from the upper right!"
+          ]
+        },
+        "cap": "Three objects on one table. The cylinder is lit from the other side, as if there were a second sun."
+      },
+      {
+        "t": "ex",
+        "title": "Which side?",
+        "q": "The light comes from a window on the right. On which side of an apple is its shadow side, and which way does its cast shadow fall?",
+        "steps": [
+          "The lit side faces the window, on the right.",
+          "The shadow side is the side turned away: the left.",
+          "The cast shadow also points away from the light: to the left."
+        ],
+        "a": "Shadow side on the left; cast shadow to the left."
+      },
+      {
+        "t": "mistake",
+        "html": "People shade each object on a different side, as if there were several suns. Before shading, draw a small arrow in the corner of the page that shows where the light comes from, and check every object against it."
+      },
+      {
+        "t": "viz",
+        "name": "ar-canvas",
+        "opts": {
+          "guide": "none",
+          "height": 280,
+          "colors": [
+            "#26221e",
+            "#7a7068",
+            "#f2c22e"
+          ],
+          "task": "Draw a sun in one corner. Then draw a ball, a box and a can, and shade each one on the side away from your sun."
+        },
+        "cap": "Practice: one light for everything."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Grokipedia, \"Shading\"",
+        "url": "https://grokipedia.com/page/Shading"
+      },
+      {
+        "name": "National Core Arts Standards, Visual Arts, Grades 6 to 8 (Creating: organize and develop artistic ideas and work)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

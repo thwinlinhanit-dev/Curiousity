@@ -1,0 +1,247 @@
+{
+  "id": "geo.circle-parts",
+  "slug": "circle-parts",
+  "ladder": "math",
+  "course": "geo",
+  "unit": "circles",
+  "title": "Parts of a Circle",
+  "short": "Radius, diameter, chord, arc, tangent and secant.",
+  "trouble": "",
+  "prereqs": [
+    "geo.points-lines-planes",
+    "g7.circumference"
+  ],
+  "xp": 1,
+  "viz": [
+    "geoboard"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/math/grade-7/circumference/\">Circumference and Pi</a> you measured around circles. Here we name their parts carefully, using the language of points, lines and segments from <a href=\"/math/geometry/points-lines-planes/\">Points, Lines and Planes</a>. A <b>circle</b> is the set of all points in a plane at one fixed distance, the <b>radius</b>, from one point, the <b>center</b>. A circle with center $O$ is called circle $O$, written $\\odot O$."
+      },
+      {
+        "t": "viz",
+        "name": "geo-fig",
+        "cap": "The parts of a circle: radius (blue), diameter (red), chord (green), secant (orange) and tangent (purple).",
+        "opts": {
+          "pts": {
+            "O": [
+              0,
+              0
+            ],
+            "A": [
+              3,
+              0
+            ],
+            "B": [
+              -1.03,
+              2.82
+            ],
+            "C": [
+              1.03,
+              -2.82
+            ],
+            "D": [
+              -2.6,
+              -1.5
+            ],
+            "E": [
+              0.52,
+              2.95
+            ],
+            "F": [
+              -2.95,
+              0.52
+            ],
+            "T": [
+              0,
+              3
+            ],
+            "U": [
+              3,
+              3
+            ],
+            "V": [
+              -3,
+              3
+            ],
+            "G": [
+              2.6,
+              -1.5
+            ],
+            "H": [
+              1.5,
+              -2.6
+            ]
+          },
+          "hide": [
+            "U",
+            "V"
+          ],
+          "nolab": [
+            "G",
+            "H"
+          ],
+          "circles": [
+            [
+              "O",
+              3
+            ]
+          ],
+          "segs": [
+            [
+              "O",
+              "A",
+              {
+                "color": "blue",
+                "lab": "radius"
+              }
+            ],
+            [
+              "B",
+              "C",
+              {
+                "color": "red",
+                "lab": "diameter",
+                "side": -1
+              }
+            ],
+            [
+              "D",
+              "E",
+              {
+                "color": "green",
+                "lab": "chord",
+                "side": 1
+              }
+            ]
+          ],
+          "lines": [
+            [
+              "U",
+              "V",
+              {
+                "color": "purple"
+              }
+            ],
+            [
+              "G",
+              "H",
+              {
+                "color": "orange"
+              }
+            ]
+          ],
+          "texts": [
+            [
+              3.9,
+              3.35,
+              "tangent",
+              {
+                "color": "purple",
+                "size": 12
+              }
+            ],
+            [
+              3.7,
+              -1.2,
+              "secant",
+              {
+                "color": "orange",
+                "size": 12
+              }
+            ]
+          ],
+          "height": 260,
+          "label": "A circle with a radius, a diameter, a chord, a secant and a tangent"
+        }
+      },
+      {
+        "t": "table",
+        "head": [
+          "Part",
+          "Definition"
+        ],
+        "rows": [
+          [
+            "radius",
+            "a segment from the center to a point on the circle (also its length, $r$)"
+          ],
+          [
+            "chord",
+            "a segment whose endpoints are both on the circle"
+          ],
+          [
+            "diameter",
+            "a chord through the center; its length is $d = 2r$"
+          ],
+          [
+            "secant",
+            "a line that crosses the circle at two points"
+          ],
+          [
+            "tangent",
+            "a line in the plane of the circle that touches it at exactly one point, the point of tangency"
+          ],
+          [
+            "arc",
+            "part of the circle between two points; a <b>minor arc</b> is less than half the circle, a <b>major arc</b> more than half, and a <b>semicircle</b> exactly half"
+          ],
+          [
+            "central angle",
+            "an angle with its vertex at the center"
+          ]
+        ],
+        "cap": "Words for the parts of a circle."
+      },
+      {
+        "t": "why",
+        "html": "Every part is defined from the center and the radius, because that is what a circle <i>is</i>: all its points are one radius from the center. That single fact will explain every theorem in this unit, from why all radii are equal to why a tangent meets a radius at a right angle."
+      },
+      {
+        "t": "key",
+        "html": "Radii go from the center to the circle; chords join two points of the circle; a diameter is the chord through the center ($d = 2r$, and it is the longest chord). A secant line cuts the circle twice; a tangent line touches it once."
+      },
+      {
+        "t": "ex",
+        "title": "Naming parts",
+        "q": "In $\\odot O$, $\\overline{PQ}$ has both endpoints on the circle and passes through $O$. Line $\\ell$ meets the circle only at $T$. What are they?",
+        "steps": [
+          "A segment with both ends on the circle is a chord; one through the center is a diameter. So $\\overline{PQ}$ is a diameter.",
+          "A line meeting the circle at exactly one point is a tangent, with point of tangency $T$."
+        ],
+        "a": "$\\overline{PQ}$ is a diameter; $\\ell$ is a tangent."
+      },
+      {
+        "t": "ex",
+        "title": "Radius and diameter",
+        "q": "A circular table has a diameter of $54$ in. What is its radius? If a different circle has circumference $18\\pi$ cm, what is its radius?",
+        "steps": [
+          "$r = \\frac{d}{2} = 27$ in.",
+          "$C = 2\\pi r = 18\\pi$, so $r = 9$ cm."
+        ],
+        "a": "$27$ in and $9$ cm"
+      },
+      {
+        "t": "mistake",
+        "html": "Calling every chord a diameter, or calling a whole line a chord. A chord is a <i>segment</i>; only the chord through the center is a diameter. A line that extends past the circle is a secant. Check: does it pass through the center? Does it stop at the circle?"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Contemporary Mathematics, 10.4 Polygons, Perimeter, and Circumference"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, High School Geometry, G-C.A.2"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

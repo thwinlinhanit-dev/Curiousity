@@ -1,0 +1,143 @@
+{
+  "id": "prob.bayes-several",
+  "slug": "bayes-several",
+  "ladder": "math",
+  "course": "prob",
+  "unit": "conditioning",
+  "title": "Bayes' Theorem with Several Causes",
+  "short": "P(Aⱼ ∣ B) = P(B ∣ Aⱼ) P(Aⱼ) / Σ P(B ∣ Aᵢ) P(Aᵢ), and each new piece of evidence updates the answer again.",
+  "trouble": "Students use P(B ∣ A) as if it were P(A ∣ B), or forget to divide by P(B).",
+  "prereqs": [
+    "prob.total-probability",
+    "stat.bayes-rule"
+  ],
+  "xp": 3,
+  "viz": [
+    "tree"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/math/probability-and-statistics/bayes-rule/\">Bayes' rule</a> you reversed a conditional probability with a tree. With several possible causes the idea is the same: the <a href=\"/math/probability/total-probability/\">law of total probability</a> supplies the denominator, and each cause gets its share. Bayes' theorem is how evidence updates a belief."
+      },
+      {
+        "t": "key",
+        "html": "For a partition $A_1, \\ldots, A_n$ and evidence $B$ with $P(B) > 0$: $$\\role[posterior]{posterior}{P(A_j \\mid B)} = \\frac{\\role[likelihood]{likelihood}{P(B \\mid A_j)}\\role[prior]{prior}{P(A_j)}}{\\role[total probability of B]{evidence}{\\sum_i P(B \\mid A_i)P(A_i)}}.$$ The <b>posterior</b> is proportional to <b>prior × likelihood</b>, rescaled so the posteriors add to 1."
+      },
+      {
+        "t": "why",
+        "html": "By definition, $P(A_j \\mid B) = \\frac{P(A_j \\cap B)}{P(B)}$. The numerator is $P(B \\mid A_j)P(A_j)$ (the multiplication rule) and the denominator is $\\sum_i P(B \\mid A_i)P(A_i)$ (total probability). In tree language: among all the paths that end in B, the posterior of cause $A_j$ is the share of probability flowing through $A_j$."
+      },
+      {
+        "t": "viz",
+        "name": "tree",
+        "opts": {
+          "tree": {
+            "kids": [
+              {
+                "label": "A",
+                "p": "1/2",
+                "kids": [
+                  {
+                    "label": "Defective",
+                    "p": "1/100"
+                  },
+                  {
+                    "label": "Good",
+                    "p": "99/100"
+                  }
+                ]
+              },
+              {
+                "label": "B",
+                "p": "3/10",
+                "kids": [
+                  {
+                    "label": "Defective",
+                    "p": "1/50"
+                  },
+                  {
+                    "label": "Good",
+                    "p": "49/50"
+                  }
+                ]
+              },
+              {
+                "label": "C",
+                "p": "1/5",
+                "kids": [
+                  {
+                    "label": "Defective",
+                    "p": "1/25"
+                  },
+                  {
+                    "label": "Good",
+                    "p": "24/25"
+                  }
+                ]
+              }
+            ]
+          },
+          "select": [
+            "C/Defective"
+          ],
+          "given": [
+            "A/Defective",
+            "B/Defective",
+            "C/Defective"
+          ]
+        },
+        "cap": "Given that the part is defective, only the three defective paths remain. Machine C has the highest defect rate, so its share of them is largest."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Which machine?",
+        "q": "Machines A, B, C make 50%, 30%, 20% of the parts with defect rates 1%, 2%, 4%. A random part is defective. Find the probability that each machine made it.",
+        "steps": [
+          "Joint probabilities: $A$: $0.005$, $B$: $0.006$, $C$: $0.008$; total $P(D) = 0.019$.",
+          "$P(A \\mid D) = \\frac{0.005}{0.019} = \\frac{5}{19}$, $P(B \\mid D) = \\frac{6}{19}$, $P(C \\mid D) = \\frac{8}{19}$.",
+          "They add to 1. C makes the fewest parts but is the most likely source of a defect."
+        ],
+        "a": "$\\frac{5}{19}$, $\\frac{6}{19}$, $\\frac{8}{19}$"
+      },
+      {
+        "t": "ex",
+        "title": "Two positive tests",
+        "q": "A condition affects 1% of people. A test is positive for 95% of people with it and for 5% without it. A person tests positive twice, and the two results are independent given their condition. Find the probability they have the condition.",
+        "steps": [
+          "After one positive: $$\\frac{0.95(0.01)}{0.95(0.01) + 0.05(0.99)} = \\frac{0.0095}{0.059} = \\frac{19}{118} \\approx 0.161$$",
+          "Use $0.161$ as the new prior. Or in one step, multiply the likelihoods: $$\\frac{0.95^{2}(0.01)}{0.95^{2}(0.01) + 0.05^{2}(0.99)} = \\frac{0.009025}{0.0115} = \\frac{361}{460}$$",
+          "$\\approx 0.785$. One positive is weak evidence for a rare condition; two independent positives are much stronger. (A negative second result would instead multiply by $0.05$ on the \"condition\" side and $0.95$ on the other, pushing the probability back down.)"
+        ],
+        "a": "$\\frac{361}{460} \\approx 0.785$"
+      },
+      {
+        "t": "note",
+        "html": "The same update in odds form: posterior odds = prior odds × likelihood ratio. Here the prior odds are $\\frac{1}{99}$, and each positive multiplies them by $\\frac{0.95}{0.05} = 19$: after two positives the odds are $\\frac{361}{99}$, a probability of $\\frac{361}{460}$."
+      },
+      {
+        "t": "mistake",
+        "html": "Reading the test's accuracy as the answer: $P(+ \\mid \\text{condition}) = 0.95$ is not $P(\\text{condition} \\mid +)$, which is only $0.161$ after one test. The other common slip is forgetting to divide by $P(B)$, so the \"posteriors\" do not add to 1. Check: list every cause and make sure your posteriors add to 1."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Grinstead and Snell, Introduction to Probability (2nd revised edition, American Mathematical Society; free from Dartmouth College), chapter 4 (Conditional Probability), section 4.1, Bayes probabilities"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.05, Introduction to Probability and Statistics (Spring 2014), readings on Bayes' theorem and updating"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

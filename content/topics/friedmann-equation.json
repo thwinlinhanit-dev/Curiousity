@@ -1,0 +1,97 @@
+{
+  "id": "astrophys.friedmann-equation",
+  "slug": "friedmann-equation",
+  "course": "astrophys",
+  "courseTitle": "Astrophysics",
+  "unit": "cosmos",
+  "unitTitle": "Galaxies and Cosmology",
+  "title": "The Friedmann Equation and Critical Density",
+  "short": "H² = 8πGρ/3 − kc²/a², so a flat universe has the critical density 3H²/(8πG).",
+  "trouble": "Students think \"flat universe\" means a universe shaped like a pancake.",
+  "prereqs": [
+    "astrophys.hubble-time",
+    "mech.orbital-energy"
+  ],
+  "xp": 3,
+  "viz": [
+    "ph-cosmic"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Does the universe expand forever? The equation that answers it was found by Alexander Friedmann in 1922 from general relativity, but its heart can be derived with nothing more than <a href=\"/physics/mechanics/orbital-energy/\">orbital energy</a>. It links the expansion rate to the density of the universe."
+      },
+      {
+        "t": "why",
+        "html": "Picture a sphere of radius $R = ar$ cut out of a uniform universe of density $\\rho$. By the shell theorem, a galaxy on its surface feels only the mass inside, $M = \\tfrac43\\pi R^3\\rho$. Its energy per unit mass is constant: $$\\tfrac12\\dot R^2 - \\frac{GM}{R} = \\text{const}.$$ Divide by $\\tfrac12R^2$ and use $H = \\dot R/R = \\dot a/a$: $$H^2 = \\frac{8\\pi G}{3}\\rho - \\frac{kc^2}{a^2},$$ where the constant has been written as $-kc^2/a^2$. General relativity gives the same equation and says what $k$ means: the <b>curvature of space</b>. The universe is flat ($k = 0$) when $\\rho$ equals the <b>critical density</b> $\\rho_c = 3H^2/(8\\pi G)$."
+      },
+      {
+        "t": "key",
+        "html": "The Friedmann equation $H^2 = \\tfrac{8\\pi G}{3}\\rho - kc^2/a^2$. With $\\Omega = \\rho/\\rho_c$: $\\Omega > 1$ means positive curvature, $\\Omega < 1$ negative, $\\Omega = 1$ flat. Measurements (Planck satellite and others) find $\\Omega$ equal to 1 within about 0.2%: about 31% matter and 69% dark energy."
+      },
+      {
+        "t": "viz",
+        "name": "ph-cosmic",
+        "opts": {
+          "mode": "scale-factor",
+          "omegaM": 0.3,
+          "omegaL": 0.7,
+          "task": "Change the amounts of matter and dark energy and watch how the expansion history changes."
+        },
+        "cap": "The scale factor over time for different mixes of matter and dark energy."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "The critical density today",
+        "q": "Find $\\rho_c$ for $H_0 = 70$ km/s/Mpc.",
+        "steps": [
+          "$H_0 = 70/3.09 \\times 10^{19} = 2.27 \\times 10^{-18}$ s⁻¹.",
+          "$\\rho_c = 3(2.27 \\times 10^{-18})^2/(8\\pi \\times 6.67 \\times 10^{-11})$."
+        ],
+        "a": "About $9.2 \\times 10^{-27}$ kg/m³, the mass of about 5.5 hydrogen atoms per cubic meter."
+      },
+      {
+        "t": "ex",
+        "title": "The expansion rate in the past",
+        "q": "With $\\Omega_m = 0.31$ and $\\Omega_\\Lambda = 0.69$, $H(z) = H_0\\sqrt{\\Omega_m(1 + z)^3 + \\Omega_\\Lambda}$. Find $H$ at $z = 1$ for $H_0 = 70$.",
+        "steps": [
+          "$0.31 \\times 2^3 + 0.69 = 3.17$, and $\\sqrt{3.17} = 1.78$.",
+          "$H = 70 \\times 1.78$."
+        ],
+        "a": "About 125 km/s/Mpc: the universe expanded faster when it was denser."
+      },
+      {
+        "t": "ex",
+        "title": "Escape speed for the universe",
+        "q": "For the sphere above, compare the expansion speed $v = HR$ with the escape speed $\\sqrt{2GM/R}$.",
+        "steps": [
+          "$v^2/v_{\\text{esc}}^2 = H^2R^2/(\\tfrac83\\pi G\\rho R^2) = \\rho_c/\\rho = 1/\\Omega$.",
+          "With matter alone, $\\Omega < 1$ means faster than escape speed."
+        ],
+        "a": "$v/v_{\\text{esc}} = 1/\\sqrt{\\Omega}$: a matter-only universe with $\\Omega < 1$ expands forever, and one with $\\Omega > 1$ recollapses. Dark energy changes this story (next topic)."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking a \"flat universe\" is shaped like a pancake. Flat describes the geometry of space everywhere, in three dimensions: parallel lines stay parallel and the angles of a giant triangle add to 180°. A closed universe ($k > 0$) is like the surface of a sphere, with triangles adding to more than 180°; an open one like a saddle. None of them has an edge. Astronomers test it with triangles billions of light-years across, using the size of hot spots in the microwave background."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Astronomy 2e, section 29.2 (A Model of the Universe) and section 29.5 (What Is the Universe Really Made Of?)"
+      },
+      {
+        "name": "MIT OpenCourseWare 8.286 The Early Universe (Fall 2013)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

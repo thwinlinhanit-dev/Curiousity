@@ -1,0 +1,90 @@
+{
+  "id": "g6.box-plots",
+  "slug": "box-plots",
+  "ladder": "math",
+  "course": "g6",
+  "unit": "statistics",
+  "title": "Box Plots",
+  "short": "Draw a box plot from the five-number summary.",
+  "trouble": "Students think a longer section of a box plot holds more data points.",
+  "prereqs": [
+    "g6.range-iqr"
+  ],
+  "xp": 2,
+  "viz": [
+    "boxplot"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The median and the quartiles you found for the <a href=\"/math/grade-6/range-iqr/\">IQR</a> split data into four parts. A box plot draws them."
+      },
+      {
+        "t": "key",
+        "html": "A <b>box plot</b> shows the <b>five-number summary</b>: minimum, $Q_1$, median, $Q_3$, maximum. The box runs from $Q_1$ to $Q_3$ with a line at the median, and whiskers reach out to the minimum and maximum. Each of the four sections holds about a quarter of the data."
+      },
+      {
+        "t": "viz",
+        "name": "boxplot",
+        "opts": {
+          "data": [
+            4,
+            6,
+            7,
+            9,
+            10,
+            12,
+            15,
+            16,
+            21
+          ],
+          "quarters": true
+        },
+        "cap": "Each shaded part holds about 25% of the values, whether it is long or short."
+      },
+      {
+        "t": "why",
+        "html": "The five numbers cut the ordered data into four groups with about the same number of values. A box plot places those cuts on a number line, so you can see the center (the median line) and the spread (the width of the box and the whiskers) at a glance. A long section means its values are spread over a wide range, not that it holds more of them."
+      },
+      {
+        "t": "ex",
+        "title": "Make the summary",
+        "q": "Find the five-number summary of 4, 6, 7, 9, 10, 12, 15, 16, 21.",
+        "steps": [
+          "Minimum 4, maximum 21. Nine values, so the median is the 5th: 10.",
+          "Lower half 4, 6, 7, 9: $Q_1 = (6 + 7) \\div 2 = 6.5$.",
+          "Upper half 12, 15, 16, 21: $Q_3 = (15 + 16) \\div 2 = 15.5$."
+        ],
+        "a": "4, 6.5, 10, 15.5, 21"
+      },
+      {
+        "t": "ex",
+        "title": "Read a box plot",
+        "q": "In a box plot, $Q_3 = 30$. About what percent of the data is above 30?",
+        "steps": [
+          "Above $Q_3$ is the right whisker: one of the four sections."
+        ],
+        "a": "About 25%"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking a longer section of a box plot holds more data points. In the plot above, the right whisker (15.5 to 21) is longer than the left one (4 to 6.5), but each holds about a quarter of the values. Quick check: count the dots in each section, not the length."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Introductory Statistics 2e, section 2.4 Box Plots"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 6.SP.B.4: box plots"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,124 @@
+{
+  "id": "phys1.spring-potential-energy",
+  "slug": "spring-potential-energy",
+  "ladder": "physics",
+  "course": "phys1",
+  "unit": "energy",
+  "title": "Elastic Potential Energy",
+  "short": "A spring stretched or squeezed by x stores ½kx².",
+  "trouble": "Students write kx² without the ½, or use the force kx as if it were energy.",
+  "prereqs": [
+    "phys1.work-from-graphs"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-energy",
+    "ph-graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A stretched spring can launch a toy or start a clock, so it stores energy. How much? It equals the work done to deform it, which is the area under the <a href=\"/physics/physics-1/work-from-graphs/\">force-stretch graph</a>."
+      },
+      {
+        "t": "key",
+        "html": "A spring stretched or compressed by $x$ from its natural length stores elastic potential energy $\\role[spring potential energy]{energy}{U_s} = \\tfrac12 \\role[spring constant]{constant}{k}\\role[stretch or compression]{position}{x}^2$."
+      },
+      {
+        "t": "why",
+        "html": "The force needed grows from $0$ to $kx$ as you stretch the spring (<a href=\"/physics/physics-1/spring-force/\">Hooke's law</a>), so the $F$–$x$ graph is a straight line through the origin. The work is the triangle under it: $\\tfrac12 \\times x \\times kx = \\tfrac12 kx^2$. The $\\tfrac12$ comes from the triangle; the square comes from the force and the distance both growing with $x$."
+      },
+      {
+        "t": "viz",
+        "name": "ph-graph",
+        "opts": {
+          "fn": "400*x",
+          "domain": [
+            0,
+            0.2
+          ],
+          "xlab": "x",
+          "xunit": "m",
+          "ylab": "F",
+          "yunit": "N",
+          "tool": "area",
+          "a": 0,
+          "b": 0.1,
+          "task": "Double the stretch from 0.1 m to 0.2 m. How does the area change?"
+        },
+        "cap": "k = 400 N/m: at 0.1 m the triangle is 2 J; at 0.2 m it is 8 J, four times as much."
+      },
+      {
+        "t": "viz",
+        "name": "ph-energy",
+        "opts": {
+          "scene": "spring",
+          "k": 400,
+          "m": 2,
+          "x0": 0.4
+        },
+        "cap": "A spring launcher: the spring energy bar turns into kinetic energy."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Energy stored",
+        "q": "A spring with $k = 250\\ \\text{N/m}$ is compressed $12\\ \\text{cm}$. How much energy does it store?",
+        "steps": [
+          "$x = 0.12\\ \\text{m}$.",
+          "$U_s = \\tfrac12(250)(0.12)^2 = 1.8\\ \\text{J}$."
+        ],
+        "a": "$1.8\\ \\text{J}$"
+      },
+      {
+        "t": "ex",
+        "title": "Stretch from energy",
+        "q": "How far must a spring with $k = 500\\ \\text{N/m}$ be stretched to store $4\\ \\text{J}$?",
+        "steps": [
+          "$4 = \\tfrac12(500)x^2$, so $x^2 = 0.016$.",
+          "$x \\approx 0.126\\ \\text{m} = 12.6\\ \\text{cm}$."
+        ],
+        "a": "about $12.6\\ \\text{cm}$"
+      },
+      {
+        "t": "ex",
+        "title": "Adding stretch",
+        "q": "A spring with $k = 300\\ \\text{N/m}$ is already stretched $5\\ \\text{cm}$. How much more energy does it take to stretch it to $10\\ \\text{cm}$?",
+        "steps": [
+          "$$\\Delta U = \\tfrac12(300)(0.10^2 - 0.05^2) = 150(0.0075) = 1.125\\ \\text{J}.$$",
+          "Not $\\tfrac12(300)(0.05)^2 = 0.375\\ \\text{J}$: the second $5\\ \\text{cm}$ is harder than the first."
+        ],
+        "a": "$1.125\\ \\text{J}$"
+      },
+      {
+        "t": "note",
+        "html": "Because the energy grows as $x^2$, the last few centimeters of a stretch store the most energy: going from $0.1$ to $0.2\\ \\text{m}$ above adds $6\\ \\text{J}$, three times as much as the first $0.1\\ \\text{m}$."
+      },
+      {
+        "t": "mistake",
+        "html": "Writing $kx^2$ without the $\\tfrac12$, or using the force $kx$ as if it were the energy. Check the units: $kx$ is in N, a force; $\\tfrac12 kx^2$ is in N·m = J, an energy. And doubling the stretch should multiply the energy by four, not two."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Physics 2e, Section 7.4 Conservative Forces and Potential Energy"
+      },
+      {
+        "name": "OpenStax University Physics Volume 1, Section 8.1 Potential Energy of a System"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-PS3-2"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

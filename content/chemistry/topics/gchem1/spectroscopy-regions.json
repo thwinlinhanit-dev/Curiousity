@@ -1,0 +1,121 @@
+{
+  "id": "gchem1.spectroscopy-regions",
+  "slug": "spectroscopy-regions",
+  "ladder": "chemistry",
+  "course": "gchem1",
+  "unit": "quantum",
+  "title": "What Light Does to Molecules",
+  "short": "Microwaves set molecules rotating, infrared makes bonds vibrate, and visible and ultraviolet light move electrons to higher levels.",
+  "trouble": "Students think infrared light makes electrons jump between levels, or that any light can break any bond.",
+  "prereqs": [
+    "gchem1.photons"
+  ],
+  "xp": 1,
+  "viz": [
+    "ch-spectrum"
+  ],
+  "figureArchetype": "WaveFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/chemistry/general-chemistry-1/photons/\">Photons and the Photoelectric Effect</a> showed that a photon's energy depends on its wavelength. Molecules can store energy in three ways: by spinning (rotation), by stretching and bending their bonds (vibration), and by moving electrons to higher orbitals. Each way needs photons of a different size, so each region of the spectrum does a different job."
+      },
+      {
+        "t": "key",
+        "html": "<b>Microwaves</b> make molecules rotate faster. <b>Infrared</b> light makes bonds vibrate. <b>Visible and ultraviolet</b> light move electrons to higher energy levels. Only photons with at least a bond's energy (most UV, and beyond) can break bonds."
+      },
+      {
+        "t": "why",
+        "html": "The energy steps for each kind of motion have very different sizes. Rotational levels are spaced by tiny amounts, well under $1\\ \\text{kJ/mol}$, which matches microwave photons. Vibrational levels are spaced by roughly 5 to 50 kJ/mol, which matches infrared photons. Electronic levels are hundreds of kJ/mol apart, which matches visible and ultraviolet photons. A molecule absorbs a photon only when the photon's energy fits one of its steps, the same rule you saw for hydrogen's levels. Compare bond energies: about 150 to 950 kJ/mol."
+      },
+      {
+        "t": "viz",
+        "name": "ch-spectrum",
+        "opts": {
+          "mode": "molecule",
+          "lambda": 10000,
+          "task": "Move the marker from microwaves through infrared to ultraviolet and watch what the molecule does."
+        },
+        "cap": "The same molecule under different light: it turns in microwaves, its bonds stretch and bend in the infrared, and an electron is lifted in visible or UV light."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Light",
+          "Wavelength",
+          "Energy per mole of photons",
+          "What it does"
+        ],
+        "rows": [
+          [
+            "Microwave",
+            "1 cm",
+            "0.012 kJ/mol",
+            "rotation"
+          ],
+          [
+            "Infrared",
+            "10 μm",
+            "12 kJ/mol",
+            "vibration"
+          ],
+          [
+            "Visible",
+            "500 nm",
+            "239 kJ/mol",
+            "electronic excitation"
+          ],
+          [
+            "Ultraviolet",
+            "200 nm",
+            "599 kJ/mol",
+            "electronic excitation; can break bonds"
+          ]
+        ],
+        "cap": "From $E = hcN_\\text{A}/\\lambda$."
+      },
+      {
+        "t": "ex",
+        "title": "An infrared photon",
+        "q": "Carbon dioxide absorbs infrared light near $15\\ \\text{μm}$. Find the energy per mole of these photons, and say what they do to the molecule.",
+        "steps": [
+          "$$E = \\dfrac{hcN_\\text{A}}{\\lambda} = \\dfrac{(6.626 \\times 10^{-34})(3.00 \\times 10^{8})(6.022 \\times 10^{23})}{15 \\times 10^{-6}\\ \\text{m}} = 7.98 \\times 10^{3}\\ \\text{J/mol}$$",
+          "That is about $8.0\\ \\text{kJ/mol}$: far too little to break a bond (C=O is about 800 kJ/mol) or lift an electron, but the right size for a vibration. These photons make the molecule bend."
+        ],
+        "a": "About $8.0\\ \\text{kJ/mol}$; they set the molecule bending."
+      },
+      {
+        "t": "ex",
+        "title": "Enough to break a bond?",
+        "q": "A germicidal lamp emits $254\\ \\text{nm}$ ultraviolet light. Does one photon carry enough energy to break a C–C bond ($347\\ \\text{kJ/mol}$)?",
+        "steps": [
+          "Per mole of photons: $$E = \\dfrac{(6.626 \\times 10^{-34})(3.00 \\times 10^{8})(6.022 \\times 10^{23})}{2.54 \\times 10^{-7}} = 4.71 \\times 10^{5}\\ \\text{J/mol} = 471\\ \\text{kJ/mol}$$",
+          "$471 > 347$, so yes: each photon carries more than one bond's worth of energy."
+        ],
+        "a": "Yes: $471\\ \\text{kJ/mol} > 347\\ \\text{kJ/mol}$."
+      },
+      {
+        "t": "mistake",
+        "html": "Saying infrared light makes electrons jump between levels, or that any light can break any bond. An infrared photon carries only a few to tens of kJ/mol, enough to set bonds vibrating, which we feel as warmth; electronic jumps and bond breaking need hundreds. Check: work out $hcN_\\text{A}/\\lambda$ and compare it with the energy of the step you have in mind."
+      },
+      {
+        "t": "note",
+        "html": "This is the physics behind the greenhouse effect: the ground gives off infrared light, and $\\mathrm{CO_2}$ and $\\mathrm{H_2O}$ absorb some of it through their vibrations. A microwave oven works because its rapidly changing field twists polar water molecules back and forth, and their jostling heats the food."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 6.1 Electromagnetic Energy"
+      },
+      {
+        "name": "College Board, AP Chemistry Course and Exam Description (effective fall 2024), Unit 3: Properties of Substances and Mixtures"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

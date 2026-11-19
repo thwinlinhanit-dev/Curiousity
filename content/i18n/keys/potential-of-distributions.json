@@ -1,0 +1,110 @@
+[
+  {
+    "key": "title",
+    "source": "Potentials of Charge Distributions"
+  },
+  {
+    "key": "short",
+    "source": "V = k∫dq/r adds up as a scalar for rods, rings and disks."
+  },
+  {
+    "key": "trouble",
+    "source": "Students split potentials into components as if they were vectors."
+  },
+  {
+    "key": "block.0.html",
+    "source": "For <a href=\"/physics/electricity-and-magnetism/field-of-ring-disk/\">rings and disks</a> we added field vectors piece by piece and had to watch every component. Potential is kinder. Each piece $dq$ contributes $k\\,dq/r$, a plain number with no direction, and numbers just add. This is often the easiest road to the field too: find $V$ first, then take its slope."
+  },
+  {
+    "key": "block.1.html",
+    "source": "With $V = 0$ far away,\n        $$V = \\int \\frac{k\\,dq}{r}.$$\n        Ring, on its axis: $V = \\dfrac{kQ}{\\sqrt{z^2 + R^2}}$. Disk, on its axis: $V = \\dfrac{\\sigma}{2\\varepsilon_0}\\left(\\sqrt{z^2 + R^2} - z\\right)$. Rod, on its own line, $a$ beyond the end: $V = k\\lambda\\ln\\dfrac{a + L}{a}$."
+  },
+  {
+    "key": "block.2.html",
+    "source": "Each piece $dq$ is a point charge, and <a href=\"/physics/electricity-and-magnetism/potential-from-field/\">a point charge's potential</a> is $k\\,dq/r$. Potentials of several charges add because their fields add: $-\\int(\\vec{E}_1 + \\vec{E}_2)\\cdot d\\vec{\\ell}$ splits into two integrals. Since each term is a number (positive for positive charge), there is no cancelling by direction and no need for components."
+  },
+  {
+    "key": "block.3.cap",
+    "source": "Potential from a ring, piece by piece. Every bar counts fully; nothing cancels, even at the center, where the field is zero."
+  },
+  {
+    "key": "block.4.text",
+    "source": "Worked examples"
+  },
+  {
+    "key": "block.5.q",
+    "source": "A ring of radius $5.0\\ \\text{cm}$ carries $4.0\\ \\text{nC}$. Find $V$ at its center and on its axis $12\\ \\text{cm}$ from the center."
+  },
+  {
+    "key": "block.5.title",
+    "source": "A ring, at the center and on the axis"
+  },
+  {
+    "key": "block.5.a",
+    "source": "$719\\ \\text{V}$ and $277\\ \\text{V}$"
+  },
+  {
+    "key": "block.5.step.0",
+    "source": "At the center every piece is $R$ away: $V = \\dfrac{kQ}{R} = \\dfrac{(8.99 \\times 10^{9})(4.0 \\times 10^{-9})}{0.050} = 719\\ \\text{V}$."
+  },
+  {
+    "key": "block.5.step.1",
+    "source": "On the axis every piece is $\\sqrt{z^2 + R^2} = \\sqrt{0.12^2 + 0.05^2} = 0.13\\ \\text{m}$ away: $V = \\dfrac{kQ}{0.13} = 277\\ \\text{V}$."
+  },
+  {
+    "key": "block.6.q",
+    "source": "A rod $0.30\\ \\text{m}$ long carries $6.0\\ \\text{nC}$. Find $V$ at a point on its line, $0.10\\ \\text{m}$ beyond one end."
+  },
+  {
+    "key": "block.6.title",
+    "source": "A rod, on its own line"
+  },
+  {
+    "key": "block.6.a",
+    "source": "$V \\approx 249\\ \\text{V}$"
+  },
+  {
+    "key": "block.6.step.0",
+    "source": "$\\lambda = 6.0\\ \\text{nC}/0.30\\ \\text{m} = 20\\ \\text{nC/m}$. A piece $dx$ at distance $x$ adds $k\\lambda\\,dx/x$."
+  },
+  {
+    "key": "block.6.step.1",
+    "source": "$$V = \\int_{0.10}^{0.40}\\frac{k\\lambda\\,dx}{x} = k\\lambda\\ln\\frac{0.40}{0.10} = (8.99 \\times 10^{9})(20 \\times 10^{-9})\\ln 4$$"
+  },
+  {
+    "key": "block.6.step.2",
+    "source": "$V = 249\\ \\text{V}$."
+  },
+  {
+    "key": "block.7.q",
+    "source": "A disk of radius $10\\ \\text{cm}$ carries $10\\ \\text{nC}$ spread evenly. Find $V$ on its axis $5.0\\ \\text{cm}$ from the center."
+  },
+  {
+    "key": "block.7.title",
+    "source": "A disk, from rings"
+  },
+  {
+    "key": "block.7.a",
+    "source": "$V \\approx 1110\\ \\text{V}$"
+  },
+  {
+    "key": "block.7.step.0",
+    "source": "A ring of radius $r$, width $dr$ holds $dq = \\sigma\\,2\\pi r\\,dr$ and adds $\\dfrac{k\\,dq}{\\sqrt{z^2 + r^2}}$."
+  },
+  {
+    "key": "block.7.step.1",
+    "source": "$$V = k\\sigma\\pi\\int_0^R\\frac{2r\\,dr}{\\sqrt{z^2 + r^2}} = 2\\pi k\\sigma\\left(\\sqrt{z^2 + R^2} - z\\right) = \\frac{\\sigma}{2\\varepsilon_0}\\left(\\sqrt{z^2 + R^2} - z\\right)$$ (substitute $u = z^2 + r^2$)."
+  },
+  {
+    "key": "block.7.step.2",
+    "source": "$\\sigma = 3.18 \\times 10^{-7}\\ \\text{C/m²}$ and $\\sqrt{0.050^2 + 0.10^2} - 0.050 = 0.0618\\ \\text{m}$, so $V = \\dfrac{3.18 \\times 10^{-7}}{2(8.85 \\times 10^{-12})}(0.0618) = 1110\\ \\text{V}$."
+  },
+  {
+    "key": "block.8.text",
+    "source": "Which road to take"
+  },
+  {
+    "key": "block.10.html",
+    "source": "<b>Splitting potential into components.</b> Writing $dV\\cos\\theta$, or cancelling the potentials of pieces on opposite sides, treats $V$ like a vector. It is not: a ring's center has $V = kQ/R$ even though the field there is zero, and that stays true if the charge is bunched on one side. Check: does every term in your sum have the sign of its own charge, with no angles in it? Then you are adding potentials correctly."
+  }
+]

@@ -1,0 +1,633 @@
+{
+  "key": "prob",
+  "ladder": "math",
+  "title": "Probability",
+  "short": "Probability",
+  "after": [
+    "calc2",
+    "stat",
+    "calc3"
+  ],
+  "units": [
+    {
+      "key": "foundations",
+      "title": "Probability Spaces",
+      "blurb": "Build probability from three rules, and count carefully when outcomes are equally likely."
+    },
+    {
+      "key": "conditioning",
+      "title": "Conditioning",
+      "blurb": "Tell joint from conditional probability, split problems into cases, update with Bayes' theorem, and test independence."
+    },
+    {
+      "key": "discrete",
+      "title": "Discrete Random Variables",
+      "blurb": "Work with pmfs and CDFs, expectations of functions, variance rules and indicators, and the classic discrete distributions."
+    },
+    {
+      "key": "continuous",
+      "title": "Continuous Random Variables",
+      "blurb": "Find probabilities, CDFs, means and variances from densities, meet the exponential distribution and the Poisson process, and transform variables."
+    },
+    {
+      "key": "joint",
+      "title": "Joint Distributions",
+      "blurb": "Handle two random variables at once: joint tables and densities, conditional distributions, covariance, sums and conditional expectation."
+    },
+    {
+      "key": "limit-theorems",
+      "title": "Inequalities and Limit Theorems",
+      "blurb": "Bound probabilities with Markov and Chebyshev, then see why averages settle down and sums look normal."
+    },
+    {
+      "key": "markov-chains",
+      "title": "Markov Chains",
+      "blurb": "Follow a process that moves between states at random: n-step probabilities, absorption and the long run."
+    }
+  ],
+  "topics": [
+    {
+      "id": "prob.axioms",
+      "slug": "axioms",
+      "course": "prob",
+      "unit": "foundations",
+      "title": "The Axioms of Probability",
+      "short": "Every probability rule follows from three: P(A) ≥ 0, P(S) = 1, and the probabilities of disjoint events add.",
+      "prereqs": [
+        "stat.addition-rule"
+      ],
+      "viz": [
+        "prob-square"
+      ]
+    },
+    {
+      "id": "prob.inclusion-exclusion-events",
+      "slug": "inclusion-exclusion-events",
+      "course": "prob",
+      "unit": "foundations",
+      "title": "Inclusion–Exclusion for Events",
+      "short": "P(A ∪ B ∪ C) adds the three probabilities, subtracts the three pairwise overlaps and adds back the triple overlap.",
+      "prereqs": [
+        "prob.axioms"
+      ],
+      "viz": [
+        "venn"
+      ]
+    },
+    {
+      "id": "prob.birthday-problem",
+      "slug": "birthday-problem",
+      "course": "prob",
+      "unit": "foundations",
+      "title": "Products of Chances: The Birthday Problem",
+      "short": "Find \"at least one match\" through its complement, a product of shrinking fractions: in a group of 23, a shared birthday is slightly more likely than not.",
+      "prereqs": [
+        "prob.axioms",
+        "stat.counting-probability"
+      ],
+      "viz": []
+    },
+    {
+      "id": "prob.conditional-vs-joint",
+      "slug": "conditional-vs-joint",
+      "course": "prob",
+      "unit": "conditioning",
+      "title": "Conditional or Joint?",
+      "short": "P(A ∩ B) is the chance that both happen; P(A ∣ B) is the chance of A among the outcomes where B happens. Read the question to see which one it asks for.",
+      "prereqs": [
+        "prob.axioms",
+        "stat.multiplication-rule"
+      ],
+      "viz": [
+        "prob-square"
+      ]
+    },
+    {
+      "id": "prob.total-probability",
+      "slug": "total-probability",
+      "course": "prob",
+      "unit": "conditioning",
+      "title": "The Law of Total Probability",
+      "short": "Split into cases A₁, …, Aₙ that cover every outcome without overlapping: P(B) = Σ P(B ∣ Aᵢ) P(Aᵢ).",
+      "prereqs": [
+        "prob.conditional-vs-joint"
+      ],
+      "viz": [
+        "tree"
+      ]
+    },
+    {
+      "id": "prob.bayes-several",
+      "slug": "bayes-several",
+      "course": "prob",
+      "unit": "conditioning",
+      "title": "Bayes' Theorem with Several Causes",
+      "short": "P(Aⱼ ∣ B) = P(B ∣ Aⱼ) P(Aⱼ) / Σ P(B ∣ Aᵢ) P(Aᵢ), and each new piece of evidence updates the answer again.",
+      "prereqs": [
+        "prob.total-probability",
+        "stat.bayes-rule"
+      ],
+      "viz": [
+        "tree"
+      ]
+    },
+    {
+      "id": "prob.independence-several",
+      "slug": "independence-several",
+      "course": "prob",
+      "unit": "conditioning",
+      "title": "Independence of Several Events",
+      "short": "A, B and C are independent when every pair and the triple multiply; disjoint events with positive probabilities are never independent.",
+      "prereqs": [
+        "prob.conditional-vs-joint",
+        "stat.independence"
+      ],
+      "viz": [
+        "prob-square"
+      ]
+    },
+    {
+      "id": "prob.pmf-cdf",
+      "slug": "pmf-cdf",
+      "course": "prob",
+      "unit": "discrete",
+      "title": "PMFs and CDFs",
+      "short": "A pmf lists P(X = x); the CDF F(x) = P(X ≤ x) climbs in steps, and P(a < X ≤ b) = F(b) − F(a).",
+      "prereqs": [
+        "prob.axioms",
+        "stat.discrete-random-variables"
+      ],
+      "viz": [
+        "prob-density"
+      ]
+    },
+    {
+      "id": "prob.expectation-of-function",
+      "slug": "expectation-of-function",
+      "course": "prob",
+      "unit": "discrete",
+      "title": "Expected Value of a Function",
+      "short": "E[g(X)] = Σ g(x) P(X = x), and in general E[g(X)] ≠ g(E[X]).",
+      "prereqs": [
+        "prob.pmf-cdf",
+        "stat.expected-value"
+      ],
+      "viz": []
+    },
+    {
+      "id": "prob.variance-rules",
+      "slug": "variance-rules",
+      "course": "prob",
+      "unit": "discrete",
+      "title": "Variance: The Shortcut and the Rules",
+      "short": "Var(X) = E[X²] − (E[X])², and Var(aX + b) = a² Var(X).",
+      "prereqs": [
+        "prob.expectation-of-function",
+        "stat.random-variable-spread"
+      ],
+      "viz": []
+    },
+    {
+      "id": "prob.linearity-indicators",
+      "slug": "linearity-indicators",
+      "course": "prob",
+      "unit": "discrete",
+      "title": "Linearity of Expectation and Indicators",
+      "short": "E[X + Y] = E[X] + E[Y] always, so a count has mean equal to the sum of its indicators' probabilities: a shuffled deck has on average 1 card left in its starting place.",
+      "prereqs": [
+        "prob.expectation-of-function",
+        "stat.combining-random-variables"
+      ],
+      "viz": []
+    },
+    {
+      "id": "prob.hypergeometric",
+      "slug": "hypergeometric",
+      "course": "prob",
+      "unit": "discrete",
+      "title": "Sampling without Replacement: The Hypergeometric Distribution",
+      "short": "Drawing n from N items, K of them successes: P(X = k) = C(K, k) C(N − K, n − k) / C(N, n).",
+      "prereqs": [
+        "prob.pmf-cdf",
+        "stat.counting-probability"
+      ],
+      "viz": []
+    },
+    {
+      "id": "prob.negative-binomial",
+      "slug": "negative-binomial",
+      "course": "prob",
+      "unit": "discrete",
+      "title": "Waiting for the rth Success",
+      "short": "The number of trials needed for r successes has P(X = k) = C(k − 1, r − 1) pʳ (1 − p)^(k − r) and mean r/p.",
+      "prereqs": [
+        "prob.linearity-indicators",
+        "stat.geometric-distribution"
+      ],
+      "viz": []
+    },
+    {
+      "id": "prob.poisson",
+      "slug": "poisson",
+      "course": "prob",
+      "unit": "discrete",
+      "title": "The Poisson Distribution",
+      "short": "Counts of rare events in a fixed time or space: P(X = k) = e^(−λ) λᵏ / k!, with mean and variance both λ.",
+      "prereqs": [
+        "prob.pmf-cdf",
+        "calc2.known-series"
+      ],
+      "viz": [
+        "prob-poisson"
+      ]
+    },
+    {
+      "id": "prob.poisson-approximation",
+      "slug": "poisson-approximation",
+      "course": "prob",
+      "unit": "discrete",
+      "title": "The Poisson Approximation to the Binomial",
+      "short": "When n is large and p is small, Binomial(n, p) is close to Poisson with λ = np.",
+      "prereqs": [
+        "prob.poisson",
+        "stat.binomial-distribution"
+      ],
+      "viz": [
+        "prob-poisson"
+      ]
+    },
+    {
+      "id": "prob.choosing-distribution",
+      "slug": "choosing-distribution",
+      "course": "prob",
+      "unit": "discrete",
+      "title": "Choosing a Distribution",
+      "short": "Match the story to binomial, geometric, negative binomial, hypergeometric or Poisson.",
+      "prereqs": [
+        "prob.hypergeometric",
+        "prob.negative-binomial",
+        "prob.poisson-approximation"
+      ],
+      "viz": []
+    },
+    {
+      "id": "prob.densities",
+      "slug": "densities",
+      "course": "prob",
+      "unit": "continuous",
+      "title": "Probability Density Functions",
+      "short": "A density f ≥ 0 has total area 1, and P(a ≤ X ≤ b) = ∫ₐᵇ f(x) dx.",
+      "prereqs": [
+        "stat.continuous-distributions",
+        "calc1.ftc-evaluate"
+      ],
+      "viz": [
+        "prob-density"
+      ]
+    },
+    {
+      "id": "prob.continuous-cdf",
+      "slug": "continuous-cdf",
+      "course": "prob",
+      "unit": "continuous",
+      "title": "CDFs, Medians and Percentiles",
+      "short": "F(x) = ∫ f(t) dt from −∞ to x, f = F′, and the median m solves F(m) = 1/2.",
+      "prereqs": [
+        "prob.densities",
+        "calc1.ftc-accumulation"
+      ],
+      "viz": [
+        "prob-density"
+      ]
+    },
+    {
+      "id": "prob.continuous-expectation",
+      "slug": "continuous-expectation",
+      "course": "prob",
+      "unit": "continuous",
+      "title": "Mean and Variance of a Continuous Variable",
+      "short": "E[X] = ∫ x f(x) dx and E[g(X)] = ∫ g(x) f(x) dx, and the variance shortcut still holds.",
+      "prereqs": [
+        "prob.densities",
+        "prob.variance-rules"
+      ],
+      "viz": [
+        "prob-density"
+      ]
+    },
+    {
+      "id": "prob.exponential",
+      "slug": "exponential",
+      "course": "prob",
+      "unit": "continuous",
+      "title": "The Exponential Distribution",
+      "short": "f(x) = λe^(−λx) for x ≥ 0 has mean 1/λ, and it is memoryless: P(X > s + t ∣ X > s) = P(X > t).",
+      "prereqs": [
+        "prob.continuous-expectation",
+        "calc2.improper-integrals",
+        "calc2.integration-by-parts"
+      ],
+      "viz": [
+        "prob-poisson"
+      ]
+    },
+    {
+      "id": "prob.poisson-process",
+      "slug": "poisson-process",
+      "course": "prob",
+      "unit": "continuous",
+      "title": "The Poisson Process",
+      "short": "For random arrivals at rate λ, the count in a window of length t is Poisson with mean λt, and the gaps between arrivals are exponential with mean 1/λ.",
+      "prereqs": [
+        "prob.exponential",
+        "prob.poisson"
+      ],
+      "viz": [
+        "prob-poisson"
+      ]
+    },
+    {
+      "id": "prob.transform-density",
+      "slug": "transform-density",
+      "course": "prob",
+      "unit": "continuous",
+      "title": "Densities of Functions of a Variable",
+      "short": "Find the density of Y = g(X) through its CDF: work out F_Y(y) = P(g(X) ≤ y), then differentiate.",
+      "prereqs": [
+        "prob.continuous-cdf",
+        "calc1.chain-rule"
+      ],
+      "viz": [
+        "prob-density"
+      ]
+    },
+    {
+      "id": "prob.joint-pmf",
+      "slug": "joint-pmf",
+      "course": "prob",
+      "unit": "joint",
+      "title": "Joint and Marginal Distributions",
+      "short": "A joint table gives P(X = x, Y = y); add across a row or down a column to get the marginal distributions.",
+      "prereqs": [
+        "prob.pmf-cdf",
+        "stat.two-way-conditional"
+      ],
+      "viz": [
+        "prob-table"
+      ]
+    },
+    {
+      "id": "prob.conditional-distributions",
+      "slug": "conditional-distributions",
+      "course": "prob",
+      "unit": "joint",
+      "title": "Conditional Distributions and Independent Variables",
+      "short": "P(X = x ∣ Y = y) divides a row of the joint table by the row's total; X and Y are independent when every cell equals the product of its marginals.",
+      "prereqs": [
+        "prob.joint-pmf",
+        "prob.conditional-vs-joint"
+      ],
+      "viz": [
+        "prob-table"
+      ]
+    },
+    {
+      "id": "prob.geometric-probability",
+      "slug": "geometric-probability",
+      "course": "prob",
+      "unit": "joint",
+      "title": "Uniform Points and Geometric Probability",
+      "short": "When a point is uniform in a region, probability is area over total area: two numbers chosen uniformly from [0, 1] differ by less than 1/4 with probability 7/16.",
+      "prereqs": [
+        "prob.densities"
+      ],
+      "viz": [
+        "prob-region"
+      ]
+    },
+    {
+      "id": "prob.joint-densities",
+      "slug": "joint-densities",
+      "course": "prob",
+      "unit": "joint",
+      "title": "Joint Densities",
+      "short": "P((X, Y) ∈ R) = ∬_R f(x, y) dA; set up the limits for regions such as {x < y}.",
+      "prereqs": [
+        "prob.geometric-probability",
+        "prob.joint-pmf",
+        "calc3.general-regions"
+      ],
+      "viz": [
+        "prob-region",
+        "surface"
+      ]
+    },
+    {
+      "id": "prob.marginal-densities",
+      "slug": "marginal-densities",
+      "course": "prob",
+      "unit": "joint",
+      "title": "Marginal and Conditional Densities",
+      "short": "f_X(x) = ∫ f(x, y) dy, and X and Y are independent when f(x, y) = f_X(x) f_Y(y) everywhere.",
+      "prereqs": [
+        "prob.joint-densities",
+        "prob.conditional-distributions"
+      ],
+      "viz": [
+        "prob-region"
+      ]
+    },
+    {
+      "id": "prob.covariance-correlation",
+      "slug": "covariance-correlation",
+      "course": "prob",
+      "unit": "joint",
+      "title": "Covariance and Correlation",
+      "short": "Cov(X, Y) = E[XY] − E[X]E[Y], and the correlation ρ = Cov(X, Y)/(σ_X σ_Y) lies between −1 and 1.",
+      "prereqs": [
+        "prob.conditional-distributions",
+        "prob.variance-rules"
+      ],
+      "viz": [
+        "prob-table"
+      ]
+    },
+    {
+      "id": "prob.variance-of-sums",
+      "slug": "variance-of-sums",
+      "course": "prob",
+      "unit": "joint",
+      "title": "Variance of a Sum",
+      "short": "Var(X + Y) = Var(X) + Var(Y) + 2 Cov(X, Y), and the variance of a longer sum adds every pairwise covariance.",
+      "prereqs": [
+        "prob.covariance-correlation",
+        "prob.linearity-indicators"
+      ],
+      "viz": []
+    },
+    {
+      "id": "prob.convolution",
+      "slug": "convolution",
+      "course": "prob",
+      "unit": "joint",
+      "title": "Sums of Independent Variables",
+      "short": "The distribution of X + Y comes from adding over every split: P(X + Y = s) = Σ P(X = k) P(Y = s − k), with an integral for densities.",
+      "prereqs": [
+        "prob.conditional-distributions",
+        "prob.marginal-densities"
+      ],
+      "viz": [
+        "prob-convolve"
+      ]
+    },
+    {
+      "id": "prob.conditional-expectation",
+      "slug": "conditional-expectation",
+      "course": "prob",
+      "unit": "joint",
+      "title": "Conditional Expectation",
+      "short": "E[X ∣ Y = y] averages X within one slice, and E[X] = E[E[X ∣ Y]] averages the slices.",
+      "prereqs": [
+        "prob.conditional-distributions",
+        "prob.total-probability"
+      ],
+      "viz": [
+        "prob-table"
+      ]
+    },
+    {
+      "id": "prob.min-max",
+      "slug": "min-max",
+      "course": "prob",
+      "unit": "joint",
+      "title": "Maximum and Minimum of Independent Variables",
+      "short": "P(max ≤ x) = F(x)ⁿ and P(min > x) = (1 − F(x))ⁿ; the minimum of independent exponential variables is exponential with the rates added.",
+      "prereqs": [
+        "prob.conditional-distributions",
+        "prob.continuous-cdf",
+        "prob.exponential"
+      ],
+      "viz": [
+        "prob-region"
+      ]
+    },
+    {
+      "id": "prob.markov-chebyshev",
+      "slug": "markov-chebyshev",
+      "course": "prob",
+      "unit": "limit-theorems",
+      "title": "Markov's and Chebyshev's Inequalities",
+      "short": "For X ≥ 0, P(X ≥ a) ≤ E[X]/a; for any X with mean μ and standard deviation σ, P(|X − μ| ≥ kσ) ≤ 1/k².",
+      "prereqs": [
+        "prob.variance-rules",
+        "prob.continuous-expectation"
+      ],
+      "viz": []
+    },
+    {
+      "id": "prob.law-large-numbers",
+      "slug": "law-large-numbers",
+      "course": "prob",
+      "unit": "limit-theorems",
+      "title": "The Law of Large Numbers",
+      "short": "The average of n independent trials has variance σ²/n, so it settles near μ as n grows.",
+      "prereqs": [
+        "prob.markov-chebyshev",
+        "prob.variance-of-sums"
+      ],
+      "viz": [
+        "dice"
+      ]
+    },
+    {
+      "id": "prob.mgf",
+      "slug": "mgf",
+      "course": "prob",
+      "unit": "limit-theorems",
+      "title": "Moment Generating Functions",
+      "short": "M(t) = E[e^(tX)]; its derivatives at t = 0 give E[X], E[X²], …, and the MGF of a sum of independent variables is the product of their MGFs.",
+      "prereqs": [
+        "prob.continuous-expectation",
+        "prob.convolution",
+        "calc2.known-series"
+      ],
+      "viz": []
+    },
+    {
+      "id": "prob.clt-sums",
+      "slug": "clt-sums",
+      "course": "prob",
+      "unit": "limit-theorems",
+      "title": "The Central Limit Theorem for Sums",
+      "short": "A sum of n independent copies of X is close to normal, with mean nμ and standard deviation σ√n.",
+      "prereqs": [
+        "prob.law-large-numbers",
+        "stat.sampling-distribution-mean"
+      ],
+      "viz": [
+        "prob-convolve",
+        "sampling"
+      ]
+    },
+    {
+      "id": "prob.continuity-correction",
+      "slug": "continuity-correction",
+      "course": "prob",
+      "unit": "limit-theorems",
+      "title": "The Normal Approximation to the Binomial",
+      "short": "Approximate Binomial(n, p) with a normal curve, widening each whole number to an interval of width 1: P(X ≤ 12) ≈ P(Y < 12.5).",
+      "prereqs": [
+        "prob.clt-sums",
+        "stat.binomial-distribution"
+      ],
+      "viz": [
+        "normal"
+      ]
+    },
+    {
+      "id": "prob.markov-chains",
+      "slug": "markov-chains",
+      "course": "prob",
+      "unit": "markov-chains",
+      "title": "Markov Chains and Transition Matrices",
+      "short": "The next state depends only on the current one; a row of probabilities times the transition matrix P steps forward, so after n steps the distribution is π₀Pⁿ.",
+      "prereqs": [
+        "prob.total-probability",
+        "pre.matrix-multiplication"
+      ],
+      "viz": [
+        "prob-markov"
+      ]
+    },
+    {
+      "id": "prob.first-step-analysis",
+      "slug": "first-step-analysis",
+      "course": "prob",
+      "unit": "markov-chains",
+      "title": "Absorption and First-Step Analysis",
+      "short": "Condition on the first step to get equations for the chance of absorption and the expected time to get there, as in the gambler's ruin.",
+      "prereqs": [
+        "prob.markov-chains",
+        "alg1.systems-elimination"
+      ],
+      "viz": [
+        "prob-markov"
+      ]
+    },
+    {
+      "id": "prob.stationary-distribution",
+      "slug": "stationary-distribution",
+      "course": "prob",
+      "unit": "markov-chains",
+      "title": "Stationary Distributions",
+      "short": "Solve πP = π together with π₁ + ⋯ + πₙ = 1 to find the long-run share of time spent in each state.",
+      "prereqs": [
+        "prob.markov-chains",
+        "alg1.systems-elimination"
+      ],
+      "viz": [
+        "prob-markov"
+      ]
+    }
+  ]
+}

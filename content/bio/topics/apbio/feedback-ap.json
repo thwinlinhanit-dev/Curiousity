@@ -1,0 +1,144 @@
+{
+  "id": "apbio.feedback-ap",
+  "slug": "feedback-ap",
+  "ladder": "bio",
+  "course": "apbio",
+  "unit": "signaling",
+  "title": "Feedback in Living Systems",
+  "short": "Negative feedback holds a variable near a set point (blood glucose, body temperature); positive feedback drives a change to completion (blood clotting, fruit ripening with ethylene). Disrupting either shows in the data.",
+  "trouble": "Students read any rising curve as positive feedback. Ask whether the response opposes the change (negative) or adds to it (positive).",
+  "prereqs": [
+    "apbio.signal-transduction",
+    "hsbio.blood-sugar"
+  ],
+  "xp": 2,
+  "viz": [
+    "bi-feedback",
+    "bi-chart"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/biology/high-school-biology/blood-sugar/\">Blood Sugar: Insulin and Glucagon</a> you saw a feedback loop hold blood sugar steady. Feedback is how cell signals and hormone pathways keep themselves in check. AP questions usually give you data and ask what kind of feedback it shows, or what happens when a loop breaks."
+      },
+      {
+        "t": "key",
+        "html": "<b>Negative feedback</b>: the response <b>opposes</b> the change, holding a variable near a set point (blood glucose, body temperature, water balance). <b>Positive feedback</b>: the response <b>adds to</b> the change, driving a process to completion (blood clotting, fruit ripening with ethylene)."
+      },
+      {
+        "t": "viz",
+        "name": "bi-feedback",
+        "opts": {
+          "loop": "glucose"
+        },
+        "cap": "Negative feedback: switch between blood glucose too high and too low."
+      },
+      {
+        "t": "viz",
+        "name": "bi-feedback",
+        "opts": {
+          "loop": "ripening"
+        },
+        "cap": "Positive feedback: ripening fruit release ethylene, which ripens more fruit."
+      },
+      {
+        "t": "why",
+        "html": "A negative loop is self-correcting: the further the value moves from the set point, the harder the response pushes back, so the value wobbles around the set point. A positive loop is self-amplifying: each round makes the next round stronger, so it runs fast until something outside it ends it (the wound is sealed, the fruit are ripe). Living things use positive loops only for changes that should happen quickly and completely."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Reading a graph",
+        "q": "After a meal, blood glucose rises from 90 to 140 mg/dL, then falls back to about 90 over two hours while insulin rises and then falls. What kind of feedback?",
+        "steps": [
+          "The change: glucose rose.",
+          "The response: insulin rose, and glucose came back down.",
+          "The response opposed the change."
+        ],
+        "a": "Negative feedback. The rising curve of insulin is not positive feedback: what matters is that the response reversed the change in glucose."
+      },
+      {
+        "t": "viz",
+        "name": "bi-chart",
+        "opts": {
+          "kind": "line",
+          "x": [
+            0,
+            30,
+            60,
+            90,
+            120,
+            150
+          ],
+          "series": [
+            {
+              "name": "Blood glucose (mg/dL)",
+              "values": [
+                90,
+                140,
+                125,
+                105,
+                92,
+                90
+              ]
+            },
+            {
+              "name": "Insulin (relative, ×10)",
+              "values": [
+                20,
+                75,
+                90,
+                60,
+                35,
+                22
+              ]
+            }
+          ],
+          "xlabel": "Minutes after a meal",
+          "ylabel": "Level"
+        },
+        "cap": "Glucose and insulin after a meal (typical shapes, made-up values)."
+      },
+      {
+        "t": "ex",
+        "title": "A broken loop",
+        "q": "In a person whose pancreas makes no insulin, what happens to blood glucose after a meal?",
+        "steps": [
+          "The sensor (pancreas cells) can detect high glucose, but no insulin is released.",
+          "Body cells and the liver are not signaled to take up glucose.",
+          "The loop cannot correct the rise."
+        ],
+        "a": "Blood glucose rises and stays high: the negative feedback loop is broken."
+      },
+      {
+        "t": "p",
+        "html": "Feedback works inside cells too. When a cell has plenty of tryptophan, the amino acid itself shuts off the genes that make it (you will see this in <a href=\"/biology/advanced-biology/operons/\">the trp operon</a>), and the end product of many pathways inhibits the pathway's first enzyme. Both are negative feedback: more product, less production."
+      },
+      {
+        "t": "mistake",
+        "html": "Reading any rising curve as positive feedback. A hormone level may climb steeply in negative feedback too. Ask the right question: does the response oppose the original change (negative) or push it further the same way (positive)? Look at the variable being controlled, not at the hormone."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Biology 2e, 33.3 Homeostasis"
+      },
+      {
+        "name": "OpenStax, Biology 2e, chapter 37, The Endocrine System"
+      },
+      {
+        "name": "OpenStax, Biology 2e, 30.6 Plant Sensory Systems and Responses (ethylene)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

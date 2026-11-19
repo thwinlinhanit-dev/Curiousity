@@ -1,0 +1,112 @@
+{
+  "id": "imicro.mrs",
+  "slug": "mrs",
+  "ladder": "economics",
+  "course": "imicro",
+  "unit": "preferences",
+  "title": "The Marginal Rate of Substitution",
+  "short": "MRS = MUx/MUy, the amount of y a person would give up for one more x, is the size of the indifference curve's slope.",
+  "trouble": "Students write MUy/MUx, flipping the ratio, or forget that the MRS changes as you move along a curved indifference curve.",
+  "prereqs": [
+    "imicro.marginal-utility-calculus",
+    "calc1.implicit-differentiation"
+  ],
+  "xp": 2,
+  "viz": [
+    "ec-choice"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "How much of one good would a person give up to get a little more of the other? That trade-off rate is the most important number in consumer theory. It comes from <a href=\"/economics/intermediate-microeconomics/marginal-utility-calculus/\">Marginal Utility as a Partial Derivative</a> and is the slope of an indifference curve, which you can find with <a href=\"/math/calculus-1/implicit-differentiation/\">Implicit Differentiation</a>."
+      },
+      {
+        "t": "key",
+        "html": "The <b>marginal rate of substitution</b> is $$MRS = \\frac{MU_x}{MU_y} = -\\frac{dy}{dx}\\Big|_{U \\text{ fixed}}.$$ It is the amount of $y$ a person would give up for one more (small) unit of $x$ and stay equally well off: the size of the indifference curve's slope at that bundle."
+      },
+      {
+        "t": "why",
+        "html": "Along an indifference curve $U(x, y) = k$, $y$ is a function of $x$. Differentiate both sides with respect to $x$: $$\\frac{\\partial U}{\\partial x} + \\frac{\\partial U}{\\partial y}\\frac{dy}{dx} = 0, \\quad\\text{so}\\quad \\frac{dy}{dx} = -\\frac{MU_x}{MU_y}.$$ In words: giving up $\\Delta y$ costs about $MU_y\\,|\\Delta y|$ in utility, and getting $\\Delta x$ adds about $MU_x\\,\\Delta x$. Staying on the curve means the two match, so $|\\Delta y|/\\Delta x = MU_x/MU_y$."
+      },
+      {
+        "t": "viz",
+        "name": "ec-choice",
+        "opts": {
+          "income": 120,
+          "prices": [
+            6,
+            6
+          ],
+          "utility": {
+            "type": "cobbdouglas",
+            "a": 0.5,
+            "b": 0.5
+          },
+          "levels": [
+            6
+          ],
+          "bundle": [
+            2,
+            18
+          ],
+          "task": "Drag the bundle down along the curve toward more x. Watch the MRS readout fall."
+        },
+        "cap": "For $U = \\sqrt{xy}$, $MRS = y/x$. At (2, 18) she would give up 9 units of $y$ per unit of $x$; at (6, 6), only 1; at (18, 2), about 0.11. The more $x$ she has, the less $y$ she will give up for more of it: a diminishing MRS, which is what convexity means."
+      },
+      {
+        "t": "ex",
+        "title": "Cobb-Douglas",
+        "q": "$U(x, y) = x^2y^3$. Find the MRS as a formula, and at $(3, 1)$.",
+        "steps": [
+          "$MU_x = 2xy^3$ and $MU_y = 3x^2y^2$.",
+          "$MRS = \\dfrac{2xy^3}{3x^2y^2} = \\dfrac{2y}{3x}$.",
+          "At $(3, 1)$: $MRS = \\dfrac{2}{9}$. She would give up about $2/9$ of a unit of $y$ for one more small unit of $x$."
+        ],
+        "a": "$MRS = \\dfrac{2y}{3x}$; $\\dfrac{2}{9}$ at $(3, 1)$."
+      },
+      {
+        "t": "ex",
+        "title": "Quasilinear",
+        "q": "$U(x, y) = 4\\sqrt{x} + y$. Find the MRS at $(16, 3)$ and at $(16, 30)$.",
+        "steps": [
+          "$MU_x = \\dfrac{2}{\\sqrt{x}}$ and $MU_y = 1$.",
+          "$MRS = \\dfrac{2}{\\sqrt{x}} = \\dfrac{2}{4} = \\dfrac{1}{2}$ at $x = 16$.",
+          "The MRS does not depend on $y$, so it is also $\\tfrac{1}{2}$ at $(16, 30)$."
+        ],
+        "a": "$\\tfrac{1}{2}$ at both bundles."
+      },
+      {
+        "t": "ex",
+        "title": "The MRS survives a transformation",
+        "q": "Show that $U = x^2y^3$ and $V = 2\\ln x + 3\\ln y$ give the same MRS.",
+        "steps": [
+          "For V: $MU_x = 2/x$ and $MU_y = 3/y$, so $MRS = \\dfrac{2/x}{3/y} = \\dfrac{2y}{3x}$.",
+          "That matches U's MRS. In general $V = f(U)$ multiplies both marginal utilities by $f'(U)$, which cancels in the ratio."
+        ],
+        "a": "Both give $\\dfrac{2y}{3x}$."
+      },
+      {
+        "t": "mistake",
+        "html": "Writing $MU_y/MU_x$ instead of $MU_x/MU_y$, or treating the MRS as one fixed number for a curved indifference curve. Keep the good on the horizontal axis on top: the MRS of $x$ for $y$ asks how much $y$ one unit of $x$ is worth. And unless the curve is a straight line, the MRS changes from bundle to bundle, so always say where you computed it. Check: when a person has a lot of $x$ and little $y$, her MRS should be small."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, appendix B Indifference Curves"
+      },
+      {
+        "name": "OpenStax Calculus Volume 1, 3.8 Implicit Differentiation"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.04 Intermediate Microeconomic Theory (course scope and lecture topics)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

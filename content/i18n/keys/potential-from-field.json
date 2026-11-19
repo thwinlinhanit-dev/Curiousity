@@ -1,0 +1,114 @@
+[
+  {
+    "key": "title",
+    "source": "Potential from the Field"
+  },
+  {
+    "key": "short",
+    "source": "ΔV = −∫E · dl, so potential falls along the direction of the field."
+  },
+  {
+    "key": "trouble",
+    "source": "Students drop the minus sign, so the potential rises along the field."
+  },
+  {
+    "key": "block.0.html",
+    "source": "In <a href=\"/physics/physics-2/electric-potential/\">Physics 2</a> potential was energy per charge, and near a point charge $V = kq/r$. That formula did not come from nowhere: it comes from the field by an integral. Once you know how, you can find the potential of anything whose field you know, including every field from <a href=\"/physics/electricity-and-magnetism/gauss-spheres/\">Gauss's law</a>."
+  },
+  {
+    "key": "block.1.html",
+    "source": "$$V_B - V_A = -\\int_A^B \\vec{E}\\cdot d\\vec{\\ell}$$\n        In a uniform field, along a straight step of length $d$ at angle $\\theta$ to the field: $\\Delta V = -Ed\\cos\\theta$. For charges of limited size we usually set $V = 0$ far away, so $V(P) = -\\int_\\infty^P \\vec{E}\\cdot d\\vec{\\ell}$. Potential <b>falls</b> along the direction of the field."
+  },
+  {
+    "key": "block.2.html",
+    "source": "Move a test charge $q$ a small step $d\\vec{\\ell}$. The field does work $q\\vec{E}\\cdot d\\vec{\\ell}$ on it, so its potential energy changes by $dU = -q\\vec{E}\\cdot d\\vec{\\ell}$ (energy the field gives away is energy the arrangement loses). Divide by $q$: $dV = -\\vec{E}\\cdot d\\vec{\\ell}$. Add the steps from A to B with an integral, using <a href=\"/math/calculus-1/ftc-evaluate/\">the Fundamental Theorem</a> when the field has an antiderivative. The electrostatic field is conservative, like gravity, so every path from A to B gives the same answer; pick the easiest one."
+  },
+  {
+    "key": "block.3.cap",
+    "source": "The field of a $0.10\\ \\text{nC}$ point charge, $E = 900/r^2$ in N/C. The shaded area under $E(r)$ from A to B is the drop in potential, $V_A - V_B$. Drag the limits to see how the area changes."
+  },
+  {
+    "key": "block.4.text",
+    "source": "Worked examples"
+  },
+  {
+    "key": "block.5.q",
+    "source": "A uniform field of $400\\ \\text{N/C}$ points along $+x$. Point B is $25\\ \\text{cm}$ from A, in a direction $60^\\circ$ from the field. Find $V_B - V_A$."
+  },
+  {
+    "key": "block.5.title",
+    "source": "A uniform field"
+  },
+  {
+    "key": "block.5.a",
+    "source": "$V_B - V_A = -50\\ \\text{V}$"
+  },
+  {
+    "key": "block.5.step.0",
+    "source": "For a straight step in a uniform field, $\\vec{E}\\cdot d\\vec{\\ell}$ is the same all along: $\\Delta V = -Ed\\cos\\theta$."
+  },
+  {
+    "key": "block.5.step.1",
+    "source": "$V_B - V_A = -(400)(0.25)\\cos 60^\\circ = -50\\ \\text{V}$."
+  },
+  {
+    "key": "block.5.step.2",
+    "source": "Only the part of the step along the field counts: $0.25\\cos 60^\\circ = 0.125\\ \\text{m}$. A step straight across the field would change nothing."
+  },
+  {
+    "key": "block.6.q",
+    "source": "Find $V_B - V_A$ for a $5.0\\ \\text{nC}$ point charge, with A $2.0\\ \\text{cm}$ and B $6.0\\ \\text{cm}$ from it. Then find $V(r)$ itself."
+  },
+  {
+    "key": "block.6.title",
+    "source": "From a point charge's field"
+  },
+  {
+    "key": "block.6.a",
+    "source": "$V_B - V_A \\approx -1500\\ \\text{V}$"
+  },
+  {
+    "key": "block.6.step.0",
+    "source": "Walk outward along a radius, where $\\vec{E}\\cdot d\\vec{\\ell} = \\dfrac{kq}{r^2}\\,dr$: $$V_B - V_A = -\\int_{r_A}^{r_B}\\frac{kq}{r^2}\\,dr = kq\\left(\\frac{1}{r_B} - \\frac{1}{r_A}\\right)$$"
+  },
+  {
+    "key": "block.6.step.1",
+    "source": "$$= (8.99 \\times 10^{9})(5.0 \\times 10^{-9})\\left(\\frac{1}{0.060} - \\frac{1}{0.020}\\right) = -1500\\ \\text{V}$$"
+  },
+  {
+    "key": "block.6.step.2",
+    "source": "Now let A go to infinity, where $V = 0$: $V(r) = kq/r$, the formula from Physics 2."
+  },
+  {
+    "key": "block.7.q",
+    "source": "A ball of radius $R$ holds charge $Q$ spread evenly. Taking $V = 0$ far away, find the potential at its center."
+  },
+  {
+    "key": "block.7.title",
+    "source": "The center of a charged ball"
+  },
+  {
+    "key": "block.7.a",
+    "source": "$V(0) = \\dfrac{3kQ}{2R}$"
+  },
+  {
+    "key": "block.7.step.0",
+    "source": "Come in from infinity in two stretches. Outside, the field is $kQ/r^2$, so at the surface $V(R) = kQ/R$."
+  },
+  {
+    "key": "block.7.step.1",
+    "source": "Inside, $E = kQr/R^3$ (from Gauss's law), so $$V(0) - V(R) = -\\int_R^0 \\frac{kQr}{R^3}\\,dr = \\frac{kQ}{2R}$$"
+  },
+  {
+    "key": "block.7.step.2",
+    "source": "$V(0) = \\dfrac{kQ}{R} + \\dfrac{kQ}{2R} = \\dfrac{3kQ}{2R}$. The center is where $E = 0$, yet $V$ is highest there: zero field means $V$ is flat, not zero."
+  },
+  {
+    "key": "block.8.html",
+    "source": "<b>Dropping the minus sign.</b> Without it, potential would rise as you move along the field, so a positive charge would be at the bottom of its own hill. Check with a positive point charge: its field points away from it and its potential $kq/r$ falls as you move away. Moving with the field must lower $V$."
+  },
+  {
+    "key": "block.9.html",
+    "source": "For an infinitely long line of charge the integral from infinity diverges, so only differences make sense: $V_B - V_A = -\\dfrac{\\lambda}{2\\pi\\varepsilon_0}\\ln\\dfrac{r_B}{r_A}$."
+  }
+]

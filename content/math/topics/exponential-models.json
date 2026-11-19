@@ -1,0 +1,100 @@
+{
+  "id": "alg1.exponential-models",
+  "slug": "exponential-models",
+  "ladder": "math",
+  "course": "alg1",
+  "unit": "exponential",
+  "title": "Writing Exponential Models",
+  "short": "Build a = a₀·bᵗ from a starting value and a rate or two data points.",
+  "trouble": "Students fit a linear model to data that changes by a constant ratio.",
+  "prereqs": [
+    "alg1.exponential-growth-decay",
+    "alg1.geometric-sequences"
+  ],
+  "xp": 3,
+  "viz": [
+    "exponential"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "To write an exponential model you need a starting value and a factor. A story may give both, as in <a href=\"/math/algebra-1/exponential-growth-decay/\">growth and decay rates</a>, or you may have to find them from data points, as with the ratio of a <a href=\"/math/algebra-1/geometric-sequences/\">geometric sequence</a>."
+      },
+      {
+        "t": "why",
+        "html": "In $y = a \\cdot b^x$, the point at $x = 0$ gives $a$ directly, because $b^0 = 1$. A second point then pins down $b$: if $y$ goes from $a$ at $x = 0$ to $y_2$ at $x = 2$, then $a \\cdot b^2 = y_2$, so $b^2 = \\frac{y_2}{a}$. In data with equal steps, the factor shows up as the constant ratio of neighboring values. If the differences are constant instead, a line fits better."
+      },
+      {
+        "t": "key",
+        "html": "Find $a$ (the value at $x = 0$) and $b$ (the factor per step, from a ratio of outputs), then write $y = a \\cdot b^x$. Check that the model reproduces the data."
+      },
+      {
+        "t": "viz",
+        "name": "exponential",
+        "opts": {
+          "a": 5,
+          "b": 3,
+          "table": true,
+          "trace": true,
+          "xmin": -1,
+          "xmax": 5,
+          "ymin": -10,
+          "ymax": 150
+        },
+        "cap": "Set $a$ and $b$ so the table matches the data in the first example: $5, 15, 45, 135$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "From two points",
+        "q": "An exponential function passes through $(0, 5)$ and $(2, 45)$. Write it.",
+        "steps": [
+          "$x = 0$ gives $a = 5$.",
+          "$5 \\cdot b^2 = 45$, so $b^2 = 9$ and $b = 3$ ($b$ must be positive).",
+          "Check: $5 \\cdot 3^1 = 15$ would be the value at $x = 1$, and $5 \\cdot 3^2 = 45$."
+        ],
+        "a": "$y = 5 \\cdot 3^x$"
+      },
+      {
+        "t": "ex",
+        "title": "From a story",
+        "q": "A sample of $400$ mg of a substance loses half its mass every $6$ hours. Write a model.",
+        "steps": [
+          "Every $6$ hours the mass is multiplied by $\\frac{1}{2}$.",
+          "After $t$ hours there have been $\\frac{t}{6}$ half-lives."
+        ],
+        "a": "$M(t) = 400\\left(\\frac{1}{2}\\right)^{t/6}$"
+      },
+      {
+        "t": "ex",
+        "title": "Choose the model",
+        "q": "Data: $(0, 4), (1, 10), (2, 16), (3, 22)$. Linear or exponential?",
+        "steps": [
+          "Differences: $6, 6, 6$, constant. Ratios: $2.5, 1.6, 1.375$, not constant."
+        ],
+        "a": "Linear: $y = 6x + 4$."
+      },
+      {
+        "t": "mistake",
+        "html": "Fitting a linear model to data that changes by a constant ratio. Data like $5, 15, 45, 135$ has differences $10, 30, 90$ that keep growing, so a straight line will miss badly after a few steps. Always compute both differences and ratios before choosing."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Algebra 2e, section 6.1 Exponential Functions (finding equations)"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, F-LE.A.2: construct exponential functions given a description or two input-output pairs"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,114 @@
+{
+  "id": "modern.microscopes",
+  "slug": "microscopes",
+  "course": "modern",
+  "courseTitle": "Waves, Optics and Modern Physics",
+  "unit": "instruments",
+  "unitTitle": "Images and Optical Instruments",
+  "title": "Magnifiers and Microscopes",
+  "short": "A magnifier gives M = 25 cm/f, and a microscope multiplies the objective's magnification by the eyepiece's.",
+  "trouble": "Students add the two magnifications instead of multiplying them.",
+  "prereqs": [
+    "modern.two-lens-systems",
+    "modern.eye-and-glasses"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-rays"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "How big something looks depends on the angle it covers at your eye, not on its actual size. To see a small thing in more detail, you bring it closer, but your eye cannot focus closer than its near point, about 25 cm (see <a href=\"/physics/waves-optics-modern-physics/eye-and-glasses/\">the eye</a>). A magnifying glass lets you bring it closer anyway, and a microscope, a <a href=\"/physics/waves-optics-modern-physics/two-lens-systems/\">two-lens system</a>, does it twice."
+      },
+      {
+        "t": "key",
+        "html": "A <b>simple magnifier</b> of focal length $f$ (in cm) gives angular magnification $$M = \\frac{25\\ \\text{cm}}{f}$$ with the object at its focal point (the eye relaxed), or $1 + \\frac{25\\ \\text{cm}}{f}$ with the image at the near point. A <b>compound microscope</b>'s total magnification is the <b>product</b> $$M = m_{\\text{obj}}\\,M_{\\text{eye}} \\approx -\\frac{L}{f_{\\text{obj}}}\\cdot\\frac{25\\ \\text{cm}}{f_{\\text{eye}}},$$ where $L$ is the distance from the objective's focal point to the image it forms (the tube length, often 16 cm)."
+      },
+      {
+        "t": "why",
+        "html": "Without a lens, the best you can do is hold an object of height $h$ at 25 cm, where it covers the angle $\\theta_0 = h/25\\ \\text{cm}$. With the object at a magnifier's focal point, the rays leave parallel, as if from a far-off object covering the angle $\\theta = h/f$. The ratio is $\\theta/\\theta_0 = 25\\ \\text{cm}/f$. In a microscope, the objective first makes a real image $|m_{\\text{obj}}|$ times as large as the object, and the eyepiece is a magnifier for that image. The image is $|m_{\\text{obj}}|$ times larger, and the eyepiece multiplies its angle by $M_{\\text{eye}}$: the factors multiply. When the object is just outside the objective's focal point, $d_i \\approx L + f_{\\text{obj}}$ and $|m_{\\text{obj}}| = \\frac{d_i - f_{\\text{obj}}}{f_{\\text{obj}}} = \\frac{L}{f_{\\text{obj}}}$."
+      },
+      {
+        "t": "viz",
+        "name": "ph-rays",
+        "opts": {
+          "element": "microscope",
+          "f": 1.6,
+          "f2": 5,
+          "sep": 20,
+          "dObj": 1.8
+        },
+        "cap": "A compound microscope: the objective makes a real, enlarged, inverted image, and the eyepiece magnifies that image again like a magnifying glass."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A magnifying glass",
+        "q": "A magnifier has $f = 5.0$ cm. Find its angular magnification with a relaxed eye, and with the image at the near point.",
+        "steps": [
+          "Relaxed: $M = \\frac{25}{5.0} = 5.0$.",
+          "Image at the near point: $M = 1 + \\frac{25}{5.0} = 6.0$."
+        ],
+        "a": "$5.0\\times$ relaxed, $6.0\\times$ at the near point"
+      },
+      {
+        "t": "ex",
+        "title": "Objective times eyepiece",
+        "q": "A microscope has a $40\\times$ objective and a $10\\times$ eyepiece. What is its total magnification?",
+        "steps": [
+          "The eyepiece magnifies the image the objective has already enlarged: $40 \\times 10 = 400$.",
+          "The image is inverted, so with signs $M = -400$."
+        ],
+        "a": "$400\\times$ (inverted)"
+      },
+      {
+        "t": "ex",
+        "title": "From the lens equation",
+        "q": "An objective with $f = 0.50$ cm holds an object 0.52 cm away. The eyepiece has $f = 2.5$ cm. Find the total magnification.",
+        "steps": [
+          "Objective: $\\frac{1}{d_i} = \\frac{1}{0.50} - \\frac{1}{0.52} = 0.0769$, so $d_i = 13.0$ cm.",
+          "$m_{\\text{obj}} = -\\frac{13.0}{0.52} = -25$.",
+          "Eyepiece: $M_{\\text{eye}} = \\frac{25}{2.5} = 10$.",
+          "$M = (-25)(10) = -250$."
+        ],
+        "a": "$M = -250$"
+      },
+      {
+        "t": "mistake",
+        "html": "Adding the two magnifications ($40 + 10 = 50$). The eyepiece magnifies an image that is already 40 times enlarged, so the factors <b>multiply</b>. Check with a picture: if the objective's image is 40 times the object's size and the eyepiece makes anything look 10 times bigger, the result is 400 times."
+      },
+      {
+        "t": "mistake",
+        "html": "Expecting a magnifier to work with the object outside its focal length. Then the lens makes a real, inverted image on the far side, not the enlarged upright view you want; keep the object at or inside $f$."
+      },
+      {
+        "t": "viz",
+        "name": "ph-rays",
+        "opts": {
+          "element": "magnifier",
+          "f": 10,
+          "dObj": 6
+        },
+        "cap": "A magnifying glass with the object inside its focal length: the image is virtual, upright and enlarged."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 3, 2.7 The Simple Magnifier"
+      },
+      {
+        "name": "OpenStax University Physics Volume 3, 2.8 Microscopes and Telescopes"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

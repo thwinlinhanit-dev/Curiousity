@@ -1,0 +1,102 @@
+{
+  "id": "g6.long-division-fluency",
+  "slug": "long-division-fluency",
+  "ladder": "math",
+  "course": "g6",
+  "unit": "number-system",
+  "title": "Long Division Fluency",
+  "short": "Divide multi-digit numbers with the standard algorithm.",
+  "trouble": "",
+  "prereqs": [
+    "g5.divide-two-digit-divisors"
+  ],
+  "xp": 2,
+  "viz": [
+    "base10"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You have divided by <a href=\"/math/grade-5/divide-two-digit-divisors/\">two-digit numbers</a> already. Fluency means doing it reliably: estimate each digit, keep the places lined up, and check by multiplying."
+      },
+      {
+        "t": "key",
+        "html": "Work from the left. At each place: <b>divide</b> (how many times does the divisor fit?), <b>multiply</b>, <b>subtract</b>, <b>bring down</b> the next digit. Write a 0 in the quotient when the divisor does not fit."
+      },
+      {
+        "t": "why",
+        "html": "Long division is a fast way of taking away big equal groups. For $8,736 \\div 24$: 300 groups of 24 use 7,200, leaving 1,536; 60 more groups use 1,440, leaving 96; 4 more groups use 96. That is $300 + 60 + 4 = 364$ groups. The algorithm does exactly these steps, writing each count in its own place."
+      },
+      {
+        "t": "viz",
+        "name": "areamodel",
+        "opts": {
+          "a": [
+            24
+          ],
+          "b": [
+            300,
+            60,
+            4
+          ]
+        },
+        "cap": "Division as a missing side: a rectangle 24 wide with area 8,736 is 300 + 60 + 4 = 364 long."
+      },
+      {
+        "t": "ex",
+        "title": "Four digits by two digits",
+        "q": "Find $8,736 \\div 24$.",
+        "steps": [
+          "24 does not fit in 8, so start with 87. $87 \\div 24$: 3 times. $3 \\times 24 = 72$; $87 - 72 = 15$.",
+          "Bring down the 3: 153. $153 \\div 24$: 6 times. $6 \\times 24 = 144$; $153 - 144 = 9$.",
+          "Bring down the 6: 96. $96 \\div 24 = 4$. $4 \\times 24 = 96$; nothing is left.",
+          "Check: $364 \\times 24 = 8,736$."
+        ],
+        "a": "364"
+      },
+      {
+        "t": "ex",
+        "title": "A zero in the quotient",
+        "q": "Find $4,872 \\div 24$.",
+        "steps": [
+          "$48 \\div 24 = 2$, with nothing left.",
+          "Bring down the 7: 24 does not fit in 7, so write <b>0</b> in the quotient.",
+          "Bring down the 2: 72. $72 \\div 24 = 3$.",
+          "Check: $203 \\times 24 = 4,872$."
+        ],
+        "a": "203"
+      },
+      {
+        "t": "ex",
+        "title": "With a remainder",
+        "q": "Find $6,040 \\div 17$.",
+        "steps": [
+          "$60 \\div 17$: 3 times ($51$), 9 left.",
+          "Bring down the 4: 94. $94 \\div 17$: 5 times ($85$), 9 left.",
+          "Bring down the 0: 90. $90 \\div 17$: 5 times ($85$), 5 left.",
+          "Check: $355 \\times 17 + 5 = 6,035 + 5 = 6,040$."
+        ],
+        "a": "355, remainder 5"
+      },
+      {
+        "t": "mistake",
+        "html": "Skipping the 0 when the divisor does not fit. Without it, $4,872 \\div 24$ comes out as 23. Quick check: estimate first. $4,800 \\div 24 = 200$, so an answer near 23 is far too small."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Prealgebra 2e, section 1.5 Divide Whole Numbers"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 6.NS.B.2: fluent division of multi-digit numbers"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

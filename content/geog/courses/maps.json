@@ -1,0 +1,656 @@
+{
+  "key": "maps",
+  "ladder": "geog",
+  "title": "Maps and Places",
+  "short": "Maps and Places",
+  "after": [],
+  "units": [
+    {
+      "key": "what-map",
+      "title": "What Is a Map?",
+      "blurb": "A map is a picture of a place seen from above. Symbols, a key and colors tell us what is there."
+    },
+    {
+      "key": "directions",
+      "title": "Which Way?",
+      "blurb": "Words for where things are, the four cardinal directions, the compass rose, and the in-between directions."
+    },
+    {
+      "key": "grids",
+      "title": "Grids, Routes and Distance",
+      "blurb": "Finding a square on a grid map, following a route, and using a scale bar to tell how far."
+    },
+    {
+      "key": "where-i-live",
+      "title": "Where I Live",
+      "blurb": "An address, the places we live inside one another, towns and cities, states, our country and its capital."
+    },
+    {
+      "key": "land-water",
+      "title": "Land and Water",
+      "blurb": "Mountains, valleys and plains; islands and peninsulas; oceans, lakes, rivers and bays; deserts and forests."
+    },
+    {
+      "key": "our-world",
+      "title": "Our World",
+      "blurb": "The globe, the seven continents and five oceans, the equator, the poles and the hemispheres."
+    }
+  ],
+  "topics": [
+    {
+      "id": "maps.what-is-a-map",
+      "slug": "what-is-a-map",
+      "course": "maps",
+      "unit": "what-map",
+      "title": "What Is a Map?",
+      "short": "A map is a drawing of a place as if you were looking down on it from the sky.",
+      "prereqs": [],
+      "viz": [
+        "gg-birdseye",
+        "gg-town"
+      ]
+    },
+    {
+      "id": "maps.birds-eye-view",
+      "slug": "birds-eye-view",
+      "course": "maps",
+      "unit": "what-map",
+      "title": "A Bird's-Eye View",
+      "short": "From above, a table looks like a rectangle and a ball looks like a circle; match each thing to its top view.",
+      "prereqs": [
+        "maps.what-is-a-map"
+      ],
+      "viz": [
+        "gg-birdseye"
+      ]
+    },
+    {
+      "id": "maps.room-map",
+      "slug": "room-map",
+      "course": "maps",
+      "unit": "what-map",
+      "title": "A Map of a Room",
+      "short": "A map of a room shows where the bed, the table and the door are, drawn smaller than the real room.",
+      "prereqs": [
+        "maps.birds-eye-view"
+      ],
+      "viz": [
+        "gg-birdseye",
+        "gg-town"
+      ]
+    },
+    {
+      "id": "maps.map-symbols",
+      "slug": "map-symbols",
+      "course": "maps",
+      "unit": "what-map",
+      "title": "Map Symbols",
+      "short": "A symbol is a small picture or shape on a map that stands for a real thing, like a tree, a house, a road or a school.",
+      "prereqs": [
+        "maps.room-map"
+      ],
+      "viz": [
+        "gg-town",
+        "gg-sort"
+      ]
+    },
+    {
+      "id": "maps.map-key",
+      "slug": "map-key",
+      "course": "maps",
+      "unit": "what-map",
+      "title": "The Map Key",
+      "short": "The key (also called the legend) is the box that tells what each symbol on the map means.",
+      "prereqs": [
+        "maps.map-symbols"
+      ],
+      "viz": [
+        "gg-town"
+      ]
+    },
+    {
+      "id": "maps.map-colors",
+      "slug": "map-colors",
+      "course": "maps",
+      "unit": "what-map",
+      "title": "Colors on a Map",
+      "short": "On many maps blue means water, green means parks, forests or low land, and brown or tan means mountains or dry land.",
+      "prereqs": [
+        "maps.map-key"
+      ],
+      "viz": [
+        "gg-town",
+        "gg-map"
+      ]
+    },
+    {
+      "id": "maps.parts-of-a-map",
+      "slug": "parts-of-a-map",
+      "course": "maps",
+      "unit": "what-map",
+      "title": "The Parts of a Map",
+      "short": "Most maps have a title, a key, a compass rose and a scale: together they say what, where and how far.",
+      "prereqs": [
+        "maps.map-colors"
+      ],
+      "viz": [
+        "gg-town"
+      ]
+    },
+    {
+      "id": "maps.location-words",
+      "slug": "location-words",
+      "course": "maps",
+      "unit": "directions",
+      "title": "Where Is It?",
+      "short": "Words like left, right, above, below, next to, between, near and far tell where things are.",
+      "prereqs": [
+        "k.position-words",
+        "maps.room-map"
+      ],
+      "viz": [
+        "gg-town",
+        "gg-birdseye"
+      ]
+    },
+    {
+      "id": "maps.cardinal-directions",
+      "slug": "cardinal-directions",
+      "course": "maps",
+      "unit": "directions",
+      "title": "North, South, East and West",
+      "short": "The four cardinal directions are north, south, east and west; on most maps north is at the top.",
+      "prereqs": [
+        "maps.location-words"
+      ],
+      "viz": [
+        "gg-compass",
+        "gg-town"
+      ]
+    },
+    {
+      "id": "maps.compass-rose",
+      "slug": "compass-rose",
+      "course": "maps",
+      "unit": "directions",
+      "title": "The Compass Rose",
+      "short": "A compass rose shows the directions on a map; going clockwise from the top they are north, east, south and west.",
+      "prereqs": [
+        "maps.cardinal-directions"
+      ],
+      "viz": [
+        "gg-compass"
+      ]
+    },
+    {
+      "id": "maps.follow-directions",
+      "slug": "follow-directions",
+      "course": "maps",
+      "unit": "directions",
+      "title": "Following Directions on a Map",
+      "short": "Follow steps like \"go 2 blocks north, then 3 blocks east\" to find where you end up.",
+      "prereqs": [
+        "maps.compass-rose"
+      ],
+      "viz": [
+        "gg-town",
+        "gg-compass"
+      ]
+    },
+    {
+      "id": "maps.intermediate-directions",
+      "slug": "intermediate-directions",
+      "course": "maps",
+      "unit": "directions",
+      "title": "In-Between Directions",
+      "short": "Northeast, southeast, southwest and northwest are halfway between the cardinal directions.",
+      "prereqs": [
+        "maps.compass-rose"
+      ],
+      "viz": [
+        "gg-compass",
+        "gg-town"
+      ]
+    },
+    {
+      "id": "maps.sun-directions",
+      "slug": "sun-directions",
+      "course": "maps",
+      "unit": "directions",
+      "title": "The Sun Shows the Way",
+      "short": "The Sun rises in the east and sets in the west, so morning sunlight comes from the east.",
+      "prereqs": [
+        "maps.cardinal-directions"
+      ],
+      "viz": [
+        "gg-compass"
+      ]
+    },
+    {
+      "id": "maps.using-a-compass",
+      "slug": "using-a-compass",
+      "course": "maps",
+      "unit": "directions",
+      "title": "Using a Compass",
+      "short": "A compass needle turns to point north; once you know north, you can find every other direction.",
+      "prereqs": [
+        "maps.compass-rose"
+      ],
+      "viz": [
+        "gg-compass"
+      ]
+    },
+    {
+      "id": "maps.grid-squares",
+      "slug": "grid-squares",
+      "course": "maps",
+      "unit": "grids",
+      "title": "Finding a Square on a Grid",
+      "short": "A grid map has letters along one edge and numbers along another, so every square has a name like B3.",
+      "prereqs": [
+        "maps.location-words"
+      ],
+      "viz": [
+        "gg-town"
+      ]
+    },
+    {
+      "id": "maps.grid-locate",
+      "slug": "grid-locate",
+      "course": "maps",
+      "unit": "grids",
+      "title": "Name the Square",
+      "short": "Look at where a thing is on a grid map, then name its square with its letter and number.",
+      "prereqs": [
+        "maps.grid-squares"
+      ],
+      "viz": [
+        "gg-town"
+      ]
+    },
+    {
+      "id": "maps.routes",
+      "slug": "routes",
+      "course": "maps",
+      "unit": "grids",
+      "title": "Routes on a Map",
+      "short": "A route is the way you travel from one place to another; on a map you can trace it and count the blocks.",
+      "prereqs": [
+        "maps.follow-directions",
+        "maps.grid-squares"
+      ],
+      "viz": [
+        "gg-town"
+      ]
+    },
+    {
+      "id": "maps.map-scale",
+      "slug": "map-scale",
+      "course": "maps",
+      "unit": "grids",
+      "title": "How Far? The Scale Bar",
+      "short": "A scale bar shows how far a length on the map is in real life, like 1 inch for 1 mile.",
+      "prereqs": [
+        "maps.routes",
+        "g2.skip-count-5-10-100"
+      ],
+      "viz": [
+        "gg-town"
+      ]
+    },
+    {
+      "id": "maps.address",
+      "slug": "address",
+      "course": "maps",
+      "unit": "where-i-live",
+      "title": "An Address",
+      "short": "An address tells exactly where a home is: a house number, a street, a town or city, a state and a ZIP code.",
+      "prereqs": [
+        "maps.map-key"
+      ],
+      "viz": [
+        "gg-nested"
+      ]
+    },
+    {
+      "id": "maps.nested-places",
+      "slug": "nested-places",
+      "course": "maps",
+      "unit": "where-i-live",
+      "title": "Places Inside Places",
+      "short": "Your home is in a neighborhood, in a town or city, in a state, in a country, on a continent, on planet Earth.",
+      "prereqs": [
+        "maps.address"
+      ],
+      "viz": [
+        "gg-nested",
+        "gg-map"
+      ]
+    },
+    {
+      "id": "maps.city-suburb-rural",
+      "slug": "city-suburb-rural",
+      "course": "maps",
+      "unit": "where-i-live",
+      "title": "City, Suburb and Country",
+      "short": "A city is a big, busy town; a suburb is a town of homes near a city; rural places have farms, fields and few houses.",
+      "prereqs": [
+        "maps.nested-places"
+      ],
+      "viz": [
+        "gg-sort",
+        "gg-town"
+      ]
+    },
+    {
+      "id": "maps.states-of-us",
+      "slug": "states-of-us",
+      "course": "maps",
+      "unit": "where-i-live",
+      "title": "The United States and Its States",
+      "short": "The United States is a country made of 50 states; each state has its own shape on the map.",
+      "prereqs": [
+        "maps.nested-places"
+      ],
+      "viz": [
+        "gg-map",
+        "gg-nested"
+      ]
+    },
+    {
+      "id": "maps.capital-city",
+      "slug": "capital-city",
+      "course": "maps",
+      "unit": "where-i-live",
+      "title": "Capital Cities",
+      "short": "A capital is the city where a country's or a state's government meets; Washington, D.C., is the capital of the United States.",
+      "prereqs": [
+        "maps.states-of-us"
+      ],
+      "viz": [
+        "gg-map"
+      ]
+    },
+    {
+      "id": "maps.north-america",
+      "slug": "north-america",
+      "course": "maps",
+      "unit": "where-i-live",
+      "title": "Our Neighbors: Canada and Mexico",
+      "short": "The United States is in North America; Canada is to the north and Mexico is to the south.",
+      "prereqs": [
+        "maps.states-of-us",
+        "maps.cardinal-directions"
+      ],
+      "viz": [
+        "gg-map"
+      ]
+    },
+    {
+      "id": "maps.land-and-water",
+      "slug": "land-and-water",
+      "course": "maps",
+      "unit": "land-water",
+      "title": "Land and Water",
+      "short": "Earth has land and water; about 71 out of every 100 parts of its surface are water, mostly ocean.",
+      "prereqs": [
+        "maps.map-colors"
+      ],
+      "viz": [
+        "gg-globe",
+        "gg-landforms"
+      ]
+    },
+    {
+      "id": "maps.mountains-hills-valleys",
+      "slug": "mountains-hills-valleys",
+      "course": "maps",
+      "unit": "land-water",
+      "title": "Mountains, Hills and Valleys",
+      "short": "A mountain is very high land, a hill is lower and rounder, and a valley is the low land between them.",
+      "prereqs": [
+        "maps.land-and-water"
+      ],
+      "viz": [
+        "gg-landforms"
+      ]
+    },
+    {
+      "id": "maps.plains-plateaus",
+      "slug": "plains-plateaus",
+      "course": "maps",
+      "unit": "land-water",
+      "title": "Plains and Plateaus",
+      "short": "A plain is wide, flat, low land; a plateau is flat land high up, with steep sides.",
+      "prereqs": [
+        "maps.mountains-hills-valleys"
+      ],
+      "viz": [
+        "gg-landforms"
+      ]
+    },
+    {
+      "id": "maps.island-peninsula",
+      "slug": "island-peninsula",
+      "course": "maps",
+      "unit": "land-water",
+      "title": "Islands and Peninsulas",
+      "short": "An island is land with water all around it; a peninsula has water on three sides and joins the mainland on one.",
+      "prereqs": [
+        "maps.land-and-water"
+      ],
+      "viz": [
+        "gg-landforms",
+        "gg-map"
+      ]
+    },
+    {
+      "id": "maps.oceans-lakes-rivers",
+      "slug": "oceans-lakes-rivers",
+      "course": "maps",
+      "unit": "land-water",
+      "title": "Oceans, Lakes and Rivers",
+      "short": "An ocean is a huge body of salt water; a lake has land all around it; a river is water flowing across the land.",
+      "prereqs": [
+        "maps.land-and-water"
+      ],
+      "viz": [
+        "gg-landforms",
+        "gg-sort"
+      ]
+    },
+    {
+      "id": "maps.river-parts",
+      "slug": "river-parts",
+      "course": "maps",
+      "unit": "land-water",
+      "title": "A River's Journey",
+      "short": "A river starts at its source, flows downhill, gets help from smaller rivers called tributaries, and ends at its mouth.",
+      "prereqs": [
+        "maps.oceans-lakes-rivers"
+      ],
+      "viz": [
+        "gg-landforms"
+      ]
+    },
+    {
+      "id": "maps.bays-gulfs",
+      "slug": "bays-gulfs",
+      "course": "maps",
+      "unit": "land-water",
+      "title": "Bays, Gulfs and Coasts",
+      "short": "A coast is where land meets the sea; a bay is part of the sea that curves into the land, and a gulf is a very large bay.",
+      "prereqs": [
+        "maps.island-peninsula",
+        "maps.oceans-lakes-rivers"
+      ],
+      "viz": [
+        "gg-landforms",
+        "gg-map"
+      ]
+    },
+    {
+      "id": "maps.landform-pairs",
+      "slug": "landform-pairs",
+      "course": "maps",
+      "unit": "land-water",
+      "title": "Opposite Pairs",
+      "short": "Some land and water shapes are opposites: an island and a lake, a peninsula and a bay, an isthmus and a strait.",
+      "prereqs": [
+        "maps.bays-gulfs"
+      ],
+      "viz": [
+        "gg-landforms"
+      ]
+    },
+    {
+      "id": "maps.deserts-forests-grasslands",
+      "slug": "deserts-forests-grasslands",
+      "course": "maps",
+      "unit": "land-water",
+      "title": "Deserts, Forests and Grasslands",
+      "short": "A desert gets very little rain, a forest is covered with trees, and a grassland is wide open land covered with grass.",
+      "prereqs": [
+        "maps.land-and-water"
+      ],
+      "viz": [
+        "gg-landforms",
+        "gg-sort"
+      ]
+    },
+    {
+      "id": "maps.globe",
+      "slug": "globe",
+      "course": "maps",
+      "unit": "our-world",
+      "title": "The Globe",
+      "short": "A globe is a small, round model of Earth that shows land and water in their true shapes.",
+      "prereqs": [
+        "maps.land-and-water"
+      ],
+      "viz": [
+        "gg-globe"
+      ]
+    },
+    {
+      "id": "maps.globe-vs-map",
+      "slug": "globe-vs-map",
+      "course": "maps",
+      "unit": "our-world",
+      "title": "Globe or Flat Map?",
+      "short": "A flat map is easy to carry and shows the whole world at once, but it stretches some places; a globe does not.",
+      "prereqs": [
+        "maps.globe"
+      ],
+      "viz": [
+        "gg-globe",
+        "gg-map"
+      ]
+    },
+    {
+      "id": "maps.continents",
+      "slug": "continents",
+      "course": "maps",
+      "unit": "our-world",
+      "title": "The Seven Continents",
+      "short": "The seven continents are Africa, Antarctica, Asia, Australia, Europe, North America and South America.",
+      "prereqs": [
+        "maps.globe"
+      ],
+      "viz": [
+        "gg-map",
+        "gg-globe"
+      ]
+    },
+    {
+      "id": "maps.find-continents",
+      "slug": "find-continents",
+      "course": "maps",
+      "unit": "our-world",
+      "title": "Find the Continents",
+      "short": "Find each continent on a world map by its shape and its place: Asia is the biggest, Australia the smallest, Antarctica at the bottom.",
+      "prereqs": [
+        "maps.continents"
+      ],
+      "viz": [
+        "gg-map",
+        "gg-globe"
+      ]
+    },
+    {
+      "id": "maps.oceans",
+      "slug": "oceans",
+      "course": "maps",
+      "unit": "our-world",
+      "title": "The Five Oceans",
+      "short": "The five oceans are the Pacific, Atlantic, Indian, Arctic and Southern; the Pacific is the biggest and the Arctic the smallest.",
+      "prereqs": [
+        "maps.find-continents"
+      ],
+      "viz": [
+        "gg-map",
+        "gg-globe"
+      ]
+    },
+    {
+      "id": "maps.continent-animals",
+      "slug": "continent-animals",
+      "course": "maps",
+      "unit": "our-world",
+      "title": "Animals Around the World",
+      "short": "Many animals live wild on only one continent: kangaroos in Australia, emperor penguins on Antarctica, giraffes in Africa.",
+      "prereqs": [
+        "maps.find-continents"
+      ],
+      "viz": [
+        "gg-map",
+        "gg-sort"
+      ]
+    },
+    {
+      "id": "maps.equator",
+      "slug": "equator",
+      "course": "maps",
+      "unit": "our-world",
+      "title": "The Equator",
+      "short": "The equator is an imaginary line around the middle of Earth, halfway between the North Pole and the South Pole.",
+      "prereqs": [
+        "maps.globe"
+      ],
+      "viz": [
+        "gg-globe",
+        "gg-map"
+      ]
+    },
+    {
+      "id": "maps.poles",
+      "slug": "poles",
+      "course": "maps",
+      "unit": "our-world",
+      "title": "The North and South Poles",
+      "short": "The North Pole is the farthest point north on Earth, in the Arctic Ocean; the South Pole is the farthest south, on Antarctica.",
+      "prereqs": [
+        "maps.equator",
+        "maps.cardinal-directions"
+      ],
+      "viz": [
+        "gg-globe"
+      ]
+    },
+    {
+      "id": "maps.hemispheres",
+      "slug": "hemispheres",
+      "course": "maps",
+      "unit": "our-world",
+      "title": "Halves of the World",
+      "short": "The equator cuts Earth into the Northern and Southern Hemispheres; another line splits it into the Eastern and Western Hemispheres.",
+      "prereqs": [
+        "maps.equator"
+      ],
+      "viz": [
+        "gg-globe",
+        "gg-map"
+      ]
+    }
+  ]
+}

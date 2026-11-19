@@ -1,0 +1,159 @@
+{
+  "id": "from-scratch.lemon-battery",
+  "slug": "lemon-battery",
+  "ladder": "inventors",
+  "course": "from-scratch",
+  "unit": "power",
+  "title": "A Lemon Battery, Like Volta's Pile",
+  "short": "Two different metals in a sour juice make a small voltage; cells in series add their voltages.",
+  "trouble": "Builders use two pieces of the same metal, or let the zinc and copper touch inside the lemon, and get nothing.",
+  "prereqs": [
+    "sciexp.circuits",
+    "invelec.volta"
+  ],
+  "xp": 2,
+  "viz": [
+    "fs-lemon"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In the 1780s an Italian doctor, Luigi Galvani, saw the legs of a dead frog twitch when he touched them with two different metals. He thought the frog made the electricity, and called it \"animal electricity.\" Alessandro Volta, a physics professor at Pavia, was not so sure. He suspected the two metals did the work, and the frog only showed it."
+      },
+      {
+        "t": "p",
+        "html": "Volta tested the idea with no frog at all. He stacked discs of two different metals, such as zinc and copper or silver, with card or cloth soaked in salt water between each pair. The taller the stack, the bigger the shock. In 1800 he described his <b>pile</b> in a letter to the Royal Society of London. It was the first battery: for the first time, people had a steady flow of electricity to experiment with."
+      },
+      {
+        "t": "note",
+        "html": "<b>Meet the inventor.</b> Read Volta's story, and the Galvani debate, in <a href=\"/inventors/age-of-electricity/volta/\">Alessandro Volta: The Pile of 1800</a>."
+      },
+      {
+        "t": "key",
+        "html": "A <b>cell</b> needs two different metals in a liquid that conducts, such as lemon juice or salt water. The more active metal (zinc) dissolves a little and leaves electrons behind, so it is the <b>negative</b> terminal; copper is the <b>positive</b> one. A zinc and copper cell makes about <b>0.9 V</b>. Cells joined <b>in series</b>, copper of one to zinc of the next, <b>add</b> their voltages."
+      },
+      {
+        "t": "p",
+        "html": "Inside the lemon, each zinc atom that dissolves gives up two electrons: $\\text{Zn} \\to \\text{Zn}^{2+} + 2e^-$. Those electrons travel through your wire to the copper, where hydrogen ions from the acid pick them up and become tiny bubbles of hydrogen. The energy comes from the zinc changing, not from the lemon itself. The juice is the road the ions travel."
+      },
+      {
+        "t": "viz",
+        "name": "fs-lemon",
+        "opts": {
+          "n": 3
+        },
+        "cap": "Add lemons, switch between series and parallel, and try different metals. Watch the voltage, the current and the LED."
+      },
+      {
+        "t": "why",
+        "html": "A lemon cell is weak for two reasons. Its voltage is small, about 0.9 V. And it has a large <b>internal resistance</b>, a few thousand ohms, because ions crawl slowly through juice. So even when the voltage is enough, only a fraction of a milliamp flows. That lights an LED dimly, and an LED is about the only light that will run on so little."
+      },
+      {
+        "t": "h",
+        "text": "Let's think it through"
+      },
+      {
+        "t": "ex",
+        "title": "How many lemons?",
+        "q": "A red LED needs a little more than 1.8 V to glow. Each lemon makes about 0.9 V. How many lemons in series?",
+        "steps": [
+          "Two lemons give $2 \\times 0.9 = 1.8$ V: right at the edge, so the LED barely glows or not at all.",
+          "Three lemons give $2.7$ V, comfortably above 1.8 V."
+        ],
+        "a": "Three lemons, and four is even better. Look in a dark room."
+      },
+      {
+        "t": "ex",
+        "title": "Series or parallel?",
+        "q": "You have four lemons. Which wiring gives the most voltage?",
+        "steps": [
+          "In series the voltages add: $4 \\times 0.9 = 3.6$ V.",
+          "In parallel every cell pushes across the same two wires: still $0.9$ V, though they can share more current."
+        ],
+        "a": "Series, about 3.6 V."
+      },
+      {
+        "t": "mistake",
+        "html": "Using two pieces of the same metal. Two copper strips, or two zinc nails, make no voltage at all. A cell needs two <i>different</i> metals. Also check that the metals are not touching inside the fruit."
+      },
+      {
+        "t": "h",
+        "text": "Build it: a lemon battery"
+      },
+      {
+        "t": "note",
+        "html": "<div class=\"fs-parts\"><b>Parts (about \\$10 to \\$20; much of it may already be in the house)</b><ul><li>3 or 4 lemons (about \\$3); limes, potatoes or cups of salt water work too</li><li>3 or 4 zinc-coated (galvanized) nails, about 5 cm long (about \\$2 for a small box)</li><li>3 or 4 pieces of thick bare copper wire, about 5 cm each, or copper pennies from before 1982 (U.S. pennies made since then are mostly zinc with a thin copper coat)</li><li>5 test leads with alligator clips at both ends (about \\$5 for a pack)</li><li>A red LED (under \\$1). Red needs the least voltage of the common colors.</li><li>Optional: an inexpensive digital multimeter (about \\$10 to \\$20). It makes the whole project better, because you can see the numbers.</li></ul></div>"
+      },
+      {
+        "t": "note",
+        "html": "<div class=\"fs-steps\"><b>Step by step</b><ol><li>Roll each lemon firmly on the table to break up the juicy parts inside.</li><li>Push a zinc nail and a copper wire into each lemon, about 2 to 3 cm apart, as deep as they will go. They must not touch each other.</li><li>If you have a meter, set it to DC volts and touch its leads to the copper (red lead) and zinc (black lead) of one lemon. Write down the reading.</li><li>Join the lemons in a chain: a clip lead from the copper of lemon 1 to the zinc of lemon 2, copper of lemon 2 to zinc of lemon 3, and so on.</li><li>Measure the whole chain, from the first zinc to the last copper. Compare it with the single lemon.</li><li>Connect the LED: its longer leg goes to the free copper end (positive), its shorter leg to the free zinc end (negative). Turn off the lights and look closely.</li></ol></div>"
+      },
+      {
+        "t": "h",
+        "text": "What to look for"
+      },
+      {
+        "t": "list",
+        "items": [
+          "One lemon reads roughly 0.8 to 1.0 V. Each lemon you add in series adds about the same again.",
+          "The LED glows faintly, best in the dark. Pull one clip off and it goes out: the circuit is broken.",
+          "Look closely at the copper: tiny bubbles of hydrogen may form there after a while."
+        ]
+      },
+      {
+        "t": "h",
+        "text": "Troubleshooting"
+      },
+      {
+        "t": "list",
+        "items": [
+          "<b>No glow at all?</b> Turn the LED around. LEDs only pass current one way.",
+          "<b>Meter reads zero?</b> Check that each clip grips a different metal, and that no nail touches a copper wire inside the fruit.",
+          "<b>Voltage fine but no glow?</b> Add another lemon, push the metals deeper, or try a darker room. A green or white LED needs more voltage than a red one.",
+          "<b>Readings drift down?</b> That is normal. Pull the electrodes out, wipe them, and push them into a fresh spot."
+        ]
+      },
+      {
+        "t": "h",
+        "text": "Iterate like Volta"
+      },
+      {
+        "t": "list",
+        "items": [
+          "Test other fruits and vegetables. Keep the metals and spacing the same so the test is fair. Which gives the highest voltage? Which lights the LED best?",
+          "Make Volta's \"crown of cups\": a row of cups of salt water, each with a zinc nail and a copper wire, joined in series. Compare it with the lemons.",
+          "Build a small pile: coins or copper washers and zinc washers, with paper soaked in salt water between them, stacked zinc, paper, copper, zinc, paper, copper. Measure it as it grows.",
+          "Try other pairs of metals, such as a steel paper clip with copper, or aluminum foil with copper. Which pair makes the most voltage?"
+        ]
+      },
+      {
+        "t": "note",
+        "html": "<b>Try it on the Circuit Bench.</b> Put 1 to 4 cells in the battery holder on the <a href=\"/science-lab/circuit-bench/\">Circuit Bench</a> and watch a bulb or an LED change as the voltages add up."
+      },
+      {
+        "t": "note",
+        "html": "<div class=\"fs-safe\"><b>Safety</b><ul><li>Do not eat or drink the lemons, potatoes or salt water afterward. Metal from the electrodes gets into them. Throw them away and wash your hands.</li><li>Nail points are sharp. Push them in carefully, away from your other hand.</li><li>A grown-up does the cutting and stripping of wire, and any work with a craft knife.</li><li>This project uses no battery and no chemicals beyond fruit and salt water. Keep it that way: do not add acids or other chemicals.</li></ul></div>"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Grokipedia, History of the battery",
+        "url": "https://grokipedia.com/page/History_of_the_battery"
+      },
+      {
+        "name": "Grokipedia, Galvanic cell",
+        "url": "https://grokipedia.com/page/Galvanic_cell"
+      },
+      {
+        "name": "Wikipedia, Lemon battery (no Grokipedia article found)",
+        "url": "https://en.wikipedia.org/wiki/Lemon_battery"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

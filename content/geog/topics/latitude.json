@@ -1,0 +1,117 @@
+{
+  "id": "worldgeo.latitude",
+  "slug": "latitude",
+  "ladder": "geog",
+  "course": "worldgeo",
+  "unit": "lat-long",
+  "title": "Latitude",
+  "short": "Latitude tells how many degrees north or south of the equator a place is, from 0° at the equator to 90° at each pole.",
+  "trouble": "Students forget to write N or S, or think latitude can be more than 90°. Latitude 40° means nothing until you say 40° N or 40° S.",
+  "prereqs": [
+    "worldgeo.parallels-meridians"
+  ],
+  "xp": 2,
+  "viz": [
+    "gg-latlon",
+    "gg-globe"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You now know that <a href=\"/geography/world-geography/parallels-meridians/\">parallels</a> circle the globe east and west. Each parallel has a number, its <b>latitude</b>, measured in degrees (°)."
+      },
+      {
+        "t": "key",
+        "html": "<b>Latitude</b> tells how many degrees north or south of the equator a place is. The equator is 0°. The North Pole is 90° N and the South Pole is 90° S. Every latitude needs its letter: N or S."
+      },
+      {
+        "t": "why",
+        "html": "Imagine a line from the center of Earth to the equator and another to your town. The angle between them is your latitude. Go all the way to a pole and the angle is a right angle, 90°. You cannot go farther north than the North Pole, so no latitude is more than 90°."
+      },
+      {
+        "t": "viz",
+        "name": "gg-latlon",
+        "opts": {
+          "mode": "place",
+          "target": [
+            20,
+            45
+          ],
+          "lines": [
+            "equator"
+          ],
+          "step": 30,
+          "snap": 5,
+          "bbox": [
+            -70,
+            -90,
+            110,
+            90
+          ]
+        },
+        "cap": "Drag the pin (or use the arrow keys) to 45° N. Watch the readout: only the up-and-down position changes the latitude."
+      },
+      {
+        "t": "ex",
+        "title": "Reading a latitude",
+        "q": "A town is on the parallel halfway between the equator and the North Pole. What is its latitude?",
+        "steps": [
+          "The equator is 0° and the North Pole is 90° N.",
+          "Halfway between 0 and 90 is 45.",
+          "The town is north of the equator, so the letter is N."
+        ],
+        "a": "45° N"
+      },
+      {
+        "t": "ex",
+        "title": "Same number, two places",
+        "q": "Two cities are both 34° from the equator. One is Los Angeles, the other is Sydney, Australia. How do we write each latitude?",
+        "steps": [
+          "Los Angeles is north of the equator: 34° N.",
+          "Sydney is south of the equator: 34° S.",
+          "Both are the same distance from the equator, on opposite sides."
+        ],
+        "a": "Los Angeles about 34° N; Sydney about 34° S."
+      },
+      {
+        "t": "mistake",
+        "html": "Writing \"latitude 40°\" without a letter. There are two parallels at 40°, one north and one south of the equator, so \"40°\" could be in Spain or in New Zealand. Always add N or S. And if you ever get a latitude above 90°, something is wrong: check whether you meant longitude."
+      },
+      {
+        "t": "viz",
+        "name": "gg-globe",
+        "opts": {
+          "center": [
+            140,
+            -10
+          ],
+          "lines": [
+            "equator"
+          ],
+          "poles": true,
+          "hemi": "S"
+        },
+        "cap": "The Southern Hemisphere is shaded. Every place there has a latitude marked S."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Prime meridian (Grokipedia)",
+        "url": "https://grokipedia.com/page/Prime_meridian"
+      },
+      {
+        "name": "U.S. Geological Survey FAQ: How much distance does a degree, minute, and second cover on your maps?",
+        "url": "https://www.usgs.gov/faqs/how-much-distance-does-degree-minute-and-second-cover-your-maps"
+      },
+      {
+        "name": "C3 Framework for Social Studies State Standards (NCSS, 2013), Geography, Dimension 2, grades 6-8"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

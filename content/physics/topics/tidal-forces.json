@@ -1,0 +1,97 @@
+{
+  "id": "astrophys.tidal-forces",
+  "slug": "tidal-forces",
+  "ladder": "physics",
+  "course": "astrophys",
+  "unit": "stellar-death",
+  "title": "Tidal Forces and the Roche Limit",
+  "short": "The difference in gravity across a body, about 2GMmΔr/r³, tears apart moons and stretches matter near black holes.",
+  "trouble": "Students think tidal force falls off as 1/r², like gravity itself, rather than 1/r³.",
+  "prereqs": [
+    "mech.shell-theorem",
+    "calc1.linear-approximation"
+  ],
+  "xp": 3,
+  "viz": [
+    "ph-orbit"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Gravity weakens with distance, so the near side of a body is pulled harder than its far side. That difference, the <b>tidal force</b>, stretches the body along the line to the other mass. It raises ocean tides, it tears apart moons that stray too close, and near a small black hole it would pull you apart. The tool is <a href=\"/math/calculus-1/linear-approximation/\">linear approximation</a> applied to <a href=\"/physics/mechanics/shell-theorem/\">gravity outside a sphere</a>."
+      },
+      {
+        "t": "why",
+        "html": "The acceleration toward a mass $M$ is $a(r) = GM/r^2$. Two points separated by a small $\\Delta r$ along the line to $M$ feel accelerations that differ by about $$\\Delta a \\approx \\left|\\frac{da}{dr}\\right|\\Delta r = \\frac{2GM}{r^3}\\,\\Delta r.$$ The derivative of $1/r^2$ is $-2/r^3$, so the tidal effect falls off one power faster than gravity itself. In the frame of the body's center, the near side is pulled toward $M$ and the far side is left behind: two bulges, not one."
+      },
+      {
+        "t": "key",
+        "html": "Tidal acceleration across a length $\\Delta r$ at distance $r$: $\\Delta a \\approx 2GM\\,\\Delta r/r^3$. It goes as $M/r^3$, so a near, small body (the Moon) can out-tide a far, huge one (the Sun)."
+      },
+      {
+        "t": "viz",
+        "name": "ph-orbit",
+        "opts": {
+          "mode": "tides"
+        },
+        "cap": "The difference between the Moon's pull on each part of Earth and its pull on Earth's center. The arrows point away from Earth on both the near and far sides: two tidal bulges."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "The Moon and the Sun on Earth's oceans",
+        "q": "Compare the tidal accelerations from the Moon ($7.35 \\times 10^{22}$ kg at $3.84 \\times 10^{8}$ m) and the Sun ($1.99 \\times 10^{30}$ kg at $1.50 \\times 10^{11}$ m) across Earth's radius ($6.37 \\times 10^{6}$ m).",
+        "steps": [
+          "Moon: $2GM\\Delta r/r^3 = 1.1 \\times 10^{-6}$ m/s².",
+          "Sun: $5.0 \\times 10^{-7}$ m/s², so the Sun's tidal effect is about $0.45$ of the Moon's."
+        ],
+        "a": "The Moon raises tides about twice as strong as the Sun's, even though the Sun pulls Earth about 180 times harder."
+      },
+      {
+        "t": "ex",
+        "title": "The Roche limit",
+        "q": "A rock sits on the near side of a moon of radius $r$ and density $\\rho_m$ orbiting a planet of radius $R_P$ and density $\\rho_P$ at distance $d$. Where does the planet's tidal pull beat the moon's own gravity?",
+        "steps": [
+          "Self-gravity: $Gm/r^2$ with $m = \\tfrac43\\pi r^3\\rho_m$. Tidal pull: $2GM\\,r/d^3$ with $M = \\tfrac43\\pi R_P^3\\rho_P$.",
+          "Equal when $d^3 = 2Mr^3/m$, so $d = R_P(2\\rho_P/\\rho_m)^{1/3}$."
+        ],
+        "a": "For icy bodies ($900$ kg/m³) near Saturn ($R_P = 60{,}300$ km, $687$ kg/m³) that is about 69,000 km; a fluid moon breaks up farther out, near $2.44R_P(\\rho_P/\\rho_m)^{1/3} \\approx 135{,}000$ km. Saturn's bright main rings lie roughly inside that distance."
+      },
+      {
+        "t": "ex",
+        "title": "Falling into a black hole",
+        "q": "Find the tidal difference across a 2 m body at the horizon of a $10\\,M_\\odot$ black hole ($r_s = 2.95 \\times 10^{4}$ m).",
+        "steps": [
+          "$\\Delta a = 2GM(2\\text{ m})/r_s^3 = 2(1.33 \\times 10^{21})(2)/(2.57 \\times 10^{13})$.",
+          "$\\Delta a \\approx 2 \\times 10^{8}$ m/s²."
+        ],
+        "a": "About 20 million $g$: fatal \"spaghettification\" well outside the horizon. At the horizon of Sagittarius A* ($4.3 \\times 10^{6}\\,M_\\odot$) the same difference is only $10^{-3}$ m/s², since $\\Delta a$ at $r_s$ goes as $1/M^2$."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking tidal force falls off as $1/r^2$, like gravity itself. It is a <i>difference</i> of gravity across a body, and the difference falls off as $1/r^3$: double the distance and gravity drops to a quarter, but tides drop to an eighth. Check: if tides went as $M/r^2$, the Sun's tides would be 180 times the Moon's instead of about half."
+      },
+      {
+        "t": "note",
+        "html": "In 1992 comet Shoemaker–Levy 9 passed inside Jupiter's Roche limit and was torn into more than 20 pieces, which struck Jupiter in July 1994."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 1, section 13.6 (Tidal Forces)"
+      },
+      {
+        "name": "OpenStax Astronomy 2e, section 24.5 (Black Holes)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

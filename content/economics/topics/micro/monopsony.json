@@ -1,0 +1,86 @@
+{
+  "id": "micro.monopsony",
+  "slug": "monopsony",
+  "ladder": "economics",
+  "course": "micro",
+  "unit": "factor-markets",
+  "title": "Monopsony",
+  "short": "A single buyer of labor must raise the wage for everyone to hire one more worker, so it hires fewer workers at a lower wage.",
+  "trouble": "Students read the wage from the marginal factor cost curve at the hiring point. The wage comes from the labor supply curve.",
+  "prereqs": [
+    "micro.factor-market-shifts",
+    "micro.monopoly-marginal-revenue"
+  ],
+  "xp": 3,
+  "viz": [
+    "ec-factor"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A <b>monopsony</b> is a single buyer, the mirror image of a monopoly. A monopoly must cut its price to sell more (<a href=\"/economics/microeconomics/monopoly-marginal-revenue/\">Why Marginal Revenue Is Below Price</a>); a monopsony employer must raise its wage to hire more. Instead of the shifting curves of <a href=\"/economics/microeconomics/factor-market-shifts/\">Shifts in Labor Demand and Supply</a>, it chooses a point on the labor supply curve."
+      },
+      {
+        "t": "key",
+        "html": "To hire one more worker, a monopsonist must pay a higher wage to <b>all</b> its workers, so the <b>marginal factor cost</b> (MFC, also called marginal resource cost) is above the wage. It hires where $MRP = MFC$, then pays the wage on the <b>supply curve</b> at that number of workers. The result: <b>fewer workers and a lower wage</b> than a competitive labor market. With linear supply $w = w_0 + sL$, $MFC = w_0 + 2sL$."
+      },
+      {
+        "t": "why",
+        "html": "Suppose 10 workers would work for \\$15 an hour, but an 11th needs \\$16. Hiring the 11th costs \\$16 for that worker plus \\$1 more for each of the other 10: \\$26 in all. That's the MFC. Since it's above the wage, the employer stops hiring earlier than a competitive employer would, and the wage only has to be high enough to attract that smaller number of workers. In this model, a minimum wage set between the monopsony wage and the competitive wage makes the MFC flat up to the supply curve and can <b>raise</b> employment."
+      },
+      {
+        "t": "viz",
+        "name": "ec-factor",
+        "opts": {
+          "mode": "monopsony"
+        },
+        "cap": "MRP meets MFC at the hiring point; the dotted line drops to the supply curve for the wage. Turn on the minimum wage to see employment rise in the model."
+      },
+      {
+        "t": "ex",
+        "title": "A one-company town",
+        "q": "Labor supply is $w = 5 + L$ (dollars an hour), and workers' MRP is $35 - L$. Find the monopsony employment and wage, and compare with a competitive market.",
+        "steps": [
+          "$MFC = 5 + 2L$ (twice the slope of supply).",
+          "$MRP = MFC$: $35 - L = 5 + 2L$, so $L = 10$.",
+          "Wage from supply: $w = 5 + 10 = \\$15$.",
+          "Competitive: $35 - L = 5 + L$ gives $L = 15$ and $w = \\$20$. The monopsony hires 5 fewer and pays \\$5 less."
+        ],
+        "a": "10 workers at \\$15 (competitive: 15 at \\$20)."
+      },
+      {
+        "t": "ex",
+        "title": "MFC from a supply schedule",
+        "q": "An employer can hire 3 workers at \\$12 an hour or 4 at \\$13. What is the marginal factor cost of the 4th worker?",
+        "steps": [
+          "Labor cost with 3: $3 \\times \\$12 = \\$36$. With 4: $4 \\times \\$13 = \\$52$.",
+          "$MFC = \\$52 - \\$36 = \\$16$, more than the \\$13 wage."
+        ],
+        "a": "\\$16 an hour."
+      },
+      {
+        "t": "mistake",
+        "html": "Reading the wage from the MFC curve at the hiring point. MFC says what the last worker <i>costs the firm</i>; the wage is what workers need to be willing to work, which is on the supply curve. In the example, MFC at 10 workers is \\$25, but the wage is \\$15. Check: the wage must be a point on the labor supply curve."
+      },
+      {
+        "t": "note",
+        "html": "Economists agree on this model's logic. How much monopsony power real employers have, and so what a particular minimum wage does to employment, is studied and debated; the evidence differs across places, industries and the size of the increase."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, 14.2 Wages and Employment in an Imperfectly Competitive Labor Market"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.01 Principles of Microeconomics (scope and sequence)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

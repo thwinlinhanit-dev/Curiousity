@@ -1,0 +1,88 @@
+{
+  "id": "chem.percent-composition",
+  "slug": "percent-composition",
+  "ladder": "chemistry",
+  "course": "chem",
+  "unit": "mole",
+  "title": "Percent Composition",
+  "short": "Each element's share of a compound's molar mass, as a percent.",
+  "trouble": "Students use the number of atoms instead of their masses, so they give water as 67% hydrogen.",
+  "prereqs": [
+    "chem.molar-mass",
+    "g6.percent-meaning"
+  ],
+  "xp": 2,
+  "viz": [],
+  "figureArchetype": "LessonFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "What fraction of a compound's mass comes from each element? Fertilizer bags, food labels and lab analyses all report this. You find it from the <a href=\"/chemistry/chemistry/molar-mass/\">Molar Mass</a>, using <a href=\"/math/grade-6/percent-meaning/\">percents</a>."
+      },
+      {
+        "t": "key",
+        "html": "$$\\%\\ \\text{of element} = \\dfrac{(\\text{number of its atoms in the formula}) \\times (\\text{its atomic mass})}{\\text{molar mass of the compound}} \\times 100\\%.$$ The percents of all the elements add up to 100%."
+      },
+      {
+        "t": "why",
+        "html": "One mole of the compound has a mass equal to its molar mass, and the formula says how much of that mass belongs to each element. Because every sample of a compound has the same makeup (<a href=\"/chemistry/chemistry/matter-classification/\">Elements, Compounds and Mixtures</a>), the same percent applies to a gram or a ton of it. Percent by mass uses masses, so heavy atoms count for more than light ones."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Carbon dioxide",
+        "q": "What percent of the mass of $\\mathrm{CO_2}$ is carbon? (C 12.01, O 16.00)",
+        "steps": [
+          "Molar mass: $$12.01 + 2(16.00) = 44.01\\ \\text{g/mol}.$$",
+          "$\\%\\ \\text{C} = \\dfrac{12.01}{44.01} \\times 100\\% = 27.29\\%$",
+          "Oxygen is the rest: $100\\% - 27.29\\% = 72.71\\%$."
+        ],
+        "a": "$27.29\\%$ carbon"
+      },
+      {
+        "t": "ex",
+        "title": "Mass of an element in a sample",
+        "q": "How many grams of iron are in $50.0\\ \\text{g}$ of $\\mathrm{Fe_2O_3}$? (Fe 55.85, O 16.00)",
+        "steps": [
+          "Molar mass: $$2(55.85) + 3(16.00) = 159.70\\ \\text{g/mol}.$$",
+          "Fraction iron: $\\dfrac{111.70}{159.70} = 0.6994$ (69.94%).",
+          "$50.0\\ \\text{g} \\times 0.6994 = 35.0\\ \\text{g}$ of iron."
+        ],
+        "a": "$35.0\\ \\text{g}$"
+      },
+      {
+        "t": "note",
+        "html": "Percent composition does not depend on the size of the sample: a gram or a ton of carbon dioxide is 27.29% carbon. That is why a measured percent can help identify a compound, and why it is the starting point for finding a formula in the next topic."
+      },
+      {
+        "t": "ex",
+        "title": "From lab data",
+        "q": "Heating a $2.50\\ \\text{g}$ sample of a copper compound drives off everything but $1.27\\ \\text{g}$ of copper. What percent of the compound is copper?",
+        "steps": [
+          "Percent by mass compares the part with the whole: $\\dfrac{1.27\\ \\text{g}}{2.50\\ \\text{g}} \\times 100\\%$.",
+          "$= 50.8\\%$ copper.",
+          "Comparing a measured percent with the percents calculated from possible formulas is one way chemists identify a compound."
+        ],
+        "a": "$50.8\\%$"
+      },
+      {
+        "t": "mistake",
+        "html": "Using the number of atoms instead of their masses, which would make water 67% hydrogen because 2 of its 3 atoms are hydrogen. By mass, water is only 11.2% hydrogen: $\\dfrac{2(1.01)}{18.02} = 0.112$. Hydrogen atoms are numerous but light. Check that you multiplied each count by the atomic mass."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 3.2 Determining Empirical and Molecular Formulas"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

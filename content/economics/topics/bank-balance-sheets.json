@@ -1,0 +1,94 @@
+{
+  "id": "macro.bank-balance-sheets",
+  "slug": "bank-balance-sheets",
+  "ladder": "economics",
+  "course": "macro",
+  "unit": "money",
+  "title": "Bank Balance Sheets",
+  "short": "Assets (reserves, loans, securities) equal liabilities (deposits) plus owners' equity; reserves split into required and excess.",
+  "trouble": "Students list deposits as a bank's assets. To the bank, a deposit is money it owes the depositor.",
+  "prereqs": [
+    "macro.money-supply-measures"
+  ],
+  "xp": 2,
+  "viz": [
+    "ec-tacct"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Most money in <a href=\"/economics/macroeconomics/money-supply-measures/\">M1</a> is not cash but bank deposits. To see how banks handle them, economists use a simple balance sheet called a T-account."
+      },
+      {
+        "t": "key",
+        "html": "A bank's <b>assets</b> (what it owns: reserves, loans, securities) equal its <b>liabilities</b> (what it owes: mainly customers' deposits) plus <b>owners' equity</b>. Reserves split into <b>required reserves</b> (reserve ratio × deposits) and <b>excess reserves</b> (everything above that)."
+      },
+      {
+        "t": "why",
+        "html": "When you deposit \\$100, the bank owes you \\$100 on demand: to the bank, your deposit is a liability. The \\$100 of cash it now holds is an asset, a reserve. Both sides rise by \\$100, so the T-account still balances. Whatever the bank does next (lend, buy a bond), it only swaps one asset for another or changes both sides together; that is why assets always equal liabilities plus equity. Equity is the cushion that belongs to the bank's owners."
+      },
+      {
+        "t": "viz",
+        "name": "ec-tacct",
+        "opts": {
+          "rr": 0.1,
+          "steps": [
+            "deposit",
+            "lend",
+            "spend"
+          ]
+        },
+        "cap": "A bank's T-account with a 10% reserve requirement. Try \"Customer deposits cash\" and watch both sides change by the same amount."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Required and excess reserves",
+        "q": "A bank has \\$50,000 of deposits and \\$8,000 of reserves. The reserve requirement is 10%.",
+        "steps": [
+          "Required reserves $= 0.10 \\times 50{,}000 = 5{,}000$.",
+          "Excess reserves $= 8{,}000 - 5{,}000 = 3{,}000$ dollars, which the bank could lend."
+        ],
+        "a": "Required \\$5,000; excess \\$3,000"
+      },
+      {
+        "t": "ex",
+        "title": "Owners’ equity",
+        "q": "A bank has reserves of \\$6,000, loans of \\$30,000 and securities of \\$12,000, with deposits of \\$44,000. Find equity.",
+        "steps": [
+          "Assets $= 6{,}000 + 30{,}000 + 12{,}000 = 48{,}000$.",
+          "Equity $= 48{,}000 - 44{,}000 = 4{,}000$ dollars."
+        ],
+        "a": "\\$4,000"
+      },
+      {
+        "t": "p",
+        "html": "A note on today's rules: the Federal Reserve set reserve requirements to zero in March 2020, so U.S. banks now have no required reserves. Problems here use a made-up ratio to show how the textbook model works; banks still hold reserves to make payments and to meet other regulations."
+      },
+      {
+        "t": "mistake",
+        "html": "Listing deposits as a bank's assets. To the bank, a deposit is money it owes the depositor: a liability. The matching asset is the cash or reserves it holds. Check: both sides of a T-account must change by the same total."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Macroeconomics 3e, 13.3 The Role of Banks"
+      },
+      {
+        "name": "Board of Governors of the Federal Reserve System, Reserve Requirements (set to zero percent in March 2020)"
+      },
+      {
+        "name": "College Board, AP Macroeconomics Course and Exam Description (topic list)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,88 @@
+{
+  "id": "mech.vis-viva",
+  "slug": "vis-viva",
+  "ladder": "physics",
+  "course": "mech",
+  "unit": "gravitation",
+  "title": "Speed on an Elliptical Orbit",
+  "short": "v² = GM(2/r − 1/a) gives the speed anywhere on an ellipse, which plans transfer orbits.",
+  "trouble": "Students think a rocket burn changes the height of the orbit right where the burn happens, rather than on the far side.",
+  "prereqs": [
+    "mech.orbital-energy",
+    "mech.kepler-second-from-newton",
+    "pre.ellipses"
+  ],
+  "xp": 3,
+  "viz": [
+    "ph-orbit"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "On an elliptical orbit (<a href=\"/math/precalculus/ellipses/\">Ellipses</a>), the speed changes all the way around. <a href=\"/physics/mechanics/orbital-energy/\">Orbital Energy</a> and <a href=\"/physics/mechanics/kepler-second-from-newton/\">Kepler's Second Law from Angular Momentum</a> give one formula for the speed anywhere, and it is the tool for planning trips between planets. Try transfers in the <a href=\"/science-lab/orbits/\">Orbit Lab</a>."
+      },
+      {
+        "t": "why",
+        "html": "At the nearest point $r_p$ and farthest point $r_a$ the velocity is perpendicular to $\\vec{r}$, so angular momentum gives $r_pv_p = r_av_a$. Energy gives $\\tfrac{1}{2}v_p^2 - \\dfrac{GM}{r_p} = \\tfrac{1}{2}v_a^2 - \\dfrac{GM}{r_a}$ (per kilogram). Substituting $v_a = v_pr_p/r_a$ and solving, the total energy per kilogram comes out as $-\\dfrac{GM}{r_p + r_a} = -\\dfrac{GM}{2a}$, where $a = \\tfrac{1}{2}(r_p + r_a)$ is the semi-major axis. Energy is the same everywhere on the orbit, so at any distance $r$: $\\tfrac{1}{2}v^2 - \\dfrac{GM}{r} = -\\dfrac{GM}{2a}$."
+      },
+      {
+        "t": "key",
+        "html": "The vis-viva equation: $$v^2 = GM\\left(\\dfrac{2}{r} - \\dfrac{1}{a}\\right).$$ For a circle ($r = a$) it gives $v^2 = GM/r$. A Hohmann transfer between circular orbits $r_1$ and $r_2$ uses an ellipse with $a = \\tfrac{1}{2}(r_1 + r_2)$: one burn at $r_1$ to get onto it, a second at $r_2$ to circularize."
+      },
+      {
+        "t": "viz",
+        "name": "ph-orbit",
+        "opts": {
+          "mode": "transfer",
+          "r1": 1,
+          "r2": 1.524,
+          "task": "Follow the transfer from Earth's orbit to Mars's: one burn to leave, half an orbit of coasting, one burn to arrive."
+        },
+        "cap": "A Hohmann transfer from Earth's orbit (1 AU) to Mars's (1.52 AU): the burn at Earth raises the far side of the orbit, half a revolution away."
+      },
+      {
+        "t": "ex",
+        "title": "Leaving Earth's orbit for Mars",
+        "q": "A Hohmann transfer to Mars has $a = \\tfrac{1}{2}(1 + 1.524) = 1.262\\ \\text{AU}$. How fast must a craft move at 1 AU to be on it, compared with Earth's orbital speed? ($GM_\\odot = 1.327 \\times 10^{20}\\ \\text{m}^3/\\text{s}^2$, $1\\ \\text{AU} = 1.496 \\times 10^{11}\\ \\text{m}$.)",
+        "steps": [
+          "On the transfer orbit at $r = 1\\ \\text{AU}$: $v^2 = GM\\left(\\dfrac{2}{1\\ \\text{AU}} - \\dfrac{1}{1.262\\ \\text{AU}}\\right)$, so $v = 32.7\\ \\text{km/s}$.",
+          "Earth's circular speed: $\\sqrt{GM/(1\\ \\text{AU})} = 29.8\\ \\text{km/s}$.",
+          "The craft needs about $2.9\\ \\text{km/s}$ beyond Earth's orbital speed (on top of escaping Earth itself)."
+        ],
+        "a": "$32.7\\ \\text{km/s}$, about $2.9\\ \\text{km/s}$ more than Earth's $29.8\\ \\text{km/s}$."
+      },
+      {
+        "t": "ex",
+        "title": "Up to geostationary orbit",
+        "q": "A satellite at $r_1 = 6.671 \\times 10^{6}\\ \\text{m}$ (300 km up) transfers to $r_2 = 4.216 \\times 10^{7}\\ \\text{m}$. Find the first burn. (Earth: $GM = 3.986 \\times 10^{14}\\ \\text{m}^3/\\text{s}^2$.)",
+        "steps": [
+          "Circular speed at $r_1$: $\\sqrt{GM/r_1} = 7.73\\ \\text{km/s}$.",
+          "Transfer ellipse: $a = \\tfrac{1}{2}(r_1 + r_2) = 2.441 \\times 10^{7}\\ \\text{m}$; at $r_1$, $v = \\sqrt{GM\\left(\\dfrac{2}{r_1} - \\dfrac{1}{a}\\right)} = 10.16\\ \\text{km/s}$.",
+          "First burn: $10.16 - 7.73 = 2.43\\ \\text{km/s}$. (A second burn of about $1.47\\ \\text{km/s}$ at the top circularizes the orbit.)"
+        ],
+        "a": "About $2.43\\ \\text{km/s}$."
+      },
+      {
+        "t": "mistake",
+        "html": "Expecting a burn to change the orbit's height right where it happens. Right after a short burn the craft is still at the same place, so that point stays on the new orbit. What changes is the energy, and with it $a$: the far side of the orbit, half a revolution later, rises or falls. Check with vis-viva: at the burn point $r$ is fixed, so a bigger $v$ means a bigger $a$, and the opposite end, at $2a - r$, moves out."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 1, 13.5 Kepler's Laws of Planetary Motion"
+      },
+      {
+        "name": "OpenStax University Physics Volume 1, 13.4 Satellite Orbits and Energy"
+      },
+      {
+        "name": "MIT OpenCourseWare 8.01 Classical Mechanics (scope and sequence)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

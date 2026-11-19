@@ -1,0 +1,110 @@
+{
+  "id": "phys1.pendulum-period",
+  "slug": "pendulum-period",
+  "ladder": "physics",
+  "course": "phys1",
+  "unit": "oscillations",
+  "title": "Period of a Pendulum",
+  "short": "For small swings T = 2π√(L/g), and the mass of the bob doesn't matter.",
+  "trouble": "Students think a heavier bob swings more slowly.",
+  "prereqs": [
+    "phys1.spring-oscillator-period",
+    "phys1.free-fall"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-oscillator"
+  ],
+  "figureArchetype": "WaveFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A pendulum has no spring, yet it swings in nearly perfect <a href=\"/physics/physics-1/spring-oscillator-period/\">simple harmonic motion</a>. Gravity, the same pull that makes things <a href=\"/physics/physics-1/free-fall/\">fall</a>, provides the restoring force."
+      },
+      {
+        "t": "why",
+        "html": "Pull the bob aside by an angle $\\theta$. Gravity $mg$ splits into a part along the string (balanced by the tension) and a part along the arc, $mg\\sin\\theta$, back toward the bottom. For small angles, $\\sin\\theta \\approx \\theta = \\dfrac{x}{L}$, where $x$ is the distance along the arc. So the restoring force is about $$F = -\\frac{mg}{L}x,$$ the same form as a spring with \"$k$\" $= \\dfrac{mg}{L}$. Put that into $T = 2\\pi\\sqrt{m/k}$: $$T = 2\\pi\\sqrt{\\frac{m}{mg/L}} = 2\\pi\\sqrt{\\frac{L}{g}}.$$ The mass cancels: a heavier bob is pulled harder but is harder to speed up, in the same proportion."
+      },
+      {
+        "t": "key",
+        "html": "For small swings, a simple pendulum of length $L$ (pivot to the center of the bob) has period $\\role[period]{time}{T} = 2\\pi\\sqrt{\\dfrac{\\role[length]{position}{L}}{\\role[acceleration of gravity]{acceleration}{g}}}$. It depends on the length and on $g$ only, not on the mass or (for small angles) the amplitude. Four times the length doubles the period."
+      },
+      {
+        "t": "viz",
+        "name": "ph-oscillator",
+        "opts": {
+          "type": "pendulum",
+          "L": 1,
+          "theta0": 10,
+          "m": 0.5,
+          "compare": {
+            "m": 3
+          },
+          "traces": [],
+          "lab": "/science-lab/pendulums/",
+          "task": "A light bob and one six times heavier, on equal strings: they swing in step.",
+          "roleLinks": {
+            "Length L": "position"
+          }
+        },
+        "cap": "Same length, very different masses, same period."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Period of a pendulum",
+        "q": "Find the period of a $1.2\\ \\text{m}$ pendulum swinging through small angles.",
+        "steps": [
+          "$T = 2\\pi\\sqrt{\\dfrac{1.2\\ \\text{m}}{9.8\\ \\text{m/s}^2}} = 2.2\\ \\text{s}$."
+        ],
+        "a": "$2.2\\ \\text{s}$"
+      },
+      {
+        "t": "ex",
+        "title": "A seconds pendulum",
+        "q": "A clock pendulum should take exactly $1.0\\ \\text{s}$ for each swing one way, so its period is $2.0\\ \\text{s}$. How long must it be?",
+        "steps": [
+          "Square: $T^2 = 4\\pi^2\\dfrac{L}{g}$, so $L = \\dfrac{gT^2}{4\\pi^2}$.",
+          "$L = \\dfrac{(9.8)(2.0)^2}{4\\pi^2} = 0.99\\ \\text{m}$: about a meter."
+        ],
+        "a": "$0.99\\ \\text{m}$"
+      },
+      {
+        "t": "ex",
+        "title": "On the Moon",
+        "q": "The same $0.99\\ \\text{m}$ pendulum is taken to the Moon, where $g = 1.62\\ \\text{m/s}^2$. Find its period.",
+        "steps": [
+          "$T = 2\\pi\\sqrt{\\dfrac{0.99}{1.62}} = 4.9\\ \\text{s}$. Weaker gravity pulls the bob back more gently, so it swings more slowly."
+        ],
+        "a": "$4.9\\ \\text{s}$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Thinking a heavier bob swings more slowly.</b> A heavier bob does feel a bigger restoring pull, but it has more inertia in exactly the same proportion, so its motion is unchanged: there is no $m$ in $T = 2\\pi\\sqrt{L/g}$. To slow a pendulum, make it longer. Check: in the visual above, the heavy and light bobs stay in step."
+      },
+      {
+        "t": "note",
+        "html": "\"Small\" swings means up to about $15^\\circ$: there the formula is off by less than half a percent. Big swings take a little longer, because $\\sin\\theta$ grows more slowly than $\\theta$. You can see this in the Pendulums and Resonance lab of the Science Lab."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Physics 2e, Section 16.4 (The Simple Pendulum)"
+      },
+      {
+        "name": "OpenStax University Physics Volume 1, Section 15.4 (Pendulums)"
+      },
+      {
+        "name": "College Board, AP Physics 1 Course and Exam Description, Unit 7: Oscillations"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

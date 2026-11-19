@@ -1,0 +1,103 @@
+{
+  "id": "nt.linear-diophantine",
+  "slug": "linear-diophantine",
+  "ladder": "math",
+  "course": "nt",
+  "unit": "divisibility",
+  "title": "Linear Diophantine Equations",
+  "short": "ax + by = c has integer solutions exactly when d = gcd(a, b) divides c, and then x = x₀ + (b/d)t, y = y₀ − (a/d)t.",
+  "trouble": "Students step by b and a instead of b/d and a/d and miss solutions, or forget to scale the Bézout solution by c/d.",
+  "prereqs": [
+    "nt.bezout"
+  ],
+  "xp": 3,
+  "viz": [
+    "nt-lattice"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A <b>Diophantine equation</b> is an equation where only integer solutions count. The simplest kind is linear: $ax + by = c$. Graphed, it is a straight line; the question is which points on it have whole-number coordinates. <a href=\"/math/number-theory/bezout/\">Bézout's identity</a> answers it completely."
+      },
+      {
+        "t": "p",
+        "html": "<b>Theorem.</b> Let $d = \\gcd(a, b)$, with $a$ and $b$ not both $0$. The equation $ax + by = c$ has an integer solution <b>exactly when $d \\mid c$</b>. If $(x_0, y_0)$ is one solution, then all solutions are $$x = x_0 + \\frac{b}{d}\\,t, \\qquad y = y_0 - \\frac{a}{d}\\,t, \\qquad t \\in \\mathbb{Z}.$$"
+      },
+      {
+        "t": "why",
+        "html": "<b>Only if:</b> $d$ divides $a$ and $b$, so it divides every $ax + by$; if $d \\nmid c$, nothing works. <b>If:</b> Bézout gives $ax' + by' = d$; multiply by $c/d$. <b>All solutions:</b> if $(x, y)$ is another solution, subtract: $a(x - x_0) = -b(y - y_0)$. Divide by $d$ and write $a' = a/d$, $b' = b/d$, which are coprime: $a'(x - x_0) = -b'(y - y_0)$. Bézout gives $a'u + b'v = 1$, so $$x - x_0 = (x - x_0)(a'u + b'v) = -b'(y - y_0)u + b'(x - x_0)v,$$ a multiple of $b'$. Write $x - x_0 = b't$; then $y - y_0 = -a't$."
+      },
+      {
+        "t": "viz",
+        "name": "nt-lattice",
+        "opts": {
+          "mode": "line",
+          "a": 4,
+          "b": 6,
+          "c": 10
+        },
+        "cap": "The line $4x + 6y = 10$ with its lattice points. Neighbors are $b/d = 3$ apart across and $a/d = 2$ apart down. Change $c$ to an odd number and every lattice point disappears."
+      },
+      {
+        "t": "ex",
+        "title": "All solutions",
+        "q": "Find all integer solutions of $12x + 18y = 30$.",
+        "steps": [
+          "$d = \\gcd(12, 18) = 6$, and $6 \\mid 30$, so solutions exist.",
+          "Bézout: $12 \\cdot (-1) + 18 \\cdot 1 = 6$. Multiply by $30/6 = 5$: $x_0 = -5$, $y_0 = 5$.",
+          "Steps: $b/d = 18/6 = 3$ and $a/d = 12/6 = 2$. So $x = -5 + 3t$, $y = 5 - 2t$.",
+          "Check $t = 2$: $(1, 1)$, and $12 + 18 = 30$."
+        ],
+        "a": "$x = -5 + 3t$, $y = 5 - 2t$ for every integer $t$."
+      },
+      {
+        "t": "ex",
+        "title": "No solution",
+        "q": "Does $6x + 9y = 20$ have an integer solution?",
+        "steps": [
+          "$\\gcd(6, 9) = 3$, so $6x + 9y$ is always a multiple of $3$.",
+          "$3 \\nmid 20$, so no integers $x$, $y$ work."
+        ],
+        "a": "No solution."
+      },
+      {
+        "t": "ex",
+        "title": "Stamps",
+        "q": "Stamps come in 5¢ and 8¢. In how many ways can you make exactly \\$1.00 of postage?",
+        "steps": [
+          "Solve $5x + 8y = 100$ with $x, y \\ge 0$. One solution is $(20, 0)$.",
+          "$d = 1$, so all solutions are $x = 20 + 8t$, $y = -5t$.",
+          "$y \\ge 0$ needs $t \\le 0$; $x \\ge 0$ needs $t \\ge -2.5$. So $t = 0, -1, -2$.",
+          "That gives $(20, 0)$, $(12, 5)$ and $(4, 10)$."
+        ],
+        "a": "Three ways."
+      },
+      {
+        "t": "p",
+        "html": "Geometrically, the solutions are the lattice points on the line $ax + by = c$. Since the line has slope $-a/b = -(a/d)/(b/d)$ in lowest terms, moving from one lattice point to the next means going $b/d$ across and $a/d$ down, and no smaller step lands on a lattice point."
+      },
+      {
+        "t": "mistake",
+        "html": "Stepping by $b$ and $a$ instead of $b/d$ and $a/d$. For $12x + 18y = 30$, the steps \"$x = -5 + 18t$, $y = 5 - 12t$\" skip most solutions, such as $(1, 1)$ and $(-2, 3)$. Another slip: forgetting to multiply the Bézout solution by $c/d$, which solves $ax + by = d$ instead of $= c$. Check every answer by substituting it."
+      },
+      {
+        "t": "key",
+        "html": "$ax + by = c$ is solvable in integers exactly when $\\gcd(a, b) \\mid c$. One solution comes from Bézout scaled by $c/d$; the rest step by $b/d$ in $x$ and $-a/d$ in $y$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "William Stein, Elementary Number Theory: Primes, Congruences, and Secrets (Springer, 2009; free online edition), chapter 2, The Ring of Integers Modulo n"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.781 Theory of Numbers (Spring 2012), lecture notes on linear Diophantine equations"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

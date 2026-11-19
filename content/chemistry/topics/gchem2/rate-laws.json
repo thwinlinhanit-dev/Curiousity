@@ -1,0 +1,147 @@
+{
+  "id": "gchem2.rate-laws",
+  "slug": "rate-laws",
+  "ladder": "chemistry",
+  "course": "gchem2",
+  "unit": "kinetics",
+  "title": "Rate Laws and Reaction Order",
+  "short": "rate = k[A]ᵐ[B]ⁿ, where the orders m and n are found by experiment.",
+  "trouble": "Students read the orders from the coefficients of the overall balanced equation.",
+  "prereqs": [
+    "gchem2.reaction-rates"
+  ],
+  "xp": 2,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You know how to <a href=\"/chemistry/general-chemistry-2/reaction-rates/\">measure a rate</a>. Experiments show that the rate depends on concentrations, and in a simple way: as a power of each concentration. That relationship is the rate law."
+      },
+      {
+        "t": "key",
+        "html": "A rate law has the form $\\text{rate} = k[\\mathrm{A}]^m[\\mathrm{B}]^n$. The exponents $m$ and $n$ are the <b>orders</b> with respect to A and B, their sum is the <b>overall order</b>, and $k$ is the <b>rate constant</b>. Orders are found by experiment, not read from the balanced equation."
+      },
+      {
+        "t": "why",
+        "html": "Why can't you read the orders from the coefficients? Most reactions do not happen in one collision. They run through a series of simpler steps, and the rate law reflects the slowest step and what comes before it, not the overall recipe. For example, $\\mathrm{2N_2O_5 \\to 4NO_2 + O_2}$ has the measured rate law $\\text{rate} = k[\\mathrm{N_2O_5}]$: first order, not second. And for $\\mathrm{NO_2 + CO \\to NO + CO_2}$ below about $500\\ \\text{K}$, $\\text{rate} = k[\\mathrm{NO_2}]^2$: carbon monoxide does not appear at all."
+      },
+      {
+        "t": "p",
+        "html": "What each order means: with order 0, changing the concentration does nothing to the rate; with order 1, doubling it doubles the rate; with order 2, doubling it multiplies the rate by $2^2 = 4$. Orders are usually 0, 1 or 2, though fractions such as $\\tfrac{1}{2}$ occur."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "fns": [
+            {
+              "f": "1+0*x",
+              "label": "zero order"
+            },
+            {
+              "f": "x",
+              "label": "first order",
+              "color": "red"
+            },
+            {
+              "f": "x^2",
+              "label": "second order",
+              "color": "green"
+            }
+          ],
+          "xmin": 0,
+          "xmax": 2.5,
+          "ymin": 0,
+          "ymax": 4.5,
+          "xlabel": "[A] (M)",
+          "ylabel": "rate (M/s)",
+          "zoom": false,
+          "trace": true
+        },
+        "cap": "Rate against concentration with $k = 1$. Trace each curve: from $[\\mathrm{A}] = 1$ to $2$, the zero-order rate stays put, the first-order rate doubles, and the second-order rate quadruples."
+      },
+      {
+        "t": "p",
+        "html": "The units of $k$ make the rate come out in $\\text{M/s}$, so they depend on the overall order:"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Overall order",
+          "Rate law example",
+          "Units of k"
+        ],
+        "rows": [
+          [
+            "0",
+            "$k$",
+            "$\\text{M/s}$"
+          ],
+          [
+            "1",
+            "$k[\\mathrm{A}]$",
+            "$\\text{s}^{-1}$"
+          ],
+          [
+            "2",
+            "$k[\\mathrm{A}]^2$ or $k[\\mathrm{A}][\\mathrm{B}]$",
+            "$\\text{M}^{-1}\\,\\text{s}^{-1}$"
+          ],
+          [
+            "3",
+            "$k[\\mathrm{A}]^2[\\mathrm{B}]$",
+            "$\\text{M}^{-2}\\,\\text{s}^{-1}$"
+          ]
+        ],
+        "cap": "In general the units of k are M^(1−n)·s⁻¹ for overall order n."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Reading a rate law",
+        "q": "For $\\mathrm{2NO + 2H_2 \\to N_2 + 2H_2O}$ the measured rate law is $\\text{rate} = k[\\mathrm{NO}]^2[\\mathrm{H_2}]$. Give the orders and the units of $k$. What happens to the rate if $[\\mathrm{NO}]$ triples?",
+        "steps": [
+          "Second order in NO, first order in $\\mathrm{H_2}$, third order overall. Notice that $\\mathrm{H_2}$ has coefficient 2 but order 1.",
+          "Units: $\\dfrac{\\text{M/s}}{\\text{M}^3} = \\text{M}^{-2}\\,\\text{s}^{-1}$.",
+          "Tripling $[\\mathrm{NO}]$ multiplies the rate by $3^2 = 9$."
+        ],
+        "a": "Orders 2 and 1 (overall 3), $k$ in $\\text{M}^{-2}\\,\\text{s}^{-1}$, and the rate becomes 9 times larger."
+      },
+      {
+        "t": "ex",
+        "title": "Using a rate law",
+        "q": "$\\text{rate} = k[\\mathrm{A}][\\mathrm{B}]^2$ with $k = 0.50\\ \\text{M}^{-2}\\,\\text{s}^{-1}$. Find the rate when $[\\mathrm{A}] = 0.20\\ \\text{M}$ and $[\\mathrm{B}] = 0.10\\ \\text{M}$.",
+        "steps": [
+          "$[\\mathrm{B}]^2 = (0.10)^2 = 0.010\\ \\text{M}^2$.",
+          "$$\\text{rate} = (0.50)(0.20)(0.010) = 1.0 \\times 10^{-3}\\ \\text{M/s}$$ The units check: $\\text{M}^{-2}\\,\\text{s}^{-1} \\times \\text{M}^3 = \\text{M/s}$."
+        ],
+        "a": "$1.0 \\times 10^{-3}\\ \\text{M/s}$."
+      },
+      {
+        "t": "mistake",
+        "html": "Writing the rate law from the balanced equation, as in $\\text{rate} = k[\\mathrm{N_2O_5}]^2$ for $\\mathrm{2N_2O_5 \\to 4NO_2 + O_2}$. The coefficients describe the overall recipe, not the collisions that set the speed. Check: if a problem gives you only the balanced equation and no data or mechanism, you cannot know the orders."
+      },
+      {
+        "t": "note",
+        "html": "The rate constant depends on temperature (and on a catalyst), but not on concentration. That is why one value of $k$ works for every experiment run at the same temperature."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 12.3 Rate Laws"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

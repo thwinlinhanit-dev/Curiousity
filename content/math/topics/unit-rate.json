@@ -1,0 +1,120 @@
+{
+  "id": "g6.unit-rate",
+  "slug": "unit-rate",
+  "ladder": "math",
+  "course": "g6",
+  "unit": "ratios",
+  "title": "Unit Rates",
+  "short": "Find how much for one: 120 miles in 3 hours is 40 miles per hour.",
+  "trouble": "Students divide in the wrong order and get hours per mile when miles per hour is asked.",
+  "prereqs": [
+    "g6.equivalent-ratios",
+    "g5.fraction-as-division"
+  ],
+  "xp": 1,
+  "viz": [
+    "ratiotable",
+    "tapediagram"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A <b>rate</b> is a ratio that compares two different kinds of things, like miles and hours. A <b>unit rate</b> tells how much for <i>one</i>: miles for one hour, dollars for one pound. Unit rates are <a href=\"/math/grade-6/equivalent-ratios/\">equivalent ratios</a> whose second number is 1."
+      },
+      {
+        "t": "viz",
+        "name": "tapediagram",
+        "opts": {
+          "tapes": [
+            {
+              "parts": [
+                1,
+                1,
+                1
+              ],
+              "labels": [
+                "40",
+                "40",
+                "40"
+              ],
+              "colors": [
+                "green",
+                "green",
+                "green"
+              ],
+              "name": "miles"
+            }
+          ],
+          "braces": [
+            {
+              "tape": 0,
+              "from": 0,
+              "to": 3,
+              "label": "120 miles in 3 hours"
+            },
+            {
+              "tape": 0,
+              "from": 0,
+              "to": 1,
+              "label": "1 hour",
+              "up": false
+            }
+          ],
+          "steps": [
+            "A car goes 120 miles in 3 hours at a steady speed.",
+            "Split the 120 miles into 3 equal parts, one for each hour.",
+            "Each part is 120 ÷ 3 = 40 miles: 40 miles per hour."
+          ]
+        },
+        "cap": "Splitting the miles into one equal piece for each hour."
+      },
+      {
+        "t": "key",
+        "html": "To find a unit rate, divide. The quantity you are counting goes on top, and the \"per\" thing goes underneath: $\\frac{120 \\text{ miles}}{3 \\text{ hours}} = 40$ miles per hour."
+      },
+      {
+        "t": "why",
+        "html": "To get from 3 hours down to 1 hour, divide by 3. To keep the ratio the same, divide the miles by 3 as well: $120 : 3 = 40 : 1$. Writing it as a fraction says the same thing, because <a href=\"/math/grade-5/fraction-as-division/\">a fraction is a division</a>: $\\frac{120}{3} = 120 \\div 3 = 40$."
+      },
+      {
+        "t": "ex",
+        "title": "A price per item",
+        "q": "4 notebooks cost \\$7. What is the price of one notebook?",
+        "steps": [
+          "Price per notebook means dollars for 1 notebook: dollars ÷ notebooks.",
+          "$7 \\div 4 = 1.75$."
+        ],
+        "a": "\\$1.75 per notebook."
+      },
+      {
+        "t": "ex",
+        "title": "Two unit rates from one ratio",
+        "q": "A printer prints 90 pages in 6 minutes. Find pages per minute and minutes per page.",
+        "steps": [
+          "Pages per minute: $90 \\div 6 = 15$.",
+          "Minutes per page: $6 \\div 90 = \\frac{1}{15}$ of a minute (4 seconds).",
+          "The two rates are reciprocals: $15 \\times \\frac{1}{15} = 1$."
+        ],
+        "a": "15 pages per minute, or $\\frac{1}{15}$ minute per page."
+      },
+      {
+        "t": "mistake",
+        "html": "Dividing in the wrong order gives the other unit rate. For 120 miles in 3 hours, $3 \\div 120 = \\frac{1}{40}$ is <i>hours per mile</i>, not miles per hour. Quick check: say the units out loud. The word after \"per\" is the one you divide by. Then ask if the size makes sense: a car covers many miles in an hour, so miles per hour should be a big number."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Prealgebra 2e, section 5.6 Ratios and Rate"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 6.RP.A.2: unit rates"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

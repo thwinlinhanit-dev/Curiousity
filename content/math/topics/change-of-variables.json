@@ -1,0 +1,129 @@
+{
+  "id": "calc3.change-of-variables",
+  "slug": "change-of-variables",
+  "ladder": "math",
+  "course": "calc3",
+  "unit": "multiple-integrals",
+  "title": "Change of Variables and the Jacobian",
+  "short": "Transform a region and scale by |∂(x, y)/∂(u, v)|.",
+  "trouble": "Students drop the absolute value of the Jacobian, or use its reciprocal.",
+  "prereqs": [
+    "calc3.polar-double-integrals",
+    "pre.determinants"
+  ],
+  "xp": 3,
+  "viz": [
+    "matrix2d"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Polar, cylindrical and spherical coordinates are special cases of one idea: describe the region with new variables in which it is simple, and correct for how the change stretches area. The correction is a <a href=\"/math/precalculus/determinants/\">determinant</a>, the <b>Jacobian</b>."
+      },
+      {
+        "t": "key",
+        "html": "If $x = x(u, v)$, $y = y(u, v)$ maps a region $S$ of the $uv$-plane one-to-one onto $R$, then\n  $$\\iint_R f(x, y)\\,dx\\,dy = \\iint_S f(x(u, v), y(u, v))\\left|\\frac{\\partial(x, y)}{\\partial(u, v)}\\right| du\\,dv, \\qquad \\frac{\\partial(x, y)}{\\partial(u, v)} = \\begin{vmatrix} x_u & x_v \\\\ y_u & y_v \\end{vmatrix}.$$"
+      },
+      {
+        "t": "why",
+        "html": "A small rectangle $\\Delta u$ by $\\Delta v$ in the $uv$-plane maps to a small curved patch. Near a point, the map is nearly linear: moving $\\Delta u$ moves you by $\\mathbf{r}_u\\Delta u = \\langle x_u, y_u \\rangle\\Delta u$, and moving $\\Delta v$ by $\\mathbf{r}_v\\Delta v$. So the patch is nearly the parallelogram on those two vectors, with area $|x_uy_v - x_vy_u|\\,\\Delta u\\,\\Delta v$ (a 2-D cross product, which is the determinant). That number is the local stretch factor. Area cannot be negative, so take the absolute value. For polar coordinates, $\\begin{vmatrix} \\cos\\theta & -r\\sin\\theta \\\\ \\sin\\theta & r\\cos\\theta \\end{vmatrix} = r$: the familiar $dA = r\\,dr\\,d\\theta$."
+      },
+      {
+        "t": "viz",
+        "name": "calc3-jacobian",
+        "opts": {
+          "map": "linear",
+          "m": [
+            [
+              0.5,
+              0.5
+            ],
+            [
+              0.5,
+              -0.5
+            ]
+          ],
+          "u": [
+            0,
+            2
+          ],
+          "v": [
+            0,
+            4
+          ],
+          "du": 0.25,
+          "dv": 0.5
+        },
+        "cap": "The map $x = \\frac{u + v}{2}$, $y = \\frac{u - v}{2}$ from the first example. Every cell of the $uv$ grid becomes a cell with half its area: $\\left|\\frac{\\partial(x, y)}{\\partial(u, v)}\\right| = \\frac{1}{2}$."
+      },
+      {
+        "t": "viz",
+        "name": "calc3-jacobian",
+        "opts": {
+          "map": "polar",
+          "u": [
+            0,
+            2
+          ],
+          "v": [
+            0,
+            "pi/2"
+          ]
+        },
+        "cap": "Polar coordinates as a change of variables: cells farther out (bigger $r$) are stretched more, by exactly the factor $r$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A parallelogram",
+        "q": "Evaluate $\\iint_R (x + y)\\,dA$ where $R$ is ${}0 \\le x + y \\le 2$, ${}0 \\le x - y \\le 4$.",
+        "steps": [
+          "Let $u = x + y$ and $v = x - y$: $R$ becomes the rectangle ${}0 \\le u \\le 2$, ${}0 \\le v \\le 4$. Solving, $x = \\frac{u + v}{2}$, $y = \\frac{u - v}{2}$.",
+          "$\\frac{\\partial(x, y)}{\\partial(u, v)} = \\begin{vmatrix} \\frac{1}{2} & \\frac{1}{2} \\\\ \\frac{1}{2} & -\\frac{1}{2} \\end{vmatrix} = -\\frac{1}{2}$, so $dA = \\frac{1}{2}\\,du\\,dv$.",
+          "$\\int_0^4\\int_0^2 u \\cdot \\frac{1}{2}\\,du\\,dv = \\frac{1}{2} \\cdot 2 \\cdot 4 = 4$."
+        ],
+        "a": "${}4$"
+      },
+      {
+        "t": "ex",
+        "title": "Area of an ellipse",
+        "q": "Find the area inside $\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1$.",
+        "steps": [
+          "Let $x = au$, $y = bv$: the ellipse becomes the unit disk $u^2 + v^2 \\le 1$.",
+          "$\\frac{\\partial(x, y)}{\\partial(u, v)} = \\begin{vmatrix} a & 0 \\\\ 0 & b \\end{vmatrix} = ab$.",
+          "Area $= \\iint_{\\text{disk}} ab\\,du\\,dv = ab \\cdot \\pi = \\pi ab$."
+        ],
+        "a": "$\\pi ab$"
+      },
+      {
+        "t": "ex",
+        "title": "Using the inverse Jacobian",
+        "q": "If you only know $u = x + y$, $v = x - 2y$, how do you get $\\frac{\\partial(x, y)}{\\partial(u, v)}$?",
+        "steps": [
+          "Compute the easy one: $\\frac{\\partial(u, v)}{\\partial(x, y)} = \\begin{vmatrix} 1 & 1 \\\\ 1 & -2 \\end{vmatrix} = -3$.",
+          "The two maps undo each other, so their stretch factors multiply to ${}1$: $\\frac{\\partial(x, y)}{\\partial(u, v)} = -\\frac{1}{3}$.",
+          "So $dA = \\frac{1}{3}\\,du\\,dv$."
+        ],
+        "a": "$-\\frac{1}{3}$, so $dA = \\frac{1}{3}\\,du\\,dv$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Dropping the absolute value, or using the reciprocal.</b> A negative Jacobian only means the map flips orientation; area is still positive, so use $\\left|\\frac{\\partial(x, y)}{\\partial(u, v)}\\right|$. And the factor that goes with $du\\,dv$ is the Jacobian of $x, y$ <i>with respect to</i> $u, v$. If you computed $\\frac{\\partial(u, v)}{\\partial(x, y)}$ instead, take its reciprocal. Check with a simple case: the map $x = 2u$, $y = 2v$ must multiply areas by ${}4$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 3, 5.7 Change of Variables in Multiple Integrals"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,109 @@
+{
+  "id": "mech.work-integral",
+  "slug": "work-integral",
+  "ladder": "physics",
+  "course": "mech",
+  "unit": "work-energy",
+  "title": "Work by a Variable Force",
+  "short": "W = ∫F dx, the area under the force–position curve.",
+  "trouble": "Students multiply the force by the distance when the force changes along the way.",
+  "prereqs": [
+    "phys1.work-from-graphs",
+    "calc1.ftc-evaluate"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-graph",
+    "ftc"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/physics/physics-1/work-from-graphs/\">Work as Area Under a Force Graph</a> found work as the area under a force–position graph, using triangles and rectangles. With <a href=\"/math/calculus-1/ftc-evaluate/\">Evaluating Integrals with FTC Part 2</a> you can find that area for any force you can write as a formula."
+      },
+      {
+        "t": "key",
+        "html": "The work done by a force $F(x)$ along the $x$-axis from $x_1$ to $x_2$ is $$\\role[work]{energy}{W} = \\int_{x_1}^{x_2} \\role{force}{F}(x)\\,\\role[tiny displacement]{position}{dx},$$ the signed area under the $F$–$x$ curve, in joules (N·m). For a spring stretched by an outside force $F = kx$: $W = \\tfrac{1}{2}k\\left(x_2^2 - x_1^2\\right)$."
+      },
+      {
+        "t": "why",
+        "html": "Over a short step $\\Delta x$ the force hardly changes, so the work on that step is about $F(x)\\Delta x$, the area of a thin rectangle. The total is the sum of those pieces, $\\sum F(x_i)\\Delta x$, a Riemann sum. Making the steps thinner turns the sum into the integral. When $F$ is constant, the integral is just $F\\,\\Delta x$, the rule you already know."
+      },
+      {
+        "t": "viz",
+        "name": "ph-graph",
+        "opts": {
+          "fn": "200*x",
+          "domain": [
+            0,
+            0.3
+          ],
+          "xlab": "x",
+          "ylab": "F",
+          "xunit": "m",
+          "yunit": "N",
+          "tool": "area",
+          "a": 0.1,
+          "b": 0.3,
+          "task": "Move the limits. The area is the work in joules."
+        },
+        "cap": "Stretching a spring with $k = 200\\ \\text{N/m}$ from 0.1 m to 0.3 m. The shaded trapezoid has area $8\\ \\text{J}$."
+      },
+      {
+        "t": "ex",
+        "title": "Stretching a spring",
+        "q": "How much work does it take to stretch a spring with $k = 200\\ \\text{N/m}$ from $0.10\\ \\text{m}$ to $0.30\\ \\text{m}$ past its natural length?",
+        "steps": [
+          "The pull needed is $F = kx$, which grows as you stretch.",
+          "$$W = \\int_{0.1}^{0.3} 200x\\,dx = 100\\left(0.3^2 - 0.1^2\\right) = 100(0.08) = 8\\ \\text{J}$$"
+        ],
+        "a": "$8\\ \\text{J}$."
+      },
+      {
+        "t": "ex",
+        "title": "A force that grows like $x^2$",
+        "q": "A force $F(x) = 3x^2 + 2$ (N, with $x$ in m) pushes a crate from $x = 0$ to $x = 2\\ \\text{m}$. Find the work.",
+        "steps": [
+          "$W = \\int_0^2 (3x^2 + 2)\\,dx = \\left[x^3 + 2x\\right]_0^2$.",
+          "$W = 8 + 4 = 12\\ \\text{J}$."
+        ],
+        "a": "$12\\ \\text{J}$."
+      },
+      {
+        "t": "mistake",
+        "html": "Multiplying the force by the distance when the force changes along the way. For the spring above, the force at the end is $60\\ \\text{N}$, and $60 \\times 0.2 = 12\\ \\text{J}$, half again too much; the force at the start gives $4\\ \\text{J}$, too little. Neither end represents the whole trip. Check with the graph: $F\\Delta x$ is a rectangle, and it only matches the true area when the graph is flat."
+      },
+      {
+        "t": "note",
+        "html": "The sign matters. The spring's own force on your hand is $-kx$, so while you stretch it, the spring does $-8\\ \\text{J}$ of work on you as you do $+8\\ \\text{J}$ on it. Always say which force's work you mean."
+      },
+      {
+        "t": "ex",
+        "title": "A repulsion that fades",
+        "q": "Two magnets repel with $F(x) = 4/x^2$ (N, m). As one slides from $x = 1\\ \\text{m}$ to $x = 2\\ \\text{m}$, how much work does the repulsion do on it?",
+        "steps": [
+          "$W = \\int_1^2 \\dfrac{4}{x^2}\\,dx = 4\\left[-\\dfrac{1}{x}\\right]_1^2 = 4\\left(1 - \\dfrac{1}{2}\\right)$.",
+          "$W = 2\\ \\text{J}$, positive because the force and the motion point the same way."
+        ],
+        "a": "$2\\ \\text{J}$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 1, 7.1 Work"
+      },
+      {
+        "name": "OpenStax Calculus Volume 1, 6.5 Physical Applications"
+      },
+      {
+        "name": "MIT OpenCourseWare 8.01 Classical Mechanics (scope and sequence)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,99 @@
+{
+  "id": "imicro.intertemporal-choice",
+  "slug": "intertemporal-choice",
+  "ladder": "economics",
+  "course": "imicro",
+  "unit": "time-risk",
+  "title": "Saving and Borrowing over Time",
+  "short": "The budget c₁ + c₂/(1 + r) = m₁ + m₂/(1 + r) shows when it pays to save and when to borrow.",
+  "trouble": "Students think a higher interest rate must make every saver save more. For a saver, the income effect can push the other way.",
+  "prereqs": [
+    "imicro.present-value",
+    "imicro.optimal-choice"
+  ],
+  "xp": 3,
+  "viz": [
+    "ec-choice"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Saving and borrowing are choices between consumption now and consumption later. The budget comes from <a href=\"/economics/intermediate-microeconomics/present-value/\">Present Value</a>, and the best choice comes from the tangency in <a href=\"/economics/intermediate-microeconomics/optimal-choice/\">The Best Affordable Bundle</a>."
+      },
+      {
+        "t": "key",
+        "html": "With income $m_1$ now and $m_2$ later, and interest rate $r$ for both saving and borrowing: $$c_1 + \\frac{c_2}{1 + r} = m_1 + \\frac{m_2}{1 + r}.$$ The right side is the present value of income. The line passes through the endowment $(m_1, m_2)$ with slope $-(1 + r)$, and at an interior optimum $MRS = 1 + r$."
+      },
+      {
+        "t": "why",
+        "html": "Saving $s = m_1 - c_1$ (negative for borrowing) earns interest, so $c_2 = m_2 + (1 + r)s$. Substitute $s$ and divide by $1 + r$ to get the budget. Giving up one dollar of $c_1$ buys $1 + r$ dollars of $c_2$, so $1 + r$ is the price of consumption now in units of consumption later. A rise in $r$ rotates the line around the endowment, which is always affordable. For a borrower, a higher rate is bad news on both counts: substitution and income effects both cut $c_1$. For a saver, the substitution effect says \"save more,\" but the higher return makes her richer, and the income effect says \"consume more now.\" Saving can go either way."
+      },
+      {
+        "t": "viz",
+        "name": "ec-choice",
+        "opts": {
+          "mode": "intertemporal",
+          "endowment": [
+            60,
+            40
+          ],
+          "rate": 0.1,
+          "utility": {
+            "type": "cobbdouglas",
+            "a": 0.5,
+            "b": 0.5
+          },
+          "task": "Move the interest rate. The budget turns around the endowment point."
+        },
+        "cap": "The endowment (60, 40) is always on the line. This person is a saver: her best bundle is to the left of the endowment."
+      },
+      {
+        "t": "ex",
+        "title": "A balanced choice",
+        "q": "$U = \\ln c_1 + \\ln c_2$, $m_1 = 100$, $m_2 = 110$, $r = 10\\%$.",
+        "steps": [
+          "Present value of income: $100 + \\dfrac{110}{1.1} = 200$.",
+          "With $U = \\ln c_1 + \\ln c_2$ (Cobb-Douglas in logs), half of that goes to each period in present value: $c_1 = 100$.",
+          "Saving $= 100 - 100 = 0$; $c_2 = 110$. Check: $MRS = c_2/c_1 = 1.1 = 1 + r$."
+        ],
+        "a": "$c_1 = 100$, no saving."
+      },
+      {
+        "t": "ex",
+        "title": "A saver and a rate rise",
+        "q": "$U = \\ln c_1 + \\ln c_2$, $m_1 = 150$, $m_2 = 0$. Compare $r = 25\\%$ and $r = 50\\%$.",
+        "steps": [
+          "Present value of income is 150 either way (no future income to discount).",
+          "$c_1 = 75$ at both rates, so saving stays at 75.",
+          "$c_2 = 1.25(75) = 93.75$, then $1.5(75) = 112.5$. For log utility with income only now, the income and substitution effects of a rate change cancel."
+        ],
+        "a": "Saving stays at 75; only $c_2$ rises."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking a higher interest rate must make every saver save more. The higher return also makes a saver richer, and that income effect raises consumption now. In the example the two effects canceled exactly; with other preferences either can win. Check: ask whether the person is a saver or a borrower first, then sort the two effects."
+      },
+      {
+        "t": "note",
+        "html": "How much household saving responds to interest rates is an empirical question, and estimates differ. The model's sure lesson is about borrowers and lenders: a higher rate always hurts a borrower and helps a saver."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, appendix C Present Discounted Value"
+      },
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, ch. 17 Financial Markets"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.04 Intermediate Microeconomic Theory (course scope and lecture topics)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,98 @@
+{
+  "id": "imicro.cournot",
+  "slug": "cournot",
+  "ladder": "economics",
+  "course": "imicro",
+  "unit": "games",
+  "title": "Cournot Competition",
+  "short": "Firms choose quantities; each firm's best response depends on the other's output, and equilibrium output lies between monopoly and competition.",
+  "trouble": "Students maximize each firm's profit as if it were a monopoly, leaving the rival's output out of the price.",
+  "prereqs": [
+    "imicro.pure-nash",
+    "imicro.monopoly-calculus"
+  ],
+  "xp": 3,
+  "viz": [
+    "linesystem"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In an oligopoly a few firms each know that their own output moves the price. Cournot's model treats quantities as the choice and looks for a <a href=\"/economics/intermediate-microeconomics/pure-nash/\">Nash equilibrium</a>. Each firm solves a small version of <a href=\"/economics/intermediate-microeconomics/monopoly-calculus/\">Monopoly with Calculus</a>: a monopoly over the demand left over by its rival."
+      },
+      {
+        "t": "key",
+        "html": "With inverse demand $P = a - b(q_1 + q_2)$ and marginal costs $c_1, c_2$, firm 1's <b>best response</b> to $q_2$ is $$q_1 = \\frac{a - c_1 - bq_2}{2b}.$$ The Cournot equilibrium solves both best responses at once: $q_1 = \\dfrac{a - 2c_1 + c_2}{3b}$. With equal costs each firm makes $\\dfrac{a - c}{3b}$, and total output lies between the monopoly and competitive levels."
+      },
+      {
+        "t": "why",
+        "html": "Firm 1 takes $q_2$ as fixed and maximizes $(a - bq_1 - bq_2)q_1 - c_1q_1$. Its marginal revenue is $a - 2bq_1 - bq_2$: like a monopoly facing the residual demand $a - bq_2 - bq_1$. Setting it equal to $c_1$ gives the best response. Each firm's best response falls as its rival produces more. The equilibrium is where the two best-response lines cross. Each firm ignores the fact that its extra output also lowers its rival's profit, so together they produce more than a monopoly (or a cartel) would."
+      },
+      {
+        "t": "viz",
+        "name": "linesystem",
+        "opts": {
+          "lines": [
+            "90 - 2x",
+            "45 - x/2"
+          ],
+          "xmin": 0,
+          "xmax": 100,
+          "ymin": 0,
+          "ymax": 100,
+          "equal": false,
+          "probe": null
+        },
+        "cap": "Best responses for $P = 100 - Q$ and $c = 10$, with $q_1$ across and $q_2$ up. Firm 1's: $q_1 = 45 - q_2/2$, drawn as $q_2 = 90 - 2q_1$. Firm 2's: $q_2 = 45 - q_1/2$. They cross at (30, 30)."
+      },
+      {
+        "t": "ex",
+        "title": "Symmetric duopoly",
+        "q": "$P = 100 - Q$, $c = 10$ for both firms.",
+        "steps": [
+          "Best response: $q_1 = \\dfrac{90 - q_2}{2}$. By symmetry $q_1 = q_2 = q$, so $q = \\dfrac{90 - q}{2}$ and $q = 30$.",
+          "$Q = 60$, $P = 40$, each profit $(40 - 10)(30) = 900$.",
+          "Compare: a monopoly makes 45 at \\$55 (profit 2,025); competition ($P = MC$) makes 90 at \\$10."
+        ],
+        "a": "30 each, $P = 40$."
+      },
+      {
+        "t": "ex",
+        "title": "Different costs",
+        "q": "$P = 100 - Q$, $c_1 = 10$, $c_2 = 16$.",
+        "steps": [
+          "$q_1 = \\dfrac{100 - 20 + 16}{3} = 32$ and $q_2 = \\dfrac{100 - 32 + 10}{3} = 26$.",
+          "$P = 100 - 58 = 42$.",
+          "The low-cost firm produces more and earns more, but the high-cost firm still produces: unlike Bertrand competition, it isn't driven out."
+        ],
+        "a": "$q_1 = 32$, $q_2 = 26$."
+      },
+      {
+        "t": "mistake",
+        "html": "Maximizing each firm's profit as if it were a monopoly, leaving the rival's output out of the price. That gives each firm the monopoly quantity (45 above), a total of 90 and a price of 10: neither firm's choice is a best response to the other's. Check: plug your $q_2$ into firm 1's best response; you must get back your $q_1$."
+      },
+      {
+        "t": "p",
+        "html": "Compare Cournot, Bertrand and Hotelling side by side in <a href=\"/business/game-theory/competition/\">Competition: Cournot, Bertrand and Hotelling</a>."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, ch. 10.2 Oligopoly"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.12 Economic Applications of Game Theory (course scope)"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.04 Intermediate Microeconomic Theory (course scope and lecture topics)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

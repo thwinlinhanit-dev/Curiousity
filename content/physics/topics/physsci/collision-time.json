@@ -1,0 +1,91 @@
+{
+  "id": "physsci.collision-time",
+  "slug": "collision-time",
+  "ladder": "physics",
+  "course": "physsci",
+  "unit": "forces",
+  "title": "Softening a Collision",
+  "short": "Stretching a collision over more time lowers the force, which is how airbags, helmets and crumple zones work.",
+  "trouble": "Students think padding reduces the change in momentum, when it really spreads the same change over more time.",
+  "prereqs": [
+    "physsci.momentum-intro",
+    "physsci.second-law-intro"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-graph",
+    "ph-collision"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Drop an egg on a pillow and on a hard floor from the same height. It hits both at the same speed and stops in both cases, so its <a href=\"/physics/physical-science/momentum-intro/\">change in momentum</a> is the same. Why does only one break? The answer combines momentum with the <a href=\"/physics/physical-science/second-law-intro/\">second law</a>."
+      },
+      {
+        "t": "key",
+        "html": "Force × time = change in momentum: $$F\\,t = \\Delta p \\quad\\text{so}\\quad F = \\dfrac{\\Delta p}{t}$$ For the same change in momentum, a longer stopping time means a smaller force."
+      },
+      {
+        "t": "why",
+        "html": "From $F = ma$ and $a = \\dfrac{\\Delta v}{t}$, we get $F = \\dfrac{m\\,\\Delta v}{t} = \\dfrac{\\Delta p}{t}$. The floor stops the egg in a tiny fraction of a second, so the force is huge. The pillow sinks in and takes many times longer, so the force is many times smaller."
+      },
+      {
+        "t": "viz",
+        "name": "ph-collision",
+        "opts": {
+          "mode": "impulse",
+          "m1": 0.5,
+          "v1": 4
+        },
+        "cap": "The same ball stopped by a hard and a soft bumper. The soft bumper's force graph is lower and wider. The area under each graph, the change in momentum, is the same."
+      },
+      {
+        "t": "ex",
+        "title": "A hard stop",
+        "q": "A 0.5 kg ball moving at 10 m/s is stopped by a wall in 0.01 s. Find the average force.",
+        "steps": [
+          "Change in momentum: $\\Delta p = 0.5 \\times 10 = 5$ kg·m/s.",
+          "$F = \\dfrac{5}{0.01} = 500$ N."
+        ],
+        "a": "500 N"
+      },
+      {
+        "t": "ex",
+        "title": "A soft stop",
+        "q": "The same ball is caught by a padded mitt that takes 0.1 s to stop it. Find the force.",
+        "steps": [
+          "Same $\\Delta p = 5$ kg·m/s.",
+          "$F = \\dfrac{5}{0.1} = 50$ N: ten times the time, one tenth the force."
+        ],
+        "a": "50 N"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking padding reduces the change in momentum. The object must go from moving to stopped either way, so $\\Delta p$ is the same. Padding, crumple zones and airbags spread that same change over more time, which lowers the force. Check: the speed before and after didn't change, so neither did $\\Delta p$."
+      },
+      {
+        "t": "note",
+        "html": "This is why a car's front end is built to crumple and why an airbag inflates: both stretch the stop over more time. A gymnast's mat and a catcher who pulls the glove back work the same way."
+      },
+      {
+        "t": "p",
+        "html": "Drop an egg on a pillow and a floor in the Science Lab: <a href=\"/science-lab/newtons-laws/momentum/\">Momentum and Collisions</a>."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e, 8.2 Impulse"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-PS2-3"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

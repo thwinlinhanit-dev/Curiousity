@@ -1,0 +1,124 @@
+{
+  "id": "sym.main-connective",
+  "slug": "main-connective",
+  "ladder": "logic",
+  "course": "sym",
+  "unit": "symbols",
+  "title": "The Main Connective and Scope",
+  "short": "Parentheses group a formula; the main connective is the one with the widest scope, applied last, and it decides what kind of statement the formula is.",
+  "trouble": "The scope of negation: ¬p ∧ q negates only p, while ¬(p ∧ q) negates the whole conjunction. Learners drop the parentheses and change the meaning.",
+  "prereqs": [
+    "sym.connectives"
+  ],
+  "xp": 2,
+  "viz": [
+    "lg-truthtable"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Once formulas have more than one connective, we need to know how they group. In ordinary arithmetic, $2 + 3 \\times 4$ means $2 + (3 \\times 4)$; in logic we avoid surprises by always writing parentheses around every binary part of a larger formula. This lesson builds on <a href=\"/logic/symbolic-logic/connectives/\">The Five Connectives</a>."
+      },
+      {
+        "t": "key",
+        "html": "The <b>main connective</b> is the one with the widest scope: the one outside all parentheses, applied last. It decides what kind of statement the whole formula is. A $\\neg$ covers only what comes right after it: one letter, or one whole pair of parentheses."
+      },
+      {
+        "t": "why",
+        "html": "A formula is built in stages, like a sentence diagram. $\\neg (p \\land q)$ is built by first making $p \\land q$, then denying it. $\\neg p \\land q$ is built by first making $\\neg p$, then joining it to $q$. The last step decides the kind of statement: the first is a negation, the second a conjunction. They mean different things, and a truth table will show a row where they differ."
+      },
+      {
+        "t": "viz",
+        "name": "lg-truthtable",
+        "opts": {
+          "formulas": [
+            "¬(p ∧ q)",
+            "¬p ∧ q"
+          ],
+          "sub": true
+        },
+        "cap": "Same letters, different scope: the columns differ in the first and last rows."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Find the main connective",
+        "q": "What is the main connective of $(p \\lor q) \\to \\neg r$?",
+        "steps": [
+          "Cover what is inside parentheses: $p \\lor q$ is one block.",
+          "What is left is block $\\to$ $\\neg r$.",
+          "The $\\neg$ covers only $r$."
+        ],
+        "a": "The conditional $\\to$: the formula is a conditional."
+      },
+      {
+        "t": "ex",
+        "title": "A negation of a whole formula",
+        "q": "What is the main connective of $\\neg ((p \\to q) \\land r)$?",
+        "steps": [
+          "The $\\neg$ stands in front of a pair of parentheses that holds everything else.",
+          "So it is applied last, to the whole conjunction."
+        ],
+        "a": "Negation: the formula is a negation."
+      },
+      {
+        "t": "ex",
+        "title": "Write the negation",
+        "q": "Deny the whole formula $p \\lor q$.",
+        "steps": [
+          "Put $\\neg$ in front.",
+          "Keep parentheses so the $\\neg$ covers both disjuncts."
+        ],
+        "a": "$\\neg (p \\lor q)$"
+      },
+      {
+        "t": "ex",
+        "title": "A longer formula",
+        "q": "What is the main connective of $p \\to (q \\leftrightarrow \\neg r)$? What are its two parts?",
+        "steps": [
+          "The parentheses hold $q \\leftrightarrow \\neg r$ together as one block.",
+          "Outside them is only $p$ $\\to$ block.",
+          "So the antecedent is $p$ and the consequent is $q \\leftrightarrow \\neg r$."
+        ],
+        "a": "The conditional $\\to$."
+      },
+      {
+        "t": "p",
+        "html": "Why insist on parentheses around every binary part? Without them, $(p \\land q) \\lor r$ could mean $(p \\land q) \\lor r$ or $p \\land (q \\lor r)$, and those two disagree when $p$ is false and $r$ is true. Writing the parentheses every time removes the doubt, so two readers always see the same formula."
+      },
+      {
+        "t": "mistake",
+        "html": "Dropping parentheses changes the meaning. $\\neg (p \\land q)$ says \"not both\"; $\\neg p \\land q$ says \"not $p$, and $q$\". They differ, for example, when $p$ and $q$ are both false: the first is true, the second false. When you deny a compound, always keep its parentheses."
+      },
+      {
+        "t": "list",
+        "items": [
+          "Count the parentheses from the outside in.",
+          "The connective outside every pair is the main one.",
+          "If a $\\neg$ stands in front of everything (with parentheses), the formula is a negation."
+        ]
+      },
+      {
+        "t": "p",
+        "html": "Knowing the main connective is the first step of almost every later skill: computing truth values in <a href=\"/logic/symbolic-logic/compute-truth-value/\">Computing a Truth Value</a>, reading formulas aloud, and choosing which proof rule applies."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Patrick J. Hurley and Lori Watson, A Concise Introduction to Logic, 13th ed., section 6.1, on parentheses and the main operator"
+      },
+      {
+        "name": "forall x: Calgary, an open introduction to formal logic (P. D. Magnus, Tim Button and others; Open Logic Project), chapter on sentences of TFL"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,858 @@
+{
+  "key": "aegean",
+  "ladder": "scripts",
+  "title": "Linear A and Linear B",
+  "short": "Linear A and B",
+  "after": [],
+  "units": [
+    {
+      "key": "bronze-age",
+      "title": "The Bronze Age Aegean",
+      "blurb": "Crete, the islands and mainland Greece: the Minoans and Mycenaeans, their palaces, how they are dated, and how the palaces ended."
+    },
+    {
+      "key": "writing",
+      "title": "Kinds of Writing",
+      "blurb": "Word signs, syllables and letters; the scripts of Crete and Cyprus; and the Greek alphabet that came after them."
+    },
+    {
+      "key": "discovery",
+      "title": "The Discovery",
+      "blurb": "Arthur Evans at Knossos, Carl Blegen at Pylos, and the fires that saved the tablets."
+    },
+    {
+      "key": "decipherment",
+      "title": "The Decipherment",
+      "blurb": "From Bennett's sign numbers and Kober's triplets to Ventris's grids, the 1952 breakthrough and the tablet that confirmed it."
+    },
+    {
+      "key": "signs",
+      "title": "The Linear B Signs",
+      "blurb": "The vowels, the rows of the syllabic grid, the special signs and the signs no one has read."
+    },
+    {
+      "key": "spelling",
+      "title": "How Linear B Spells Greek",
+      "blurb": "Open syllables, missing consonants, empty vowels, shared signs and glides: the rules for getting from signs to words."
+    },
+    {
+      "key": "records",
+      "title": "Logograms, Numbers and Tablets",
+      "blurb": "Object signs, male and female animals, numerals and measures, the shapes of tablets, the scribes, and reading a line."
+    },
+    {
+      "key": "language",
+      "title": "Mycenaean Greek",
+      "blurb": "The oldest written Greek: words and their later forms, endings you can see, places and gods."
+    },
+    {
+      "key": "society",
+      "title": "What the Tablets Tell",
+      "blurb": "The palace economy, the wanax and his officials, offerings to the gods, and what the tablets leave out."
+    },
+    {
+      "key": "linear-a",
+      "title": "Linear A",
+      "blurb": "The Minoan script: where it is found, the signs it shares with Linear B, its numbers and fractions, ku-ro, the libation formula, and why it is still unread."
+    },
+    {
+      "key": "compare",
+      "title": "Judging and Comparing",
+      "blurb": "How to test a decipherment claim, and the two scripts side by side."
+    }
+  ],
+  "topics": [
+    {
+      "id": "aegean.aegean-world",
+      "slug": "aegean-world",
+      "course": "aegean",
+      "unit": "bronze-age",
+      "title": "The Aegean World",
+      "short": "Crete, the Cyclades and mainland Greece, linked by the sea, in the Bronze Age (about 3000 to 1100 BC).",
+      "prereqs": [],
+      "viz": [
+        "sc-map",
+        "sc-timeline"
+      ]
+    },
+    {
+      "id": "aegean.minoans",
+      "slug": "minoans",
+      "course": "aegean",
+      "unit": "bronze-age",
+      "title": "The Minoans of Crete",
+      "short": "Crete's Bronze Age civilization, named by Arthur Evans after the legendary King Minos; we do not know what they called themselves.",
+      "prereqs": [
+        "aegean.aegean-world"
+      ],
+      "viz": [
+        "sc-map",
+        "sc-timeline"
+      ]
+    },
+    {
+      "id": "aegean.cretan-palaces",
+      "slug": "cretan-palaces",
+      "course": "aegean",
+      "unit": "bronze-age",
+      "title": "Knossos and the Cretan Palaces",
+      "short": "Knossos, Phaistos, Malia and Zakros: big buildings around a central court that stored goods, held workshops and kept records.",
+      "prereqs": [
+        "aegean.minoans"
+      ],
+      "viz": [
+        "sc-map"
+      ]
+    },
+    {
+      "id": "aegean.mycenaeans",
+      "slug": "mycenaeans",
+      "course": "aegean",
+      "unit": "bronze-age",
+      "title": "The Mycenaeans",
+      "short": "Greek speakers of the mainland from about 1600 BC, with palaces at Mycenae, Pylos, Thebes and Tiryns; by about 1450 BC Greek speakers ran Knossos too.",
+      "prereqs": [
+        "aegean.aegean-world"
+      ],
+      "viz": [
+        "sc-map",
+        "sc-timeline"
+      ]
+    },
+    {
+      "id": "aegean.aegean-dating",
+      "slug": "aegean-dating",
+      "course": "aegean",
+      "unit": "bronze-age",
+      "title": "Dating the Aegean Bronze Age",
+      "short": "Periods named from pottery styles (Early, Middle and Late Minoan; Helladic on the mainland), tied to years by radiocarbon and by links to Egypt.",
+      "prereqs": [
+        "aegean.minoans",
+        "aegean.mycenaeans"
+      ],
+      "viz": [
+        "sc-timeline"
+      ]
+    },
+    {
+      "id": "aegean.end-of-palaces",
+      "slug": "end-of-palaces",
+      "course": "aegean",
+      "unit": "bronze-age",
+      "title": "The End of the Palaces",
+      "short": "Around 1200 BC the mainland palaces were destroyed, Pylos by fire, and writing disappeared from Greece for about four centuries.",
+      "prereqs": [
+        "aegean.mycenaeans",
+        "aegean.aegean-dating"
+      ],
+      "viz": [
+        "sc-timeline",
+        "sc-map"
+      ]
+    },
+    {
+      "id": "aegean.kinds-of-writing",
+      "slug": "kinds-of-writing",
+      "course": "aegean",
+      "unit": "writing",
+      "title": "Word Signs, Syllables and Letters",
+      "short": "Three ways to write: a sign for a word (logogram), a sign for a syllable (syllabogram), or a sign for a single sound (a letter of an alphabet).",
+      "prereqs": [],
+      "viz": [
+        "sc-compare",
+        "sc-signs"
+      ]
+    },
+    {
+      "id": "aegean.how-syllabary-works",
+      "slug": "how-syllabary-works",
+      "course": "aegean",
+      "unit": "writing",
+      "title": "How a Syllabary Works",
+      "short": "One sign per syllable: a vowel alone (a) or a consonant plus a vowel (ka, ke, ki, ko, ku), so the signs fill a grid of consonants and vowels.",
+      "prereqs": [
+        "aegean.kinds-of-writing"
+      ],
+      "viz": [
+        "sc-grid",
+        "sc-signs"
+      ]
+    },
+    {
+      "id": "aegean.cretan-hieroglyphs",
+      "slug": "cretan-hieroglyphs",
+      "course": "aegean",
+      "unit": "writing",
+      "title": "Cretan Hieroglyphs",
+      "short": "Crete's earliest script, used mostly on seals from about 2100 or 1900 BC to about 1700 BC; it overlapped with Linear A and is still unread.",
+      "prereqs": [
+        "aegean.kinds-of-writing",
+        "aegean.minoans"
+      ],
+      "viz": [
+        "sc-timeline",
+        "sc-map"
+      ]
+    },
+    {
+      "id": "aegean.aegean-scripts",
+      "slug": "aegean-scripts",
+      "course": "aegean",
+      "unit": "writing",
+      "title": "A Family of Aegean Scripts",
+      "short": "Linear A gave rise to Linear B; on Cyprus, Cypro-Minoan and then the Cypriot syllabary, which wrote Greek and was read in the 1870s.",
+      "prereqs": [
+        "aegean.cretan-hieroglyphs",
+        "aegean.how-syllabary-works"
+      ],
+      "viz": [
+        "sc-timeline",
+        "sc-compare"
+      ]
+    },
+    {
+      "id": "aegean.greek-alphabet",
+      "slug": "greek-alphabet",
+      "course": "aegean",
+      "unit": "writing",
+      "title": "Then Came the Alphabet",
+      "short": "After the palaces fell no one wrote in Greece for about four centuries; around 800 BC Greeks borrowed the Phoenician letters and added vowels.",
+      "prereqs": [
+        "aegean.aegean-scripts",
+        "aegean.end-of-palaces"
+      ],
+      "viz": [
+        "sc-compare",
+        "sc-timeline"
+      ]
+    },
+    {
+      "id": "aegean.evans-knossos",
+      "slug": "evans-knossos",
+      "course": "aegean",
+      "unit": "discovery",
+      "title": "Arthur Evans at Knossos, 1900",
+      "short": "Evans began digging at Knossos in March 1900, found thousands of clay tablets, named Linear A and Linear B, and believed their language was not Greek.",
+      "prereqs": [
+        "aegean.cretan-palaces"
+      ],
+      "viz": [
+        "sc-map",
+        "sc-tablet"
+      ]
+    },
+    {
+      "id": "aegean.blegen-pylos",
+      "slug": "blegen-pylos",
+      "course": "aegean",
+      "unit": "discovery",
+      "title": "Carl Blegen at Pylos",
+      "short": "In 1939 Blegen found the archive room of the palace at Pylos on the first day of digging; after the war, in 1952, his team found many more tablets.",
+      "prereqs": [
+        "aegean.mycenaeans",
+        "aegean.evans-knossos"
+      ],
+      "viz": [
+        "sc-map",
+        "sc-tablet"
+      ]
+    },
+    {
+      "id": "aegean.clay-and-fire",
+      "slug": "clay-and-fire",
+      "course": "aegean",
+      "unit": "discovery",
+      "title": "Clay, Fire and Survival",
+      "short": "The tablets were sun-dried clay meant for one season's records; the fires that destroyed the palaces baked them and saved them.",
+      "prereqs": [
+        "aegean.blegen-pylos"
+      ],
+      "viz": [
+        "sc-tablet"
+      ]
+    },
+    {
+      "id": "aegean.sign-numbers",
+      "slug": "sign-numbers",
+      "course": "aegean",
+      "unit": "decipherment",
+      "title": "Numbering the Signs",
+      "short": "Emmett Bennett sorted the signs into a standard list; scholars still name a sign by its number, like *08, and write an unread sign that way.",
+      "prereqs": [
+        "aegean.evans-knossos"
+      ],
+      "viz": [
+        "sc-grid",
+        "sc-signs"
+      ]
+    },
+    {
+      "id": "aegean.kober-triplets",
+      "slug": "kober-triplets",
+      "course": "aegean",
+      "unit": "decipherment",
+      "title": "Alice Kober's Triplets",
+      "short": "In the 1940s Alice Kober showed that Linear B words change their endings, using sets of three related forms, without guessing any sounds.",
+      "prereqs": [
+        "aegean.sign-numbers",
+        "aegean.how-syllabary-works"
+      ],
+      "viz": [
+        "sc-grid",
+        "sc-signs"
+      ]
+    },
+    {
+      "id": "aegean.the-grid",
+      "slug": "the-grid",
+      "course": "aegean",
+      "unit": "decipherment",
+      "title": "Building the Grid",
+      "short": "Michael Ventris placed signs in a grid so that signs in one row shared a consonant and signs in one column a vowel, before knowing any of the sounds.",
+      "prereqs": [
+        "aegean.kober-triplets"
+      ],
+      "viz": [
+        "sc-grid"
+      ]
+    },
+    {
+      "id": "aegean.place-names",
+      "slug": "place-names",
+      "course": "aegean",
+      "unit": "decipherment",
+      "title": "The Breakthrough: Cretan Place Names",
+      "short": "Ventris tried known Cretan place names on words found only at Knossos: ko-no-so (Knossos), a-mi-ni-so (Amnisos) and tu-ri-so (Tylissos), and the grid gave Greek.",
+      "prereqs": [
+        "aegean.the-grid"
+      ],
+      "viz": [
+        "sc-signs",
+        "sc-map",
+        "sc-grid"
+      ]
+    },
+    {
+      "id": "aegean.announcement-1952",
+      "slug": "announcement-1952",
+      "course": "aegean",
+      "unit": "decipherment",
+      "title": "Greek, 1952",
+      "short": "Ventris announced on BBC radio on 1 July 1952 that Linear B was Greek; with John Chadwick he published the case in 1953.",
+      "prereqs": [
+        "aegean.place-names"
+      ],
+      "viz": [
+        "sc-timeline"
+      ]
+    },
+    {
+      "id": "aegean.tripod-tablet",
+      "slug": "tripod-tablet",
+      "course": "aegean",
+      "unit": "decipherment",
+      "title": "The Tripod Tablet Confirms It",
+      "short": "On Pylos tablet Ta 641, read in 1953, the words read by Ventris's values describe the pictured vessels: ti-ri-po beside a tripod, and cups with four, three or no handles.",
+      "prereqs": [
+        "aegean.announcement-1952"
+      ],
+      "viz": [
+        "sc-tablet",
+        "sc-signs"
+      ]
+    },
+    {
+      "id": "aegean.vowels",
+      "slug": "vowels",
+      "course": "aegean",
+      "unit": "signs",
+      "title": "The Five Vowel Signs",
+      "short": "a, e, i, o and u: five signs that stand for a vowel alone, the first column of the grid.",
+      "prereqs": [
+        "aegean.how-syllabary-works"
+      ],
+      "viz": [
+        "sc-grid",
+        "sc-signs"
+      ]
+    },
+    {
+      "id": "aegean.first-rows",
+      "slug": "first-rows",
+      "course": "aegean",
+      "unit": "signs",
+      "title": "The d, k, m, n and p Rows",
+      "short": "Each row is one consonant with the five vowels: da de di do du, ka ke ki ko ku, and so on.",
+      "prereqs": [
+        "aegean.vowels"
+      ],
+      "viz": [
+        "sc-grid",
+        "sc-signs"
+      ]
+    },
+    {
+      "id": "aegean.more-rows",
+      "slug": "more-rows",
+      "course": "aegean",
+      "unit": "signs",
+      "title": "The Other Rows: j, q, r, s, t, w, z",
+      "short": "The rest of the grid: q for sounds like kw, r for both r and l, z for a sound like dz, and the glides j and w; some rows have gaps.",
+      "prereqs": [
+        "aegean.first-rows"
+      ],
+      "viz": [
+        "sc-grid",
+        "sc-signs"
+      ]
+    },
+    {
+      "id": "aegean.special-signs",
+      "slug": "special-signs",
+      "course": "aegean",
+      "unit": "signs",
+      "title": "Special Signs",
+      "short": "Signs beyond the basic grid: a2 (ha), a3 (ai), au, pu2 (phu), ra2, ra3, ro2, ta2, and signs for clusters like dwe, dwo, nwa, pte, twe and two.",
+      "prereqs": [
+        "aegean.more-rows"
+      ],
+      "viz": [
+        "sc-grid",
+        "sc-signs"
+      ]
+    },
+    {
+      "id": "aegean.unread-signs",
+      "slug": "unread-signs",
+      "course": "aegean",
+      "unit": "signs",
+      "title": "Signs Still Unread",
+      "short": "About fifteen rare signs, such as *18, *47 and *63, have no agreed value; a few, like *65 (perhaps ju) and *79 (perhaps zu), have proposed values.",
+      "prereqs": [
+        "aegean.special-signs",
+        "aegean.sign-numbers"
+      ],
+      "viz": [
+        "sc-grid"
+      ]
+    },
+    {
+      "id": "aegean.open-syllables",
+      "slug": "open-syllables",
+      "course": "aegean",
+      "unit": "spelling",
+      "title": "Every Sign Ends in a Vowel",
+      "short": "Linear B can only write syllables that end in a vowel, so Greek words full of consonant clusters and final consonants must be bent to fit.",
+      "prereqs": [
+        "aegean.first-rows"
+      ],
+      "viz": [
+        "sc-signs"
+      ]
+    },
+    {
+      "id": "aegean.dropped-consonants",
+      "slug": "dropped-consonants",
+      "course": "aegean",
+      "unit": "spelling",
+      "title": "Missing Consonants",
+      "short": "Final consonants, and l, m, n, r and s before another consonant, are not written: ka-ko is khalkos (bronze), pa-ta is panta (all), pe-mo is sperma (seed).",
+      "prereqs": [
+        "aegean.open-syllables"
+      ],
+      "viz": [
+        "sc-signs"
+      ]
+    },
+    {
+      "id": "aegean.empty-vowels",
+      "slug": "empty-vowels",
+      "course": "aegean",
+      "unit": "spelling",
+      "title": "Clusters and Empty Vowels",
+      "short": "Other consonant clusters are split with a vowel borrowed from the next syllable: ko-no-so for Knossos, ti-ri-po for tripos, a-re-ka-sa-da-ra for Alexandra.",
+      "prereqs": [
+        "aegean.dropped-consonants"
+      ],
+      "viz": [
+        "sc-signs"
+      ]
+    },
+    {
+      "id": "aegean.sound-mergers",
+      "slug": "sound-mergers",
+      "course": "aegean",
+      "unit": "spelling",
+      "title": "One Sign, Several Sounds",
+      "short": "r stands for r and l; p, k and q signs each cover a voiced, voiceless and aspirated sound; only d and t are kept apart; h is usually not written.",
+      "prereqs": [
+        "aegean.more-rows",
+        "aegean.open-syllables"
+      ],
+      "viz": [
+        "sc-signs",
+        "sc-grid"
+      ]
+    },
+    {
+      "id": "aegean.glides-diphthongs",
+      "slug": "glides-diphthongs",
+      "course": "aegean",
+      "unit": "spelling",
+      "title": "Diphthongs and Glides",
+      "short": "Between vowels the glides j and w often appear (i-je-re-u, hiereus, priest); the u of a diphthong is written (au, eu), but the i of ai, ei, oi is often left out.",
+      "prereqs": [
+        "aegean.sound-mergers",
+        "aegean.empty-vowels"
+      ],
+      "viz": [
+        "sc-signs"
+      ]
+    },
+    {
+      "id": "aegean.logograms",
+      "slug": "logograms",
+      "course": "aegean",
+      "unit": "records",
+      "title": "Logograms",
+      "short": "Signs for things (man, woman, horse, tripod, wheat, wine) that stand before a number and say what is counted; they are not read as part of a sentence.",
+      "prereqs": [
+        "aegean.kinds-of-writing",
+        "aegean.vowels"
+      ],
+      "viz": [
+        "sc-tablet",
+        "sc-signs"
+      ]
+    },
+    {
+      "id": "aegean.sex-marks",
+      "slug": "sex-marks",
+      "course": "aegean",
+      "unit": "records",
+      "title": "Male and Female Animals",
+      "short": "Small marks show the sex of animals: a ram has two short bars across its stem, a ewe a forked stem; scholars write them OVISm and OVISf.",
+      "prereqs": [
+        "aegean.logograms"
+      ],
+      "viz": [
+        "sc-signs",
+        "sc-tablet"
+      ]
+    },
+    {
+      "id": "aegean.numerals",
+      "slug": "numerals",
+      "course": "aegean",
+      "unit": "records",
+      "title": "Aegean Numbers",
+      "short": "Strokes for ones, bars for tens, circles for hundreds, circles with rays for thousands; you add them up, and the order of the groups does not change the value.",
+      "prereqs": [],
+      "viz": [
+        "sc-numbers"
+      ]
+    },
+    {
+      "id": "aegean.measures",
+      "slug": "measures",
+      "course": "aegean",
+      "unit": "records",
+      "title": "Weights and Measures",
+      "short": "Dry goods: a unit, then T (a tenth), V (a sixth of T) and Z (a quarter of V); liquids: a unit, S (a third), V and Z; weights from the talent (L) down.",
+      "prereqs": [
+        "aegean.numerals",
+        "aegean.logograms"
+      ],
+      "viz": [
+        "sc-numbers"
+      ]
+    },
+    {
+      "id": "aegean.tablet-forms",
+      "slug": "tablet-forms",
+      "course": "aegean",
+      "unit": "records",
+      "title": "Pages, Leaves and Labels",
+      "short": "Page-shaped tablets for lists, palm-leaf tablets for single entries, clay labels for baskets, sealings, and words painted on jars.",
+      "prereqs": [
+        "aegean.clay-and-fire",
+        "aegean.logograms"
+      ],
+      "viz": [
+        "sc-tablet"
+      ]
+    },
+    {
+      "id": "aegean.scribal-hands",
+      "slug": "scribal-hands",
+      "course": "aegean",
+      "unit": "records",
+      "title": "Scribes and Their Hands",
+      "short": "Each scribe's handwriting can be recognized; scholars count about 66 hands at Knossos and 45 at Pylos and number them.",
+      "prereqs": [
+        "aegean.tablet-forms"
+      ],
+      "viz": [
+        "sc-tablet"
+      ]
+    },
+    {
+      "id": "aegean.reading-a-tablet",
+      "slug": "reading-a-tablet",
+      "course": "aegean",
+      "unit": "records",
+      "title": "Reading a Tablet Line",
+      "short": "Most lines follow one pattern: a word or name, then a logogram, then a number; a word divider separates words.",
+      "prereqs": [
+        "aegean.logograms",
+        "aegean.numerals",
+        "aegean.empty-vowels"
+      ],
+      "viz": [
+        "sc-tablet",
+        "sc-signs"
+      ]
+    },
+    {
+      "id": "aegean.words-descendants",
+      "slug": "words-descendants",
+      "course": "aegean",
+      "unit": "language",
+      "title": "Mycenaean Words and Their Descendants",
+      "short": "ti-ri-po is tripous (tripod), di-pa is depas (cup), e-ra-wo is elaion (oil), wa-na-ka is anax (lord): many Mycenaean words live on in later Greek.",
+      "prereqs": [
+        "aegean.dropped-consonants",
+        "aegean.glides-diphthongs"
+      ],
+      "viz": [
+        "sc-signs"
+      ]
+    },
+    {
+      "id": "aegean.case-endings",
+      "slug": "case-endings",
+      "course": "aegean",
+      "unit": "language",
+      "title": "Endings You Can See",
+      "short": "Some endings show through the spelling: -o-jo for the genitive of o-stems (te-o-jo, of the god), -e and -i for datives (di-we, to Zeus), -pi for an instrumental plural.",
+      "prereqs": [
+        "aegean.words-descendants"
+      ],
+      "viz": [
+        "sc-signs"
+      ]
+    },
+    {
+      "id": "aegean.tablet-places",
+      "slug": "tablet-places",
+      "course": "aegean",
+      "unit": "language",
+      "title": "Places on the Tablets",
+      "short": "ko-no-so (Knossos), pa-i-to (Phaistos), a-mi-ni-so (Amnisos), ku-do-ni-ja (Kydonia, modern Chania), pu-ro (Pylos) and te-qa (Thebes) are named on the tablets.",
+      "prereqs": [
+        "aegean.words-descendants",
+        "aegean.place-names"
+      ],
+      "viz": [
+        "sc-map",
+        "sc-signs"
+      ]
+    },
+    {
+      "id": "aegean.gods-named",
+      "slug": "gods-named",
+      "course": "aegean",
+      "unit": "language",
+      "title": "Gods on the Tablets",
+      "short": "po-se-da-o (Poseidon), di-we and di-wo (Zeus), e-ra (Hera), di-wo-nu-so (Dionysus), e-ma-a2 (Hermes) and a-ta-na-po-ti-ni-ja (Mistress Athena) appear by name.",
+      "prereqs": [
+        "aegean.case-endings"
+      ],
+      "viz": [
+        "sc-signs",
+        "sc-tablet"
+      ]
+    },
+    {
+      "id": "aegean.palace-economy",
+      "slug": "palace-economy",
+      "course": "aegean",
+      "unit": "society",
+      "title": "The Palace Economy",
+      "short": "The tablets track what came in and went out: flocks and wool, oil and perfume, rations for workers, bronze for smiths, chariots and armor.",
+      "prereqs": [
+        "aegean.reading-a-tablet"
+      ],
+      "viz": [
+        "sc-tablet"
+      ]
+    },
+    {
+      "id": "aegean.wanax-lawagetas",
+      "slug": "wanax-lawagetas",
+      "course": "aegean",
+      "unit": "society",
+      "title": "The Wanax and the Lawagetas",
+      "short": "The wa-na-ka (wanax) ruled the palace state; the ra-wa-ke-ta (lawagetas) ranked next; a qa-si-re-u (later basileus, king) was a lesser local official.",
+      "prereqs": [
+        "aegean.words-descendants",
+        "aegean.palace-economy"
+      ],
+      "viz": [
+        "sc-signs"
+      ]
+    },
+    {
+      "id": "aegean.offerings",
+      "slug": "offerings",
+      "course": "aegean",
+      "unit": "society",
+      "title": "Offerings to the Gods",
+      "short": "Tablets list offerings of oil, honey and gold vessels to gods; Pylos tablet Tn 316 records gold vessels and people brought to Zeus, Hera and others.",
+      "prereqs": [
+        "aegean.gods-named",
+        "aegean.palace-economy"
+      ],
+      "viz": [
+        "sc-tablet"
+      ]
+    },
+    {
+      "id": "aegean.what-they-dont-say",
+      "slug": "what-they-dont-say",
+      "course": "aegean",
+      "unit": "society",
+      "title": "What the Tablets Don't Tell",
+      "short": "No poems, laws, letters or histories survive in Linear B; the tablets record one season's business, so much about these people remains unknown.",
+      "prereqs": [
+        "aegean.palace-economy"
+      ],
+      "viz": [
+        "sc-tablet"
+      ]
+    },
+    {
+      "id": "aegean.linear-a-corpus",
+      "slug": "linear-a-corpus",
+      "course": "aegean",
+      "unit": "linear-a",
+      "title": "Linear A: Where and What",
+      "short": "The Minoan script, used about 1800 to 1450 BC: about 1,400 short inscriptions, most from Hagia Triada, Zakros, Chania and Phaistos.",
+      "prereqs": [
+        "aegean.minoans",
+        "aegean.aegean-scripts"
+      ],
+      "viz": [
+        "sc-map",
+        "sc-timeline"
+      ]
+    },
+    {
+      "id": "aegean.shared-signs",
+      "slug": "shared-signs",
+      "course": "aegean",
+      "unit": "linear-a",
+      "title": "Signs Shared with Linear B",
+      "short": "Many Linear A signs look like Linear B signs, so scholars read them with the Linear B values by convention; this is a working guess about sounds.",
+      "prereqs": [
+        "aegean.linear-a-corpus",
+        "aegean.special-signs"
+      ],
+      "viz": [
+        "sc-compare",
+        "sc-signs"
+      ]
+    },
+    {
+      "id": "aegean.la-numbers",
+      "slug": "la-numbers",
+      "course": "aegean",
+      "unit": "linear-a",
+      "title": "Linear A Numbers and Fractions",
+      "short": "Linear A counts with the same decimal marks as Linear B and also has fraction signs; J as one half is widely accepted, while values for the others are proposed.",
+      "prereqs": [
+        "aegean.numerals",
+        "aegean.linear-a-corpus"
+      ],
+      "viz": [
+        "sc-numbers"
+      ]
+    },
+    {
+      "id": "aegean.ku-ro",
+      "slug": "ku-ro",
+      "course": "aegean",
+      "unit": "linear-a",
+      "title": "Ku-ro, the Total",
+      "short": "The word read ku-ro stands before a number that equals the sum of the list above it, so it is widely accepted to mean \"total\"; ki-ro also recurs in lists, its meaning uncertain.",
+      "prereqs": [
+        "aegean.la-numbers",
+        "aegean.shared-signs"
+      ],
+      "viz": [
+        "sc-tablet",
+        "sc-signs"
+      ]
+    },
+    {
+      "id": "aegean.libation-formula",
+      "slug": "libation-formula",
+      "course": "aegean",
+      "unit": "linear-a",
+      "title": "The Libation Formula",
+      "short": "Stone offering tables from sanctuaries repeat a set of words, such as a-sa-sa-ra-me (also ja-sa-sa-ra-me), i-pi-na-ma and si-ru-te; their meanings are unknown.",
+      "prereqs": [
+        "aegean.shared-signs"
+      ],
+      "viz": [
+        "sc-signs",
+        "sc-compare"
+      ]
+    },
+    {
+      "id": "aegean.why-unread",
+      "slug": "why-unread",
+      "course": "aegean",
+      "unit": "linear-a",
+      "title": "Why Linear A Can't Be Read Yet",
+      "short": "The texts are few and short, the Minoan language matches no known language, and there is no bilingual text like the Rosetta Stone.",
+      "prereqs": [
+        "aegean.ku-ro",
+        "aegean.libation-formula"
+      ],
+      "viz": [
+        "sc-compare"
+      ]
+    },
+    {
+      "id": "aegean.judging-claims",
+      "slug": "judging-claims",
+      "course": "aegean",
+      "unit": "compare",
+      "title": "How to Judge a Decipherment Claim",
+      "short": "A good decipherment makes testable predictions, reads the whole corpus the same way, fits place names and new finds, and convinces specialists.",
+      "prereqs": [
+        "aegean.why-unread",
+        "aegean.tripod-tablet"
+      ],
+      "viz": [
+        "sc-compare"
+      ]
+    },
+    {
+      "id": "aegean.side-by-side",
+      "slug": "side-by-side",
+      "course": "aegean",
+      "unit": "compare",
+      "title": "Linear A and Linear B Side by Side",
+      "short": "The same sign shapes, different languages: what we know about each script, what we don't, and why Linear B could be read when Linear A cannot.",
+      "prereqs": [
+        "aegean.judging-claims"
+      ],
+      "viz": [
+        "sc-compare",
+        "sc-signs"
+      ]
+    }
+  ]
+}

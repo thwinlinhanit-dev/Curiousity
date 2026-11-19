@@ -1,0 +1,122 @@
+{
+  "id": "cusafe.cooling",
+  "slug": "cooling",
+  "ladder": "culinary",
+  "course": "cusafe",
+  "unit": "temps",
+  "title": "Cooling Food Safely",
+  "short": "The Food Code's two stages: from 135°F to 70°F within 2 hours, then to 41°F or below within 4 more hours. Shallow pans, ice baths and small portions make it work.",
+  "trouble": "Cooks put a full stockpot of hot soup straight in the walk-in; the middle can stay warm for many hours.",
+  "prereqs": [
+    "cusafe.danger-zone"
+  ],
+  "xp": 2,
+  "viz": [
+    "cu-cool"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Hot food has to pass through the danger zone to get cold. The bigger the batch, the slower it cools, and a big pot in a refrigerator can stay warm in the middle for many hours."
+      },
+      {
+        "t": "key",
+        "html": "<b>The Food Code's two-stage cooling rule:</b> cool cooked TCS food from <b>135°F to 70°F within 2 hours</b>, then from <b>70°F to 41°F or below within the next 4 hours</b>: 6 hours in all. The first stage is the strict one, because bacteria grow fastest between about 125°F and 70°F."
+      },
+      {
+        "t": "viz",
+        "name": "cu-cool",
+        "opts": {
+          "mode": "check"
+        },
+        "cap": "Set when the food reached 70°F and 41°F, or try a cooling method, and see if it passes."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Method (Food Code 3-501.15)",
+          "Why it works"
+        ],
+        "rows": [
+          [
+            "Shallow pans (food about 2 inches deep or less), uncovered or loosely covered until cold",
+            "More surface, less distance for heat to travel"
+          ],
+          [
+            "Cut large items into smaller pieces",
+            "Thin pieces lose heat faster"
+          ],
+          [
+            "An ice-water bath, stirring often",
+            "Water pulls heat far faster than air"
+          ],
+          [
+            "Ice wands (frozen paddles) stirred in",
+            "Cool from the inside"
+          ],
+          [
+            "Ice added as an ingredient (for soups and stocks)",
+            "The ice replaces some of the water in the recipe"
+          ],
+          [
+            "Blast chillers and tumble chillers",
+            "Fast cold air or water made for cooling"
+          ]
+        ],
+        "cap": "Ways to cool faster"
+      },
+      {
+        "t": "why",
+        "html": "If food reaches 70°F early, say in 1 hour, the FDA's handout says the remaining time still applies to reaching 41°F; the 6 hours in total is the outer limit. If food is not at 70°F within 2 hours, the Food Code says it must be reheated to 165°F and cooled again from the start, or thrown away, depending on the rules where you work."
+      },
+      {
+        "t": "ex",
+        "title": "Did it pass?",
+        "q": "Chili is 135°F at noon, 72°F at 2:00 p.m., and 40°F at 5:00 p.m.",
+        "steps": [
+          "Stage 1: 135°F to 70°F must happen by 2:00 p.m. At 2:00 it was 72°F, still above 70°F.",
+          "Stage 1 failed, even though stage 2 was fast."
+        ],
+        "a": "It did not pass."
+      },
+      {
+        "t": "ex",
+        "title": "Time left",
+        "q": "Stock reaches 70°F 90 minutes after it was 135°F. By when must it reach 41°F, counting from 135°F?",
+        "steps": [
+          "6 hours in all from 135°F.",
+          "It reached 70°F at 1.5 hours; the outer limit is 6 hours from the start."
+        ],
+        "a": "Within 6 hours of the start (4½ hours after it hit 70°F)."
+      },
+      {
+        "t": "mistake",
+        "html": "Putting a lid on a deep, hot pot and putting it in the walk-in. The lid traps heat, the pot holds it, and warm air from it can warm nearby food."
+      },
+      {
+        "t": "note",
+        "html": "<div class=\"cu-box cu-drill\"><p class=\"cu-box-lab\"><span aria-hidden=\"true\">🏠</span> Practice at home</p><ul><li>Make a pot of stock or soup. Split it: one half stays in the pot in the refrigerator; the other goes into a shallow pan set in an ice bath. Check both temperatures every 30 minutes for 2 hours and graph them.</li></ul></div>"
+      },
+      {
+        "t": "note",
+        "html": "<div class=\"cu-box cu-sci\"><p class=\"cu-box-lab\"><span aria-hidden=\"true\">🔬</span> The science behind it</p><ul><li><a href=\"/math/differential-equations/growth-cooling/\">Newton's law of cooling</a>: why the cooling curve bends</li></ul></div>"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "FDA, Cooling Cooked Time/Temperature Control for Safety Foods and the FDA Food Code: for Food Employees (July 2024)",
+        "url": "https://www.fda.gov/media/181882/download"
+      },
+      {
+        "name": "U.S. Food and Drug Administration, Food Code 2022 (the model code most state and local health departments adopt)",
+        "url": "https://www.fda.gov/food/fda-food-code/food-code-2022"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

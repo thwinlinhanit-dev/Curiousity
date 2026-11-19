@@ -1,0 +1,97 @@
+{
+  "id": "calc3.triple-spherical",
+  "slug": "triple-spherical",
+  "ladder": "math",
+  "course": "calc3",
+  "unit": "multiple-integrals",
+  "title": "Triple Integrals in Spherical Coordinates",
+  "short": "dV = ρ² sin φ dρ dφ dθ.",
+  "trouble": "Students forget the factor ρ² sin φ, or use the wrong range for φ.",
+  "prereqs": [
+    "calc3.triple-cylindrical"
+  ],
+  "xp": 3,
+  "viz": [
+    "vectors3d"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Balls, shells and cones with their tip at the origin are simplest in <a href=\"/math/calculus-3/cylindrical-spherical/\">spherical coordinates</a>: a ball of radius $a$ is just ${}0 \\le \\rho \\le a$. The volume element needs one careful picture."
+      },
+      {
+        "t": "key",
+        "html": "$$dV = \\rho^2\\sin\\varphi\\,d\\rho\\,d\\varphi\\,d\\theta, \\qquad 0 \\le \\varphi \\le \\pi,\\ 0 \\le \\theta \\le 2\\pi,$$\n  with $x = \\rho\\sin\\varphi\\cos\\theta$, $y = \\rho\\sin\\varphi\\sin\\theta$, $z = \\rho\\cos\\varphi$ and $x^2 + y^2 + z^2 = \\rho^2$."
+      },
+      {
+        "t": "why",
+        "html": "A small spherical box has three nearly perpendicular edges. Changing $\\rho$ by $\\Delta\\rho$ moves you $\\Delta\\rho$ straight out. Changing $\\varphi$ by $\\Delta\\varphi$ moves you along a meridian, a circle of radius $\\rho$: distance $\\rho\\,\\Delta\\varphi$. Changing $\\theta$ by $\\Delta\\theta$ moves you along a circle of latitude, whose radius is the distance from the $z$-axis, $\\rho\\sin\\varphi$: distance $\\rho\\sin\\varphi\\,\\Delta\\theta$. Multiply the three edges: $\\Delta V \\approx \\rho^2\\sin\\varphi\\,\\Delta\\rho\\,\\Delta\\varphi\\,\\Delta\\theta$. Near the poles ($\\sin\\varphi \\approx 0$) the boxes are thin slivers, which the factor $\\sin\\varphi$ records."
+      },
+      {
+        "t": "viz",
+        "name": "calc3-coords",
+        "opts": {
+          "mode": "sph",
+          "rho": 2.4,
+          "theta": 50,
+          "phi": 60
+        },
+        "cap": "The three directions of a spherical box: out along $\\rho$, down along the purple $\\varphi$ arc (radius $\\rho$), and around along the circle of radius $r = \\rho\\sin\\varphi$. Change $\\varphi$ toward ${}0$ and that last circle shrinks."
+      },
+      {
+        "t": "p",
+        "html": "Spherical limits are read off the same way. The angle $\\theta$ goes around the $z$-axis; $\\varphi$ is measured down from the positive $z$-axis, so the upper half of space is ${}0 \\le \\varphi \\le \\frac{\\pi}{2}$ and the cone $z = \\sqrt{x^2 + y^2}$ is $\\varphi = \\frac{\\pi}{4}$; $\\rho$ runs out from the origin to the outer surface. A sphere through the origin, such as $x^2 + y^2 + z^2 = 2z$, becomes $\\rho^2 = 2\\rho\\cos\\varphi$, that is, $\\rho = 2\\cos\\varphi$ with ${}0 \\le \\varphi \\le \\frac{\\pi}{2}$. Its volume is ${}2\\pi \\int_0^{\\pi/2} \\frac{8}{3}\\cos^3\\varphi\\sin\\varphi\\,d\\varphi = \\frac{4\\pi}{3}$, the volume of a ball of radius ${}1$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Volume of a ball",
+        "q": "Find the volume of the ball $\\rho \\le a$.",
+        "steps": [
+          "$\\int_0^{2\\pi}\\int_0^{\\pi}\\int_0^{a} \\rho^2\\sin\\varphi\\,d\\rho\\,d\\varphi\\,d\\theta$: the three integrals separate.",
+          "$\\int_0^a \\rho^2\\,d\\rho = \\frac{a^3}{3}$, $\\int_0^{\\pi}\\sin\\varphi\\,d\\varphi = 2$, $\\int_0^{2\\pi}d\\theta = 2\\pi$.",
+          "$V = \\frac{a^3}{3} \\cdot 2 \\cdot 2\\pi = \\frac{4}{3}\\pi a^3$."
+        ],
+        "a": "$\\frac{4}{3}\\pi a^3$"
+      },
+      {
+        "t": "ex",
+        "title": "An ice cream cone",
+        "q": "Find the volume inside the sphere $\\rho = 2$ and the cone $\\varphi \\le \\frac{\\pi}{3}$.",
+        "steps": [
+          "Only the upper limit of $\\varphi$ changes: $\\int_0^{\\pi/3}\\sin\\varphi\\,d\\varphi = 1 - \\cos\\frac{\\pi}{3} = \\frac{1}{2}$.",
+          "$V = \\frac{8}{3} \\cdot \\frac{1}{2} \\cdot 2\\pi = \\frac{8\\pi}{3}$."
+        ],
+        "a": "$\\frac{8\\pi}{3}$"
+      },
+      {
+        "t": "ex",
+        "title": "A moment",
+        "q": "Evaluate $\\iiint_H z\\,dV$ over the upper half-ball $\\rho \\le a$, $z \\ge 0$.",
+        "steps": [
+          "$z = \\rho\\cos\\varphi$, and the upper half is ${}0 \\le \\varphi \\le \\frac{\\pi}{2}$.",
+          "$$\\int_0^{2\\pi}\\int_0^{\\pi/2}\\int_0^a \\rho^3\\cos\\varphi\\sin\\varphi\\,d\\rho\\,d\\varphi\\,d\\theta = \\frac{a^4}{4} \\cdot \\frac{1}{2} \\cdot 2\\pi = \\frac{\\pi a^4}{4}.$$"
+        ],
+        "a": "$\\frac{\\pi a^4}{4}$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Forgetting $\\rho^2\\sin\\varphi$, or letting $\\varphi$ run to ${}2\\pi$.</b> Without the factor, the \"volume\" of a ball comes out as ${}2\\pi^2a$, not even the right units. And $\\varphi$ is measured from the north pole to the south pole, so it runs from ${}0$ to $\\pi$; going to ${}2\\pi$ covers the ball twice and makes $\\int\\sin\\varphi\\,d\\varphi = 0$. Check every setup against $\\frac{4}{3}\\pi a^3$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 3, 5.5 Triple Integrals in Cylindrical and Spherical Coordinates"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

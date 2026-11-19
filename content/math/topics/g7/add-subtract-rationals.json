@@ -1,0 +1,119 @@
+{
+  "id": "g7.add-subtract-rationals",
+  "slug": "add-subtract-rationals",
+  "ladder": "math",
+  "course": "g7",
+  "unit": "add-subtract",
+  "title": "Adding and Subtracting Rational Numbers",
+  "short": "Use the same rules for negative fractions and decimals.",
+  "trouble": "",
+  "prereqs": [
+    "g7.subtract-integers",
+    "g5.unlike-mixed-numbers"
+  ],
+  "xp": 2,
+  "viz": [
+    "integerline",
+    "numberline"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The rules for <a href=\"/math/grade-7/add-integers/\">adding</a> and <a href=\"/math/grade-7/subtract-integers/\">subtracting</a> integers work for every rational number: negative fractions, negative decimals and negative mixed numbers. You also need what you know about <a href=\"/math/grade-5/unlike-mixed-numbers/\">unlike denominators</a>."
+      },
+      {
+        "t": "key",
+        "html": "Change subtraction into adding the opposite. Then use the sign rules. For fractions, use a common denominator; for decimals, line up the decimal points."
+      },
+      {
+        "t": "why",
+        "html": "The sign rules come from moves on the number line. A move does not have to be a whole number of steps. Moving $\\frac{3}{4}$ to the left and then $\\frac{1}{6}$ to the right partly cancels, the same as with integers."
+      },
+      {
+        "t": "viz",
+        "name": "numberline",
+        "opts": {
+          "min": -2,
+          "max": 1,
+          "step": 1,
+          "sub": 4,
+          "labels": "frac",
+          "points": [
+            {
+              "v": "-3/4",
+              "label": "start",
+              "color": "red"
+            }
+          ],
+          "hops": [
+            {
+              "from": "-3/4",
+              "by": "-5/4",
+              "n": 1
+            }
+          ],
+          "value": false
+        },
+        "cap": "$-\\frac{3}{4} + \\left(-\\frac{5}{4}\\right)$: a move of $\\frac{5}{4}$ to the left lands on $-2$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Fractions with different signs",
+        "q": "Find $-\\frac{3}{4} + \\frac{1}{6}$.",
+        "steps": [
+          "Common denominator 12: $-\\frac{9}{12} + \\frac{2}{12}$.",
+          "Different signs: $9 - 2 = 7$, and the negative part is bigger.",
+          "The sum is $-\\frac{7}{12}$."
+        ],
+        "a": "$-\\frac{7}{12}$"
+      },
+      {
+        "t": "ex",
+        "title": "Decimals",
+        "q": "Find $-2.5 - 1.75$.",
+        "steps": [
+          "Add the opposite: $-2.5 + (-1.75)$.",
+          "Both negative: $2.5 + 1.75 = 4.25$, so the answer is $-4.25$."
+        ],
+        "a": "$-4.25$"
+      },
+      {
+        "t": "ex",
+        "title": "Mixed numbers",
+        "q": "Find $-1\\frac{1}{2} - \\left(-3\\frac{1}{4}\\right)$.",
+        "steps": [
+          "Add the opposite: $-1\\frac{1}{2} + 3\\frac{1}{4}$.",
+          "As fractions: $-\\frac{6}{4} + \\frac{13}{4} = \\frac{7}{4}$.",
+          "$\\frac{7}{4} = 1\\frac{3}{4}$. Check the sign: $3\\frac{1}{4}$ is farther from $0$, so the answer is positive ✓."
+        ],
+        "a": "$1\\frac{3}{4}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Two slips: forgetting to change \"minus a negative\" into \"plus a positive,\" and adding denominators ($\\frac{1}{2} + \\frac{1}{4} \\ne \\frac{2}{6}$). Check with an estimate: $-\\frac{3}{4} + \\frac{1}{6}$ should be a little more than $-\\frac{3}{4}$, and $-\\frac{7}{12}$ is ✓."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Prealgebra 2e, Section 4.5 Add and Subtract Fractions with Different Denominators"
+      },
+      {
+        "name": "OpenStax, Prealgebra 2e, Section 5.2 Decimal Operations"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 7.NS.A.1d"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

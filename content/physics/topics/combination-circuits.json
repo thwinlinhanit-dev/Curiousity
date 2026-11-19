@@ -1,0 +1,93 @@
+{
+  "id": "phys2.combination-circuits",
+  "slug": "combination-circuits",
+  "ladder": "physics",
+  "course": "phys2",
+  "unit": "circuits",
+  "title": "Series-Parallel Combinations",
+  "short": "Reduce a circuit step by step, then work back out to find each current and voltage.",
+  "trouble": "Students combine two resistors as if in series or parallel when they are neither.",
+  "prereqs": [
+    "phys2.parallel-resistors"
+  ],
+  "xp": 3,
+  "viz": [
+    "ph-circuit"
+  ],
+  "figureArchetype": "FieldFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Real circuits mix <a href=\"/physics/physics-2/series-resistors/\">series</a> and <a href=\"/physics/physics-2/parallel-resistors/\">parallel</a> parts. The plan is to shrink the circuit one step at a time to a single resistor, then work back out to find every current and voltage."
+      },
+      {
+        "t": "why",
+        "html": "Replacing a group by its equivalent does not change anything outside the group: the rest of the circuit sees the same current for the same voltage. So you may collapse groups one by one. The only care is to collapse a group only if it really is series (same current, no junction in between) or really is parallel (both ends joined to the same two points)."
+      },
+      {
+        "t": "key",
+        "html": "Reduce: combine true series groups ($R_1 + R_2$) and true parallel groups ($\\tfrac{R_1R_2}{R_1 + R_2}$), innermost first, until one resistor is left; $I = V/R_{\\text{eq}}$. Expand: go back step by step, using $V = IR$ on each piece; series pieces share current, parallel pieces share voltage."
+      },
+      {
+        "t": "viz",
+        "name": "ph-circuit",
+        "opts": {
+          "circuit": "V(12) series(R1:4, par(R2:6, R3:3))",
+          "show": [
+            "current",
+            "voltage"
+          ],
+          "task": "Compare the currents in R2 and R3 with the current through R1."
+        },
+        "cap": "$R_1$ in series with the parallel pair $R_2 \\parallel R_3$. Build it in the <a href=\"/science-lab/circuits/\">Circuit Builder</a>."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Series then parallel",
+        "q": "A $12\\,\\text{V}$ battery feeds $R_1 = 4\\,\\Omega$ in series with $R_2 = 6\\,\\Omega$ and $R_3 = 3\\,\\Omega$ in parallel. Find every current.",
+        "steps": [
+          "Parallel pair: $R_{23} = \\dfrac{6 \\times 3}{6 + 3} = 2\\,\\Omega$. With $R_1$: $R_{\\text{eq}} = 4 + 2 = 6\\,\\Omega$.",
+          "Battery current: $I = \\dfrac{12}{6} = 2.0\\,\\text{A}$, all through $R_1$, so $V_1 = 8.0\\,\\text{V}$.",
+          "The pair gets $V_{23} = (2.0)(2) = 4.0\\,\\text{V}$ (and $8.0 + 4.0 = 12$).",
+          "$I_2 = \\dfrac{4.0}{6} = 0.67\\,\\text{A}$, $I_3 = \\dfrac{4.0}{3} = 1.33\\,\\text{A}$; together $2.0\\,\\text{A}$."
+        ],
+        "a": "$2.0\\,\\text{A}$; $0.67\\,\\text{A}$ and $1.33\\,\\text{A}$"
+      },
+      {
+        "t": "ex",
+        "title": "Parallel then series",
+        "q": "$R_1 = 2\\,\\Omega$ and $R_2 = 4\\,\\Omega$ are in series, and that pair is in parallel with $R_3 = 3\\,\\Omega$, across $6.0\\,\\text{V}$. Find the battery current and the voltage across $R_2$.",
+        "steps": [
+          "Series pair: $2 + 4 = 6\\,\\Omega$. In parallel with $3\\,\\Omega$: $R_{\\text{eq}} = \\dfrac{6 \\times 3}{9} = 2\\,\\Omega$, so $I = 3.0\\,\\text{A}$.",
+          "Each branch has the full $6.0\\,\\text{V}$: the $R_1$–$R_2$ branch carries $\\dfrac{6.0}{6} = 1.0\\,\\text{A}$, the $R_3$ branch $2.0\\,\\text{A}$.",
+          "$V_2 = (1.0)(4) = 4.0\\,\\text{V}$."
+        ],
+        "a": "$3.0\\,\\text{A}$; $4.0\\,\\text{V}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Combining two resistors as if in series or parallel when they are neither. Two resistors are in series only if no junction lies between them, and in parallel only if both of their ends meet at the same two points. Being drawn side by side, or one after the other on the page, is not enough. Check each pair against those two tests before you combine."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e, section 21.1 Resistors in Series and Parallel"
+      },
+      {
+        "name": "OpenStax, University Physics Volume 2, section 10.2 Resistors in Series and Parallel"
+      },
+      {
+        "name": "College Board, AP Physics 2 Course and Exam Description, Unit 11: Electric Circuits"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

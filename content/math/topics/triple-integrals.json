@@ -1,0 +1,194 @@
+{
+  "id": "calc3.triple-integrals",
+  "slug": "triple-integrals",
+  "ladder": "math",
+  "course": "calc3",
+  "unit": "multiple-integrals",
+  "title": "Triple Integrals",
+  "short": "Integrate over solid regions.",
+  "trouble": "",
+  "prereqs": [
+    "calc3.general-regions"
+  ],
+  "xp": 3,
+  "viz": [
+    "vectors3d"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Triple integrals add up a quantity over a solid region $E$ in space: mass from density, total charge, or simply volume. They are computed like <a href=\"/math/calculus-3/general-regions/\">double integrals over general regions</a>, one variable at a time, now with three nested integrals."
+      },
+      {
+        "t": "key",
+        "html": "$\\iiint_E f\\,dV$ is the limit of sums $\\sum f(x^*, y^*, z^*)\\,\\Delta V$ over small boxes. For $$E = \\{(x, y) \\in D,\\ u_1(x, y) \\le z \\le u_2(x, y)\\}\\text{:}$$ \n  $$\\iiint_E f\\,dV = \\iint_D \\left(\\int_{u_1(x, y)}^{u_2(x, y)} f(x, y, z)\\,dz\\right) dA.$$\n  The volume of $E$ is $\\iiint_E 1\\,dV$."
+      },
+      {
+        "t": "why",
+        "html": "Think of the solid as a bundle of vertical sticks. Above each point $(x, y)$ of the shadow $D$, a stick runs from the bottom surface $z = u_1$ to the top surface $z = u_2$; the inner integral adds $f$ along that stick. Then the double integral adds the sticks over the shadow, which you already know how to set up. The outermost limits must be numbers; the innermost may depend on both outer variables."
+      },
+      {
+        "t": "viz",
+        "name": "calc3-scene",
+        "opts": {
+          "polys": [
+            {
+              "pts": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  2,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  3,
+                  0
+                ]
+              ],
+              "color": "gold",
+              "alpha": 0.3
+            },
+            {
+              "pts": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  2,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  6
+                ]
+              ],
+              "color": "blue",
+              "alpha": 0.18
+            },
+            {
+              "pts": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  3,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  6
+                ]
+              ],
+              "color": "blue",
+              "alpha": 0.18
+            },
+            {
+              "pts": [
+                [
+                  2,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  3,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  6
+                ]
+              ],
+              "color": "green",
+              "alpha": 0.3
+            }
+          ],
+          "segs": [
+            {
+              "a": [
+                0.6,
+                0.8,
+                0
+              ],
+              "b": [
+                0.6,
+                0.8,
+                2.6
+              ],
+              "color": "red"
+            }
+          ],
+          "range": 4.5,
+          "yaw": -2,
+          "pitch": 0.3
+        },
+        "cap": "The tetrahedron under ${}3x + 2y + z = 6$. The gold shadow is $D$; the red stick runs from the floor $z = 0$ up to the slanted face $z = 6 - 3x - 2y$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Over a box",
+        "q": "Evaluate $\\iiint_B xyz\\,dV$ over $B = [0, 1] \\times [0, 2] \\times [0, 3]$.",
+        "steps": [
+          "All limits are constants and the integrand is a product, so it splits:",
+          "$$\\left(\\int_0^1 x\\,dx\\right)\\left(\\int_0^2 y\\,dy\\right)\\left(\\int_0^3 z\\,dz\\right) = \\frac{1}{2} \\cdot 2 \\cdot \\frac{9}{2} = \\frac{9}{2}.$$"
+        ],
+        "a": "$\\frac{9}{2}$"
+      },
+      {
+        "t": "ex",
+        "title": "Volume of a tetrahedron",
+        "q": "Find the volume of the solid bounded by the coordinate planes and ${}3x + 2y + z = 6$.",
+        "steps": [
+          "Top: $z = 6 - 3x - 2y$. It meets the floor along ${}3x + 2y = 6$, so the shadow is ${}0 \\le x \\le 2$, ${}0 \\le y \\le 3 - \\frac{3x}{2}$.",
+          "Inner: $\\int_0^{6 - 3x - 2y} dz = 6 - 3x - 2y$. Middle: $\\int_0^{3 - 3x/2}(6 - 3x - 2y)\\,dy = \\left(3 - \\frac{3x}{2}\\right)^2$.",
+          "Outer: $\\int_0^2 \\left(3 - \\frac{3x}{2}\\right)^2 dx = 6$. Check: $\\frac{1}{6}$ of the box ${}2 \\times 3 \\times 6$ is ${}6$."
+        ],
+        "a": "${}6$"
+      },
+      {
+        "t": "ex",
+        "title": "An integral over it",
+        "q": "For the same tetrahedron $E$, find $\\iiint_E z\\,dV$ and the height of its centroid.",
+        "steps": [
+          "Inner: $\\int_0^{6 - 3x - 2y} z\\,dz = \\frac{1}{2}(6 - 3x - 2y)^2$.",
+          "Middle (with $w = 6 - 3x - 2y$): $\\frac{1}{12}(6 - 3x)^3$. Outer: $\\frac{1}{12}\\int_0^2 (6 - 3x)^3\\,dx = 9$.",
+          "Centroid height $\\bar{z} = \\frac{9}{6} = \\frac{3}{2}$, a quarter of the way up, as for every tetrahedron."
+        ],
+        "a": "${}9$; $\\bar{z} = \\frac{3}{2}$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Limits that do not nest.</b> The innermost limits may involve the two outer variables; the middle limits only the outermost one; the outermost are numbers. Writing $\\int_0^2\\int_0^3\\int_0^6 dz\\,dy\\,dx$ for the tetrahedron integrates over the whole box (volume 36). Check volumes against simple shapes, like $\\frac{1}{6}abc$ for a corner tetrahedron."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 3, 5.4 Triple Integrals"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

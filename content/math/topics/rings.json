@@ -1,0 +1,108 @@
+{
+  "id": "aa.rings",
+  "slug": "rings",
+  "ladder": "math",
+  "course": "aa",
+  "unit": "rings",
+  "title": "Rings",
+  "short": "A ring is an abelian group under addition with an associative multiplication that distributes over it; ℤ, ℤₙ, matrices and polynomials are rings, and the units are the elements with multiplicative inverses.",
+  "trouble": "Students assume multiplication commutes or that a ring has a 1: 2ℤ has no identity, and matrix rings are not commutative.",
+  "prereqs": [
+    "aa.group-axioms",
+    "nt.modular-arithmetic",
+    "la.matrix-algebra"
+  ],
+  "xp": 2,
+  "viz": [
+    "aa-cayley"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Integers, matrices, polynomials and <a href=\"/math/number-theory/modular-arithmetic/\">residues mod n</a> can all be added <i>and</i> multiplied. A ring is the structure with both operations, linked by the distributive law. Everything you learned about <a href=\"/math/abstract-algebra/group-axioms/\">groups</a> applies to the addition."
+      },
+      {
+        "t": "p",
+        "html": "<b>Definition.</b> A <b>ring</b> is a set $R$ with two operations, $+$ and $\\cdot$, such that"
+      },
+      {
+        "t": "list",
+        "items": [
+          "$(R, +)$ is an abelian group (identity $0$, inverses $-a$);",
+          "multiplication is associative: $(ab)c = a(bc)$;",
+          "multiplication distributes over addition: $a(b + c) = ab + ac$ and $(a + b)c = ac + bc$."
+        ]
+      },
+      {
+        "t": "p",
+        "html": "A ring is <b>commutative</b> if $ab = ba$ always, and has an <b>identity</b> (or unity) if some $1 \\ne 0$ has $1a = a1 = a$. A <b>unit</b> is an element with a multiplicative inverse; the units form a group $U(R)$ under multiplication. Examples: $\\mathbb{Z}$, $\\mathbb{Q}$, $\\mathbb{R}$, $\\mathbb{Z}_{n}$ (units $U(n)$), polynomials $\\mathbb{R}[x]$, the $2 \\times 2$ real <a href=\"/math/linear-algebra/matrix-algebra/\">matrices</a> (not commutative; units are the invertible matrices), and $2\\mathbb{Z}$ (no identity)."
+      },
+      {
+        "t": "why",
+        "html": "<b>Rules that follow from the axioms.</b> In any ring, $0a = 0$ and $(-a)b = -(ab)$.<br><b>Proof.</b> $0a = (0 + 0)a = 0a + 0a$ by distributivity; adding $-(0a)$ to both sides gives $0 = 0a$. Next, $ab + (-a)b = (a + (-a))b = 0b = 0$, so $(-a)b$ is the additive inverse of $ab$. $\\square$ So \"a negative times a positive is negative\" is not a convention: it is forced by distributivity. Applying the second rule twice gives $(-a)(-b) = ab$."
+      },
+      {
+        "t": "viz",
+        "name": "aa-cayley",
+        "opts": {
+          "group": "Zmul",
+          "n": 6,
+          "sel": [
+            "2",
+            "3"
+          ]
+        },
+        "cap": "The multiplication table of the ring $\\mathbb{Z}_{6}$. The units $1$ and $5$ have a $1$ in their rows; $2 \\cdot 3 = 0$ although neither factor is $0$."
+      },
+      {
+        "t": "ex",
+        "title": "Units of a product ring",
+        "q": "How many units does $\\mathbb{Z}_{4} \\times \\mathbb{Z}_{9}$ have (operations coordinate by coordinate)?",
+        "steps": [
+          "$(a, b)$ has an inverse exactly when $a$ is a unit of $\\mathbb{Z}_{4}$ and $b$ is a unit of $\\mathbb{Z}_{9}$.",
+          "$|U(4)| = 2$ and $|U(9)| = 6$."
+        ],
+        "a": "$2 \\cdot 6 = 12$."
+      },
+      {
+        "t": "ex",
+        "title": "Matrices over $\\mathbb{Z}_{2}$ do not commute",
+        "q": "In the ring of $2 \\times 2$ matrices over $\\mathbb{Z}_{2}$, compare $AB$ and $BA$ for $A = \\begin{pmatrix} 1 & 1 \\\\ 0 & 1 \\end{pmatrix}$, $B = \\begin{pmatrix} 1 & 0 \\\\ 1 & 1 \\end{pmatrix}$.",
+        "steps": [
+          "$AB = \\begin{pmatrix} 2 & 1 \\\\ 1 & 1 \\end{pmatrix} = \\begin{pmatrix} 0 & 1 \\\\ 1 & 1 \\end{pmatrix}$ (mod 2).",
+          "$BA = \\begin{pmatrix} 1 & 1 \\\\ 1 & 2 \\end{pmatrix} = \\begin{pmatrix} 1 & 1 \\\\ 1 & 0 \\end{pmatrix}$."
+        ],
+        "a": "$AB \\ne BA$: a finite noncommutative ring."
+      },
+      {
+        "t": "p",
+        "html": "The <b>characteristic</b> of a ring with identity is the least $n \\ge 1$ with $n \\cdot 1 = 1 + \\cdots + 1 = 0$, or $0$ if there is none: $\\mathbb{Z}_{n}$ has characteristic $n$, $\\mathbb{Z}$ and $\\mathbb{Q}$ have characteristic $0$, and $\\mathbb{Z}_{4} \\times \\mathbb{Z}_{6}$ has characteristic $\\operatorname{lcm}(4, 6) = 12$."
+      },
+      {
+        "t": "mistake",
+        "html": "Assuming a ring's multiplication commutes, or that a ring has a $1$. Matrix rings fail the first ($AB \\ne BA$ above), and $2\\mathbb{Z}$ fails the second: no even number $u$ has $u \\cdot 2 = 2$. Many statements about \"rings\" in this course say \"commutative ring with identity\" for exactly this reason."
+      },
+      {
+        "t": "key",
+        "html": "A ring is an abelian group under $+$ with an associative, distributive multiplication. Units are the invertible elements. From the axioms, $0a = 0$ and $(-a)b = -(ab)$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Thomas W. Judson, Abstract Algebra: Theory and Applications (open textbook), chapter 16, Rings (section 16.1, Rings)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.702 Algebra II (Spring 2011), lecture notes on rings"
+      },
+      {
+        "name": "John A. Beachy and William D. Blair, Abstract Algebra, online study guide (Northern Illinois University), section 5.1, Commutative Rings"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

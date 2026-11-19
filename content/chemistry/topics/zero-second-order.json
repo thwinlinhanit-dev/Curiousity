@@ -1,0 +1,130 @@
+{
+  "id": "gchem2.zero-second-order",
+  "slug": "zero-second-order",
+  "ladder": "chemistry",
+  "course": "gchem2",
+  "unit": "kinetics",
+  "title": "Zero- and Second-Order Reactions",
+  "short": "[A] or 1/[A] changes in a straight line with time, and the half-life depends on the starting concentration.",
+  "trouble": "Students use the first-order half-life formula for every order.",
+  "prereqs": [
+    "gchem2.first-order"
+  ],
+  "xp": 3,
+  "viz": [
+    "ch-kineticsplot"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The <a href=\"/chemistry/general-chemistry-2/first-order/\">first-order</a> equations came from integrating $\\text{rate} = k[\\mathrm{A}]$. Integrating the zero- and second-order rate laws in the same way gives two more straight-line laws, each with its own half-life."
+      },
+      {
+        "t": "key",
+        "html": "Zero order: $[\\mathrm{A}] = [\\mathrm{A}]_0 - kt$ and $t_{1/2} = \\dfrac{[\\mathrm{A}]_0}{2k}$. Second order: $\\dfrac{1}{[\\mathrm{A}]} = \\dfrac{1}{[\\mathrm{A}]_0} + kt$ and $t_{1/2} = \\dfrac{1}{k[\\mathrm{A}]_0}$. Only the first-order half-life is independent of concentration."
+      },
+      {
+        "t": "why",
+        "html": "Zero order: $-d[\\mathrm{A}]/dt = k$ is a constant rate, so the concentration falls in a straight line. Second order: $-d[\\mathrm{A}]/dt = k[\\mathrm{A}]^2$; separating gives $\\int [\\mathrm{A}]^{-2}\\,d[\\mathrm{A}] = -k\\int dt$, so $\\dfrac{1}{[\\mathrm{A}]} - \\dfrac{1}{[\\mathrm{A}]_0} = kt$. Put $[\\mathrm{A}] = \\tfrac{1}{2}[\\mathrm{A}]_0$ into each to get the half-lives. A second-order reaction slows sharply as A runs down (the rate goes as the square), so each half-life is twice as long as the one before. A zero-order reaction keeps its pace, so each half-life is half as long as the one before."
+      },
+      {
+        "t": "viz",
+        "name": "ch-kineticsplot",
+        "opts": {
+          "order": 2,
+          "k": 1,
+          "A0": 1,
+          "plot": "A",
+          "halves": true
+        },
+        "cap": "A second-order reaction with half-life markers: each half-life is twice the one before it."
+      },
+      {
+        "t": "table",
+        "head": [
+          "",
+          "Zero order",
+          "First order",
+          "Second order"
+        ],
+        "rows": [
+          [
+            "Rate law",
+            "$k$",
+            "$k[\\mathrm{A}]$",
+            "$k[\\mathrm{A}]^2$"
+          ],
+          [
+            "Straight-line plot",
+            "$[\\mathrm{A}]$ vs $t$",
+            "$\\ln[\\mathrm{A}]$ vs $t$",
+            "$1/[\\mathrm{A}]$ vs $t$"
+          ],
+          [
+            "Slope",
+            "$-k$",
+            "$-k$",
+            "$+k$"
+          ],
+          [
+            "Half-life",
+            "$[\\mathrm{A}]_0/2k$",
+            "$0.693/k$",
+            "$1/(k[\\mathrm{A}]_0)$"
+          ],
+          [
+            "Units of k",
+            "$\\text{M/s}$",
+            "$\\text{s}^{-1}$",
+            "$\\text{M}^{-1}\\,\\text{s}^{-1}$"
+          ]
+        ],
+        "cap": "The three integrated rate laws."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A second-order reaction",
+        "q": "$\\text{rate} = k[\\mathrm{A}]^2$ with $k = 0.50\\ \\text{M}^{-1}\\,\\text{s}^{-1}$ and $[\\mathrm{A}]_0 = 0.20\\ \\text{M}$. Find the first half-life, the second half-life and $[\\mathrm{A}]$ at $30\\ \\text{s}$.",
+        "steps": [
+          "First half-life: $t_{1/2} = \\dfrac{1}{(0.50)(0.20)} = 10\\ \\text{s}$.",
+          "The second half-life starts at $0.10\\ \\text{M}$: $\\dfrac{1}{(0.50)(0.10)} = 20\\ \\text{s}$, twice as long.",
+          "At $30\\ \\text{s}$: $$\\dfrac{1}{[\\mathrm{A}]} = \\dfrac{1}{0.20} + (0.50)(30) = 5.0 + 15 = 20\\ \\text{M}^{-1}$$ so $[\\mathrm{A}] = 0.050\\ \\text{M}$. That fits: 10 s plus 20 s is two half-lives, and $0.20 \\to 0.10 \\to 0.050$."
+        ],
+        "a": "$10\\ \\text{s}$, $20\\ \\text{s}$ and $0.050\\ \\text{M}$."
+      },
+      {
+        "t": "ex",
+        "title": "A zero-order reaction",
+        "q": "A reaction on a catalyst surface is zero order with $k = 5.0 \\times 10^{-3}\\ \\text{M/s}$ and $[\\mathrm{A}]_0 = 0.20\\ \\text{M}$. Find the half-life and when A runs out.",
+        "steps": [
+          "$t_{1/2} = \\dfrac{0.20}{2(5.0 \\times 10^{-3})} = 20\\ \\text{s}$.",
+          "$[\\mathrm{A}] = 0$ when $0.20 = (5.0 \\times 10^{-3})t$: $t = 40\\ \\text{s}$. The second \"half-life\" (from 0.10 M to 0.050 M) takes only 10 s."
+        ],
+        "a": "$20\\ \\text{s}$; A is gone at $40\\ \\text{s}$."
+      },
+      {
+        "t": "mistake",
+        "html": "Using $t_{1/2} = 0.693/k$ for every reaction. That formula holds only for first order. Check the units of $k$: if $k$ is in $\\text{M}^{-1}\\,\\text{s}^{-1}$, the reaction is second order and its half-life needs $[\\mathrm{A}]_0$."
+      },
+      {
+        "t": "note",
+        "html": "Zero-order behavior is common when a reaction happens on a surface or on an enzyme that is fully occupied: adding more reactant cannot speed it up, because every site is already busy."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 12.4 Integrated Rate Laws"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

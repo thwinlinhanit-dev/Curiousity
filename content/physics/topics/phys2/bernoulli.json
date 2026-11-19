@@ -1,0 +1,105 @@
+{
+  "id": "phys2.bernoulli",
+  "slug": "bernoulli",
+  "ladder": "physics",
+  "course": "phys2",
+  "unit": "fluids",
+  "title": "Bernoulli's Equation",
+  "short": "Along a streamline P + ½ρv² + ρgh stays the same, so faster-moving fluid has lower pressure.",
+  "trouble": "Students think faster-moving fluid pushes harder, so its pressure must be higher.",
+  "prereqs": [
+    "phys2.continuity",
+    "phys2.pressure-depth",
+    "phys1.energy-conservation"
+  ],
+  "xp": 3,
+  "viz": [
+    "ph-fluids"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/physics/physics-2/continuity/\">Flow Rate and Continuity</a> water sped up in a narrow pipe. But speeding up takes a net force. Something must push the water from behind harder than the water ahead pushes back, so the pressure must <em>drop</em> where the water is fast. Bernoulli's equation makes this exact, using <a href=\"/physics/physics-1/energy-conservation/\">conservation of energy</a>."
+      },
+      {
+        "t": "why",
+        "html": "Follow a small parcel of water of volume $\\Delta V$ (mass $\\rho\\,\\Delta V$) from point 1 to point 2 in steady flow. The water behind pushes it forward and does work $P_1 \\Delta V$; the water ahead pushes back and takes away $P_2 \\Delta V$. With no friction, this net work changes the parcel's kinetic and gravitational energy: $$(P_1 - P_2)\\Delta V = \\tfrac{1}{2}\\rho \\Delta V (v_2^2 - v_1^2) + \\rho \\Delta V g (h_2 - h_1).$$ Divide by $\\Delta V$ and gather each point's terms on its own side. For still water ($v_1 = v_2 = 0$) it gives back $P_2 = P_1 + \\rho g (h_1 - h_2)$, the rule from <a href=\"/physics/physics-2/pressure-depth/\">Pressure and Depth</a>."
+      },
+      {
+        "t": "key",
+        "html": "<b>Bernoulli's equation:</b> along a streamline of steady, frictionless flow of a liquid, $$P + \\tfrac{1}{2}\\rho v^2 + \\rho g h = \\text{constant}.$$ Each term is energy per cubic meter. At the same height, faster fluid has <b>lower</b> pressure; at the same speed, higher fluid has lower pressure."
+      },
+      {
+        "t": "viz",
+        "name": "ph-fluids",
+        "opts": {
+          "mode": "flow",
+          "task": "Narrow the pipe and raise its far end. Watch the pressure columns."
+        },
+        "cap": "Speed and height both cost pressure: the far gauge drops when the pipe narrows or climbs."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A narrowing level pipe",
+        "q": "Water flows at $2.0\\,\\text{m/s}$ and $200\\,\\text{kPa}$ in a level pipe that narrows to half its area. What is the pressure in the narrow part?",
+        "steps": [
+          "Continuity: $v_2 = 2v_1 = 4.0\\,\\text{m/s}$.",
+          "Level, so $$P_2 = P_1 - \\tfrac{1}{2}\\rho(v_2^2 - v_1^2) = 200{,}000 - \\tfrac{1}{2}(1000)(16 - 4)\\,\\text{Pa}$$",
+          "$\\tfrac{1}{2}(1000)(12) = 6000\\,\\text{Pa}$, so $P_2 = 194{,}000\\,\\text{Pa} = 194\\,\\text{kPa}$."
+        ],
+        "a": "$194\\,\\text{kPa}$"
+      },
+      {
+        "t": "ex",
+        "title": "A leak in a tank (Torricelli)",
+        "q": "A large open tank has a small hole $1.8\\,\\text{m}$ below the water surface. How fast does the water squirt out?",
+        "steps": [
+          "Point 1 is the surface, point 2 the hole. Both are open to the air, so $P_1 = P_2$; the surface barely moves, so $v_1 \\approx 0$.",
+          "Bernoulli leaves $\\rho g h = \\tfrac{1}{2}\\rho v_2^2$, so $v_2 = \\sqrt{2gh}$.",
+          "$v_2 = \\sqrt{2(9.8)(1.8)} = \\sqrt{35.3} = 5.94\\,\\text{m/s}$, as fast as a stone dropped $1.8\\,\\text{m}$."
+        ],
+        "a": "$5.94\\,\\text{m/s}$"
+      },
+      {
+        "t": "ex",
+        "title": "Pressure upstairs",
+        "q": "Water at $300\\,\\text{kPa}$ enters a house through a pipe of constant diameter. What is the pressure $10\\,\\text{m}$ higher, on the third floor, while it flows?",
+        "steps": [
+          "Same diameter means the same speed, so the $\\tfrac{1}{2}\\rho v^2$ terms cancel.",
+          "$$P_2 = P_1 - \\rho g \\Delta h = 300\\,\\text{kPa} - (1000)(9.8)(10)\\,\\text{Pa} = 300 - 98 = 202\\,\\text{kPa}$$"
+        ],
+        "a": "$202\\,\\text{kPa}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking faster fluid pushes harder, so its pressure must be higher. A fast jet does push hard on whatever <em>stops</em> it, but that is the force of stopping its momentum. Inside the moving stream, sideways pressure is lower where it moves faster. Check with forces: water speeds up only if the pressure behind it is higher than the pressure ahead."
+      },
+      {
+        "t": "note",
+        "html": "Bernoulli's equation leaves out friction (viscosity) and assumes the liquid's density stays fixed. Real pipes lose some pressure to friction, so it gives an upper limit for speeds and a lower limit for pressure drops."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e, section 12.2 Bernoulli’s Equation"
+      },
+      {
+        "name": "OpenStax, College Physics 2e, section 12.3 The Most General Applications of Bernoulli’s Equation"
+      },
+      {
+        "name": "College Board, AP Physics 1 Course and Exam Description, Unit 8: Fluids"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

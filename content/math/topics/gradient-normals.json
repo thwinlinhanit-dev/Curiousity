@@ -1,0 +1,106 @@
+{
+  "id": "calc3.gradient-normals",
+  "slug": "gradient-normals",
+  "ladder": "math",
+  "course": "calc3",
+  "unit": "partials",
+  "title": "Gradients, Level Sets and Normal Lines",
+  "short": "∇f is perpendicular to level curves and level surfaces.",
+  "trouble": "",
+  "prereqs": [
+    "calc3.gradient",
+    "calc3.level-surfaces"
+  ],
+  "xp": 3,
+  "viz": [
+    "gradient"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The <a href=\"/math/calculus-3/gradient/\">gradient</a> points in the direction of fastest increase, and the rate of change is zero along a level curve. Put those together: the gradient must be perpendicular to the level curves. In three variables the same reasoning makes $\\nabla F$ perpendicular to <a href=\"/math/calculus-3/level-surfaces/\">level surfaces</a>, and that gives tangent planes to surfaces that are not graphs."
+      },
+      {
+        "t": "key",
+        "html": "$\\nabla F(P)$ is a normal vector to the level surface $F(x, y, z) = k$ at $P$. The tangent plane there is\n  $$F_x(P)(x - x_0) + F_y(P)(y - y_0) + F_z(P)(z - z_0) = 0,$$\n  and the normal line is $\\mathbf{r}(t) = P + t\\,\\nabla F(P)$. In two variables, $\\nabla f$ is perpendicular to the level curve through the point."
+      },
+      {
+        "t": "why",
+        "html": "Take any curve $\\mathbf{r}(t)$ lying in the level surface and passing through $P$. Along it, $F(\\mathbf{r}(t)) = k$ is constant, so by the chain rule\n  $$\\frac{d}{dt}F(\\mathbf{r}(t)) = \\nabla F \\cdot \\mathbf{r}'(t) = 0.$$\n  The gradient is perpendicular to the velocity of every curve in the surface through $P$, so it is perpendicular to the whole tangent plane. For a graph $z = f(x, y)$, use $F = f(x, y) - z$: $\\nabla F = \\langle f_x, f_y, -1 \\rangle$, the same normal as in <a href=\"/math/calculus-3/tangent-planes/\">tangent planes</a>."
+      },
+      {
+        "t": "viz",
+        "name": "gradient",
+        "opts": {
+          "f": "x^2 + 2y^2",
+          "point": [
+            1,
+            1
+          ],
+          "dir": 90
+        },
+        "cap": "The bold curve is the level curve through the point, and the red gradient meets it at a right angle. Drag the point anywhere: the right angle never changes."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Tangent plane to an ellipsoid",
+        "q": "Find the tangent plane to $x^2 + 2y^2 + 3z^2 = 6$ at $(1, 1, 1)$.",
+        "steps": [
+          "$F = x^2 + 2y^2 + 3z^2$: $\\nabla F = \\langle 2x, 4y, 6z \\rangle = \\langle 2, 4, 6 \\rangle$.",
+          "${}2(x - 1) + 4(y - 1) + 6(z - 1) = 0$.",
+          "Divide by 2 and expand: $x + 2y + 3z = 6$."
+        ],
+        "a": "$x + 2y + 3z = 6$"
+      },
+      {
+        "t": "ex",
+        "title": "The normal line",
+        "q": "Find the normal line to the same ellipsoid at $(1, 1, 1)$.",
+        "steps": [
+          "Direction $\\nabla F = \\langle 2, 4, 6 \\rangle$, or the simpler $\\langle 1, 2, 3 \\rangle$.",
+          "$\\mathbf{r}(t) = \\langle 1 + t, 1 + 2t, 1 + 3t \\rangle$."
+        ],
+        "a": "$\\mathbf{r}(t) = \\langle 1 + t, 1 + 2t, 1 + 3t \\rangle$"
+      },
+      {
+        "t": "ex",
+        "title": "A tangent line to a level curve",
+        "q": "Find the tangent line to $x^2 - xy + y^2 = 7$ at $(3, 2)$.",
+        "steps": [
+          "$\\nabla F = \\langle 2x - y, -x + 2y \\rangle = \\langle 4, 1 \\rangle$ at $(3, 2)$, a normal to the curve.",
+          "${}4(x - 3) + 1(y - 2) = 0$, so ${}4x + y = 14$."
+        ],
+        "a": "${}4x + y = 14$"
+      },
+      {
+        "t": "ex",
+        "title": "A graph as a level surface",
+        "q": "Find the tangent plane to $z = x^2 + y^2$ at $(1, 2, 5)$.",
+        "steps": [
+          "$F = x^2 + y^2 - z$ has $\\nabla F = \\langle 2x, 2y, -1 \\rangle = \\langle 2, 4, -1 \\rangle$.",
+          "${}2(x - 1) + 4(y - 2) - (z - 5) = 0$, so $z = 2x + 4y - 5$."
+        ],
+        "a": "$z = 2x + 4y - 5$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Using a two-component gradient as a normal in space.</b> For the surface $z = f(x, y)$, the vector $\\nabla f = \\langle f_x, f_y \\rangle$ is perpendicular to level curves in the plane, not to the surface. The surface's normal needs three components: write it as $F = f - z$ and use $\\nabla F = \\langle f_x, f_y, -1 \\rangle$. Check: the point must satisfy your tangent plane equation."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 3, 4.6 Directional Derivatives and the Gradient"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,103 @@
+{
+  "id": "chem.ion-charges",
+  "slug": "ion-charges",
+  "ladder": "chemistry",
+  "course": "chem",
+  "unit": "periodic",
+  "title": "Predicting Ion Charges",
+  "short": "Main-group atoms gain or lose electrons to match the nearest noble gas.",
+  "trouble": "Students predict that sodium gains seven electrons instead of losing one, or write the sulfide ion as S²⁺.",
+  "prereqs": [
+    "chem.valence-electrons",
+    "chem.ions"
+  ],
+  "xp": 1,
+  "viz": [
+    "ch-periodic",
+    "ch-atom"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/chemistry/chemistry/ions/\">Ions and Charge</a> showed what an ion is; <a href=\"/chemistry/chemistry/valence-electrons/\">Valence Electrons and Dot Symbols</a> showed how many outer electrons each atom has. Put them together and you can predict the charge most main-group atoms take."
+      },
+      {
+        "t": "key",
+        "html": "Main-group atoms gain or lose electrons to reach the electron arrangement of the <b>nearest noble gas</b>. Metals on the left lose electrons: group 1 forms $+1$ ions, group 2 forms $+2$, aluminum $+3$. Nonmetals on the right gain them: group 15 forms $-3$, group 16 $-2$, group 17 $-1$."
+      },
+      {
+        "t": "why",
+        "html": "It is about energy, not wanting. Removing sodium's one outer electron costs 496 kJ/mol, but removing a second one, from the full inner shell much closer to the nucleus, costs 4562 kJ/mol, far more than any energy the reaction can repay. So sodium stops at $\\mathrm{Na^+}$, with neon's arrangement. A chlorine atom releases energy when it gains one electron into its nearly full shell, but a second electron would have to start a new shell farther out, which costs energy. So chlorine stops at $\\mathrm{Cl^-}$, with argon's arrangement."
+      },
+      {
+        "t": "viz",
+        "name": "ch-periodic",
+        "opts": {
+          "mode": "charges"
+        },
+        "cap": "Common ion charges. The charges step from +1 and +2 on the left to −3, −2 and −1 on the right."
+      },
+      {
+        "t": "viz",
+        "name": "ch-coulomb",
+        "opts": {
+          "mode": "isoelectronic",
+          "list": [
+            "O2-",
+            "F-",
+            "Na+",
+            "Mg2+",
+            "Al3+"
+          ]
+        },
+        "cap": "Five ions with neon’s 10 electrons. The more protons pull on those 10 electrons, the smaller the ion."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Calcium",
+        "q": "What ion does calcium (group 2) form?",
+        "steps": [
+          "Calcium has 2 valence electrons ($\\mathrm{[Ar]\\,4s^2}$).",
+          "Losing both leaves argon's arrangement."
+        ],
+        "a": "$\\mathrm{Ca^{2+}}$"
+      },
+      {
+        "t": "ex",
+        "title": "Nitrogen",
+        "q": "What ion does nitrogen (group 15) form, and how many electrons does it have?",
+        "steps": [
+          "Nitrogen has 5 valence electrons; gaining 3 completes the shell like neon.",
+          "Ion: $\\mathrm{N^{3-}}$, with $7 + 3 = 10$ electrons."
+        ],
+        "a": "$\\mathrm{N^{3-}}$, 10 electrons"
+      },
+      {
+        "t": "mistake",
+        "html": "Predicting that sodium gains seven electrons instead of losing one, or writing the sulfide ion as $\\mathrm{S^{2+}}$. Count which way is shorter to a noble gas: sodium is 1 past neon, sulfur is 2 short of argon. Then check the sign: losing electrons gives a positive ion, gaining gives a negative one."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 2.6 Ionic and Molecular Compounds"
+      },
+      {
+        "name": "OpenStax Chemistry 2e, Section 7.1 Ionic Bonding"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-PS1-2 (outcomes of simple reactions from outermost electron states)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

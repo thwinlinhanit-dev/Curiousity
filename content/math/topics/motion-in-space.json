@@ -1,0 +1,92 @@
+{
+  "id": "calc3.motion-in-space",
+  "slug": "motion-in-space",
+  "ladder": "math",
+  "course": "calc3",
+  "unit": "vector-functions",
+  "title": "Velocity and Acceleration in Space",
+  "short": "Split acceleration into tangential and normal parts.",
+  "trouble": "",
+  "prereqs": [
+    "calc3.curvature",
+    "calc1.motion"
+  ],
+  "xp": 3,
+  "viz": [
+    "param3d",
+    "vectors3d"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Back to physics. In <a href=\"/math/calculus-1/motion/\">one dimension</a> velocity and acceleration were numbers along a line. In space they are vectors: $\\mathbf{v}(t) = \\mathbf{r}'(t)$, speed $|\\mathbf{v}(t)|$, and $\\mathbf{a}(t) = \\mathbf{r}''(t)$. The new question is what acceleration <i>does</i>: part of it speeds you up or slows you down, and part of it turns you."
+      },
+      {
+        "t": "key",
+        "html": "Acceleration splits into a tangential part and a normal part:\n  $$\\mathbf{a} = a_T\\,\\mathbf{T} + a_N\\,\\mathbf{N}, \\qquad a_T = \\frac{d|\\mathbf{v}|}{dt} = \\frac{\\mathbf{v} \\cdot \\mathbf{a}}{|\\mathbf{v}|}, \\qquad a_N = \\kappa|\\mathbf{v}|^2 = \\frac{|\\mathbf{v} \\times \\mathbf{a}|}{|\\mathbf{v}|}.$$\n  $a_T$ changes the speed; $a_N \\ge 0$ changes the direction."
+      },
+      {
+        "t": "why",
+        "html": "Write the velocity as speed times direction: $\\mathbf{v} = |\\mathbf{v}|\\,\\mathbf{T}$. Differentiate with the product rule:\n  $$\\mathbf{a} = \\frac{d|\\mathbf{v}|}{dt}\\,\\mathbf{T} + |\\mathbf{v}|\\,\\mathbf{T}'.$$\n  From the <a href=\"/math/calculus-3/curvature/\">curvature</a> lesson, $\\mathbf{T}' = |\\mathbf{T}'|\\,\\mathbf{N} = \\kappa|\\mathbf{v}|\\,\\mathbf{N}$. So $\\mathbf{a} = \\frac{d|\\mathbf{v}|}{dt}\\mathbf{T} + \\kappa|\\mathbf{v}|^2\\mathbf{N}$. That is why a car taking a curve twice as fast needs four times the sideways force."
+      },
+      {
+        "t": "viz",
+        "name": "param3d",
+        "opts": {
+          "x": "2t",
+          "y": "t",
+          "z": "4t - t^2",
+          "t0": 0,
+          "t1": 4,
+          "t": 1,
+          "tangent": true,
+          "frame": true,
+          "shadow": true
+        },
+        "cap": "A projectile path. $\\mathbf{T}$ follows the motion and $\\mathbf{N}$ points toward the inside of the curve, downward here. Gravity pulls straight down, so it has a tangential part (slowing the rise) and a normal part (bending the path)."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Velocity, speed and both components",
+        "q": "For $\\mathbf{r}(t) = \\langle t^2, 2t, \\ln t \\rangle$, find $\\mathbf{v}$, the speed, $a_T$ and $a_N$ at $t = 1$.",
+        "steps": [
+          "$\\mathbf{v} = \\left\\langle 2t, 2, \\frac{1}{t} \\right\\rangle$ and $\\mathbf{a} = \\left\\langle 2, 0, -\\frac{1}{t^2} \\right\\rangle$; at $t = 1$: $\\mathbf{v} = \\langle 2, 2, 1 \\rangle$, $\\mathbf{a} = \\langle 2, 0, -1 \\rangle$.",
+          "Speed $|\\mathbf{v}| = 3$.",
+          "$a_T = \\frac{\\mathbf{v} \\cdot \\mathbf{a}}{|\\mathbf{v}|} = \\frac{4 + 0 - 1}{3} = 1$: the speed grows by 1 unit per second per second.",
+          "$\\mathbf{v} \\times \\mathbf{a} = \\langle -2, 4, -4 \\rangle$ with length ${}6$, so $a_N = \\frac{6}{3} = 2$. Check: $a_T^2 + a_N^2 = 1 + 4 = 5 = |\\mathbf{a}|^2$."
+        ],
+        "a": "$\\mathbf{v} = \\langle 2, 2, 1 \\rangle$, speed ${}3$, $a_T = 1$, $a_N = 2$"
+      },
+      {
+        "t": "ex",
+        "title": "A projectile",
+        "q": "A ball leaves the ground with $\\mathbf{v}(0) = \\langle 20, 10, 64 \\rangle$ ft/s; gravity gives $\\mathbf{a} = \\langle 0, 0, -32 \\rangle$. Where does it land, and how high does it go?",
+        "steps": [
+          "Integrate: $\\mathbf{v}(t) = \\langle 20, 10, 64 - 32t \\rangle$ and, starting at the origin, $\\mathbf{r}(t) = \\langle 20t, 10t, 64t - 16t^2 \\rangle$.",
+          "Landing: ${}64t - 16t^2 = 16t(4 - t) = 0$ at $t = 4$ s, at $(80, 40, 0)$.",
+          "Top: vertical velocity ${}64 - 32t = 0$ at $t = 2$, height ${}128 - 64 = 64$ ft."
+        ],
+        "a": "lands at $(80, 40, 0)$; maximum height ${}64$ ft"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Thinking constant speed means no acceleration.</b> A car going around a circle at a steady 30 mph has $a_T = 0$, but its direction keeps changing, so $a_N = \\kappa|\\mathbf{v}|^2 \\ne 0$. Acceleration is the change in the velocity <i>vector</i>. Also: $a_N$ is never negative (it is a length along $\\mathbf{N}$), while a negative $a_T$ simply means slowing down. A useful check is $a_T^2 + a_N^2 = |\\mathbf{a}|^2$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 3, 3.4 Motion in Space"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

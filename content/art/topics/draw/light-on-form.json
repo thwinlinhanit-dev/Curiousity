@@ -1,0 +1,142 @@
+{
+  "id": "draw.light-on-form",
+  "slug": "light-on-form",
+  "ladder": "art",
+  "course": "draw",
+  "unit": "light",
+  "title": "Highlight, Core Shadow and Reflected Light",
+  "short": "Light on a round form runs highlight, light, halftone, core shadow and reflected light, and the cast shadow lies on the ground beside it.",
+  "trouble": "People make the reflected light as bright as the lit side. Reflected light is always darker than any value in the light.",
+  "prereqs": [
+    "draw.light-direction",
+    "draw.shapes-to-forms"
+  ],
+  "xp": 2,
+  "viz": [
+    "ar-shade"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Light does not just make a round form \"light on one side and dark on the other.\" It moves across the surface in a series of values that artists name. Learn them on a ball, and you can find them on an apple, a head or a vase."
+      },
+      {
+        "t": "viz",
+        "name": "ar-shade",
+        "opts": {
+          "form": "sphere",
+          "light": 150,
+          "parts": [
+            "highlight",
+            "core",
+            "reflected"
+          ]
+        },
+        "cap": "Three of the parts of light on a sphere, with its cast shadow on the table. Drag to move the light; the table below names every part."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Part",
+          "What it is"
+        ],
+        "rows": [
+          [
+            "highlight",
+            "the brightest spot, where the light reflects straight toward your eye"
+          ],
+          [
+            "light",
+            "the side facing the light"
+          ],
+          [
+            "halftone",
+            "the middle values where the surface starts to turn away"
+          ],
+          [
+            "core shadow",
+            "the darkest band on the form, where the surface turns away from the light"
+          ],
+          [
+            "reflected light",
+            "a dim glow inside the shadow, bounced up from the table or nearby things"
+          ],
+          [
+            "cast shadow",
+            "the shadow the form throws onto the table"
+          ],
+          [
+            "occlusion shadow",
+            "the darkest line, right where the form touches the table"
+          ]
+        ],
+        "cap": "The parts of light on a round form, from the light into the shadow."
+      },
+      {
+        "t": "key",
+        "html": "From the light into the shadow: <b>highlight, light, halftone, core shadow, reflected light</b>, and the <b>cast shadow</b> on the ground. Reflected light is always darker than any value in the light."
+      },
+      {
+        "t": "why",
+        "html": "The more directly a surface faces the light, the more light it receives. As a ball curves away, each part faces the light less, so the values step down until the core shadow, where the surface turns fully away. Past the core, light bounced from the table brightens the shadow a little. That bounce is weak, so reflected light stays a shadow value."
+      },
+      {
+        "t": "ex",
+        "title": "Darker or lighter",
+        "q": "Which is darker: the reflected light, or the halftone?",
+        "steps": [
+          "The halftone belongs to the light side.",
+          "Reflected light belongs to the shadow side.",
+          "Every value in the shadow is darker than every value in the light."
+        ],
+        "a": "The reflected light."
+      },
+      {
+        "t": "mistake",
+        "html": "People make the reflected light as bright as the lit side, and the ball looks like it glows or turns to glass. Reflected light is always darker than any value in the light. Check by squinting: the whole shadow side should read as one dark shape."
+      },
+      {
+        "t": "viz",
+        "name": "ar-shade",
+        "opts": {
+          "form": "sphere",
+          "light": 40,
+          "target": "core",
+          "parts": [
+            "highlight",
+            "core",
+            "reflected",
+            "cast"
+          ],
+          "labels": "letters"
+        },
+        "cap": "Tap the letter on the core shadow, then tap Check."
+      },
+      {
+        "t": "viz",
+        "name": "ar-artwork",
+        "opts": {
+          "work": "rembrandt-1659"
+        },
+        "cap": "Rembrandt's Self-Portrait (1659): light falls on one side of the face, and the rest turns into soft shadow."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Grokipedia, \"Shading\"",
+        "url": "https://grokipedia.com/page/Shading"
+      },
+      {
+        "name": "Grokipedia, \"Chiaroscuro\"",
+        "url": "https://grokipedia.com/page/Chiaroscuro"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

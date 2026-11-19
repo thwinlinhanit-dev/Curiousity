@@ -1,0 +1,97 @@
+{
+  "id": "pre.arc-sector-radians",
+  "slug": "arc-sector-radians",
+  "ladder": "math",
+  "course": "pre",
+  "unit": "angles-unit-circle",
+  "title": "Arc Length, Sector Area and Angular Speed",
+  "short": "s = rθ and A = ½r²θ when θ is in radians.",
+  "trouble": "Students use degrees in s = rθ.",
+  "prereqs": [
+    "pre.degrees-radians",
+    "geo.sector-area"
+  ],
+  "xp": 2,
+  "viz": [
+    "unitcircle"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In geometry you found <a href=\"/math/geometry/arc-length/\">arc length</a> and <a href=\"/math/geometry/sector-area/\">sector area</a> as a fraction of the whole circle, with the angle in degrees. Radians make those formulas much shorter, because a radian is already measured in radii."
+      },
+      {
+        "t": "key",
+        "html": "With $\\theta$ in <b>radians</b>: $$s = r\\theta \\qquad A = \\tfrac{1}{2}r^2\\theta.$$ For turning motion, angular speed is $\\omega = \\frac{\\theta}{t}$ and the speed of a point on the rim is $v = r\\omega$."
+      },
+      {
+        "t": "why",
+        "html": "A sector of angle $\\theta$ is the fraction $\\frac{\\theta}{2\\pi}$ of the full circle. So its arc is $\\frac{\\theta}{2\\pi} \\cdot 2\\pi r = r\\theta$ and its area is $\\frac{\\theta}{2\\pi} \\cdot \\pi r^2 = \\frac{1}{2}r^2\\theta$. For speed: in time $t$ a point on the rim travels the arc $s = r\\theta$, so its speed is $\\frac{s}{t} = r \\cdot \\frac{\\theta}{t} = r\\omega$."
+      },
+      {
+        "t": "viz",
+        "name": "pre-radian",
+        "opts": {
+          "theta": 1.5,
+          "r": 3,
+          "rslider": true,
+          "sector": true
+        },
+        "cap": "Change the angle and the radius. The readout computes $s = r\\theta$ and $A = \\frac{1}{2}r^2\\theta$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Arc and area",
+        "q": "A sector has radius $6$ in and angle $\\frac{2\\pi}{3}$. Find its arc length and area.",
+        "steps": [
+          "Arc: $s = r\\theta = 6 \\cdot \\frac{2\\pi}{3} = 4\\pi$ in.",
+          "Area: $A = \\frac{1}{2} \\cdot 6^2 \\cdot \\frac{2\\pi}{3} = 18 \\cdot \\frac{2\\pi}{3} = 12\\pi$ square inches."
+        ],
+        "a": "$s = 4\\pi \\approx 12.6$ in, $A = 12\\pi \\approx 37.7$ in²"
+      },
+      {
+        "t": "ex",
+        "title": "Given in degrees",
+        "q": "Find the arc length cut off by a $45^\\circ$ angle on a circle of radius $8$ cm.",
+        "steps": [
+          "Convert first: $45^\\circ = \\frac{\\pi}{4}$.",
+          "$s = 8 \\cdot \\frac{\\pi}{4} = 2\\pi$ cm."
+        ],
+        "a": "$2\\pi \\approx 6.28$ cm"
+      },
+      {
+        "t": "ex",
+        "title": "A spinning wheel",
+        "q": "A bike wheel of radius $30$ cm turns at $100$ revolutions per minute. How fast is the bike moving?",
+        "steps": [
+          "Each revolution is $2\\pi$ radians, so $\\omega = 100 \\cdot 2\\pi = 200\\pi$ radians per minute.",
+          "$v = r\\omega = 30 \\cdot 200\\pi = 6000\\pi$ cm per minute.",
+          "That is about $18{,}850$ cm, or $188.5$ m, each minute."
+        ],
+        "a": "$6000\\pi$ cm/min, about $11.3$ km/h"
+      },
+      {
+        "t": "mistake",
+        "html": "Using degrees in $s = r\\theta$. With $45^\\circ$ and $r = 8$ you would get $s = 360$ cm, but the whole circle is only $2\\pi \\cdot 8 \\approx 50$ cm around. Check: an arc can't be longer than the circumference unless the angle is more than a full turn."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Precalculus 2e, Section 5.1 Angles"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, G-C.B.5"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

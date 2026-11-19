@@ -1,0 +1,101 @@
+{
+  "id": "gchem2.multistep-energy-profiles",
+  "slug": "multistep-energy-profiles",
+  "ladder": "chemistry",
+  "course": "gchem2",
+  "unit": "kinetics",
+  "title": "Energy Profiles for Multistep Reactions",
+  "short": "Each step is a hump: intermediates sit in the valleys and transition states at the peaks.",
+  "trouble": "Students think the step with the biggest drop in energy is the slow step, or confuse an intermediate with a transition state.",
+  "prereqs": [
+    "gchem2.mechanisms",
+    "chem.activation-energy-catalysts"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-energydiagram"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "For one step, an energy profile has one hump, the <a href=\"/chemistry/chemistry/activation-energy-catalysts/\">activation energy</a>. For a <a href=\"/chemistry/general-chemistry-2/mechanisms/\">mechanism</a> with several steps, the profile has one hump per step, with valleys between them."
+      },
+      {
+        "t": "key",
+        "html": "Each peak is a <b>transition state</b>: a fleeting arrangement at the top of a barrier that cannot be isolated. Each valley between peaks is an <b>intermediate</b>: a real species that lasts long enough, at least in principle, to be detected. The step with the tallest climb (measured from the valley just before it) is usually the slow step."
+      },
+      {
+        "t": "why",
+        "html": "A transition state is the point of highest energy along one step, with bonds half made and half broken; molecules pass through it in about a trillionth of a second. An intermediate sits in a dip: it has to climb over a barrier to go anywhere, so it survives for a while. The rate of each step depends on the height of its own barrier, so the highest climb is the bottleneck. The overall $\\Delta H$ is simply the energy of the products minus that of the reactants, no matter how many steps lie between."
+      },
+      {
+        "t": "viz",
+        "name": "ch-energydiagram",
+        "opts": {
+          "mode": "steps",
+          "steps": [
+            {
+              "dE": 30,
+              "Ea": 80,
+              "label": "step 1"
+            },
+            {
+              "dE": -70,
+              "Ea": 40,
+              "label": "step 2"
+            }
+          ]
+        },
+        "cap": "The second example's profile: reactants at 0, the first peak at 80, an intermediate at 30, the second peak at 70 and products at −40 kJ/mol."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Reading a profile",
+        "q": "An energy profile has three peaks and ends lower than it starts. How many steps does the mechanism have, how many intermediates, and is the reaction exothermic?",
+        "steps": [
+          "One peak per step: three steps.",
+          "The valleys between peaks are intermediates: two of them.",
+          "Products lower than reactants: exothermic."
+        ],
+        "a": "Three steps, two intermediates, exothermic."
+      },
+      {
+        "t": "ex",
+        "title": "Finding the slow step",
+        "q": "Energies along a two-step profile (kJ/mol): reactants 0, first transition state 80, intermediate 30, second transition state 70, products −40. Which step is slow? What is $\\Delta H$?",
+        "steps": [
+          "Step 1: climb from 0 to 80, so $E_{a1} = 80\\ \\text{kJ/mol}$.",
+          "Step 2: climb from the intermediate at 30 to 70, so $E_{a2} = 40\\ \\text{kJ/mol}$.",
+          "Step 1 has the larger barrier: it is the slow step. $\\Delta H = -40 - 0 = -40\\ \\text{kJ/mol}$."
+        ],
+        "a": "Step 1 is slow; $\\Delta H = -40\\ \\text{kJ/mol}$."
+      },
+      {
+        "t": "mistake",
+        "html": "Picking the step with the biggest drop in energy as the slow step, or calling a peak an intermediate. How far a step falls says how much energy it releases, not how fast it goes; speed is set by the climb. Check: intermediates are in valleys, transition states are on peaks."
+      },
+      {
+        "t": "note",
+        "html": "Strictly, what controls the overall rate is how high the highest transition state lies above the starting point. In the simple profiles of this course, that is the step with the tallest climb from the valley before it."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 12.6 Reaction Mechanisms"
+      },
+      {
+        "name": "OpenStax Chemistry 2e, Section 12.7 Catalysis"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

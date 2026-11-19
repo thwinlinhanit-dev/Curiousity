@@ -1,0 +1,128 @@
+{
+  "id": "young.sorry",
+  "slug": "sorry",
+  "ladder": "etiquette",
+  "course": "young",
+  "unit": "kind-words",
+  "title": "Saying I'm Sorry",
+  "short": "When we hurt someone, even by accident, we say \"I'm sorry,\" say what we did, and try to help.",
+  "trouble": "Children say a quick \"sorry\" without looking at the person or helping. A real apology names what happened: \"I'm sorry I knocked over your tower. Can I help fix it?\"",
+  "prereqs": [
+    "young.excuse-me"
+  ],
+  "xp": 1,
+  "viz": [
+    "et-scene",
+    "et-order"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Sometimes we hurt someone, even by accident. Then we say <b>I'm sorry</b>. A real sorry is more than one quick word."
+      },
+      {
+        "t": "viz",
+        "name": "et-scene",
+        "opts": {
+          "big": true,
+          "speak": true,
+          "readme": "Read the question aloud, then let your child choose. Talk about why.",
+          "place": "home",
+          "people": [
+            {
+              "who": "leo",
+              "mood": "worried"
+            },
+            {
+              "who": "hana",
+              "mood": "sad"
+            }
+          ],
+          "props": [
+            {
+              "kind": "blocks",
+              "x": 300,
+              "y": 224
+            }
+          ],
+          "prompt": "Leo knocked over Hana's tower by accident. What should Leo do?",
+          "choices": [
+            {
+              "text": "Leo looks at Hana and says, “I'm sorry I knocked over your tower. Can I help fix it?”",
+              "ok": true,
+              "mood": {
+                "0": "happy",
+                "1": "happy"
+              },
+              "say": [
+                [
+                  1,
+                  "Okay! Let's build it taller."
+                ]
+              ],
+              "outcome": "Hana feels better. They build it again together."
+            },
+            {
+              "text": "Leo mumbles, “Sorry,” and keeps playing.",
+              "ok": false,
+              "mood": {
+                "1": "sad"
+              },
+              "outcome": "Hana is still sad. A quick sorry did not help much."
+            }
+          ]
+        },
+        "cap": "A real sorry names what happened and helps."
+      },
+      {
+        "t": "key",
+        "html": "A real sorry has three parts: <b>look</b> at the person, <b>say what happened</b>, and <b>try to help</b>."
+      },
+      {
+        "t": "why",
+        "html": "Saying what happened shows you understand how they feel. Helping makes things better. Then the other person can feel okay again."
+      },
+      {
+        "t": "ex",
+        "title": "Let's practice",
+        "q": "Sam spills juice on Mia's drawing. What does a real sorry sound like?",
+        "steps": [
+          "Sam looks at Mia.",
+          "He says what happened: “I'm sorry I spilled juice on your drawing.”",
+          "He offers to help: “Can I help wipe it up?”"
+        ],
+        "a": "“I'm sorry I spilled juice on your drawing. Can I help wipe it up?”"
+      },
+      {
+        "t": "viz",
+        "name": "et-order",
+        "opts": {
+          "items": [
+            "Look at the person.",
+            "Say, “I'm sorry I…” and what happened.",
+            "Ask, “Can I help fix it?”"
+          ],
+          "big": true,
+          "readme": "Read the steps aloud. Your child taps two steps to swap them, then Check.",
+          "title": "A real sorry"
+        },
+        "cap": "Put the three parts of a sorry in order."
+      },
+      {
+        "t": "mistake",
+        "html": "A fast “sorry” without looking, or “It was an accident, so it's not my fault.” Accidents can still hurt. Sorry is how we show we care."
+      },
+      {
+        "t": "note",
+        "html": "<b>For the grown-up.</b> Model it with your own small slips: “I'm sorry I forgot your water bottle. I'll bring it tomorrow.” Avoid forcing an apology in the heat of the moment; wait until your child is calm, then help them find the words."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": []
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

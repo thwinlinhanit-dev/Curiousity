@@ -1,0 +1,96 @@
+{
+  "id": "g7.probability-models",
+  "slug": "probability-models",
+  "ladder": "math",
+  "course": "g7",
+  "unit": "probability",
+  "title": "Comparing Models with Experiments",
+  "short": "Decide whether a model fits observed results.",
+  "trouble": "",
+  "prereqs": [
+    "g7.experimental-probability"
+  ],
+  "xp": 2,
+  "viz": [
+    "dice"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A <b>probability model</b> lists the possible outcomes and gives each one a probability. Some models come from <a href=\"/math/grade-7/theoretical-probability/\">equally likely outcomes</a>; others come from <a href=\"/math/grade-7/experimental-probability/\">experiments</a>. Comparing a model with real results tells you whether to trust it."
+      },
+      {
+        "t": "key",
+        "html": "In a <b>uniform</b> model, every outcome has the same probability. In other models, probabilities differ, and they can be estimated from data. All the probabilities in a model add to 1. A model predicts about (probability × trials) occurrences; results far from that, over many trials, suggest the model is wrong."
+      },
+      {
+        "t": "why",
+        "html": "A model is a claim about how chance behaves. Small differences between the prediction and the data are normal, because results vary. But if a spinner with 4 \"equal\" parts lands on red 180 times in 400 spins instead of about 100, chance alone almost never does that: the parts are probably not equal."
+      },
+      {
+        "t": "viz",
+        "name": "dice",
+        "opts": {
+          "kind": "dice",
+          "n": 2,
+          "sides": 6,
+          "event": 7,
+          "theory": true
+        },
+        "cap": "The sum of two number cubes is a non-uniform model: 7 is the most likely sum ($\\frac{6}{36}$) and 2 and 12 the least ($\\frac{1}{36}$). The data settle onto the dashed model."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Does it fit?",
+        "q": "A spinner has 4 equal parts, one red. In 400 spins, it lands on red 103 times. Does the data fit the model?",
+        "steps": [
+          "The model predicts $\\frac{1}{4} \\times 400 = 100$ reds.",
+          "103 is close to 100, a normal amount of variation. The data fit the model."
+        ],
+        "a": "Yes"
+      },
+      {
+        "t": "ex",
+        "title": "It does not fit",
+        "q": "Another \"equal parts\" spinner lands on red 180 times in 400 spins. Does it fit?",
+        "steps": [
+          "Again the model predicts about 100.",
+          "180 is far from 100 after so many spins, so the model does not fit. The red part is probably bigger than a quarter."
+        ],
+        "a": "No"
+      },
+      {
+        "t": "ex",
+        "title": "A model from data",
+        "q": "A thumbtack lands point up 62 times in 100 drops. Make a model and predict the number of point-up landings in 500 drops.",
+        "steps": [
+          "The outcomes are not equally likely, so use the data: $P(\\text{up}) \\approx \\frac{62}{100} = 0.62$ and $P(\\text{down}) \\approx 0.38$. They add to 1 ✓.",
+          "Prediction: $0.62 \\times 500 = 310$."
+        ],
+        "a": "About 310"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Introductory Statistics, Section 3.1 Terminology"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 7.SP.C.7a"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 7.SP.C.7b"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

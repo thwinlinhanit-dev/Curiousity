@@ -1,0 +1,98 @@
+{
+  "id": "pre.induction",
+  "slug": "induction",
+  "ladder": "math",
+  "course": "pre",
+  "unit": "analysis",
+  "title": "Proof by Induction",
+  "short": "Prove a base case, then show each case implies the next.",
+  "trouble": "Students prove the next case by assuming it is true, or skip the base case.",
+  "prereqs": [
+    "alg2.sigma-notation"
+  ],
+  "xp": 3,
+  "viz": [
+    "sequence"
+  ],
+  "figureArchetype": "FieldFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Checking $1 + 3 + 5 = 9 = 3^2$ and $1 + 3 + 5 + 7 = 16 = 4^2$ suggests a pattern, but no number of examples proves it for <i>every</i> $n$. Mathematical induction does. It is the standard way to prove statements about <a href=\"/math/algebra-2/sigma-notation/\">sums</a> and other patterns indexed by whole numbers."
+      },
+      {
+        "t": "key",
+        "html": "To prove a statement $S(n)$ for all $n \\ge 1$: (1) <b>Base case:</b> show $S(1)$ is true. (2) <b>Inductive step:</b> assume $S(k)$ is true for some $k \\ge 1$ (the inductive hypothesis) and use it to show $S(k + 1)$ is true. Then $S(n)$ holds for every $n \\ge 1$."
+      },
+      {
+        "t": "why",
+        "html": "Picture an endless line of dominoes. The base case knocks over the first one. The inductive step guarantees that whenever one falls, the next one falls too. So the second falls, then the third, and so on forever. In logical terms: if some $n$ failed, look at the smallest such $n$. It is not $1$, so $n - 1$ works, and the inductive step then makes $n$ work, a contradiction."
+      },
+      {
+        "t": "viz",
+        "name": "sequence",
+        "opts": {
+          "type": "custom",
+          "f": "2n-1",
+          "N": 8,
+          "sums": true,
+          "sliders": false
+        },
+        "cap": "The odd numbers $1, 3, 5, \\ldots$ and their running totals $1, 4, 9, 16, \\ldots$: perfect squares every time."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Sum of odd numbers",
+        "q": "Prove $1 + 3 + 5 + \\cdots + (2n - 1) = n^2$ for all $n \\ge 1$.",
+        "steps": [
+          "Base case: for $n = 1$ the left side is $1$ and the right side is $1^2 = 1$. ✓",
+          "Inductive step: assume $1 + 3 + \\cdots + (2k - 1) = k^2$. The next odd number is $2(k + 1) - 1 = 2k + 1$.",
+          "Add it to both sides: $$1 + 3 + \\cdots + (2k - 1) + (2k + 1) = k^2 + 2k + 1 = (k + 1)^2.$$",
+          "That is the statement for $n = k + 1$, so by induction it holds for every $n$."
+        ],
+        "a": "Proved"
+      },
+      {
+        "t": "ex",
+        "title": "Sum of the first $n$ numbers",
+        "q": "Show the inductive step for $1 + 2 + \\cdots + n = \\dfrac{n(n + 1)}{2}$.",
+        "steps": [
+          "Assume $1 + 2 + \\cdots + k = \\dfrac{k(k + 1)}{2}$. Add the next term, $k + 1$, to both sides.",
+          "Right side: $$\\dfrac{k(k + 1)}{2} + (k + 1) = \\dfrac{k(k + 1) + 2(k + 1)}{2} = \\dfrac{(k + 1)(k + 2)}{2}.$$",
+          "That is the formula with $n = k + 1$. (The base case: $1 = \\frac{1 \\cdot 2}{2}$.)"
+        ],
+        "a": "The step works, so the formula holds for all $n \\ge 1$"
+      },
+      {
+        "t": "ex",
+        "title": "Divisibility",
+        "q": "Prove that $3$ divides $4^n - 1$ for all $n \\ge 1$.",
+        "steps": [
+          "Base: $4^1 - 1 = 3$. ✓",
+          "Assume $4^k - 1$ is a multiple of $3$. Then $$4^{k+1} - 1 = 4 \\cdot 4^k - 4 + 3 = 4(4^k - 1) + 3.$$",
+          "Both $4(4^k - 1)$ and $3$ are multiples of $3$, so their sum is too."
+        ],
+        "a": "Proved"
+      },
+      {
+        "t": "mistake",
+        "html": "Two common errors. Skipping the base case: the step alone can \"prove\" false statements, such as $n = n + 1$ (if $k = k + 1$ then $k + 1 = k + 2$), because no first domino ever falls. And assuming the conclusion: writing down $S(k + 1)$ and simplifying it until it looks true proves nothing. The step must <b>start</b> from $S(k)$ and <b>arrive</b> at $S(k + 1)$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Eric Lehman, F. Thomson Leighton and Albert R. Meyer, Mathematics for Computer Science (MIT OpenCourseWare 6.042J), the chapter on induction"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

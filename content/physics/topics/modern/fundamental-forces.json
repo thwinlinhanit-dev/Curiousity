@@ -1,0 +1,113 @@
+{
+  "id": "modern.fundamental-forces",
+  "slug": "fundamental-forces",
+  "ladder": "physics",
+  "course": "modern",
+  "unit": "nuclei-particles",
+  "title": "The Four Forces and Their Carriers",
+  "short": "Gravity, electromagnetism and the weak and strong forces; the last three are carried by photons, W and Z bosons and gluons.",
+  "trouble": "Students think the strong force acts between electrons and nuclei.",
+  "prereqs": [
+    "modern.particle-families"
+  ],
+  "xp": 1,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Everything that happens in nature comes down to four interactions. Gravity and electromagnetism you know well. The other two act only inside nuclei and particles. In the modern picture, each force (except, so far, gravity) works by trading <b>carrier particles</b>, and the mass of the carrier sets how far the force reaches. This connects back to the <a href=\"/physics/waves-optics-modern-physics/particle-families/\">particle families</a>."
+      },
+      {
+        "t": "key",
+        "html": "<ul><li><b>Strong</b>: binds quarks into protons, neutrons and other hadrons, carried by <b>gluons</b>; between nucleons it appears as the short-range nuclear force (range about 1 fm). Acts only on quarks and gluons, not on leptons.</li><li><b>Electromagnetic</b>: acts on charges, carried by <b>photons</b>; infinite range.</li><li><b>Weak</b>: changes one kind of quark or lepton into another (beta decay), carried by the heavy <b>W⁺, W⁻ and Z⁰</b> bosons; range about $10^{-18}$ m.</li><li><b>Gravity</b>: acts on all mass and energy; infinite range; far the weakest between particles. A carrier (the graviton) is proposed but not observed.</li></ul>"
+      },
+      {
+        "t": "why",
+        "html": "Why does a heavy carrier mean a short range? A carrier of mass $m$ appears out of nothing for a moment, so energy is “borrowed” by about $\\Delta E = mc^2$. The <a href=\"/physics/waves-optics-modern-physics/uncertainty-principle/\">uncertainty relation</a> lets that last only about $\\Delta t \\approx \\frac{\\hbar}{mc^2}$, and in that time the carrier can travel at most about $c\\,\\Delta t$: $$R \\approx \\frac{\\hbar}{mc} = \\frac{\\hbar c}{mc^2},\\qquad \\hbar c = 197.3\\ \\text{MeV·fm}.$$ This is Hideki Yukawa's 1935 argument: a nuclear force of range 1.4 fm needs a carrier of about 140 MeV, and the pion was found with just that mass. Massless photons give an infinite range. The W boson, at 80.4 GeV, gives about $2.5 \\times 10^{-3}$ fm, which is why the weak force is so feeble at ordinary distances."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "fns": [
+            {
+              "f": "1/x",
+              "label": "massless",
+              "color": "blue"
+            },
+            {
+              "f": "exp(-x/R)/x",
+              "label": "Yukawa",
+              "color": "red"
+            }
+          ],
+          "params": {
+            "R": {
+              "min": 0.3,
+              "max": 5,
+              "value": 1.4,
+              "step": 0.1,
+              "label": "range R (fm)"
+            }
+          },
+          "xmin": 0,
+          "xmax": 6,
+          "ymin": 0,
+          "ymax": 3,
+          "xlabel": "r (fm)",
+          "ylabel": "strength",
+          "zoom": false
+        },
+        "cap": "A force carried by a massless particle falls off as $1/r$ (in potential); one carried by a massive particle is cut off exponentially beyond $R = \\hbar/mc$. Shrink $R$ (a heavier carrier) and the force dies away sooner."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Gravity against electricity",
+        "q": "Compare the electric and gravitational forces between two protons. ($k = 8.99 \\times 10^9$ N·m²/C², $G = 6.674 \\times 10^{-11}$ N·m²/kg², $e = 1.602 \\times 10^{-19}$ C, $m_p = 1.673 \\times 10^{-27}$ kg.)",
+        "steps": [
+          "Both forces go as $1/r^2$, so the ratio does not depend on the distance: $\\frac{F_e}{F_g} = \\frac{ke^2}{Gm_p^2}$.",
+          "$= \\frac{(8.99 \\times 10^9)(1.602 \\times 10^{-19})^2}{(6.674 \\times 10^{-11})(1.673 \\times 10^{-27})^2} = \\frac{2.307 \\times 10^{-28}}{1.868 \\times 10^{-64}}$."
+        ],
+        "a": "$1.24 \\times 10^{36}$: gravity matters only because big objects are electrically neutral"
+      },
+      {
+        "t": "ex",
+        "title": "The range of the weak force",
+        "q": "Estimate the range of a force carried by the W boson ($mc^2 = 80.4$ GeV).",
+        "steps": [
+          "$R \\approx \\frac{\\hbar c}{mc^2} = \\frac{197.3\\ \\text{MeV·fm}}{80{,}400\\ \\text{MeV}}$.",
+          "$R \\approx 2.5 \\times 10^{-3}$ fm $= 2.5 \\times 10^{-18}$ m."
+        ],
+        "a": "About $2.5 \\times 10^{-18}$ m, roughly a thousandth of a proton's width"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking the strong force acts between electrons and nuclei, holding atoms together. Electrons are leptons and do not feel the strong force at all; atoms are held together by the electromagnetic force. The strong force binds quarks, and, as a short-range leftover, holds protons and neutrons together inside nuclei. Check the ranges: the nuclear force dies out within a few fm, while electrons orbit about 50,000 fm from the nucleus."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 3, 11.5 The Standard Model"
+      },
+      {
+        "name": "OpenStax University Physics Volume 3, 11.1 Introduction to Particle Physics"
+      },
+      {
+        "name": "Particle Data Group (Lawrence Berkeley National Laboratory), Review of Particle Physics: particle masses and quantum numbers"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

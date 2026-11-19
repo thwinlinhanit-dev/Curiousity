@@ -1,0 +1,151 @@
+{
+  "id": "from-scratch.simple-motor",
+  "slug": "simple-motor",
+  "ladder": "inventors",
+  "course": "from-scratch",
+  "unit": "power",
+  "title": "A Homopolar Motor, Faraday's 1821 Idea",
+  "short": "A current crossing a magnetic field feels a push, F = BIL; arranged right, the push keeps a wire spinning.",
+  "trouble": "Builders squeeze the wire tight against the battery so it can't turn, or use a magnet narrower than the battery.",
+  "prereqs": [
+    "from-scratch.electromagnet",
+    "invelec.faraday"
+  ],
+  "xp": 2,
+  "viz": [
+    "fs-motor"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Michael Faraday began as a bookbinder's apprentice who read the science books he bound. In 1813 the chemist Humphry Davy hired him as an assistant at the Royal Institution in London. In 1821, after Ørsted's discovery, Faraday wondered: if a current pushes on a magnet, could a magnet push on a current, and keep pushing?"
+      },
+      {
+        "t": "p",
+        "html": "On 3 September 1821 he stood a magnet upright in a dish of mercury, a metal that is liquid at room temperature. He hung a wire from above so its lower end dipped into the mercury, then sent current from a battery through the wire and the mercury. The wire swept round and round the magnet, as long as the current flowed. It was the first electric motor: electricity turned into continuous motion. Mercury is poisonous, so we never use it. The homopolar motor below shows the same push with a battery, a magnet and copper wire."
+      },
+      {
+        "t": "note",
+        "html": "<b>Meet the inventor.</b> Faraday's life and his own words are in <a href=\"/inventors/age-of-electricity/faraday/\">Michael Faraday: The Motor and the Generator</a>."
+      },
+      {
+        "t": "key",
+        "html": "A wire carrying current across a magnetic field feels a force, at right angles to both the wire and the field. Its size is $F = B I L$: field strength (teslas) × current (amps) × length of wire in the field (meters). <b>Reverse the current or the field and the force reverses</b>; reverse both and it stays the same."
+      },
+      {
+        "t": "p",
+        "html": "In a homopolar motor, current flows down the copper wire, out through the magnet's edge and back into the battery. Near the magnet the current runs outward, sideways, while the magnet's field points up or down. The force on that current is sideways too, around the battery, so the wire keeps turning in one direction. No switches, no brushes: the simplest motor there is."
+      },
+      {
+        "t": "viz",
+        "name": "fs-motor",
+        "cap": "Change the current and flip the magnet. The curved arrow shows which way the wire turns."
+      },
+      {
+        "t": "why",
+        "html": "The force is small. With about 0.3 T at the magnet's edge, 3 A of current and 1 cm of wire touching the field, $F = 0.3 \\times 3 \\times 0.01 = 0.009$ N, about the weight of a paper clip. But the wire is light and balanced on a point, so that little push is enough to spin it fast."
+      },
+      {
+        "t": "h",
+        "text": "Let's think it through"
+      },
+      {
+        "t": "ex",
+        "title": "Flip it",
+        "q": "Your motor spins clockwise. You turn the magnet over. Then you also turn the battery over. Which way does it spin now?",
+        "steps": [
+          "Turning the magnet over reverses the field: counterclockwise.",
+          "Turning the battery over reverses the current: back to clockwise."
+        ],
+        "a": "Clockwise, the same as at the start."
+      },
+      {
+        "t": "ex",
+        "title": "How big is the push?",
+        "q": "A wire carries 2 A across a 0.4 T field; 1.5 cm of it is in the field. What is the force?",
+        "steps": [
+          "$L = 0.015$ m.",
+          "$F = 0.4 \\times 2 \\times 0.015 = 0.012$ N."
+        ],
+        "a": "0.012 N, or 12 millinewtons."
+      },
+      {
+        "t": "mistake",
+        "html": "Pressing the wire tightly against the battery so it can't move, or using a magnet narrower than the battery so the wire can't reach it. The wire must rest lightly on the top terminal like a spinning top, and just brush the side of the magnet."
+      },
+      {
+        "t": "h",
+        "text": "Build it: a homopolar motor"
+      },
+      {
+        "t": "note",
+        "html": "<div class=\"fs-parts\"><b>Parts (about \\$8 to \\$12)</b><ul><li>One new AA alkaline battery</li><li>One or two neodymium disc magnets, about the same width as the battery or a little wider (about 12 to 15 mm across; about \\$5 for a small pack)</li><li>About 25 cm of bare copper wire, fairly stiff (about 16 to 18 gauge); stripped house wire offcuts or craft wire both work</li><li>Needle-nose pliers, and fine sandpaper if the wire is coated</li></ul></div>"
+      },
+      {
+        "t": "note",
+        "html": "<div class=\"fs-steps\"><b>Step by step</b><ol><li>Stand the magnet on the table and set the battery on it, flat negative end down. The magnet holds it in place.</li><li>Find the middle of the wire and bend a small dip or point there. It will rest on the battery's top (positive) bump.</li><li>Bend the two halves down either side of the battery, like a heart or a tall rectangle. Shape the ends so they curl in and lightly brush the sides of the magnet.</li><li>Set the wire on top. Adjust until it balances and the ends just touch the magnet. It should start to spin by itself.</li><li>Watch for 5 to 10 seconds, then lift the wire off. Feel the wire before you touch it again; let it cool between runs.</li></ol></div>"
+      },
+      {
+        "t": "h",
+        "text": "What to look for"
+      },
+      {
+        "t": "list",
+        "items": [
+          "The wire spins steadily one way. Turn the magnet over and it spins the other way.",
+          "A better balanced wire spins faster. A wire touching on only one side may jiggle instead of turning.",
+          "The battery and wire get warm quickly. That is the large short-circuit current doing the work."
+        ]
+      },
+      {
+        "t": "h",
+        "text": "Troubleshooting"
+      },
+      {
+        "t": "list",
+        "items": [
+          "<b>Wire won't turn?</b> Make sure the wire touches both the top terminal and the magnet at the same time, lightly.",
+          "<b>Jumps off?</b> Make the top dip deeper so it sits in place, and balance the two sides.",
+          "<b>Nothing at all?</b> Sand any coating off the wire where it touches, and try a fresh battery."
+        ]
+      },
+      {
+        "t": "h",
+        "text": "Iterate like Faraday"
+      },
+      {
+        "t": "list",
+        "items": [
+          "Try different wire shapes: a heart, a spiral, a tall rectangle. Which spins fastest? Count turns in ten seconds to compare.",
+          "Stack two magnets. Does it speed up?",
+          "Faraday published his result in a few weeks and kept testing. Write a one-page report: what you built, what you changed, what happened. Draw it."
+        ]
+      },
+      {
+        "t": "note",
+        "html": "<div class=\"fs-safe\"><b>Safety</b><ul><li>Use only ordinary AA or AAA batteries (alkaline). Never use a wall outlet, a plug-in power supply or a lithium rechargeable pack for these projects.</li><li>A bare wire straight across a battery is a short circuit. The wire and battery get hot within seconds, so make the connection only briefly, then let go. If anything feels hot, disconnect it and let it cool.</li><li>Run the motor for a few seconds at a time, then take the wire off. Store the battery and magnet apart.</li><li>Strong (neodymium) magnets snap together hard and can pinch skin. Slide them apart instead of pulling. Keep them, and any small batteries, away from small children: swallowed magnets and button or coin batteries can cause serious injury.</li><li>Do not try Faraday's original setup: it used mercury, which is poisonous.</li></ul></div>"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Grokipedia, Homopolar motor",
+        "url": "https://grokipedia.com/page/Homopolar_motor"
+      },
+      {
+        "name": "American Physical Society, APS News: This Month in Physics History, Faraday and electromagnetism",
+        "url": "https://www.aps.org/apsnews/2001/08/faraday-electromagnetism"
+      },
+      {
+        "name": "U.S. Consumer Product Safety Commission, CPSC warns high-powered magnets and children make a deadly mix (2012)",
+        "url": "https://www.cpsc.gov/Newsroom/News-Releases/2012/cpsc-warns-high-powered-magnets-and-children-make-a-deadly-mix"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

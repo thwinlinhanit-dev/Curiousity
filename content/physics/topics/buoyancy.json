@@ -1,0 +1,127 @@
+{
+  "id": "phys2.buoyancy",
+  "slug": "buoyancy",
+  "ladder": "physics",
+  "course": "phys2",
+  "unit": "fluids",
+  "title": "Buoyant Force and Archimedes' Principle",
+  "short": "The fluid pushes up with the weight of the fluid displaced, F_b = ρ_fluid·V·g, and a floating object displaces its own weight.",
+  "trouble": "Students think the buoyant force depends on the object's own weight or density instead of the volume of fluid it pushes aside.",
+  "prereqs": [
+    "phys2.pressure-depth"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-fluids"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A rock feels lighter under water, and a steel ship floats. Both come from <a href=\"/physics/physics-2/pressure-depth/\">pressure growing with depth</a>: the water pushes harder on the bottom of an object than on its top."
+      },
+      {
+        "t": "why",
+        "html": "Take a box of height $L$ and top area $A$, held under water with its top at depth $h$. The water pushes down on the top with $(P_0 + \\rho g h)A$ and up on the bottom with $(P_0 + \\rho g (h + L))A$. The side pushes cancel. The net push is up: $$F_b = \\rho g L A = \\rho_{\\text{fluid}} V g,$$ the weight of the fluid that would fill the box's space. Another way to see it: replace the box with water. That water would float in place, so the surrounding water must push up on it with exactly its weight. The surrounding water cannot tell what fills the space."
+      },
+      {
+        "t": "key",
+        "html": "<b>Archimedes' principle:</b> the buoyant force equals the weight of the fluid pushed aside, $F_b = \\rho_{\\text{fluid}} V_{\\text{sub}} g$. An object denser than the fluid sinks; a less dense one floats with the fraction $\\rho_{\\text{object}}/\\rho_{\\text{fluid}}$ of its volume under the surface."
+      },
+      {
+        "t": "viz",
+        "name": "ph-fluids",
+        "opts": {
+          "mode": "buoyancy",
+          "objRho": 2700,
+          "objV": 0.001,
+          "play": false,
+          "task": "Press Play to lower the block, then change its density. Watch the buoyant force once the block is fully under."
+        },
+        "cap": "A block on a spring scale goes under water. The scale reading drops by the weight of the water that spills into the cup."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A block on a scale",
+        "q": "A $1.0\\,\\text{L}$ ($0.0010\\,\\text{m}^3$) aluminum block ($2700\\,\\text{kg/m}^3$) hangs from a spring scale, fully under fresh water. What does the scale read?",
+        "steps": [
+          "Weight: $W = \\rho_{\\text{Al}} V g = (2700)(0.0010)(9.8) = 26.5\\,\\text{N}$.",
+          "Buoyant force: $F_b = \\rho_{\\text{water}} V g = (1000)(0.0010)(9.8) = 9.8\\,\\text{N}$, the weight of one liter of water.",
+          "Forces balance: scale + buoyant force = weight, so the scale reads $26.5 - 9.8 = 16.7\\,\\text{N}$."
+        ],
+        "a": "$16.7\\,\\text{N}$"
+      },
+      {
+        "t": "ex",
+        "title": "The tip of the iceberg",
+        "q": "Ice ($917\\,\\text{kg/m}^3$) floats in seawater ($1025\\,\\text{kg/m}^3$). What fraction of an iceberg is under the surface?",
+        "steps": [
+          "Floating, the buoyant force equals the weight: $\\rho_{\\text{sea}} V_{\\text{sub}} g = \\rho_{\\text{ice}} V g$.",
+          "$\\dfrac{V_{\\text{sub}}}{V} = \\dfrac{917}{1025} = 0.895$.",
+          "About $89\\%$ is under water; only about a tenth shows."
+        ],
+        "a": "$0.895$, about $89\\%$"
+      },
+      {
+        "t": "ex",
+        "title": "Finding a density",
+        "q": "A metal sample weighs $30.0\\,\\text{N}$ in air and $27.0\\,\\text{N}$ fully under fresh water. What is its density?",
+        "steps": [
+          "The buoyant force is the lost weight: $30.0 - 27.0 = 3.0\\,\\text{N}$.",
+          "Volume: $V = \\dfrac{F_b}{\\rho_{\\text{water}} g} = \\dfrac{3.0}{(1000)(9.8)} = 3.06 \\times 10^{-4}\\,\\text{m}^3$. Mass: $m = 30.0/9.8 = 3.06\\,\\text{kg}$.",
+          "$\\rho = m/V = 10{,}000\\,\\text{kg/m}^3$, ten times water, since it lost a tenth of its weight."
+        ],
+        "a": "$1.0 \\times 10^{4}\\,\\text{kg/m}^3$"
+      },
+      {
+        "t": "viz",
+        "name": "ph-fluids",
+        "opts": {
+          "mode": "float",
+          "objects": [
+            {
+              "label": "pine log",
+              "rho": 500,
+              "w": 1.4
+            },
+            {
+              "label": "ice",
+              "rho": 917,
+              "w": 0.8
+            },
+            {
+              "label": "pebble",
+              "rho": 2600,
+              "w": 0.25
+            }
+          ]
+        },
+        "cap": "Whether something floats depends on its density, not its weight: a heavy log floats and a small pebble sinks."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking the buoyant force depends on the object's own weight or density. It depends only on the volume under the surface and the fluid's density. An aluminum block and a lead block of the same size feel the same buoyant force; the lead sinks because its weight is bigger, not because the water pushes less. Check: $F_b = \\rho_{\\text{fluid}} V_{\\text{sub}} g$ has nothing about the object in it except its submerged volume."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e, section 11.7 Archimedes’ Principle"
+      },
+      {
+        "name": "OpenStax, University Physics Volume 1, section 14.4 Archimedes’ Principle and Buoyancy"
+      },
+      {
+        "name": "College Board, AP Physics 1 Course and Exam Description, Unit 8: Fluids"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

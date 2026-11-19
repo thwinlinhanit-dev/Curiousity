@@ -1,0 +1,101 @@
+{
+  "id": "calc3.absolute-extrema",
+  "slug": "absolute-extrema",
+  "ladder": "math",
+  "course": "calc3",
+  "unit": "optimization",
+  "title": "Absolute Extrema on Closed Regions",
+  "short": "Check critical points inside and the whole boundary.",
+  "trouble": "Students skip the boundary or its corner points.",
+  "prereqs": [
+    "calc3.critical-points"
+  ],
+  "xp": 3,
+  "viz": [
+    "surface"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A <a href=\"/math/calculus-3/critical-points/\">critical point</a> finds local highs and lows inside a region, but the highest point of a whole region is often on its edge. Think of a sloping field: its highest point is at a fence, where the gradient is not zero at all. As in Calculus 1, where you checked <a href=\"/math/calculus-1/critical-points-extrema/\">endpoints</a>, the boundary must be checked too."
+      },
+      {
+        "t": "key",
+        "html": "A continuous function on a <b>closed, bounded</b> region has an absolute maximum and an absolute minimum. To find them:"
+      },
+      {
+        "t": "list",
+        "items": [
+          "Find the critical points of $f$ <b>inside</b> the region and the values of $f$ there.",
+          "On each piece of the <b>boundary</b>, write $f$ as a function of one variable and find its critical points.",
+          "Include the <b>corners</b> (the endpoints of the boundary pieces).",
+          "The largest value in the whole list is the absolute maximum; the smallest is the absolute minimum."
+        ]
+      },
+      {
+        "t": "why",
+        "html": "Where can the maximum be? If it is at an interior point, $f$ is locally largest there, so $\\nabla f = \\mathbf{0}$: step 1 catches it. If it is on the boundary, it is in particular the largest value of $f$ along that edge, which is a one-variable problem: either a critical point of the edge function or an end of the edge, a corner. Steps 2 and 3 catch those. Nothing else is possible, so comparing the finite list is enough."
+      },
+      {
+        "t": "viz",
+        "name": "surface",
+        "opts": {
+          "f": "x^2 + y^2 - 2x - 4y",
+          "xmin": 0,
+          "xmax": 3,
+          "ymin": 0,
+          "ymax": 3,
+          "contours": 10,
+          "slice": "x",
+          "at": 3
+        },
+        "cap": "$f = x^2 + y^2 - 2x - 4y$ over the square $[0, 3] \\times [0, 3]$. The bottom of the bowl is inside, at $(1, 2)$; the highest point is a corner. The red slice is the edge $x = 3$, where $f$ becomes the one-variable function $y^2 - 4y + 3$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "On a square",
+        "q": "Find the absolute extremes of $f(x, y) = x^2 + y^2 - 2x - 4y$ on ${}0 \\le x \\le 3$, ${}0 \\le y \\le 3$.",
+        "steps": [
+          "Inside: $f_x = 2x - 2 = 0$, $f_y = 2y - 4 = 0$ at $(1, 2)$, where $f = -5$.",
+          "Edge $y = 0$: $x^2 - 2x$, critical at $x = 1$: $f(1, 0) = -1$. Edge $x = 3$: $y^2 - 4y + 3$, critical at $y = 2$: $f(3, 2) = -1$.",
+          "Edge $y = 3$: $x^2 - 2x - 3$, critical at $x = 1$: $f(1, 3) = -4$. Edge $x = 0$: $y^2 - 4y$, critical at $y = 2$: $f(0, 2) = -4$.",
+          "Corners: $f(0, 0) = 0$, $f(3, 0) = 3$, $f(3, 3) = 0$, $f(0, 3) = -3$.",
+          "Compare everything: largest ${}3$, smallest $-5$."
+        ],
+        "a": "maximum ${}3$ at $(3, 0)$; minimum $-5$ at $(1, 2)$"
+      },
+      {
+        "t": "ex",
+        "title": "On a triangle",
+        "q": "Find the absolute extremes of $f(x, y) = 2x^2 + y^2 - 4x$ on the triangle with vertices $(0, 0)$, $(2, 0)$, $(0, 2)$.",
+        "steps": [
+          "Inside: $f_x = 4x - 4 = 0$ and $f_y = 2y = 0$ give $(1, 0)$, which is on the edge, not inside.",
+          "Edge $y = 0$: ${}2x^2 - 4x$, critical at $x = 1$: $f = -2$. Edge $x = 0$: $y^2$, no interior critical point.",
+          "Hypotenuse $y = 2 - x$: ${}2x^2 + (2 - x)^2 - 4x = 3x^2 - 8x + 4$, critical at $x = \\frac{4}{3}$: $f = -\\frac{4}{3}$.",
+          "Corners: $f(0, 0) = 0$, $f(2, 0) = 0$, $f(0, 2) = 4$.",
+          "Largest ${}4$, smallest $-2$."
+        ],
+        "a": "maximum ${}4$ at $(0, 2)$; minimum $-2$ at $(1, 0)$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Skipping the boundary, or its corners.</b> Setting $\\nabla f = \\mathbf{0}$ only finds interior candidates. In the first example the maximum, ${}3$, is at a corner, where neither partial derivative is zero. Each edge needs its own one-variable search, and every corner must be on the list, because the edge functions are only defined on closed intervals."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 3, 4.7 Maxima/Minima Problems"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,144 @@
+{
+  "id": "gchem2.standard-entropy",
+  "slug": "standard-entropy",
+  "ladder": "chemistry",
+  "course": "gchem2",
+  "unit": "thermodynamics",
+  "title": "Absolute Entropies and ΔS°",
+  "short": "ΔS°(reaction) = Σ S°(products) − Σ S°(reactants), and the S° of an element is not zero.",
+  "trouble": "Students set the standard entropy of an element to zero, as they do for ΔH°f.",
+  "prereqs": [
+    "gchem2.entropy-change-sign",
+    "gchem1.enthalpy-of-formation"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-microstates"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "To put numbers on <a href=\"/chemistry/general-chemistry-2/entropy-change-sign/\">entropy changes</a>, chemists tabulate standard molar entropies, $S^\\circ$. You combine them the way you combined <a href=\"/chemistry/general-chemistry-1/enthalpy-of-formation/\">enthalpies of formation</a>, with one important difference."
+      },
+      {
+        "t": "key",
+        "html": "The <b>third law</b>: a perfect crystal at $0\\ \\text{K}$ has $S = 0$. So every substance, element or compound, has a positive absolute entropy $S^\\circ$ at $298\\ \\text{K}$. For a reaction,\n$$\\Delta S^\\circ = \\sum nS^\\circ(\\text{products}) - \\sum nS^\\circ(\\text{reactants})$$"
+      },
+      {
+        "t": "why",
+        "html": "A perfect crystal at absolute zero has only one possible arrangement: $W = 1$, so $S = k\\ln 1 = 0$. That gives entropy a true zero point. Warming a substance from there adds microstates, so $S^\\circ$ at $298\\ \\text{K}$ is measured from heat capacities as an absolute value. Enthalpy has no such zero, which is why $\\Delta H^\\circ_f$ of an element is <i>defined</i> as zero; $S^\\circ$ of an element is not zero at all."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Substance",
+          "$S^\\circ$ (J/(mol·K))"
+        ],
+        "rows": [
+          [
+            "$\\mathrm{H_2(g)}$",
+            "130.7"
+          ],
+          [
+            "$\\mathrm{N_2(g)}$",
+            "191.6"
+          ],
+          [
+            "$\\mathrm{O_2(g)}$",
+            "205.2"
+          ],
+          [
+            "$\\mathrm{NH_3(g)}$",
+            "192.8"
+          ],
+          [
+            "$\\mathrm{H_2O(l)}$",
+            "70.0"
+          ],
+          [
+            "$\\mathrm{H_2O(g)}$",
+            "188.8"
+          ],
+          [
+            "$\\mathrm{CO_2(g)}$",
+            "213.8"
+          ],
+          [
+            "$\\mathrm{CaCO_3(s)}$",
+            "92.9"
+          ],
+          [
+            "$\\mathrm{CaO(s)}$",
+            "38.1"
+          ]
+        ],
+        "cap": "Standard molar entropies at 298 K. Note the elements: none is zero, and gases are far above solids."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Making ammonia",
+        "q": "Find $\\Delta S^\\circ$ for $\\mathrm{N_2(g) + 3H_2(g) \\to 2NH_3(g)}$.",
+        "steps": [
+          "Products: $2(192.8) = 385.6\\ \\text{J/K}$.",
+          "Reactants: $$191.6 + 3(130.7) = 191.6 + 392.1 = 583.7\\ \\text{J/K}$$",
+          "$\\Delta S^\\circ = 385.6 - 583.7 = -198.1\\ \\text{J/K}$. Negative, as expected from 4 mol of gas becoming 2."
+        ],
+        "a": "$-198.1\\ \\text{J/K}$."
+      },
+      {
+        "t": "ex",
+        "title": "Decomposing limestone",
+        "q": "Find $\\Delta S^\\circ$ for $\\mathrm{CaCO_3(s) \\to CaO(s) + CO_2(g)}$.",
+        "steps": [
+          "$\\Delta S^\\circ = (38.1 + 213.8) - 92.9 = +159.0\\ \\text{J/K}$.",
+          "Positive: a gas forms."
+        ],
+        "a": "$+159.0\\ \\text{J/K}$."
+      },
+      {
+        "t": "viz",
+        "name": "ch-microstates",
+        "opts": {
+          "mode": "compare",
+          "compare": "phases"
+        },
+        "cap": "Why gases have large entropies: on the same lattice, a gas has many more arrangements than a liquid or solid."
+      },
+      {
+        "t": "p",
+        "html": "Three trends make the table easy to read. Gases have much larger $S^\\circ$ than liquids, and liquids than solids. Within one phase, larger and more complex molecules have larger entropies (more ways to vibrate and rotate): $S^\\circ$ rises from $\\mathrm{CH_4}$ (186.3) to $\\mathrm{C_2H_6}$ (229.2) to $\\mathrm{C_3H_8}$ (270.3). And hard, tightly bonded solids such as diamond (2.4) have very low entropies, while soft solids such as lead (64.8) have higher ones."
+      },
+      {
+        "t": "note",
+        "html": "Tables of $S^\\circ$, $\\Delta H^\\circ_f$ and $\\Delta G^\\circ_f$ appear side by side in the back of most textbooks; the values here come from those tables."
+      },
+      {
+        "t": "mistake",
+        "html": "Setting the standard entropy of an element to zero, as you do for $\\Delta H^\\circ_f$. Only a perfect crystal at 0 K has zero entropy. Check: in the ammonia example, leaving out $\\mathrm{N_2}$ and $\\mathrm{H_2}$ would give $+385.6\\ \\text{J/K}$, the wrong sign entirely."
+      },
+      {
+        "t": "p",
+        "html": "See why absolute zero can be approached but never reached in the Science Lab's <a href=\"/science-lab/thermodynamics/third-law/\">Absolute Zero and the Third Law</a> chapter."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 16.3 The Second and Third Laws of Thermodynamics"
+      },
+      {
+        "name": "OpenStax Chemistry 2e, Appendix G: Standard Thermodynamic Properties for Selected Substances"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

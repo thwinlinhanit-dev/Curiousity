@@ -1,0 +1,106 @@
+{
+  "id": "chem.balancing-equations",
+  "slug": "balancing-equations",
+  "ladder": "chemistry",
+  "course": "chem",
+  "unit": "reactions",
+  "title": "Balancing Equations",
+  "short": "Change coefficients, never subscripts, until every element has the same count on both sides.",
+  "trouble": "Students change subscripts to balance an equation, which turns the substances into different ones.",
+  "prereqs": [
+    "chem.coefficients-subscripts"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-eqbalance"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Atoms are conserved, so a correct equation has the same number of each kind of atom on both sides. A <b>skeleton equation</b>, with only the right formulas, usually does not. With <a href=\"/chemistry/chemistry/coefficients-subscripts/\">Coefficients and Subscripts</a> in hand, you can fix the count."
+      },
+      {
+        "t": "key",
+        "html": "Balance an equation by changing coefficients, never subscripts, until every element has the same number of atoms on both sides. Use the smallest whole numbers."
+      },
+      {
+        "t": "why",
+        "html": "The formulas are set by what the substances are: water is always $\\mathrm{H}_{2}\\mathrm{O}$, because of how oxygen and hydrogen bond. The only freedom left is how many of each molecule take part, and that is exactly what a coefficient says."
+      },
+      {
+        "t": "viz",
+        "name": "ch-eqbalance",
+        "opts": {
+          "eq": "CH4 + O2 -> CO2 + H2O",
+          "task": "Balance the equation.",
+          "pictures": true
+        },
+        "cap": "Change the coefficients and watch the atom tally on each side. When every element matches, the equation is balanced."
+      },
+      {
+        "t": "list",
+        "items": [
+          "Write correct formulas for every reactant and product.",
+          "Make a tally of each element on both sides.",
+          "Balance elements that appear in only one substance on each side first. Leave elements that appear alone, such as $\\mathrm{O}_{2}$, $\\mathrm{H}_{2}$ or a metal, for last.",
+          "Treat a polyatomic ion that appears unchanged on both sides as one unit.",
+          "If you need half a molecule, double every coefficient. Check the tally, and reduce if all coefficients share a factor."
+        ]
+      },
+      {
+        "t": "ex",
+        "title": "Water from its elements",
+        "q": "Balance $$\\mathrm{H}_{2} + \\mathrm{O}_{2} \\to \\mathrm{H}_{2}\\mathrm{O}$$",
+        "steps": [
+          "Tally: left 2 H, 2 O; right 2 H, 1 O. Oxygen is short on the right.",
+          "Put 2 in front of water: $2\\mathrm{H}_{2}\\mathrm{O}$ has 4 H and 2 O. Now hydrogen is short on the left.",
+          "Put 2 in front of $\\mathrm{H}_{2}$: left 4 H, 2 O; right 4 H, 2 O."
+        ],
+        "a": "$$2\\mathrm{H}_{2} + \\mathrm{O}_{2} \\to 2\\mathrm{H}_{2}\\mathrm{O}$$"
+      },
+      {
+        "t": "ex",
+        "title": "Burning methane",
+        "q": "Balance $$\\mathrm{CH}_{4} + \\mathrm{O}_{2} \\to \\mathrm{CO}_{2} + \\mathrm{H}_{2}\\mathrm{O}$$",
+        "steps": [
+          "Carbon: 1 on each side. Balanced.",
+          "Hydrogen: 4 on the left, so make $2\\mathrm{H}_{2}\\mathrm{O}$ (4 H).",
+          "Oxygen last: right side has $2 + 2 = 4$ O, so use $2\\mathrm{O}_{2}$.",
+          "Check: C 1 = 1, H 4 = 4, O 4 = 4."
+        ],
+        "a": "$$\\mathrm{CH}_{4} + 2\\mathrm{O}_{2} \\to \\mathrm{CO}_{2} + 2\\mathrm{H}_{2}\\mathrm{O}$$"
+      },
+      {
+        "t": "ex",
+        "title": "When a half shows up",
+        "q": "Balance $$\\mathrm{C}_{2}\\mathrm{H}_{6} + \\mathrm{O}_{2} \\to \\mathrm{CO}_{2} + \\mathrm{H}_{2}\\mathrm{O}$$",
+        "steps": [
+          "Carbon: $2\\mathrm{CO}_{2}$. Hydrogen: 6 H means $3\\mathrm{H}_{2}\\mathrm{O}$.",
+          "Oxygen on the right: $2 \\times 2 + 3 = 7$ atoms, which needs $\\tfrac{7}{2}$ $\\mathrm{O}_{2}$.",
+          "Double everything to clear the half: 2, 7, 4, 6.",
+          "Check: C 4 = 4, H 12 = 12, O 14 = 14."
+        ],
+        "a": "$$2\\mathrm{C}_{2}\\mathrm{H}_{6} + 7\\mathrm{O}_{2} \\to 4\\mathrm{CO}_{2} + 6\\mathrm{H}_{2}\\mathrm{O}$$"
+      },
+      {
+        "t": "mistake",
+        "html": "Changing a subscript to make the numbers work, such as turning $\\mathrm{H}_{2}\\mathrm{O}$ into $\\mathrm{H}_{2}\\mathrm{O}_{2}$ so the oxygen balances. That turns water into hydrogen peroxide, so the equation now describes a different reaction. Check every formula at the end: is each one still the same substance you started with?"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 4.1 Writing and Balancing Chemical Equations"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-PS1-7"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

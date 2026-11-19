@@ -1,0 +1,96 @@
+{
+  "id": "micro.income-inequality",
+  "slug": "income-inequality",
+  "ladder": "economics",
+  "course": "micro",
+  "unit": "market-failure",
+  "title": "Measuring Income Inequality",
+  "short": "The Lorenz curve and the Gini coefficient show how evenly income is shared.",
+  "trouble": "Students read a Lorenz curve farther from the diagonal as more equal, or think a higher Gini coefficient means a more equal distribution.",
+  "prereqs": [
+    "micro.factor-market-shifts",
+    "g6.percent-meaning"
+  ],
+  "xp": 2,
+  "viz": [
+    "ec-lorenz"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Labor markets set wages (<a href=\"/economics/microeconomics/factor-market-shifts/\">Shifts in Labor Demand and Supply</a>), and wages are most of most people's income. How evenly is income shared? Economists summarize it with shares of a whole, the idea from <a href=\"/math/grade-6/percent-meaning/\">Percent Means per 100</a>."
+      },
+      {
+        "t": "key",
+        "html": "Line up households from lowest income to highest and split them into five equal groups (<b>quintiles</b>). The <b>Lorenz curve</b> plots the cumulative share of households against the cumulative share of income. Perfect equality is the diagonal line. The <b>Gini coefficient</b> is $A/(A + B)$, where $A$ is the area between the diagonal and the Lorenz curve and $B$ is the area under the curve: <b>0 means perfect equality</b>; values near 1 mean extreme inequality."
+      },
+      {
+        "t": "why",
+        "html": "With perfect equality, the bottom 20% of households would have 20% of income, the bottom 40% would have 40%, and so on: the diagonal. Any real distribution gives the bottom groups less than their share, so the curve sags below the diagonal. The more it sags, the bigger area $A$ and the larger the Gini. Because $A + B$ is the whole triangle under the diagonal (area $\\tfrac{1}{2}$), $\\text{Gini} = A / \\tfrac{1}{2} = 1 - 2B$."
+      },
+      {
+        "t": "viz",
+        "name": "ec-lorenz",
+        "opts": {
+          "shares": [
+            4,
+            9,
+            15,
+            23,
+            49
+          ],
+          "show": [
+            "table",
+            "areas",
+            "gini"
+          ]
+        },
+        "cap": "Drag the shares. The farther the curve bows from the diagonal, the larger area A and the higher the Gini coefficient."
+      },
+      {
+        "t": "ex",
+        "title": "Cumulative shares",
+        "q": "Income shares by quintile, poorest first: 4%, 9%, 15%, 23%, 49%. What share of income goes to the bottom 60%?",
+        "steps": [
+          "Add the first three: $4\\% + 9\\% + 15\\% = 28\\%$.",
+          "So the bottom 60% of households get 28% of income; the top 20% alone get 49%."
+        ],
+        "a": "28%."
+      },
+      {
+        "t": "ex",
+        "title": "A Gini from five points",
+        "q": "Using the same shares, estimate the Gini coefficient with trapezoids.",
+        "steps": [
+          "Cumulative shares: 0, 0.04, 0.13, 0.28, 0.51, 1.00.",
+          "Area $B$, five trapezoids of width 0.2: $$0.2 \\times \\tfrac{1}{2}\\left[(0 + 0.04) + (0.04 + 0.13) + (0.13 + 0.28) + (0.28 + 0.51) + (0.51 + 1)\\right] = 0.2 \\times 1.46 = 0.292$$",
+          "$\\text{Gini} = 1 - 2(0.292) = 0.416$."
+        ],
+        "a": "About 0.42."
+      },
+      {
+        "t": "mistake",
+        "html": "Reading a Lorenz curve farther from the diagonal as more equal, or a higher Gini as more equal. The diagonal <i>is</i> equality, so distance from it measures inequality, and the Gini grows with that distance. Check: a Gini of 0 is the diagonal itself."
+      },
+      {
+        "t": "note",
+        "html": "For current U.S. figures, use the Census Bureau's income tables; numbers vary by year and by how income is measured (before or after taxes and transfers). What causes inequality and how much to reduce it are debated, and the answers mix evidence with values."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, 15.4 Income Inequality: Measurement and Causes"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.01 Principles of Microeconomics (scope and sequence)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

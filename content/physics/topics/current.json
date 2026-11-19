@@ -1,0 +1,89 @@
+{
+  "id": "phys2.current",
+  "slug": "current",
+  "ladder": "physics",
+  "course": "phys2",
+  "unit": "circuits",
+  "title": "Electric Current",
+  "short": "I = ΔQ/Δt, and conventional current points the way positive charge would flow.",
+  "trouble": "Students think current gets used up as it passes through a bulb.",
+  "prereqs": [
+    "phys2.charge-conservation",
+    "physsci.current-voltage"
+  ],
+  "xp": 1,
+  "viz": [
+    "ph-circuit"
+  ],
+  "figureArchetype": "FieldFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/physics/physical-science/current-voltage/\">Current and Voltage</a> you met current as the flow of charge around a circuit. Now we measure it. Because <a href=\"/physics/physics-2/charge-conservation/\">charge is conserved</a>, counting the charge that passes a point tells you a great deal about the whole circuit."
+      },
+      {
+        "t": "why",
+        "html": "Stand at one point in a wire and count the charge going past. The current is how much passes per second. In a metal the moving charges are electrons, and they drift slowly, typically well under a millimeter per second, but the push that moves them spreads through the circuit almost at once, so a lamp lights the instant the switch closes. Charge cannot pile up anywhere in a steady circuit, so on a single path the same current passes every point, before and after each part."
+      },
+      {
+        "t": "key",
+        "html": "$$\\role{current}{I} = \\frac{\\role[charge passing]{charge}{\\Delta Q}}{\\role[time interval]{time}{\\Delta t}}, \\qquad 1\\,\\text{A} = 1\\,\\text{C/s}$$ <b>Conventional current</b> points the way positive charge would flow: out of the battery's $+$ terminal, around the circuit, and back into its $-$ terminal. In wires, electrons drift the opposite way."
+      },
+      {
+        "t": "viz",
+        "name": "ph-circuit",
+        "opts": {
+          "circuit": "V(6) series(B1:12)",
+          "show": [
+            "current"
+          ],
+          "task": "The moving dots are the current. Count them going into the bulb and coming out."
+        },
+        "cap": "A battery and a bulb: the same current enters and leaves the bulb. Build your own in the <a href=\"/science-lab/circuits/\">Circuit Builder</a>."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Finding a current",
+        "q": "$3.0\\,\\text{C}$ of charge passes a point in $1.5\\,\\text{s}$. What is the current?",
+        "steps": [
+          "$I = \\dfrac{\\Delta Q}{\\Delta t} = \\dfrac{3.0\\,\\text{C}}{1.5\\,\\text{s}} = 2.0\\,\\text{A}$."
+        ],
+        "a": "$2.0\\,\\text{A}$"
+      },
+      {
+        "t": "ex",
+        "title": "Charge and electrons",
+        "q": "A current of $0.50\\,\\text{A}$ flows for $2.0$ minutes. How much charge passes, and how many electrons is that?",
+        "steps": [
+          "$\\Delta Q = I\\,\\Delta t = (0.50\\,\\text{A})(120\\,\\text{s}) = 60\\,\\text{C}$.",
+          "$N = \\dfrac{60\\,\\text{C}}{1.60 \\times 10^{-19}\\,\\text{C}} = 3.75 \\times 10^{20}$ electrons."
+        ],
+        "a": "$60\\,\\text{C}$; $3.75 \\times 10^{20}$ electrons"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking current gets used up as it passes through a bulb, so less comes out than goes in. The charge that goes in must come out; otherwise it would pile up inside the bulb. What the bulb uses is <em>energy</em>: each coulomb leaves at a lower potential than it entered. Check: put an ammeter on each side of the bulb; both read the same."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e, section 20.1 Current"
+      },
+      {
+        "name": "OpenStax, University Physics Volume 2, section 9.1 Electrical Current"
+      },
+      {
+        "name": "College Board, AP Physics 2 Course and Exam Description, Unit 11: Electric Circuits"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

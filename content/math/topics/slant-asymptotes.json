@@ -1,0 +1,99 @@
+{
+  "id": "alg2.slant-asymptotes",
+  "slug": "slant-asymptotes",
+  "ladder": "math",
+  "course": "alg2",
+  "unit": "rational",
+  "title": "Slant Asymptotes",
+  "short": "Divide when the numerator's degree is one more than the denominator's.",
+  "trouble": "",
+  "prereqs": [
+    "alg2.graph-rational-functions",
+    "alg2.polynomial-long-division"
+  ],
+  "xp": 3,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "When the numerator's degree is exactly one more than the denominator's, a rational function has no horizontal asymptote; instead its ends follow a slanted line. <a href=\"/math/algebra-2/polynomial-long-division/\">Division</a> finds that line, and it extends what you learned in <a href=\"/math/algebra-2/graph-rational-functions/\">Graphing Rational Functions</a>."
+      },
+      {
+        "t": "key",
+        "html": "If $\\deg(\\text{top}) = \\deg(\\text{bottom}) + 1$, divide: $f(x) = (mx + b) + \\frac{r(x)}{d(x)}$ with $\\deg r < \\deg d$. The <b>slant asymptote</b> is $y = mx + b$."
+      },
+      {
+        "t": "why",
+        "html": "The leftover fraction $\\frac{r(x)}{d(x)}$ has a smaller degree on top, so it goes to 0 as $|x|$ grows, just like a fraction with a horizontal asymptote $y = 0$. What remains is the line $mx + b$, so the graph hugs that line far from the origin."
+      },
+      {
+        "t": "viz",
+        "name": "alg2-plot",
+        "opts": {
+          "fns": [
+            "(x^2 + 5x + 5)/(x + 3)",
+            {
+              "f": "x + 2",
+              "dash": true,
+              "color": "gold"
+            }
+          ],
+          "vlines": [
+            -3
+          ],
+          "xmin": -12,
+          "xmax": 8,
+          "ymin": -12,
+          "ymax": 12,
+          "label": "A rational function and its slant asymptote"
+        },
+        "cap": "$f(x) = \\frac{x^2 + 5x + 5}{x + 3} = x + 2 - \\frac{1}{x + 3}$ hugs the dashed line $y = x + 2$ at both ends, with a vertical asymptote $x = -3$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Dividing by a linear factor",
+        "q": "Find the slant asymptote of $f(x) = \\frac{x^2 + 5x + 5}{x + 3}$.",
+        "steps": [
+          "Synthetic division by $-3$: coefficients $1, 5, 5$ give $1, 2$ with remainder $-1$.",
+          "$f(x) = x + 2 - \\frac{1}{x + 3}$."
+        ],
+        "a": "$y = x + 2$"
+      },
+      {
+        "t": "ex",
+        "title": "A quadratic denominator",
+        "q": "Find the slant asymptote of $g(x) = \\frac{2x^3 - x^2 + 1}{x^2 + 1}$.",
+        "steps": [
+          "Long division: $2x^3 \\div x^2 = 2x$; subtract $2x^3 + 2x$ to get $-x^2 - 2x + 1$.",
+          "$-x^2 \\div x^2 = -1$; subtract $-x^2 - 1$ to get $-2x + 2$.",
+          "$g(x) = 2x - 1 + \\frac{-2x + 2}{x^2 + 1}$, and the fraction goes to 0."
+        ],
+        "a": "$y = 2x - 1$"
+      },
+      {
+        "t": "mistake",
+        "html": "Keeping the remainder as part of the asymptote, or using the ratio of leading coefficients (which is for equal degrees). Only the quotient $mx + b$ is the asymptote; the remainder fraction is exactly the part that fades away. Check with a big $x$: $f(100) = \\frac{10505}{103} \\approx 101.99$, very close to $100 + 2$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Algebra 2e, Section 5.6 Rational Functions (slant asymptotes)"
+      },
+      {
+        "name": "Common Core State Standards, F-IF.C.7d"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

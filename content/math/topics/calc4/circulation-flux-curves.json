@@ -1,0 +1,106 @@
+{
+  "id": "calc4.circulation-flux-curves",
+  "slug": "circulation-flux-curves",
+  "ladder": "math",
+  "course": "calc4",
+  "unit": "line-integrals",
+  "title": "Circulation and Flux across Plane Curves",
+  "short": "Flux across a curve uses the outward normal.",
+  "trouble": "Students use the tangent vector when the flux across a curve needs the normal.",
+  "prereqs": [
+    "calc4.work-line-integrals"
+  ],
+  "xp": 3,
+  "viz": [
+    "lineintegral",
+    "flux"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A fluid moving in the plane can do two things relative to a curve: flow <b>along</b> it or flow <b>across</b> it. Along is measured by the tangential component $\\mathbf{F} \\cdot \\mathbf{T}$, which you met in <a href=\"/math/calculus-4/work-line-integrals/\">work integrals</a>. Across is measured by the normal component $\\mathbf{F} \\cdot \\mathbf{n}$. Around a closed curve, the first total is the <b>circulation</b>, and the second is the <b>flux</b>, the net rate at which fluid leaves the region inside."
+      },
+      {
+        "t": "key",
+        "html": "For a closed curve $C$ traced counterclockwise and $\\mathbf{F} = \\langle P, Q \\rangle$, with $\\mathbf{T}$ the unit tangent and $\\mathbf{n}$ the outward unit normal:\n  $$\\text{circulation} = \\oint_C \\mathbf{F} \\cdot \\mathbf{T}\\,ds = \\oint_C P\\,dx + Q\\,dy, \\qquad \\text{flux} = \\oint_C \\mathbf{F} \\cdot \\mathbf{n}\\,ds = \\oint_C P\\,dy - Q\\,dx.$$\n  For a curve that is not closed, the flux $\\int_C P\\,dy - Q\\,dx$ uses the normal pointing to the right of the direction of travel."
+      },
+      {
+        "t": "why",
+        "html": "$\\mathbf{T}\\,ds = \\langle dx, dy \\rangle$. Turning a vector a quarter turn clockwise sends $\\langle a, b \\rangle$ to $\\langle b, -a \\rangle$ and keeps its length, so $\\mathbf{n}\\,ds = \\langle dy, -dx \\rangle$ is a normal of the same length, pointing to the right of the direction of travel. Walking counterclockwise around a region, the region is on your left, so the right side is the outside. Then $\\mathbf{F} \\cdot \\mathbf{n}\\,ds = P\\,dy - Q\\,dx$."
+      },
+      {
+        "t": "viz",
+        "name": "calc4-loop",
+        "opts": {
+          "P": "x",
+          "Q": "0",
+          "center": [
+            0,
+            0
+          ],
+          "r": 0.6,
+          "show": "both",
+          "task": "Resize the circle until the outward flux is about $3.14$.",
+          "target": {
+            "flux": 3.1416,
+            "tol": 0.04
+          }
+        },
+        "cap": "The field $\\langle x, 0 \\rangle$ pushes away from the $y$-axis. At the marked point you see $\\mathbf{T}$ (blue), the outward normal $\\mathbf{n}$ (red) and $\\mathbf{F}$. The circulation stays ${}0$ while the flux grows with the area: it equals the area of the circle, so radius ${}1$ gives $\\pi$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "The radial field",
+        "q": "Find the circulation and the outward flux of $\\mathbf{F} = \\langle x, y \\rangle$ around the circle of radius $R$ centered at the origin.",
+        "steps": [
+          "$x = R\\cos t$, $y = R\\sin t$; $dx = -R\\sin t\\,dt$, $dy = R\\cos t\\,dt$.",
+          "Circulation: $$P\\,dx + Q\\,dy = (-R^2\\cos t\\sin t + R^2\\sin t\\cos t)\\,dt = 0.$$",
+          "Flux: $$P\\,dy - Q\\,dx = (R^2\\cos^2 t + R^2\\sin^2 t)\\,dt = R^2\\,dt,$$ so the flux is ${}2\\pi R^2$.",
+          "The field points straight out: it crosses the circle everywhere and never runs along it."
+        ],
+        "a": "circulation ${}0$, flux ${}2\\pi R^2$"
+      },
+      {
+        "t": "ex",
+        "title": "The rotation field",
+        "q": "Repeat for $\\mathbf{F} = \\langle -y, x \\rangle$.",
+        "steps": [
+          "Circulation: $$(-R\\sin t)(-R\\sin t) + (R\\cos t)(R\\cos t) = R^2$$ per $dt$: total ${}2\\pi R^2$.",
+          "Flux: $$P\\,dy - Q\\,dx = (-R\\sin t)(R\\cos t) - (R\\cos t)(-R\\sin t) = 0.$$"
+        ],
+        "a": "circulation ${}2\\pi R^2$, flux ${}0$"
+      },
+      {
+        "t": "ex",
+        "title": "Flux across a segment",
+        "q": "Find the flux of $\\mathbf{F} = \\langle x, y + 1 \\rangle$ across the segment from $(0, 0)$ to $(2, 0)$, normal to the right of travel.",
+        "steps": [
+          "$\\mathbf{r}(t) = \\langle 2t, 0 \\rangle$: $dx = 2\\,dt$, $dy = 0$, and $y = 0$.",
+          "$$P\\,dy - Q\\,dx = 0 - (0 + 1)(2)\\,dt = -2\\,dt,$$ so the flux is $\\int_0^1 -2\\,dt = -2$.",
+          "Check: traveling right, the right-hand normal points down, $\\langle 0, -1 \\rangle$. Then $\\mathbf{F} \\cdot \\mathbf{n} = -1$ along a segment of length ${}2$."
+        ],
+        "a": "$-2$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Using the tangent for flux.</b> $\\oint P\\,dx + Q\\,dy$ is circulation, not flux. Flux across a curve needs the normal: $\\oint P\\,dy - Q\\,dx$. Mixing them up swaps the answers in the first two examples: the radial field would seem to circulate and the rotation field would seem to flow out."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 3, 6.2 Line Integrals"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

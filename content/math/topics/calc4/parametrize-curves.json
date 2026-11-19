@@ -1,0 +1,114 @@
+{
+  "id": "calc4.parametrize-curves",
+  "slug": "parametrize-curves",
+  "ladder": "math",
+  "course": "calc4",
+  "unit": "line-integrals",
+  "title": "Parametrizing Curves for Integration",
+  "short": "Write segments, circles and graphs as r(t) with an orientation.",
+  "trouble": "Students parametrize a segment from B to A when the curve runs from A to B.",
+  "prereqs": [
+    "calc3.vector-functions"
+  ],
+  "xp": 1,
+  "viz": [
+    "lineintegral",
+    "param3d"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Every integral along a curve starts the same way: describe the curve by a <a href=\"/math/calculus-3/vector-functions/\">vector function</a> $\\mathbf{r}(t)$, $a \\le t \\le b$. For line integrals of vector fields, the <b>direction</b> matters too: a curve from $A$ to $B$ is a different oriented curve from the same points traced from $B$ to $A$. So a parametrization has two jobs: trace the right points, and trace them the right way."
+      },
+      {
+        "t": "key",
+        "html": "Standard parametrizations:"
+      },
+      {
+        "t": "list",
+        "items": [
+          "<b>Segment</b> from $A$ to $B$: $\\mathbf{r}(t) = A + t(B - A)$, ${}0 \\le t \\le 1$.",
+          "<b>Circle</b> with center $(h, k)$ and radius $R$, counterclockwise from $(h + R, k)$: $\\mathbf{r}(t) = \\langle h + R\\cos t, k + R\\sin t \\rangle$, ${}0 \\le t \\le 2\\pi$. Clockwise: $\\langle h + R\\cos t, k - R\\sin t \\rangle$.",
+          "<b>Graph</b> $y = g(x)$ from $x = a$ to $x = b$: $\\mathbf{r}(t) = \\langle t, g(t) \\rangle$, $a \\le t \\le b$.",
+          "<b>Helix</b> around the $z$-axis: $\\langle R\\cos t, R\\sin t, ct \\rangle$.",
+          "<b>Reversed curve</b> $-C$: if $\\mathbf{r}(t)$, $a \\le t \\le b$, traces $C$, then $\\mathbf{r}(a + b - t)$ traces the same points backward."
+        ]
+      },
+      {
+        "t": "p",
+        "html": "A curve made of several smooth pieces, such as the boundary of a triangle, is parametrized one piece at a time, each piece in its direction of travel. We write $C = C_1 + C_2 + C_3$, and an integral over $C$ is the sum of the integrals over the pieces."
+      },
+      {
+        "t": "why",
+        "html": "<b>Why $A + t(B - A)$ works:</b> at $t = 0$ it is $A$, at $t = 1$ it is $A + (B - A) = B$, and in between it moves a fraction $t$ of the displacement $B - A$, in a straight line at constant velocity $B - A$.<br>\n  <b>Why the reversal works:</b> $s = a + b - t$ runs from $b$ down to $a$ as $t$ runs from $a$ to $b$, so $\\mathbf{r}(s)$ visits the points in the opposite order. Its velocity is $-\\mathbf{r}'(s)$."
+      },
+      {
+        "t": "viz",
+        "name": "param3d",
+        "opts": {
+          "x": "2cos(t)",
+          "y": "2sin(t)",
+          "z": "t/3",
+          "t0": 0,
+          "t1": "4pi",
+          "t": 2,
+          "tangent": true,
+          "shadow": true
+        },
+        "cap": "A helix $\\langle 2\\cos t, 2\\sin t, t/3 \\rangle$ with its velocity $\\mathbf{r}'(t)$. The tangent arrow shows the direction of travel; the same points traced with $t$ running backward would have every arrow reversed."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A segment",
+        "q": "Parametrize the segment from $(1, -2)$ to $(4, 2)$.",
+        "steps": [
+          "$B - A = \\langle 3, 4 \\rangle$.",
+          "$\\mathbf{r}(t) = \\langle 1 + 3t, -2 + 4t \\rangle$, ${}0 \\le t \\le 1$.",
+          "Check: $\\mathbf{r}(0) = (1, -2)$ and $\\mathbf{r}(1) = (4, 2)$. The speed is $|\\langle 3, 4 \\rangle| = 5$, the length of the segment."
+        ],
+        "a": "$\\langle 1 + 3t, -2 + 4t \\rangle$"
+      },
+      {
+        "t": "ex",
+        "title": "A clockwise circle",
+        "q": "Parametrize the circle with center $(2, -1)$ and radius ${}3$, clockwise, starting at $(5, -1)$.",
+        "steps": [
+          "Counterclockwise from $(5, -1)$ would be $\\langle 2 + 3\\cos t, -1 + 3\\sin t \\rangle$.",
+          "Flip the sine to go clockwise: $\\mathbf{r}(t) = \\langle 2 + 3\\cos t, -1 - 3\\sin t \\rangle$, ${}0 \\le t \\le 2\\pi$.",
+          "Check: at $t = \\pi/2$ the point is $(2, -4)$, below the center, so the motion is clockwise."
+        ],
+        "a": "$\\langle 2 + 3\\cos t, -1 - 3\\sin t \\rangle$"
+      },
+      {
+        "t": "ex",
+        "title": "A segment and its reverse in space",
+        "q": "Parametrize the segment from $A(0, 1, 2)$ to $B(3, -1, 2)$, and the same segment from $B$ to $A$.",
+        "steps": [
+          "$B - A = \\langle 3, -2, 0 \\rangle$, so $\\mathbf{r}(t) = \\langle 3t, 1 - 2t, 2 \\rangle$, ${}0 \\le t \\le 1$.",
+          "From $B$ to $A$: $B + t(A - B) = \\langle 3 - 3t, -1 + 2t, 2 \\rangle$, which is also $\\mathbf{r}(1 - t)$."
+        ],
+        "a": "$\\langle 3t, 1 - 2t, 2 \\rangle$ and $\\langle 3 - 3t, -1 + 2t, 2 \\rangle$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Running the curve backward.</b> If $C$ goes from $A$ to $B$, then $\\mathbf{r}(0)$ must be $A$. Writing $B + t(A - B)$ by habit traces the right segment in the wrong direction, and every line integral of a vector field along it comes out with the wrong sign. Always check $\\mathbf{r}$ at the first and last parameter values."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 3, 6.2 Line Integrals"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

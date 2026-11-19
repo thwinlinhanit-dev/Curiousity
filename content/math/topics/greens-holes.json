@@ -1,0 +1,104 @@
+{
+  "id": "calc4.greens-holes",
+  "slug": "greens-holes",
+  "ladder": "math",
+  "course": "calc4",
+  "unit": "greens",
+  "title": "Green's Theorem for Regions with Holes",
+  "short": "Orient inner boundaries the opposite way.",
+  "trouble": "Students orient the inner boundary the same way as the outer one.",
+  "prereqs": [
+    "calc4.greens-circulation"
+  ],
+  "xp": 3,
+  "viz": [
+    "vectorfield"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Green's theorem also works for regions with holes, such as a ring between two circles, as long as the whole boundary is used with the right orientation. This version explains how a field with zero curl can still circulate: all of its spin can be hidden inside a hole. You need <a href=\"/math/calculus-4/greens-circulation/\">Green's theorem</a> for regions without holes."
+      },
+      {
+        "t": "key",
+        "html": "If $D$ is bounded by an outer curve $C_1$ and inner curves $C_2, \\ldots$, the <b>positively oriented boundary</b> keeps $D$ on the left: the outer curve counterclockwise and each inner curve <b>clockwise</b>. With that orientation,\n  $$\\oint_{\\partial D} P\\,dx + Q\\,dy = \\iint_D (Q_x - P_y)\\,dA.$$\n  Consequence: if $Q_x = P_y$ throughout a ring, the circulations around the outer and inner circles, both counterclockwise, are equal."
+      },
+      {
+        "t": "why",
+        "html": "Cut the ring with two straight slits into two pieces without holes. Apply Green's theorem to each piece and add. Each slit is traced twice, once in each direction, so those integrals cancel. What remains is the outer circle counterclockwise and the inner circle clockwise, since walking around each piece with the piece on your left sends you clockwise along the inner arcs.<br>\n  For the consequence: $\\oint_{C_1, \\text{ccw}} + \\oint_{C_2, \\text{cw}} = 0$, and $\\oint_{C_2, \\text{cw}} = -\\oint_{C_2, \\text{ccw}}$."
+      },
+      {
+        "t": "viz",
+        "name": "calc4-loop",
+        "opts": {
+          "sources": [
+            {
+              "x": 0,
+              "y": 0,
+              "q": "2pi",
+              "kind": "vortex"
+            }
+          ],
+          "center": [
+            0.3,
+            0.2
+          ],
+          "r": 1.4,
+          "show": "circ",
+          "task": "Switch to the square, then move and resize it. While the origin is inside, the circulation stays $2\\pi$."
+        },
+        "cap": "The whirlpool field $\\frac{\\langle -y, x \\rangle}{x^2 + y^2}$ has zero curl away from the origin. Any loop around the origin can be shrunk to a tiny circle without changing the circulation (Green's theorem on the ring between them), so every such loop gives ${}2\\pi$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A ring",
+        "q": "Find $\\oint_{\\partial D} -y\\,dx + x\\,dy$, where $D$ is the ring ${}1 \\le x^2 + y^2 \\le 4$, positively oriented.",
+        "steps": [
+          "$Q_x - P_y = 1 + 1 = 2$, and the ring has area ${}4\\pi - \\pi = 3\\pi$, so the answer is ${}6\\pi$.",
+          "Check: the outer circle counterclockwise gives ${}2 \\cdot 4\\pi = 8\\pi$ (twice its area); the inner circle clockwise gives $-2\\pi$. Total ${}6\\pi$."
+        ],
+        "a": "${}6\\pi$"
+      },
+      {
+        "t": "ex",
+        "title": "The whirlpool field",
+        "q": "Find $\\oint_C \\frac{-y\\,dx + x\\,dy}{x^2 + y^2}$ around the ellipse $\\frac{x^2}{9} + \\frac{y^2}{4} = 1$, counterclockwise.",
+        "steps": [
+          "The integrand is not defined at the origin, which is inside the ellipse, so Green's theorem cannot be used on the whole inside.",
+          "Use the ring between the ellipse and a small circle $x^2 + y^2 = \\varepsilon^2$. There $Q_x - P_y = 0$, so the ellipse has the same counterclockwise circulation as the small circle.",
+          "On the small circle, $\\frac{-y\\,dx + x\\,dy}{x^2 + y^2} = \\frac{\\varepsilon^2\\,dt}{\\varepsilon^2} = dt$, giving ${}2\\pi$."
+        ],
+        "a": "${}2\\pi$"
+      },
+      {
+        "t": "ex",
+        "title": "From inner to outer",
+        "q": "In the ring ${}1 \\le x^2 + y^2 \\le 9$, a field has $Q_x - P_y = 1$. Its counterclockwise circulation around the inner circle is ${}5$. Find its counterclockwise circulation around the outer circle.",
+        "steps": [
+          "$$\\oint_{\\text{outer}} - \\oint_{\\text{inner}} = \\iint_{\\text{ring}} 1\\,dA = 9\\pi - \\pi = 8\\pi$$ (both circles counterclockwise).",
+          "So $\\oint_{\\text{outer}} = 5 + 8\\pi$."
+        ],
+        "a": "${}5 + 8\\pi$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Orienting the inner curve like the outer one.</b> With both circles counterclockwise, the theorem reads $\\oint_{\\text{outer}} - \\oint_{\\text{inner}} = \\iint (Q_x - P_y)\\,dA$, with a minus sign. In the ring example, adding ${}8\\pi$ and ${}2\\pi$ would give ${}10\\pi$ instead of the correct ${}6\\pi$. Walk each boundary curve with the region on your left."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 3, 6.4 Green's Theorem"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

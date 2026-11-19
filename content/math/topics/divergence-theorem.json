@@ -1,0 +1,100 @@
+{
+  "id": "calc4.divergence-theorem",
+  "slug": "divergence-theorem",
+  "ladder": "math",
+  "course": "calc4",
+  "unit": "theorems",
+  "title": "The Divergence Theorem",
+  "short": "Outward flux through a closed surface equals the integral of the divergence inside.",
+  "trouble": "Students apply it to a surface that is not closed, like a hemisphere without its base.",
+  "prereqs": [
+    "calc4.flux-integrals",
+    "calc3.triple-integrals",
+    "calc4.greens-flux"
+  ],
+  "xp": 3,
+  "viz": [
+    "flux"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/math/calculus-4/greens-flux/\">Green's theorem in flux form</a> says that the flow out of a plane region equals the total divergence inside. The divergence theorem is the same statement in space: the <a href=\"/math/calculus-4/flux-integrals/\">flux</a> out of a closed surface equals the <a href=\"/math/calculus-3/triple-integrals/\">triple integral</a> of the divergence over the solid inside. Sources inside produce the net outflow."
+      },
+      {
+        "t": "key",
+        "html": "<b>Divergence theorem.</b> Let $E$ be a solid region whose boundary $S$ is a closed, piecewise smooth surface with outward orientation. If $\\mathbf{F}$ has continuous partial derivatives on an open region containing $E$, then\n  $$\\iint_S \\mathbf{F} \\cdot d\\mathbf{S} = \\iiint_E \\nabla \\cdot \\mathbf{F}\\,dV.$$"
+      },
+      {
+        "t": "why",
+        "html": "<b>A small box</b> $[x, x + \\Delta x] \\times [y, y + \\Delta y] \\times [z, z + \\Delta z]$: the right face (normal $\\mathbf{i}$) and the left face (normal $-\\mathbf{i}$) together give about $$[P(x + \\Delta x, y, z) - P(x, y, z)]\\,\\Delta y\\,\\Delta z \\approx P_x\\,\\Delta V.$$ The other two pairs of faces give $Q_y\\,\\Delta V$ and $R_z\\,\\Delta V$. So the outward flux of a small box is about $(\\nabla \\cdot \\mathbf{F})\\,\\Delta V$.<br>\n  <b>Many boxes:</b> fill $E$ with small boxes and add their fluxes. Each inside face is shared by two boxes with opposite outward normals, so it cancels. What is left is the flux through the outer surface, and the sum of $(\\nabla \\cdot \\mathbf{F})\\,\\Delta V$ is a Riemann sum for the triple integral."
+      },
+      {
+        "t": "viz",
+        "name": "flux",
+        "opts": {
+          "field": "radial",
+          "surface": "sphere",
+          "surfaces": [
+            "sphere",
+            "hemisphere",
+            "cylinder"
+          ],
+          "R": 1,
+          "H": 1
+        },
+        "cap": "The field $\\langle x, y, z \\rangle$ has divergence ${}3$ everywhere. Its outward flux through the unit sphere is ${}3 \\times \\frac{4}{3}\\pi = 4\\pi \\approx 12.57$. The open surfaces in the list do not enclose a solid, so the theorem says nothing about them."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A sphere",
+        "q": "Find the outward flux of $\\mathbf{F} = \\langle x^3, y^3, z^3 \\rangle$ through the sphere of radius $a$.",
+        "steps": [
+          "$\\nabla \\cdot \\mathbf{F} = 3x^2 + 3y^2 + 3z^2 = 3\\rho^2$.",
+          "$$\\iiint_E 3\\rho^2\\,dV = \\int_0^{2\\pi} \\int_0^\\pi \\int_0^a 3\\rho^2 \\cdot \\rho^2\\sin\\varphi\\,d\\rho\\,d\\varphi\\,d\\theta = 2\\pi \\cdot 2 \\cdot \\frac{3a^5}{5} = \\frac{12\\pi a^5}{5}.$$"
+        ],
+        "a": "$\\frac{12\\pi a^5}{5}$"
+      },
+      {
+        "t": "ex",
+        "title": "A box",
+        "q": "Find the outward flux of $\\mathbf{F} = \\langle xy, yz, zx \\rangle$ through the surface of $[0, 1] \\times [0, 2] \\times [0, 3]$.",
+        "steps": [
+          "$\\nabla \\cdot \\mathbf{F} = y + z + x$.",
+          "$\\iiint (x + y + z)\\,dV$ is the volume times the average value of $x + y + z$. Each coordinate averages to the middle of its interval, so this is ${}6\\left(\\frac{1}{2} + 1 + \\frac{3}{2}\\right) = 18$.",
+          "Computing six separate surface integrals would give the same ${}18$, with much more work."
+        ],
+        "a": "${}18$"
+      },
+      {
+        "t": "ex",
+        "title": "A cylinder",
+        "q": "Find the outward flux of $\\mathbf{F} = \\langle x, y, z^2 \\rangle$ through the closed cylinder $x^2 + y^2 \\le 4$, ${}0 \\le z \\le 3$ (side, top and bottom).",
+        "steps": [
+          "$\\nabla \\cdot \\mathbf{F} = 2 + 2z$.",
+          "$$\\iiint (2 + 2z)\\,dV = (\\text{area of the base}) \\int_0^3 (2 + 2z)\\,dz = 4\\pi \\cdot (6 + 9) = 60\\pi.$$"
+        ],
+        "a": "${}60\\pi$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Using it on a surface that is not closed.</b> The theorem needs the whole boundary of a solid. The upper hemisphere alone, or a cylinder without its top and bottom, encloses nothing, and $\\iiint \\nabla \\cdot \\mathbf{F}\\,dV$ over \"the inside\" is not its flux. Close the surface first (add the base disk or the lids), apply the theorem, then subtract the flux through the added pieces, as in <a href=\"/math/calculus-4/divergence-applications/\">using the divergence theorem</a>."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 3, 6.8 The Divergence Theorem"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

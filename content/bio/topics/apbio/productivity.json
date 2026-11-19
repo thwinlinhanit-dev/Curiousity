@@ -1,0 +1,96 @@
+{
+  "id": "apbio.productivity",
+  "slug": "productivity",
+  "ladder": "bio",
+  "course": "apbio",
+  "unit": "ecology",
+  "title": "Primary Productivity",
+  "short": "Gross primary productivity (GPP) is all the energy producers capture; net primary productivity NPP = GPP − R (respiration). Ecologists measure it with oxygen or carbon changes in light and dark bottles.",
+  "trouble": "Students subtract in the wrong direction, or think the light bottle measures gross productivity. The light bottle shows net; adding the dark bottle's respiration gives gross.",
+  "prereqs": [
+    "apbio.energy-budgets",
+    "apbio.oxidative-phosphorylation"
+  ],
+  "xp": 3,
+  "viz": [
+    "bi-pyramid",
+    "bi-chart"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Producers capture the energy that runs nearly every ecosystem. How much they capture, and how much they keep, are measured as productivity. The idea connects <a href=\"/biology/advanced-biology/energy-budgets/\">energy budgets</a> with <a href=\"/biology/advanced-biology/oxidative-phosphorylation/\">respiration</a>: producers spend part of what they make on their own respiration."
+      },
+      {
+        "t": "key",
+        "html": "<b>Gross primary productivity (GPP)</b> is all the energy producers capture by photosynthesis. <b>Net primary productivity (NPP)</b> is what is left after their own respiration (R): $$NPP = GPP - R$$ NPP is the energy available to the rest of the ecosystem, and it shows up as new plant or algal biomass."
+      },
+      {
+        "t": "viz",
+        "name": "apbio-bottles",
+        "opts": {
+          "initial": 8,
+          "light": 9.5,
+          "dark": 7,
+          "hours": 24
+        },
+        "cap": "The light and dark bottle method, worked through."
+      },
+      {
+        "t": "why",
+        "html": "How do bottles separate the two? Fill bottles with pond water and measure dissolved oxygen. In a clear bottle in the light, algae photosynthesize (adding O₂) and respire (using O₂) at once, so the change shows the net. In a dark bottle, photosynthesis stops but respiration goes on, so the drop in O₂ shows respiration alone. Add respiration back to the net and you get the gross. Oxygen stands in for energy because photosynthesis releases one O₂ for each CO₂ fixed."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Light and dark bottles",
+        "q": "Pond water starts at 8.0 mg O₂/L. After 24 hours, a light bottle reads 9.5 and a dark bottle 7.0. Find NPP, R and GPP.",
+        "steps": [
+          "NPP = light − start = 9.5 − 8.0 = 1.5 mg O₂/L per day.",
+          "R = start − dark = 8.0 − 7.0 = 1.0 mg O₂/L per day.",
+          "GPP = NPP + R = 1.5 + 1.0 = 2.5, which is also light − dark = 9.5 − 7.0."
+        ],
+        "a": "NPP = 1.5, R = 1.0, GPP = 2.5 mg O₂/L per day."
+      },
+      {
+        "t": "ex",
+        "title": "Rates per hour",
+        "q": "In a 6-hour experiment, a light bottle gains 1.8 mg O₂/L and a dark bottle loses 0.6. What is the gross productivity per hour?",
+        "steps": [
+          "GPP over 6 hours = 1.8 + 0.6 = 2.4 mg O₂/L.",
+          "Per hour: 2.4 / 6 = 0.4 mg O₂/L."
+        ],
+        "a": "0.4 mg O₂/L per hour."
+      },
+      {
+        "t": "p",
+        "html": "Across Earth, NPP per square meter is highest in tropical rainforests, coral reefs and estuaries, and lowest in deserts and the open ocean. But the open ocean is so vast that it contributes a large share of Earth's total NPP, mostly from microscopic algae."
+      },
+      {
+        "t": "mistake",
+        "html": "Two slips: subtracting in the wrong direction (respiration is start − dark, a loss), and thinking the light bottle measures gross productivity. The light bottle shows <b>net</b>, because the algae in it respire too. Add the dark bottle's respiration to get gross. Check: GPP must be the largest of the three numbers."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Biology 2e, 46.2 Energy Flow through Ecosystems"
+      },
+      {
+        "name": "OpenStax, Biology for AP Courses, 46.2 Energy Flow through Ecosystems"
+      },
+      {
+        "name": "College Board, AP Biology Course and Exam Description (science practices and the AP Biology Equations and Formulas sheet)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

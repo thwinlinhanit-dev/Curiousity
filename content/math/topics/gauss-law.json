@@ -1,0 +1,127 @@
+{
+  "id": "calc4.gauss-law",
+  "slug": "gauss-law",
+  "ladder": "math",
+  "course": "calc4",
+  "unit": "applications",
+  "title": "Gauss's Law and Electric Flux",
+  "short": "Flux through a closed surface counts the charge inside.",
+  "trouble": "Students expect the flux to depend on the surface's shape and size.",
+  "prereqs": [
+    "calc4.divergence-applications"
+  ],
+  "xp": 3,
+  "viz": [
+    "flux"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "An electric charge $q$ at the origin produces the field\n  $$\\mathbf{E} = \\frac{q}{4\\pi\\varepsilon_0}\\,\\frac{\\mathbf{r}}{|\\mathbf{r}|^3},$$\n  an inverse-square field like gravity, where $\\varepsilon_0$ is a physical constant. You computed in <a href=\"/math/calculus-4/divergence-applications/\">using the divergence theorem</a> that $\\frac{\\mathbf{r}}{|\\mathbf{r}|^3}$ has flux ${}4\\pi$ through every closed surface around the origin. Multiply by $\\frac{q}{4\\pi\\varepsilon_0}$: the electric flux is $q/\\varepsilon_0$, whatever the surface. That is Gauss's law."
+      },
+      {
+        "t": "key",
+        "html": "<b>Gauss's law.</b> For any closed surface $S$ (outward normal) enclosing total charge $Q_{\\text{enc}}$:\n  $$\\iint_S \\mathbf{E} \\cdot d\\mathbf{S} = \\frac{Q_{\\text{enc}}}{\\varepsilon_0}.$$\n  Charges outside $S$ contribute nothing to the net flux. Differential form, for a charge density $\\rho$: $\\nabla \\cdot \\mathbf{E} = \\dfrac{\\rho}{\\varepsilon_0}$."
+      },
+      {
+        "t": "why",
+        "html": "<b>One charge:</b> on a sphere of radius $r$ around it, $\\mathbf{E} \\cdot \\mathbf{n} = \\frac{q}{4\\pi\\varepsilon_0 r^2}$, and the area is ${}4\\pi r^2$: the flux is $\\frac{q}{\\varepsilon_0}$. The $r^2$ in the area cancels the $r^2$ in the field. Any other closed surface around the charge has the same flux, because $\\nabla \\cdot \\mathbf{E} = 0$ away from the charge (divergence theorem on the region between). A charge outside gives zero net flux: its field is smooth and divergence-free inside $S$.<br>\n  <b>Many charges:</b> fields add, so fluxes add.<br>\n  <b>Differential form:</b> $$\\iiint_E \\nabla \\cdot \\mathbf{E}\\,dV = \\iint_S \\mathbf{E} \\cdot d\\mathbf{S} = \\frac{1}{\\varepsilon_0}\\iiint_E \\rho\\,dV$$ for every region $E$, so the integrands agree."
+      },
+      {
+        "t": "viz",
+        "name": "calc4-loop",
+        "opts": {
+          "sources": [
+            {
+              "x": -1.2,
+              "y": 0.3,
+              "q": 2,
+              "kind": "source"
+            },
+            {
+              "x": 1,
+              "y": 1,
+              "q": 1,
+              "kind": "source"
+            },
+            {
+              "x": 0.6,
+              "y": -1.4,
+              "q": -1,
+              "kind": "source"
+            }
+          ],
+          "center": [
+            -1,
+            0
+          ],
+          "r": 0.8,
+          "shape": "square",
+          "show": "flux",
+          "task": "Move and resize the loop so the outward flux is $3$.",
+          "target": {
+            "flux": 3,
+            "tol": 0.03
+          }
+        },
+        "cap": "A cross-section of three long charged wires (the plane version of Gauss's law: each wire's field falls off like ${}1/r$ in the plane). The flux through the loop counts only the wires inside it, however the loop is shaped or placed."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Counting charges",
+        "q": "Charges ${}3\\,\\mu$C at the origin, $-1\\,\\mu$C at $(0, 0, 1)$ and ${}5\\,\\mu$C at $(4, 0, 0)$. Find the electric flux through the sphere $x^2 + y^2 + z^2 = 4$.",
+        "steps": [
+          "Inside (distance less than ${}2$): the first two. Outside: the third.",
+          "Flux $= \\frac{3 - 1}{\\varepsilon_0} = \\frac{2\\,\\mu\\text{C}}{\\varepsilon_0}$."
+        ],
+        "a": "${}2\\,\\mu\\text{C}/\\varepsilon_0$"
+      },
+      {
+        "t": "ex",
+        "title": "A charged ball",
+        "q": "A ball of radius $R$ carries charge $Q$ spread uniformly through its volume. Find the field strength at distance $r$ from the center.",
+        "steps": [
+          "By symmetry $\\mathbf{E}$ points radially with size $E(r)$, so the flux through the sphere of radius $r$ is $E \\cdot 4\\pi r^2$.",
+          "Outside ($r > R$): all of $Q$ is enclosed, so $E = \\frac{Q}{4\\pi\\varepsilon_0 r^2}$, as if the charge sat at the center.",
+          "Inside ($r < R$): the enclosed charge is $Q\\frac{r^3}{R^3}$, so $E = \\frac{Q r}{4\\pi\\varepsilon_0 R^3}$, growing linearly from ${}0$ at the center."
+        ],
+        "a": "$\\frac{Qr}{4\\pi\\varepsilon_0 R^3}$ inside, $\\frac{Q}{4\\pi\\varepsilon_0 r^2}$ outside"
+      },
+      {
+        "t": "ex",
+        "title": "A charged wire",
+        "q": "A long straight wire carries charge $\\lambda$ per unit length. Find the field at distance $r$.",
+        "steps": [
+          "Use a closed cylinder of radius $r$ and length $\\ell$ around the wire. The field points straight out, so the end caps have zero flux and the side has $E \\cdot 2\\pi r\\ell$.",
+          "Gauss: $E \\cdot 2\\pi r\\ell = \\frac{\\lambda\\ell}{\\varepsilon_0}$, so $E = \\frac{\\lambda}{2\\pi\\varepsilon_0 r}$."
+        ],
+        "a": "$\\frac{\\lambda}{2\\pi\\varepsilon_0 r}$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Expecting the shape or size to matter.</b> A bigger sphere around the same charge does not catch more flux: the field weakens like ${}1/r^2$ exactly as the area grows like $r^2$. Any closed surface, of any shape, around the same charges has the same flux. What does change with the surface is which charges are inside."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 2, 6.2 Explaining Gauss's Law"
+      },
+      {
+        "name": "OpenStax University Physics Volume 2, 6.3 Applying Gauss's Law"
+      },
+      {
+        "name": "OpenStax Calculus Volume 3, 6.8 The Divergence Theorem"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

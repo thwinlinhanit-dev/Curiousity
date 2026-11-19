@@ -1,0 +1,119 @@
+{
+  "id": "hsbio.multiple-alleles",
+  "slug": "multiple-alleles",
+  "ladder": "bio",
+  "course": "hsbio",
+  "unit": "genetics",
+  "title": "Multiple Alleles: Blood Types",
+  "short": "The ABO blood type gene has three alleles: Iᴬ and Iᴮ are codominant and both dominant to i. Six genotypes give four blood types: A, B, AB and O.",
+  "trouble": "Students think a person can carry three alleles of one gene because three exist. Each person has only two; the third exists in the population.",
+  "prereqs": [
+    "hsbio.incomplete-codominance"
+  ],
+  "xp": 2,
+  "viz": [
+    "bi-punnett"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "So far each gene had two alleles. Many genes have more in the population. The gene for the ABO blood types has three: I<sup>A</sup>, I<sup>B</sup> and i. It mixes the ideas of <a href=\"/biology/high-school-biology/incomplete-codominance/\">codominance</a> and ordinary dominance."
+      },
+      {
+        "t": "key",
+        "html": "I<sup>A</sup> and I<sup>B</sup> are <b>codominant</b>; both are <b>dominant to i</b>. A person has two of the three alleles, which makes six genotypes and four blood types."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Blood type",
+          "Genotypes",
+          "Markers on red blood cells"
+        ],
+        "rows": [
+          [
+            "A",
+            "I<sup>A</sup>I<sup>A</sup> or I<sup>A</sup>i",
+            "A"
+          ],
+          [
+            "B",
+            "I<sup>B</sup>I<sup>B</sup> or I<sup>B</sup>i",
+            "B"
+          ],
+          [
+            "AB",
+            "I<sup>A</sup>I<sup>B</sup>",
+            "A and B"
+          ],
+          [
+            "O",
+            "ii",
+            "neither"
+          ]
+        ]
+      },
+      {
+        "t": "why",
+        "html": "I<sup>A</sup> and I<sup>B</sup> each code for an enzyme that adds a different sugar marker to the surface of red blood cells. The i allele codes for no working enzyme. One I<sup>A</sup> is enough to add A markers, so I<sup>A</sup>i is type A. With I<sup>A</sup> and I<sup>B</sup>, both markers are added: type AB."
+      },
+      {
+        "t": "viz",
+        "name": "bi-punnett",
+        "opts": {
+          "p1": "IAi",
+          "p2": "IBi"
+        },
+        "cap": "I<sup>A</sup>i × I<sup>B</sup>i: one box each of AB, A, B and O."
+      },
+      {
+        "t": "ex",
+        "title": "All four types from one couple",
+        "q": "A parent with type A blood (I<sup>A</sup>i) and a parent with type B (I<sup>B</sup>i) have children. What blood types are possible?",
+        "steps": [
+          "Gametes: I<sup>A</sup> or i; I<sup>B</sup> or i.",
+          "Boxes: I<sup>A</sup>I<sup>B</sup> (AB), I<sup>A</sup>i (A), I<sup>B</sup>i (B), ii (O)."
+        ],
+        "a": "AB, A, B and O, each with chance ¼."
+      },
+      {
+        "t": "ex",
+        "title": "Working backward",
+        "q": "Two parents with type A blood have a child with type O. What are the parents' genotypes?",
+        "steps": [
+          "Type O is ii, so the child got i from each parent.",
+          "Each parent is type A and carries i."
+        ],
+        "a": "Both are I<sup>A</sup>i."
+      },
+      {
+        "t": "ex",
+        "title": "What cannot happen",
+        "q": "Can a parent with type AB blood have a child with type O?",
+        "steps": [
+          "The AB parent is I<sup>A</sup>I<sup>B</sup> and gives either I<sup>A</sup> or I<sup>B</sup>.",
+          "A type O child (ii) needs an i from each parent."
+        ],
+        "a": "No."
+      },
+      {
+        "t": "mistake",
+        "html": "Because three alleles exist, some people think a person can carry all three. Each person has only <b>two</b> copies of the gene, one on each chromosome of the pair. The third allele exists elsewhere in the population, in other people."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Concepts of Biology, 8.2 Laws of Inheritance (multiple alleles)"
+      },
+      {
+        "name": "OpenStax, Biology 2e, 12.3 Laws of Inheritance (multiple alleles; the ABO blood groups)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

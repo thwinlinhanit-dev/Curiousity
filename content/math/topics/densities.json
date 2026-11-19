@@ -1,0 +1,102 @@
+{
+  "id": "prob.densities",
+  "slug": "densities",
+  "ladder": "math",
+  "course": "prob",
+  "unit": "continuous",
+  "title": "Probability Density Functions",
+  "short": "A density f ≥ 0 has total area 1, and P(a ≤ X ≤ b) = ∫ₐᵇ f(x) dx.",
+  "trouble": "Students read f(x) as a probability. A density can be larger than 1 (f(x) = 4 on [0, 1/4]), and P(X = a) = 0 for every single value a.",
+  "prereqs": [
+    "stat.continuous-distributions",
+    "calc1.ftc-evaluate"
+  ],
+  "xp": 2,
+  "viz": [
+    "prob-density"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A waiting time or a measured length can take any value in an interval, so listing $P(X = x)$ value by value no longer works. In <a href=\"/math/probability-and-statistics/continuous-distributions/\">continuous random variables</a> probability became area under a curve. With <a href=\"/math/calculus-1/ftc-evaluate/\">the Fundamental Theorem of Calculus</a> we can compute those areas exactly."
+      },
+      {
+        "t": "key",
+        "html": "A <b>probability density function</b> $f$ satisfies $f(x) \\ge 0$ and $\\int_{-\\infty}^{\\infty} f(x)\\,dx = 1$, and $$P(a \\le X \\le b) = \\int_{a}^{b} f(x)\\,dx.$$ A single point has probability $P(X = a) = 0$, so $<$ and $\\le$ give the same answers. The height $f(x)$ is not a probability and may be larger than 1."
+      },
+      {
+        "t": "why",
+        "html": "For a short interval near $x$, $P(x \\le X \\le x + \\Delta x) \\approx f(x)\\,\\Delta x$. So $f(x)$ is probability <i>per unit length</i>, just as a density in physics is mass per unit volume. A probability per unit can be large when the unit is long compared with where the probability sits: if all the probability is packed into $[0, \\frac{1}{4}]$, the density there must be 4 to make the area 1. And a single point is an interval of length 0, so it carries no area: $P(X = a) = \\int_{a}^{a} f = 0$."
+      },
+      {
+        "t": "viz",
+        "name": "prob-density",
+        "opts": {
+          "dist": "uniform",
+          "params": {
+            "a": 0,
+            "b": 0.25
+          },
+          "a": 0.05,
+          "b": 0.15,
+          "xmin": -0.25,
+          "xmax": 1
+        },
+        "cap": "The uniform density on 0 to one quarter has height 4, yet its total area is 1. Drag a and b: probabilities are areas under the curve and gaps on the CDF below. Hover to read a height."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Finding the constant",
+        "q": "$f(x) = cx^{2}$ for $0 \\le x \\le 2$ and 0 otherwise. Find $c$.",
+        "steps": [
+          "The total area must be 1: $\\int_{0}^{2} cx^{2}\\,dx = c \\cdot \\frac{8}{3}$.",
+          "$c \\cdot \\frac{8}{3} = 1$, so $c = \\frac{3}{8}$."
+        ],
+        "a": "$c = \\frac{3}{8}$"
+      },
+      {
+        "t": "ex",
+        "title": "A probability as an area",
+        "q": "With $f(x) = \\frac{3}{8}x^{2}$ on $[0, 2]$, find $P(1 \\le X \\le 2)$ and $P(X > 3)$.",
+        "steps": [
+          "$$P(1 \\le X \\le 2) = \\int_{1}^{2} \\frac{3}{8}x^{2}\\,dx = \\frac{3}{8} \\cdot \\frac{8 - 1}{3} = \\frac{7}{8}$$",
+          "$P(X > 3) = 0$: the density is 0 beyond 2.",
+          "Notice that $f(2) = \\frac{3}{2}$, more than 1, and nothing is wrong."
+        ],
+        "a": "$\\frac{7}{8}$ and 0"
+      },
+      {
+        "t": "ex",
+        "title": "A tall density",
+        "q": "$X$ is uniform on $\\left[0, \\frac{1}{4}\\right]$, so $f(x) = 4$ there. Find $P(X \\le 0.1)$ and $P(X = 0.1)$.",
+        "steps": [
+          "$P(X \\le 0.1) = 4 \\times 0.1 = 0.4$: an area, height times width.",
+          "$P(X = 0.1) = 0$: a single point has no width."
+        ],
+        "a": "$0.4$ and $0$"
+      },
+      {
+        "t": "mistake",
+        "html": "Reading $f(x)$ as the probability that $X = x$. A density can be 4, or 100, at a point, while $P(X = x) = 0$ for every single value. Check: a probability is always an area under $f$ over an interval, and must end up between 0 and 1."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Grinstead and Snell, Introduction to Probability (2nd revised edition, American Mathematical Society; free from Dartmouth College), chapter 2 (Continuous Probability Densities), section 2.2, density functions of continuous random variables"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.05, Introduction to Probability and Statistics (Spring 2014), readings on continuous random variables and probability density functions"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

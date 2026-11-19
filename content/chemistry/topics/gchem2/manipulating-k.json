@@ -1,0 +1,105 @@
+{
+  "id": "gchem2.manipulating-k",
+  "slug": "manipulating-k",
+  "ladder": "chemistry",
+  "course": "gchem2",
+  "unit": "equilibrium",
+  "title": "Reversing, Scaling and Adding Reactions",
+  "short": "Reversing gives 1/K, multiplying by n gives Kⁿ, and adding reactions multiplies their K values.",
+  "trouble": "Students double K when the equation is doubled instead of squaring it, or add K values when they add reactions.",
+  "prereqs": [
+    "gchem2.equilibrium-expressions"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-equilibrium"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Equilibrium constants are tabulated for particular equations. Often you need $K$ for the same reaction written differently, or for a combination of reactions. Because $K$ is built from the <a href=\"/chemistry/general-chemistry-2/equilibrium-expressions/\">equilibrium expression</a>, you can work it out from what happens to that expression."
+      },
+      {
+        "t": "key",
+        "html": "Reverse the equation: $K' = 1/K$. Multiply every coefficient by $n$: $K' = K^n$ (so halving gives $\\sqrt{K}$). Add two equations: $K = K_1 \\times K_2$."
+      },
+      {
+        "t": "why",
+        "html": "Reversing swaps the top and bottom of the expression, so it becomes the reciprocal. Doubling every coefficient doubles every exponent, which squares the whole fraction. When you add two equations, multiplying their expressions makes the concentrations of species that cancel (appearing in the top of one and the bottom of the other) cancel in the product too, leaving the expression for the sum."
+      },
+      {
+        "t": "viz",
+        "name": "ch-equilibrium",
+        "opts": {
+          "rxn": "A<=>B",
+          "c0": {
+            "B": 1
+          },
+          "show": [
+            "Q"
+          ]
+        },
+        "cap": "Starting from B alone, the same equilibrium is reached as from A. Read backward, the same mixture gives $[\\mathrm{A}]/[\\mathrm{B}] = 1/K$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Reverse and scale",
+        "q": "For $\\mathrm{N_2(g) + 3H_2(g) \\rightleftharpoons 2NH_3(g)}$, $K = 0.50$ at $673\\ \\text{K}$. Find $K$ for $\\mathrm{2NH_3 \\rightleftharpoons N_2 + 3H_2}$ and for $\\mathrm{\\tfrac{1}{2}N_2 + \\tfrac{3}{2}H_2 \\rightleftharpoons NH_3}$.",
+        "steps": [
+          "Reversed: $K' = \\dfrac{1}{0.50} = 2.0$.",
+          "Halved: $K'' = (0.50)^{1/2} = 0.71$."
+        ],
+        "a": "$2.0$ and $0.71$."
+      },
+      {
+        "t": "ex",
+        "title": "Adding reactions",
+        "q": "At some temperature, $\\mathrm{A \\rightleftharpoons B}$ has $K_1 = 2.0 \\times 10^{-3}$ and $\\mathrm{B \\rightleftharpoons 2C}$ has $K_2 = 4.0 \\times 10^{2}$. Find $K$ for $\\mathrm{A \\rightleftharpoons 2C}$.",
+        "steps": [
+          "The equations add to $\\mathrm{A \\rightleftharpoons 2C}$ (B cancels).",
+          "$K = K_1K_2 = (2.0 \\times 10^{-3})(4.0 \\times 10^{2}) = 0.80$.",
+          "Check with the expressions: $\\dfrac{[\\mathrm{B}]}{[\\mathrm{A}]} \\cdot \\dfrac{[\\mathrm{C}]^2}{[\\mathrm{B}]} = \\dfrac{[\\mathrm{C}]^2}{[\\mathrm{A}]}$."
+        ],
+        "a": "$K = 0.80$."
+      },
+      {
+        "t": "ex",
+        "title": "Reverse one, then add",
+        "q": "$\\mathrm{X \\rightleftharpoons Y}$ has $K_1 = 5.0$, and $\\mathrm{Z \\rightleftharpoons Y}$ has $K_2 = 2.0 \\times 10^{-2}$. Find $K$ for $\\mathrm{X \\rightleftharpoons Z}$.",
+        "steps": [
+          "To get Z on the right, reverse the second: $\\mathrm{Y \\rightleftharpoons Z}$, $K = 1/(2.0 \\times 10^{-2}) = 50$.",
+          "Add to the first: $\\mathrm{X \\rightleftharpoons Z}$, $K = (5.0)(50) = 2.5 \\times 10^{2}$."
+        ],
+        "a": "$2.5 \\times 10^{2}$."
+      },
+      {
+        "t": "p",
+        "html": "These rules are how chemists find constants that are hard to measure directly. If two reactions with known $K$ add up to the one you care about, multiply their constants. The same idea, in the language of energy, is Hess's law: free energies add when equations add, and since $\\Delta G^\\circ = -RT\\ln K$, adding $\\Delta G^\\circ$ values means multiplying $K$ values."
+      },
+      {
+        "t": "mistake",
+        "html": "Doubling $K$ when the equation is doubled, or adding $K$ values when the reactions are added. The changes act on exponents and on a fraction, so they become powers and products. Check: a reaction and its reverse must have $K \\times K' = 1$."
+      },
+      {
+        "t": "note",
+        "html": "This rule is the reason <a href=\"/chemistry/general-chemistry-2/ka-kb/\">Ka × Kb = Kw</a> for a conjugate acid–base pair, and why <a href=\"/chemistry/general-chemistry-2/coupled-reactions/\">coupled reactions</a> multiply their constants."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 13.2 Equilibrium Constants"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

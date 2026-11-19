@@ -1,0 +1,101 @@
+{
+  "id": "phys2.thin-lens-equation",
+  "slug": "thin-lens-equation",
+  "ladder": "physics",
+  "course": "phys2",
+  "unit": "geometric-optics",
+  "title": "The Thin Lens Equation",
+  "short": "The mirror equation works for lenses too, and real images form on the far side of the lens.",
+  "trouble": "Students forget that a diverging lens has a negative focal length.",
+  "prereqs": [
+    "phys2.lens-ray-diagrams",
+    "phys2.mirror-equation"
+  ],
+  "xp": 3,
+  "viz": [
+    "ph-rays"
+  ],
+  "figureArchetype": "OpticsFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The <a href=\"/physics/physics-2/mirror-equation/\">The Mirror Equation</a> works for thin lenses too, with one change in where things are. For a lens, a real image forms on the <b>far</b> side, where the light goes, so that is where $d_i > 0$. Everything else, including the magnification, carries over from <a href=\"/physics/physics-2/lens-ray-diagrams/\">Lenses and Ray Diagrams</a>."
+      },
+      {
+        "t": "key",
+        "html": "$$\\frac{1}{f} = \\frac{1}{d_o} + \\frac{1}{d_i}, \\qquad m = -\\frac{d_i}{d_o}.$$ $f > 0$ for a converging lens, $f < 0$ for a diverging lens. $d_i > 0$: real image on the far side. $d_i < 0$: virtual image on the object's side."
+      },
+      {
+        "t": "why",
+        "html": "The same similar triangles as for a mirror appear. The ray through the center goes straight, so the object and image tips line up through the center: $\\frac{h_i}{h_o} = -\\frac{d_i}{d_o}$. The parallel ray bends through $F$, giving $\\frac{h_i}{h_o} = -\\frac{d_i - f}{f}$. Setting them equal gives the same equation. The geometry is a mirror unfolded."
+      },
+      {
+        "t": "viz",
+        "name": "ph-rays",
+        "opts": {
+          "element": "converging",
+          "f": 5,
+          "dObj": 7.5,
+          "hObj": 2,
+          "lab": "/science-lab/optics/",
+          "task": "Move the object from far away toward F. Watch d_i grow."
+        },
+        "cap": "As the object approaches $F$, the image runs off far away and grows. Inside $F$ it jumps to the object's side as a virtual image."
+      },
+      {
+        "t": "mistake",
+        "html": "Forgetting that a diverging lens has a negative focal length. A diverging lens with \"$f = 20\\ \\text{cm}$\" means $f = -20\\ \\text{cm}$ in the equation. Check: a diverging lens alone always gives $d_i < 0$ and $0 < m < 1$."
+      },
+      {
+        "t": "ex",
+        "title": "Converging lens",
+        "q": "An object is $7.5\\ \\text{cm}$ from a converging lens with $f = 5.0\\ \\text{cm}$. Find $d_i$ and $m$.",
+        "steps": [
+          "$\\dfrac{1}{d_i} = \\dfrac{1}{5.0} - \\dfrac{1}{7.5} = \\dfrac{3}{15} - \\dfrac{2}{15} = \\dfrac{1}{15}$.",
+          "$d_i = 15\\ \\text{cm}$: a real image on the far side.",
+          "$m = -\\dfrac{15}{7.5} = -2.0$: inverted and twice as tall."
+        ],
+        "a": "$d_i = 15\\ \\text{cm}$, $m = -2.0$"
+      },
+      {
+        "t": "ex",
+        "title": "Diverging lens",
+        "q": "An object is $30\\ \\text{cm}$ from a diverging lens with $f = -20\\ \\text{cm}$.",
+        "steps": [
+          "$\\dfrac{1}{d_i} = -\\dfrac{1}{20} - \\dfrac{1}{30} = -\\dfrac{3}{60} - \\dfrac{2}{60} = -\\dfrac{5}{60}$.",
+          "$d_i = -12\\ \\text{cm}$: virtual, on the object's side.",
+          "$m = -\\dfrac{-12}{30} = +0.40$: upright and smaller."
+        ],
+        "a": "$d_i = -12\\ \\text{cm}$, $m = +0.40$"
+      },
+      {
+        "t": "ex",
+        "title": "Choosing a projector lens",
+        "q": "A projector puts a slide $10.0\\ \\text{cm}$ from its lens and a sharp image on a screen $4.0\\ \\text{m}$ away. What focal length does the lens have?",
+        "steps": [
+          "Both distances are real: $d_o = 0.100\\ \\text{m}$, $d_i = 4.0\\ \\text{m}$.",
+          "$$\\dfrac{1}{f} = \\dfrac{1}{0.100} + \\dfrac{1}{4.0} = 10.0 + 0.25 = 10.25\\ \\text{m}^{-1}.$$",
+          "$f = 0.0976\\ \\text{m} = 9.76\\ \\text{cm}$. The magnification is $m = -40$, so the slide is turned upside down to come out upright."
+        ],
+        "a": "$f \\approx 9.8\\ \\text{cm}$"
+      },
+      {
+        "t": "note",
+        "html": "Optometrists use the power $P = 1/f$ in diopters (with $f$ in meters): a $+2.5\\ \\text{D}$ reading lens has $f = 40\\ \\text{cm}$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Physics 2e, Section 25.6: Image Formation by Lenses"
+      },
+      {
+        "name": "OpenStax University Physics Volume 3, Section 2.4: Thin Lenses"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

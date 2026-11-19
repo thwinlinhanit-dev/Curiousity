@@ -1,0 +1,110 @@
+{
+  "id": "g8.linear-models",
+  "slug": "linear-models",
+  "ladder": "math",
+  "course": "g8",
+  "unit": "slope",
+  "title": "Building Linear Models",
+  "short": "Find the rate and the starting value from a story or two points.",
+  "trouble": "Students use the first value in a table as the starting value even when it is not at x = 0.",
+  "prereqs": [
+    "g8.slope-intercept-form"
+  ],
+  "xp": 2,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Many real situations change at a constant rate: a bill that adds the same charge each hour, a tank that drains steadily. With <a href=\"/math/pre-algebra/slope-intercept-form/\">slope-intercept form</a> you can turn such a story into an equation, then use it to predict."
+      },
+      {
+        "t": "why",
+        "html": "A constant rate means equal steps in $x$ add equal amounts to $y$, so the data lie on a line. Two points pin down a line: their rise over run is the rate, and walking back along the line to $x = 0$ gives the starting value."
+      },
+      {
+        "t": "key",
+        "html": "Rate: $m = \\dfrac{y_2 - y_1}{x_2 - x_1}$. Starting value: $b = y - mx$, using either point. Model: $y = mx + b$. In context, $m$ is the change per unit of $x$ and $b$ is the value when $x = 0$."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "f": "40x+45",
+          "points": [
+            {
+              "x": 3,
+              "y": 165,
+              "label": "3 h"
+            },
+            {
+              "x": 5,
+              "y": 245,
+              "label": "5 h"
+            }
+          ],
+          "xmin": 0,
+          "xmax": 8,
+          "ymin": 0,
+          "ymax": 400,
+          "zoom": false
+        },
+        "cap": "The plumber’s bill from Example 1. The line meets the $y$-axis at the fixed charge, \\$45."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Two points in a story",
+        "q": "A plumber’s bill is \\$165 for 3 hours and \\$245 for 5 hours, with a constant charge per hour. Write a model.",
+        "steps": [
+          "Rate: $m = \\frac{245 - 165}{5 - 3} = \\frac{80}{2} = 40$ dollars per hour.",
+          "Start: $b = 165 - 40 \\cdot 3 = 165 - 120 = 45$ dollars.",
+          "Model: $y = 40x + 45$. The 45 is a fixed charge for coming out; the 40 is the charge per hour."
+        ],
+        "a": "$y = 40x + 45$"
+      },
+      {
+        "t": "ex",
+        "title": "A table that starts late",
+        "q": "$$\\begin{array}{c|ccc} x & 2 & 4 & 6 \\\\ \\hline y & 31 & 43 & 55 \\end{array}$$ Find the rate and the starting value.",
+        "steps": [
+          "Rate: $\\frac{43 - 31}{4 - 2} = 6$.",
+          "The table starts at $x = 2$, so 31 is not the start. Go back 2 steps: $b = 31 - 6 \\cdot 2 = 19$."
+        ],
+        "a": "rate 6, starting value 19: $y = 6x + 19$"
+      },
+      {
+        "t": "ex",
+        "title": "Predict",
+        "q": "Using $y = 40x + 45$, what would 7 hours cost?",
+        "steps": [
+          "$y = 40 \\cdot 7 + 45 = 280 + 45 = 325$."
+        ],
+        "a": "\\$325"
+      },
+      {
+        "t": "mistake",
+        "html": "Using the first value in a table as the starting value when the table does not begin at $x = 0$. In Example 2, 31 is the value at $x = 2$. The starting value is $b$, the value at $x = 0$: work backward with the rate."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Elementary Algebra 2e, Section 4.6: Find the Equation of a Line"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 8, 8.F.B.4 (construct a function to model a linear relationship)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,100 @@
+{
+  "id": "g8.pythagorean-applications",
+  "slug": "pythagorean-applications",
+  "ladder": "math",
+  "course": "g8",
+  "unit": "pythagorean",
+  "title": "Pythagorean Theorem in 2D and 3D",
+  "short": "Find missing lengths in plane figures and boxes.",
+  "trouble": "",
+  "prereqs": [
+    "g8.pythagorean-theorem",
+    "g8.estimate-irrationals"
+  ],
+  "xp": 2,
+  "viz": [
+    "pythagoras",
+    "volume"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Right angles are everywhere: walls meet floors, streets cross, edges of boxes meet. Wherever two perpendicular lengths are known, the <a href=\"/math/pre-algebra/pythagorean-theorem/\">Pythagorean theorem</a> finds the distance across. When the answer is a square root, <a href=\"/math/pre-algebra/estimate-irrationals/\">estimate it</a>."
+      },
+      {
+        "t": "why",
+        "html": "A ladder against a wall, a diagonal across a screen, a shortcut across a field: each is the hypotenuse of a right triangle whose legs you know (or can measure). In a box, no single triangle reaches from a bottom corner to the opposite top corner, but two do: one across the floor, then one standing up on that floor diagonal."
+      },
+      {
+        "t": "key",
+        "html": "Sketch the right triangle, label the legs and the hypotenuse, then use $a^{2} + b^{2} = c^{2}$. For the space diagonal of a box: first the floor diagonal $d^{2} = l^{2} + w^{2}$, then $D^{2} = d^{2} + h^{2}$."
+      },
+      {
+        "t": "viz",
+        "name": "g8-solid",
+        "opts": {
+          "shape": "box",
+          "l": 4,
+          "w": 3,
+          "h": 12,
+          "diag": true
+        },
+        "cap": "The dashed floor diagonal and the height make a right triangle whose hypotenuse (red) is the space diagonal."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A ladder",
+        "q": "A 10-foot ladder leans against a wall with its foot 6 feet from the wall. How high does it reach?",
+        "steps": [
+          "The ladder is the hypotenuse: $6^{2} + h^{2} = 10^{2}$.",
+          "$h^{2} = 100 - 36 = 64$, so $h = 8$."
+        ],
+        "a": "8 feet"
+      },
+      {
+        "t": "ex",
+        "title": "A screen",
+        "q": "A screen is 16 inches wide and 9 inches tall. How long is its diagonal, to the nearest tenth of an inch?",
+        "steps": [
+          "$d^{2} = 16^{2} + 9^{2} = 256 + 81 = 337$.",
+          "$18^{2} = 324$ and $19^{2} = 361$, so $d$ is between 18 and 19.",
+          "$18.3^{2} = 334.89$ and $18.4^{2} = 338.56$; 337 is closer to 338.56."
+        ],
+        "a": "about 18.4 inches"
+      },
+      {
+        "t": "ex",
+        "title": "A box",
+        "q": "A box is 4 by 3 by 12 inches. How long is the longest rod that fits, from a bottom corner to the opposite top corner?",
+        "steps": [
+          "Floor diagonal: $d^{2} = 4^{2} + 3^{2} = 25$, so $d = 5$.",
+          "Space diagonal: $D^{2} = 5^{2} + 12^{2} = 25 + 144 = 169$.",
+          "$D = 13$."
+        ],
+        "a": "13 inches"
+      },
+      {
+        "t": "mistake",
+        "html": "Using the theorem once in a box, or adding the three lengths. The space diagonal is not $4 + 3 + 12$; it takes two right triangles. (A shortcut: $D^{2} = l^{2} + w^{2} + h^{2}$.)"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 8, 8.G.B.7 (apply the Pythagorean theorem in two and three dimensions)"
+      },
+      {
+        "name": "OpenStax Prealgebra 2e, Section 9.3: Use Properties of Angles, Triangles, and the Pythagorean Theorem"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

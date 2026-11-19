@@ -1,0 +1,142 @@
+{
+  "id": "sym.statement-relations",
+  "slug": "statement-relations",
+  "ladder": "logic",
+  "course": "sym",
+  "unit": "truth-tables",
+  "title": "Consistent, Inconsistent and Contradictory",
+  "short": "Statements are consistent if some row makes them all true; two statements are contradictory if they have opposite values in every row.",
+  "trouble": "Learners call any two statements that disagree \"contradictory\". Inconsistent statements cannot all be true, but, unlike contradictories, they may all be false.",
+  "prereqs": [
+    "sym.tautology-contradiction"
+  ],
+  "xp": 2,
+  "viz": [
+    "lg-truthtable"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Truth tables compare more than single formulas. With a joint table (<a href=\"/logic/symbolic-logic/tautology-contradiction/\">Tautologies, Contradictions and Contingent Statements</a>) you can ask how two or more statements relate to each other: can they all be true at once, and can they all be false at once?"
+      },
+      {
+        "t": "key",
+        "html": "Statements are <b>consistent</b> if at least one row makes all of them true; otherwise they are <b>inconsistent</b>. Two statements are <b>contradictory</b> if they have opposite values in every row."
+      },
+      {
+        "t": "why",
+        "html": "Consistency is about whether a set of claims could describe one possible situation. If no row makes them all true, then believing all of them is a mistake, whatever the facts are. Contradictories are a special, tighter case: exactly one of the pair is true in every row, so they can be neither both true nor both false. Inconsistent statements that are not contradictory can still both be false together."
+      },
+      {
+        "t": "viz",
+        "name": "lg-truthtable",
+        "opts": {
+          "formulas": [
+            "p ∧ q",
+            "¬p ∧ q"
+          ]
+        },
+        "cap": "Inconsistent but not contradictory: no row makes both true, but the last row makes both false."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Contradictory",
+        "q": "How are $p \\to q$ and $p \\land \\neg q$ related?",
+        "steps": [
+          "Column for $p \\to q$: T, F, T, T.",
+          "Column for $p \\land \\neg q$: F, T, F, F.",
+          "They are opposite in every row."
+        ],
+        "a": "Contradictory"
+      },
+      {
+        "t": "ex",
+        "title": "Inconsistent, not contradictory",
+        "q": "How are $p \\land q$ and $\\neg p \\land q$ related?",
+        "steps": [
+          "No row makes both T: one needs $p$ T, the other $p$ F.",
+          "The row $p$ F, $q$ F makes both F."
+        ],
+        "a": "Inconsistent but not contradictory"
+      },
+      {
+        "t": "ex",
+        "title": "Consistent",
+        "q": "Are $p \\lor q$, $\\neg p$ and $q \\to r$ consistent?",
+        "steps": [
+          "Try $p$ F, $q$ T, $r$ T.",
+          "$p \\lor q$ is T, $\\neg p$ is T, $q \\to r$ is T."
+        ],
+        "a": "Consistent: that row makes all three true."
+      },
+      {
+        "t": "mistake",
+        "html": "Calling any two statements that \"disagree\" contradictory. \"The box is all red\" and \"the box is all blue\" cannot both be true, but both are false if the box is green. They are inconsistent, not contradictory. Contradictories must split every row: one T, the other F."
+      },
+      {
+        "t": "ex",
+        "title": "Three statements",
+        "q": "Are $p \\to q$, $p$ and $\\neg q$ consistent?",
+        "steps": [
+          "For all three to be T we need $p$ T and $q$ F.",
+          "Then $p \\to q$ is T → F, which is F.",
+          "No row makes all three T."
+        ],
+        "a": "Inconsistent. (Notice that no two of them clash on their own; the problem only shows up with all three.)"
+      },
+      {
+        "t": "p",
+        "html": "Consistency and validity are linked. An argument is valid exactly when its premises together with the negation of its conclusion are inconsistent: no row makes the premises true and the conclusion false. So a consistency check is another way to test an argument."
+      },
+      {
+        "t": "p",
+        "html": "Why care? A set of claims that is inconsistent cannot all be true, so if someone asserts all of them, at least one claim must go. That makes consistency a first test for any story, plan or set of beliefs, before anyone checks the facts."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Both true in some row?",
+          "Opposite in every row?",
+          "Name"
+        ],
+        "rows": [
+          [
+            "yes",
+            "no",
+            "consistent"
+          ],
+          [
+            "no",
+            "yes",
+            "contradictory"
+          ],
+          [
+            "no",
+            "no",
+            "inconsistent but not contradictory"
+          ]
+        ],
+        "cap": "Deciding with a joint truth table."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Patrick J. Hurley and Lori Watson, A Concise Introduction to Logic, 13th ed., section 6.3, comparing statements"
+      },
+      {
+        "name": "forall x: Calgary, an open introduction to formal logic (P. D. Magnus, Tim Button and others; Open Logic Project), chapter on semantic concepts"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

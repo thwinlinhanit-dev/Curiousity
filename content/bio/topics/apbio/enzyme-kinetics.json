@@ -1,0 +1,127 @@
+{
+  "id": "apbio.enzyme-kinetics",
+  "slug": "enzyme-kinetics",
+  "ladder": "bio",
+  "course": "apbio",
+  "unit": "energetics",
+  "title": "Enzyme Kinetics",
+  "short": "Rate rises with substrate concentration and levels off when the enzymes are saturated (Vmax). Doubling the enzyme doubles Vmax; temperature and pH move the curve.",
+  "trouble": "Students think adding more substrate always speeds the reaction. Once every active site is busy, only more enzyme can raise the rate.",
+  "prereqs": [
+    "apbio.free-energy",
+    "hsbio.enzyme-conditions"
+  ],
+  "xp": 3,
+  "viz": [
+    "bi-enzyme",
+    "bi-chart"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/biology/high-school-biology/enzyme-conditions/\">Temperature, pH and Enzymes</a> you saw how conditions change an enzyme's activity. Now we hold conditions steady and change the amount of substrate. The curve you get is one of the most useful graphs in biology."
+      },
+      {
+        "t": "viz",
+        "name": "bi-enzyme",
+        "opts": {
+          "mode": "substrate"
+        },
+        "cap": "Reaction rate against substrate concentration. Try the inhibitor sliders later, in the next topic."
+      },
+      {
+        "t": "key",
+        "html": "As substrate concentration rises, the rate rises, then levels off at a maximum, $V_{max}$, when every active site is busy (the enzyme is <b>saturated</b>). Past that point, only more enzyme raises the rate: doubling the enzyme doubles $V_{max}$."
+      },
+      {
+        "t": "why",
+        "html": "An enzyme can only handle a substrate when one is in its active site. At low substrate, most active sites sit empty, so adding substrate fills more of them and the rate climbs almost in proportion. At high substrate, an active site is refilled the instant it lets go of a product. Each enzyme is already working as fast as it can, so extra substrate just waits its turn."
+      },
+      {
+        "t": "p",
+        "html": "College courses describe the curve with the Michaelis-Menten equation: $$v = \\frac{V_{max}[S]}{K_m + [S]}$$ $K_m$ is the substrate concentration that gives half of $V_{max}$. A small $K_m$ means the enzyme reaches half speed at low substrate, a sign that it binds its substrate well."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Reading Vmax and Km from data",
+        "q": "An enzyme gives these rates (µmol/min) at substrate concentrations of 1, 2, 5, 10, 20 and 40 mM: 11, 17, 25, 30, 33 and 35. Estimate $V_{max}$ and $K_m$.",
+        "steps": [
+          "From 20 to 40 mM the rate rises only from 33 to 35: the curve is nearly flat, so $V_{max}$ is a little above 35, about 37 µmol/min.",
+          "Half of $V_{max}$ is about 18.5.",
+          "The rate is 17 at 2 mM and 25 at 5 mM, so half speed comes a little above 2 mM."
+        ],
+        "a": "$V_{max} \\approx 37$ µmol/min and $K_m \\approx 2.5$ mM. (The data were made with $V_{max} = 37.5$ and $K_m = 2.5$ mM.)"
+      },
+      {
+        "t": "viz",
+        "name": "bi-chart",
+        "opts": {
+          "kind": "scatter",
+          "x": [
+            1,
+            2,
+            5,
+            10,
+            20,
+            40
+          ],
+          "series": [
+            {
+              "name": "Rate (µmol/min)",
+              "values": [
+                11,
+                17,
+                25,
+                30,
+                33,
+                35
+              ]
+            }
+          ],
+          "xlabel": "Substrate (mM)",
+          "ylabel": "Rate (µmol/min)",
+          "ymin": 0,
+          "ymax": 40
+        },
+        "cap": "The data of the first example: a curve that rises steeply, then flattens."
+      },
+      {
+        "t": "ex",
+        "title": "Using the equation",
+        "q": "An enzyme has $V_{max} = 50$ µmol/min and $K_m = 4$ mM. What is the rate at 12 mM substrate? What if the enzyme concentration is doubled?",
+        "steps": [
+          "$v = \\frac{50 \\times 12}{4 + 12} = \\frac{600}{16} = 37.5$ µmol/min.",
+          "Doubling the enzyme doubles $V_{max}$ to 100; $K_m$ (a property of each enzyme molecule) stays 4 mM.",
+          "$v = \\frac{100 \\times 12}{16} = 75$ µmol/min."
+        ],
+        "a": "37.5 µmol/min, and 75 µmol/min with twice the enzyme."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking more substrate always speeds the reaction. On the flat part of the curve, the enzyme is saturated and the rate barely changes. Check where you are on the curve: if doubling [S] barely changes the rate, the limit is the amount of enzyme, not substrate."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Biology 2e, 6.5 Enzymes"
+      },
+      {
+        "name": "OpenStax, Biology for AP Courses, 6.5 Enzymes"
+      },
+      {
+        "name": "MIT OpenCourseWare, 7.05 General Biochemistry (enzyme kinetics)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,975 @@
+{
+  "key": "imicro",
+  "ladder": "economics",
+  "title": "Intermediate Microeconomics",
+  "short": "Int. Micro",
+  "after": [
+    "micro",
+    "calc1"
+  ],
+  "units": [
+    {
+      "key": "preferences",
+      "title": "Preferences and Utility",
+      "blurb": "How economists describe what people want: preference axioms, indifference curves, utility functions and the marginal rate of substitution."
+    },
+    {
+      "key": "choice",
+      "title": "Consumer Choice",
+      "blurb": "Budget sets, the best affordable bundle, corners and kinks, the Lagrange method, minimizing spending, and revealed preference."
+    },
+    {
+      "key": "demand",
+      "title": "Demand and Welfare",
+      "blurb": "How demand responds to income and prices, income and substitution effects, point elasticity, market demand, and money measures of gains and losses."
+    },
+    {
+      "key": "time-risk",
+      "title": "Work, Time and Risk",
+      "blurb": "Choosing between work and leisure, between now and later, and among risky prospects."
+    },
+    {
+      "key": "production",
+      "title": "Production and Cost",
+      "blurb": "Production functions with calculus, isoquants, returns to scale, cost minimization and cost functions."
+    },
+    {
+      "key": "competitive-markets",
+      "title": "Competitive Markets",
+      "blurb": "The firm's supply curve, producer surplus, long-run equilibrium with free entry, and the incidence and cost of taxes."
+    },
+    {
+      "key": "market-power",
+      "title": "Market Power",
+      "blurb": "Monopoly with calculus, markups and the Lerner index, pricing in separate markets, two-part tariffs and monopsony."
+    },
+    {
+      "key": "games",
+      "title": "Game Theory and Strategy",
+      "blurb": "Nash equilibrium in pure and mixed strategies, sequential and repeated games, oligopoly models and auctions."
+    },
+    {
+      "key": "general-equilibrium",
+      "title": "General Equilibrium and Welfare",
+      "blurb": "Trade between two people in an Edgeworth box, competitive equilibrium in exchange, and the two welfare theorems."
+    },
+    {
+      "key": "failure-information",
+      "title": "Externalities and Information",
+      "blurb": "Externalities with calculus, the Coase theorem, public goods, common resources, adverse selection, moral hazard and signaling."
+    }
+  ],
+  "topics": [
+    {
+      "id": "imicro.preferences",
+      "slug": "preferences",
+      "course": "imicro",
+      "unit": "preferences",
+      "title": "Preferences and Their Axioms",
+      "short": "Completeness, transitivity, more-is-better and a taste for variety let us rank bundles of goods consistently.",
+      "prereqs": [
+        "micro.marginal-utility"
+      ],
+      "viz": [
+        "graph"
+      ]
+    },
+    {
+      "id": "imicro.indifference-curves",
+      "slug": "indifference-curves",
+      "course": "imicro",
+      "unit": "preferences",
+      "title": "Indifference Curves",
+      "short": "All bundles a person likes equally lie on one curve; when more is better, the curves slope down and never cross.",
+      "prereqs": [
+        "imicro.preferences",
+        "alg1.graphs-as-solutions"
+      ],
+      "viz": [
+        "ec-choice"
+      ]
+    },
+    {
+      "id": "imicro.utility-functions",
+      "slug": "utility-functions",
+      "course": "imicro",
+      "unit": "preferences",
+      "title": "Utility Functions",
+      "short": "A utility function gives preferred bundles bigger numbers; any increasing transformation of it describes the same preferences.",
+      "prereqs": [
+        "imicro.indifference-curves",
+        "alg2.function-composition"
+      ],
+      "viz": [
+        "surface"
+      ]
+    },
+    {
+      "id": "imicro.marginal-utility-calculus",
+      "slug": "marginal-utility-calculus",
+      "course": "imicro",
+      "unit": "preferences",
+      "title": "Marginal Utility as a Partial Derivative",
+      "short": "MUx = ∂U/∂x is the extra utility from a little more x with y held fixed.",
+      "prereqs": [
+        "imicro.utility-functions",
+        "calc3.partial-derivatives"
+      ],
+      "viz": [
+        "surface"
+      ]
+    },
+    {
+      "id": "imicro.mrs",
+      "slug": "mrs",
+      "course": "imicro",
+      "unit": "preferences",
+      "title": "The Marginal Rate of Substitution",
+      "short": "MRS = MUx/MUy, the amount of y a person would give up for one more x, is the size of the indifference curve's slope.",
+      "prereqs": [
+        "imicro.marginal-utility-calculus",
+        "calc1.implicit-differentiation"
+      ],
+      "viz": [
+        "ec-choice"
+      ]
+    },
+    {
+      "id": "imicro.preference-types",
+      "slug": "preference-types",
+      "course": "imicro",
+      "unit": "preferences",
+      "title": "Substitutes, Complements, Cobb-Douglas and Quasilinear",
+      "short": "Four common utility functions and the shapes of their indifference curves.",
+      "prereqs": [
+        "imicro.mrs"
+      ],
+      "viz": [
+        "ec-choice"
+      ]
+    },
+    {
+      "id": "imicro.budget-set",
+      "slug": "budget-set",
+      "course": "imicro",
+      "unit": "choice",
+      "title": "Budget Sets",
+      "short": "p₁x₁ + p₂x₂ ≤ m, and how prices, income, taxes and rationing reshape the set of affordable bundles.",
+      "prereqs": [
+        "micro.budget-constraint",
+        "alg1.linear-inequalities-2var"
+      ],
+      "viz": [
+        "ec-choice"
+      ]
+    },
+    {
+      "id": "imicro.optimal-choice",
+      "slug": "optimal-choice",
+      "course": "imicro",
+      "unit": "choice",
+      "title": "The Best Affordable Bundle",
+      "short": "At an interior optimum the MRS equals the price ratio; substitute the budget into the utility function and maximize.",
+      "prereqs": [
+        "imicro.mrs",
+        "imicro.budget-set",
+        "calc1.optimization"
+      ],
+      "viz": [
+        "ec-choice"
+      ]
+    },
+    {
+      "id": "imicro.cobb-douglas-demand",
+      "slug": "cobb-douglas-demand",
+      "course": "imicro",
+      "unit": "choice",
+      "title": "Cobb-Douglas Demand",
+      "short": "With U = xᵃyᵇ a person spends the fixed share a/(a + b) of income on x.",
+      "prereqs": [
+        "imicro.optimal-choice",
+        "imicro.preference-types"
+      ],
+      "viz": [
+        "ec-choice"
+      ]
+    },
+    {
+      "id": "imicro.corner-solutions",
+      "slug": "corner-solutions",
+      "course": "imicro",
+      "unit": "choice",
+      "title": "Corners and Kinks",
+      "short": "Perfect substitutes lead to buying only the good with more utility per dollar; perfect complements are bought in fixed proportions.",
+      "prereqs": [
+        "imicro.optimal-choice",
+        "imicro.preference-types"
+      ],
+      "viz": [
+        "ec-choice"
+      ]
+    },
+    {
+      "id": "imicro.lagrange-consumer",
+      "slug": "lagrange-consumer",
+      "course": "imicro",
+      "unit": "choice",
+      "title": "The Lagrange Method for Consumers",
+      "short": "Maximize utility subject to the budget with a Lagrange multiplier, which measures the marginal utility of income.",
+      "prereqs": [
+        "imicro.optimal-choice",
+        "calc3.lagrange-multipliers"
+      ],
+      "viz": [
+        "ec-choice"
+      ]
+    },
+    {
+      "id": "imicro.expenditure-minimization",
+      "slug": "expenditure-minimization",
+      "course": "imicro",
+      "unit": "choice",
+      "title": "Minimizing Spending for a Target Utility",
+      "short": "The cheapest way to reach a utility level is also a tangency, and it gives compensated (Hicksian) demand.",
+      "prereqs": [
+        "imicro.cobb-douglas-demand"
+      ],
+      "viz": [
+        "ec-choice"
+      ]
+    },
+    {
+      "id": "imicro.revealed-preference",
+      "slug": "revealed-preference",
+      "course": "imicro",
+      "unit": "choice",
+      "title": "Revealed Preference",
+      "short": "If you chose bundle A when B was affordable, you should never choose B when A is affordable.",
+      "prereqs": [
+        "imicro.budget-set",
+        "imicro.optimal-choice"
+      ],
+      "viz": [
+        "ec-choice"
+      ]
+    },
+    {
+      "id": "imicro.income-changes",
+      "slug": "income-changes",
+      "course": "imicro",
+      "unit": "demand",
+      "title": "Income Changes and Engel Curves",
+      "short": "The income offer curve and the Engel curve show normal goods, inferior goods, luxuries and necessities.",
+      "prereqs": [
+        "imicro.cobb-douglas-demand",
+        "micro.demand-shifters"
+      ],
+      "viz": [
+        "ec-choice"
+      ]
+    },
+    {
+      "id": "imicro.price-changes",
+      "slug": "price-changes",
+      "course": "imicro",
+      "unit": "demand",
+      "title": "Price Changes and the Demand Curve",
+      "short": "Rotating the budget line traces the price offer curve and the demand curve; doubling all prices and income changes nothing.",
+      "prereqs": [
+        "imicro.cobb-douglas-demand"
+      ],
+      "viz": [
+        "ec-choice"
+      ]
+    },
+    {
+      "id": "imicro.income-substitution-effects",
+      "slug": "income-substitution-effects",
+      "course": "imicro",
+      "unit": "demand",
+      "title": "Substitution and Income Effects",
+      "short": "Split a price change into a move along the original indifference curve and a shift from the change in buying power.",
+      "prereqs": [
+        "imicro.income-changes",
+        "imicro.price-changes",
+        "imicro.expenditure-minimization"
+      ],
+      "viz": [
+        "ec-slutsky"
+      ]
+    },
+    {
+      "id": "imicro.point-elasticity",
+      "slug": "point-elasticity",
+      "course": "imicro",
+      "unit": "demand",
+      "title": "Point Elasticity with Calculus",
+      "short": "ε = (dQ/dP)(P/Q) at a point; demand Q = AP^(−k) has elasticity −k everywhere.",
+      "prereqs": [
+        "micro.price-elasticity-demand",
+        "calc1.power-rule"
+      ],
+      "viz": [
+        "ec-elasticity"
+      ]
+    },
+    {
+      "id": "imicro.market-demand",
+      "slug": "market-demand",
+      "course": "imicro",
+      "unit": "demand",
+      "title": "Adding Up to Market Demand",
+      "short": "Market demand adds the quantities all buyers want at each price, a horizontal sum.",
+      "prereqs": [
+        "imicro.price-changes",
+        "alg1.piecewise-functions"
+      ],
+      "viz": [
+        "graph"
+      ]
+    },
+    {
+      "id": "imicro.consumer-surplus-integral",
+      "slug": "consumer-surplus-integral",
+      "course": "imicro",
+      "unit": "demand",
+      "title": "Consumer Surplus as an Integral",
+      "short": "Consumer surplus is the area under the demand curve and above the price, an integral over quantity.",
+      "prereqs": [
+        "micro.consumer-producer-surplus",
+        "calc1.ftc-evaluate"
+      ],
+      "viz": [
+        "ftc"
+      ]
+    },
+    {
+      "id": "imicro.compensating-equivalent-variation",
+      "slug": "compensating-equivalent-variation",
+      "course": "imicro",
+      "unit": "demand",
+      "title": "Compensating and Equivalent Variation",
+      "short": "Money measures of a price change: how much to hand back afterward (CV) or take away beforehand (EV) to leave utility the same.",
+      "prereqs": [
+        "imicro.consumer-surplus-integral",
+        "imicro.income-substitution-effects"
+      ],
+      "viz": [
+        "ec-slutsky"
+      ]
+    },
+    {
+      "id": "imicro.labor-leisure",
+      "slug": "labor-leisure",
+      "course": "imicro",
+      "unit": "time-risk",
+      "title": "Labor Supply and Leisure",
+      "short": "A higher wage makes leisure more costly but also makes you richer, so labor supply can bend backward.",
+      "prereqs": [
+        "imicro.cobb-douglas-demand",
+        "imicro.income-substitution-effects"
+      ],
+      "viz": [
+        "ec-choice"
+      ]
+    },
+    {
+      "id": "imicro.present-value",
+      "slug": "present-value",
+      "course": "imicro",
+      "unit": "time-risk",
+      "title": "Present Value",
+      "short": "A dollar later is worth less than a dollar now: PV = FV/(1 + r)ᵗ, with shortcuts for annuities and perpetuities.",
+      "prereqs": [
+        "alg2.compound-interest",
+        "alg2.infinite-geometric-series"
+      ],
+      "viz": [
+        "ec-bond"
+      ]
+    },
+    {
+      "id": "imicro.intertemporal-choice",
+      "slug": "intertemporal-choice",
+      "course": "imicro",
+      "unit": "time-risk",
+      "title": "Saving and Borrowing over Time",
+      "short": "The budget c₁ + c₂/(1 + r) = m₁ + m₂/(1 + r) shows when it pays to save and when to borrow.",
+      "prereqs": [
+        "imicro.present-value",
+        "imicro.optimal-choice"
+      ],
+      "viz": [
+        "ec-choice"
+      ]
+    },
+    {
+      "id": "imicro.expected-utility",
+      "slug": "expected-utility",
+      "course": "imicro",
+      "unit": "time-risk",
+      "title": "Expected Utility",
+      "short": "Compare risky choices by the probability-weighted average of their utilities, not of their dollar amounts.",
+      "prereqs": [
+        "imicro.utility-functions",
+        "stat.expected-value"
+      ],
+      "viz": [
+        "ec-risk"
+      ]
+    },
+    {
+      "id": "imicro.risk-aversion",
+      "slug": "risk-aversion",
+      "course": "imicro",
+      "unit": "time-risk",
+      "title": "Risk Aversion and Certainty Equivalents",
+      "short": "With concave utility, a sure amount below the expected value is as good as the gamble; the gap is the risk premium.",
+      "prereqs": [
+        "imicro.expected-utility",
+        "calc1.concavity"
+      ],
+      "viz": [
+        "ec-risk"
+      ]
+    },
+    {
+      "id": "imicro.insurance",
+      "slug": "insurance",
+      "course": "imicro",
+      "unit": "time-risk",
+      "title": "Insurance",
+      "short": "A risk-averse person offered actuarially fair insurance buys full coverage.",
+      "prereqs": [
+        "imicro.risk-aversion"
+      ],
+      "viz": [
+        "ec-risk"
+      ]
+    },
+    {
+      "id": "imicro.production-functions",
+      "slug": "production-functions",
+      "course": "imicro",
+      "unit": "production",
+      "title": "Production Functions and Marginal Products",
+      "short": "Q = f(K, L); the marginal product of labor is ∂Q/∂L.",
+      "prereqs": [
+        "micro.production-function",
+        "calc3.partial-derivatives"
+      ],
+      "viz": [
+        "surface"
+      ]
+    },
+    {
+      "id": "imicro.isoquants-mrts",
+      "slug": "isoquants-mrts",
+      "course": "imicro",
+      "unit": "production",
+      "title": "Isoquants and the MRTS",
+      "short": "An isoquant shows the input mixes that make the same output; the size of its slope is MRTS = MPL/MPK.",
+      "prereqs": [
+        "imicro.production-functions",
+        "imicro.mrs"
+      ],
+      "viz": [
+        "ec-isoquant"
+      ]
+    },
+    {
+      "id": "imicro.returns-to-scale",
+      "slug": "returns-to-scale",
+      "course": "imicro",
+      "unit": "production",
+      "title": "Returns to Scale",
+      "short": "Doubling every input may more than double, exactly double, or less than double output.",
+      "prereqs": [
+        "imicro.production-functions",
+        "micro.long-run-costs"
+      ],
+      "viz": [
+        "ec-isoquant"
+      ]
+    },
+    {
+      "id": "imicro.cost-minimization",
+      "slug": "cost-minimization",
+      "course": "imicro",
+      "unit": "production",
+      "title": "Cost Minimization",
+      "short": "The cheapest input mix sets MRTS = w/r, the producer's version of the consumer's tangency.",
+      "prereqs": [
+        "imicro.isoquants-mrts",
+        "micro.least-cost-rule",
+        "calc1.optimization"
+      ],
+      "viz": [
+        "ec-isoquant"
+      ]
+    },
+    {
+      "id": "imicro.cost-functions",
+      "slug": "cost-functions",
+      "course": "imicro",
+      "unit": "production",
+      "title": "Cost Functions and Marginal Cost",
+      "short": "C(q) gives the least cost of making q; MC = C′(q) and AC = C(q)/q.",
+      "prereqs": [
+        "imicro.cost-minimization",
+        "micro.short-run-costs",
+        "calc1.power-rule"
+      ],
+      "viz": [
+        "ec-costcurves"
+      ]
+    },
+    {
+      "id": "imicro.short-long-run-cost",
+      "slug": "short-long-run-cost",
+      "course": "imicro",
+      "unit": "production",
+      "title": "Short-Run and Long-Run Cost",
+      "short": "With capital fixed, short-run cost is never below long-run cost; the long-run curve is the lower envelope of the short-run curves.",
+      "prereqs": [
+        "imicro.cost-functions"
+      ],
+      "viz": [
+        "ec-costcurves"
+      ]
+    },
+    {
+      "id": "imicro.minimum-average-cost",
+      "slug": "minimum-average-cost",
+      "course": "imicro",
+      "unit": "production",
+      "title": "Where Average Cost Is Lowest",
+      "short": "Average cost is lowest where it equals marginal cost, and the quotient rule shows why.",
+      "prereqs": [
+        "imicro.cost-functions",
+        "calc1.quotient-rule"
+      ],
+      "viz": [
+        "ec-costcurves"
+      ]
+    },
+    {
+      "id": "imicro.competitive-supply",
+      "slug": "competitive-supply",
+      "course": "imicro",
+      "unit": "competitive-markets",
+      "title": "The Competitive Firm's Supply Curve",
+      "short": "Maximize pq − C(q): set p = MC on the rising part of MC above minimum average variable cost.",
+      "prereqs": [
+        "imicro.minimum-average-cost",
+        "micro.shutdown-rule"
+      ],
+      "viz": [
+        "ec-costcurves"
+      ]
+    },
+    {
+      "id": "imicro.producer-surplus-integral",
+      "slug": "producer-surplus-integral",
+      "course": "imicro",
+      "unit": "competitive-markets",
+      "title": "Producer Surplus as an Integral",
+      "short": "Producer surplus is the integral of p − MC, which equals revenue minus variable cost, or profit plus fixed cost.",
+      "prereqs": [
+        "imicro.competitive-supply",
+        "calc1.ftc-evaluate"
+      ],
+      "viz": [
+        "ftc"
+      ]
+    },
+    {
+      "id": "imicro.long-run-industry",
+      "slug": "long-run-industry",
+      "course": "imicro",
+      "unit": "competitive-markets",
+      "title": "Long-Run Industry Equilibrium",
+      "short": "With free entry, price falls to minimum average cost, and the number of firms is market quantity over each firm's output.",
+      "prereqs": [
+        "imicro.competitive-supply",
+        "micro.long-run-competition"
+      ],
+      "viz": [
+        "ec-firmmarket"
+      ]
+    },
+    {
+      "id": "imicro.tax-incidence-formula",
+      "slug": "tax-incidence-formula",
+      "course": "imicro",
+      "unit": "competitive-markets",
+      "title": "Tax Incidence with Elasticities",
+      "short": "Buyers bear the share εS/(εS + |εD|) of a small per-unit tax, so the less elastic side pays more.",
+      "prereqs": [
+        "imicro.point-elasticity",
+        "micro.tax-incidence"
+      ],
+      "viz": [
+        "ec-intervention"
+      ]
+    },
+    {
+      "id": "imicro.deadweight-loss-calculus",
+      "slug": "deadweight-loss-calculus",
+      "course": "imicro",
+      "unit": "competitive-markets",
+      "title": "Deadweight Loss of a Tax",
+      "short": "The deadweight loss is about ½·t·ΔQ, so it grows with the square of the tax.",
+      "prereqs": [
+        "imicro.tax-incidence-formula",
+        "imicro.consumer-surplus-integral",
+        "imicro.producer-surplus-integral"
+      ],
+      "viz": [
+        "ec-intervention"
+      ]
+    },
+    {
+      "id": "imicro.monopoly-calculus",
+      "slug": "monopoly-calculus",
+      "course": "imicro",
+      "unit": "market-power",
+      "title": "Monopoly with Calculus",
+      "short": "Maximize p(q)·q − C(q): set MR = p + q·p′(q) equal to MC.",
+      "prereqs": [
+        "micro.monopoly-price-output",
+        "imicro.cost-functions",
+        "calc1.product-rule"
+      ],
+      "viz": [
+        "ec-monopoly"
+      ]
+    },
+    {
+      "id": "imicro.lerner-index",
+      "slug": "lerner-index",
+      "course": "imicro",
+      "unit": "market-power",
+      "title": "Markups and the Lerner Index",
+      "short": "(p − MC)/p = 1/|ε|, so a monopoly with positive marginal cost never prices where demand is inelastic.",
+      "prereqs": [
+        "imicro.monopoly-calculus",
+        "imicro.point-elasticity"
+      ],
+      "viz": [
+        "ec-monopoly"
+      ]
+    },
+    {
+      "id": "imicro.third-degree-discrimination",
+      "slug": "third-degree-discrimination",
+      "course": "imicro",
+      "unit": "market-power",
+      "title": "Pricing in Separate Markets",
+      "short": "Set marginal revenue equal to marginal cost in each market; the less elastic market pays the higher price.",
+      "prereqs": [
+        "imicro.lerner-index",
+        "micro.price-discrimination"
+      ],
+      "viz": [
+        "ec-monopoly"
+      ]
+    },
+    {
+      "id": "imicro.two-part-tariff",
+      "slug": "two-part-tariff",
+      "course": "imicro",
+      "unit": "market-power",
+      "title": "Two-Part Tariffs",
+      "short": "With identical customers, charge a per-unit price equal to marginal cost and an entry fee equal to each customer's consumer surplus.",
+      "prereqs": [
+        "imicro.monopoly-calculus",
+        "imicro.consumer-surplus-integral"
+      ],
+      "viz": [
+        "ec-monopoly"
+      ]
+    },
+    {
+      "id": "imicro.monopsony-calculus",
+      "slug": "monopsony-calculus",
+      "course": "imicro",
+      "unit": "market-power",
+      "title": "Monopsony with Calculus",
+      "short": "An employer facing the wage curve w(L) hires where marginal revenue product equals the marginal cost of labor, w + L·w′(L).",
+      "prereqs": [
+        "micro.monopsony",
+        "imicro.production-functions",
+        "calc1.product-rule"
+      ],
+      "viz": [
+        "ec-factor"
+      ]
+    },
+    {
+      "id": "imicro.pure-nash",
+      "slug": "pure-nash",
+      "course": "imicro",
+      "unit": "games",
+      "title": "Best Responses and Nash Equilibrium",
+      "short": "Mark each player's best responses; any cell where both are best responses is a Nash equilibrium, and there may be several.",
+      "prereqs": [
+        "micro.nash-equilibrium"
+      ],
+      "viz": [
+        "ec-payoff"
+      ]
+    },
+    {
+      "id": "imicro.mixed-strategies",
+      "slug": "mixed-strategies",
+      "course": "imicro",
+      "unit": "games",
+      "title": "Mixed Strategies",
+      "short": "In a mixed-strategy equilibrium each player mixes so as to make the other player indifferent between their choices.",
+      "prereqs": [
+        "imicro.pure-nash",
+        "stat.expected-value"
+      ],
+      "viz": [
+        "ec-payoff"
+      ]
+    },
+    {
+      "id": "imicro.backward-induction",
+      "slug": "backward-induction",
+      "course": "imicro",
+      "unit": "games",
+      "title": "Sequential Games and Backward Induction",
+      "short": "Solve a game tree from the end: each player looks ahead to how others will respond, which rules out empty threats.",
+      "prereqs": [
+        "imicro.pure-nash"
+      ],
+      "viz": [
+        "ec-gametree"
+      ]
+    },
+    {
+      "id": "imicro.repeated-games",
+      "slug": "repeated-games",
+      "course": "imicro",
+      "unit": "games",
+      "title": "Repeated Games and Cooperation",
+      "short": "When a game repeats with no known last round, cooperation can last if players value the future enough.",
+      "prereqs": [
+        "imicro.backward-induction",
+        "alg2.infinite-geometric-series"
+      ],
+      "viz": [
+        "ec-payoff"
+      ]
+    },
+    {
+      "id": "imicro.cournot",
+      "slug": "cournot",
+      "course": "imicro",
+      "unit": "games",
+      "title": "Cournot Competition",
+      "short": "Firms choose quantities; each firm's best response depends on the other's output, and equilibrium output lies between monopoly and competition.",
+      "prereqs": [
+        "imicro.pure-nash",
+        "imicro.monopoly-calculus"
+      ],
+      "viz": [
+        "linesystem"
+      ]
+    },
+    {
+      "id": "imicro.bertrand",
+      "slug": "bertrand",
+      "course": "imicro",
+      "unit": "games",
+      "title": "Bertrand Competition",
+      "short": "Two firms selling identical goods and competing on price drive the price down to marginal cost.",
+      "prereqs": [
+        "imicro.cournot"
+      ],
+      "viz": [
+        "linesystem"
+      ]
+    },
+    {
+      "id": "imicro.stackelberg",
+      "slug": "stackelberg",
+      "course": "imicro",
+      "unit": "games",
+      "title": "Stackelberg Leadership",
+      "short": "A leader who moves first, knowing the follower's best response, produces more and earns more than in Cournot.",
+      "prereqs": [
+        "imicro.cournot",
+        "imicro.backward-induction"
+      ],
+      "viz": [
+        "ec-gametree"
+      ]
+    },
+    {
+      "id": "imicro.auctions",
+      "slug": "auctions",
+      "course": "imicro",
+      "unit": "games",
+      "title": "Auctions",
+      "short": "In a second-price sealed-bid auction, bidding your true value is a dominant strategy; in a first-price auction bidders shade their bids.",
+      "prereqs": [
+        "imicro.pure-nash",
+        "micro.dominant-strategies"
+      ],
+      "viz": [
+        "graph"
+      ]
+    },
+    {
+      "id": "imicro.edgeworth-box",
+      "slug": "edgeworth-box",
+      "course": "imicro",
+      "unit": "general-equilibrium",
+      "title": "The Edgeworth Box and Pareto Efficiency",
+      "short": "An allocation is Pareto efficient when no trade can help one person without hurting the other; there the two MRSs are equal.",
+      "prereqs": [
+        "imicro.mrs",
+        "imicro.preference-types"
+      ],
+      "viz": [
+        "ec-edgeworth"
+      ]
+    },
+    {
+      "id": "imicro.exchange-equilibrium",
+      "slug": "exchange-equilibrium",
+      "course": "imicro",
+      "unit": "general-equilibrium",
+      "title": "Competitive Equilibrium in Exchange",
+      "short": "Find the price ratio at which both people's demands, paid for with the value of their endowments, add up to what is available.",
+      "prereqs": [
+        "imicro.edgeworth-box",
+        "imicro.cobb-douglas-demand"
+      ],
+      "viz": [
+        "ec-edgeworth"
+      ]
+    },
+    {
+      "id": "imicro.welfare-theorems",
+      "slug": "welfare-theorems",
+      "course": "imicro",
+      "unit": "general-equilibrium",
+      "title": "The Welfare Theorems",
+      "short": "Competitive equilibria are Pareto efficient, and with convex preferences any efficient allocation can be reached with lump-sum transfers.",
+      "prereqs": [
+        "imicro.exchange-equilibrium",
+        "micro.efficiency"
+      ],
+      "viz": [
+        "ec-edgeworth"
+      ]
+    },
+    {
+      "id": "imicro.externality-optimum",
+      "slug": "externality-optimum",
+      "course": "imicro",
+      "unit": "failure-information",
+      "title": "The Efficient Amount of an Externality",
+      "short": "Set marginal benefit equal to marginal social cost; a tax equal to the marginal external damage at that quantity gets the market there.",
+      "prereqs": [
+        "micro.externality-policy",
+        "imicro.competitive-supply"
+      ],
+      "viz": [
+        "ec-externality"
+      ]
+    },
+    {
+      "id": "imicro.coase-theorem",
+      "slug": "coase-theorem",
+      "course": "imicro",
+      "unit": "failure-information",
+      "title": "The Coase Theorem",
+      "short": "With clear property rights and low bargaining costs, the parties reach the efficient outcome whoever holds the rights; only who pays whom differs.",
+      "prereqs": [
+        "imicro.externality-optimum"
+      ],
+      "viz": [
+        "graph"
+      ]
+    },
+    {
+      "id": "imicro.public-goods-samuelson",
+      "slug": "public-goods-samuelson",
+      "course": "imicro",
+      "unit": "failure-information",
+      "title": "Providing Public Goods Efficiently",
+      "short": "Provide more of a public good while the sum of everyone's marginal benefits is above its marginal cost.",
+      "prereqs": [
+        "micro.public-goods",
+        "imicro.mrs"
+      ],
+      "viz": [
+        "graph"
+      ]
+    },
+    {
+      "id": "imicro.common-resources",
+      "slug": "common-resources",
+      "course": "imicro",
+      "unit": "failure-information",
+      "title": "Common Resources",
+      "short": "Open access draws users until the average return equals the cost, which uses the resource more than is efficient.",
+      "prereqs": [
+        "imicro.externality-optimum",
+        "micro.types-of-goods"
+      ],
+      "viz": [
+        "graph"
+      ]
+    },
+    {
+      "id": "imicro.adverse-selection",
+      "slug": "adverse-selection",
+      "course": "imicro",
+      "unit": "failure-information",
+      "title": "Adverse Selection and Lemons",
+      "short": "When sellers know quality and buyers don't, good products can be driven out of the market.",
+      "prereqs": [
+        "imicro.insurance",
+        "micro.market-equilibrium"
+      ],
+      "viz": [
+        "graph"
+      ]
+    },
+    {
+      "id": "imicro.moral-hazard",
+      "slug": "moral-hazard",
+      "course": "imicro",
+      "unit": "failure-information",
+      "title": "Moral Hazard and Incentives",
+      "short": "When actions are hidden after a deal, deductibles, copays and pay tied to results can restore incentives.",
+      "prereqs": [
+        "imicro.insurance"
+      ],
+      "viz": [
+        "graph"
+      ]
+    },
+    {
+      "id": "imicro.signaling",
+      "slug": "signaling",
+      "course": "imicro",
+      "unit": "failure-information",
+      "title": "Signaling",
+      "short": "A costly signal can separate types when it costs the high type less, even if it adds nothing to productivity.",
+      "prereqs": [
+        "imicro.adverse-selection",
+        "imicro.pure-nash"
+      ],
+      "viz": [
+        "graph"
+      ]
+    }
+  ]
+}

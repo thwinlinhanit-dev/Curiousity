@@ -1,0 +1,100 @@
+{
+  "id": "maps.map-scale",
+  "slug": "map-scale",
+  "ladder": "geog",
+  "course": "maps",
+  "unit": "grids",
+  "title": "How Far? The Scale Bar",
+  "short": "A scale bar shows how far a length on the map is in real life, like 1 inch for 1 mile.",
+  "trouble": "Children think places that look close on any map are close in real life. A map of the whole country and a map of one town can show the same length on paper for very different distances.",
+  "prereqs": [
+    "maps.routes",
+    "g2.skip-count-5-10-100"
+  ],
+  "xp": 2,
+  "viz": [
+    "gg-town"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A map is much smaller than the real place. So how can a map tell you how far something is? It uses a <b>scale bar</b>."
+      },
+      {
+        "t": "viz",
+        "name": "gg-town",
+        "opts": {
+          "places": [
+            {
+              "kind": "farm",
+              "c": 0,
+              "r": 2
+            },
+            {
+              "kind": "school",
+              "c": 4,
+              "r": 2
+            },
+            {
+              "kind": "house",
+              "c": 2,
+              "r": 4
+            }
+          ],
+          "labels": true,
+          "grid": false,
+          "key": false,
+          "compass": false,
+          "scale": {
+            "blocks": 1,
+            "label": "1 square = 10 miles"
+          },
+          "big": true
+        },
+        "cap": "The scale bar says one square is 10 miles."
+      },
+      {
+        "t": "key",
+        "html": "A scale bar shows how far a length on the map is in real life. Count the lengths, then use the scale to find the real distance."
+      },
+      {
+        "t": "ex",
+        "title": "From the farm to the school",
+        "q": "The farm and the school are 4 squares apart. One square is 10 miles. How far is it?",
+        "steps": [
+          "Count the squares: 4.",
+          "Skip-count by 10 for each square: 10, 20, 30, 40."
+        ],
+        "a": "40 miles."
+      },
+      {
+        "t": "why",
+        "html": "The mapmaker shrinks everything by the same amount. If one square stands for 10 miles everywhere on the map, then 4 squares must stand for 4 tens: 40 miles. That is why the same skip-counting from <a href=\"/math/grade-2/skip-count-5-10-100/\">counting by 5s, 10s and 100s</a> works."
+      },
+      {
+        "t": "mistake",
+        "html": "Places that look close are not always close. On a map of your town, one finger-width might be a few blocks. On a map of the whole country, the same finger-width might be hundreds of miles. Always check the scale bar."
+      },
+      {
+        "t": "note",
+        "html": "<b>For the grown-up.</b> Compare a map of your town with a map of your state. Put a finger on each. Ask, \"Is my finger the same distance on both maps?\""
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "C3 Framework for Social Studies State Standards (National Council for the Social Studies, 2013), Geography, D2.Geo.1.K-2 and D2.Geo.2.K-2: maps of familiar places and where places are"
+      },
+      {
+        "name": "Grokipedia, \"Scale (map)\"",
+        "url": "https://grokipedia.com/page/Scale_(map)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

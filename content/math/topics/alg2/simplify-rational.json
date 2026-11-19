@@ -1,0 +1,100 @@
+{
+  "id": "alg2.simplify-rational",
+  "slug": "simplify-rational",
+  "ladder": "math",
+  "course": "alg2",
+  "unit": "rational",
+  "title": "Simplifying Rational Expressions",
+  "short": "Factor, then cancel common factors, and note excluded values.",
+  "trouble": "Students cancel terms instead of factors, turning (x + 3)/3 into x.",
+  "prereqs": [
+    "alg1.factor-completely"
+  ],
+  "xp": 2,
+  "viz": [],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A <b>rational expression</b> is a fraction whose top and bottom are polynomials, like $\\frac{x^2 - 9}{x^2 + x - 6}$. Simplifying one works exactly like reducing $\\frac{12}{18}$ to $\\frac{2}{3}$: factor, then cancel common factors. You will use everything from <a href=\"/math/algebra-1/factor-completely/\">Factoring Completely</a>."
+      },
+      {
+        "t": "key",
+        "html": "Factor the numerator and denominator completely, then cancel factors that appear in both. Before you cancel, note the <b>excluded values</b>: every $x$ that makes the original denominator 0. The simplified expression equals the original only for $x$ outside that list."
+      },
+      {
+        "t": "why",
+        "html": "Cancelling uses the fact that $\\frac{ac}{bc} = \\frac{a}{b} \\cdot \\frac{c}{c} = \\frac{a}{b}$, because $\\frac{c}{c} = 1$. That is only true when $c \\ne 0$. So when you cancel $(x - 3)$, you are quietly assuming $x \\ne 3$. The original expression is undefined at $x = 3$ and stays undefined there; the graph shows a hole at that point."
+      },
+      {
+        "t": "viz",
+        "name": "alg2-plot",
+        "opts": {
+          "fns": [
+            "x + 3"
+          ],
+          "points": [
+            {
+              "x": 3,
+              "y": 6,
+              "open": true,
+              "label": "hole (3, 6)"
+            }
+          ],
+          "xmin": -6,
+          "xmax": 7,
+          "ymin": -4,
+          "ymax": 10,
+          "label": "The line y = x + 3 with a hole at (3, 6)"
+        },
+        "cap": "$y = \\frac{x^2 - 9}{x - 3}$ looks exactly like the line $y = x + 3$, except for a hole at $(3, 6)$: at $x = 3$ the original expression is $\\frac{0}{0}$, which is undefined."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Factor, then cancel",
+        "q": "Simplify $\\frac{x^2 - 9}{x^2 + x - 6}$ and state the excluded values.",
+        "steps": [
+          "Factor: $\\frac{(x - 3)(x + 3)}{(x + 3)(x - 2)}$.",
+          "Excluded values come from the original denominator: $x \\ne -3$ and $x \\ne 2$.",
+          "Cancel $(x + 3)$."
+        ],
+        "a": "$\\frac{x - 3}{x - 2}$, for $x \\ne -3, 2$"
+      },
+      {
+        "t": "ex",
+        "title": "Opposite factors",
+        "q": "Simplify $\\frac{5 - x}{x^2 - 25}$.",
+        "steps": [
+          "Factor: $x^2 - 25 = (x - 5)(x + 5)$, and $5 - x = -(x - 5)$.",
+          "Cancel $(x - 5)$, keeping the $-1$: $\\frac{-1}{x + 5}$."
+        ],
+        "a": "$-\\frac{1}{x + 5}$, for $x \\ne \\pm 5$"
+      },
+      {
+        "t": "mistake",
+        "html": "Cancelling terms instead of factors, as in $\\frac{x + 3}{3} = x$. The 3 on top is added, not multiplied, so it can't cancel. Test with a number: at $x = 3$, $\\frac{3 + 3}{3} = 2$, not 3. Only cancel something that multiplies the <b>entire</b> numerator and the <b>entire</b> denominator."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Intermediate Algebra 2e, Section 7.1 Multiply and Divide Rational Expressions (simplifying)"
+      },
+      {
+        "name": "OpenStax College Algebra 2e, Section 1.6 Rational Expressions"
+      },
+      {
+        "name": "Common Core State Standards, A-APR.D.6"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

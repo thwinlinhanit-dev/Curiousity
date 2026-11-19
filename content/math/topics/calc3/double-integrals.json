@@ -1,0 +1,100 @@
+{
+  "id": "calc3.double-integrals",
+  "slug": "double-integrals",
+  "ladder": "math",
+  "course": "calc3",
+  "unit": "multiple-integrals",
+  "title": "Double Integrals over Rectangles",
+  "short": "Volume under a surface as a limit of sums.",
+  "trouble": "",
+  "prereqs": [
+    "calc3.multivariable-functions",
+    "calc1.definite-integral"
+  ],
+  "xp": 2,
+  "viz": [
+    "surface",
+    "riemann"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In Calculus 1 the <a href=\"/math/calculus-1/definite-integral/\">definite integral</a> was built from thin rectangles under a curve. A surface $z = f(x, y)$ over a rectangle $R$ in the plane encloses a solid, and its volume is built the same way from thin <b>boxes</b>."
+      },
+      {
+        "t": "key",
+        "html": "Divide $R$ into small rectangles of area $\\Delta A$, pick a sample point $(x_{ij}^*, y_{ij}^*)$ in each, and add up box volumes:\n  $$\\iint_R f(x, y)\\,dA = \\lim_{m, n \\to \\infty} \\sum_{i=1}^{m}\\sum_{j=1}^{n} f(x_{ij}^*, y_{ij}^*)\\,\\Delta A.$$\n  If $f \\ge 0$ this is the volume under the surface; parts below the $xy$-plane count as negative. The <b>average value</b> of $f$ on $R$ is $\\frac{1}{\\text{area}(R)}\\iint_R f\\,dA$."
+      },
+      {
+        "t": "why",
+        "html": "Over one small rectangle the surface is nearly flat, so the solid above it is nearly a box with base $\\Delta A$ and height $f$ at the sample point. Each box is slightly too tall or too short, but for a continuous $f$ the surface varies less and less across a smaller rectangle, so the total error goes to ${}0$ as the grid gets finer. The sums settle on one number, the double integral. Sums split and constants factor out, so the integral is linear: $$\\iint (af + bg)\\,dA = a\\iint f\\,dA + b\\iint g\\,dA.$$"
+      },
+      {
+        "t": "viz",
+        "name": "calc3-boxes",
+        "opts": {
+          "f": "4 - x^2/2 - y^2/4",
+          "a": 0,
+          "b": 2,
+          "c": 0,
+          "d": 2,
+          "n": 4,
+          "sample": "mid"
+        },
+        "cap": "Boxes under $z = 4 - \\frac{x^2}{2} - \\frac{y^2}{4}$ over $[0, 2] \\times [0, 2]$. Raise $n$ and the sum of the box volumes closes in on the integral; switch the sample point to see a cruder estimate."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "The midpoint rule",
+        "q": "Estimate $\\iint_R (x + 2y)\\,dA$ on $R = [0, 2] \\times [0, 2]$ with a ${}2 \\times 2$ grid and midpoints.",
+        "steps": [
+          "Four unit squares, so $\\Delta A = 1$. Midpoints: $(0.5, 0.5)$, $(1.5, 0.5)$, $(0.5, 1.5)$, $(1.5, 1.5)$.",
+          "Values: ${}1.5$, ${}2.5$, ${}3.5$, ${}4.5$, with sum ${}12$.",
+          "Estimate $= 12 \\cdot 1 = 12$. (For a function like this, whose graph is a plane, the midpoint rule is exact.)"
+        ],
+        "a": "${}12$"
+      },
+      {
+        "t": "ex",
+        "title": "Average value",
+        "q": "Find the average value of $f(x, y) = xy$ on $R = [0, 2] \\times [0, 4]$.",
+        "steps": [
+          "$$\\iint_R xy\\,dA = \\left(\\int_0^2 x\\,dx\\right)\\left(\\int_0^4 y\\,dy\\right) = 2 \\cdot 8 = 16$$ (the integral of a product $g(x)h(y)$ over a rectangle splits).",
+          "Area $= 8$, so the average is $\\frac{16}{8} = 2$.",
+          "A flat box of height ${}2$ over $R$ holds the same volume as the region under the surface."
+        ],
+        "a": "${}2$"
+      },
+      {
+        "t": "ex",
+        "title": "Linearity",
+        "q": "If $\\iint_R f\\,dA = 5$ and $\\iint_R g\\,dA = -2$ on a rectangle of area ${}3$, find $\\iint_R (3f - 2g + 1)\\,dA$.",
+        "steps": [
+          "Split: ${}3(5) - 2(-2) + \\iint_R 1\\,dA$.",
+          "$\\iint_R 1\\,dA$ is the area, ${}3$. Total: ${}15 + 4 + 3 = 22$."
+        ],
+        "a": "${}22$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Forgetting $\\Delta A$ in a Riemann sum.</b> Adding the heights alone gives a number that changes when you refine the grid. Each term is a volume: height times base area. Check: doubling $m$ and $n$ should give a similar estimate, not one four times as big. Also remember that a double integral is a <i>signed</i> volume: if $f$ dips below zero, that part subtracts."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 3, 5.1 Double Integrals over Rectangular Regions"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

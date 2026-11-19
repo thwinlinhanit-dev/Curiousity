@@ -1,0 +1,127 @@
+{
+  "id": "prob.inclusion-exclusion-events",
+  "slug": "inclusion-exclusion-events",
+  "ladder": "math",
+  "course": "prob",
+  "unit": "foundations",
+  "title": "Inclusion–Exclusion for Events",
+  "short": "P(A ∪ B ∪ C) adds the three probabilities, subtracts the three pairwise overlaps and adds back the triple overlap.",
+  "trouble": "Students forget to add back P(A ∩ B ∩ C) after subtracting the pairs.",
+  "prereqs": [
+    "prob.axioms"
+  ],
+  "xp": 2,
+  "viz": [
+    "venn"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The <a href=\"/math/probability/axioms/\">axioms</a> gave the addition rule for two events: add, then subtract the overlap that was counted twice. With three events the overlaps overlap too, so one more correction is needed. The result, <b>inclusion–exclusion</b>, is the standard way to find the chance that at least one of several events happens."
+      },
+      {
+        "t": "key",
+        "html": "$$P(A \\cup B \\cup C) = P(A) + P(B) + P(C) - P(A \\cap B) - P(A \\cap C) - P(B \\cap C) + P(A \\cap B \\cap C).$$ Add the singles, subtract the pairs, add back the triple."
+      },
+      {
+        "t": "why",
+        "html": "Look at one outcome that lies in exactly $k$ of the three events, and count how many times the right side counts it. The singles count it $k$ times, the pairs $\\binom{k}{2}$ times, the triple $\\binom{k}{3}$ times. For $k = 1$: $1 - 0 + 0 = 1$. For $k = 2$: $2 - 1 + 0 = 1$. For $k = 3$: $3 - 3 + 1 = 1$. Every outcome in the union is counted exactly once, and outcomes outside the union are never counted, so the sum is $P(A \\cup B \\cup C)$. The same count works for $n$ events, because $$\\sum_{j \\ge 1} (-1)^{j+1}\\binom{k}{j} = 1 - (1 - 1)^{k} = 1$$"
+      },
+      {
+        "t": "viz",
+        "name": "venn",
+        "opts": {
+          "sets": 3,
+          "labels": [
+            "A",
+            "B",
+            "C"
+          ],
+          "probs": {
+            "a": 0.19,
+            "b": 0.13,
+            "c": 0.08,
+            "ab": 0.06,
+            "ac": 0.07,
+            "bc": 0.04,
+            "abc": 0.03,
+            "n": 0.4
+          },
+          "shade": "A∪B∪C",
+          "presets": [
+            "A∪B∪C",
+            "A∩B∩C",
+            "A∩B",
+            "A′"
+          ]
+        },
+        "cap": "Three events with the probability of each separate region. Tap regions to build an event; the triple region in the middle sits inside every pairwise overlap."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Three activities",
+        "q": "In a gym, $P(\\text{swim}) = 0.35$, $P(\\text{run}) = 0.26$, $P(\\text{cycle}) = 0.22$, the pairwise overlaps are $P(S \\cap R) = 0.09$, $P(S \\cap C) = 0.10$, $P(R \\cap C) = 0.07$, and $P(S \\cap R \\cap C) = 0.03$. Find the probability that a member does at least one.",
+        "steps": [
+          "Singles: $0.35 + 0.26 + 0.22 = 0.83$.",
+          "Pairs: $0.09 + 0.10 + 0.07 = 0.26$.",
+          "$$P(S \\cup R \\cup C) = 0.83 - 0.26 + 0.03 = 0.60$$"
+        ],
+        "a": "$0.6$"
+      },
+      {
+        "t": "ex",
+        "title": "Divisible by 2, 3 or 5",
+        "q": "A whole number is chosen at random from 1 to 60. Find the probability that it is divisible by 2, 3 or 5.",
+        "steps": [
+          "Let A, B, C be \"divisible by 2\", \"by 3\", \"by 5\". Divisible by both 2 and 3 means divisible by 6, and so on, because 2, 3 and 5 share no factors.",
+          "Counts: $30 + 20 + 12$ singles; $10 + 6 + 4$ pairs (multiples of 6, 10, 15); $2$ multiples of 30.",
+          "$$30 + 20 + 12 - 10 - 6 - 4 + 2 = 44$$ numbers, so the probability is $\\frac{44}{60} = \\frac{11}{15}$."
+        ],
+        "a": "$\\frac{11}{15}$"
+      },
+      {
+        "t": "ex",
+        "title": "Exactly one of the three",
+        "q": "With the gym numbers above, find the probability that a member does exactly one of the three activities.",
+        "steps": [
+          "The sum of the singles counts each \"exactly two\" region twice and the triple region three times; the sum of the pairs counts each \"exactly two\" region once and the triple region three times.",
+          "So $$P(\\text{exactly one}) = \\Sigma\\,\\text{singles} - 2\\,\\Sigma\\,\\text{pairs} + 3P(\\text{triple})$$",
+          "$$= 0.83 - 2(0.26) + 3(0.03) = 0.40$$",
+          "In the same way, $$P(\\text{exactly two}) = \\Sigma\\,\\text{pairs} - 3P(\\text{triple}) = 0.26 - 0.09 = 0.17$$ each pairwise overlap contains the triple region once."
+        ],
+        "a": "$0.4$ (and $0.17$ for exactly two)"
+      },
+      {
+        "t": "p",
+        "html": "The formula can also be run backward. If the union is known and one term is missing, such as $P(A \\cap B \\cap C)$, write out inclusion–exclusion and solve for it. And \"none of the three\" is the complement of the union."
+      },
+      {
+        "t": "mistake",
+        "html": "Stopping after subtracting the pairs. The triple region was added three times (once in each single) and subtracted three times (once in each pair), so without the last term it is not counted at all. Check: your answer must be at least as large as the largest single probability, and at most their sum."
+      },
+      {
+        "t": "note",
+        "html": "For $n$ events, add all singles, subtract all pairs, add all triples, subtract all quadruples, and so on. One famous use: if $n$ people grab coats at random, the chance that nobody gets their own coat is $1 - 1 + \\frac{1}{2!} - \\frac{1}{3!} + \\cdots \\pm \\frac{1}{n!}$, which is close to $\\frac{1}{e} \\approx 0.368$ for any $n$ beyond 5."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Grinstead and Snell, Introduction to Probability (2nd revised edition, American Mathematical Society; free from Dartmouth College), chapter 3 (Combinatorics), section 3.2, the inclusion-exclusion principle"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.05, Introduction to Probability and Statistics (Spring 2014), readings on counting and probability"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

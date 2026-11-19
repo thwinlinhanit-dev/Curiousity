@@ -1,0 +1,89 @@
+{
+  "id": "g4.add-subtract-algorithm",
+  "slug": "add-subtract-algorithm",
+  "ladder": "math",
+  "course": "g4",
+  "unit": "place-value",
+  "title": "The Standard Algorithm for Adding and Subtracting",
+  "short": "Add and subtract multi-digit numbers column by column.",
+  "trouble": "Children regroup across several zeros incorrectly, as in 6,000 − 2,347.",
+  "prereqs": [
+    "g4.large-numbers",
+    "g3.subtract-across-zeros"
+  ],
+  "xp": 2,
+  "viz": [
+    "placevalue",
+    "base10"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You already add and subtract within 1,000 and <a href=\"/math/grade-3/subtract-across-zeros/\">subtract across zeros</a>. The standard algorithm does the same thing for numbers of any size: one column at a time, starting with the ones."
+      },
+      {
+        "t": "key",
+        "html": "Line up the digits by place. <b>Add</b>: when a column makes 10 or more, write the ones digit and carry 1 to the next place. <b>Subtract</b>: when the top digit is too small, trade 1 from the next place for 10 in this place."
+      },
+      {
+        "t": "why",
+        "html": "Carrying and trading never change the amount. Ten ones are one ten, so swapping them only writes the number in standard form. When a place holds 0, you trade from the next place over: 1 thousand becomes 10 hundreds, then 1 of those hundreds becomes 10 tens, and so on."
+      },
+      {
+        "t": "ex",
+        "title": "Adding with carries",
+        "q": "Add $4{,}562 + 2{,}879$.",
+        "steps": [
+          "Ones: $2 + 9 = 11$. Write 1, carry 1 ten.",
+          "Tens: $6 + 7 + 1 = 14$. Write 4, carry 1 hundred.",
+          "Hundreds: $5 + 8 + 1 = 14$. Write 4, carry 1 thousand.",
+          "Thousands: $4 + 2 + 1 = 7$. Write 7."
+        ],
+        "a": "$7{,}441$"
+      },
+      {
+        "t": "viz",
+        "name": "g4-column",
+        "opts": {
+          "op": "-",
+          "a": 6000,
+          "b": 2347
+        },
+        "cap": "Press <b>Next step</b> to see each trade: the 6 thousands become 5 thousands and 10 hundreds, then a hundred becomes 10 tens, then a ten becomes 10 ones."
+      },
+      {
+        "t": "ex",
+        "title": "Subtracting across zeros",
+        "q": "Subtract $6{,}000 - 2{,}347$.",
+        "steps": [
+          "Ones: 0 is less than 7, and the tens and hundreds are 0 too. Go to the thousands.",
+          "Trade 1 thousand for 10 hundreds, 1 hundred for 10 tens, and 1 ten for 10 ones. The top is now 5 thousands, 9 hundreds, 9 tens, 10 ones.",
+          "Subtract: $10 - 7 = 3$, $9 - 4 = 5$, $9 - 3 = 6$, $5 - 2 = 3$.",
+          "Check by adding: $3{,}653 + 2{,}347 = 6{,}000$."
+        ],
+        "a": "$3{,}653$"
+      },
+      {
+        "t": "mistake",
+        "html": "Taking the smaller digit from the larger one in each column ($6{,}000 - 2{,}347$ becomes $4{,}347$), or trading into a 0 without trading the 0 too. Always add your answer to the number you subtracted: you should get the top number back."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 4, 4.NBT.B.4 (fluently add and subtract multi-digit whole numbers using the standard algorithm)"
+      },
+      {
+        "name": "OpenStax Prealgebra 2e, section 1.2 Add Whole Numbers"
+      },
+      {
+        "name": "OpenStax Prealgebra 2e, section 1.3 Subtract Whole Numbers"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

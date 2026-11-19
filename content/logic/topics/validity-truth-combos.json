@@ -1,0 +1,140 @@
+{
+  "id": "informal.validity-truth-combos",
+  "slug": "validity-truth-combos",
+  "ladder": "logic",
+  "course": "informal",
+  "unit": "deduction-induction",
+  "title": "Validity and Truth Together",
+  "short": "Every mix of true and false premises and conclusions is possible for a valid argument except one: true premises with a false conclusion.",
+  "trouble": "Learners believe a valid argument cannot have false premises or a false conclusion. It can have both; what it cannot have is all true premises and a false conclusion.",
+  "prereqs": [
+    "informal.soundness"
+  ],
+  "xp": 2,
+  "viz": [
+    "lg-sort"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Validity and truth are separate. <a href=\"/logic/informal-logic/soundness/\">Soundness</a> needs both. This lesson maps every way they can mix, so you are never surprised by a valid argument with a false conclusion."
+      },
+      {
+        "t": "key",
+        "html": "A valid argument can have any mix of true and false premises and conclusion <b>except one</b>: all true premises with a false conclusion. An invalid argument can have any mix at all."
+      },
+      {
+        "t": "why",
+        "html": "Validity is defined as \"it is impossible for all the premises to be true and the conclusion false.\" It rules out exactly that one case and says nothing about the others. So from \"valid\" alone you cannot tell whether anything in it is true."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Premises",
+          "Conclusion",
+          "Valid example possible?",
+          "Invalid example possible?"
+        ],
+        "rows": [
+          [
+            "All true",
+            "True",
+            "Yes",
+            "Yes"
+          ],
+          [
+            "All true",
+            "False",
+            "<b>No</b>",
+            "Yes"
+          ],
+          [
+            "Some false",
+            "True",
+            "Yes",
+            "Yes"
+          ],
+          [
+            "Some false",
+            "False",
+            "Yes",
+            "Yes"
+          ]
+        ],
+        "cap": "Only one box is empty."
+      },
+      {
+        "t": "ex",
+        "title": "Valid, false premises, true conclusion",
+        "q": "Is \"All fish are mammals. All whales are fish. So all whales are mammals.\" valid?",
+        "steps": [
+          "Both premises are false.",
+          "The conclusion happens to be true.",
+          "The form \"All B are C; all A are B; so all A are C\" is valid."
+        ],
+        "a": "Valid, and not sound, with a true conclusion."
+      },
+      {
+        "t": "ex",
+        "title": "Invalid, everything true",
+        "q": "Is \"All robins are birds. Some birds can fly. So all robins can fly.\" valid?",
+        "steps": [
+          "All three statements are true.",
+          "Same form, other words: \"All penguins are birds. Some birds can fly. So all penguins can fly.\" True premises, false conclusion.",
+          "So the form can fail."
+        ],
+        "a": "Invalid, even though every statement in it is true."
+      },
+      {
+        "t": "viz",
+        "name": "lg-sort",
+        "opts": {
+          "bins": [
+            "Possible for a valid argument",
+            "Impossible for a valid argument"
+          ],
+          "cards": [
+            {
+              "text": "True premises, true conclusion",
+              "bin": 0
+            },
+            {
+              "text": "True premises, false conclusion",
+              "bin": 1,
+              "why": "This is the one mix validity rules out."
+            },
+            {
+              "text": "A false premise, true conclusion",
+              "bin": 0
+            },
+            {
+              "text": "A false premise, false conclusion",
+              "bin": 0
+            }
+          ],
+          "shuffle": true,
+          "reveal": true
+        },
+        "cap": "Sort each mix of truth values."
+      },
+      {
+        "t": "mistake",
+        "html": "Believing a valid argument cannot have false premises or a false conclusion. It can have both. What it cannot have is all true premises and a false conclusion. If you know an argument has true premises and a false conclusion, you know for sure it is invalid."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Internet Encyclopedia of Philosophy, \"Validity and Soundness\""
+      },
+      {
+        "name": "Patrick Hurley, A Concise Introduction to Logic, chapter 1 (validity, truth, soundness)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

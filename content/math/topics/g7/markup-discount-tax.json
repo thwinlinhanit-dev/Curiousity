@@ -1,0 +1,126 @@
+{
+  "id": "g7.markup-discount-tax",
+  "slug": "markup-discount-tax",
+  "ladder": "math",
+  "course": "g7",
+  "unit": "percent",
+  "title": "Markups, Discounts and Tax",
+  "short": "Find sale prices and totals with percents.",
+  "trouble": "Students add two discounts together, thinking 20% off then 10% off is 30% off.",
+  "prereqs": [
+    "g7.percent-change"
+  ],
+  "xp": 2,
+  "viz": [
+    "percentbar",
+    "tapediagram"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Stores use <a href=\"/math/grade-7/percent-change/\">percent change</a> all the time. A discount takes a percent off; sales tax, a tip or a markup adds a percent on. One multiplication can do each job."
+      },
+      {
+        "t": "key",
+        "html": "With $d\\%$ off, you pay $(100 - d)\\%$ of the price. With $t\\%$ added (tax, tip or markup), you pay $(100 + t)\\%$. Write that percent as a decimal and multiply."
+      },
+      {
+        "t": "why",
+        "html": "20% off a price $p$ is $p - 0.20p$. By the distributive property that is $(1 - 0.20)p = 0.80p$: you pay 80%. In the same way, 6% tax gives $p + 0.06p = 1.06p$. When there are two changes, the second percent is taken of the <b>new</b> price, so you multiply twice."
+      },
+      {
+        "t": "viz",
+        "name": "percentbar",
+        "opts": {
+          "whole": 60,
+          "pct": 80,
+          "step": 10,
+          "snap": 5,
+          "pre": "$"
+        },
+        "cap": "A \\$60 jacket at 20% off: you pay 80% of \\$60, which is \\$48. Drag the marker to try other discounts."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A discount",
+        "q": "A \\$60 jacket is on sale for 20% off. What is the sale price?",
+        "steps": [
+          "You pay $100\\% - 20\\% = 80\\%$.",
+          "$0.80 \\times 60 = 48$."
+        ],
+        "a": "\\$48"
+      },
+      {
+        "t": "ex",
+        "title": "Sales tax",
+        "q": "Shoes cost \\$35, and the sales tax is 6%. What is the total?",
+        "steps": [
+          "You pay $100\\% + 6\\% = 106\\%$.",
+          "$1.06 \\times 35 = 37.10$.",
+          "Check: the tax is $0.06 \\times 35 = 2.10$, and $35 + 2.10 = 37.10$ ✓."
+        ],
+        "a": "\\$37.10"
+      },
+      {
+        "t": "ex",
+        "title": "Two discounts in a row",
+        "q": "A \\$50 backpack is 20% off, and a coupon takes another 10% off the sale price. What is the final price?",
+        "steps": [
+          "After 20% off: $0.80 \\times 50 = 40$.",
+          "The coupon takes 10% off \\$40, not off \\$50: $0.90 \\times 40 = 36$.",
+          "In one step: $50 \\times 0.80 \\times 0.90 = 50 \\times 0.72 = 36$. You pay 72%, which is 28% off, not 30%."
+        ],
+        "a": "\\$36"
+      },
+      {
+        "t": "mistake",
+        "html": "Adding the discounts: \"20% off and then 10% off is 30% off.\" That would give \\$35, but the second discount comes off a smaller price, so it saves less. Check: 10% of \\$40 is \\$4, not \\$5."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Situation",
+          "Multiply the price by"
+        ],
+        "rows": [
+          [
+            "15% off",
+            "$0.85$"
+          ],
+          [
+            "8% sales tax",
+            "$1.08$"
+          ],
+          [
+            "20% tip",
+            "$1.20$ (for the total) or $0.20$ (for the tip alone)"
+          ],
+          [
+            "50% markup",
+            "$1.50$"
+          ]
+        ],
+        "cap": "Each percent change is one multiplication."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Prealgebra 2e, Section 6.3 Solve Sales Tax, Commission, and Discount Applications"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 7.RP.A.3"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

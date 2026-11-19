@@ -1,0 +1,102 @@
+{
+  "id": "gchem2.buffer-additions",
+  "slug": "buffer-additions",
+  "ladder": "chemistry",
+  "course": "gchem2",
+  "unit": "acids-bases",
+  "title": "Adding Acid or Base to a Buffer",
+  "short": "Do the neutralization stoichiometry first, then use the new ratio in the Henderson–Hasselbalch equation.",
+  "trouble": "Students put the added moles into an equilibrium calculation before they do the neutralization.",
+  "prereqs": [
+    "gchem2.henderson-hasselbalch",
+    "gchem1.solution-stoichiometry"
+  ],
+  "xp": 3,
+  "viz": [
+    "ch-buffer"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "When strong acid or base is added to a <a href=\"/chemistry/general-chemistry-2/henderson-hasselbalch/\">buffer</a>, it reacts completely with one buffer partner first. So the calculation has two stages: <a href=\"/chemistry/general-chemistry-1/solution-stoichiometry/\">stoichiometry</a>, then equilibrium."
+      },
+      {
+        "t": "key",
+        "html": "Stage 1: work in moles. The added $\\mathrm{OH^-}$ converts that many moles of HA to $\\mathrm{A^-}$ (or added $\\mathrm{H_3O^+}$ converts $\\mathrm{A^-}$ to HA). Stage 2: put the new mole ratio into $\\text{pH} = \\text{p}K_a + \\log\\dfrac{n_{\\mathrm{A^-}}}{n_\\mathrm{HA}}$."
+      },
+      {
+        "t": "why",
+        "html": "A strong base reacting with a weak acid has an enormous equilibrium constant ($K = K_a/K_w$, about $10^{9}$ for acetic acid), so it goes to completion before anything else matters. Only after that does the weak-acid equilibrium set the pH. Moles are easier than molarities here because adding a solution changes the volume, but both buffer partners share the same final volume, so the volume cancels from the ratio."
+      },
+      {
+        "t": "viz",
+        "name": "ch-buffer",
+        "opts": {
+          "mode": "bars",
+          "pKa": 4.74,
+          "nHA": 0.1,
+          "nA": 0.1,
+          "V": 0.5,
+          "adds": 0.01
+        },
+        "cap": "Each click adds 0.01 mol of strong acid or base. Watch the bars: one partner shrinks and the other grows by the same amount, and the pH follows the ratio."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Adding base",
+        "q": "A $500\\ \\text{mL}$ buffer is $0.20\\ \\text{M}$ in $\\mathrm{CH_3COOH}$ and $0.20\\ \\text{M}$ in $\\mathrm{CH_3COO^-}$ ($\\text{p}K_a = 4.74$). Add $0.020\\ \\text{mol}$ NaOH. Find the pH.",
+        "steps": [
+          "Moles: $0.100\\ \\text{mol}$ of each partner.",
+          "Stage 1: $\\mathrm{CH_3COOH + OH^- \\to CH_3COO^- + H_2O}$. HA: $0.100 - 0.020 = 0.080\\ \\text{mol}$; $\\mathrm{A^-}$: $0.100 + 0.020 = 0.120\\ \\text{mol}$.",
+          "Stage 2: $$\\text{pH} = 4.74 + \\log\\dfrac{0.120}{0.080} = 4.74 + 0.18 = 4.92$$"
+        ],
+        "a": "$\\text{pH} = 4.92$ (up from 4.74)."
+      },
+      {
+        "t": "ex",
+        "title": "Adding acid to an ammonia buffer",
+        "q": "To $100\\ \\text{mL}$ of a buffer with $0.25\\ \\text{M}$ $\\mathrm{NH_3}$ and $0.20\\ \\text{M}$ $\\mathrm{NH_4^+}$ ($\\text{p}K_a = 9.25$), add $10.0\\ \\text{mL}$ of $1.0\\ \\text{M}$ HCl.",
+        "steps": [
+          "Moles: $\\mathrm{NH_3}$ $0.025$, $\\mathrm{NH_4^+}$ $0.020$, HCl $0.010\\ \\text{mol}$.",
+          "Stage 1: $\\mathrm{NH_3 + H_3O^+ \\to NH_4^+ + H_2O}$. $\\mathrm{NH_3}$: $0.015\\ \\text{mol}$; $\\mathrm{NH_4^+}$: $0.030\\ \\text{mol}$.",
+          "Stage 2: $$\\text{pH} = 9.25 + \\log\\dfrac{0.015}{0.030} = 9.25 - 0.30 = 8.95$$ The total volume (110 mL) never entered."
+        ],
+        "a": "$\\text{pH} = 8.95$."
+      },
+      {
+        "t": "ex",
+        "title": "Too much acid",
+        "q": "Add $0.15\\ \\text{mol}$ HCl to the acetate buffer of the first example ($0.100\\ \\text{mol}$ of each partner, $500\\ \\text{mL}$). What happens?",
+        "steps": [
+          "All $0.100\\ \\text{mol}$ of acetate is used, and $0.050\\ \\text{mol}$ HCl is left over. The buffer is exhausted.",
+          "The excess strong acid sets the pH: $[\\mathrm{H_3O^+}] = 0.050/0.500 = 0.10\\ \\text{M}$, pH 1.00 (the acetic acid adds almost nothing)."
+        ],
+        "a": "$\\text{pH} = 1.00$: the buffer's capacity was exceeded."
+      },
+      {
+        "t": "note",
+        "html": "The same two-stage method gives every point on a <a href=\"/chemistry/general-chemistry-2/weak-titration-curves/\">weak-acid titration curve</a> before the equivalence point."
+      },
+      {
+        "t": "mistake",
+        "html": "Putting the added moles into an equilibrium (ICE) calculation before doing the neutralization. Strong acid and base react completely first. Check: after stage 1, there should be no strong acid or base left (unless the buffer has been used up)."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 14.6 Buffers"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

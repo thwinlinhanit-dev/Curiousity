@@ -1,0 +1,110 @@
+{
+  "id": "chem.collision-theory",
+  "slug": "collision-theory",
+  "ladder": "chemistry",
+  "course": "chem",
+  "unit": "rates-equilibrium",
+  "title": "Collision Theory and Reaction Rate",
+  "short": "Particles must collide hard enough and lined up the right way, so temperature, concentration and surface area change the rate.",
+  "trouble": "Students think every collision makes a reaction, or that heating speeds a reaction only by causing more collisions, missing the larger share of collisions that are hard enough.",
+  "prereqs": [
+    "chem.kinetic-molecular-theory",
+    "chem.exo-endo"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-collisions",
+    "ch-maxwell"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Some reactions are over in a flash; others, like iron rusting, take years. <a href=\"/chemistry/chemistry/kinetic-molecular-theory/\">Kinetic Molecular Theory</a> pictures particles flying and colliding, and <a href=\"/chemistry/chemistry/exo-endo/\">Exothermic and Endothermic Reactions</a> showed that atoms must rearrange for a reaction to happen. Put these together and you can explain reaction speed."
+      },
+      {
+        "t": "key",
+        "html": "For particles to react, they must <b>collide</b>, hard enough to reach the <b>activation energy</b> $E_a$, and lined up with the right <b>orientation</b>. Anything that makes such collisions more frequent speeds the reaction up: a higher temperature, a higher concentration (or gas pressure), or a larger surface area of a solid."
+      },
+      {
+        "t": "why",
+        "html": "Most collisions are too gentle: the particles bounce apart unchanged. Raising the temperature does two things. Collisions happen a little more often, but, more importantly, many more of them carry at least $E_a$. For a reaction with $E_a = 50\\ \\text{kJ/mol}$, warming from $300\\ \\text{K}$ to $310\\ \\text{K}$ raises the collision rate by less than 2%, yet nearly doubles the share of collisions that are hard enough. Concentration and surface area act differently: they only add collisions, because more reactant particles are in reach of each other."
+      },
+      {
+        "t": "viz",
+        "name": "ch-collisions",
+        "opts": {
+          "nA": 12,
+          "nB": 12,
+          "T": 300,
+          "Ea": 12
+        },
+        "cap": "A and B particles colliding. Only collisions with enough energy turn into products. Raise the temperature and watch the reaction rate climb much faster than the collision count."
+      },
+      {
+        "t": "viz",
+        "name": "ch-maxwell",
+        "opts": {
+          "x": "energy",
+          "curves": [
+            {
+              "f": "N2",
+              "T": 300
+            },
+            {
+              "f": "N2",
+              "T": 350
+            }
+          ],
+          "Ea": 10
+        },
+        "cap": "How collision energies are spread at two temperatures. The shaded tail beyond $E_a$ is the share hard enough to react; it grows sharply as the temperature rises."
+      },
+      {
+        "t": "ex",
+        "title": "Cutting a solid into pieces",
+        "q": "A $2\\ \\text{cm}$ cube of zinc is cut into $1\\ \\text{cm}$ cubes. How does the total surface area change?",
+        "steps": [
+          "The big cube: $6 \\times 2^2 = 24\\ \\text{cm}^2$.",
+          "It makes $8$ small cubes, each $6 \\times 1^2 = 6\\ \\text{cm}^2$: $48\\ \\text{cm}^2$ in all.",
+          "Twice as much zinc surface is exposed to an acid, so the pieces react faster."
+        ],
+        "a": "It doubles, from $24$ to $48\\ \\text{cm}^2$."
+      },
+      {
+        "t": "ex",
+        "title": "More crowded particles",
+        "q": "In a gas, A–B collisions per second are proportional to $[\\mathrm{A}] \\times [\\mathrm{B}]$. What happens to the collision rate if both concentrations double?",
+        "steps": [
+          "Each A has twice as many B particles to hit, and there are twice as many A particles.",
+          "$2 \\times 2 = 4$."
+        ],
+        "a": "It becomes 4 times as large."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking every collision makes a reaction, or that heating speeds a reaction only by causing more collisions. If every collision reacted, gases would react almost instantly. Most collisions bounce; heating mainly raises the fraction of collisions that have enough energy. Check any \"why\" answer about temperature: does it mention energy, not only frequency?"
+      },
+      {
+        "t": "note",
+        "html": "Speed up a reaction with heat and concentration in <a href=\"/science-lab/chem-lab/\">Mixing Lab</a>."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 12.2 Factors Affecting Reaction Rates"
+      },
+      {
+        "name": "OpenStax Chemistry 2e, 12.5 Collision Theory"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-PS1-5"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

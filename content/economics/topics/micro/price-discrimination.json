@@ -1,0 +1,95 @@
+{
+  "id": "micro.price-discrimination",
+  "slug": "price-discrimination",
+  "ladder": "economics",
+  "course": "micro",
+  "unit": "imperfect-competition",
+  "title": "Price Discrimination",
+  "short": "Charging different buyers different prices for the same good can raise both output and profit while shrinking consumer surplus.",
+  "trouble": "Students call any price difference discrimination (costs may differ), and miss the conditions it needs: market power, a way to sort buyers, and no resale.",
+  "prereqs": [
+    "micro.monopoly-inefficiency"
+  ],
+  "xp": 2,
+  "viz": [
+    "ec-monopoly"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The single-price monopoly in <a href=\"/economics/microeconomics/monopoly-inefficiency/\">Monopoly and Deadweight Loss</a> leaves sales on the table: some buyers would pay more than the price, and some would buy at a lower price. A seller who can charge different prices to different buyers can capture some of that."
+      },
+      {
+        "t": "key",
+        "html": "<b>Price discrimination</b> is charging different buyers different prices for the same good, for reasons not based on cost. It needs three things: <b>market power</b>, a way to <b>sort buyers</b> by willingness to pay, and a way to <b>prevent resale</b>. With <b>perfect</b> price discrimination, each buyer pays their full willingness to pay: output rises to the competitive level, consumer surplus goes to zero and the deadweight loss disappears. With separate <b>groups</b>, the group with less elastic demand pays more."
+      },
+      {
+        "t": "why",
+        "html": "With one price, the seller trades off selling more against cutting the price for everyone. If it can sort buyers, cutting the price for one group doesn't lower it for the others, so marginal revenue is higher and it sells more. In each group it sets $MR = MC$; the group with fewer alternatives (less elastic demand) gets the higher price. Resale must be blocked, or low-price buyers would resell to high-price buyers."
+      },
+      {
+        "t": "viz",
+        "name": "ec-monopoly",
+        "opts": {
+          "mode": "third",
+          "markets": [
+            {
+              "p0": 14,
+              "s": 1
+            },
+            {
+              "p0": 8,
+              "s": 1
+            }
+          ],
+          "mc": {
+            "m0": 2,
+            "m1": 0
+          }
+        },
+        "cap": "Two groups with a shared marginal cost of \\$2. Each gets its own MR = MC quantity; the group with less elastic demand pays more."
+      },
+      {
+        "t": "ex",
+        "title": "Two groups of moviegoers",
+        "q": "A theater's marginal cost per seat is \\$2. Adults' demand is $P = 14 - Q$; students' is $P = 8 - Q$ (Q in dozens of tickets). Students must show an ID. What price does each group pay?",
+        "steps": [
+          "Adults: $MR = 14 - 2Q = 2$, so $Q = 6$ and $P = \\$8$.",
+          "Students: $MR = 8 - 2Q = 2$, so $Q = 3$ and $P = \\$5$.",
+          "The ID check sorts buyers and stops resale; students, with lower willingness to pay and more alternatives, pay less."
+        ],
+        "a": "Adults \\$8; students \\$5."
+      },
+      {
+        "t": "ex",
+        "title": "Perfect price discrimination",
+        "q": "A seller faces demand $P = 20 - Q$ with a constant MC of \\$4 and can charge each buyer exactly their willingness to pay. How much does it sell, and what is its profit?",
+        "steps": [
+          "Each extra sale doesn't lower any other price, so $MR = P$: sell until $P = MC$, which is 16 units.",
+          "Profit is the whole area between demand and MC: $\\tfrac{1}{2} \\times 16 \\times (20 - 4) = \\$128$.",
+          "Consumer surplus is 0 and so is the deadweight loss: efficient, but every gain goes to the seller."
+        ],
+        "a": "16 units; profit \\$128."
+      },
+      {
+        "t": "mistake",
+        "html": "Calling any price difference discrimination. A plane seat booked a year ahead and one booked the day before may cost different amounts to provide, and a delivered pizza costs more to make than one picked up. Check the three conditions too: without a way to stop resale, discrimination falls apart."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, 9.2 How a Profit-Maximizing Monopoly Chooses Output and Price"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.01 Principles of Microeconomics (scope and sequence)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

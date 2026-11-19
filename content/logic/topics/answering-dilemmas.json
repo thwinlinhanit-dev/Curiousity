@@ -1,0 +1,135 @@
+{
+  "id": "trad.answering-dilemmas",
+  "slug": "answering-dilemmas",
+  "ladder": "logic",
+  "course": "trad",
+  "unit": "hypothetical",
+  "title": "Answering a Dilemma",
+  "short": "Escape between the horns (show a third option), grasp a horn (deny a conditional premise), or offer a counterdilemma.",
+  "trouble": "Learners answer a valid dilemma by calling it invalid. A valid dilemma can only be answered by showing one of its premises is false.",
+  "prereqs": [
+    "trad.dilemmas",
+    "informal.false-dilemma"
+  ],
+  "xp": 3,
+  "viz": [
+    "lg-argmap"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A <a href=\"/logic/traditional-logic/dilemmas/\">dilemma</a> can feel like a trap, but a valid argument is only as good as its premises. Since the classic dilemmas are valid, answering one means challenging a premise. Rhetoric teachers named three ways to do it. (Calling the choice too narrow is the same move you studied in <a href=\"/logic/informal-logic/false-dilemma/\">False Dilemma</a>.)"
+      },
+      {
+        "t": "list",
+        "items": [
+          "<b>Escaping between the horns</b>: show a third option the \"or\" premise left out, so the disjunction is false.",
+          "<b>Grasping a horn</b>: deny one of the conditionals; show that one option does not lead where the arguer claims.",
+          "<b>Offering a counterdilemma</b>: build a new dilemma from the same options with a different (often cheerful) conclusion."
+        ]
+      },
+      {
+        "t": "key",
+        "html": "A valid dilemma can only be answered by showing that a premise is false or doubtful: the disjunction (between the horns) or a conditional (grasping a horn). A counterdilemma does not refute; it shows another way to look at the same choice."
+      },
+      {
+        "t": "why",
+        "html": "Validity guarantees that true premises give a true conclusion. So if you want to reject the conclusion, you must find a premise to reject; complaining about the form gets nowhere. Escaping between the horns attacks the \"or\"; grasping a horn attacks an \"if\". A counterdilemma leaves both standing and changes the emphasis, which is why it persuades but does not prove the original wrong."
+      },
+      {
+        "t": "viz",
+        "name": "lg-argmap",
+        "opts": {
+          "nodes": [
+            {
+              "id": 1,
+              "text": "If the club raises its dues, some members quit."
+            },
+            {
+              "id": 2,
+              "text": "If the club keeps its dues the same, it cannot buy new equipment."
+            },
+            {
+              "id": 3,
+              "text": "The club raises its dues or keeps them the same."
+            },
+            {
+              "id": 4,
+              "text": "Some members quit, or the club cannot buy new equipment.",
+              "kind": "conclusion"
+            },
+            {
+              "id": 5,
+              "text": "The club could keep its dues the same and hold a bake sale for the equipment.",
+              "kind": "objection"
+            }
+          ],
+          "links": [
+            {
+              "from": [
+                1,
+                2,
+                3
+              ],
+              "to": 4
+            },
+            {
+              "from": [
+                5
+              ],
+              "to": 2,
+              "kind": "against"
+            }
+          ]
+        },
+        "cap": "The objection attacks the second conditional: grasping a horn."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Between the horns",
+        "q": "Dilemma: \"If we leave early, we wait an hour; if we leave late, we miss the song; we leave early or late.\" Reply: \"We could leave at a middle time.\" Which way of answering is it?",
+        "steps": [
+          "The reply offers a third option the \"or\" premise ignored.",
+          "It denies the disjunction."
+        ],
+        "a": "escaping between the horns"
+      },
+      {
+        "t": "ex",
+        "title": "A counterdilemma",
+        "q": "Reply to the same dilemma: \"If we leave early, we get the best seats; if we leave late, we skip the long line. Either way, we gain something.\"",
+        "steps": [
+          "The reply keeps the same two options.",
+          "It draws a new, cheerful conclusion from new conditionals."
+        ],
+        "a": "a counterdilemma"
+      },
+      {
+        "t": "mistake",
+        "html": "Answering a valid dilemma by calling it invalid. A valid dilemma can only be answered by showing one of its premises is false. Check: first ask whether the form is a correct constructive or destructive dilemma; if it is, look for a third option or a weak \"if … then\"."
+      },
+      {
+        "t": "note",
+        "html": "Some dilemmas cannot be escaped between the horns because the options are a statement and its denial (\"Either Sam admits it or he keeps quiet\"). Then only grasping a horn or a counterdilemma remains."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Patrick J. Hurley, A Concise Introduction to Logic, 6.6 Argument Forms and Fallacies"
+      },
+      {
+        "name": "Irving Copi and Carl Cohen, Introduction to Logic, on refuting dilemmas"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

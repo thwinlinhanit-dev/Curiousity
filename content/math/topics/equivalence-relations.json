@@ -1,0 +1,110 @@
+{
+  "id": "disc.equivalence-relations",
+  "slug": "equivalence-relations",
+  "ladder": "math",
+  "course": "disc",
+  "unit": "relations",
+  "title": "Equivalence Relations and Partitions",
+  "short": "A reflexive, symmetric and transitive relation splits its set into classes that do not overlap.",
+  "trouble": "Students forget to check transitivity, or put one element into two different classes.",
+  "prereqs": [
+    "disc.relations"
+  ],
+  "xp": 2,
+  "viz": [
+    "disc-relation"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Some <a href=\"/math/discrete-math/relations/\">relations</a> behave like \"is the same as\" in some respect: same remainder, same birthday, same number of letters. They have the three properties that sameness should have, and they always sort their set into neat groups."
+      },
+      {
+        "t": "key",
+        "html": "An <b>equivalence relation</b> is reflexive, symmetric and transitive; we often write $a \\sim b$. The <b>equivalence class</b> of $a$ is $[a] = \\{x \\in A : x \\sim a\\}$. The classes form a <b>partition</b> of $A$: every element is in exactly one class, and two elements are related exactly when they share a class."
+      },
+      {
+        "t": "why",
+        "html": "Why can't classes overlap? Suppose some $c$ is in both $[a]$ and $[b]$. Then $c \\sim a$ and $c \\sim b$; symmetry gives $a \\sim c$, and transitivity gives $a \\sim b$. From there, anything related to $a$ is related to $b$ and the other way around, so $[a] = [b]$. Two classes are either identical or disjoint. Reflexivity puts each $a$ in its own class $[a]$, so the classes cover the whole set. Going the other way, any partition defines an equivalence relation: \"in the same piece.\""
+      },
+      {
+        "t": "viz",
+        "name": "disc-relation",
+        "opts": {
+          "mode": "classes",
+          "A": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9"
+          ],
+          "rule": "mod 3"
+        },
+        "cap": "\"Same remainder when divided by $3$\" on $\\{1, \\ldots, 9\\}$: three classes, one for each remainder."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Remainder classes",
+        "q": "On $\\{1, 2, \\ldots, 12\\}$, let $a \\sim b$ mean $a$ and $b$ leave the same remainder when divided by $4$. List the classes.",
+        "steps": [
+          "Remainder $1$: $[1] = \\{1, 5, 9\\}$. Remainder $2$: $[2] = \\{2, 6, 10\\}$.",
+          "Remainder $3$: $[3] = \\{3, 7, 11\\}$. Remainder $0$: $[4] = \\{4, 8, 12\\}$.",
+          "Four classes, disjoint, covering all $12$ numbers. Note $[5] = [1]$: a class can be named by any of its members."
+        ],
+        "a": "$\\{1, 5, 9\\}, \\{2, 6, 10\\}, \\{3, 7, 11\\}, \\{4, 8, 12\\}$"
+      },
+      {
+        "t": "ex",
+        "title": "From a partition to a relation",
+        "q": "A partition of $\\{1, 2, 3, 4, 5\\}$ has classes $\\{1, 2, 3\\}$ and $\\{4, 5\\}$. How many ordered pairs are in the corresponding equivalence relation?",
+        "steps": [
+          "Inside a class, every element is related to every element, including itself.",
+          "A class of size $s$ contributes $s^{2}$ pairs: $3^{2} + 2^{2} = 9 + 4 = 13$."
+        ],
+        "a": "$13$"
+      },
+      {
+        "t": "ex",
+        "title": "A relation that fails",
+        "q": "On $\\{1, 2, 3\\}$, is $$R = \\{(1, 1), (2, 2), (3, 3), (1, 2), (2, 1), (2, 3), (3, 2)\\}$$ an equivalence relation?",
+        "steps": [
+          "Reflexive: yes. Symmetric: every pair has its reverse. Yes.",
+          "Transitive: $1 \\sim 2$ and $2 \\sim 3$, so we need $1 \\sim 3$. But $(1, 3) \\notin R$. No.",
+          "So it is not an equivalence relation, and indeed it does not split $\\{1, 2, 3\\}$ into groups: $2$ would have to share a group with both $1$ and $3$, which are not related."
+        ],
+        "a": "No (not transitive)"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Forgetting transitivity, or putting an element in two classes.</b> \"Is within $1$ of\" is reflexive and symmetric, so it feels like an equivalence relation, but $1 \\sim 2$ and $2 \\sim 3$ while $1 \\not\\sim 3$. And a proposed partition like $\\{1, 2\\}, \\{2, 3\\}$ is not a partition at all, because $2$ sits in two pieces. Check: every element must appear in exactly one class, and every two-step route must have its shortcut."
+      },
+      {
+        "t": "note",
+        "html": "Counting equivalence relations means counting partitions. A $3$-element set $\\{1, 2, 3\\}$ has $5$: all together; $\\{1, 2\\}, \\{3\\}$; $\\{1, 3\\}, \\{2\\}$; $\\{2, 3\\}, \\{1\\}$; and all separate."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Richard Hammack, Book of Proof (3rd ed.), chapter \"Relations\" (equivalence relations, equivalence classes and partitions)"
+      },
+      {
+        "name": "MIT OpenCourseWare 6.042J Mathematics for Computer Science (Lehman, Leighton and Meyer), chapter \"Directed Graphs and Partial Orders\" (equivalence relations)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

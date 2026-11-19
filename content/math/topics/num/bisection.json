@@ -1,0 +1,118 @@
+{
+  "id": "num.bisection",
+  "slug": "bisection",
+  "ladder": "math",
+  "course": "num",
+  "unit": "roots",
+  "title": "The Bisection Method",
+  "short": "Keep halving an interval where f changes sign; after n steps the midpoint is within (b − a)/2ⁿ⁺¹ of a root.",
+  "trouble": "Students start without checking for a sign change, or use a function with a break: tan x changes sign on [1, 2] at an asymptote, not at a root.",
+  "prereqs": [
+    "calc1.intermediate-value-theorem"
+  ],
+  "xp": 1,
+  "viz": [
+    "num-roots"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The <a href=\"/math/calculus-1/intermediate-value-theorem/\">The Intermediate Value Theorem</a> promises a root of a continuous $f$ wherever $f(a)$ and $f(b)$ have opposite signs. Bisection turns that promise into an algorithm: keep cutting the interval in half, always keeping the half where the sign changes."
+      },
+      {
+        "t": "list",
+        "items": [
+          "Start with $[a, b]$ where $f$ is continuous and $f(a)f(b) < 0$.",
+          "Compute the midpoint $m = \\frac{a + b}{2}$ and $f(m)$. If $f(m) = 0$, stop.",
+          "If $f(m)$ has the same sign as $f(a)$, replace $a$ by $m$; otherwise replace $b$ by $m$.",
+          "Repeat until the interval is as short as you need."
+        ]
+      },
+      {
+        "t": "key",
+        "html": "After $n$ halvings the interval has width $\\frac{b - a}{2^{n}}$, so its midpoint is within $\\frac{b - a}{2^{n+1}}$ of a root. Bisection gains one binary digit per step, about one decimal digit every 3.3 steps, and it cannot fail when its conditions hold."
+      },
+      {
+        "t": "why",
+        "html": "At every step the endpoints still have opposite signs, so by the Intermediate Value Theorem a root stays inside the interval. The interval is halved each time, and any point of an interval is within half its width of its midpoint. The error bound therefore halves every step: linear convergence with ratio $\\frac{1}{2}$. Since $\\log_{10}2 \\approx 0.301$, it takes about $1/0.301 \\approx 3.3$ steps for each new decimal digit."
+      },
+      {
+        "t": "viz",
+        "name": "num-roots",
+        "opts": {
+          "f": "x^3+x-4",
+          "method": "bisection",
+          "a": 1,
+          "b": 2,
+          "steps": 3,
+          "window": [
+            0.5,
+            2.5,
+            -4,
+            8
+          ],
+          "task": "Step through bisection. Then drag the endpoints and watch the signs at the ends."
+        },
+        "cap": "Each bar is one interval; the current one is orange. The signs of f at the two starting ends are marked."
+      },
+      {
+        "t": "ex",
+        "title": "Three steps by hand",
+        "q": "Apply bisection to $f(x) = x^{2} - 3$ on $[1, 2]$ for three steps.",
+        "steps": [
+          "$f(1) = -2 < 0$ and $f(2) = 1 > 0$: there is a root in between ($\\sqrt{3}$).",
+          "$m = 1.5$: $f(1.5) = -0.75 < 0$, so keep $[1.5, 2]$.",
+          "$m = 1.75$: $f(1.75) = 0.0625 > 0$, so keep $[1.5, 1.75]$.",
+          "$m = 1.625$: $f(1.625) \\approx -0.36 < 0$, so keep $[1.625, 1.75]$.",
+          "Its midpoint $1.6875$ is within $\\frac{1}{2^{4}} = 0.0625$ of the root; in fact $\\sqrt{3} - 1.6875 \\approx 0.045$."
+        ],
+        "a": "$[1.625, 1.75]$"
+      },
+      {
+        "t": "ex",
+        "title": "How many steps?",
+        "q": "Bisection starts on an interval of width $1$. How many steps guarantee that the midpoint is within $10^{-6}$ of a root?",
+        "steps": [
+          "We need $\\frac{1}{2^{n+1}} \\le 10^{-6}$, that is, $2^{n+1} \\ge 10^{6}$.",
+          "$2^{19} = 524{,}288$ is too small and $2^{20} = 1{,}048{,}576$ is enough, so $n + 1 = 20$.",
+          "$n = 19$ steps, known in advance, whatever $f$ is."
+        ],
+        "a": "$19$"
+      },
+      {
+        "t": "ex",
+        "title": "A sign change that is not a root",
+        "q": "Bisection on $f(x) = \\tan x$ over $[1, 2]$: $f(1) \\approx 1.56$ and $f(2) \\approx -2.19$. Where does it go?",
+        "steps": [
+          "The signs differ, so bisection runs, and the midpoints close in on $1.5708\\ldots = \\frac{\\pi}{2}$.",
+          "But $\\tan x$ is not continuous on $[1, 2]$: it has a vertical asymptote at $\\frac{\\pi}{2}$, where it jumps from $+\\infty$ to $-\\infty$.",
+          "Check the result: $|f(m)|$ grows as the interval shrinks. At a real root it would shrink."
+        ],
+        "a": "to the asymptote $\\frac{\\pi}{2}$, not a root"
+      },
+      {
+        "t": "mistake",
+        "html": "Starting without checking for a sign change, or using a function with a break. Same signs at the ends do not mean \"no root\" (there could be two), but bisection cannot start. A sign change across a jump or an asymptote is not a root. Always check continuity, and check $|f|$ at the final midpoint."
+      },
+      {
+        "t": "note",
+        "html": "Bisection is slow but sure. Faster methods (<a href=\"/math/numerical-analysis/newton-convergence/\">Newton's</a>, the <a href=\"/math/numerical-analysis/secant-method/\">secant method</a>) can fail far from a root, so practical root finders often combine them with a bracket that bisection keeps."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Autar Kaw, Holistic Numerical Methods (University of South Florida): Nonlinear Equations, \"Bisection Method\""
+      },
+      {
+        "name": "MIT OpenCourseWare 18.330, Introduction to Numerical Analysis: lecture notes on nonlinear equations (bisection)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

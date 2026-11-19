@@ -1,0 +1,103 @@
+{
+  "id": "calc2.integral-test",
+  "slug": "integral-test",
+  "ladder": "math",
+  "course": "calc2",
+  "unit": "sequences-series",
+  "title": "The Integral Test and p-Series",
+  "short": "Compare a series with an improper integral; Σ1/nᵖ converges when p > 1.",
+  "trouble": "Students think the series and the integral have the same value.",
+  "prereqs": [
+    "calc2.divergence-test",
+    "calc2.improper-integrals"
+  ],
+  "xp": 2,
+  "viz": [
+    "riemann",
+    "seriespartial"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "When the terms of a series come from a nice function, $a_n = f(n)$, you can compare the series with an <a href=\"/math/calculus-2/improper-integrals/\">improper integral</a>. That settles the most useful family of all, the $p$-series $\\sum\\frac{1}{n^{p}}$, in cases where the <a href=\"/math/calculus-2/divergence-test/\">The Divergence Test</a> says nothing."
+      },
+      {
+        "t": "why",
+        "html": "Let $f$ be positive, continuous and decreasing for $x \\ge 1$. Draw rectangles of width 1 under the graph, using right endpoints: their heights are $a_2, a_3, \\ldots$, and they fit under the curve, so $a_2 + \\cdots + a_N \\le \\int_1^{N} f(x)\\,dx$. Rectangles with left endpoints stick out above the curve: $\\int_1^{N+1} f(x)\\,dx \\le a_1 + \\cdots + a_N$. So if the integral is finite, the partial sums are increasing and bounded, hence convergent; if the integral is infinite, the partial sums are too."
+      },
+      {
+        "t": "key",
+        "html": "<b>Integral test:</b> if $f$ is positive, continuous and decreasing on $[1, \\infty)$ and $a_n = f(n)$, then $\\sum a_n$ and $\\int_1^{\\infty} f(x)\\,dx$ both converge or both diverge. <b>$p$-series:</b> $\\sum\\frac{1}{n^{p}}$ converges when $p > 1$ and diverges when $p \\le 1$."
+      },
+      {
+        "t": "viz",
+        "name": "riemann",
+        "opts": {
+          "f": "1/x^2",
+          "a": 1,
+          "b": 8,
+          "n": 7,
+          "method": "left",
+          "methods": [
+            "left",
+            "right"
+          ],
+          "exact": true
+        },
+        "cap": "Left-endpoint rectangles of width 1 for $f(x) = \\frac{1}{x^{2}}$: their areas are $1, \\frac{1}{4}, \\frac{1}{9}, \\ldots$, the terms of $\\sum\\frac{1}{n^{2}}$. They sit above the curve. Switch to right endpoints: those rectangles fit under it."
+      },
+      {
+        "t": "ex",
+        "title": "p-series",
+        "q": "For which $p$ does $\\sum_{n=1}^{\\infty}\\frac{1}{n^{p}}$ converge?",
+        "steps": [
+          "For $p \\le 0$ the terms do not go to 0, so it diverges. For $p > 0$, $f(x) = x^{-p}$ is positive and decreasing.",
+          "$\\int_1^{\\infty}x^{-p}\\,dx$ converges exactly when $p > 1$ (it is $\\frac{1}{p - 1}$ then).",
+          "So the series converges exactly when $p > 1$. For example $\\sum\\frac{1}{n^{2}}$ converges and $\\sum\\frac{1}{\\sqrt{n}}$ diverges."
+        ],
+        "a": "$p > 1$"
+      },
+      {
+        "t": "ex",
+        "title": "A log in the denominator",
+        "q": "Does $\\sum_{n=2}^{\\infty}\\frac{1}{n\\ln n}$ converge?",
+        "steps": [
+          "$f(x) = \\frac{1}{x\\ln x}$ is positive and decreasing for $x \\ge 2$.",
+          "With $u = \\ln x$: $\\int_2^{t}\\frac{dx}{x\\ln x} = \\ln(\\ln t) - \\ln(\\ln 2)$, which grows without bound.",
+          "So the series diverges, though very slowly."
+        ],
+        "a": "It diverges."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking the series equals the integral. $\\int_1^{\\infty}\\frac{dx}{x^{2}} = 1$, but $\\sum_{n=1}^{\\infty}\\frac{1}{n^{2}} = \\frac{\\pi^{2}}{6} \\approx 1.645$. The rectangles are not the region under the curve, so the test only tells you whether the series converges. The two numbers do bound each other: here $1 \\le \\sum\\frac{1}{n^{2}} \\le 1 + 1 = 2$."
+      },
+      {
+        "t": "ex",
+        "title": "An integral you can evaluate",
+        "q": "Does $\\sum_{n=1}^{\\infty} n e^{-n^{2}}$ converge?",
+        "steps": [
+          "$f(x) = xe^{-x^{2}}$ is positive, and $f'(x) = e^{-x^{2}}(1 - 2x^{2}) < 0$ for $x \\ge 1$, so it is decreasing.",
+          "$\\int_1^{\\infty}xe^{-x^{2}}dx = \\left[-\\frac{1}{2}e^{-x^{2}}\\right]_1^{\\infty} = \\frac{1}{2e}$, finite.",
+          "So the series converges."
+        ],
+        "a": "It converges."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 2, Section 5.3: The Divergence and Integral Tests"
+      },
+      {
+        "name": "Paul’s Online Math Notes (Lamar University), Calculus II: Integral Test"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

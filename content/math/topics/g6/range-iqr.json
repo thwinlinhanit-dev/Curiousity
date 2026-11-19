@@ -1,0 +1,95 @@
+{
+  "id": "g6.range-iqr",
+  "slug": "range-iqr",
+  "ladder": "math",
+  "course": "g6",
+  "unit": "statistics",
+  "title": "Range and Interquartile Range",
+  "short": "The IQR is the spread of the middle half of the data.",
+  "trouble": "",
+  "prereqs": [
+    "g6.median-mode"
+  ],
+  "xp": 2,
+  "viz": [
+    "boxplot"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Center is only half the story. Two classes can have the same <a href=\"/math/grade-6/median-mode/\">median</a> score but very different spreads. Range and interquartile range measure spread."
+      },
+      {
+        "t": "key",
+        "html": "<b>Range</b> = greatest value − least value. The <b>interquartile range</b> (IQR) = $Q_3 - Q_1$, the spread of the middle half of the data. $Q_1$ is the median of the lower half and $Q_3$ is the median of the upper half."
+      },
+      {
+        "t": "viz",
+        "name": "boxplot",
+        "opts": {
+          "data": [
+            2,
+            4,
+            5,
+            7,
+            8,
+            10,
+            12,
+            15
+          ],
+          "quarters": true
+        },
+        "cap": "The box covers the middle half of the data, from $Q_1$ to $Q_3$. Its width is the IQR. Drag a dot to see what changes."
+      },
+      {
+        "t": "why",
+        "html": "The range uses only the two most extreme values, so one unusual value can stretch it a lot. The IQR leaves out the lowest quarter and the highest quarter of the data, so it describes where the middle half lives, and an outlier hardly changes it."
+      },
+      {
+        "t": "ex",
+        "title": "An even number of values",
+        "q": "Find the range and IQR of 2, 4, 5, 7, 8, 10, 12, 15.",
+        "steps": [
+          "Range: $15 - 2 = 13$.",
+          "Split into halves: 2, 4, 5, 7 and 8, 10, 12, 15.",
+          "$Q_1 = (4 + 5) \\div 2 = 4.5$ and $Q_3 = (10 + 12) \\div 2 = 11$.",
+          "IQR $= 11 - 4.5 = 6.5$."
+        ],
+        "a": "Range 13, IQR 6.5"
+      },
+      {
+        "t": "ex",
+        "title": "An odd number of values",
+        "q": "Find the IQR of 3, 5, 6, 8, 9, 11, 20.",
+        "steps": [
+          "The median is 8, the middle value. Leave it out of both halves.",
+          "Lower half 3, 5, 6: $Q_1 = 5$. Upper half 9, 11, 20: $Q_3 = 11$.",
+          "IQR $= 11 - 5 = 6$. (The range is $20 - 3 = 17$, stretched by the 20.)"
+        ],
+        "a": "IQR 6"
+      },
+      {
+        "t": "mistake",
+        "html": "Forgetting to order the data first, or putting the median into one of the halves when there is an odd number of values. Math Ladder leaves the middle value out of both halves, as many U.S. courses do. Quick check: the two halves should have the same number of values."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Introductory Statistics 2e, section 2.3 Measures of the Location of the Data"
+      },
+      {
+        "name": "OpenStax, Introductory Statistics 2e, section 2.7 Measures of the Spread of the Data"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 6.SP.A.3: a measure of variation describes spread"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

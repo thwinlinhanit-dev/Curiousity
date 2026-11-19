@@ -1,0 +1,107 @@
+{
+  "id": "informal.validity",
+  "slug": "validity",
+  "ladder": "logic",
+  "course": "informal",
+  "unit": "deduction-induction",
+  "title": "Validity",
+  "short": "An argument is valid when it is impossible for all its premises to be true and its conclusion false.",
+  "trouble": "Confusing validity with truth: learners call an argument invalid because a premise is false, or valid because they agree with the conclusion. Validity is about the link, not the facts.",
+  "prereqs": [
+    "informal.deductive-inductive"
+  ],
+  "xp": 2,
+  "viz": [
+    "lg-sort"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A <a href=\"/logic/informal-logic/deductive-inductive/\">deductive argument</a> promises that its conclusion must follow. When it keeps that promise, logicians call it <b>valid</b>."
+      },
+      {
+        "t": "key",
+        "html": "An argument is <b>valid</b> when it is impossible for all its premises to be true and its conclusion false. Validity is about the link between premises and conclusion, not about whether they are actually true."
+      },
+      {
+        "t": "why",
+        "html": "Validity comes from the <i>form</i> of an argument. \"All B are C; all A are B; so all A are C\" is valid whatever A, B and C are: if every A is inside B and every B is inside C, every A is inside C. Put in any words and the link holds."
+      },
+      {
+        "t": "ex",
+        "title": "Valid, with a false premise",
+        "q": "\"All penguins can fly. Pip is a penguin. So Pip can fly.\"",
+        "steps": [
+          "The first premise is false: penguins cannot fly.",
+          "But <i>imagine</i> both premises were true. Then Pip would have to fly.",
+          "There is no way for the premises to be true and the conclusion false."
+        ],
+        "a": "Valid (but, as we will see, not sound)."
+      },
+      {
+        "t": "ex",
+        "title": "Invalid, though every statement is true",
+        "q": "\"All squares are rectangles. All squares are shapes. So all rectangles are shapes.\"",
+        "steps": [
+          "Every statement here is true.",
+          "The form is: all A are B; all A are C; so all B are C.",
+          "Put other words in the same form: \"All dogs are mammals. All dogs are pets. So all mammals are pets.\" The premises are true and the conclusion is false (wild bears are not pets).",
+          "So the form can fail, and the argument is invalid."
+        ],
+        "a": "Invalid, even though everything in it is true."
+      },
+      {
+        "t": "viz",
+        "name": "lg-sort",
+        "opts": {
+          "bins": [
+            "Valid",
+            "Invalid"
+          ],
+          "cards": [
+            {
+              "text": "All whales are fish. Moby is a whale. So Moby is a fish.",
+              "bin": 0,
+              "why": "False premise, but if it were true the conclusion would follow."
+            },
+            {
+              "text": "All robins are birds. Some birds are penguins. So some robins are penguins.",
+              "bin": 1
+            },
+            {
+              "text": "All squares are rectangles. All rectangles have four sides. So all squares have four sides.",
+              "bin": 0
+            },
+            {
+              "text": "All dogs are mammals. All cats are mammals. So all cats are dogs.",
+              "bin": 1,
+              "why": "Two things in the same group need not be the same thing."
+            }
+          ],
+          "shuffle": true,
+          "reveal": true
+        },
+        "cap": "Imagine every premise is true. Could the conclusion still be false?"
+      },
+      {
+        "t": "mistake",
+        "html": "Calling an argument invalid because a premise is false, or valid because you agree with the conclusion. Validity ignores the facts. Test: pretend the premises are true. If the conclusion could still be false, the argument is invalid."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Internet Encyclopedia of Philosophy, \"Validity and Soundness\""
+      },
+      {
+        "name": "Patrick Hurley, A Concise Introduction to Logic, chapter 1 (validity, truth, soundness)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

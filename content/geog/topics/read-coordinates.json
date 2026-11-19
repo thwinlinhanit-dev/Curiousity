@@ -1,0 +1,99 @@
+{
+  "id": "worldgeo.read-coordinates",
+  "slug": "read-coordinates",
+  "ladder": "geog",
+  "course": "worldgeo",
+  "unit": "lat-long",
+  "title": "Reading Coordinates",
+  "short": "Give a place's location as latitude first, then longitude: Washington, D.C., is at about 39° N, 77° W.",
+  "trouble": "Students give longitude first, as in an (x, y) graph, or drop the letters. Geographers write latitude first, and each number needs its N, S, E or W.",
+  "prereqs": [
+    "worldgeo.latitude",
+    "worldgeo.longitude"
+  ],
+  "xp": 2,
+  "viz": [
+    "gg-latlon",
+    "gg-map"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Put <a href=\"/geography/world-geography/latitude/\">latitude</a> and <a href=\"/geography/world-geography/longitude/\">longitude</a> together and you get a place's <b>coordinates</b>: an address that works anywhere on Earth, even in the middle of the ocean."
+      },
+      {
+        "t": "key",
+        "html": "Write <b>latitude first, then longitude</b>, each with its letter: Washington, D.C., is at about <b>39° N, 77° W</b>."
+      },
+      {
+        "t": "viz",
+        "name": "gg-latlon",
+        "opts": {
+          "bbox": [
+            -120,
+            15,
+            -60,
+            55
+          ],
+          "point": [
+            -77,
+            39
+          ],
+          "cities": [
+            "Washington, D.C."
+          ]
+        },
+        "cap": "Washington, D.C., on a grid every 10 degrees: up from the equator to 39° N, left of the prime meridian to 77° W."
+      },
+      {
+        "t": "why",
+        "html": "Geographers and sailors wrote latitude first long before graphs were invented, because latitude was the easier one to find: you can measure it from the height of the Sun at noon or the North Star at night. Longitude needed accurate clocks, which came much later. The habit stuck, so every map, atlas and GPS writes latitude first."
+      },
+      {
+        "t": "ex",
+        "title": "Reading a point",
+        "q": "A point sits on the parallel marked 30° S and on the meridian marked 60° W. Write its coordinates.",
+        "steps": [
+          "Latitude first: the parallel is 30° S.",
+          "Then longitude: the meridian is 60° W.",
+          "Put them together with a comma."
+        ],
+        "a": "30° S, 60° W"
+      },
+      {
+        "t": "ex",
+        "title": "Between the lines",
+        "q": "On a map with lines every 10°, a dot is halfway between 40° N and 50° N, and exactly on 10° E. Where is it?",
+        "steps": [
+          "Halfway between 40 and 50 is 45, so the latitude is 45° N.",
+          "The longitude is on the line: 10° E.",
+          "Latitude first."
+        ],
+        "a": "45° N, 10° E (in northern Italy)."
+      },
+      {
+        "t": "mistake",
+        "html": "Writing the longitude first, as in an (x, y) graph, or dropping the letters. \"77, 39\" could mean a dozen places. Check two things every time: is the first number the north-south one, and does each number have N, S, E or W? Latitude letters are N or S; longitude letters are E or W, so \"39° W, 77° N\" is a sure sign the order is backward."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Prime meridian (Grokipedia)",
+        "url": "https://grokipedia.com/page/Prime_meridian"
+      },
+      {
+        "name": "U.S. Geological Survey FAQ: How much distance does a degree, minute, and second cover on your maps?",
+        "url": "https://www.usgs.gov/faqs/how-much-distance-does-degree-minute-and-second-cover-your-maps"
+      },
+      {
+        "name": "C3 Framework for Social Studies State Standards (NCSS, 2013), Geography, Dimension 2, grades 6-8"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

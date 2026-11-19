@@ -1,0 +1,136 @@
+{
+  "id": "g6.gcf-lcm",
+  "slug": "gcf-lcm",
+  "ladder": "math",
+  "course": "g6",
+  "unit": "number-system",
+  "title": "Greatest Common Factor and Least Common Multiple",
+  "short": "Find the GCF and LCM of two numbers.",
+  "trouble": "Students mix up which one they need, using the LCM to split items into equal groups.",
+  "prereqs": [
+    "g5.prime-factorization",
+    "g4.multiples"
+  ],
+  "xp": 2,
+  "viz": [
+    "arraygrid"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You know how to find <a href=\"/math/grade-4/multiples/\">multiples</a> and how to write a <a href=\"/math/grade-5/prime-factorization/\">prime factorization</a>. Two numbers often share factors and share multiples, and two of those shared numbers are special."
+      },
+      {
+        "t": "key",
+        "html": "The <b>greatest common factor</b> (GCF) is the biggest number that divides both numbers. The <b>least common multiple</b> (LCM) is the smallest number that both numbers divide into. For 12 and 18: GCF = 6, LCM = 36."
+      },
+      {
+        "t": "why",
+        "html": "Prime factors show why. $12 = 2 \\times 2 \\times 3$ and $18 = 2 \\times 3 \\times 3$. A common factor can only use primes that both numbers have, and the most they share is one 2 and one 3: GCF $= 2 \\times 3 = 6$. A common multiple must contain each number's whole factorization, so it needs two 2s and two 3s: LCM $= 2 \\times 2 \\times 3 \\times 3 = 36$."
+      },
+      {
+        "t": "viz",
+        "name": "g6-line",
+        "opts": {
+          "min": 0,
+          "max": 36,
+          "step": 4,
+          "sub": 4,
+          "hops": [
+            {
+              "from": 0,
+              "by": 4,
+              "n": 9,
+              "color": "blue",
+              "label": "count by 4"
+            },
+            {
+              "from": 0,
+              "by": 6,
+              "n": 6,
+              "color": "orange",
+              "below": true,
+              "label": "count by 6"
+            }
+          ],
+          "points": [
+            {
+              "v": 12,
+              "label": "12",
+              "color": "green",
+              "ring": true
+            },
+            {
+              "v": 24,
+              "label": "24",
+              "color": "green",
+              "ring": true
+            },
+            {
+              "v": 36,
+              "label": "36",
+              "color": "green",
+              "ring": true
+            }
+          ],
+          "label": "Counting by 4 above the line and by 6 below it; both land on 12, 24 and 36"
+        },
+        "cap": "Count by 4s above the line and by 6s below it. Both land on 12, 24 and 36: the common multiples of 4 and 6. The least is 12, the LCM."
+      },
+      {
+        "t": "ex",
+        "title": "Greatest common factor",
+        "q": "Find the GCF of 24 and 36.",
+        "steps": [
+          "Factors of 24: 1, 2, 3, 4, 6, 8, 12, 24.",
+          "Factors of 36: 1, 2, 3, 4, 6, 9, 12, 18, 36.",
+          "The biggest number on both lists is 12."
+        ],
+        "a": "12"
+      },
+      {
+        "t": "ex",
+        "title": "Least common multiple",
+        "q": "Find the LCM of 6 and 8.",
+        "steps": [
+          "Count by the bigger number, 8: 8, 16, 24, …",
+          "Stop at the first one that 6 also divides: 8 no, 16 no, 24 yes."
+        ],
+        "a": "24"
+      },
+      {
+        "t": "ex",
+        "title": "Which one does the story need?",
+        "q": "Hot dogs come in packs of 10 and buns in packs of 8. What is the smallest number of each you can buy to have the same number of hot dogs and buns?",
+        "steps": [
+          "Buying packs adds up 10 at a time and 8 at a time, so we want a number that is a multiple of both.",
+          "Multiples of 10: 10, 20, 30, 40. 40 is also a multiple of 8.",
+          "That is 4 packs of hot dogs and 5 packs of buns."
+        ],
+        "a": "40 of each (the LCM)."
+      },
+      {
+        "t": "mistake",
+        "html": "Using the wrong one. Splitting things into identical groups with nothing left over needs a number that <i>divides</i> both amounts: a factor, the GCF. Things that repeat until they line up again need a <i>multiple</i>: the LCM. Quick check: the GCF can never be bigger than the smaller number, and the LCM can never be smaller than the bigger number."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Prealgebra 2e, section 2.4 Find Multiples and Factors"
+      },
+      {
+        "name": "OpenStax, Prealgebra 2e, section 2.5 Prime Factorization and the Least Common Multiple"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 6.NS.B.4: greatest common factor and least common multiple"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

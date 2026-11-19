@@ -1,0 +1,83 @@
+{
+  "id": "micro.least-cost-rule",
+  "slug": "least-cost-rule",
+  "ladder": "economics",
+  "course": "micro",
+  "unit": "factor-markets",
+  "title": "The Least-Cost Mix of Inputs",
+  "short": "Use inputs so the last dollar spent on each adds the same output: MPL/w = MPK/r.",
+  "trouble": "Students hire more of the input with the higher marginal product without dividing by its price.",
+  "prereqs": [
+    "micro.marginal-revenue-product",
+    "micro.utility-maximizing-rule"
+  ],
+  "xp": 3,
+  "viz": [
+    "ec-factor"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Firms use more than one input. Choosing the mix is the same problem as the shopper's in <a href=\"/economics/microeconomics/utility-maximizing-rule/\">Marginal Utility per Dollar</a>: get the most for each dollar. Here the \"utility\" is output, and the inputs are labor and capital, valued by the MRP idea of <a href=\"/economics/microeconomics/marginal-revenue-product/\">Marginal Revenue Product and Hiring</a>."
+      },
+      {
+        "t": "key",
+        "html": "The <b>least-cost rule</b>: a firm produces any given output at the lowest cost when the last dollar spent on each input adds the same output, $$\\frac{MP_L}{w} = \\frac{MP_K}{r},$$ where $w$ is the wage and $r$ is the rental price of capital. The <b>profit-maximizing rule</b> adds that each input's MRP equals its price: $MRP_L = w$ and $MRP_K = r$."
+      },
+      {
+        "t": "why",
+        "html": "If the last dollar on labor adds 3 units and the last dollar on machines adds 2, move a dollar from machines to labor: output rises by about 1 unit at no extra cost. Keep moving dollars until the two ratios are equal. Least cost doesn't guarantee the best scale, though: a firm could make the wrong amount cheaply. Profit maximization also needs each input hired until its MRP equals its price, which makes both ratios $MRP/\\text{price}$ equal 1."
+      },
+      {
+        "t": "viz",
+        "name": "ec-factor",
+        "opts": {
+          "mode": "leastcost"
+        },
+        "cap": "Step through spending a budget: each step buys the input with the higher marginal product per dollar, until the budget is spent and the ratios are about equal."
+      },
+      {
+        "t": "ex",
+        "title": "Which input to add?",
+        "q": "A factory's last worker adds 20 units a day and costs \\$100; its last machine adds 30 units and costs \\$200 a day to rent. Is it using the least-cost mix?",
+        "steps": [
+          "Labor: $20 \\div 100 = 0.2$ units per dollar. Capital: $30 \\div 200 = 0.15$ units per dollar.",
+          "A dollar does more on labor, so shift spending toward labor and away from machines.",
+          "As it hires more workers, $MP_L$ falls; with fewer machines, $MP_K$ rises, until the ratios meet."
+        ],
+        "a": "No: use more labor and less capital."
+      },
+      {
+        "t": "ex",
+        "title": "Profit maximizing as well",
+        "q": "Product price \\$2. At the current mix, $MP_L = 15$ with $w = \\$30$, and $MP_K = 40$ with $r = \\$80$. Is the firm at the least-cost mix? Is it maximizing profit?",
+        "steps": [
+          "$MP_L/w = 15/30 = 0.5$ and $MP_K/r = 40/80 = 0.5$: equal, so it's the least-cost mix.",
+          "$MRP_L = 15 \\times 2 = \\$30 = w$ and $MRP_K = 40 \\times 2 = \\$80 = r$: both equal their prices."
+        ],
+        "a": "Yes to both."
+      },
+      {
+        "t": "mistake",
+        "html": "Hiring more of the input with the higher marginal product without dividing by its price. A machine that adds 30 units beats a worker who adds 20, but not if the machine costs twice as much. Check: always compare $MP \\div \\text{price}$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, 7.4 Production in the Long Run"
+      },
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, 14.1 The Theory of Labor Markets"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.01 Principles of Microeconomics (scope and sequence)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

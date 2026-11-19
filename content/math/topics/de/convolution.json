@@ -1,0 +1,125 @@
+{
+  "id": "de.convolution",
+  "slug": "convolution",
+  "ladder": "math",
+  "course": "de",
+  "unit": "laplace",
+  "title": "Convolution",
+  "short": "The transform of a convolution is a product of transforms.",
+  "trouble": "Students think the transform of a product f·g is the product of the transforms.",
+  "prereqs": [
+    "de.laplace-ivps"
+  ],
+  "xp": 3,
+  "viz": [],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Products in $s$ appear constantly: $Y(s) = G(s)\\cdot\\frac{1}{s^{2} + 4}$ when a spring is driven by $g(t)$. Which function of $t$ has a product as its transform? Not the product of the two functions, but their convolution."
+      },
+      {
+        "t": "key",
+        "html": "The <b>convolution</b> of $f$ and $g$ is $$(f * g)(t) = \\int_0^{t} f(\\tau)\\,g(t - \\tau)\\,d\\tau,$$ and $\\mathcal{L}\\{f * g\\} = F(s)G(s)$. Convolution is commutative: $f * g = g * f$."
+      },
+      {
+        "t": "why",
+        "html": "Write the product as a double integral: $F(s)G(s)$ $= \\int_0^{\\infty}\\int_0^{\\infty} e^{-s(\\tau + u)}f(\\tau)g(u)\\,du\\,d\\tau$. Substitute $t = \\tau + u$ in the inner integral and switch the order of integration over the region $0 \\le \\tau \\le t$: $$F(s)G(s) = \\int_0^{\\infty} e^{-st}\\left(\\int_0^{t} f(\\tau)g(t - \\tau)\\,d\\tau\\right)dt.$$ In words: the response at time $t$ adds up the input at each earlier time $\\tau$, weighted by how the system responds after a delay $t - \\tau$."
+      },
+      {
+        "t": "ex",
+        "title": "Compute a convolution",
+        "q": "Find $1 * e^{2t}$ and check with transforms.",
+        "steps": [
+          "$\\int_0^{t} 1\\cdot e^{2(t - \\tau)}\\,d\\tau$ $= \\left[-\\frac{1}{2}e^{2(t - \\tau)}\\right]_0^{t} = \\frac{e^{2t} - 1}{2}$.",
+          "Check: $\\mathcal{L}\\{1\\}\\mathcal{L}\\{e^{2t}\\} = \\frac{1}{s(s - 2)}$ $= \\frac{1}{2}\\left(\\frac{1}{s - 2} - \\frac{1}{s}\\right)$, which inverts to $\\frac{e^{2t} - 1}{2}$. ✓"
+        ],
+        "a": "$\\frac{e^{2t} - 1}{2}$"
+      },
+      {
+        "t": "ex",
+        "title": "An inverse transform by convolution",
+        "q": "Find $\\mathcal{L}^{-1}\\left\\{\\frac{1}{s(s^{2} + 9)}\\right\\}$.",
+        "steps": [
+          "$\\frac{1}{s} = \\mathcal{L}\\{1\\}$ and $\\frac{1}{s^{2} + 9} = \\mathcal{L}\\left\\{\\frac{\\sin 3t}{3}\\right\\}$.",
+          "So the answer is $\\int_0^{t} \\frac{\\sin 3\\tau}{3}\\,d\\tau = \\frac{1 - \\cos 3t}{9}$."
+        ],
+        "a": "$\\frac{1 - \\cos 3t}{9}$"
+      },
+      {
+        "t": "ex",
+        "title": "An integral equation",
+        "q": "Solve $y(t)$ $= 1 + \\int_0^{t} \\sin(t - \\tau)\\,y(\\tau)\\,d\\tau$.",
+        "steps": [
+          "The integral is $(\\sin t) * y$, so transforming gives $Y = \\frac{1}{s} + \\frac{Y}{s^{2} + 1}$.",
+          "$Y\\cdot\\frac{s^{2}}{s^{2} + 1} = \\frac{1}{s}$, so $Y = \\frac{s^{2} + 1}{s^{3}} = \\frac{1}{s} + \\frac{1}{s^{3}}$."
+        ],
+        "a": "$y = 1 + \\frac{t^{2}}{2}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Assuming $\\mathcal{L}\\{f g\\} = FG$. Try $f = g = t$: $\\mathcal{L}\\{t^{2}\\} = \\frac{2}{s^{3}}$, but $\\mathcal{L}\\{t\\}\\mathcal{L}\\{t\\} = \\frac{1}{s^{4}}$, which is the transform of $t * t = \\frac{t^{3}}{6}$. Products in $s$ correspond to convolutions in $t$, never to plain products."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "fns": [
+            {
+              "f": "x*(1 + sign(x))/2",
+              "label": "f"
+            },
+            {
+              "f": "e^(-(t - x))*(1 + sign(t - x))/2",
+              "dash": true,
+              "color": "orange",
+              "label": "g(t-x)"
+            },
+            {
+              "f": "x*e^(-(t - x))*(1 + sign(t - x))/2*(1 + sign(x))/2",
+              "color": "purple",
+              "label": "product"
+            }
+          ],
+          "params": {
+            "t": [
+              0.2,
+              6,
+              2,
+              0.1
+            ]
+          },
+          "shade": {
+            "fn": 2,
+            "a": 0,
+            "b": 8
+          },
+          "xmin": -1,
+          "xmax": 8,
+          "ymin": -0.5,
+          "ymax": 6,
+          "xlabel": "τ"
+        },
+        "cap": "Convolution of $f(t) = t$ with $g(t) = e^{-t}$. The dashed curve is $g$ flipped and slid to position $t$; the purple curve is the product $f(\\tau)g(t - \\tau)$, and its shaded area is $(f * g)(t)$. Move $t$ and watch the area grow."
+      },
+      {
+        "t": "note",
+        "html": "Convolution describes every linear system at rest. For $ay'' + by' + cy = g(t)$ with zero initial values, $Y = H(s)G(s)$, where $H = \\frac{1}{as^{2} + bs + c}$ is the <b>transfer function</b>. Its inverse $h(t)$ is the response to a unit <a href=\"/math/differential-equations/impulses/\">impulse</a>, since $\\mathcal{L}\\{\\delta\\} = 1$. Then $y = h * g$ (Duhamel's principle): the output is the input, chopped into many small impulses, each followed by its own copy of $h$. Engineers measure $h$ once and predict the response to any input."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Paul's Online Math Notes, Differential Equations: Convolution Integrals"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.03SC Differential Equations (Fall 2011), Unit III: Fourier Series and Laplace Transform"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

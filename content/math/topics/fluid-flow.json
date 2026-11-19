@@ -1,0 +1,109 @@
+{
+  "id": "calc4.fluid-flow",
+  "slug": "fluid-flow",
+  "ladder": "math",
+  "course": "calc4",
+  "unit": "applications",
+  "title": "Fluid Flow, Sources and Circulation",
+  "short": "Interpret flux and curl for moving fluids.",
+  "trouble": "",
+  "prereqs": [
+    "calc4.divergence-applications",
+    "calc4.curl-divergence-meaning"
+  ],
+  "xp": 3,
+  "viz": [
+    "vectorfield",
+    "flux"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Vector calculus was built largely to describe fluids. A moving fluid has a velocity field $\\mathbf{v}$, and the ideas of this course become physical laws: <a href=\"/math/calculus-4/flux-integrals/\">flux</a> is the volume of fluid crossing a surface per second, <a href=\"/math/calculus-4/curl-divergence-meaning/\">divergence</a> measures sources, and curl measures spin, which engineers call vorticity."
+      },
+      {
+        "t": "key",
+        "html": "For a fluid with velocity $\\mathbf{v}$ and density $\\rho$:"
+      },
+      {
+        "t": "list",
+        "items": [
+          "<b>Volume flow rate</b> through $S$: $\\iint_S \\mathbf{v} \\cdot d\\mathbf{S}$. <b>Mass flow rate</b>: $\\iint_S \\rho\\mathbf{v} \\cdot d\\mathbf{S}$.",
+          "<b>Conservation of mass</b> (continuity equation): $\\dfrac{\\partial \\rho}{\\partial t} + \\nabla \\cdot (\\rho\\mathbf{v}) = 0$.",
+          "<b>Incompressible</b> flow (constant density): $\\nabla \\cdot \\mathbf{v} = 0$. <b>Irrotational</b> flow: $\\nabla \\times \\mathbf{v} = \\mathbf{0}$, so $\\mathbf{v} = \\nabla\\phi$ on a region without holes.",
+          "Both at once: $\\nabla \\cdot \\nabla\\phi = \\phi_{xx} + \\phi_{yy} + \\phi_{zz} = 0$, <b>Laplace's equation</b>."
+        ]
+      },
+      {
+        "t": "why",
+        "html": "<b>Continuity equation:</b> take any fixed region $E$ with surface $S$. The mass inside, $\\iiint_E \\rho\\,dV$, changes only because mass flows across $S$:\n  $$\\frac{d}{dt}\\iiint_E \\rho\\,dV = -\\iint_S \\rho\\mathbf{v} \\cdot d\\mathbf{S} = -\\iiint_E \\nabla \\cdot (\\rho\\mathbf{v})\\,dV$$\n  by the divergence theorem. So $\\iiint_E \\left[\\rho_t + \\nabla \\cdot (\\rho\\mathbf{v})\\right] dV = 0$ for every region $E$, and a continuous function with zero integral over every small region is ${}0$."
+      },
+      {
+        "t": "viz",
+        "name": "vectorfield",
+        "opts": {
+          "P": "x",
+          "Q": "-y",
+          "probe": "both",
+          "at": [
+            1,
+            1
+          ],
+          "particles": true,
+          "presets": true
+        },
+        "cap": "The flow $\\langle x, -y \\rangle$, like water coming down onto a floor and spreading sideways. Divergence ${}1 - 1 = 0$ (no fluid is created) and curl ${}0$ (no spin): it is $\\nabla\\phi$ with $\\phi = \\frac{1}{2}(x^2 - y^2)$, which satisfies Laplace's equation."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Flow through a window",
+        "q": "Water moves with constant velocity $\\mathbf{v} = \\langle 1, 2, 3 \\rangle$ m/s. How much crosses the square $[0, 1] \\times [0, 1]$ in the plane $z = 0$, upward, each second?",
+        "steps": [
+          "Normal $\\mathbf{k}$, area ${}1$: flow rate $= \\mathbf{v} \\cdot \\mathbf{k} \\times 1 = 3$ m$^3$/s.",
+          "The other components run along the square and carry nothing through it."
+        ],
+        "a": "${}3$ m$^3$/s"
+      },
+      {
+        "t": "ex",
+        "title": "An ideal flow",
+        "q": "Is $\\mathbf{v} = \\langle x, -y, 0 \\rangle$ incompressible? Irrotational? Find a velocity potential.",
+        "steps": [
+          "$\\nabla \\cdot \\mathbf{v} = 1 - 1 + 0 = 0$: incompressible.",
+          "$\\nabla \\times \\mathbf{v} = \\langle 0, 0, 0 - 0 \\rangle = \\mathbf{0}$: irrotational.",
+          "$\\phi = \\frac{1}{2}(x^2 - y^2)$ has $\\nabla\\phi = \\mathbf{v}$ and $\\phi_{xx} + \\phi_{yy} = 1 - 1 = 0$."
+        ],
+        "a": "yes, yes, $\\phi = \\frac{1}{2}(x^2 - y^2)$"
+      },
+      {
+        "t": "ex",
+        "title": "Net outflow from a box",
+        "q": "For $\\mathbf{v} = \\langle x^2, y^2, z^2 \\rangle$, find the net rate at which fluid leaves the unit cube $[0, 1]^3$.",
+        "steps": [
+          "Divergence theorem: net outflow $= \\iiint (2x + 2y + 2z)\\,dV$.",
+          "Each of ${}2x$, ${}2y$, ${}2z$ averages to ${}1$ over the cube, so the answer is ${}3$.",
+          "Positive: this flow is not incompressible; fluid must be created inside (or the density must be dropping)."
+        ],
+        "a": "${}3$"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 3, 6.8 The Divergence Theorem"
+      },
+      {
+        "name": "OpenStax Calculus Volume 3, 6.5 Divergence and Curl"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,104 @@
+{
+  "id": "em.energy-conservation-charges",
+  "slug": "energy-conservation-charges",
+  "ladder": "physics",
+  "course": "em",
+  "unit": "potential",
+  "title": "Energy Conservation for Moving Charges",
+  "short": "A charge released near fixed charges trades potential energy for kinetic energy: qΔV + ΔK = 0.",
+  "trouble": "Students forget that a negative charge gains kinetic energy moving toward higher potential.",
+  "prereqs": [
+    "em.energy-of-charges",
+    "em.potential-from-field"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-efield"
+  ],
+  "figureArchetype": "FieldFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The electric force is conservative, like gravity, so a charge moving among fixed charges keeps its total energy: whatever <a href=\"/physics/electricity-and-magnetism/energy-of-charges/\">potential energy</a> it loses becomes kinetic energy. With <a href=\"/physics/electricity-and-magnetism/potential-from-field/\">potentials</a> in hand, this is often the quickest way to find a speed: no forces, no accelerations, no time."
+      },
+      {
+        "t": "key",
+        "html": "$$\\Delta K + q\\,\\Delta V = 0 \\qquad\\text{or}\\qquad \\tfrac{1}{2}mv_f^2 - \\tfrac{1}{2}mv_i^2 = -q(V_f - V_i).$$\n        A positive charge speeds up moving to lower potential; a negative charge speeds up moving to <b>higher</b> potential. One electron-volt, $1\\ \\text{eV} = 1.60 \\times 10^{-19}\\ \\text{J}$, is the energy an electron gains crossing $1\\ \\text{V}$."
+      },
+      {
+        "t": "why",
+        "html": "The work the field does on the charge equals the drop in its potential energy, $-q\\Delta V$, and by the work-energy theorem that work is $\\Delta K$. Because the electrostatic force is conservative, the path does not matter, only the start and end potentials."
+      },
+      {
+        "t": "p",
+        "html": "The electron-volt is handy because $q\\,\\Delta V$ is then just arithmetic: an electron crossing $500\\ \\text{V}$ gains $500\\ \\text{eV}$, and an alpha particle (charge $2e$) crossing the same $500\\ \\text{V}$ gains $1000\\ \\text{eV}$, whatever their masses. Convert to joules only when you need a speed. And remember that $\\tfrac{1}{2}mv^2$ is the slow-speed formula: when a speed comes out above about a tenth of the speed of light, relativity gives a noticeably different answer."
+      },
+      {
+        "t": "viz",
+        "name": "ph-efield",
+        "opts": {
+          "mode": "plates",
+          "V": 100,
+          "d": 0.02
+        },
+        "cap": "An electron entering the gap between charged plates. The field does work on it; its kinetic energy grows by $e\\,\\Delta V$ as it moves toward the positive plate."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "An electron gun",
+        "q": "An electron starts from rest and is accelerated through $500\\ \\text{V}$. How fast is it going?",
+        "steps": [
+          "It gains $K = e\\,\\Delta V = 500\\ \\text{eV} = (1.60 \\times 10^{-19})(500) = 8.00 \\times 10^{-17}\\ \\text{J}$.",
+          "$$v = \\sqrt{\\frac{2K}{m}} = \\sqrt{\\frac{2(8.00 \\times 10^{-17})}{9.11 \\times 10^{-31}}} = 1.33 \\times 10^{7}\\ \\text{m/s}$$",
+          "About 4% of the speed of light, so the classical formula is still fine."
+        ],
+        "a": "$v \\approx 1.33 \\times 10^{7}\\ \\text{m/s}$"
+      },
+      {
+        "t": "ex",
+        "title": "Pushed away by a fixed charge",
+        "q": "A proton is released from rest $2.0\\ \\text{mm}$ from a fixed $+5.0\\ \\text{nC}$ charge. How fast is it moving when it is far away?",
+        "steps": [
+          "Far away the potential is zero, so the proton loses all of $U = \\dfrac{kQe}{r}$: $$K = \\frac{(8.99 \\times 10^{9})(5.0 \\times 10^{-9})(1.60 \\times 10^{-19})}{0.0020} = 3.60 \\times 10^{-15}\\ \\text{J}$$",
+          "$v = \\sqrt{2K/m_p} = \\sqrt{\\dfrac{2(3.60 \\times 10^{-15})}{1.67 \\times 10^{-27}}} = 2.08 \\times 10^{6}\\ \\text{m/s}$."
+        ],
+        "a": "$v \\approx 2.08 \\times 10^{6}\\ \\text{m/s}$"
+      },
+      {
+        "t": "ex",
+        "title": "Rutherford's closest approach",
+        "q": "An alpha particle ($+2e$) with $5.0\\ \\text{MeV}$ of kinetic energy heads straight for a gold nucleus ($+79e$). How close does it get?",
+        "steps": [
+          "At the turning point it is momentarily at rest, so all of its $K$ has become $U = \\dfrac{k(2e)(79e)}{r}$.",
+          "$K = 5.0 \\times 10^{6} \\times 1.60 \\times 10^{-19} = 8.0 \\times 10^{-13}\\ \\text{J}$.",
+          "$$r = \\frac{(8.99 \\times 10^{9})(2)(79)(1.60 \\times 10^{-19})^2}{8.0 \\times 10^{-13}} = 4.55 \\times 10^{-14}\\ \\text{m}$$ about $45.5\\ \\text{fm}$. That is thousands of times smaller than a gold atom (radius about $1.4 \\times 10^{-10}\\ \\text{m}$), so the atom's positive charge must be packed into a tiny nucleus."
+        ],
+        "a": "$r \\approx 4.55 \\times 10^{-14}\\ \\text{m}$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>\"Charges always speed up moving toward lower potential.\"</b> That is true for positive charges only. For an electron, $\\Delta K = -q\\Delta V = +e\\Delta V$: it gains energy moving toward <i>higher</i> potential, the way a bubble rises in water. Check with forces: the field points from high to low $V$, and a negative charge is pushed opposite the field, toward high $V$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 2, 7.2 Electric Potential and Potential Difference"
+      },
+      {
+        "name": "OpenStax University Physics Volume 2, 7.1 Electric Potential Energy"
+      },
+      {
+        "name": "MIT OpenCourseWare, 8.02 Physics II: Electricity and Magnetism"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

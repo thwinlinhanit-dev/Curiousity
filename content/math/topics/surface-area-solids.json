@@ -1,0 +1,123 @@
+{
+  "id": "geo.surface-area-solids",
+  "slug": "surface-area-solids",
+  "ladder": "math",
+  "course": "geo",
+  "unit": "measurement",
+  "title": "Surface Area of Solids",
+  "short": "Find surface areas of prisms, cylinders, pyramids, cones and spheres.",
+  "trouble": "Students use the height instead of the slant height for the lateral area of a cone or pyramid.",
+  "prereqs": [
+    "geo.pyramids-cones-spheres",
+    "g7.surface-area-problems"
+  ],
+  "xp": 2,
+  "viz": [
+    "nets"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Surface area is the total area of a solid's outside, the paint it would take to cover it. Unfold the solid into a flat <b>net</b>, as in <a href=\"/math/grade-7/surface-area-problems/\">Area and Surface Area Problems</a>, and add the areas of the pieces. The height and slant height from <a href=\"/math/geometry/pyramids-cones-spheres/\">Volume of Pyramids, Cones and Spheres</a> play different roles here."
+      },
+      {
+        "t": "why",
+        "html": "<b>Cylinder:</b> two circles plus a rectangle whose length is the circumference, $2\\pi r$, so $S = 2\\pi r^2 + 2\\pi rh$. <b>Cone:</b> the curved part unrolls into a sector of a circle with radius $\\ell$ (the slant height) and arc length $2\\pi r$. Its area is $\\frac{1}{2} \\cdot \\ell \\cdot 2\\pi r = \\pi r \\ell$, like the \"half the apothem times the perimeter\" idea. So $S = \\pi r^2 + \\pi r \\ell$. <b>Pyramid:</b> the base plus triangles whose heights are the slant height $\\ell$. <b>Sphere:</b> $S = 4\\pi r^2$, exactly four times the area of a great circle (Archimedes showed this; a full proof needs calculus)."
+      },
+      {
+        "t": "viz",
+        "name": "nets",
+        "cap": "Unfold the cylinder: two circles and a rectangle as long as the circumference.",
+        "opts": {
+          "solid": "cylinder",
+          "r": 1,
+          "h": 3,
+          "fold": 0.25
+        }
+      },
+      {
+        "t": "table",
+        "head": [
+          "Solid",
+          "Surface area"
+        ],
+        "rows": [
+          [
+            "rectangular prism $l \\times w \\times h$",
+            "$2(lw + lh + wh)$"
+          ],
+          [
+            "cylinder",
+            "$2\\pi r^2 + 2\\pi rh$"
+          ],
+          [
+            "square pyramid, base edge $s$, slant height $\\ell$",
+            "$s^2 + 2s\\ell$"
+          ],
+          [
+            "cone",
+            "$\\pi r^2 + \\pi r \\ell$"
+          ],
+          [
+            "sphere",
+            "$4\\pi r^2$"
+          ]
+        ],
+        "cap": "Surface area formulas. $\\ell$ is the slant height, measured along the face."
+      },
+      {
+        "t": "key",
+        "html": "Surface area adds the areas of every face. The slanted faces of pyramids and cones use the slant height $\\ell$, not the height $h$; they are related by the Pythagorean theorem."
+      },
+      {
+        "t": "ex",
+        "title": "A cylinder",
+        "q": "Find the surface area of a cylinder with radius $3$ and height $8$.",
+        "steps": [
+          "Bases: $2 \\cdot \\pi \\cdot 9 = 18\\pi$. Side: $2\\pi \\cdot 3 \\cdot 8 = 48\\pi$.",
+          "$S = 66\\pi \\approx 207.3$."
+        ],
+        "a": "$66\\pi$"
+      },
+      {
+        "t": "ex",
+        "title": "A pyramid from its height",
+        "q": "A square pyramid has base edge $10$ and height $12$. Find its surface area.",
+        "steps": [
+          "The slant height is the hypotenuse of a right triangle with legs $12$ (the height) and $5$ (half the base edge): $\\ell = \\sqrt{144 + 25} = 13$.",
+          "Base: $100$. Four triangles: $4 \\cdot \\frac{1}{2} \\cdot 10 \\cdot 13 = 260$.",
+          "$S = 360$."
+        ],
+        "a": "$360$ square units"
+      },
+      {
+        "t": "ex",
+        "title": "A cone",
+        "q": "A cone has radius $6$ and height $8$. Find its surface area.",
+        "steps": [
+          "$\\ell = \\sqrt{6^2 + 8^2} = 10$.",
+          "$S = \\pi \\cdot 36 + \\pi \\cdot 6 \\cdot 10$ $= 36\\pi + 60\\pi = 96\\pi \\approx 301.6$."
+        ],
+        "a": "$96\\pi$"
+      },
+      {
+        "t": "mistake",
+        "html": "Using the height instead of the slant height for the lateral area of a cone or pyramid. The triangles and the cone's curved surface slope, so their \"height\" is the slant height. Check: the slant height is longer than the height, so the correct lateral area is the larger one."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Contemporary Mathematics, 10.7 Volume and Surface Area"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, High School Geometry, G-MG.A.1"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

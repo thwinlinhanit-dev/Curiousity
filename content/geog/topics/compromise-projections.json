@@ -1,0 +1,116 @@
+{
+  "id": "worldgeo.compromise-projections",
+  "slug": "compromise-projections",
+  "ladder": "geog",
+  "course": "worldgeo",
+  "unit": "maps-projections",
+  "title": "Compromise Maps",
+  "short": "Robinson and Winkel tripel maps keep nothing perfectly but stretch everything only a little; many atlases use them for world maps.",
+  "trouble": "Students want to know which map is \"right.\" For a world wall map, a compromise looks most like the globe; for navigation, Mercator; for comparing sizes, an equal-area map.",
+  "prereqs": [
+    "worldgeo.equal-area"
+  ],
+  "xp": 2,
+  "viz": [
+    "gg-projection"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Mercator keeps shapes, and <a href=\"/geography/world-geography/equal-area/\">equal-area maps</a> keep sizes. A third family keeps neither exactly, on purpose."
+      },
+      {
+        "t": "key",
+        "html": "A <b>compromise</b> projection, such as <b>Robinson</b> or <b>Winkel tripel</b>, keeps nothing perfectly but stretches sizes, shapes and distances only a little. The whole world looks much like it does on a globe, which is why many atlases and wall maps use them."
+      },
+      {
+        "t": "viz",
+        "name": "gg-projection",
+        "opts": {
+          "choose": true,
+          "proj": "robinson",
+          "choices": [
+            "mercator",
+            "equalearth",
+            "robinson",
+            "winkel"
+          ]
+        },
+        "cap": "Switch between four projections and compare Greenland, Africa and Antarctica."
+      },
+      {
+        "t": "why",
+        "html": "Errors in area and errors in shape trade against each other. Mercator pushes area error to the extreme to get perfect shapes; Gall-Peters does the opposite. A compromise spreads small errors over both. Arthur Robinson designed his projection in 1963 for the atlas maker Rand McNally by adjusting it until it looked right. The National Geographic Society used it for its world maps from 1988 and switched to the Winkel tripel in 1998, because Winkel's errors in area, shape and distance are smaller overall."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Job",
+          "Best choice",
+          "Why"
+        ],
+        "rows": [
+          [
+            "Steering a ship by compass",
+            "Mercator",
+            "Straight lines are steady compass courses"
+          ],
+          [
+            "Comparing sizes of countries",
+            "Equal-area (Equal Earth, Mollweide, Gall-Peters)",
+            "Every area is in true proportion"
+          ],
+          [
+            "A world wall map for a classroom",
+            "Compromise (Winkel tripel, Robinson)",
+            "Looks most like the globe overall"
+          ],
+          [
+            "A street map of a city",
+            "Almost any",
+            "Over a small area every projection is nearly true"
+          ]
+        ],
+        "cap": "Pick the map for the job."
+      },
+      {
+        "t": "ex",
+        "title": "Choosing a map",
+        "q": "A teacher wants one world map on the wall so students get a fair picture of the whole Earth. Which projection should she choose?",
+        "steps": [
+          "She is not steering a ship, so Mercator's true directions do not matter.",
+          "She wants sizes and shapes both close to the globe.",
+          "A compromise projection does that."
+        ],
+        "a": "A compromise projection, such as Winkel tripel or Robinson."
+      },
+      {
+        "t": "mistake",
+        "html": "Asking which map is \"right.\" There is no single right map: there is a right map for a job. For navigation use Mercator, for comparing sizes an equal-area map, for a general picture of the world a compromise."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Robinson projection (Grokipedia)",
+        "url": "https://grokipedia.com/page/Robinson_projection"
+      },
+      {
+        "name": "Winkel tripel projection (Grokipedia)",
+        "url": "https://grokipedia.com/page/Winkel_tripel_projection"
+      },
+      {
+        "name": "Mercator projection (Grokipedia)",
+        "url": "https://grokipedia.com/page/Mercator_projection"
+      },
+      {
+        "name": "C3 Framework for Social Studies State Standards (NCSS, 2013), Geography, Dimension 2, grades 6-8"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,124 @@
+{
+  "id": "phys2.refrigerators",
+  "slug": "refrigerators",
+  "course": "phys2",
+  "courseTitle": "Physics 2: Fluids, Heat, Electricity, Light and Atoms",
+  "unit": "thermodynamics",
+  "unitTitle": "Thermodynamics",
+  "title": "Refrigerators and Heat Pumps",
+  "short": "Work can move heat from cold to hot, and a heat pump delivers more heat than the work it uses.",
+  "trouble": "Students think a heat pump that delivers 3 J of heat for each joule of work breaks conservation of energy.",
+  "prereqs": [
+    "phys2.heat-engines"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-pv"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Heat flows from hot to cold on its own. A refrigerator moves it the other way, from the cold food to the warm kitchen. It is a <a href=\"/physics/physics-2/heat-engines/\">heat engine</a> run backward: work goes in, and heat is pumped uphill."
+      },
+      {
+        "t": "why",
+        "html": "Over each cycle $\\Delta U = 0$, so energy in equals energy out: the heat $Q_C$ taken from the cold side plus the work $W$ equals the heat $Q_H$ given to the hot side. A refrigerator is rated by how much heat it removes per joule of work. A heat pump, the same machine pointed at a house, is rated by how much heat it delivers per joule, and that is always more than one joule, because it also brings in the heat it collected from outside."
+      },
+      {
+        "t": "key",
+        "html": "$$Q_H = Q_C + W, \\qquad \\text{COP}_{\\text{fridge}} = \\frac{Q_C}{W}, \\qquad \\text{COP}_{\\text{heat pump}} = \\frac{Q_H}{W}$$ The best possible (Carnot) values are $\\dfrac{T_C}{T_H - T_C}$ and $\\dfrac{T_H}{T_H - T_C}$, with kelvins."
+      },
+      {
+        "t": "viz",
+        "name": "ph-pv",
+        "opts": {
+          "mode": "fridge",
+          "states": [
+            [
+              200,
+              2
+            ],
+            [
+              200,
+              5
+            ],
+            [
+              80,
+              5
+            ],
+            [
+              80,
+              2
+            ]
+          ],
+          "path": [
+            "isobaric",
+            "isochoric",
+            "isobaric",
+            "isochoric"
+          ]
+        },
+        "cap": "The engine cycle run counterclockwise: work goes in, and heat flows from cold to hot. Run one in the <a href=\"/science-lab/thermodynamics/engines/\">Engines, Refrigerators and Heat Pumps</a> chapter of the Science Lab."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A kitchen refrigerator",
+        "q": "A refrigerator removes $600\\,\\text{J}$ from the food using $200\\,\\text{J}$ of work. Find the heat released into the kitchen and the COP.",
+        "steps": [
+          "$Q_H = Q_C + W = 600 + 200 = 800\\,\\text{J}$, released by the coils on the back.",
+          "$\\text{COP} = \\dfrac{Q_C}{W} = \\dfrac{600}{200} = 3.0$."
+        ],
+        "a": "$800\\,\\text{J}$; COP $= 3.0$"
+      },
+      {
+        "t": "ex",
+        "title": "A heat pump",
+        "q": "A heat pump with a heating COP of $3.5$ delivers $7.0\\,\\text{kW}$ of heat to a house. Find the electrical power and the rate it draws heat from outside.",
+        "steps": [
+          "$W = \\dfrac{Q_H}{\\text{COP}} = \\dfrac{7.0\\,\\text{kW}}{3.5} = 2.0\\,\\text{kW}$.",
+          "From outside: $Q_C = Q_H - W = 7.0 - 2.0 = 5.0\\,\\text{kW}$."
+        ],
+        "a": "$2.0\\,\\text{kW}$; $5.0\\,\\text{kW}$"
+      },
+      {
+        "t": "ex",
+        "title": "The best possible heat pump",
+        "q": "What is the highest heating COP between $-5\\,^\\circ\\text{C}$ outside and $20\\,^\\circ\\text{C}$ inside?",
+        "steps": [
+          "$T_H = 293\\,\\text{K}$, and the difference is $25\\,\\text{K}$.",
+          "$\\text{COP}_{\\max} = \\dfrac{293}{25} = 11.7$. Real heat pumps reach a fraction of this, and less in colder weather."
+        ],
+        "a": "$11.7$"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking a heat pump that gives $3\\,\\text{J}$ of heat per joule of work breaks conservation of energy. It does not create heat; it moves $2\\,\\text{J}$ in from the cold outdoors and adds the $1\\,\\text{J}$ of work. Check: $Q_H = Q_C + W$ always balances."
+      },
+      {
+        "t": "note",
+        "html": "Leaving a refrigerator door open warms the kitchen: it dumps $Q_H = Q_C + W$, which is more than the $Q_C$ it removes."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e, section 15.5 Applications of Thermodynamics: Heat Pumps and Refrigerators"
+      },
+      {
+        "name": "OpenStax, University Physics Volume 2, section 4.3 Refrigerators and Heat Pumps"
+      },
+      {
+        "name": "College Board, AP Physics 2 Course and Exam Description, Unit 9: Thermodynamics"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

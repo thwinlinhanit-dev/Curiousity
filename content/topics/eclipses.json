@@ -1,0 +1,94 @@
+{
+  "id": "astro.eclipses",
+  "slug": "eclipses",
+  "course": "astro",
+  "courseTitle": "Astronomy",
+  "unit": "sky",
+  "unitTitle": "The Sky",
+  "title": "Eclipse Seasons",
+  "short": "The Moon's orbit is tilted about 5°, so eclipses happen only near the two nodes, in eclipse seasons about six months apart.",
+  "trouble": "Students think there should be an eclipse every month, at every new and full Moon.",
+  "prereqs": [
+    "earthsci.eclipses",
+    "astro.moon-phases"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-sky"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "From <a href=\"/earth-and-space/earth-science/eclipses/\">Solar and Lunar Eclipses</a> you know an eclipse needs the Sun, Earth and Moon in a line: a solar eclipse at new moon, when the Moon's shadow falls on Earth, and a lunar eclipse at full moon, when the Moon passes through Earth's shadow. <a href=\"/physics/astronomy/moon-phases/\">New and full moons</a> come every month, so why are eclipses rare?"
+      },
+      {
+        "t": "why",
+        "html": "The Moon's orbit is tilted about $5^\\circ$ to the plane of Earth's orbit. The two planes cross along a line, the <b>line of nodes</b>. Most months, the new moon passes up to $5^\\circ$ above or below the Sun, which is about ten times the Sun's width of $0.53^\\circ$, and the shadow misses Earth. An eclipse needs a new or full moon close to a node. The tilted orbit keeps its direction in space as Earth circles the Sun, so twice a year the line of nodes points at the Sun. Those windows, each about five weeks long, are the <b>eclipse seasons</b>."
+      },
+      {
+        "t": "key",
+        "html": "Because the Moon's orbit is tilted about $5^\\circ$, eclipses happen only when a new or full moon falls near a node, during eclipse seasons about 173 days apart. Every year has at least two solar eclipses somewhere on Earth."
+      },
+      {
+        "t": "viz",
+        "name": "ph-sky",
+        "opts": {
+          "mode": "eclipse",
+          "task": "Press Play. Watch the line of nodes: eclipses happen only when it points at the Sun.",
+          "lab": "/science-lab/night-sky/"
+        },
+        "cap": "Earth's orbit with the Moon's tilted orbit (tilt exaggerated). The inset shows a solar eclipse from the side, with the dark umbra and the lighter penumbra."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "How far apart?",
+        "q": "The line of nodes points at the Sun once per half of an eclipse year of $346.6$ days. How far apart are the eclipse seasons?",
+        "steps": [
+          "$346.6 \\div 2 = 173.3$ days: a little under six months.",
+          "The eclipse year is shorter than the calendar year because the nodes slide slowly westward, so the seasons arrive about 19 days earlier each year."
+        ],
+        "a": "About 173 days."
+      },
+      {
+        "t": "ex",
+        "title": "Total or annular?",
+        "q": "The Moon is $3474$ km across. During one solar eclipse it is $400{,}000$ km away. The Sun looks $0.533^\\circ$ wide. Total or annular?",
+        "steps": [
+          "Small-angle rule: angle $\\approx 57.3^\\circ \\times \\frac{\\text{diameter}}{\\text{distance}}$ ($57.3^\\circ$ is one radian).",
+          "Moon: $57.3^\\circ \\times \\frac{3474}{400{,}000} = 0.498^\\circ$.",
+          "That is smaller than the Sun, so a bright ring stays visible: an <b>annular</b> eclipse. Near its closest, about $357{,}000$ km, the Moon looks $0.558^\\circ$ wide and can cover the Sun completely: a total eclipse."
+        ],
+        "a": "Annular."
+      },
+      {
+        "t": "mistake",
+        "html": "\"There should be an eclipse every month\" is a natural guess if you picture the Moon's orbit flat. It is tilted, so most new moons pass above or below the Sun and most full moons pass above or below Earth's shadow. Check with numbers: $5.1^\\circ \\div 0.53^\\circ \\approx 10$, so the new moon can miss the Sun by about ten Sun-widths."
+      },
+      {
+        "t": "note",
+        "html": "A solar eclipse is seen only along the narrow path of the Moon's shadow, while a lunar eclipse is seen from the whole night side of Earth, which is why most people have seen more lunar eclipses. Find the eclipse seasons yourself in the <a href=\"/science-lab/night-sky/\">Sky and Solar System</a> lab."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Astronomy 2e, section 4.7, Eclipses of the Sun and Moon"
+      },
+      {
+        "name": "NASA Goddard Space Flight Center, eclipse resources (eclipse seasons and the eclipse year)"
+      },
+      {
+        "name": "NGSS MS-ESS1-1"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

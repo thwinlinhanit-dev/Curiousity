@@ -1,0 +1,90 @@
+{
+  "id": "gchem1.orbital-diagrams",
+  "slug": "orbital-diagrams",
+  "ladder": "chemistry",
+  "course": "gchem1",
+  "unit": "quantum",
+  "title": "Orbital Diagrams and Magnetism",
+  "short": "Pauli's rule and Hund's rule place the arrows, and unpaired electrons make an atom paramagnetic.",
+  "trouble": "Students pair electrons in one p orbital before every orbital in the sublevel has one, and so miscount the unpaired electrons.",
+  "prereqs": [
+    "gchem1.quantum-numbers",
+    "chem.electron-configuration"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-orbitalbox"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "An <a href=\"/chemistry/chemistry/electron-configuration/\">Electron Configurations</a> such as $1s^2 2s^2 2p^4$ says how many electrons are in each subshell. An <b>orbital diagram</b> shows more: one box per orbital, one arrow per electron, with its spin. <a href=\"/chemistry/general-chemistry-1/quantum-numbers/\">Quantum Numbers</a> told you how many boxes each subshell gets; three rules say how to fill them."
+      },
+      {
+        "t": "key",
+        "html": "<b>Aufbau:</b> fill the lowest-energy orbitals first (1s, 2s, 2p, 3s, 3p, 4s, 3d, 4p…). <b>Pauli:</b> at most two electrons per orbital, with opposite spins (↑↓). <b>Hund:</b> in a set of equal-energy orbitals, put one electron in each, all with the same spin, before pairing any. Atoms with unpaired electrons are <b>paramagnetic</b> (drawn into a magnetic field); atoms with all electrons paired are <b>diamagnetic</b>."
+      },
+      {
+        "t": "why",
+        "html": "Two electrons in the same orbital share the same region of space, and they repel each other. Spreading out into separate orbitals of equal energy keeps them farther apart, so it costs less energy; parallel spins lower the energy a little more (a quantum effect called exchange). Pauli's rule is a law of nature for electrons: two spins per orbital, opposite. And an unpaired electron is a tiny magnet with nothing to cancel it, which is why atoms with unpaired electrons are pulled into a magnetic field."
+      },
+      {
+        "t": "viz",
+        "name": "ch-orbitalbox",
+        "opts": {
+          "Z": 7,
+          "mode": "fill",
+          "place": true,
+          "task": "Place nitrogen's seven electrons. Tap a box to add an arrow."
+        },
+        "cap": "Build nitrogen's diagram yourself. The visual points out any rule you break."
+      },
+      {
+        "t": "ex",
+        "title": "Oxygen",
+        "q": "Draw the orbital diagram of oxygen ($Z = 8$) and count its unpaired electrons.",
+        "steps": [
+          "Configuration: $1s^2\\,2s^2\\,2p^4$.",
+          "1s: ↑↓. 2s: ↑↓.",
+          "2p has three boxes. The first three electrons go one per box, spins parallel: ↑ ↑ ↑. The fourth pairs up in the first box: ↑↓ ↑ ↑.",
+          "Two unpaired electrons, so oxygen atoms are paramagnetic."
+        ],
+        "a": "$1s$ ↑↓, $2s$ ↑↓, $2p$ ↑↓ ↑ ↑; 2 unpaired."
+      },
+      {
+        "t": "ex",
+        "title": "Iron",
+        "q": "How many unpaired electrons does an iron atom ($Z = 26$) have?",
+        "steps": [
+          "Configuration: $[\\text{Ar}]\\,4s^2\\,3d^6$.",
+          "4s: ↑↓ (paired).",
+          "3d has five boxes. Five electrons go in one per box (↑ ↑ ↑ ↑ ↑), and the sixth pairs: ↑↓ ↑ ↑ ↑ ↑.",
+          "Four unpaired electrons."
+        ],
+        "a": "4 unpaired: paramagnetic."
+      },
+      {
+        "t": "mistake",
+        "html": "Pairing electrons before every orbital of the sublevel has one. Writing nitrogen's 2p as ↑↓ ↑ _ gives 1 unpaired electron instead of the real 3. Check: in a half-filled or less-than-half-filled subshell, the number of unpaired electrons equals the number of electrons in it (p³ has 3); past half, count the empty spots (p⁴ has 2, d⁸ has 2)."
+      },
+      {
+        "t": "note",
+        "html": "Magnetism is how these diagrams were tested. Measuring how strongly a sample is pulled into a magnet counts its unpaired electrons, and the counts match Hund's rule."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 6.4 Electronic Structure of Atoms (Electron Configurations)"
+      },
+      {
+        "name": "College Board, AP Chemistry Course and Exam Description (effective fall 2024), Unit 1: Atomic Structure and Properties"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

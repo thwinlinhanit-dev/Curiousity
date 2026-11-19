@@ -1,0 +1,80 @@
+{
+  "id": "micro.negative-externalities",
+  "slug": "negative-externalities",
+  "ladder": "economics",
+  "course": "micro",
+  "unit": "market-failure",
+  "title": "Negative Externalities",
+  "short": "When a cost spills onto bystanders, the market produces more than the efficient amount.",
+  "trouble": "Students put the deadweight loss on the wrong side of the efficient quantity, or think the market underproduces goods that pollute.",
+  "prereqs": [
+    "micro.deadweight-loss"
+  ],
+  "xp": 2,
+  "viz": [
+    "ec-externality"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A competitive market maximizes total surplus (<a href=\"/economics/microeconomics/deadweight-loss/\">Total Surplus and Deadweight Loss</a>) when everyone affected is a buyer or a seller. When a cost falls on someone outside the deal, that is no longer true."
+      },
+      {
+        "t": "key",
+        "html": "A <b>negative externality</b> is a cost imposed on bystanders, such as pollution from a factory or noise from a highway. The <b>marginal social cost</b> is $MSC = MPC + MEC$: the private cost (supply) plus the marginal external cost. The market produces where demand meets private supply, <b>more</b> than the efficient quantity, where demand (marginal social benefit) meets MSC. The deadweight loss is the triangle between MSC and demand from the efficient quantity out to the market quantity."
+      },
+      {
+        "t": "why",
+        "html": "Sellers decide how much to make by comparing price with their own costs. The harm to neighbors doesn't show up in their costs, so they act as if it were zero. For units past the efficient quantity, the true cost to society (private cost plus the harm) is higher than what buyers would pay; producing them destroys surplus. That's the deadweight loss, and it sits <i>beyond</i> the efficient quantity, because the problem is too much, not too little."
+      },
+      {
+        "t": "viz",
+        "name": "ec-externality",
+        "opts": {
+          "mode": "negative"
+        },
+        "cap": "Private supply understates the cost to society by the marginal external cost. The market makes too much; the hatched triangle is the deadweight loss."
+      },
+      {
+        "t": "ex",
+        "title": "Too much of a polluting good",
+        "q": "Demand for a chemical is $P = 20 - Q$. The private marginal cost is $MPC = 2 + Q$, and each unit causes \\$4 of harm downstream. Find the market quantity, the efficient quantity and the deadweight loss.",
+        "steps": [
+          "Market: $20 - Q = 2 + Q$, so $Q_m = 9$.",
+          "Social cost: $MSC = 2 + Q + 4 = 6 + Q$. Efficient: $20 - Q = 6 + Q$, so $Q_e = 7$.",
+          "At $Q_m = 9$ the gap between MSC and demand is $(6 + 9) - (20 - 9) = 4$.",
+          "$DWL = \\tfrac{1}{2} \\times 4 \\times (9 - 7) = \\$4$."
+        ],
+        "a": "Market 9, efficient 7, DWL \\$4."
+      },
+      {
+        "t": "ex",
+        "title": "Who bears the cost?",
+        "q": "In the example, what are the total external costs at the market quantity?",
+        "steps": [
+          "Each unit causes \\$4 of harm, and 9 units are made.",
+          "External cost: $9 \\times \\$4 = \\$36$, borne by people downstream who are not part of the trade."
+        ],
+        "a": "\\$36."
+      },
+      {
+        "t": "mistake",
+        "html": "Putting the deadweight loss on the wrong side of the efficient quantity, or thinking the market makes too little of a good that pollutes. Ignoring a cost makes production look cheaper than it is, so the market makes <i>too much</i>. Check: the market quantity is where the lower, private curve crosses demand, which is to the right of where the higher, social curve does."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, 12.1 The Economics of Pollution"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.01 Principles of Microeconomics (scope and sequence)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

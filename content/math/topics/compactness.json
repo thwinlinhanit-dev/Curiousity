@@ -1,0 +1,136 @@
+{
+  "id": "ra.compactness",
+  "slug": "compactness",
+  "ladder": "math",
+  "course": "ra",
+  "unit": "metric-spaces",
+  "title": "Compact Sets",
+  "short": "K is compact when every open cover has a finite subcover; in ℝⁿ that happens exactly when K is closed and bounded (Heine–Borel).",
+  "trouble": "Students show that one cover has a finite subcover and stop; compactness is about every open cover. Others call (0, 1] compact because it is bounded.",
+  "prereqs": [
+    "ra.open-closed-sets",
+    "ra.evt"
+  ],
+  "xp": 3,
+  "viz": [
+    "ra-cover"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The <a href=\"/math/real-analysis/evt/\">extreme value theorem</a> and uniform continuity both used something special about $[a, b]$: every sequence in it has a subsequence converging in it. Compactness is the name for this property, stated in a form that works in every metric space. It builds on <a href=\"/math/real-analysis/open-closed-sets/\">open sets</a>."
+      },
+      {
+        "t": "key",
+        "html": "An <b>open cover</b> of $K$ is a collection of open sets whose union contains $K$. $K$ is <b>compact</b> when <b>every</b> open cover of $K$ has a finite subcover. In a metric space this is equivalent to: every sequence in $K$ has a subsequence converging to a point of $K$. <b>Heine–Borel:</b> in $\\mathbb{R}^{n}$, $K$ is compact exactly when it is closed and bounded."
+      },
+      {
+        "t": "why",
+        "html": "<b>$[a, b]$ is compact.</b> Take an open cover, and let $c$ be the supremum of the $x \\in [a, b]$ for which $[a, x]$ is covered by finitely many sets of the cover ($x = a$ qualifies, so $c$ exists). Some set $U_0$ of the cover contains $c$, and with it an interval $(c - r, c + r)$. Pick a qualifying $x > c - r$: finitely many sets cover $[a, x]$, and adding $U_0$ covers $[a, t]$ for every $t < c + r$. If $c < b$, then $t = \\min\\left(c + \\frac{r}{2}, b\\right)$ qualifies and is larger than $c$, which is impossible. So $c = b$, and the same finite family covers $[a, b]$. $\\blacksquare$"
+      },
+      {
+        "t": "p",
+        "html": "<b>Bounded is not enough.</b> The sets $\\left(\\frac{1}{n}, 2\\right)$ cover $(0, 1]$, since every $x > 0$ has $\\frac{1}{n} < x$ for large $n$. But finitely many of them have a largest $N$, and their union $\\left(\\frac{1}{N}, 2\\right)$ misses $\\frac{1}{2N}$. So $(0, 1]$ is not compact: it is not closed. Compact sets give back the theorems of unit 4 in full generality: a continuous function maps compact sets to compact sets, so a continuous real function on a compact set attains a maximum and a minimum."
+      },
+      {
+        "t": "viz",
+        "name": "ra-cover",
+        "opts": {
+          "a": 0,
+          "b": 4,
+          "intervals": [
+            [
+              -0.3,
+              1.2
+            ],
+            [
+              0.9,
+              2.1
+            ],
+            [
+              1.8,
+              3.3
+            ],
+            [
+              3,
+              4.5
+            ],
+            [
+              0.5,
+              1.5
+            ],
+            [
+              2.5,
+              3.6
+            ],
+            [
+              0.2,
+              0.8
+            ]
+          ],
+          "mode": "cover"
+        },
+        "cap": "An open cover of $[0, 4]$. \"Find a finite subcover\" chooses, from the left, the interval that reaches farthest at each step, the same idea as in the proof."
+      },
+      {
+        "t": "viz",
+        "name": "ra-cover",
+        "opts": {
+          "mode": "inv",
+          "nmax": 12
+        },
+        "cap": "The cover $\\left(\\frac{1}{n}, 2\\right)$ of $(0, 1]$: with the slider, use more and more of the intervals. Each finite batch leaves a gap next to $0$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Choosing a finite subcover",
+        "q": "The open intervals $(-1, 2)$, $(1, 3)$, $(0, 1.5)$, $(2.5, 5)$ cover $[0, 4]$. What is the smallest number of them that still covers?",
+        "steps": [
+          "Start at $0$: $(-1, 2)$ reaches farthest, to $2$.",
+          "The point $2$ is not in $(-1, 2)$; of the intervals containing $2$, $(1, 3)$ reaches farthest. Then $(2.5, 5)$ covers past $4$."
+        ],
+        "a": "$3$; the interval $(0, 1.5)$ is not needed."
+      },
+      {
+        "t": "ex",
+        "title": "How many intervals of the bad cover",
+        "q": "How many of the sets $\\left(\\frac{1}{n}, 2\\right)$ are needed to cover $\\left[\\frac{1}{10}, 1\\right]$?",
+        "steps": [
+          "The union of the first $N$ is $\\left(\\frac{1}{N}, 2\\right)$; it contains $\\frac{1}{10}$ when $\\frac{1}{N} < \\frac{1}{10}$, that is $N \\ge 11$."
+        ],
+        "a": "$11$. The closed interval $\\left[\\frac{1}{10}, 1\\right]$ is compact, so a finite number suffices; for $(0, 1]$ no number does."
+      },
+      {
+        "t": "ex",
+        "title": "Which are compact?",
+        "q": "Which of $[0, 1]$, $[0, \\infty)$, $\\{0\\} \\cup \\left\\{\\frac{1}{n}\\right\\}$, $\\mathbb{Q} \\cap [0, 1]$ are compact?",
+        "steps": [
+          "Apply Heine–Borel: $[0, \\infty)$ is unbounded; $\\mathbb{Q} \\cap [0, 1]$ is not closed."
+        ],
+        "a": "$[0, 1]$ and $\\{0\\} \\cup \\left\\{\\frac{1}{n}\\right\\}$."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Showing it for one cover.</b> Finding a finite subcover of one particular open cover proves nothing about compactness; the definition is about every open cover. To show a set is not compact, you need one cover with no finite subcover. To show it is compact, use a theorem (Heine–Borel in $\\mathbb{R}^{n}$, or the sequence criterion) or an argument that handles an arbitrary cover, like the supremum proof above."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Jiří Lebl, Basic Analysis I: Introduction to Real Analysis, section 7.4 (completeness and compactness)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.100B Real Analysis, lecture notes on compact sets and Heine–Borel"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

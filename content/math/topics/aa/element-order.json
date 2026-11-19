@@ -1,0 +1,112 @@
+{
+  "id": "aa.element-order",
+  "slug": "element-order",
+  "ladder": "math",
+  "course": "aa",
+  "unit": "groups",
+  "title": "The Order of an Element",
+  "short": "The order of a is the least n ≥ 1 with aⁿ = e (n·a = 0 when the operation is addition), and aᵏ = e exactly when the order of a divides k.",
+  "trouble": "Students mix up the order of an element with the order of the group, or in ℤₙ multiply a by itself instead of adding it to itself.",
+  "prereqs": [
+    "aa.group-properties",
+    "aa.units-mod-n",
+    "nt.order-mod-n"
+  ],
+  "xp": 2,
+  "viz": [
+    "aa-cayley"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/math/number-theory/order-mod-n/\">number theory</a> the order of $a$ mod $n$ was the first power of $a$ that is $1$. The same idea works in every group, and it is the most useful single number attached to an element."
+      },
+      {
+        "t": "p",
+        "html": "<b>Definition.</b> The <b>order</b> of $a$, written $|a|$, is the least positive integer $n$ with $a^{n} = e$. If no such $n$ exists, $a$ has <b>infinite order</b>. In additive notation the condition reads $na = a + a + \\cdots + a = 0$."
+      },
+      {
+        "t": "p",
+        "html": "Here $a^{n}$ means $a$ multiplied by itself $n$ times, $a^{0} = e$, and $a^{-n} = (a^{-1})^{n}$; the usual rules $a^{m}a^{n} = a^{m+n}$ and $(a^{m})^{n} = a^{mn}$ hold in any group (by associativity), while $(ab)^{n} = a^{n}b^{n}$ needs $ab = ba$."
+      },
+      {
+        "t": "why",
+        "html": "<b>Theorem.</b> If $|a| = n$, then $a^{k} = e$ exactly when $n$ divides $k$.<br><b>Proof.</b> If $k = nq$ then $a^{k} = (a^{n})^{q} = e^{q} = e$. Conversely, suppose $a^{k} = e$ and divide: $k = nq + r$ with $0 \\le r < n$. Then $$e = a^{k} = (a^{n})^{q}a^{r} = a^{r}.$$ Since $n$ is the <i>least</i> positive exponent giving $e$ and $0 \\le r < n$, we must have $r = 0$, so $n \\mid k$. $\\square$ Consequence: $a^{i} = a^{j}$ exactly when $i \\equiv j \\pmod{n}$, so exponents can be reduced mod $|a|$. In particular the powers $e, a, a^{2}, \\dots, a^{n-1}$ are all different: if two of them agreed, a smaller positive power would already be $e$."
+      },
+      {
+        "t": "ex",
+        "title": "Order in $\\mathbb{Z}_{16}$",
+        "q": "Find the order of $6$ in $\\mathbb{Z}_{16}$.",
+        "steps": [
+          "We need the least $m \\ge 1$ with $6m \\equiv 0 \\pmod{16}$, that is, $16 \\mid 6m$, that is, $8 \\mid 3m$.",
+          "Since $\\gcd(8, 3) = 1$, this means $8 \\mid m$.",
+          "Check by adding: $6, 12, 2, 8, 14, 4, 10, 0$: eight steps."
+        ],
+        "a": "$|6| = 8$."
+      },
+      {
+        "t": "ex",
+        "title": "Order in $U(10)$",
+        "q": "Find the order of $3$ in $U(10)$.",
+        "steps": [
+          "Powers: $3^{1} = 3$, $3^{2} = 9$, $3^{3} = 27 \\equiv 7$, $3^{4} = 21 \\equiv 1$."
+        ],
+        "a": "$|3| = 4$, which equals $|U(10)|$, so the powers of $3$ fill $U(10)$."
+      },
+      {
+        "t": "ex",
+        "title": "A matrix of finite order",
+        "q": "Find the order of $A = \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix}$, the rotation by $90^\\circ$.",
+        "steps": [
+          "$A^{2} = \\begin{pmatrix} -1 & 0 \\\\ 0 & -1 \\end{pmatrix} = -I$, the rotation by $180^\\circ$.",
+          "$A^{4} = (A^{2})^{2} = I$, and no smaller power is $I$.",
+          "Then, for example, $A^{103} = A^{103 \\bmod 4} = A^{3}$."
+        ],
+        "a": "$|A| = 4$."
+      },
+      {
+        "t": "viz",
+        "name": "aa-cayley",
+        "opts": {
+          "group": "Z",
+          "n": 8,
+          "sel": [
+            "6",
+            "6"
+          ],
+          "modes": [
+            "product"
+          ],
+          "task": "Start at $6$ and keep adding $6$: tap row $6$ again and again. How many steps until you reach $0$?"
+        },
+        "cap": "Repeated addition in $\\mathbb{Z}_{8}$: the order of $6$ is the number of copies of $6$ needed to reach $0$."
+      },
+      {
+        "t": "mistake",
+        "html": "Confusing the order of an element with the order of the group. $|U(10)| = 4$ counts elements; $|9| = 2$ in $U(10)$ because $9^{2} = 81 \\equiv 1$. The two agree only for an element that generates the whole group. Another slip: in $\\mathbb{Z}_{n}$ the operation is addition, so the order of $6$ comes from $6 + 6 + \\cdots$, not from $6 \\cdot 6 \\cdot \\cdots$."
+      },
+      {
+        "t": "key",
+        "html": "$|a|$ is the least $n \\ge 1$ with $a^{n} = e$ (or $na = 0$ additively). Then $a^{k} = e$ exactly when $|a|$ divides $k$, and exponents can be reduced mod $|a|$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Thomas W. Judson, Abstract Algebra: Theory and Applications (open textbook), chapter 4, Cyclic Groups (section 4.1, Cyclic Subgroups: the order of an element)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.703 Modern Algebra (Spring 2013), lecture 3, cyclic groups and orders"
+      },
+      {
+        "name": "John A. Beachy and William D. Blair, Abstract Algebra, online study guide (Northern Illinois University), section 3.2, Subgroups (order of an element)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

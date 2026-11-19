@@ -1,0 +1,90 @@
+{
+  "id": "disc.sets",
+  "slug": "sets",
+  "ladder": "math",
+  "course": "disc",
+  "unit": "sets-functions",
+  "title": "Sets and Set-Builder Notation",
+  "short": "Describe a set by listing its elements or by a rule, and use ∈, ⊆ and |A|.",
+  "trouble": "Students mix up ∈ and ⊆: 1 ∈ {1, 2} but {1} ⊆ {1, 2}. Also ∅ and {∅} are different sets: the second has one element.",
+  "prereqs": [
+    "disc.quantifiers"
+  ],
+  "xp": 1,
+  "viz": [],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A set is the simplest kind of mathematical object: a collection, with nothing but its members. You already describe collections with <a href=\"/math/discrete-math/quantifiers/\">predicates and domains</a>; set notation packages that idea so that collections can be named, compared and counted."
+      },
+      {
+        "t": "key",
+        "html": "A <b>set</b> is determined by its elements; order and repetition do not matter, so $\\{1, 2\\} = \\{2, 1\\} = \\{1, 1, 2\\}$. Write $x \\in A$ when $x$ is an element of $A$. $A \\subseteq B$ ($A$ is a <b>subset</b> of $B$) means every element of $A$ is in $B$. $|A|$ is the number of elements of a finite set, and $\\varnothing$ is the empty set, with $|\\varnothing| = 0$."
+      },
+      {
+        "t": "p",
+        "html": "A set can be written in <b>roster form</b>, listing its elements, as in $\\{2, 3, 5, 7\\}$, or in <b>set-builder form</b>, $\\{x \\in D : P(x)\\}$, \"the $x$ in $D$ for which $P(x)$ is true.\" Standard domains: $\\mathbb{Z}$ (integers), $\\mathbb{Z}^{+}$ (positive integers), $\\mathbb{Q}$ (rational numbers), $\\mathbb{R}$ (real numbers). Books disagree about whether $0$ belongs to $\\mathbb{N}$, so on this site we say \"positive integers\" or \"nonnegative integers\" instead. A <b>proper subset</b>, $A \\subsetneq B$, is a subset that is not all of $B$."
+      },
+      {
+        "t": "why",
+        "html": "Why is $\\varnothing \\subseteq A$ for every set $A$? The definition says: for every $x$, if $x \\in \\varnothing$, then $x \\in A$. The hypothesis $x \\in \\varnothing$ is never true, so the conditional is vacuously true, exactly as in the lesson on conditionals. In the same way, every set is a subset of itself."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "From set-builder to roster",
+        "q": "List the elements of $\\{x \\in \\mathbb{Z} : x^{2} < 10\\}$ and give its size.",
+        "steps": [
+          "We need integers whose square is less than $10$: $0^{2} = 0$, $1^{2} = 1$, $2^{2} = 4$, $3^{2} = 9$ all work; $4^{2} = 16$ does not.",
+          "Negative integers count too: $(-3)^{2} = 9 < 10$.",
+          "The set is $\\{-3, -2, -1, 0, 1, 2, 3\\}$, with $7$ elements."
+        ],
+        "a": "$\\{-3, -2, -1, 0, 1, 2, 3\\}$; size $7$"
+      },
+      {
+        "t": "ex",
+        "title": "Element or subset?",
+        "q": "Let $S = \\{1, \\{2, 3\\}, \\varnothing\\}$. Decide: $2 \\in S$; $\\{2, 3\\} \\in S$; $\\{2, 3\\} \\subseteq S$; $\\varnothing \\in S$; $\\varnothing \\subseteq S$; $|S|$.",
+        "steps": [
+          "The elements of $S$ are exactly three things: the number $1$, the set $\\{2, 3\\}$, and the empty set.",
+          "$2 \\in S$ is false: $2$ is inside an element, not an element itself. $\\{2, 3\\} \\in S$ is true: it is listed.",
+          "$\\{2, 3\\} \\subseteq S$ is false: that would need $2 \\in S$ and $3 \\in S$.",
+          "$\\varnothing \\in S$ is true (it is listed), and $\\varnothing \\subseteq S$ is true (as for every set). $|S| = 3$."
+        ],
+        "a": "false, true, false, true, true, $3$"
+      },
+      {
+        "t": "ex",
+        "title": "Repeated values collapse",
+        "q": "How many elements does $\\{k^{2} : k \\in \\{-2, -1, 0, 1, 2\\}\\}$ have?",
+        "steps": [
+          "The squares are $4, 1, 0, 1, 4$.",
+          "A set lists each element once: $\\{0, 1, 4\\}$.",
+          "So it has $3$ elements, not $5$."
+        ],
+        "a": "$3$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Mixing up $\\in$ and $\\subseteq$, and $\\varnothing$ with $\\{\\varnothing\\}$.</b> $1 \\in \\{1, 2\\}$ but $\\{1\\} \\subseteq \\{1, 2\\}$: $\\in$ relates one element to a set, $\\subseteq$ relates a set to a set. And $\\varnothing$ has no elements, while $\\{\\varnothing\\}$ has one element, the empty set (like an empty box versus a box holding an empty box). Check: for $x \\in A$, look for $x$ in the list of $A$; for $X \\subseteq A$, check every element of $X$ against that list."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Oscar Levin, Discrete Mathematics: An Open Introduction (3rd ed.), section \"Sets\""
+      },
+      {
+        "name": "MIT OpenCourseWare 6.042J Mathematics for Computer Science (Lehman, Leighton and Meyer), chapter \"Mathematical Data Types\" (sets)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

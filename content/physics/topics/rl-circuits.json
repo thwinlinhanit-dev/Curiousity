@@ -1,0 +1,106 @@
+{
+  "id": "em.rl-circuits",
+  "slug": "rl-circuits",
+  "ladder": "physics",
+  "course": "em",
+  "unit": "induction",
+  "title": "RL Circuits",
+  "short": "The current rises as I = (ε/R)(1 − e^(−Rt/L)), with time constant L/R.",
+  "trouble": "Students think the current jumps to ε/R the instant the switch closes.",
+  "prereqs": [
+    "em.inductance",
+    "em.rc-charging"
+  ],
+  "xp": 3,
+  "viz": [
+    "em-decay",
+    "ph-circuit"
+  ],
+  "figureArchetype": "FieldFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Put an <a href=\"/physics/electricity-and-magnetism/inductance/\">inductor</a> in series with a resistor and a battery. Because the inductor fights every change in current, the current cannot jump when the switch closes; it grows smoothly, in a curve you have seen before in <a href=\"/physics/electricity-and-magnetism/rc-charging/\">charging a capacitor</a>."
+      },
+      {
+        "t": "why",
+        "html": "Loop rule, with the inductor's back emf: $\\varepsilon - IR - L\\dfrac{dI}{dt} = 0$, so\n        $$\\frac{dI}{dt} = \\frac{\\varepsilon - IR}{L} \\quad\\Longrightarrow\\quad \\frac{dI}{\\varepsilon/R - I} = \\frac{R}{L}\\,dt.$$\n        Integrating from $I = 0$ at $t = 0$ gives $I = \\dfrac{\\varepsilon}{R}\\left(1 - e^{-Rt/L}\\right)$. At first $I = 0$, so the whole battery voltage sits across the inductor: the current starts rising at the rate $\\varepsilon/L$. As $I$ grows, more voltage goes to the resistor and the rise slows."
+      },
+      {
+        "t": "key",
+        "html": "$$I = \\frac{\\varepsilon}{R}\\left(1 - e^{-t/\\tau}\\right), \\qquad V_L = \\varepsilon e^{-t/\\tau}, \\qquad \\tau = \\frac{L}{R}.$$\n        If the battery is removed and the loop stays closed through a resistance $R$, the current dies away as $I = I_0e^{-t/\\tau}$."
+      },
+      {
+        "t": "viz",
+        "name": "em-decay",
+        "opts": {
+          "mode": "rl-rise",
+          "R": 10,
+          "L": 0.5,
+          "V0": 12
+        },
+        "cap": "An RL circuit after the switch closes: the current starts at zero and rises toward $\\varepsilon/R$, while the inductor's voltage starts at $\\varepsilon$ and fades."
+      },
+      {
+        "t": "viz",
+        "name": "ph-circuit",
+        "opts": {
+          "mode": "transient",
+          "circuit": "V(12) series(R1:10, L1:0.5)"
+        },
+        "cap": "The same circuit drawn with its parts, the current shown as moving dots."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Current after one time constant",
+        "q": "A $0.50\\ \\text{H}$ inductor and a $10\\ \\Omega$ resistor are switched onto $12\\ \\text{V}$. Find $\\tau$, the final current, the current after one time constant and the starting rate of rise.",
+        "steps": [
+          "$\\tau = L/R = 0.50/10 = 50.0\\ \\text{ms}$; final current $\\varepsilon/R = 1.2\\ \\text{A}$.",
+          "$I(\\tau) = 1.2(1 - e^{-1}) = 0.759\\ \\text{A}$, 63% of the way.",
+          "At $t = 0$: $\\dfrac{dI}{dt} = \\dfrac{\\varepsilon}{L} = \\dfrac{12}{0.50} = 24\\ \\text{A/s}$."
+        ],
+        "a": "$I(\\tau) \\approx 0.759\\ \\text{A}$"
+      },
+      {
+        "t": "ex",
+        "title": "Time to 90%",
+        "q": "When does the current in that circuit reach 90% of its final value?",
+        "steps": [
+          "$1 - e^{-t/\\tau} = 0.90$, so $t = \\tau\\ln 10 = (0.050)(2.303) = 115\\ \\text{ms}$."
+        ],
+        "a": "$t \\approx 115\\ \\text{ms}$"
+      },
+      {
+        "t": "ex",
+        "title": "Switching off gently",
+        "q": "After the current has settled at $1.2\\ \\text{A}$, the battery is removed and the inductor and resistor are left connected. What is the current $50\\ \\text{ms}$ later?",
+        "steps": [
+          "Loop rule without the battery: $L\\dfrac{dI}{dt} = -IR$, so $I = I_0e^{-t/\\tau}$ with the same $\\tau = 50\\ \\text{ms}$.",
+          "$I = 1.2e^{-1} = 0.441\\ \\text{A}$. The inductor keeps the current flowing for a while after the battery is gone."
+        ],
+        "a": "$I \\approx 0.441\\ \\text{A}$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>\"The current jumps to $\\varepsilon/R$ the instant the switch closes.\"</b> A sudden jump would need an infinite $dI/dt$, and so an infinite back emf. Instead the inductor takes the whole battery voltage at the start and the current begins at zero. Check with the loop rule at $t = 0$: $I = 0$, so $L\\,dI/dt = \\varepsilon$. (A capacitor is the opposite: its current jumps at once and its voltage builds slowly.)"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 2, 14.4 RL Circuits"
+      },
+      {
+        "name": "MIT OpenCourseWare, 8.02 Physics II: Electricity and Magnetism"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,119 @@
+{
+  "id": "prob.markov-chains",
+  "slug": "markov-chains",
+  "ladder": "math",
+  "course": "prob",
+  "unit": "markov-chains",
+  "title": "Markov Chains and Transition Matrices",
+  "short": "The next state depends only on the current one; a row of probabilities times the transition matrix P steps forward, so after n steps the distribution is π₀Pⁿ.",
+  "trouble": "Students multiply on the wrong side (Pπ₀ with a row-based P), or write rows that do not add to 1.",
+  "prereqs": [
+    "prob.total-probability",
+    "pre.matrix-multiplication"
+  ],
+  "xp": 2,
+  "viz": [
+    "prob-markov"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Weather that tends to persist, a customer switching brands, a board-game token: in each, the next state is random, but its chances depend on the current state. A Markov chain models this. Its one-step behavior is a table of <a href=\"/math/probability/total-probability/\">conditional probabilities</a>, and many steps are computed by <a href=\"/math/precalculus/matrix-multiplication/\">matrix multiplication</a>."
+      },
+      {
+        "t": "key",
+        "html": "A <b>Markov chain</b> has the property that, given the present state, the past does not matter: $$P(X_{n + 1} = j \\mid X_n = i, \\text{earlier states}) = P_{ij}$$ The <b>transition matrix</b> $P$ has row $i$ listing the chances of moving from state $i$, so <b>every row adds to 1</b>. A distribution is a row vector $\\pi_n$, and $$\\pi_{n + 1} = \\pi_n P, \\qquad \\pi_n = \\pi_0 P^{n};$$ entry $(i, j)$ of $P^{n}$ is the chance of going from $i$ to $j$ in $n$ steps."
+      },
+      {
+        "t": "why",
+        "html": "Condition on where the chain is now, using the law of total probability: $$P(X_{n + 1} = j) = \\sum_i P(X_n = i)\\,P_{ij}.$$ The right side is the row vector $\\pi_n$ times column $j$ of $P$, so $\\pi_{n + 1} = \\pi_n P$. Repeating, $\\pi_n = \\pi_0 P^{n}$. Starting surely in state $i$ makes $\\pi_0$ a row of zeros with a single 1, and then $\\pi_0 P^{n}$ is row $i$ of $P^{n}$."
+      },
+      {
+        "t": "note",
+        "html": "<b>Mind the convention.</b> Here, as in most probability books, rows of $P$ add to 1 and the distribution is a row vector multiplied on the left. The <a href=\"/math/linear-algebra/matrix-powers-markov/\">Linear Algebra lesson on Markov chains</a> uses the transpose: columns add to 1 and $\\mathbf{x}_{k + 1} = P\\mathbf{x}_k$ with column vectors. The two describe the same chain."
+      },
+      {
+        "t": "viz",
+        "name": "prob-markov",
+        "opts": {
+          "P": [
+            [
+              "1/2",
+              "1/2"
+            ],
+            [
+              "1/4",
+              "3/4"
+            ]
+          ],
+          "names": [
+            "Sunny",
+            "Rainy"
+          ],
+          "mode": "distribution",
+          "pi0": [
+            1,
+            0
+          ],
+          "steps": 1
+        },
+        "cap": "A two-state weather chain. Each step multiplies the row of probabilities by the matrix, and one entry of the product is written out as a row times a column."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Two steps ahead",
+        "q": "Weather: from Sunny, tomorrow is Sunny or Rainy with probability $\\frac{1}{2}$ each; from Rainy, Sunny with $\\frac{1}{4}$ and Rainy with $\\frac{3}{4}$. Today is Sunny. Find the chance the day after tomorrow is Rainy.",
+        "steps": [
+          "Write S for Sunny and R for Rainy, and condition on tomorrow: $P(X_2 = R) = P_{SS}P_{SR} + P_{SR}P_{RR}$.",
+          "$= \\frac{1}{2} \\cdot \\frac{1}{2} + \\frac{1}{2} \\cdot \\frac{3}{4} = \\frac{1}{4} + \\frac{3}{8} = \\frac{5}{8}$.",
+          "This is entry (Sunny, Rainy) of $P^{2}$, as the next example confirms."
+        ],
+        "a": "$\\frac{5}{8}$"
+      },
+      {
+        "t": "ex",
+        "title": "The whole matrix",
+        "q": "For the same chain, find $P^{2}$.",
+        "steps": [
+          "Row 1: $\\left(\\frac{1}{2} \\cdot \\frac{1}{2} + \\frac{1}{2} \\cdot \\frac{1}{4},\\ \\frac{5}{8}\\right) = \\left(\\frac{3}{8}, \\frac{5}{8}\\right)$.",
+          "Row 2: $$\\left(\\frac{1}{4} \\cdot \\frac{1}{2} + \\frac{3}{4} \\cdot \\frac{1}{4},\\ \\frac{1}{4} \\cdot \\frac{1}{2} + \\frac{3}{4} \\cdot \\frac{3}{4}\\right) = \\left(\\frac{5}{16}, \\frac{11}{16}\\right)$$",
+          "Each row of $P^{2}$ adds to 1 again."
+        ],
+        "a": "$$P^{2} = \\begin{bmatrix} \\frac{3}{8} & \\frac{5}{8} \\\\ \\frac{5}{16} & \\frac{11}{16} \\end{bmatrix}$$"
+      },
+      {
+        "t": "ex",
+        "title": "A distribution",
+        "q": "If today is Sunny with probability $\\frac{1}{2}$, find tomorrow's distribution.",
+        "steps": [
+          "$\\pi_1 = \\left(\\frac{1}{2}, \\frac{1}{2}\\right)P$.",
+          "First entry: $\\frac{1}{2} \\cdot \\frac{1}{2} + \\frac{1}{2} \\cdot \\frac{1}{4} = \\frac{3}{8}$; second: $\\frac{1}{2} \\cdot \\frac{1}{2} + \\frac{1}{2} \\cdot \\frac{3}{4} = \\frac{5}{8}$."
+        ],
+        "a": "$\\left(\\frac{3}{8}, \\frac{5}{8}\\right)$"
+      },
+      {
+        "t": "mistake",
+        "html": "Multiplying on the wrong side, $P\\pi_0$, with a matrix whose rows add to 1; that mixes the wrong entries and need not even give a distribution. Another slip is writing rows that do not add to 1, for example by listing the chances of arriving <i>in</i> a state along a row. Check: every row of $P$, and every $\\pi_n$, adds to 1."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Grinstead and Snell, Introduction to Probability (2nd revised edition, American Mathematical Society; free from Dartmouth College), chapter 11 (Markov Chains), section 11.1"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.440, Probability and Random Variables (Spring 2014), lecture notes on Markov chains"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

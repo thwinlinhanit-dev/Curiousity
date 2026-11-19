@@ -1,0 +1,113 @@
+{
+  "id": "weather.enso",
+  "slug": "enso",
+  "ladder": "earth",
+  "course": "weather",
+  "unit": "global-circulation",
+  "title": "El Niño and La Niña",
+  "short": "When the Pacific trade winds weaken, warm water spreads east (El Niño); when they strengthen, cool water wells up in the east (La Niña), and weather shifts around the world.",
+  "trouble": "Students blame El Niño for every odd season; it tilts the odds toward certain patterns in certain regions but does not cause any single storm.",
+  "prereqs": [
+    "weather.three-cells",
+    "earthsci.surface-currents"
+  ],
+  "xp": 2,
+  "viz": [
+    "es-ocean"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The <a href=\"/earth-and-space/weather-and-climate/three-cells/\">trade winds</a> blow across the tropical Pacific from east to west. They push the warm surface water west, in the same way that winds drive the <a href=\"/earth-and-space/earth-science/surface-currents/\">surface currents</a> you met in Earth Science. Every few years that balance tips one way or the other, and weather shifts around the world."
+      },
+      {
+        "t": "key",
+        "html": "In normal years the trades pile warm water in the western Pacific, and cold water wells up off South America. In <b>El Niño</b> the trades weaken, warm water spreads east, and the heavy rain shifts east with it. In <b>La Niña</b> the trades strengthen and the eastern Pacific gets even cooler. NOAA tracks the sea-surface temperature anomaly in the central Pacific (the Niño 3.4 region): about +0.5 °C or more for several months in a row is El Niño, about −0.5 °C or less is La Niña."
+      },
+      {
+        "t": "why",
+        "html": "The ocean and the air push each other. Strong trade winds drag warm surface water west, which leaves the east cool; a cool east and a warm west strengthen the pressure difference that drives the trades: a loop that holds itself in place. If the trades falter, warm water sloshes east, the east warms, the pressure difference weakens, and the trades falter more. The same feedback runs the other way into La Niña. The cycle repeats irregularly, every 2 to 7 years. Because the tropical Pacific is so large, moving its warmest water and its rain belt shifts the jet streams and storm tracks far away."
+      },
+      {
+        "t": "viz",
+        "name": "es-ocean",
+        "opts": {
+          "mode": "enso",
+          "state": "elnino"
+        },
+        "cap": "The tropical Pacific in El Niño: weak trade winds and warm water spread east. Switch to neutral and La Niña to compare the winds, the warm pool and the rain."
+      },
+      {
+        "t": "ex",
+        "title": "Is it El Niño?",
+        "q": "The Niño 3.4 region's average temperature for a season is 27.9 °C, and its normal for that season is 26.7 °C. What is the anomaly, and which phase does it point to?",
+        "steps": [
+          "Anomaly = value − normal = $27.9 - 26.7 = +1.2$ °C.",
+          "+1.2 °C is above +0.5 °C: El Niño conditions, if it lasts for several overlapping seasons."
+        ],
+        "a": "+1.2 °C: El Niño"
+      },
+      {
+        "t": "ex",
+        "title": "A three-month average",
+        "q": "Monthly Niño 3.4 anomalies are −0.4, −0.7 and −0.9 °C. What is their three-month average, and what does it suggest?",
+        "steps": [
+          "Average: $(-0.4 - 0.7 - 0.9) \\div 3 = -2.0 \\div 3 \\approx -0.67$ °C.",
+          "At or below −0.5 °C: La Niña conditions."
+        ],
+        "a": "About −0.67 °C: La Niña"
+      },
+      {
+        "t": "mistake",
+        "html": "Blaming El Niño for every odd season. El Niño tilts the odds: in winter it makes a wet southern United States and a mild northern tier more likely, for example. It does not cause any particular storm, and some El Niño winters turn out differently. Check the wording of NOAA's outlooks: they give probabilities, such as \"a 50% chance of above-normal precipitation,\" not certainties."
+      },
+      {
+        "t": "table",
+        "head": [
+          "",
+          "Trade winds",
+          "Eastern Pacific",
+          "Heavy tropical rain"
+        ],
+        "rows": [
+          [
+            "La Niña",
+            "stronger",
+            "cooler than normal",
+            "far west (Indonesia, northern Australia)"
+          ],
+          [
+            "Neutral",
+            "normal",
+            "cool (upwelling)",
+            "western Pacific"
+          ],
+          [
+            "El Niño",
+            "weaker",
+            "warmer than normal",
+            "shifts to the central and eastern Pacific"
+          ]
+        ],
+        "cap": "The three phases of the El Niño–Southern Oscillation (ENSO)."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "NOAA: Climate Prediction Center, ENSO definitions and the Oceanic Niño Index"
+      },
+      {
+        "name": "NOAA: Climate.gov, ENSO blog: What is El Niño?"
+      },
+      {
+        "name": "Ahrens and Henson, Meteorology Today, chapter 10 (El Niño and the Southern Oscillation)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

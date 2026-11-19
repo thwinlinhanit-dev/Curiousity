@@ -1,0 +1,126 @@
+{
+  "id": "usgeo.state-populations",
+  "slug": "state-populations",
+  "ladder": "geog",
+  "course": "usgeo",
+  "unit": "people-places",
+  "title": "Most and Fewest People",
+  "short": "California, Texas, Florida, New York and Pennsylvania have the most people; Wyoming has the fewest (2020 Census).",
+  "trouble": "Students think the biggest states by area have the most people. Alaska is the largest state but has one of the smallest populations.",
+  "prereqs": [
+    "usgeo.largest-cities"
+  ],
+  "xp": 2,
+  "viz": [
+    "gg-map"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "States differ hugely in how many people live in them. The <a href=\"/geography/us-geography/largest-cities/\">largest cities</a> help explain why."
+      },
+      {
+        "t": "key",
+        "html": "In the 2020 Census, the states with the most people were <b>California</b> (about 39.5 million), <b>Texas</b> (about 29.1 million), <b>Florida</b> (about 21.5 million), <b>New York</b> (about 20.2 million) and <b>Pennsylvania</b> (about 13.0 million). <b>Wyoming</b> had the fewest, about 577,000."
+      },
+      {
+        "t": "viz",
+        "name": "gg-map",
+        "opts": {
+          "map": "us",
+          "data": {
+            "AL": 5,
+            "AK": 0.7,
+            "AZ": 7.2,
+            "AR": 3,
+            "CA": 39.5,
+            "CO": 5.8,
+            "CT": 3.6,
+            "DE": 1,
+            "FL": 21.5,
+            "GA": 10.7,
+            "HI": 1.5,
+            "ID": 1.8,
+            "IL": 12.8,
+            "IN": 6.8,
+            "IA": 3.2,
+            "KS": 2.9,
+            "KY": 4.5,
+            "LA": 4.7,
+            "ME": 1.4,
+            "MD": 6.2,
+            "MA": 7,
+            "MI": 10.1,
+            "MN": 5.7,
+            "MS": 3,
+            "MO": 6.2,
+            "MT": 1.1,
+            "NE": 2,
+            "NV": 3.1,
+            "NH": 1.4,
+            "NJ": 9.3,
+            "NM": 2.1,
+            "NY": 20.2,
+            "NC": 10.4,
+            "ND": 0.8,
+            "OH": 11.8,
+            "OK": 4,
+            "OR": 4.2,
+            "PA": 13,
+            "RI": 1.1,
+            "SC": 5.1,
+            "SD": 0.9,
+            "TN": 6.9,
+            "TX": 29.1,
+            "UT": 3.3,
+            "VT": 0.6,
+            "VA": 8.6,
+            "WA": 7.7,
+            "WV": 1.8,
+            "WI": 5.9,
+            "WY": 0.6
+          },
+          "breaks": [
+            1,
+            5,
+            10,
+            20
+          ],
+          "legend": "People (millions, 2020)"
+        },
+        "cap": "Population of each state in 2020. Read the key to see which color means more people."
+      },
+      {
+        "t": "why",
+        "html": "Why do people cluster in some states? People settle where they can make a living: near ports and rivers for trade, on good farmland, and in places with jobs. Big cities draw more people, which brings more jobs. Mild weather has pulled many people to Florida, Texas and California. Mountains, deserts and cold, as in Wyoming or Alaska, keep numbers low."
+      },
+      {
+        "t": "ex",
+        "title": "Round to the nearest million",
+        "q": "Texas had 29,145,505 people in 2020. What is that to the nearest million?",
+        "steps": [
+          "The millions digit is 9, so the choices are 29 million and 30 million.",
+          "Look at the hundred-thousands digit: 1.",
+          "1 is less than 5, so round down."
+        ],
+        "a": "29,000,000."
+      },
+      {
+        "t": "mistake",
+        "html": "People think the biggest states by area have the most people. <b>Alaska</b> is the largest state, yet only Wyoming, Vermont (and the District of Columbia) had fewer people in 2020. Area and population are different things: one measures land, the other counts people."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "U.S. Census Bureau, 2020 Census apportionment results: resident population and population density by state (table as republished by the New Jersey Department of Labor)",
+        "url": "https://www.nj.gov/labor/labormarketinformation/assets/PDFs/census/2020/2020%20Apportionment/population-density-data-table.pdf"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

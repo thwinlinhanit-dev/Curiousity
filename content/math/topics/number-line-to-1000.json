@@ -1,0 +1,108 @@
+{
+  "id": "g2.number-line-to-1000",
+  "slug": "number-line-to-1000",
+  "ladder": "math",
+  "course": "g2",
+  "unit": "place-value",
+  "title": "Numbers on a Number Line",
+  "short": "Place numbers on a line with equally spaced marks.",
+  "trouble": "Children count the tick marks instead of the jumps, or space the marks unevenly.",
+  "prereqs": [
+    "g2.skip-count-5-10-100"
+  ],
+  "xp": 1,
+  "viz": [
+    "numberline"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A number line is like a ruler for numbers. The marks are spaced evenly, so every jump from one mark to the next is the same size. Skip counting (<a href=\"/math/grade-2/skip-count-5-10-100/\">Skip Counting by 5s, 10s and 100s</a>) helps you read it."
+      },
+      {
+        "t": "viz",
+        "name": "g2-line",
+        "opts": {
+          "min": 300,
+          "max": 400,
+          "step": 10,
+          "labels": "ends",
+          "points": [
+            {
+              "v": 370,
+              "text": "?"
+            }
+          ]
+        },
+        "cap": "Only 300 and 400 are labeled. What number is the dot?"
+      },
+      {
+        "t": "why",
+        "html": "From 300 to 400 is 100. There are 10 equal jumps, and 10 jumps of 10 make 100, so each jump is 10. Now count jumps from 300: 310, 320, 330, 340, 350, 360, 370. The dot is 7 jumps along, at 370."
+      },
+      {
+        "t": "ex",
+        "title": "Find the jump size",
+        "q": "A number line goes from 0 to 1,000 in 10 equal jumps. How big is each jump?",
+        "steps": [
+          "Try counting by 100s: 100, 200, …, 1,000.",
+          "That takes 10 jumps, so each jump is 100."
+        ],
+        "a": "100"
+      },
+      {
+        "t": "ex",
+        "title": "Count jumps, not marks",
+        "q": "Each jump is 10. A dot is 4 jumps after 50. Where is it?",
+        "steps": [
+          "Start at 50. Don’t count the 50 mark itself.",
+          "Jump: 60, 70, 80, 90."
+        ],
+        "a": "90"
+      },
+      {
+        "t": "viz",
+        "name": "g2-line",
+        "opts": {
+          "min": 560,
+          "max": 660,
+          "step": 10,
+          "labels": [
+            600,
+            610
+          ],
+          "points": [
+            {
+              "v": 640,
+              "text": "?"
+            }
+          ]
+        },
+        "cap": "Only 600 and 610 are labeled. Find the jump size first, then find the dot."
+      },
+      {
+        "t": "key",
+        "html": "On a number line every jump is the same size. Find the jump size first, then count jumps, not marks."
+      },
+      {
+        "t": "mistake",
+        "html": "Counting the tick marks instead of the jumps. If you count the starting mark as “1,” you end up one jump too far. Check: put your finger on the start, then count each hop to the next mark."
+      },
+      {
+        "t": "note",
+        "html": "<b>Grown-up tip:</b> Draw a number line on a long strip of paper and let your child hop a toy along it."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 2, standard 2.MD.B.6 (represent whole numbers as lengths from 0 on a number line with equally spaced points)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

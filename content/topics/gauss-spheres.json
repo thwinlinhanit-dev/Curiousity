@@ -1,0 +1,101 @@
+{
+  "id": "em.gauss-spheres",
+  "slug": "gauss-spheres",
+  "course": "em",
+  "courseTitle": "Electricity and Magnetism",
+  "unit": "fields-gauss",
+  "unitTitle": "Charges, Fields and Gauss's Law",
+  "title": "Gauss's Law with Spherical Symmetry",
+  "short": "Find the fields of point charges, charged shells and uniformly charged balls, inside and out.",
+  "trouble": "Students think the field inside a uniformly charged ball is zero, as it is inside a charged shell.",
+  "prereqs": [
+    "em.gauss-law"
+  ],
+  "xp": 3,
+  "viz": [
+    "ph-efield"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/physics/electricity-and-magnetism/gauss-law/\">Gauss's law</a> becomes a tool for finding fields when the charge is spherically symmetric: a point charge, a charged shell, a ball, or layers of these. Symmetry says the field points straight out (or in) and has the same size everywhere on a sphere centered on the charge. On such a sphere the flux integral is just $E$ times the area."
+      },
+      {
+        "t": "why",
+        "html": "Draw a Gaussian sphere of radius $r$ through the point you care about. The field is radial and the same size all over it, so\n        $$\\oint \\vec{E}\\cdot d\\vec{A} = E\\,(4\\pi r^2) = \\frac{q_{\\text{enc}}}{\\varepsilon_0} \\quad\\Longrightarrow\\quad E = \\frac{k\\,q_{\\text{enc}}}{r^2}.$$\n        Every problem in this topic comes down to one question: how much charge is inside radius $r$? Charge farther out than $r$ contributes nothing at radius $r$."
+      },
+      {
+        "t": "key",
+        "html": "<b>Shell</b> of charge $Q$, radius $R$: $E = 0$ inside, $E = kQ/r^2$ outside.<br><b>Uniform ball</b>: inside, only the fraction $r^3/R^3$ is enclosed, so $E = \\dfrac{kQr}{R^3}$, growing in step with $r$; outside, $E = kQ/r^2$."
+      },
+      {
+        "t": "viz",
+        "name": "ph-efield",
+        "opts": {
+          "mode": "distribution",
+          "dist": {
+            "type": "ball",
+            "Q": 5,
+            "R": 0.1
+          },
+          "dP": 0.05
+        },
+        "cap": "A uniformly charged ball. Drag P from the center outward: the field grows linearly inside, peaks at the surface, then falls as $1/r^2$. The dashed circle is the Gaussian sphere through P."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Inside and outside a ball",
+        "q": "A ball of radius $6.0\\ \\text{cm}$ holds $12\\ \\text{nC}$ spread evenly. Find the field $3.0\\ \\text{cm}$ and $12\\ \\text{cm}$ from the center.",
+        "steps": [
+          "At $3.0\\ \\text{cm}$ (inside), the enclosed fraction is $(3/6)^3 = 1/8$. $$E = \\frac{kQr}{R^3} = \\frac{(8.99 \\times 10^{9})(12 \\times 10^{-9})(0.030)}{(0.060)^3} = 1.50 \\times 10^{4}\\ \\text{N/C}$$",
+          "At $12\\ \\text{cm}$ (outside), all of $Q$ is enclosed: $$E = \\frac{kQ}{r^2} = \\frac{(8.99 \\times 10^{9})(12 \\times 10^{-9})}{(0.12)^2} = 7490\\ \\text{N/C}$$",
+          "At the surface both formulas give the same value, $kQ/R^2 = 3.00 \\times 10^{4}\\ \\text{N/C}$, so the field is continuous there."
+        ],
+        "a": "$1.50 \\times 10^{4}\\ \\text{N/C}$ and $7490\\ \\text{N/C}$"
+      },
+      {
+        "t": "ex",
+        "title": "A charge inside a charged shell",
+        "q": "A $+3.0\\ \\text{nC}$ point charge sits at the center of a thin shell of radius $5.0\\ \\text{cm}$ carrying $-5.0\\ \\text{nC}$. Find the field at $3.0\\ \\text{cm}$ and at $10\\ \\text{cm}$.",
+        "steps": [
+          "At $3.0\\ \\text{cm}$ the Gaussian sphere encloses only the point charge: $E = \\dfrac{(8.99 \\times 10^{9})(3.0 \\times 10^{-9})}{(0.030)^2} = 3.00 \\times 10^{4}\\ \\text{N/C}$, outward.",
+          "At $10\\ \\text{cm}$ it encloses $3.0 - 5.0 = -2.0\\ \\text{nC}$: $E = \\dfrac{(8.99 \\times 10^{9})(2.0 \\times 10^{-9})}{(0.10)^2} = 1800\\ \\text{N/C}$, pointing <i>inward</i> because the enclosed charge is negative."
+        ],
+        "a": "$3.00 \\times 10^{4}\\ \\text{N/C}$ outward; $1800\\ \\text{N/C}$ inward"
+      },
+      {
+        "t": "ex",
+        "title": "A density that grows outward",
+        "q": "A ball of radius $R = 10\\ \\text{cm}$ has $\\rho = \\rho_0 r/R$ with $\\rho_0 = 20\\ \\mu\\text{C/m}^3$. Find $E$ at $r = 5.0\\ \\text{cm}$.",
+        "steps": [
+          "Enclosed charge, by thin shells: $$q(r) = \\int_0^r \\rho_0\\frac{s}{R}\\,4\\pi s^2\\,ds = \\frac{\\pi\\rho_0 r^4}{R}$$",
+          "Gauss: $E(4\\pi r^2) = \\dfrac{\\pi\\rho_0 r^4}{\\varepsilon_0 R}$, so $E = \\dfrac{\\rho_0 r^2}{4\\varepsilon_0 R}$.",
+          "$$E = \\frac{(20 \\times 10^{-6})(0.050)^2}{4(8.85 \\times 10^{-12})(0.10)} = 1.41 \\times 10^{4}\\ \\text{N/C}$$"
+        ],
+        "a": "$E \\approx 1.41 \\times 10^{4}\\ \\text{N/C}$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>\"The field inside a charged ball is zero, like inside a shell.\"</b> A shell has no charge inside it, so a Gaussian sphere there encloses nothing. A ball has charge all the way in, so the enclosed charge, and the field, grow as you move out: $E = kQr/R^3$. Only at the very center is $E = 0$. Check with the first example: halfway out, the field is half the surface value, not zero."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 2, 6.3 Applying Gauss's Law"
+      },
+      {
+        "name": "MIT OpenCourseWare, 8.02 Physics II: Electricity and Magnetism"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

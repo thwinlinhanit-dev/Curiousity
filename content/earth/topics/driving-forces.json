@@ -1,0 +1,87 @@
+{
+  "id": "geology.driving-forces",
+  "slug": "driving-forces",
+  "ladder": "earth",
+  "course": "geology",
+  "unit": "plate-tectonics",
+  "title": "What Drives the Plates",
+  "short": "Sinking slabs pull plates, high ridges push them, and the mantle convects beneath; the pull of sinking slabs is the largest force.",
+  "trouble": "Students picture plates as rafts carried along by mantle currents; the fastest plates are the ones with long sinking edges, which shows the sinking slab itself pulls hardest.",
+  "prereqs": [
+    "earthsci.convection",
+    "geology.magnetic-stripes"
+  ],
+  "xp": 2,
+  "viz": [
+    "es-boundary"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "What moves the plates? <a href=\"/earth-and-space/earth-science/convection/\">Convection</a> in the mantle is part of the answer, but the plates are not simply rafts on a moving current. The <a href=\"/earth-and-space/geology/magnetic-stripes/\">spreading rates</a> of the different plates point to what pulls hardest."
+      },
+      {
+        "t": "why",
+        "html": "New ocean lithosphere is hot. As it moves away from the ridge it cools from above, thickens, contracts and grows denser, so it also sinks lower: young seafloor is about 2,500 m deep, and its depth grows roughly as $d \\approx 2,500 + 350\\sqrt{t}$ meters ($t$ in million years). After a few tens of millions of years the plate is denser than the hot mantle beneath it. Where it bends down at a trench, the sinking edge (the slab) drags the rest of the plate after it: <b>slab pull</b>. Meanwhile, the plate slides gently downhill away from the high, hot ridge: <b>ridge push</b>."
+      },
+      {
+        "t": "key",
+        "html": "Plates are driven mainly by gravity: cold, dense slabs sinking at subduction zones pull hardest (slab pull), and plates slide off high ridges (ridge push). Plates with long sinking edges move fastest."
+      },
+      {
+        "t": "viz",
+        "name": "es-boundary",
+        "opts": {
+          "type": "ocean-continent",
+          "forces": true
+        },
+        "cap": "The forces on a plate: slab pull at the trench, ridge push at the ridge."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "How deep is old seafloor?",
+        "q": "Using $d \\approx 2,500 + 350\\sqrt{t}$, how deep is 49-million-year-old seafloor, and how much deeper than the ridge crest?",
+        "steps": [
+          "$\\sqrt{49} = 7$, so $d = 2,500 + 350 \\times 7 = 4,950\\,\\text{m}$.",
+          "The crest is at 2,500 m, so the old floor is 2,450 m deeper: a long, gentle slope the plate slides down."
+        ],
+        "a": "About $4,950\\,\\text{m}$; $2,450\\,\\text{m}$ deeper."
+      },
+      {
+        "t": "ex",
+        "title": "The evidence",
+        "q": "The Pacific plate, edged by trenches, moves 5 to 10 cm/yr; the Eurasian plate, with almost no sinking edge, moves 1 to 2 cm/yr. What does that suggest?",
+        "steps": [
+          "If mantle currents simply carried plates, speed would not depend on whether a plate has a sinking edge.",
+          "Instead, plates with long subducting edges are fastest: the sinking slab is pulling."
+        ],
+        "a": "Slab pull is the main driving force."
+      },
+      {
+        "t": "mistake",
+        "html": "The picture of plates as rafts carried along by mantle currents is popular but misleading. The plates are the cold top of the mantle's own convection, and their sinking edges are what drive the flow. Check with speeds: if rafting were the rule, big continents would move as fast as ocean plates."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "USGS, This Dynamic Earth: The Story of Plate Tectonics (Kious and Tilling)"
+      },
+      {
+        "name": "NGSS HS-ESS2-3 (nextgenscience.org)"
+      },
+      {
+        "name": "MIT OpenCourseWare, 12.001 Introduction to Geology"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

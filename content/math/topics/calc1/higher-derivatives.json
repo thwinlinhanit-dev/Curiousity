@@ -1,0 +1,100 @@
+{
+  "id": "calc1.higher-derivatives",
+  "slug": "higher-derivatives",
+  "ladder": "math",
+  "course": "calc1",
+  "unit": "rules",
+  "title": "Higher Derivatives",
+  "short": "Differentiate again to get f″, f‴ and beyond.",
+  "trouble": "",
+  "prereqs": [
+    "calc1.power-rule"
+  ],
+  "xp": 1,
+  "viz": [
+    "derivgraph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The derivative of a function is another function (<a href=\"/math/calculus-1/power-rule/\">Constant, Power and Sum Rules</a> makes this concrete), so we can differentiate it again. The second derivative measures how the slope itself changes."
+      },
+      {
+        "t": "key",
+        "html": "$f''(x)$ is the derivative of $f'(x)$; $f'''(x)$ is the derivative of $f''$; and $f^{(n)}$ is the $n$th derivative. Leibniz notation: $\\dfrac{d^2y}{dx^2}$, $\\dfrac{d^3y}{dx^3}$. If $s(t)$ is position, $s'$ is velocity and $s''$ is acceleration."
+      },
+      {
+        "t": "why",
+        "html": "The first derivative is a rate of change. Its rate of change says whether that rate is speeding up or slowing down. For motion this is acceleration. For graphs it describes bending: when $f'' > 0$ the slopes are increasing, so the graph bends upward like a cup. The units multiply out the same way: if $s$ is in meters and $t$ in seconds, $s''$ is in meters per second per second."
+      },
+      {
+        "t": "viz",
+        "name": "derivgraph",
+        "opts": {
+          "f": "x^3/3 - x",
+          "x": -1.5,
+          "second": true,
+          "xmin": -2.5,
+          "xmax": 2.5
+        },
+        "cap": "Three panels: $f$, its slope $f'$, and the slope of the slope $f''$. Where $f''$ is positive, $f'$ is rising and $f$ bends upward."
+      },
+      {
+        "t": "ex",
+        "title": "Repeat the power rule",
+        "q": "Find $f''$ and $f'''$ for $f(x) = x^4 - 3x^2 + 5$.",
+        "steps": [
+          "$f'(x) = 4x^3 - 6x$.",
+          "$f''(x) = 12x^2 - 6$.",
+          "$f'''(x) = 24x$."
+        ],
+        "a": "$f''(x) = 12x^2 - 6$, $f'''(x) = 24x$"
+      },
+      {
+        "t": "ex",
+        "title": "A pattern",
+        "q": "Find a formula for the $n$th derivative of $f(x) = \\frac{1}{x}$.",
+        "steps": [
+          "$f = x^{-1}$, $f' = -x^{-2}$, $f'' = 2x^{-3}$, $f''' = -6x^{-4}$, $f^{(4)} = 24x^{-5}$.",
+          "Each step multiplies by the current exponent ($-1, -2, -3, \\ldots$), so the signs alternate and the coefficients are $1, 2, 6, 24 = n!$."
+        ],
+        "a": "$f^{(n)}(x) = \\frac{(-1)^n\\,n!}{x^{n+1}}$"
+      },
+      {
+        "t": "ex",
+        "title": "Acceleration",
+        "q": "A car's position is $s(t) = 2t^3 - 9t^2 + 12t$ meters. Find its acceleration at $t = 2$ seconds.",
+        "steps": [
+          "$v(t) = s'(t) = 6t^2 - 18t + 12$.",
+          "$a(t) = v'(t) = 12t - 18$.",
+          "$a(2) = 24 - 18 = 6$."
+        ],
+        "a": "$6$ m/s²"
+      },
+      {
+        "t": "p",
+        "html": "In the next unit, the sign of $f''$ will tell us which way a graph bends (concavity) and will classify peaks and valleys. A positive second derivative means the slopes are increasing: the graph curves upward like a cup. A negative one means it curves downward like a cap."
+      },
+      {
+        "t": "note",
+        "html": "For a polynomial of degree $n$, the $n$th derivative is a constant and every derivative after that is 0. For sine and cosine the derivatives repeat in a cycle of four: $\\sin x \\to \\cos x \\to -\\sin x \\to -\\cos x \\to \\sin x$."
+      },
+      {
+        "t": "mistake",
+        "html": "Squaring the first derivative instead of differentiating twice: $f''(x)$ is not $\\big(f'(x)\\big)^2$. For $f(x) = x^3$: $f''(x) = 6x$, but $(f'(x))^2 = 9x^4$. Check the notation: the primes count derivatives, not powers."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 1, 3.3 Differentiation Rules"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

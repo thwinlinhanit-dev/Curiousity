@@ -1,0 +1,64 @@
+{
+  "id": "exam.mass-spectrometer",
+  "slug": "mass-spectrometer",
+  "course": "exam",
+  "courseTitle": "Exam Challenge: Multi-Step Physics Problems",
+  "unit": "em",
+  "unitTitle": "Electricity and Magnetism",
+  "title": "A Particle Bent by a Magnetic Field",
+  "short": "A voltage speeds an ion up; a magnetic field bends it into a half circle that sorts by mass.",
+  "trouble": "Students think the radius grows in proportion to the mass, forgetting the speed depends on mass too.",
+  "prereqs": [
+    "phys2.charged-particle-circles",
+    "phys2.electric-potential"
+  ],
+  "xp": 3,
+  "viz": [
+    "exam-mass-spectrometer"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A mass spectrometer sorts atoms by mass in two steps: a voltage gives every ion the same energy, then a magnetic field bends each into a circle, as in <a href=\"/physics/physics-2/charged-particle-circles/\">Charged Particles in Circles</a>. Each problem here is one short scene and a chain of questions. Answer them in order: each later question uses what you found before, so a slip early on carries through. Keep full precision between steps and round only at the end."
+      },
+      {
+        "t": "key",
+        "html": "$$qV = \\tfrac{1}{2}mv^2, \\qquad qvB = \\frac{mv^2}{r} \\ \\Rightarrow\\ \\role[radius of the path]{position}{r} = \\frac{\\role{mass}{m}\\role{velocity}{v}}{\\role{charge}{q}\\role[magnetic field]{field}{B}} = \\frac{1}{B}\\sqrt{\\frac{2mV}{q}}.$$ So $r \\propto \\sqrt{m}$ for ions sped up by the same voltage, and the time for a half circle is $\\pi m/(qB)$."
+      },
+      {
+        "t": "viz",
+        "name": "exam-mass-spectrometer",
+        "opts": {
+          "V": 1000,
+          "B": 0.2
+        },
+        "cap": "The plates speed the ion up; inside the field the force is always at right angles to the motion, so it bends the path into a circle without changing the speed."
+      },
+      {
+        "t": "ex",
+        "title": "Neon ions",
+        "q": "Singly charged neon-20 ions ($20\\ \\text{u}$) are sped up through $1000\\ \\text{V}$ and enter a $0.20\\ \\text{T}$ field. Find (1) their speed and (2) the radius.",
+        "steps": [
+          "(1) $m = 20(1.66 \\times 10^{-27}) = 3.32 \\times 10^{-26}\\ \\text{kg}$; $v = \\sqrt{2(1.6 \\times 10^{-19})(1000)/m} = 9.82 \\times 10^{4}\\ \\text{m/s}$.",
+          "(2) $r = \\dfrac{mv}{qB} = 10.2\\ \\text{cm}$."
+        ],
+        "a": "$9.82 \\times 10^4\\ \\text{m/s}$, $10.2\\ \\text{cm}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Saying a heavier ion's radius grows in proportion to its mass. The heavier ion also leaves the voltage slower, so $r$ grows only as $\\sqrt{m}$. Check: substitute $v$ before comparing."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e (Rice University), chapters 18 to 23 on electricity and magnetism"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

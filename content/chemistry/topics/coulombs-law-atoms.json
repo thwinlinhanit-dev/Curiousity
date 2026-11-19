@@ -1,0 +1,96 @@
+{
+  "id": "gchem1.coulombs-law-atoms",
+  "slug": "coulombs-law-atoms",
+  "ladder": "chemistry",
+  "course": "gchem1",
+  "unit": "trends",
+  "title": "Coulomb's Law in Atoms",
+  "short": "The attraction between charges grows with the size of the charges and weakens with distance.",
+  "trouble": "Students explain trends by saying atoms \"want\" full shells, instead of using charge and distance.",
+  "prereqs": [
+    "chem.ionization-energy",
+    "physsci.static-forces",
+    "alg2.variation"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-coulomb"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/chemistry/chemistry/ionization-energy/\">Ionization Energy</a> you learned the trends: ionization energy rises across a period and falls down a group. Here is the reason, and it is the same force you met in <a href=\"/physics/physical-science/static-forces/\">Attraction and Repulsion</a>: opposite charges attract, more strongly when the charges are bigger and closer."
+      },
+      {
+        "t": "key",
+        "html": "Coulomb's law: the force between two charges is $$F = k\\frac{q_1 q_2}{r^2},$$ and the energy it takes to pull them apart grows as $q_1 q_2 / r$. For an electron in an atom: <b>more nuclear charge</b> holds it more tightly, and <b>more distance</b> holds it less tightly. Nearly every periodic trend is one of these two effects winning."
+      },
+      {
+        "t": "why",
+        "html": "Removing an electron means pulling it away from the positive nucleus, so the energy needed tracks the attraction. The force is an <a href=\"/math/algebra-2/variation/\">inverse-square variation</a>: double the distance and the force drops to a quarter; double one charge and it doubles. Down a group, each element puts its outer electron in a new shell, much farther out, while the extra protons are mostly hidden behind the extra inner electrons (the next topic makes this exact). Distance wins, so ionization energy falls. Across a period, electrons go into the same shell while protons pile up, so charge wins and ionization energy rises."
+      },
+      {
+        "t": "viz",
+        "name": "ch-coulomb",
+        "opts": {
+          "mode": "atom",
+          "a": "Na",
+          "b": "K",
+          "task": "Compare the pull on the outer electron of sodium and potassium."
+        },
+        "cap": "Sodium and potassium both have one outer electron and a core that hides all but about one proton's worth of charge. Potassium's outer electron is in shell 4, farther out, so it feels a weaker pull and is easier to remove (419 kJ/mol against 496)."
+      },
+      {
+        "t": "ex",
+        "title": "Scaling the force",
+        "q": "Two charges attract with force $F$. If one charge is doubled and the distance between them is tripled, what is the new force?",
+        "steps": [
+          "$F \\propto \\dfrac{q_1 q_2}{r^2}$. Doubling one charge multiplies $F$ by 2.",
+          "Tripling $r$ multiplies $r^2$ by 9, which divides $F$ by 9.",
+          "New force: $F \\times \\dfrac{2}{9} = \\tfrac{2}{9}F$."
+        ],
+        "a": "$\\tfrac{2}{9}F$, about 22% of the original."
+      },
+      {
+        "t": "ex",
+        "title": "Explaining a trend with charge and distance",
+        "q": "Why is the first ionization energy of magnesium (738 kJ/mol) larger than that of sodium (496 kJ/mol)?",
+        "steps": [
+          "Both outer electrons are in shell 3, at a similar distance from the nucleus.",
+          "Magnesium has 12 protons to sodium's 11, and its extra electron is in the same shell, so it hides little of the extra charge.",
+          "More charge at about the same distance: a stronger pull, so more energy to remove the electron."
+        ],
+        "a": "Same shell, more nuclear charge: stronger attraction."
+      },
+      {
+        "t": "ex",
+        "title": "The energy of one ion pair",
+        "q": "A $\\mathrm{Na^+}$ ion and a $\\mathrm{Cl^-}$ ion touch, $283\\ \\text{pm}$ apart. Find their Coulomb energy, $E = kq_1q_2/r$, with $k = 8.99 \\times 10^{9}\\ \\text{N·m}^2/\\text{C}^2$ and $e = 1.602 \\times 10^{-19}\\ \\text{C}$.",
+        "steps": [
+          "$$q_1q_2 = (+e)(-e) = -(1.602 \\times 10^{-19})^2 = -2.566 \\times 10^{-38}\\ \\text{C}^2$$",
+          "$$E = \\dfrac{(8.99 \\times 10^{9})(-2.566 \\times 10^{-38})}{283 \\times 10^{-12}} = -8.15 \\times 10^{-19}\\ \\text{J}$$",
+          "Negative: the pair has less energy than the separate ions, so pulling them apart takes energy. Per mole of pairs that is about $-491\\ \\text{kJ/mol}$."
+        ],
+        "a": "$-8.15 \\times 10^{-19}\\ \\text{J}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Explaining trends by what atoms \"want\": \"sodium wants to lose an electron to get an octet.\" No atom wants anything, and removing sodium's electron costs 496 kJ/mol; it never happens on its own. Explanations should name a charge and a distance: \"potassium's outer electron is farther from the nucleus, and the core hides about the same charge, so it is held less tightly.\" Check: if your explanation would work just as well for the opposite trend, it isn't an explanation."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 6.5 Periodic Variations in Element Properties"
+      },
+      {
+        "name": "College Board, AP Chemistry Course and Exam Description (effective fall 2024), Unit 1: Atomic Structure and Properties"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

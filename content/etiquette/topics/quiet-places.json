@@ -1,0 +1,139 @@
+{
+  "id": "young.quiet-places",
+  "slug": "quiet-places",
+  "ladder": "etiquette",
+  "course": "young",
+  "unit": "out",
+  "title": "Quiet Places",
+  "short": "In quiet places like a concert, a play, a waiting room or a place of worship, we sit still, keep our voices low and follow the place's customs.",
+  "trouble": "Children think whispering is fine during a performance or a service. In most quiet places, even whispers wait for a break.",
+  "prereqs": [
+    "young.library"
+  ],
+  "xp": 1,
+  "viz": [
+    "et-scene",
+    "et-sort"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The <a href=\"/etiquette/young-children/library/\">library</a> is one quiet place. There are others: a concert, a play, a waiting room, a place of worship."
+      },
+      {
+        "t": "viz",
+        "name": "et-scene",
+        "opts": {
+          "big": true,
+          "speak": true,
+          "readme": "Read the question aloud, then let your child choose. Talk about why.",
+          "place": "hall",
+          "people": [
+            {
+              "who": "mia",
+              "pose": "sit"
+            },
+            {
+              "who": "june",
+              "pose": "sit"
+            }
+          ],
+          "prompt": "Mia is at a concert with Grandma. The music is playing. Mia wants to say something. What should she do?",
+          "choices": [
+            {
+              "text": "Mia waits until the music stops, then whispers.",
+              "ok": true,
+              "mood": {
+                "1": "happy"
+              },
+              "outcome": "Everyone hears the whole song."
+            },
+            {
+              "text": "Mia whispers during the song.",
+              "ok": false,
+              "outcome": "Even a whisper can be heard during quiet music. It can wait for the break."
+            }
+          ]
+        },
+        "cap": "Waiting for a break to talk."
+      },
+      {
+        "t": "key",
+        "html": "In quiet places, <b>sit still</b>, keep your <b>voice low</b> or silent, and <b>follow the place's customs</b>."
+      },
+      {
+        "t": "why",
+        "html": "Everyone came to listen, to rest, or to think. Being quiet lets everyone enjoy it."
+      },
+      {
+        "t": "ex",
+        "title": "Let's practice",
+        "q": "Sam visits a place of worship with Ruby's family. Everyone is quiet. What should Sam do?",
+        "steps": [
+          "Sam doesn't know this place's customs.",
+          "He watches Ruby's family.",
+          "He sits quietly and follows what they do. Questions can wait until after."
+        ],
+        "a": "Sam sits quietly and follows Ruby's family."
+      },
+      {
+        "t": "viz",
+        "name": "et-sort",
+        "opts": {
+          "bins": [
+            "Polite",
+            "Not polite"
+          ],
+          "cards": [
+            {
+              "text": "Sitting still",
+              "bin": 0
+            },
+            {
+              "text": "Clapping at the end",
+              "bin": 0
+            },
+            {
+              "text": "Saving questions for after",
+              "bin": 0
+            },
+            {
+              "text": "Whispering all through the show",
+              "bin": 1,
+              "why": "Even whispers wait for a break."
+            },
+            {
+              "text": "Kicking the seat in front",
+              "bin": 1,
+              "why": "The person in front can feel it."
+            }
+          ],
+          "shuffle": true,
+          "reveal": true,
+          "big": true,
+          "readme": "Read each card aloud. Your child taps a card, then a group."
+        },
+        "cap": "Sort the cards: polite or not polite."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking whispering is fine during a performance or a service. In most quiet places, even whispers wait for a break."
+      },
+      {
+        "t": "note",
+        "html": "<b>Customs differ.</b> Every place of worship and every performance has its own customs: when to stand, when to sit, when to clap. When you visit, watch your hosts and follow along."
+      },
+      {
+        "t": "note",
+        "html": "<b>For the grown-up.</b> Before a quiet event, say what will happen and how long it lasts. Bring a quiet activity for waiting rooms. Plan a signal (a squeeze of the hand) for “I need to tell you something at the break.”"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": []
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

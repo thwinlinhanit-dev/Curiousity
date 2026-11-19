@@ -1,0 +1,94 @@
+{
+  "id": "g6.equivalent-expressions",
+  "slug": "equivalent-expressions",
+  "ladder": "math",
+  "course": "g6",
+  "unit": "expressions",
+  "title": "Equivalent Expressions with Properties",
+  "short": "Use the distributive property: 3(x + 2) = 3x + 6.",
+  "trouble": "Students multiply only the first term, writing 3(x + 2) = 3x + 2.",
+  "prereqs": [
+    "g6.evaluate-expressions",
+    "g6.distributive-with-gcf"
+  ],
+  "xp": 2,
+  "viz": [
+    "areamodel"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You used the distributive property to <a href=\"/math/grade-6/distributive-with-gcf/\">factor sums of numbers</a> like $36 + 8 = 4(9 + 2)$. It works the same way with variables, and it lets you rewrite an expression without changing its value."
+      },
+      {
+        "t": "key",
+        "html": "<b>Equivalent expressions</b> are equal for every value of the variable. The distributive property, $a(b + c) = ab + ac$, makes them: $3(x + 2) = 3x + 6$. So does combining like terms: $y + y + y = 3y$."
+      },
+      {
+        "t": "viz",
+        "name": "areamodel",
+        "opts": {
+          "a": 3,
+          "b": "x+2",
+          "x": 4
+        },
+        "cap": "A 3 by $(x + 2)$ rectangle is a 3 by $x$ part and a 3 by 2 part: $3(x + 2) = 3x + 6$. Move the slider: the two areas stay equal for every $x$."
+      },
+      {
+        "t": "why",
+        "html": "Picture a rectangle 3 units tall and $x + 2$ units long. Split it into a 3 by $x$ part (area $3x$) and a 3 by 2 part (area 6). The whole area is $3(x + 2)$; the parts add to $3x + 6$. Since it is the same rectangle, the two expressions are equal whatever length $x$ is. Combining like terms is the same property: $4a + 3a = (4 + 3)a = 7a$."
+      },
+      {
+        "t": "ex",
+        "title": "Expand",
+        "q": "Write $3(x + 2)$ without parentheses.",
+        "steps": [
+          "The 3 multiplies each term inside: $3 \\times x = 3x$ and $3 \\times 2 = 6$."
+        ],
+        "a": "$3x + 6$"
+      },
+      {
+        "t": "ex",
+        "title": "Factor",
+        "q": "Factor $12 + 18x$.",
+        "steps": [
+          "The greatest common factor of 12 and 18 is 6.",
+          "$12 = 6 \\times 2$ and $18x = 6 \\times 3x$.",
+          "So $12 + 18x = 6(2 + 3x)$."
+        ],
+        "a": "$6(2 + 3x)$"
+      },
+      {
+        "t": "ex",
+        "title": "Combine like terms",
+        "q": "Simplify $4a + 2 + 3a$.",
+        "steps": [
+          "$4a$ and $3a$ are like terms: both count $a$’s.",
+          "$4a + 3a = 7a$. The 2 has no $a$, so it stays."
+        ],
+        "a": "$7a + 2$"
+      },
+      {
+        "t": "mistake",
+        "html": "Multiplying only the first term: $3(x + 2) = 3x + 2$. Quick check: try $x = 1$. $3(1 + 2) = 9$, but $3(1) + 2 = 5$. They are not equal, so something was left out. The 3 must multiply the 2 as well."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Prealgebra 2e, section 7.3 Distributive Property"
+      },
+      {
+        "name": "OpenStax, Prealgebra 2e, section 2.2 Evaluate, Simplify, and Translate Expressions"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 6.EE.A.3: generating equivalent expressions with properties"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

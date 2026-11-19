@@ -1,0 +1,134 @@
+{
+  "id": "alg2.simplify-radicals",
+  "slug": "simplify-radicals",
+  "ladder": "math",
+  "course": "alg2",
+  "unit": "radicals",
+  "title": "Simplifying and Rationalizing Radicals",
+  "short": "Simplify roots and clear them from denominators.",
+  "trouble": "Students multiply only the numerator by the conjugate.",
+  "prereqs": [
+    "alg2.nth-roots",
+    "alg1.radical-operations"
+  ],
+  "xp": 2,
+  "viz": [],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You already simplify square roots like $\\sqrt{72} = 6\\sqrt{2}$ (<a href=\"/math/algebra-1/radical-operations/\">Adding and Multiplying Radicals</a>). The same idea works for any root, and one more skill finishes the job: clearing roots out of a denominator. It builds on <a href=\"/math/algebra-2/nth-roots/\">nth Roots</a>."
+      },
+      {
+        "t": "key",
+        "html": "To simplify $\\sqrt[n]{a}$, pull out the largest perfect $n$th power: $\\sqrt[3]{54} = \\sqrt[3]{27 \\cdot 2} = 3\\sqrt[3]{2}$. To rationalize $\\frac{c}{\\sqrt{b}}$, multiply top and bottom by $\\sqrt{b}$. To rationalize $\\frac{c}{a + \\sqrt{b}}$, multiply top and bottom by the conjugate $a - \\sqrt{b}$."
+      },
+      {
+        "t": "why",
+        "html": "The product rule $\\sqrt[n]{xy} = \\sqrt[n]{x}\\,\\sqrt[n]{y}$ (for nonnegative $x$, $y$) lets you split off the perfect power, whose root is a whole number. Rationalizing multiplies by a form of 1, so the value stays the same. The conjugate works because of the difference of squares: $(a + \\sqrt{b})(a - \\sqrt{b}) = a^2 - b$, which has no root left."
+      },
+      {
+        "t": "table",
+        "head": [
+          "$n$",
+          "perfect $n$th powers"
+        ],
+        "rows": [
+          [
+            "2",
+            "4, 9, 16, 25, 36, 49, 64, 81, 100"
+          ],
+          [
+            "3",
+            "8, 27, 64, 125, 216, 1000"
+          ],
+          [
+            "4",
+            "16, 81, 256, 625"
+          ]
+        ],
+        "cap": "Perfect powers to look for"
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A cube root",
+        "q": "Simplify $\\sqrt[3]{40}$.",
+        "steps": [
+          "The largest perfect cube factor of 40 is 8: $40 = 8 \\cdot 5$.",
+          "$\\sqrt[3]{40} = \\sqrt[3]{8}\\,\\sqrt[3]{5} = 2\\sqrt[3]{5}$."
+        ],
+        "a": "$2\\sqrt[3]{5}$"
+      },
+      {
+        "t": "ex",
+        "title": "A single root below",
+        "q": "Rationalize $\\frac{6}{\\sqrt{3}}$.",
+        "steps": [
+          "Multiply by $\\frac{\\sqrt{3}}{\\sqrt{3}}$: $\\frac{6\\sqrt{3}}{3}$.",
+          "Simplify: $2\\sqrt{3}$."
+        ],
+        "a": "$2\\sqrt{3}$"
+      },
+      {
+        "t": "ex",
+        "title": "The conjugate",
+        "q": "Rationalize $\\frac{4}{3 - \\sqrt{5}}$.",
+        "steps": [
+          "Multiply top and bottom by $3 + \\sqrt{5}$.",
+          "Bottom: $(3 - \\sqrt{5})(3 + \\sqrt{5}) = 9 - 5 = 4$.",
+          "Top: $4(3 + \\sqrt{5})$. Divide by 4."
+        ],
+        "a": "$3 + \\sqrt{5}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Multiplying only the numerator by the conjugate (or by $\\sqrt{b}$). That changes the value: you must multiply by $\\frac{3 + \\sqrt{5}}{3 + \\sqrt{5}}$, which is 1. A quick check with a calculator: $\\frac{4}{3 - \\sqrt{5}} \\approx 5.236$ and $3 + \\sqrt{5} \\approx 5.236$."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "fns": [
+            "4/(3 - sqrt(x))",
+            {
+              "f": "4(3 + sqrt(x))/(9 - x)",
+              "dash": true
+            }
+          ],
+          "points": [
+            {
+              "x": 5,
+              "y": 5.236,
+              "label": "x = 5"
+            }
+          ],
+          "xmin": 0,
+          "xmax": 12,
+          "ymin": -10,
+          "ymax": 14
+        },
+        "cap": "$f(x) = \\frac{4}{3 - \\sqrt{x}}$ and the rationalized form $g(x) = \\frac{4(3 + \\sqrt{x})}{9 - x}$ are the same function (away from $x = 9$). At $x = 5$ both equal $3 + \\sqrt{5}$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Intermediate Algebra 2e, Section 8.2 Simplify Radical Expressions"
+      },
+      {
+        "name": "OpenStax Intermediate Algebra 2e, Section 8.5 Divide Radical Expressions"
+      },
+      {
+        "name": "Common Core State Standards, N-RN.A.2"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

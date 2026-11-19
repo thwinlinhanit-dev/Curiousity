@@ -1,0 +1,110 @@
+{
+  "id": "macro.rule-of-70",
+  "slug": "rule-of-70",
+  "ladder": "economics",
+  "course": "macro",
+  "unit": "growth",
+  "title": "Compound Growth and the Rule of 70",
+  "short": "At a growth rate of g percent a year, a quantity doubles in about 70/g years.",
+  "trouble": "Students add growth year by year instead of compounding it, so they badly underestimate how small differences in growth rates add up over decades.",
+  "prereqs": [
+    "macro.productivity",
+    "alg1.exponential-growth-decay"
+  ],
+  "xp": 2,
+  "viz": [
+    "exponential"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/economics/macroeconomics/productivity/\">Productivity growth</a> of 1% or 2% a year sounds small. But growth compounds, like the <a href=\"/math/algebra-1/exponential-growth-decay/\">exponential growth</a> you have seen in algebra: each year's growth builds on the last."
+      },
+      {
+        "t": "key",
+        "html": "<b>Rule of 70:</b> a quantity growing at $g$ percent a year doubles in about $$\\dfrac{70}{g} \\text{ years.}$$ So 2% growth doubles income in about 35 years; 7% doubles it in about 10. The exact doubling time is $\\dfrac{\\ln 2}{\\ln(1 + g/100)}$, very close for small rates."
+      },
+      {
+        "t": "why",
+        "html": "Growing at rate $r$ (as a decimal) for $t$ years multiplies a quantity by $(1 + r)^t$. Doubling means $(1 + r)^t = 2$, so $t = \\dfrac{\\ln 2}{\\ln(1 + r)}$. For small $r$, $\\ln(1 + r) \\approx r$, and $\\ln 2 \\approx 0.693$, so $t \\approx \\dfrac{0.69}{r} = \\dfrac{69}{g}$ with $g$ in percent. Rounding to 70 makes the arithmetic easy. Adding a fixed amount each year instead would badly understate the result: growth is a percent of an ever larger base."
+      },
+      {
+        "t": "viz",
+        "name": "exponential",
+        "opts": {
+          "a": 1,
+          "b": 1.05,
+          "compare": true,
+          "table": true,
+          "trace": true,
+          "xmin": 0,
+          "xmax": 30,
+          "ymin": 0,
+          "ymax": 5
+        },
+        "cap": "Growth at 5% a year (factor 1.05). The orange line adds the first year's gain every year; the blue curve compounds and pulls away. The readout gives the exact doubling time; the rule of 70 gives 14."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Doubling time",
+        "q": "Real GDP per person grows 2.5% a year. About how long until it doubles?",
+        "steps": [
+          "$\\dfrac{70}{2.5} = 28$ years.",
+          "Exactly: $\\dfrac{\\ln 2}{\\ln 1.025} \\approx 28.1$ years."
+        ],
+        "a": "About 28 years"
+      },
+      {
+        "t": "ex",
+        "title": "Small differences, big gaps",
+        "q": "Two countries start equal. A grows 1% a year and B grows 2%. After 70 years, how do they compare?",
+        "steps": [
+          "A doubles every 70 years: one doubling, a factor of 2.",
+          "B doubles every 35 years: two doublings, a factor of 4.",
+          "B ends up about twice as rich as A, from a 1-point difference in growth."
+        ],
+        "a": "B is about twice as rich"
+      },
+      {
+        "t": "ex",
+        "title": "How many times larger?",
+        "q": "An economy grows 7% a year. About how many times larger is it after 30 years?",
+        "steps": [
+          "Doubling time $\\approx \\dfrac{70}{7} = 10$ years, so 30 years is 3 doublings.",
+          "$2^3 = 8$ times larger (exactly $1.07^{30} \\approx 7.6$)."
+        ],
+        "a": "About 8 times"
+      },
+      {
+        "t": "mistake",
+        "html": "Adding growth year by year instead of compounding it, which badly underestimates how small differences in growth rates add up over decades. 10% a year for 20 years is not \"200% more\" but about 6.7 times the start. Check: use the rule of 70 and count doublings."
+      },
+      {
+        "t": "note",
+        "html": "Try the compounding calculator on the <a href=\"/markets/tools/\">Calculators &amp; Links</a> page with different growth rates and see how the doubling time changes."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Macroeconomics 3e, 6.1 The Relatively Recent Arrival of Economic Growth"
+      },
+      {
+        "name": "OpenStax Principles of Macroeconomics 3e, 6.2 Labor Productivity and Economic Growth"
+      },
+      {
+        "name": "College Board, AP Macroeconomics Course and Exam Description (topic list)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

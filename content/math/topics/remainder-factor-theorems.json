@@ -1,0 +1,100 @@
+{
+  "id": "alg2.remainder-factor-theorems",
+  "slug": "remainder-factor-theorems",
+  "ladder": "math",
+  "course": "alg2",
+  "unit": "polynomials",
+  "title": "The Remainder and Factor Theorems",
+  "short": "p(a) is the remainder when dividing by x − a; p(a) = 0 means x − a is a factor.",
+  "trouble": "",
+  "prereqs": [
+    "alg2.synthetic-division"
+  ],
+  "xp": 2,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "After a few <a href=\"/math/algebra-2/synthetic-division/\">synthetic divisions</a> you may notice something: the remainder from dividing by $x - r$ is always $p(r)$. That is not a coincidence, and it gives two powerful shortcuts."
+      },
+      {
+        "t": "key",
+        "html": "<b>Remainder theorem:</b> when $p(x)$ is divided by $x - r$, the remainder is $p(r)$. <b>Factor theorem:</b> $x - r$ is a factor of $p(x)$ exactly when $p(r) = 0$."
+      },
+      {
+        "t": "why",
+        "html": "Division always gives $p(x) = (x - r)\\,q(x) + R$, where the remainder $R$ is a number because it has lower degree than $x - r$. This is true for every $x$, so put in $x = r$: $p(r) = (r - r)\\,q(r) + R = 0 + R = R$. If that remainder is 0, then $p(x) = (x - r)\\,q(x)$, which says exactly that $x - r$ is a factor. Graphically, $p(r) = 0$ means the graph crosses or touches the $x$-axis at $r$."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "f": "x^3 - 4x^2 + x + 6",
+          "trace": {
+            "x": 1
+          },
+          "xmin": -3,
+          "xmax": 5,
+          "ymin": -10,
+          "ymax": 10,
+          "roots": true
+        },
+        "cap": "$p(x) = x^3 - 4x^2 + x + 6$. Drag the point along the graph: its height $p(r)$ is the remainder when you divide by $x - r$. Where the height is 0, $x - r$ is a factor."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A remainder without dividing",
+        "q": "Find the remainder when $p(x) = x^4 - 3x^3 + 2x - 5$ is divided by $x - 2$.",
+        "steps": [
+          "By the remainder theorem, it is $p(2)$.",
+          "$p(2) = 16 - 24 + 4 - 5 = -9$."
+        ],
+        "a": "$-9$"
+      },
+      {
+        "t": "ex",
+        "title": "Testing a factor",
+        "q": "Is $x + 1$ a factor of $x^3 + 2x^2 - x - 2$?",
+        "steps": [
+          "$x + 1 = x - (-1)$, so compute $p(-1) = -1 + 2 + 1 - 2 = 0$.",
+          "It is 0, so yes."
+        ],
+        "a": "Yes: $x + 1$ is a factor."
+      },
+      {
+        "t": "ex",
+        "title": "Finding a missing coefficient",
+        "q": "Find $k$ so that $x - 2$ is a factor of $x^3 + kx^2 - 4x + 4$.",
+        "steps": [
+          "Set $p(2) = 0$: $8 + 4k - 8 + 4 = 0$.",
+          "$4k + 4 = 0$, so $k = -1$."
+        ],
+        "a": "$k = -1$"
+      },
+      {
+        "t": "mistake",
+        "html": "Evaluating at the wrong sign: for the divisor $x + 1$ you need $p(-1)$, not $p(1)$. The number to use is the one that makes the divisor 0."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Algebra 2e, Section 5.5 Zeros of Polynomial Functions (remainder and factor theorems)"
+      },
+      {
+        "name": "Common Core State Standards, A-APR.B.2"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

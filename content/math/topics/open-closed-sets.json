@@ -1,0 +1,121 @@
+{
+  "id": "ra.open-closed-sets",
+  "slug": "open-closed-sets",
+  "ladder": "math",
+  "course": "ra",
+  "unit": "metric-spaces",
+  "title": "Open and Closed Sets",
+  "short": "A set is open when every point has a ball around it inside the set, and closed when it contains all its limit points; the closure adds the limit points.",
+  "trouble": "Students think \"not open\" means closed. [0, 1) is neither open nor closed, and ℝ is both.",
+  "prereqs": [
+    "ra.metric-spaces"
+  ],
+  "xp": 3,
+  "viz": [
+    "ra-balls",
+    "ra-supinf"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In a <a href=\"/math/real-analysis/metric-spaces/\">metric space</a> the open ball $B(p, r) = \\{x : d(x, p) < r\\}$ plays the role of an open interval. Open and closed sets describe, without any numbers, where limits can go."
+      },
+      {
+        "t": "key",
+        "html": "$U$ is <b>open</b> when every $p \\in U$ has some $r > 0$ with $B(p, r) \\subseteq U$. $E$ is <b>closed</b> when its complement is open; equivalently, whenever $x_n \\in E$ and $x_n \\to x$, the limit $x$ is in $E$. The <b>closure</b> $\\overline{E}$ is $E$ together with all limits of sequences from $E$: the smallest closed set containing $E$."
+      },
+      {
+        "t": "why",
+        "html": "<b>An open ball is open.</b> Let $q \\in B(p, r)$ and set $s = r - d(p, q) > 0$. If $d(x, q) < s$, then $d(x, p) \\le d(x, q) + d(q, p) < s + d(p, q) = r$, so $B(q, s) \\subseteq B(p, r)$. $\\blacksquare$"
+      },
+      {
+        "t": "p",
+        "html": "<b>Closed sets keep their limits.</b> Suppose the complement of $E$ is open, $x_n \\in E$ and $x_n \\to x$. If $x \\notin E$, some ball $B(x, r)$ misses $E$; but $x_n \\in B(x, r)$ for large $n$, and $x_n \\in E$. Contradiction, so $x \\in E$. $\\blacksquare$ In $\\mathbb{R}$: $(0, 1)$ is open, $[0, 1]$ closed, $[0, 1)$ neither, and $\\mathbb{R}$ and $\\varnothing$ are both. Any union of open sets is open, but only finite intersections need be: $\\bigcap_{n} \\left(-\\frac{1}{n}, \\frac{1}{n}\\right) = \\{0\\}$ is not open."
+      },
+      {
+        "t": "viz",
+        "name": "ra-balls",
+        "opts": {
+          "p": [
+            2,
+            4
+          ],
+          "q": null,
+          "r": 1,
+          "metric": "all",
+          "square": 6
+        },
+        "cap": "The open square $(0, 6)^{2}$ is open: from any point $p$ inside it, a ball fits. The largest radius is the distance from $p$ to the nearest side. Drag $p$ toward an edge and watch the room shrink to $0$, but never reach it."
+      },
+      {
+        "t": "viz",
+        "name": "ra-supinf",
+        "opts": {
+          "seq": "1/n",
+          "nmax": 40,
+          "sup": null,
+          "inf": null,
+          "eps": null,
+          "closure": true,
+          "limits": [
+            0
+          ],
+          "xmin": -0.1,
+          "xmax": 1.1
+        },
+        "cap": "The set $\\left\\{\\frac{1}{n}\\right\\}$ is not closed: its terms pile up at $0$, which is not in the set (gold ring). Adding $0$ gives the closure."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "How much room",
+        "q": "Find the largest $r$ such that $B\\left(\\frac{3}{2}, r\\right) \\subseteq (0, 2) \\cup (3, 7)$ in $\\mathbb{R}$.",
+        "steps": [
+          "The point $\\frac{3}{2}$ is in $(0, 2)$; its distances to the ends are $\\frac{3}{2}$ and $\\frac{1}{2}$."
+        ],
+        "a": "$r = \\frac{1}{2}$ (any larger ball sticks out past $2$)."
+      },
+      {
+        "t": "ex",
+        "title": "Closure and interior",
+        "q": "For $E = [0, 2) \\cup \\{5\\}$ in $\\mathbb{R}$, find the closure and the interior (the largest open set inside $E$).",
+        "steps": [
+          "Limits of sequences in $E$ fill in $2$; the isolated point $5$ stays.",
+          "Interior points need a whole interval around them: $0$ and $5$ fail."
+        ],
+        "a": "$\\overline{E} = [0, 2] \\cup \\{5\\}$; interior $= (0, 2)$."
+      },
+      {
+        "t": "ex",
+        "title": "Neither",
+        "q": "Is $\\mathbb{Q}$ open or closed in $\\mathbb{R}$?",
+        "steps": [
+          "Every interval around a rational contains irrationals, so no ball fits: not open.",
+          "Rationals converge to $\\sqrt{2}$, which is not rational: not closed."
+        ],
+        "a": "Neither. Its closure is $\\mathbb{R}$, and its interior is empty."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>\"Not open\" does not mean closed.</b> Sets are not doors. $[0, 1)$ fails both tests: no ball around $0$ fits inside, and the sequence $1 - \\frac{1}{n}$ in the set converges to $1$, outside it. Check each property on its own. Also, openness depends on the space: $[0, 1)$ is open as a subset of the metric space $[0, 1]$, since the ball of radius $\\frac{1}{2}$ around $0$ there is $[0, \\frac{1}{2})$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Jiří Lebl, Basic Analysis I: Introduction to Real Analysis, section 7.2 (open and closed sets)"
+      },
+      {
+        "name": "William F. Trench, Introduction to Real Analysis (Trinity University), section 1.3 (the real line: open and closed sets)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

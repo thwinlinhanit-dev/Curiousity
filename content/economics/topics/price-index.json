@@ -1,0 +1,105 @@
+{
+  "id": "macro.price-index",
+  "slug": "price-index",
+  "ladder": "economics",
+  "course": "macro",
+  "unit": "unemployment-inflation",
+  "title": "Price Indexes and the CPI",
+  "short": "A price index compares the cost of a fixed basket of goods with its cost in a base year, set to 100.",
+  "trouble": "Students read an index of 120 as a price of 120 dollars, and miss that the CPI tends to overstate inflation because people switch to cheaper goods and quality improves.",
+  "prereqs": [
+    "macro.real-gdp"
+  ],
+  "xp": 2,
+  "viz": [
+    "ec-basket"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/economics/macroeconomics/real-gdp/\">Nominal and Real GDP</a> needed fixed prices to remove inflation from output. To measure inflation itself for households, economists price a fixed basket of the things a typical family buys, year after year."
+      },
+      {
+        "t": "key",
+        "html": "A price index compares the cost of a fixed basket with its cost in a <b>base period</b>, which is set to 100: $$\\text{index} = \\dfrac{\\text{cost of the basket this period}}{\\text{cost of the basket in the base period}} \\times 100$$ The <b>consumer price index</b> (CPI), from the Bureau of Labor Statistics, uses a basket of goods and services bought by urban households."
+      },
+      {
+        "t": "why",
+        "html": "Holding the basket fixed means only prices can change the cost, so the index measures price changes alone. Setting the base period to 100 turns the ratio into an easy percent: an index of 120 means the same basket costs 20% more than in the base period. An index has no dollar units: 120 is not \\$120."
+      },
+      {
+        "t": "viz",
+        "name": "ec-basket",
+        "opts": {
+          "mode": "cpi"
+        },
+        "cap": "A three-item basket priced over four years. Change the base year: every index value changes, but the percent changes between years stay the same."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Building an index",
+        "q": "A basket is 10 loaves of bread and 15 gallons of gas. In 2022 bread is \\$2.50 and gas \\$3.00; in 2024 bread is \\$2.90 and gas \\$3.40. With 2022 as the base year, find the 2024 index.",
+        "steps": [
+          "Cost in 2022: $10 \\times 2.50 + 15 \\times 3.00 = 25 + 45 = 70$ dollars.",
+          "Cost in 2024 (same basket): $10 \\times 2.90 + 15 \\times 3.40 = 29 + 51 = 80$ dollars.",
+          "Index $= \\dfrac{80}{70} \\times 100 \\approx 114.3$. The basket costs about 14.3% more."
+        ],
+        "a": "About 114.3"
+      },
+      {
+        "t": "ex",
+        "title": "Reading an index",
+        "q": "The CPI is 135. What does that tell you?",
+        "steps": [
+          "The base period is 100.",
+          "$135 - 100 = 35$: the basket costs 35% more than in the base period. It does not mean anything costs \\$135."
+        ],
+        "a": "Prices are 35% above the base period"
+      },
+      {
+        "t": "h",
+        "text": "Why the CPI tends to run a little high"
+      },
+      {
+        "t": "list",
+        "items": [
+          "<b>Substitution:</b> when beef gets expensive, people buy more chicken, but a fixed basket keeps buying beef.",
+          "<b>Quality changes:</b> a phone that costs the same but does much more is a better deal, which is hard to count.",
+          "<b>New goods:</b> new products enter the basket only after a delay."
+        ]
+      },
+      {
+        "t": "p",
+        "html": "Each of these makes the CPI rise somewhat faster than the true cost of living. The Bureau of Labor Statistics has changed its methods to shrink these biases, but some remain."
+      },
+      {
+        "t": "mistake",
+        "html": "Reading an index of 120 as a price of \\$120, and missing that a fixed basket tends to overstate inflation. Check: subtract 100 from the index to get the percent change since the base period."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Macroeconomics 3e, 8.1 Tracking Inflation"
+      },
+      {
+        "name": "OpenStax Principles of Macroeconomics 3e, 8.2 How to Measure Changes in the Cost of Living"
+      },
+      {
+        "name": "U.S. Bureau of Labor Statistics, Consumer Price Index: questions and answers"
+      },
+      {
+        "name": "College Board, AP Macroeconomics Course and Exam Description (topic list)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

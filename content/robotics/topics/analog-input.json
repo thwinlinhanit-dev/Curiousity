@@ -1,0 +1,85 @@
+{
+  "id": "rbelec.analog-input",
+  "slug": "analog-input",
+  "ladder": "robotics",
+  "course": "rbelec",
+  "unit": "mcu",
+  "title": "Analog Readings",
+  "short": "An analog-to-digital converter turns 0 to 3.3 V into a whole number from 0 to 1023 (10-bit) or 4095 (12-bit).",
+  "trouble": "Students use 1024 or 4096 as the top reading instead of one less.",
+  "prereqs": [
+    "rbelec.voltage-divider",
+    "g8.proportional-slope"
+  ],
+  "xp": 2,
+  "viz": [
+    "rb-divider"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A microcontroller thinks in whole numbers. To read a voltage, it uses an <b>analog-to-digital converter</b> (ADC) that turns the voltage into a count."
+      },
+      {
+        "t": "key",
+        "html": "An $n$-bit ADC gives readings from $0$ to $2^n - 1$. A 10-bit ADC (Arduino Uno) reads 0 to 1023; a 12-bit one reads 0 to 4095. Reading $= \\dfrac{V}{V_{\\text{ref}}} \\times (2^n - 1)$, rounded. The Pico's ADC returns 0 to 65535 in MicroPython, scaled up from 12 bits."
+      },
+      {
+        "t": "viz",
+        "name": "rb-divider",
+        "opts": {
+          "mode": "adc",
+          "bits": 10
+        },
+        "cap": "Slide the input voltage and watch the count. Each step of the count is one tiny slice of the voltage."
+      },
+      {
+        "t": "why",
+        "html": "Knowing the size of one step tells you how fine your measurement can be. With 10 bits and 5 V, one count is about 4.9 mV. Noise smaller than that is invisible; noise bigger shows up as a jumpy reading."
+      },
+      {
+        "t": "ex",
+        "title": "Voltage to count",
+        "q": "A 10-bit ADC with $V_{\\text{ref}} = 5\\ \\text{V}$ reads 2.0 V.",
+        "steps": [
+          "$\\dfrac{2.0}{5} \\times 1023 = 409.2$.",
+          "Rounded: 409."
+        ],
+        "a": "409."
+      },
+      {
+        "t": "ex",
+        "title": "Count to voltage",
+        "q": "A 12-bit ADC with $V_{\\text{ref}} = 3.3\\ \\text{V}$ reads 3000.",
+        "steps": [
+          "$V = \\dfrac{3000}{4095} \\times 3.3 \\approx 2.42\\ \\text{V}$."
+        ],
+        "a": "About 2.42 V."
+      },
+      {
+        "t": "mistake",
+        "html": "Using 1024 or 4096 as the top reading. The largest reading is one less, because counting starts at 0."
+      },
+      {
+        "t": "note",
+        "html": "<div class=\"rb-safe\"><b>Safety for your board.</b> Never put more than the board's own supply voltage on an input pin. A Pico and many newer boards run at 3.3 V, and 5 V on a pin can damage them.</div>"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Arduino Documentation",
+        "url": "https://docs.arduino.cc/"
+      },
+      {
+        "name": "Raspberry Pi Foundation, Raspberry Pi Projects",
+        "url": "https://projects.raspberrypi.org/"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,153 @@
+{
+  "id": "gchem1.vsepr-five-six",
+  "slug": "vsepr-five-six",
+  "ladder": "chemistry",
+  "course": "gchem1",
+  "unit": "bonding",
+  "title": "Shapes with Five and Six Electron Groups",
+  "short": "The trigonal bipyramidal and octahedral families, and where their lone pairs go.",
+  "trouble": "Students put lone pairs in the axial positions of a trigonal bipyramid instead of the roomier equatorial ones.",
+  "prereqs": [
+    "gchem1.octet-exceptions",
+    "chem.vsepr-shapes"
+  ],
+  "xp": 3,
+  "viz": [
+    "ch-vsepr"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/chemistry/chemistry/vsepr-shapes/\">Molecular Shapes (VSEPR)</a> handled two, three and four electron groups. <a href=\"/chemistry/general-chemistry-1/octet-exceptions/\">Exceptions to the Octet Rule</a> showed that central atoms such as P, S and Xe can carry five or six groups. The same rule applies, groups spread as far apart as they can, but five groups bring one new question: where do the lone pairs go?"
+      },
+      {
+        "t": "key",
+        "html": "<b>Six groups</b> point to the corners of an <b>octahedron</b>, all $90^\\circ$ apart. <b>Five groups</b> form a <b>trigonal bipyramid</b>: three <i>equatorial</i> positions $120^\\circ$ apart around the middle, and two <i>axial</i> positions above and below, at $90^\\circ$ to the equator. <b>Lone pairs take equatorial positions</b>; in an octahedron, two lone pairs sit opposite each other."
+      },
+      {
+        "t": "why",
+        "html": "Lone pairs are held by one nucleus only, so they spread out wider and repel more than bonding pairs. The strongest repulsions are between groups at $90^\\circ$. An axial position has three neighbors at $90^\\circ$; an equatorial position has only two (the axial ones). So a lone pair in an equatorial spot suffers fewer close repulsions. In the octahedron every position is the same, so the first lone pair goes anywhere, and the second goes directly across from it, $180^\\circ$ away, as far as possible."
+      },
+      {
+        "t": "viz",
+        "name": "ch-vsepr",
+        "opts": {
+          "mol": "SF4",
+          "show": [
+            "angles",
+            "names",
+            "lonepairs"
+          ],
+          "task": "Turn the model. Find the lone pair, and the two axial fluorines."
+        },
+        "cap": "Sulfur tetrafluoride: five groups, one of them a lone pair in an equatorial position, giving a seesaw shape."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Groups",
+          "Lone pairs",
+          "Shape",
+          "Example"
+        ],
+        "rows": [
+          [
+            "5",
+            "0",
+            "trigonal bipyramidal",
+            "$\\mathrm{PCl_5}$"
+          ],
+          [
+            "5",
+            "1",
+            "seesaw",
+            "$\\mathrm{SF_4}$"
+          ],
+          [
+            "5",
+            "2",
+            "T-shaped",
+            "$\\mathrm{ClF_3}$"
+          ],
+          [
+            "5",
+            "3",
+            "linear",
+            "$\\mathrm{XeF_2}$, $\\mathrm{I_3^-}$"
+          ],
+          [
+            "6",
+            "0",
+            "octahedral",
+            "$\\mathrm{SF_6}$"
+          ],
+          [
+            "6",
+            "1",
+            "square pyramidal",
+            "$\\mathrm{BrF_5}$"
+          ],
+          [
+            "6",
+            "2",
+            "square planar",
+            "$\\mathrm{XeF_4}$"
+          ]
+        ],
+        "cap": "The shape names the arrangement of the atoms only; the lone pairs are invisible in it."
+      },
+      {
+        "t": "ex",
+        "title": "Chlorine trifluoride",
+        "q": "Predict the shape of $\\mathrm{ClF_3}$.",
+        "steps": [
+          "Valence electrons: $7 + 3(7) = 28$. Three Cl–F bonds use 6; the F atoms take $3 \\times 6 = 18$; 4 are left: 2 lone pairs on Cl.",
+          "Five groups: trigonal bipyramid. Both lone pairs go equatorial.",
+          "The three F atoms take the two axial spots and the last equatorial spot: a T shape, with F–Cl–F angles close to $90^\\circ$."
+        ],
+        "a": "T-shaped."
+      },
+      {
+        "t": "ex",
+        "title": "Xenon tetrafluoride",
+        "q": "Predict the shape and the polarity of $\\mathrm{XeF_4}$.",
+        "steps": [
+          "From the octet-exceptions lesson: 4 bonds and 2 lone pairs on Xe, six groups: octahedral arrangement.",
+          "The two lone pairs sit opposite each other, leaving the four F atoms in a square around Xe: square planar, F–Xe–F $90^\\circ$.",
+          "The four Xe–F bond dipoles cancel in pairs: nonpolar."
+        ],
+        "a": "Square planar and nonpolar."
+      },
+      {
+        "t": "ex",
+        "title": "The triiodide ion",
+        "q": "What shape is $\\mathrm{I_3^-}$?",
+        "steps": [
+          "$3(7) + 1 = 22$ electrons. Two I–I bonds (4), the end atoms 6 each (12): 6 left, 3 lone pairs on the central I.",
+          "Five groups; three lone pairs fill the equator.",
+          "The two bonded atoms are axial, $180^\\circ$ apart."
+        ],
+        "a": "Linear."
+      },
+      {
+        "t": "mistake",
+        "html": "Putting lone pairs in the axial positions of a trigonal bipyramid. That would give $\\mathrm{SF_4}$ a trigonal pyramid instead of a seesaw and $\\mathrm{XeF_2}$ a bent or triangular shape instead of linear. Check: an axial lone pair has three neighbors at $90^\\circ$; an equatorial one has two. Lone pairs always take the roomier equatorial seats."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 7.6 Molecular Structure and Polarity"
+      },
+      {
+        "name": "College Board, AP Chemistry Course and Exam Description (effective fall 2024), Unit 2: Compound Structure and Properties"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

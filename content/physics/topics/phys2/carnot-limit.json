@@ -1,0 +1,125 @@
+{
+  "id": "phys2.carnot-limit",
+  "slug": "carnot-limit",
+  "ladder": "physics",
+  "course": "phys2",
+  "unit": "thermodynamics",
+  "title": "The Carnot Limit",
+  "short": "No engine running between T_H and T_C can beat e = 1 − T_C/T_H, with temperatures in kelvins.",
+  "trouble": "Students put Celsius temperatures into the Carnot formula.",
+  "prereqs": [
+    "phys2.heat-engines"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-pv"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Every <a href=\"/physics/physics-2/heat-engines/\">heat engine</a> wastes some heat. How little? In 1824 Sadi Carnot found the answer: the limit depends only on the temperatures of the hot and cold reservoirs."
+      },
+      {
+        "t": "why",
+        "html": "Carnot imagined an engine with no friction, which takes in heat only at $T_H$, gives it off only at $T_C$, and could run backward as easily as forward. For it, $\\dfrac{Q_C}{Q_H} = \\dfrac{T_C}{T_H}$ with kelvin temperatures, so $e = 1 - T_C/T_H$. No real engine can do better. If one could, you could use it to drive Carnot's engine backward as a refrigerator, and the pair would carry heat from cold to hot with no outside work, which never happens."
+      },
+      {
+        "t": "key",
+        "html": "$$e_{\\max} = 1 - \\frac{T_C}{T_H} \\quad \\text{(kelvins!)}$$ A hotter source or a colder sink raises the limit. Real engines fall below it."
+      },
+      {
+        "t": "viz",
+        "name": "ph-pv",
+        "opts": {
+          "mode": "engine",
+          "states": [
+            [
+              300,
+              2
+            ],
+            [
+              300,
+              4
+            ],
+            [
+              100,
+              4
+            ],
+            [
+              100,
+              2
+            ]
+          ],
+          "path": [
+            "isobaric",
+            "isochoric",
+            "isobaric",
+            "isochoric"
+          ],
+          "task": "Compare this cycle's efficiency with the Carnot limit for its hottest and coldest temperatures."
+        },
+        "cap": "A real cycle's efficiency always sits below the Carnot limit for its hottest and coldest temperatures. Explore it in the <a href=\"/science-lab/thermodynamics/engines/\">Engines, Refrigerators and Heat Pumps</a> chapter of the Science Lab."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Kelvin reservoirs",
+        "q": "What is the best possible efficiency between $500\\,\\text{K}$ and $300\\,\\text{K}$?",
+        "steps": [
+          "$e_{\\max} = 1 - \\dfrac{300}{500} = 1 - 0.60 = 0.40 = 40\\%$."
+        ],
+        "a": "$40\\%$"
+      },
+      {
+        "t": "ex",
+        "title": "A power plant",
+        "q": "A power plant's steam is at $550\\,^\\circ\\text{C}$ and its cooling water at $25\\,^\\circ\\text{C}$. Find its Carnot limit.",
+        "steps": [
+          "Kelvins: $T_H = 823\\,\\text{K}$, $T_C = 298\\,\\text{K}$.",
+          "$e_{\\max} = 1 - \\dfrac{298}{823} = 0.638 = 63.8\\%$.",
+          "With Celsius you would get $1 - 25/550 = 95.5\\%$, which is wrong."
+        ],
+        "a": "$63.8\\%$"
+      },
+      {
+        "t": "ex",
+        "title": "Check a claim",
+        "q": "An inventor claims $50\\%$ efficiency for an engine working between $400\\,\\text{K}$ and $300\\,\\text{K}$. Possible?",
+        "steps": [
+          "$e_{\\max} = 1 - \\dfrac{300}{400} = 25\\%$.",
+          "$50\\% > 25\\%$, so the claim breaks the second law. No design can do it."
+        ],
+        "a": "Impossible"
+      },
+      {
+        "t": "p",
+        "html": "The formula shows the two ways to build a better engine: make the hot side hotter or the cold side colder. That is why power plants run their steam as hot as their materials allow. The cold side is usually the air or a river, so it cannot go much below about $280\\,\\text{K}$, and absolute zero itself can never be reached, so no engine can ever reach $100\\%$."
+      },
+      {
+        "t": "mistake",
+        "html": "Putting Celsius temperatures into the Carnot formula. The ratio $T_C/T_H$ only means something on a scale that starts at absolute zero; with Celsius, a cold side at $0\\,^\\circ\\text{C}$ would seem to allow $100\\%$. Check: add 273 to every temperature before dividing."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e, section 15.4 Carnot’s Perfect Heat Engine: The Second Law of Thermodynamics Restated"
+      },
+      {
+        "name": "OpenStax, University Physics Volume 2, section 4.5 The Carnot Cycle"
+      },
+      {
+        "name": "College Board, AP Physics 2 Course and Exam Description, Unit 9: Thermodynamics"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

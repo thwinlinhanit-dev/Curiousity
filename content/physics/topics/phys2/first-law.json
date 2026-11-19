@@ -1,0 +1,152 @@
+{
+  "id": "phys2.first-law",
+  "slug": "first-law",
+  "ladder": "physics",
+  "course": "phys2",
+  "unit": "thermodynamics",
+  "title": "The First Law of Thermodynamics",
+  "short": "ΔU = Q + W: the internal energy changes by the heat added plus the work done on the gas.",
+  "trouble": "Students think adding heat must raise the temperature, forgetting the gas can spend that energy doing work.",
+  "prereqs": [
+    "phys2.pv-work",
+    "phys2.kinetic-theory"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-pv"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Energy is conserved, and for a gas there are two ways for it to cross the boundary: <b>heat</b> $Q$, which flows because of a temperature difference, and <b>work</b> $W$, a force acting through a distance, which you met in <a href=\"/physics/physics-2/pv-work/\">Work Done on a Gas</a>. What arrives is stored as internal energy $U$, the energy of the molecules' motion, which for a monatomic gas is $\\tfrac{3}{2}nRT$ from <a href=\"/physics/physics-2/kinetic-theory/\">Temperature and Molecular Energy</a>."
+      },
+      {
+        "t": "why",
+        "html": "Treat the gas like a bank account. Deposits are heat flowing in and work done on the gas; withdrawals are heat flowing out and work the gas does. The balance can change only by the deposits minus the withdrawals. Written with signs, that is the first law. It is conservation of energy, nothing more, but it lets heat and work trade places: a gas can take in heat and spend it all as work, so its temperature need not rise."
+      },
+      {
+        "t": "key",
+        "html": "$$\\Delta U = Q + W$$ $Q > 0$ when heat flows into the gas; $W > 0$ when work is done <b>on</b> the gas ($W = -P\\Delta V$). For an ideal gas, $U$ depends only on $T$: $\\Delta U = 0$ whenever the temperature ends where it started."
+      },
+      {
+        "t": "table",
+        "head": [
+          "",
+          "This course (and AP Physics 2)",
+          "Science Lab and OpenStax College Physics"
+        ],
+        "rows": [
+          [
+            "First law",
+            "$\\Delta U = Q + W$",
+            "$\\Delta U = Q - W_{\\text{by}}$"
+          ],
+          [
+            "The work in it",
+            "$W$ = work done <b>on</b> the gas $= -P\\Delta V$",
+            "$W_{\\text{by}}$ = work done <b>by</b> the gas $= +P\\Delta V$"
+          ],
+          [
+            "Gas expands",
+            "$W < 0$",
+            "$W_{\\text{by}} > 0$"
+          ],
+          [
+            "Heat $Q$",
+            "positive into the gas",
+            "positive into the gas"
+          ]
+        ],
+        "cap": "Two ways of writing the same law. Since $W = -W_{\\text{by}}$, they always give the same $\\Delta U$."
+      },
+      {
+        "t": "p",
+        "html": "Try the <a href=\"/science-lab/thermodynamics/first-law/\">Energy and the First Law</a> chapter of the Science Lab, which keeps its ledger as $\\Delta U = Q - W$ with $W$ done <em>by</em> the gas. Same physics, opposite sign for the work."
+      },
+      {
+        "t": "viz",
+        "name": "ph-pv",
+        "opts": {
+          "mode": "process",
+          "states": [
+            [
+              300,
+              2
+            ],
+            [
+              100,
+              6
+            ]
+          ],
+          "path": [
+            "isothermal"
+          ],
+          "show": [
+            "isotherms"
+          ],
+          "task": "An isothermal expansion: heat flows in, the gas does work, and ΔU = 0."
+        },
+        "cap": "Along an isotherm, every joule of heat that flows in leaves again as work."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Heat in, work out",
+        "q": "A gas absorbs $500\\,\\text{J}$ of heat and does $200\\,\\text{J}$ of work pushing a piston. Find $\\Delta U$.",
+        "steps": [
+          "Signs: $Q = +500\\,\\text{J}$. The gas does work, so the work done on it is $W = -200\\,\\text{J}$.",
+          "$\\Delta U = 500 + (-200) = +300\\,\\text{J}$. The gas warms."
+        ],
+        "a": "$+300\\,\\text{J}$"
+      },
+      {
+        "t": "ex",
+        "title": "Squeezed and cooled",
+        "q": "A gas is compressed with $300\\,\\text{J}$ of work while it gives off $100\\,\\text{J}$ of heat. Find $\\Delta U$.",
+        "steps": [
+          "$W = +300\\,\\text{J}$ (done on the gas), $Q = -100\\,\\text{J}$ (heat out).",
+          "$\\Delta U = -100 + 300 = +200\\,\\text{J}$. It got warmer even though heat left."
+        ],
+        "a": "$+200\\,\\text{J}$"
+      },
+      {
+        "t": "ex",
+        "title": "Heat without warming",
+        "q": "An ideal gas expands at constant temperature while absorbing $400\\,\\text{J}$ of heat. How much work does it do?",
+        "steps": [
+          "Constant temperature means $\\Delta U = 0$ for an ideal gas.",
+          "$0 = Q + W$, so $W = -400\\,\\text{J}$: the gas does $400\\,\\text{J}$ of work."
+        ],
+        "a": "$400\\,\\text{J}$ of work by the gas"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking adding heat must raise the temperature. Heat raises $U$ only if the gas does not spend it as work. In the third example all $400\\,\\text{J}$ left as work and the temperature never changed; and in the second, the gas warmed while losing heat. Check: write down $Q$ and $W$ with their signs before deciding what happens to $T$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e, section 15.1 The First Law of Thermodynamics"
+      },
+      {
+        "name": "OpenStax, University Physics Volume 2, section 3.3 First Law of Thermodynamics"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-PS3-1"
+      },
+      {
+        "name": "College Board, AP Physics 2 Course and Exam Description, Unit 9: Thermodynamics"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

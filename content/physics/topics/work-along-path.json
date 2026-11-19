@@ -1,0 +1,99 @@
+{
+  "id": "mech.work-along-path",
+  "slug": "work-along-path",
+  "ladder": "physics",
+  "course": "mech",
+  "unit": "work-energy",
+  "title": "Work Along a Path",
+  "short": "W = ∫F · dr adds up only the part of the force along each small step of the path.",
+  "trouble": "Students multiply the size of the force by the path length, ignoring the angle between them.",
+  "prereqs": [
+    "mech.work-integral",
+    "pre.dot-product"
+  ],
+  "xp": 3,
+  "viz": [
+    "lineintegral"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/physics/mechanics/work-integral/\">Work by a Variable Force</a> handled motion along a straight line with the force along that line. Now let the path curve and the force point any way. The tool is <a href=\"/math/precalculus/dot-product/\">The Dot Product and the Angle Between Vectors</a>: it keeps only the part of the force along each little step."
+      },
+      {
+        "t": "key",
+        "html": "$$W = \\int_{\\text{path}} \\vec{F}\\cdot d\\vec{r} = \\int \\left(F_x\\,dx + F_y\\,dy + F_z\\,dz\\right).$$ Only the component of $\\vec{F}$ along the direction of motion does work. For a straight path and a constant force, $W = \\vec{F}\\cdot\\Delta\\vec{r} = F\\,d\\cos\\theta$."
+      },
+      {
+        "t": "why",
+        "html": "Break the path into tiny straight steps $d\\vec{r}$. On one step the force is nearly constant, and the work is $\\vec{F}\\cdot d\\vec{r} = F\\,dr\\cos\\theta$: a force perpendicular to the step ($\\theta = 90^\\circ$) does nothing, a force along it does the most. Add up the steps and you have a line integral. To compute it, describe the path with one parameter, such as $x$ or $t$, and write $dx$, $dy$ and the force in terms of it."
+      },
+      {
+        "t": "viz",
+        "name": "lineintegral",
+        "opts": {
+          "P": "y",
+          "Q": "2x",
+          "x": "t",
+          "y": "t^2",
+          "t0": 0,
+          "t1": 1.5,
+          "xmin": -1,
+          "xmax": 3,
+          "ymin": -1,
+          "ymax": 3,
+          "task": "Move along the parabola. Watch the work build up where the force points along the path."
+        },
+        "cap": "The field $\\vec{F} = \\langle y, 2x \\rangle$ along $y = x^2$. Arrows show the force; the running total is $\\int \\vec{F}\\cdot d\\vec{r}$."
+      },
+      {
+        "t": "ex",
+        "title": "Pulling a sled",
+        "q": "You pull a sled $10\\ \\text{m}$ across level snow with a $40\\ \\text{N}$ rope tension at $30^\\circ$ above horizontal. How much work does the rope do?",
+        "steps": [
+          "$W = Fd\\cos\\theta = 40(10)\\cos 30^\\circ$.",
+          "$W = 400(0.866) = 346\\ \\text{J}$.",
+          "The vertical part, $40\\sin 30^\\circ = 20\\ \\text{N}$, lightens the sled but does no work."
+        ],
+        "a": "$346\\ \\text{J}$."
+      },
+      {
+        "t": "ex",
+        "title": "A field along a curve",
+        "q": "Find the work done by $\\vec{F} = \\langle y, 2x \\rangle$ (N, m) on a particle moving along $y = x^2$ from $(0, 0)$ to $(1, 1)$.",
+        "steps": [
+          "On the path $y = x^2$ and $dy = 2x\\,dx$.",
+          "$$F_x\\,dx + F_y\\,dy = x^2\\,dx + 2x(2x\\,dx) = 5x^2\\,dx$$",
+          "$W = \\int_0^1 5x^2\\,dx = \\tfrac{5}{3} \\approx 1.67\\ \\text{J}$.",
+          "Along the straight line $y = x$ instead: $\\int_0^1 (x + 2x)\\,dx = 1.5\\ \\text{J}$. A different path, a different work."
+        ],
+        "a": "$\\tfrac{5}{3}\\ \\text{J}$ (and $1.5\\ \\text{J}$ along the straight line)."
+      },
+      {
+        "t": "mistake",
+        "html": "Multiplying the size of the force by the length of the path. For the sled that gives $400\\ \\text{J}$ instead of $346\\ \\text{J}$. It ignores the angle: the upward part of the pull never moves the sled forward. Check: if the force were straight up, the formula $Fd$ would still give 400 J, though the sled wouldn't budge forward at all. The dot product gives zero, as it should."
+      },
+      {
+        "t": "note",
+        "html": "The work depended on the path in the second example. Forces for which it never does are special and very useful; they are the subject of <a href=\"/physics/mechanics/conservative-forces/\">Conservative Forces</a>."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 1, 7.1 Work"
+      },
+      {
+        "name": "OpenStax Calculus Volume 3, 6.2 Line Integrals"
+      },
+      {
+        "name": "MIT OpenCourseWare 8.01 Classical Mechanics (scope and sequence)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

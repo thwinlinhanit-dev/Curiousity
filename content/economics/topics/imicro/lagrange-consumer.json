@@ -1,0 +1,100 @@
+{
+  "id": "imicro.lagrange-consumer",
+  "slug": "lagrange-consumer",
+  "ladder": "economics",
+  "course": "imicro",
+  "unit": "choice",
+  "title": "The Lagrange Method for Consumers",
+  "short": "Maximize utility subject to the budget with a Lagrange multiplier, which measures the marginal utility of income.",
+  "trouble": "Students solve the first-order conditions but forget the budget constraint, leaving more unknowns than equations.",
+  "prereqs": [
+    "imicro.optimal-choice",
+    "calc3.lagrange-multipliers"
+  ],
+  "xp": 3,
+  "viz": [
+    "ec-choice"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/math/calculus-3/lagrange-multipliers/\">Lagrange Multipliers</a> you maximized a function along a curve by lining up two gradients. The consumer's problem from <a href=\"/economics/intermediate-microeconomics/optimal-choice/\">The Best Affordable Bundle</a> is exactly that: maximize $U(x, y)$ along the budget line. The method gives the same bundle as substitution, plus one more number with a meaning of its own."
+      },
+      {
+        "t": "key",
+        "html": "Form $\\mathcal{L} = U(x, y) - \\lambda(p_1x + p_2y - m)$ and set its three partial derivatives to zero: $$MU_x = \\lambda p_1, \\qquad MU_y = \\lambda p_2, \\qquad p_1x + p_2y = m.$$ The multiplier $\\lambda = \\dfrac{MU_x}{p_1} = \\dfrac{MU_y}{p_2}$ is the <b>marginal utility of income</b>: the extra utility from one more dollar."
+      },
+      {
+        "t": "why",
+        "html": "At the best bundle the indifference curve and the budget line are tangent, so their normal vectors point the same way: $\\nabla U = (MU_x, MU_y)$ is parallel to $(p_1, p_2)$, the gradient of the budget. \"Parallel\" means one is a multiple of the other: $\\nabla U = \\lambda(p_1, p_2)$. Dividing the first two conditions gives $MU_x/MU_y = p_1/p_2$, the tangency rule. And $\\lambda$ is utility per dollar on either good. If income rises by \\$1, spending it on either good adds about $\\lambda$ to utility, so $dU^*/dm = \\lambda$ (this is the envelope theorem)."
+      },
+      {
+        "t": "viz",
+        "name": "ec-choice",
+        "opts": {
+          "income": 80,
+          "prices": [
+            2,
+            4
+          ],
+          "utility": {
+            "type": "cobbdouglas",
+            "a": 0.5,
+            "b": 0.5
+          },
+          "levels": [
+            14.142
+          ],
+          "task": "Move income. The optimum slides out along a ray; the tangency condition holds at every income."
+        },
+        "cap": "At the optimum (20, 10), $\\nabla U$ is perpendicular to the indifference curve and $(p_1, p_2) = (2, 4)$ is perpendicular to the budget line; tangency makes them parallel."
+      },
+      {
+        "t": "ex",
+        "title": "Solving with λ",
+        "q": "Maximize $U = xy$ subject to $2x + 4y = 80$.",
+        "steps": [
+          "$\\mathcal{L} = xy - \\lambda(2x + 4y - 80)$.",
+          "$\\partial\\mathcal{L}/\\partial x = y - 2\\lambda = 0$, so $y = 2\\lambda$. $\\partial\\mathcal{L}/\\partial y = x - 4\\lambda = 0$, so $x = 4\\lambda$.",
+          "Budget: $2(4\\lambda) + 4(2\\lambda) = 16\\lambda = 80$, so $\\lambda = 5$.",
+          "$x = 20$, $y = 10$. Check the meaning: the maximum utility is $U^* = m^2/32$, so $dU^*/dm = m/16 = 5 = \\lambda$."
+        ],
+        "a": "$(20, 10)$ with $\\lambda = 5$."
+      },
+      {
+        "t": "ex",
+        "title": "Log utility",
+        "q": "Maximize $U = \\ln x + 2\\ln y$ subject to $3x + y = 90$. Find $\\lambda$.",
+        "steps": [
+          "FOCs: $\\dfrac{1}{x} = 3\\lambda$ and $\\dfrac{2}{y} = \\lambda$, so $3x = \\dfrac{1}{\\lambda}$ and $y = \\dfrac{2}{\\lambda}$.",
+          "Budget: $\\dfrac{1}{\\lambda} + \\dfrac{2}{\\lambda} = 90$, so $\\lambda = \\dfrac{3}{90} = \\dfrac{1}{30}$.",
+          "$x = 10$, $y = 60$. Another \\$1 raises utility by about $1/30$."
+        ],
+        "a": "$\\lambda = 1/30$."
+      },
+      {
+        "t": "mistake",
+        "html": "Solving the first two conditions and stopping. $MU_x = \\lambda p_1$ and $MU_y = \\lambda p_2$ are two equations in three unknowns $(x, y, \\lambda)$: they only tell you the ratio of $x$ to $y$. The third condition, $\\partial\\mathcal{L}/\\partial\\lambda = 0$, is the budget itself, and it pins down the scale. Check: your bundle must cost exactly $m$."
+      },
+      {
+        "t": "note",
+        "html": "The size of $\\lambda$ depends on how utility is scaled (double $U$ and $\\lambda$ doubles), so compare $\\lambda$s only for the same utility function. The same method works with more goods: one condition per good plus the budget. Nothing later in this course needs it; the substitution method always works too."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 3, 4.8 Lagrange Multipliers"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.04 Intermediate Microeconomic Theory (course scope and lecture topics)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

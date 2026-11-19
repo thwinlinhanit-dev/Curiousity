@@ -1,0 +1,132 @@
+{
+  "id": "weather.radiation-wavelength",
+  "slug": "radiation-wavelength",
+  "ladder": "earth",
+  "course": "weather",
+  "unit": "energy",
+  "title": "Sunlight In, Infrared Out",
+  "short": "The Sun's light peaks in the visible and Earth's glow peaks near 10 μm in the infrared, so air can let sunlight through yet absorb Earth's heat.",
+  "trouble": "Students think only hot, glowing things give off light; everything gives off radiation, and the ground, the air and your body glow in infrared we can't see.",
+  "prereqs": [
+    "earthsci.greenhouse-effect",
+    "astro.color-temperature"
+  ],
+  "xp": 2,
+  "viz": [
+    "es-energy"
+  ],
+  "figureArchetype": "WaveFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In Earth Science you saw the <a href=\"/earth-and-space/earth-science/greenhouse-effect/\">greenhouse effect</a> as a story: sunlight comes in, heat goes out, and some gases catch part of the heat. This unit puts numbers on that story, starting with a fact from astronomy: <a href=\"/physics/astronomy/color-temperature/\">hotter things glow at shorter wavelengths</a>. The Sun and Earth glow very differently, and that difference is the key to the whole energy balance."
+      },
+      {
+        "t": "key",
+        "html": "Everything warmer than absolute zero gives off electromagnetic radiation. Its brightest wavelength follows <b>Wien's law</b>: $$\\lambda_{\\text{peak}} = \\frac{2898\\ \\mu\\text{m·K}}{T}$$ The Sun (about 5772 K) peaks near 0.5 μm, in visible light. Earth (about 288 K) peaks near 10 μm, in the infrared."
+      },
+      {
+        "t": "why",
+        "html": "A warm object glows because its molecules and electrons jiggle, and jiggling charges send out light. Hotter matter jiggles faster and more violently, so it sends out more of the short, energetic waves. That is why a stove ring goes from dull red to orange as it heats, and why a star's color tells its temperature. Cooler things still glow; they just glow at wavelengths too long for our eyes. Astronomers write the same law in nanometers: $2.898 \\times 10^6$ nm·K is the same constant as 2898 μm·K."
+      },
+      {
+        "t": "viz",
+        "name": "es-energy",
+        "opts": {
+          "mode": "spectrum",
+          "wien": true,
+          "bands": true
+        },
+        "cap": "The glow of the Sun and of Earth (each scaled to fit). Sunlight peaks in the visible band; Earth's glow peaks near 10 μm. The shaded bands are where water vapor and carbon dioxide absorb Earth's infrared; most sunlight passes through."
+      },
+      {
+        "t": "ex",
+        "title": "The Sun's peak",
+        "q": "The Sun's surface is about 5772 K. At what wavelength does its glow peak?",
+        "steps": [
+          "$\\lambda_{\\text{peak}} = 2898 \\div 5772$ μm.",
+          "$\\approx 0.50$ μm, which is 500 nm: blue-green visible light. Our eyes evolved to see the light the Sun gives off most."
+        ],
+        "a": "About 0.50 μm"
+      },
+      {
+        "t": "ex",
+        "title": "Earth's peak",
+        "q": "Earth's average surface temperature is about 15 °C. At what wavelength does the ground glow brightest?",
+        "steps": [
+          "Change to kelvins: $15 + 273 = 288$ K.",
+          "$\\lambda_{\\text{peak}} = 2898 \\div 288 \\approx 10.1$ μm.",
+          "That is infrared, about 20 times longer than the Sun's peak, because the Sun is about 20 times hotter in kelvins."
+        ],
+        "a": "About 10 μm"
+      },
+      {
+        "t": "p",
+        "html": "This split is what makes a greenhouse effect possible. Nitrogen and oxygen, 99% of dry air, barely absorb either kind of light. Water vapor, carbon dioxide and methane let most visible sunlight through but absorb strongly at many infrared wavelengths. So sunlight reaches the ground, while much of the ground's infrared is caught by the air above it. A gap called the <b>atmospheric window</b>, about 8 to 13 μm, lets some infrared escape straight to space; thermal cameras and weather satellites look through it."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking only hot, glowing things give off light. Ice, clouds, the ground and your body all give off infrared radiation all the time; a thermal camera shows it. What changes with temperature is <b>which</b> wavelengths and <b>how much</b>. Check: any object above 0 K has a peak wavelength, $2898/T$ μm; a block of ice at 263 K peaks near 11 μm."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Object",
+          "Temperature",
+          "Peak wavelength",
+          "Kind of light"
+        ],
+        "rows": [
+          [
+            "the Sun",
+            "5772 K",
+            "0.50 μm",
+            "visible"
+          ],
+          [
+            "lava",
+            "1400 K",
+            "2.1 μm",
+            "infrared (with a red visible tail)"
+          ],
+          [
+            "your skin",
+            "about 306 K",
+            "9.5 μm",
+            "infrared"
+          ],
+          [
+            "the ground",
+            "288 K",
+            "10 μm",
+            "infrared"
+          ],
+          [
+            "a cold cloud top",
+            "220 K",
+            "13 μm",
+            "infrared"
+          ]
+        ],
+        "cap": "Wien's law for objects you know."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Astronomy 2e, chapter 5, Radiation and Spectra: 5.1 The Behavior of Light and 5.2 The Electromagnetic Spectrum"
+      },
+      {
+        "name": "NASA: Earth Observatory, Climate and Earth's Energy Budget"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-ESS2-4"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

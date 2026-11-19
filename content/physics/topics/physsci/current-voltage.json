@@ -1,0 +1,89 @@
+{
+  "id": "physsci.current-voltage",
+  "slug": "current-voltage",
+  "ladder": "physics",
+  "course": "physsci",
+  "unit": "electricity",
+  "title": "Current and Voltage",
+  "short": "Current is the flow of charge, in amperes; voltage is the push given to each charge, in volts.",
+  "trouble": "Students think current gets used up as it passes through a bulb.",
+  "prereqs": [
+    "physsci.charges-in-atoms"
+  ],
+  "xp": 1,
+  "viz": [
+    "ph-circuit"
+  ],
+  "figureArchetype": "FieldFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In a wire, <a href=\"/physics/physical-science/charges-in-atoms/\">electrons</a> can move freely from atom to atom. Connect the wire to a battery and they flow. Two numbers describe this flow: how much charge passes each second, and how much energy each bit of charge carries."
+      },
+      {
+        "t": "key",
+        "html": "<b>Current</b> $I$ is the rate of flow of charge: $I = \\dfrac{Q}{t}$, in amperes (A), where 1 A is 1 coulomb per second. <b>Voltage</b> $V$ is the energy given to each coulomb of charge, in volts (V), where 1 V is 1 joule per coulomb."
+      },
+      {
+        "t": "why",
+        "html": "Think of a loop of water pipe with a pump. The pump (the battery) gives the water energy; the flow rate (the current) is how much water passes a point each second. In a light bulb the charge gives up its energy as light and heat, but the charge itself keeps going around the loop: what goes into the bulb comes out of it. Current is not used up; energy is transferred."
+      },
+      {
+        "t": "viz",
+        "name": "ph-circuit",
+        "opts": {
+          "circuit": "V(6) series(A1, B1:6)",
+          "show": [
+            "meters"
+          ]
+        },
+        "cap": "A 6 V battery, an ammeter and a bulb. The moving dots show the current. It is the same all the way around the loop."
+      },
+      {
+        "t": "ex",
+        "title": "Find the current",
+        "q": "30 coulombs of charge flow through a lamp in 10 s. What is the current?",
+        "steps": [
+          "$I = \\dfrac{Q}{t} = \\dfrac{30\\,\\mathrm{C}}{10\\,\\mathrm{s}} = 3\\,\\mathrm{A}$."
+        ],
+        "a": "3 A"
+      },
+      {
+        "t": "ex",
+        "title": "Energy from voltage",
+        "q": "A 9 V battery pushes 4 C of charge through a circuit. How much energy does it give the charge?",
+        "steps": [
+          "Each coulomb gets 9 J.",
+          "$4 \\times 9 = 36$ J."
+        ],
+        "a": "36 J"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking current gets used up as it passes through a bulb, so less comes out than goes in. An ammeter placed before the bulb and one placed after read the same. What the bulb uses is <b>energy</b>, carried by the charge; the charge itself returns to the battery."
+      },
+      {
+        "t": "note",
+        "html": "The electrons in a wire drift along slowly, often less than a millimeter per second. A lamp still lights almost at once, because the wire is already full of electrons and they all start moving together, like water in a full hose."
+      },
+      {
+        "t": "p",
+        "html": "Wire up batteries, bulbs and meters in the Science Lab: <a href=\"/science-lab/circuits/\">Circuit Builder</a>."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e, 20.1 Current"
+      },
+      {
+        "name": "OpenStax, College Physics 2e, 19.1 Electric Potential Energy: Potential Difference"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

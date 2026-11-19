@@ -1,0 +1,119 @@
+{
+  "id": "cplx.trig-integrals-residues",
+  "slug": "trig-integrals-residues",
+  "ladder": "math",
+  "course": "cplx",
+  "unit": "residues",
+  "title": "Integrals over a Full Turn",
+  "short": "Turn ∫₀^{2π} R(cos θ, sin θ) dθ into a contour integral around the unit circle with z = e^(iθ), cos θ = (z + 1/z)/2 and dθ = dz/(iz).",
+  "trouble": "Students forget the factor dθ = dz/(iz), or count poles outside the unit circle.",
+  "prereqs": [
+    "cplx.residue-theorem",
+    "cplx.higher-order-residues"
+  ],
+  "xp": 3,
+  "viz": [
+    "cplx-contour"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Here is the first payoff of the <a href=\"/math/complex-analysis/residue-theorem/\">residue theorem</a>: real integrals of trigonometric expressions over a full turn, which are hard by real methods, become contour integrals around the unit circle."
+      },
+      {
+        "t": "key",
+        "html": "For $\\displaystyle\\int_0^{2\\pi} R(\\cos\\theta, \\sin\\theta)\\,d\\theta$, put $z = e^{i\\theta}$. As $\\theta$ runs from $0$ to $2\\pi$, $z$ goes once around $|z| = 1$, and\n      $$\\cos\\theta = \\frac{z + z^{-1}}{2}, \\qquad \\sin\\theta = \\frac{z - z^{-1}}{2i}, \\qquad d\\theta = \\frac{dz}{iz}.$$\n      The integral becomes $\\oint_{|z| = 1}(\\text{a rational function of } z)\\,dz = 2\\pi i\\,\\times$ (sum of the residues inside the unit circle). A standard result: for $a > |b|$,\n      $$\\int_0^{2\\pi}\\frac{d\\theta}{a + b\\cos\\theta} = \\frac{2\\pi}{\\sqrt{a^2 - b^2}}.$$"
+      },
+      {
+        "t": "why",
+        "html": "The substitutions come from Euler's formula: $z + \\frac{1}{z} = e^{i\\theta} + e^{-i\\theta} = 2\\cos\\theta$, and similarly for sine. From $z = e^{i\\theta}$, $dz = ie^{i\\theta}d\\theta = iz\\,d\\theta$, so $d\\theta = \\frac{dz}{iz}$. For the standard result, $a + b\\frac{z + z^{-1}}{2} = \\frac{bz^2 + 2az + b}{2z}$, so the integrand becomes $\\frac{2}{i(bz^2 + 2az + b)}$. The two roots of $bz^2 + 2az + b$ multiply to $1$; the one inside the unit circle is $z_1 = \\frac{-a + \\sqrt{a^2 - b^2}}{b}$, with residue $\\frac{2}{ib(z_1 - z_2)} = \\frac{1}{i\\sqrt{a^2 - b^2}}$. Times $2\\pi i$ gives the result."
+      },
+      {
+        "t": "viz",
+        "name": "cplx-contour",
+        "opts": {
+          "mode": "trig",
+          "g": "1/(5+3c)",
+          "poles": [
+            [
+              -0.3333333,
+              0
+            ],
+            [
+              -3,
+              0
+            ]
+          ]
+        },
+        "cap": "$\\int_0^{2\\pi}\\frac{d\\theta}{5 + 3\\cos\\theta}$: as $\\theta$ moves, $z = e^{i\\theta}$ goes around the unit circle. The integrand in $z$ has poles at $-\\frac{1}{3}$ (inside) and $-3$ (outside); only the inside one counts, and the numerical integral matches $2\\pi i$ times its residue, $\\frac{\\pi}{2}$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "The standard integral",
+        "q": "Evaluate $\\displaystyle\\int_0^{2\\pi}\\frac{d\\theta}{5 + 3\\cos\\theta}$.",
+        "steps": [
+          "With $z = e^{i\\theta}$: $\\frac{d\\theta}{5 + 3\\cos\\theta} = \\frac{dz}{iz}\\cdot\\frac{2z}{3z^2 + 10z + 3} = \\frac{2\\,dz}{i(3z^2 + 10z + 3)}$.",
+          "$3z^2 + 10z + 3 = (3z + 1)(z + 3)$: roots $-\\frac{1}{3}$ (inside) and $-3$ (outside).",
+          "Residue at $-\\frac{1}{3}$: $\\frac{2}{i \\cdot 3\\left(-\\frac{1}{3} + 3\\right)} = \\frac{2}{8i} = \\frac{1}{4i}$.",
+          "$2\\pi i \\cdot \\frac{1}{4i} = \\frac{\\pi}{2}$, which matches $\\frac{2\\pi}{\\sqrt{25 - 9}}$."
+        ],
+        "a": "$\\frac{\\pi}{2}$"
+      },
+      {
+        "t": "ex",
+        "title": "With sine",
+        "q": "Evaluate $\\displaystyle\\int_0^{2\\pi}\\frac{d\\theta}{13 + 5\\sin\\theta}$.",
+        "steps": [
+          "The same method (or the same formula with $\\sin$, since shifting $\\theta$ by $\\frac{\\pi}{2}$ turns $\\cos$ into $\\sin$ over a full period) gives $\\frac{2\\pi}{\\sqrt{169 - 25}}$.",
+          "$\\sqrt{144} = 12$, so the integral is $\\frac{2\\pi}{12} = \\frac{\\pi}{6}$."
+        ],
+        "a": "$\\frac{\\pi}{6}$"
+      },
+      {
+        "t": "ex",
+        "title": "A double pole inside",
+        "q": "Evaluate $\\displaystyle\\int_0^{2\\pi}\\frac{d\\theta}{(5 + 3\\cos\\theta)^2}$.",
+        "steps": [
+          "The integrand becomes $\\frac{dz}{iz}\\cdot\\frac{4z^2}{(3z^2 + 10z + 3)^2} = \\frac{4z\\,dz}{9i(z + \\frac{1}{3})^2(z + 3)^2}$, with a double pole at $-\\frac{1}{3}$ inside.",
+          "Residue: $\\frac{4}{9i}\\frac{d}{dz}\\frac{z}{(z + 3)^2}\\Big|_{-1/3} = \\frac{4}{9i}\\cdot\\frac{3 - z}{(z + 3)^3}\\Big|_{-1/3} = \\frac{4}{9i}\\cdot\\frac{10/3}{(8/3)^3} = \\frac{5}{64i}$.",
+          "$2\\pi i\\cdot\\frac{5}{64i} = \\frac{5\\pi}{32}$ (in general $\\frac{2\\pi a}{(a^2 - b^2)^{3/2}}$)."
+        ],
+        "a": "$\\frac{5\\pi}{32}$"
+      },
+      {
+        "t": "list",
+        "items": [
+          "Replace $\\cos\\theta$, $\\sin\\theta$ and $d\\theta$ using $z = e^{i\\theta}$, and simplify to one fraction in $z$.",
+          "Find the poles and keep those with $|z| < 1$.",
+          "Add their residues and multiply by $2\\pi i$. The result must be real; if it is not, recheck the factor $\\frac{1}{iz}$."
+        ]
+      },
+      {
+        "t": "note",
+        "html": "The method needs a full period $0$ to $2\\pi$. For $\\int_0^{\\pi}$, use symmetry first (for example, an even function of $\\cos\\theta$ over $[0, \\pi]$ is half of the integral over $[0, 2\\pi]$)."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Forgetting $d\\theta = \\frac{dz}{iz}$, or counting poles outside the circle.</b> Leaving out the factor $\\frac{1}{iz}$ changes the integrand and its poles, and the answer comes out wrong (often not even real). And of the two roots of $bz^2 + 2az + b$, only the one with modulus less than $1$ is inside; including both gives $0$. Check: the original integral is a real number, and positive when the integrand is positive."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Beck, Marchesi, Pixton and Sabalka, A First Course in Complex Analysis, chapter 9 (Isolated Singularities and the Residue Theorem)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.04, Complex Variables with Applications (Spring 2018), course notes: definite integrals using the residue theorem"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

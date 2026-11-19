@@ -1,0 +1,86 @@
+{
+  "id": "disc.sum-product-rules",
+  "slug": "sum-product-rules",
+  "ladder": "math",
+  "course": "disc",
+  "unit": "counting",
+  "title": "The Sum and Product Rules",
+  "short": "Add the counts of cases that cannot happen together; multiply the counts of choices made one after another.",
+  "trouble": "Students multiply when the cases are alternatives (either/or) that should be added, or add when the choices are made in sequence.",
+  "prereqs": [
+    "disc.power-sets-products",
+    "stat.permutations"
+  ],
+  "xp": 1,
+  "viz": [],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In probability you counted <a href=\"/math/probability-and-statistics/permutations/\">permutations</a> by multiplying choices. That multiplication is one of two basic rules of counting. Both rules are facts about sets you have seen: the size of a union of separate sets, and the size of a <a href=\"/math/discrete-math/power-sets-products/\">Cartesian product</a>."
+      },
+      {
+        "t": "key",
+        "html": "<b>Sum rule:</b> if a choice can be made in one of several ways that cannot happen together, with $a$, $b$, … options in each, the total is $a + b + \\cdots$. <b>Product rule:</b> if a choice is made in steps, with $a$ options for the first step and $b$ for the second (whatever the first was), and so on, the total is $a \\cdot b \\cdots$."
+      },
+      {
+        "t": "why",
+        "html": "The sum rule is $|A \\cup B| = |A| + |B|$ for disjoint sets: nothing is counted twice because nothing is in both. The product rule is $|A \\times B| = |A| \\cdot |B|$: a two-step choice is an ordered pair, and each first step pairs with every second step. The words to listen for: \"either … or\" (alternatives, add) versus \"first … then\" (a sequence, multiply). Big problems often need both: split into cases with the sum rule, count each case with the product rule."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A license plate",
+        "q": "A plate has $3$ letters (A–Z) followed by $3$ digits (0–9), repeats allowed. How many plates are there?",
+        "steps": [
+          "Six steps in a row: $26$ choices for each letter and $10$ for each digit.",
+          "Product rule: $26^{3} \\cdot 10^{3} = 17{,}576 \\cdot 1{,}000 = 17{,}576{,}000$."
+        ],
+        "a": "$17{,}576{,}000$"
+      },
+      {
+        "t": "ex",
+        "title": "Two possible lengths",
+        "q": "A code uses digits 0–9 and has length $3$ or $4$. How many codes are there?",
+        "steps": [
+          "A code has one length or the other, never both, so split into cases and add.",
+          "Length $3$: $10^{3} = 1{,}000$. Length $4$: $10^{4} = 10{,}000$.",
+          "Sum rule: $1{,}000 + 10{,}000 = 11{,}000$."
+        ],
+        "a": "$11{,}000$"
+      },
+      {
+        "t": "ex",
+        "title": "Cases, then products",
+        "q": "How many three-digit numbers are even and have three different digits?",
+        "steps": [
+          "The last digit must be even, and $0$ behaves differently because the first digit cannot be $0$. So split by the last digit.",
+          "Last digit $0$: first digit $1$–$9$ ($9$ ways), middle digit anything else ($8$ ways): $9 \\cdot 8 = 72$.",
+          "Last digit $2$, $4$, $6$ or $8$ ($4$ ways): first digit not $0$ and not the last digit ($8$ ways), middle digit not either of those ($8$ ways): $4 \\cdot 8 \\cdot 8 = 256$.",
+          "Sum rule: $72 + 256 = 328$."
+        ],
+        "a": "$328$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Multiplying alternatives or adding a sequence.</b> \"Choose a dessert: one of $4$ pies or one of $3$ cakes\" is $4 + 3 = 7$, not $12$; there is no second step. \"Choose a pie and a cake\" is $4 \\cdot 3 = 12$, not $7$. Check: ask whether one outcome involves both choices (multiply) or just one of them (add)."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Oscar Levin, Discrete Mathematics: An Open Introduction (3rd ed.), section \"Additive and Multiplicative Principles\""
+      },
+      {
+        "name": "MIT OpenCourseWare 6.042J Mathematics for Computer Science (Lehman, Leighton and Meyer), chapter \"Cardinality Rules\" (sum and product rules)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

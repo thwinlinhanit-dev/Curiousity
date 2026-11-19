@@ -1,0 +1,94 @@
+{
+  "id": "de.impulses",
+  "slug": "impulses",
+  "ladder": "math",
+  "course": "de",
+  "unit": "laplace",
+  "title": "Impulses and the Delta Function",
+  "short": "Model a sudden kick with δ(t − c).",
+  "trouble": "",
+  "prereqs": [
+    "de.step-forcing"
+  ],
+  "xp": 3,
+  "viz": [
+    "springmass"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A hammer blow, a sudden voltage spike, a dose injected at once: forces that act for an instant but leave a lasting effect. The Dirac delta models them, and with <a href=\"/math/differential-equations/step-forcing/\">step functions</a> behind us, the Laplace transform handles them easily."
+      },
+      {
+        "t": "key",
+        "html": "$\\delta(t - c)$ is an idealized spike at $t = c$ with total area 1: $$\\int_{-\\infty}^{\\infty} f(t)\\delta(t - c)\\,dt = f(c),$$ $$\\mathcal{L}\\{\\delta(t - c)\\} = e^{-cs}.$$ In $my'' + \\dots = K\\delta(t - c)$ the velocity jumps by $\\frac{K}{m}$ at $t = c$; in a first-order equation $y' + \\dots = K\\delta(t - c)$, $y$ itself jumps by $K$."
+      },
+      {
+        "t": "why",
+        "html": "Think of $\\delta$ as the limit of tall narrow pulses $d_\\varepsilon$, of height $\\frac{1}{\\varepsilon}$ on $[c, c + \\varepsilon)$, each with area 1. Then $\\int f d_\\varepsilon\\,dt$ is the average of $f$ over the pulse, which tends to $f(c)$, and $\\mathcal{L}\\{d_\\varepsilon\\} = \\frac{e^{-cs} - e^{-(c + \\varepsilon)s}}{\\varepsilon s} \\to e^{-cs}$. Physically, the integral of a force over time is the change of momentum, so an impulse $K$ changes $mv$ by $K$ instantly while the position has no time to move."
+      },
+      {
+        "t": "ex",
+        "title": "Sifting",
+        "q": "Evaluate $\\int_0^{\\infty} (t^{2} + 1)\\delta(t - 3)\\,dt$.",
+        "steps": [
+          "The delta picks out the value at $t = 3$: $3^{2} + 1$."
+        ],
+        "a": "10"
+      },
+      {
+        "t": "ex",
+        "title": "A dose at $t = 1$",
+        "q": "Solve $y' + 2y = 3\\delta(t - 1)$, $y(0) = 1$.",
+        "steps": [
+          "$(s + 2)Y - 1 = 3e^{-s}$, so $Y = \\frac{1}{s + 2} + \\frac{3e^{-s}}{s + 2}$.",
+          "Invert: $e^{-2t}$, and the shifted $3u(t - 1)e^{-2(t - 1)}$."
+        ],
+        "a": "$y = e^{-2t}$ for $t < 1$ and $y = e^{-2t} + 3e^{-2(t - 1)}$ for $t > 1$: a jump of 3 at $t = 1$"
+      },
+      {
+        "t": "ex",
+        "title": "A blow to a spring at rest",
+        "q": "Solve $y'' + 4y = 2\\delta(t - \\pi)$, $y(0) = 0$, $y'(0) = 0$.",
+        "steps": [
+          "$(s^{2} + 4)Y = 2e^{-\\pi s}$, so $Y = e^{-\\pi s}\\cdot\\frac{2}{s^{2} + 4}$.",
+          "$\\frac{2}{s^{2} + 4}$ inverts to $\\sin 2t$; shift by $\\pi$: $u(t - \\pi)\\sin(2(t - \\pi))$ $= u(t - \\pi)\\sin 2t$."
+        ],
+        "a": "$y = 0$ before $t = \\pi$, then $y = \\sin 2t$: the blow gives velocity 2 and the spring starts to swing"
+      },
+      {
+        "t": "mistake",
+        "html": "Treating $\\delta(t - c)$ as an ordinary function equal to 1 at $t = c$. A single point carries no area, so that would do nothing. Its meaning is in integrals: area 1, concentrated at $c$. A second slip: in a second-order equation, the impulse makes the <i>velocity</i> jump; the position stays continuous."
+      },
+      {
+        "t": "viz",
+        "name": "springmass",
+        "opts": {
+          "m": 1,
+          "c": 0.3,
+          "k": 4,
+          "x0": 0,
+          "v0": 2,
+          "tmax": 15,
+          "play": false
+        },
+        "cap": "A spring at rest that receives a blow at $t = 0$ moves exactly like one that starts at $x = 0$ with velocity $\\frac{K}{m}$ (here 2). The impulse sets the velocity; the spring does the rest."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Paul's Online Math Notes, Differential Equations: Dirac Delta Function"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.03SC Differential Equations (Fall 2011), Unit III: Fourier Series and Laplace Transform"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

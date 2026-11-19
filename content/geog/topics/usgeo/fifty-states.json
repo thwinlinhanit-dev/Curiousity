@@ -1,0 +1,102 @@
+{
+  "id": "usgeo.fifty-states",
+  "slug": "fifty-states",
+  "ladder": "geog",
+  "course": "usgeo",
+  "unit": "the-us",
+  "title": "Fifty States and a Capital",
+  "short": "The country has 50 states and the District of Columbia; 48 states touch one another, and Alaska and Hawaii stand apart.",
+  "trouble": "Students think Washington, D.C., is in Washington State, or that it is a state. The District of Columbia is a federal district on the East Coast, between Maryland and Virginia.",
+  "prereqs": [
+    "usgeo.us-on-the-map",
+    "maps.capital-city"
+  ],
+  "xp": 1,
+  "viz": [
+    "gg-map"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": {
+    "kind": "worked-example",
+    "q": "How many states touch at least one other state?",
+    "a": "48 states.",
+    "steps": [
+      "There are 50 states in all.",
+      "Alaska touches only Canada. Hawaii is surrounded by ocean.",
+      "50 − 2 = 48."
+    ],
+    "title": "Counting the block of 48"
+  },
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A country can be split into smaller parts. In the United States those parts are called <b>states</b>. You met them in <a href=\"/geography/maps-and-places/states-of-us/\">The United States and Its States</a>. Here is the whole picture."
+      },
+      {
+        "t": "key",
+        "html": "The United States has <b>50 states</b> and the <b>District of Columbia</b> (Washington, D.C.), the nation's capital. 48 states touch one another in one block of land. <b>Alaska</b> and <b>Hawaii</b> stand apart."
+      },
+      {
+        "t": "viz",
+        "name": "gg-map",
+        "opts": {
+          "map": "us",
+          "mode": "explore"
+        },
+        "cap": "Tap any state to see its name, its capital and when it joined."
+      },
+      {
+        "t": "why",
+        "html": "Why is the capital not in a state? When the Constitution was written, its authors wanted the national government to sit on land that no single state controlled, so no state would have extra power over it. Maryland and Virginia gave land along the Potomac River, and the District of Columbia was made there. It belongs to the whole country."
+      },
+      {
+        "t": "ex",
+        "title": "Counting the block of 48",
+        "q": "How many states touch at least one other state?",
+        "steps": [
+          "There are 50 states in all.",
+          "Alaska touches only Canada. Hawaii is surrounded by ocean.",
+          "50 − 2 = 48."
+        ],
+        "a": "48 states."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Washington, D.C., is not in Washington State.</b> They share a name (both honor George Washington) but sit on opposite sides of the country. Washington State is in the far northwest. Washington, D.C., is on the East Coast, between Maryland and Virginia. D.C. is also not a state: it is a federal district."
+      },
+      {
+        "t": "viz",
+        "name": "gg-map",
+        "opts": {
+          "map": "us",
+          "highlight": [
+            "WA"
+          ],
+          "highlight2": [
+            "DC"
+          ],
+          "labels": [
+            "WA",
+            "DC"
+          ],
+          "dots": true
+        },
+        "cap": "Washington State (orange) and Washington, D.C. (blue dot) are on opposite sides of the country."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "U.S. Census Bureau, Census Regions and Divisions of the United States (list of states by region and division)",
+        "url": "https://www2.census.gov/geo/docs/maps-data/maps/reg_div.txt"
+      },
+      {
+        "name": "Natural Earth (public domain map data): admin-1 states, rivers, lakes and physical regions, drawn by the Geography Ladder's map kit"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

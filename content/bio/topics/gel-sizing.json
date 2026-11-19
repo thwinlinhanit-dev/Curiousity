@@ -1,0 +1,112 @@
+{
+  "id": "apbio.gel-sizing",
+  "slug": "gel-sizing",
+  "ladder": "bio",
+  "course": "apbio",
+  "unit": "expression",
+  "title": "Sizing DNA on a Gel",
+  "short": "Distance moved is roughly linear in the logarithm of fragment size, so read an unknown band against the ladder: between the 1,000 and 500 base-pair bands means between those sizes.",
+  "trouble": "Students interpolate on a straight size scale, as if halfway between 1,000 and 500 were 750. On the log scale it is about 710.",
+  "prereqs": [
+    "hsbio.gel-electrophoresis"
+  ],
+  "xp": 3,
+  "viz": [
+    "bi-gel",
+    "bi-chart"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/biology/high-school-biology/gel-electrophoresis/\">Gel Electrophoresis</a> you saw that DNA moves toward the positive pole and small pieces move farther. To give a band an actual size, run a <b>ladder</b> of known sizes in another lane and compare. The comparison has a twist: the relationship is not a straight line in size."
+      },
+      {
+        "t": "key",
+        "html": "Distance moved is close to a straight line against the <b>logarithm</b> of fragment size. Plot the ladder as distance against log(size), draw the line, and read the unknown off it. A band halfway between the 1,000 and 500 base-pair bands is about $\\sqrt{1{,}000 \\times 500} \\approx 707$ base pairs, not 750."
+      },
+      {
+        "t": "viz",
+        "name": "apbio-semilog",
+        "opts": {
+          "ladder": [
+            5000,
+            3000,
+            2000,
+            1000,
+            500,
+            250
+          ]
+        },
+        "cap": "A standard curve on a log scale. Slide the unknown band and read its size."
+      },
+      {
+        "t": "why",
+        "html": "Why a log? The gel is a mesh. A fragment twice as long is held back by a roughly fixed extra amount, not twice as much, so each doubling of size takes off about the same distance. Equal ratios of size give equal steps of distance: 4,000 to 2,000 is the same step as 2,000 to 1,000 and 1,000 to 500. On a log scale, equal ratios are equal steps, so the points line up. (Very large and very small fragments drift off the line, which is why we read only between ladder bands.)"
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Halfway between two bands",
+        "q": "An unknown band sits exactly halfway between the 2,000 and 1,000 base-pair bands of the ladder. About how big is it?",
+        "steps": [
+          "Halfway in distance is halfway in log(size).",
+          "log 2,000 ≈ 3.301 and log 1,000 = 3; halfway: 3.151.",
+          "$10^{3.151} \\approx 1{,}414$, which is also $\\sqrt{2{,}000 \\times 1{,}000}$."
+        ],
+        "a": "About 1,400 base pairs (not 1,500)."
+      },
+      {
+        "t": "ex",
+        "title": "Not halfway",
+        "q": "The 1,000 bp band moved 30 mm and the 500 bp band 40 mm. An unknown moved 36 mm. Estimate its size.",
+        "steps": [
+          "It is $(36 - 30)/(40 - 30) = 0.6$ of the way from the 1,000 band to the 500 band.",
+          "In logs: $\\log s = 3 - 0.6(3 - 2.699) = 3 - 0.181 = 2.819$.",
+          "$s = 10^{2.819} \\approx 660$ bp."
+        ],
+        "a": "About 660 base pairs."
+      },
+      {
+        "t": "viz",
+        "name": "bi-gel",
+        "opts": {
+          "lanes": [
+            {
+              "name": "Sample",
+              "bands": [
+                1400,
+                660
+              ]
+            }
+          ]
+        },
+        "cap": "A gel with the ladder and the two bands from the examples."
+      },
+      {
+        "t": "p",
+        "html": "A gel can also check a cut. If a 5,000 base-pair plasmid is cut at two sites, the two fragments must add up to 5,000: bands at 3,800 and 1,200, for example. Linear DNA cut at two sites gives three fragments. Adding the fragment sizes back up is a quick test that you read the bands correctly. Uncut circular plasmids are the exception: they run at odd positions because of their coiled shape, so size them only after cutting."
+      },
+      {
+        "t": "mistake",
+        "html": "Interpolating on a straight size scale, as if halfway between 1,000 and 500 were 750. On the log scale it is about 707. A check: your answer for a band between two ladder bands should be a bit closer in value to the smaller one, because the small sizes are spread farther apart on the gel."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Biology 2e, 17.1 Biotechnology (gel electrophoresis)"
+      },
+      {
+        "name": "OpenStax, Biology for AP Courses, 17.1 Biotechnology"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

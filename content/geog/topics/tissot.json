@@ -1,0 +1,118 @@
+{
+  "id": "worldgeo.tissot",
+  "slug": "tissot",
+  "ladder": "geog",
+  "course": "worldgeo",
+  "unit": "maps-projections",
+  "title": "Seeing Distortion with Circles",
+  "short": "Draw same-size circles all over the globe and project them: where the circles grow, the map enlarges areas; where they squash, it bends shapes.",
+  "trouble": "Students look at country shapes alone and cannot tell what a map distorts. Same-size circles on the globe make the stretching visible.",
+  "prereqs": [
+    "worldgeo.compromise-projections"
+  ],
+  "xp": 3,
+  "viz": [
+    "gg-projection"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Looking at country shapes is a hard way to judge a map, because few of us know the true shapes well. Mapmakers have a better test, invented by the French mathematician Nicolas Auguste Tissot in papers from 1859 to 1871. It uses circles. You already know the projections from <a href=\"/geography/world-geography/compromise-projections/\">Compromise Maps</a>."
+      },
+      {
+        "t": "key",
+        "html": "Draw <b>same-size circles</b> all over the globe, then project them. Where the circles get <b>bigger</b>, the map enlarges areas. Where they turn into <b>ovals</b>, it bends shapes. Circles that stay round and the same size mean no distortion there."
+      },
+      {
+        "t": "viz",
+        "name": "gg-projection",
+        "opts": {
+          "proj": "mercator",
+          "tissot": true,
+          "choose": true,
+          "choices": [
+            "mercator",
+            "gallpeters",
+            "robinson",
+            "equalearth"
+          ]
+        },
+        "cap": "Every circle is the same size on the globe. Switch projections and see how each map changes them."
+      },
+      {
+        "t": "why",
+        "html": "A tiny circle on the globe is the simplest test shape: it has the same width in every direction. If a projection stretches more in one direction than another, the circle becomes an oval; if it stretches equally in all directions, the circle stays round but changes size. So the circles show both kinds of distortion at once."
+      },
+      {
+        "t": "table",
+        "head": [
+          "What the circles do",
+          "What the map keeps",
+          "Example"
+        ],
+        "rows": [
+          [
+            "Stay round, but grow toward the poles",
+            "Shapes (angles); areas grow",
+            "Mercator"
+          ],
+          [
+            "Become ovals, but keep the same area",
+            "Areas; shapes bend",
+            "Gall-Peters, Mollweide, Equal Earth"
+          ],
+          [
+            "Change a little in size and shape",
+            "Neither exactly; small errors",
+            "Robinson, Winkel tripel"
+          ]
+        ],
+        "cap": "Reading the circles."
+      },
+      {
+        "t": "ex",
+        "title": "Reading a Tissot map",
+        "q": "On a map, the circles near 60° N are perfectly round but about twice as wide as the circles on the equator. What kind of map is it?",
+        "steps": [
+          "Round circles mean shapes are kept.",
+          "Circles twice as wide cover about four times the area, so areas are enlarged there.",
+          "Keeping shapes while enlarging areas toward the poles is what Mercator does."
+        ],
+        "a": "A Mercator map (it keeps shapes; areas at 60° look 4 times too big)."
+      },
+      {
+        "t": "ex",
+        "title": "Ovals",
+        "q": "On another map, circles near the poles are squashed into wide, flat ovals, but each oval covers the same area as the circles at the equator. What does the map keep?",
+        "steps": [
+          "Same area everywhere: areas are true.",
+          "Ovals: shapes are bent."
+        ],
+        "a": "It is an equal-area map."
+      },
+      {
+        "t": "mistake",
+        "html": "Judging a map by whether the countries \"look right.\" Your idea of how countries look may come from Mercator maps. The circles are a fair test: compare their sizes to judge area, and their roundness to judge shape."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Tissot's indicatrix (Grokipedia)",
+        "url": "https://grokipedia.com/page/Tissot's_indicatrix"
+      },
+      {
+        "name": "Mercator projection (Grokipedia)",
+        "url": "https://grokipedia.com/page/Mercator_projection"
+      },
+      {
+        "name": "C3 Framework for Social Studies State Standards (NCSS, 2013), Geography, Dimension 2, grades 6-8"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

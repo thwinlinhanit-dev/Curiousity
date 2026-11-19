@@ -1,0 +1,102 @@
+{
+  "id": "g8.systems-substitution",
+  "slug": "systems-substitution",
+  "ladder": "math",
+  "course": "g8",
+  "unit": "systems",
+  "title": "Solving Systems by Substitution",
+  "short": "Replace one variable with its expression from the other equation.",
+  "trouble": "Students substitute back into the same equation they solved, which always gives a true statement.",
+  "prereqs": [
+    "g8.systems-graphing",
+    "g8.variables-both-sides"
+  ],
+  "xp": 2,
+  "viz": [
+    "linesystem"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/math/pre-algebra/systems-graphing/\">Graphing</a> is hard to read exactly when the answer involves fractions. Substitution finds the exact answer with algebra, using what you know about <a href=\"/math/pre-algebra/variables-both-sides/\">equations with variables on both sides</a>."
+      },
+      {
+        "t": "why",
+        "html": "If one equation says $y = 2x - 1$, then at the solution $y$ and $2x - 1$ are the same number. So in the other equation you may replace $y$ with $2x - 1$. That leaves one equation with one unknown, which you already know how to solve."
+      },
+      {
+        "t": "key",
+        "html": "(1) Solve one equation for one variable, if it isn’t already. (2) Substitute that expression into the <b>other</b> equation. (3) Solve. (4) Put the value back to find the other variable. (5) Check the pair in both equations."
+      },
+      {
+        "t": "viz",
+        "name": "linesystem",
+        "opts": {
+          "lines": [
+            "2x - 1",
+            "3x + y = 9"
+          ],
+          "probe": null
+        },
+        "cap": "The system in Example 1. The algebra finds the crossing point $(2, 3)$ exactly."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "One equation is solved for y",
+        "q": "Solve: $y = 2x - 1$ and $3x + y = 9$.",
+        "steps": [
+          "Replace $y$ in the second equation: $3x + (2x - 1) = 9$.",
+          "Combine: $5x - 1 = 9$, so $5x = 10$ and $x = 2$.",
+          "Then $y = 2 \\cdot 2 - 1 = 3$. Check: $3 \\cdot 2 + 3 = 9$."
+        ],
+        "a": "$(2, 3)$"
+      },
+      {
+        "t": "ex",
+        "title": "Both are solved for y",
+        "q": "Solve: $y = 4x - 3$ and $y = x + 6$.",
+        "steps": [
+          "Both expressions equal $y$, so they equal each other: $4x - 3 = x + 6$.",
+          "Subtract $x$ and add 3: $3x = 9$, so $x = 3$.",
+          "$y = 3 + 6 = 9$. Check: $4 \\cdot 3 - 3 = 9$."
+        ],
+        "a": "$(3, 9)$"
+      },
+      {
+        "t": "ex",
+        "title": "Solve for a variable first",
+        "q": "Solve: $x + 2y = 7$ and $3x - y = 7$.",
+        "steps": [
+          "The first equation has $x$ with coefficient 1: $x = 7 - 2y$.",
+          "Substitute: $3(7 - 2y) - y = 7$, so $21 - 7y = 7$.",
+          "$-7y = -14$, so $y = 2$. Then $x = 7 - 4 = 3$.",
+          "Check: $3 + 4 = 7$ and $9 - 2 = 7$."
+        ],
+        "a": "$(3, 2)$"
+      },
+      {
+        "t": "mistake",
+        "html": "Substituting back into the same equation the expression came from. Putting $y = 2x - 1$ into $y = 2x - 1$ gives $2x - 1 = 2x - 1$, which is always true and tells you nothing. Substitute into the <b>other</b> equation."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Elementary Algebra 2e, Section 5.2: Solving Systems of Equations by Substitution"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 8, 8.EE.C.8b (solve systems algebraically)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

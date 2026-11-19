@@ -1,0 +1,96 @@
+{
+  "id": "stat.inverse-normal",
+  "slug": "inverse-normal",
+  "ladder": "math",
+  "course": "stat",
+  "unit": "normal",
+  "title": "Finding Values from Percentiles",
+  "short": "Work backward from an area to a z-score to a value.",
+  "trouble": "",
+  "prereqs": [
+    "stat.normal-probabilities"
+  ],
+  "xp": 2,
+  "viz": [
+    "normal"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "So far you went from a value to an area. Often the question runs the other way: \"How long must a battery last to be in the top 5%?\" Now you start with an area, find the z-score that cuts it off, and then turn the z-score back into a value, the reverse of <a href=\"/math/probability-and-statistics/normal-probabilities/\">finding areas</a>."
+      },
+      {
+        "t": "key",
+        "html": "To find the value with a given area to its left: (1) look up the z with that left area (inverse normal); (2) undo the z-score: $x = \\mu + z\\sigma$. For \"top $k\\%$,\" use left area $1 - k/100$."
+      },
+      {
+        "t": "why",
+        "html": "A z-score is a position measured in standard deviations. Reading the table backward tells you that position for the area you want. Since $z = (x - \\mu)/\\sigma$, solving for $x$ gives $x = \\mu + z\\sigma$: start at the mean and walk $z$ standard deviations."
+      },
+      {
+        "t": "viz",
+        "name": "normal",
+        "opts": {
+          "mu": 500,
+          "sigma": 50,
+          "a": 582,
+          "b": 600,
+          "shade": "right",
+          "sliders": false,
+          "xlabel": "battery life (hours)"
+        },
+        "cap": "Drag a until the shaded right tail shows 0.05: that value starts the top 5%."
+      },
+      {
+        "t": "ex",
+        "title": "A percentile",
+        "q": "Battery lifetimes are normal with mean 500 hours and SD 50. Find the 90th percentile. (The z with 90% to its left is $1.28$.)",
+        "steps": [
+          "The 90th percentile has 90% of the area to its left, so $z = 1.28$.",
+          "$$x = 500 + 1.28(50) = 500 + 64 = 564$$"
+        ],
+        "a": "About 564 hours."
+      },
+      {
+        "t": "ex",
+        "title": "The top 5%",
+        "q": "What lifetime separates the top 5% of batteries from the rest? (The z with 95% to its left is $1.645$.)",
+        "steps": [
+          "Top 5% above means 95% below: left area $0.95$, so $z = 1.645$.",
+          "$x = 500 + 1.645(50) = 582.25$."
+        ],
+        "a": "About 582 hours."
+      },
+      {
+        "t": "ex",
+        "title": "The middle 80%",
+        "q": "Which two lifetimes mark off the middle 80%? (The z with 10% to its left is $-1.28$.)",
+        "steps": [
+          "The middle 80% leaves 10% in each tail.",
+          "Lower cutoff: $z = -1.28$, so $x = 500 - 64 = 436$.",
+          "Upper cutoff: by symmetry $z = 1.28$, so $x = 564$."
+        ],
+        "a": "436 and 564 hours."
+      },
+      {
+        "t": "mistake",
+        "html": "Looking up the area of the tail you care about instead of the area to the left. For the top 5%, looking up $0.05$ gives $z = -1.645$, a value far <b>below</b> the mean. Check: a \"top\" cutoff must be above the mean, so its z must be positive."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Introductory Statistics 2e, section 6.2 Using the Normal Distribution"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, S-ID.A.4"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

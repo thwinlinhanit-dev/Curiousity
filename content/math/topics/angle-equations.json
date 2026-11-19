@@ -1,0 +1,103 @@
+{
+  "id": "g7.angle-equations",
+  "slug": "angle-equations",
+  "ladder": "math",
+  "course": "g7",
+  "unit": "geometry",
+  "title": "Finding Unknown Angles with Equations",
+  "short": "Write and solve an equation from an angle diagram.",
+  "trouble": "",
+  "prereqs": [
+    "g7.angle-relationships",
+    "g7.two-step-equations"
+  ],
+  "xp": 2,
+  "viz": [
+    "angle"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Sometimes the angles in a diagram are labeled with expressions like $(2x + 10)^\\circ$. The <a href=\"/math/grade-7/angle-relationships/\">angle facts</a> give you an equation, and you know how to <a href=\"/math/grade-7/two-step-equations/\">solve it</a>."
+      },
+      {
+        "t": "key",
+        "html": "Use the angle fact to write an equation: the parts of a right angle add to 90, angles on a line add to 180, angles around a point add to 360, and vertical angles are equal. Solve for $x$, then substitute to find each angle."
+      },
+      {
+        "t": "why",
+        "html": "The labels describe the sizes of real angles. If two angles make a straight line, their sizes add to $180^\\circ$ no matter how they are written, so the expressions must add to 180. That sentence is the equation."
+      },
+      {
+        "t": "viz",
+        "name": "g7-angles",
+        "opts": {
+          "mode": "line",
+          "parts": [
+            70,
+            110
+          ],
+          "labels": [
+            "(2x + 10)°",
+            "(3x + 20)°"
+          ]
+        },
+        "cap": "Two angles on a straight line: $(2x + 10) + (3x + 20) = 180$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "On a straight line",
+        "q": "Two angles on a line measure $(2x + 10)^\\circ$ and $(3x + 20)^\\circ$. Find $x$ and both angles.",
+        "steps": [
+          "They add to $180$: $2x + 10 + 3x + 20 = 180$.",
+          "Combine like terms: $5x + 30 = 180$. Subtract 30: $5x = 150$. Divide: $x = 30$.",
+          "Angles: $2(30) + 10 = 70^\\circ$ and $3(30) + 20 = 110^\\circ$. Check: $70 + 110 = 180$ ✓."
+        ],
+        "a": "$x = 30$; the angles are $70^\\circ$ and $110^\\circ$"
+      },
+      {
+        "t": "ex",
+        "title": "In a right angle",
+        "q": "A right angle is split into $x^\\circ$ and $(2x + 15)^\\circ$. Find $x$.",
+        "steps": [
+          "The parts add to $90$: $x + 2x + 15 = 90$.",
+          "$3x + 15 = 90$, so $3x = 75$ and $x = 25$.",
+          "Check: $25 + (2 \\cdot 25 + 15) = 25 + 65 = 90$ ✓."
+        ],
+        "a": "$x = 25$"
+      },
+      {
+        "t": "ex",
+        "title": "Vertical angles",
+        "q": "Vertical angles measure $(4x - 10)^\\circ$ and $70^\\circ$. Find $x$.",
+        "steps": [
+          "Vertical angles are equal: $4x - 10 = 70$.",
+          "Add 10: $4x = 80$. Divide: $x = 20$."
+        ],
+        "a": "$x = 20$"
+      },
+      {
+        "t": "mistake",
+        "html": "Stopping at $x$ when the question asks for an angle. In the first example, $x = 30$ but the angles are $70^\\circ$ and $110^\\circ$. Reread the question, and check that your angles fit the fact you used."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Prealgebra 2e, Section 9.3 Use Properties of Angles, Triangles, and the Pythagorean Theorem"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 7.G.B.5"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

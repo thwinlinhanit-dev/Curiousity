@@ -1,0 +1,110 @@
+{
+  "id": "worldgeo.longitude",
+  "slug": "longitude",
+  "ladder": "geog",
+  "course": "worldgeo",
+  "unit": "lat-long",
+  "title": "Longitude",
+  "short": "Longitude tells how many degrees east or west of the prime meridian (through Greenwich, England) a place is, up to 180°.",
+  "trouble": "Students think longitude runs to 360° or that the prime meridian runs around the world like the equator. It runs pole to pole; across the globe from it is the 180° meridian.",
+  "prereqs": [
+    "worldgeo.parallels-meridians"
+  ],
+  "xp": 2,
+  "viz": [
+    "gg-latlon",
+    "gg-globe"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Latitude alone cannot pin down a place: lots of towns share one parallel. We also need to know how far east or west a place is. That is the job of the <a href=\"/geography/world-geography/parallels-meridians/\">meridians</a>."
+      },
+      {
+        "t": "key",
+        "html": "<b>Longitude</b> tells how many degrees east or west of the <b>prime meridian</b> a place is. The prime meridian, 0°, runs through Greenwich, in London, England. Longitude goes up to 180° E and 180° W, which meet on the far side of the globe."
+      },
+      {
+        "t": "viz",
+        "name": "gg-globe",
+        "opts": {
+          "center": [
+            0,
+            20
+          ],
+          "lines": [
+            "prime",
+            "equator"
+          ],
+          "poles": true
+        },
+        "cap": "The prime meridian (0°) runs from pole to pole through Greenwich. Drag the globe to the far side to find 180°."
+      },
+      {
+        "t": "why",
+        "html": "Unlike the equator, the prime meridian is not set by nature. Any meridian could have been 0°. In 1884, at a meeting in Washington, D.C., delegates from 25 countries chose the one through the Royal Observatory at Greenwich, mainly because most of the world's ships already used sea charts based on it. From there you count 180° east and 180° west, which makes 360°, a full circle."
+      },
+      {
+        "t": "ex",
+        "title": "Counting west",
+        "q": "A meridian is 75° west of the prime meridian. How do you write its longitude? Which continent does it cross north of the equator?",
+        "steps": [
+          "Count west from 0° at Greenwich.",
+          "75° west is written 75° W.",
+          "Going 75° west from London crosses the Atlantic and reaches eastern North America (it passes near Philadelphia)."
+        ],
+        "a": "75° W, through eastern North America."
+      },
+      {
+        "t": "ex",
+        "title": "Across the globe",
+        "q": "What longitude is exactly on the other side of the globe from the prime meridian?",
+        "steps": [
+          "Half a circle is 360° ÷ 2 = 180°.",
+          "Going 180° east or 180° west lands on the same meridian.",
+          "So it is written just 180°, with no letter."
+        ],
+        "a": "180°"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking longitude goes up to 360°, or that the prime meridian runs all the way around Earth like the equator. The prime meridian is only a half circle, pole to pole. Its other half, on the opposite side of the globe, is the 180° meridian. So longitudes run 0° to 180° E and 0° to 180° W, and every one needs its letter, E or W."
+      },
+      {
+        "t": "viz",
+        "name": "gg-latlon",
+        "opts": {
+          "mode": "place",
+          "target": [
+            -75,
+            40
+          ],
+          "step": 30,
+          "snap": 5,
+          "bbox": [
+            -150,
+            -60,
+            30,
+            90
+          ]
+        },
+        "cap": "Drag the pin to 75° W. Only the left-right position changes the longitude."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Prime meridian (Grokipedia)",
+        "url": "https://grokipedia.com/page/Prime_meridian"
+      },
+      {
+        "name": "C3 Framework for Social Studies State Standards (NCSS, 2013), Geography, Dimension 2, grades 6-8"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

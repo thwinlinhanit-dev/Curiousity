@@ -1,0 +1,146 @@
+{
+  "id": "disc.valid-arguments",
+  "slug": "valid-arguments",
+  "ladder": "math",
+  "course": "disc",
+  "unit": "logic",
+  "title": "Valid Arguments and Rules of Inference",
+  "short": "Modus ponens and modus tollens are valid forms of argument; affirming the consequent and denying the antecedent are not.",
+  "trouble": "Students accept \"If P, then Q. Q is true, so P is true.\" That is the fallacy of affirming the consequent.",
+  "prereqs": [
+    "disc.logical-equivalence"
+  ],
+  "xp": 2,
+  "viz": [
+    "disc-truth"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "An argument is a list of premises followed by a conclusion. Logic cannot tell you whether the premises are true, but it can tell you whether the conclusion <i>follows</i> from them. That test uses nothing more than the <a href=\"/math/discrete-math/logical-equivalence/\">truth tables and equivalences</a> you have already built."
+      },
+      {
+        "t": "key",
+        "html": "An argument is <b>valid</b> when, in every row of the truth table where all the premises are true, the conclusion is true too. One row with true premises and a false conclusion (a counterexample row) makes it invalid. Valid forms include <b>modus ponens</b> ($P \\to Q$, $P$, so $Q$) and <b>modus tollens</b> ($P \\to Q$, $\\neg Q$, so $\\neg P$)."
+      },
+      {
+        "t": "why",
+        "html": "Validity is about form, not content. \"If it snows, school is closed; it snows; so school is closed\" and \"If $n$ is divisible by $6$, it is even; $n$ is divisible by $6$; so $n$ is even\" have the same shape, $P \\to Q$, $P$, therefore $Q$. Checking the shape once with a truth table settles every argument of that shape. Modus tollens works because $P \\to Q$ is equivalent to its contrapositive $\\neg Q \\to \\neg P$, so it is modus ponens in disguise."
+      },
+      {
+        "t": "viz",
+        "name": "disc-truth",
+        "opts": {
+          "premises": [
+            "P -> Q",
+            "Q"
+          ],
+          "conclusion": "P"
+        },
+        "cap": "Affirming the consequent: $P \\to Q$ and $Q$ do not give $P$. The highlighted rows have both premises true; the red one has a false conclusion."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Name",
+          "Form",
+          "Valid?"
+        ],
+        "rows": [
+          [
+            "Modus ponens",
+            "$P \\to Q$, $P$, therefore $Q$",
+            "yes"
+          ],
+          [
+            "Modus tollens",
+            "$P \\to Q$, $\\neg Q$, therefore $\\neg P$",
+            "yes"
+          ],
+          [
+            "Hypothetical syllogism",
+            "$P \\to Q$, $Q \\to R$, therefore $P \\to R$",
+            "yes"
+          ],
+          [
+            "Disjunctive syllogism",
+            "$P \\vee Q$, $\\neg P$, therefore $Q$",
+            "yes"
+          ],
+          [
+            "Affirming the consequent",
+            "$P \\to Q$, $Q$, therefore $P$",
+            "no"
+          ],
+          [
+            "Denying the antecedent",
+            "$P \\to Q$, $\\neg P$, therefore $\\neg Q$",
+            "no"
+          ]
+        ],
+        "cap": "Common forms."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Spotting the form",
+        "q": "\"If the battery is dead, the car will not start. The car will not start. Therefore the battery is dead.\" Valid?",
+        "steps": [
+          "Let $P$: \"the battery is dead,\" $Q$: \"the car will not start.\" The argument is $P \\to Q$, $Q$, therefore $P$.",
+          "That is affirming the consequent. In the row $P$ false, $Q$ true, both premises are true and the conclusion is false.",
+          "In real terms: the car might not start because it is out of gas. <b>Invalid</b>."
+        ],
+        "a": "Invalid (affirming the consequent)"
+      },
+      {
+        "t": "ex",
+        "title": "Chaining rules",
+        "q": "Premises: $P \\to Q$, $Q \\to R$, $\\neg R$. What can you conclude about $P$?",
+        "steps": [
+          "From $Q \\to R$ and $\\neg R$, modus tollens gives $\\neg Q$.",
+          "From $P \\to Q$ and $\\neg Q$, modus tollens again gives $\\neg P$.",
+          "So $\\neg P$ follows. A truth table with $8$ rows confirms it: the only row with all three premises true has $P$ false."
+        ],
+        "a": "$\\neg P$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Affirming the consequent.</b> \"If $P$, then $Q$; $Q$ is true; so $P$ is true\" sounds reasonable, but $Q$ can be true for other reasons. Check: look for a row with $P$ false and $Q$ true. Both premises hold there and the conclusion fails, so the form is invalid."
+      },
+      {
+        "t": "viz",
+        "name": "disc-truth",
+        "opts": {
+          "premises": [
+            "P -> Q",
+            "~Q"
+          ],
+          "conclusion": "~P"
+        },
+        "cap": "Modus tollens is valid: the only row with both premises true also has $\\neg P$ true."
+      },
+      {
+        "t": "note",
+        "html": "A valid argument can have a false conclusion if a premise is false. An argument that is valid <i>and</i> has true premises is called <b>sound</b>, and its conclusion must be true."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Oscar Levin, Discrete Mathematics: An Open Introduction (3rd ed.), section \"Propositional Logic\" (deductions and rules of inference)"
+      },
+      {
+        "name": "MIT OpenCourseWare 6.042J Mathematics for Computer Science (Lehman, Leighton and Meyer), chapters \"Proofs\" and \"Logical Formulas\""
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

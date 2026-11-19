@@ -1,0 +1,93 @@
+{
+  "id": "macro.gdp-deflator",
+  "slug": "gdp-deflator",
+  "ladder": "economics",
+  "course": "macro",
+  "unit": "measuring",
+  "title": "The GDP Deflator",
+  "short": "The deflator is nominal GDP divided by real GDP, times 100, and it turns nominal values into real ones.",
+  "trouble": "Students divide real GDP by nominal GDP, or forget the factor of 100, and get a deflator that is upside down or 100 times too small.",
+  "prereqs": [
+    "macro.real-gdp"
+  ],
+  "xp": 2,
+  "viz": [
+    "ec-basket"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Once you have nominal and real GDP (<a href=\"/economics/macroeconomics/real-gdp/\">Nominal and Real GDP</a>), their ratio measures how much prices have changed since the base year. That ratio is the GDP deflator, a price index for everything the economy produces."
+      },
+      {
+        "t": "key",
+        "html": "$$\\text{GDP deflator} = \\dfrac{\\text{nominal GDP}}{\\text{real GDP}} \\times 100$$ It equals 100 in the base year. A deflator of 115 means prices of the economy's output are 15% higher than in the base year. Rearranged, $\\text{real GDP} = \\dfrac{\\text{nominal GDP}}{\\text{deflator}/100}$."
+      },
+      {
+        "t": "why",
+        "html": "Nominal GDP is current quantities at current prices; real GDP is the same quantities at base-year prices. The quantities are the same on top and bottom, so they cancel out, and what is left compares current prices with base-year prices for the very same output. Multiplying by 100 turns the ratio into an index. In the base year, nominal and real GDP are equal, so the deflator is exactly 100."
+      },
+      {
+        "t": "viz",
+        "name": "ec-basket",
+        "opts": {
+          "mode": "gdp",
+          "base": 2024
+        },
+        "cap": "The table shows the deflator for each year. With 2024 as the base year, the 2024 deflator is 100; the year before is below 100 because prices were lower."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Finding the deflator",
+        "q": "Nominal GDP is \\$1,320 billion and real GDP is \\$1,200 billion. Find the deflator.",
+        "steps": [
+          "$\\dfrac{1{,}320}{1{,}200} \\times 100 = 1.1 \\times 100 = 110$.",
+          "Prices are 10% above the base year."
+        ],
+        "a": "110"
+      },
+      {
+        "t": "ex",
+        "title": "Deflating nominal GDP",
+        "q": "Nominal GDP is \\$2,500 billion and the deflator is 125. Find real GDP.",
+        "steps": [
+          "$\\text{real} = \\dfrac{2{,}500}{125/100} = \\dfrac{2{,}500}{1.25} = 2{,}000$.",
+          "Check: $\\dfrac{2{,}500}{2{,}000} \\times 100 = 125$. ✓"
+        ],
+        "a": "\\$2,000 billion"
+      },
+      {
+        "t": "ex",
+        "title": "Inflation from the deflator",
+        "q": "The deflator is 120 one year and 126 the next. What was the inflation rate?",
+        "steps": [
+          "Inflation is the percent change in the price index: (new − old) ÷ old.",
+          "$\\dfrac{126 - 120}{120} \\times 100 = \\dfrac{6}{120} \\times 100 = 5\\%$."
+        ],
+        "a": "5%"
+      },
+      {
+        "t": "mistake",
+        "html": "Dividing real by nominal, or forgetting the 100, which gives a deflator that is upside down (0.87 instead of 115) or 100 times too small (1.15). Check: in years after the base year, when prices have risen, nominal GDP is bigger than real GDP, so the deflator should be above 100."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Macroeconomics 3e, 5.2 Adjusting Nominal Values to Real Values"
+      },
+      {
+        "name": "College Board, AP Macroeconomics Course and Exam Description (topic list)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

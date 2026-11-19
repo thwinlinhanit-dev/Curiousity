@@ -1,0 +1,108 @@
+{
+  "id": "alg2.complex-arithmetic",
+  "slug": "complex-arithmetic",
+  "ladder": "math",
+  "course": "alg2",
+  "unit": "quadratics-complex",
+  "title": "Adding and Multiplying Complex Numbers",
+  "short": "Treat i like a variable, then replace i² with −1.",
+  "trouble": "Students leave i² in the answer or replace it with +1.",
+  "prereqs": [
+    "alg2.imaginary-unit"
+  ],
+  "xp": 1,
+  "viz": [
+    "complexplane"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A complex number is written $a + bi$: a real part $a$ and an imaginary part $b$. You add and multiply them with the algebra you already know from <a href=\"/math/algebra-1/multiply-binomials/\">multiplying binomials</a>, plus one new fact from <a href=\"/math/algebra-2/imaginary-unit/\">The Imaginary Unit i</a>: $i^2 = -1$."
+      },
+      {
+        "t": "key",
+        "html": "Treat $i$ like a variable: combine real parts with real parts and $i$ terms with $i$ terms. When you multiply, every $i^2$ becomes $-1$, which turns that term real. Always finish in the form $a + bi$."
+      },
+      {
+        "t": "why",
+        "html": "Complex numbers follow the same rules as polynomials in $i$ (commutative, associative, distributive). So $(2 + 3i) + (4 - i)$ works just like $(2 + 3x) + (4 - x)$. The only difference shows up in multiplication: an $x^2$ term would stay, but $i^2$ is the number $-1$. In the plane, adding complex numbers adds arrows tip to tail, exactly like adding vectors."
+      },
+      {
+        "t": "viz",
+        "name": "complexplane",
+        "opts": {
+          "z": [
+            2,
+            1
+          ],
+          "w": [
+            1,
+            3
+          ],
+          "op": "add",
+          "ops": [
+            "add",
+            "sub",
+            "mul"
+          ],
+          "snap": 0.5,
+          "range": 6
+        },
+        "cap": "Adding complex numbers adds their arrows tip to tail. Switch to \"mul\" to see that multiplying turns and stretches."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Adding and subtracting",
+        "q": "Simplify $(5 - 2i) - (3 + 4i)$.",
+        "steps": [
+          "Distribute the minus sign: $5 - 2i - 3 - 4i$.",
+          "Real parts: $5 - 3 = 2$. Imaginary parts: $-2i - 4i = -6i$."
+        ],
+        "a": "$2 - 6i$"
+      },
+      {
+        "t": "ex",
+        "title": "Multiplying",
+        "q": "Simplify $(2 + 3i)(4 - i)$.",
+        "steps": [
+          "FOIL: $8 - 2i + 12i - 3i^2$.",
+          "Replace $i^2$ with $-1$: $-3i^2 = +3$.",
+          "Combine: $8 + 3 + 10i = 11 + 10i$."
+        ],
+        "a": "$11 + 10i$"
+      },
+      {
+        "t": "ex",
+        "title": "A number times its conjugate",
+        "q": "Simplify $(3 + 4i)(3 - 4i)$.",
+        "steps": [
+          "FOIL: $9 - 12i + 12i - 16i^2$.",
+          "The $i$ terms cancel, and $-16i^2 = 16$: $9 + 16 = 25$."
+        ],
+        "a": "$25$, a real number. In general $(a + bi)(a - bi) = a^2 + b^2$."
+      },
+      {
+        "t": "mistake",
+        "html": "Leaving $i^2$ in the answer, or replacing it with $+1$. In $(2 + 3i)(4 - i)$ the last product is $3i \\cdot (-i) = -3i^2 = -3(-1) = +3$. If you got $8 - 3 + 10i = 5 + 10i$, you used $i^2 = 1$. A quick check: $|2 + 3i|^2 \\cdot |4 - i|^2 = 13 \\cdot 17 = 221$, and $11^2 + 10^2 = 221$ too."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Algebra 2e, Section 2.4 Complex Numbers"
+      },
+      {
+        "name": "Common Core State Standards, N-CN.A.2"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

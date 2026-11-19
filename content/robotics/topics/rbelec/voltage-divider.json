@@ -1,0 +1,84 @@
+{
+  "id": "rbelec.voltage-divider",
+  "slug": "voltage-divider",
+  "ladder": "robotics",
+  "course": "rbelec",
+  "unit": "circuits",
+  "title": "Voltage Dividers and Sensors",
+  "short": "Two resistors in series split a voltage; a light sensor in a divider turns light into volts.",
+  "trouble": "Students put the wrong resistor on top of the fraction, R1 instead of the one between the output and ground.",
+  "prereqs": [
+    "rbelec.ohms-law",
+    "phys2.series-resistors"
+  ],
+  "xp": 2,
+  "viz": [
+    "rb-divider"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Many sensors are just resistors whose resistance changes: with light, with temperature, with bending. A microcontroller cannot read resistance. It can read voltage. A voltage divider turns one into the other."
+      },
+      {
+        "t": "key",
+        "html": "Two resistors in series across $V_{\\text{in}}$ split it. The voltage across the bottom one is $V_{\\text{out}} = V_{\\text{in}} \\dfrac{R_2}{R_1 + R_2}$, where $R_2$ is the resistor between the output and ground."
+      },
+      {
+        "t": "viz",
+        "name": "rb-divider",
+        "opts": {
+          "mode": "divider"
+        },
+        "cap": "Change the light on the sensor and watch the output voltage and the reading."
+      },
+      {
+        "t": "why",
+        "html": "The current is the same through both resistors, so each gets a share of the voltage in proportion to its resistance. This is Ohm's law on two parts at once."
+      },
+      {
+        "t": "ex",
+        "title": "Half and half",
+        "q": "$V_{\\text{in}} = 5\\ \\text{V}$, $R_1 = R_2 = 10\\ \\text{k}\\Omega$.",
+        "steps": [
+          "$V_{\\text{out}} = 5 \\times \\dfrac{10}{20} = 2.5\\ \\text{V}$."
+        ],
+        "a": "2.5 V."
+      },
+      {
+        "t": "ex",
+        "title": "A light sensor",
+        "q": "A light-dependent resistor (top, $R_1$) reads 2 kΩ in bright light; the fixed bottom resistor is 10 kΩ; $V_{\\text{in}} = 3.3\\ \\text{V}$.",
+        "steps": [
+          "$V_{\\text{out}} = 3.3 \\times \\dfrac{10}{12} = 2.75\\ \\text{V}$.",
+          "In the dark the sensor might be 50 kΩ: $3.3 \\times \\dfrac{10}{60} = 0.55\\ \\text{V}$."
+        ],
+        "a": "2.75 V bright, about 0.55 V dark."
+      },
+      {
+        "t": "mistake",
+        "html": "Putting the wrong resistor on top of the fraction. The top of the fraction is the resistor between the output and ground."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Paul Horowitz and Winfield Hill, The Art of Electronics, 3rd ed. (Cambridge University Press, 2015)"
+      },
+      {
+        "name": "Arduino Documentation",
+        "url": "https://docs.arduino.cc/"
+      },
+      {
+        "name": "Raspberry Pi Foundation, Raspberry Pi Projects",
+        "url": "https://projects.raspberrypi.org/"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

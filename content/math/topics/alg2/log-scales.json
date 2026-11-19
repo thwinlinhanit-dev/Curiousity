@@ -1,0 +1,93 @@
+{
+  "id": "alg2.log-scales",
+  "slug": "log-scales",
+  "ladder": "math",
+  "course": "alg2",
+  "unit": "exponential-log",
+  "title": "Logarithmic Scales",
+  "short": "Each step on a log scale multiplies by the same factor, as in decibels and pH.",
+  "trouble": "Students think a pH of 4 is twice as acidic as a pH of 8, when it is ten thousand times as acidic.",
+  "prereqs": [
+    "alg2.log-graphs"
+  ],
+  "xp": 2,
+  "viz": [
+    "logscale"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "When quantities range from tiny to huge, scientists measure them on a scale of exponents, a logarithmic scale. You already read <a href=\"/math/algebra-2/log-graphs/\">log graphs</a>; now you read log scales."
+      },
+      {
+        "t": "key",
+        "html": "On a log scale, each step of 1 means multiplying by the base (usually 10). pH: $\\text{pH} = -\\log[H^+]$, so one pH unit is a factor of 10 in acidity. Decibels: $L = 10\\log\\frac{I}{I_0}$, so 10 dB is a factor of 10 in intensity. A difference of $d$ on the scale means a ratio of $10^d$ (for decibels, $10^{d/10}$)."
+      },
+      {
+        "t": "why",
+        "html": "The log of a product is a sum, so multiplying a quantity by 10 adds 1 to its log. That turns a range like $10^{-14}$ to $1$ into a tidy scale from 14 to 0. The price is that the scale does not add up the way it looks: going from pH 4 to pH 2 is not \"twice as acidic,\" it is $10^2 = 100$ times."
+      },
+      {
+        "t": "viz",
+        "name": "logscale",
+        "opts": {
+          "mode": "axis",
+          "modes": [
+            "axis"
+          ],
+          "values": [
+            2,
+            20,
+            200,
+            2000
+          ],
+          "x": 20
+        },
+        "cap": "Drag the number on the bottom line. On the log line, 2, 20, 200 and 2000 are evenly spaced: each step multiplies by 10."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Acidity",
+        "q": "How many times more acidic is pH 4 than pH 8?",
+        "steps": [
+          "$[H^+] = 10^{-4}$ versus $10^{-8}$.",
+          "Ratio: $\\frac{10^{-4}}{10^{-8}} = 10^4$."
+        ],
+        "a": "10,000 times"
+      },
+      {
+        "t": "ex",
+        "title": "Loudness",
+        "q": "A sound is 30 dB louder than another. How many times greater is its intensity?",
+        "steps": [
+          "$10\\log\\frac{I_1}{I_2} = 30$, so $\\log\\frac{I_1}{I_2} = 3$.",
+          "$\\frac{I_1}{I_2} = 10^3$."
+        ],
+        "a": "1,000 times"
+      },
+      {
+        "t": "mistake",
+        "html": "Reading a log scale as if it were linear. A pH of 4 is not \"twice as acidic\" as a pH of 8. The difference is 4 units, and each unit is a factor of 10, so it is $10^4 = 10{,}000$ times as acidic. Subtract the scale values, then raise 10 to that power."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Algebra 2e, Section 6.7 Exponential and Logarithmic Models"
+      },
+      {
+        "name": "Common Core State Standards, F-LE.A.4"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,129 @@
+{
+  "id": "alg1.correlation-causation",
+  "slug": "correlation-causation",
+  "ladder": "math",
+  "course": "alg1",
+  "unit": "data",
+  "title": "Correlation and Causation",
+  "short": "The correlation coefficient measures linear strength; it does not prove cause.",
+  "trouble": "Students conclude that one variable causes the other just because they are strongly correlated.",
+  "prereqs": [
+    "alg1.lines-of-fit-residuals"
+  ],
+  "xp": 2,
+  "viz": [
+    "scatter"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The <b>correlation coefficient</b> $r$ is a single number that describes how closely a scatter plot follows a line. You saw it next to <a href=\"/math/algebra-1/lines-of-fit-residuals/\">lines of fit</a>. It is useful, and it is easy to over-read."
+      },
+      {
+        "t": "list",
+        "items": [
+          "$r$ is always between $-1$ and $1$.",
+          "The <b>sign</b> gives the direction: positive when $y$ tends to rise with $x$, negative when it tends to fall.",
+          "The <b>size</b> gives the strength: near $\\pm 1$ the points hug a line; near $0$ there is no linear trend.",
+          "$r$ measures only <em>linear</em> association: points on a U-shaped curve can have $r$ near $0$."
+        ]
+      },
+      {
+        "t": "viz",
+        "name": "scatter",
+        "opts": {
+          "points": [
+            [
+              1,
+              9
+            ],
+            [
+              2,
+              8.5
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              4,
+              6.8
+            ],
+            [
+              5,
+              5.5
+            ],
+            [
+              6,
+              4.4
+            ],
+            [
+              7,
+              4
+            ],
+            [
+              8,
+              2.6
+            ]
+          ],
+          "fit": true,
+          "residuals": false,
+          "editable": true
+        },
+        "cap": "A strong negative correlation. Drag points away from the line and watch $r$ move toward $0$."
+      },
+      {
+        "t": "why",
+        "html": "Correlation does not show causation. Two variables can move together because a third variable, a <b>lurking variable</b>, drives both: ice cream sales and drowning accidents both rise in summer heat, but ice cream does not cause drowning. They can also move together by coincidence, or the cause can run the other way. The way to show cause and effect is a controlled experiment: change one variable on purpose, at random, and watch the other."
+      },
+      {
+        "t": "key",
+        "html": "$r$ tells the direction and strength of a linear relationship. A strong correlation alone never proves that one variable causes the other."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Read r",
+        "q": "Which is stronger, $r = 0.4$ or $r = -0.85$?",
+        "steps": [
+          "Strength is the size of $r$: $|-0.85| = 0.85 > 0.4$."
+        ],
+        "a": "$r = -0.85$: a strong negative relationship."
+      },
+      {
+        "t": "ex",
+        "title": "A lurking variable",
+        "q": "Across many towns, the number of churches and the number of crimes are strongly correlated. Why?",
+        "steps": [
+          "Larger towns have more of almost everything, including churches and crimes.",
+          "Population is a lurking variable driving both."
+        ],
+        "a": "Town size, not churches, explains the correlation."
+      },
+      {
+        "t": "mistake",
+        "html": "Concluding that one variable causes the other because they are strongly correlated. Before claiming a cause, ask: could a third variable push both? Could the cause run the other way? Was there an experiment? Without one, describe the result as an association."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Introductory Statistics, chapter 12 Linear Regression and Correlation"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, S-ID.C.8: compute and interpret the correlation coefficient"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, S-ID.C.9: distinguish between correlation and causation"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

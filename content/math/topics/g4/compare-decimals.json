@@ -1,0 +1,81 @@
+{
+  "id": "g4.compare-decimals",
+  "slug": "compare-decimals",
+  "ladder": "math",
+  "course": "g4",
+  "unit": "decimals",
+  "title": "Comparing Decimals",
+  "short": "Compare tenths first, then hundredths.",
+  "trouble": "Children think a decimal with more digits is larger, so 0.25 seems bigger than 0.3.",
+  "prereqs": [
+    "g4.decimal-notation"
+  ],
+  "xp": 2,
+  "viz": [
+    "decimalgrid",
+    "numberline"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "To compare decimals, use the place value from <a href=\"/math/grade-4/decimal-notation/\">writing decimals</a>. It works just like <a href=\"/math/grade-4/compare-large-numbers/\">comparing whole numbers</a>: start at the greatest place."
+      },
+      {
+        "t": "key",
+        "html": "Compare the whole numbers first, then the tenths, then the hundredths. It helps to write both decimals with two places: $0.3 = 0.30$. Now $0.30$ and $0.25$ are 30 hundredths and 25 hundredths, so $0.3 > 0.25$."
+      },
+      {
+        "t": "why",
+        "html": "A 0 at the end of a decimal adds 0 hundredths, so it does not change the amount: 3 tenths is exactly 30 hundredths. Writing both with hundredths makes the pieces the same size, and then you can compare like whole numbers. Both decimals must refer to the same whole."
+      },
+      {
+        "t": "viz",
+        "name": "decimalgrid",
+        "opts": {
+          "v": "0.3",
+          "compare": "0.25"
+        },
+        "cap": "$0.3$ shades more of the grid than $0.25$, even though 25 is more than 3."
+      },
+      {
+        "t": "ex",
+        "title": "Different lengths",
+        "q": "Compare $0.3$ and $0.25$.",
+        "steps": [
+          "Tenths first: 3 tenths and 2 tenths. $3 > 2$.",
+          "Or with hundredths: $0.30$ and $0.25$, and $30 > 25$."
+        ],
+        "a": "$0.3 > 0.25$"
+      },
+      {
+        "t": "ex",
+        "title": "With wholes",
+        "q": "Compare $1.2$ and $1.19$.",
+        "steps": [
+          "The wholes match: 1 and 1.",
+          "Tenths: 2 and 1. Since $2 > 1$, stop."
+        ],
+        "a": "$1.2 > 1.19$"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking the decimal with more digits is larger, so $0.25 > 0.3$ \"because 25 > 3.\" The digits after the point are tenths and hundredths, not whole numbers. Line up the decimal points, or add a zero so both have hundredths."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 4, 4.NF.C.7 (compare two decimals to hundredths by reasoning about their size)"
+      },
+      {
+        "name": "OpenStax Prealgebra 2e, section 5.1 Decimals"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

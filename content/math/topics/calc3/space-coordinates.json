@@ -1,0 +1,149 @@
+{
+  "id": "calc3.space-coordinates",
+  "slug": "space-coordinates",
+  "ladder": "math",
+  "course": "calc3",
+  "unit": "space",
+  "title": "Three-Dimensional Coordinates",
+  "short": "Locate points with (x, y, z) and find distances in space.",
+  "trouble": "Students sketch the axes so the right-hand rule fails, or drop the z term from the distance formula.",
+  "prereqs": [
+    "geo.distance-midpoint"
+  ],
+  "xp": 1,
+  "viz": [
+    "vectors3d"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In the plane you name a point with two numbers and measure distance with the <a href=\"/math/geometry/distance-midpoint/\">distance formula</a>, which is the Pythagorean theorem in disguise. Space needs one more number. A point is an ordered triple $(x, y, z)$: go $x$ units along the $x$-axis, $y$ units parallel to the $y$-axis, then $z$ units up (or down, if $z$ is negative)."
+      },
+      {
+        "t": "p",
+        "html": "The three axes are perpendicular, and their directions follow the <b>right-hand rule</b>: point the fingers of your right hand along the positive $x$-axis and curl them toward the positive $y$-axis; your thumb points along the positive $z$-axis. Every textbook picture and every formula later in this course (the cross product, orientations, Stokes' theorem) assumes this arrangement."
+      },
+      {
+        "t": "key",
+        "html": "A point in space is $(x, y, z)$. The distance between $(x_1, y_1, z_1)$ and $(x_2, y_2, z_2)$ is\n  $$d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2}.$$\n  The sphere with center $(a, b, c)$ and radius $r$ is every point at distance $r$ from the center: $(x - a)^2 + (y - b)^2 + (z - c)^2 = r^2$."
+      },
+      {
+        "t": "why",
+        "html": "Use the Pythagorean theorem twice. Walk from $P$ to $Q$ in three legs: $\\Delta x$ along the $x$-direction, $\\Delta y$ along the $y$-direction, then $\\Delta z$ straight up. The first two legs lie in a horizontal floor and are perpendicular, so the floor diagonal has length $\\sqrt{(\\Delta x)^2 + (\\Delta y)^2}$. That diagonal is horizontal and the last leg is vertical, so they are perpendicular too, and\n  $$d^2 = \\left(\\sqrt{(\\Delta x)^2 + (\\Delta y)^2}\\right)^2 + (\\Delta z)^2 = (\\Delta x)^2 + (\\Delta y)^2 + (\\Delta z)^2.$$"
+      },
+      {
+        "t": "viz",
+        "name": "calc3-scene",
+        "opts": {
+          "points": [
+            {
+              "p": [
+                1,
+                2,
+                2
+              ],
+              "label": "P",
+              "box": true
+            },
+            {
+              "p": [
+                3,
+                -1,
+                4
+              ],
+              "label": "Q",
+              "color": "blue"
+            }
+          ],
+          "show": "distance",
+          "range": 4
+        },
+        "cap": "The three colored legs are $\\Delta x$, $\\Delta y$ and $\\Delta z$. Drag the picture to turn it: the legs always meet at right angles. The dashed box under $P$ shows how its coordinates are measured."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Equation",
+          "The set of points"
+        ],
+        "rows": [
+          [
+            "$z = 0$",
+            "the $xy$-plane (the floor)"
+          ],
+          [
+            "$x = 0$",
+            "the $yz$-plane"
+          ],
+          [
+            "$y = 0$",
+            "the $xz$-plane"
+          ],
+          [
+            "$x = 3$",
+            "a plane parallel to the $yz$-plane, 3 units in front of it"
+          ],
+          [
+            "$x = 0$ and $y = 0$",
+            "the $z$-axis"
+          ]
+        ],
+        "cap": "In space, one equation usually describes a surface, not a curve."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Distance",
+        "q": "Find the distance between $P(1, -2, 3)$ and $Q(4, 2, 15)$.",
+        "steps": [
+          "Differences: $\\Delta x = 3$, $\\Delta y = 4$, $\\Delta z = 12$.",
+          "Square and add: ${}9 + 16 + 144 = 169$.",
+          "$d = \\sqrt{169} = 13$."
+        ],
+        "a": "${}13$"
+      },
+      {
+        "t": "ex",
+        "title": "Center and radius of a sphere",
+        "q": "Find the center and radius of $x^2 + y^2 + z^2 - 4x + 6z - 3 = 0$.",
+        "steps": [
+          "Group by variable: $(x^2 - 4x) + y^2 + (z^2 + 6z) = 3$.",
+          "Complete each square: $x^2 - 4x = (x - 2)^2 - 4$ and $z^2 + 6z = (z + 3)^2 - 9$.",
+          "So $$(x - 2)^2 + y^2 + (z + 3)^2 = 3 + 4 + 9 = 16.$$",
+          "Center $(2, 0, -3)$ (the signs flip), radius $\\sqrt{16} = 4$."
+        ],
+        "a": "center $(2, 0, -3)$, radius ${}4$"
+      },
+      {
+        "t": "ex",
+        "title": "Distance to an axis and to a plane",
+        "q": "How far is $(3, -4, 5)$ from the $z$-axis, and from the $xy$-plane?",
+        "steps": [
+          "The nearest point of the $z$-axis is $(0, 0, 5)$: same height, $x = y = 0$.",
+          "So the distance to the axis is $\\sqrt{3^2 + (-4)^2} = 5$: only $x$ and $y$ count.",
+          "The nearest point of the $xy$-plane is $(3, -4, 0)$, straight below, so that distance is $|z| = 5$."
+        ],
+        "a": "${}5$ and ${}5$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Dropping the $z$-term.</b> Using $\\sqrt{(\\Delta x)^2 + (\\Delta y)^2}$ in space gives the length of the shadow on the floor, not the distance. Check: the answer can never be smaller than $|\\Delta z|$.<br><b>Left-handed axes.</b> If your sketch has $x$ to the right, $y$ up the page and $z$ coming out of the page toward you, that is fine; but $z$ pointing into the page makes a left-handed system and later sign rules will fail. Test with the right-hand rule: curl from $x$ to $y$, and the thumb must point along $z$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 3, 2.2 Vectors in Three Dimensions"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

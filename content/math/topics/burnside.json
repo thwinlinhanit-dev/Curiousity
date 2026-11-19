@@ -1,0 +1,104 @@
+{
+  "id": "aa.burnside",
+  "slug": "burnside",
+  "ladder": "math",
+  "course": "aa",
+  "unit": "actions",
+  "title": "Burnside's Lemma",
+  "short": "The number of orbits is the average number of points fixed by a group element; count necklaces and colorings up to symmetry by adding up the fixed colorings over the group.",
+  "trouble": "Students divide the total number of colorings by |G|, which works only when no coloring is fixed by anything except e.",
+  "prereqs": [
+    "aa.orbit-stabilizer",
+    "aa.permutation-order",
+    "disc.division-rule"
+  ],
+  "xp": 3,
+  "viz": [
+    "aa-burnside"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "How many different necklaces can you make with 6 beads in 2 colors, if turning a necklace does not change it? There are $2^{6} = 64$ colorings, and the rotations group them into orbits; the question asks for the number of orbits. Dividing by the number of rotations fails, because orbits have <a href=\"/math/abstract-algebra/orbit-stabilizer/\">different sizes</a>. Burnside's lemma counts them correctly."
+      },
+      {
+        "t": "why",
+        "html": "<b>Burnside's lemma.</b> If a finite group $G$ acts on a finite set $X$, the number of orbits is $$\\frac{1}{|G|}\\sum_{g \\in G} |\\mathrm{Fix}(g)|, \\qquad \\mathrm{Fix}(g) = \\{x : g \\cdot x = x\\}.$$ <b>Proof.</b> Count the pairs $(g, x)$ with $g \\cdot x = x$ in two ways. By $g$: $\\sum_{g} |\\mathrm{Fix}(g)|$. By $x$: $\\sum_{x} |G_{x}|$, and by orbit–stabilizer $|G_{x}| = |G|/|G \\cdot x|$. So $$\\sum_{g} |\\mathrm{Fix}(g)| = |G| \\sum_{x} \\frac{1}{|G \\cdot x|}.$$ The points of one orbit $O$ contribute $|O| \\cdot \\frac{1}{|O|} = 1$, so the last sum is the number of orbits. $\\square$"
+      },
+      {
+        "t": "p",
+        "html": "<b>Counting fixed colorings.</b> A coloring is fixed by a symmetry exactly when the symmetry never moves a bead onto a bead of a different color, that is, when each cycle of the symmetry (as a <a href=\"/math/abstract-algebra/permutation-order/\">permutation</a> of the beads) is a single color. With $k$ colors and $c$ cycles, $k^{c}$ colorings are fixed. Rotating $n$ beads by $j$ steps has $\\gcd(n, j)$ cycles."
+      },
+      {
+        "t": "viz",
+        "name": "aa-burnside",
+        "opts": {
+          "shape": "necklace",
+          "n": 6,
+          "k": 2,
+          "g": 2,
+          "task": "Pick each rotation in turn and count its cycles, then open the <b>Burnside table</b>."
+        },
+        "cap": "Rotating a 6-bead necklace by 2 steps makes 2 cycles (rings of the same color), so $2^{2} = 4$ colorings are fixed. The table averages the fixed counts over all six rotations."
+      },
+      {
+        "t": "ex",
+        "title": "Necklaces with 6 beads",
+        "q": "Count 6-bead necklaces in 2 colors, up to rotation.",
+        "steps": [
+          "Rotations by $0, 1, 2, 3, 4, 5$ steps have $6, 1, 2, 3, 2, 1$ cycles.",
+          "Fixed colorings: $64 + 2 + 4 + 8 + 4 + 2 = 84$.",
+          "Number of necklaces: $84/6 = 14$."
+        ],
+        "a": "$14$."
+      },
+      {
+        "t": "ex",
+        "title": "Corners of a square",
+        "q": "Color the 4 corners of a square with 2 colors. How many colorings are there up to rotations and reflections ($D_{4}$)?",
+        "steps": [
+          "$e$: $2^{4} = 16$. Quarter turns $r, r^{3}$ (one 4-cycle): $2$ each. Half turn (two 2-cycles): $4$.",
+          "Diagonal mirrors (two fixed corners, one 2-cycle): $2^{3} = 8$ each. Side mirrors (two 2-cycles): $4$ each.",
+          "Total $16 + 2 + 2 + 4 + 8 + 8 + 4 + 4 = 48$; divide by $8$."
+        ],
+        "a": "$6$."
+      },
+      {
+        "t": "ex",
+        "title": "Painting a cube",
+        "q": "Paint each face of a cube one of 2 colors. How many different cubes are there, up to rotation?",
+        "steps": [
+          "The $24$ rotations by type, with their cycles on the faces: identity ($6$ cycles); $6$ quarter turns about face axes ($3$ cycles); $3$ half turns about face axes ($4$); $8$ turns about vertex axes ($2$); $6$ half turns about edge axes ($3$).",
+          "Sum: $2^{6} + 6 \\cdot 2^{3} + 3 \\cdot 2^{4} + 8 \\cdot 2^{2} + 6 \\cdot 2^{3} = 64 + 48 + 48 + 32 + 48 = 240$.",
+          "$240/24 = 10$."
+        ],
+        "a": "$10$."
+      },
+      {
+        "t": "mistake",
+        "html": "Dividing the total number of colorings by $|G|$: $64/6$ is not even a whole number. That shortcut assumes every orbit has $|G|$ members, which fails whenever some coloring is fixed by a symmetry other than $e$ (the one-color necklaces are fixed by everything). Burnside's average of fixed counts is always a whole number; if yours is not, recount the cycles."
+      },
+      {
+        "t": "key",
+        "html": "Number of orbits = average number of fixed points: $\\frac{1}{|G|}\\sum_{g} |\\mathrm{Fix}(g)|$. For colorings, a symmetry with $c$ cycles fixes $k^{c}$ of them."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Thomas W. Judson, Abstract Algebra: Theory and Applications (open textbook), chapter 14, Group Actions (section 14.3, Burnside's Counting Theorem)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.703 Modern Algebra (Spring 2013), lecture on counting with groups"
+      },
+      {
+        "name": "John A. Beachy and William D. Blair, Abstract Algebra, online study guide (Northern Illinois University), section 7.3 (counting orbits)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

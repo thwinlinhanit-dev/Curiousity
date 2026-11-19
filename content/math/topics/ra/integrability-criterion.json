@@ -1,0 +1,102 @@
+{
+  "id": "ra.integrability-criterion",
+  "slug": "integrability-criterion",
+  "ladder": "math",
+  "course": "ra",
+  "unit": "integral",
+  "title": "The Integrability Criterion",
+  "short": "f is integrable exactly when for every ε > 0 some partition has U(f, P) − L(f, P) < ε; for monotone f on n equal pieces the gap is |f(b) − f(a)|(b − a)/n.",
+  "trouble": "Students show that U − L is small for one partition and stop. The criterion needs a partition for every ε > 0.",
+  "prereqs": [
+    "ra.upper-lower-sums",
+    "ra.sequence-limit"
+  ],
+  "xp": 3,
+  "viz": [
+    "ra-sums"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A bounded function is <b>integrable</b> when its lower integral equals its upper integral; the common value is $\\int_a^b f$. Checking that directly means handling every partition at once. The criterion below reduces it to finding, for each $\\varepsilon$, one good partition, exactly in the spirit of <a href=\"/math/real-analysis/sequence-limit/\">ε–N proofs</a> and built on <a href=\"/math/real-analysis/upper-lower-sums/\">upper and lower sums</a>."
+      },
+      {
+        "t": "key",
+        "html": "<b>Integrability criterion.</b> A bounded $f$ on $[a, b]$ is integrable if and only if for every $\\varepsilon > 0$ there is a partition $P$ with $U(f, P) - L(f, P) < \\varepsilon$. For a monotone $f$ and $n$ equal pieces, $U - L = |f(b) - f(a)|\\frac{b - a}{n}$."
+      },
+      {
+        "t": "why",
+        "html": "For every partition, $L(f, P) \\le \\underline{\\int} f \\le \\overline{\\int} f \\le U(f, P)$. If the gap $U - L$ can be made less than every $\\varepsilon$, the upper and lower integrals differ by less than every $\\varepsilon$, so they are equal. Conversely, if they are equal to $I$, choose $P_1$ with $L(f, P_1) > I - \\frac{\\varepsilon}{2}$ and $P_2$ with $U(f, P_2) < I + \\frac{\\varepsilon}{2}$; their common refinement does both, so its gap is less than $\\varepsilon$. <b>Monotone functions:</b> for increasing $f$ and equal pieces of width $\\Delta x$, $M_i - m_i = f(x_i) - f(x_{i-1})$, and the sum telescopes: $$U - L = \\sum (f(x_i) - f(x_{i-1}))\\Delta x = (f(b) - f(a))\\Delta x.$$ This goes to $0$ as $n$ grows, so every monotone function is integrable. $\\blacksquare$"
+      },
+      {
+        "t": "viz",
+        "name": "ra-sums",
+        "opts": {
+          "f": "sqrt(x)",
+          "a": 0,
+          "b": 4,
+          "n": 6,
+          "show": "gap"
+        },
+        "cap": "The gap for $\\sqrt{x}$ on $[0, 4]$: slide the gold strips together into one column and its height is $f(4) - f(0) = 2$, with width $\\frac{4}{n}$."
+      },
+      {
+        "t": "p",
+        "html": "The criterion is the integral's version of the Cauchy idea: instead of knowing the value of the integral in advance, you show that the over-estimate and the under-estimate can be squeezed together. Once a function passes, any sums with shrinking pieces (left, right, midpoint, or any sample points at all) converge to the same number, because all of them lie between the lower and upper sums of their partition."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "The gap for a monotone function",
+        "q": "For $f(x) = \\frac{1}{x}$ on $[1, 3]$ with $5$ equal pieces, find $U - L$.",
+        "steps": [
+          "$f$ decreases, so $U - L = |f(3) - f(1)|\\cdot\\frac{3 - 1}{5}$.",
+          "$= \\frac{2}{3}\\cdot\\frac{2}{5}$."
+        ],
+        "a": "$\\frac{4}{15}$"
+      },
+      {
+        "t": "ex",
+        "title": "How fine a partition?",
+        "q": "For $f(x) = x^{3}$ on $[0, 2]$, find the smallest $n$ such that $n$ equal pieces give $U - L < 0.1$.",
+        "steps": [
+          "$U - L = (8 - 0)\\cdot\\frac{2}{n} = \\frac{16}{n}$.",
+          "$\\frac{16}{n} < 0.1$ means $n > 160$."
+        ],
+        "a": "$n = 161$ (or more)."
+      },
+      {
+        "t": "ex",
+        "title": "A function that turns",
+        "q": "For $x^{2}$ on $[-1, 1]$ with $n = 3$ equal pieces, find $U - L$.",
+        "steps": [
+          "Points: $-1, -\\frac{1}{3}, \\frac{1}{3}, 1$. On $[-1, -\\frac{1}{3}]$: $M - m = 1 - \\frac{1}{9} = \\frac{8}{9}$. The same on $[\\frac{1}{3}, 1]$.",
+          "The middle piece contains $0$: $M - m = \\frac{1}{9} - 0 = \\frac{1}{9}$."
+        ],
+        "a": "$U - L = \\left(\\frac{8}{9} + \\frac{1}{9} + \\frac{8}{9}\\right)\\cdot\\frac{2}{3} = \\frac{34}{27}$."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>One partition is not a proof.</b> Showing $U - L < 0.1$ for $n = 161$ proves nothing about integrability by itself. The criterion needs a partition for <b>every</b> $\\varepsilon > 0$, so a proof sounds like: \"Let $\\varepsilon > 0$. Choose $n > \\frac{16}{\\varepsilon}$. Then $U - L = \\frac{16}{n} < \\varepsilon$.\""
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Jiří Lebl, Basic Analysis I: Introduction to Real Analysis, sections 5.1 and 5.2 (Riemann integrability)"
+      },
+      {
+        "name": "William F. Trench, Introduction to Real Analysis (Trinity University), section 3.2"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

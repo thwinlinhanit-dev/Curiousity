@@ -1,0 +1,135 @@
+{
+  "id": "stat.correlation-causation-stat",
+  "slug": "correlation-causation-stat",
+  "ladder": "math",
+  "course": "stat",
+  "unit": "regression",
+  "title": "Correlation, Causation and Lurking Variables",
+  "short": "Association alone does not show cause and effect.",
+  "trouble": "Students conclude that ice cream sales cause drownings because the two are correlated.",
+  "prereqs": [
+    "stat.correlation"
+  ],
+  "xp": 1,
+  "viz": [
+    "scatter"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A strong <a href=\"/math/probability-and-statistics/correlation/\">correlation</a> is tempting to read as cause and effect. You saw in Algebra 1 that <a href=\"/math/algebra-1/correlation-causation/\">correlation is not causation</a>. Here we name the ways an association can arise without one variable causing the other."
+      },
+      {
+        "t": "key",
+        "html": "An association between x and y can come from (1) x causing y, (2) y causing x, (3) a <b>lurking variable</b> that affects both, or (4) chance. Observational data alone cannot tell these apart. A well-designed randomized experiment can."
+      },
+      {
+        "t": "why",
+        "html": "If a third variable pushes both x and y up and down, x and y move together even though neither touches the other. On hot days, people buy more ice cream and also spend more time in the sun, so ice cream sales and sunburns rise together. Banning ice cream would not prevent a single sunburn. Random assignment breaks this link: it gives the treatment without regard to temperature or anything else, so the lurking variable ends up balanced between the groups."
+      },
+      {
+        "t": "viz",
+        "name": "stat-chart",
+        "opts": {
+          "kind": "scatter",
+          "points": [
+            [
+              120,
+              4
+            ],
+            [
+              150,
+              6
+            ],
+            [
+              180,
+              5
+            ],
+            [
+              210,
+              9
+            ],
+            [
+              240,
+              8
+            ],
+            [
+              260,
+              12
+            ],
+            [
+              300,
+              13
+            ],
+            [
+              320,
+              11
+            ],
+            [
+              350,
+              16
+            ],
+            [
+              380,
+              18
+            ],
+            [
+              410,
+              17
+            ],
+            [
+              450,
+              21
+            ]
+          ],
+          "xlabel": "ice cream cones sold",
+          "ylabel": "sunburn cases"
+        },
+        "cap": "Daily ice cream sales and sunburn cases at a beach town: a strong positive association, driven by the weather."
+      },
+      {
+        "t": "ex",
+        "title": "Finding the lurking variable",
+        "q": "Among children ages 5 to 12, shoe size and reading score are strongly correlated. Do bigger feet improve reading?",
+        "steps": [
+          "Ask what could affect both variables.",
+          "Older children have bigger feet, and older children have had more years of reading practice.",
+          "Age is a lurking variable. Among children of the same age, the association would mostly vanish."
+        ],
+        "a": "No. Age drives both."
+      },
+      {
+        "t": "ex",
+        "title": "Which way does it run?",
+        "q": "Cities with more police officers have more crime. Do police cause crime?",
+        "steps": [
+          "Reverse cause is likely: cities with more crime hire more police.",
+          "City size is also a lurking variable: big cities have more of both."
+        ],
+        "a": "No. The association likely runs the other way, and size affects both."
+      },
+      {
+        "t": "mistake",
+        "html": "Concluding that one variable causes the other from a correlation alone, such as \"ice cream causes drownings\" because both rise in summer. Check by asking: what else changes along with x? Could y cause x? Was x assigned at random?"
+      },
+      {
+        "t": "note",
+        "html": "Correlation is still useful. You can predict sunburn risk from ice cream sales even though one does not cause the other. Prediction needs association; changing outcomes needs cause. Telling these apart is the central problem of <a href=\"/business/econometrics/modern-causal-inference/\">causal inference in econometrics</a>."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Introductory Statistics 2e, section 1.4 Experimental Design and Ethics"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, S-ID.C.9 (Distinguish between correlation and causation)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

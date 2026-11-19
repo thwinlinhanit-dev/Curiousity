@@ -1,0 +1,119 @@
+{
+  "id": "weather.moist-adiabatic",
+  "slug": "moist-adiabatic",
+  "ladder": "earth",
+  "course": "weather",
+  "unit": "rising-air",
+  "title": "Saturated Air Cools More Slowly",
+  "short": "Once a parcel is saturated, condensation releases latent heat, so it cools more slowly, about 6 °C per kilometer on average.",
+  "trouble": "Students think the released latent heat warms a rising cloud parcel; it still cools as it rises, only more slowly than dry air.",
+  "prereqs": [
+    "weather.cloud-base",
+    "weather.latent-heat"
+  ],
+  "xp": 2,
+  "viz": [
+    "es-parcel"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Above the <a href=\"/earth-and-space/weather-and-climate/cloud-base/\">cloud base</a>, a rising parcel is saturated, and every bit more cooling condenses some vapor. Condensing releases <a href=\"/earth-and-space/weather-and-climate/latent-heat/\">latent heat</a> inside the parcel. That changes how fast it cools."
+      },
+      {
+        "t": "key",
+        "html": "A saturated parcel cools more slowly than a dry one: about <b>6 °C per km</b> on average (the <b>moist adiabatic lapse rate</b>). It is about 4 °C per km in warm, humid air near the ground and approaches the dry rate (9.8 °C per km) in very cold air high up. Problems here use 6 °C per km unless they say otherwise."
+      },
+      {
+        "t": "why",
+        "html": "Expansion still cools the parcel by 9.8 °C for each km. But as it cools, vapor condenses, and each gram of vapor that condenses gives about 2500 J back to the parcel's air. That pays back part of the cooling. Warm saturated air condenses a lot of vapor for each degree of cooling (saturation climbs so steeply with temperature), so it gets a big payback and cools only about 4 °C per km. Cold air has little vapor left to condense, so it cools almost as fast as dry air."
+      },
+      {
+        "t": "viz",
+        "name": "es-parcel",
+        "opts": {
+          "mode": "lift",
+          "T0": 26,
+          "Td0": 18,
+          "rates": {
+            "dry": 10,
+            "moist": 6,
+            "dew": 2
+          },
+          "lift": 6
+        },
+        "cap": "Below the cloud base (1 km here), the parcel cools at 10 °C per km; above it, at 6 °C per km. The bend in the red line is where condensation begins."
+      },
+      {
+        "t": "ex",
+        "title": "Climbing inside a cloud",
+        "q": "A parcel is saturated at its cloud base, 1 km up, at 16 °C. It keeps rising to 5 km. What is its temperature? (Use 6 °C per km.)",
+        "steps": [
+          "It climbs $5 - 1 = 4$ km while saturated.",
+          "Cooling: $4 \\times 6 = 24$ °C.",
+          "$16 - 24 = -8$ °C. A dry parcel would have cooled 40 °C, to −24 °C."
+        ],
+        "a": "−8 °C"
+      },
+      {
+        "t": "ex",
+        "title": "From the ground to the top of a cloud",
+        "q": "Ground air at 26 °C with a dew point of 18 °C is lifted to 4 km. Use 10 °C per km (dry), 2 °C per km for the dew point and 6 °C per km (moist). Find its temperature at 4 km.",
+        "steps": [
+          "Cloud base: the spread of 8 °C closes at 8 °C per km, so the base is at 1 km.",
+          "At the base: $26 - 10 \\times 1 = 16$ °C (and the dew point is $18 - 2 = 16$ °C).",
+          "From 1 km to 4 km, moist: $16 - 6 \\times 3 = -2$ °C."
+        ],
+        "a": "−2 °C"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking the released latent heat warms a rising cloud parcel. The parcel still <b>cools</b> as it rises; the latent heat only slows the cooling, from 9.8 to about 6 °C per km. Check: in any moist-ascent answer, the parcel's temperature at the top must be lower than at the cloud base."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Air at the cloud",
+          "Moist lapse rate (about)"
+        ],
+        "rows": [
+          [
+            "30 °C, near sea level",
+            "3.6 °C per km"
+          ],
+          [
+            "20 °C, near sea level",
+            "4.3 °C per km"
+          ],
+          [
+            "0 °C, near sea level",
+            "6.5 °C per km"
+          ],
+          [
+            "−20 °C, about 5.5 km up",
+            "7.7 °C per km"
+          ],
+          [
+            "−40 °C, about 9 km up",
+            "9.0 °C per km"
+          ]
+        ],
+        "cap": "The moist rate depends on temperature and pressure (computed from the standard formula)."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "NOAA National Weather Service, JetStream online school for weather: The Atmosphere: Adiabatic processes and stability"
+      },
+      {
+        "name": "Wallace and Hobbs, Atmospheric Science: An Introductory Survey, 2nd ed., section 3.5 (saturated adiabatic lapse rate)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

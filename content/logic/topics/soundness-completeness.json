@@ -1,0 +1,123 @@
+{
+  "id": "sym.soundness-completeness",
+  "slug": "soundness-completeness",
+  "ladder": "logic",
+  "course": "sym",
+  "unit": "metatheory",
+  "title": "Soundness and Completeness",
+  "short": "Provable (⊢) is about rules; valid (⊨) is about truth. A system is sound if everything provable is valid, and complete if everything valid is provable; our rules are both.",
+  "trouble": "Learners swap the two. Soundness: the rules never prove an invalid argument. Completeness: the rules can prove every valid one.",
+  "prereqs": [
+    "sym.identity-proofs",
+    "sym.counterexample-interpretation"
+  ],
+  "xp": 3,
+  "viz": [],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "This course has given you two ways to show an argument is good. One is about truth: truth tables and worlds, with no row or world making the premises true and the conclusion false. The other is about rules: a proof, line by line, from <a href=\"/logic/symbolic-logic/identity-proofs/\">Proofs with Identity</a> and everything before it. Do they always agree? This capstone answers that, drawing also on <a href=\"/logic/symbolic-logic/counterexample-interpretation/\">Counterexample Worlds</a>."
+      },
+      {
+        "t": "key",
+        "html": "$\\Gamma \\vdash \\varphi$ (\"provable\") means there is a proof of $\\varphi$ from the premises $\\Gamma$. $\\Gamma \\models \\varphi$ (\"valid\") means every row or world that makes $\\Gamma$ true makes $\\varphi$ true. A system is <b>sound</b> if everything provable is valid, and <b>complete</b> if everything valid is provable. Our rules are both."
+      },
+      {
+        "t": "why",
+        "html": "Soundness holds because every rule is truth-preserving: each was checked to be a valid form (or an equivalence), and CP, IP and the quantifier rules, with their restrictions, never let a falsehood follow from truths. Completeness is harder and deeper. For statement logic it means the eighteen rules plus CP and IP can reach every tautological consequence. For predicate logic it was proved by Kurt Gödel in his 1929 doctoral thesis: every valid argument of first-order logic has a proof."
+      },
+      {
+        "t": "table",
+        "head": [
+          "",
+          "Says",
+          "Direction"
+        ],
+        "rows": [
+          [
+            "Soundness",
+            "If $\\Gamma \\vdash \\varphi$ then $\\Gamma \\models \\varphi$",
+            "proof → truth"
+          ],
+          [
+            "Completeness",
+            "If $\\Gamma \\models \\varphi$ then $\\Gamma \\vdash \\varphi$",
+            "truth → proof"
+          ]
+        ],
+        "cap": "Two properties of a proof system."
+      },
+      {
+        "t": "h",
+        "text": "What each one gives you"
+      },
+      {
+        "t": "list",
+        "items": [
+          "Soundness: a correct proof guarantees validity, so you never need a truth table to back it up. And if an argument has a counterexample, no proof of it exists, however long you search.",
+          "Completeness: if an argument is valid, a proof is out there. If you cannot find one, keep looking, or check validity another way.",
+          "Together: $\\vdash$ and $\\models$ pick out exactly the same arguments."
+        ]
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Use soundness",
+        "q": "Someone shows you a \"proof\" of $p \\to q$, $q$, so $p$. What follows?",
+        "steps": [
+          "The argument is invalid (the row $p$ F, $q$ T).",
+          "Our system is sound, so no correct proof of it exists."
+        ],
+        "a": "The \"proof\" breaks a rule somewhere."
+      },
+      {
+        "t": "ex",
+        "title": "Use completeness",
+        "q": "A truth table shows $(p \\lor q) \\land \\neg p$ implies $q$. Must a proof exist?",
+        "steps": [
+          "The argument is valid.",
+          "The system is complete."
+        ],
+        "a": "Yes (DS after Simp does it)."
+      },
+      {
+        "t": "ex",
+        "title": "Changing the rules",
+        "q": "If we added the rule \"from $p \\to q$ and $q$, infer $p$\", what would break?",
+        "steps": [
+          "That rule is affirming the consequent, which is invalid.",
+          "It could prove an invalid argument."
+        ],
+        "a": "Soundness. (Removing a rule, by contrast, can only threaten completeness.)"
+      },
+      {
+        "t": "mistake",
+        "html": "Swapping the two. Soundness: the rules never prove an invalid argument (provable implies valid). Completeness: the rules can prove every valid one (valid implies provable). A memory aid: soundness protects you from proving falsehoods; completeness promises you are not missing anything."
+      },
+      {
+        "t": "note",
+        "html": "One limit worth knowing: truth tables decide validity in statement logic mechanically, but for predicate logic there is no general mechanical test that always says \"invalid\" when it should (Church and Turing, 1936). Completeness guarantees a proof for every valid argument, not a quick way to tell when none exists."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "forall x: Calgary, an open introduction to formal logic (P. D. Magnus, Tim Button and others; Open Logic Project), chapters on soundness and completeness"
+      },
+      {
+        "name": "Stanford Encyclopedia of Philosophy, \"Kurt Gödel\", section on the completeness theorem"
+      },
+      {
+        "name": "Stanford Encyclopedia of Philosophy, \"Classical Logic\", sections on soundness and completeness"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

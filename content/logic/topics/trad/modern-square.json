@@ -1,0 +1,113 @@
+{
+  "id": "trad.modern-square",
+  "slug": "modern-square",
+  "ladder": "logic",
+  "course": "trad",
+  "unit": "opposition",
+  "title": "The Modern Square",
+  "short": "Without existential import only the contradictory diagonals survive; contrariety, subcontrariety and subalternation can fail when a class is empty.",
+  "trouble": "Learners keep using subalternation in the Boolean reading: from \"All dragons breathe fire\" it does not follow that some dragon breathes fire.",
+  "prereqs": [
+    "trad.square-inferences",
+    "trad.existential-import"
+  ],
+  "xp": 3,
+  "viz": [
+    "lg-square",
+    "lg-venn3"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Everything on the square so far used the traditional assumption that the subject class has members. On the modern reading, <a href=\"/logic/traditional-logic/existential-import/\">universal statements have no existential import</a>, and most of the square comes apart."
+      },
+      {
+        "t": "key",
+        "html": "On the <b>modern (Boolean) square</b>, only the contradictories hold: A–O and E–I still have opposite values. Contrariety, subcontrariety and subalternation can all fail when the subject class is empty."
+      },
+      {
+        "t": "why",
+        "html": "Suppose there are no dragons. \"All dragons breathe fire\" and \"No dragons breathe fire\" say only that two regions are empty, and with no dragons both are true: contrariety fails. \"Some dragons breathe fire\" and \"Some dragons do not\" both say a dragon exists, so both are false: subcontrariety fails. And the true A does not send truth down to the false I: subalternation fails. The diagonals survive because each pair still talks about the same region, empty or not."
+      },
+      {
+        "t": "viz",
+        "name": "lg-square",
+        "opts": {
+          "s": "dragons",
+          "p": "creatures that breathe fire",
+          "boolean": true,
+          "given": {
+            "A": true
+          }
+        },
+        "cap": "The modern square: from A true only O (false) follows."
+      },
+      {
+        "t": "viz",
+        "name": "lg-venn3",
+        "opts": {
+          "terms": [
+            "dragons",
+            "fire breathers"
+          ],
+          "circles": 2,
+          "props": [
+            "All dragons are fire breathers",
+            "No dragons are fire breathers"
+          ]
+        },
+        "cap": "If the dragons circle is empty, both diagrams are correct at once."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Subalternation on the modern square",
+        "q": "On the Boolean reading, \"All campers are dancers\" is true. What is \"Some campers are dancers\"?",
+        "steps": [
+          "A and I are not contradictories, so the modern square links them by nothing.",
+          "If there are no campers, I is false; if there are, I is true."
+        ],
+        "a": "undetermined"
+      },
+      {
+        "t": "ex",
+        "title": "A contradictory still works",
+        "q": "On the Boolean reading, \"Some actors are poets\" is false. What is \"No actors are poets\"?",
+        "steps": [
+          "E and I are contradictories, which hold on every reading.",
+          "I is false, so E is true."
+        ],
+        "a": "true"
+      },
+      {
+        "t": "note",
+        "html": "Why keep both squares? The traditional square is right whenever we already know the subject class has members, which is true of most everyday talk. The modern square is safer in general, because it makes no assumption, and it is the one built into modern symbolic logic."
+      },
+      {
+        "t": "mistake",
+        "html": "Keeping subalternation on the Boolean reading: from \"All dragons breathe fire\" it does not follow that some dragon breathes fire. Check: could the subject class be empty? If so, the universal is true and the particular false."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Patrick J. Hurley, A Concise Introduction to Logic, 4.3 Venn Diagrams and the Modern Square of Opposition"
+      },
+      {
+        "name": "Patrick J. Hurley, A Concise Introduction to Logic, 4.6 Venn Diagrams and the Traditional Standpoint"
+      },
+      {
+        "name": "Stanford Encyclopedia of Philosophy, \"The Traditional Square of Opposition\""
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,116 @@
+{
+  "id": "chem.combined-gas-law",
+  "slug": "combined-gas-law",
+  "ladder": "chemistry",
+  "course": "chem",
+  "unit": "gases",
+  "title": "Gay-Lussac's Law and the Combined Gas Law",
+  "short": "At constant volume, pressure is proportional to kelvin temperature, and P₁V₁/T₁ = P₂V₂/T₂ joins all three laws.",
+  "trouble": "Students forget to convert to kelvins, or put the starting and final values on the wrong sides of the equation.",
+  "prereqs": [
+    "chem.boyles-law",
+    "chem.charles-law"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-gasbox"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/chemistry/chemistry/boyles-law/\">Boyle's Law</a> held the temperature constant and <a href=\"/chemistry/chemistry/charles-law/\">Charles's Law</a> held the pressure constant. Hold the <i>volume</i> constant instead, as in a rigid steel tank, and you get the third law. Then all three fit into one equation."
+      },
+      {
+        "t": "key",
+        "html": "At constant volume, pressure is proportional to kelvin temperature (Gay-Lussac's law): $\\dfrac{P_1}{T_1} = \\dfrac{P_2}{T_2}$. For a fixed amount of gas, all three laws combine into $$\\frac{P_1V_1}{T_1} = \\frac{P_2V_2}{T_2}$$"
+      },
+      {
+        "t": "why",
+        "html": "In a rigid tank the walls cannot move, so when the particles speed up they simply hit harder and more often: pressure rises in proportion to the kelvin temperature. In general, $PV/T$ stays the same for a fixed amount of gas. Set $T_1 = T_2$ and the combined law becomes Boyle's law; set $P_1 = P_2$ and it becomes Charles's law; set $V_1 = V_2$ and it becomes Gay-Lussac's law."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Law",
+          "Held constant",
+          "Relation"
+        ],
+        "rows": [
+          [
+            "Boyle",
+            "temperature, amount",
+            "$P_1V_1 = P_2V_2$"
+          ],
+          [
+            "Charles",
+            "pressure, amount",
+            "$V_1/T_1 = V_2/T_2$"
+          ],
+          [
+            "Gay-Lussac",
+            "volume, amount",
+            "$P_1/T_1 = P_2/T_2$"
+          ],
+          [
+            "combined",
+            "amount",
+            "$P_1V_1/T_1 = P_2V_2/T_2$"
+          ]
+        ],
+        "cap": "One equation, three special cases."
+      },
+      {
+        "t": "viz",
+        "name": "ch-gasbox",
+        "opts": {
+          "n": 1,
+          "T": 300,
+          "lock": "V",
+          "graph": "PT"
+        },
+        "cap": "The piston is pinned, so the volume cannot change. Heat the gas and the pressure climbs in step with the kelvin temperature (on a wide screen, a live $P$–$T$ line points back to $0\\ \\text{K}$)."
+      },
+      {
+        "t": "ex",
+        "title": "A rigid tank warms",
+        "q": "A steel tank holds gas at $2.00\\ \\text{atm}$ and $25^\\circ\\text{C}$. It is warmed to $100^\\circ\\text{C}$. What is the new pressure?",
+        "steps": [
+          "Constant volume. Kelvins: $T_1 = 298.15\\ \\text{K}$, $T_2 = 373.15\\ \\text{K}$.",
+          "$$P_2 = 2.00\\ \\text{atm} \\times \\dfrac{373.15}{298.15} = 2.50\\ \\text{atm}$$"
+        ],
+        "a": "$2.50\\ \\text{atm}$."
+      },
+      {
+        "t": "ex",
+        "title": "A weather balloon",
+        "q": "A weather balloon holds $10.0\\ \\text{L}$ of helium at $1.00\\ \\text{atm}$ and $25^\\circ\\text{C}$. It rises to where the pressure is $0.500\\ \\text{atm}$ and the temperature is $-10^\\circ\\text{C}$. What is its new volume?",
+        "steps": [
+          "Solve the combined law for $V_2$: $V_2 = V_1 \\times \\dfrac{P_1}{P_2} \\times \\dfrac{T_2}{T_1}$.",
+          "Kelvins: $T_1 = 298.15\\ \\text{K}$, $T_2 = 263.15\\ \\text{K}$.",
+          "$$V_2 = 10.0\\ \\text{L} \\times \\dfrac{1.00}{0.500} \\times \\dfrac{263.15}{298.15} = 17.7\\ \\text{L}$$",
+          "Check: lower pressure makes it bigger, the cold makes it a little smaller."
+        ],
+        "a": "About $17.7\\ \\text{L}$."
+      },
+      {
+        "t": "mistake",
+        "html": "Forgetting to change to kelvins, or putting the starting and final values on the wrong sides of the equation. Keep all the \"1\" values on one side and all the \"2\" values on the other, and use kelvins every time. Then check each factor's direction: a drop in pressure should make the volume bigger, a drop in temperature smaller."
+      },
+      {
+        "t": "note",
+        "html": "See all three laws in <a href=\"/science-lab/gas/\">Gas in a Box</a> by locking the temperature, the pressure or the volume in turn."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 9.2 Relating Pressure, Volume, Amount, and Temperature: The Ideal Gas Law"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

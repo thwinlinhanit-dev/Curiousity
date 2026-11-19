@@ -1,0 +1,154 @@
+{
+  "id": "gov.committees",
+  "slug": "committees",
+  "ladder": "civics",
+  "course": "gov",
+  "unit": "congress",
+  "title": "Committees",
+  "short": "Most work happens in committees: standing (permanent, by subject), select or special (temporary), joint (both houses) and conference (to settle differences between House and Senate versions of a bill); committees hold hearings and mark up bills.",
+  "trouble": "Students think every bill gets a vote on the floor. Most bills die in committee without a vote.",
+  "prereqs": [
+    "gov.congressional-leadership"
+  ],
+  "xp": 2,
+  "viz": [
+    "cv-sort",
+    "cv-bill"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Thousands of bills are introduced in each Congress. No chamber can study them all, so <a href=\"/american-history/civics-and-government/congressional-leadership/\">the leaders</a> send each bill to a <b>committee</b>, a smaller group of members who specialize in a subject."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Kind",
+          "What it is",
+          "Examples"
+        ],
+        "rows": [
+          [
+            "Standing",
+            "permanent, by subject; most bills go to one",
+            "House Ways and Means (taxes), Appropriations, Armed Services; Senate Finance, Foreign Relations, Judiciary"
+          ],
+          [
+            "Select or special",
+            "set up for a limited purpose, often an investigation",
+            "committees to investigate a scandal or study an issue"
+          ],
+          [
+            "Joint",
+            "members of both houses, usually for study or housekeeping",
+            "Joint Economic Committee; Joint Committee on Taxation"
+          ],
+          [
+            "Conference",
+            "temporary, members of both houses, to settle differences between the House and Senate versions of one bill",
+            "a conference on a farm bill"
+          ]
+        ]
+      },
+      {
+        "t": "viz",
+        "name": "cv-bill",
+        "opts": {
+          "start": "house",
+          "path": "sign",
+          "mode": "steps"
+        },
+        "cap": "Step through a bill's path. Notice the committee step: it is where most bills stop."
+      },
+      {
+        "t": "why",
+        "html": "Committees do the detailed work: they hold <b>hearings</b> (witnesses, experts, agency officials), then <b>mark up</b> the bill (rewrite it line by line) and vote whether to report it to the full chamber. They also gatekeep. A chair who does not schedule a bill can let it die quietly, and roughly nine of every ten bills introduced never get past committee. The House has an escape hatch: a <b>discharge petition</b> signed by 218 members (a majority) can force a bill to the floor, though few succeed. Members seek seats on committees that matter to their districts, and the majority party holds most seats and every chair."
+      },
+      {
+        "t": "key",
+        "html": "Most work happens in committees: <b>standing</b> (permanent, by subject), <b>select or special</b> (temporary), <b>joint</b> (both houses) and <b>conference</b> (to settle House–Senate differences). Committees hold <b>hearings</b> and <b>mark up</b> bills; most bills die there."
+      },
+      {
+        "t": "ex",
+        "title": "Which kind?",
+        "q": "The House passed a highway bill; the Senate passed a different version. A group from both chambers meets to write one text. What kind of committee is that?",
+        "steps": [
+          "Temporary, both houses, one bill, settling differences: a conference committee."
+        ],
+        "a": "A conference committee."
+      },
+      {
+        "t": "ex",
+        "title": "Forcing a vote",
+        "q": "A bill has 230 cosponsors in the House, but the committee chair refuses to act. What can its supporters do?",
+        "steps": [
+          "They can file a discharge petition.",
+          "If 218 members sign it, the bill can be brought to the floor without the committee."
+        ],
+        "a": "A discharge petition with 218 signatures."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking every bill gets a vote on the floor. Most bills die in committee without a vote. Check: a bill's path has a gate at the committee step; only bills a committee reports (or that are discharged) reach the floor."
+      },
+      {
+        "t": "viz",
+        "name": "cv-sort",
+        "opts": {
+          "bins": [
+            "Standing",
+            "Select",
+            "Joint",
+            "Conference"
+          ],
+          "columns": 2,
+          "cards": [
+            {
+              "text": "House Ways and Means",
+              "bin": 0
+            },
+            {
+              "text": "Senate Judiciary",
+              "bin": 0
+            },
+            {
+              "text": "a temporary panel to investigate an attack",
+              "bin": 1
+            },
+            {
+              "text": "Joint Committee on Taxation",
+              "bin": 2
+            },
+            {
+              "text": "negotiators from both houses on one bill",
+              "bin": 3
+            }
+          ]
+        }
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Grokipedia, \"United States congressional committee\"",
+        "url": "https://grokipedia.com/page/United_States_congressional_committee"
+      },
+      {
+        "name": "Grokipedia, \"Discharge petition\"",
+        "url": "https://grokipedia.com/page/Discharge_petition"
+      },
+      {
+        "name": "Grokipedia, \"Act of Congress\"",
+        "url": "https://grokipedia.com/page/Act_of_Congress"
+      },
+      {
+        "name": "OpenStax, American Government 3e, chapter 11, \"Congress\""
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

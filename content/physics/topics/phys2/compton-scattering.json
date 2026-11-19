@@ -1,0 +1,94 @@
+{
+  "id": "phys2.compton-scattering",
+  "slug": "compton-scattering",
+  "ladder": "physics",
+  "course": "phys2",
+  "unit": "quantum",
+  "title": "Compton Scattering",
+  "short": "A photon carries momentum p = h/λ, so an X-ray that bounces off an electron comes away with a longer wavelength.",
+  "trouble": "Students think the scattered photon slows down, when it still moves at c and its lost energy shows up as a longer wavelength.",
+  "prereqs": [
+    "phys2.matter-waves",
+    "phys1.elastic-collisions"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-photon"
+  ],
+  "figureArchetype": "WaveFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A photon has no mass, but it carries momentum. Turn the <a href=\"/physics/physics-2/matter-waves/\">de Broglie relation</a> around: a photon of wavelength $\\lambda$ has $p = h/\\lambda$. In 1923 Arthur Compton bounced X-rays off electrons and found that the photons behave like billiard balls in a <a href=\"/physics/physics-1/elastic-collisions/\">collision</a>, conserving both energy and momentum."
+      },
+      {
+        "t": "key",
+        "html": "A photon has momentum $p = \\dfrac{h}{\\lambda} = \\dfrac{E}{c}$. A photon that scatters off a free electron at angle $\\theta$ comes away with a longer wavelength: $$\\Delta\\lambda = \\lambda' - \\lambda = \\frac{h}{m_e c}(1 - \\cos\\theta),$$ where $\\dfrac{h}{m_e c} = 2.43\\ \\text{pm}$ (the Compton wavelength of the electron)."
+      },
+      {
+        "t": "viz",
+        "name": "ph-photon",
+        "opts": {
+          "mode": "compton",
+          "lambda0": 71,
+          "theta": 90,
+          "task": "Raise the scattering angle. When is the shift largest?"
+        },
+        "cap": "An X-ray photon strikes an electron at rest. The electron recoils, and the photon leaves with less energy and a longer wavelength."
+      },
+      {
+        "t": "why",
+        "html": "The electron recoils and carries off some kinetic energy. The photon must lose that much energy, and for a photon less energy means a lower frequency and a longer wavelength, since $E = hc/\\lambda$. Its speed cannot change: every photon moves at $c$. A head-on bounce ($\\theta = 180^\\circ$) gives the electron the biggest kick, so the shift is largest there, $2(2.43) = 4.86\\ \\text{pm}$. A grazing scatter ($\\theta \\to 0$) changes almost nothing."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking the scattered photon slows down. It still moves at $c$; its lost energy shows up as a longer wavelength (lower frequency). Check: the shift depends only on the angle, and $\\lambda'$ is always longer than $\\lambda$."
+      },
+      {
+        "t": "ex",
+        "title": "Scattering at 90°",
+        "q": "X-rays of $71.0\\ \\text{pm}$ scatter at $90^\\circ$ from free electrons. Find the scattered wavelength.",
+        "steps": [
+          "$\\cos 90^\\circ = 0$, so $\\Delta\\lambda = 2.43\\ \\text{pm}$.",
+          "$\\lambda' = 71.0 + 2.43 = 73.4\\ \\text{pm}$."
+        ],
+        "a": "$73.4\\ \\text{pm}$"
+      },
+      {
+        "t": "ex",
+        "title": "Energy given to the electron",
+        "q": "For the same scattering, how much kinetic energy does the electron get? Use $hc = 1240\\ \\text{eV·nm} = 1.240 \\times 10^{6}\\ \\text{eV·pm}$.",
+        "steps": [
+          "Before: $E = \\dfrac{1.240 \\times 10^{6}}{71.0} = 17{,}460\\ \\text{eV}$.",
+          "After: $E' = \\dfrac{1.240 \\times 10^{6}}{73.43} = 16{,}890\\ \\text{eV}$.",
+          "The electron gets the difference: about $580\\ \\text{eV}$, so the photon gave up about $3\\%$ of its energy."
+        ],
+        "a": "About $580\\ \\text{eV}$"
+      },
+      {
+        "t": "ex",
+        "title": "Momentum of visible light",
+        "q": "Find the momentum of a $500\\ \\text{nm}$ photon.",
+        "steps": [
+          "$$p = \\dfrac{h}{\\lambda} = \\dfrac{6.63 \\times 10^{-34}}{5.00 \\times 10^{-7}} = 1.33 \\times 10^{-27}\\ \\text{kg·m/s}.$$",
+          "Tiny, but sunlight's push on a large thin sail can steer a spacecraft."
+        ],
+        "a": "$1.33 \\times 10^{-27}\\ \\text{kg·m/s}$"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Physics 2e, Section 29.4: Photon Momentum"
+      },
+      {
+        "name": "OpenStax University Physics Volume 3, Section 6.3: The Compton Effect"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

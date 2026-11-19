@@ -1,0 +1,82 @@
+[
+  {
+    "key": "title",
+    "source": "Potential Energy Diagrams"
+  },
+  {
+    "key": "short",
+    "source": "Read turning points, allowed regions and stable or unstable equilibria from a graph of U(x)."
+  },
+  {
+    "key": "trouble",
+    "source": "Students think an object can pass through a region where its total energy is less than U."
+  },
+  {
+    "key": "block.0.html",
+    "source": "A graph of $U(x)$ with a horizontal line at the total energy $E$ tells you nearly everything about one-dimensional motion without solving any equation. It combines <a href=\"/physics/mechanics/force-from-potential/\">Force from Potential Energy</a> (force is minus the slope) with <a href=\"/math/calculus-1/concavity/\">Concavity and the Second Derivative Test</a> (the shape of a graph near a flat point)."
+  },
+  {
+    "key": "block.1.html",
+    "source": "With total energy $E$, the kinetic energy is $K = E - U(x)$, the gap between the line and the curve. <ul><li><b>Allowed regions:</b> where $U(x) \\le E$, since $K$ can't be negative.</li><li><b>Turning points:</b> where $U(x) = E$; the object stops and reverses.</li><li><b>Equilibria:</b> where $dU/dx = 0$. A minimum ($d^2U/dx^2 > 0$) is stable; a maximum ($d^2U/dx^2 < 0$) is unstable.</li></ul>"
+  },
+  {
+    "key": "block.2.html",
+    "source": "Energy conservation says $\\tfrac{1}{2}mv^2 + U(x) = E$, so $v = \\pm\\sqrt{2(E - U)/m}$: fastest where $U$ is lowest, zero where $U = E$. At a minimum of $U$, a small nudge either way puts the object uphill, and the force $-dU/dx$ points back toward the minimum: it rocks back and forth there (stable). At a maximum, a nudge puts it downhill, and the force pushes it farther away (unstable)."
+  },
+  {
+    "key": "block.3.cap",
+    "source": "The double well $U = x^4 - 8x^2$ with $E = -7\\ \\text{J}$: the ball is trapped between $x = 1$ and $x = \\sqrt{7}$ in the right-hand well."
+  },
+  {
+    "key": "block.4.q",
+    "source": "Find and classify the equilibria of $U(x) = x^4 - 8x^2$ (J, m)."
+  },
+  {
+    "key": "block.4.title",
+    "source": "Equilibria of a double well"
+  },
+  {
+    "key": "block.4.a",
+    "source": "Unstable at $x = 0$; stable at $x = \\pm 2\\ \\text{m}$, where $U = -16\\ \\text{J}$."
+  },
+  {
+    "key": "block.4.step.0",
+    "source": "$\\dfrac{dU}{dx} = 4x^3 - 16x = 4x(x^2 - 4) = 0$ at $x = 0, \\pm 2$."
+  },
+  {
+    "key": "block.4.step.1",
+    "source": "$\\dfrac{d^2U}{dx^2} = 12x^2 - 16$: at $x = 0$ it is $-16$ (a maximum, unstable); at $x = \\pm 2$ it is $32$ (minima, stable)."
+  },
+  {
+    "key": "block.5.q",
+    "source": "A particle in the same well has $E = -7\\ \\text{J}$ and starts in the right-hand well. Where does it turn around?"
+  },
+  {
+    "key": "block.5.title",
+    "source": "Turning points"
+  },
+  {
+    "key": "block.5.a",
+    "source": "At $x = 1\\ \\text{m}$ and $x = 2.65\\ \\text{m}$."
+  },
+  {
+    "key": "block.5.step.0",
+    "source": "Set $U = E$: $x^4 - 8x^2 + 7 = 0$, a quadratic in $x^2$: $(x^2 - 1)(x^2 - 7) = 0$."
+  },
+  {
+    "key": "block.5.step.1",
+    "source": "On the right: $x = 1\\ \\text{m}$ and $x = \\sqrt{7} = 2.65\\ \\text{m}$."
+  },
+  {
+    "key": "block.5.step.2",
+    "source": "Between them $U < E$; outside them $U > E$, which is forbidden. Since $E < U(0) = 0$, it can't cross to the left well."
+  },
+  {
+    "key": "block.6.html",
+    "source": "Thinking the object can pass through a region where $E < U$, perhaps \"with enough momentum.\" Its momentum is already counted in $E$. Where $U > E$, the kinetic energy $E - U$ would be negative, and $\\tfrac{1}{2}mv^2$ can't be. Check by reading the graph: if the energy line is below the curve somewhere, the object can't get there from where it is (in classical physics; quantum tunneling is a different story, met in later physics)."
+  },
+  {
+    "key": "block.7.html",
+    "source": "Near a stable minimum, any smooth $U$ looks like a parabola, $U \\approx U_0 + \\tfrac{1}{2}U''(x_0)(x - x_0)^2$: a spring with $k = U''(x_0)$. That is why small oscillations everywhere in nature are close to simple harmonic, as you'll see in <a href=\"/physics/mechanics/shm-equation/\">The Equation of Simple Harmonic Motion</a>."
+  }
+]

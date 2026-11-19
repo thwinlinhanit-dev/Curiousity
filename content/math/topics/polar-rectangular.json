@@ -1,0 +1,106 @@
+{
+  "id": "pre.polar-rectangular",
+  "slug": "polar-rectangular",
+  "ladder": "math",
+  "course": "pre",
+  "unit": "polar-complex",
+  "title": "Converting Polar and Rectangular",
+  "short": "x = r cos θ, y = r sin θ, and back again.",
+  "trouble": "Students take θ = tan⁻¹(y/x) for a point in the second or third quadrant without adjusting.",
+  "prereqs": [
+    "pre.polar-coordinates",
+    "pre.vector-components"
+  ],
+  "xp": 2,
+  "viz": [
+    "polar"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A point described in <a href=\"/math/precalculus/polar-coordinates/\">polar coordinates</a> also has rectangular coordinates. Converting between them is the same calculation as finding <a href=\"/math/precalculus/vector-components/\">vector components</a> and magnitudes."
+      },
+      {
+        "t": "key",
+        "html": "Polar to rectangular: $x = r\\cos\\theta$, $y = r\\sin\\theta$. Rectangular to polar: $r^2 = x^2 + y^2$ and $\\tan\\theta = \\frac{y}{x}$, with $\\theta$ chosen in the quadrant where $(x, y)$ actually is. For equations, substitute $x = r\\cos\\theta$, $y = r\\sin\\theta$, $x^2 + y^2 = r^2$."
+      },
+      {
+        "t": "why",
+        "html": "The point at distance $r$ along the ray at angle $\\theta$ is the unit-circle point $(\\cos\\theta, \\sin\\theta)$ stretched by $r$. Going back, $r$ is the distance from the origin (the Pythagorean theorem), and $\\frac{y}{x}$ is the slope of the ray, which is $\\tan\\theta$."
+      },
+      {
+        "t": "viz",
+        "name": "polar",
+        "opts": {
+          "point": [
+            2,
+            150
+          ],
+          "units": "rad"
+        },
+        "cap": "The dashed lines show $x = r\\cos\\theta$ and $y = r\\sin\\theta$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Polar to rectangular",
+        "q": "Convert $\\left(4, \\frac{2\\pi}{3}\\right)$ to rectangular coordinates.",
+        "steps": [
+          "$x = 4\\cos\\frac{2\\pi}{3} = 4 \\cdot \\left(-\\frac{1}{2}\\right) = -2$.",
+          "$y = 4\\sin\\frac{2\\pi}{3} = 4 \\cdot \\frac{\\sqrt{3}}{2} = 2\\sqrt{3}$."
+        ],
+        "a": "$\\left(-2, 2\\sqrt{3}\\right)$"
+      },
+      {
+        "t": "ex",
+        "title": "Rectangular to polar",
+        "q": "Convert $\\left(-1, -\\sqrt{3}\\right)$ to polar coordinates with $r > 0$ and $0 \\le \\theta < 2\\pi$.",
+        "steps": [
+          "$r = \\sqrt{1 + 3} = 2$.",
+          "$\\tan\\theta = \\frac{-\\sqrt{3}}{-1} = \\sqrt{3}$, so the reference angle is $\\frac{\\pi}{3}$.",
+          "The point is in Quadrant III, so $\\theta = \\pi + \\frac{\\pi}{3} = \\frac{4\\pi}{3}$."
+        ],
+        "a": "$\\left(2, \\frac{4\\pi}{3}\\right)$"
+      },
+      {
+        "t": "ex",
+        "title": "An equation",
+        "q": "Write $r = 4\\cos\\theta$ in rectangular form.",
+        "steps": [
+          "Multiply both sides by $r$: $r^2 = 4r\\cos\\theta$.",
+          "Substitute: $x^2 + y^2 = 4x$.",
+          "Complete the square: $(x - 2)^2 + y^2 = 4$, a circle of radius $2$ centered at $(2, 0)$."
+        ],
+        "a": "$x^2 + y^2 = 4x$"
+      },
+      {
+        "t": "ex",
+        "title": "The other way",
+        "q": "Write the line $x = 3$ as a polar equation solved for $r$.",
+        "steps": [
+          "Replace $x$: $r\\cos\\theta = 3$.",
+          "Solve: $r = \\frac{3}{\\cos\\theta} = 3\\sec\\theta$."
+        ],
+        "a": "$r = 3\\sec\\theta$"
+      },
+      {
+        "t": "mistake",
+        "html": "Using $\\theta = \\tan^{-1}\\frac{y}{x}$ for a point in Quadrant II or III. For $\\left(-1, -\\sqrt{3}\\right)$, $\\tan^{-1}\\sqrt{3} = \\frac{\\pi}{3}$ points into Quadrant I, the wrong side of the origin. Add $\\pi$ when $x < 0$. Always check that your $(r, \\theta)$ converts back to the original point."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Precalculus 2e, Section 8.3 Polar Coordinates"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,107 @@
+{
+  "id": "gchem1.solution-stoichiometry",
+  "slug": "solution-stoichiometry",
+  "ladder": "chemistry",
+  "course": "gchem1",
+  "unit": "solution-reactions",
+  "title": "Solution Stoichiometry",
+  "short": "Molarity times volume gives moles, which go straight into a mole ratio.",
+  "trouble": "Students multiply molarity by milliliters as if they were liters, or skip the mole ratio.",
+  "prereqs": [
+    "chem.molarity",
+    "chem.limiting-reactant"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-convert",
+    "ch-limiting"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/chemistry/chemistry/molarity/\">Molarity</a> turns a volume of solution into moles, and once you have moles, <a href=\"/chemistry/chemistry/limiting-reactant/\">the mole ratio and the limiting reactant</a> work exactly as before. This is the arithmetic of almost every reaction run in solution."
+      },
+      {
+        "t": "key",
+        "html": "$$n = M \\times V \\quad (V\\ \\text{in liters})$$ Change each given volume of solution to moles, use the mole ratio from the balanced (or net ionic) equation, then change to what is asked: a mass, a volume of another solution ($V = n/M$) or a concentration. When two solutions are mixed, check which reactant runs out first."
+      },
+      {
+        "t": "why",
+        "html": "Molarity is moles per liter, so multiplying by liters cancels the \"per liter\" and leaves moles. Everything after that is the familiar mole road map, with one new road: \"liters of solution\" connected to \"moles\" by the molarity. Volumes in milliliters must be divided by 1000 first; otherwise the moles come out 1000 times too big."
+      },
+      {
+        "t": "viz",
+        "name": "ch-limiting",
+        "opts": {
+          "eq": "BaCl2 + Na2SO4 -> BaSO4 + 2NaCl",
+          "amounts": {
+            "BaCl2": 0.01,
+            "Na2SO4": 0.012
+          },
+          "unit": "mol",
+          "show": [
+            "bars",
+            "table"
+          ]
+        },
+        "cap": "Two solutions mixed: 0.0100 mol of $\\mathrm{BaCl_2}$ and 0.0120 mol of $\\mathrm{Na_2SO_4}$. Barium runs out first, so it decides how much $\\mathrm{BaSO_4}$ forms."
+      },
+      {
+        "t": "ex",
+        "title": "Volume needed",
+        "q": "What volume of $0.100\\ \\text{M}\\ \\mathrm{AgNO_3}$ is needed to precipitate all the chloride in $25.0\\ \\text{mL}$ of $0.150\\ \\text{M}\\ \\mathrm{CaCl_2}$? ($\\mathrm{Ag^+} + \\mathrm{Cl^-} \\to \\mathrm{AgCl}$)",
+        "steps": [
+          "Moles of $\\mathrm{Cl^-}$: $0.0250\\ \\text{L} \\times 0.150\\ \\text{M} \\times 2 = 7.50 \\times 10^{-3}\\ \\text{mol}$ (two chlorides per $\\mathrm{CaCl_2}$).",
+          "Ratio 1 : 1, so $7.50 \\times 10^{-3}\\ \\text{mol}$ of $\\mathrm{Ag^+}$.",
+          "$$V = \\dfrac{n}{M} = \\dfrac{7.50 \\times 10^{-3}}{0.100} = 0.0750\\ \\text{L} = 75.0\\ \\text{mL}$$"
+        ],
+        "a": "$75.0\\ \\text{mL}$"
+      },
+      {
+        "t": "ex",
+        "title": "Two solutions, one limiting",
+        "q": "$50.0\\ \\text{mL}$ of $0.200\\ \\text{M}\\ \\mathrm{BaCl_2}$ is mixed with $40.0\\ \\text{mL}$ of $0.300\\ \\text{M}\\ \\mathrm{Na_2SO_4}$. What mass of $\\mathrm{BaSO_4}$ ($233.40\\ \\text{g/mol}$) forms?",
+        "steps": [
+          "$\\mathrm{Ba^{2+}}$: $0.0500 \\times 0.200 = 0.0100\\ \\text{mol}$. $\\mathrm{SO_4^{2-}}$: $0.0400 \\times 0.300 = 0.0120\\ \\text{mol}$.",
+          "They react 1 : 1, so barium (0.0100 mol) is limiting; 0.0020 mol of sulfate is left over.",
+          "Mass: $0.0100 \\times 233.40 = 2.33\\ \\text{g}$."
+        ],
+        "a": "$2.33\\ \\text{g}$"
+      },
+      {
+        "t": "ex",
+        "title": "Mass of a precipitate",
+        "q": "What mass of $\\mathrm{Mg(OH)_2}$ ($58.33\\ \\text{g/mol}$) forms when $30.0\\ \\text{mL}$ of $0.250\\ \\text{M}$ NaOH is added to excess $\\mathrm{MgCl_2}$ solution? ($\\mathrm{Mg^{2+}} + 2\\,\\mathrm{OH^-} \\to \\mathrm{Mg(OH)_2(s)}$)",
+        "steps": [
+          "$n_{\\mathrm{OH^-}} = 0.0300 \\times 0.250 = 7.50 \\times 10^{-3}\\ \\text{mol}$.",
+          "Two hydroxides per formula unit: $7.50 \\times 10^{-3}/2 = 3.75 \\times 10^{-3}\\ \\text{mol}\\ \\mathrm{Mg(OH)_2}$.",
+          "Mass: $3.75 \\times 10^{-3} \\times 58.33 = 0.219\\ \\text{g}$."
+        ],
+        "a": "$0.219\\ \\text{g}$"
+      },
+      {
+        "t": "note",
+        "html": "To find what is left over, subtract the moles used from the moles of the excess reactant, then divide by the <b>total</b> volume of the mixture: in the example, $0.0020\\ \\text{mol}$ of sulfate in $90.0\\ \\text{mL}$ is $0.022\\ \\text{M}$."
+      },
+      {
+        "t": "mistake",
+        "html": "Multiplying molarity by milliliters as if they were liters, or skipping the mole ratio. $0.150\\ \\text{M} \\times 25.0 = 3.75$ is not moles; $0.150 \\times 0.0250 = 3.75 \\times 10^{-3}$ is. And for $\\mathrm{CaCl_2}$ the chloride moles are twice the salt's. Check: mL × M gives millimoles, a useful unit if you keep the label."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 4.3 Reaction Stoichiometry"
+      },
+      {
+        "name": "College Board, AP Chemistry Course and Exam Description (effective fall 2024), Unit 4: Chemical Reactions"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

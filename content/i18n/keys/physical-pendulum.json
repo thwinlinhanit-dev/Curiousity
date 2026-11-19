@@ -1,0 +1,82 @@
+[
+  {
+    "key": "title",
+    "source": "Simple and Physical Pendulums"
+  },
+  {
+    "key": "short",
+    "source": "A swinging rigid body has T = 2π√(I/(mgd)), and small angles make any pendulum simple harmonic."
+  },
+  {
+    "key": "trouble",
+    "source": "Students use the whole length of a swinging rod instead of the distance from the pivot to its center of mass."
+  },
+  {
+    "key": "block.0.html",
+    "source": "<a href=\"/physics/physics-1/pendulum-period/\">Period of a Pendulum</a> gave $T = 2\\pi\\sqrt{L/g}$ for a small bob on a string. A swinging bar, a leg or a door knocker is a rigid body: its mass is spread out, so we need <a href=\"/physics/mechanics/parallel-axis/\">The Parallel-Axis Theorem</a>, the torque form of Newton's law, and the small-angle trick from <a href=\"/math/calculus-1/linear-approximation/\">Linear Approximation and Differentials</a>. It builds on <a href=\"/physics/mechanics/shm-equation/\">The Equation of Simple Harmonic Motion</a>. See pendulums keep time in the <a href=\"/science-lab/pendulums/\">Pendulums and Resonance</a> lab."
+  },
+  {
+    "key": "block.1.html",
+    "source": "A rigid body hangs from a pivot with its center of mass a distance $d$ below. Tilted by $\\theta$, gravity acting at the center of mass gives a torque $\\tau = -mgd\\sin\\theta$ about the pivot. Newton's law for rotation: $$I\\ddot{\\theta} = -mgd\\sin\\theta.$$ For small angles (in radians), $\\sin\\theta \\approx \\theta$, the linear approximation near 0, so $\\ddot{\\theta} = -\\dfrac{mgd}{I}\\theta$: simple harmonic motion with $\\omega^2 = \\dfrac{mgd}{I}$."
+  },
+  {
+    "key": "block.2.html",
+    "source": "$$T = 2\\pi\\sqrt{\\dfrac{I}{mgd}},$$ with $I$ about the pivot and $d$ from the pivot to the center of mass. A simple pendulum is the special case $I = mL^2$, $d = L$. The formula holds for small swings; larger swings take slightly longer."
+  },
+  {
+    "key": "block.3.cap",
+    "source": "A uniform 1 m rod swinging from one end. Its period, about 1.64 s, matches a simple pendulum only two thirds as long."
+  },
+  {
+    "key": "block.4.q",
+    "source": "A uniform meter stick swings from one end. Find its period for small swings."
+  },
+  {
+    "key": "block.4.title",
+    "source": "A swinging rod"
+  },
+  {
+    "key": "block.4.a",
+    "source": "$1.64\\ \\text{s}$."
+  },
+  {
+    "key": "block.4.step.0",
+    "source": "$I = \\tfrac{1}{3}mL^2$ about the end, and $d = L/2$."
+  },
+  {
+    "key": "block.4.step.1",
+    "source": "$$T = 2\\pi\\sqrt{\\dfrac{mL^2/3}{mgL/2}} = 2\\pi\\sqrt{\\dfrac{2L}{3g}} = 2\\pi\\sqrt{\\dfrac{2(1)}{3(9.8)}} = 1.64\\ \\text{s}$$"
+  },
+  {
+    "key": "block.4.step.2",
+    "source": "A simple pendulum of length $\\tfrac{2}{3}L$ has the same period: some of the rod's mass is close to the pivot and swings in a smaller arc."
+  },
+  {
+    "key": "block.5.q",
+    "source": "A uniform disk of radius $0.20\\ \\text{m}$ hangs on a nail through a point on its rim. Find its period."
+  },
+  {
+    "key": "block.5.title",
+    "source": "A disk on a nail"
+  },
+  {
+    "key": "block.5.a",
+    "source": "$1.10\\ \\text{s}$."
+  },
+  {
+    "key": "block.5.step.0",
+    "source": "About the rim: $I = \\tfrac{1}{2}MR^2 + MR^2 = \\tfrac{3}{2}MR^2$; $d = R$."
+  },
+  {
+    "key": "block.5.step.1",
+    "source": "$T = 2\\pi\\sqrt{\\dfrac{3R}{2g}} = 2\\pi\\sqrt{\\dfrac{3(0.2)}{2(9.8)}} = 1.10\\ \\text{s}$. The mass cancels."
+  },
+  {
+    "key": "block.6.html",
+    "source": "Using the whole length of a swinging rod as the pendulum length, as in $2\\pi\\sqrt{L/g} = 2.01\\ \\text{s}$ for the meter stick. A rod isn't a bob on a string: its mass is spread from the pivot to the tip. Check: put $I$ about the pivot and $d$ from the pivot to the <i>center of mass</i> into $T = 2\\pi\\sqrt{I/(mgd)}$; for a rod pivoted at its end, $d = L/2$."
+  },
+  {
+    "key": "block.7.html",
+    "source": "The small-angle period is very close for modest swings: at a $30^\\circ$ amplitude the true period is only about 1.7% longer, and at $10^\\circ$ about 0.2%. That near-independence from amplitude is why pendulums made good clocks."
+  }
+]

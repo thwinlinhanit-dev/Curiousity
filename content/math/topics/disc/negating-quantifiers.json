@@ -1,0 +1,108 @@
+{
+  "id": "disc.negating-quantifiers",
+  "slug": "negating-quantifiers",
+  "ladder": "math",
+  "course": "disc",
+  "unit": "logic",
+  "title": "Negating Quantified Statements",
+  "short": "¬∀x P(x) ≡ ∃x ¬P(x) and ¬∃x P(x) ≡ ∀x ¬P(x).",
+  "trouble": "Students negate \"all of them are\" as \"none of them are.\" The negation is \"at least one is not.\"",
+  "prereqs": [
+    "disc.quantifiers"
+  ],
+  "xp": 2,
+  "viz": [],
+  "figureArchetype": "LessonFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "To disprove a claim you must know exactly what its negation says. For <a href=\"/math/discrete-math/quantifiers/\">quantified statements</a> the rule is short, and it comes straight from <a href=\"/math/discrete-math/logical-equivalence/\">De Morgan's laws</a>."
+      },
+      {
+        "t": "key",
+        "html": "$\\neg \\forall x\\, P(x) \\equiv \\exists x\\, \\neg P(x)$ and $\\neg \\exists x\\, P(x) \\equiv \\forall x\\, \\neg P(x)$. To negate, move the $\\neg$ past the quantifier, switch the quantifier, and negate what is inside."
+      },
+      {
+        "t": "why",
+        "html": "On a domain $\\{a, b, c\\}$, $\\forall x\\, P(x)$ is $P(a) \\wedge P(b) \\wedge P(c)$. De Morgan turns its negation into $\\neg P(a) \\vee \\neg P(b) \\vee \\neg P(c)$: at least one fails, which is $\\exists x\\, \\neg P(x)$. The same argument, with \"or\" and \"and\" swapped, gives the second rule. In plain words: \"not everyone\" means \"someone doesn't,\" and \"nobody\" means \"everyone doesn't.\""
+      },
+      {
+        "t": "table",
+        "head": [
+          "Statement",
+          "Negation"
+        ],
+        "rows": [
+          [
+            "Every dog in the park is on a leash.",
+            "At least one dog in the park is not on a leash."
+          ],
+          [
+            "Some student turned in the homework.",
+            "No student turned in the homework."
+          ],
+          [
+            "No light in the house is on.",
+            "At least one light in the house is on."
+          ]
+        ],
+        "cap": "Negations in English."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Negating a symbolic statement",
+        "q": "Negate $\\forall x\\, (x > 0 \\to x^{2} > x)$ and simplify.",
+        "steps": [
+          "Switch the quantifier: $\\exists x\\, \\neg(x > 0 \\to x^{2} > x)$.",
+          "Negate the conditional: $\\neg(A \\to B) \\equiv A \\wedge \\neg B$. So we get $\\exists x\\, (x > 0 \\wedge x^{2} \\le x)$.",
+          "Over the real numbers, $x = \\frac{1}{2}$ is a witness: $\\frac{1}{2} > 0$ and $\\frac{1}{4} \\le \\frac{1}{2}$. So the negation is true, and the original statement is false."
+        ],
+        "a": "$\\exists x\\, (x > 0 \\wedge x^{2} \\le x)$"
+      },
+      {
+        "t": "ex",
+        "title": "Which one is true?",
+        "q": "Negate \"Every prime number is odd.\" Which is true: the statement or its negation?",
+        "steps": [
+          "The negation is \"Some prime number is not odd,\" that is, at least one prime is even.",
+          "$2$ is prime and even, so the negation is true.",
+          "So the original statement is false, and $2$ is the witness."
+        ],
+        "a": "The negation is true (because of $2$)."
+      },
+      {
+        "t": "ex",
+        "title": "Negating \"no\"",
+        "q": "Negate \"No integer is both even and odd.\"",
+        "steps": [
+          "\"No integer is both even and odd\" is $\\forall n\\, \\neg(E(n) \\wedge O(n))$.",
+          "Its negation is $\\exists n\\, (E(n) \\wedge O(n))$: \"Some integer is both even and odd.\"",
+          "That negation is false, so the original is true. You will prove it later by contradiction."
+        ],
+        "a": "Some integer is both even and odd."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Negating \"all are\" as \"none are.\"</b> The negation of \"every dog is on a leash\" is not \"no dog is on a leash.\" One dog off the leash is enough to make the original false. Check: the negation must be true in exactly the situations where the original is false. If both \"every dog is leashed\" and your \"negation\" can be false at once (say, half the dogs are leashed), you have not found the negation."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Oscar Levin, Discrete Mathematics: An Open Introduction (3rd ed.), section \"Mathematical Statements\" (quantifiers and negation)"
+      },
+      {
+        "name": "MIT OpenCourseWare 6.042J Mathematics for Computer Science (Lehman, Leighton and Meyer), chapter \"Logical Formulas\""
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

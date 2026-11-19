@@ -1,0 +1,143 @@
+{
+  "id": "disc.big-o",
+  "slug": "big-o",
+  "ladder": "math",
+  "course": "disc",
+  "unit": "induction-recursion",
+  "title": "Growth Rates and Big-O",
+  "short": "Rank functions by how fast they grow, log n ≪ n ≪ n log n ≪ n² ≪ 2ⁿ ≪ n!; f is O(g) when f(n) ≤ C · g(n) for all large n.",
+  "trouble": "Students judge growth from small values of n (100n is larger than n² until n = 100), or think a constant factor changes the Big-O class.",
+  "prereqs": [
+    "disc.nested-quantifiers",
+    "alg2.log-graphs"
+  ],
+  "xp": 2,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "When we compare algorithms, or counts like $2^{n}$ and $n!$, we care about what happens as $n$ grows, not about small cases or constant factors. Big-O notation makes that precise, and its definition is a <a href=\"/math/discrete-math/nested-quantifiers/\">nested quantifier</a> statement. <a href=\"/math/algebra-2/log-graphs/\">Logarithms</a>, which grow slowly, sit at the bottom of the growth ladder."
+      },
+      {
+        "t": "key",
+        "html": "$f$ is $O(g)$ (\"big-O of $g$\") when there are constants $C$ and $k$ such that $|f(n)| \\le C\\,|g(n)|$ for every $n > k$. The common growth classes, from slowest to fastest, are $$\\log n \\ll \\sqrt{n} \\ll n \\ll n\\log n \\ll n^{2} \\ll n^{3} \\ll 2^{n} \\ll n!.$$"
+      },
+      {
+        "t": "why",
+        "html": "Read the definition with its quantifiers: there exist $C$ and $k$ such that for all $n > k$… The \"for all $n > k$\" ignores any finite beginning, and the $C$ absorbs constant factors. So $100n$ is $O(n)$ (take $C = 100$), and $n^{2}$ is not $O(100n)$: whatever $C$ you pick, $n^{2} \\le 100Cn$ fails once $n > 100C$. For the ladder, compare ratios: $n^{2}/n = n$ grows without bound, so $n^{2}$ is not $O(n)$, and the same argument works for each step up."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "fns": [
+            {
+              "f": "100x",
+              "label": "100n",
+              "color": "blue"
+            },
+            {
+              "f": "x^2",
+              "label": "n²",
+              "color": "red"
+            }
+          ],
+          "xmin": -40,
+          "xmax": 160,
+          "ymin": -1500,
+          "ymax": 20000,
+          "intersections": true
+        },
+        "cap": "$100x$ is bigger than $x^{2}$ until $x = 100$; after that $x^{2}$ wins and never looks back. Zoom out to see it."
+      },
+      {
+        "t": "table",
+        "head": [
+          "$n$",
+          "$\\log_{2} n$",
+          "$n\\log_{2} n$",
+          "$n^{2}$",
+          "$2^{n}$"
+        ],
+        "rows": [
+          [
+            "$10$",
+            "$3.3$",
+            "$33$",
+            "$100$",
+            "$1{,}024$"
+          ],
+          [
+            "$100$",
+            "$6.6$",
+            "$664$",
+            "$10^{4}$",
+            "$\\approx 10^{30}$"
+          ],
+          [
+            "$1{,}000$",
+            "$10.0$",
+            "$9{,}966$",
+            "$10^{6}$",
+            "$\\approx 10^{301}$"
+          ]
+        ],
+        "cap": "The ladder in numbers ($2^{100} \\approx 1.3 \\times 10^{30}$)."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Finding witnesses",
+        "q": "Show that $f(n) = 3n^{2} + 5n + 2$ is $O(n^{2})$.",
+        "steps": [
+          "For $n \\ge 1$: $5n \\le 5n^{2}$ and $2 \\le 2n^{2}$.",
+          "So $f(n) \\le 3n^{2} + 5n^{2} + 2n^{2} = 10n^{2}$.",
+          "The witnesses $C = 10$, $k = 0$ (or $k = 1$) satisfy the definition."
+        ],
+        "a": "$C = 10$ works for all $n \\ge 1$."
+      },
+      {
+        "t": "ex",
+        "title": "A constant cannot rescue it",
+        "q": "Is $n^{2}$ $O(100n)$?",
+        "steps": [
+          "Suppose $n^{2} \\le C \\cdot 100n$ for all $n > k$. Dividing by $n$: $n \\le 100C$ for all $n > k$.",
+          "That fails for any $n$ larger than both $k$ and $100C$.",
+          "So no $C$ works: $n^{2}$ is not $O(100n)$, even though $100n$ is the larger one for every $n < 100$."
+        ],
+        "a": "No"
+      },
+      {
+        "t": "ex",
+        "title": "The tightest class",
+        "q": "Let $f(n) = 5n\\log_{2} n + 100n + 7$. Which is the slowest-growing of $n$, $n\\log n$, $n^{2}$ that $f$ is big-O of?",
+        "steps": [
+          "The term $5n\\log_{2} n$ eventually dominates: $100n \\le 100\\,n\\log_{2} n$ once $\\log_{2} n \\ge 1$, and $7 \\le 7n\\log_{2} n$ too.",
+          "So $f(n) \\le 112\\,n\\log_{2} n$ for $n \\ge 2$: $f$ is $O(n\\log n)$. It is also $O(n^{2})$, but that is a looser statement. It is not $O(n)$, since $f(n)/n \\ge 5\\log_{2} n$ is unbounded."
+        ],
+        "a": "$n\\log n$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Judging growth from small values, or thinking a constant changes the class.</b> At $n = 50$, $100n = 5{,}000$ beats $n^{2} = 2{,}500$, but that says nothing about large $n$. And $1000n$ and $n$ are both $O(n)$: big-O deliberately ignores constant factors. Check: look at the ratio $f(n)/g(n)$ for large $n$. If it stays bounded, $f$ is $O(g)$; if it grows without bound, it is not."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "MIT OpenCourseWare 6.042J Mathematics for Computer Science (Lehman, Leighton and Meyer), chapter \"Sums and Asymptotics\" (asymptotic notation)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,103 @@
+{
+  "id": "la.svd-applications",
+  "slug": "svd-applications",
+  "ladder": "math",
+  "course": "la",
+  "unit": "symmetric-svd",
+  "title": "Low-Rank Approximation and Applications",
+  "short": "Keep the largest singular values to compress data.",
+  "trouble": "",
+  "prereqs": [
+    "la.svd"
+  ],
+  "xp": 3,
+  "viz": [],
+  "figureArchetype": "EnergyFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The <a href=\"/math/linear-algebra/svd/\">SVD</a> sorts a matrix into pieces by importance. Keeping the important pieces and dropping the rest is the idea behind image compression, noise removal, recommendation systems and principal component analysis."
+      },
+      {
+        "t": "p",
+        "html": "Multiplying out $U\\Sigma V^{T}$ column by column gives the <b>outer-product form</b> $$A = \\sigma_1\\mathbf{u}_1\\mathbf{v}_1^{T} + \\sigma_2\\mathbf{u}_2\\mathbf{v}_2^{T} + \\cdots + \\sigma_r\\mathbf{u}_r\\mathbf{v}_r^{T},$$ a sum of rank-1 matrices, largest first. The <b>rank-$k$ approximation</b> $A_k$ keeps the first $k$ terms."
+      },
+      {
+        "t": "key",
+        "html": "<b>Eckart–Young.</b> $A_k$ is the closest matrix of rank $k$ to $A$. The error is $\\lVert A - A_k\\rVert = \\sigma_{k+1}$ (largest stretch) and $\\lVert A - A_k\\rVert_F$ $= \\sqrt{\\sigma_{k+1}^{2} + \\cdots + \\sigma_r^{2}}$ (square root of the sum of squared entries)."
+      },
+      {
+        "t": "why",
+        "html": "Why is dropping the small terms the right move? The Frobenius norm satisfies $\\lVert A\\rVert_F^{2} = \\sigma_1^{2} + \\cdots + \\sigma_r^{2}$, because orthogonal matrices do not change it and $\\Sigma$ holds the rest. So each term carries \"energy\" $\\sigma_i^{2}$, and the leftover $A - A_k$ is itself an SVD with the dropped singular values. Proving that no other rank-$k$ matrix does better takes more work, but the energy count shows why the largest terms matter most."
+      },
+      {
+        "t": "viz",
+        "name": "la-lowrank",
+        "opts": {
+          "image": "rook",
+          "size": 40,
+          "k": 3,
+          "task": "Raise k until the rook is clearly recognizable. How many terms did it take, and what fraction of the numbers?"
+        },
+        "cap": "A 40 × 40 picture is a matrix. Its rank-$k$ approximation keeps the $k$ largest terms $\\sigma_i\\mathbf{u}_i\\mathbf{v}_i^{T}$. The bars show the singular values; green ones are kept."
+      },
+      {
+        "t": "ex",
+        "title": "Storage for an image",
+        "q": "A grayscale photo is a $400 \\times 600$ matrix. How many numbers does its rank-20 approximation need, compared with the full image?",
+        "steps": [
+          "Each term needs $\\sigma_i$ (1 number), $\\mathbf{u}_i$ (400 numbers) and $\\mathbf{v}_i$ (600 numbers): $1001$ numbers.",
+          "Twenty terms: $20 \\times 1001 = 20{,}020$ numbers.",
+          "The full image has $400 \\times 600 = 240{,}000$, so the approximation uses about $8.3\\%$ of the storage."
+        ],
+        "a": "$20{,}020$ numbers"
+      },
+      {
+        "t": "ex",
+        "title": "A rank-1 approximation",
+        "q": "$A = U\\Sigma V^{T}$ with $\\mathbf{u}_1 = \\left(\\frac{3}{5}, \\frac{4}{5}\\right)$, $\\mathbf{v}_1 = \\left(\\frac{4}{5}, \\frac{3}{5}\\right)$, $\\sigma_1 = 10$ and $\\sigma_2 = 1$. Find $A_1$ and its error.",
+        "steps": [
+          "$\\mathbf{u}_1\\mathbf{v}_1^{T}$ $= \\begin{bmatrix} \\frac{3}{5} \\\\ \\frac{4}{5} \\end{bmatrix}\\begin{bmatrix} \\frac{4}{5} & \\frac{3}{5} \\end{bmatrix}$ $= \\begin{bmatrix} \\frac{12}{25} & \\frac{9}{25} \\\\ \\frac{16}{25} & \\frac{12}{25} \\end{bmatrix}$.",
+          "$A_1$ $= 10\\,\\mathbf{u}_1\\mathbf{v}_1^{T}$ $= \\begin{bmatrix} \\frac{24}{5} & \\frac{18}{5} \\\\ \\frac{32}{5} & \\frac{24}{5} \\end{bmatrix}$.",
+          "Error: $\\lVert A - A_1\\rVert = \\sigma_2 = 1$, small compared with $\\sigma_1 = 10$."
+        ],
+        "a": "$A_1 = \\begin{bmatrix} \\frac{24}{5} & \\frac{18}{5} \\\\ \\frac{32}{5} & \\frac{24}{5} \\end{bmatrix}$, error $1$"
+      },
+      {
+        "t": "ex",
+        "title": "How much is kept?",
+        "q": "A matrix has singular values $8, 4, 2, 1$. What fraction of $\\lVert A\\rVert_F^{2}$ does $A_2$ keep?",
+        "steps": [
+          "Total: $64 + 16 + 4 + 1 = 85$. Kept: $64 + 16 = 80$.",
+          "Fraction: $\\frac{80}{85} = \\frac{16}{17} \\approx 94\\%$, using half the terms."
+        ],
+        "a": "$\\frac{16}{17}$"
+      },
+      {
+        "t": "list",
+        "items": [
+          "<b>Principal component analysis:</b> center a data matrix (rows = people, columns = measurements). Its right singular vectors are the directions of greatest spread, and $\\sigma_i^{2}$ measures the spread along each.",
+          "<b>Noise reduction:</b> noise spreads over many small singular values; truncating removes much of it.",
+          "<b>Least squares:</b> the pseudoinverse $A^{+} = V\\Sigma^{+}U^{T}$ gives the least-squares solution of smallest length, even when the columns are dependent."
+        ]
+      },
+      {
+        "t": "mistake",
+        "html": "Expecting the error to be the sum of the dropped singular values. In the operator norm it is the <b>first</b> dropped value, $\\sigma_{k+1}$; in the Frobenius norm it is the square root of the sum of their <b>squares</b>."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Strang, Introduction to Linear Algebra (5th ed.), Chapter 7, The Singular Value Decomposition: image processing and principal component analysis"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.06 Linear Algebra (Gilbert Strang, Spring 2010), Lecture 31: Change of Basis; Image Compression"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

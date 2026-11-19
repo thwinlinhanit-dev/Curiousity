@@ -1,0 +1,128 @@
+{
+  "id": "la.spectral-theorem",
+  "slug": "spectral-theorem",
+  "ladder": "math",
+  "course": "la",
+  "unit": "symmetric-svd",
+  "title": "Symmetric Matrices and the Spectral Theorem",
+  "short": "A symmetric matrix has an orthonormal basis of eigenvectors.",
+  "trouble": "",
+  "prereqs": [
+    "la.diagonalization",
+    "la.orthogonal-matrices"
+  ],
+  "xp": 3,
+  "viz": [
+    "matrix2d"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Most matrices need care to <a href=\"/math/linear-algebra/diagonalization/\">diagonalize</a>: eigenvalues may be complex, eigenvectors may be missing, and $P$ may be awkward to invert. Symmetric matrices ($A^{T} = A$) have none of these problems. Their eigenvectors can be chosen <a href=\"/math/linear-algebra/orthogonal-matrices/\">orthonormal</a>, so $P^{-1}$ is just $P^{T}$."
+      },
+      {
+        "t": "key",
+        "html": "<b>Spectral theorem.</b> A real $n \\times n$ matrix $A$ is symmetric exactly when it is <b>orthogonally diagonalizable</b>: $A = PDP^{T}$ with $P$ orthogonal and $D$ diagonal. Its eigenvalues are real, and eigenvectors for different eigenvalues are orthogonal."
+      },
+      {
+        "t": "why",
+        "html": "The orthogonality is a two-line proof. Let $A\\mathbf{u} = \\lambda\\mathbf{u}$ and $A\\mathbf{v} = \\mu\\mathbf{v}$ with $\\lambda \\neq \\mu$. Then $\\lambda(\\mathbf{u}\\cdot\\mathbf{v})$ $= (A\\mathbf{u})\\cdot\\mathbf{v}$ $= (A\\mathbf{u})^{T}\\mathbf{v}$ $= \\mathbf{u}^{T}A^{T}\\mathbf{v}$ $= \\mathbf{u}^{T}A\\mathbf{v}$ $= \\mu(\\mathbf{u}\\cdot\\mathbf{v})$, using $A^{T} = A$. So $(\\lambda - \\mu)\\,\\mathbf{u}\\cdot\\mathbf{v} = 0$, which forces $\\mathbf{u}\\cdot\\mathbf{v} = 0$. The other direction is quick too: $(PDP^{T})^{T} = PD^{T}P^{T} = PDP^{T}$. (That the eigenvalues are real, and that repeated eigenvalues still have full eigenspaces, takes a longer argument that we do not repeat here.)"
+      },
+      {
+        "t": "ex",
+        "title": "Orthogonally diagonalize",
+        "q": "Orthogonally diagonalize $A = \\begin{bmatrix} 2 & 2 \\\\ 2 & 5 \\end{bmatrix}$.",
+        "steps": [
+          "$\\det(A - \\lambda I)$ $= \\lambda^{2} - 7\\lambda + 6$ $= (\\lambda - 6)(\\lambda - 1)$: eigenvalues $6$ and $1$.",
+          "$\\lambda = 6$: $A - 6I = \\begin{bmatrix} -4 & 2 \\\\ 2 & -1 \\end{bmatrix}$ gives $x_2 = 2x_1$, so $(1, 2)$. $\\lambda = 1$: $A - I = \\begin{bmatrix} 1 & 2 \\\\ 2 & 4 \\end{bmatrix}$ gives $(2, -1)$.",
+          "They are orthogonal, as promised: $(1)(2) + (2)(-1) = 0$. Divide each by its length $\\sqrt{5}$.",
+          "$P = \\frac{1}{\\sqrt{5}}\\begin{bmatrix} 1 & 2 \\\\ 2 & -1 \\end{bmatrix}$, $D = \\begin{bmatrix} 6 & 0 \\\\ 0 & 1 \\end{bmatrix}$, and $A = PDP^{T}$."
+        ],
+        "a": "$P = \\frac{1}{\\sqrt{5}}\\begin{bmatrix} 1 & 2 \\\\ 2 & -1 \\end{bmatrix}$, $D = \\operatorname{diag}(6, 1)$"
+      },
+      {
+        "t": "p",
+        "html": "Writing $A = PDP^{T}$ column by column gives the <b>spectral decomposition</b> $$A = \\lambda_1\\mathbf{u}_1\\mathbf{u}_1^{T} + \\lambda_2\\mathbf{u}_2\\mathbf{u}_2^{T} + \\cdots + \\lambda_n\\mathbf{u}_n\\mathbf{u}_n^{T}.$$ Each $\\mathbf{u}_i\\mathbf{u}_i^{T}$ is the <a href=\"/math/linear-algebra/orthogonal-projections/\">projection</a> onto the line through $\\mathbf{u}_i$, so a symmetric matrix is a weighted sum of projections onto perpendicular lines."
+      },
+      {
+        "t": "ex",
+        "title": "The spectral decomposition",
+        "q": "Write $A = \\begin{bmatrix} 2 & 2 \\\\ 2 & 5 \\end{bmatrix}$ as $\\lambda_1\\mathbf{u}_1\\mathbf{u}_1^{T} + \\lambda_2\\mathbf{u}_2\\mathbf{u}_2^{T}$.",
+        "steps": [
+          "$\\mathbf{u}_1\\mathbf{u}_1^{T} = \\frac{1}{5}\\begin{bmatrix} 1 & 2 \\\\ 2 & 4 \\end{bmatrix}$ and $\\mathbf{u}_2\\mathbf{u}_2^{T} = \\frac{1}{5}\\begin{bmatrix} 4 & -2 \\\\ -2 & 1 \\end{bmatrix}$.",
+          "$6 \\cdot \\frac{1}{5}\\begin{bmatrix} 1 & 2 \\\\ 2 & 4 \\end{bmatrix} + 1 \\cdot \\frac{1}{5}\\begin{bmatrix} 4 & -2 \\\\ -2 & 1 \\end{bmatrix}$ $= \\frac{1}{5}\\begin{bmatrix} 10 & 10 \\\\ 10 & 25 \\end{bmatrix}$ $= \\begin{bmatrix} 2 & 2 \\\\ 2 & 5 \\end{bmatrix}$. ✓"
+        ],
+        "a": "$A = 6\\,\\mathbf{u}_1\\mathbf{u}_1^{T} + \\mathbf{u}_2\\mathbf{u}_2^{T}$"
+      },
+      {
+        "t": "viz",
+        "name": "matrix2d",
+        "opts": {
+          "m": [
+            [
+              2,
+              2
+            ],
+            [
+              2,
+              5
+            ]
+          ],
+          "presets": false,
+          "eigen": true,
+          "vector": [
+            1,
+            0
+          ]
+        },
+        "cap": "For a symmetric matrix the two eigenvector lines are perpendicular: the map stretches by 6 along one and by 1 along the other."
+      },
+      {
+        "t": "viz",
+        "name": "la-svd",
+        "opts": {
+          "m": [
+            [
+              2,
+              2
+            ],
+            [
+              2,
+              5
+            ]
+          ],
+          "t": 3,
+          "vector": true
+        },
+        "cap": "A symmetric matrix turns the unit circle into an ellipse whose axes lie along its eigenvectors, with half-lengths equal to the eigenvalues (here 6 and 1)."
+      },
+      {
+        "t": "p",
+        "html": "Geometrically, a symmetric matrix does the simplest thing a linear map can do: it picks $n$ perpendicular directions and stretches (or flips) along each one, with no turning or shearing in between. A general matrix may also rotate; the next topics show how the SVD separates the stretching from the rotating for every matrix."
+      },
+      {
+        "t": "note",
+        "html": "Symmetric matrices are everywhere: covariance matrices in statistics, the Hessian of second derivatives in calculus, stiffness matrices in engineering, and $A^{T}A$ for any matrix $A$, which is the door to the SVD."
+      },
+      {
+        "t": "mistake",
+        "html": "Forgetting to normalize. The columns of $P$ must be <b>unit</b> eigenvectors; otherwise $P^{T} \\neq P^{-1}$ and $PDP^{T}$ is not $A$. Check: $P^{T}P$ should be $I$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Strang, Introduction to Linear Algebra (5th ed.), Chapter 6, Eigenvalues and Eigenvectors: symmetric matrices"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.06 Linear Algebra (Gilbert Strang, Spring 2010), Lecture 25: Symmetric Matrices and Positive Definiteness"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

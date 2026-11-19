@@ -1,0 +1,118 @@
+{
+  "id": "calc2.slope-fields-euler",
+  "slug": "slope-fields-euler",
+  "ladder": "math",
+  "course": "calc2",
+  "unit": "first-de",
+  "title": "Direction Fields and Euler's Method",
+  "short": "Sketch solutions from slopes, and step along them numerically.",
+  "trouble": "Students use the slope at the new point instead of the current point in Euler's method.",
+  "prereqs": [
+    "calc2.de-intro"
+  ],
+  "xp": 2,
+  "viz": [
+    "slopefield"
+  ],
+  "figureArchetype": "FieldFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Most <a href=\"/math/calculus-2/de-intro/\">differential equations</a> cannot be solved with a formula. Two tools still tell you a lot: a <b>slope field</b>, which shows the shape of every solution at once, and <b>Euler's method</b>, which builds a numerical solution step by step from the same idea as <a href=\"/math/calculus-1/linear-approximation/\">linear approximation</a>."
+      },
+      {
+        "t": "why",
+        "html": "The equation $\\frac{dy}{dx} = f(x, y)$ tells you the slope of the solution curve through any point $(x, y)$, before you know the solution. Draw a short segment with that slope at many points and you get a slope field; every solution curve must run along those segments. Euler's method follows one segment for a short step $h$: over a small step the curve is close to its tangent line, so\n$$y_{n+1} = y_n + h\\cdot f(x_n, y_n),$$ $$x_{n+1} = x_n + h.$$\nThen repeat from the new point with its own slope."
+      },
+      {
+        "t": "key",
+        "html": "Slope field: at $(x, y)$ draw a segment of slope $f(x, y)$. Euler's method: $y_{n+1} = y_n + h\\,f(x_n, y_n)$, always using the slope at the point you are standing on. Smaller steps give better answers."
+      },
+      {
+        "t": "viz",
+        "name": "slopefield",
+        "opts": {
+          "f": "x - y",
+          "point": [
+            0,
+            1
+          ],
+          "euler": true,
+          "h": 0.5,
+          "xmin": -2,
+          "xmax": 4,
+          "ymin": -2,
+          "ymax": 4
+        },
+        "cap": "The slope field of $y' = x - y$, with the solution through $(0, 1)$ in blue and Euler's method in steps of $h = 0.5$. Shrink $h$ and watch the steps hug the curve."
+      },
+      {
+        "t": "ex",
+        "title": "Euler by hand",
+        "q": "Use Euler's method with $h = 0.5$ to estimate $y(1)$ for $y' = x + y$, $y(0) = 1$.",
+        "steps": [
+          "Step 1: at $(0, 1)$ the slope is $0 + 1 = 1$. $y_1 = 1 + 0.5(1) = 1.5$ at $x = 0.5$.",
+          "Step 2: at $(0.5, 1.5)$ the slope is $0.5 + 1.5 = 2$. $y_2 = 1.5 + 0.5(2) = 2.5$ at $x = 1$.",
+          "So $y(1) \\approx 2.5$. The exact solution is $y = 2e^{x} - x - 1$, with $y(1) = 2e - 2 \\approx 3.44$: Euler underestimates here because the solution bends upward away from its tangent lines."
+        ],
+        "a": "$y(1) \\approx 2.5$"
+      },
+      {
+        "t": "table",
+        "head": [
+          "$n$",
+          "$x_n$",
+          "$y_n$",
+          "slope $f(x_n, y_n)$",
+          "$y_{n+1} = y_n + 0.5\\cdot\\text{slope}$"
+        ],
+        "rows": [
+          [
+            "0",
+            "0",
+            "1",
+            "1",
+            "1.5"
+          ],
+          [
+            "1",
+            "0.5",
+            "1.5",
+            "2",
+            "2.5"
+          ]
+        ],
+        "cap": "The same computation as a table: one row per step."
+      },
+      {
+        "t": "mistake",
+        "html": "Using the slope at the new point instead of the current point. Euler's method only knows where you are now; the slope at $(x_{n+1}, y_{n+1})$ needs $y_{n+1}$, which is what you are trying to compute. Check each row: the slope column must be computed from the $x_n$ and $y_n$ in the same row."
+      },
+      {
+        "t": "ex",
+        "title": "Reading a slope field",
+        "q": "Where are the slopes of $y' = x - y$ equal to 0, and what happens above and below that line?",
+        "steps": [
+          "$x - y = 0$ on the line $y = x$, so the segments there are flat.",
+          "Below the line ($y < x$) the slopes are positive; above it they are negative.",
+          "So solutions rise when they are below $y = x$ and fall when they are above it: they all drift toward the line $y = x - 1$, which itself is a solution (check: $y' = 1$ and $x - y = 1$)."
+        ],
+        "a": "Flat along $y = x$; solutions approach $y = x - 1$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 2, Section 4.2: Direction Fields and Numerical Methods"
+      },
+      {
+        "name": "Paul’s Online Math Notes (Lamar University), Calculus II: Direction Fields; Euler's Method (Differential Equations notes)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

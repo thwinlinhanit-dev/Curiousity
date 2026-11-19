@@ -1,0 +1,126 @@
+{
+  "id": "apbio.c4-cam",
+  "slug": "c4-cam",
+  "ladder": "bio",
+  "course": "apbio",
+  "unit": "energetics",
+  "title": "C4 and CAM Plants",
+  "short": "When stomata close in hot, dry weather, rubisco fixes O₂ instead of CO₂ (photorespiration). C4 plants like corn separate fixation in space; CAM plants like cactuses separate it in time, taking in CO₂ at night.",
+  "trouble": "Students think CAM plants do the Calvin cycle at night. They only take in and store CO₂ at night; the Calvin cycle still runs by day.",
+  "prereqs": [
+    "apbio.calvin-cycle",
+    "hsbio.plant-homeostasis"
+  ],
+  "xp": 2,
+  "viz": [
+    "bi-plant",
+    "bi-energy"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Rubisco, the enzyme of the <a href=\"/biology/advanced-biology/calvin-cycle/\">Calvin cycle</a>, has a flaw: it can grab O₂ instead of CO₂. When that happens, the plant loses fixed carbon and energy in a process called <b>photorespiration</b>. You saw in <a href=\"/biology/high-school-biology/plant-homeostasis/\">Water Balance in Plants</a> that stomata close when the plant is short of water. Then CO₂ inside the leaf drops, O₂ from the light reactions builds up, and rubisco makes the mistake more often, especially in heat."
+      },
+      {
+        "t": "key",
+        "html": "<b>C4 plants</b> (corn, sugarcane) separate CO₂ capture and the Calvin cycle <b>in space</b>: mesophyll cells fix CO₂ into a 4-carbon acid, which carries it to bundle-sheath cells where rubisco works in a CO₂-rich spot. <b>CAM plants</b> (cactuses, pineapple) separate them <b>in time</b>: they open stomata and store CO₂ at night, and run the Calvin cycle by day with stomata closed."
+      },
+      {
+        "t": "table",
+        "head": [
+          "",
+          "C3 (most plants: wheat, rice, soybean)",
+          "C4 (corn, sugarcane)",
+          "CAM (cactuses, pineapple)"
+        ],
+        "rows": [
+          [
+            "First CO₂ capture",
+            "Rubisco, onto RuBP",
+            "PEP carboxylase, into a 4-carbon acid",
+            "PEP carboxylase, into a 4-carbon acid"
+          ],
+          [
+            "Where or when the Calvin cycle runs",
+            "Mesophyll cells, by day",
+            "Bundle-sheath cells, by day",
+            "Mesophyll cells, by day"
+          ],
+          [
+            "Stomata open",
+            "By day",
+            "By day (can open less)",
+            "At night"
+          ],
+          [
+            "Best suited to",
+            "Cool, moist places",
+            "Hot, sunny places",
+            "Hot, very dry places"
+          ]
+        ],
+        "cap": "Three ways to run photosynthesis."
+      },
+      {
+        "t": "viz",
+        "name": "bi-plant",
+        "opts": {
+          "mode": "stomata",
+          "water": 0.3
+        },
+        "cap": "Guard cells close the stomata when water is short. Drag to change the water supply."
+      },
+      {
+        "t": "why",
+        "html": "The first enzyme in C4 and CAM plants, PEP carboxylase, binds CO₂ even when CO₂ is scarce and does not grab O₂. It works like a pump: it collects CO₂ and stores it in an acid. Later the acid releases CO₂ right where rubisco is, so rubisco is surrounded by CO₂ and rarely makes its mistake. The pump costs extra ATP, which is why C4 and CAM pay off in heat and drought but not in cool, wet places."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Spotting a CAM plant from data",
+        "q": "A succulent's leaves are measured at dawn and at dusk. At dawn the leaf sap is very acidic; at dusk it is much less acidic. Its stomata are open at night. What kind of plant is it?",
+        "steps": [
+          "Open stomata at night means CO₂ is taken in at night.",
+          "The CO₂ is stored as organic acid, so acid builds up overnight: high at dawn.",
+          "By day the acid releases CO₂ for the Calvin cycle, so it falls by dusk."
+        ],
+        "a": "A CAM plant."
+      },
+      {
+        "t": "ex",
+        "title": "Hot and dry",
+        "q": "On a hot, dry afternoon, a wheat plant (C3) and a corn plant (C4) both close their stomata partway. Which loses more carbon to photorespiration?",
+        "steps": [
+          "In wheat, rubisco takes CO₂ straight from the air spaces of the leaf, which is running low on CO₂.",
+          "In corn, PEP carboxylase keeps CO₂ concentrated around rubisco in the bundle-sheath cells."
+        ],
+        "a": "The wheat plant."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking CAM plants run the Calvin cycle at night. At night they only take in CO₂ and store it as acid. The Calvin cycle still needs ATP and NADPH from the light reactions, so it runs by day, using the stored CO₂ while the stomata stay closed."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Biology 2e, 8.3 Using Light Energy to Make Organic Molecules"
+      },
+      {
+        "name": "OpenStax, Biology for AP Courses, 8.3 Using Light Energy to Make Organic Molecules"
+      },
+      {
+        "name": "OpenStax, Biology 2e, 30.5 Transport of Water and Solutes in Plants (stomata)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,113 @@
+{
+  "id": "calc1.average-value",
+  "slug": "average-value",
+  "ladder": "math",
+  "course": "calc1",
+  "unit": "integrals",
+  "title": "Average Value of a Function",
+  "short": "f_avg = (1/(b − a)) ∫ₐᵇ f(x) dx.",
+  "trouble": "",
+  "prereqs": [
+    "calc1.ftc-evaluate"
+  ],
+  "xp": 2,
+  "viz": [
+    "ftc",
+    "riemann"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The average of finitely many numbers is their sum divided by how many there are. For a function, which has infinitely many values, the <a href=\"/math/calculus-1/ftc-evaluate/\">definite integral</a> plays the role of the sum."
+      },
+      {
+        "t": "key",
+        "html": "The <b>average value</b> of $f$ on $[a, b]$ is $$\\role[average height]{output}{f_{\\text{avg}}} = \\frac{1}{\\role[width of the interval]{input}{b - a}}\\role[area under f]{integral}{\\int_a^b f(x)\\,dx}.$$ It is the height of the rectangle on $[a, b]$ with the same area as the region under $f$. If $f$ is continuous, some $c$ in $[a, b]$ has $f(c) = f_{\\text{avg}}$ (the Mean Value Theorem for integrals)."
+      },
+      {
+        "t": "why",
+        "html": "Sample $f$ at $n$ equally spaced points and average: $\\frac{1}{n}\\sum f(x_i)$. Since $\\Delta x = \\frac{b - a}{n}$, we have $\\frac{1}{n} = \\frac{\\Delta x}{b - a}$, so the average is $\\frac{1}{b - a}\\sum f(x_i)\\,\\Delta x$, a Riemann sum divided by the length. Letting $n \\to \\infty$ gives the formula. Because a continuous $f$ takes every value between its min and max, and the average lies between those, $f$ must hit the average somewhere."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "fns": [
+            "x^2",
+            {
+              "f": "3",
+              "color": "red",
+              "dash": true,
+              "label": "avg"
+            }
+          ],
+          "shade": {
+            "fn": 0,
+            "a": 0,
+            "b": 3
+          },
+          "points": [
+            [
+              1.732,
+              3
+            ]
+          ],
+          "xmin": -0.5,
+          "xmax": 3.5,
+          "ymin": -0.5,
+          "ymax": 9.5
+        },
+        "cap": "$f(x) = x^2$ on $[0, 3]$: the area under it is 9, the same as a rectangle of height 3 and width 3. The curve meets the average height at $x = \\sqrt{3}$."
+      },
+      {
+        "t": "ex",
+        "title": "A polynomial",
+        "q": "Find the average value of $f(x) = x^2$ on $[0, 3]$, and where $f$ equals it.",
+        "steps": [
+          "$\\int_0^3 x^2\\,dx = \\frac{27}{3} = 9$.",
+          "$f_{\\text{avg}} = \\frac{9}{3} = 3$.",
+          "$c^2 = 3$ gives $c = \\sqrt{3}$ in $[0, 3]$."
+        ],
+        "a": "$f_{\\text{avg}} = 3$, reached at $x = \\sqrt{3}$."
+      },
+      {
+        "t": "ex",
+        "title": "Sine over an arch",
+        "q": "Find the average value of $\\sin x$ on $[0, \\pi]$.",
+        "steps": [
+          "$\\int_0^{\\pi}\\sin x\\,dx = 2$.",
+          "Divide by the length $\\pi$: $\\frac{2}{\\pi} \\approx 0.637$."
+        ],
+        "a": "$\\frac{2}{\\pi}$, a bit less than $\\frac{2}{3}$ of the peak height."
+      },
+      {
+        "t": "ex",
+        "title": "Average temperature",
+        "q": "A model of the temperature (°F) $t$ hours after 6 a.m. is $T(t) = 50 + 4t - \\frac{t^2}{4}$. Find the average temperature over the first 12 hours.",
+        "steps": [
+          "$$\\int_0^{12} T\\,dt = \\Big[50t + 2t^2 - \\frac{t^3}{12}\\Big]_0^{12} = 600 + 288 - 144 = 744$$.",
+          "Average $= \\frac{744}{12} = 62$."
+        ],
+        "a": "62 °F"
+      },
+      {
+        "t": "mistake",
+        "html": "Averaging the endpoint values, $\\frac{f(a) + f(b)}{2}$, instead of integrating. For $x^2$ on $[0, 3]$ that gives 4.5 instead of 3. Endpoint averaging only works for straight lines. Check: the average must lie between the minimum and maximum of $f$ on the interval."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 1, 5.4 Integration Formulas and the Net Change Theorem"
+      },
+      {
+        "name": "OpenStax Calculus Volume 1, 5.3 The Fundamental Theorem of Calculus"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

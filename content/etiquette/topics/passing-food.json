@@ -1,0 +1,138 @@
+{
+  "id": "growing.passing-food",
+  "slug": "passing-food",
+  "ladder": "etiquette",
+  "course": "growing",
+  "unit": "table",
+  "title": "Passing Food",
+  "short": "Pass dishes to the right (counterclockwise), offer them to your neighbor first if you are starting, and pass the salt and pepper together.",
+  "trouble": "Learners take a dish that was passed to someone else, or send the salt without the pepper. The salt and pepper travel as a pair.",
+  "prereqs": [
+    "growing.setting-table"
+  ],
+  "xp": 2,
+  "viz": [
+    "et-scene",
+    "et-sort",
+    "et-order"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "At a family-style meal, dishes go around the table instead of being served from the kitchen. Once you know <a href=\"/etiquette/growing-up/setting-table/\">where everything sits</a>, passing is the next skill, and a few simple customs keep it from turning into a scramble."
+      },
+      {
+        "t": "key",
+        "html": "Pass dishes <b>to the right</b> (counterclockwise). If you start a dish, <b>offer it to your neighbor</b> or hold it while they serve themselves. <b>Pass the salt and pepper together</b>, even if someone asks for only one. When someone asks for a dish, pass it to them without helping yourself on the way."
+      },
+      {
+        "t": "why",
+        "html": "When every dish travels the same direction, no two bowls collide and nobody gets skipped. The salt and pepper travel as a pair so nobody has to hunt for the other one. And handing a dish straight to the person who asked respects their turn."
+      },
+      {
+        "t": "viz",
+        "name": "et-scene",
+        "opts": {
+          "place": "table",
+          "people": [
+            {
+              "who": "leo",
+              "age": "teen"
+            },
+            {
+              "who": "june"
+            },
+            {
+              "who": "sam",
+              "age": "teen"
+            }
+          ],
+          "say": [
+            [
+              2,
+              "Could you please pass the salt?"
+            ]
+          ],
+          "prompt": "Leo has the salt and the pepper. What should he do?",
+          "choices": [
+            {
+              "text": "Pass the salt and the pepper together.",
+              "ok": true,
+              "mood": {
+                "2": "happy"
+              },
+              "say": [
+                [
+                  2,
+                  "Thanks, Leo."
+                ]
+              ],
+              "outcome": "The pair stays together, so the next person doesn’t have to hunt for the pepper."
+            },
+            {
+              "text": "Shake some salt on his own food first, then pass it.",
+              "ok": false,
+              "mood": {
+                "2": "neutral"
+              },
+              "outcome": "Sam asked first. Pass it straight to him, and ask for it back later."
+            },
+            {
+              "text": "Slide the salt across the table to Sam.",
+              "ok": false,
+              "mood": {
+                "1": "worried"
+              },
+              "outcome": "Sliding can tip things over. Hand it along, and send the pepper too."
+            }
+          ]
+        },
+        "cap": "Choose what Leo does."
+      },
+      {
+        "t": "ex",
+        "title": "Starting the potatoes",
+        "q": "The mashed potatoes are in front of Mia. Everyone is ready to start. What should she do?",
+        "steps": [
+          "Offer them first: hold the bowl for the person on her left, or ask, “Would you like some?”",
+          "Serve herself a fair share.",
+          "Pass the bowl to the right."
+        ],
+        "a": "Offer, serve herself, then pass to the right."
+      },
+      {
+        "t": "ex",
+        "title": "Passing to someone far away",
+        "q": "At the other end of the table, Grandpa Walt asks for the rolls. Ruby is holding the basket. What should she do?",
+        "steps": [
+          "Pass the basket toward Grandpa through the people in between, the shortest way.",
+          "Don’t take a roll on the way; he asked first.",
+          "If she wants one, she can ask for the basket back afterward."
+        ],
+        "a": "Pass it along to Grandpa without taking one, and ask for it later."
+      },
+      {
+        "t": "mistake",
+        "html": "Taking a dish that was passed to someone else, or sending the salt without the pepper. Check: is the dish going to the person who asked? Are the salt and pepper traveling as a pair?"
+      },
+      {
+        "t": "note",
+        "html": "Pass bowls with the handle or the serving spoon turned toward the person taking it, and hold a hot dish with a napkin or pot holder."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Present-day American etiquette as commonly taught to children and families (summarized in our own words)"
+      },
+      {
+        "name": "Emily Post, Etiquette (1922, public domain), on passing dishes at the table (for history; many details have changed)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

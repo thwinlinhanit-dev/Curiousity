@@ -1,0 +1,779 @@
+{
+  "key": "aa",
+  "ladder": "math",
+  "title": "Abstract Algebra",
+  "short": "Abstract Algebra",
+  "after": [
+    "disc",
+    "nt",
+    "la"
+  ],
+  "units": [
+    {
+      "key": "groups",
+      "title": "Groups",
+      "blurb": "Build groups from the Cayley table up: the axioms, the first proofs, the groups ℤₙ and U(n), orders of elements and subgroups."
+    },
+    {
+      "key": "cyclic",
+      "title": "Cyclic Groups",
+      "blurb": "Groups made by one element: generators, the orders of powers, and the tidy subgroup structure of ℤₙ."
+    },
+    {
+      "key": "permutations",
+      "title": "Permutation Groups",
+      "blurb": "Rearrangements as a group: composing permutations, cycle notation, orders and signs, and the symmetries of a regular polygon."
+    },
+    {
+      "key": "cosets",
+      "title": "Cosets and Lagrange's Theorem",
+      "blurb": "Cut a group into cosets of a subgroup, prove Lagrange's theorem, and use it to limit the orders of subgroups and elements."
+    },
+    {
+      "key": "homomorphisms",
+      "title": "Normal Subgroups and Homomorphisms",
+      "blurb": "Subgroups you can divide by, maps that respect the operation, and the first isomorphism theorem that ties them together."
+    },
+    {
+      "key": "products",
+      "title": "Direct Products and Abelian Groups",
+      "blurb": "Build groups as products, decide when a product is cyclic, and list every finite abelian group of a given order."
+    },
+    {
+      "key": "actions",
+      "title": "Group Actions and Counting",
+      "blurb": "Let groups move things: orbits and stabilizers, conjugacy classes, Burnside's counting lemma and the Sylow theorems."
+    },
+    {
+      "key": "rings",
+      "title": "Rings and Ideals",
+      "blurb": "Two operations at once: rings, zero divisors, integral domains and fields, ideals, ring homomorphisms and quotient rings."
+    },
+    {
+      "key": "polynomials",
+      "title": "Polynomial Rings",
+      "blurb": "Polynomials with coefficients in a ring or field: division with remainder, gcds, roots and tests for irreducibility."
+    },
+    {
+      "key": "fields",
+      "title": "Fields and Extensions",
+      "blurb": "Grow fields by adjoining roots: arithmetic in ℚ(√2) and F[x]/(p(x)), minimal polynomials, degrees and the finite fields GF(pⁿ)."
+    }
+  ],
+  "topics": [
+    {
+      "id": "aa.binary-operations",
+      "slug": "binary-operations",
+      "course": "aa",
+      "unit": "groups",
+      "title": "Binary Operations and Cayley Tables",
+      "short": "A binary operation combines two elements of a set into one element of the set; a Cayley table lists every product a ∗ b (row a, column b), so you can read off closure, an identity and commutativity.",
+      "prereqs": [
+        "disc.functions",
+        "disc.power-sets-products",
+        "nt.modular-arithmetic"
+      ],
+      "viz": [
+        "aa-cayley"
+      ]
+    },
+    {
+      "id": "aa.group-axioms",
+      "slug": "group-axioms",
+      "course": "aa",
+      "unit": "groups",
+      "title": "The Group Axioms",
+      "short": "A group is a set with an associative operation, an identity and an inverse for every element; decide which axiom fails for examples like ℤ under subtraction or ℤₙ under multiplication.",
+      "prereqs": [
+        "aa.binary-operations",
+        "nt.modular-inverses",
+        "la.matrix-inverse"
+      ],
+      "viz": [
+        "aa-cayley"
+      ]
+    },
+    {
+      "id": "aa.units-mod-n",
+      "slug": "units-mod-n",
+      "course": "aa",
+      "unit": "groups",
+      "title": "The Groups ℤₙ and U(n)",
+      "short": "ℤₙ is {0, 1, …, n − 1} under addition mod n; U(n) is the set of residues coprime to n under multiplication mod n, a group of order φ(n).",
+      "prereqs": [
+        "aa.group-axioms",
+        "nt.euler-phi"
+      ],
+      "viz": [
+        "aa-cayley"
+      ]
+    },
+    {
+      "id": "aa.group-properties",
+      "slug": "group-properties",
+      "course": "aa",
+      "unit": "groups",
+      "title": "First Proofs: Uniqueness, Cancellation and Inverses",
+      "short": "From the axioms alone: the identity and inverses are unique, ab = ac gives b = c, and (ab)⁻¹ = b⁻¹a⁻¹.",
+      "prereqs": [
+        "aa.group-axioms",
+        "disc.direct-proof"
+      ],
+      "viz": [
+        "aa-cayley"
+      ]
+    },
+    {
+      "id": "aa.element-order",
+      "slug": "element-order",
+      "course": "aa",
+      "unit": "groups",
+      "title": "The Order of an Element",
+      "short": "The order of a is the least n ≥ 1 with aⁿ = e (n·a = 0 when the operation is addition), and aᵏ = e exactly when the order of a divides k.",
+      "prereqs": [
+        "aa.group-properties",
+        "aa.units-mod-n",
+        "nt.order-mod-n"
+      ],
+      "viz": [
+        "aa-cayley"
+      ]
+    },
+    {
+      "id": "aa.subgroups",
+      "slug": "subgroups",
+      "course": "aa",
+      "unit": "groups",
+      "title": "Subgroups and the Subgroup Test",
+      "short": "H is a subgroup when it is a group under the same operation; it is enough that H is nonempty and ab⁻¹ ∈ H for all a, b ∈ H (for a finite H, closure alone is enough).",
+      "prereqs": [
+        "aa.group-properties",
+        "aa.units-mod-n"
+      ],
+      "viz": [
+        "aa-cayley"
+      ]
+    },
+    {
+      "id": "aa.cyclic-groups",
+      "slug": "cyclic-groups",
+      "course": "aa",
+      "unit": "cyclic",
+      "title": "Cyclic Groups and Generators",
+      "short": "⟨a⟩ = {aᵏ : k ∈ ℤ} is the smallest subgroup containing a; G is cyclic when one element generates it, and k generates ℤₙ exactly when gcd(k, n) = 1.",
+      "prereqs": [
+        "aa.subgroups",
+        "aa.element-order"
+      ],
+      "viz": [
+        "aa-cayley",
+        "complexplane"
+      ]
+    },
+    {
+      "id": "aa.order-of-powers",
+      "slug": "order-of-powers",
+      "course": "aa",
+      "unit": "cyclic",
+      "title": "Orders of Powers",
+      "short": "If a has order n, then aᵏ has order n / gcd(n, k); in ℤₙ the element k has order n / gcd(n, k).",
+      "prereqs": [
+        "aa.cyclic-groups",
+        "nt.euclidean-algorithm"
+      ],
+      "viz": [
+        "aa-cayley"
+      ]
+    },
+    {
+      "id": "aa.subgroups-of-cyclic",
+      "slug": "subgroups-of-cyclic",
+      "course": "aa",
+      "unit": "cyclic",
+      "title": "Subgroups of Cyclic Groups",
+      "short": "Every subgroup of a cyclic group is cyclic; ℤₙ has exactly one subgroup of each order d dividing n, namely ⟨n/d⟩, and it has φ(d) elements of order d.",
+      "prereqs": [
+        "aa.order-of-powers"
+      ],
+      "viz": [
+        "aa-lattice"
+      ]
+    },
+    {
+      "id": "aa.subgroup-lattice",
+      "slug": "subgroup-lattice",
+      "course": "aa",
+      "unit": "cyclic",
+      "title": "Subgroup Lattices",
+      "short": "Draw the subgroups of a group ordered by inclusion; for ℤₙ the picture is the divisor diagram of n turned upside down, and you read off intersections and joins.",
+      "prereqs": [
+        "aa.subgroups-of-cyclic",
+        "disc.partial-orders"
+      ],
+      "viz": [
+        "aa-lattice"
+      ]
+    },
+    {
+      "id": "aa.permutations",
+      "slug": "permutations",
+      "course": "aa",
+      "unit": "permutations",
+      "title": "Permutations and Composition",
+      "short": "A permutation is a bijection from {1, …, n} to itself; Sₙ is the group of all n! of them under composition, and στ means do τ first, then σ.",
+      "prereqs": [
+        "aa.group-axioms",
+        "disc.bijections-inverses"
+      ],
+      "viz": [
+        "aa-perm"
+      ]
+    },
+    {
+      "id": "aa.cycle-notation",
+      "slug": "cycle-notation",
+      "course": "aa",
+      "unit": "permutations",
+      "title": "Cycle Notation",
+      "short": "Follow 1 → σ(1) → σ(σ(1)) → … until you come back, then start a new cycle with the smallest unused number; disjoint cycles commute, and overlapping cycles must be multiplied out.",
+      "prereqs": [
+        "aa.permutations"
+      ],
+      "viz": [
+        "aa-perm"
+      ]
+    },
+    {
+      "id": "aa.permutation-order",
+      "slug": "permutation-order",
+      "course": "aa",
+      "unit": "permutations",
+      "title": "The Order of a Permutation",
+      "short": "Write σ as disjoint cycles: its order is the lcm of the cycle lengths, and its cycle type tells how many permutations share its shape.",
+      "prereqs": [
+        "aa.cycle-notation",
+        "aa.element-order"
+      ],
+      "viz": [
+        "aa-perm"
+      ]
+    },
+    {
+      "id": "aa.sign-alternating",
+      "slug": "sign-alternating",
+      "course": "aa",
+      "unit": "permutations",
+      "title": "Even and Odd Permutations",
+      "short": "Every permutation is a product of transpositions, always an even number or always an odd number of them; a k-cycle is even when k is odd, and the even permutations form Aₙ, of order n!/2.",
+      "prereqs": [
+        "aa.permutation-order",
+        "aa.subgroups"
+      ],
+      "viz": [
+        "aa-perm"
+      ]
+    },
+    {
+      "id": "aa.dihedral-groups",
+      "slug": "dihedral-groups",
+      "course": "aa",
+      "unit": "permutations",
+      "title": "Dihedral Groups",
+      "short": "Dₙ is the group of the 2n symmetries of a regular n-gon: rotations rᵏ and reflections rᵏs, with rⁿ = s² = e and sr = r⁻¹s.",
+      "prereqs": [
+        "aa.permutations",
+        "aa.element-order",
+        "geo.polygon-symmetry"
+      ],
+      "viz": [
+        "aa-dihedral"
+      ]
+    },
+    {
+      "id": "aa.cosets",
+      "slug": "cosets",
+      "course": "aa",
+      "unit": "cosets",
+      "title": "Cosets",
+      "short": "The left coset aH = {ah : h ∈ H}; the left cosets of H all have |H| elements and split G into disjoint pieces, and aH = bH exactly when a⁻¹b ∈ H.",
+      "prereqs": [
+        "aa.subgroups-of-cyclic",
+        "aa.cycle-notation",
+        "disc.equivalence-relations"
+      ],
+      "viz": [
+        "aa-cosets"
+      ]
+    },
+    {
+      "id": "aa.lagrange",
+      "slug": "lagrange",
+      "course": "aa",
+      "unit": "cosets",
+      "title": "Lagrange's Theorem",
+      "short": "If H is a subgroup of a finite group G, then |H| divides |G|, and the index [G : H] = |G|/|H| counts the cosets.",
+      "prereqs": [
+        "aa.cosets"
+      ],
+      "viz": [
+        "aa-cosets",
+        "aa-lattice"
+      ]
+    },
+    {
+      "id": "aa.lagrange-consequences",
+      "slug": "lagrange-consequences",
+      "course": "aa",
+      "unit": "cosets",
+      "title": "Consequences of Lagrange's Theorem",
+      "short": "The order of every element divides |G|, so a^|G| = e; a group of prime order is cyclic; and Fermat's and Euler's theorems follow by taking G = U(n).",
+      "prereqs": [
+        "aa.lagrange",
+        "nt.euler-theorem"
+      ],
+      "viz": []
+    },
+    {
+      "id": "aa.normal-subgroups",
+      "slug": "normal-subgroups",
+      "course": "aa",
+      "unit": "homomorphisms",
+      "title": "Normal Subgroups",
+      "short": "N is normal when gNg⁻¹ = N for every g, which is the same as gN = Ng; subgroups of abelian groups and subgroups of index 2 are always normal.",
+      "prereqs": [
+        "aa.cosets",
+        "aa.dihedral-groups"
+      ],
+      "viz": [
+        "aa-cosets"
+      ]
+    },
+    {
+      "id": "aa.quotient-groups",
+      "slug": "quotient-groups",
+      "course": "aa",
+      "unit": "homomorphisms",
+      "title": "Quotient Groups",
+      "short": "When N is normal, the cosets of N form a group G/N with (aN)(bN) = abN, of order |G|/|N|.",
+      "prereqs": [
+        "aa.normal-subgroups",
+        "aa.lagrange"
+      ],
+      "viz": [
+        "aa-cosets",
+        "aa-cayley"
+      ]
+    },
+    {
+      "id": "aa.homomorphisms",
+      "slug": "homomorphisms",
+      "course": "aa",
+      "unit": "homomorphisms",
+      "title": "Group Homomorphisms",
+      "short": "φ : G → H is a homomorphism when φ(ab) = φ(a)φ(b); then φ(e) = e, φ(a⁻¹) = φ(a)⁻¹, and the order of φ(a) divides the order of a.",
+      "prereqs": [
+        "aa.element-order",
+        "aa.cyclic-groups",
+        "aa.sign-alternating",
+        "la.linear-transformations"
+      ],
+      "viz": []
+    },
+    {
+      "id": "aa.kernels-images",
+      "slug": "kernels-images",
+      "course": "aa",
+      "unit": "homomorphisms",
+      "title": "Kernels and Images",
+      "short": "The kernel {g : φ(g) = e} is a normal subgroup, the image is a subgroup, φ is one-to-one exactly when the kernel is {e}, and |G| = |ker φ| · |im φ|.",
+      "prereqs": [
+        "aa.homomorphisms",
+        "aa.normal-subgroups",
+        "aa.lagrange"
+      ],
+      "viz": []
+    },
+    {
+      "id": "aa.isomorphisms",
+      "slug": "isomorphisms",
+      "course": "aa",
+      "unit": "homomorphisms",
+      "title": "Isomorphic Groups",
+      "short": "An isomorphism is a bijective homomorphism; to show two groups are not isomorphic, find a property one has and the other lacks: order, being abelian or cyclic, or how many elements have each order.",
+      "prereqs": [
+        "aa.kernels-images",
+        "aa.permutation-order"
+      ],
+      "viz": []
+    },
+    {
+      "id": "aa.cayley-theorem",
+      "slug": "cayley-theorem",
+      "course": "aa",
+      "unit": "homomorphisms",
+      "title": "Cayley's Theorem",
+      "short": "Every group is isomorphic to a group of permutations: g acts on G by x ↦ gx, so a group of order n sits inside Sₙ.",
+      "prereqs": [
+        "aa.isomorphisms",
+        "aa.cycle-notation"
+      ],
+      "viz": [
+        "aa-cayley",
+        "aa-perm"
+      ]
+    },
+    {
+      "id": "aa.first-isomorphism",
+      "slug": "first-isomorphism",
+      "course": "aa",
+      "unit": "homomorphisms",
+      "title": "The First Isomorphism Theorem",
+      "short": "If φ : G → H is a homomorphism, then G/ker φ ≅ im φ; use it to name quotients such as ℤ/nℤ ≅ ℤₙ and Sₙ/Aₙ ≅ ℤ₂.",
+      "prereqs": [
+        "aa.quotient-groups",
+        "aa.isomorphisms",
+        "aa.kernels-images"
+      ],
+      "viz": [
+        "aa-cosets"
+      ]
+    },
+    {
+      "id": "aa.direct-products",
+      "slug": "direct-products",
+      "course": "aa",
+      "unit": "products",
+      "title": "Direct Products",
+      "short": "In G × H the operation works coordinate by coordinate; the order of (g, h) is lcm(|g|, |h|), and ℤₘ × ℤₙ ≅ ℤₘₙ exactly when gcd(m, n) = 1.",
+      "prereqs": [
+        "aa.isomorphisms",
+        "aa.order-of-powers",
+        "nt.chinese-remainder"
+      ],
+      "viz": [
+        "aa-cayley"
+      ]
+    },
+    {
+      "id": "aa.finite-abelian",
+      "slug": "finite-abelian",
+      "course": "aa",
+      "unit": "products",
+      "title": "Classifying Finite Abelian Groups",
+      "short": "Every finite abelian group is a product of cyclic groups of prime-power order; for order pᵃ the choices match the partitions of a, so you can list them all.",
+      "prereqs": [
+        "aa.direct-products",
+        "nt.unique-factorization"
+      ],
+      "viz": []
+    },
+    {
+      "id": "aa.invariant-factors",
+      "slug": "invariant-factors",
+      "course": "aa",
+      "unit": "products",
+      "title": "Invariant Factors and Telling Abelian Groups Apart",
+      "short": "Regroup a product of cyclic groups so each order divides the next (ℤ₂ × ℤ₄ × ℤ₃ ≅ ℤ₂ × ℤ₁₂), and count elements of each order to tell abelian groups apart.",
+      "prereqs": [
+        "aa.finite-abelian"
+      ],
+      "viz": []
+    },
+    {
+      "id": "aa.group-actions",
+      "slug": "group-actions",
+      "course": "aa",
+      "unit": "actions",
+      "title": "Group Actions",
+      "short": "A group acts on a set X when each g moves points, x ↦ g·x, with e·x = x and g·(h·x) = (gh)·x; the orbit of x is everywhere it can go, and its stabilizer is the subgroup that fixes it.",
+      "prereqs": [
+        "aa.dihedral-groups",
+        "aa.homomorphisms"
+      ],
+      "viz": [
+        "aa-dihedral"
+      ]
+    },
+    {
+      "id": "aa.orbit-stabilizer",
+      "slug": "orbit-stabilizer",
+      "course": "aa",
+      "unit": "actions",
+      "title": "The Orbit–Stabilizer Theorem",
+      "short": "For a finite group, |orbit of x| · |stabilizer of x| = |G|, because the points of the orbit match the cosets of the stabilizer.",
+      "prereqs": [
+        "aa.group-actions",
+        "aa.lagrange"
+      ],
+      "viz": [
+        "aa-dihedral"
+      ]
+    },
+    {
+      "id": "aa.class-equation",
+      "slug": "class-equation",
+      "course": "aa",
+      "unit": "actions",
+      "title": "Conjugacy Classes and the Class Equation",
+      "short": "Conjugacy classes are the orbits of G acting on itself by x ↦ gxg⁻¹; in Sₙ they are the cycle types, and |G| = |Z(G)| + the sum of [G : C(x)] over the classes with more than one element.",
+      "prereqs": [
+        "aa.orbit-stabilizer",
+        "aa.normal-subgroups",
+        "aa.permutation-order"
+      ],
+      "viz": []
+    },
+    {
+      "id": "aa.burnside",
+      "slug": "burnside",
+      "course": "aa",
+      "unit": "actions",
+      "title": "Burnside's Lemma",
+      "short": "The number of orbits is the average number of points fixed by a group element; count necklaces and colorings up to symmetry by adding up the fixed colorings over the group.",
+      "prereqs": [
+        "aa.orbit-stabilizer",
+        "aa.permutation-order",
+        "disc.division-rule"
+      ],
+      "viz": [
+        "aa-burnside"
+      ]
+    },
+    {
+      "id": "aa.sylow",
+      "slug": "sylow",
+      "course": "aa",
+      "unit": "actions",
+      "title": "The Sylow Theorems",
+      "short": "If |G| = pᵃm with p not dividing m, then G has subgroups of order pᵃ, they are all conjugate, and their number nₚ divides m and is ≡ 1 (mod p).",
+      "prereqs": [
+        "aa.class-equation"
+      ],
+      "viz": []
+    },
+    {
+      "id": "aa.rings",
+      "slug": "rings",
+      "course": "aa",
+      "unit": "rings",
+      "title": "Rings",
+      "short": "A ring is an abelian group under addition with an associative multiplication that distributes over it; ℤ, ℤₙ, matrices and polynomials are rings, and the units are the elements with multiplicative inverses.",
+      "prereqs": [
+        "aa.group-axioms",
+        "nt.modular-arithmetic",
+        "la.matrix-algebra"
+      ],
+      "viz": [
+        "aa-cayley"
+      ]
+    },
+    {
+      "id": "aa.integral-domains",
+      "slug": "integral-domains",
+      "course": "aa",
+      "unit": "rings",
+      "title": "Integral Domains and Fields",
+      "short": "A zero divisor is an a ≠ 0 with ab = 0 for some b ≠ 0; an integral domain has none, every field is one, and ℤₙ is a field exactly when n is prime.",
+      "prereqs": [
+        "aa.rings",
+        "nt.modular-inverses"
+      ],
+      "viz": [
+        "aa-cayley"
+      ]
+    },
+    {
+      "id": "aa.ideals",
+      "slug": "ideals",
+      "course": "aa",
+      "unit": "rings",
+      "title": "Ideals",
+      "short": "An ideal is an additive subgroup I with ra and ar in I for every r in R and a in I; nℤ and ⟨d⟩ in ℤₙ are ideals, and every ideal of ℤ has the form nℤ.",
+      "prereqs": [
+        "aa.integral-domains",
+        "aa.subgroups-of-cyclic"
+      ],
+      "viz": [
+        "aa-lattice"
+      ]
+    },
+    {
+      "id": "aa.ring-homomorphisms",
+      "slug": "ring-homomorphisms",
+      "course": "aa",
+      "unit": "rings",
+      "title": "Ring Homomorphisms",
+      "short": "φ respects both operations, φ(a + b) = φ(a) + φ(b) and φ(ab) = φ(a)φ(b); its kernel is an ideal, and reduction ℤ → ℤₙ and evaluation f ↦ f(c) are the key examples.",
+      "prereqs": [
+        "aa.ideals",
+        "aa.kernels-images"
+      ],
+      "viz": []
+    },
+    {
+      "id": "aa.quotient-rings",
+      "slug": "quotient-rings",
+      "course": "aa",
+      "unit": "rings",
+      "title": "Quotient Rings",
+      "short": "For an ideal I, the cosets a + I form a ring R/I; compute in ℝ[x]/(x² + 1), where x² can be replaced by −1, and in ℤₚ[x]/(f) by taking remainders.",
+      "prereqs": [
+        "aa.ideals",
+        "aa.quotient-groups"
+      ],
+      "viz": []
+    },
+    {
+      "id": "aa.prime-maximal-ideals",
+      "slug": "prime-maximal-ideals",
+      "course": "aa",
+      "unit": "rings",
+      "title": "Prime and Maximal Ideals",
+      "short": "P is prime when ab ∈ P forces a ∈ P or b ∈ P, and M is maximal when no ideal lies strictly between M and R; R/P is an integral domain and R/M is a field.",
+      "prereqs": [
+        "aa.quotient-rings",
+        "aa.ring-homomorphisms"
+      ],
+      "viz": [
+        "aa-lattice"
+      ]
+    },
+    {
+      "id": "aa.polynomial-rings",
+      "slug": "polynomial-rings",
+      "course": "aa",
+      "unit": "polynomials",
+      "title": "Polynomial Rings",
+      "short": "R[x] holds the polynomials with coefficients in R; over an integral domain deg(fg) = deg f + deg g, but in ℤₙ[x] with n composite degrees can drop.",
+      "prereqs": [
+        "aa.integral-domains",
+        "alg1.multiply-polynomials"
+      ],
+      "viz": []
+    },
+    {
+      "id": "aa.polynomial-division",
+      "slug": "polynomial-division",
+      "course": "aa",
+      "unit": "polynomials",
+      "title": "Division and Roots in F[x]",
+      "short": "Over a field, f = qg + r with deg r < deg g; c is a root of f exactly when x − c divides f, so a nonzero polynomial of degree n has at most n roots.",
+      "prereqs": [
+        "aa.polynomial-rings",
+        "alg2.polynomial-long-division",
+        "alg2.remainder-factor-theorems"
+      ],
+      "viz": []
+    },
+    {
+      "id": "aa.polynomial-gcd",
+      "slug": "polynomial-gcd",
+      "course": "aa",
+      "unit": "polynomials",
+      "title": "The Euclidean Algorithm for Polynomials",
+      "short": "Repeated division finds gcd(f, g) in F[x], and running it backward writes the gcd as af + bg, which is how inverses are found in F[x]/(p(x)).",
+      "prereqs": [
+        "aa.polynomial-division",
+        "nt.bezout"
+      ],
+      "viz": []
+    },
+    {
+      "id": "aa.irreducible-low-degree",
+      "slug": "irreducible-low-degree",
+      "course": "aa",
+      "unit": "polynomials",
+      "title": "Irreducible Polynomials of Degree 2 and 3",
+      "short": "A polynomial of degree 2 or 3 over a field is irreducible exactly when it has no root in the field, so over ℤₚ you can test every element.",
+      "prereqs": [
+        "aa.polynomial-division"
+      ],
+      "viz": []
+    },
+    {
+      "id": "aa.irreducibility-tests",
+      "slug": "irreducibility-tests",
+      "course": "aa",
+      "unit": "polynomials",
+      "title": "Testing Irreducibility over ℚ",
+      "short": "Use the rational root test, Gauss's lemma, Eisenstein's criterion (a prime dividing every coefficient but the leading one, with p² not dividing the constant) and reduction mod p.",
+      "prereqs": [
+        "aa.irreducible-low-degree",
+        "alg2.rational-root-theorem"
+      ],
+      "viz": []
+    },
+    {
+      "id": "aa.field-extensions",
+      "slug": "field-extensions",
+      "course": "aa",
+      "unit": "fields",
+      "title": "Field Extensions",
+      "short": "If p(x) is irreducible over F, then F[x]/(p(x)) is a field containing a root of p; ℚ(√2) = {a + b√2 : a, b ∈ ℚ} is one, with inverses found by the conjugate.",
+      "prereqs": [
+        "aa.irreducibility-tests",
+        "aa.prime-maximal-ideals",
+        "aa.polynomial-gcd",
+        "la.basis"
+      ],
+      "viz": []
+    },
+    {
+      "id": "aa.minimal-polynomials",
+      "slug": "minimal-polynomials",
+      "course": "aa",
+      "unit": "fields",
+      "title": "Minimal Polynomials and Degree",
+      "short": "The minimal polynomial of α over F is the monic irreducible polynomial with α as a root, and [F(α) : F] equals its degree.",
+      "prereqs": [
+        "aa.field-extensions"
+      ],
+      "viz": []
+    },
+    {
+      "id": "aa.tower-law",
+      "slug": "tower-law",
+      "course": "aa",
+      "unit": "fields",
+      "title": "Degrees and the Tower Law",
+      "short": "For fields F ⊆ K ⊆ L, [L : F] = [L : K][K : F]; so [ℚ(√2, √3) : ℚ] = 4, and the cube root of 2 lies in no extension of ℚ whose degree is a power of 2.",
+      "prereqs": [
+        "aa.minimal-polynomials",
+        "la.dimension-rank"
+      ],
+      "viz": [
+        "aa-lattice"
+      ]
+    },
+    {
+      "id": "aa.finite-fields",
+      "slug": "finite-fields",
+      "course": "aa",
+      "unit": "fields",
+      "title": "Finite Fields GF(pⁿ)",
+      "short": "GF(pⁿ) = ℤₚ[x]/(f) for an irreducible f of degree n: add and multiply polynomials mod p and mod f, and find inverses with the Euclidean algorithm.",
+      "prereqs": [
+        "aa.field-extensions",
+        "aa.polynomial-gcd"
+      ],
+      "viz": [
+        "aa-gf"
+      ]
+    },
+    {
+      "id": "aa.finite-field-structure",
+      "slug": "finite-field-structure",
+      "course": "aa",
+      "unit": "fields",
+      "title": "The Multiplicative Group of a Finite Field",
+      "short": "The nonzero elements of GF(pⁿ) form a cyclic group of order pⁿ − 1, generated by a primitive element, and GF(pⁿ) contains GF(pᵐ) exactly when m divides n.",
+      "prereqs": [
+        "aa.finite-fields",
+        "aa.lagrange-consequences"
+      ],
+      "viz": [
+        "aa-gf"
+      ]
+    }
+  ]
+}

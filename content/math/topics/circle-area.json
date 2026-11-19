@@ -1,0 +1,95 @@
+{
+  "id": "g7.circle-area",
+  "slug": "circle-area",
+  "ladder": "math",
+  "course": "g7",
+  "unit": "geometry",
+  "title": "Area of a Circle",
+  "short": "Rearrange slices into a near-rectangle: A = πr².",
+  "trouble": "Students mix up 2πr and πr², or square the diameter.",
+  "prereqs": [
+    "g7.circumference",
+    "g6.area-parallelogram"
+  ],
+  "xp": 2,
+  "viz": [
+    "circlepi",
+    "areaformulas"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You know the <a href=\"/math/grade-7/circumference/\">circumference</a> of a circle and the <a href=\"/math/grade-6/area-parallelogram/\">area of a parallelogram</a>. Cutting a circle into slices connects the two."
+      },
+      {
+        "t": "key",
+        "html": "$$A = \\pi r^2$$ Square the radius, then multiply by $\\pi$. Area is measured in square units."
+      },
+      {
+        "t": "why",
+        "html": "Cut a circle into many thin slices, like a pizza, and line them up, points up and down. They make a shape that is almost a parallelogram, and nearly a rectangle when the slices are thin. Its height is the radius $r$. Its length is half the circumference, $\\frac{1}{2} \\times 2\\pi r = \\pi r$, because half the crust is on top and half on the bottom. Area $=$ length $\\times$ height $= \\pi r \\times r = \\pi r^2$."
+      },
+      {
+        "t": "viz",
+        "name": "areaformulas",
+        "opts": {
+          "shape": "circle",
+          "n": 16
+        },
+        "cap": "Slice the circle and rearrange: the near-rectangle is $\\pi r$ long and $r$ tall. More slices make it closer to a rectangle."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "From the radius",
+        "q": "Find the area of a circle with radius 5 cm.",
+        "steps": [
+          "$A = \\pi r^2 = \\pi \\times 5^2 = 25\\pi$ square cm (exact).",
+          "Using $3.14$: $25 \\times 3.14 = 78.5$ square cm."
+        ],
+        "a": "$25\\pi \\approx 78.5$ square cm"
+      },
+      {
+        "t": "ex",
+        "title": "From the diameter",
+        "q": "A round rug has a diameter of 12 ft. What is its area? Use $3.14$.",
+        "steps": [
+          "The radius is half the diameter: $r = 6$ ft.",
+          "$A \\approx 3.14 \\times 6^2 = 3.14 \\times 36 = 113.04$ square ft."
+        ],
+        "a": "$113.04$ square ft"
+      },
+      {
+        "t": "ex",
+        "title": "Working backward",
+        "q": "A circle has an area of $49\\pi$ square inches. What is its radius?",
+        "steps": [
+          "$\\pi r^2 = 49\\pi$, so $r^2 = 49$.",
+          "$7 \\times 7 = 49$, so $r = 7$ inches."
+        ],
+        "a": "7 inches"
+      },
+      {
+        "t": "mistake",
+        "html": "Mixing up $2\\pi r$ (the distance around, in cm) and $\\pi r^2$ (the space inside, in square cm), or squaring the diameter. Squaring the diameter gives an area 4 times too big: $12^2 = 144$, but $6^2 = 36$. Check the units: area must be in square units."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Prealgebra 2e, Section 9.5 Solve Geometry Applications: Circles and Irregular Figures"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 7.G.B.4"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

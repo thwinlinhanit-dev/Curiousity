@@ -1,0 +1,84 @@
+{
+  "id": "rbvision.centroid-steering",
+  "slug": "centroid-steering",
+  "ladder": "robotics",
+  "course": "rbvision",
+  "unit": "seeing",
+  "title": "Finding the Center and Steering",
+  "short": "The target's center is the average column of the pixels that pass; the steering error is that minus the image center.",
+  "trouble": "Students measure the error from the left edge instead of from the center.",
+  "prereqs": [
+    "rbvision.color-threshold",
+    "rbctrl.p-control"
+  ],
+  "xp": 3,
+  "viz": [
+    "rb-threshold"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The mask shows where the ball is. Now steer toward it."
+      },
+      {
+        "t": "key",
+        "html": "The target's <b>center</b> (centroid) is the average column of the pixels that passed. The <b>steering error</b> is that column minus the image's middle column, $w/2$. Feed it to a proportional controller: turn toward the target, harder when it is farther off center."
+      },
+      {
+        "t": "viz",
+        "name": "rb-threshold",
+        "opts": {
+          "t": 50
+        },
+        "cap": "The cross marks the center of the kept pixels. The readout gives the steering error."
+      },
+      {
+        "t": "why",
+        "html": "This is closed-loop control with a camera as the sensor. Each frame measures the error and the robot corrects; as it turns, the ball moves toward the middle and the error shrinks. It is how many FIRST robots line up with targets."
+      },
+      {
+        "t": "ex",
+        "title": "Steering error",
+        "q": "Image 320 wide; kept pixels in columns 210, 214, 220, 224.",
+        "steps": [
+          "Center: $(210 + 214 + 220 + 224)/4 = 217$.",
+          "Error: $217 - 160 = 57$."
+        ],
+        "a": "57 pixels right of center: turn right."
+      },
+      {
+        "t": "mistake",
+        "html": "Measuring the error from the left edge instead of from the center."
+      },
+      {
+        "t": "h",
+        "text": "Hands-on: a ball-chasing robot"
+      },
+      {
+        "t": "p",
+        "html": "Put a camera on your mobile robot. Each frame: threshold for your ball's color, find the center, and set the wheel speeds from the steering error. Start with a small gain and raise it until the robot turns briskly without wobbling."
+      },
+      {
+        "t": "note",
+        "html": "<div class=\"rb-safe\"><b>Safety.</b> Chase a soft ball in an open room at low speed, with the power switch in reach. Keep the robot away from stairs.</div>"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Richard Szeliski, Computer Vision: Algorithms and Applications, 2nd ed. (Springer, 2022), free online edition",
+        "url": "https://szeliski.org/Book/"
+      },
+      {
+        "name": "FIRST (For Inspiration and Recognition of Science and Technology), programs for students",
+        "url": "https://www.firstinspires.org/"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

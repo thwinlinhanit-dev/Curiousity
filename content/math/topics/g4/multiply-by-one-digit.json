@@ -1,0 +1,86 @@
+{
+  "id": "g4.multiply-by-one-digit",
+  "slug": "multiply-by-one-digit",
+  "ladder": "math",
+  "course": "g4",
+  "unit": "multiplication",
+  "title": "Multiplying by a One-Digit Number",
+  "short": "Multiply numbers up to four digits by one digit.",
+  "trouble": "Children forget to add the regrouped amount after multiplying the next digit.",
+  "prereqs": [
+    "g4.area-model-multiplication"
+  ],
+  "xp": 2,
+  "viz": [
+    "areamodel",
+    "placevalue"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The <a href=\"/math/grade-4/area-model-multiplication/\">area model</a> finds every partial product. The written method below does the same work in a shorter way: one column at a time, carrying as you go."
+      },
+      {
+        "t": "key",
+        "html": "Multiply the ones, then the tens, then the hundreds. When a product is 10 or more, write its ones digit and <b>carry</b> the rest to the next place. In the next place, multiply first, then add the carried amount."
+      },
+      {
+        "t": "why",
+        "html": "In $346 \\times 7$, the ones give $6 \\times 7 = 42$ ones: 4 tens and 2 ones. The 4 tens join the tens column: $4 \\times 7 = 28$ tens, plus the 4 tens makes 32 tens. These are the same partial products as the area model, $2{,}100 + 280 + 42$, added as you go."
+      },
+      {
+        "t": "viz",
+        "name": "g4-column",
+        "opts": {
+          "op": "x",
+          "a": 346,
+          "b": 7
+        },
+        "cap": "Press <b>Next step</b> to multiply one place at a time. The small blue digits are the carried amounts."
+      },
+      {
+        "t": "ex",
+        "title": "Carrying twice",
+        "q": "Find $346 \\times 7$.",
+        "steps": [
+          "Ones: $6 \\times 7 = 42$. Write 2, carry 4.",
+          "Tens: $4 \\times 7 = 28$, plus 4 carried is 32. Write 2, carry 3.",
+          "Hundreds: $3 \\times 7 = 21$, plus 3 carried is 24. Write 24.",
+          "Check with the area model: $2{,}100 + 280 + 42 = 2{,}422$."
+        ],
+        "a": "$2{,}422$"
+      },
+      {
+        "t": "ex",
+        "title": "Four digits",
+        "q": "Find $1{,}508 \\times 6$.",
+        "steps": [
+          "Ones: $8 \\times 6 = 48$. Write 8, carry 4.",
+          "Tens: $0 \\times 6 = 0$, plus 4 carried is 4. Write 4.",
+          "Hundreds: $5 \\times 6 = 30$. Write 0, carry 3.",
+          "Thousands: $1 \\times 6 = 6$, plus 3 carried is 9. Write 9."
+        ],
+        "a": "$9{,}048$"
+      },
+      {
+        "t": "mistake",
+        "html": "Forgetting to add the carried amount, so $346 \\times 7$ comes out as $2{,}182$. Another slip is adding the carry before multiplying ($4 + 4 = 8$, then $8 \\times 7$). Multiply first, then add the carry. Estimate to check: $350 \\times 7 = 2{,}450$, close to $2{,}422$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 4, 4.NBT.B.5 (multiply a whole number of up to four digits by a one-digit whole number)"
+      },
+      {
+        "name": "OpenStax Prealgebra 2e, section 1.4 Multiply Whole Numbers"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

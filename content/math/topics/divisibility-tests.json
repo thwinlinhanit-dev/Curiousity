@@ -1,0 +1,134 @@
+{
+  "id": "nt.divisibility-tests",
+  "slug": "divisibility-tests",
+  "ladder": "math",
+  "course": "nt",
+  "unit": "congruences",
+  "title": "Divisibility Tests from Congruences",
+  "short": "Since 10 ≡ 1 (mod 9) and 10 ≡ −1 (mod 11), digit sums and alternating digit sums test divisibility by 9 and by 11.",
+  "trouble": "Students find a remainder mod 11 with the alternating sum started from the leftmost digit. That can give the negative of the true remainder; start with the ones digit.",
+  "prereqs": [
+    "nt.modular-arithmetic"
+  ],
+  "xp": 2,
+  "viz": [],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You may know that a number is divisible by 9 when its digit sum is. With <a href=\"/math/number-theory/modular-arithmetic/\">modular arithmetic</a> this stops being a trick and becomes a two-line proof, and the same idea gives tests for 3, 11, 4, 8 and even 7 and 13."
+      },
+      {
+        "t": "why",
+        "html": "Write $n = d_k 10^{k} + \\cdots + d_1 10 + d_0$ in <a href=\"/math/number-theory/number-bases/\">base 10</a>. Since $10 \\equiv 1 \\pmod{9}$, every power $10^{i} \\equiv 1$, so $$n \\equiv d_k + \\cdots + d_1 + d_0 \\pmod{9}.$$ The same holds mod $3$. Since $10 \\equiv -1 \\pmod{11}$, the powers $10^{0}, 10^{1}, 10^{2}, \\dots$ are $\\equiv 1, -1, 1, \\dots$, so $$n \\equiv d_0 - d_1 + d_2 - d_3 + \\cdots \\pmod{11},$$ with the signs starting at the <b>ones digit</b>."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Modulus",
+          "Because",
+          "Test"
+        ],
+        "rows": [
+          [
+            "3, 9",
+            "$10 \\equiv 1$",
+            "digit sum"
+          ],
+          [
+            "11",
+            "$10 \\equiv -1$",
+            "alternating sum from the right"
+          ],
+          [
+            "2, 5",
+            "$10 \\equiv 0$",
+            "last digit"
+          ],
+          [
+            "4",
+            "$100 \\equiv 0$",
+            "last two digits"
+          ],
+          [
+            "8",
+            "$1000 \\equiv 0$",
+            "last three digits"
+          ],
+          [
+            "7, 11, 13",
+            "$1000 \\equiv -1$ (as $1001 = 7 \\cdot 11 \\cdot 13$)",
+            "alternating sum of 3-digit blocks"
+          ]
+        ],
+        "cap": "Each test is one congruence about a power of 10. They give the remainder, not just a yes or no."
+      },
+      {
+        "t": "ex",
+        "title": "Remainder mod 9",
+        "q": "Find the remainder of $8{,}437{,}265$ divided by $9$.",
+        "steps": [
+          "Digit sum: $8 + 4 + 3 + 7 + 2 + 6 + 5 = 35$.",
+          "$35 \\equiv 3 + 5 = 8 \\pmod{9}$."
+        ],
+        "a": "$8$."
+      },
+      {
+        "t": "ex",
+        "title": "Divisible by 11?",
+        "q": "Is $918{,}082$ divisible by $11$?",
+        "steps": [
+          "From the ones digit: $2 - 8 + 0 - 8 + 1 - 9 = -22$.",
+          "$-22 \\equiv 0 \\pmod{11}$, so yes. Indeed $918{,}082 = 11 \\cdot 83{,}462$."
+        ],
+        "a": "Yes."
+      },
+      {
+        "t": "ex",
+        "title": "A missing digit",
+        "q": "The 6-digit number $7\\square4312$ is divisible by 11. Find the missing digit.",
+        "steps": [
+          "From the right: $2 - 1 + 3 - 4 + \\square - 7 = \\square - 7$.",
+          "We need $\\square - 7 \\equiv 0 \\pmod{11}$, and the only digit that works is $\\square = 7$.",
+          "Check: $774{,}312 = 11 \\cdot 70{,}392$."
+        ],
+        "a": "$7$."
+      },
+      {
+        "t": "ex",
+        "title": "Blocks of three for 7",
+        "q": "Find the remainder of $2{,}456{,}789$ divided by $7$.",
+        "steps": [
+          "Since $1001 = 7 \\cdot 143$, we have $1000 \\equiv -1 \\pmod{7}$. So group the digits in threes from the right and alternate signs: $789 - 456 + 2 = 335$.",
+          "$335 = 7 \\cdot 47 + 6$, so the remainder is $6$. Check: $2{,}456{,}789 = 7 \\cdot 350{,}969 + 6$."
+        ],
+        "a": "$6$."
+      },
+      {
+        "t": "mistake",
+        "html": "Starting the alternating sum from the leftmost digit when you want the remainder mod 11. For $4316$: from the right, $6 - 1 + 3 - 4 = 4$, the true remainder ($4316 = 11 \\cdot 392 + 4$). From the left, $4 - 3 + 1 - 6 = -4 \\equiv 7$, the negative of it. (The two agree when the number has an odd number of digits, or when the answer is 0.) Always give the ones digit the plus sign."
+      },
+      {
+        "t": "note",
+        "html": "Casting out nines is an old way to check arithmetic: since every number is congruent to its digit sum mod 9, the digit sum of a correct product must match the product of the digit sums, mod 9. It catches most slips, though not swapped digits."
+      },
+      {
+        "t": "key",
+        "html": "A divisibility test is a congruence for a power of 10: $10 \\equiv 1 \\pmod{9}$ gives digit sums, and $10 \\equiv -1 \\pmod{11}$ gives alternating sums from the ones digit."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "William Stein, Elementary Number Theory: Primes, Congruences, and Secrets (Springer, 2009; free online edition), chapter 2, The Ring of Integers Modulo n"
+      },
+      {
+        "name": "Lehman, Leighton and Meyer, Mathematics for Computer Science (MIT OpenCourseWare 6.042J), chapter on number theory: modular arithmetic"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

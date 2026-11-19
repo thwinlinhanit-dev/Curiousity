@@ -1,0 +1,108 @@
+{
+  "id": "trad.genus-species",
+  "slug": "genus-species",
+  "ladder": "logic",
+  "course": "trad",
+  "unit": "terms",
+  "title": "Genus and Species",
+  "short": "A genus is a wider class divided into species; the same class can be a species of one genus and a genus of narrower species.",
+  "trouble": "Learners use the biology ranks. In logic, genus and species are relative: \"polygon\" is a species of \"shape\" and a genus of \"triangle\".",
+  "prereqs": [
+    "trad.extension-intension",
+    "informal.genus-difference"
+  ],
+  "xp": 1,
+  "viz": [
+    "lg-sort"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You saw in <a href=\"/logic/traditional-logic/extension-intension/\">Extension and Comprehension</a> that terms nest inside one another, and in <a href=\"/logic/informal-logic/genus-difference/\">Definition by Genus and Difference</a> that a definition names a wider class and then narrows it. Logic names the two ends of that relation."
+      },
+      {
+        "t": "key",
+        "html": "A <b>genus</b> is a wider class that is divided into narrower classes; each narrower class is a <b>species</b> of that genus. The same class can be a species of one genus and a genus of other species."
+      },
+      {
+        "t": "why",
+        "html": "Genus and species name a relation between two classes, like \"parent\" and \"child\". Nobody is a parent all by themselves; you are a parent of someone. In the same way, \"polygon\" is a species when we compare it with \"shape\" (every polygon is a shape, not every shape is a polygon), and a genus when we compare it with \"triangle\". Only the comparison decides."
+      },
+      {
+        "t": "viz",
+        "name": "lg-sort",
+        "opts": {
+          "bins": [
+            "Genus of \"rectangles\"",
+            "Species of \"rectangles\""
+          ],
+          "cards": [
+            {
+              "text": "quadrilaterals",
+              "bin": 0,
+              "why": "Every rectangle is a quadrilateral, but not the other way around."
+            },
+            {
+              "text": "squares",
+              "bin": 1,
+              "why": "Every square is a rectangle, but not every rectangle is a square."
+            },
+            {
+              "text": "polygons",
+              "bin": 0,
+              "why": "A wider class that contains the rectangles."
+            },
+            {
+              "text": "golden rectangles",
+              "bin": 1,
+              "why": "A narrower class inside the rectangles."
+            },
+            {
+              "text": "shapes",
+              "bin": 0,
+              "why": "Wider still, but still a genus of rectangles."
+            }
+          ]
+        },
+        "cap": "Sort each class by how it relates to the rectangles."
+      },
+      {
+        "t": "h",
+        "text": "Worked example"
+      },
+      {
+        "t": "ex",
+        "title": "One class, two roles",
+        "q": "How is \"mammals\" related to \"animals\" and to \"dogs\"?",
+        "steps": [
+          "Compare mammals with animals: every mammal is an animal, but some animals (birds, fish) are not mammals. So mammals is the narrower class: a species of animals.",
+          "Compare mammals with dogs: every dog is a mammal, but not every mammal is a dog. So mammals is the wider class: a genus of dogs."
+        ],
+        "a": "a species of animals and a genus of dogs"
+      },
+      {
+        "t": "note",
+        "html": "Porphyry drew these nested classes as a tree, now called the Tree of Porphyry: substance at the top, then body, living body, animal, and rational animal (human being) near the bottom. A class with no wider class above it is a <b>highest genus</b>; a class that is not divided any further is a <b>lowest species</b>. Everything between is both a genus and a species."
+      },
+      {
+        "t": "mistake",
+        "html": "Using the biology ranks. In biology, \"genus\" and \"species\" are fixed levels (Canis is a genus, Canis familiaris a species). In logic they are relative: any wider class is a genus of any narrower class inside it, at any level. Check by asking \"wider or narrower than <i>what</i>?\""
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Porphyry, Isagoge (the five predicables)"
+      },
+      {
+        "name": "Patrick J. Hurley, A Concise Introduction to Logic, 2.4 Definitional Techniques (definition by genus and difference)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

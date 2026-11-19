@@ -1,0 +1,109 @@
+{
+  "id": "alg2.log-exp-forms",
+  "slug": "log-exp-forms",
+  "ladder": "math",
+  "course": "alg2",
+  "unit": "exponential-log",
+  "title": "Switching Between Log and Exponential Form",
+  "short": "log_b(y) = x means bˣ = y.",
+  "trouble": "",
+  "prereqs": [
+    "alg2.logarithms"
+  ],
+  "xp": 1,
+  "viz": [
+    "logscale"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Every logarithm statement is an exponential statement in disguise, and switching between the two forms is the main tool for working with <a href=\"/math/algebra-2/logarithms/\">What a Logarithm Is</a>."
+      },
+      {
+        "t": "key",
+        "html": "$$\\log_b y = x \\quad\\Longleftrightarrow\\quad b^x = y$$ The base of the log is the base of the power, and the log itself is the exponent. Use this to evaluate logs, and to solve equations where the unknown is the input, the base or the exponent."
+      },
+      {
+        "t": "why",
+        "html": "This is the definition of a logarithm, read in both directions. Because $b^x$ and $\\log_b x$ are inverse functions, each form undoes the other: $b^{\\log_b y} = y$ and $\\log_b (b^x) = x$."
+      },
+      {
+        "t": "viz",
+        "name": "logscale",
+        "opts": {
+          "mode": "graph",
+          "modes": [
+            "graph"
+          ],
+          "base": 2
+        },
+        "cap": "$y = 2^x$ and $y = \\log_2 x$ are mirror images across $y = x$: every point $(a, b)$ on one is $(b, a)$ on the other."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Switching forms",
+        "q": "Write $\\log_5 125 = 3$ in exponential form, and $10^{-2} = 0.01$ in log form.",
+        "steps": [
+          "Base 5, exponent 3: $5^3 = 125$.",
+          "Base 10, exponent $-2$: $\\log 0.01 = -2$."
+        ],
+        "a": "$5^3 = 125$ and $\\log 0.01 = -2$"
+      },
+      {
+        "t": "ex",
+        "title": "Solving for the input",
+        "q": "Solve $\\log_4 x = 3$.",
+        "steps": [
+          "Exponential form: $x = 4^3 = 64$."
+        ],
+        "a": "$x = 64$"
+      },
+      {
+        "t": "ex",
+        "title": "Solving for the base",
+        "q": "Solve $\\log_x 49 = 2$.",
+        "steps": [
+          "$x^2 = 49$, so $x = \\pm 7$.",
+          "A base must be positive, so $x = 7$."
+        ],
+        "a": "$x = 7$"
+      },
+      {
+        "t": "note",
+        "html": "Because the two forms undo each other, $b^{\\log_b y} = y$ and $\\log_b(b^x) = x$. For example $10^{\\log 7} = 7$ and $\\ln(e^{-2}) = -2$. These two facts are how you will solve exponential and log equations: apply the inverse to both sides."
+      },
+      {
+        "t": "ex",
+        "title": "Solving for the exponent",
+        "q": "Solve $10^x = 250$ exactly, and estimate it.",
+        "steps": [
+          "Log form: $x = \\log 250$.",
+          "$100 < 250 < 1000$, so $x$ is between 2 and 3 (a calculator gives about $2.398$)."
+        ],
+        "a": "$x = \\log 250 \\approx 2.398$"
+      },
+      {
+        "t": "mistake",
+        "html": "Swapping the roles: writing $\\log_5 125 = 3$ as $3^5 = 125$ or $125^3 = 5$. Keep the base as the base. A check: the base raised to the log must give the number inside the log."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Algebra 2e, Section 6.3 Logarithmic Functions"
+      },
+      {
+        "name": "Common Core State Standards, F-BF.B.5"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

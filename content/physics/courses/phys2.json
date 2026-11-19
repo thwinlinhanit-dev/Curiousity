@@ -1,0 +1,1217 @@
+{
+  "key": "phys2",
+  "ladder": "physics",
+  "title": "Physics 2: Fluids, Heat, Electricity, Light and Atoms",
+  "short": "Physics 2",
+  "after": [
+    "phys1",
+    "alg2"
+  ],
+  "units": [
+    {
+      "key": "fluids",
+      "title": "Fluids",
+      "blurb": "Pressure in still fluids, buoyancy, and the flow of moving fluids."
+    },
+    {
+      "key": "thermodynamics",
+      "title": "Thermodynamics",
+      "blurb": "Gases, heat flow, the first and second laws, and engines."
+    },
+    {
+      "key": "electrostatics",
+      "title": "Electric Force, Field and Potential",
+      "blurb": "Charges, Coulomb's law, fields, potential and capacitors."
+    },
+    {
+      "key": "circuits",
+      "title": "Electric Circuits",
+      "blurb": "Current, resistance, power, series and parallel networks, Kirchhoff's rules and RC circuits."
+    },
+    {
+      "key": "magnetism",
+      "title": "Magnetism and Electromagnetism",
+      "blurb": "Magnetic forces on moving charges and currents, fields of currents, and induction."
+    },
+    {
+      "key": "geometric-optics",
+      "title": "Geometric Optics",
+      "blurb": "Mirrors and lenses: reflection, refraction and the images they form."
+    },
+    {
+      "key": "waves",
+      "title": "Waves, Sound and Physical Optics",
+      "blurb": "How waves move, reflect and add, standing waves and sound, and the wave behavior of light."
+    },
+    {
+      "key": "quantum",
+      "title": "Quantum Physics and the Nucleus",
+      "blurb": "Photons, energy levels and spectra, matter waves, and the energy stored in nuclei."
+    }
+  ],
+  "topics": [
+    {
+      "id": "phys2.pressure-depth",
+      "slug": "pressure-depth",
+      "course": "phys2",
+      "unit": "fluids",
+      "title": "Pressure and Depth",
+      "short": "In a still fluid P = P₀ + ρgh, and gauge pressure leaves out the air pressure above.",
+      "prereqs": [
+        "physsci.pressure",
+        "earthsci.density",
+        "phys1.equilibrium-first-law"
+      ],
+      "viz": [
+        "ph-fluids"
+      ]
+    },
+    {
+      "id": "phys2.pascals-principle",
+      "slug": "pascals-principle",
+      "course": "phys2",
+      "unit": "fluids",
+      "title": "Pascal's Principle and Hydraulics",
+      "short": "A pressure change spreads through a confined fluid, so a small force on a small piston lifts a heavy load.",
+      "prereqs": [
+        "phys2.pressure-depth",
+        "phys1.work"
+      ],
+      "viz": [
+        "ph-fluids"
+      ]
+    },
+    {
+      "id": "phys2.buoyancy",
+      "slug": "buoyancy",
+      "course": "phys2",
+      "unit": "fluids",
+      "title": "Buoyant Force and Archimedes' Principle",
+      "short": "The fluid pushes up with the weight of the fluid displaced, F_b = ρ_fluid·V·g, and a floating object displaces its own weight.",
+      "prereqs": [
+        "phys2.pressure-depth"
+      ],
+      "viz": [
+        "ph-fluids"
+      ]
+    },
+    {
+      "id": "phys2.continuity",
+      "slug": "continuity",
+      "course": "phys2",
+      "unit": "fluids",
+      "title": "Flow Rate and Continuity",
+      "short": "For a liquid filling a pipe, the flow rate Av is the same everywhere: A₁v₁ = A₂v₂.",
+      "prereqs": [
+        "physsci.pressure",
+        "g7.solve-proportions"
+      ],
+      "viz": [
+        "ph-fluids"
+      ]
+    },
+    {
+      "id": "phys2.bernoulli",
+      "slug": "bernoulli",
+      "course": "phys2",
+      "unit": "fluids",
+      "title": "Bernoulli's Equation",
+      "short": "Along a streamline P + ½ρv² + ρgh stays the same, so faster-moving fluid has lower pressure.",
+      "prereqs": [
+        "phys2.continuity",
+        "phys2.pressure-depth",
+        "phys1.energy-conservation"
+      ],
+      "viz": [
+        "ph-fluids"
+      ]
+    },
+    {
+      "id": "phys2.ideal-gas-law",
+      "slug": "ideal-gas-law",
+      "course": "phys2",
+      "unit": "thermodynamics",
+      "title": "The Ideal Gas Law",
+      "short": "PV = nRT = Nk_BT, with the temperature in kelvins.",
+      "prereqs": [
+        "chem.kinetic-molecular-theory",
+        "alg1.literal-equations"
+      ],
+      "viz": [
+        "ph-gas"
+      ]
+    },
+    {
+      "id": "phys2.kinetic-theory",
+      "slug": "kinetic-theory",
+      "course": "phys2",
+      "unit": "thermodynamics",
+      "title": "Temperature and Molecular Energy",
+      "short": "Each gas molecule has average kinetic energy (3/2)k_BT, so a monatomic gas holds internal energy U = (3/2)nRT.",
+      "prereqs": [
+        "phys2.ideal-gas-law",
+        "physsci.kinetic-energy"
+      ],
+      "viz": [
+        "ph-gas"
+      ]
+    },
+    {
+      "id": "phys2.latent-heat",
+      "slug": "latent-heat",
+      "course": "phys2",
+      "unit": "thermodynamics",
+      "title": "Latent Heat",
+      "short": "Melting or boiling a mass m takes Q = mL; add the warming stages to find the total heat.",
+      "prereqs": [
+        "physsci.phase-changes",
+        "chem.calorimetry"
+      ],
+      "viz": [
+        "ph-thermal"
+      ]
+    },
+    {
+      "id": "phys2.conduction-rate",
+      "slug": "conduction-rate",
+      "course": "phys2",
+      "unit": "thermodynamics",
+      "title": "Rate of Heat Conduction",
+      "short": "Heat flows through a slab at the rate P = kAΔT/L, so thinner and wider walls pass more.",
+      "prereqs": [
+        "physsci.heat-transfer",
+        "alg1.literal-equations"
+      ],
+      "viz": [
+        "ph-thermal"
+      ]
+    },
+    {
+      "id": "phys2.thermal-radiation",
+      "slug": "thermal-radiation",
+      "course": "phys2",
+      "unit": "thermodynamics",
+      "title": "Thermal Radiation and Blackbodies",
+      "short": "Every object radiates P = eσAT⁴, and hotter objects glow at shorter peak wavelengths: λ_max·T = 2.898 × 10⁻³ m·K.",
+      "prereqs": [
+        "physsci.heat-transfer",
+        "physsci.em-spectrum"
+      ],
+      "viz": [
+        "ph-blackbody",
+        "ph-thermal"
+      ]
+    },
+    {
+      "id": "phys2.pv-work",
+      "slug": "pv-work",
+      "course": "phys2",
+      "unit": "thermodynamics",
+      "title": "Work Done on a Gas",
+      "short": "W = −PΔV is the work done on the gas, and its size is the area under the path on a P–V diagram.",
+      "prereqs": [
+        "phys2.ideal-gas-law",
+        "phys1.work-from-graphs"
+      ],
+      "viz": [
+        "ph-pv"
+      ]
+    },
+    {
+      "id": "phys2.first-law",
+      "slug": "first-law",
+      "course": "phys2",
+      "unit": "thermodynamics",
+      "title": "The First Law of Thermodynamics",
+      "short": "ΔU = Q + W: the internal energy changes by the heat added plus the work done on the gas.",
+      "prereqs": [
+        "phys2.pv-work",
+        "phys2.kinetic-theory"
+      ],
+      "viz": [
+        "ph-pv"
+      ]
+    },
+    {
+      "id": "phys2.thermo-processes",
+      "slug": "thermo-processes",
+      "course": "phys2",
+      "unit": "thermodynamics",
+      "title": "Isobaric, Isochoric, Isothermal and Adiabatic Processes",
+      "short": "Each process holds one thing fixed, which decides how Q, W and ΔU split.",
+      "prereqs": [
+        "phys2.first-law"
+      ],
+      "viz": [
+        "ph-pv"
+      ]
+    },
+    {
+      "id": "phys2.thermo-cycles",
+      "slug": "thermo-cycles",
+      "course": "phys2",
+      "unit": "thermodynamics",
+      "title": "Cycles on a P–V Diagram",
+      "short": "Around a closed cycle ΔU = 0, and the area enclosed is the net work.",
+      "prereqs": [
+        "phys2.thermo-processes"
+      ],
+      "viz": [
+        "ph-pv"
+      ]
+    },
+    {
+      "id": "phys2.heat-engines",
+      "slug": "heat-engines",
+      "course": "phys2",
+      "unit": "thermodynamics",
+      "title": "Heat Engines and Efficiency",
+      "short": "An engine turns part of the heat Q_H into work and gives off the rest as Q_C, with efficiency e = W/Q_H.",
+      "prereqs": [
+        "phys2.thermo-cycles",
+        "physsci.efficiency"
+      ],
+      "viz": [
+        "ph-pv"
+      ]
+    },
+    {
+      "id": "phys2.carnot-limit",
+      "slug": "carnot-limit",
+      "course": "phys2",
+      "unit": "thermodynamics",
+      "title": "The Carnot Limit",
+      "short": "No engine running between T_H and T_C can beat e = 1 − T_C/T_H, with temperatures in kelvins.",
+      "prereqs": [
+        "phys2.heat-engines"
+      ],
+      "viz": [
+        "ph-pv"
+      ]
+    },
+    {
+      "id": "phys2.refrigerators",
+      "slug": "refrigerators",
+      "course": "phys2",
+      "unit": "thermodynamics",
+      "title": "Refrigerators and Heat Pumps",
+      "short": "Work can move heat from cold to hot, and a heat pump delivers more heat than the work it uses.",
+      "prereqs": [
+        "phys2.heat-engines"
+      ],
+      "viz": [
+        "ph-pv"
+      ]
+    },
+    {
+      "id": "phys2.entropy",
+      "slug": "entropy",
+      "course": "phys2",
+      "unit": "thermodynamics",
+      "title": "Entropy and the Second Law",
+      "short": "Heat flows from hot to cold on its own; ΔS = Q/T, and the total entropy of an isolated system never decreases.",
+      "prereqs": [
+        "phys2.carnot-limit"
+      ],
+      "viz": [
+        "ph-thermal"
+      ]
+    },
+    {
+      "id": "phys2.charge-conservation",
+      "slug": "charge-conservation",
+      "course": "phys2",
+      "unit": "electrostatics",
+      "title": "Charge, Conductors and Charging",
+      "short": "Charge comes in whole multiples of e and is conserved, and objects charge by friction, contact or induction.",
+      "prereqs": [
+        "physsci.static-forces"
+      ],
+      "viz": [
+        "ph-efield"
+      ]
+    },
+    {
+      "id": "phys2.coulombs-law",
+      "slug": "coulombs-law",
+      "course": "phys2",
+      "unit": "electrostatics",
+      "title": "Coulomb's Law",
+      "short": "F = k|q₁q₂|/r²: double the distance and the force drops to a quarter.",
+      "prereqs": [
+        "phys2.charge-conservation",
+        "phys1.gravitational-force"
+      ],
+      "viz": [
+        "ph-efield"
+      ]
+    },
+    {
+      "id": "phys2.coulomb-superposition",
+      "slug": "coulomb-superposition",
+      "course": "phys2",
+      "unit": "electrostatics",
+      "title": "Adding Electric Forces",
+      "short": "The net force on a charge is the vector sum of the forces from each of the other charges.",
+      "prereqs": [
+        "phys2.coulombs-law",
+        "phys1.vector-addition"
+      ],
+      "viz": [
+        "ph-efield",
+        "ph-vectors"
+      ]
+    },
+    {
+      "id": "phys2.electric-field",
+      "slug": "electric-field",
+      "course": "phys2",
+      "unit": "electrostatics",
+      "title": "The Electric Field",
+      "short": "E = F/q is the force on each coulomb; a point charge makes E = k|q|/r², pointing away from a positive charge.",
+      "prereqs": [
+        "phys2.coulombs-law",
+        "physsci.fields-intro"
+      ],
+      "viz": [
+        "ph-efield"
+      ]
+    },
+    {
+      "id": "phys2.field-superposition",
+      "slug": "field-superposition",
+      "course": "phys2",
+      "unit": "electrostatics",
+      "title": "Fields of Several Charges and Field Lines",
+      "short": "Add the field vectors from each charge; field lines show the direction, and their spacing shows the strength.",
+      "prereqs": [
+        "phys2.electric-field",
+        "phys2.coulomb-superposition"
+      ],
+      "viz": [
+        "ph-efield"
+      ]
+    },
+    {
+      "id": "phys2.uniform-field",
+      "slug": "uniform-field",
+      "course": "phys2",
+      "unit": "electrostatics",
+      "title": "Charges in a Uniform Field",
+      "short": "Between parallel plates E is uniform, so a charge feels a constant force qE and moves like a projectile.",
+      "prereqs": [
+        "phys2.electric-field",
+        "phys1.projectile-horizontal"
+      ],
+      "viz": [
+        "ph-efield"
+      ]
+    },
+    {
+      "id": "phys2.electric-potential-energy",
+      "slug": "electric-potential-energy",
+      "course": "phys2",
+      "unit": "electrostatics",
+      "title": "Electric Potential Energy",
+      "short": "Two charges store U = kq₁q₂/r, positive when they repel and negative when they attract.",
+      "prereqs": [
+        "phys2.coulombs-law",
+        "phys1.gravitational-pe-universal"
+      ],
+      "viz": [
+        "ph-efield"
+      ]
+    },
+    {
+      "id": "phys2.electric-potential",
+      "slug": "electric-potential",
+      "course": "phys2",
+      "unit": "electrostatics",
+      "title": "Electric Potential and Voltage",
+      "short": "Potential is energy per charge, V = kq/r near a point charge, and a charge crossing ΔV gains or loses qΔV of kinetic energy.",
+      "prereqs": [
+        "phys2.electric-potential-energy",
+        "phys2.electric-field"
+      ],
+      "viz": [
+        "ph-efield"
+      ]
+    },
+    {
+      "id": "phys2.equipotentials",
+      "slug": "equipotentials",
+      "course": "phys2",
+      "unit": "electrostatics",
+      "title": "Equipotentials and Field Strength",
+      "short": "The field points from high to low potential, at right angles to equipotentials, with E = ΔV/d between plates.",
+      "prereqs": [
+        "phys2.electric-potential",
+        "phys2.field-superposition"
+      ],
+      "viz": [
+        "ph-efield"
+      ]
+    },
+    {
+      "id": "phys2.capacitors",
+      "slug": "capacitors",
+      "course": "phys2",
+      "unit": "electrostatics",
+      "title": "Capacitors",
+      "short": "C = Q/V, and for parallel plates C = κε₀A/d.",
+      "prereqs": [
+        "phys2.equipotentials"
+      ],
+      "viz": [
+        "ph-efield"
+      ]
+    },
+    {
+      "id": "phys2.capacitor-energy",
+      "slug": "capacitor-energy",
+      "course": "phys2",
+      "unit": "electrostatics",
+      "title": "Energy Stored in a Capacitor",
+      "short": "A charged capacitor stores U = ½QV = ½CV².",
+      "prereqs": [
+        "phys2.capacitors",
+        "phys1.work-from-graphs"
+      ],
+      "viz": [
+        "ph-efield",
+        "ph-graph"
+      ]
+    },
+    {
+      "id": "phys2.current",
+      "slug": "current",
+      "course": "phys2",
+      "unit": "circuits",
+      "title": "Electric Current",
+      "short": "I = ΔQ/Δt, and conventional current points the way positive charge would flow.",
+      "prereqs": [
+        "phys2.charge-conservation",
+        "physsci.current-voltage"
+      ],
+      "viz": [
+        "ph-circuit"
+      ]
+    },
+    {
+      "id": "phys2.resistivity",
+      "slug": "resistivity",
+      "course": "phys2",
+      "unit": "circuits",
+      "title": "Resistance and Resistivity",
+      "short": "R = ρL/A, so longer and thinner wires resist more.",
+      "prereqs": [
+        "phys2.current",
+        "physsci.ohms-law"
+      ],
+      "viz": [
+        "ph-circuit"
+      ]
+    },
+    {
+      "id": "phys2.resistor-power",
+      "slug": "resistor-power",
+      "course": "phys2",
+      "unit": "circuits",
+      "title": "Power in Resistors",
+      "short": "P = IV = I²R = V²/R are three forms of one idea.",
+      "prereqs": [
+        "phys2.resistivity",
+        "physsci.electric-power"
+      ],
+      "viz": [
+        "ph-circuit"
+      ]
+    },
+    {
+      "id": "phys2.series-resistors",
+      "slug": "series-resistors",
+      "course": "phys2",
+      "unit": "circuits",
+      "title": "Resistors in Series",
+      "short": "One current passes through every resistor, the voltages add, and R_eq = R₁ + R₂ + ⋯.",
+      "prereqs": [
+        "phys2.resistivity",
+        "physsci.series-parallel-intro"
+      ],
+      "viz": [
+        "ph-circuit"
+      ]
+    },
+    {
+      "id": "phys2.parallel-resistors",
+      "slug": "parallel-resistors",
+      "course": "phys2",
+      "unit": "circuits",
+      "title": "Resistors in Parallel",
+      "short": "Each branch has the same voltage, 1/R_eq = 1/R₁ + 1/R₂ + ⋯, and adding a branch lowers R_eq.",
+      "prereqs": [
+        "phys2.series-resistors"
+      ],
+      "viz": [
+        "ph-circuit"
+      ]
+    },
+    {
+      "id": "phys2.combination-circuits",
+      "slug": "combination-circuits",
+      "course": "phys2",
+      "unit": "circuits",
+      "title": "Series-Parallel Combinations",
+      "short": "Reduce a circuit step by step, then work back out to find each current and voltage.",
+      "prereqs": [
+        "phys2.parallel-resistors"
+      ],
+      "viz": [
+        "ph-circuit"
+      ]
+    },
+    {
+      "id": "phys2.kirchhoff-junction",
+      "slug": "kirchhoff-junction",
+      "course": "phys2",
+      "unit": "circuits",
+      "title": "Kirchhoff's Junction Rule",
+      "short": "The current flowing into a junction equals the current flowing out, because charge is conserved.",
+      "prereqs": [
+        "phys2.parallel-resistors"
+      ],
+      "viz": [
+        "ph-circuit"
+      ]
+    },
+    {
+      "id": "phys2.kirchhoff-loop",
+      "slug": "kirchhoff-loop",
+      "course": "phys2",
+      "unit": "circuits",
+      "title": "Kirchhoff's Loop Rule",
+      "short": "The voltage changes around any closed loop add to zero, because energy is conserved.",
+      "prereqs": [
+        "phys2.kirchhoff-junction",
+        "phys2.combination-circuits",
+        "alg1.systems-elimination"
+      ],
+      "viz": [
+        "ph-circuit"
+      ]
+    },
+    {
+      "id": "phys2.internal-resistance",
+      "slug": "internal-resistance",
+      "course": "phys2",
+      "unit": "circuits",
+      "title": "EMF and Internal Resistance",
+      "short": "A real battery's terminal voltage is ε − Ir, so it sags as the current grows.",
+      "prereqs": [
+        "phys2.kirchhoff-loop"
+      ],
+      "viz": [
+        "ph-circuit"
+      ]
+    },
+    {
+      "id": "phys2.capacitor-combinations",
+      "slug": "capacitor-combinations",
+      "course": "phys2",
+      "unit": "circuits",
+      "title": "Capacitors in Series and Parallel",
+      "short": "Parallel capacitances add, and series capacitances combine by reciprocals, the opposite of resistors.",
+      "prereqs": [
+        "phys2.capacitors",
+        "phys2.parallel-resistors"
+      ],
+      "viz": [
+        "ph-circuit"
+      ]
+    },
+    {
+      "id": "phys2.rc-circuits",
+      "slug": "rc-circuits",
+      "course": "phys2",
+      "unit": "circuits",
+      "title": "RC Circuits",
+      "short": "A capacitor charges through a resistor with time constant τ = RC, and once full it blocks steady current.",
+      "prereqs": [
+        "phys2.capacitor-combinations",
+        "phys2.kirchhoff-loop",
+        "alg1.exponential-growth-decay"
+      ],
+      "viz": [
+        "ph-circuit"
+      ]
+    },
+    {
+      "id": "phys2.magnetic-fields",
+      "slug": "magnetic-fields",
+      "course": "phys2",
+      "unit": "magnetism",
+      "title": "Magnetic Fields and Their Sources",
+      "short": "Magnets and moving charges make magnetic fields, measured in teslas, whose lines form closed loops.",
+      "prereqs": [
+        "physsci.electromagnets"
+      ],
+      "viz": [
+        "ph-magnetism"
+      ]
+    },
+    {
+      "id": "phys2.force-on-moving-charge",
+      "slug": "force-on-moving-charge",
+      "course": "phys2",
+      "unit": "magnetism",
+      "title": "Magnetic Force on a Moving Charge",
+      "short": "F = qvB sin θ, at right angles to both v and B, by the right-hand rule.",
+      "prereqs": [
+        "phys2.magnetic-fields",
+        "phys1.vector-components"
+      ],
+      "viz": [
+        "ph-magnetism"
+      ]
+    },
+    {
+      "id": "phys2.charged-particle-circles",
+      "slug": "charged-particle-circles",
+      "course": "phys2",
+      "unit": "magnetism",
+      "title": "Charges Circling in a Magnetic Field",
+      "short": "The magnetic force is centripetal, so r = mv/(|q|B), and it never changes the speed.",
+      "prereqs": [
+        "phys2.force-on-moving-charge",
+        "phys1.centripetal-force"
+      ],
+      "viz": [
+        "ph-magnetism"
+      ]
+    },
+    {
+      "id": "phys2.force-on-wire",
+      "slug": "force-on-wire",
+      "course": "phys2",
+      "unit": "magnetism",
+      "title": "Magnetic Force on a Current",
+      "short": "A wire carrying current I across a field B feels F = ILB sin θ.",
+      "prereqs": [
+        "phys2.force-on-moving-charge",
+        "phys2.current"
+      ],
+      "viz": [
+        "ph-magnetism"
+      ]
+    },
+    {
+      "id": "phys2.field-of-wire",
+      "slug": "field-of-wire",
+      "course": "phys2",
+      "unit": "magnetism",
+      "title": "Fields of Wires and Solenoids",
+      "short": "A long wire makes B = μ₀I/(2πr) in circles around it, a solenoid makes a nearly uniform B = μ₀nI inside, and parallel currents attract.",
+      "prereqs": [
+        "phys2.force-on-wire"
+      ],
+      "viz": [
+        "ph-magnetism"
+      ]
+    },
+    {
+      "id": "phys2.magnetic-flux",
+      "slug": "magnetic-flux",
+      "course": "phys2",
+      "unit": "magnetism",
+      "title": "Magnetic Flux",
+      "short": "Φ = BA cos θ counts the field passing through a loop, with θ measured from the loop's normal.",
+      "prereqs": [
+        "phys2.magnetic-fields",
+        "geo.trig-ratios"
+      ],
+      "viz": [
+        "ph-induction"
+      ]
+    },
+    {
+      "id": "phys2.faradays-law",
+      "slug": "faradays-law",
+      "course": "phys2",
+      "unit": "magnetism",
+      "title": "Faraday's Law",
+      "short": "A changing magnetic flux makes an emf: ε = −N ΔΦ/Δt.",
+      "prereqs": [
+        "phys2.magnetic-flux",
+        "physsci.generators"
+      ],
+      "viz": [
+        "ph-induction"
+      ]
+    },
+    {
+      "id": "phys2.lenzs-law",
+      "slug": "lenzs-law",
+      "course": "phys2",
+      "unit": "magnetism",
+      "title": "Lenz's Law",
+      "short": "The induced current makes a field that opposes the change in flux.",
+      "prereqs": [
+        "phys2.faradays-law",
+        "phys2.field-of-wire"
+      ],
+      "viz": [
+        "ph-induction"
+      ]
+    },
+    {
+      "id": "phys2.motional-emf",
+      "slug": "motional-emf",
+      "course": "phys2",
+      "unit": "magnetism",
+      "title": "Motional EMF",
+      "short": "A rod sliding along rails at speed v makes ε = BLv, and the force on the induced current slows the rod.",
+      "prereqs": [
+        "phys2.faradays-law",
+        "phys2.force-on-wire"
+      ],
+      "viz": [
+        "ph-induction"
+      ]
+    },
+    {
+      "id": "phys2.reflection",
+      "slug": "reflection",
+      "course": "phys2",
+      "unit": "geometric-optics",
+      "title": "Reflection and Plane Mirrors",
+      "short": "The angle of reflection equals the angle of incidence, and a plane mirror's image is as far behind it as the object is in front.",
+      "prereqs": [
+        "physsci.wave-behavior"
+      ],
+      "viz": [
+        "ph-rays"
+      ]
+    },
+    {
+      "id": "phys2.index-of-refraction",
+      "slug": "index-of-refraction",
+      "course": "phys2",
+      "unit": "geometric-optics",
+      "title": "Index of Refraction",
+      "short": "n = c/v: light slows in glass and water, and its wavelength shrinks while its frequency stays the same.",
+      "prereqs": [
+        "physsci.refraction-intro",
+        "physsci.wave-speed"
+      ],
+      "viz": [
+        "ph-refraction"
+      ]
+    },
+    {
+      "id": "phys2.snells-law",
+      "slug": "snells-law",
+      "course": "phys2",
+      "unit": "geometric-optics",
+      "title": "Snell's Law",
+      "short": "n₁ sin θ₁ = n₂ sin θ₂, with angles measured from the normal.",
+      "prereqs": [
+        "phys2.index-of-refraction",
+        "geo.inverse-trig-angles"
+      ],
+      "viz": [
+        "ph-refraction"
+      ]
+    },
+    {
+      "id": "phys2.total-internal-reflection",
+      "slug": "total-internal-reflection",
+      "course": "phys2",
+      "unit": "geometric-optics",
+      "title": "Total Internal Reflection",
+      "short": "Going from higher to lower n, light beyond the critical angle, sin θc = n₂/n₁, reflects completely.",
+      "prereqs": [
+        "phys2.snells-law"
+      ],
+      "viz": [
+        "ph-refraction"
+      ]
+    },
+    {
+      "id": "phys2.mirror-ray-diagrams",
+      "slug": "mirror-ray-diagrams",
+      "course": "phys2",
+      "unit": "geometric-optics",
+      "title": "Curved Mirrors and Ray Diagrams",
+      "short": "Three principal rays locate the image formed by a concave or convex mirror.",
+      "prereqs": [
+        "phys2.reflection"
+      ],
+      "viz": [
+        "ph-rays"
+      ]
+    },
+    {
+      "id": "phys2.mirror-equation",
+      "slug": "mirror-equation",
+      "course": "phys2",
+      "unit": "geometric-optics",
+      "title": "The Mirror Equation",
+      "short": "1/f = 1/dₒ + 1/dᵢ and m = −dᵢ/dₒ, with signs that mark real and virtual images.",
+      "prereqs": [
+        "phys2.mirror-ray-diagrams",
+        "alg2.rational-equations"
+      ],
+      "viz": [
+        "ph-rays"
+      ]
+    },
+    {
+      "id": "phys2.lens-ray-diagrams",
+      "slug": "lens-ray-diagrams",
+      "course": "phys2",
+      "unit": "geometric-optics",
+      "title": "Lenses and Ray Diagrams",
+      "short": "Converging and diverging lenses bend parallel rays toward or away from a focal point.",
+      "prereqs": [
+        "phys2.snells-law",
+        "phys2.mirror-ray-diagrams"
+      ],
+      "viz": [
+        "ph-rays"
+      ]
+    },
+    {
+      "id": "phys2.thin-lens-equation",
+      "slug": "thin-lens-equation",
+      "course": "phys2",
+      "unit": "geometric-optics",
+      "title": "The Thin Lens Equation",
+      "short": "The mirror equation works for lenses too, and real images form on the far side of the lens.",
+      "prereqs": [
+        "phys2.lens-ray-diagrams",
+        "phys2.mirror-equation"
+      ],
+      "viz": [
+        "ph-rays"
+      ]
+    },
+    {
+      "id": "phys2.wave-speed-medium",
+      "slug": "wave-speed-medium",
+      "course": "phys2",
+      "unit": "waves",
+      "title": "What Sets a Wave's Speed",
+      "short": "The medium sets the speed, v = √(tension/μ) on a string, and the source sets the frequency.",
+      "prereqs": [
+        "physsci.wave-speed",
+        "phys1.connected-objects",
+        "g8.square-roots"
+      ],
+      "viz": [
+        "ph-wave"
+      ]
+    },
+    {
+      "id": "phys2.wave-graphs",
+      "slug": "wave-graphs",
+      "course": "phys2",
+      "unit": "waves",
+      "title": "Snapshot and History Graphs",
+      "short": "A y–x graph shows the whole wave at one instant; a y–t graph follows one point over time.",
+      "prereqs": [
+        "phys2.wave-speed-medium"
+      ],
+      "viz": [
+        "ph-wave"
+      ]
+    },
+    {
+      "id": "phys2.wave-boundaries",
+      "slug": "wave-boundaries",
+      "course": "phys2",
+      "unit": "waves",
+      "title": "Reflection at Boundaries",
+      "short": "A pulse reflects upside down from a fixed end and right side up from a free end, and partly passes into a new medium.",
+      "prereqs": [
+        "phys2.wave-speed-medium"
+      ],
+      "viz": [
+        "ph-wave"
+      ]
+    },
+    {
+      "id": "phys2.em-waves",
+      "slug": "em-waves",
+      "course": "phys2",
+      "unit": "waves",
+      "title": "Electromagnetic Waves",
+      "short": "Light is a wave of linked electric and magnetic fields moving through empty space at c = fλ.",
+      "prereqs": [
+        "physsci.em-spectrum",
+        "phys2.faradays-law",
+        "phys2.electric-field"
+      ],
+      "viz": [
+        "ph-spectrum",
+        "ph-wave"
+      ]
+    },
+    {
+      "id": "phys2.polarization",
+      "slug": "polarization",
+      "course": "phys2",
+      "unit": "waves",
+      "title": "Polarization",
+      "short": "Only transverse waves can be polarized; a polarizer passes half of unpolarized light and I₀cos²θ of polarized light.",
+      "prereqs": [
+        "phys2.em-waves",
+        "phys2.wave-boundaries"
+      ],
+      "viz": [
+        "ph-wave"
+      ]
+    },
+    {
+      "id": "phys2.superposition",
+      "slug": "superposition",
+      "course": "phys2",
+      "unit": "waves",
+      "title": "Superposition and Interference",
+      "short": "Overlapping waves add point by point: crest on crest builds up, crest on trough cancels.",
+      "prereqs": [
+        "phys2.wave-graphs"
+      ],
+      "viz": [
+        "ph-wave"
+      ]
+    },
+    {
+      "id": "phys2.standing-waves-strings",
+      "slug": "standing-waves-strings",
+      "course": "phys2",
+      "unit": "waves",
+      "title": "Standing Waves on Strings",
+      "short": "A string fixed at both ends resonates at fₙ = nv/(2L).",
+      "prereqs": [
+        "phys2.superposition",
+        "phys2.wave-boundaries"
+      ],
+      "viz": [
+        "ph-wave"
+      ]
+    },
+    {
+      "id": "phys2.standing-waves-pipes",
+      "slug": "standing-waves-pipes",
+      "course": "phys2",
+      "unit": "waves",
+      "title": "Standing Sound Waves in Pipes",
+      "short": "Open pipes resonate at fₙ = nv/(2L); pipes closed at one end only at odd multiples of v/(4L).",
+      "prereqs": [
+        "phys2.standing-waves-strings",
+        "physsci.sound"
+      ],
+      "viz": [
+        "ph-wave"
+      ]
+    },
+    {
+      "id": "phys2.sound-intensity",
+      "slug": "sound-intensity",
+      "course": "phys2",
+      "unit": "waves",
+      "title": "Sound Intensity and Decibels",
+      "short": "Intensity falls off as 1/r², and β = 10 log(I/I₀), so adding 10 dB means 10 times the intensity.",
+      "prereqs": [
+        "physsci.sound",
+        "alg2.logarithms"
+      ],
+      "viz": [
+        "ph-wave"
+      ]
+    },
+    {
+      "id": "phys2.doppler",
+      "slug": "doppler",
+      "course": "phys2",
+      "unit": "waves",
+      "title": "The Doppler Effect",
+      "short": "A source moving toward you sounds higher and one moving away sounds lower: f′ = f·v/(v ∓ vₛ).",
+      "prereqs": [
+        "phys2.wave-speed-medium",
+        "physsci.sound"
+      ],
+      "viz": [
+        "ph-doppler"
+      ]
+    },
+    {
+      "id": "phys2.single-slit",
+      "slug": "single-slit",
+      "course": "phys2",
+      "unit": "waves",
+      "title": "Diffraction",
+      "short": "Waves spread out past an opening, and a single slit makes dark fringes where a sin θ = mλ.",
+      "prereqs": [
+        "phys2.superposition",
+        "geo.trig-ratios"
+      ],
+      "viz": [
+        "ph-interference"
+      ]
+    },
+    {
+      "id": "phys2.double-slit",
+      "slug": "double-slit",
+      "course": "phys2",
+      "unit": "waves",
+      "title": "Double-Slit Interference",
+      "short": "Bright fringes appear where the path difference is a whole number of wavelengths: d sin θ = mλ.",
+      "prereqs": [
+        "phys2.superposition",
+        "geo.trig-ratios"
+      ],
+      "viz": [
+        "ph-interference"
+      ]
+    },
+    {
+      "id": "phys2.diffraction-grating",
+      "slug": "diffraction-grating",
+      "course": "phys2",
+      "unit": "waves",
+      "title": "Diffraction Gratings",
+      "short": "Many evenly spaced slits make sharp bright lines at d sin θ = mλ, where d is 1 divided by the number of lines per meter.",
+      "prereqs": [
+        "phys2.double-slit"
+      ],
+      "viz": [
+        "ph-interference",
+        "ph-spectrum"
+      ]
+    },
+    {
+      "id": "phys2.thin-films",
+      "slug": "thin-films",
+      "course": "phys2",
+      "unit": "waves",
+      "title": "Thin-Film Interference",
+      "short": "Light reflecting from the top and bottom of a thin film interferes, with a half-wave flip at each reflection off a higher index.",
+      "prereqs": [
+        "phys2.double-slit",
+        "phys2.index-of-refraction",
+        "phys2.wave-boundaries"
+      ],
+      "viz": [
+        "ph-interference"
+      ]
+    },
+    {
+      "id": "phys2.photons",
+      "slug": "photons",
+      "course": "phys2",
+      "unit": "quantum",
+      "title": "Photons",
+      "short": "Light comes in photons of energy E = hf = hc/λ, and 1 eV = 1.602 × 10⁻¹⁹ J.",
+      "prereqs": [
+        "phys2.em-waves",
+        "phys2.electric-potential",
+        "physsci.radiation-energy"
+      ],
+      "viz": [
+        "ph-spectrum",
+        "ph-photon"
+      ]
+    },
+    {
+      "id": "phys2.photoelectric-effect",
+      "slug": "photoelectric-effect",
+      "course": "phys2",
+      "unit": "quantum",
+      "title": "The Photoelectric Effect",
+      "short": "An electron escapes a metal only if a single photon brings more than the work function: Kₘₐₓ = hf − φ.",
+      "prereqs": [
+        "phys2.photons"
+      ],
+      "viz": [
+        "ph-photon"
+      ]
+    },
+    {
+      "id": "phys2.bohr-model",
+      "slug": "bohr-model",
+      "course": "phys2",
+      "unit": "quantum",
+      "title": "The Bohr Model and Energy Levels",
+      "short": "Electrons in atoms have only certain energies, and a jump between levels absorbs or emits a photon whose energy is the difference between the two levels.",
+      "prereqs": [
+        "phys2.photons",
+        "chem.emission-spectra"
+      ],
+      "viz": [
+        "ph-spectrum"
+      ]
+    },
+    {
+      "id": "phys2.spectra",
+      "slug": "spectra",
+      "course": "phys2",
+      "unit": "quantum",
+      "title": "Emission and Absorption Spectra",
+      "short": "A hot thin gas emits bright lines, and the same gas in front of a hotter source absorbs those same lines.",
+      "prereqs": [
+        "phys2.bohr-model"
+      ],
+      "viz": [
+        "ph-spectrum"
+      ]
+    },
+    {
+      "id": "phys2.matter-waves",
+      "slug": "matter-waves",
+      "course": "phys2",
+      "unit": "quantum",
+      "title": "Matter Waves",
+      "short": "Particles have a wavelength λ = h/p, so electrons diffract like light.",
+      "prereqs": [
+        "phys2.photons",
+        "phys1.momentum",
+        "phys2.double-slit"
+      ],
+      "viz": [
+        "ph-interference"
+      ]
+    },
+    {
+      "id": "phys2.compton-scattering",
+      "slug": "compton-scattering",
+      "course": "phys2",
+      "unit": "quantum",
+      "title": "Compton Scattering",
+      "short": "A photon carries momentum p = h/λ, so an X-ray that bounces off an electron comes away with a longer wavelength.",
+      "prereqs": [
+        "phys2.matter-waves",
+        "phys1.elastic-collisions"
+      ],
+      "viz": [
+        "ph-photon"
+      ]
+    },
+    {
+      "id": "phys2.mass-energy",
+      "slug": "mass-energy",
+      "course": "phys2",
+      "unit": "quantum",
+      "title": "Mass-Energy and Binding Energy",
+      "short": "E = mc²: a nucleus has less mass than its separate protons and neutrons, and the missing mass is its binding energy.",
+      "prereqs": [
+        "chem.fission-fusion",
+        "phys2.electric-potential",
+        "phys1.energy-conservation"
+      ],
+      "viz": [
+        "ph-nucleus"
+      ]
+    }
+  ]
+}

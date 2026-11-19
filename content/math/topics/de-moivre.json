@@ -1,0 +1,109 @@
+{
+  "id": "pre.de-moivre",
+  "slug": "de-moivre",
+  "ladder": "math",
+  "course": "pre",
+  "unit": "polar-complex",
+  "title": "Multiplying, Powers and De Moivre's Theorem",
+  "short": "Multiply moduli and add angles; zⁿ = rⁿ(cos nθ + i sin nθ).",
+  "trouble": "Students multiply the angles instead of adding them.",
+  "prereqs": [
+    "pre.complex-polar-form"
+  ],
+  "xp": 3,
+  "viz": [
+    "complexplane"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Multiplying $a + bi$ by $c + di$ in rectangular form is a chore. In <a href=\"/math/precalculus/complex-polar-form/\">polar form</a> it becomes almost trivial, and powers become easy. The reason is the <a href=\"/math/precalculus/sum-difference-formulas/\">sum formulas</a>."
+      },
+      {
+        "t": "key",
+        "html": "$$r_1(\\cos\\alpha + i\\sin\\alpha) \\cdot r_2(\\cos\\beta + i\\sin\\beta) = r_1r_2\\big(\\cos(\\alpha + \\beta) + i\\sin(\\alpha + \\beta)\\big)$$ Multiply the moduli and <b>add</b> the angles; to divide, divide the moduli and subtract the angles. Repeating gives <b>De Moivre's theorem</b>: $$\\big[r(\\cos\\theta + i\\sin\\theta)\\big]^n = r^n(\\cos n\\theta + i\\sin n\\theta).$$"
+      },
+      {
+        "t": "why",
+        "html": "Multiply out: $$(\\cos\\alpha + i\\sin\\alpha)(\\cos\\beta + i\\sin\\beta) = (\\cos\\alpha\\cos\\beta - \\sin\\alpha\\sin\\beta) + i(\\sin\\alpha\\cos\\beta + \\cos\\alpha\\sin\\beta),$$ using $i^2 = -1$. The real part is $\\cos(\\alpha + \\beta)$ and the imaginary part is $\\sin(\\alpha + \\beta)$. So multiplying by a complex number stretches by its modulus and rotates by its angle. Doing that $n$ times rotates $n$ times."
+      },
+      {
+        "t": "viz",
+        "name": "complexplane",
+        "opts": {
+          "z": [
+            1,
+            1
+          ],
+          "w": [
+            1,
+            2
+          ],
+          "op": "mul",
+          "ops": [
+            "mul",
+            "div",
+            "pow"
+          ],
+          "n": 3,
+          "polar": true
+        },
+        "cap": "The product $zw$: its length is $|z||w|$ and its angle is the sum of the two angles."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A product",
+        "q": "Multiply $2\\left(\\cos\\frac{\\pi}{6} + i\\sin\\frac{\\pi}{6}\\right)$ by $3\\left(\\cos\\frac{\\pi}{3} + i\\sin\\frac{\\pi}{3}\\right)$.",
+        "steps": [
+          "Moduli: $2 \\cdot 3 = 6$. Angles: $\\frac{\\pi}{6} + \\frac{\\pi}{3} = \\frac{\\pi}{2}$.",
+          "$6\\left(\\cos\\frac{\\pi}{2} + i\\sin\\frac{\\pi}{2}\\right) = 6(0 + i)$."
+        ],
+        "a": "$6i$"
+      },
+      {
+        "t": "ex",
+        "title": "A big power",
+        "q": "Find $(1 + i)^8$.",
+        "steps": [
+          "$1 + i = \\sqrt{2}\\left(\\cos\\frac{\\pi}{4} + i\\sin\\frac{\\pi}{4}\\right)$.",
+          "De Moivre: $\\left(\\sqrt{2}\\right)^8 = 16$ and $8 \\cdot \\frac{\\pi}{4} = 2\\pi$.",
+          "$16(\\cos 2\\pi + i\\sin 2\\pi) = 16$."
+        ],
+        "a": "$16$"
+      },
+      {
+        "t": "ex",
+        "title": "Back to rectangular",
+        "q": "Find $\\left(1 + i\\sqrt{3}\\right)^5$.",
+        "steps": [
+          "$1 + i\\sqrt{3} = 2\\left(\\cos\\frac{\\pi}{3} + i\\sin\\frac{\\pi}{3}\\right)$.",
+          "$2^5 = 32$ and $5 \\cdot \\frac{\\pi}{3} = \\frac{5\\pi}{3}$.",
+          "$32\\left(\\frac{1}{2} - \\frac{\\sqrt{3}}{2}i\\right) = 16 - 16\\sqrt{3}\\,i$."
+        ],
+        "a": "$16 - 16\\sqrt{3}\\,i$"
+      },
+      {
+        "t": "mistake",
+        "html": "Multiplying the angles instead of adding them, as in $\\frac{\\pi}{6} \\cdot \\frac{\\pi}{3}$. Angles add because rotations combine: turn $30^\\circ$, then $60^\\circ$, and you have turned $90^\\circ$. Only in a power, $z^n$, does the angle get multiplied, by the whole number $n$, because you add it $n$ times."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Precalculus 2e, Section 8.5 Polar Form of Complex Numbers"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, N-CN.B.5"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

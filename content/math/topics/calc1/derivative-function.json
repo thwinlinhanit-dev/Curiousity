@@ -1,0 +1,96 @@
+{
+  "id": "calc1.derivative-function",
+  "slug": "derivative-function",
+  "ladder": "math",
+  "course": "calc1",
+  "unit": "derivative",
+  "title": "The Derivative as a Function",
+  "short": "f′ gives the slope of f at every x.",
+  "trouble": "Students sketch f′ to look like f, instead of tracking where f rises, falls and levels off.",
+  "prereqs": [
+    "calc1.derivative-at-a-point"
+  ],
+  "xp": 2,
+  "viz": [
+    "derivgraph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Computing <a href=\"/math/calculus-1/derivative-at-a-point/\">a derivative at a point</a> one point at a time is slow. If we keep $x$ general instead of picking a number, the same limit produces a formula for the slope at every point. That formula is itself a function."
+      },
+      {
+        "t": "key",
+        "html": "The <b>derivative function</b> is $$\\role[slope at x]{rate}{f'(x)} = \\lim_{h \\to 0} \\frac{\\role[change in output]{output}{f(x + h) - f(x)}}{\\role[change in input]{input}{h}}$$ for every $x$ where the limit exists. Its graph shows the slope of $f$: $f' > 0$ where $f$ rises, $f' < 0$ where $f$ falls, and $f' = 0$ where the tangent is flat."
+      },
+      {
+        "t": "viz",
+        "name": "derivgraph",
+        "opts": {
+          "f": "x^3/3 - x",
+          "x": -1.8,
+          "reveal": true,
+          "xmin": -2.5,
+          "xmax": 2.5,
+          "task": "Move $x$ from left to right. The lower graph is drawn only where you have been: it records the slope of the upper graph."
+        },
+        "cap": "$f(x) = \\frac{x^3}{3} - x$ on top, $f'(x) = x^2 - 1$ below. Turning points of $f$ line up with zeros of $f'$."
+      },
+      {
+        "t": "why",
+        "html": "The slope of $f$ can be different at different points, so it depends on $x$: that is what makes it a function. The definition is the same limit as before, with $a$ replaced by a letter. Every formula you will learn in the next unit comes from evaluating this limit once, in general, so you never have to do it again for that kind of function."
+      },
+      {
+        "t": "ex",
+        "title": "A quadratic, in general",
+        "q": "Find $f'(x)$ for $f(x) = 3x^2 - 5x$.",
+        "steps": [
+          "$$f(x + h) = 3(x + h)^2 - 5(x + h) = 3x^2 + 6xh + 3h^2 - 5x - 5h$$.",
+          "Subtract $f(x) = 3x^2 - 5x$: $6xh + 3h^2 - 5h$.",
+          "Divide by $h$: $6x + 3h - 5$.",
+          "Let $h \\to 0$: $f'(x) = 6x - 5$."
+        ],
+        "a": "$f'(x) = 6x - 5$. For example, the slope at $x = 1$ is $1$ and at $x = 0$ it is $-5$."
+      },
+      {
+        "t": "ex",
+        "title": "A reciprocal, in general",
+        "q": "Find $f'(x)$ for $f(x) = \\frac{1}{x}$.",
+        "steps": [
+          "$\\frac{1}{x + h} - \\frac{1}{x} = \\frac{x - (x + h)}{x(x + h)} = \\frac{-h}{x(x + h)}$.",
+          "Divide by $h$: $\\frac{-1}{x(x + h)}$.",
+          "Let $h \\to 0$: $-\\frac{1}{x^2}$."
+        ],
+        "a": "$f'(x) = -\\frac{1}{x^2}$, negative everywhere: $\\frac{1}{x}$ falls on each side of 0."
+      },
+      {
+        "t": "h",
+        "text": "Reading $f'$ from the graph of $f$"
+      },
+      {
+        "t": "list",
+        "items": [
+          "Where $f$ climbs, $f'$ is above the axis; where $f$ falls, below.",
+          "At a peak or a valley of a smooth $f$, $f' = 0$.",
+          "Where $f$ is steepest, $|f'|$ is largest."
+        ]
+      },
+      {
+        "t": "mistake",
+        "html": "Sketching $f'$ so that it looks like $f$: a peak in $f$ drawn as a peak in $f'$. A peak in $f$ is where the slope is 0, so $f'$ crosses the axis there. Check each turning point of $f$: it must line up with a zero of $f'$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 1, 3.2 The Derivative as a Function"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,120 @@
+{
+  "id": "hsbio.cellular-respiration",
+  "slug": "cellular-respiration",
+  "ladder": "bio",
+  "course": "hsbio",
+  "unit": "energy",
+  "title": "Cellular Respiration",
+  "short": "C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + ATP. Glycolysis (cytoplasm) splits glucose; the Krebs cycle and the electron transport chain (mitochondria) release the rest, about 30 ATP per glucose in all.",
+  "trouble": "Students think the oxygen we breathe becomes the carbon dioxide we breathe out. The carbon dioxide comes from glucose's carbon; oxygen accepts electrons at the end of the chain and becomes water.",
+  "prereqs": [
+    "hsbio.atp",
+    "lifesci.cellular-respiration"
+  ],
+  "xp": 3,
+  "viz": [
+    "bi-energy"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/biology/life-science/cellular-respiration/\">Cellular Respiration</a> you saw the overall trade: sugar and oxygen in, carbon dioxide, water and energy out. Here we follow the sugar step by step to see where each product is made and where most of the <a href=\"/biology/high-school-biology/atp/\">ATP</a> comes from."
+      },
+      {
+        "t": "key",
+        "html": "$$\\text{C}_6\\text{H}_{12}\\text{O}_6 + 6\\text{O}_2 \\rightarrow 6\\text{CO}_2 + 6\\text{H}_2\\text{O} + \\text{ATP}$$ <b>Glycolysis</b> (in the cytoplasm) splits glucose. The <b>Krebs cycle</b> (in the mitochondrial matrix) releases its carbon as CO₂, and the <b>electron transport chain</b> (on the inner mitochondrial membrane) makes most of the ATP: about 30 per glucose in all."
+      },
+      {
+        "t": "viz",
+        "name": "bi-energy",
+        "opts": {
+          "mode": "resp-stages"
+        },
+        "cap": "Step through the stages: where each happens, what goes in and what comes out."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Stage",
+          "Where",
+          "Products per glucose"
+        ],
+        "rows": [
+          [
+            "Glycolysis",
+            "Cytoplasm",
+            "2 pyruvate, 2 ATP (net), 2 NADH"
+          ],
+          [
+            "Pyruvate oxidation",
+            "Mitochondrial matrix",
+            "2 acetyl-CoA, 2 CO₂, 2 NADH"
+          ],
+          [
+            "Krebs (citric acid) cycle",
+            "Mitochondrial matrix",
+            "4 CO₂, 2 ATP, 6 NADH, 2 FADH₂"
+          ],
+          [
+            "Electron transport chain and chemiosmosis",
+            "Inner mitochondrial membrane",
+            "About 26–28 ATP; water"
+          ]
+        ],
+        "cap": "Add the ATP: 2 + 2 + about 26–28 = about 30–32. Textbooks once said 36–38; better measurements lowered it."
+      },
+      {
+        "t": "why",
+        "html": "Burning sugar in a flame releases its energy all at once as heat. Cells release it in small steps so they can catch it. Glycolysis and the Krebs cycle strip high-energy electrons from the sugar and load them onto the carriers NADH and FADH₂. Those carriers drop the electrons at the electron transport chain, where the electrons' energy pumps H⁺ across the inner membrane. The H⁺ flows back through the enzyme ATP synthase, which turns like a tiny mill and makes ATP. At the very end, <b>oxygen</b> accepts the spent electrons and picks up H⁺, becoming <b>water</b>. Without oxygen to clear them away, the chain backs up and stops."
+      },
+      {
+        "t": "ex",
+        "title": "Count the carbon",
+        "q": "Where do the 6 CO₂ molecules made from one glucose come from?",
+        "steps": [
+          "Glucose has 6 carbons.",
+          "Pyruvate oxidation releases 2 of them as 2 CO₂.",
+          "The Krebs cycle releases the other 4 as 4 CO₂.",
+          "So every carbon of the CO₂ came from glucose."
+        ],
+        "a": "2 from pyruvate oxidation and 4 from the Krebs cycle, all from glucose's carbon"
+      },
+      {
+        "t": "ex",
+        "title": "Scale it up",
+        "q": "A cell completely breaks down 5 glucose molecules by aerobic respiration. About how many ATP does it make, and how many O₂ does it use?",
+        "steps": [
+          "About 30 ATP per glucose: $5 \\times 30 = 150$ ATP.",
+          "6 O₂ per glucose: $5 \\times 6 = 30$ O₂."
+        ],
+        "a": "About $150$ ATP; $30$ O₂"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking the oxygen we breathe in becomes the carbon dioxide we breathe out. The carbon dioxide is made from <b>glucose's</b> carbon, in pyruvate oxidation and the Krebs cycle. The oxygen we breathe accepts electrons at the end of the electron transport chain and becomes <b>water</b>. Check by following the carbon: O₂ has none, so it cannot be the source of CO₂."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Concepts of Biology, 4.2 Glycolysis; 4.3 Citric Acid Cycle and Oxidative Phosphorylation"
+      },
+      {
+        "name": "OpenStax, Biology 2e, 7.2–7.4 Glycolysis, Oxidation of Pyruvate and the Citric Acid Cycle, Oxidative Phosphorylation"
+      },
+      {
+        "name": "Grokipedia, Cellular respiration",
+        "url": "https://grokipedia.com/page/Cellular_respiration"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-LS1-7: Use a model to illustrate that cellular respiration is a chemical process"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

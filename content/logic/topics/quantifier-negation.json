@@ -1,0 +1,162 @@
+{
+  "id": "sym.quantifier-negation",
+  "slug": "quantifier-negation",
+  "ladder": "logic",
+  "course": "sym",
+  "unit": "predicate",
+  "title": "Quantifier Negation",
+  "short": "¬∀x Fx is equivalent to ∃x ¬Fx, and ¬∃x Fx to ∀x ¬Fx: moving a negation across a quantifier flips ∀ and ∃.",
+  "trouble": "The scope of negation: learners write ¬∀x Fx as ∀x ¬Fx (\"not everything is F\" is not \"nothing is F\").",
+  "prereqs": [
+    "sym.translate-categorical",
+    "sym.de-morgan"
+  ],
+  "xp": 2,
+  "viz": [
+    "lg-quantworld"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A negation in front of a quantifier can be moved inside, switching the quantifier, much as De Morgan moves a negation through $\\land$ and $\\lor$ (<a href=\"/logic/symbolic-logic/de-morgan/\">De Morgan's Laws</a>). This makes negated quantified sentences easy to read and to use in proofs. It builds on <a href=\"/logic/symbolic-logic/translate-harder/\">Translating Harder Quantified Sentences</a>."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Form",
+          "Equivalent form",
+          "In words"
+        ],
+        "rows": [
+          [
+            "$\\neg \\forall x Fx$",
+            "$\\exists x\\neg Fx$",
+            "not everything is $F$ = something is not $F$"
+          ],
+          [
+            "$\\neg \\exists x Fx$",
+            "$\\forall x\\neg Fx$",
+            "nothing is $F$ = everything is not $F$"
+          ],
+          [
+            "$\\forall x Fx$",
+            "$\\neg \\exists x\\neg Fx$",
+            "everything is $F$ = nothing is not $F$"
+          ],
+          [
+            "$\\exists x Fx$",
+            "$\\neg \\forall x\\neg Fx$",
+            "something is $F$ = not everything is not $F$"
+          ]
+        ],
+        "cap": "Quantifier negation (QN)."
+      },
+      {
+        "t": "key",
+        "html": "Moving a $\\neg$ across a quantifier switches it: $\\neg \\forall x Fx$ becomes $\\exists x\\neg Fx$, and $\\neg \\exists x Fx$ becomes $\\forall x\\neg Fx$, whatever formula stands in place of $Fx$. Then keep moving the $\\neg$ inward with the rules you know (DM, and $\\neg (p \\to q)$ as $p \\land \\neg q$)."
+      },
+      {
+        "t": "why",
+        "html": "\"Not everything is red\" is true exactly when there is at least one thing that is not red: a counterexample. \"Nothing is red\" is true exactly when each thing fails to be red. In a finite world, $\\forall$ is a long conjunction (a is $F$ and b is $F$ and …) and $\\exists$ a long disjunction, so quantifier negation is De Morgan's law stretched over the whole domain."
+      },
+      {
+        "t": "viz",
+        "name": "lg-quantworld",
+        "opts": {
+          "objects": [
+            {
+              "n": "a",
+              "has": [
+                "C",
+                "R"
+              ]
+            },
+            {
+              "n": "b",
+              "has": [
+                "S",
+                "B"
+              ]
+            },
+            {
+              "n": "c",
+              "has": [
+                "C",
+                "B",
+                "L"
+              ]
+            }
+          ],
+          "sentences": [
+            "¬∀x(Cx → Rx)",
+            "∃x(Cx ∧ ¬Rx)",
+            "¬∃x(Sx ∧ Rx)",
+            "∀x(Sx → ¬Rx)"
+          ],
+          "preset": "shapes"
+        },
+        "cap": "The sentences come in equivalent pairs: the first two agree in every world, and so do the last two. Here $c$ is a blue circle, which makes the first pair true."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Not all",
+        "q": "Rewrite $\\neg \\forall x(Cx \\to Rx)$ with no $\\neg$ in front of a quantifier.",
+        "steps": [
+          "QN: $\\exists x\\neg (Cx \\to Rx)$.",
+          "A negated conditional is its antecedent and the negated consequent: $Cx \\land \\neg Rx$."
+        ],
+        "a": "$\\exists x(Cx \\land \\neg Rx)$: some circle is not red."
+      },
+      {
+        "t": "ex",
+        "title": "No",
+        "q": "Rewrite $\\neg \\exists x(Sx \\land Rx)$.",
+        "steps": [
+          "QN: $\\forall x\\neg (Sx \\land Rx)$.",
+          "DM: $\\neg Sx \\lor \\neg Rx$, which is $Sx \\to \\neg Rx$ by Impl."
+        ],
+        "a": "$\\forall x(Sx \\to \\neg Rx)$: no square is red, an E statement."
+      },
+      {
+        "t": "ex",
+        "title": "In English",
+        "q": "What does $\\neg \\forall x(Px \\to Mx)$ say, with $P$: pets and $M$: mammals?",
+        "steps": [
+          "Not every pet is a mammal.",
+          "QN: some pet is not a mammal."
+        ],
+        "a": "Some pets are not mammals."
+      },
+      {
+        "t": "mistake",
+        "html": "Moving the negation without switching the quantifier, or applying it to only part of the formula. $\\neg \\forall x Fx$ is not $\\forall x\\neg Fx$: \"not everything is red\" is much weaker than \"nothing is red\". The scope matters too: in $\\neg \\forall x Fx \\to Ga$ the $\\neg$ covers only $\\forall x Fx$. Check the scope first, then switch $\\forall$ and $\\exists$ as the negation moves."
+      },
+      {
+        "t": "p",
+        "html": "A handy pattern from these examples: once the negation has moved inside, a universal statement usually ends with an arrow inside it and an existential one with an \"and\". If your result has $\\exists x(\\ldots \\to \\ldots)$ or $\\forall x(\\ldots \\land \\ldots)$, look again; it is probably a slip."
+      },
+      {
+        "t": "p",
+        "html": "In proofs, QN is a rule of replacement: it may be used on any part of a line, in either direction. It is often the first step when a premise begins with a negation, because the instantiation rules of the next unit need a quantifier in front."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Patrick J. Hurley and Lori Watson, A Concise Introduction to Logic, 13th ed., section 8.3, Change of Quantifier Rule"
+      },
+      {
+        "name": "forall x: Calgary, an open introduction to formal logic (P. D. Magnus, Tim Button and others; Open Logic Project), chapter on quantifier negation"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

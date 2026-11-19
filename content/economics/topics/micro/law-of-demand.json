@@ -1,0 +1,95 @@
+{
+  "id": "micro.law-of-demand",
+  "slug": "law-of-demand",
+  "ladder": "economics",
+  "course": "micro",
+  "unit": "supply-demand",
+  "title": "The Law of Demand",
+  "short": "Other things equal, a higher price means a smaller quantity demanded.",
+  "trouble": "Students think \"demand\" means one number, the amount bought, rather than the whole relationship between price and quantity demanded.",
+  "prereqs": [
+    "micro.utility-maximizing-rule",
+    "alg1.linear-models-context"
+  ],
+  "xp": 1,
+  "viz": [
+    "ec-market"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The utility rule (<a href=\"/economics/microeconomics/utility-maximizing-rule/\">Marginal Utility per Dollar</a>) says a shopper buys a good until its marginal utility per dollar matches other goods'. Raise the good's price and its utility per dollar falls, so the shopper buys less. Add up every shopper and you get demand. Its graph is a line or curve, read the way you read <a href=\"/math/algebra-1/linear-models-context/\">Linear Models in Context</a>."
+      },
+      {
+        "t": "key",
+        "html": "The <b>law of demand</b>: other things equal, when the price of a good rises, the <b>quantity demanded</b> falls, and when the price falls, it rises. <b>Demand</b> is the whole relationship between price and quantity demanded: a <b>demand schedule</b> (a table) or a <b>demand curve</b> (its graph, with price on the vertical axis). <b>Market demand</b> adds every buyer's quantity at each price."
+      },
+      {
+        "t": "why",
+        "html": "Three forces push the same way. Utility per dollar: at a higher price, the good gives less satisfaction per dollar, so buyers move their spending elsewhere. Substitution: buyers switch to alternatives that are now relatively cheaper. Income: a higher price leaves less buying power for everything. \"Other things equal\" (economists also say <i>ceteris paribus</i>) matters: the law describes what happens when only the price changes."
+      },
+      {
+        "t": "viz",
+        "name": "ec-market",
+        "opts": {
+          "demand": {
+            "a": 20,
+            "b": 2
+          },
+          "supply": {
+            "c": -4,
+            "d": 2
+          },
+          "mode": "move",
+          "money": true
+        },
+        "cap": "Drag the point along the demand curve: a lower price, a larger quantity demanded. The curve itself stays where it is."
+      },
+      {
+        "t": "ex",
+        "title": "A demand schedule from an equation",
+        "q": "Demand for tacos at a food truck is $Q_d = 120 - 10P$ per day, with $P$ in dollars. Find the quantity demanded at \\$3, \\$5 and \\$7.",
+        "steps": [
+          "At \\$3: $120 - 10(3) = 90$ tacos.",
+          "At \\$5: $120 - 10(5) = 70$ tacos.",
+          "At \\$7: $120 - 10(7) = 50$ tacos.",
+          "Each \\$1 rise in price lowers quantity demanded by 10: the law of demand."
+        ],
+        "a": "90, 70 and 50 tacos a day."
+      },
+      {
+        "t": "ex",
+        "title": "Market demand",
+        "q": "At a price of \\$4, Ana wants 3 tacos, Ben wants 5 and Cy wants 0. At \\$2, they want 5, 8 and 2. Find the market quantity demanded at each price.",
+        "steps": [
+          "Add across buyers at the same price.",
+          "At \\$4: $3 + 5 + 0 = 8$. At \\$2: $5 + 8 + 2 = 15$."
+        ],
+        "a": "8 tacos at \\$4 and 15 tacos at \\$2."
+      },
+      {
+        "t": "mistake",
+        "html": "Using \"demand\" for one number, the amount people buy. Demand is the whole schedule. When the price changes, demand does not change; the quantity demanded does, as you slide along the same curve. Check: if your sentence names one price and one quantity, the word you want is \"quantity demanded.\""
+      },
+      {
+        "t": "note",
+        "html": "Why is price on the vertical axis, when it is the cause? It is a tradition from the economist Alfred Marshall, and every textbook keeps it. Read a demand curve sideways: pick a price on the vertical axis, go across to the curve, then down to the quantity."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, 3.1 Demand, Supply, and Equilibrium in Markets for Goods and Services"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.01 Principles of Microeconomics (scope and sequence)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

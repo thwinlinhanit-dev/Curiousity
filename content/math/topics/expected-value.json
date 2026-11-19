@@ -1,0 +1,93 @@
+{
+  "id": "stat.expected-value",
+  "slug": "expected-value",
+  "ladder": "math",
+  "course": "stat",
+  "unit": "random-variables",
+  "title": "Expected Value",
+  "short": "The long-run average outcome: Σ x · P(x).",
+  "trouble": "Students think the expected value must be a value the variable can take.",
+  "prereqs": [
+    "stat.discrete-random-variables"
+  ],
+  "xp": 2,
+  "viz": [
+    "dice"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A <a href=\"/math/probability-and-statistics/discrete-random-variables/\">probability distribution</a> lists every value and its chance. One number summarizes where it is centered: the expected value, the long-run average of the variable over many repetitions."
+      },
+      {
+        "t": "key",
+        "html": "The <b>expected value</b> (mean) of a discrete random variable is $$\\role[expected value]{integral}{E(X)} = \\mu = \\sum \\role[value]{input}{x} \\cdot \\role[probability of that value]{probability}{P(x)},$$ each value weighted by its probability. It is the average you would see in the long run, and it does not have to be a possible value of $X$."
+      },
+      {
+        "t": "why",
+        "html": "Imagine repeating the process $N$ times, with $N$ large. The value $x$ shows up about $N \\cdot P(x)$ times, so the total of all results is about $\\sum x \\cdot N P(x)$. Divide by $N$ to get the average: $\\sum x P(x)$. It is the same as a mean computed from a frequency table, with probabilities in place of relative frequencies."
+      },
+      {
+        "t": "ex",
+        "title": "One die",
+        "q": "Find the expected value of one roll of a fair die.",
+        "steps": [
+          "Each value from 1 to 6 has probability $\\frac{1}{6}$.",
+          "$$E(X) = \\frac{1}{6}(1 + 2 + 3 + 4 + 5 + 6) = \\frac{21}{6} = 3.5$$",
+          "No roll ever shows 3.5. It is the long-run average of many rolls."
+        ],
+        "a": "$3.5$"
+      },
+      {
+        "t": "ex",
+        "title": "From a table",
+        "q": "For the number of pets $X$ with $P(0) = 0.30$, $P(1) = 0.25$, $P(2) = 0.25$, $P(3) = 0.15$, $P(4) = 0.05$, find $E(X)$.",
+        "steps": [
+          "$$E(X) = 0(0.30) + 1(0.25) + 2(0.25) + 3(0.15) + 4(0.05)$$",
+          "$$= 0 + 0.25 + 0.50 + 0.45 + 0.20 = 1.4$$"
+        ],
+        "a": "$1.4$ pets per household, on average."
+      },
+      {
+        "t": "ex",
+        "title": "A game",
+        "q": "A game costs \\$2. You win \\$10 with probability $0.1$, \\$3 with probability $0.2$, and nothing otherwise. What is the expected net gain per game?",
+        "steps": [
+          "Expected winnings: $$10(0.1) + 3(0.2) + 0(0.7) = 1 + 0.6 = 1.6$$ dollars.",
+          "Net: $1.6 - 2 = -0.4$.",
+          "On average you lose 40 cents per game; over 100 games, about \\$40."
+        ],
+        "a": "$-\\$0.40$ per game."
+      },
+      {
+        "t": "viz",
+        "name": "dice",
+        "opts": {
+          "kind": "dice",
+          "n": 1,
+          "sides": 6,
+          "theory": true
+        },
+        "cap": "Roll one die many times. The bars level out at 1/6 each, and the long-run average of the rolls settles near 3.5."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking the expected value must be a value the variable can take, or the most likely value. The expected number of pets is 1.4, though no household has 1.4 pets. Check: E(X) is an average, a balance point, not a prediction for one trial."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Introductory Statistics 2e, section 4.2 Mean or Expected Value and Standard Deviation"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, S-MD.A.2 (Calculate the expected value of a random variable)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

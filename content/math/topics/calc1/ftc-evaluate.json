@@ -1,0 +1,103 @@
+{
+  "id": "calc1.ftc-evaluate",
+  "slug": "ftc-evaluate",
+  "ladder": "math",
+  "course": "calc1",
+  "unit": "integrals",
+  "title": "Evaluating Integrals with FTC Part 2",
+  "short": "∫ₐᵇ f(x) dx = F(b) − F(a).",
+  "trouble": "Students compute F(a) − F(b), or drop a minus sign when F(a) is negative.",
+  "prereqs": [
+    "calc1.ftc-accumulation",
+    "calc1.antiderivatives"
+  ],
+  "xp": 2,
+  "viz": [
+    "ftc"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Computing integrals as limits of sums is slow. Part 1 of the theorem (<a href=\"/math/calculus-1/ftc-accumulation/\">Accumulation Functions and FTC Part 1</a>) leads to a shortcut that replaces all of that with one subtraction, using <a href=\"/math/calculus-1/antiderivatives/\">Antiderivatives</a>."
+      },
+      {
+        "t": "key",
+        "html": "<b>Fundamental Theorem of Calculus, Part 2.</b> If $f$ is continuous on $[a, b]$ and $F$ is any antiderivative of $f$, then $$\\role[accumulated area]{integral}{\\int_a^b f(x)\\,dx} = \\role[change in the antiderivative]{output}{F(b) - F(a)} = \\Big[F(x)\\Big]_a^b.$$"
+      },
+      {
+        "t": "why",
+        "html": "Let $A(x) = \\int_a^x f(t)\\,dt$. By Part 1, $A$ is an antiderivative of $f$. So is $F$, and two antiderivatives differ by a constant: $A(x) = F(x) + C$. At $x = a$, $A(a) = 0$, so $C = -F(a)$. At $x = b$: $\\int_a^b f = A(b) = F(b) - F(a)$. Any constant added to $F$ cancels in the subtraction, so no \"$+ C$\" is needed."
+      },
+      {
+        "t": "viz",
+        "name": "ftc",
+        "opts": {
+          "f": "x^2",
+          "a": 0,
+          "x": 2,
+          "xmin": -0.5,
+          "xmax": 3,
+          "play": true
+        },
+        "cap": "For $f(x) = x^2$, the accumulated area $A(x)$ is $\\frac{x^3}{3}$, an antiderivative of $x^2$. At $x = 2$ the area is $\\frac{8}{3}$."
+      },
+      {
+        "t": "ex",
+        "title": "A polynomial",
+        "q": "Evaluate $\\displaystyle\\int_1^3 (x^2 + 1)\\,dx$.",
+        "steps": [
+          "Antiderivative: $F(x) = \\frac{x^3}{3} + x$.",
+          "$F(3) = 9 + 3 = 12$; $F(1) = \\frac{1}{3} + 1 = \\frac{4}{3}$.",
+          "$12 - \\frac{4}{3} = \\frac{32}{3}$."
+        ],
+        "a": "$\\frac{32}{3}$"
+      },
+      {
+        "t": "ex",
+        "title": "Sine",
+        "q": "Evaluate $\\displaystyle\\int_0^{\\pi}\\sin x\\,dx$.",
+        "steps": [
+          "Antiderivative: $-\\cos x$.",
+          "$\\big[-\\cos x\\big]_0^{\\pi} = -\\cos\\pi - (-\\cos 0) = 1 + 1$."
+        ],
+        "a": "$2$: one arch of the sine curve has area exactly 2."
+      },
+      {
+        "t": "ex",
+        "title": "Careful with signs",
+        "q": "Evaluate $\\displaystyle\\int_{-1}^{2}(x^2 - 2x)\\,dx$.",
+        "steps": [
+          "$F(x) = \\frac{x^3}{3} - x^2$.",
+          "$F(2) = \\frac{8}{3} - 4 = -\\frac{4}{3}$.",
+          "$F(-1) = -\\frac{1}{3} - 1 = -\\frac{4}{3}$.",
+          "$F(2) - F(-1) = -\\frac{4}{3} - \\left(-\\frac{4}{3}\\right) = 0$."
+        ],
+        "a": "$0$: the area below the axis on $(0, 2)$ exactly balances the area above it on $(-1, 0)$."
+      },
+      {
+        "t": "p",
+        "html": "Together, the two parts of the theorem say that differentiation and integration undo each other. Part 1: integrate, then differentiate, and you get the function back. Part 2: differentiate, then integrate, and you get the total change. A problem about areas (adding up infinitely many slivers) becomes a problem about slopes (finding an antiderivative)."
+      },
+      {
+        "t": "note",
+        "html": "The theorem needs $f$ continuous on the whole interval. Ignoring that leads to nonsense: \"$\\int_{-1}^{1}\\frac{1}{x^2}\\,dx = \\Big[-\\frac{1}{x}\\Big]_{-1}^{1} = -2$\" is wrong, since a positive function cannot have a negative integral. The integrand blows up at 0; such improper integrals are handled in Calculus 2."
+      },
+      {
+        "t": "mistake",
+        "html": "Computing $F(a) - F(b)$ (bottom minus top), or dropping a minus sign when $F(a)$ is negative, as in $F(2) - F(-1)$ above. Write the subtraction with parentheses: $F(b) - \\big(F(a)\\big)$. Check the sign of your answer against a sketch: mostly above the axis should give a positive number."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 1, 5.3 The Fundamental Theorem of Calculus"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

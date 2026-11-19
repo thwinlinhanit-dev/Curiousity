@@ -1,0 +1,95 @@
+{
+  "id": "alg1.point-slope-form",
+  "slug": "point-slope-form",
+  "ladder": "math",
+  "course": "alg1",
+  "unit": "linear-functions",
+  "title": "Point-Slope Form",
+  "short": "Write a line from a point and a slope: y − y₁ = m(x − x₁).",
+  "trouble": "Students read the point from y − 2 = 3(x + 1) as (1, 2) instead of (−1, 2).",
+  "prereqs": [
+    "alg1.graphs-as-solutions",
+    "g8.slope-formula"
+  ],
+  "xp": 2,
+  "viz": [
+    "slope",
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "If you know one point on a line and its <a href=\"/math/pre-algebra/slope-formula/\">slope</a>, you know the whole line. Point-slope form writes that fact down directly, with no need to find the $y$-intercept first. It builds on what you know about <a href=\"/math/algebra-1/graphs-as-solutions/\">graphs as solutions</a>."
+      },
+      {
+        "t": "why",
+        "html": "Let $(x_1, y_1)$ be the known point and $(x, y)$ any other point on the line. The slope between them must be $m$: $$\\frac{y - y_1}{x - x_1} = m$$ Multiply both sides by $(x - x_1)$ and you get point-slope form, $y - y_1 = m(x - x_1)$. Every point on the line satisfies it, and so does the known point itself (both sides are $0$)."
+      },
+      {
+        "t": "viz",
+        "name": "slope",
+        "opts": {
+          "p1": [
+            -1,
+            2
+          ],
+          "p2": [
+            2,
+            -4
+          ],
+          "showEq": true,
+          "slide": true
+        },
+        "cap": "Drag the points. The slope triangle has the same rise over run wherever you slide it, which is why one point and the slope pin down the whole line."
+      },
+      {
+        "t": "key",
+        "html": "The line through $(x_1, y_1)$ with slope $m$ is $y - y_1 = m(x - x_1)$. Solve for $y$ if you want slope-intercept form."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Write a line",
+        "q": "Write an equation of the line through $(2, -3)$ with slope $4$.",
+        "steps": [
+          "Substitute $m = 4$, $x_1 = 2$, $y_1 = -3$: $y - (-3) = 4(x - 2)$.",
+          "Simplify the signs: $y + 3 = 4(x - 2)$. This is a complete answer.",
+          "For slope-intercept form, distribute and subtract $3$: $y = 4x - 11$."
+        ],
+        "a": "$y + 3 = 4(x - 2)$, or $y = 4x - 11$."
+      },
+      {
+        "t": "ex",
+        "title": "Read the point and slope",
+        "q": "Which point and slope does $y - 2 = -\\frac{1}{2}(x + 5)$ describe?",
+        "steps": [
+          "Match it to $y - y_1 = m(x - x_1)$. $y - 2$ gives $y_1 = 2$.",
+          "$x + 5 = x - (-5)$, so $x_1 = -5$.",
+          "The slope is the factor in front: $m = -\\frac{1}{2}$."
+        ],
+        "a": "The point $(-5, 2)$ and slope $-\\frac{1}{2}$."
+      },
+      {
+        "t": "mistake",
+        "html": "Reading the point from $y - 2 = 3(x + 1)$ as $(1, 2)$. The form <em>subtracts</em> the coordinates, so $x + 1$ means $x_1 = -1$, and the point is $(-1, 2)$. Check: put $x = -1$ and $y = 2$ in; both sides should be $0$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Elementary Algebra 2e, section 4.6 Find the Equation of a Line"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, A-CED.A.2: create equations in two variables to represent relationships"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

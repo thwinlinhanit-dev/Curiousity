@@ -1,0 +1,215 @@
+{
+  "id": "alg1.step-functions",
+  "slug": "step-functions",
+  "ladder": "math",
+  "course": "alg1",
+  "unit": "functions",
+  "title": "Step Functions",
+  "short": "Graph functions like the floor function that jump between flat steps.",
+  "trouble": "Students connect the steps with vertical lines, which breaks the function rule.",
+  "prereqs": [
+    "alg1.piecewise-functions"
+  ],
+  "xp": 2,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A <b>step function</b> is a <a href=\"/math/algebra-1/piecewise-functions/\">piecewise function</a> whose pieces are all flat. Its graph looks like a staircase. Prices often work this way: parking charged by the started hour, shipping charged by weight bands, postage by the ounce."
+      },
+      {
+        "t": "p",
+        "html": "The basic example is the <b>floor function</b> $\\lfloor x \\rfloor$, the greatest integer less than or equal to $x$. So $\\lfloor 2.7 \\rfloor = 2$, $\\lfloor 5 \\rfloor = 5$, and $\\lfloor -1.3 \\rfloor = -2$ (on the number line, move left to the first integer)."
+      },
+      {
+        "t": "why",
+        "html": "On each interval from one integer up to (but not including) the next, the floor function has one constant value. For $2 \\le x < 3$, $\\lfloor x \\rfloor = 2$. At $x = 3$ it jumps to $3$. Each step includes its left end (a filled dot) and leaves out its right end (an open dot), so every input still has exactly one output. Drawing vertical lines between the steps would put many outputs above a single input, which a function cannot have."
+      },
+      {
+        "t": "viz",
+        "name": "alg1-piecewise",
+        "opts": {
+          "pieces": [
+            {
+              "f": "-4",
+              "tex": "-4",
+              "from": -4,
+              "to": -3,
+              "inFrom": true,
+              "inTo": false
+            },
+            {
+              "f": "-3",
+              "tex": "-3",
+              "from": -3,
+              "to": -2,
+              "inFrom": true,
+              "inTo": false
+            },
+            {
+              "f": "-2",
+              "tex": "-2",
+              "from": -2,
+              "to": -1,
+              "inFrom": true,
+              "inTo": false
+            },
+            {
+              "f": "-1",
+              "tex": "-1",
+              "from": -1,
+              "to": 0,
+              "inFrom": true,
+              "inTo": false
+            },
+            {
+              "f": "0",
+              "tex": "0",
+              "from": 0,
+              "to": 1,
+              "inFrom": true,
+              "inTo": false
+            },
+            {
+              "f": "1",
+              "tex": "1",
+              "from": 1,
+              "to": 2,
+              "inFrom": true,
+              "inTo": false
+            },
+            {
+              "f": "2",
+              "tex": "2",
+              "from": 2,
+              "to": 3,
+              "inFrom": true,
+              "inTo": false
+            },
+            {
+              "f": "3",
+              "tex": "3",
+              "from": 3,
+              "to": 4,
+              "inFrom": true,
+              "inTo": false
+            }
+          ],
+          "probe": 1.5,
+          "name": "f",
+          "xmin": -4,
+          "xmax": 4,
+          "ymin": -4,
+          "ymax": 4,
+          "equal": true
+        },
+        "cap": "$f(x) = \\lfloor x \\rfloor$. Drag the input: inside a step the output stays the same, and at each whole number it jumps up by $1$."
+      },
+      {
+        "t": "key",
+        "html": "A step function is constant on each interval and jumps between intervals. Use the endpoint symbols (filled or open dots, $\\le$ or $<$) to decide which step a boundary input belongs to."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Floor of a negative number",
+        "q": "Find $\\lfloor -3.4 \\rfloor$ and $\\lfloor 3.4 \\rfloor$.",
+        "steps": [
+          "$-4 \\le -3.4 < -3$, so $\\lfloor -3.4 \\rfloor = -4$.",
+          "$3 \\le 3.4 < 4$, so $\\lfloor 3.4 \\rfloor = 3$."
+        ],
+        "a": "$-4$ and $3$."
+      },
+      {
+        "t": "ex",
+        "title": "Parking by the started hour",
+        "q": "A garage charges $\\$3$ for each hour or part of an hour. What does $2$ hours $15$ minutes cost? Graph the cost for up to $5$ hours.",
+        "steps": [
+          "Any started hour counts in full, so $2$ h $15$ min is charged as $3$ hours.",
+          "Cost: $3 \\cdot 3 = \\$9$.",
+          "On the graph, each hour is a step: the open dot at the left end and the filled dot at the right end, because exactly $2$ hours still costs $\\$6$."
+        ],
+        "a": "$\\$9$"
+      },
+      {
+        "t": "viz",
+        "name": "alg1-piecewise",
+        "opts": {
+          "pieces": [
+            {
+              "f": "3",
+              "tex": "3",
+              "from": 0,
+              "to": 1,
+              "inFrom": false,
+              "inTo": true
+            },
+            {
+              "f": "6",
+              "tex": "6",
+              "from": 1,
+              "to": 2,
+              "inFrom": false,
+              "inTo": true
+            },
+            {
+              "f": "9",
+              "tex": "9",
+              "from": 2,
+              "to": 3,
+              "inFrom": false,
+              "inTo": true
+            },
+            {
+              "f": "12",
+              "tex": "12",
+              "from": 3,
+              "to": 4,
+              "inFrom": false,
+              "inTo": true
+            },
+            {
+              "f": "15",
+              "tex": "15",
+              "from": 4,
+              "to": 5,
+              "inFrom": false,
+              "inTo": true
+            }
+          ],
+          "probe": 2.25,
+          "name": "C",
+          "snap": 0.25,
+          "xmin": -0.5,
+          "xmax": 5.5,
+          "ymin": -1,
+          "ymax": 17
+        },
+        "cap": "Parking cost $C(t)$ for $t$ hours: here each step includes its <em>right</em> end, the opposite of the floor function."
+      },
+      {
+        "t": "mistake",
+        "html": "Joining the steps with vertical lines. A vertical segment would give one input many outputs, so it is not part of a function's graph. Check a boundary input, like $t = 2$ hours: it should land on exactly one step."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Common Core State Standards for Mathematics, F-IF.C.7b: graph step functions"
+      },
+      {
+        "name": "OpenStax, Intermediate Algebra 2e, section 3.6 Graphs of Functions"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

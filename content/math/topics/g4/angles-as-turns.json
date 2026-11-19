@@ -1,0 +1,158 @@
+{
+  "id": "g4.angles-as-turns",
+  "slug": "angles-as-turns",
+  "ladder": "math",
+  "course": "g4",
+  "unit": "geometry",
+  "title": "What an Angle Measures",
+  "short": "An angle measures the amount of turn; a degree is 1/360 of a full turn.",
+  "trouble": "Children think longer rays make a bigger angle.",
+  "prereqs": [
+    "g4.points-lines-rays"
+  ],
+  "xp": 2,
+  "viz": [
+    "angle"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Two <a href=\"/math/grade-4/points-lines-rays/\">rays</a> that share an endpoint make an <b>angle</b>. The shared endpoint is the vertex. What does the size of an angle measure? Not the length of its sides: the <b>amount of turn</b> between them."
+      },
+      {
+        "t": "key",
+        "html": "Imagine one ray turning around the vertex until it lands on the other ray. A full turn is $360^\\circ$, so one <b>degree</b> is $\\dfrac{1}{360}$ of a full turn. A quarter turn is $90^\\circ$, a half turn is $180^\\circ$, and an angle that turns through 50 one-degree angles measures $50^\\circ$."
+      },
+      {
+        "t": "why",
+        "html": "To measure, you need a unit, just like inches for length. The unit for turning is the one-degree angle: split a full circle into 360 equal slices, and each slice is 1 degree. Measuring an angle means counting how many of those slices fit inside it. Making the rays longer does not add any slices."
+      },
+      {
+        "t": "viz",
+        "name": "angle",
+        "opts": {
+          "deg": 90,
+          "protractor": false,
+          "turn": true
+        },
+        "cap": "Drag the green ray. The readout gives the angle in degrees and as a fraction of a full turn."
+      },
+      {
+        "t": "viz",
+        "name": "g4-geo",
+        "opts": {
+          "w": 10,
+          "h": 4.4,
+          "grid": "none",
+          "label": "Two angles with the same opening, one with long sides and one with short sides",
+          "items": [
+            {
+              "t": "angle",
+              "at": [
+                1,
+                0.7
+              ],
+              "a1": 0,
+              "a2": 50,
+              "r": 0.6,
+              "color": "red",
+              "label": "50°"
+            },
+            {
+              "t": "ray",
+              "a": [
+                1,
+                0.7
+              ],
+              "dir": 0,
+              "len": 3.6,
+              "color": "green"
+            },
+            {
+              "t": "ray",
+              "a": [
+                1,
+                0.7
+              ],
+              "dir": 50,
+              "len": 3.6,
+              "color": "green"
+            },
+            {
+              "t": "angle",
+              "at": [
+                6.6,
+                0.7
+              ],
+              "a1": 0,
+              "a2": 50,
+              "r": 0.6,
+              "color": "red",
+              "label": "50°"
+            },
+            {
+              "t": "ray",
+              "a": [
+                6.6,
+                0.7
+              ],
+              "dir": 0,
+              "len": 1.5,
+              "color": "purple"
+            },
+            {
+              "t": "ray",
+              "a": [
+                6.6,
+                0.7
+              ],
+              "dir": 50,
+              "len": 1.5,
+              "color": "purple"
+            }
+          ]
+        },
+        "cap": "These two angles are the same size, $50^\\circ$, even though one has much longer sides."
+      },
+      {
+        "t": "ex",
+        "title": "A fraction of a turn",
+        "q": "How many degrees is $\\dfrac{1}{3}$ of a full turn?",
+        "steps": [
+          "A full turn is $360^\\circ$.",
+          "Split it into 3 equal parts: $360 \\div 3 = 120$."
+        ],
+        "a": "$120^\\circ$"
+      },
+      {
+        "t": "ex",
+        "title": "A clock hand",
+        "q": "The minute hand turns from the 12 to the 3. How many degrees does it turn?",
+        "steps": [
+          "The 12 numbers split a full turn into 12 parts: $360 \\div 12 = 30^\\circ$ each.",
+          "From 12 to 3 is 3 parts: $3 \\times 30 = 90$."
+        ],
+        "a": "$90^\\circ$ (a quarter turn)"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking longer sides make a bigger angle. The size of an angle is how far it opens, not how long its rays are drawn. You could extend both rays forever and the turn would stay the same."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 4, 4.MD.C.5 (understand angles as geometric shapes formed by two rays and how they are measured in degrees)"
+      },
+      {
+        "name": "OpenStax Prealgebra 2e, section 9.3 Use Properties of Angles, Triangles, and the Pythagorean Theorem"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,124 @@
+{
+  "id": "pre.inverse-trig",
+  "slug": "inverse-trig",
+  "ladder": "math",
+  "course": "pre",
+  "unit": "trig-graphs",
+  "title": "Inverse Trig Functions",
+  "short": "Restrict sine, cosine and tangent so they have inverses.",
+  "trouble": "Students read sin⁻¹ x as 1/sin x, or give an angle outside the restricted range.",
+  "prereqs": [
+    "pre.sine-cosine-graphs",
+    "alg2.restrict-domain-inverse"
+  ],
+  "xp": 2,
+  "viz": [
+    "unitcircle"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Sine takes each value between $-1$ and $1$ infinitely many times, so \"the angle whose sine is $\\frac{1}{2}$\" is not one angle: $\\frac{\\pi}{6}$, $\\frac{5\\pi}{6}$, $\\frac{13\\pi}{6}$ and more all work. As with any function that is not one-to-one, we <a href=\"/math/algebra-2/restrict-domain-inverse/\">restrict the domain</a> to one piece that takes every value once, and invert that piece."
+      },
+      {
+        "t": "key",
+        "html": "$\\arcsin x$ (also written $\\sin^{-1}x$) is the angle in $\\left[-\\frac{\\pi}{2}, \\frac{\\pi}{2}\\right]$ whose sine is $x$, for $-1 \\le x \\le 1$.<br>$\\arccos x$ ($\\cos^{-1}x$) is the angle in $[0, \\pi]$ whose cosine is $x$, for $-1 \\le x \\le 1$.<br>$\\arctan x$ ($\\tan^{-1}x$) is the angle in $\\left(-\\frac{\\pi}{2}, \\frac{\\pi}{2}\\right)$ whose tangent is $x$, for any $x$."
+      },
+      {
+        "t": "why",
+        "html": "On the unit circle: the right half (Quadrants I and IV, from $-\\frac{\\pi}{2}$ up to $\\frac{\\pi}{2}$) visits every height from $-1$ to $1$ exactly once, so it is the natural piece for sine and tangent. The top half ($0$ to $\\pi$) visits every $x$-coordinate from $1$ down to $-1$ exactly once, so it is the piece for cosine. Each piece includes the familiar first-quadrant angles."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "fns": [
+            {
+              "f": "sin(x)",
+              "dash": true,
+              "color": "teal",
+              "label": "sin"
+            },
+            {
+              "f": "sin(x)",
+              "from": "-pi/2",
+              "to": "pi/2",
+              "color": "blue",
+              "label": "piece"
+            },
+            {
+              "f": "asin(x)",
+              "color": "red",
+              "label": "arcsin"
+            },
+            {
+              "f": "x",
+              "dash": true,
+              "color": "gold",
+              "label": "line"
+            }
+          ],
+          "xmin": -4,
+          "xmax": 4,
+          "ymin": -2.5,
+          "ymax": 2.5,
+          "equal": true
+        },
+        "cap": "The solid blue piece of sine, reflected across $y = x$ (gold), gives arcsine (red)."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A first-quadrant answer",
+        "q": "Find $\\arcsin\\frac{1}{2}$.",
+        "steps": [
+          "We need an angle in $\\left[-\\frac{\\pi}{2}, \\frac{\\pi}{2}\\right]$ with sine $\\frac{1}{2}$.",
+          "$\\sin\\frac{\\pi}{6} = \\frac{1}{2}$, and $\\frac{\\pi}{6}$ is in the range."
+        ],
+        "a": "$\\frac{\\pi}{6}$"
+      },
+      {
+        "t": "ex",
+        "title": "A negative input to arccos",
+        "q": "Find $\\arccos\\left(-\\frac{\\sqrt{2}}{2}\\right)$.",
+        "steps": [
+          "The answer must be in $[0, \\pi]$, the top half of the circle. Cosine is negative there only in Quadrant II.",
+          "The reference angle is $\\frac{\\pi}{4}$, so the angle is $\\pi - \\frac{\\pi}{4} = \\frac{3\\pi}{4}$."
+        ],
+        "a": "$\\frac{3\\pi}{4}$"
+      },
+      {
+        "t": "ex",
+        "title": "A negative input to arctan",
+        "q": "Find $\\tan^{-1}\\left(-\\sqrt{3}\\right)$.",
+        "steps": [
+          "The answer is in $\\left(-\\frac{\\pi}{2}, \\frac{\\pi}{2}\\right)$; a negative tangent puts it in Quadrant IV.",
+          "$\\tan\\frac{\\pi}{3} = \\sqrt{3}$, so the angle is $-\\frac{\\pi}{3}$."
+        ],
+        "a": "$-\\frac{\\pi}{3}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Two traps. First, $\\sin^{-1}x$ is <b>not</b> $\\frac{1}{\\sin x}$; that reciprocal is $\\csc x$. The $-1$ here means \"inverse function,\" just like $f^{-1}$. Second, giving a correct angle outside the range, such as $\\arcsin\\left(-\\frac{1}{2}\\right) = \\frac{7\\pi}{6}$. Its sine is right, but arcsine only gives angles between $-\\frac{\\pi}{2}$ and $\\frac{\\pi}{2}$, so the answer is $-\\frac{\\pi}{6}$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Precalculus 2e, Section 6.3 Inverse Trigonometric Functions"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, F-TF.B.6"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

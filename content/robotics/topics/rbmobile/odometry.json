@@ -1,0 +1,81 @@
+{
+  "id": "rbmobile.odometry",
+  "slug": "odometry",
+  "ladder": "robotics",
+  "course": "rbmobile",
+  "unit": "motion",
+  "title": "Odometry",
+  "short": "Update the pose each step: x += d cos θ, y += d sin θ, θ += Δθ.",
+  "trouble": "Students update the heading before moving, or forget that small errors grow with every meter.",
+  "prereqs": [
+    "rbmobile.differential-drive",
+    "rbsense.encoders",
+    "rbmech.coordinate-frames"
+  ],
+  "xp": 3,
+  "viz": [
+    "rb-diffdrive"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "With no GPS indoors, a robot can still keep track of itself by adding up its own small moves. This is <b>odometry</b>, or dead reckoning."
+      },
+      {
+        "t": "key",
+        "html": "Each loop, the encoders give a distance $d$ and a turn $\\Delta\\theta$. Update the pose: $x \\leftarrow x + d\\cos\\theta$, $y \\leftarrow y + d\\sin\\theta$, then $\\theta \\leftarrow \\theta + \\Delta\\theta$. Small loops make this simple rule accurate."
+      },
+      {
+        "t": "viz",
+        "name": "rb-diffdrive",
+        "opts": {
+          "vl": 0.4,
+          "vr": 0.42,
+          "drift": true
+        },
+        "cap": "The true path and the odometry estimate. Watch them slowly separate."
+      },
+      {
+        "t": "why",
+        "html": "Each step is a tiny straight move along the current heading, which is the coordinate-frames rule with the robot's own forward direction. But every step's small error is kept forever: slipping wheels, a slightly wrong wheel size. So odometry drifts, and the error grows the farther the robot goes."
+      },
+      {
+        "t": "ex",
+        "title": "One step",
+        "q": "Pose $(1.0, 2.0)$, heading $60^\\circ$, move $0.5$ m.",
+        "steps": [
+          "$x = 1 + 0.5\\cos 60^\\circ = 1.25$.",
+          "$y = 2 + 0.5\\sin 60^\\circ \\approx 2.43$."
+        ],
+        "a": "(1.25, 2.43)."
+      },
+      {
+        "t": "mistake",
+        "html": "Updating the heading before moving when the rule says move first, or forgetting that small errors grow with every meter."
+      },
+      {
+        "t": "h",
+        "text": "Hands-on: drive a square"
+      },
+      {
+        "t": "p",
+        "html": "Program your robot to drive a 1-meter square using encoder odometry, and mark where it ends. Repeat five times. The gap between start and finish shows your odometry's drift. Try slower turns, or measuring your wheel size more carefully, and see what helps."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Roland Siegwart, Illah R. Nourbakhsh and Davide Scaramuzza, Introduction to Autonomous Mobile Robots, 2nd ed. (MIT Press, 2011)"
+      },
+      {
+        "name": "Sebastian Thrun, Wolfram Burgard and Dieter Fox, Probabilistic Robotics (MIT Press, 2005)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

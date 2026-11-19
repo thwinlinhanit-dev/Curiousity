@@ -1,0 +1,120 @@
+{
+  "id": "lifesci.body-temperature",
+  "slug": "body-temperature",
+  "ladder": "bio",
+  "course": "lifesci",
+  "unit": "animals",
+  "title": "Endotherms and Ectotherms",
+  "short": "Birds and mammals are endotherms: they make heat inside and keep a fairly steady body temperature. Fish, amphibians and reptiles are ectotherms: their temperature follows their surroundings.",
+  "trouble": "Students think \"cold-blooded\" animals have cold blood. A lizard basking in the sun can be warmer than a person; its temperature simply depends on its surroundings.",
+  "prereqs": [
+    "lifesci.vertebrate-groups"
+  ],
+  "xp": 2,
+  "viz": [
+    "bi-classify",
+    "bi-chart"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/biology/life-science/vertebrate-groups/\">Vertebrate Groups</a> the table had a column for body temperature. Here is what it means."
+      },
+      {
+        "t": "key",
+        "html": "Birds and mammals are <b>endotherms</b>: they make heat inside their bodies and keep a fairly steady temperature. Fish, amphibians and reptiles (and most invertebrates) are <b>ectotherms</b>: their temperature follows their surroundings."
+      },
+      {
+        "t": "viz",
+        "name": "bi-chart",
+        "opts": {
+          "kind": "line",
+          "x": [
+            5,
+            10,
+            15,
+            20,
+            25,
+            30,
+            35
+          ],
+          "series": [
+            {
+              "name": "Mouse (endotherm)",
+              "values": [
+                37,
+                37,
+                37,
+                37,
+                37,
+                37,
+                38
+              ]
+            },
+            {
+              "name": "Lizard (ectotherm)",
+              "values": [
+                7,
+                12,
+                17,
+                22,
+                27,
+                32,
+                36
+              ]
+            }
+          ],
+          "xlabel": "Air temperature (°C)",
+          "ylabel": "Body temperature (°C)",
+          "ymin": 0
+        },
+        "cap": "Body temperature against air temperature for a mouse and a lizard (rounded example values)."
+      },
+      {
+        "t": "why",
+        "html": "Making heat costs energy, and energy comes from food. So a mouse needs much more food for its size than a lizard does. In return, the mouse stays active on a cold night. A lizard warms itself by basking in the sun and cools off in the shade or a burrow, and it slows down when it is cold."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Read the chart",
+        "q": "At an air temperature of 10 °C, about how warm is each animal?",
+        "steps": [
+          "The mouse line stays at about 37 °C.",
+          "The lizard line is at about 12 °C, near the air temperature."
+        ],
+        "a": "Mouse about 37 °C; lizard about 12 °C."
+      },
+      {
+        "t": "ex",
+        "title": "Which is which?",
+        "q": "A frog's body temperature rises from 10 °C to 25 °C as a pond warms. Endotherm or ectotherm?",
+        "steps": [
+          "Its temperature follows its surroundings."
+        ],
+        "a": "An ectotherm."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking \"cold-blooded\" animals have cold blood. A lizard basking in the sun can be as warm as a person, or warmer; its temperature simply depends on its surroundings. Scientists prefer the word \"ectotherm.\""
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Biology 2e, 33.3 Homeostasis (thermoregulation)"
+      },
+      {
+        "name": "OpenStax, Concepts of Biology, 15.6 Vertebrates"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

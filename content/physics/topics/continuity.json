@@ -1,0 +1,104 @@
+{
+  "id": "phys2.continuity",
+  "slug": "continuity",
+  "ladder": "physics",
+  "course": "phys2",
+  "unit": "fluids",
+  "title": "Flow Rate and Continuity",
+  "short": "For a liquid filling a pipe, the flow rate Av is the same everywhere: A₁v₁ = A₂v₂.",
+  "trouble": "Students think water slows down where a pipe gets narrower.",
+  "prereqs": [
+    "physsci.pressure",
+    "g7.solve-proportions"
+  ],
+  "xp": 1,
+  "viz": [
+    "ph-fluids"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Put your thumb over the end of a garden hose and the water shoots out faster. Nothing new pushed it; the water simply had to get through a smaller opening. This lesson turns that into a rule, using the <a href=\"/physics/physical-science/pressure/\">pressure</a> picture of a liquid and a <a href=\"/math/grade-7/solve-proportions/\">proportion</a>."
+      },
+      {
+        "t": "why",
+        "html": "A liquid barely compresses. In a pipe that is full, water cannot pile up anywhere, so every second the same volume must pass every cross-section. In a time $\\Delta t$ the water moves a distance $v\\,\\Delta t$, so the volume passing is $A v\\,\\Delta t$, and the volume per second is $$Q = Av.$$ If $Q$ is the same at two places, then $A_1 v_1 = A_2 v_2$. Halve the area and the speed must double."
+      },
+      {
+        "t": "key",
+        "html": "<b>Flow rate</b> $Q = Av$ (in $\\text{m}^3\\text{/s}$; $1\\,\\text{L} = 10^{-3}\\,\\text{m}^3$). For a liquid filling a pipe, $A_1 v_1 = A_2 v_2$: the liquid moves fastest where the pipe is narrowest."
+      },
+      {
+        "t": "viz",
+        "name": "ph-fluids",
+        "opts": {
+          "mode": "flow",
+          "h2": 0,
+          "task": "Make the narrow section smaller and watch the speed arrow there."
+        },
+        "cap": "The same volume per second passes both sections, so the water speeds up in the narrow part."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A nozzle",
+        "q": "Water moves at $1.5\\,\\text{m/s}$ in a hose of area $2.0\\,\\text{cm}^2$. The nozzle opening is $0.50\\,\\text{cm}^2$. How fast does the water leave?",
+        "steps": [
+          "$A_1 v_1 = A_2 v_2$, so $v_2 = v_1 \\dfrac{A_1}{A_2}$.",
+          "$v_2 = (1.5\\,\\text{m/s}) \\dfrac{2.0\\,\\text{cm}^2}{0.50\\,\\text{cm}^2} = (1.5)(4) = 6.0\\,\\text{m/s}$.",
+          "The areas form a ratio, so they can stay in $\\text{cm}^2$."
+        ],
+        "a": "$6.0\\,\\text{m/s}$"
+      },
+      {
+        "t": "ex",
+        "title": "Filling a bucket",
+        "q": "Water flows at $2.5\\,\\text{m/s}$ through a pipe of area $4.0\\,\\text{cm}^2$. What is the flow rate, and how long does a $10\\,\\text{L}$ bucket take to fill?",
+        "steps": [
+          "Convert the area: $4.0\\,\\text{cm}^2 = 4.0 \\times 10^{-4}\\,\\text{m}^2$.",
+          "$Q = Av = (4.0 \\times 10^{-4}\\,\\text{m}^2)(2.5\\,\\text{m/s}) = 1.0 \\times 10^{-3}\\,\\text{m}^3\\text{/s} = 1.0\\,\\text{L/s}$.",
+          "$t = V/Q = (10\\,\\text{L})/(1.0\\,\\text{L/s}) = 10\\,\\text{s}$."
+        ],
+        "a": "$1.0\\,\\text{L/s}$; $10\\,\\text{s}$"
+      },
+      {
+        "t": "ex",
+        "title": "Half the diameter",
+        "q": "A round pipe narrows from a diameter of $4.0\\,\\text{cm}$ to $2.0\\,\\text{cm}$. Water moves at $0.50\\,\\text{m/s}$ in the wide part. How fast in the narrow part?",
+        "steps": [
+          "Area goes as diameter squared ($A = \\pi d^2/4$), so $\\dfrac{A_1}{A_2} = \\left(\\dfrac{4.0}{2.0}\\right)^2 = 4$.",
+          "$v_2 = (0.50\\,\\text{m/s})(4) = 2.0\\,\\text{m/s}$. Half the diameter means four times the speed."
+        ],
+        "a": "$2.0\\,\\text{m/s}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking water slows down where a pipe narrows, as if it were squeezed or held back. In a full pipe it must speed up, or the water behind it would have nowhere to go. Rivers show it too: the same water that drifts through a wide, deep pool races through narrow rapids. Check: does $A \\times v$ come out the same at both places?"
+      },
+      {
+        "t": "note",
+        "html": "Air compresses, so $A_1 v_1 = A_2 v_2$ holds for a gas only when its density stays about the same, as in slow airflow."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e, section 12.1 Flow Rate and Its Relation to Velocity"
+      },
+      {
+        "name": "OpenStax, University Physics Volume 1, section 14.5 Fluid Dynamics"
+      },
+      {
+        "name": "College Board, AP Physics 1 Course and Exam Description, Unit 8: Fluids"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

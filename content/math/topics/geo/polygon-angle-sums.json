@@ -1,0 +1,195 @@
+{
+  "id": "geo.polygon-angle-sums",
+  "slug": "polygon-angle-sums",
+  "ladder": "math",
+  "course": "geo",
+  "unit": "quadrilaterals",
+  "title": "Polygon Angle Sums",
+  "short": "Split a polygon into triangles: (n − 2) × 180°.",
+  "trouble": "Students think the exterior angles add to more for polygons with more sides, when the sum is always 360°.",
+  "prereqs": [
+    "geo.triangle-theorems"
+  ],
+  "xp": 2,
+  "viz": [
+    "angle",
+    "geoboard"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You proved in <a href=\"/math/geometry/triangle-theorems/\">Triangle Sum and Exterior Angle Proofs</a> that a triangle's angles add to $180^\\circ$. Every polygon can be cut into triangles, so the same fact gives the angle sum of any polygon."
+      },
+      {
+        "t": "why",
+        "html": "<b>Interior angles.</b> In a convex polygon with $n$ sides, draw every diagonal from one vertex. They cut it into $n - 2$ triangles (each side except the two at that vertex gets its own triangle), and the triangles' angles together make up exactly the polygon's angles. So the sum is $(n - 2) \\cdot 180^\\circ$.<br><b>Exterior angles.</b> At each vertex, the interior and exterior angles form a linear pair, so all $n$ pairs total $n \\cdot 180^\\circ$. Subtract the interior sum: $n \\cdot 180^\\circ - (n - 2) \\cdot 180^\\circ = 360^\\circ$. It is one full turn, the amount you turn while walking once around the polygon."
+      },
+      {
+        "t": "viz",
+        "name": "geoboard",
+        "cap": "The diagonals from $A$ cut the pentagon into 3 triangles. Drag the corners (keep it convex): the five angles in the readout always add to $3 \\cdot 180^\\circ = 540^\\circ$.",
+        "opts": {
+          "points": {
+            "A": [
+              1,
+              2
+            ],
+            "B": [
+              5,
+              1
+            ],
+            "C": [
+              9,
+              3
+            ],
+            "D": [
+              7,
+              7
+            ],
+            "E": [
+              2,
+              6
+            ]
+          },
+          "objects": [
+            [
+              "poly",
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            [
+              "seg",
+              "A",
+              "C"
+            ],
+            [
+              "seg",
+              "A",
+              "D"
+            ]
+          ],
+          "show": {
+            "len": false,
+            "ang": true,
+            "area": false
+          },
+          "xmin": 0,
+          "xmax": 10,
+          "ymin": 0,
+          "ymax": 8
+        }
+      },
+      {
+        "t": "table",
+        "head": [
+          "Sides $n$",
+          "Triangles",
+          "Interior sum",
+          "Each angle if regular",
+          "Each exterior angle if regular"
+        ],
+        "rows": [
+          [
+            "3",
+            "1",
+            "$180^\\circ$",
+            "$60^\\circ$",
+            "$120^\\circ$"
+          ],
+          [
+            "4",
+            "2",
+            "$360^\\circ$",
+            "$90^\\circ$",
+            "$90^\\circ$"
+          ],
+          [
+            "5",
+            "3",
+            "$540^\\circ$",
+            "$108^\\circ$",
+            "$72^\\circ$"
+          ],
+          [
+            "6",
+            "4",
+            "$720^\\circ$",
+            "$120^\\circ$",
+            "$60^\\circ$"
+          ],
+          [
+            "8",
+            "6",
+            "$1080^\\circ$",
+            "$135^\\circ$",
+            "$45^\\circ$"
+          ],
+          [
+            "$n$",
+            "$n - 2$",
+            "$(n - 2) \\cdot 180^\\circ$",
+            "$\\frac{(n - 2) \\cdot 180^\\circ}{n}$",
+            "$\\frac{360^\\circ}{n}$"
+          ]
+        ],
+        "cap": "Angle sums for convex polygons."
+      },
+      {
+        "t": "key",
+        "html": "The interior angles of a convex $n$-gon add to $(n - 2) \\cdot 180^\\circ$. The exterior angles, one at each vertex, always add to $360^\\circ$."
+      },
+      {
+        "t": "ex",
+        "title": "An interior sum",
+        "q": "Find the sum of the interior angles of a nonagon (9 sides).",
+        "steps": [
+          "$(9 - 2) \\cdot 180 = 7 \\cdot 180 = 1260$."
+        ],
+        "a": "$1260^\\circ$"
+      },
+      {
+        "t": "ex",
+        "title": "Working backward from one angle",
+        "q": "Each interior angle of a regular polygon measures $156^\\circ$. How many sides does it have?",
+        "steps": [
+          "Each exterior angle is $180 - 156 = 24^\\circ$.",
+          "The exterior angles add to $360^\\circ$: $n = \\frac{360}{24} = 15$."
+        ],
+        "a": "15 sides"
+      },
+      {
+        "t": "ex",
+        "title": "A missing angle",
+        "q": "A hexagon has angles $110^\\circ$, $135^\\circ$, $120^\\circ$, $140^\\circ$, $95^\\circ$ and $x^\\circ$. Find $x$.",
+        "steps": [
+          "Interior sum: $(6 - 2) \\cdot 180 = 720$.",
+          "Known angles: $110 + 135 + 120 + 140 + 95 = 600$.",
+          "$x = 720 - 600 = 120$."
+        ],
+        "a": "$x = 120$"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking the exterior angles add to more when there are more sides. The interior sum grows by $180^\\circ$ with each new side, but the exterior sum stays $360^\\circ$: more exterior angles, each one smaller. Check: a square has four $90^\\circ$ exterior angles and a regular octagon has eight $45^\\circ$ ones; both total $360^\\circ$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Contemporary Mathematics, 10.4 Polygons, Perimeter, and Circumference"
+      },
+      {
+        "name": "Euclid, <i>Elements</i>, Book I, Proposition 32 (with its corollaries)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

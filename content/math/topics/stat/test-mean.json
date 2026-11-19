@@ -1,0 +1,87 @@
+{
+  "id": "stat.test-mean",
+  "slug": "test-mean",
+  "ladder": "math",
+  "course": "stat",
+  "unit": "inference",
+  "title": "Testing a Claim about a Mean",
+  "short": "Carry out a one-sample t test.",
+  "trouble": "",
+  "prereqs": [
+    "stat.test-proportion",
+    "stat.confidence-interval-mean"
+  ],
+  "xp": 3,
+  "viz": [
+    "normal"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A test for a mean follows the same steps as a <a href=\"/math/probability-and-statistics/test-proportion/\">test for a proportion</a>, with the t distribution from <a href=\"/math/probability-and-statistics/confidence-interval-mean/\">confidence intervals for a mean</a> in place of z."
+      },
+      {
+        "t": "key",
+        "html": "To test $H_0: \\mu = \\mu_0$: $$t = \\dfrac{\\bar{x} - \\mu_0}{s/\\sqrt{n}}, \\quad df = n - 1.$$ The p-value is the area beyond t under the t curve, in the direction of $H_a$. Conditions: a random sample, and a roughly normal population or a large sample."
+      },
+      {
+        "t": "why",
+        "html": "If $H_0$ is true, $\\bar{x}$ varies around $\\mu_0$ with standard deviation $\\sigma/\\sqrt{n}$. We estimate that with $s/\\sqrt{n}$, which makes the standardized statistic follow a t distribution with $n - 1$ degrees of freedom rather than the normal. A t of $-2.5$ says the sample mean is two and a half standard errors below the claimed mean."
+      },
+      {
+        "t": "viz",
+        "name": "stat-curve",
+        "opts": {
+          "dist": "t",
+          "df": 15,
+          "x": -2.5,
+          "tail": "left",
+          "compare": true
+        },
+        "cap": "The t curve with 15 degrees of freedom; the shaded left tail beyond t = −2.5 is the p-value of the first example."
+      },
+      {
+        "t": "ex",
+        "title": "Underfilled boxes?",
+        "q": "Cereal boxes are labeled 500 grams. A random sample of 16 boxes has $\\bar{x} = 497.5$ g and $s = 4$ g. Test $H_0: \\mu = 500$ against $H_a: \\mu < 500$ at $\\alpha = 0.05$.",
+        "steps": [
+          "SE $= \\dfrac{4}{\\sqrt{16}} = 1$; $t = \\dfrac{497.5 - 500}{1} = -2.5$ with $df = 15$.",
+          "p-value: the area below $-2.5$ under the t curve with 15 df, about $0.012$ (from software).",
+          "$0.012 < 0.05$: reject $H_0$. There is convincing evidence that the boxes are underfilled on average."
+        ],
+        "a": "t = −2.5, p ≈ 0.012: reject."
+      },
+      {
+        "t": "ex",
+        "title": "A two-sided test",
+        "q": "A battery maker claims a mean life of 40 hours. A random sample of 25 batteries has $\\bar{x} = 41.2$ and $s = 3$. Test $H_0: \\mu = 40$ against $H_a: \\mu \\ne 40$.",
+        "steps": [
+          "SE $= \\dfrac{3}{\\sqrt{25}} = 0.6$; $t = \\dfrac{41.2 - 40}{0.6} = 2$ with $df = 24$.",
+          "Two-sided p-value: $2 \\times P(T > 2) \\approx 0.057$.",
+          "$0.057 > 0.05$: fail to reject. The data do not give convincing evidence that the mean differs from 40 hours."
+        ],
+        "a": "t = 2, p ≈ 0.057: fail to reject."
+      },
+      {
+        "t": "mistake",
+        "html": "Using the normal table for t, or taking $df = n$. With 15 df, a two-sided cutoff is $2.131$, not $1.96$. Check your df and use the t distribution whenever the standard error uses $s$. And remember: \"fail to reject\" is not \"accept.\""
+      },
+      {
+        "t": "note",
+        "html": "Tests and intervals agree: a two-sided test at $\\alpha = 0.05$ rejects $H_0: \\mu = \\mu_0$ exactly when $\\mu_0$ falls outside the 95% confidence interval."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Introductory Statistics 2e, section 9.6 Hypothesis Testing of a Single Mean and Single Proportion"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

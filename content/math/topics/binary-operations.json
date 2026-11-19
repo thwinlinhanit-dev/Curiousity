@@ -1,0 +1,124 @@
+{
+  "id": "aa.binary-operations",
+  "slug": "binary-operations",
+  "ladder": "math",
+  "course": "aa",
+  "unit": "groups",
+  "title": "Binary Operations and Cayley Tables",
+  "short": "A binary operation combines two elements of a set into one element of the set; a Cayley table lists every product a ∗ b (row a, column b), so you can read off closure, an identity and commutativity.",
+  "trouble": "Students read b ∗ a when they mean a ∗ b (row first, then column), or take a symmetric table as proof of associativity, which needs every triple.",
+  "prereqs": [
+    "disc.functions",
+    "disc.power-sets-products",
+    "nt.modular-arithmetic"
+  ],
+  "xp": 1,
+  "viz": [
+    "aa-cayley"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Abstract algebra studies operations themselves. You already know many: adding integers, multiplying matrices, <a href=\"/math/number-theory/modular-arithmetic/\">adding and multiplying mod n</a>, composing <a href=\"/math/discrete-math/functions/\">functions</a>. This course asks what all of them have in common, so that one proof can cover every example at once. The first step is to say exactly what an operation is."
+      },
+      {
+        "t": "p",
+        "html": "<b>Definition.</b> A <b>binary operation</b> on a set $S$ is a function $\\ast: S \\times S \\to S$. It takes an ordered pair $(a, b)$ of elements of $S$ (an element of the <a href=\"/math/discrete-math/power-sets-products/\">Cartesian product</a> $S \\times S$) and returns one element $a \\ast b$ that is again in $S$. That last requirement is called <b>closure</b>: subtraction is a binary operation on $\\mathbb{Z}$, but not on $\\mathbb{N} = \\{0, 1, 2, \\dots\\}$, because $1 - 2 \\notin \\mathbb{N}$."
+      },
+      {
+        "t": "p",
+        "html": "For a small set we can list every answer in a <b>Cayley table</b>: the entry in row $a$ and column $b$ is $a \\ast b$. The order matters, since $a \\ast b$ and $b \\ast a$ may differ."
+      },
+      {
+        "t": "viz",
+        "name": "aa-cayley",
+        "opts": {
+          "group": "Z",
+          "n": 5,
+          "sel": [
+            "3",
+            "4"
+          ],
+          "modes": [
+            "product"
+          ],
+          "task": "Tap the cell for $4 + 2$ and then the cell for $2 + 4$. Are they equal?"
+        },
+        "cap": "Addition mod 5 as a Cayley table. Each cell is tinted by its value, so you can see that every row and every column contains each element exactly once."
+      },
+      {
+        "t": "h",
+        "text": "Properties you can read off (or not)"
+      },
+      {
+        "t": "list",
+        "items": [
+          "<b>Commutative:</b> $a \\ast b = b \\ast a$ for all $a, b$. In the table this means symmetry across the main diagonal.",
+          "<b>Identity:</b> an element $e$ with $e \\ast a = a = a \\ast e$ for all $a$. Its row and its column copy the headings.",
+          "<b>Associative:</b> $(a \\ast b) \\ast c = a \\ast (b \\ast c)$ for all $a, b, c$. This one is <i>not</i> visible in the table: for a set with $n$ elements there are $n^{3}$ triples to check."
+        ]
+      },
+      {
+        "t": "why",
+        "html": "Why care about associativity? It is what lets us drop parentheses and write $a \\ast b \\ast c \\ast d$: every way of grouping gives the same answer. Without it, even $a \\ast a \\ast a$ is ambiguous. Every operation we build groups from will be associative, and the reason is usually that it comes from something already associative: addition and multiplication of numbers, multiplication of matrices, or composition of functions, where $(f \\circ g) \\circ h$ and $f \\circ (g \\circ h)$ both send $x$ to $f(g(h(x)))$."
+      },
+      {
+        "t": "ex",
+        "title": "Reading a table, both ways",
+        "q": "On $S = \\{a, b, c\\}$ the table gives $a \\ast b = c$ (row $a$, column $b$) and $b \\ast a = a$ (row $b$, column $a$). Is $\\ast$ commutative?",
+        "steps": [
+          "Commutativity needs $x \\ast y = y \\ast x$ for <i>every</i> pair.",
+          "Here $a \\ast b = c$ but $b \\ast a = a$.",
+          "One failing pair is enough."
+        ],
+        "a": "No: $a \\ast b \\ne b \\ast a$."
+      },
+      {
+        "t": "ex",
+        "title": "Testing associativity with a formula",
+        "q": "On $\\mathbb{Z}$ define $a \\ast b = a + b + ab$. Is it associative?",
+        "steps": [
+          "Notice $1 + (a \\ast b) = 1 + a + b + ab = (1 + a)(1 + b)$.",
+          "So $1 + ((a \\ast b) \\ast c) = (1 + a)(1 + b)(1 + c)$, and the same for $1 + (a \\ast (b \\ast c))$.",
+          "Both groupings give the same number, because multiplication of integers is associative."
+        ],
+        "a": "Yes, it is associative (and commutative)."
+      },
+      {
+        "t": "ex",
+        "title": "A commutative operation that is not associative",
+        "q": "On $\\mathbb{Z}$ define $a \\ast b = |a - b|$. Check commutativity and associativity.",
+        "steps": [
+          "$|a - b| = |b - a|$, so it is commutative.",
+          "Try $1, 2, 3$: $(1 \\ast 2) \\ast 3 = 1 \\ast 3 = 2$, but $1 \\ast (2 \\ast 3) = 1 \\ast 1 = 0$."
+        ],
+        "a": "Commutative but not associative."
+      },
+      {
+        "t": "mistake",
+        "html": "Reading $b \\ast a$ when you want $a \\ast b$. The <b>row</b> is the left factor and the <b>column</b> is the right factor. A second trap: a symmetric table proves commutativity, not associativity. The example $|a - b|$ has a perfectly symmetric table and still fails associativity, so test triples, or find a reason like the $(1 + a)(1 + b)$ trick above."
+      },
+      {
+        "t": "key",
+        "html": "A binary operation on $S$ sends each ordered pair of elements of $S$ to an element of $S$. A Cayley table lists all the answers (row $a$, column $b$ gives $a \\ast b$); commutativity and identities show up in the table, but associativity has to be checked on triples or proved."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Thomas W. Judson, Abstract Algebra: Theory and Applications (open textbook), chapter 3, Groups (section 3.2, Definitions and Examples)"
+      },
+      {
+        "name": "John A. Beachy and William D. Blair, Abstract Algebra, online study guide (Northern Illinois University), section 3.1, Definition of a Group"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.703 Modern Algebra (Spring 2013), lecture 1, groups"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

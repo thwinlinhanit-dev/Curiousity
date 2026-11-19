@@ -1,0 +1,123 @@
+{
+  "id": "growing.school-teachers",
+  "slug": "school-teachers",
+  "ladder": "etiquette",
+  "course": "growing",
+  "unit": "getting-along",
+  "title": "At School and with Teachers",
+  "short": "Greet your teacher, raise your hand and wait, listen when others speak, and ask for help respectfully.",
+  "trouble": "Learners call out answers or argue a grade in front of the class. Ask to talk after class instead.",
+  "prereqs": [
+    "growing.disagreeing"
+  ],
+  "xp": 1,
+  "viz": [
+    "et-scene",
+    "et-sort"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "School is a place where many people share a room for many hours. The skills from <a href=\"/etiquette/growing-up/disagreeing/\">disagreeing kindly</a> help a lot, and so do a few classroom habits that teachers notice every day."
+      },
+      {
+        "t": "key",
+        "html": "<b>Greet your teacher</b>, <b>raise your hand and wait</b> to be called on, <b>listen when others speak</b>, and <b>ask for help respectfully</b>. If you disagree with a grade or a rule, <b>ask to talk after class</b>."
+      },
+      {
+        "t": "why",
+        "html": "A teacher is trying to help twenty or thirty people learn at once. Raising your hand gives everyone a fair turn, and listening to classmates gives their ideas the same respect you want for yours. Talking about a grade in private keeps it calm and lets the teacher listen, without an audience."
+      },
+      {
+        "t": "viz",
+        "name": "et-scene",
+        "opts": {
+          "place": "classroom",
+          "people": [
+            {
+              "who": "park"
+            },
+            {
+              "who": "omar",
+              "age": "teen"
+            },
+            {
+              "who": "hana",
+              "age": "teen"
+            }
+          ],
+          "prompt": "Ms. Park asks a question. Omar knows the answer right away. What should he do?",
+          "choices": [
+            {
+              "text": "Raise his hand and wait to be called on.",
+              "ok": true,
+              "mood": {
+                "0": "happy",
+                "1": "happy"
+              },
+              "outcome": "Everyone gets a chance to think, and Omar gets his turn."
+            },
+            {
+              "text": "Shout out the answer.",
+              "ok": false,
+              "mood": {
+                "2": "cross"
+              },
+              "outcome": "Hana was still thinking. Calling out takes away everyone else’s turn."
+            },
+            {
+              "text": "Whisper the answer to Hana.",
+              "ok": false,
+              "mood": {
+                "0": "neutral"
+              },
+              "outcome": "Whispering distracts both of them. Raise your hand instead."
+            }
+          ]
+        },
+        "cap": "Choose what Omar does."
+      },
+      {
+        "t": "ex",
+        "title": "A grade that seems wrong",
+        "q": "Sam thinks a test question was marked wrong by mistake. What is the respectful way to handle it?",
+        "steps": [
+          "Wait until after class, or ask, “Could I talk with you about my test sometime?”",
+          "Bring the test and explain calmly: “I think this answer might be right. Could you look again?”",
+          "Accept the teacher’s answer politely, even if it is not the one he hoped for."
+        ],
+        "a": "Ask to talk privately after class, and explain calmly."
+      },
+      {
+        "t": "ex",
+        "title": "Asking for help",
+        "q": "Ruby doesn’t understand the homework. What can she say?",
+        "steps": [
+          "Ask at a good moment, such as after class or during work time.",
+          "Be specific: “Ms. Park, I’m stuck on number 4. Could you explain the first step?”",
+          "Thank her for the help."
+        ],
+        "a": "“Ms. Park, I’m stuck on number 4. Could you explain the first step? Thank you!”"
+      },
+      {
+        "t": "mistake",
+        "html": "Calling out answers, or arguing about a grade in front of the class. Raise your hand and wait; for grades, ask to talk after class."
+      },
+      {
+        "t": "note",
+        "html": "Small courtesies count: say good morning and goodbye, hold the door, help a substitute learn names, and return borrowed supplies."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Present-day American etiquette as commonly taught to children and families (summarized in our own words)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

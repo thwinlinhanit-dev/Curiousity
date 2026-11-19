@@ -1,0 +1,73 @@
+{
+  "id": "rbmech.coordinate-frames",
+  "slug": "coordinate-frames",
+  "ladder": "robotics",
+  "course": "rbmech",
+  "unit": "frames",
+  "title": "Coordinate Frames",
+  "short": "A point seen by the robot becomes a point on the map by a rotation and a shift.",
+  "trouble": "Students add the robot's position but forget to rotate by its heading, or rotate the wrong way.",
+  "prereqs": [
+    "pre.matrix-transformations",
+    "geo.trig-ratios"
+  ],
+  "xp": 3,
+  "viz": [
+    "rb-frames"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The robot's distance sensor says, \"Obstacle 1 meter ahead.\" Where is that on the map? It depends on where the robot is and which way it faces."
+      },
+      {
+        "t": "key",
+        "html": "A <b>frame</b> is a point of view: an origin and axes. A point $(x_r, y_r)$ in the robot's frame, for a robot at $(x, y)$ facing angle $\\theta$, is on the map at <br>$x_m = x + x_r\\cos\\theta - y_r\\sin\\theta$, $\\ y_m = y + x_r\\sin\\theta + y_r\\cos\\theta$. <b>Rotate, then shift.</b>"
+      },
+      {
+        "t": "viz",
+        "name": "rb-frames",
+        "opts": {
+          "x": 2,
+          "y": 1,
+          "th": 30
+        },
+        "cap": "Move and turn the robot. The point its sensor sees stays fixed in the robot's frame but moves on the map."
+      },
+      {
+        "t": "why",
+        "html": "The rotation is a matrix multiplication, the same one taught on the Math Ladder. Robots chain many of these: camera to body, body to map. Every one is rotate, then shift."
+      },
+      {
+        "t": "ex",
+        "title": "Straight ahead",
+        "q": "Robot at (2, 1) facing 90° (straight up the map). Its sensor sees a point 1 m ahead: $(1, 0)$ in its frame.",
+        "steps": [
+          "$\\cos 90^\\circ = 0$, $\\sin 90^\\circ = 1$.",
+          "$x_m = 2 + 1 \\cdot 0 - 0 = 2$, $y_m = 1 + 1 \\cdot 1 + 0 = 2$."
+        ],
+        "a": "(2, 2)."
+      },
+      {
+        "t": "mistake",
+        "html": "Adding the robot's position but forgetting to rotate by its heading. That is only right when the robot faces along the map's $x$-axis."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Kevin M. Lynch and Frank C. Park, Modern Robotics: Mechanics, Planning, and Control (Cambridge University Press, 2017), free preprint and videos",
+        "url": "https://hades.mech.northwestern.edu/index.php/Modern_Robotics"
+      },
+      {
+        "name": "REP 103: Standard Units of Measure and Coordinate Conventions",
+        "url": "https://www.ros.org/reps/rep-0103.html"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

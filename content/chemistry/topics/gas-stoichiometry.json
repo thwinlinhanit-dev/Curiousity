@@ -1,0 +1,93 @@
+{
+  "id": "gchem1.gas-stoichiometry",
+  "slug": "gas-stoichiometry",
+  "ladder": "chemistry",
+  "course": "gchem1",
+  "unit": "gases",
+  "title": "Gas Stoichiometry",
+  "short": "Use PV = nRT to turn a volume of gas into moles inside a stoichiometry problem.",
+  "trouble": "Students use 22.4 L/mol at conditions that are not 0 °C and 1 atm.",
+  "prereqs": [
+    "chem.ideal-gas-law",
+    "chem.mass-stoichiometry"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-convert"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/chemistry/chemistry/mass-stoichiometry/\">Mass-to-Mass Stoichiometry</a> every road ran through moles. When a reactant or product is a gas, there is one more road into moles: its volume, through the <a href=\"/chemistry/chemistry/ideal-gas-law/\">The Ideal Gas Law</a>."
+      },
+      {
+        "t": "key",
+        "html": "For a gas, $n = \\dfrac{PV}{RT}$ and $V = \\dfrac{nRT}{P}$. Change the given amount to moles, use the mole ratio from the balanced equation, then change to the amount asked for. For two gases at the same temperature and pressure, volumes are in the same ratio as moles, so the coefficients compare volumes directly. The shortcut $22.4\\ \\text{L/mol}$ works only at $0^\\circ\\text{C}$ and 1 atm."
+      },
+      {
+        "t": "why",
+        "html": "$PV = nRT$ says that at fixed $T$ and $P$, the volume of a gas is proportional to its moles, whatever the gas. That is why Gay-Lussac found in 1808 that gases react in simple whole-number volume ratios, such as 2 volumes of hydrogen with 1 of oxygen. The value 22.4 L/mol is $RT/P$ at 273.15 K and 1 atm; at room temperature, 25 °C, a mole fills about 24.5 L instead, and at other pressures something else again."
+      },
+      {
+        "t": "viz",
+        "name": "ch-convert",
+        "opts": {
+          "mode": "map",
+          "eq": "CH4 + 2O2 -> CO2 + 2H2O",
+          "a": "CH4",
+          "b": "O2",
+          "from": "g",
+          "to": "Lgas",
+          "start": 10
+        },
+        "cap": "The mole map: grams of $\\mathrm{CH_4}$ to moles, across the bridge (1 : 2) to moles of $\\mathrm{O_2}$, then out to liters of gas."
+      },
+      {
+        "t": "ex",
+        "title": "From grams to liters",
+        "q": "What volume of $\\mathrm{O_2}$ at $25^\\circ\\text{C}$ and $1.00\\ \\text{atm}$ is needed to burn $10.0\\ \\text{g}$ of methane? $$\\mathrm{CH_4} + 2\\,\\mathrm{O_2} \\to \\mathrm{CO_2} + 2\\,\\mathrm{H_2O}$$",
+        "steps": [
+          "Moles of $\\mathrm{CH_4}$: $10.0/16.05 = 0.6231\\ \\text{mol}$.",
+          "Moles of $\\mathrm{O_2}$: $0.6231 \\times 2 = 1.246\\ \\text{mol}$.",
+          "$$V = \\dfrac{nRT}{P} = \\dfrac{(1.246)(0.08206)(298.15)}{1.00} = 30.5\\ \\text{L}$$"
+        ],
+        "a": "$30.5\\ \\text{L}$"
+      },
+      {
+        "t": "ex",
+        "title": "A gas product at another pressure",
+        "q": "Heating $25.0\\ \\text{g}$ of $\\mathrm{CaCO_3}$ ($100.09\\ \\text{g/mol}$) gives $\\mathrm{CaCO_3} \\to \\mathrm{CaO} + \\mathrm{CO_2}$. What volume of $\\mathrm{CO_2}$ forms, measured at $25^\\circ\\text{C}$ and $0.950\\ \\text{atm}$?",
+        "steps": [
+          "Moles: $25.0/100.09 = 0.2498\\ \\text{mol}\\ \\mathrm{CaCO_3}$, so $0.2498\\ \\text{mol}\\ \\mathrm{CO_2}$ (1 : 1).",
+          "$$V = \\dfrac{(0.2498)(0.08206)(298.15)}{0.950} = 6.43\\ \\text{L}$$"
+        ],
+        "a": "$6.43\\ \\text{L}$"
+      },
+      {
+        "t": "ex",
+        "title": "Volume to volume",
+        "q": "How many liters of $\\mathrm{NH_3}$ can $6.0\\ \\text{L}$ of $\\mathrm{H_2}$ make, with plenty of $\\mathrm{N_2}$, all gases at the same temperature and pressure? $$\\mathrm{N_2} + 3\\,\\mathrm{H_2} \\to 2\\,\\mathrm{NH_3}$$",
+        "steps": [
+          "At the same $T$ and $P$, volumes are proportional to moles.",
+          "$6.0\\ \\text{L}\\ \\mathrm{H_2} \\times \\dfrac{2\\ \\text{L}\\ \\mathrm{NH_3}}{3\\ \\text{L}\\ \\mathrm{H_2}} = 4.0\\ \\text{L}$."
+        ],
+        "a": "$4.0\\ \\text{L}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Using 22.4 L/mol at conditions that are not 0 °C and 1 atm. At 25 °C and 1 atm a mole of gas is 24.5 L, about 9% more, and at 2 atm it is half that. Check: use 22.4 only when the problem says STP or gives exactly 0 °C and 1 atm; otherwise use $PV = nRT$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 9.3 Stoichiometry of Gaseous Substances, Mixtures, and Reactions"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

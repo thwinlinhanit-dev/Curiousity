@@ -1,0 +1,83 @@
+{
+  "id": "g3.area-distributive",
+  "slug": "area-distributive",
+  "ladder": "math",
+  "course": "g3",
+  "unit": "area-perimeter",
+  "title": "Area and the Distributive Property",
+  "short": "Split a rectangle in two to find its area in parts.",
+  "trouble": "",
+  "prereqs": [
+    "g3.area-by-multiplying",
+    "g3.distributive-facts"
+  ],
+  "xp": 2,
+  "viz": [
+    "areamodel"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You <a href=\"/math/grade-3/distributive-facts/\">broke apart facts</a> like $7 \\times 6 = 5 \\times 6 + 2 \\times 6$, and you can find the <a href=\"/math/grade-3/area-by-multiplying/\">area of a rectangle</a>. Here the two ideas meet: cut a rectangle into two smaller rectangles."
+      },
+      {
+        "t": "viz",
+        "name": "areamodel",
+        "opts": {
+          "a": 6,
+          "b": [
+            5,
+            3
+          ],
+          "grid": true
+        },
+        "cap": "A 6-by-8 rectangle cut into a 6-by-5 part and a 6-by-3 part. $30 + 18 = 48$, the same as $6 \\times 8$."
+      },
+      {
+        "t": "why",
+        "html": "Cutting a rectangle does not change how much space it covers. The two pieces together cover exactly the whole. Both pieces are 6 tall, so their areas are $6 \\times 5$ and $6 \\times 3$. Adding them gives the whole area: $6 \\times 8 = 6 \\times 5 + 6 \\times 3$. This is the same break-apart idea, drawn as area."
+      },
+      {
+        "t": "key",
+        "html": "$a \\times (b + c) = a \\times b + a \\times c$. To find a big area, cut the rectangle into two easier rectangles and add their areas."
+      },
+      {
+        "t": "ex",
+        "title": "Cut the long side",
+        "q": "Find the area of a 6 by 8 rectangle by cutting 8 into $5 + 3$.",
+        "steps": [
+          "Left part: $6 \\times 5 = 30$.",
+          "Right part: $6 \\times 3 = 18$.",
+          "Whole: $30 + 18 = 48$."
+        ],
+        "a": "48 square units"
+      },
+      {
+        "t": "ex",
+        "title": "Bigger numbers",
+        "q": "Find $7 \\times 13$ using area.",
+        "steps": [
+          "Cut 13 into $10 + 3$.",
+          "$7 \\times 10 = 70$ and $7 \\times 3 = 21$.",
+          "$70 + 21 = 91$."
+        ],
+        "a": "91"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Adding a side instead of an area.</b> $6 \\times 5 + 3$ leaves out most of the right part: that part is 6 rows of 3, not just 3. Each part is a rectangle, so find each area by multiplying."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 3, 3.MD.C.7c (use area models to represent the distributive property)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

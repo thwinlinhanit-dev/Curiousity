@@ -1,0 +1,117 @@
+{
+  "id": "macro.real-interest-rate",
+  "slug": "real-interest-rate",
+  "ladder": "economics",
+  "course": "macro",
+  "unit": "money",
+  "title": "Nominal and Real Interest Rates",
+  "short": "The real interest rate is about the nominal rate minus the inflation rate.",
+  "trouble": "Students add inflation instead of subtracting it, or think a lender earning 5% gains 5% in buying power when inflation is 3%.",
+  "prereqs": [
+    "macro.financial-assets",
+    "macro.inflation-rate"
+  ],
+  "xp": 2,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A bond or a bank account pays a nominal interest rate in dollars. But <a href=\"/economics/macroeconomics/inflation-rate/\">inflation</a> shrinks what each dollar buys. To know what a saver really earns, combine the two, using <a href=\"/economics/macroeconomics/financial-assets/\">interest rates</a> and price changes."
+      },
+      {
+        "t": "key",
+        "html": "$$\\text{real interest rate} \\approx \\text{nominal interest rate} - \\text{inflation rate}$$ The nominal rate is the growth of your dollars; the real rate is the growth of your buying power. A lender who wants a real return of $r$ and expects inflation $\\pi^e$ charges about $r + \\pi^e$."
+      },
+      {
+        "t": "why",
+        "html": "Lend \\$100 at 5% for a year: you get \\$105 back. If prices rose 3%, something that cost \\$100 now costs \\$103, so your \\$105 buys only about 2% more than before. Exactly, $\\dfrac{1.05}{1.03} - 1 \\approx 1.94\\%$; for small rates, subtracting is close enough, and this course uses the subtraction rule. If inflation is higher than the nominal rate, the real rate is negative: savers lose buying power even though their balance grows."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "f": "n - x",
+          "fns": [
+            {
+              "f": "((1+n/100)/(1+x/100)-1)*100",
+              "color": "green",
+              "dash": true,
+              "label": "exact"
+            }
+          ],
+          "params": {
+            "n": [
+              0,
+              10,
+              5,
+              0.5
+            ]
+          },
+          "xmin": 0,
+          "xmax": 10,
+          "ymin": -6,
+          "ymax": 10,
+          "xlabel": "π (%)",
+          "ylabel": "Real rate (%)",
+          "zoom": false
+        },
+        "cap": "Inflation $\\pi$ is across the bottom. The real rate for a nominal rate $n$ (slider). The solid line subtracts; the dashed line is exact. Where inflation passes $n$, the real rate turns negative."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Finding the real rate",
+        "q": "A savings account pays 4.5% and inflation is 3%. What is the real interest rate?",
+        "steps": [
+          "$4.5\\% - 3\\% = 1.5\\%$.",
+          "Your buying power grows about 1.5% a year, not 4.5%."
+        ],
+        "a": "About 1.5%"
+      },
+      {
+        "t": "ex",
+        "title": "Expected versus actual",
+        "q": "A loan is made at 7%, when both sides expect 2% inflation. Inflation turns out to be 5%. Who gains?",
+        "steps": [
+          "Expected real rate: $7\\% - 2\\% = 5\\%$. Actual: $7\\% - 5\\% = 2\\%$.",
+          "The borrower pays a lower real rate than planned and gains; the lender loses."
+        ],
+        "a": "The borrower"
+      },
+      {
+        "t": "p",
+        "html": "Real rates matter for decisions. A firm deciding whether to borrow for a new machine compares the machine's return with the <i>real</i> cost of borrowing, because the machine's output will sell at future prices. Savers deciding between spending now and later care about how much more they can buy later: the real return."
+      },
+      {
+        "t": "mistake",
+        "html": "Adding inflation instead of subtracting it, or thinking a lender earning 5% gains 5% in buying power when inflation is 3%. Check: if prices rise faster than your balance, your buying power falls, so the real rate must be below the nominal rate when inflation is positive."
+      },
+      {
+        "t": "note",
+        "html": "See it with real data: the 10-year Treasury yield (nominal) and the 10-year inflation-protected Treasury yield (a market real rate) on the <a href=\"/markets/indicators/#s=DGS10:level,DFII10:level\">Economic Data</a> page. The gap between them is roughly the inflation that markets expect."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Macroeconomics 3e, 8.4 The Confusion Over Inflation"
+      },
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, 17.3 How Households Supply Financial Capital"
+      },
+      {
+        "name": "College Board, AP Macroeconomics Course and Exam Description (topic list)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

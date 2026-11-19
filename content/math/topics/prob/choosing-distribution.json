@@ -1,0 +1,133 @@
+{
+  "id": "prob.choosing-distribution",
+  "slug": "choosing-distribution",
+  "ladder": "math",
+  "course": "prob",
+  "unit": "discrete",
+  "title": "Choosing a Distribution",
+  "short": "Match the story to binomial, geometric, negative binomial, hypergeometric or Poisson.",
+  "trouble": "Students reach for the binomial whenever there are \"successes,\" without checking for a fixed number of independent trials with the same p.",
+  "prereqs": [
+    "prob.hypergeometric",
+    "prob.negative-binomial",
+    "prob.poisson-approximation"
+  ],
+  "xp": 2,
+  "viz": [],
+  "figureArchetype": "LessonFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Most word problems in this unit are solved the moment the right model is named. This lesson collects the <a href=\"/math/probability/hypergeometric/\">hypergeometric</a>, <a href=\"/math/probability/negative-binomial/\">negative binomial</a> and <a href=\"/math/probability/poisson-approximation/\">Poisson</a> models with the binomial and geometric, and gives a short set of questions for telling them apart."
+      },
+      {
+        "t": "key",
+        "html": "Ask in order: Is there a <b>fixed number of draws without replacement</b> from a finite group? Hypergeometric. A <b>fixed number $n$ of independent trials</b> with the same $p$, counting successes? Binomial. Trials <b>until the first success</b>? Geometric. <b>Until the $r$th</b>? Negative binomial. Events at random at a <b>steady rate</b> in time or space, with no fixed number of trials? Poisson."
+      },
+      {
+        "t": "why",
+        "html": "Each model is the exact answer for its story, and each formula uses the story's features. The binomial's $\\binom{n}{k}p^{k}(1 - p)^{n - k}$ needs independence and a constant $p$; without replacement those fail, and counting subsets replaces them. The waiting-time models fix the number of successes and let the number of trials vary; the binomial does the opposite. The Poisson is the limit of many tiny independent chances. Using a model whose story does not fit gives a precise-looking wrong answer."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Model",
+          "Story",
+          "$P(X = k)$",
+          "Mean",
+          "Variance"
+        ],
+        "rows": [
+          [
+            "Binomial",
+            "$n$ independent trials, count successes",
+            "$\\binom{n}{k}p^{k}(1 - p)^{n - k}$",
+            "$np$",
+            "$np(1 - p)$"
+          ],
+          [
+            "Geometric",
+            "trials until the first success",
+            "$(1 - p)^{k - 1}p$",
+            "$\\frac{1}{p}$",
+            "$\\frac{1 - p}{p^{2}}$"
+          ],
+          [
+            "Negative binomial",
+            "trials until the $r$th success",
+            "$\\binom{k - 1}{r - 1}p^{r}(1 - p)^{k - r}$",
+            "$\\frac{r}{p}$",
+            "$\\frac{r(1 - p)}{p^{2}}$"
+          ],
+          [
+            "Hypergeometric",
+            "$n$ draws without replacement, $K$ of $N$ special",
+            "$\\frac{\\binom{K}{k}\\binom{N - K}{n - k}}{\\binom{N}{n}}$",
+            "$\\frac{nK}{N}$",
+            "$n\\frac{K}{N}\\frac{N - K}{N}\\frac{N - n}{N - 1}$"
+          ],
+          [
+            "Poisson",
+            "random events at a steady rate",
+            "$e^{-\\lambda}\\frac{\\lambda^{k}}{k!}$",
+            "$\\lambda$",
+            "$\\lambda$"
+          ]
+        ],
+        "cap": "The five discrete models of this unit."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A card hand",
+        "q": "Five cards are dealt from a shuffled deck. $X$ is the number of hearts. Which model, and what is $E[X]$?",
+        "steps": [
+          "A fixed number of draws without replacement from 52 cards, 13 of them hearts: hypergeometric.",
+          "$E[X] = 5 \\cdot \\frac{13}{52} = \\frac{5}{4}$."
+        ],
+        "a": "Hypergeometric, mean $\\frac{5}{4}$."
+      },
+      {
+        "t": "ex",
+        "title": "Waiting for sixes",
+        "q": "Roll a die until the third six. $X$ is the number of rolls. Which model, and what is $E[X]$?",
+        "steps": [
+          "Independent trials, same $p = \\frac{1}{6}$, until the 3rd success: negative binomial with $r = 3$.",
+          "$E[X] = \\frac{3}{1/6} = 18$."
+        ],
+        "a": "Negative binomial, mean 18."
+      },
+      {
+        "t": "ex",
+        "title": "Two counts that look alike",
+        "q": "(a) The number of earthquakes above magnitude 5 in a region in a year. (b) The number of defective items in a sample of 10 from a shipment of 100,000. Which models?",
+        "steps": [
+          "(a) Events at random times at a steady average rate, no fixed number of trials: Poisson.",
+          "(b) Strictly hypergeometric, but 10 draws from 100,000 barely change the mix, so binomial with $n = 10$ is an excellent approximation."
+        ],
+        "a": "Poisson; binomial (as an approximation to the hypergeometric)."
+      },
+      {
+        "t": "mistake",
+        "html": "Reaching for the binomial whenever the word \"success\" appears. Before using it, check all four conditions: a fixed number of trials, two outcomes, independence, and the same $p$ every time. A question that says \"until\" has a random number of trials; one that says \"without replacement\" from a small group breaks independence."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Grinstead and Snell, Introduction to Probability (2nd revised edition, American Mathematical Society; free from Dartmouth College), chapter 5 (Distributions and Densities), section 5.1, important distributions"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.05, Introduction to Probability and Statistics (Spring 2014), readings on a gallery of discrete distributions"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,100 @@
+{
+  "id": "ra.sequence-limit",
+  "slug": "sequence-limit",
+  "ladder": "math",
+  "course": "ra",
+  "unit": "sequences",
+  "title": "The Definition of a Limit (ε–N)",
+  "short": "aₙ → L when for every ε > 0 there is an N with |aₙ − L| < ε for all n ≥ N; for a given ε you can find such an N and check it.",
+  "trouble": "Students check a single term instead of every term from N on, or think there is only one right N. Any larger N works too.",
+  "prereqs": [
+    "ra.completeness",
+    "calc2.sequences",
+    "disc.nested-quantifiers"
+  ],
+  "xp": 2,
+  "viz": [
+    "ra-epsband"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/math/calculus-2/sequences/\">Calculus 2</a> you said $a_n \\to L$ when the terms \"get closer and closer\" to $L$. That phrase is not precise enough to prove anything: $1 + \\frac{1}{n}$ gets closer and closer to $0$ as well, without ever getting close. The fix is a definition with two quantifiers, the kind you read in <a href=\"/math/discrete-math/nested-quantifiers/\">Discrete Math</a>, and it rests on the <a href=\"/math/real-analysis/completeness/\">Archimedean property</a>."
+      },
+      {
+        "t": "key",
+        "html": "$a_n \\to L$ means: <b>for every $\\varepsilon > 0$ there is an $N$ such that $|a_n - L| < \\varepsilon$ for every $n \\ge N$.</b> The $\\varepsilon$ is a challenge (how close?), and $N$ is the answer (from where on?). If one $N$ works, every larger $N$ works too."
+      },
+      {
+        "t": "why",
+        "html": "Read the definition as a game. A skeptic names a tolerance $\\varepsilon$, as tiny as they like. You must answer with a point $N$ in the sequence beyond which <b>every</b> term stays within $\\varepsilon$ of $L$, not just one term, and not just most of them. A sequence converges to $L$ when you can always win, whatever $\\varepsilon$ the skeptic picks. For $1 + \\frac{1}{n}$ and $L = 0$ the skeptic wins with $\\varepsilon = \\frac{1}{2}$: every term is more than $1$ away from $0$."
+      },
+      {
+        "t": "viz",
+        "name": "ra-epsband",
+        "opts": {
+          "f": "(2n+1)/(n+3)",
+          "L": "2",
+          "eps": 0.2,
+          "N": 10,
+          "nmax": 50
+        },
+        "cap": "Terms of $a_n = \\frac{2n + 1}{n + 3}$ with the band $L \\pm \\varepsilon$ around $L = 2$. Drag $N$ (or use the arrow keys): terms from $N$ on turn green inside the band and red outside. Shrink $\\varepsilon$ and watch the smallest working $N$ grow."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Finding $N$ for one $\\varepsilon$",
+        "q": "Let $a_n = \\frac{2n + 1}{n + 3}$, so $L = 2$. Find an $N$ that works for $\\varepsilon = 0.01$.",
+        "steps": [
+          "$a_n - 2 = \\frac{2n + 1 - 2(n + 3)}{n + 3} = \\frac{-5}{n + 3}$, so $|a_n - 2| = \\frac{5}{n + 3}$.",
+          "$\\frac{5}{n + 3} < 0.01$ means $n + 3 > 500$, that is, $n > 497$.",
+          "Since $\\frac{5}{n + 3}$ decreases, every $n \\ge 498$ works, and $n = 497$ gives exactly $0.01$, which is not less than $0.01$."
+        ],
+        "a": "$N = 498$ (or any larger $N$)."
+      },
+      {
+        "t": "ex",
+        "title": "Checking a proposed $N$",
+        "q": "For $a_n = \\frac{1}{n^{2}}$ ($L = 0$) and $\\varepsilon = 0.001$, does $N = 30$ work?",
+        "steps": [
+          "$|a_n - 0| = \\frac{1}{n^{2}} < 0.001$ means $n^{2} > 1000$, that is, $n \\ge 32$.",
+          "At $n = 30$ the distance is $\\frac{1}{900} \\approx 0.0011$, which is not below $0.001$."
+        ],
+        "a": "No. The smallest $N$ that works is $32$."
+      },
+      {
+        "t": "ex",
+        "title": "A sequence that zigzags",
+        "q": "Let $a_n = \\frac{3 + 2(-1)^{n}}{n}$, with limit $0$. Find the smallest $N$ that works for $\\varepsilon = 0.1$.",
+        "steps": [
+          "For even $n$, $|a_n| = \\frac{5}{n}$; for odd $n$, $|a_n| = \\frac{1}{n}$. The distances are not monotone.",
+          "Even $n$: need $\\frac{5}{n} < 0.1$, so $n > 50$; the last even failure is $n = 50$. Odd $n$: $\\frac{1}{n} < 0.1$ once $n > 10$; the last odd failure is $n = 9$.",
+          "The last failing index is $50$, so every $n \\ge 51$ works."
+        ],
+        "a": "$N = 51$."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Checking one term instead of all the later ones.</b> In the zigzag example, $|a_{11}| = \\frac{1}{11} < 0.1$, but $N = 11$ fails because $a_{12}, a_{14}, \\ldots$ are still too far. Always ask: does the inequality hold for <b>every</b> $n \\ge N$? The opposite slip is thinking there is one correct $N$. If $N = 498$ works, so do $499$ and $10^{6}$; a definition that says \"there is an $N$\" never needs the smallest one."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Jiří Lebl, Basic Analysis I: Introduction to Real Analysis, section 2.1 (sequences and limits)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.100A Real Analysis, lecture notes on convergent sequences"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,109 @@
+{
+  "id": "alg1.piecewise-functions",
+  "slug": "piecewise-functions",
+  "ladder": "math",
+  "course": "alg1",
+  "unit": "functions",
+  "title": "Piecewise Functions",
+  "short": "Use the rule that matches the input's interval.",
+  "trouble": "Students evaluate with the wrong piece at a boundary because they ignore whether the endpoint is included.",
+  "prereqs": [
+    "alg1.domain-range",
+    "alg1.compound-inequalities"
+  ],
+  "xp": 2,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Some rules change partway along. A phone plan might charge one price up to a data limit and another after it. A <b>piecewise function</b> uses different formulas on different parts of its <a href=\"/math/algebra-1/domain-range/\">domain</a>, and the parts are described with inequalities, like the ones in <a href=\"/math/algebra-1/compound-inequalities/\">compound inequalities</a>."
+      },
+      {
+        "t": "p",
+        "html": "For example, $$f(x) = \\begin{cases} x + 2 & \\text{if } x < 1 \\\\ 3 - x & \\text{if } x \\ge 1 \\end{cases}$$ uses $x + 2$ for inputs less than $1$ and $3 - x$ for inputs of $1$ or more."
+      },
+      {
+        "t": "why",
+        "html": "A function must give exactly one output for each input, so the conditions must not overlap and each input must land in exactly one piece. That is why boundaries matter: in the example, $x = 1$ belongs to the second piece ($x \\ge 1$), not the first ($x < 1$). On the graph, a filled dot marks an endpoint that is included and an open dot marks one that is not."
+      },
+      {
+        "t": "viz",
+        "name": "alg1-piecewise",
+        "opts": {
+          "pieces": [
+            {
+              "f": "x+2",
+              "tex": "x + 2",
+              "to": 1,
+              "inTo": false
+            },
+            {
+              "f": "3-x",
+              "tex": "3 - x",
+              "from": 1,
+              "inFrom": true
+            }
+          ],
+          "probe": 1,
+          "xmin": -5,
+          "xmax": 6,
+          "ymin": -4,
+          "ymax": 6
+        },
+        "cap": "Drag the input. At $x = 1$ the open dot shows that $x + 2$ is not used; the filled dot shows $f(1) = 3 - 1 = 2$."
+      },
+      {
+        "t": "key",
+        "html": "To evaluate a piecewise function, first find the condition the input satisfies, then use only that piece's formula."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Evaluating, including a boundary",
+        "q": "For $f$ above, find $f(-3)$, $f(1)$ and $f(4)$.",
+        "steps": [
+          "$-3 < 1$, so use $x + 2$: $f(-3) = -1$.",
+          "$1 \\ge 1$, so use $3 - x$: $f(1) = 2$.",
+          "$4 \\ge 1$, so use $3 - x$: $f(4) = -1$."
+        ],
+        "a": "$f(-3) = -1$, $f(1) = 2$, $f(4) = -1$."
+      },
+      {
+        "t": "ex",
+        "title": "Three pieces",
+        "q": "$$g(x) = \\begin{cases} -2x & \\text{if } x < 0 \\\\ x^2 & \\text{if } 0 \\le x \\le 2 \\\\ 6 & \\text{if } x > 2 \\end{cases}$$ Find $g(-1) + g(2) + g(3)$.",
+        "steps": [
+          "$-1 < 0$: $g(-1) = -2(-1) = 2$.",
+          "$2$ satisfies $0 \\le x \\le 2$: $g(2) = 2^2 = 4$.",
+          "$3 > 2$: $g(3) = 6$.",
+          "Sum: $2 + 4 + 6 = 12$."
+        ],
+        "a": "$12$"
+      },
+      {
+        "t": "mistake",
+        "html": "Using the wrong piece at a boundary because the endpoint symbols were skipped. At $x = 1$ above, $1 < 1$ is false, so the first piece does not apply at all. Check: the input must make its piece's condition true."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Algebra 2e, section 3.2 Domain and Range (piecewise-defined functions)"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, F-IF.C.7b: graph piecewise-defined functions, including step and absolute value functions"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

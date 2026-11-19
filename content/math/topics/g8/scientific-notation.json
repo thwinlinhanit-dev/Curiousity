@@ -1,0 +1,105 @@
+{
+  "id": "g8.scientific-notation",
+  "slug": "scientific-notation",
+  "ladder": "math",
+  "course": "g8",
+  "unit": "exponents",
+  "title": "Scientific Notation",
+  "short": "Write numbers as a × 10ⁿ with 1 ≤ a < 10.",
+  "trouble": "Students move the decimal point the wrong way for small numbers, or leave a first factor like 45 × 10³.",
+  "prereqs": [
+    "g8.zero-negative-exponents",
+    "g5.multiply-divide-powers-of-ten"
+  ],
+  "xp": 1,
+  "viz": [
+    "placevalue"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Light travels about 300,000,000 meters each second. A small bacterium can be about 0.000002 meter long. Numbers like these are easy to misread, because you have to count zeros. Scientific notation writes them as a short number times a power of 10: $3 \\times 10^{8}$ and $2 \\times 10^{-6}$."
+      },
+      {
+        "t": "p",
+        "html": "It rests on <a href=\"/math/grade-5/multiply-divide-powers-of-ten/\">multiplying and dividing by powers of 10</a>: each factor of 10 moves every digit one place."
+      },
+      {
+        "t": "key",
+        "html": "A number is in <b>scientific notation</b> when it is written as $a \\times 10^{n}$, where $1 \\le a < 10$ and $n$ is an integer. Big numbers get a positive $n$. Numbers between 0 and 1 get a negative $n$."
+      },
+      {
+        "t": "why",
+        "html": "$3.08 \\times 10^{6}$ multiplies 3.08 by 10 six times, which moves its digits six places to the left: 3,080,000. A <a href=\"/math/pre-algebra/zero-negative-exponents/\">negative exponent</a> divides instead: $10^{-4} = \\frac{1}{10{,}000}$, so $5.06 \\times 10^{-4}$ moves the digits four places to the right: 0.000506."
+      },
+      {
+        "t": "viz",
+        "name": "placevalue",
+        "opts": {
+          "n": "4.5",
+          "hi": 4,
+          "lo": -1,
+          "shift": true,
+          "edit": false,
+          "words": false
+        },
+        "cap": "Press “× 10” four times: 4.5 becomes 45,000. So $45{,}000 = 4.5 \\times 10^{4}$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A big number",
+        "q": "Write $3{,}080{,}000$ in scientific notation.",
+        "steps": [
+          "Put the decimal point after the first nonzero digit: $3.08$, which is between 1 and 10.",
+          "From 3.08 to 3,080,000 the point moves 6 places to the right.",
+          "So $3{,}080{,}000 = 3.08 \\times 10^{6}$."
+        ],
+        "a": "$3.08 \\times 10^{6}$"
+      },
+      {
+        "t": "ex",
+        "title": "A small number",
+        "q": "Write $0.000506$ in scientific notation.",
+        "steps": [
+          "The first factor is $5.06$.",
+          "To get from 5.06 back to 0.000506, the point moves 4 places to the <b>left</b>, which is dividing by $10^{4}$.",
+          "Dividing by $10^{4}$ is multiplying by $10^{-4}$."
+        ],
+        "a": "$5.06 \\times 10^{-4}$"
+      },
+      {
+        "t": "ex",
+        "title": "Back to standard form",
+        "q": "Write $6.1 \\times 10^{-3}$ as an ordinary decimal.",
+        "steps": [
+          "A negative exponent: the number is less than 1.",
+          "Move the point 3 places left, filling with zeros."
+        ],
+        "a": "$0.0061$"
+      },
+      {
+        "t": "mistake",
+        "html": "Two common slips. (1) Using a positive exponent for a small number: $0.0045 = 4.5 \\times 10^{3}$ is wrong, because $4.5 \\times 10^{3}$ is 4,500. A number less than 1 needs a negative exponent: $4.5 \\times 10^{-3}$. (2) Stopping at $45 \\times 10^{3}$. It equals 45,000, but 45 is not less than 10. Move one more place: $4.5 \\times 10^{4}$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Prealgebra 2e, Section 10.5: Integer Exponents and Scientific Notation"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 8, 8.EE.A.3 (numbers as a single digit times a power of 10)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

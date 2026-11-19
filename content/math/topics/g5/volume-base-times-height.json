@@ -1,0 +1,86 @@
+{
+  "id": "g5.volume-base-times-height",
+  "slug": "volume-base-times-height",
+  "ladder": "math",
+  "course": "g5",
+  "unit": "volume",
+  "title": "Volume as Base Area Times Height",
+  "short": "V = B × h: the area of one layer times the number of layers.",
+  "trouble": "",
+  "prereqs": [
+    "g5.volume-of-prism"
+  ],
+  "xp": 2,
+  "viz": [
+    "volume"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You know <a href=\"/math/grade-5/volume-of-prism/\">$V = l \times w \times h$</a>. Grouping the first two factors gives another useful way to see the same formula."
+      },
+      {
+        "t": "key",
+        "html": "$V = B \\times h$, where $B$ is the area of the base and $h$ is the height. The base area is the number of cubes in one layer; the height is the number of layers."
+      },
+      {
+        "t": "why",
+        "html": "$l \\times w$ is the area of the bottom rectangle, and it is also the number of unit cubes that sit on it in one layer. Stacking $h$ such layers gives $B \\times h$ cubes. Multiplying in a different order, $(l \\times w) \\times h = l \\times (w \\times h)$, gives the same volume, so you can stand the box on any face."
+      },
+      {
+        "t": "viz",
+        "name": "volume",
+        "opts": {
+          "l": 5,
+          "w": 3,
+          "h": 4,
+          "layers": true
+        },
+        "cap": "Each colored layer is the base, $5 \\times 3 = 15$ cubes. Four layers: $15 \\times 4 = 60$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Base area given",
+        "q": "A prism has a base area of 24 square cm and a height of 5 cm. Find its volume.",
+        "steps": [
+          "$V = B \\times h = 24 \\times 5$.",
+          "$24 \\times 5 = 120$."
+        ],
+        "a": "120 cubic centimeters"
+      },
+      {
+        "t": "ex",
+        "title": "Find the height",
+        "q": "A box has a volume of 120 cubic inches and a base area of 20 square inches. How tall is it?",
+        "steps": [
+          "$V = B \\times h$, so $120 = 20 \\times h$.",
+          "$120 \\div 20 = 6$: there are 6 layers of 20 cubes."
+        ],
+        "a": "6 inches"
+      },
+      {
+        "t": "mistake",
+        "html": "Multiplying the base area by another side of the base instead of the height. The base area already uses the length and width; the third factor must be the height, the number of layers. Check: name what each number measures before you multiply."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Prealgebra 2e, 9.6 Solve Geometry Applications: Volume and Surface Area"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 5.MD.C.5a: show that the volume is the same as the area of the base times the height"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

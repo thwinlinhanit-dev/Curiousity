@@ -1,0 +1,114 @@
+[
+  {
+    "key": "title",
+    "source": "The Planck Function"
+  },
+  {
+    "key": "short",
+    "source": "B_λ(T) gives a blackbody's spectrum; its peak gives Wien's law and its area gives σT⁴."
+  },
+  {
+    "key": "trouble",
+    "source": "Students think a hotter blackbody is brighter only at short wavelengths, when it is brighter at every wavelength."
+  },
+  {
+    "key": "block.0.html",
+    "source": "In <a href=\"/physics/waves-optics-modern-physics/planck-blackbody/\">Planck and Blackbody Radiation</a> you saw why quantized energies give the blackbody spectrum. Astrophysicists use the result as a working tool. It tells a star's temperature from its color, its power from its size, and it describes the oldest light in the universe."
+  },
+  {
+    "key": "block.1.html",
+    "source": "The <b>Planck function</b> gives the power emitted per unit area, per unit wavelength, per unit solid angle: $$B_\\lambda(T) = \\frac{2hc^2}{\\lambda^5}\\,\\frac{1}{e^{hc/\\lambda kT} - 1}.$$ Its peak gives Wien's law, $\\lambda_{\\max}T = 2.898 \\times 10^{-3}$ m·K, and its area gives the flux $F = \\pi\\int_0^\\infty B_\\lambda\\,d\\lambda = \\sigma T^4$."
+  },
+  {
+    "key": "block.2.text",
+    "source": "Where the peak comes from"
+  },
+  {
+    "key": "block.3.html",
+    "source": "Write $x = hc/(\\lambda kT)$. Then $1/\\lambda^5 = (kT/hc)^5x^5$, so at a fixed temperature $$B_\\lambda = 2hc^2\\left(\\frac{kT}{hc}\\right)^{5}\\frac{x^5}{e^x - 1}.$$ Finding the peak means maximizing $x^5/(e^x - 1)$. Setting the derivative to zero gives $5(e^x - 1) = xe^x$, or $x = 5(1 - e^{-x})$. Start at $x = 5$ and iterate: $5(1 - e^{-5}) = 4.966$, then $4.965$. So the peak sits at $x = 4.965$, which means $\\lambda_{\\max}T = hc/(4.965\\,k) = 2.898 \\times 10^{-3}$ m·K. The peak wavelength is inversely proportional to temperature."
+  },
+  {
+    "key": "block.4.text",
+    "source": "Where σT⁴ comes from"
+  },
+  {
+    "key": "block.5.html",
+    "source": "Integrate over all wavelengths, substituting $\\lambda = hc/(xkT)$: $$\\int_0^\\infty B_\\lambda\\,d\\lambda = \\frac{2k^4T^4}{h^3c^2}\\int_0^\\infty \\frac{x^3}{e^x - 1}\\,dx.$$ This is an <a href=\"/math/calculus-2/improper-integrals/\">improper integral</a>, and it converges: near $0$ the integrand behaves like $x^2$, and for large $x$ it dies off like $x^3e^{-x}$. Its value is $\\pi^4/15$. Multiplying by $\\pi$ (to add up the light leaving a surface in every outward direction) gives $F = \\sigma T^4$ with $\\sigma = 2\\pi^5k^4/(15h^3c^2) = 5.67 \\times 10^{-8}$ W/(m²·K⁴). The temperature comes out as $T^4$ because the substitution pulled out $T^5$ from the curve's height and $1/T$ from its width."
+  },
+  {
+    "key": "block.6.cap",
+    "source": "Planck curves at 3,500 K, 5,772 K (the Sun) and 8,000 K. The curves never cross: the hotter body is brighter at every wavelength, and its peak moves toward the blue."
+  },
+  {
+    "key": "block.7.text",
+    "source": "Worked examples"
+  },
+  {
+    "key": "block.8.q",
+    "source": "Where does the Sun's spectrum ($T = 5772$ K) peak?"
+  },
+  {
+    "key": "block.8.title",
+    "source": "The Sun's peak"
+  },
+  {
+    "key": "block.8.a",
+    "source": "About 502 nm, blue-green light. (Plotted per unit frequency instead, the peak lands elsewhere, so \"the Sun's peak color\" depends on how you plot it.)"
+  },
+  {
+    "key": "block.8.step.0",
+    "source": "$\\lambda_{\\max} = (2.898 \\times 10^{-3}\\text{ m·K})/(5772\\text{ K})$."
+  },
+  {
+    "key": "block.8.step.1",
+    "source": "$= 5.02 \\times 10^{-7}$ m."
+  },
+  {
+    "key": "block.9.q",
+    "source": "At $\\lambda = 500$ nm, compare $B_\\lambda$ for 8,000 K and 4,000 K. Use $hc/k = 1.4388 \\times 10^{-2}$ m·K."
+  },
+  {
+    "key": "block.9.title",
+    "source": "Hotter is brighter at every wavelength"
+  },
+  {
+    "key": "block.9.a",
+    "source": "Doubling the temperature raises the 500 nm output about 37 times, far more than 2 times."
+  },
+  {
+    "key": "block.9.step.0",
+    "source": "The factor $2hc^2/\\lambda^5$ cancels in the ratio; only $1/(e^x - 1)$ changes."
+  },
+  {
+    "key": "block.9.step.1",
+    "source": "$$x_{4000} = \\frac{1.4388 \\times 10^{-2}}{(5.00 \\times 10^{-7})(4000)} = 7.194,$$ and half that at 8,000 K: $x_{8000} = 3.597$."
+  },
+  {
+    "key": "block.9.step.2",
+    "source": "Ratio $= (e^{7.194} - 1)/(e^{3.597} - 1) = 1330/35.5 \\approx 37.5$."
+  },
+  {
+    "key": "block.10.q",
+    "source": "Repeat the comparison at $\\lambda = 1$ cm, a radio wavelength."
+  },
+  {
+    "key": "block.10.title",
+    "source": "The long-wavelength limit"
+  },
+  {
+    "key": "block.10.a",
+    "source": "The ratio is $2.00$: at long wavelengths the hotter body is brighter only in proportion to its temperature."
+  },
+  {
+    "key": "block.10.step.0",
+    "source": "Now $$x_{4000} = \\frac{1.4388 \\times 10^{-2}}{(0.01)(4000)} = 3.6 \\times 10^{-4},$$ which is tiny."
+  },
+  {
+    "key": "block.10.step.1",
+    "source": "For small $x$, $e^x - 1 \\approx x$, so $B_\\lambda \\approx 2ckT/\\lambda^4$ (the Rayleigh–Jeans law), proportional to $T$."
+  },
+  {
+    "key": "block.11.html",
+    "source": "Thinking a hotter blackbody is brighter only at short wavelengths, because its peak moves to the blue. In fact $B_\\lambda$ grows with $T$ at <b>every</b> wavelength: raising $T$ lowers $x = hc/\\lambda kT$, which lowers $e^x - 1$ and raises $B_\\lambda$. The curves for different temperatures never cross. Check with the examples above: the hotter body wins at 500 nm and at 1 cm."
+  }
+]

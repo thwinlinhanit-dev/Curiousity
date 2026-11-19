@@ -1,0 +1,118 @@
+{
+  "id": "sym.equivalence",
+  "slug": "equivalence",
+  "ladder": "logic",
+  "course": "sym",
+  "unit": "truth-tables",
+  "title": "Logical Equivalence",
+  "short": "Two formulas are logically equivalent when they have the same truth value in every row; then their biconditional is a tautology.",
+  "trouble": "Learners compare only the rows where a formula is true, or decide two formulas are equivalent because they look alike.",
+  "prereqs": [
+    "sym.tautology-contradiction"
+  ],
+  "xp": 2,
+  "viz": [
+    "lg-truthtable"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Two formulas can look different and still say the same thing. Truth tables (<a href=\"/logic/symbolic-logic/tautology-contradiction/\">Tautologies, Contradictions and Contingent Statements</a>) let us make that precise."
+      },
+      {
+        "t": "key",
+        "html": "Two formulas are <b>logically equivalent</b> when they have the same truth value in every row of a joint truth table. Then their biconditional is a tautology."
+      },
+      {
+        "t": "why",
+        "html": "A formula's meaning, as far as logic is concerned, is its column: the rows where it is true. If two formulas have identical columns, there is no situation in which one is true and the other false, so either one can stand in for the other in any argument. That is also exactly when $A \\leftrightarrow B$ is true in every row, since a biconditional is true when the sides match."
+      },
+      {
+        "t": "viz",
+        "name": "lg-truthtable",
+        "opts": {
+          "formulas": [
+            "p → q",
+            "¬p ∨ q"
+          ],
+          "sub": true
+        },
+        "cap": "Equivalent: the two main columns match in every row."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Conditional and disjunction",
+        "q": "Are $p \\to q$ and $\\neg p \\lor q$ equivalent?",
+        "steps": [
+          "Column for $p \\to q$: T, F, T, T.",
+          "Column for $\\neg p \\lor q$: $\\neg p$ is F, F, T, T, so the disjunction is T, F, T, T.",
+          "The columns match."
+        ],
+        "a": "Equivalent"
+      },
+      {
+        "t": "ex",
+        "title": "A look-alike that is not",
+        "q": "Are $(p \\land q) \\to r$ and $(p \\to q) \\to r$ equivalent?",
+        "steps": [
+          "Try the row $p$ F, $q$ F, $r$ F.",
+          "$(p \\land q) \\to r$: F → F is T.",
+          "$(p \\to q) \\to r$: $p \\to q$ is T, and T → F is F."
+        ],
+        "a": "Not equivalent: they differ in that row."
+      },
+      {
+        "t": "ex",
+        "title": "Use the biconditional",
+        "q": "How could you test the first example with one column?",
+        "steps": [
+          "Build $(p \\to q) \\leftrightarrow (\\neg p \\lor q)$.",
+          "If it is T in every row, the two are equivalent."
+        ],
+        "a": "It is a tautology, so they are equivalent."
+      },
+      {
+        "t": "ex",
+        "title": "Two ways to say if and only if",
+        "q": "Are $p \\leftrightarrow q$ and $(p \\land q) \\lor (\\neg p \\land \\neg q)$ equivalent?",
+        "steps": [
+          "$p \\leftrightarrow q$ is T when the values match: rows TT and FF.",
+          "$(p \\land q) \\lor (\\neg p \\land \\neg q)$ is T when both are T or both are F: the same two rows.",
+          "Both are F in the other two rows."
+        ],
+        "a": "Equivalent"
+      },
+      {
+        "t": "p",
+        "html": "Notice the difference between being equivalent and merely having the same value in one row. In the row where $p$ and $q$ are both true, $p \\land q$ and $p \\lor q$ are both T, but they are not equivalent: in the row $p$ T, $q$ F they differ. Equivalence is a claim about every row."
+      },
+      {
+        "t": "mistake",
+        "html": "Comparing only the rows where the formulas are true, or deciding by how alike they look. Two formulas can share every T row and still differ where one is F and the other T only if you skipped rows; check every row, T and F alike. And look-alikes are often not equivalent: $(p \\land q) \\to r$ and $(p \\to q) \\to r$ differ, as the second example shows."
+      },
+      {
+        "t": "p",
+        "html": "Equivalences are the raw material of the rules of replacement later in the course (<a href=\"/logic/symbolic-logic/replacement-intro/\">Rules of Replacement</a>). Each of those rules is a pair of equivalent forms, checked once by a truth table and then used anywhere."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Patrick J. Hurley and Lori Watson, A Concise Introduction to Logic, 13th ed., section 6.3, comparing statements"
+      },
+      {
+        "name": "forall x: Calgary, an open introduction to formal logic (P. D. Magnus, Tim Button and others; Open Logic Project), chapter on semantic concepts, equivalence"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

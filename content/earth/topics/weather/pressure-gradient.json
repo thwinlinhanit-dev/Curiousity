@@ -1,0 +1,87 @@
+{
+  "id": "weather.pressure-gradient",
+  "slug": "pressure-gradient",
+  "ladder": "earth",
+  "course": "weather",
+  "unit": "pressure-wind",
+  "title": "The Pressure Gradient Force",
+  "short": "Air is pushed from high toward low pressure, harder where the isobars are close together.",
+  "trouble": "Students think wind blows straight from high to low pressure; that is only how it starts, before Earth's spin turns it.",
+  "prereqs": [
+    "earthsci.wind",
+    "weather.pressure-units",
+    "g8.slope-rate-of-change"
+  ],
+  "xp": 2,
+  "viz": [
+    "es-wind"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You know from Earth Science that <a href=\"/earth-and-space/earth-science/wind/\">wind blows from high to low pressure</a>. Here we measure that push. On a weather map, lines of equal <a href=\"/earth-and-space/weather-and-climate/pressure-units/\">pressure</a> called <b>isobars</b> are drawn every 4 hPa. The pressure gradient is how fast the pressure changes across them: a <a href=\"/math/pre-algebra/slope-rate-of-change/\">rate of change</a> with distance."
+      },
+      {
+        "t": "key",
+        "html": "The <b>pressure gradient force</b> pushes air from high toward low pressure, straight across the isobars. Its size per kilogram of air is $$a = \\frac{1}{\\rho}\\,\\frac{\\Delta p}{\\Delta n}$$ where $\\Delta p$ is the pressure difference (in Pa) across a distance $\\Delta n$ (in m) and $\\rho$ is the air's density. Where isobars are <b>close together</b>, the gradient and the push are strong, and winds are strong."
+      },
+      {
+        "t": "why",
+        "html": "Picture a box of air with high pressure on its west face and lower pressure on its east face. The air on the west pushes harder than the air on the east, so the box feels a net push eastward, toward the low. Double the pressure difference, or halve the distance it is spread over, and the net push doubles. Dividing by the density turns force into acceleration: the same push moves thin air faster than dense air."
+      },
+      {
+        "t": "viz",
+        "name": "es-wind",
+        "opts": {
+          "mode": "isobars",
+          "forces": true
+        },
+        "cap": "Isobars around a high and a low. The pressure gradient force (arrow) points straight across the isobars toward the low and is strongest where they crowd together. Change the spacing to see the push grow and shrink."
+      },
+      {
+        "t": "ex",
+        "title": "Reading the gradient",
+        "q": "Two isobars, 1012 hPa and 1008 hPa, are 200 km apart. What is the pressure gradient in hPa per 100 km?",
+        "steps": [
+          "Pressure difference: $1012 - 1008 = 4$ hPa.",
+          "Per 100 km: $4 \\div 200 \\times 100 = 2$ hPa per 100 km."
+        ],
+        "a": "2 hPa per 100 km"
+      },
+      {
+        "t": "ex",
+        "title": "How hard is the push?",
+        "q": "For that gradient, with air density 1.2 kg/m³, what acceleration does the pressure gradient give the air?",
+        "steps": [
+          "$\\Delta p = 4$ hPa = 400 Pa; $\\Delta n = 200$ km = 200,000 m.",
+          "$a = \\dfrac{400}{1.2 \\times 200{,}000} \\approx 0.0017$ m/s².",
+          "Small, but acting for an hour (3600 s) it would add about 6 m/s of speed if nothing pushed back."
+        ],
+        "a": "About 0.0017 m/s²"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking wind blows straight from high to low pressure. The pressure gradient force does point straight across the isobars, and that is how air <b>starts</b> to move. But as soon as it moves, Earth's spin turns it (the next lesson), and above the ground it ends up blowing <b>along</b> the isobars. Check: on a weather map, upper-level winds follow the lines, and surface winds cross them only at a slant."
+      },
+      {
+        "t": "note",
+        "html": "Pressure differences that drive the wind are small: a strong gradient is only a few hectopascals per 100 km, less than 1% of the total pressure. A hurricane's eye can be 50 to 100 hPa below its surroundings across a short distance, which is why its winds are so violent."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "NOAA National Weather Service, JetStream online school for weather: Wind: the pressure gradient force"
+      },
+      {
+        "name": "Wallace and Hobbs, Atmospheric Science: An Introductory Survey, 2nd ed., chapter 7 (atmospheric dynamics: the forces on the air)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

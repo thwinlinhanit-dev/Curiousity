@@ -1,0 +1,110 @@
+[
+  {
+    "key": "title",
+    "source": "Dielectrics"
+  },
+  {
+    "key": "short",
+    "source": "A dielectric weakens the field by κ and raises C to κC; with the battery connected Q grows, but disconnected V drops."
+  },
+  {
+    "key": "trouble",
+    "source": "Students don't track what stays fixed: Q when the capacitor is isolated, V when the battery stays connected."
+  },
+  {
+    "key": "block.0.html",
+    "source": "Fill the gap of a <a href=\"/physics/electricity-and-magnetism/capacitance-geometry/\">capacitor</a> with an insulator such as glass, plastic or oil, and its capacitance goes up by a factor $\\kappa$, the material's <b>dielectric constant</b>. What else changes depends on one question: is the battery still connected?"
+  },
+  {
+    "key": "block.1.html",
+    "source": "A dielectric that fills the gap gives $C = \\kappa C_0$.\n        <br><b>Battery connected</b> (fixed $V$): $Q \\to \\kappa Q_0$ and $U = \\tfrac{1}{2}CV^2 \\to \\kappa U_0$.\n        <br><b>Isolated</b> (fixed $Q$): $V \\to V_0/\\kappa$, $E \\to E_0/\\kappa$ and $U = Q^2/(2C) \\to U_0/\\kappa$."
+  },
+  {
+    "key": "block.2.html",
+    "source": "An insulator has no free electrons, but its molecules can stretch or turn. In the field between the plates they line up a little, positive ends toward the negative plate. Inside the material these tiny dipoles cancel each other, but at the two faces a thin layer of <b>bound charge</b> is left over, opposite in sign to the nearby plate. That bound charge cancels part of the plates' field. With a weaker field for the same free charge, the voltage is smaller, and $C = Q/V$ is larger."
+  },
+  {
+    "key": "block.3.cap",
+    "source": "A capacitor with a removable dielectric ($\\kappa = 3$). Connected, $V$ stays at $12\\ \\text{V}$ and $Q$ triples; disconnected, $Q$ is trapped and $V$ drops."
+  },
+  {
+    "key": "block.4.cap",
+    "source": "What a dielectric that fills the gap does in each case."
+  },
+  {
+    "key": "block.5.text",
+    "source": "Worked examples"
+  },
+  {
+    "key": "block.6.q",
+    "source": "A $50\\ \\text{pF}$ air capacitor is charged to $12\\ \\text{V}$, disconnected, and filled with a dielectric of $\\kappa = 3.0$. Find the new voltage and energy."
+  },
+  {
+    "key": "block.6.title",
+    "source": "Isolated"
+  },
+  {
+    "key": "block.6.a",
+    "source": "$4.0\\ \\text{V}$, $1.2\\ \\text{nJ}$"
+  },
+  {
+    "key": "block.6.step.0",
+    "source": "$Q = C_0V_0 = 600\\ \\text{pC}$ is trapped."
+  },
+  {
+    "key": "block.6.step.1",
+    "source": "$C = 3.0 \\times 50 = 150\\ \\text{pF}$, so $V = Q/C = 600/150 = 4.0\\ \\text{V}$."
+  },
+  {
+    "key": "block.6.step.2",
+    "source": "$U = Q^2/(2C)$ drops from $3.6\\ \\text{nJ}$ to $1.2\\ \\text{nJ}$. The difference went into pulling the slab in: a capacitor draws a dielectric toward it."
+  },
+  {
+    "key": "block.7.q",
+    "source": "Same capacitor, but it stays on the $12\\ \\text{V}$ battery while the dielectric goes in."
+  },
+  {
+    "key": "block.7.title",
+    "source": "Connected"
+  },
+  {
+    "key": "block.7.a",
+    "source": "$1800\\ \\text{pC}$, $10.8\\ \\text{nJ}$"
+  },
+  {
+    "key": "block.7.step.0",
+    "source": "$V$ stays $12\\ \\text{V}$; $C$ becomes $150\\ \\text{pF}$."
+  },
+  {
+    "key": "block.7.step.1",
+    "source": "$Q = CV = 1800\\ \\text{pC}$: the battery pushed $1200\\ \\text{pC}$ more onto the plates."
+  },
+  {
+    "key": "block.7.step.2",
+    "source": "$U = \\tfrac{1}{2}CV^2 = 10.8\\ \\text{nJ}$, three times as much. The battery supplied the extra energy (and more, some of which pulled the slab in)."
+  },
+  {
+    "key": "block.8.q",
+    "source": "A dielectric of $\\kappa = 3.0$ fills only half of a $50\\ \\text{pF}$ air capacitor. Find $C$ if it fills (a) the left half of the area, full gap, (b) half the thickness, full area."
+  },
+  {
+    "key": "block.8.title",
+    "source": "Half filled"
+  },
+  {
+    "key": "block.8.a",
+    "source": "(a) $100\\ \\text{pF}$, (b) $75\\ \\text{pF}$"
+  },
+  {
+    "key": "block.8.step.0",
+    "source": "(a) Side by side, both halves feel the same voltage: two capacitors in parallel, $\\dfrac{C_0}{2} + \\dfrac{\\kappa C_0}{2} = 25 + 75 = 100\\ \\text{pF}$."
+  },
+  {
+    "key": "block.8.step.1",
+    "source": "(b) Stacked, the same charge passes through both layers: two capacitors in series, each with half the gap ($2C_0$ and $2\\kappa C_0$): $\\dfrac{1}{C} = \\dfrac{1}{100} + \\dfrac{1}{300}$, so $C = 75\\ \\text{pF}$."
+  },
+  {
+    "key": "block.9.html",
+    "source": "<b>Not tracking what stays fixed.</b> \"The dielectric raises $C$, so $Q = CV$ goes up\" is right only with the battery connected. Unplugged, the charge has nowhere to come from, so $Q$ stays put and $V$ falls instead. Before any dielectric problem, write down which is fixed: $V$ (connected) or $Q$ (isolated). Then use the energy formula built on that fixed quantity: $\\tfrac{1}{2}CV^2$ for fixed $V$, $Q^2/(2C)$ for fixed $Q$."
+  }
+]

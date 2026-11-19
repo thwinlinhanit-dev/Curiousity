@@ -1,0 +1,125 @@
+{
+  "id": "de.substitutions",
+  "slug": "substitutions",
+  "ladder": "math",
+  "course": "de",
+  "unit": "first-order",
+  "title": "Homogeneous and Bernoulli Equations",
+  "short": "Change variables to reach a separable or linear equation.",
+  "trouble": "",
+  "prereqs": [
+    "de.linear-first-order"
+  ],
+  "xp": 3,
+  "viz": [],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Many nonlinear equations can be turned into ones we already know how to solve by a change of variables. The two classic families are <b>homogeneous</b> equations, which become separable, and <b>Bernoulli</b> equations, which become <a href=\"/math/differential-equations/linear-first-order/\">linear</a>."
+      },
+      {
+        "t": "key",
+        "html": "<b>Homogeneous:</b> if $y' = F\\!\\left(\\frac{y}{x}\\right)$, set $v = \\frac{y}{x}$, so $y = vx$ and $y' = v + xv'$. Then $xv' = F(v) - v$ is separable.<br><b>Bernoulli:</b> if $y' + p(t)y = q(t)y^{n}$ with $n \\ne 0, 1$, set $v = y^{1-n}$. Then $v' + (1 - n)p\\,v = (1 - n)q$ is linear."
+      },
+      {
+        "t": "h",
+        "text": "Homogeneous equations"
+      },
+      {
+        "t": "why",
+        "html": "A function of $y/x$ alone does not change if $x$ and $y$ are scaled together, so after writing $y = vx$ the right side depends only on $v$. The only place $x$ survives is the product rule term $xv'$, and dividing by $x$ separates the variables: $\\frac{dv}{F(v) - v} = \\frac{dx}{x}$."
+      },
+      {
+        "t": "ex",
+        "title": "A homogeneous equation",
+        "q": "Solve $xy\\,y' = x^{2} + y^{2}$, $y(1) = 2$, for $x > 0$.",
+        "steps": [
+          "Divide by $xy$: $y' = \\frac{x}{y} + \\frac{y}{x}$, a function of $v = \\frac{y}{x}$: $F(v) = \\frac{1}{v} + v$.",
+          "With $y' = v + xv'$: $v + xv' = \\frac{1}{v} + v$, so $xv' = \\frac{1}{v}$.",
+          "Separate: $v\\,dv = \\frac{dx}{x}$, so $\\frac{v^{2}}{2} = \\ln x + C$.",
+          "At $x = 1$, $v = 2$: $C = 2$, so $v^{2} = 2\\ln x + 4$."
+        ],
+        "a": "$y = x\\sqrt{2\\ln x + 4}$"
+      },
+      {
+        "t": "h",
+        "text": "Bernoulli equations"
+      },
+      {
+        "t": "why",
+        "html": "Divide $y' + py = qy^{n}$ by $y^{n}$: $$y^{-n}y' + p\\,y^{1-n} = q.$$ The chain rule gives $(y^{1-n})' = (1 - n)y^{-n}y'$, so with $v = y^{1-n}$ the first term is $\\frac{v'}{1 - n}$ and the second is $pv$. Multiplying by $1 - n$ leaves a linear equation for $v$."
+      },
+      {
+        "t": "ex",
+        "title": "A Bernoulli equation",
+        "q": "Solve $y' + y = y^{2}$, $y(0) = \\frac{1}{2}$.",
+        "steps": [
+          "$n = 2$, so $v = y^{-1}$ and $v' = -y^{-2}y'$.",
+          "Divide by $y^{2}$: $y^{-2}y' + y^{-1} = 1$, which is $-v' + v = 1$, or $v' - v = -1$.",
+          "Linear: $\\mu = e^{-t}$, $(e^{-t}v)' = -e^{-t}$, so $v = 1 + Ce^{t}$.",
+          "$v(0) = \\frac{1}{y(0)} = 2$ gives $C = 1$."
+        ],
+        "a": "$y = \\frac{1}{1 + e^{t}}$"
+      },
+      {
+        "t": "ex",
+        "title": "The logistic equation as a Bernoulli equation",
+        "q": "Solve $P' = rP - \\frac{r}{K}P^{2}$.",
+        "steps": [
+          "Rewrite as $P' - rP = -\\frac{r}{K}P^{2}$: Bernoulli with $n = 2$. Let $v = \\frac{1}{P}$.",
+          "Then $v' + rv = \\frac{r}{K}$, whose solution is $v = \\frac{1}{K} + Ae^{-rt}$.",
+          "So $P = \\frac{1}{\\frac{1}{K} + Ae^{-rt}} = \\frac{K}{1 + AKe^{-rt}}$."
+        ],
+        "a": "The familiar logistic curve from <a href=\"/math/calculus-2/logistic-equation/\">The Logistic Equation</a>, found this time without partial fractions."
+      },
+      {
+        "t": "mistake",
+        "html": "Common slips: substituting $v = y^{n}$ instead of $y^{1-n}$; substituting before dividing by $y^{n}$; and forgetting the factor $1 - n$ in $v'$. Also, dividing by $y^{n}$ hides the solution $y = 0$ (when $n > 0$). Check at the end by substituting your $y$ back into the original equation."
+      },
+      {
+        "t": "viz",
+        "name": "slopefield",
+        "opts": {
+          "f": "y^2 - y",
+          "point": [
+            0,
+            0.5
+          ],
+          "curves": [
+            [
+              0,
+              1.5
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "xmin": -2,
+          "xmax": 4,
+          "ymin": -2,
+          "ymax": 3
+        },
+        "cap": "Slopes of $y' = y^{2} - y$ from the Bernoulli example. The blue solution $\\frac{1}{1 + e^{t}}$ falls toward the equilibrium $y = 0$; solutions that start above $y = 1$ blow up."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Paul's Online Math Notes, Differential Equations: Substitutions"
+      },
+      {
+        "name": "Paul's Online Math Notes, Differential Equations: Bernoulli Differential Equations"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.03SC Differential Equations (Fall 2011), Unit I: First Order Differential Equations"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

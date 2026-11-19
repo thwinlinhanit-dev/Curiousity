@@ -1,0 +1,105 @@
+{
+  "id": "g4.equivalent-fractions-multiply",
+  "slug": "equivalent-fractions-multiply",
+  "ladder": "math",
+  "course": "g4",
+  "unit": "fractions",
+  "title": "Equivalent Fractions by Multiplying",
+  "short": "Multiply top and bottom by the same number: the pieces get smaller, the amount stays.",
+  "trouble": "Children add the same number to the top and bottom, thinking 2/3 equals 4/5.",
+  "prereqs": [
+    "g3.equivalent-fractions-models"
+  ],
+  "xp": 2,
+  "viz": [
+    "fractionbar",
+    "areamodel"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In Grade 3 you saw with pictures that <a href=\"/math/grade-3/equivalent-fractions-models/\">1/2 and 2/4 name the same amount</a>. Now you will see <b>why</b>, and get a rule that works for any fraction."
+      },
+      {
+        "t": "key",
+        "html": "Multiply the numerator and the denominator by the <b>same</b> number, and you get an equivalent fraction: $\\dfrac{2}{3} = \\dfrac{2 \\times 4}{3 \\times 4} = \\dfrac{8}{12}$. The pieces get smaller, there are more of them, and the amount stays the same."
+      },
+      {
+        "t": "why",
+        "html": "Start with $\\dfrac{2}{3}$ of a bar: 2 of 3 equal pieces are shaded. Now cut every piece into 4 smaller pieces. The bar has $3 \\times 4 = 12$ pieces, and the shaded part has $2 \\times 4 = 8$ of them. Nothing was added or taken away; you only cut. So $\\dfrac{2}{3} = \\dfrac{8}{12}$. Multiplying the bottom by 4 makes the pieces 4 times smaller; multiplying the top by 4 counts 4 times as many of them. The two changes cancel out."
+      },
+      {
+        "t": "viz",
+        "name": "fractionbar",
+        "opts": {
+          "bars": [
+            "2/3"
+          ],
+          "equiv": true
+        },
+        "cap": "Use <b>Cut each part into</b> to cut $\\dfrac{2}{3}$ into smaller pieces: $\\dfrac{4}{6}$, $\\dfrac{6}{9}$, $\\dfrac{8}{12}$. The shaded length never changes."
+      },
+      {
+        "t": "viz",
+        "name": "fractioncircle",
+        "opts": {
+          "fracs": [
+            "3/4"
+          ],
+          "equiv": true
+        },
+        "cap": "The same idea with a circle: cut each fourth in two and $\\dfrac{3}{4}$ becomes $\\dfrac{6}{8}$."
+      },
+      {
+        "t": "ex",
+        "title": "Find a missing numerator",
+        "q": "Fill in: $\\dfrac{3}{5} = \\dfrac{?}{20}$",
+        "steps": [
+          "The denominator went from 5 to 20: it was multiplied by 4.",
+          "Multiply the numerator by 4 too: $3 \\times 4 = 12$."
+        ],
+        "a": "$\\dfrac{3}{5} = \\dfrac{12}{20}$"
+      },
+      {
+        "t": "ex",
+        "title": "Test a claim",
+        "q": "Is $\\dfrac{2}{3}$ equal to $\\dfrac{4}{5}$?",
+        "steps": [
+          "$\\dfrac{4}{5}$ comes from adding 2 to the top and to the bottom, not multiplying.",
+          "Compare with the same denominator: $\\dfrac{2}{3} = \\dfrac{10}{15}$ and $\\dfrac{4}{5} = \\dfrac{12}{15}$."
+        ],
+        "a": "No: $\\dfrac{2}{3} < \\dfrac{4}{5}$."
+      },
+      {
+        "t": "viz",
+        "name": "fractionbar",
+        "opts": {
+          "bars": [
+            "2/3",
+            "4/5"
+          ],
+          "guide": true
+        },
+        "cap": "Adding the same number to the top and bottom changes the amount: $\\dfrac{4}{5}$ is longer than $\\dfrac{2}{3}$."
+      },
+      {
+        "t": "mistake",
+        "html": "Adding the same number to the top and bottom, thinking $\\dfrac{2}{3} = \\dfrac{4}{5}$. Adding does not cut pieces evenly, so the amount changes. Only multiplying (or dividing) both by the same number keeps it the same."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 4, 4.NF.A.1 (explain why a fraction a/b is equivalent to (n × a)/(n × b) using visual fraction models)"
+      },
+      {
+        "name": "OpenStax Prealgebra 2e, section 4.1 Visualize Fractions"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

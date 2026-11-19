@@ -1,0 +1,122 @@
+{
+  "id": "informal.conditional-fallacies",
+  "slug": "conditional-fallacies",
+  "ladder": "logic",
+  "course": "informal",
+  "unit": "evaluating",
+  "title": "Affirming the Consequent and Denying the Antecedent",
+  "short": "From \"if P then Q\", you may infer Q from P, and not-P from not-Q; inferring P from Q, or not-Q from not-P, is a fallacy.",
+  "trouble": "Affirming the consequent feels natural: \"If it rained, the street is wet. The street is wet, so it rained.\" A sprinkler could have wet the street.",
+  "prereqs": [
+    "informal.counterexample-method"
+  ],
+  "xp": 2,
+  "viz": [
+    "lg-fallacy"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The <a href=\"/logic/informal-logic/counterexample-method/\">counterexample method</a> shows a form is invalid. Here we use it on the most common formal fallacies, which start from an \"if… then…\" premise."
+      },
+      {
+        "t": "key",
+        "html": "From \"If P, then Q\": you <b>may</b> infer Q from P (<i>modus ponens</i>), and not-P from not-Q (<i>modus tollens</i>). You may <b>not</b> infer P from Q (<b>affirming the consequent</b>) or not-Q from not-P (<b>denying the antecedent</b>)."
+      },
+      {
+        "t": "why",
+        "html": "\"If it rained, the street is wet\" says rain is <i>one</i> way to get a wet street. So rain guarantees a wet street, and a dry street rules out rain. But a wet street does not tell you it rained (a sprinkler could have done it), and no rain does not tell you the street is dry, for the same reason."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Form",
+          "Second premise",
+          "Conclusion",
+          "Verdict"
+        ],
+        "rows": [
+          [
+            "Modus ponens",
+            "P (it rained)",
+            "Q (the street is wet)",
+            "Valid"
+          ],
+          [
+            "Modus tollens",
+            "not Q (the street is dry)",
+            "not P (it did not rain)",
+            "Valid"
+          ],
+          [
+            "Affirming the consequent",
+            "Q (the street is wet)",
+            "P (it rained)",
+            "Invalid"
+          ],
+          [
+            "Denying the antecedent",
+            "not P (it did not rain)",
+            "not Q (the street is dry)",
+            "Invalid"
+          ]
+        ],
+        "cap": "From \"If it rained, the street is wet.\""
+      },
+      {
+        "t": "viz",
+        "name": "lg-fallacy",
+        "opts": {
+          "sentences": [
+            "If it rained last night, the street is wet.",
+            "The street is wet.",
+            "So it rained last night."
+          ],
+          "fault": 2,
+          "name": "Affirming the consequent",
+          "note": "A sprinkler or a street cleaner could have wet the street."
+        },
+        "cap": "The faulty step: concluding the \"if\" part from the \"then\" part."
+      },
+      {
+        "t": "ex",
+        "title": "Name the form",
+        "q": "\"If the dog is hungry, it barks at the door. It is barking at the door. So it is hungry.\"",
+        "steps": [
+          "The second premise says the \"then\" part happened (it is barking).",
+          "The conclusion is the \"if\" part (it is hungry).",
+          "It might bark because it wants to go out."
+        ],
+        "a": "Affirming the consequent: invalid."
+      },
+      {
+        "t": "ex",
+        "title": "A valid one",
+        "q": "\"If Ben won the race, he got a medal. Ben did not get a medal. So Ben did not win.\"",
+        "steps": [
+          "The second premise denies the \"then\" part.",
+          "If Ben had won, he would have a medal; he doesn't, so he didn't win."
+        ],
+        "a": "Modus tollens: valid."
+      },
+      {
+        "t": "mistake",
+        "html": "Affirming the consequent feels natural: \"If it rained, the street is wet. The street is wet, so it rained.\" Before accepting, ask: what else could make the \"then\" part true? A counterexample with the same form: \"If it is a dog, it is a mammal. It is a mammal. So it is a dog\" (it could be a cat)."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Patrick Hurley, A Concise Introduction to Logic, chapter 1 (argument forms: proving invalidity)"
+      },
+      {
+        "name": "Internet Encyclopedia of Philosophy, \"Fallacies\""
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

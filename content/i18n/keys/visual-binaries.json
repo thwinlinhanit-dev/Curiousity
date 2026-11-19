@@ -1,0 +1,110 @@
+[
+  {
+    "key": "title",
+    "source": "Masses from Visual Binaries"
+  },
+  {
+    "key": "short",
+    "source": "Parallax turns angular separation into a, Kepler's third law gives M₁ + M₂, and the center of mass splits it."
+  },
+  {
+    "key": "trouble",
+    "source": "Students apply the third law with a in arcseconds, before converting it to AU."
+  },
+  {
+    "key": "block.0.html",
+    "source": "Almost everything we know about the masses of stars comes from binaries, pairs of stars in orbit around each other. In a <b>visual binary</b> a telescope separates the two stars, and over years or decades you can watch one trace an ellipse around the other. In <a href=\"/physics/astronomy/binary-stars/\">Binary Stars and Stellar Masses</a> you saw the idea; here you will do the full calculation, using <a href=\"/physics/mechanics/kepler-third-from-newton/\">Kepler's third law from Newton</a>."
+  },
+  {
+    "key": "block.1.html",
+    "source": "Newton's version of Kepler's third law for two bodies is $$P^2 = \\frac{4\\pi^2a^3}{G(M_1 + M_2)},$$ where $a$ is the semi-major axis of the <i>relative</i> orbit (one star around the other). For Earth and the Sun the same law gives $(1\\text{ yr})^2 = 4\\pi^2(1\\text{ AU})^3/(GM_\\odot)$. Divide one equation by the other, and $4\\pi^2$ and $G$ cancel: with $a$ in AU, $P$ in years and masses in solar masses, $M_1 + M_2 = a^3/P^2$. The catch is that a telescope measures the orbit as an <b>angle</b> $\\alpha$ in arcseconds. The parsec is defined so that 1 AU seen from 1 pc spans exactly 1″, so the small-angle rule becomes $a\\,(\\text{AU}) = \\alpha\\,('') \\times d\\,(\\text{pc}) = \\alpha/p$."
+  },
+  {
+    "key": "block.2.html",
+    "source": "Convert the angle first, then weigh: $$a = \\frac{\\alpha}{p}\\ \\text{AU}, \\qquad M_1 + M_2 = \\frac{a^3}{P^2}\\ M_\\odot.$$ Each star circles the center of mass, so $M_1a_1 = M_2a_2$: the heavier star moves on the smaller ellipse."
+  },
+  {
+    "key": "block.3.cap",
+    "source": "Two stars around their center of mass. The lighter star swings on the bigger orbit; both share one period. You can launch your own orbits in the <a href=\"/science-lab/orbits/\">Orbit Lab</a>."
+  },
+  {
+    "key": "block.4.text",
+    "source": "Worked examples"
+  },
+  {
+    "key": "block.5.q",
+    "source": "Sirius A and its white dwarf companion Sirius B have a relative orbit with angular semi-major axis $7.50''$ and period $50.1$ years. The parallax of Sirius is $0.379''$. Find the total mass."
+  },
+  {
+    "key": "block.5.title",
+    "source": "Weighing Sirius"
+  },
+  {
+    "key": "block.5.a",
+    "source": "About $3.1\\,M_\\odot$ for the pair."
+  },
+  {
+    "key": "block.5.step.0",
+    "source": "Semi-major axis: $a = 7.50/0.379 = 19.8$ AU."
+  },
+  {
+    "key": "block.5.step.1",
+    "source": "Kepler: $M_1 + M_2 = a^3/P^2 = 19.8^3/50.1^2$."
+  },
+  {
+    "key": "block.5.step.2",
+    "source": "$= 7740/2510 \\approx 3.09$."
+  },
+  {
+    "key": "block.6.q",
+    "source": "Measured against the background stars, Sirius B's orbit around the center of mass is about twice as large as Sirius A's. Find each mass."
+  },
+  {
+    "key": "block.6.title",
+    "source": "Splitting the mass"
+  },
+  {
+    "key": "block.6.a",
+    "source": "Sirius A has about $2.1\\,M_\\odot$; Sirius B, only Earth-sized, has about $1.0\\,M_\\odot$."
+  },
+  {
+    "key": "block.6.step.0",
+    "source": "$M_A a_A = M_B a_B$, so $M_A/M_B = a_B/a_A = 2.0$."
+  },
+  {
+    "key": "block.6.step.1",
+    "source": "$M_A + M_B = 3.09$ and $M_A = 2.0\\,M_B$, so $3.0\\,M_B = 3.09$."
+  },
+  {
+    "key": "block.6.step.2",
+    "source": "$M_B = 1.03\\,M_\\odot$ and $M_A = 2.06\\,M_\\odot$."
+  },
+  {
+    "key": "block.7.q",
+    "source": "The two bright stars of Alpha Centauri orbit each other with $a = 23.4$ AU and $P = 79.9$ yr. What is their total mass?"
+  },
+  {
+    "key": "block.7.title",
+    "source": "A pair like our neighbors"
+  },
+  {
+    "key": "block.7.a",
+    "source": "About $2.0\\,M_\\odot$, two stars much like the Sun."
+  },
+  {
+    "key": "block.7.step.0",
+    "source": "$a^3 = 23.4^3 = 12{,}800$ and $P^2 = 79.9^2 = 6380$."
+  },
+  {
+    "key": "block.7.step.1",
+    "source": "$M_1 + M_2 = 12{,}800/6380 \\approx 2.0$."
+  },
+  {
+    "key": "block.8.html",
+    "source": "Putting the angle straight into Kepler's law. $\\alpha = 7.50''$ is not 7.50 AU; Kepler's law needs a length. Using arcseconds as if they were AU here would give $7.5^3/50.1^2 = 0.17\\,M_\\odot$ instead of $3.1\\,M_\\odot$. Convert with $a = \\alpha/p$ (or $\\alpha \\times d$ in parsecs) first. Also use the relative orbit, $a = a_1 + a_2$, not one star's orbit around the center of mass."
+  },
+  {
+    "key": "block.9.html",
+    "source": "This is how the mass–luminosity relation was first measured: binaries give masses, and the same stars' distances and brightness give luminosities."
+  }
+]

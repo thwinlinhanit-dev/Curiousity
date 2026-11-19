@@ -1,0 +1,93 @@
+{
+  "id": "calc2.ratio-root-tests",
+  "slug": "ratio-root-tests",
+  "ladder": "math",
+  "course": "calc2",
+  "unit": "sequences-series",
+  "title": "Ratio and Root Tests",
+  "short": "Look at the limit of |aₙ₊₁/aₙ| or |aₙ|^(1/n).",
+  "trouble": "Students conclude convergence or divergence when the limit equals 1, where the test says nothing.",
+  "prereqs": [
+    "calc2.absolute-conditional"
+  ],
+  "xp": 2,
+  "viz": [],
+  "figureArchetype": "LessonFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Factorials and $n$th powers make comparison awkward. The ratio and root tests compare a series with a <a href=\"/math/calculus-2/geometric-telescoping/\">geometric series</a> automatically, and they test <a href=\"/math/calculus-2/absolute-conditional/\">absolute convergence</a> directly."
+      },
+      {
+        "t": "why",
+        "html": "Suppose $\\left|\\frac{a_{n+1}}{a_n}\\right| \\to L < 1$. Pick a number $r$ with $L < r < 1$. From some point $N$ on, each term is at most $r$ times the one before, so $|a_{N+k}| \\le |a_N|\\,r^{k}$. That is a convergent geometric series, so $\\sum|a_n|$ converges by comparison. If $L > 1$, the terms eventually grow, so they cannot go to 0 and the series diverges. The root test uses $\\sqrt[n]{|a_n|} \\to L$ the same way: $|a_n| \\le r^{n}$ eventually."
+      },
+      {
+        "t": "key",
+        "html": "Let $L = \\lim\\left|\\frac{a_{n+1}}{a_n}\\right|$ (ratio test) or $L = \\lim\\sqrt[n]{|a_n|}$ (root test). If $L < 1$ the series converges absolutely; if $L > 1$ (or $L = \\infty$) it diverges; if $L = 1$ the test gives no conclusion."
+      },
+      {
+        "t": "ex",
+        "title": "Factorials",
+        "q": "Does $\\sum_{n=1}^{\\infty}\\frac{3^{n}}{n!}$ converge?",
+        "steps": [
+          "$\\frac{a_{n+1}}{a_n} = \\frac{3^{n+1}}{(n + 1)!}\\cdot\\frac{n!}{3^{n}} = \\frac{3}{n + 1}$.",
+          "$L = \\lim\\frac{3}{n + 1} = 0 < 1$, so it converges absolutely."
+        ],
+        "a": "It converges."
+      },
+      {
+        "t": "ex",
+        "title": "A ratio that needs e",
+        "q": "Does $\\sum_{n=1}^{\\infty}\\frac{n!}{n^{n}}$ converge?",
+        "steps": [
+          "$$\\begin{aligned} \\frac{a_{n+1}}{a_n} &= \\frac{(n + 1)!}{(n + 1)^{n+1}}\\cdot\\frac{n^{n}}{n!} \\\\ &= \\frac{n^{n}}{(n + 1)^{n}} \\\\ &= \\frac{1}{\\left(1 + \\frac{1}{n}\\right)^{n}}. \\end{aligned}$$",
+          "$L = \\frac{1}{e} < 1$, so the series converges."
+        ],
+        "a": "It converges."
+      },
+      {
+        "t": "ex",
+        "title": "The root test",
+        "q": "Does $\\sum_{n=1}^{\\infty}\\left(\\frac{n}{2n + 1}\\right)^{n}$ converge?",
+        "steps": [
+          "$\\sqrt[n]{a_n} = \\frac{n}{2n + 1} \\to \\frac{1}{2}$.",
+          "$L = \\frac{1}{2} < 1$, so it converges."
+        ],
+        "a": "It converges."
+      },
+      {
+        "t": "mistake",
+        "html": "Drawing a conclusion when $L = 1$. For $\\sum\\frac{1}{n}$ and for $\\sum\\frac{1}{n^{2}}$, the ratio is $\\frac{n}{n + 1}$ or $\\frac{n^{2}}{(n + 1)^{2}}$, both tending to 1. One series diverges and the other converges, so $L = 1$ cannot decide anything. Whenever the terms are rational expressions in $n$, expect $L = 1$ and use a comparison test instead."
+      },
+      {
+        "t": "ex",
+        "title": "When the terms grow",
+        "q": "Does $\\sum_{n=1}^{\\infty}\\frac{n!}{10^{n}}$ converge?",
+        "steps": [
+          "$\\frac{a_{n+1}}{a_n} = \\frac{(n + 1)!}{10^{n+1}}\\cdot\\frac{10^{n}}{n!} = \\frac{n + 1}{10}$.",
+          "This grows without bound: $L = \\infty > 1$. The terms shrink at first (each is a tenth of $n$ times the last) but from $n = 10$ on they grow, so the series diverges."
+        ],
+        "a": "It diverges."
+      },
+      {
+        "t": "note",
+        "html": "Ratio or root? Use the ratio test when the term has factorials or products, because consecutive terms share most of their factors. Use the root test when the whole term is raised to the $n$th power. The fact $\\sqrt[n]{n} \\to 1$ handles stray powers of $n$ in the root test."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 2, Section 5.6: Ratio and Root Tests"
+      },
+      {
+        "name": "Paul’s Online Math Notes (Lamar University), Calculus II: Ratio Test; Root Test"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

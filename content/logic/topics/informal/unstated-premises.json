@@ -1,0 +1,105 @@
+{
+  "id": "informal.unstated-premises",
+  "slug": "unstated-premises",
+  "ladder": "logic",
+  "course": "informal",
+  "unit": "arguments",
+  "title": "Unstated Premises",
+  "short": "Many arguments leave a premise unsaid; supply the most reasonable one that connects the stated premises to the conclusion.",
+  "trouble": "Learners supply a premise that just repeats the conclusion, or one much stronger than the speaker needs and would accept.",
+  "prereqs": [
+    "informal.subarguments"
+  ],
+  "xp": 2,
+  "viz": [
+    "lg-argmap"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "People rarely say every step out loud. In a <a href=\"/logic/informal-logic/subarguments/\">chain of reasoning</a> or a short argument, a premise is often left for the listener to fill in."
+      },
+      {
+        "t": "key",
+        "html": "An <b>unstated premise</b> is a claim the argument needs but does not say. Supply the most reasonable one: it should connect the stated premise to the conclusion, and the speaker should accept it."
+      },
+      {
+        "t": "why",
+        "html": "Without the missing link, the stated premise does not reach the conclusion. \"Rex is a dog, so Rex is a mammal\" works only because we all know that dogs are mammals. Writing it down lets us check it, which is the whole point."
+      },
+      {
+        "t": "viz",
+        "name": "lg-argmap",
+        "opts": {
+          "nodes": [
+            {
+              "id": 1,
+              "text": "The class garden gets six hours of sun."
+            },
+            {
+              "id": 2,
+              "text": "Tomatoes grow well with six hours of sun.",
+              "kind": "unstated"
+            },
+            {
+              "id": 3,
+              "text": "We should plant tomatoes in the class garden.",
+              "kind": "conclusion"
+            }
+          ],
+          "links": [
+            {
+              "from": [
+                1,
+                2
+              ],
+              "to": 3
+            }
+          ]
+        },
+        "cap": "The dashed box is the unstated premise that links the sunshine to the tomatoes."
+      },
+      {
+        "t": "ex",
+        "title": "Fill the gap",
+        "q": "\"Mia is a member of the band, so Mia must go to Friday practice.\"",
+        "steps": [
+          "Stated premise: Mia is a band member. Conclusion: Mia must go to Friday practice.",
+          "What links them? A claim about band members and Friday practice.",
+          "Most reasonable: \"Every band member must go to Friday practice.\""
+        ],
+        "a": "Unstated premise: \"Every band member must go to Friday practice.\""
+      },
+      {
+        "t": "ex",
+        "title": "Not too strong",
+        "q": "\"The milk smells sour, so we shouldn't drink it.\" Which missing premise is best: \"Sour-smelling milk is not safe to drink\" or \"We should never drink milk of any kind\"?",
+        "steps": [
+          "Both would make the conclusion follow.",
+          "The second is far stronger than the speaker needs, and the speaker clearly does not believe it.",
+          "Charity and accuracy both pick the first."
+        ],
+        "a": "\"Sour-smelling milk is not safe to drink.\""
+      },
+      {
+        "t": "mistake",
+        "html": "Supplying a premise that just repeats the conclusion (\"We shouldn't drink the milk\"), or one much stronger than the speaker would accept. Check: does it link the stated premise to the conclusion, and would the speaker say \"Yes, that's what I meant\"?"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Patrick Hurley, A Concise Introduction to Logic, chapter 1 (extended arguments and missing premises)"
+      },
+      {
+        "name": "Stanford Encyclopedia of Philosophy, \"Informal Logic\""
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

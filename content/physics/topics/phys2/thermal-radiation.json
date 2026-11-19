@@ -1,0 +1,116 @@
+{
+  "id": "phys2.thermal-radiation",
+  "slug": "thermal-radiation",
+  "ladder": "physics",
+  "course": "phys2",
+  "unit": "thermodynamics",
+  "title": "Thermal Radiation and Blackbodies",
+  "short": "Every object radiates P = eσAT⁴, and hotter objects glow at shorter peak wavelengths: λ_max·T = 2.898 × 10⁻³ m·K.",
+  "trouble": "Students think only glowing objects radiate, or that doubling the kelvin temperature doubles the radiated power instead of multiplying it by 16.",
+  "prereqs": [
+    "physsci.heat-transfer",
+    "physsci.em-spectrum"
+  ],
+  "xp": 3,
+  "viz": [
+    "ph-blackbody",
+    "ph-thermal"
+  ],
+  "figureArchetype": "WaveFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The Sun warms your face across $150$ million kilometers of empty space. That is radiation, the one kind of <a href=\"/physics/physical-science/heat-transfer/\">heat transfer</a> that needs no material. It carries energy as electromagnetic waves, mostly the infrared part of the <a href=\"/physics/physical-science/em-spectrum/\">electromagnetic spectrum</a>."
+      },
+      {
+        "t": "why",
+        "html": "The charged particles in every object jiggle with thermal motion, and moving charges give off electromagnetic waves. Hotter means more vigorous jiggling, so more power comes out, and more of it at high frequencies (short wavelengths). Measurements, explained by Planck's theory, give two simple laws. The total power grows as the fourth power of the kelvin temperature, and the wavelength of the peak shrinks in proportion to $1/T$. Good absorbers are also good emitters; the emissivity $e$, from 0 to 1, measures both."
+      },
+      {
+        "t": "key",
+        "html": "<b>Stefan–Boltzmann:</b> $P = e\\sigma AT^4$, with $\\sigma = 5.67 \\times 10^{-8}\\,\\text{W/(m}^2\\cdot\\text{K}^4)$ and $T$ in kelvins. An object in surroundings at $T_{\\text{env}}$ loses net power $e\\sigma A(T^4 - T_{\\text{env}}^4)$. <b>Wien:</b> $\\lambda_{\\max}T = 2.898 \\times 10^{-3}\\,\\text{m}\\cdot\\text{K}$."
+      },
+      {
+        "t": "viz",
+        "name": "ph-thermal",
+        "opts": {
+          "mode": "transfer"
+        },
+        "cap": "Three ways heat travels. Only radiation crosses empty space."
+      },
+      {
+        "t": "viz",
+        "name": "ph-blackbody",
+        "opts": {
+          "T": [
+            3000,
+            4500,
+            6000
+          ],
+          "show": [
+            "peak",
+            "area"
+          ],
+          "task": "Compare the curves: hotter is brighter at every wavelength and peaks farther to the left."
+        },
+        "cap": "Blackbody spectra. The area under each curve is the total power, which grows as $T^4$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Double the temperature",
+        "q": "A hot plate at $27\\,^\\circ\\text{C}$ is heated to $327\\,^\\circ\\text{C}$. By what factor does its radiated power grow?",
+        "steps": [
+          "Kelvins: $27 + 273 = 300\\,\\text{K}$ and $327 + 273 = 600\\,\\text{K}$, so the temperature doubled.",
+          "$\\dfrac{P_2}{P_1} = \\left(\\dfrac{600}{300}\\right)^4 = 2^4 = 16$.",
+          "Not $2$, and not $(327/27)^4 \\approx 21{,}500$ from Celsius numbers."
+        ],
+        "a": "$16$ times"
+      },
+      {
+        "t": "ex",
+        "title": "Peak wavelengths",
+        "q": "Where do the Sun's surface ($5772\\,\\text{K}$) and your skin ($306\\,\\text{K}$) radiate most strongly?",
+        "steps": [
+          "Sun: $\\lambda_{\\max} = \\dfrac{2.898 \\times 10^{-3}}{5772}\\,\\text{m} = 5.02 \\times 10^{-7}\\,\\text{m} = 502\\,\\text{nm}$, blue-green light in the middle of the visible range.",
+          "Skin: $\\lambda_{\\max} = \\dfrac{2.898 \\times 10^{-3}}{306}\\,\\text{m} = 9.47 \\times 10^{-6}\\,\\text{m}$, about $9.5\\,\\mu\\text{m}$, in the infrared. Thermal cameras see it."
+        ],
+        "a": "$502\\,\\text{nm}$ and $9.47\\,\\mu\\text{m}$"
+      },
+      {
+        "t": "ex",
+        "title": "Losing heat in a room",
+        "q": "A person with $1.5\\,\\text{m}^2$ of skin at $306\\,\\text{K}$ ($e = 0.97$) stands in a room at $293\\,\\text{K}$. What is the net power lost by radiation?",
+        "steps": [
+          "$$T^4 - T_{\\text{env}}^4 = 306^4 - 293^4 = 8.768 \\times 10^{9} - 7.370 \\times 10^{9} = 1.398 \\times 10^{9}\\,\\text{K}^4$$",
+          "$P = (0.97)(5.67 \\times 10^{-8})(1.5)(1.398 \\times 10^{9}) = 115\\,\\text{W}$, about as much as a resting body produces. Clothing cuts this loss by keeping the outer surface cooler."
+        ],
+        "a": "$115\\,\\text{W}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking only glowing objects radiate, or that doubling the temperature doubles the power. Everything above absolute zero radiates; cool things just radiate in the infrared, which we cannot see. And the power goes as $T^4$: doubling the kelvin temperature multiplies it by $16$. Check: are your temperatures in kelvins, and did you raise them to the fourth power before subtracting?"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e, section 14.7 Radiation"
+      },
+      {
+        "name": "OpenStax, University Physics Volume 2, section 1.6 Mechanisms of Heat Transfer"
+      },
+      {
+        "name": "College Board, AP Physics 2 Course and Exam Description, Unit 9: Thermodynamics"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

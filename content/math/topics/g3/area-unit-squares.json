@@ -1,0 +1,100 @@
+{
+  "id": "g3.area-unit-squares",
+  "slug": "area-unit-squares",
+  "ladder": "math",
+  "course": "g3",
+  "unit": "area-perimeter",
+  "title": "Area with Unit Squares",
+  "short": "Area counts how many unit squares cover a shape.",
+  "trouble": "Students leave gaps or overlaps when tiling, or count units along the edge instead of squares inside.",
+  "prereqs": [
+    "g2.partition-rectangle"
+  ],
+  "xp": 1,
+  "viz": [
+    "arraygrid",
+    "geoboard"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You have split rectangles into <a href=\"/math/grade-2/partition-rectangle/\">rows and columns of squares</a>. Counting those squares measures something new: <b>area</b>, the amount of flat space a shape covers."
+      },
+      {
+        "t": "viz",
+        "name": "g3-shape",
+        "opts": {
+          "rect": [
+            4,
+            3
+          ],
+          "grid": "squares",
+          "sides": false
+        },
+        "cap": "This rectangle is covered by 12 unit squares, with no gaps and no overlaps. Its area is 12 square units."
+      },
+      {
+        "t": "why",
+        "html": "To measure length we use a unit length, like 1 inch, and count how many fit end to end. To measure area we use a <b>unit square</b>, a square 1 unit on each side, and count how many cover the shape. The squares must not overlap and must not leave gaps, or the count would be too big or too small."
+      },
+      {
+        "t": "key",
+        "html": "Area is the number of unit squares that cover a shape with no gaps or overlaps. It is measured in square units: square centimeters, square inches, square feet, square meters."
+      },
+      {
+        "t": "ex",
+        "title": "Count the squares",
+        "q": "A rectangle is covered by 3 rows of 4 unit squares. What is its area?",
+        "steps": [
+          "Count by rows: 4, 8, 12.",
+          "12 unit squares cover it."
+        ],
+        "a": "12 square units"
+      },
+      {
+        "t": "ex",
+        "title": "A bent shape",
+        "q": "A shape is made of a row of 5 squares with a row of 2 squares on top. What is its area?",
+        "steps": [
+          "Count each part: $5 + 2 = 7$."
+        ],
+        "a": "7 square units"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Leaving gaps or overlapping tiles</b> gives the wrong count. Line the squares up edge to edge, like floor tiles.<br><b>Counting along the edge.</b> The squares along the border are only some of the squares. Area counts every square inside, the middle ones too."
+      },
+      {
+        "t": "viz",
+        "name": "arraygrid",
+        "opts": {
+          "rows": 2,
+          "cols": 3,
+          "style": "squares",
+          "rotate": false,
+          "max": 8,
+          "task": {
+            "target": 12,
+            "all": true
+          }
+        },
+        "cap": "Make every rectangle you can with exactly 12 unit squares. They all have an area of 12 square units, even though they look different."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 3, 3.MD.C.5 (area as an attribute; unit squares)"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 3, 3.MD.C.6 (measure areas by counting unit squares)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

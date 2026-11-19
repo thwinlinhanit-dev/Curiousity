@@ -1,0 +1,123 @@
+{
+  "id": "geo.cross-sections-revolution",
+  "slug": "cross-sections-revolution",
+  "ladder": "math",
+  "course": "geo",
+  "unit": "measurement",
+  "title": "Cross Sections and Solids of Revolution",
+  "short": "Identify slices of solids and the solid made by spinning a shape.",
+  "trouble": "",
+  "prereqs": [
+    "geo.cavalieri",
+    "g7.cross-sections"
+  ],
+  "xp": 2,
+  "viz": [
+    "solids"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Slicing a solid with a plane shows a flat <b>cross section</b>; you sliced solids in <a href=\"/math/grade-7/cross-sections/\">Slicing Solids</a>. Cavalieri's principle in <a href=\"/math/geometry/cavalieri/\">Cavalieri's Principle</a> is built on those slices. Going the other way, spinning a flat shape around a line sweeps out a solid, called a <b>solid of revolution</b>."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Solid",
+          "Slice parallel to the base",
+          "Slice through the axis (vertical)"
+        ],
+        "rows": [
+          [
+            "prism or cylinder",
+            "a copy of the base",
+            "a rectangle"
+          ],
+          [
+            "pyramid",
+            "a smaller copy of the base",
+            "a triangle"
+          ],
+          [
+            "cone",
+            "a circle",
+            "a triangle"
+          ],
+          [
+            "sphere",
+            "a circle (any slice)",
+            "a circle"
+          ]
+        ],
+        "cap": "Common cross sections."
+      },
+      {
+        "t": "why",
+        "html": "Each point of a spinning shape traces a circle around the axis. So a slice of a solid of revolution, perpendicular to the axis, is always a circle or a ring. A rectangle spun around one side sweeps a cylinder: the side on the axis becomes the height, and the other side becomes the radius. A right triangle spun around a leg sweeps a cone, and a semicircle spun around its diameter sweeps a sphere."
+      },
+      {
+        "t": "viz",
+        "name": "solids",
+        "cap": "A rectangle under $y = 3$ from $x = 0$ to $5$, spun around the $x$-axis: a cylinder with radius $3$ and height $5$.",
+        "opts": {
+          "f": "3",
+          "a": 0,
+          "b": 5,
+          "axis": "x",
+          "angle": 270
+        }
+      },
+      {
+        "t": "key",
+        "html": "Cross sections perpendicular to the axis of a prism, cylinder or pyramid copy (or shrink) the base. Spinning a rectangle, a right triangle or a semicircle around a side or diameter gives a cylinder, a cone or a sphere."
+      },
+      {
+        "t": "ex",
+        "title": "Naming a cross section",
+        "q": "A cube is sliced by a plane through three corners that are each one edge away from the same corner. What shape is the cross section?",
+        "steps": [
+          "The three cut points are joined by diagonals of three faces of the cube, and all face diagonals are equal."
+        ],
+        "a": "An equilateral triangle."
+      },
+      {
+        "t": "ex",
+        "title": "Spinning a rectangle",
+        "q": "A $4$ cm by $7$ cm rectangle spins around its $7$ cm side. Find the volume of the solid.",
+        "steps": [
+          "The solid is a cylinder: the side on the axis ($7$) is the height and the other side ($4$) is the radius.",
+          "$V = \\pi \\cdot 4^2 \\cdot 7 = 112\\pi \\approx 351.9$ cm$^3$."
+        ],
+        "a": "$112\\pi$ cm$^3$"
+      },
+      {
+        "t": "ex",
+        "title": "Spinning a right triangle",
+        "q": "A right triangle with legs $3$ and $6$ spins around the leg of length $6$. Find the volume.",
+        "steps": [
+          "It sweeps a cone with height $6$ (the axis) and radius $3$.",
+          "$V = \\frac{1}{3}\\pi \\cdot 9 \\cdot 6 = 18\\pi$. (Around the other leg it would be $\\frac{1}{3}\\pi \\cdot 36 \\cdot 3 = 36\\pi$: the choice of axis matters.)"
+        ],
+        "a": "$18\\pi$"
+      },
+      {
+        "t": "mistake",
+        "html": "Mixing up which side becomes the radius. The side lying on the axis stays put and becomes the height; the side sticking out from the axis sweeps around and becomes the radius. Check with a quick sketch of the spun shape."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 1, 6.2 Determining Volumes by Slicing"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, High School Geometry, G-GMD.B.4"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

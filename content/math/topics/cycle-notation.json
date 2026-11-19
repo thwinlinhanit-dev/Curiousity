@@ -1,0 +1,112 @@
+{
+  "id": "aa.cycle-notation",
+  "slug": "cycle-notation",
+  "ladder": "math",
+  "course": "aa",
+  "unit": "permutations",
+  "title": "Cycle Notation",
+  "short": "Follow 1 → σ(1) → σ(σ(1)) → … until you come back, then start a new cycle with the smallest unused number; disjoint cycles commute, and overlapping cycles must be multiplied out.",
+  "trouble": "Students read a product of overlapping cycles, like (1 2)(2 3), as if the cycles were disjoint, or multiply the cycles left to right.",
+  "prereqs": [
+    "aa.permutations"
+  ],
+  "xp": 2,
+  "viz": [
+    "aa-perm"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Two-row notation lists every number, even the ones that do not move. <a href=\"/math/abstract-algebra/permutations/\">Permutations</a> have a much shorter description: follow each number around until it comes back."
+      },
+      {
+        "t": "p",
+        "html": "<b>Cycles.</b> The cycle $(a_{1}\\;a_{2}\\;\\dots\\;a_{k})$ sends $a_{1} \\to a_{2} \\to \\cdots \\to a_{k} \\to a_{1}$ and fixes every other number. It has <b>length</b> $k$; a 2-cycle is a <b>transposition</b>. The same cycle can start anywhere: $(1\\;4\\;3) = (4\\;3\\;1) = (3\\;1\\;4)$."
+      },
+      {
+        "t": "why",
+        "html": "<b>Every permutation is a product of disjoint cycles, in exactly one way</b> (apart from the order of the cycles and where each one starts). Algorithm: start at the smallest number, $1$, and follow $1 \\to \\sigma(1) \\to \\sigma(\\sigma(1)) \\to \\cdots$. Since there are finitely many numbers and $\\sigma$ is one-to-one, you must come back to $1$ (you cannot return to a middle number first, because it already has its preimage in the chain). Close the cycle, then start again at the smallest unused number. Fixed points form cycles of length $1$, which we leave out."
+      },
+      {
+        "t": "viz",
+        "name": "aa-perm",
+        "opts": {
+          "p": [
+            4,
+            6,
+            1,
+            3,
+            5,
+            2,
+            7
+          ],
+          "task": "Press <b>Build the cycles</b> to trace the cycles one step at a time."
+        },
+        "cap": "The permutation $1 \\mapsto 4$, $2 \\mapsto 6$, $3 \\mapsto 1$, $4 \\mapsto 3$, $5 \\mapsto 5$, $6 \\mapsto 2$, $7 \\mapsto 7$ as arrows; each cycle has its own color. The fixed points $5$ and $7$ are left out of cycle notation."
+      },
+      {
+        "t": "ex",
+        "title": "From two rows to cycles",
+        "q": "Write $\\sigma = \\begin{pmatrix} 1 & 2 & 3 & 4 & 5 & 6 & 7 \\\\ 4 & 6 & 1 & 3 & 5 & 2 & 7 \\end{pmatrix}$ in cycle notation.",
+        "steps": [
+          "$1 \\to 4 \\to 3 \\to 1$: the cycle $(1\\;4\\;3)$.",
+          "Smallest unused: $2 \\to 6 \\to 2$: the cycle $(2\\;6)$.",
+          "$5$ and $7$ are fixed."
+        ],
+        "a": "$\\sigma = (1\\;4\\;3)(2\\;6)$."
+      },
+      {
+        "t": "p",
+        "html": "<b>Disjoint cycles commute</b>: they move different numbers, so it does not matter which acts first. Cycles that share a number usually do not commute, and a product of overlapping cycles must be multiplied out, right to left like any composition."
+      },
+      {
+        "t": "ex",
+        "title": "Multiplying overlapping cycles",
+        "q": "Write $(1\\;2\\;3)(2\\;3\\;4)$ in $S_{4}$ as a product of disjoint cycles.",
+        "steps": [
+          "Apply $(2\\;3\\;4)$ first, then $(1\\;2\\;3)$.",
+          "$1$: the right cycle fixes $1$, the left sends $1 \\to 2$. So $1 \\mapsto 2$.",
+          "$2$: right sends $2 \\to 3$, left sends $3 \\to 1$. So $2 \\mapsto 1$.",
+          "$3$: right sends $3 \\to 4$, left fixes $4$. So $3 \\mapsto 4$.",
+          "$4$: right sends $4 \\to 2$, left sends $2 \\to 3$. So $4 \\mapsto 3$."
+        ],
+        "a": "$(1\\;2)(3\\;4)$."
+      },
+      {
+        "t": "ex",
+        "title": "Inverting",
+        "q": "Find the inverse of $(1\\;5\\;2\\;4)(3\\;6)$.",
+        "steps": [
+          "Run each cycle backward: $(1\\;5\\;2\\;4)^{-1} = (4\\;2\\;5\\;1) = (1\\;4\\;2\\;5)$, and a transposition is its own inverse.",
+          "The cycles are disjoint, so invert them one at a time."
+        ],
+        "a": "$(1\\;4\\;2\\;5)(3\\;6)$."
+      },
+      {
+        "t": "mistake",
+        "html": "Treating overlapping cycles as if they were disjoint. $(1\\;2\\;3)(2\\;3\\;4)$ is not \"a 3-cycle and a 3-cycle\"; multiplied out it is $(1\\;2)(3\\;4)$. And multiply right to left: done left to right, the same product would give $(1\\;3)(2\\;4)$. A good check is to trace a single number through the cycles in both orders and see which matches the definition $\\sigma\\tau = \\sigma \\circ \\tau$."
+      },
+      {
+        "t": "key",
+        "html": "Every permutation is a product of disjoint cycles, found by following $1 \\to \\sigma(1) \\to \\cdots$ until you return. Disjoint cycles commute; overlapping cycles are multiplied right to left; inverses run each cycle backward."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Thomas W. Judson, Abstract Algebra: Theory and Applications (open textbook), chapter 5, Permutation Groups (section 5.1, Cycle Notation)"
+      },
+      {
+        "name": "John A. Beachy and William D. Blair, Abstract Algebra, online study guide (Northern Illinois University), section 2.3, Permutations"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.701 Algebra I (Fall 2010), lecture notes on permutations"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

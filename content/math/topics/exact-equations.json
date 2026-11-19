@@ -1,0 +1,103 @@
+{
+  "id": "de.exact-equations",
+  "slug": "exact-equations",
+  "ladder": "math",
+  "course": "de",
+  "unit": "first-order",
+  "title": "Exact Equations",
+  "short": "M dx + N dy = 0 is exact when My = Nx.",
+  "trouble": "",
+  "prereqs": [
+    "de.linear-first-order",
+    "calc3.higher-partials"
+  ],
+  "xp": 3,
+  "viz": [
+    "gradient"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Suppose a curve $y(x)$ stays on a level curve $F(x, y) = C$ of a function of two variables. Differentiating with the chain rule gives $F_x + F_y\\,y' = 0$, or in differential form $$F_x\\,dx + F_y\\,dy = 0.$$ So if an equation $M\\,dx + N\\,dy = 0$ has $M = F_x$ and $N = F_y$ for some $F$, its solutions are simply the level curves $F(x, y) = C$. Such equations are called <b>exact</b>, and recognizing them uses the mixed partials from <a href=\"/math/calculus-3/higher-partials/\">Higher-Order Partials</a>."
+      },
+      {
+        "t": "key",
+        "html": "$M(x, y)\\,dx + N(x, y)\\,dy = 0$ is exact on a rectangle when $M_y = N_x$ there. Then find a <b>potential function</b> $F$ with $F_x = M$ and $F_y = N$; the solutions are $F(x, y) = C$."
+      },
+      {
+        "t": "why",
+        "html": "If $M = F_x$ and $N = F_y$, then $M_y = F_{xy}$ and $N_x = F_{yx}$, and these are equal for functions with continuous second partials (Clairaut's theorem). So $M_y = N_x$ is necessary. It is also enough: integrate $M$ in $x$ to get $F = \\int M\\,dx + h(y)$, then choose $h$ so that $F_y = N$. The condition $M_y = N_x$ is exactly what guarantees $h'$ depends on $y$ alone."
+      },
+      {
+        "t": "ex",
+        "title": "Find the potential",
+        "q": "Solve $(2xy + 3x^{2})\\,dx + (x^{2} + 2y)\\,dy$ $= 0$.",
+        "steps": [
+          "Check: $M_y = 2x$ and $N_x = 2x$. Exact.",
+          "Integrate $M$ in $x$ (holding $y$ fixed): $F = x^{2}y + x^{3} + h(y)$.",
+          "Then $F_y = x^{2} + h'(y)$ must equal $N = x^{2} + 2y$, so $h'(y) = 2y$ and $h = y^{2}$.",
+          "$F = x^{2}y + x^{3} + y^{2}$."
+        ],
+        "a": "$x^{2}y + x^{3} + y^{2} = C$"
+      },
+      {
+        "t": "ex",
+        "title": "With an initial condition",
+        "q": "Solve $(y\\cos x + 2x)\\,dx$ $+ (\\sin x - 3y^{2})\\,dy$ $= 0$ with $y(0) = 1$.",
+        "steps": [
+          "$M_y = \\cos x = N_x$. Exact.",
+          "$F = \\int (y\\cos x + 2x)\\,dx$ $= y\\sin x + x^{2} + h(y)$.",
+          "$F_y = \\sin x + h'(y)$ $= \\sin x - 3y^{2}$, so $h = -y^{3}$.",
+          "At $(0, 1)$: $F = 0 + 0 - 1 = -1$."
+        ],
+        "a": "$y\\sin x + x^{2} - y^{3} = -1$, an implicit solution."
+      },
+      {
+        "t": "ex",
+        "title": "Not exact, but close",
+        "q": "Is $(3xy + y^{2})\\,dx + (x^{2} + xy)\\,dy$ $= 0$ exact? If not, try multiplying by $x$.",
+        "steps": [
+          "$M_y = 3x + 2y$ but $N_x = 2x + y$: not exact.",
+          "Multiply by $x$: $M = 3x^{2}y + xy^{2}$, $N = x^{3} + x^{2}y$.",
+          "Now $M_y = 3x^{2} + 2xy = N_x$: exact. Integrating gives $F = x^{3}y + \\frac{1}{2}x^{2}y^{2}$."
+        ],
+        "a": "$x^{3}y + \\frac{1}{2}x^{2}y^{2} = C$. (Here $\\frac{M_y - N_x}{N} = \\frac{1}{x}$ depends on $x$ only, which is the signal that $\\mu = e^{\\int dx/x} = x$ works.)"
+      },
+      {
+        "t": "viz",
+        "name": "gradient",
+        "opts": {
+          "f": "x^2*y + x^3 + y^2",
+          "point": [
+            0.5,
+            -0.5
+          ],
+          "xmin": -2,
+          "xmax": 2,
+          "ymin": -2,
+          "ymax": 2,
+          "levels": 14
+        },
+        "cap": "Contours of $F = x^{2}y + x^{3} + y^{2}$ from the first example. Each contour is a solution curve. The gradient $(F_x, F_y) = (M, N)$ is perpendicular to it, which is exactly what $M\\,dx + N\\,dy = 0$ says."
+      },
+      {
+        "t": "mistake",
+        "html": "Two frequent slips: checking $M_x = N_y$ instead of $M_y = N_x$, and forgetting the unknown $h(y)$ after integrating $M$ in $x$ (the “constant” of a partial integration can depend on $y$). Always finish by differentiating your $F$: you should get back both $M$ and $N$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Paul's Online Math Notes, Differential Equations: Exact Equations"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.03SC Differential Equations (Fall 2011), Unit I: First Order Differential Equations"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

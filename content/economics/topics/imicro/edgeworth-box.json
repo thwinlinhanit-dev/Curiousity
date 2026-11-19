@@ -1,0 +1,100 @@
+{
+  "id": "imicro.edgeworth-box",
+  "slug": "edgeworth-box",
+  "ladder": "economics",
+  "course": "imicro",
+  "unit": "general-equilibrium",
+  "title": "The Edgeworth Box and Pareto Efficiency",
+  "short": "An allocation is Pareto efficient when no trade can help one person without hurting the other; there the two MRSs are equal.",
+  "trouble": "Students think Pareto efficient means fair. An allocation that gives everything to one person is Pareto efficient.",
+  "prereqs": [
+    "imicro.mrs",
+    "imicro.preference-types"
+  ],
+  "xp": 2,
+  "viz": [
+    "ec-edgeworth"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Until now one consumer faced fixed prices. General equilibrium asks how a whole economy's goods end up divided. The simplest case has two people and two goods, and a picture that puts both people's <a href=\"/economics/intermediate-microeconomics/mrs/\">indifference maps</a> (often from the <a href=\"/economics/intermediate-microeconomics/preference-types/\">Cobb-Douglas family</a>) in one box."
+      },
+      {
+        "t": "key",
+        "html": "In an <b>Edgeworth box</b> with $X$ units of $x$ and $Y$ units of $y$, every point is an allocation: A's bundle measured from the bottom-left corner, B's from the top-right. An allocation is <b>Pareto efficient</b> if no change can make one person better off without making the other worse off. At an interior efficient allocation the two indifference curves are tangent: $$MRS_A = MRS_B.$$ The set of efficient allocations is the <b>contract curve</b>."
+      },
+      {
+        "t": "why",
+        "html": "Suppose $MRS_A = 3$ and $MRS_B = 1/3$: A would give up 3 units of $y$ for one more $x$, while B would give up a unit of $x$ for just $1/3$ of a $y$. Let B give A one unit of $x$ in exchange for one unit of $y$: A pays less than her limit of 3 and B gets more than his limit of $1/3$. Both gain. In the picture, the two indifference curves through the allocation form a lens; every allocation inside it is better for both. Only where the curves touch, and the lens disappears, is there no such trade left."
+      },
+      {
+        "t": "viz",
+        "name": "ec-edgeworth",
+        "opts": {
+          "total": [
+            20,
+            20
+          ],
+          "endow": [
+            5,
+            15
+          ],
+          "a": [
+            0.5,
+            0.5
+          ],
+          "show": [
+            "lens",
+            "contract"
+          ]
+        },
+        "cap": "Both people have $U = \\sqrt{xy}$ and 20 units of each good. A starts with (5, 15). The lens between their indifference curves holds every allocation both prefer; the contract curve is the diagonal."
+      },
+      {
+        "t": "ex",
+        "title": "An inefficient allocation",
+        "q": "$X = Y = 20$; both have $U = xy$. A has (5, 15), so B has (15, 5). Is this efficient?",
+        "steps": [
+          "$MRS_A = y_A/x_A = 15/5 = 3$; $MRS_B = 5/15 = 1/3$.",
+          "They differ, so a trade can help both: B gives A some $x$ for $y$ at any rate between $1/3$ and 3.",
+          "For instance A gives 2 of $y$ for 2 of $x$: A moves to (7, 13), utility $91 > 75$; B moves to (13, 7), utility $91 > 75$."
+        ],
+        "a": "Not efficient."
+      },
+      {
+        "t": "ex",
+        "title": "Finding a point on the contract curve",
+        "q": "$X = Y = 30$. $U_A = x^{1/2}y^{1/2}$ and $U_B = x^{1/3}y^{2/3}$. If A has 10 units of $x$ at an efficient allocation, how much $y$ does A have?",
+        "steps": [
+          "$MRS_A = \\dfrac{y_A}{x_A}$ and $MRS_B = \\dfrac{1}{2}\\cdot\\dfrac{y_B}{x_B}$.",
+          "With $x_A = 10$, $x_B = 20$, $y_B = 30 - y_A$: $\\dfrac{y_A}{10} = \\dfrac{30 - y_A}{40}$.",
+          "$40y_A = 300 - 10y_A$, so $y_A = 6$. Check: $MRS_A = 0.6$ and $MRS_B = \\tfrac{1}{2}\\cdot\\tfrac{24}{20} = 0.6$."
+        ],
+        "a": "$y_A = 6$."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking Pareto efficient means fair. The corner where A has everything is efficient: any change gives B something only by taking it from A. Efficiency rules out waste; it says nothing about how the total is shared. Check: to judge fairness you need a separate standard (equality, need, desert); the contract curve contains both very equal and very unequal allocations."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, ch. 8.4 Efficiency in Perfectly Competitive Markets"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.04 Intermediate Microeconomic Theory (course scope and lecture topics)"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.03 Microeconomic Theory and Public Policy (course scope)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,115 @@
+{
+  "id": "nt.divisibility",
+  "slug": "divisibility",
+  "ladder": "math",
+  "course": "nt",
+  "unit": "divisibility",
+  "title": "Divisibility",
+  "short": "a ∣ b means b = ak for some integer k; if a divides b and c, it divides every combination mb + nc.",
+  "trouble": "Students read a ∣ b as the fraction a/b, or reverse the roles: 3 ∣ 12 is true, but 12 ∣ 3 is false.",
+  "prereqs": [
+    "g6.gcf-lcm",
+    "disc.direct-proof"
+  ],
+  "xp": 1,
+  "viz": [],
+  "figureArchetype": "LessonFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Number theory is the study of the integers $\\dots, -2, -1, 0, 1, 2, \\dots$ and of the patterns hidden in them. Its first and most basic idea is one you met in <a href=\"/math/grade-6/gcf-lcm/\">grade 6</a>, when you listed factors: one whole number dividing another with nothing left over. Here we make that idea exact, so that we can prove things about it."
+      },
+      {
+        "t": "p",
+        "html": "<b>Definition.</b> For integers $a$ and $b$, we say <b>$a$ divides $b$</b>, and write $a \\mid b$, when there is an integer $k$ with $b = ak$. Then $a$ is a <b>divisor</b> (or factor) of $b$, and $b$ is a <b>multiple</b> of $a$. When no such $k$ exists we write $a \\nmid b$."
+      },
+      {
+        "t": "list",
+        "items": [
+          "$3 \\mid 12$, because $12 = 3 \\cdot 4$.",
+          "$-4 \\mid 20$, because $20 = (-4)(-5)$. Signs never change whether one number divides another.",
+          "$7 \\mid 0$, because $0 = 7 \\cdot 0$. Every integer divides $0$.",
+          "$0 \\nmid 5$: the only multiple of $0$ is $0$ itself.",
+          "$6 \\nmid 45$: $45 = 6 \\cdot 7 + 3$, so there is a remainder."
+        ]
+      },
+      {
+        "t": "p",
+        "html": "Notice that $a \\mid b$ is a <b>statement</b>, true or false. It is not a number, and it is not the fraction $a/b$. The fraction $12/3$ equals $4$; the statement $3 \\mid 12$ is simply true."
+      },
+      {
+        "t": "h",
+        "text": "Rules that follow from the definition"
+      },
+      {
+        "t": "list",
+        "items": [
+          "<b>Transitive:</b> if $a \\mid b$ and $b \\mid c$, then $a \\mid c$.",
+          "<b>Combinations:</b> if $d \\mid a$ and $d \\mid b$, then $d \\mid (ma + nb)$ for all integers $m$ and $n$. In particular $d$ divides $a + b$ and $a - b$.",
+          "<b>Size:</b> if $a \\mid b$ and $b \\neq 0$, then $|a| \\le |b|$, since $|b| = |a|\\,|k|$ with $|k| \\ge 1$."
+        ]
+      },
+      {
+        "t": "why",
+        "html": "Each rule has a two-line <a href=\"/math/discrete-math/direct-proof/\">direct proof</a>: rewrite every \"divides\" as an equation, then factor. For combinations, suppose $a = dk$ and $b = dl$. Then $$ma + nb = mdk + ndl = d(mk + nl),$$ and $mk + nl$ is an integer, so $d \\mid (ma + nb)$. Transitivity works the same way: $b = ak$ and $c = bl$ give $c = a(kl)$. This \"write it as an equation\" move is how almost every proof in this course begins."
+      },
+      {
+        "t": "ex",
+        "title": "Reading the bar",
+        "q": "True or false: (a) $6 \\mid 42$, (b) $42 \\mid 6$, (c) $-6 \\mid 42$, (d) $6 \\mid -45$.",
+        "steps": [
+          "(a) $42 = 6 \\cdot 7$: <b>true</b>.",
+          "(b) We would need $6 = 42k$. But $0 < 6 < 42$, so $k$ would be strictly between $0$ and $1$: <b>false</b>. The number on the left is the divisor.",
+          "(c) $42 = (-6)(-7)$: <b>true</b>.",
+          "(d) $-45 = 6 \\cdot (-8) + 3$ leaves remainder $3$: <b>false</b>."
+        ],
+        "a": "True, false, true, false."
+      },
+      {
+        "t": "ex",
+        "title": "Divisors of two numbers at once",
+        "q": "Suppose a positive integer $d$ divides both $n$ and $n + 15$. Which values can $d$ have?",
+        "steps": [
+          "By the combination rule, $d$ divides the difference $(n + 15) - n = 15$.",
+          "So $d$ is a positive divisor of $15$: $d \\in \\{1, 3, 5, 15\\}$.",
+          "Each one really occurs: take $n = 15$, which works for all four."
+        ],
+        "a": "$d = 1, 3, 5$ or $15$."
+      },
+      {
+        "t": "ex",
+        "title": "A short proof",
+        "q": "Show that if $n$ is odd, then $8 \\mid n^{2} - 1$.",
+        "steps": [
+          "Odd means $n = 2k + 1$ for an integer $k$.",
+          "Then $n^{2} - 1 = 4k^{2} + 4k = 4k(k + 1)$.",
+          "One of $k$ and $k + 1$ is even, so $k(k + 1) = 2j$ for an integer $j$.",
+          "So $n^{2} - 1 = 8j$, which says $8 \\mid n^{2} - 1$. Check: $7^{2} - 1 = 48 = 8 \\cdot 6$."
+        ],
+        "a": "$n^{2} - 1 = 8j$ for an integer $j$."
+      },
+      {
+        "t": "mistake",
+        "html": "Reading $a \\mid b$ as the fraction $a/b$, or swapping the roles. $3 \\mid 12$ is true, but $12 \\mid 3$ is false. Say it aloud as \"$a$ divides $b$\", then ask: <i>is $b$ a multiple of $a$?</i> The divisor is on the left, and (unless $b = 0$) it is never larger in size than $b$."
+      },
+      {
+        "t": "key",
+        "html": "$a \\mid b$ means $b = ak$ for some integer $k$. Divisibility survives sums, differences and multiples: if $d \\mid a$ and $d \\mid b$, then $d \\mid ma + nb$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "William Stein, Elementary Number Theory: Primes, Congruences, and Secrets (Springer, 2009; free online edition), chapter 1, Prime Numbers"
+      },
+      {
+        "name": "Lehman, Leighton and Meyer, Mathematics for Computer Science (MIT OpenCourseWare 6.042J), chapter on number theory: divisibility"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,104 @@
+{
+  "id": "gchem2.nernst",
+  "slug": "nernst",
+  "ladder": "chemistry",
+  "course": "gchem2",
+  "unit": "electrochemistry",
+  "title": "The Nernst Equation",
+  "short": "E = E° − (RT/nF) ln Q gives the cell voltage away from standard conditions, even for concentration cells.",
+  "trouble": "Students put the reactant concentrations on top of Q, or include solids in Q.",
+  "prereqs": [
+    "gchem2.cell-potential-free-energy"
+  ],
+  "xp": 3,
+  "viz": [
+    "ch-cell"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Standard potentials assume 1 M solutions. Real cells drift away from that as they run, and their voltage changes. Combining <a href=\"/chemistry/general-chemistry-2/cell-potential-free-energy/\">ΔG = −nFE</a> with <a href=\"/chemistry/general-chemistry-2/free-energy-k/\">ΔG = ΔG° + RT ln Q</a> gives the correction."
+      },
+      {
+        "t": "key",
+        "html": "$$E = E^\\circ - \\frac{RT}{nF}\\ln Q$$ or, at $25\\ ^\\circ\\text{C}$, $$E = E^\\circ - \\frac{0.0592\\ \\text{V}}{n}\\log Q$$\n$Q$ is products over reactants, with solids left out. As the cell runs, $Q$ grows toward $K$ and $E$ falls toward zero: a dead battery is a cell at equilibrium."
+      },
+      {
+        "t": "why",
+        "html": "Substitute $\\Delta G = -nFE$ and $\\Delta G^\\circ = -nFE^\\circ$ into $\\Delta G = \\Delta G^\\circ + RT\\ln Q$ and divide by $-nF$. When products are scarce ($Q < 1$), the log is negative and $E$ is larger than $E^\\circ$; when products have built up, $E$ is smaller. At equilibrium $Q = K$ and $E = 0$."
+      },
+      {
+        "t": "viz",
+        "name": "ch-cell",
+        "opts": {
+          "mode": "galvanic",
+          "anode": "Zn2+/Zn",
+          "cathode": "Cu2+/Cu",
+          "c": [
+            1,
+            0.01
+          ],
+          "show": [
+            "volts",
+            "labels",
+            "ions"
+          ]
+        },
+        "cap": "Slide the ion concentrations. Lowering $[\\mathrm{Cu^{2+}}]$ (a reactant) lowers the voltage; lowering $[\\mathrm{Zn^{2+}}]$ (a product) raises it."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A cell running down",
+        "q": "A zinc–copper cell ($E^\\circ = 1.10\\ \\text{V}$) has $[\\mathrm{Zn^{2+}}] = 1.0\\ \\text{M}$ and $[\\mathrm{Cu^{2+}}] = 0.010\\ \\text{M}$. Find $E$ at 25 °C.",
+        "steps": [
+          "$$\\mathrm{Zn(s)} + \\mathrm{Cu^{2+}(aq)} \\to \\mathrm{Zn^{2+}(aq)} + \\mathrm{Cu(s)}$$: $Q = \\dfrac{[\\mathrm{Zn^{2+}}]}{[\\mathrm{Cu^{2+}}]} = \\dfrac{1.0}{0.010} = 100$ (the metals are left out).",
+          "$$E = 1.10 - \\dfrac{0.0592}{2}\\log 100 = 1.10 - (0.0296)(2) = 1.04\\ \\text{V}$$"
+        ],
+        "a": "$1.04\\ \\text{V}$."
+      },
+      {
+        "t": "ex",
+        "title": "A concentration cell",
+        "q": "Both half-cells are $\\mathrm{Cu^{2+}/Cu}$, one with $0.0010\\ \\text{M}$ and one with $1.0\\ \\text{M}$ $\\mathrm{Cu^{2+}}$. Find $E$.",
+        "steps": [
+          "$E^\\circ = 0$: the two half-reactions are the same. The dilute side is the anode (copper dissolves there, raising its concentration); the concentrated side is the cathode.",
+          "Overall: $$\\mathrm{Cu^{2+}(1.0\\ M)} \\to \\mathrm{Cu^{2+}(0.0010\\ M)}$$ so $Q = \\dfrac{0.0010}{1.0} = 1.0 \\times 10^{-3}$.",
+          "$$E = 0 - \\dfrac{0.0592}{2}\\log(1.0 \\times 10^{-3}) = (0.0296)(3) = 0.089\\ \\text{V}$$"
+        ],
+        "a": "$0.089\\ \\text{V}$."
+      },
+      {
+        "t": "p",
+        "html": "The correction is small but not negligible: every factor of 10 in $Q$ changes $E$ by $0.0592/n$ volts. For a two-electron cell, that is 30 mV per factor of 10."
+      },
+      {
+        "t": "mistake",
+        "html": "Putting the reactant concentrations on top of $Q$, or including solids. $Q$ has the same form as $K$: products over reactants, aqueous ions and gases only. Check: making more reactant should raise the voltage; if your $Q$ says otherwise, it is upside down."
+      },
+      {
+        "t": "p",
+        "html": "A pH meter uses the same law. Its glass electrode responds to $[\\mathrm{H_3O^+}]$, and at 25 °C its voltage changes by about $0.0592\\ \\text{V}$ (59 mV) for each unit of pH, the Nernst slope for one electron per proton. That is why meters are calibrated with buffers of known pH, and why they correct for temperature."
+      },
+      {
+        "t": "note",
+        "html": "Your nerve cells use concentration differences the same way: a membrane potential of roughly $-70\\ \\text{mV}$ comes mainly from a difference in potassium ion concentration across the cell membrane."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 17.4 Potential, Free Energy, and Equilibrium"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

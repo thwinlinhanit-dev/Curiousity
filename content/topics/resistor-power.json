@@ -1,0 +1,111 @@
+{
+  "id": "phys2.resistor-power",
+  "slug": "resistor-power",
+  "course": "phys2",
+  "courseTitle": "Physics 2: Fluids, Heat, Electricity, Light and Atoms",
+  "unit": "circuits",
+  "unitTitle": "Electric Circuits",
+  "title": "Power in Resistors",
+  "short": "P = IV = I²R = V²/R are three forms of one idea.",
+  "trouble": "Students conclude that a bigger resistor always uses more power, missing that in parallel the smaller one does.",
+  "prereqs": [
+    "phys2.resistivity",
+    "physsci.electric-power"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-circuit"
+  ],
+  "figureArchetype": "CircuitFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A resistor turns electrical energy into thermal energy: that is how toasters, heaters and old-style light bulbs work. In <a href=\"/physics/physical-science/electric-power/\">Electric Power and Energy Use</a> you met $P = IV$. Combined with $V = IR$ and what you know about <a href=\"/physics/physics-2/resistivity/\">resistance</a>, it comes in three forms."
+      },
+      {
+        "t": "why",
+        "html": "Each coulomb that crosses a resistor drops through a potential difference $V$, so it gives up $V$ joules. If $I$ coulombs cross each second, the resistor receives $IV$ joules per second: $P = IV$. Substituting Ohm's law: with $V = IR$, $P = I^2R$; with $I = V/R$, $P = V^2/R$. They are one idea; pick the form that uses what you know."
+      },
+      {
+        "t": "key",
+        "html": "$$\\role{power}{P} = \\role{current}{I}\\role{voltage}{V} = \\role{current}{I}^2\\role{resistance}{R} = \\frac{\\role{voltage}{V}^2}{\\role{resistance}{R}}$$ Same current (series): the bigger resistor uses more power. Same voltage (parallel): the smaller resistor uses more power. Energy $=$ power $\\times$ time; $1\\,\\text{kWh} = 3.6 \\times 10^{6}\\,\\text{J}$."
+      },
+      {
+        "t": "viz",
+        "name": "ph-circuit",
+        "opts": {
+          "circuit": "V(12) series(B1:4, B2:8)",
+          "show": [
+            "current"
+          ]
+        },
+        "cap": "Bulbs in series share one current, so the $8\\,\\Omega$ bulb ($I^2R$ larger) glows brighter."
+      },
+      {
+        "t": "viz",
+        "name": "ph-circuit",
+        "opts": {
+          "circuit": "V(12) par(B1:4, B2:8)",
+          "show": [
+            "current"
+          ]
+        },
+        "cap": "Bulbs in parallel share one voltage, so now the $4\\,\\Omega$ bulb ($V^2/R$ larger) glows brighter. Try both in the <a href=\"/science-lab/circuits/\">Circuit Builder</a>."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A lamp",
+        "q": "A lamp on $120\\,\\text{V}$ draws $0.50\\,\\text{A}$. Find its power and its resistance.",
+        "steps": [
+          "$P = IV = (0.50)(120) = 60\\,\\text{W}$.",
+          "$R = \\dfrac{V}{I} = 240\\,\\Omega$. Check: $V^2/R = 14{,}400/240 = 60\\,\\text{W}$."
+        ],
+        "a": "$60\\,\\text{W}$; $240\\,\\Omega$"
+      },
+      {
+        "t": "ex",
+        "title": "Series: bigger wins",
+        "q": "A $2\\,\\Omega$ and a $4\\,\\Omega$ resistor are in series on $12\\,\\text{V}$. Find each one's power.",
+        "steps": [
+          "$I = \\dfrac{12}{2 + 4} = 2.0\\,\\text{A}$ through both.",
+          "$P_2 = (2.0)^2(2) = 8.0\\,\\text{W}$ and $P_4 = (2.0)^2(4) = 16\\,\\text{W}$."
+        ],
+        "a": "$8.0\\,\\text{W}$ and $16\\,\\text{W}$"
+      },
+      {
+        "t": "ex",
+        "title": "Parallel: smaller wins",
+        "q": "The same resistors are put in parallel on $12\\,\\text{V}$. Find each one's power.",
+        "steps": [
+          "Each has the full $12\\,\\text{V}$.",
+          "$P_2 = \\dfrac{12^2}{2} = 72\\,\\text{W}$ and $P_4 = \\dfrac{12^2}{4} = 36\\,\\text{W}$."
+        ],
+        "a": "$72\\,\\text{W}$ and $36\\,\\text{W}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Concluding that a bigger resistor always uses more power. That is true only when the current is the same (series). With the same voltage (parallel), the smaller resistor lets more current through and uses more power, which is why a $1500\\,\\text{W}$ heater has a <em>smaller</em> resistance than a $60\\,\\text{W}$ lamp on the same outlet. Check: first decide what is shared, $I$ or $V$, then use $I^2R$ or $V^2/R$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e, section 20.4 Electric Power and Energy"
+      },
+      {
+        "name": "OpenStax, University Physics Volume 2, section 9.5 Electrical Energy and Power"
+      },
+      {
+        "name": "College Board, AP Physics 2 Course and Exam Description, Unit 11: Electric Circuits"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

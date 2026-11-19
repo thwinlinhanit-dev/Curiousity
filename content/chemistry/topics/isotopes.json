@@ -1,0 +1,131 @@
+{
+  "id": "chem.isotopes",
+  "slug": "isotopes",
+  "ladder": "chemistry",
+  "course": "chem",
+  "unit": "atoms",
+  "title": "Isotopes and Mass Number",
+  "short": "Isotopes have the same number of protons but different numbers of neutrons; mass number = protons + neutrons.",
+  "trouble": "Students find the neutrons by adding the atomic number to the mass number, or think isotopes of one element have different numbers of protons.",
+  "prereqs": [
+    "chem.subatomic-particles"
+  ],
+  "xp": 1,
+  "viz": [
+    "ch-atom"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/chemistry/chemistry/subatomic-particles/\">Protons, Neutrons and Electrons</a> showed that protons decide the element. Neutrons are free to vary: atoms of the same element can carry different numbers of them. These versions are called isotopes."
+      },
+      {
+        "t": "key",
+        "html": "<b>Isotopes</b> have the same number of protons but different numbers of neutrons. The <b>mass number</b> $A$ counts both: $A = \\text{protons} + \\text{neutrons}$, so $\\text{neutrons} = A - Z$. We write an isotope as $^{A}_{Z}\\mathrm{X}$ or as \"name-A\", like carbon-14."
+      },
+      {
+        "t": "why",
+        "html": "The mass number counts every particle in the nucleus, and the atomic number counts only the protons, so the difference is the neutrons. Isotopes of one element have the same number of protons, hence the same number of electrons when neutral, and so nearly the same chemistry. That is why carbon-14 in a living thing behaves almost exactly like carbon-12, which is what makes radiocarbon dating work. What differs is the mass, and for some isotopes, the stability of the nucleus."
+      },
+      {
+        "t": "viz",
+        "name": "ch-atom",
+        "opts": {
+          "p": 6,
+          "n": 8,
+          "e": 6
+        },
+        "cap": "Carbon-14: 6 protons and 8 neutrons. Remove two neutrons to make carbon-12; the element stays carbon."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Isotope",
+          "Symbol",
+          "Protons",
+          "Neutrons"
+        ],
+        "rows": [
+          [
+            "carbon-12",
+            "$^{12}_{6}\\mathrm{C}$",
+            "6",
+            "6"
+          ],
+          [
+            "carbon-13",
+            "$^{13}_{6}\\mathrm{C}$",
+            "6",
+            "7"
+          ],
+          [
+            "carbon-14",
+            "$^{14}_{6}\\mathrm{C}$",
+            "6",
+            "8"
+          ],
+          [
+            "chlorine-35",
+            "$^{35}_{17}\\mathrm{Cl}$",
+            "17",
+            "18"
+          ],
+          [
+            "chlorine-37",
+            "$^{37}_{17}\\mathrm{Cl}$",
+            "17",
+            "20"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Counting neutrons",
+        "q": "How many neutrons are in $^{37}_{17}\\mathrm{Cl}$?",
+        "steps": [
+          "Mass number $A = 37$ (protons and neutrons).",
+          "Atomic number $Z = 17$ (protons).",
+          "Neutrons $= 37 - 17 = 20$."
+        ],
+        "a": "20 neutrons"
+      },
+      {
+        "t": "ex",
+        "title": "All three particles",
+        "q": "Give the protons, neutrons and electrons in a neutral atom of uranium-238 ($Z = 92$).",
+        "steps": [
+          "Protons: 92.",
+          "Neutrons: $238 - 92 = 146$.",
+          "Electrons (neutral): 92."
+        ],
+        "a": "92 protons, 146 neutrons, 92 electrons."
+      },
+      {
+        "t": "mistake",
+        "html": "Finding neutrons by adding the atomic number to the mass number ($37 + 17 = 54$ for chlorine-37), or thinking isotopes have different numbers of protons. The mass number already includes the protons, so subtract. Check: the neutron count should be close to the proton count for light elements, never larger than the mass number."
+      },
+      {
+        "t": "p",
+        "html": "Add and remove neutrons and watch which isotopes are stable in <a href=\"/science-lab/atom/\">Build an Atom</a>."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 2.3 Atomic Structure and Symbolism"
+      },
+      {
+        "name": "NIST, Atomic Weights and Isotopic Compositions (IUPAC standard atomic weights)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

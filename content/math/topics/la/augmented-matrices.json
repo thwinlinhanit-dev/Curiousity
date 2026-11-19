@@ -1,0 +1,113 @@
+{
+  "id": "la.augmented-matrices",
+  "slug": "augmented-matrices",
+  "ladder": "math",
+  "course": "la",
+  "unit": "systems",
+  "title": "Augmented Matrices and Row Operations",
+  "short": "Swap, scale and add rows without changing the solutions.",
+  "trouble": "Students multiply a row by 0, subtract a row from itself, or copy one row over another, which throws away an equation and can change the solution set.",
+  "prereqs": [
+    "la.systems-pictures",
+    "pre.gaussian-elimination"
+  ],
+  "xp": 1,
+  "viz": [],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/math/precalculus/gaussian-elimination/\">precalculus</a> you solved systems with row operations. Here we make that tool precise, because the whole course rests on it. The first step is to stop copying the letters: in a system, only the numbers carry information."
+      },
+      {
+        "t": "p",
+        "html": "For the system $$\\begin{aligned} x + 2y - z &= 4 \\\\ 2x - y + 3z &= 9 \\\\ -x + y + z &= 0 \\end{aligned}$$ the <b>coefficient matrix</b> collects the coefficients, one row per equation and one column per unknown, and the <b>augmented matrix</b> adds the constants as a last column: $$\\left[\\begin{array}{ccc|c} 1 & 2 & -1 & 4 \\\\ 2 & -1 & 3 & 9 \\\\ -1 & 1 & 1 & 0 \\end{array}\\right]$$ The bar is a reminder that the last column holds the right-hand sides. A missing unknown has coefficient $0$, and every row must list the unknowns in the same order."
+      },
+      {
+        "t": "h",
+        "text": "The three row operations"
+      },
+      {
+        "t": "list",
+        "items": [
+          "<b>Replacement:</b> add a multiple of one row to a <i>different</i> row. Written $R_2 \\to R_2 - 2R_1$: \"replace row 2 by row 2 minus twice row 1\".",
+          "<b>Scaling:</b> multiply every entry of a row by a <i>nonzero</i> number: $R_3 \\to \\frac{1}{2}R_3$.",
+          "<b>Interchange:</b> swap two rows: $R_1 \\leftrightarrow R_2$."
+        ]
+      },
+      {
+        "t": "why",
+        "html": "Each operation can be undone by another operation of the same kind: $R_2 \\to R_2 - 2R_1$ is undone by $R_2 \\to R_2 + 2R_1$, scaling by $c$ is undone by scaling by $\\frac{1}{c}$, and a swap undoes itself. Now, any solution of the old system also solves the new one, because the new equations are built from true equations by adding and multiplying. Since we can go back, any solution of the new system solves the old one too. So the solution set never changes. Matrices that are connected by row operations are called <b>row equivalent</b>, and their systems have exactly the same solutions."
+      },
+      {
+        "t": "viz",
+        "name": "la-rowops",
+        "opts": {
+          "m": [
+            [
+              1,
+              2,
+              5
+            ],
+            [
+              3,
+              -1,
+              1
+            ]
+          ],
+          "aug": 1,
+          "zero": true,
+          "task": "Apply $R_2 \\to R_2 - 3R_1$ and watch the gold point. Then try scaling a row by $0$ and see what goes wrong."
+        },
+        "cap": "Each row is a line. Legal row operations change the lines but never the point where they cross."
+      },
+      {
+        "t": "ex",
+        "title": "Writing the augmented matrix",
+        "q": "Write the augmented matrix of $3y - x = 2$, $x + 4z = -1$, $2x - y + z = 5$, with columns $x, y, z$.",
+        "steps": [
+          "Rewrite each equation with the unknowns in order: $-x + 3y + 0z = 2$, then $x + 0y + 4z = -1$, then $2x - y + z = 5$.",
+          "Copy the coefficients row by row and put the constants after the bar: $\\left[\\begin{array}{ccc|c} -1 & 3 & 0 & 2 \\\\ 1 & 0 & 4 & -1 \\\\ 2 & -1 & 1 & 5 \\end{array}\\right]$"
+        ],
+        "a": "$\\left[\\begin{array}{ccc|c} -1 & 3 & 0 & 2 \\\\ 1 & 0 & 4 & -1 \\\\ 2 & -1 & 1 & 5 \\end{array}\\right]$"
+      },
+      {
+        "t": "ex",
+        "title": "Two replacements",
+        "q": "Apply $R_2 \\to R_2 - 2R_1$ and then $R_3 \\to R_3 + R_1$ to $\\left[\\begin{array}{ccc|c} 1 & 2 & -1 & 4 \\\\ 2 & -1 & 3 & 9 \\\\ -1 & 1 & 1 & 0 \\end{array}\\right]$.",
+        "steps": [
+          "Row 2 minus twice row 1, entry by entry: $(2 - 2,\\; -1 - 4,\\; 3 + 2 \\mid 9 - 8)$ $= (0, -5, 5 \\mid 1)$. Rows 1 and 3 do not change: $\\left[\\begin{array}{ccc|c} 1 & 2 & -1 & 4 \\\\ 0 & -5 & 5 & 1 \\\\ -1 & 1 & 1 & 0 \\end{array}\\right]$",
+          "Row 3 plus row 1: $(-1 + 1,\\; 1 + 2,\\; 1 - 1 \\mid 0 + 4)$ $= (0, 3, 0 \\mid 4)$: $\\left[\\begin{array}{ccc|c} 1 & 2 & -1 & 4 \\\\ 0 & -5 & 5 & 1 \\\\ 0 & 3 & 0 & 4 \\end{array}\\right]$",
+          "The new system has the same solutions as the old one, and it is simpler: $x$ now appears only in the first equation."
+        ],
+        "a": "$\\left[\\begin{array}{ccc|c} 1 & 2 & -1 & 4 \\\\ 0 & -5 & 5 & 1 \\\\ 0 & 3 & 0 & 4 \\end{array}\\right]$"
+      },
+      {
+        "t": "mistake",
+        "html": "Two moves look like row operations but are not: <b>multiplying a row by $0$</b>, and replacing a row by itself minus itself ($R_1 \\to R_1 - R_1$). Both turn the row into zeros, which throws away an equation and can add solutions. Copying one row over another ($R_2 \\to R_1$) also loses an equation. (Adding a row to itself, $R_1 \\to R_1 + R_1$, is harmless: that is just scaling by $2$.) Quick check: ask \"can I undo this?\" If not, it is not allowed."
+      },
+      {
+        "t": "note",
+        "html": "Always change the row named on the left of the arrow, and only that row. The row you use as a tool stays the same."
+      },
+      {
+        "t": "key",
+        "html": "An augmented matrix is a system with the letters removed. Replacement, nonzero scaling and interchange are reversible, so they never change the solution set; that is what lets us simplify a system without losing or gaining solutions."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Margalit and Rabinoff, Interactive Linear Algebra (Georgia Tech), §1.2 Row Reduction"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.06 Linear Algebra (Gilbert Strang, Spring 2010), Lecture 2: Elimination with Matrices"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

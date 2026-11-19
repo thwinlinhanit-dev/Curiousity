@@ -1,0 +1,104 @@
+{
+  "id": "imicro.producer-surplus-integral",
+  "slug": "producer-surplus-integral",
+  "ladder": "economics",
+  "course": "imicro",
+  "unit": "competitive-markets",
+  "title": "Producer Surplus as an Integral",
+  "short": "Producer surplus is the integral of p − MC, which equals revenue minus variable cost, or profit plus fixed cost.",
+  "trouble": "Students equate producer surplus with profit, forgetting that fixed cost comes out of profit but not out of producer surplus.",
+  "prereqs": [
+    "imicro.competitive-supply",
+    "calc1.ftc-evaluate"
+  ],
+  "xp": 2,
+  "viz": [
+    "ftc"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The seller's side of surplus mirrors <a href=\"/economics/intermediate-microeconomics/consumer-surplus-integral/\">Consumer Surplus as an Integral</a>. A <a href=\"/economics/intermediate-microeconomics/competitive-supply/\">competitive firm</a> sells each unit at the price $p$, and the unit costs it $MC(q)$ to make. Adding the gaps is an integral, evaluated with <a href=\"/math/calculus-1/ftc-evaluate/\">Evaluating Integrals with FTC Part 2</a>."
+      },
+      {
+        "t": "key",
+        "html": "$$PS = \\int_0^q \\big(p - MC(x)\\big)\\,dx = pq - VC(q) = \\pi + F.$$ Producer surplus is revenue minus <i>variable</i> cost. It equals profit plus the fixed cost, so it is larger than profit whenever there is a fixed cost."
+      },
+      {
+        "t": "why",
+        "html": "By the Fundamental Theorem of Calculus, $\\int_0^q MC(x)\\,dx = C(q) - C(0) = VC(q)$: adding up marginal costs gives back variable cost, and the fixed cost (which is $C(0)$) never shows up. So $PS = pq - VC(q)$. Profit subtracts the fixed cost as well. In the short run the fixed cost is owed whether or not the firm produces, so producer surplus measures what the firm gains from producing rather than shutting down. For a market, the same integral under the market supply curve adds up every firm's surplus."
+      },
+      {
+        "t": "viz",
+        "name": "ftc",
+        "opts": {
+          "f": "20 - 2*x",
+          "a": 0,
+          "x": 10,
+          "xmin": 0,
+          "xmax": 12,
+          "ghost": true
+        },
+        "cap": "$p - MC(q)$ for $C(q) = 50 + q^2$ at $p = 20$. The area from 0 to $q = 10$ is producer surplus, \\$100. Profit is \\$50: the fixed cost of 50 comes out of profit but not out of producer surplus."
+      },
+      {
+        "t": "ex",
+        "title": "A firm",
+        "q": "$C(q) = 50 + q^2$ and $p = 20$. Find producer surplus and profit.",
+        "steps": [
+          "$q = 10$ (from $20 = 2q$).",
+          "$PS = \\int_0^{10}(20 - 2x)\\,dx = \\left[20x - x^2\\right]_0^{10} = 100$.",
+          "Check: $pq - VC = 200 - 100 = 100$. Profit $= 100 - 50 = 50$."
+        ],
+        "a": "$PS = 100$, profit $= 50$."
+      },
+      {
+        "t": "ex",
+        "title": "A market",
+        "q": "Market supply is $P = 4 + \\tfrac{1}{2}Q$ and the price is \\$10.",
+        "steps": [
+          "Quantity: $4 + Q/2 = 10$ gives $Q = 12$.",
+          "$PS = \\int_0^{12}\\left(6 - \\tfrac{1}{2}Q\\right)dQ = 72 - 36 = 36$.",
+          "Check: the triangle $\\tfrac{1}{2}(12)(6) = 36$."
+        ],
+        "a": "\\$36."
+      },
+      {
+        "t": "ex",
+        "title": "A curved marginal cost",
+        "q": "$MC(q) = 2 + q^2$ and $p = 11$.",
+        "steps": [
+          "$2 + q^2 = 11$ gives $q = 3$.",
+          "$$PS = \\int_0^3 (9 - x^2)\\,dx = \\left[9x - \\tfrac{x^3}{3}\\right]_0^3 = 27 - 9 = 18$$"
+        ],
+        "a": "\\$18."
+      },
+      {
+        "t": "p",
+        "html": "Why use producer surplus rather than profit to judge a policy? Because the fixed cost is the same whether a tax, a price control or a new competitor comes along, so it cancels out of every comparison. The change in producer surplus equals the change in profit, and it is what the area above the supply curve measures. In the long run, when nothing is fixed, producer surplus is the return to whatever is scarce: the best land, a good location, a rare skill."
+      },
+      {
+        "t": "mistake",
+        "html": "Treating producer surplus as profit. They differ by the fixed cost: in the first example, \\$100 versus \\$50. Check: if your producer surplus changes when you change only the fixed cost, you have computed profit instead."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, ch. 3.4 Price Ceilings and Price Floors (producer surplus)"
+      },
+      {
+        "name": "OpenStax Calculus Volume 1, 5.3 The Fundamental Theorem of Calculus"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.04 Intermediate Microeconomic Theory (course scope and lecture topics)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

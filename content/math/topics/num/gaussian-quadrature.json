@@ -1,0 +1,146 @@
+{
+  "id": "num.gaussian-quadrature",
+  "slug": "gaussian-quadrature",
+  "ladder": "math",
+  "course": "num",
+  "unit": "numerical-calculus",
+  "title": "Gaussian Quadrature",
+  "short": "Choose the nodes as well as the weights: two points at ±1/√3 integrate every cubic exactly on [−1, 1].",
+  "trouble": "Students move the nodes to [a, b] but forget to multiply by (b − a)/2.",
+  "prereqs": [
+    "num.composite-rules",
+    "num.lagrange"
+  ],
+  "xp": 3,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The <a href=\"/math/numerical-analysis/composite-rules/\">trapezoid and Simpson rules</a> use equally spaced points and choose only the weights. Gauss had a better idea: choose the <b>points</b> too. With $n$ points there are $2n$ numbers to choose, so a rule can be made exact for all polynomials of degree up to $2n - 1$, which is what <a href=\"/math/numerical-analysis/lagrange/\">interpolation</a> at $n$ fixed points could never do."
+      },
+      {
+        "t": "key",
+        "html": "Two-point Gauss rule: $\\int_{-1}^{1}f(x)\\,dx \\approx f\\left(-\\frac{1}{\\sqrt{3}}\\right) + f\\left(\\frac{1}{\\sqrt{3}}\\right)$, exact for every cubic. In general the $n$-point Gauss–Legendre rule is exact up to degree $2n - 1$ (three points: nodes $0, \\pm\\sqrt{3/5}$, weights $\\frac{8}{9}, \\frac{5}{9}, \\frac{5}{9}$). On $[a, b]$, substitute $x = \\frac{a + b}{2} + \\frac{b - a}{2}t$ and multiply by $\\frac{b - a}{2}$."
+      },
+      {
+        "t": "why",
+        "html": "Ask for $w_1f(x_1) + w_2f(x_2)$ to equal $\\int_{-1}^{1}f$ for $f = 1, x, x^{2}, x^{3}$: $$w_1 + w_2 = 2,\\quad w_1x_1 + w_2x_2 = 0,\\quad w_1x_1^{2} + w_2x_2^{2} = \\tfrac{2}{3},\\quad w_1x_1^{3} + w_2x_2^{3} = 0.$$ By symmetry try $x_2 = -x_1$, $w_1 = w_2 = 1$: the odd equations hold automatically, and $2x_1^{2} = \\frac{2}{3}$ gives $x_1 = \\frac{1}{\\sqrt{3}}$. For the interval $[a, b]$, the substitution maps $[-1, 1]$ onto $[a, b]$ and $dx = \\frac{b - a}{2}\\,dt$, which is where the extra factor comes from."
+      },
+      {
+        "t": "ex",
+        "title": "Exact for a cubic",
+        "q": "Apply the 2-point rule to $\\int_{-1}^{1}(x^{3} + x^{2} + 1)\\,dx$.",
+        "steps": [
+          "At $\\pm\\frac{1}{\\sqrt{3}}$ the $x^{3}$ terms cancel, and $x^{2} = \\frac{1}{3}$ at both.",
+          "Sum: $2\\left(\\frac{1}{3} + 1\\right) = \\frac{8}{3}$.",
+          "Exact: $0 + \\frac{2}{3} + 2 = \\frac{8}{3}$. ✓"
+        ],
+        "a": "$\\frac{8}{3}$"
+      },
+      {
+        "t": "ex",
+        "title": "On another interval",
+        "q": "Estimate $\\int_0^1 e^{x}\\,dx$ with the 2-point rule.",
+        "steps": [
+          "Nodes: $\\frac{1}{2} \\pm \\frac{1}{2\\sqrt{3}} \\approx 0.2113249$ and $0.7886751$.",
+          "Weights: $\\frac{b - a}{2} = \\frac{1}{2}$ each.",
+          "$\\frac{1}{2}\\left(e^{0.2113249} + e^{0.7886751}\\right) \\approx 1.717896$. The exact value is $1.718282$: error $3.9 \\times 10^{-4}$.",
+          "Simpson's rule with 3 points has error $5.8 \\times 10^{-4}$: two well-placed points beat three equally spaced ones."
+        ],
+        "a": "$\\approx 1.717896$"
+      },
+      {
+        "t": "ex",
+        "title": "One degree too many",
+        "q": "What does the 2-point rule give for $\\int_{-1}^{1}x^{4}\\,dx$?",
+        "steps": [
+          "$\\left(\\frac{1}{\\sqrt{3}}\\right)^{4} \\times 2 = \\frac{2}{9}$, but the integral is $\\frac{2}{5}$.",
+          "Error $\\frac{2}{9} - \\frac{2}{5} = -\\frac{8}{45}$: degree 4 is beyond $2n - 1 = 3$."
+        ],
+        "a": "$\\frac{2}{9}$, error $-\\frac{8}{45}$"
+      },
+      {
+        "t": "p",
+        "html": "Where do the nodes come from in general? They are the zeros of the Legendre polynomial $P_n$, the polynomials that are orthogonal on $[-1, 1]$; that orthogonality is exactly what makes the rule exact up to degree $2n - 1$. The weights are all positive, which keeps the rule stable. The price: the nodes for $n$ and $n + 1$ points share nothing (apart from $0$), so increasing $n$ throws away all earlier function values. Practical codes therefore use a fixed $n$ on many panels (composite Gauss), or pairs of rules built to share nodes (Gauss–Kronrod), which also give an error estimate."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "f": "exp(x)",
+          "xmin": -0.1,
+          "xmax": 1.1,
+          "ymin": 0,
+          "ymax": 3,
+          "zoom": false,
+          "points": [
+            {
+              "x": 0.2113,
+              "y": 1.2353,
+              "label": "node 1",
+              "color": "red"
+            },
+            {
+              "x": 0.7887,
+              "y": 2.2005,
+              "label": "node 2",
+              "color": "red"
+            }
+          ]
+        },
+        "cap": "The two Gauss nodes for [0, 1], at 0.211 and 0.789: not at the ends, and not at the middle."
+      },
+      {
+        "t": "table",
+        "head": [
+          "points $n$",
+          "nodes on $[-1, 1]$",
+          "weights",
+          "exact up to degree"
+        ],
+        "rows": [
+          [
+            "1",
+            "$0$",
+            "$2$",
+            "1"
+          ],
+          [
+            "2",
+            "$\\pm\\frac{1}{\\sqrt{3}}$",
+            "$1, 1$",
+            "3"
+          ],
+          [
+            "3",
+            "$0, \\pm\\sqrt{\\frac{3}{5}}$",
+            "$\\frac{8}{9}, \\frac{5}{9}, \\frac{5}{9}$",
+            "5"
+          ]
+        ],
+        "cap": "Gauss–Legendre rules. The nodes are the zeros of the Legendre polynomials."
+      },
+      {
+        "t": "mistake",
+        "html": "Moving the nodes to $[a, b]$ but forgetting to multiply by $\\frac{b - a}{2}$. Check with $f = 1$: the rule must give $b - a$, the length of the interval. Without the factor it gives $2$ (the length of $[-1, 1]$) for every interval."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Autar Kaw, Holistic Numerical Methods (University of South Florida): Integration, \"Gauss Quadrature Rule\""
+      },
+      {
+        "name": "MIT OpenCourseWare 18.330, Introduction to Numerical Analysis: lecture notes on Gaussian quadrature"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

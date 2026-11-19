@@ -1,0 +1,110 @@
+{
+  "id": "alg2.function-composition",
+  "slug": "function-composition",
+  "ladder": "math",
+  "course": "alg2",
+  "unit": "functions",
+  "title": "Composition of Functions",
+  "short": "f(g(x)) feeds the output of g into f.",
+  "trouble": "Students multiply f(x) by g(x), or apply the functions in the wrong order.",
+  "prereqs": [
+    "alg2.function-operations"
+  ],
+  "xp": 2,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/math/algebra-2/function-operations/\">Adding, Subtracting, Multiplying and Dividing Functions</a> you combined two outputs. Composition does something different: the output of one function becomes the input of the next, like two machines on an assembly line."
+      },
+      {
+        "t": "key",
+        "html": "$(f \\circ g)(x) = f(g(x))$. Work from the inside out: apply $g$ first, then apply $f$ to the result. To get a formula, replace every $x$ in $f$ with the whole expression $g(x)$."
+      },
+      {
+        "t": "why",
+        "html": "Read $f(g(3))$ like a set of instructions. The parentheses say $g$ acts on 3 first; its output is the only thing $f$ ever sees. Order matters because the processes are different: putting on socks and then shoes is not the same as shoes and then socks. The little circle $\\circ$ is read \"after\": $f \\circ g$ is \"$f$ after $g$.\""
+      },
+      {
+        "t": "viz",
+        "name": "alg2-machines",
+        "opts": {
+          "fns": [
+            {
+              "name": "g",
+              "f": "2x - 3",
+              "tex": "2x - 3"
+            },
+            {
+              "name": "f",
+              "f": "x^2 + 1",
+              "tex": "x^2 + 1"
+            }
+          ],
+          "x": 2,
+          "min": -4,
+          "max": 5,
+          "swap": true
+        },
+        "cap": "Two machines in a row. Change the input and press \"Swap the order\" to see that $f(g(x))$ and $g(f(x))$ are usually different."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Numbers first",
+        "q": "Let $f(x) = x^2 + 1$ and $g(x) = 2x - 3$. Find $f(g(2))$ and $g(f(2))$.",
+        "steps": [
+          "$g(2) = 4 - 3 = 1$, then $f(1) = 1 + 1 = 2$. So $f(g(2)) = 2$.",
+          "$f(2) = 4 + 1 = 5$, then $g(5) = 10 - 3 = 7$. So $g(f(2)) = 7$."
+        ],
+        "a": "$f(g(2)) = 2$ and $g(f(2)) = 7$: the order changes the answer."
+      },
+      {
+        "t": "ex",
+        "title": "A formula for the composition",
+        "q": "With the same functions, find $f(g(x))$ and $g(f(x))$.",
+        "steps": [
+          "Replace $x$ in $f$ with $(2x - 3)$: $f(g(x)) = (2x - 3)^2 + 1$.",
+          "Expand: $4x^2 - 12x + 9 + 1 = 4x^2 - 12x + 10$.",
+          "Replace $x$ in $g$ with $(x^2 + 1)$: $g(f(x)) = 2(x^2 + 1) - 3 = 2x^2 - 1$.",
+          "Check with $x = 2$: $4(4) - 24 + 10 = 2$ and $2(4) - 1 = 7$, matching the first example."
+        ],
+        "a": "$f(g(x)) = 4x^2 - 12x + 10$ and $g(f(x)) = 2x^2 - 1$"
+      },
+      {
+        "t": "ex",
+        "title": "Reading a table",
+        "q": "$f(1) = 4$, $f(3) = -2$, $g(2) = 3$ and $g(4) = 1$. Find $f(g(2))$.",
+        "steps": [
+          "Inside first: $g(2) = 3$.",
+          "Then $f(3) = -2$."
+        ],
+        "a": "$f(g(2)) = -2$"
+      },
+      {
+        "t": "mistake",
+        "html": "Multiplying instead of composing. $f(g(x))$ is not $f(x) \\cdot g(x)$. In the first example, $f(2) \\cdot g(2) = 5 \\cdot 1 = 5$, but $f(g(2)) = 2$. Another slip is working in the wrong order. Check yourself by plugging in one number and evaluating step by step from the inside out."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Algebra 2e, Section 3.4 Composition of Functions"
+      },
+      {
+        "name": "Common Core State Standards, F-BF.A.1c"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,134 @@
+{
+  "id": "weather.pressure-units",
+  "slug": "pressure-units",
+  "ladder": "earth",
+  "course": "weather",
+  "unit": "air-basics",
+  "title": "Measuring Air Pressure",
+  "short": "Pressure is force per area; read it in hectopascals, millibars and inches of mercury.",
+  "trouble": "Students think a barometer weighs the air in the room; it measures the weight of the whole column of air above it, about 1013 hPa at sea level on average.",
+  "prereqs": [
+    "earthsci.air-pressure",
+    "physsci.pressure",
+    "alg1.units-quantities"
+  ],
+  "xp": 1,
+  "viz": [
+    "es-atmosphere"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In Earth Science you met <a href=\"/earth-and-space/earth-science/air-pressure/\">air pressure</a> as the push of the air around us. Physics gives that push a number: <a href=\"/physics/physical-science/pressure/\">pressure</a> is force spread over an area, $P = F/A$, measured in pascals (Pa), one newton on each square meter. This lesson puts real numbers on the air's push and sorts out the units that weather reports use."
+      },
+      {
+        "t": "key",
+        "html": "Air pressure at a place is the <b>weight of the whole column of air above each square meter</b>. At sea level it averages $101{,}325$ Pa, which weather maps write as $1013.25$ hPa (hectopascals). One hectopascal is 100 Pa, the same as one millibar (mb). U.S. reports use inches of mercury: $1\\ \\text{inHg} = 33.86$ hPa, so the average is $29.92$ inHg."
+      },
+      {
+        "t": "why",
+        "html": "Picture a square meter of beach and the column of air standing on it, all the way to the top of the atmosphere. That column holds about 10,300 kg of air. Its weight, about $10{,}300 \\times 9.8 \\approx 101{,}000$ N, rests on one square meter: about $101{,}000$ Pa. Air is a fluid, and its molecules hit surfaces from every side, so this push acts sideways and upward as well as down. That is why the air under a table pushes up as hard as the air above pushes down, and why your body, with fluids inside pushing back, is not crushed."
+      },
+      {
+        "t": "viz",
+        "name": "es-atmosphere",
+        "opts": {
+          "probe": 0,
+          "pie": false
+        },
+        "cap": "Pressure from the ground up. At the ground the probe reads about 1013 hPa; switch the units to see the same push in inches of mercury or kilopascals."
+      },
+      {
+        "t": "h",
+        "text": "Barometers"
+      },
+      {
+        "t": "p",
+        "html": "A <b>mercury barometer</b> is a glass tube, closed at the top, standing in a dish of mercury. The air pushes on the dish and holds up a column of mercury whose weight per area matches the air's push: about 760 mm (29.92 inches) at sea level. Mercury is used because it is dense (13.6 times as dense as water); a water barometer would need a tube about 10.3 m tall. Most barometers today are <b>aneroid</b>: a sealed metal capsule that flexes as the pressure changes."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Unit",
+          "Sea-level average",
+          "Where you see it"
+        ],
+        "rows": [
+          [
+            "pascal (Pa)",
+            "101,325 Pa",
+            "science and engineering"
+          ],
+          [
+            "hectopascal (hPa) = millibar (mb)",
+            "1013.25 hPa",
+            "weather maps around the world"
+          ],
+          [
+            "kilopascal (kPa)",
+            "101.3 kPa",
+            "some forecasts, tire gauges"
+          ],
+          [
+            "inches of mercury (inHg)",
+            "29.92 inHg",
+            "U.S. TV forecasts, airports"
+          ],
+          [
+            "millimeters of mercury (mmHg)",
+            "760 mmHg",
+            "medicine, older books"
+          ]
+        ],
+        "cap": "The same push in five units. On most days sea-level pressure stays between about 980 and 1040 hPa."
+      },
+      {
+        "t": "ex",
+        "title": "From inches to hectopascals",
+        "q": "A TV forecast gives the pressure as 30.12 inHg. What is that in hectopascals?",
+        "steps": [
+          "Each inch of mercury is 33.86 hPa: $30.12\\ \\text{inHg} \\times 33.86\\ \\dfrac{\\text{hPa}}{\\text{inHg}}$.",
+          "The inHg units cancel, as with any <a href=\"/math/algebra-1/units-quantities/\">unit fraction</a>: $= 1019.9$ hPa.",
+          "That is about 7 hPa above the average: fairly high pressure."
+        ],
+        "a": "About 1020 hPa"
+      },
+      {
+        "t": "ex",
+        "title": "How much air is above you?",
+        "q": "Sea-level pressure is 101,325 Pa. What mass of air stands on each square meter? Use $g = 9.8$ N/kg.",
+        "steps": [
+          "The force on 1 m² is $F = PA = 101{,}325\\ \\text{Pa} \\times 1\\ \\text{m}^2 = 101{,}325$ N.",
+          "That force is the column's weight, $mg$, so $m = F/g = 101{,}325 \\div 9.8$.",
+          "$m \\approx 10{,}340$ kg: more than ten tonnes of air on every square meter."
+        ],
+        "a": "About 10,300 kg"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking a barometer weighs the air in the room. A barometer in a closed room reads the same as one just outside the window, because the room's air is pressed by the whole column above the building. It measures the weight of the <b>whole column</b> of air overhead, which is why it reads less on a mountain, where part of the column is below you. Check: an answer near 1000 hPa (or 30 inHg) is about one atmosphere's worth."
+      },
+      {
+        "t": "note",
+        "html": "Millibars and hectopascals are the same size, so 1008 mb is 1008 hPa. Forecasters switched to the name hectopascal to match the SI unit, the pascal."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e, 11.3 Pressure and 11.6 Gauge Pressure, Absolute Pressure, and Pressure Measurement"
+      },
+      {
+        "name": "NOAA National Weather Service, JetStream online school for weather: Air Pressure"
+      },
+      {
+        "name": "U.S. Standard Atmosphere, 1976 (NOAA, NASA and the U.S. Air Force)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

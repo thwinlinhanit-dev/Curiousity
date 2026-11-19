@@ -1,0 +1,138 @@
+{
+  "id": "astro.spectral-classes",
+  "slug": "spectral-classes",
+  "ladder": "physics",
+  "course": "astro",
+  "unit": "stars",
+  "title": "Spectral Classes",
+  "short": "The classes O, B, A, F, G, K and M sort stars from hottest to coolest by their spectral lines.",
+  "trouble": "Students think the spectral classes are in alphabetical or size order.",
+  "prereqs": [
+    "astro.spectral-lines",
+    "astro.color-temperature"
+  ],
+  "xp": 1,
+  "viz": [
+    "ph-spectrum",
+    "ph-hr"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Spread a star's light into a spectrum and you see dark <a href=\"/physics/astronomy/spectral-lines/\">absorption lines</a>. Around 1900, astronomers at Harvard, led by Annie Jump Cannon, sorted hundreds of thousands of stellar spectra by their patterns of lines. The classes they settled on, in order, are <b>O, B, A, F, G, K, M</b>, and they turned out to be a sequence of <a href=\"/physics/astronomy/color-temperature/\">temperature</a>, from the hottest (O) to the coolest (M)."
+      },
+      {
+        "t": "why",
+        "html": "Most stars are made of nearly the same mix: about three-quarters hydrogen and a quarter helium by mass, with a sprinkle of everything else (as Cecilia Payne showed in 1925). Their spectra differ because temperature decides what state the atoms are in. In cool M stars, molecules such as titanium oxide survive and make broad bands. In K and G stars, metals like calcium and iron show strongly. Hydrogen's visible lines need electrons sitting in level 2; that needs heat, but too much heat strips hydrogen's electron off entirely, so these lines peak in A stars near $10{,}000$ K. Only the hottest O stars can ionize helium, so their spectra show ionized-helium lines. Each class is split into subclasses 0 to 9; the Sun is a G2 star."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Class",
+          "Temperature (K)",
+          "Strongest lines"
+        ],
+        "rows": [
+          [
+            "O (blue)",
+            "above 30,000",
+            "ionized helium"
+          ],
+          [
+            "B (blue-white)",
+            "10,000–30,000",
+            "neutral helium"
+          ],
+          [
+            "A (white)",
+            "7500–10,000",
+            "hydrogen, strongest"
+          ],
+          [
+            "F (yellow-white)",
+            "6000–7500",
+            "hydrogen, ionized calcium"
+          ],
+          [
+            "G (yellow)",
+            "5200–6000",
+            "ionized calcium, metals"
+          ],
+          [
+            "K (orange)",
+            "3700–5200",
+            "metals"
+          ],
+          [
+            "M (red)",
+            "below 3700",
+            "molecules (titanium oxide)"
+          ]
+        ],
+        "cap": "The spectral classes (approximate temperature ranges)."
+      },
+      {
+        "t": "p",
+        "html": "Some familiar examples: the stars of Orion's Belt (O and B), Rigel (B), Sirius and Vega (A), Procyon (F), the Sun (G), Arcturus and Aldebaran (K), Betelgeuse and Proxima Centauri (M)."
+      },
+      {
+        "t": "key",
+        "html": "The spectral classes O, B, A, F, G, K, M run from hottest to coolest. The lines a star shows depend mostly on its temperature, not on a different makeup."
+      },
+      {
+        "t": "viz",
+        "name": "ph-spectrum",
+        "opts": {
+          "mode": "classes"
+        },
+        "cap": "The seven classes with their temperatures and how the strength of each kind of line changes with temperature."
+      },
+      {
+        "t": "h",
+        "text": "Worked example"
+      },
+      {
+        "t": "ex",
+        "title": "Classify a star",
+        "q": "A star's surface temperature is $9000$ K. What class is it, and which lines dominate its spectrum?",
+        "steps": [
+          "$9000$ K lies between $7500$ and $10{,}000$ K: class A.",
+          "A stars show the strongest hydrogen lines of any class."
+        ],
+        "a": "Class A, with strong hydrogen lines."
+      },
+      {
+        "t": "mistake",
+        "html": "The order O, B, A, F, G, K, M looks scrambled because it is not alphabetical and not by size. The letters first came from an older, alphabetical scheme based on hydrogen-line strength; when astronomers realized temperature was the real key, they kept the letters and reordered them. A traditional memory aid is \"Oh Be A Fine Girl/Guy, Kiss Me.\" Check: the Sun (G) is cooler than Sirius (A) and hotter than Betelgeuse (M)."
+      },
+      {
+        "t": "viz",
+        "name": "ph-hr",
+        "opts": {
+          "mode": "diagram",
+          "highlight": [
+            "Rigel",
+            "Sirius A",
+            "Sun",
+            "Betelgeuse"
+          ]
+        },
+        "cap": "The classes along the top of the H–R diagram, from O on the hot left to M on the cool right."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Astronomy 2e, section 17.3, The Spectra of Stars (and Brown Dwarfs)"
+      },
+      {
+        "name": "OpenStax, Astronomy 2e, section 17.2, Colors of Stars"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

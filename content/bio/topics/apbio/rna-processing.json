@@ -1,0 +1,98 @@
+{
+  "id": "apbio.rna-processing",
+  "slug": "rna-processing",
+  "ladder": "bio",
+  "course": "apbio",
+  "unit": "expression",
+  "title": "Transcription and RNA Processing",
+  "short": "RNA polymerase binds a promoter and builds RNA 5′ to 3′. In eukaryotes the pre-mRNA gets a 5′ cap and a poly-A tail, and introns are spliced out; alternative splicing makes several proteins from one gene.",
+  "trouble": "Students think introns are kept and exons removed, or that prokaryotes splice their mRNA. Exons are expressed and kept; prokaryotic genes generally have no introns.",
+  "prereqs": [
+    "apbio.replication-details",
+    "hsbio.transcription"
+  ],
+  "xp": 3,
+  "viz": [
+    "bi-central"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/biology/high-school-biology/transcription/\">Transcription</a> RNA polymerase copied a gene into mRNA. Two details matter now. Transcription follows the same direction rule as <a href=\"/biology/advanced-biology/replication-details/\">replication</a>. And in eukaryotes, the first RNA made is not ready to use: it must be processed before it leaves the nucleus."
+      },
+      {
+        "t": "list",
+        "items": [
+          "<b>Initiation</b>: RNA polymerase binds a <b>promoter</b>, a DNA sequence just upstream of the gene (in eukaryotes, with the help of transcription factors).",
+          "<b>Elongation</b>: it reads the template strand 3′ → 5′ and builds RNA 5′ → 3′, pairing A with U, T with A, G with C and C with G. The RNA has the same sequence as the other DNA strand, the coding strand, with U for T.",
+          "<b>Termination</b>: at the end of the gene, the RNA is released."
+        ]
+      },
+      {
+        "t": "viz",
+        "name": "apbio-splice",
+        "opts": {},
+        "cap": "Step from gene to mature mRNA, then switch to the second splice variant."
+      },
+      {
+        "t": "key",
+        "html": "In eukaryotes, the pre-mRNA gets a <b>5′ cap</b> and a <b>poly-A tail</b>, and its <b>introns</b> are cut out by spliceosomes while the <b>exons</b> are joined. By keeping different sets of exons, <b>alternative splicing</b> lets one gene make several proteins."
+      },
+      {
+        "t": "why",
+        "html": "Why process the RNA? The cap and tail protect the mRNA from enzymes that chew RNA from its ends, and they help it leave the nucleus and attract a ribosome. Splicing adds flexibility. Because exons often code for separate parts (domains) of a protein, mixing and matching exons gives related proteins from one gene. That is one reason humans make many more kinds of protein than they have genes. Prokaryotes, with no nucleus, translate their mRNA while it is still being made, and their genes generally have no introns."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "From template to RNA",
+        "q": "A template strand reads 3′-TACGGATTC-5′. What RNA is made?",
+        "steps": [
+          "Pair each base: T→A, A→U, C→G, G→C, G→C, A→U, T→A, T→A, C→G.",
+          "The RNA runs antiparallel to the template, so its left end is 5′."
+        ],
+        "a": "5′-AUGCCUAAG-3′"
+      },
+      {
+        "t": "ex",
+        "title": "Splicing a pre-mRNA",
+        "q": "A pre-mRNA has exon 1 (120 nucleotides), intron 1 (400), exon 2 (90), intron 2 (650) and exon 3 (150). How long is the coding part of the mature mRNA (not counting cap and tail)? How long if exon 2 is skipped?",
+        "steps": [
+          "Introns are removed; exons are kept.",
+          "$120 + 90 + 150 = 360$ nucleotides.",
+          "Skipping exon 2: $120 + 150 = 270$."
+        ],
+        "a": "360 nucleotides; 270 with exon 2 skipped. (360 is divisible by 3, enough for 120 codons.)"
+      },
+      {
+        "t": "mistake",
+        "html": "Two mix-ups. Keeping the introns and dropping the exons: <b>ex</b>ons are <b>ex</b>pressed and kept; <b>in</b>trons are <b>in</b> the way and removed. And expecting prokaryotes to splice: their genes generally have no introns, and their mRNA is used at once."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Biology 2e, 15.2 Prokaryotic Transcription"
+      },
+      {
+        "name": "OpenStax, Biology 2e, 15.3 Eukaryotic Transcription"
+      },
+      {
+        "name": "OpenStax, Biology 2e, 15.4 RNA Processing in Eukaryotes"
+      },
+      {
+        "name": "NHGRI Talking Glossary: Exon",
+        "url": "https://www.genome.gov/genetics-glossary/Exon"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

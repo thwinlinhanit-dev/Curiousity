@@ -1,0 +1,131 @@
+{
+  "id": "apbio.error-bars",
+  "slug": "error-bars",
+  "ladder": "bio",
+  "course": "apbio",
+  "unit": "practices",
+  "title": "Standard Error and Error Bars",
+  "short": "The standard error of a mean is SE = s/√n. Error bars of ±2 SE give roughly a 95% confidence interval; when such bars for two groups do not overlap, the difference is likely real.",
+  "trouble": "Students read overlapping error bars as proof of no difference, or confuse standard deviation (spread of the data) with standard error (uncertainty in the mean). SE shrinks as n grows; SD does not.",
+  "prereqs": [
+    "hsbio.reading-data",
+    "stat.standard-deviation"
+  ],
+  "xp": 3,
+  "viz": [
+    "bi-chart"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/biology/high-school-biology/reading-data/\">reading graphs and data</a> you compared bars by their heights. But a mean from a few measurements is only an estimate. Grow 10 more bean plants and the mean height will come out a little different. Error bars show how much we trust a mean. To read them, you need two ideas that sound alike: the standard deviation and the standard error. You met the first in <a href=\"/math/probability-and-statistics/standard-deviation/\">Standard Deviation</a>."
+      },
+      {
+        "t": "list",
+        "items": [
+          "<b>Standard deviation (SD, $s$)</b> describes the data: how spread out the individual measurements are.",
+          "<b>Standard error of the mean (SE)</b> describes the mean: how far the sample mean is likely to be from the true mean of the whole population."
+        ]
+      },
+      {
+        "t": "key",
+        "html": "$$SE = \\frac{s}{\\sqrt{n}}$$ A bar of the mean ± 2 SE is roughly a 95% confidence interval. If the ±2 SE bars of two groups do not overlap, the difference between the groups is likely real."
+      },
+      {
+        "t": "why",
+        "html": "Why divide by $\\sqrt{n}$? A single measurement can land far from the true mean. But when you average many, the highs and lows partly cancel. The spread of the <i>means</i> you would get from repeated samples shrinks as the sample grows, in proportion to $1/\\sqrt{n}$. So four times as many measurements cut the SE in half. The SD does not shrink, because the plants are no less varied just because you measured more of them."
+      },
+      {
+        "t": "viz",
+        "name": "apbio-se",
+        "opts": {
+          "mean": 50,
+          "sd": 10,
+          "n": 5,
+          "seed": 4
+        },
+        "cap": "Drag the sample size. The red bar (±1 SD) stays about the same width; the green bar (±2 SE) narrows."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Standard error from SD and n",
+        "q": "Sixteen bean plants have a mean height of 24.0 cm with a standard deviation of 4.0 cm. Find the SE and the ±2 SE interval.",
+        "steps": [
+          "$SE = s/\\sqrt{n} = 4.0/\\sqrt{16} = 4.0/4 = 1.0$ cm.",
+          "2 SE = 2.0 cm.",
+          "Interval: 24.0 − 2.0 to 24.0 + 2.0, that is 22.0 cm to 26.0 cm."
+        ],
+        "a": "SE = 1.0 cm; the interval is about 22.0 to 26.0 cm. We are about 95% confident the true mean lies in it."
+      },
+      {
+        "t": "ex",
+        "title": "Do the bars overlap?",
+        "q": "Plants given fertilizer A: mean 30.0 cm, SE 1.2 cm. Plants given fertilizer B: mean 25.0 cm, SE 1.0 cm. Is the difference likely real?",
+        "steps": [
+          "A: 30.0 ± 2(1.2) gives 27.6 to 32.4 cm.",
+          "B: 25.0 ± 2(1.0) gives 23.0 to 27.0 cm.",
+          "The top of B (27.0) is below the bottom of A (27.6): the bars do not overlap."
+        ],
+        "a": "The difference is likely real: the plants with fertilizer A grew taller."
+      },
+      {
+        "t": "viz",
+        "name": "bi-chart",
+        "opts": {
+          "kind": "bar",
+          "x": [
+            "Fertilizer A",
+            "Fertilizer B"
+          ],
+          "series": [
+            {
+              "name": "Mean height (cm), bars ±2 SE",
+              "values": [
+                30,
+                25
+              ],
+              "err": [
+                2.4,
+                2
+              ]
+            }
+          ],
+          "ylabel": "Height (cm)",
+          "ymin": 0,
+          "ymax": 36
+        },
+        "cap": "The second example as a graph: the ±2 SE bars do not overlap."
+      },
+      {
+        "t": "mistake",
+        "html": "Two mix-ups. First, reading overlapping bars as proof that there is <b>no</b> difference. Overlap only means these data do not show a clear difference; a larger sample, with smaller SE, might. Second, swapping SD and SE. Check which one a graph uses (it should say in the caption), and remember the test: more data shrinks the SE, but not the SD."
+      },
+      {
+        "t": "note",
+        "html": "The \"no overlap\" rule of thumb is a quick visual check, not a formal test. Its formal partners are the null hypothesis and tests like chi-square, which come next."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "College Board, AP Biology Course and Exam Description (science practices and the AP Biology Equations and Formulas sheet)"
+      },
+      {
+        "name": "OpenStax, Biology 2e, 1.1 The Science of Biology (scientific reasoning and data)"
+      },
+      {
+        "name": "OpenStax, Introductory Statistics 2e, 7.1 The Central Limit Theorem for Sample Means"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

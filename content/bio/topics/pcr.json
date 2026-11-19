@@ -1,0 +1,98 @@
+{
+  "id": "hsbio.pcr",
+  "slug": "pcr",
+  "ladder": "bio",
+  "course": "hsbio",
+  "unit": "biotech",
+  "title": "PCR: Copying DNA",
+  "short": "The polymerase chain reaction copies a chosen piece of DNA by cycles of heating (separate strands), cooling (primers bind) and warming (polymerase builds). Each cycle doubles it: 2ⁿ copies after n cycles.",
+  "trouble": "Students add copies each cycle instead of doubling, or think PCR copies the whole genome. It copies only the stretch between the two primers.",
+  "prereqs": [
+    "hsbio.dna-replication",
+    "g8.exponent-properties"
+  ],
+  "xp": 2,
+  "viz": [
+    "bi-dna",
+    "bi-chart"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A drop of blood or a single hair holds only a tiny amount of DNA, far too little to study. The <b>polymerase chain reaction</b> (PCR) makes billions of copies of one chosen piece. It is <a href=\"/biology/high-school-biology/dna-replication/\">DNA replication</a> done in a tube, over and over."
+      },
+      {
+        "t": "key",
+        "html": "PCR repeats a cycle of three temperatures. <b>Denature</b> at about 95 °C: the strands separate. <b>Anneal</b> at about 50–65 °C: short <b>primers</b> bind on each side of the target. <b>Extend</b> at about 72 °C: a heat-proof DNA polymerase builds new strands. Each cycle <b>doubles</b> the target, so n cycles make $2^n$ copies of each starting copy."
+      },
+      {
+        "t": "why",
+        "html": "Why doubling? Every copy made in one cycle becomes a template in the next. One copy becomes 2, then 4, then 8. That is <a href=\"/math/pre-algebra/exponent-properties/\">exponential growth</a>: after n cycles there are $2^n$ times as many copies. Thirty cycles give $2^{30}$, about a billion, in a couple of hours."
+      },
+      {
+        "t": "viz",
+        "name": "bi-population",
+        "opts": {
+          "model": "doubling",
+          "gens": 6,
+          "N0": 1
+        },
+        "cap": "Copies of the target after each cycle: 1, 2, 4, 8, 16, 32, 64."
+      },
+      {
+        "t": "ex",
+        "title": "Counting copies",
+        "q": "A tube starts with 5 copies of a gene. How many copies are there after 10 cycles?",
+        "steps": [
+          "Each cycle doubles: 10 cycles multiply by $2^{10}$, which is 1,024.",
+          "5 × 1,024 = 5,120."
+        ],
+        "a": "5,120 copies (in an ideal reaction)."
+      },
+      {
+        "t": "ex",
+        "title": "How many cycles?",
+        "q": "Starting from one copy, how many cycles are needed to pass one million copies?",
+        "steps": [
+          "$2^{19}$ is 524,288, which is not enough.",
+          "$2^{20}$ is 1,048,576, which passes one million."
+        ],
+        "a": "20 cycles."
+      },
+      {
+        "t": "p",
+        "html": "Two discoveries made PCR practical. Kary Mullis invented the method in 1983, and shared the 1993 Nobel Prize in Chemistry for it. And the DNA polymerase used comes from <i>Thermus aquaticus</i>, a bacterium from hot springs; this \"Taq\" polymerase survives the 95 °C step, so it does not have to be added again every cycle."
+      },
+      {
+        "t": "list",
+        "items": [
+          "<b>Primers</b> are short single strands of DNA, about 20 bases, made to match the two ends of the target.",
+          "Only the stretch <b>between the two primers</b> is copied over and over.",
+          "Real reactions slow down after many cycles as primers and nucleotides run low, so $2^n$ is the ideal."
+        ]
+      },
+      {
+        "t": "mistake",
+        "html": "Two slips are common. One is adding instead of multiplying: 10 cycles do not make 10 or 20 copies, they make $2^{10}$ = 1,024 times as many. The other is thinking PCR copies a whole genome. It copies only the piece between the two primers. Check: the number of copies should double each time you add one cycle."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Concepts of Biology, 10.1 Cloning and Genetic Engineering (PCR)"
+      },
+      {
+        "name": "OpenStax, Biology 2e, 17.1 Biotechnology (amplifying DNA)"
+      },
+      {
+        "name": "Grokipedia, Polymerase chain reaction",
+        "url": "https://grokipedia.com/page/Polymerase_chain_reaction"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

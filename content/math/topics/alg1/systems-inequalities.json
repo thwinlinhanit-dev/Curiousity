@@ -1,0 +1,105 @@
+{
+  "id": "alg1.systems-inequalities",
+  "slug": "systems-inequalities",
+  "ladder": "math",
+  "course": "alg1",
+  "unit": "systems",
+  "title": "Systems of Linear Inequalities",
+  "short": "Find the region where both shadings overlap.",
+  "trouble": "Students shade each inequality but report the union of the regions instead of the overlap.",
+  "prereqs": [
+    "alg1.linear-inequalities-2var",
+    "alg1.systems-elimination"
+  ],
+  "xp": 2,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A system of inequalities asks for every point that satisfies all of them at once. You already know how to graph <a href=\"/math/algebra-1/linear-inequalities-2var/\">one linear inequality</a> as a shaded half-plane, and from <a href=\"/math/algebra-1/systems-elimination/\">systems of equations</a> that a solution must work in every equation."
+      },
+      {
+        "t": "why",
+        "html": "Each inequality's solutions fill a half-plane. A point solves the system only if it is in the first half-plane <em>and</em> in the second, so the solution set is where the shadings overlap, the same “and” idea as in <a href=\"/math/algebra-1/compound-inequalities/\">compound inequalities</a>. Points in only one shading are not solutions. Boundaries follow the same rules as before: dashed for $<$ and $>$, solid for $\\le$ and $\\ge$, and a point on a dashed boundary is not included."
+      },
+      {
+        "t": "viz",
+        "name": "linesystem",
+        "opts": {
+          "lines": [
+            "-x + 4",
+            "2x - 2"
+          ],
+          "shade": [
+            "below",
+            "above"
+          ],
+          "strict": [
+            false,
+            true
+          ],
+          "probe": [
+            0,
+            1
+          ],
+          "xmin": -6,
+          "xmax": 6,
+          "ymin": -6,
+          "ymax": 6
+        },
+        "cap": "$y \\le -x + 4$ and $y > 2x - 2$. The solutions are where both colors overlap. Drag the test point into each region and read which inequalities it satisfies."
+      },
+      {
+        "t": "key",
+        "html": "Graph each inequality (boundary dashed or solid, shade the side that works). The solution set is the overlap. Check with a test point that lies in the overlap: it must make every inequality true."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Graph and check a system",
+        "q": "Describe the solutions of $y \\le -x + 4$ and $y > 2x - 2$.",
+        "steps": [
+          "First: solid line $y = -x + 4$, shade below.",
+          "Second: dashed line $y = 2x - 2$, shade above.",
+          "The lines cross where $-x + 4 = 2x - 2$, at $x = 2$, $y = 2$. The overlap is the wedge to the left of that point, between the lines.",
+          "Test $(0, 0)$: $0 \\le 4$ is true and $0 > -2$ is true, so $(0, 0)$ is a solution."
+        ],
+        "a": "The wedge left of $(2, 2)$, including the solid boundary but not the dashed one."
+      },
+      {
+        "t": "ex",
+        "title": "A budget",
+        "q": "Pens cost \\$2 and notebooks \\$5. You can spend at most \\$30 and want at least $3$ notebooks. Can you buy $6$ pens and $4$ notebooks?",
+        "steps": [
+          "Let $p$ = pens and $n$ = notebooks: $2p + 5n \\le 30$ and $n \\ge 3$.",
+          "Test $(6, 4)$: $2(6) + 5(4) = 32$, and $32 \\le 30$ is false."
+        ],
+        "a": "No: it meets the notebook goal but goes over budget."
+      },
+      {
+        "t": "mistake",
+        "html": "Reporting every shaded point, from either inequality, as a solution. That is the union, an “or.” A system means “and,” so only the overlap counts. Check any point you choose in <em>every</em> inequality."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Elementary Algebra 2e, section 5.6 Graphing Systems of Linear Inequalities"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, A-REI.D.12: graph the solution set of a system of linear inequalities as the intersection of half-planes"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,95 @@
+{
+  "id": "imicro.externality-optimum",
+  "slug": "externality-optimum",
+  "ladder": "economics",
+  "course": "imicro",
+  "unit": "failure-information",
+  "title": "The Efficient Amount of an Externality",
+  "short": "Set marginal benefit equal to marginal social cost; a tax equal to the marginal external damage at that quantity gets the market there.",
+  "trouble": "Students set the tax equal to the marginal damage at the market quantity rather than at the efficient quantity.",
+  "prereqs": [
+    "micro.externality-policy",
+    "imicro.competitive-supply"
+  ],
+  "xp": 3,
+  "viz": [
+    "ec-externality"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/economics/microeconomics/externality-policy/\">Correcting Externalities</a> showed that a tax equal to the marginal external cost can fix overproduction. With the supply side from <a href=\"/economics/intermediate-microeconomics/competitive-supply/\">The Competitive Firm's Supply Curve</a> and a little calculus, we can find exactly how big the tax should be and how much the uncorrected market wastes."
+      },
+      {
+        "t": "key",
+        "html": "With marginal benefit $MB(Q)$ (demand), marginal private cost $MPC(Q)$ (supply) and marginal external cost $MEC(Q)$, the efficient quantity solves $$MB(Q^*) = MSC(Q^*) = MPC(Q^*) + MEC(Q^*).$$ A per-unit tax equal to the marginal external damage <b>at the efficient quantity</b>, $t = MEC(Q^*)$, moves the market there."
+      },
+      {
+        "t": "why",
+        "html": "Total surplus counting everyone is $W(Q) = \\int_0^Q \\big(MB - MPC - MEC\\big)\\,dq$. Its derivative is $MB - MPC - MEC$, which is zero at $Q^*$. The market stops where $MB = MPC$, past $Q^*$, because no buyer or seller pays for the damage. With a tax $t$, sellers act as if marginal cost were $MPC + t$; choosing $t = MEC(Q^*)$ makes $MPC + t$ cross $MB$ exactly at $Q^*$. Each unit between $Q^*$ and the market quantity costs society more than it is worth; adding up that gap gives the deadweight loss."
+      },
+      {
+        "t": "viz",
+        "name": "ec-externality",
+        "opts": {
+          "mode": "negative",
+          "tax": 0,
+          "show": [
+            "market",
+            "social",
+            "dwl"
+          ],
+          "task": "Raise the tax until the market lands on the efficient quantity."
+        },
+        "cap": "Marginal social cost lies above supply by the marginal external cost. The hatched triangle is the deadweight loss of the unregulated market; the right tax removes it."
+      },
+      {
+        "t": "ex",
+        "title": "Quantities, tax and deadweight loss",
+        "q": "$MB = 100 - Q$, $MPC = 20 + Q$, $MEC = 10 + \\tfrac{1}{2}Q$.",
+        "steps": [
+          "Market: $100 - Q = 20 + Q$, so $Q_m = 40$.",
+          "Efficient: $100 - Q = 30 + 1.5Q$, so $Q^* = 28$.",
+          "Tax: $t = MEC(28) = 10 + 14 = 24$. Check: $100 - Q = 44 + Q$ gives $Q = 28$.",
+          "$DWL = \\int_{28}^{40}(MSC - MB)\\,dQ$; the gap is 0 at 28 and $90 - 60 = 30$ at 40, so $DWL = \\tfrac{1}{2}(12)(30) = 180$."
+        ],
+        "a": "$Q_m = 40$, $Q^* = 28$, tax 24, DWL 180."
+      },
+      {
+        "t": "ex",
+        "title": "The wrong tax",
+        "q": "What if the tax were set at the marginal damage at the market quantity, $MEC(40) = 30$?",
+        "steps": [
+          "The market would solve $100 - Q = 50 + Q$: $Q = 25$, below the efficient 28.",
+          "The damage per unit falls as output falls, so taxing at the old, higher damage overshoots."
+        ],
+        "a": "Output falls too far, to 25."
+      },
+      {
+        "t": "mistake",
+        "html": "Setting the tax equal to the marginal damage at the market quantity. That is where the damage is measured before the policy, but the tax should reflect the damage where the market will end up. Check: plug your tax into $MB = MPC + t$ and solve. You must get $Q^*$."
+      },
+      {
+        "t": "note",
+        "html": "The efficient amount of pollution is usually not zero: cutting the last units of damage would cost more than it saves. Economists broadly agree that pricing pollution (by taxes or tradable permits) reaches a given cut at lower cost than rules that tell every firm what to do; measuring the damage, and choosing among those tools in practice, involve debates about evidence and values."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, ch. 12.1 The Economics of Pollution"
+      },
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, ch. 12.3 Market-Oriented Environmental Tools"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.04 Intermediate Microeconomic Theory (course scope and lecture topics)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

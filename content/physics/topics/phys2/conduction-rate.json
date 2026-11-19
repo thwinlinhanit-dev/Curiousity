@@ -1,0 +1,133 @@
+{
+  "id": "phys2.conduction-rate",
+  "slug": "conduction-rate",
+  "ladder": "physics",
+  "course": "phys2",
+  "unit": "thermodynamics",
+  "title": "Rate of Heat Conduction",
+  "short": "Heat flows through a slab at the rate P = kAΔT/L, so thinner and wider walls pass more.",
+  "trouble": "Students think a good conductor must be hot, rather than a material that passes heat along quickly.",
+  "prereqs": [
+    "physsci.heat-transfer",
+    "alg1.literal-equations"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-thermal"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You met conduction in <a href=\"/physics/physical-science/heat-transfer/\">Conduction, Convection and Radiation</a>: heat passing through a material from molecule to molecule. Now we ask how fast. Builders, cooks and engineers all need the rate, in joules per second, or watts, and often need to <a href=\"/math/algebra-1/literal-equations/\">solve the formula</a> for a thickness or an area."
+      },
+      {
+        "t": "why",
+        "html": "Think of heat crossing a slab of thickness $L$ and area $A$. Twice the area is like two slabs side by side, so twice the rate: $P \\propto A$. A bigger temperature difference drives heat harder: $P \\propto \\Delta T$. A thicker slab spreads the same temperature difference over more distance, so each layer passes on less: $P \\propto 1/L$. What is left is the material, through its thermal conductivity $k$. In metals, free electrons carry energy quickly, so $k$ is large; in foam, trapped air carries it slowly."
+      },
+      {
+        "t": "key",
+        "html": "$$P = \\frac{Q}{t} = \\frac{kA\\,\\Delta T}{L}$$ Thin, wide slabs with big temperature differences pass heat fastest. A temperature difference in $^\\circ\\text{C}$ is the same number in kelvins."
+      },
+      {
+        "t": "viz",
+        "name": "ph-thermal",
+        "opts": {
+          "mode": "slab",
+          "material": "glass",
+          "d": 0.005,
+          "dT": 20,
+          "task": "Switch the material and change the thickness. Watch the rate."
+        },
+        "cap": "Conduction through a slab: copper passes heat thousands of times faster than foam."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Material",
+          "$k$ in $\\text{W/(m}\\cdot\\text{K)}$"
+        ],
+        "rows": [
+          [
+            "Copper",
+            "about 390"
+          ],
+          [
+            "Aluminum",
+            "about 220"
+          ],
+          [
+            "Glass, brick",
+            "about 0.8"
+          ],
+          [
+            "Water",
+            "about 0.6"
+          ],
+          [
+            "Wood",
+            "about 0.12"
+          ],
+          [
+            "Still air",
+            "about 0.025"
+          ],
+          [
+            "Styrofoam",
+            "about 0.010"
+          ]
+        ],
+        "cap": "Approximate thermal conductivities near room temperature."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A window",
+        "q": "A glass window ($k = 0.84\\,\\text{W/(m}\\cdot\\text{K)}$) is $1.2\\,\\text{m}^2$ in area and $4.0\\,\\text{mm}$ thick. The inner surface is $15\\,^\\circ\\text{C}$ warmer than the outer surface. Find the rate of heat flow.",
+        "steps": [
+          "Thickness in meters: $L = 0.0040\\,\\text{m}$. $\\Delta T = 15\\,\\text{K}$.",
+          "$P = \\dfrac{(0.84)(1.2)(15)}{0.0040} = 3780\\,\\text{W}$, about $3.8\\,\\text{kW}$."
+        ],
+        "a": "$3.78 \\times 10^{3}\\,\\text{W}$"
+      },
+      {
+        "t": "ex",
+        "title": "A foam cooler",
+        "q": "A styrofoam cooler ($k = 0.010$) has walls $2.0\\,\\text{cm}$ thick with a total area of $0.80\\,\\text{m}^2$. Outside is $25\\,^\\circ\\text{C}$ warmer than inside. How fast does heat leak in, and how long until it has delivered enough heat to melt $1.0\\,\\text{kg}$ of ice ($3.34 \\times 10^{5}\\,\\text{J}$)?",
+        "steps": [
+          "$P = \\dfrac{(0.010)(0.80)(25)}{0.020} = 10\\,\\text{W}$.",
+          "$t = \\dfrac{Q}{P} = \\dfrac{3.34 \\times 10^{5}\\,\\text{J}}{10\\,\\text{J/s}} = 3.34 \\times 10^{4}\\,\\text{s}$, a bit over nine hours."
+        ],
+        "a": "$10\\,\\text{W}$; about $9.3\\,\\text{h}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking a good conductor must be hot. A good conductor is a material that passes heat along quickly, at any temperature. A metal bench and a wooden bench in the same shade are at the same temperature, but the metal feels colder because its large $k$ pulls heat out of your skin faster. Check: temperature tells you which way heat flows; $k$ tells you how fast."
+      },
+      {
+        "t": "note",
+        "html": "A real single-pane window loses heat more slowly than the first example says, because thin films of still air cling to both sides of the glass and add their own insulation."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e, section 14.5 Conduction"
+      },
+      {
+        "name": "OpenStax, University Physics Volume 2, section 1.6 Mechanisms of Heat Transfer"
+      },
+      {
+        "name": "College Board, AP Physics 2 Course and Exam Description, Unit 9: Thermodynamics"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

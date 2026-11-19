@@ -1,0 +1,97 @@
+{
+  "id": "pre.parabolas-conics",
+  "slug": "parabolas-conics",
+  "ladder": "math",
+  "course": "pre",
+  "unit": "conics",
+  "title": "Parabolas as Conics",
+  "short": "Use focus, directrix and vertex for parabolas opening any way.",
+  "trouble": "Students forget that p is the distance from the vertex to the focus, not from the focus to the directrix.",
+  "prereqs": [
+    "geo.parabola-focus-directrix"
+  ],
+  "xp": 2,
+  "viz": [
+    "parabola"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In geometry you met the parabola as the set of points <a href=\"/math/geometry/parabola-focus-directrix/\">equally far from a focus and a directrix</a>. Here we turn that definition into standard forms that open in any of four directions, so you can read the focus and directrix straight from an equation."
+      },
+      {
+        "t": "key",
+        "html": "With vertex $(h, k)$: $$(x - h)^2 = 4p(y - k) \\text{ opens up } (p > 0) \\text{ or down } (p < 0);$$ $$(y - k)^2 = 4p(x - h) \\text{ opens right } (p > 0) \\text{ or left } (p < 0).$$ The focus is $|p|$ units from the vertex, inside the curve; the directrix is $|p|$ units from the vertex on the other side."
+      },
+      {
+        "t": "why",
+        "html": "Take focus $(0, p)$ and directrix $y = -p$. A point $(x, y)$ is equally far from both when $\\sqrt{x^2 + (y - p)^2} = |y + p|$. Square both sides: $$x^2 + y^2 - 2py + p^2 = y^2 + 2py + p^2,$$ which simplifies to $x^2 = 4py$. The vertex, halfway between focus and directrix, is the origin, and shifting it to $(h, k)$ gives the general form."
+      },
+      {
+        "t": "viz",
+        "name": "pre-conic",
+        "opts": {
+          "type": "parabola",
+          "p": 1,
+          "vertical": true,
+          "s": 1
+        },
+        "cap": "Drag $P$ along the parabola: its distance to the focus (red) always equals its distance to the dashed directrix (green)."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Vertex at the origin",
+        "q": "Find the focus and directrix of $x^2 = 12y$.",
+        "steps": [
+          "Match $x^2 = 4py$: $4p = 12$, so $p = 3$. It opens up.",
+          "Focus $3$ units above the vertex: $(0, 3)$. Directrix $3$ units below: $y = -3$."
+        ],
+        "a": "Focus $(0, 3)$; directrix $y = -3$"
+      },
+      {
+        "t": "ex",
+        "title": "Shifted, opening left",
+        "q": "Find the vertex, focus and directrix of $(y - 2)^2 = -8(x + 1)$.",
+        "steps": [
+          "Vertex $(-1, 2)$. $4p = -8$, so $p = -2$: it opens left.",
+          "Focus: $2$ units left of the vertex, $(-3, 2)$. Directrix: $2$ units right, $x = 1$."
+        ],
+        "a": "Vertex $(-1, 2)$; focus $(-3, 2)$; directrix $x = 1$"
+      },
+      {
+        "t": "ex",
+        "title": "From focus and directrix",
+        "q": "Write the parabola with focus $(2, 5)$ and directrix $y = 1$.",
+        "steps": [
+          "The vertex is halfway between: $(2, 3)$.",
+          "The focus is $2$ units above the vertex, so $p = 2$ and the parabola opens up.",
+          "$(x - 2)^2 = 4 \\cdot 2\\,(y - 3)$."
+        ],
+        "a": "$(x - 2)^2 = 8(y - 3)$"
+      },
+      {
+        "t": "mistake",
+        "html": "Taking $p$ as the distance from the focus to the directrix. That distance is $2|p|$; $p$ is only the distance from the <b>vertex</b> to the focus. In the last example the focus and directrix are $4$ apart, but $p = 2$. Check that your vertex sits exactly halfway between them."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Precalculus 2e, Section 10.3 The Parabola"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, G-GPE.A.2"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,163 @@
+{
+  "id": "sym.simp-conj-add",
+  "slug": "simp-conj-add",
+  "ladder": "logic",
+  "course": "sym",
+  "unit": "inference",
+  "title": "Simplification, Conjunction and Addition (Simp, Conj, Add)",
+  "short": "Simp: from p ∧ q, infer p. Conj: from p and q, infer p ∧ q. Add: from p, infer p ∨ q for any q at all.",
+  "trouble": "Addition feels like cheating, and learners wrongly apply Simp to a disjunction. From p ∨ q you cannot infer p.",
+  "prereqs": [
+    "sym.hs-ds"
+  ],
+  "xp": 2,
+  "viz": [
+    "lg-proof"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Three short rules handle $\\land$ and $\\lor$ directly. They look almost too simple, but proofs are full of them. They join the rules from <a href=\"/logic/symbolic-logic/hs-ds/\">Hypothetical and Disjunctive Syllogism (HS, DS)</a>."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Rule",
+          "From",
+          "Infer"
+        ],
+        "rows": [
+          [
+            "Simp (simplification)",
+            "$p \\land q$",
+            "$p$ (or $q$)"
+          ],
+          [
+            "Conj (conjunction)",
+            "$p$ and $q$",
+            "$p \\land q$"
+          ],
+          [
+            "Add (addition)",
+            "$p$",
+            "$p \\lor q$ (or $q \\lor p$), for any $q$"
+          ]
+        ],
+        "cap": "Simplification, conjunction and addition."
+      },
+      {
+        "t": "key",
+        "html": "Simp takes one conjunct out of a conjunction. Conj joins two lines with $\\land$. Add joins anything at all to a line with $\\lor$. Simp and Add cite one line; Conj cites two."
+      },
+      {
+        "t": "why",
+        "html": "If $p \\land q$ is true, both parts are true, so either one may be written alone (Simp). If $p$ and $q$ are each true, their conjunction is true (Conj). Addition is the surprising one: if $p$ is true, then $p \\lor q$ is true whatever $q$ is, because a disjunction needs only one true part. Adding does lose information, but it never takes you from truth to falsehood, and that is all a rule needs."
+      },
+      {
+        "t": "viz",
+        "name": "lg-proof",
+        "opts": {
+          "premises": [
+            "p ∧ q",
+            "(p ∨ r) → s"
+          ],
+          "conclusion": "s ∧ q",
+          "lines": [
+            {
+              "f": "p",
+              "j": "Simp 1"
+            },
+            {
+              "f": "p ∨ r",
+              "j": "Add 3",
+              "note": "Add brings in r, which the conditional needs."
+            },
+            {
+              "f": "s",
+              "j": "MP 2, 4"
+            },
+            {
+              "f": "q",
+              "j": "Simp 1"
+            },
+            {
+              "f": "s ∧ q",
+              "j": "Conj 5, 6"
+            }
+          ],
+          "steps": true,
+          "goalLine": true
+        },
+        "cap": "All three rules in one proof."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Simplification",
+        "q": "From $(p \\to q) \\land \\neg r$, what can Simp give?",
+        "steps": [
+          "The line is a conjunction.",
+          "Either conjunct may be written alone."
+        ],
+        "a": "$p \\to q$ or $\\neg r$."
+      },
+      {
+        "t": "ex",
+        "title": "Conjunction",
+        "q": "From line 2, $\\neg p$, and line 5, $q \\lor r$, what does Conj give?",
+        "steps": [
+          "Join the two lines with $\\land$, in the order you choose."
+        ],
+        "a": "$\\neg p \\land (q \\lor r)$ (justified \"Conj 2, 5\")."
+      },
+      {
+        "t": "ex",
+        "title": "Addition",
+        "q": "You have $s$ and the conclusion is $s \\lor (t \\to u)$. How do you finish?",
+        "steps": [
+          "The conclusion is a disjunction whose first disjunct is $s$.",
+          "Add may attach any formula with $\\lor$."
+        ],
+        "a": "Write $s \\lor (t \\to u)$ by Add from the line $s$."
+      },
+      {
+        "t": "mistake",
+        "html": "Applying Simp to a disjunction: from $p \\lor q$ inferring $p$. A disjunction can be true with $p$ false, so nothing can be \"simplified\" out of it. Simp works only on a whole line whose main connective is $\\land$. The opposite worry, that Add feels like cheating, is unfounded: Add is valid, since $p \\lor q$ is true in every row where $p$ is."
+      },
+      {
+        "t": "list",
+        "items": [
+          "Simp: whole line is $A \\land B$ → write $A$ or $B$.",
+          "Conj: two lines $A$, $B$ → write $A \\land B$.",
+          "Add: one line $A$ → write $A$ $\\lor$ anything you like."
+        ]
+      },
+      {
+        "t": "p",
+        "html": "These rules are also how you take a conjunction apart and put a new one together. A premise like $p \\land (q \\to r)$ is two premises in one: Simp gives you $p$ and $q \\to r$ as separate lines, and then the other rules can use them. At the end, Conj puts the pieces of a conjunctive conclusion back together."
+      },
+      {
+        "t": "p",
+        "html": "Watch for Add whenever the conclusion contains a letter that appears in no premise: only Add can introduce something new."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Patrick J. Hurley and Lori Watson, A Concise Introduction to Logic, 13th ed., section 7.2, Rules of Implication II"
+      },
+      {
+        "name": "forall x: Calgary, an open introduction to formal logic (P. D. Magnus, Tim Button and others; Open Logic Project), chapter on basic rules for TFL"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

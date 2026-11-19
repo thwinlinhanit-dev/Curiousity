@@ -1,0 +1,168 @@
+{
+  "id": "geo.partition-segment",
+  "slug": "partition-segment",
+  "ladder": "math",
+  "course": "geo",
+  "unit": "similarity",
+  "title": "Dividing a Segment in a Ratio",
+  "short": "Find the point that splits a segment in the ratio a : b.",
+  "trouble": "Students go a/b of the way instead of a/(a + b) of the way.",
+  "prereqs": [
+    "geo.side-splitter",
+    "geo.distance-midpoint"
+  ],
+  "xp": 2,
+  "viz": [
+    "geoboard"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The midpoint from <a href=\"/math/geometry/distance-midpoint/\">Distance and Midpoint Formulas</a> splits a segment in the ratio $1 : 1$. Sometimes you need a point that splits it in another ratio, like $2 : 3$. The side-splitting idea from <a href=\"/math/geometry/side-splitter/\">The Triangle Proportionality Theorem</a> shows how."
+      },
+      {
+        "t": "why",
+        "html": "Draw the right triangle under $\\overline{AB}$, with legs along the grid. A point $P$ on $\\overline{AB}$ with $AP : PB = a : b$ cuts the hypotenuse into $a + b$ equal parts and keeps $a$ of them. Lines through $P$ parallel to the legs cut the legs in the same ratio (the triangles are similar), so $P$ is $\\frac{a}{a + b}$ of the way along in $x$ and in $y$. Its coordinates $(x, y)$ are $$x = x_1 + \\tfrac{a}{a + b}(x_2 - x_1)$$ $$y = y_1 + \\tfrac{a}{a + b}(y_2 - y_1)$$"
+      },
+      {
+        "t": "viz",
+        "name": "geo-fig",
+        "cap": "$AP : PB = 2 : 3$, so $P$ is $\\frac{2}{5}$ of the way from $A$ to $B$, in both $x$ and $y$.",
+        "opts": {
+          "pts": {
+            "A": [
+              1,
+              1
+            ],
+            "B": [
+              11,
+              6
+            ],
+            "P": [
+              5,
+              3
+            ],
+            "Q": [
+              5,
+              1
+            ],
+            "C": [
+              11,
+              1
+            ]
+          },
+          "hide": [
+            "Q",
+            "C"
+          ],
+          "segs": [
+            [
+              "A",
+              "B",
+              {
+                "color": "blue",
+                "w": 3
+              }
+            ],
+            [
+              "A",
+              "C",
+              {
+                "dash": 1,
+                "color": "muted"
+              }
+            ],
+            [
+              "C",
+              "B",
+              {
+                "dash": 1,
+                "color": "muted"
+              }
+            ],
+            [
+              "P",
+              "Q",
+              {
+                "dash": 1,
+                "color": "red"
+              }
+            ]
+          ],
+          "texts": [
+            [
+              3,
+              0.4,
+              "2 parts",
+              {
+                "color": "red",
+                "size": 13
+              }
+            ],
+            [
+              8,
+              0.4,
+              "3 parts",
+              {
+                "size": 13
+              }
+            ]
+          ],
+          "axes": true,
+          "height": 220,
+          "label": "Point P two fifths of the way from A to B"
+        }
+      },
+      {
+        "t": "key",
+        "html": "To divide $\\overline{AB}$ so that $AP : PB = a : b$, go $\\frac{a}{a + b}$ of the way from $A$ to $B$: add that fraction of the change in $x$ to $x_1$, and of the change in $y$ to $y_1$."
+      },
+      {
+        "t": "ex",
+        "title": "On a number line",
+        "q": "$A$ is at $-3$ and $B$ is at $17$. Find $P$ with $AP : PB = 1 : 4$.",
+        "steps": [
+          "There are $1 + 4 = 5$ parts, and $P$ is $\\frac{1}{5}$ of the way from $A$.",
+          "The distance is $17 - (-3) = 20$, and $\\frac{1}{5} \\cdot 20 = 4$.",
+          "$P = -3 + 4 = 1$."
+        ],
+        "a": "$P = 1$"
+      },
+      {
+        "t": "ex",
+        "title": "On the coordinate plane",
+        "q": "Find $P$ on $\\overline{AB}$ with $A(1, 1)$, $B(11, 6)$ and $AP : PB = 2 : 3$.",
+        "steps": [
+          "$P$ is $\\frac{2}{5}$ of the way. The change is $\\langle 10, 5 \\rangle$, and $\\frac{2}{5}$ of it is $\\langle 4, 2 \\rangle$.",
+          "$P = (1 + 4, 1 + 2) = (5, 3)$."
+        ],
+        "a": "$P(5, 3)$"
+      },
+      {
+        "t": "ex",
+        "title": "A fraction answer",
+        "q": "Find $P$ on $\\overline{AB}$ with $A(-2, 5)$, $B(4, -1)$ and $AP : PB = 3 : 1$.",
+        "steps": [
+          "$P$ is $\\frac{3}{4}$ of the way. The change is $\\langle 6, -6 \\rangle$; three quarters of it is $\\left\\langle \\frac{9}{2}, -\\frac{9}{2} \\right\\rangle$.",
+          "$P = \\left(-2 + \\frac{9}{2}, 5 - \\frac{9}{2}\\right) = \\left(\\frac{5}{2}, \\frac{1}{2}\\right)$."
+        ],
+        "a": "$P\\left(\\frac{5}{2}, \\frac{1}{2}\\right)$"
+      },
+      {
+        "t": "mistake",
+        "html": "Going $\\frac{a}{b}$ of the way instead of $\\frac{a}{a + b}$. With $AP : PB = 2 : 3$, the point is $\\frac{2}{5}$ of the way, not $\\frac{2}{3}$: the ratio compares the two pieces with each other, but you need a piece compared with the whole. Check: $AP$ and $PB$ should come out in the ratio you were given."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Common Core State Standards for Mathematics, High School Geometry, G-GPE.B.6"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

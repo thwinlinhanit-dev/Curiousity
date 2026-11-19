@@ -1,0 +1,70 @@
+{
+  "id": "rbsense.ultrasonic-ranging",
+  "slug": "ultrasonic-ranging",
+  "ladder": "robotics",
+  "course": "rbsense",
+  "unit": "sensors",
+  "title": "Ultrasonic Distance",
+  "short": "Sound goes out and back, so distance = speed of sound times time, divided by 2.",
+  "trouble": "Students forget to halve the round trip.",
+  "prereqs": [
+    "rbprog.sensor-decisions",
+    "physsci.speed"
+  ],
+  "xp": 2,
+  "viz": [
+    "rb-sta"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Bats find insects by listening for echoes. A cheap ultrasonic sensor does the same with a click too high for us to hear."
+      },
+      {
+        "t": "key",
+        "html": "The sensor sends a pulse of sound and times the echo. Sound goes <b>there and back</b>, so $d = \\dfrac{v\\,t}{2}$, with $v \\approx 343\\ \\text{m/s}$ in room-temperature air. A closer formula is $v \\approx 331 + 0.6\\,T$ m/s, with $T$ in °C."
+      },
+      {
+        "t": "viz",
+        "name": "rb-sta",
+        "opts": {
+          "sensor": true
+        },
+        "cap": "The robot uses its distance reading to stop before the wall."
+      },
+      {
+        "t": "why",
+        "html": "Sound is slow enough to time with a microcontroller: 1 meter away gives an echo after about 5.8 ms. Soft, angled or very small objects send back weak echoes, so these sensors can miss things a camera would see."
+      },
+      {
+        "t": "ex",
+        "title": "Echo time to distance",
+        "q": "An echo after 1,750 µs.",
+        "steps": [
+          "$343 \\times 0.00175 \\approx 0.600\\ \\text{m}$ round trip.",
+          "Half: about 0.30 m."
+        ],
+        "a": "About 30 cm."
+      },
+      {
+        "t": "mistake",
+        "html": "Forgetting to halve the round trip, which makes every object look twice as far as it is."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Roland Siegwart, Illah R. Nourbakhsh and Davide Scaramuzza, Introduction to Autonomous Mobile Robots, 2nd ed. (MIT Press, 2011)"
+      },
+      {
+        "name": "Arduino Documentation",
+        "url": "https://docs.arduino.cc/"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,107 @@
+{
+  "id": "calc2.absolute-conditional",
+  "slug": "absolute-conditional",
+  "ladder": "math",
+  "course": "calc2",
+  "unit": "sequences-series",
+  "title": "Absolute and Conditional Convergence",
+  "short": "Test Σ|aₙ| to learn how a series converges.",
+  "trouble": "",
+  "prereqs": [
+    "calc2.alternating-series",
+    "calc2.comparison-tests"
+  ],
+  "xp": 2,
+  "viz": [
+    "seriespartial"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Some series have signs that are neither all positive nor neatly alternating, like $\\sum\\frac{\\sin n}{n^{2}}$. The way in is to look at the sizes $|a_n|$, where the <a href=\"/math/calculus-2/comparison-tests/\">comparison tests</a> apply, and to remember the <a href=\"/math/calculus-2/alternating-series/\">alternating series test</a> for the cases where sizes alone are not enough."
+      },
+      {
+        "t": "why",
+        "html": "If $\\sum|a_n|$ converges, then so does $\\sum a_n$. Here is why: $0 \\le a_n + |a_n| \\le 2|a_n|$, so $\\sum(a_n + |a_n|)$ converges by comparison, and $a_n = (a_n + |a_n|) - |a_n|$ is the difference of two convergent series. Cancellation can only help a series converge, never hurt it."
+      },
+      {
+        "t": "key",
+        "html": "$\\sum a_n$ is <b>absolutely convergent</b> if $\\sum|a_n|$ converges (then $\\sum a_n$ converges too). It is <b>conditionally convergent</b> if $\\sum a_n$ converges but $\\sum|a_n|$ diverges. Otherwise it diverges."
+      },
+      {
+        "t": "list",
+        "items": [
+          "Step 1: test $\\sum|a_n|$ (comparison, $p$-series, ratio test, …). If it converges, you are done: absolute convergence.",
+          "Step 2: if $\\sum|a_n|$ diverges, test $\\sum a_n$ itself, usually with the alternating series test. If it converges: conditional.",
+          "Step 3: if the terms do not go to 0, it diverges."
+        ]
+      },
+      {
+        "t": "ex",
+        "title": "Absolutely convergent",
+        "q": "Classify $\\sum_{n=1}^{\\infty}\\frac{(-1)^{n}}{n^{2}}$.",
+        "steps": [
+          "$\\sum\\left|\\frac{(-1)^{n}}{n^{2}}\\right| = \\sum\\frac{1}{n^{2}}$ converges ($p = 2$).",
+          "So the series converges absolutely."
+        ],
+        "a": "Absolutely convergent"
+      },
+      {
+        "t": "ex",
+        "title": "Conditionally convergent",
+        "q": "Classify $\\sum_{n=1}^{\\infty}\\frac{(-1)^{n}}{\\sqrt{n}}$.",
+        "steps": [
+          "$\\sum\\frac{1}{\\sqrt{n}}$ diverges ($p = \\frac{1}{2}$), so it is not absolutely convergent.",
+          "But $\\frac{1}{\\sqrt{n}}$ decreases to 0, so the alternating series converges.",
+          "So it converges conditionally."
+        ],
+        "a": "Conditionally convergent"
+      },
+      {
+        "t": "ex",
+        "title": "Irregular signs",
+        "q": "Classify $\\sum_{n=1}^{\\infty}\\frac{\\sin n}{n^{2}}$.",
+        "steps": [
+          "The signs follow no simple pattern, so the alternating series test does not apply.",
+          "$\\left|\\frac{\\sin n}{n^{2}}\\right| \\le \\frac{1}{n^{2}}$, and $\\sum\\frac{1}{n^{2}}$ converges, so $\\sum\\left|\\frac{\\sin n}{n^{2}}\\right|$ converges by comparison.",
+          "So the series converges absolutely."
+        ],
+        "a": "Absolutely convergent"
+      },
+      {
+        "t": "viz",
+        "name": "seriespartial",
+        "opts": {
+          "a": "sin(n)/n^2",
+          "start": 1,
+          "N": 30,
+          "maxN": 60
+        },
+        "cap": "The terms $\\frac{\\sin n}{n^{2}}$ jump between positive and negative with no pattern, but their sizes shrink like $\\frac{1}{n^{2}}$, so the partial sums settle quickly."
+      },
+      {
+        "t": "mistake",
+        "html": "Calling a series absolutely convergent because it passes the alternating series test. The alternating series test only shows convergence; $\\sum\\frac{(-1)^{n}}{n}$ passes it, yet $\\sum\\frac{1}{n}$ diverges, so that series is conditionally convergent. Absolute convergence is a statement about $\\sum|a_n|$, and you have to test that series separately."
+      },
+      {
+        "t": "note",
+        "html": "The difference matters: an absolutely convergent series has the same sum however you reorder its terms. A conditionally convergent one can be rearranged to add up to any number you like (Riemann's rearrangement theorem), so its sum depends on the order."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 2, Section 5.5: Alternating Series (absolute and conditional convergence)"
+      },
+      {
+        "name": "Paul’s Online Math Notes (Lamar University), Calculus II: Absolute Convergence"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

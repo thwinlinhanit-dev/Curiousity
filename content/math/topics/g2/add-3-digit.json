@@ -1,0 +1,100 @@
+{
+  "id": "g2.add-3-digit",
+  "slug": "add-3-digit",
+  "ladder": "math",
+  "course": "g2",
+  "unit": "add-sub-1000",
+  "title": "Adding Three-Digit Numbers",
+  "short": "Add hundreds, tens and ones, regrouping when needed.",
+  "trouble": "Children write a two-digit column sum in one column, so 7 + 8 ones becomes \"15\" squeezed into the answer.",
+  "prereqs": [
+    "g2.add-within-100",
+    "g2.place-value-hundreds"
+  ],
+  "xp": 2,
+  "viz": [
+    "base10",
+    "placevalue"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Adding three-digit numbers is like <a href=\"/math/grade-2/add-within-100/\">adding two-digit numbers</a>, with one more place: the hundreds. Add the ones, then the tens, then the hundreds."
+      },
+      {
+        "t": "viz",
+        "name": "base10",
+        "opts": {
+          "n": 367,
+          "add": 258
+        },
+        "cap": "Press “Add 258”. Trade 10 ones for a ten, then 10 tens for a hundred."
+      },
+      {
+        "t": "why",
+        "html": "Each place holds 0 to 9. When the ones make 10 or more, 10 ones become a new ten. When the tens make 10 or more, 10 tens become a new hundred. Trading keeps the total the same and lets each place hold just one digit."
+      },
+      {
+        "t": "ex",
+        "title": "No trades",
+        "q": "Find $243 + 125$.",
+        "steps": [
+          "Ones: $3 + 5 = 8$.",
+          "Tens: $4 + 2 = 6$.",
+          "Hundreds: $2 + 1 = 3$."
+        ],
+        "a": "$368$"
+      },
+      {
+        "t": "ex",
+        "title": "Two trades",
+        "q": "Find $367 + 258$.",
+        "steps": [
+          "Ones: $7 + 8 = 15$. Write 5 and make a new ten.",
+          "Tens: $6 + 5 + 1 = 12$ tens. Write 2 and make a new hundred.",
+          "Hundreds: $3 + 2 + 1 = 6$."
+        ],
+        "a": "$625$"
+      },
+      {
+        "t": "ex",
+        "title": "Add by place value",
+        "q": "Find $467 + 258$ with expanded form.",
+        "steps": [
+          "Hundreds: $400 + 200 = 600$.",
+          "Tens: $60 + 50 = 110$.",
+          "Ones: $7 + 8 = 15$.",
+          "$600 + 110 + 15 = 725$."
+        ],
+        "a": "$725$"
+      },
+      {
+        "t": "key",
+        "html": "Add ones, tens, then hundreds. When a place gets 10 or more, trade 10 of them for 1 of the next place."
+      },
+      {
+        "t": "mistake",
+        "html": "Squeezing a two-digit sum into one place. For $247 + 138$, the ones make $7 + 8 = 15$. Writing all of 15 in the answer gives 3715. A place holds only one digit: write 5 and trade the ten. The answer is 385. Check: 247 is close to 250 and 138 is close to 140, so the sum is close to 390, not thousands."
+      },
+      {
+        "t": "note",
+        "html": "<b>Grown-up tip:</b> Graph paper helps keep the digits lined up in their places."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 2, standard 2.NBT.B.7 (add and subtract within 1000 using models and strategies based on place value)"
+      },
+      {
+        "name": "OpenStax, Prealgebra 2e, Section 1.2 Add Whole Numbers (background for grown-ups)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

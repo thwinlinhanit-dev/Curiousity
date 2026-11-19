@@ -1,0 +1,100 @@
+{
+  "id": "hsbio.adaptation-in-action",
+  "slug": "adaptation-in-action",
+  "ladder": "bio",
+  "course": "hsbio",
+  "unit": "evolution",
+  "title": "Evolution in Action",
+  "short": "Antibiotic and pesticide resistance and the changing beaks of Galápagos finches after a drought show natural selection measured within a few generations.",
+  "trouble": "Students think the drug or the drought causes the needed mutation. The variation was already there; the environment selects among it.",
+  "prereqs": [
+    "hsbio.selection-patterns",
+    "lifesci.populations-change"
+  ],
+  "xp": 2,
+  "viz": [
+    "bi-selection",
+    "bi-chart"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Evolution usually takes many generations, but when selection is strong and generations are short, we can watch it. These cases put <a href=\"/biology/high-school-biology/selection-patterns/\">directional selection</a> and <a href=\"/biology/life-science/populations-change/\">populations changing over time</a> on a timeline you can see."
+      },
+      {
+        "t": "h",
+        "text": "Antibiotic resistance"
+      },
+      {
+        "t": "p",
+        "html": "When an antibiotic is used, it kills the bacteria it can. A few bacteria may already carry an allele that lets them survive. Those survivors multiply, so the next population is mostly resistant. The CDC describes resistance as germs developing \"the ability to defeat the drugs designed to kill them,\" and notes that antibiotics do not work on viruses. Insects become resistant to pesticides the same way."
+      },
+      {
+        "t": "viz",
+        "name": "bi-population",
+        "opts": {
+          "model": "doubling",
+          "gens": 6,
+          "N0": 1
+        },
+        "cap": "After the drug, a single resistant survivor that doubles each generation becomes 64 resistant bacteria in six generations."
+      },
+      {
+        "t": "h",
+        "text": "Finch beaks in a drought"
+      },
+      {
+        "t": "p",
+        "html": "On the small Galápagos island of Daphne Major, Peter and Rosemary Grant measured medium ground finches year after year. In the 1977 drought, small soft seeds ran out and the population fell by about 85%. Birds with deeper beaks could crack the hard seeds that were left, so more of them survived. Their offspring also had deeper beaks on average: evolution measured in one generation."
+      },
+      {
+        "t": "key",
+        "html": "In each case the <b>variation was already there</b>. The drug, the pesticide or the drought did not create the helpful trait. It <b>selected</b> among traits that already varied, and the next generation inherited the survivors' alleles."
+      },
+      {
+        "t": "why",
+        "html": "A mutation is a copying change, and copying changes happen whether or not they would help. The environment cannot reach into the DNA and order the right one. What the environment does is decide who leaves offspring. That is why resistance spreads faster when a drug is used more: more use means stronger selection."
+      },
+      {
+        "t": "ex",
+        "title": "Counting survivors",
+        "q": "A colony of 1,000,000 bacteria has 10 resistant cells. An antibiotic kills every other cell. The survivors double every hour. How many bacteria are there 5 hours later?",
+        "steps": [
+          "Survivors: the 10 resistant cells.",
+          "Five doublings multiply by $2^5 = 32$.",
+          "10 × 32 = 320."
+        ],
+        "a": "320 bacteria, all resistant."
+      },
+      {
+        "t": "mistake",
+        "html": "A very common idea is that the drug or the drought caused the needed change, as if the bacteria \"learned\" to resist. The variation was there first; the environment only chose among it. A quick check: in the finch study, the deep beaks were measured <i>before</i> the drought began."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "CDC, About Antimicrobial Resistance",
+        "url": "https://www.cdc.gov/antimicrobial-resistance/about/index.html"
+      },
+      {
+        "name": "OpenStax, Biology 2e, 19.3 Adaptive Evolution"
+      },
+      {
+        "name": "OpenStax, Concepts of Biology, 11.1 Discovering How Populations Change"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-LS4-4: Biological Evolution: Unity and Diversity"
+      },
+      {
+        "name": "Grokipedia, Darwin's finches",
+        "url": "https://grokipedia.com/page/Darwin%27s_finches"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

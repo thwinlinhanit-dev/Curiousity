@@ -1,0 +1,142 @@
+{
+  "id": "phys1.position-time-graphs",
+  "slug": "position-time-graphs",
+  "course": "phys1",
+  "courseTitle": "Physics 1: Motion, Forces and Energy",
+  "unit": "kinematics",
+  "unitTitle": "Motion in One Dimension",
+  "title": "Position-Time Graphs",
+  "short": "The slope of an x–t graph is the velocity.",
+  "trouble": "Students read a high point on the graph as a high speed, mixing up the value with the slope.",
+  "prereqs": [
+    "phys1.average-velocity",
+    "g8.slope-formula"
+  ],
+  "xp": 1,
+  "viz": [
+    "ph-motion",
+    "ph-graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A position-time ($x$–$t$) graph plots where an object is at each moment. Its most useful feature is its slope, which you can find with <a href=\"/math/pre-algebra/slope-formula/\">The Slope Formula</a>. Over any straight piece, rise over run is $\\dfrac{\\Delta x}{\\Delta t}$, which is exactly the <a href=\"/physics/physics-1/average-velocity/\">Average Velocity</a>."
+      },
+      {
+        "t": "key",
+        "html": "The slope of an $x$–$t$ graph is the velocity. Steeper means faster; upward slope means moving in the $+x$ direction; downward slope means $-x$; flat means standing still."
+      },
+      {
+        "t": "why",
+        "html": "The rise of the graph is a change in position, $\\Delta x$, and the run is a change in time, $\\Delta t$. Dividing gives $\\Delta x / \\Delta t$, the definition of velocity. The height of the graph only tells you <i>where</i> the object is, not how fast it moves."
+      },
+      {
+        "t": "viz",
+        "name": "ph-graph",
+        "opts": {
+          "pts": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              9
+            ],
+            [
+              8,
+              0
+            ]
+          ],
+          "xlab": "t",
+          "xunit": "s",
+          "ylab": "x",
+          "yunit": "m",
+          "tool": "slope",
+          "at": 1,
+          "task": "Drag the gold point along the graph. The slope it reports is the velocity on that piece."
+        },
+        "cap": "A walk in four pieces: forward, a stop, a fast stretch forward, then a long walk back."
+      },
+      {
+        "t": "table",
+        "head": [
+          "On the x–t graph",
+          "The motion"
+        ],
+        "rows": [
+          [
+            "straight line sloping up",
+            "steady velocity in the +x direction"
+          ],
+          [
+            "steeper line",
+            "faster"
+          ],
+          [
+            "flat line",
+            "at rest"
+          ],
+          [
+            "line sloping down",
+            "steady velocity in the −x direction"
+          ],
+          [
+            "crossing the t axis",
+            "passing the origin (not stopping)"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Reading a slope",
+        "q": "On the graph above, find the velocity from $t = 5\\ \\text{s}$ to $t = 8\\ \\text{s}$.",
+        "steps": [
+          "$x$ goes from $9\\ \\text{m}$ to $0\\ \\text{m}$: $\\Delta x = -9\\ \\text{m}$.",
+          "$\\Delta t = 3\\ \\text{s}$, so $v = \\dfrac{-9}{3} = -3\\ \\text{m/s}$."
+        ],
+        "a": "$-3\\ \\text{m/s}$ (walking back toward the origin)"
+      },
+      {
+        "t": "ex",
+        "title": "Fastest is steepest",
+        "q": "On the same graph, when is the walker fastest?",
+        "steps": [
+          "Slopes: $0$–$2\\ \\text{s}$: $2\\ \\text{m/s}$; $2$–$4\\ \\text{s}$: $0$; $4$–$5\\ \\text{s}$: $4\\ \\text{m/s}$; $5$–$8\\ \\text{s}$: $-3\\ \\text{m/s}$.",
+          "Speed is the size of the slope, so the biggest is $4\\ \\text{m/s}$, from $4$ to $5\\ \\text{s}$."
+        ],
+        "a": "From $t = 4\\ \\text{s}$ to $5\\ \\text{s}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Reading a high point on the graph as high speed. The top of the graph above ($x = 9\\ \\text{m}$ at $t = 5\\ \\text{s}$) is where the walker is farthest away, not where they move fastest; at the highest point of a curved graph, the object is momentarily stopped. Check: always ask \"how steep?\", never \"how high?\", when you want velocity."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Physics 2e, Section 2.8 Graphical Analysis of One-Dimensional Motion"
+      },
+      {
+        "name": "OpenStax University Physics Volume 1, Section 3.1 Position, Displacement, and Average Velocity"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

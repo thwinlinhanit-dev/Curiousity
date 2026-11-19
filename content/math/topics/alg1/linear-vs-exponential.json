@@ -1,0 +1,122 @@
+{
+  "id": "alg1.linear-vs-exponential",
+  "slug": "linear-vs-exponential",
+  "ladder": "math",
+  "course": "alg1",
+  "unit": "exponential",
+  "title": "Linear vs Exponential Change",
+  "short": "Linear grows by equal differences; exponential grows by equal factors.",
+  "trouble": "Students judge by the first few values and miss that exponential growth eventually passes any linear growth.",
+  "prereqs": [
+    "alg1.exponential-functions",
+    "alg1.arithmetic-sequences"
+  ],
+  "xp": 2,
+  "viz": [
+    "exponential",
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "How can you tell from data whether something grows linearly or exponentially? Compare it with <a href=\"/math/algebra-1/arithmetic-sequences/\">arithmetic sequences</a> (add the same amount) and <a href=\"/math/algebra-1/exponential-functions/\">exponential functions</a> (multiply by the same factor)."
+      },
+      {
+        "t": "why",
+        "html": "Over equal steps in $x$, a linear function changes by equal <b>differences</b>: $y = 3x + 2$ adds $3$ each step. An exponential function changes by equal <b>ratios</b>: $y = 2 \\cdot 3^x$ multiplies by $3$ each step. That is the test. It also explains the long run: a linear function always adds the same amount, but an exponential function adds an amount proportional to what it already has, so its yearly gain keeps growing. Eventually any exponential growth passes any linear growth, however far behind it starts."
+      },
+      {
+        "t": "viz",
+        "name": "exponential",
+        "opts": {
+          "a": 1,
+          "b": 2,
+          "compare": true,
+          "table": true,
+          "xmin": -1,
+          "xmax": 7,
+          "ymin": -5,
+          "ymax": 70
+        },
+        "cap": "$y = 2^x$ against the line that grows by the same amount as the first step. The line adds; the curve multiplies, and soon leaves the line behind."
+      },
+      {
+        "t": "table",
+        "head": [
+          "$x$",
+          "$0$",
+          "$1$",
+          "$2$",
+          "$3$",
+          "$4$"
+        ],
+        "rows": [
+          [
+            "linear $y = 10x + 1$",
+            "$1$",
+            "$11$",
+            "$21$",
+            "$31$",
+            "$41$"
+          ],
+          [
+            "exponential $y = 3^x$",
+            "$1$",
+            "$3$",
+            "$9$",
+            "$27$",
+            "$81$"
+          ]
+        ],
+        "cap": "The linear function leads at first; the exponential one passes it between $x = 3$ and $x = 4$."
+      },
+      {
+        "t": "key",
+        "html": "Equal differences over equal intervals mean linear; equal ratios mean exponential. Exponential growth eventually exceeds linear growth."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Test a table",
+        "q": "Is the data $(0, 5), (1, 10), (2, 20), (3, 40)$ linear or exponential?",
+        "steps": [
+          "Differences: $5, 10, 20$. Not equal, so not linear.",
+          "Ratios: $\\frac{10}{5} = 2$, $\\frac{20}{10} = 2$, $\\frac{40}{20} = 2$. Equal."
+        ],
+        "a": "Exponential: $y = 5 \\cdot 2^x$."
+      },
+      {
+        "t": "ex",
+        "title": "When does the exponential win?",
+        "q": "$f(x) = 2^x$ and $g(x) = 25x$. For which whole $x$ does $f$ first pass $g$?",
+        "steps": [
+          "$x = 6$: $64$ vs $150$. $x = 7$: $128$ vs $175$.",
+          "$x = 8$: $256$ vs $200$."
+        ],
+        "a": "At $x = 8$, and $f$ stays ahead from then on."
+      },
+      {
+        "t": "mistake",
+        "html": "Judging from the first few values. At first $25x$ is far ahead of $2^x$, so it can look as if the linear function wins. Keep the table going, or compare the step-by-step gains: the line gains $25$ each time, while $2^x$ gains $2^x$ itself, which soon exceeds $25$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Algebra 2e, section 6.1 Exponential Functions (linear versus exponential growth)"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, F-LE.A.1: distinguish between situations modeled with linear functions and with exponential functions"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,81 @@
+{
+  "id": "rbctrl.open-closed-loop",
+  "slug": "open-closed-loop",
+  "ladder": "robotics",
+  "course": "rbctrl",
+  "unit": "loops",
+  "title": "Open and Closed Loops",
+  "short": "Open loop runs a fixed command; closed loop measures the error, setpoint minus measurement, and corrects it.",
+  "trouble": "Students get the sign of the error backward, measurement minus setpoint.",
+  "prereqs": [
+    "rbprog.loop-timing"
+  ],
+  "xp": 2,
+  "viz": [],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Tell a robot to drive forward for 3 seconds. On carpet it goes 80 cm; on wood, 1.2 m; with a weak battery, 60 cm. It has no idea. That is <b>open-loop</b> control."
+      },
+      {
+        "t": "key",
+        "html": "<b>Open loop:</b> send a fixed command and hope. <b>Closed loop</b> (feedback): measure the result, compare it with the goal, and correct. The <b>error</b> is $e = \\text{setpoint} - \\text{measurement}$."
+      },
+      {
+        "t": "viz",
+        "name": "rb-pid",
+        "opts": {
+          "mode": "pid",
+          "kp": 1,
+          "ki": 0,
+          "kd": 0
+        },
+        "cap": "A cart driven by a controller. Start with these settings, then try others."
+      },
+      {
+        "t": "why",
+        "html": "Feedback works without knowing the world exactly. Whether the floor is carpet or wood, the robot keeps measuring and correcting until the error is small. That is why almost every robot joint and wheel runs a feedback loop."
+      },
+      {
+        "t": "ex",
+        "title": "The error",
+        "q": "Goal: 90°. The arm's sensor reads 72°.",
+        "steps": [
+          "$e = 90 - 72 = 18^\\circ$.",
+          "Positive: push toward larger angles."
+        ],
+        "a": "18°."
+      },
+      {
+        "t": "ex",
+        "title": "Open or closed?",
+        "q": "A thermostat that turns the heater on when the room is below the set temperature.",
+        "steps": [
+          "It measures the result (room temperature) and corrects."
+        ],
+        "a": "Closed loop."
+      },
+      {
+        "t": "mistake",
+        "html": "Getting the sign of the error backward (measurement minus setpoint). Then the controller pushes the wrong way and the error grows."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Karl J. Åström and Richard M. Murray, Feedback Systems: An Introduction for Scientists and Engineers, 2nd ed. (Princeton University Press), free online edition",
+        "url": "https://www.cds.caltech.edu/~murray/amwiki/"
+      },
+      {
+        "name": "MIT OpenCourseWare, 2.12 Introduction to Robotics (Fall 2005)",
+        "url": "https://ocw.mit.edu/courses/2-12-introduction-to-robotics-fall-2005/"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

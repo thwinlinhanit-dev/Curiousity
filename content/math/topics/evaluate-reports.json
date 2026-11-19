@@ -1,0 +1,87 @@
+{
+  "id": "stat.evaluate-reports",
+  "slug": "evaluate-reports",
+  "ladder": "math",
+  "course": "stat",
+  "unit": "collecting-data",
+  "title": "Evaluating Statistical Reports",
+  "short": "Judge claims in the news by how the data were produced.",
+  "trouble": "",
+  "prereqs": [
+    "stat.experimental-design"
+  ],
+  "xp": 2,
+  "viz": [],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "News stories, ads and social media posts are full of statistics. You now know enough about <a href=\"/math/probability-and-statistics/sampling-bias/\">sampling</a> and <a href=\"/math/probability-and-statistics/experimental-design/\">experiments</a> to ask the right questions before believing a claim."
+      },
+      {
+        "t": "key",
+        "html": "Judge a statistical claim by how the data were produced. Ask: Who was studied, and how were they chosen? Was anything randomly assigned? How many were studied, and how much did results vary? What exactly was measured or asked? Does the conclusion match the design (association versus cause, these subjects versus everyone)?"
+      },
+      {
+        "t": "why",
+        "html": "A number is only as good as the process that made it. A precise-looking \"73%\" from a self-selected online poll carries less information than a rough \"about 60%\" from a careful random sample. Most misleading claims are not false arithmetic; they are true numbers attached to the wrong conclusion."
+      },
+      {
+        "t": "list",
+        "items": [
+          "<b>Sample</b>: random, or convenience or volunteers?",
+          "<b>Design</b>: experiment or observational study?",
+          "<b>Size and variation</b>: could chance explain the result?",
+          "<b>Measurement</b>: neutral wording? What was actually counted?",
+          "<b>Conclusion</b>: does \"causes\" or \"all Americans\" go beyond the design?"
+        ]
+      },
+      {
+        "t": "ex",
+        "title": "A causal headline",
+        "q": "A headline reads: \"Chess makes kids smarter: chess club members get higher grades.\" The story compares club members with other students. Evaluate.",
+        "steps": [
+          "Students chose to join the club: an observational study.",
+          "Students who join a chess club may already like school and get support at home (confounding).",
+          "The data show an association; they do not show that chess causes better grades."
+        ],
+        "a": "The headline claims cause from an observational comparison."
+      },
+      {
+        "t": "ex",
+        "title": "Relative versus absolute risk",
+        "q": "An ad says a medicine \"cuts the risk of a side effect in half,\" from 2 in 10,000 people to 1 in 10,000. Evaluate.",
+        "steps": [
+          "Relative change: from 2 to 1 is indeed half.",
+          "Absolute change: 1 fewer case per 10,000 people, or 0.01%.",
+          "Both are true, but \"in half\" sounds far bigger than the actual difference."
+        ],
+        "a": "A large relative change can be a tiny absolute change; report both."
+      },
+      {
+        "t": "mistake",
+        "html": "Trusting a result because the number looks precise or the sample is large. A poll of 50,000 self-selected website visitors is less trustworthy than a random sample of 1,000. Check the design questions first, then the numbers."
+      },
+      {
+        "t": "note",
+        "html": "Misleading graphs are a cousin of misleading claims: a bar graph whose axis starts at 950 instead of 0 can make a 2% change look like doubling. Read the axis labels."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Introductory Statistics 2e, section 1.4 Experimental Design and Ethics"
+      },
+      {
+        "name": "OpenStax, Introductory Statistics 2e, section 1.2 Data, Sampling, and Variation in Data and Sampling"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, S-IC.B.6 (Evaluate reports based on data)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

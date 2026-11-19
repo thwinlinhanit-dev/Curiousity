@@ -1,0 +1,117 @@
+{
+  "id": "alg2.even-odd-functions",
+  "slug": "even-odd-functions",
+  "ladder": "math",
+  "course": "alg2",
+  "unit": "functions",
+  "title": "Even and Odd Functions",
+  "short": "f(−x) = f(x) means symmetric about the y-axis; f(−x) = −f(x) means symmetric about the origin.",
+  "trouble": "Students decide even or odd from the exponents they see, missing that x² + x is neither.",
+  "prereqs": [
+    "alg2.parent-functions"
+  ],
+  "xp": 2,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Some graphs are their own mirror image. You met symmetry in the <a href=\"/math/algebra-2/parent-functions/\">Parent Functions</a>: $x^2$ is symmetric about the $y$-axis, and $x^3$ looks the same after a half turn about the origin. Algebra can detect this symmetry without drawing anything."
+      },
+      {
+        "t": "key",
+        "html": "$f$ is <b>even</b> when $f(-x) = f(x)$ for every $x$: the graph is symmetric about the $y$-axis. $f$ is <b>odd</b> when $f(-x) = -f(x)$ for every $x$: the graph is symmetric about the origin. Most functions are neither."
+      },
+      {
+        "t": "why",
+        "html": "Replacing $x$ with $-x$ reflects a graph across the $y$-axis. If that gives back the same formula, the graph is its own mirror image: even. If it gives back the negative of the formula, then reflecting across the $y$-axis and then across the $x$-axis (a half turn) returns the graph to itself: odd. The names come from powers: $(-x)^n = x^n$ when $n$ is even and $(-x)^n = -x^n$ when $n$ is odd."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "fns": [
+            "x^3 + a*x^2 - 3x",
+            {
+              "f": "x^3 - a*x^2 - 3x",
+              "dash": true
+            }
+          ],
+          "params": {
+            "a": [
+              -3,
+              3,
+              2,
+              0.5
+            ]
+          },
+          "xmin": -4,
+          "xmax": 4,
+          "ymin": -8,
+          "ymax": 8,
+          "target": {
+            "param": "a",
+            "value": 0,
+            "tol": 0.01
+          },
+          "task": "Find the value of a that makes the dashed copy land on f."
+        },
+        "cap": "The solid curve is $f$; the dashed curve $g$ is $-f(-x)$, the half-turn copy. They match only when $f$ is odd."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "An even polynomial",
+        "q": "Is $f(x) = x^4 - 3x^2 + 2$ even, odd or neither?",
+        "steps": [
+          "$f(-x) = (-x)^4 - 3(-x)^2 + 2$ $= x^4 - 3x^2 + 2$.",
+          "That is exactly $f(x)$. (The constant 2 is $2x^0$, an even power.)"
+        ],
+        "a": "Even"
+      },
+      {
+        "t": "ex",
+        "title": "An odd polynomial",
+        "q": "Is $g(x) = x^3 - 5x$ even, odd or neither?",
+        "steps": [
+          "$g(-x) = (-x)^3 - 5(-x)$ $= -x^3 + 5x$.",
+          "Compare with $-g(x) = -x^3 + 5x$. They are equal."
+        ],
+        "a": "Odd"
+      },
+      {
+        "t": "ex",
+        "title": "Neither",
+        "q": "Is $h(x) = x^2 + x$ even, odd or neither?",
+        "steps": [
+          "$h(-x) = x^2 - x$.",
+          "That is not $h(x) = x^2 + x$, and not $-h(x) = -x^2 - x$.",
+          "Numbers confirm it: $h(1) = 2$ but $h(-1) = 0$."
+        ],
+        "a": "Neither"
+      },
+      {
+        "t": "mistake",
+        "html": "Deciding from the exponents you happen to see. $x^2 + x$ has an even power, but it also has an odd one, so it is neither. A hidden constant counts too: $x^3 + 1$ is neither. A quick test can rule things out: if $f(-1) \\ne f(1)$ it is not even, and if $f(-1) \\ne -f(1)$ it is not odd. One number can disprove symmetry but never prove it; for that, compute $f(-x)$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Algebra 2e, Section 3.5 Transformation of Functions (even and odd functions)"
+      },
+      {
+        "name": "Common Core State Standards, F-BF.B.3"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

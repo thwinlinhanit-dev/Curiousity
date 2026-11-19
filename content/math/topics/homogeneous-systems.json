@@ -1,0 +1,110 @@
+{
+  "id": "la.homogeneous-systems",
+  "slug": "homogeneous-systems",
+  "ladder": "math",
+  "course": "la",
+  "unit": "vectors-matrices",
+  "title": "Homogeneous Systems",
+  "short": "Ax = 0 always has the zero solution; the question is whether there are others.",
+  "trouble": "",
+  "prereqs": [
+    "la.matrix-equation",
+    "la.parametric-solutions"
+  ],
+  "xp": 2,
+  "viz": [
+    "span"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A system $A\\mathbf{x} = \\mathbf{0}$, with every constant equal to zero, is called <b>homogeneous</b>. It always has at least one solution, $\\mathbf{x} = \\mathbf{0}$, called the <b>trivial solution</b>. So existence is never in doubt; the real question is whether there are others. This uses <a href=\"/math/linear-algebra/parametric-solutions/\">free variables</a> and <a href=\"/math/linear-algebra/matrix-equation/\">the matrix equation</a>."
+      },
+      {
+        "t": "key",
+        "html": "$A\\mathbf{x} = \\mathbf{0}$ has a nontrivial solution exactly when the equation has at least one free variable, that is, when some column of $A$ has no pivot. Its solution set is the span of one vector per free variable."
+      },
+      {
+        "t": "ex",
+        "title": "Parametric vector form",
+        "q": "Solve $A\\mathbf{x} = \\mathbf{0}$ for $A = \\begin{bmatrix} 1 & 2 & -1 \\\\ 2 & 5 & 1 \\end{bmatrix}$.",
+        "steps": [
+          "Row reduce $A$ (the column of zeros never changes, so leave it off): $R_2 \\to R_2 - 2R_1$ gives $(0, 1, 3)$, then $R_1 \\to R_1 - 2R_2$: $\\begin{bmatrix} 1 & 0 & -7 \\\\ 0 & 1 & 3 \\end{bmatrix}$.",
+          "$x_3$ is free; let $x_3 = t$. Row 1: $x_1 = 7t$. Row 2: $x_2 = -3t$.",
+          "$\\mathbf{x} = t\\begin{bmatrix} 7 \\\\ -3 \\\\ 1 \\end{bmatrix}$. The solution set is $\\operatorname{Span}\\left\\{\\begin{bmatrix} 7 \\\\ -3 \\\\ 1 \\end{bmatrix}\\right\\}$: a line through the origin in $\\mathbb{R}^3$.",
+          "Check: $A\\begin{bmatrix} 7 \\\\ -3 \\\\ 1 \\end{bmatrix} = \\begin{bmatrix} 0 \\\\ 0 \\end{bmatrix} = \\begin{bmatrix} 0 \\\\ 0 \\end{bmatrix}$. ✓"
+        ],
+        "a": "$\\mathbf{x} = t(7, -3, 1)$"
+      },
+      {
+        "t": "viz",
+        "name": "matrix2d",
+        "opts": {
+          "m": [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              4
+            ]
+          ],
+          "presets": false,
+          "eigen": true,
+          "vector": [
+            1,
+            1
+          ],
+          "t": 1,
+          "task": "Drag $\\mathbf{v}$ until $A\\mathbf{v} = \\mathbf{0}$. Which line are you on?"
+        },
+        "cap": "This $A$ squashes the plane onto a line. Every vector on the line through $(2, -1)$ is sent to $\\mathbf{0}$: those are the solutions of $A\\mathbf{x} = \\mathbf{0}$."
+      },
+      {
+        "t": "h",
+        "text": "Homogeneous and nonhomogeneous solutions"
+      },
+      {
+        "t": "p",
+        "html": "Compare the general solution of $A\\mathbf{x} = \\mathbf{b}$ from <a href=\"/math/linear-algebra/parametric-solutions/\">the parametric topic</a>, $\\mathbf{x} = \\mathbf{p} + t\\mathbf{v}$, with the solution of $A\\mathbf{x} = \\mathbf{0}$: the same $t\\mathbf{v}$ appears. That is no accident."
+      },
+      {
+        "t": "why",
+        "html": "Suppose $A\\mathbf{p} = \\mathbf{b}$. If $A\\mathbf{v}_h = \\mathbf{0}$, then $A(\\mathbf{p} + \\mathbf{v}_h)$ $= A\\mathbf{p} + A\\mathbf{v}_h$ $= \\mathbf{b} + \\mathbf{0}$ $= \\mathbf{b}$, so $\\mathbf{p} + \\mathbf{v}_h$ is a solution. Conversely, if $A\\mathbf{y} = \\mathbf{b}$, then $A(\\mathbf{y} - \\mathbf{p}) = \\mathbf{b} - \\mathbf{b} = \\mathbf{0}$, so $\\mathbf{y}$ $= \\mathbf{p} + (\\text{a homogeneous solution})$. <b>Every solution of $A\\mathbf{x} = \\mathbf{b}$ is one particular solution plus a solution of $A\\mathbf{x} = \\mathbf{0}$.</b> Geometrically, the solution set of $A\\mathbf{x} = \\mathbf{b}$ is the solution set of $A\\mathbf{x} = \\mathbf{0}$ slid over by $\\mathbf{p}$: a parallel line or plane."
+      },
+      {
+        "t": "ex",
+        "title": "Using the structure",
+        "q": "For the same $A$, one solution of $A\\mathbf{x} = \\begin{bmatrix} 2 \\\\ 3 \\end{bmatrix}$ is $\\mathbf{p} = \\begin{bmatrix} 4 \\\\ -1 \\\\ 0 \\end{bmatrix}$. Find all solutions.",
+        "steps": [
+          "Check $\\mathbf{p}$: $A\\mathbf{p} = \\begin{bmatrix} 2 \\\\ 3 \\end{bmatrix} = \\begin{bmatrix} 2 \\\\ 3 \\end{bmatrix}$. ✓",
+          "All solutions are $\\mathbf{p}$ plus the homogeneous solutions: $\\mathbf{x} = \\begin{bmatrix} 4 \\\\ -1 \\\\ 0 \\end{bmatrix} + t\\begin{bmatrix} 7 \\\\ -3 \\\\ 1 \\end{bmatrix}$."
+        ],
+        "a": "$\\mathbf{x} = (4 + 7t,\\; -1 - 3t,\\; t)$"
+      },
+      {
+        "t": "p",
+        "html": "With one free variable the homogeneous solutions form a line through the origin; with two, a plane through the origin; in general, the span of one vector for each free variable. Those vectors come straight from the reduced echelon form: set one free variable to $1$ and the others to $0$, and read off the basic variables. We will meet this set again under the name <i>null space</i>."
+      },
+      {
+        "t": "note",
+        "html": "If $A$ has more columns than rows, $A\\mathbf{x} = \\mathbf{0}$ <b>always</b> has a nontrivial solution: there are more unknowns than possible pivots, so something is free."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Margalit and Rabinoff, Interactive Linear Algebra (Georgia Tech), §2.4 Solution Sets"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.06 Linear Algebra (Gilbert Strang, Spring 2010), Lecture 7: Solving Ax = 0: Pivot Variables, Special Solutions"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

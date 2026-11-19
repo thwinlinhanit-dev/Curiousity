@@ -1,0 +1,93 @@
+{
+  "id": "astro.black-holes",
+  "slug": "black-holes",
+  "course": "astro",
+  "courseTitle": "Astronomy",
+  "unit": "stellar-lives",
+  "unitTitle": "The Lives of Stars",
+  "title": "Black Holes",
+  "short": "Within the event horizon, R = 2GM/c², not even light can escape, yet far away a black hole pulls like any other mass.",
+  "trouble": "Students think black holes are cosmic vacuum cleaners that pull in everything around them.",
+  "prereqs": [
+    "astro.neutron-stars",
+    "astro.orbits-escape"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-orbit"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "If the core left by a supernova has more than about 3 solar masses, not even the neutron pressure that holds up a <a href=\"/physics/astronomy/neutron-stars/\">neutron star</a> can support it, and nothing known can stop the collapse. The result is a <b>black hole</b>. The idea grows out of <a href=\"/physics/astronomy/orbits-escape/\">escape speed</a>: the more mass squeezed into a smaller ball, the faster you must go to leave its surface."
+      },
+      {
+        "t": "why",
+        "html": "Escape speed is $v_{\\text{esc}} = \\sqrt{2GM/r}$. Squeeze a mass $M$ small enough and the escape speed reaches the speed of light $c$. Setting $\\sqrt{2GM/r} = c$ gives $$R_s = \\frac{2GM}{c^2},$$ the <b>Schwarzschild radius</b>. Einstein's general relativity gives exactly this radius for the <b>event horizon</b>: nothing that crosses it, not even light, ever comes back out. For the Sun's mass, $R_s$ is about $3$ km; it grows in proportion to mass, about $2.95$ km per solar mass. Far outside the horizon, though, a black hole's gravity is just $\\frac{GM}{r^2}$, the same as any star of that mass."
+      },
+      {
+        "t": "key",
+        "html": "A black hole's event horizon has radius $R_s = \\dfrac{2GM}{c^2}$, about $3$ km per solar mass. Inside it, nothing escapes. Far away, a black hole pulls exactly like any other object of the same mass."
+      },
+      {
+        "t": "viz",
+        "name": "ph-orbit",
+        "opts": {
+          "mode": "blackhole",
+          "M": 10
+        },
+        "cap": "A 10-solar-mass black hole drawn to scale: its event horizon is about $30$ km in radius. The dashed circle is the innermost stable orbit, at three times that."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A stellar black hole",
+        "q": "Find the event-horizon radius of a black hole of $10$ solar masses ($1.99 \\times 10^{31}$ kg).",
+        "steps": [
+          "$R_s = \\frac{2GM}{c^2} = \\frac{2 \\times 6.674 \\times 10^{-11} \\times 1.99 \\times 10^{31}}{(3.00 \\times 10^{8})^2}$.",
+          "$R_s = 2.95 \\times 10^{4}$ m $\\approx 30$ km: ten Suns' worth of mass inside a city-sized sphere."
+        ],
+        "a": "About $30$ km."
+      },
+      {
+        "t": "ex",
+        "title": "The giant at our galaxy's center",
+        "q": "Sagittarius A* has about $4.3 \\times 10^{6}$ solar masses. How big is its event horizon, in AU?",
+        "steps": [
+          "$R_s \\approx 2.95$ km $\\times 4.3 \\times 10^{6} = 1.27 \\times 10^{7}$ km.",
+          "In AU: $\\frac{1.27 \\times 10^{7}}{1.496 \\times 10^{8}} = 0.085$ AU, smaller than Mercury's orbit.",
+          "Its mass was found from stars orbiting it, using <a href=\"/physics/astronomy/weighing-with-orbits/\">orbits as scales</a>."
+        ],
+        "a": "About $0.085$ AU."
+      },
+      {
+        "t": "mistake",
+        "html": "Black holes are not cosmic vacuum cleaners. Outside the horizon, gravity follows the same $GM/r^2$ as always. If the Sun were replaced by a black hole of the same mass, Earth would keep orbiting exactly as it does (in the dark). Only things that come very close, within a few times $R_s$, are in danger. Check: stars orbit Sagittarius A* on stable ellipses, year after year."
+      },
+      {
+        "t": "note",
+        "html": "Evidence for black holes: X-ray-bright gas swirling into unseen companions of several to about 20 solar masses (such as Cygnus X-1), stars orbiting Sagittarius A*, the gravitational waves from merging black holes first detected by LIGO in 2015, and the Event Horizon Telescope's images of the dark shadows of M87* (2019) and Sagittarius A* (2022)."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Astronomy 2e, section 24.5, Black Holes"
+      },
+      {
+        "name": "OpenStax, Astronomy 2e, section 24.6, Evidence for Black Holes"
+      },
+      {
+        "name": "OpenStax, Astronomy 2e, section 24.7, Gravitational Wave Astronomy"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

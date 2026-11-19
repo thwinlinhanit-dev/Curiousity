@@ -1,0 +1,100 @@
+{
+  "id": "mech.time-varying-force",
+  "slug": "time-varying-force",
+  "ladder": "physics",
+  "course": "mech",
+  "unit": "dynamics",
+  "title": "Motion Under a Time-Varying Force",
+  "short": "Integrate F(t)/m to find the velocity when the force changes with time.",
+  "trouble": "Students use the final force as if it had acted the whole time.",
+  "prereqs": [
+    "mech.motion-from-acceleration",
+    "phys1.second-law-systems"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/physics/physics-1/second-law-systems/\">Newton's Second Law Along an Axis</a> used forces that stay the same. Real pushes rarely do: a motor ramps up, a gust fades, a bat touches a ball for a few milliseconds. Newton's second law still holds at every instant, so the acceleration simply follows the force, and <a href=\"/physics/mechanics/motion-from-acceleration/\">Velocity and Position from Acceleration</a> does the rest."
+      },
+      {
+        "t": "key",
+        "html": "With a net force $F(t)$ on a mass $m$: $$a(t) = \\dfrac{F(t)}{m}, \\qquad v(t) = v_0 + \\dfrac{1}{m}\\int_0^t F(t')\\,dt'.$$ The change in velocity is the area under the force–time graph divided by the mass."
+      },
+      {
+        "t": "why",
+        "html": "$F = ma$ is a statement about one instant: the net force <i>now</i> sets the acceleration <i>now</i>. Over a tiny time $dt$ the velocity changes by $dv = a\\,dt = \\dfrac{F}{m}\\,dt$. Adding up all those small changes is an integral. The quantity $\\int F\\,dt$ is the impulse, which you'll meet again in <a href=\"/physics/mechanics/impulse-integral/\">Impulse as an Integral</a>."
+      },
+      {
+        "t": "viz",
+        "name": "ph-graph",
+        "opts": {
+          "fn": "6*x",
+          "domain": [
+            0,
+            4
+          ],
+          "xlab": "t",
+          "ylab": "F",
+          "xunit": "s",
+          "yunit": "N",
+          "tool": "area",
+          "a": 0,
+          "b": 4,
+          "task": "Drag the right edge. The area (in N·s) divided by the mass is the speed gained."
+        },
+        "cap": "$F(t) = 6t$ on a 3 kg cart. The area from 0 to 4 s is $48\\ \\text{N·s}$, so the cart gains $48/3 = 16\\ \\text{m/s}$."
+      },
+      {
+        "t": "ex",
+        "title": "A force that grows",
+        "q": "A $3\\ \\text{kg}$ cart starts from rest on a frictionless track, pushed by $F(t) = 6t$ (N, s). Find its speed and position at $t = 4\\ \\text{s}$.",
+        "steps": [
+          "$a(t) = F/m = 2t\\ \\text{m/s}^2$.",
+          "$v(t) = \\int_0^t 2t'\\,dt' = t^2$, so $v(4) = 16\\ \\text{m/s}$.",
+          "$x(t) = \\int_0^t t'^2\\,dt' = \\tfrac{1}{3}t^3$, so $x(4) = \\tfrac{64}{3} \\approx 21.3\\ \\text{m}$."
+        ],
+        "a": "$v = 16\\ \\text{m/s}$, $x \\approx 21.3\\ \\text{m}$."
+      },
+      {
+        "t": "ex",
+        "title": "A push that fades out",
+        "q": "A $5\\ \\text{kg}$ block on ice starts from rest. A push $F(t) = 40 - 10t$ (N, s) acts until it reaches zero. How fast is the block moving then?",
+        "steps": [
+          "The force reaches zero at $t = 4\\ \\text{s}$.",
+          "$$\\Delta v = \\dfrac{1}{5}\\int_0^4 (40 - 10t)\\,dt = \\dfrac{1}{5}\\left[40t - 5t^2\\right]_0^4 = \\dfrac{80}{5} = 16\\ \\text{m/s}$$",
+          "Geometrically, the area is a triangle: $\\tfrac{1}{2}(4)(40) = 80\\ \\text{N·s}$."
+        ],
+        "a": "$16\\ \\text{m/s}$."
+      },
+      {
+        "t": "mistake",
+        "html": "Using the final force as if it had acted the whole time. For the first cart, the force at 4 s is 24 N; $24 \\times 4/3 = 32\\ \\text{m/s}$, twice the true 16 m/s, because the push was weaker early on. Using the starting force goes wrong the other way. Check: the answer must equal the area under the actual $F$–$t$ graph divided by $m$. A rectangle drawn at the final height is far bigger than the triangle under $F = 6t$."
+      },
+      {
+        "t": "note",
+        "html": "If several forces act, add them first: $F_{\\text{net}}(t) = F_{\\text{push}}(t) - f_k$, and integrate the net force. The integral of one force alone gives only that force's share of the change in momentum."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 1, 5.3 Newton's Second Law"
+      },
+      {
+        "name": "OpenStax University Physics Volume 1, 9.2 Impulse and Collisions"
+      },
+      {
+        "name": "MIT OpenCourseWare 8.01 Classical Mechanics (scope and sequence)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

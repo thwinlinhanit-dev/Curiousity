@@ -1,0 +1,135 @@
+{
+  "id": "phys2.capacitor-energy",
+  "slug": "capacitor-energy",
+  "course": "phys2",
+  "courseTitle": "Physics 2: Fluids, Heat, Electricity, Light and Atoms",
+  "unit": "electrostatics",
+  "unitTitle": "Electric Force, Field and Potential",
+  "title": "Energy Stored in a Capacitor",
+  "short": "A charged capacitor stores U = ½QV = ½CV².",
+  "trouble": "Students use U = QV, forgetting the voltage grows from zero while the capacitor charges.",
+  "prereqs": [
+    "phys2.capacitors",
+    "phys1.work-from-graphs"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-efield",
+    "ph-graph"
+  ],
+  "figureArchetype": "CircuitFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A charged <a href=\"/physics/physics-2/capacitors/\">capacitor</a> stores energy: a camera flash or a defibrillator dumps it in a fraction of a second. How much? The answer comes from the same idea as <a href=\"/physics/physics-1/work-from-graphs/\">work as the area under a graph</a>."
+      },
+      {
+        "t": "why",
+        "html": "Charge the capacitor a little at a time. When it already holds charge $q$, its voltage is $v = q/C$, and moving the next small bit $\\Delta q$ across takes work $v\\,\\Delta q$. At first $v = 0$ and it costs nothing; near the end each bit costs almost $V$. On a graph of $v$ against $q$, the work is the area under a straight line from $0$ to $(Q, V)$: a triangle with area $\\tfrac{1}{2}QV$."
+      },
+      {
+        "t": "key",
+        "html": "$$U = \\tfrac{1}{2}QV = \\tfrac{1}{2}CV^2 = \\frac{Q^2}{2C}$$ Use whichever form matches what you know. At fixed $C$, doubling the voltage stores four times the energy."
+      },
+      {
+        "t": "viz",
+        "name": "ph-graph",
+        "opts": {
+          "pts": [
+            [
+              0,
+              0
+            ],
+            [
+              60,
+              12
+            ]
+          ],
+          "domain": [
+            0,
+            70
+          ],
+          "range": [
+            0,
+            14
+          ],
+          "xlab": "charge q",
+          "xunit": "μC",
+          "ylab": "voltage V",
+          "yunit": "V",
+          "tool": "area",
+          "a": 0,
+          "b": 60,
+          "task": "Drag the area's right edge. The stored energy is the triangle's area."
+        },
+        "cap": "Voltage rises in proportion to charge, so the stored energy is the triangle's area, $\\tfrac{1}{2}QV$: here $\\tfrac{1}{2}(60\\,\\mu\\text{C})(12\\,\\text{V}) = 360\\,\\mu\\text{J}$."
+      },
+      {
+        "t": "viz",
+        "name": "ph-efield",
+        "opts": {
+          "mode": "capacitor",
+          "kappa": 1,
+          "task": "With the battery connected, widen the gap, then disconnect the battery and widen it again. Watch the stored energy U."
+        },
+        "cap": "A parallel-plate capacitor with its charge, voltage and stored energy."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "From C and V",
+        "q": "How much energy does a $100\\,\\mu\\text{F}$ capacitor store at $12\\,\\text{V}$?",
+        "steps": [
+          "$U = \\tfrac{1}{2}CV^2 = \\tfrac{1}{2}(100 \\times 10^{-6})(12)^2 = 7.2 \\times 10^{-3}\\,\\text{J} = 7.2\\,\\text{mJ}$."
+        ],
+        "a": "$7.2\\,\\text{mJ}$"
+      },
+      {
+        "t": "ex",
+        "title": "From Q and V",
+        "q": "A capacitor holds $30\\,\\mu\\text{C}$ at $50\\,\\text{V}$. Find its stored energy.",
+        "steps": [
+          "$U = \\tfrac{1}{2}QV = \\tfrac{1}{2}(30 \\times 10^{-6})(50) = 7.5 \\times 10^{-4}\\,\\text{J} = 0.75\\,\\text{mJ}$."
+        ],
+        "a": "$0.75\\,\\text{mJ}$"
+      },
+      {
+        "t": "ex",
+        "title": "Double the voltage",
+        "q": "A capacitor stores $5.0\\,\\text{mJ}$. How much does it store at twice the voltage?",
+        "steps": [
+          "$U = \\tfrac{1}{2}CV^2$ with $C$ fixed: twice $V$ gives $2^2 = 4$ times $U$.",
+          "$U = 4 \\times 5.0 = 20\\,\\text{mJ}$. (The charge doubled too, and so did the average voltage it was moved through.)"
+        ],
+        "a": "$20\\,\\text{mJ}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Using $U = QV$, as if every bit of charge were moved through the full voltage $V$. The voltage builds up from zero as the capacitor charges, so on average each bit crosses only $V/2$. Check: the energy is a triangle under the $V$–$q$ graph, not a rectangle."
+      },
+      {
+        "t": "note",
+        "html": "A battery charging a capacitor through a resistor gives out $QV$, but the capacitor keeps only $\\tfrac{1}{2}QV$; the other half becomes heat in the resistance while the current flows."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e, section 19.7 Energy Stored in Capacitors"
+      },
+      {
+        "name": "OpenStax, University Physics Volume 2, section 8.3 Energy Stored in a Capacitor"
+      },
+      {
+        "name": "College Board, AP Physics 2 Course and Exam Description, Unit 10: Electric Force, Field, and Potential"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

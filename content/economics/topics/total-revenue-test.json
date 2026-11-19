@@ -1,0 +1,106 @@
+{
+  "id": "micro.total-revenue-test",
+  "slug": "total-revenue-test",
+  "ladder": "economics",
+  "course": "micro",
+  "unit": "elasticity",
+  "title": "Elasticity and Total Revenue",
+  "short": "A higher price raises revenue only when demand is inelastic; revenue is largest where demand is unit elastic.",
+  "trouble": "Students believe a price increase always raises revenue because each unit brings in more money.",
+  "prereqs": [
+    "micro.elasticity-determinants"
+  ],
+  "xp": 2,
+  "viz": [
+    "ec-elasticity"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A seller cares about elasticity (<a href=\"/economics/microeconomics/elasticity-determinants/\">Elastic, Inelastic and What Decides It</a>) because it decides what a price change does to revenue. <b>Total revenue</b> is what buyers spend: $TR = P \\times Q$."
+      },
+      {
+        "t": "key",
+        "html": "If demand is <b>elastic</b>, a higher price <b>lowers</b> total revenue and a lower price raises it. If demand is <b>inelastic</b>, a higher price <b>raises</b> total revenue. If demand is <b>unit elastic</b>, revenue doesn't change. On a straight-line demand curve, total revenue is largest at the midpoint, where demand is unit elastic."
+      },
+      {
+        "t": "why",
+        "html": "A price rise has two effects on revenue: each unit sold brings in more (the price effect), but fewer units are sold (the quantity effect). In percent terms, $\\%\\Delta TR \\approx \\%\\Delta P + \\%\\Delta Q$. When demand is elastic, the quantity falls by a bigger percent than the price rises, so revenue falls. When it is inelastic, the price effect wins. At unit elasticity they cancel, which is why revenue peaks there."
+      },
+      {
+        "t": "viz",
+        "name": "ec-elasticity",
+        "opts": {
+          "mode": "line",
+          "demand": {
+            "a": 20,
+            "b": 2
+          },
+          "points": [
+            [
+              4,
+              8
+            ],
+            [
+              6,
+              7
+            ]
+          ],
+          "show": [
+            "tr",
+            "trcurve",
+            "regions"
+          ]
+        },
+        "cap": "The gold rectangle is total revenue, $P \\times Q$, at point A. The lower panel plots revenue against quantity: it rises through the elastic stretch, peaks at the midpoint (10 units, \\$5) and falls through the inelastic stretch."
+      },
+      {
+        "t": "ex",
+        "title": "The test with numbers",
+        "q": "A theater raises ticket prices from \\$10 to \\$12, and attendance falls from 500 to 450. Is demand elastic or inelastic in this range?",
+        "steps": [
+          "Revenue before: $\\$10 \\times 500 = \\$5{,}000$. After: $\\$12 \\times 450 = \\$5{,}400$.",
+          "Price rose and revenue rose: demand is <b>inelastic</b>.",
+          "Check with the midpoint method: $\\%\\Delta Q = 50/475 \\approx 10.5\\%$, $\\%\\Delta P = 2/11 \\approx 18.2\\%$, $E_d \\approx 0.58 < 1$. ✓"
+        ],
+        "a": "Inelastic: revenue rose from \\$5,000 to \\$5,400."
+      },
+      {
+        "t": "ex",
+        "title": "The revenue-maximizing price",
+        "q": "Demand is $Q_d = 100 - 5P$. What price maximizes total revenue, and what is that revenue?",
+        "steps": [
+          "The demand line runs from \\$20 (where $Q = 0$) down to 100 units (where $P = 0$).",
+          "Revenue peaks at the midpoint: $P = \\$10$, $Q = 100 - 50 = 50$.",
+          "$TR = \\$10 \\times 50 = \\$500$. At \\$8 it would be $\\$8 \\times 60 = \\$480$; at \\$12, $\\$12 \\times 40 = \\$480$."
+        ],
+        "a": "\\$10, for revenue of \\$500."
+      },
+      {
+        "t": "mistake",
+        "html": "Believing a price increase always raises revenue because each unit brings in more money. That ignores the units no longer sold. In the elastic stretch, raising the price loses so many sales that revenue falls. Check: compute $P \\times Q$ before and after."
+      },
+      {
+        "t": "note",
+        "html": "This is why a business with inelastic demand can raise revenue with a price rise, while one facing close competitors usually cannot. Profit also depends on costs, which come later in the course; revenue alone doesn't decide the best price."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, 5.3 Elasticity and Pricing"
+      },
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, 5.1 Price Elasticity of Demand and Price Elasticity of Supply"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.01 Principles of Microeconomics (scope and sequence)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

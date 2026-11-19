@@ -1,0 +1,95 @@
+{
+  "id": "em.resistance-integral",
+  "slug": "resistance-integral",
+  "course": "em",
+  "courseTitle": "Electricity and Magnetism",
+  "unit": "circuits",
+  "unitTitle": "Current and Circuits",
+  "title": "Resistance of Tapered Conductors",
+  "short": "Add dR = ρ dx/A(x) along a conductor whose cross section changes.",
+  "trouble": "Students use one area for the whole conductor when the area changes along it.",
+  "prereqs": [
+    "phys2.resistivity",
+    "calc1.u-substitution"
+  ],
+  "xp": 3,
+  "viz": [
+    "em-taper"
+  ],
+  "figureArchetype": "CircuitFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The formula <a href=\"/physics/physics-2/resistivity/\">$R = \\rho L/A$</a> assumes the same cross section all the way along. Real conductors are not always so tidy: a tapered probe, a cone-shaped contact, or a cable where current flows outward through the insulation. For those, cut the conductor into thin slices, find each slice's resistance, and add."
+      },
+      {
+        "t": "key",
+        "html": "Slices that carry the current one after another are in series, so their resistances add:\n        $$R = \\int \\frac{\\rho\\,dx}{A(x)}.$$\n        $dx$ is a slice's thickness along the current and $A(x)$ its area across the current."
+      },
+      {
+        "t": "why",
+        "html": "A thin slice is so thin that its area is nearly constant across it, so the ordinary formula works for it: $dR = \\rho\\,dx/A(x)$. The same current passes through every slice in turn, which is exactly what series means, and series resistances add. The sum of infinitely many thin slices is an integral, which <a href=\"/math/calculus-1/u-substitution/\">substitution</a> usually handles."
+      },
+      {
+        "t": "viz",
+        "name": "em-taper",
+        "opts": {
+          "r1": 1,
+          "r2": 3,
+          "L": 20,
+          "rho": 0.0000011,
+          "n": 6,
+          "task": "Add slices, then change the wide end. Compare the slice sum with the one-area estimate in the readout."
+        },
+        "cap": "A nichrome conductor $20\\ \\text{cm}$ long, widening from $1\\ \\text{mm}$ to $3\\ \\text{mm}$ in radius. The thin end's slices (darker) contribute most of the resistance."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A cone-shaped conductor",
+        "q": "A nichrome conductor ($\\rho = 1.1 \\times 10^{-6}\\ \\Omega\\cdot\\text{m}$) is $20\\ \\text{cm}$ long; its radius grows evenly from $1.0\\ \\text{mm}$ to $3.0\\ \\text{mm}$. Find its resistance for current from end to end.",
+        "steps": [
+          "The radius is $r(x) = r_1 + \\dfrac{r_2 - r_1}{L}x$, so $dR = \\dfrac{\\rho\\,dx}{\\pi r(x)^2}$.",
+          "Substitute $u = r(x)$, $dx = \\dfrac{L}{r_2 - r_1}du$: $$R = \\frac{\\rho L}{\\pi(r_2 - r_1)}\\int_{r_1}^{r_2}\\frac{du}{u^2} = \\frac{\\rho L}{\\pi(r_2 - r_1)}\\cdot\\frac{r_2 - r_1}{r_1r_2} = \\frac{\\rho L}{\\pi r_1r_2}$$",
+          "$$R = \\frac{(1.1 \\times 10^{-6})(0.20)}{\\pi(1.0 \\times 10^{-3})(3.0 \\times 10^{-3})} = 0.0233\\ \\text{Ω}$$",
+          "Check: if $r_1 = r_2$ this becomes $\\rho L/(\\pi r^2)$, the familiar formula."
+        ],
+        "a": "$R \\approx 0.0233\\ \\text{Ω}$"
+      },
+      {
+        "t": "ex",
+        "title": "Current flowing outward",
+        "q": "A coaxial cable $0.50\\ \\text{m}$ long has a thin inner conductor of radius $1.0\\ \\text{cm}$ and an outer conductor of radius $3.0\\ \\text{cm}$. The space between is filled with a material of resistivity $100\\ \\Omega\\cdot\\text{m}$. What is the resistance for current leaking straight outward?",
+        "steps": [
+          "Now the \"slices\" are thin cylindrical shells: thickness $dr$ along the current, area $2\\pi rL$ across it, and the current crosses them in series.",
+          "$$R = \\int_a^b \\frac{\\rho\\,dr}{2\\pi rL} = \\frac{\\rho}{2\\pi L}\\ln\\frac{b}{a} = \\frac{100}{2\\pi(0.50)}\\ln 3 = 35.0\\ \\text{Ω}$$"
+        ],
+        "a": "$R \\approx 35.0\\ \\text{Ω}$"
+      },
+      {
+        "t": "p",
+        "html": "The slices also tell you where the heat goes. With the same current through every slice, each one turns $I^2\\,dR$ into heat, so the thin end, with the largest $dR$ per length, runs hottest. That is why a wire with a nick or a narrow neck heats up and fails right there, and why fuses are made with a deliberately thin section."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Using one area for the whole conductor.</b> Taking the average radius, $2.0\\ \\text{mm}$, in the first example gives $\\rho L/(\\pi r_{\\text{avg}}^2) = 0.0175\\ \\text{Ω}$, 25% too small. The thin end resists far more than the wide end, and $1/r^2$ punishes thinness more than an average can show. Check: your answer should depend on the area along the whole length, so an integral (or at least a slice-by-slice sum) must appear."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 2, 9.3 Resistivity and Resistance"
+      },
+      {
+        "name": "MIT OpenCourseWare, 8.02 Physics II: Electricity and Magnetism"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

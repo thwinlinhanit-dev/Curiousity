@@ -1,0 +1,112 @@
+{
+  "id": "geo.congruence-rigid-motions",
+  "slug": "congruence-rigid-motions",
+  "ladder": "math",
+  "course": "geo",
+  "unit": "congruence",
+  "title": "Congruence and Rigid Motions",
+  "short": "Two figures are congruent when a rigid motion maps one onto the other.",
+  "trouble": "",
+  "prereqs": [
+    "geo.compose-transformations"
+  ],
+  "xp": 2,
+  "viz": [
+    "transform"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "\"Same size and shape\" is a good first idea, but it is hard to check or prove. Geometry makes it precise with the rigid motions from <a href=\"/math/geometry/compose-transformations/\">Composing Transformations</a>: two figures are <b>congruent</b> if some sequence of translations, reflections and rotations carries one exactly onto the other."
+      },
+      {
+        "t": "why",
+        "html": "Rigid motions keep every distance and every angle. So if a rigid motion carries figure $F$ onto figure $G$, each part of $F$ lands on a part of $G$ with the same length or measure. Congruent figures therefore have all corresponding parts equal. The definition also works for any shape, not just polygons: two circles, two curves, two letters of the alphabet."
+      },
+      {
+        "t": "viz",
+        "name": "transform",
+        "cap": "Find a rigid motion that moves the triangle onto the dashed outline. Any rule that lands exactly on it shows the two triangles are congruent.",
+        "opts": {
+          "shape": [
+            [
+              1,
+              1
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              1,
+              3
+            ]
+          ],
+          "t": "reflect",
+          "line": "x=2",
+          "pick": true,
+          "range": 7,
+          "task": {
+            "target": [
+              [
+                -1,
+                1
+              ],
+              [
+                -4,
+                1
+              ],
+              [
+                -1,
+                3
+              ]
+            ]
+          }
+        }
+      },
+      {
+        "t": "key",
+        "html": "Two figures are congruent ($\\cong$) when a sequence of rigid motions maps one onto the other. Then every pair of matching sides and angles is equal."
+      },
+      {
+        "t": "ex",
+        "title": "Finding the motion",
+        "q": "$\\triangle ABC$ has $A(1, 2)$, $B(5, 2)$, $C(1, 4)$ and $\\triangle DEF$ has $D(-2, -1)$, $E(-2, -5)$, $F(0, -1)$, with $A \\to D$, $B \\to E$, $C \\to F$. Show the triangles are congruent.<div class=\"ml-viz\" data-viz=\"geo-fig\" data-opts='{\"pts\":{\"A\":[1,2],\"B\":[5,2],\"C\":[1,4],\"D\":[-2,-1],\"E\":[-2,-5],\"F\":[0,-1]},\"polys\":[[\"A\",\"B\",\"C\",{\"fill\":\"blue\"}],[\"D\",\"E\",\"F\",{\"fill\":\"green\"}]],\"groups\":[[\"A\",\"B\",\"C\"],[\"D\",\"E\",\"F\"]],\"axes\":true,\"height\":260,\"label\":\"Triangles ABC and DEF on a grid\"}' aria-label=\"Triangles ABC and DEF on a grid\"></div>",
+        "steps": [
+          "$\\overline{AB}$ points right (4 units); $\\overline{DE}$ points down (4 units). $\\overline{AC}$ points up (2 units); $\\overline{DF}$ points right (2 units). Right turns into down and up turns into right: that is a $90^\\circ$ clockwise turn, $(x, y) \\to (y, -x)$.",
+          "Rotate: $A \\to (2, -1)$, $B \\to (2, -5)$, $C \\to (4, -1)$.",
+          "Each image is 4 units right of its target, so translate by $\\langle -4, 0 \\rangle$: $(2, -1) \\to (-2, -1) = D$, $(2, -5) \\to (-2, -5) = E$ and $(4, -1) \\to (0, -1) = F$."
+        ],
+        "a": "A $90^\\circ$ clockwise rotation about the origin followed by a translation of $\\langle -4, 0 \\rangle$ maps $\\triangle ABC$ onto $\\triangle DEF$, so they are congruent."
+      },
+      {
+        "t": "ex",
+        "title": "Showing two figures are not congruent",
+        "q": "$\\triangle PQR$ has sides $5$, $5$ and $6$. $\\triangle STU$ has sides $5$, $6$ and $6$. Can they be congruent?",
+        "steps": [
+          "A rigid motion keeps every length, so congruent triangles have the same three side lengths.",
+          "The lists $\\{5, 5, 6\\}$ and $\\{5, 6, 6\\}$ differ."
+        ],
+        "a": "No rigid motion can map one onto the other: they are not congruent."
+      },
+      {
+        "t": "mistake",
+        "html": "Deciding congruence from one number, like equal areas or equal perimeters. A $2 \\times 6$ rectangle and a $3 \\times 4$ rectangle both have area 12, but no rigid motion maps one onto the other. Check matching lengths and angles, or find the motion."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Contemporary Mathematics, 10.5 Tessellations"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, High School Geometry, G-CO.B.6"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

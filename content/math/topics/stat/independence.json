@@ -1,0 +1,104 @@
+{
+  "id": "stat.independence",
+  "slug": "independence",
+  "ladder": "math",
+  "course": "stat",
+  "unit": "probability-rules",
+  "title": "Independent Events",
+  "short": "A and B are independent when P(A ∣ B) = P(A).",
+  "trouble": "Students think mutually exclusive events are independent, when knowing one happened rules out the other.",
+  "prereqs": [
+    "stat.conditional-probability"
+  ],
+  "xp": 2,
+  "viz": [
+    "venn",
+    "tree"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Sometimes knowing B changes the chance of A (as with the review class and passing). Sometimes it changes nothing at all. That second case has a name, and it builds directly on <a href=\"/math/probability-and-statistics/conditional-probability/\">conditional probability</a>."
+      },
+      {
+        "t": "key",
+        "html": "Events A and B are <b>independent</b> if knowing one happened does not change the probability of the other: $P(A \\mid B) = P(A)$. Equivalently, $P(A \\cap B) = P(A) \\cdot P(B)$. Otherwise they are dependent."
+      },
+      {
+        "t": "why",
+        "html": "Start from the definition $P(A \\mid B) = P(A \\cap B)/P(B)$. If $P(A \\mid B) = P(A)$, multiply both sides by $P(B)$ to get $P(A \\cap B) = P(A)P(B)$; the steps reverse, so the two tests say the same thing. In words: A happens in the same fraction of the B-world as of the whole world."
+      },
+      {
+        "t": "viz",
+        "name": "tree",
+        "opts": {
+          "levels": [
+            [
+              "H",
+              "T"
+            ],
+            [
+              "H",
+              "T"
+            ]
+          ],
+          "select": [
+            "H/H"
+          ]
+        },
+        "cap": "Two coin flips: the second flip's branches are 1/2 and 1/2 no matter how the first one landed. That is independence."
+      },
+      {
+        "t": "ex",
+        "title": "Checking a table",
+        "q": "Of 200 students, 60 play an instrument. Among the 80 ninth graders, 24 play one. Are \"plays an instrument\" and \"ninth grader\" independent?",
+        "steps": [
+          "$P(\\text{instrument}) = \\dfrac{60}{200} = 0.3$.",
+          "$$P(\\text{instrument} \\mid \\text{9th grade}) = \\dfrac{24}{80} = 0.3$$",
+          "Equal: knowing the grade does not change the chance."
+        ],
+        "a": "Independent."
+      },
+      {
+        "t": "ex",
+        "title": "Checking with the product",
+        "q": "$P(A) = 0.6$, $P(B) = 0.5$, $P(A \\cap B) = 0.2$. Are A and B independent?",
+        "steps": [
+          "If independent, $P(A \\cap B)$ would be $0.6 \\times 0.5 = 0.3$.",
+          "It is $0.2$, not $0.3$."
+        ],
+        "a": "Not independent."
+      },
+      {
+        "t": "ex",
+        "title": "Mutually exclusive is not independent",
+        "q": "A = \"the die shows 1\" and B = \"the die shows 6.\" Are they independent?",
+        "steps": [
+          "$P(A) = \\frac{1}{6}$ and $P(B) = \\frac{1}{6}$.",
+          "They cannot both happen: $P(A \\cap B) = 0$, but $P(A)P(B) = \\frac{1}{36}$.",
+          "Knowing the die shows 1 changes the chance of 6 from $\\frac{1}{6}$ to 0."
+        ],
+        "a": "Dependent (and mutually exclusive)."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking mutually exclusive events are independent. They are the opposite: if A happens, B cannot, so knowing about A tells you everything about B. Check: if $P(A \\cap B) = 0$ but both $P(A)$ and $P(B)$ are positive, the events are dependent."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Introductory Statistics 2e, section 3.2 Independent and Mutually Exclusive Events"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, S-CP.A.2 (Understand that two events are independent if P(A and B) = P(A)P(B))"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

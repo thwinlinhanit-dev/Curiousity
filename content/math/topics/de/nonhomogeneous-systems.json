@@ -1,0 +1,95 @@
+{
+  "id": "de.nonhomogeneous-systems",
+  "slug": "nonhomogeneous-systems",
+  "ladder": "math",
+  "course": "de",
+  "unit": "systems",
+  "title": "Nonhomogeneous Systems",
+  "short": "Add a particular solution to the homogeneous solution.",
+  "trouble": "",
+  "prereqs": [
+    "de.eigen-solutions",
+    "de.undetermined-coefficients"
+  ],
+  "xp": 3,
+  "viz": [],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A forced system $\\mathbf{x}' = A\\mathbf{x} + \\mathbf{f}(t)$ has the same structure as a forced single equation: every solution is one particular solution plus the general solution of $\\mathbf{x}' = A\\mathbf{x}$ from <a href=\"/math/differential-equations/eigen-solutions/\">eigenvalue solutions</a>. And the particular solution can often be guessed, as in <a href=\"/math/differential-equations/undetermined-coefficients/\">undetermined coefficients</a>."
+      },
+      {
+        "t": "key",
+        "html": "$\\mathbf{x} = \\mathbf{x}_p + c_1e^{\\lambda_1t}\\mathbf{v}_1 + c_2e^{\\lambda_2t}\\mathbf{v}_2$. For a constant forcing $\\mathbf{b}$, the equilibrium $\\mathbf{x}_p = -A^{-1}\\mathbf{b}$ works. For $e^{kt}\\mathbf{g}$ with $k$ not an eigenvalue, try $\\mathbf{x}_p = e^{kt}\\mathbf{a}$ with $(kI - A)\\mathbf{a} = \\mathbf{g}$."
+      },
+      {
+        "t": "why",
+        "html": "If $\\mathbf{x}$ and $\\mathbf{x}_p$ both solve the forced system, their difference solves $\\mathbf{x}' = A\\mathbf{x}$, by linearity. A constant $\\mathbf{x}_p$ has $\\mathbf{x}_p' = \\mathbf{0}$, so it needs $A\\mathbf{x}_p + \\mathbf{b} = \\mathbf{0}$, solvable when $A$ is invertible (no zero eigenvalue). For $e^{kt}\\mathbf{a}$: substituting gives $ke^{kt}\\mathbf{a} = e^{kt}A\\mathbf{a} + e^{kt}\\mathbf{g}$, so $(kI - A)\\mathbf{a} = \\mathbf{g}$, which has a unique solution unless $k$ is an eigenvalue (the resonance case, where extra terms with $t$ are needed)."
+      },
+      {
+        "t": "ex",
+        "title": "Constant forcing",
+        "q": "Find the equilibrium of $\\mathbf{x}' = \\begin{bmatrix} 1 & 2 \\\\ 2 & 1 \\end{bmatrix}\\mathbf{x} + \\begin{bmatrix} -5 \\\\ -4 \\end{bmatrix}$.",
+        "steps": [
+          "Solve $A\\mathbf{x}_p = \\begin{bmatrix} 5 \\\\ 4 \\end{bmatrix}$: $x + 2y = 5$, $2x + y = 4$.",
+          "Subtracting twice the first from the second: $-3y = -6$, so $y = 2$, $x = 1$."
+        ],
+        "a": "$\\mathbf{x}_p = \\begin{bmatrix} 1 \\\\ 2 \\end{bmatrix}$"
+      },
+      {
+        "t": "ex",
+        "title": "The full solution",
+        "q": "Solve that system with $\\mathbf{x}(0) = \\begin{bmatrix} 4 \\\\ 3 \\end{bmatrix}$.",
+        "steps": [
+          "From the eigen-solutions lesson: $\\mathbf{x}_h = c_1e^{3t}\\begin{bmatrix} 1 \\\\ 1 \\end{bmatrix} + c_2e^{-t}\\begin{bmatrix} 1 \\\\ -1 \\end{bmatrix}$.",
+          "At $t = 0$: $c_1\\begin{bmatrix} 1 \\\\ 1 \\end{bmatrix} + c_2\\begin{bmatrix} 1 \\\\ -1 \\end{bmatrix} = \\mathbf{x}(0) - \\mathbf{x}_p$ $= \\begin{bmatrix} 3 \\\\ 1 \\end{bmatrix}$, so $c_1 = 2$, $c_2 = 1$."
+        ],
+        "a": "$x_1 = 1 + 2e^{3t} + e^{-t}$, $x_2 = 2 + 2e^{3t} - e^{-t}$"
+      },
+      {
+        "t": "ex",
+        "title": "Exponential forcing",
+        "q": "Find $\\mathbf{x}_p = e^{2t}\\mathbf{a}$ for $\\mathbf{x}' = \\begin{bmatrix} 1 & 2 \\\\ 2 & 1 \\end{bmatrix}\\mathbf{x} + e^{2t}\\begin{bmatrix} 1 \\\\ 0 \\end{bmatrix}$.",
+        "steps": [
+          "$2I - A = \\begin{bmatrix} 1 & -2 \\\\ -2 & 1 \\end{bmatrix}$ (invertible: 2 is not an eigenvalue).",
+          "Solve $a_1 - 2a_2 = 1$, $-2a_1 + a_2 = 0$: $a_2 = 2a_1$, so $-3a_1 = 1$."
+        ],
+        "a": "$\\mathbf{a} = \\begin{bmatrix} -\\frac{1}{3} \\\\ -\\frac{2}{3} \\end{bmatrix}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Fitting the initial condition to $\\mathbf{x}_h$ alone: the constants must make $\\mathbf{x}_p(0) + \\mathbf{x}_h(0) = \\mathbf{x}(0)$, so subtract $\\mathbf{x}_p(0)$ first. Also check the sign in the equilibrium: it solves $A\\mathbf{x}_p = -\\mathbf{b}$, not $A\\mathbf{x}_p = \\mathbf{b}$."
+      },
+      {
+        "t": "viz",
+        "name": "phaseplane",
+        "opts": {
+          "P": "x - 1 + 2*(y - 2)",
+          "Q": "2*(x - 1) + (y - 2)",
+          "point": [
+            1.5,
+            1.5
+          ],
+          "range": 4,
+          "presets": false
+        },
+        "cap": "The forced system of the first two examples. Its picture is the unforced saddle moved so that its center sits at the equilibrium $(1, 2)$: trajectories approach along $(1, -1)$ and leave along $(1, 1)$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Paul's Online Math Notes, Differential Equations: Nonhomogeneous Systems"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.03SC Differential Equations (Fall 2011), Unit IV: First-order Systems"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

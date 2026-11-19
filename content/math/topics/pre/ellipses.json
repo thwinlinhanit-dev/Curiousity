@@ -1,0 +1,96 @@
+{
+  "id": "pre.ellipses",
+  "slug": "ellipses",
+  "ladder": "math",
+  "course": "pre",
+  "unit": "conics",
+  "title": "Ellipses",
+  "short": "The sum of distances to two foci is constant; c² = a² − b².",
+  "trouble": "Students use c² = a² + b² for an ellipse, or mix up which axis is major.",
+  "prereqs": [
+    "geo.circle-completing-square"
+  ],
+  "xp": 2,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Tie a loop of string around two pins and pull it tight with a pencil: as you move the pencil around, it draws an ellipse. The pins are the <b>foci</b>. Like <a href=\"/math/geometry/circle-completing-square/\">circles</a>, ellipses have tidy standard equations, and you can find the center by completing the square."
+      },
+      {
+        "t": "key",
+        "html": "An ellipse is the set of points whose distances to two foci add to a constant, $2a$. Centered at the origin: $$\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1 \\ (a > b)$$ has a horizontal major axis, vertices $(\\pm a, 0)$, co-vertices $(0, \\pm b)$ and foci $(\\pm c, 0)$, where $c^2 = a^2 - b^2$. If the larger denominator is under $y^2$, the major axis is vertical. With center $(h, k)$, replace $x$ by $x - h$ and $y$ by $y - k$."
+      },
+      {
+        "t": "why",
+        "html": "At the vertex $(a, 0)$ the distances to the foci are $a - c$ and $a + c$, which add to $2a$, so the constant is $2a$. At the co-vertex $(0, b)$ the two distances are equal, so each is $a$; the right triangle with legs $b$ and $c$ and hypotenuse $a$ gives $b^2 + c^2 = a^2$. The foci sit inside the ellipse, so $c$ is smaller than $a$."
+      },
+      {
+        "t": "viz",
+        "name": "pre-conic",
+        "opts": {
+          "type": "ellipse",
+          "a": 5,
+          "b": 3,
+          "s": 0.8
+        },
+        "cap": "Drag $P$ around the ellipse. The two distances change, but their sum stays $2a$. Change $a$ and $b$ to see the foci move."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Reading an equation",
+        "q": "Find the vertices and foci of $\\dfrac{x^2}{25} + \\dfrac{y^2}{9} = 1$.",
+        "steps": [
+          "The larger denominator, $25$, is under $x^2$: horizontal major axis, $a = 5$, $b = 3$.",
+          "$c^2 = 25 - 9 = 16$, so $c = 4$."
+        ],
+        "a": "Vertices $(\\pm 5, 0)$; foci $(\\pm 4, 0)$"
+      },
+      {
+        "t": "ex",
+        "title": "A tall ellipse",
+        "q": "Find the foci of $\\dfrac{x^2}{16} + \\dfrac{y^2}{25} = 1$.",
+        "steps": [
+          "The larger denominator is under $y^2$: vertical major axis with $a = 5$, $b = 4$.",
+          "$c^2 = 25 - 16 = 9$, $c = 3$, on the $y$-axis."
+        ],
+        "a": "$(0, \\pm 3)$"
+      },
+      {
+        "t": "ex",
+        "title": "Writing an equation",
+        "q": "Write the ellipse centered at the origin with vertices $(\\pm 13, 0)$ and foci $(\\pm 12, 0)$.",
+        "steps": [
+          "$a = 13$, $c = 12$, so $b^2 = a^2 - c^2 = 169 - 144 = 25$.",
+          "The major axis is horizontal, so $a^2$ goes under $x^2$."
+        ],
+        "a": "$\\frac{x^2}{169} + \\frac{y^2}{25} = 1$"
+      },
+      {
+        "t": "mistake",
+        "html": "Using $c^2 = a^2 + b^2$ (the hyperbola rule) for an ellipse, or reading the major axis from the order of the terms instead of the larger denominator. Checks: the foci of an ellipse are inside it, so $c < a$; and the major axis always goes with the bigger denominator."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Precalculus 2e, Section 10.1 The Ellipse"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, G-GPE.A.3"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

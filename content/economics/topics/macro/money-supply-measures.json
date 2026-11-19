@@ -1,0 +1,142 @@
+{
+  "id": "macro.money-supply-measures",
+  "slug": "money-supply-measures",
+  "ladder": "economics",
+  "course": "macro",
+  "unit": "money",
+  "title": "Measuring Money: M1 and M2",
+  "short": "M1 holds the most liquid forms of money; M2 adds less liquid ones such as small time deposits.",
+  "trouble": "Students count stocks, bonds or unused credit limits as money, or think M1 and M2 are separate pools rather than M2 containing M1.",
+  "prereqs": [
+    "macro.money-functions",
+    "macro.financial-assets"
+  ],
+  "xp": 1,
+  "viz": [
+    "ec-sort"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/economics/macroeconomics/money-functions/\">Money</a> is whatever is accepted in payment, but some assets are closer to spendable than others. A checking balance can be spent today; a <a href=\"/economics/macroeconomics/financial-assets/\">bond</a> must first be sold. The Federal Reserve measures money at two levels of liquidity."
+      },
+      {
+        "t": "key",
+        "html": "<b>M1</b> = currency held by the public + checking (demand) deposits + other liquid deposits, which since May 2020 include savings deposits. <b>M2</b> = M1 + small time deposits (certificates of deposit under \\$100,000) + retail money market fund balances. M2 contains M1. Stocks, bonds and credit limits are not money."
+      },
+      {
+        "t": "why",
+        "html": "Liquidity is how quickly and cheaply something can be spent. Currency and checking deposits are as liquid as it gets. Savings deposits used to be counted only in M2, because withdrawals were limited; in 2020 the Federal Reserve dropped that limit and moved savings deposits into M1. (Older textbooks still put savings in M2 only.) Time deposits and money market funds take a step or a short wait to spend, so they are in M2 but not M1. The measures are nested circles, not separate pools."
+      },
+      {
+        "t": "viz",
+        "name": "ec-sort",
+        "opts": {
+          "bins": [
+            "In M1 (and M2)",
+            "In M2 only",
+            "Not money"
+          ],
+          "check": true,
+          "shuffle": true,
+          "cards": [
+            {
+              "text": "Coins and bills in your wallet",
+              "bin": 0,
+              "why": "Currency held by the public is in M1."
+            },
+            {
+              "text": "A checking account balance",
+              "bin": 0,
+              "why": "Demand deposits are in M1."
+            },
+            {
+              "text": "A savings account balance",
+              "bin": 0,
+              "why": "Since May 2020, savings deposits are part of M1."
+            },
+            {
+              "text": "A 1-year CD for 5,000 dollars",
+              "bin": 1,
+              "why": "A small time deposit: in M2, not M1."
+            },
+            {
+              "text": "A retail money market fund balance",
+              "bin": 1,
+              "why": "In M2, not M1."
+            },
+            {
+              "text": "Shares of stock",
+              "bin": 2,
+              "why": "An asset you would have to sell first."
+            },
+            {
+              "text": "The unused limit on a credit card",
+              "bin": 2,
+              "why": "A promise of a loan, not money you hold."
+            }
+          ]
+        },
+        "cap": "Sort each item by the Federal Reserve's current definitions, then press Check."
+      },
+      {
+        "t": "h",
+        "text": "A worked example"
+      },
+      {
+        "t": "ex",
+        "title": "Counting M1 and M2",
+        "q": "In billions: currency held by the public 2,300; checking deposits 4,000; savings deposits 10,000; small time deposits 800; retail money market funds 1,200; stocks held by households 30,000. Find M1 and M2.",
+        "steps": [
+          "M1 $= 2{,}300 + 4{,}000 + 10{,}000 = 16{,}300$.",
+          "M2 $= 16{,}300 + 800 + 1{,}200 = 18{,}300$.",
+          "The stocks are in neither."
+        ],
+        "a": "M1 \\$16,300 billion; M2 \\$18,300 billion"
+      },
+      {
+        "t": "h",
+        "text": "Why measure money at all?"
+      },
+      {
+        "t": "p",
+        "html": "How much money there is matters for spending and prices. When the money supply grows much faster than the economy's output for years, prices rise; when it shrinks suddenly, spending can collapse, as in the early 1930s. The central bank watches the money measures, along with interest rates and other data, when it sets policy. Later lessons connect the money supply to interest rates (the money market) and to inflation (the quantity theory)."
+      },
+      {
+        "t": "list",
+        "items": [
+          "<b>Most liquid:</b> currency, then checking deposits.",
+          "<b>Next:</b> savings deposits (in M1 since 2020).",
+          "<b>Less liquid:</b> small time deposits and retail money market funds (M2 only).",
+          "<b>Not money:</b> stocks, bonds, houses, credit limits."
+        ]
+      },
+      {
+        "t": "mistake",
+        "html": "Counting stocks, bonds or unused credit limits as money, or treating M1 and M2 as separate pools. M2 includes all of M1. Check: when you compute M2, start from M1 and add."
+      },
+      {
+        "t": "note",
+        "html": "See it with real data: the growth rate of M2 over the past year on the <a href=\"/markets/indicators/#s=M2SL:yoy\">Economic Data</a> page."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Macroeconomics 3e, 13.2 Measuring Money: Currency, M1, and M2"
+      },
+      {
+        "name": "Board of Governors of the Federal Reserve System, H.6 Money Stock Measures (technical notes on the May 2020 change to M1)"
+      },
+      {
+        "name": "College Board, AP Macroeconomics Course and Exam Description (topic list)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

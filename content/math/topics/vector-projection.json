@@ -1,0 +1,104 @@
+{
+  "id": "pre.vector-projection",
+  "slug": "vector-projection",
+  "ladder": "math",
+  "course": "pre",
+  "unit": "triangles-vectors",
+  "title": "Vector Projections and Work",
+  "short": "Split a vector into parts along and across another vector.",
+  "trouble": "",
+  "prereqs": [
+    "pre.dot-product"
+  ],
+  "xp": 3,
+  "viz": [
+    "vectors2d"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "When you push a lawnmower, only part of your push moves it forward; the rest presses it into the ground. The <a href=\"/math/precalculus/dot-product/\">dot product</a> splits a vector into the part along a direction and the part across it."
+      },
+      {
+        "t": "key",
+        "html": "The vector projection of $\\mathbf{u}$ onto $\\mathbf{v}$ is $$\\operatorname{proj}_{\\mathbf{v}}\\mathbf{u} = \\frac{\\mathbf{u} \\cdot \\mathbf{v}}{|\\mathbf{v}|^2}\\,\\mathbf{v},$$ its signed length (scalar component) is $\\frac{\\mathbf{u} \\cdot \\mathbf{v}}{|\\mathbf{v}|}$, and $\\mathbf{u} - \\operatorname{proj}_{\\mathbf{v}}\\mathbf{u}$ is perpendicular to $\\mathbf{v}$. Work done by a constant force $\\mathbf{F}$ over a displacement $\\mathbf{d}$ is $W = \\mathbf{F} \\cdot \\mathbf{d} = |\\mathbf{F}||\\mathbf{d}|\\cos\\theta$."
+      },
+      {
+        "t": "why",
+        "html": "Shine a light straight down onto the line of $\\mathbf{v}$: the shadow of $\\mathbf{u}$ has length $|\\mathbf{u}|\\cos\\theta$. Multiply that length by the unit vector $\\frac{\\mathbf{v}}{|\\mathbf{v}|}$ to give it direction: $$|\\mathbf{u}|\\cos\\theta \\cdot \\frac{\\mathbf{v}}{|\\mathbf{v}|} = \\frac{|\\mathbf{u}||\\mathbf{v}|\\cos\\theta}{|\\mathbf{v}|^2}\\mathbf{v} = \\frac{\\mathbf{u} \\cdot \\mathbf{v}}{|\\mathbf{v}|^2}\\mathbf{v}.$$ Work counts only the force along the motion, which is that same shadow length times the distance."
+      },
+      {
+        "t": "viz",
+        "name": "vectors2d",
+        "opts": {
+          "u": [
+            3,
+            3
+          ],
+          "v": [
+            4,
+            1
+          ],
+          "op": "dot",
+          "ops": [
+            "dot"
+          ]
+        },
+        "cap": "The shadow of $\\mathbf{u}$ on the line of $\\mathbf{v}$ is the projection."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A projection",
+        "q": "Find $\\operatorname{proj}_{\\mathbf{v}}\\mathbf{u}$ for $\\mathbf{u} = \\langle 4, 2 \\rangle$ and $\\mathbf{v} = \\langle 3, 4 \\rangle$.",
+        "steps": [
+          "$\\mathbf{u} \\cdot \\mathbf{v} = 12 + 8 = 20$ and $|\\mathbf{v}|^2 = 25$.",
+          "$\\frac{20}{25}\\langle 3, 4 \\rangle = \\frac{4}{5}\\langle 3, 4 \\rangle$."
+        ],
+        "a": "$\\left\\langle \\frac{12}{5}, \\frac{16}{5} \\right\\rangle$"
+      },
+      {
+        "t": "ex",
+        "title": "Splitting a vector",
+        "q": "Write $\\mathbf{u} = \\langle 4, 2 \\rangle$ as a part along $\\mathbf{v} = \\langle 3, 4 \\rangle$ plus a part perpendicular to it.",
+        "steps": [
+          "Along: $\\left\\langle \\frac{12}{5}, \\frac{16}{5} \\right\\rangle$ from the last example.",
+          "Across: $\\langle 4, 2 \\rangle - \\left\\langle \\frac{12}{5}, \\frac{16}{5} \\right\\rangle = \\left\\langle \\frac{8}{5}, -\\frac{6}{5} \\right\\rangle$.",
+          "Check: $\\frac{8}{5} \\cdot 3 - \\frac{6}{5} \\cdot 4 = 0$, so it is perpendicular to $\\mathbf{v}$."
+        ],
+        "a": "$\\mathbf{u} = \\left\\langle \\frac{12}{5}, \\frac{16}{5} \\right\\rangle + \\left\\langle \\frac{8}{5}, -\\frac{6}{5} \\right\\rangle$"
+      },
+      {
+        "t": "ex",
+        "title": "Work",
+        "q": "You pull a wagon $100$ ft with a force of $50$ lb along a handle at $60^\\circ$ to the ground. How much work do you do?",
+        "steps": [
+          "$$W = |\\mathbf{F}||\\mathbf{d}|\\cos\\theta = 50 \\cdot 100 \\cdot \\cos 60^\\circ.$$",
+          "$= 5000 \\cdot \\frac{1}{2}$."
+        ],
+        "a": "$2500$ ft-lb"
+      },
+      {
+        "t": "mistake",
+        "html": "Dividing by $|\\mathbf{v}|$ instead of $|\\mathbf{v}|^2$ in the vector projection. Check with $\\mathbf{u} = \\mathbf{v}$: the projection of a vector onto itself must be the vector itself, and $\\frac{\\mathbf{v} \\cdot \\mathbf{v}}{|\\mathbf{v}|^2} = 1$ gives exactly that."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Precalculus 2e, Section 8.8 Vectors"
+      },
+      {
+        "name": "OpenStax Calculus Volume 3, Section 2.3 The Dot Product"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

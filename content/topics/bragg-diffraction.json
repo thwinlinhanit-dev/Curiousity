@@ -1,0 +1,100 @@
+{
+  "id": "modern.bragg-diffraction",
+  "slug": "bragg-diffraction",
+  "course": "modern",
+  "courseTitle": "Waves, Optics and Modern Physics",
+  "unit": "wave-optics",
+  "unitTitle": "Wave Optics",
+  "title": "X-Ray Diffraction and Bragg's Law",
+  "short": "Crystal planes a distance d apart reflect X-rays strongly when 2d sin θ = mλ.",
+  "trouble": "Students measure θ from the normal, as in Snell's law, instead of from the crystal planes.",
+  "prereqs": [
+    "phys2.diffraction-grating"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-interference"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A <a href=\"/physics/physics-2/diffraction-grating/\">diffraction grating</a> needs a spacing close to the wavelength. X-rays have wavelengths near 0.1 nm, far too short for any ruled grating, but just right for the spacing of atoms in a crystal. In 1912 and 1913, Max von Laue and then William and Lawrence Bragg used crystals as three-dimensional gratings. The method still finds the structure of materials, of proteins and of DNA."
+      },
+      {
+        "t": "key",
+        "html": "X-rays reflect strongly from a family of crystal planes a distance $d$ apart when $$2d\\sin\\theta = m\\lambda,\\quad m = 1, 2, 3, \\ldots$$ (<b>Bragg's law</b>). Here $\\theta$ is the <b>glancing angle</b>, measured from the planes, not from the normal. The beam is turned through $2\\theta$ in all."
+      },
+      {
+        "t": "why",
+        "html": "Each plane of atoms reflects a tiny part of the beam like a weak mirror. Rays reflecting from neighboring planes travel different distances: the lower ray goes in and out an extra $d\\sin\\theta$ each way, a path difference of $2d\\sin\\theta$. Thousands of planes take part, so, like a grating with thousands of lines, the reflections only build up when every neighboring pair is in step: $2d\\sin\\theta = m\\lambda$. At other angles the many small reflections cancel almost completely."
+      },
+      {
+        "t": "viz",
+        "name": "ph-interference",
+        "opts": {
+          "mode": "bragg",
+          "planeD": 0.282,
+          "lambda": 0.154,
+          "theta": 15.8
+        },
+        "cap": "Copper's 0.154 nm X-rays on planes 0.282 nm apart (rock salt). The reflected intensity spikes only at the Bragg angles. Slide the glancing angle and watch where the extra path $2d\\sin\\theta$ equals a whole number of wavelengths."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Rock salt",
+        "q": "X-rays of wavelength 0.154 nm reflect from planes of NaCl 0.282 nm apart. Find the first-order glancing angle and the angle through which the beam is turned.",
+        "steps": [
+          "$\\sin\\theta = \\frac{m\\lambda}{2d} = \\frac{0.154}{2(0.282)} = 0.273$.",
+          "$\\theta = 15.8^\\circ$ from the planes.",
+          "The beam turns through $2\\theta = 31.7^\\circ$."
+        ],
+        "a": "$\\theta = 15.8^\\circ$; turned $31.7^\\circ$"
+      },
+      {
+        "t": "ex",
+        "title": "Find the spacing",
+        "q": "The same X-rays reflect in second order at a glancing angle of $22.6^\\circ$ from another crystal. What is the plane spacing?",
+        "steps": [
+          "$d = \\frac{m\\lambda}{2\\sin\\theta} = \\frac{2(0.154\\ \\text{nm})}{2\\sin 22.6^\\circ}$.",
+          "$= \\frac{0.308}{0.769} = 0.401$ nm."
+        ],
+        "a": "$d \\approx 0.401$ nm"
+      },
+      {
+        "t": "ex",
+        "title": "How many orders?",
+        "q": "For $d = 0.282$ nm and $\\lambda = 0.154$ nm, what is the highest order that can appear?",
+        "steps": [
+          "$\\sin\\theta \\le 1$, so $m \\le \\frac{2d}{\\lambda} = \\frac{0.564}{0.154} = 3.66$."
+        ],
+        "a": "$m = 3$"
+      },
+      {
+        "t": "p",
+        "html": "Each family of planes in a crystal reflects at its own set of angles. Measuring many reflections, with the crystal turned many ways, lets scientists work backward to where every atom sits. X-ray images of DNA fibers made by Rosalind Franklin and Raymond Gosling in 1952 were key evidence for DNA's double helix, and most protein structures known today were found this way."
+      },
+      {
+        "t": "mistake",
+        "html": "Measuring $\\theta$ from the normal, as in Snell's law. Bragg's law uses the glancing angle between the beam and the planes. If a problem gives the angle from the normal, $\\phi$, use $\\theta = 90^\\circ - \\phi$; if it gives the angle the beam is turned through, use half of it. Check: small glancing angles go with large spacings, since $\\sin\\theta = m\\lambda/2d$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 3, 4.6 X-Ray Diffraction"
+      },
+      {
+        "name": "OpenStax University Physics Volume 3, 4.4 Diffraction Gratings"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

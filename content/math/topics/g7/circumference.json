@@ -1,0 +1,95 @@
+{
+  "id": "g7.circumference",
+  "slug": "circumference",
+  "ladder": "math",
+  "course": "g7",
+  "unit": "geometry",
+  "title": "Circumference and Pi",
+  "short": "Every circle's circumference is π times its diameter.",
+  "trouble": "Students use the radius where the diameter belongs, or think π is exactly 3.14.",
+  "prereqs": [
+    "g5.multiply-decimals"
+  ],
+  "xp": 1,
+  "viz": [
+    "circlepi"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The distance around a circle is its <b>circumference</b>. Every circle, from a coin to a Ferris wheel, follows the same rule, and finding it needs only <a href=\"/math/grade-5/multiply-decimals/\">multiplying decimals</a>."
+      },
+      {
+        "t": "key",
+        "html": "$$C = \\pi d = 2\\pi r$$ The diameter $d$ goes across through the center; the radius $r$ is half of it. $\\pi$ is about $3.14$ (or $\\frac{22}{7}$)."
+      },
+      {
+        "t": "why",
+        "html": "All circles are the same shape: each is a scaled copy of every other. So the ratio of circumference to diameter is the same for all of them. Roll any circle along a line for one turn: it covers a little more than 3 diameters. That number is $\\pi = 3.14159\\ldots$; its digits go on forever without repeating, so $3.14$ is only an approximation."
+      },
+      {
+        "t": "viz",
+        "name": "circlepi",
+        "opts": {
+          "d": 1,
+          "mode": "roll",
+          "r": true
+        },
+        "cap": "Unroll the circle: one full turn is a little more than 3 diameters. Change the size; the ratio stays the same."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "From the diameter",
+        "q": "A plate has a diameter of 10 inches. Find its circumference.",
+        "steps": [
+          "$C = \\pi d = \\pi \\times 10 = 10\\pi$ inches (exact).",
+          "Using $3.14$: $C \\approx 3.14 \\times 10 = 31.4$ inches."
+        ],
+        "a": "$10\\pi \\approx 31.4$ inches"
+      },
+      {
+        "t": "ex",
+        "title": "From the radius",
+        "q": "A circle has a radius of 7 cm. Find its circumference. Use $3.14$.",
+        "steps": [
+          "The diameter is $2 \\times 7 = 14$ cm.",
+          "$C \\approx 3.14 \\times 14 = 43.96$ cm."
+        ],
+        "a": "$43.96$ cm"
+      },
+      {
+        "t": "ex",
+        "title": "Working backward",
+        "q": "A circular track is 47.1 m around. What is its diameter? Use $3.14$.",
+        "steps": [
+          "$C = \\pi d$, so $d = C \\div \\pi$.",
+          "$d \\approx 47.1 \\div 3.14 = 15$ m."
+        ],
+        "a": "15 m"
+      },
+      {
+        "t": "mistake",
+        "html": "Using the radius where the formula needs the diameter ($3.14 \\times 7 = 21.98$ instead of $43.96$). Check: the circumference is always a little more than 3 times the <b>diameter</b>. Another slip is thinking $\\pi$ equals $3.14$ exactly; it only rounds to it."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Prealgebra 2e, Section 9.5 Solve Geometry Applications: Circles and Irregular Figures"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 7.G.B.4"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

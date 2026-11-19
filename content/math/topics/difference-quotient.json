@@ -1,0 +1,101 @@
+{
+  "id": "pre.difference-quotient",
+  "slug": "difference-quotient",
+  "ladder": "math",
+  "course": "pre",
+  "unit": "analysis",
+  "title": "The Difference Quotient",
+  "short": "[f(x + h) − f(x)]/h is the slope of a secant line.",
+  "trouble": "Students write f(x + h) as f(x) + h, or f(x) + f(h).",
+  "prereqs": [
+    "alg2.function-composition",
+    "alg1.average-rate-of-change"
+  ],
+  "xp": 2,
+  "viz": [
+    "secant"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The <a href=\"/math/algebra-1/average-rate-of-change/\">average rate of change</a> of $f$ between two inputs is rise over run. If the inputs are $x$ and $x + h$, that slope has a general formula. Simplifying it is the first step toward calculus, and it relies on evaluating <a href=\"/math/algebra-2/function-composition/\">a function at an expression</a> like $x + h$."
+      },
+      {
+        "t": "key",
+        "html": "The <b>difference quotient</b> $$\\frac{\\role[change in output]{output}{f(x + h) - f(x)}}{\\role[change in input]{input}{h}}, \\quad h \\ne 0,$$ is the slope of the secant line through $(x, f(x))$ and $(x + h, f(x + h))$. To simplify: find $f(x + h)$ by replacing every $x$ with $(x + h)$, subtract $f(x)$, then divide out the factor $h$."
+      },
+      {
+        "t": "why",
+        "html": "The two points are $h$ apart horizontally (the run) and $f(x + h) - f(x)$ apart vertically (the rise). As $h$ shrinks, the second point slides toward the first and the secant line turns into the tangent line. Calculus studies exactly what the difference quotient approaches as $h \\to 0$, so getting it into a form where $h$ is not in the denominator is the key move."
+      },
+      {
+        "t": "viz",
+        "name": "secant",
+        "opts": {
+          "f": "x^2",
+          "a": 1,
+          "h": 2,
+          "tangent": true,
+          "table": true,
+          "roleLinks": {
+            "h": "input"
+          }
+        },
+        "cap": "Shrink $h$: the secant line through the two points swings toward the dashed tangent line, and its slope approaches $2$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A quadratic",
+        "q": "For $f(x) = x^2 + 3x$, simplify the difference quotient.",
+        "steps": [
+          "$$f(x + h) = (x + h)^2 + 3(x + h) = x^2 + 2xh + h^2 + 3x + 3h.$$",
+          "Subtract $f(x) = x^2 + 3x$: $2xh + h^2 + 3h$.",
+          "Divide by $h$: $2x + h + 3$."
+        ],
+        "a": "$2x + h + 3$"
+      },
+      {
+        "t": "ex",
+        "title": "A reciprocal",
+        "q": "For $f(x) = \\dfrac{1}{x}$, simplify the difference quotient.",
+        "steps": [
+          "$$f(x + h) - f(x) = \\dfrac{1}{x + h} - \\dfrac{1}{x} = \\dfrac{x - (x + h)}{x(x + h)} = \\dfrac{-h}{x(x + h)}.$$",
+          "Divide by $h$."
+        ],
+        "a": "$-\\frac{1}{x(x + h)}$"
+      },
+      {
+        "t": "ex",
+        "title": "With numbers",
+        "q": "For $f(x) = x^2$, find the slope of the secant from $x = 3$ to $x = 3.1$.",
+        "steps": [
+          "$\\dfrac{f(3.1) - f(3)}{0.1} = \\dfrac{9.61 - 9}{0.1}$.",
+          "$= 6.1$. The formula $2x + h$ with $x = 3$, $h = 0.1$ agrees."
+        ],
+        "a": "$6.1$"
+      },
+      {
+        "t": "mistake",
+        "html": "Writing $f(x + h)$ as $f(x) + h$ or as $f(x) + f(h)$. Replace every $x$ in the formula with $(x + h)$, parentheses included. Check with numbers: for $f(x) = x^2$, $f(2 + 1) = 9$, but $f(2) + 1 = 5$ and $f(2) + f(1) = 5$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Precalculus 2e, Section 1.3 Rates of Change and Behavior of Graphs"
+      },
+      {
+        "name": "OpenStax Precalculus 2e, Section 12.4 Derivatives"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

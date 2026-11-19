@@ -1,0 +1,131 @@
+{
+  "id": "macro.balance-of-payments",
+  "slug": "balance-of-payments",
+  "ladder": "economics",
+  "course": "macro",
+  "unit": "open-economy",
+  "title": "The Balance of Payments",
+  "short": "The current account and the capital and financial account record a country's dealings with the rest of the world, and they balance each other.",
+  "trouble": "Students think a trade deficit means money is draining out of the country, missing that it is matched by a financial account surplus as foreigners buy assets.",
+  "prereqs": [
+    "macro.gdp-expenditure",
+    "micro.gains-from-trade"
+  ],
+  "xp": 2,
+  "viz": [
+    "ec-sort"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/economics/microeconomics/gains-from-trade/\">Trade between countries</a> shows up in <a href=\"/economics/macroeconomics/gdp-expenditure/\">GDP as net exports</a>. The balance of payments is the full record of a country's dealings with the rest of the world: not just goods, but income and assets too."
+      },
+      {
+        "t": "key",
+        "html": "The <b>current account</b> records trade in goods and services, income earned on investments abroad, and transfers (like money sent home to family). The <b>financial account</b> records purchases of assets across borders: stocks, bonds, factories, buildings. A small <b>capital account</b> records some capital transfers. Together they balance: current account + capital account + financial account = 0. This course uses the AP convention: a net inflow of foreign capital is a financial account <b>surplus</b>."
+      },
+      {
+        "t": "why",
+        "html": "Every international purchase is paid for somehow. If Americans buy \\$100 more of goods from abroad than they sell, foreigners end up with \\$100 of extra dollars. They do not throw them away: they use them to buy U.S. assets, such as Treasury bonds, stocks or real estate. So a current account deficit of \\$100 is matched by a financial account surplus of \\$100: the country is selling assets to (or borrowing from) the rest of the world. In real data a statistical discrepancy is needed to make the books balance exactly."
+      },
+      {
+        "t": "viz",
+        "name": "ec-sort",
+        "opts": {
+          "bins": [
+            "Current account",
+            "Financial account"
+          ],
+          "check": true,
+          "shuffle": true,
+          "cards": [
+            {
+              "text": "A U.S. farm sells soybeans to China",
+              "bin": 0,
+              "why": "An export of goods."
+            },
+            {
+              "text": "An American family buys a German car",
+              "bin": 0,
+              "why": "An import of goods."
+            },
+            {
+              "text": "An American receives dividends from a Japanese company",
+              "bin": 0,
+              "why": "Income earned on an investment abroad."
+            },
+            {
+              "text": "A worker sends money to family in Mexico",
+              "bin": 0,
+              "why": "A transfer."
+            },
+            {
+              "text": "A Japanese bank buys U.S. Treasury bonds",
+              "bin": 1,
+              "why": "A foreign purchase of a U.S. asset: a capital inflow."
+            },
+            {
+              "text": "A U.S. company builds a factory in Brazil",
+              "bin": 1,
+              "why": "A U.S. purchase of a foreign asset: a capital outflow."
+            }
+          ]
+        },
+        "cap": "Sort each transaction into the U.S. balance of payments, then press Check."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "The current account",
+        "q": "In billions: exports of goods and services 2,500; imports 3,100; net income from abroad +150; net transfers −100. Find the current account balance.",
+        "steps": [
+          "Trade balance: $2{,}500 - 3{,}100 = -600$.",
+          "Current account: $-600 + 150 - 100 = -550$ billion dollars, a deficit."
+        ],
+        "a": "−\\$550 billion"
+      },
+      {
+        "t": "ex",
+        "title": "Balancing the accounts",
+        "q": "A country's current account deficit is \\$500 billion and its capital account is about zero. What is its financial account balance?",
+        "steps": [
+          "The accounts sum to zero, so the financial account is $+500$ billion.",
+          "A surplus: foreigners bought \\$500 billion more of its assets than its residents bought abroad."
+        ],
+        "a": "+\\$500 billion"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking a trade deficit means money is draining out of the country. The dollars come back as foreigners buy U.S. assets, shown as a financial account surplus. Whether that borrowing is a problem depends on what it pays for, which is a separate question. Check: the two big accounts must offset each other."
+      },
+      {
+        "t": "note",
+        "html": "See it with real data: the U.S. trade balance in goods and services on the <a href=\"/markets/indicators/#s=BOPGSTB:level\">Economic Data</a> page."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Macroeconomics 3e, 9.1 Measuring Trade Balances"
+      },
+      {
+        "name": "OpenStax Principles of Macroeconomics 3e, 9.3 Trade Balances and Flows of Financial Capital"
+      },
+      {
+        "name": "U.S. Bureau of Economic Analysis, U.S. International Transactions (current, capital and financial accounts)"
+      },
+      {
+        "name": "College Board, AP Macroeconomics Course and Exam Description (topic list)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

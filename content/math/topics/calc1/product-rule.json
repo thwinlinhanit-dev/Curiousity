@@ -1,0 +1,101 @@
+{
+  "id": "calc1.product-rule",
+  "slug": "product-rule",
+  "ladder": "math",
+  "course": "calc1",
+  "unit": "rules",
+  "title": "The Product Rule",
+  "short": "(fg)′ = f′g + fg′.",
+  "trouble": "Students write (fg)′ = f′g′.",
+  "prereqs": [
+    "calc1.power-rule"
+  ],
+  "xp": 2,
+  "viz": [],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The <a href=\"/math/calculus-1/power-rule/\">Constant, Power and Sum Rules</a> handles sums easily, because derivatives split over sums. Products do not split so simply. The right rule has two terms, and a picture shows why."
+      },
+      {
+        "t": "key",
+        "html": "$$\\big(f g\\big)' = f' g + f g'.$$ Differentiate one factor at a time, keep the other as it is, and add the two results."
+      },
+      {
+        "t": "viz",
+        "name": "calc1-product",
+        "opts": {
+          "f": "x",
+          "g": "0.5x^2+1",
+          "x": 1.6,
+          "dx": 0.5,
+          "xmin": 0.5,
+          "xmax": 3,
+          "task": "Shrink $\\Delta x$. The two strips carry the change in area; the red corner becomes negligible."
+        },
+        "cap": "Area $= f \\cdot g$. When $x$ grows, the area gains a strip $g\\,\\Delta f$, a strip $f\\,\\Delta g$, and a tiny corner $\\Delta f\\,\\Delta g$."
+      },
+      {
+        "t": "why",
+        "html": "Think of $f(x)g(x)$ as the area of a rectangle with sides $f$ and $g$. When $x$ changes by $\\Delta x$, the sides change by $\\Delta f$ and $\\Delta g$, and the area changes by $$\\Delta(fg) = g\\,\\Delta f + f\\,\\Delta g + \\Delta f\\,\\Delta g.$$ Divide by $\\Delta x$: $g\\frac{\\Delta f}{\\Delta x} + f\\frac{\\Delta g}{\\Delta x} + \\Delta f\\frac{\\Delta g}{\\Delta x}$. As $\\Delta x \\to 0$ the first two terms become $g f' + f g'$, while the last term has an extra factor $\\Delta f \\to 0$, so it disappears."
+      },
+      {
+        "t": "ex",
+        "title": "Two polynomials",
+        "q": "Differentiate $(x^2 + 1)(x^3 - 4x)$.",
+        "steps": [
+          "$f = x^2 + 1$, $f' = 2x$; $g = x^3 - 4x$, $g' = 3x^2 - 4$.",
+          "$$f'g + fg' = 2x(x^3 - 4x) + (x^2 + 1)(3x^2 - 4)$$.",
+          "Expand: $$2x^4 - 8x^2 + 3x^4 - 4x^2 + 3x^2 - 4 = 5x^4 - 9x^2 - 4$$.",
+          "Check by expanding first: $x^5 - 3x^3 - 4x$ has derivative $5x^4 - 9x^2 - 4$. They agree."
+        ],
+        "a": "$5x^4 - 9x^2 - 4$"
+      },
+      {
+        "t": "ex",
+        "title": "A root times a polynomial",
+        "q": "Differentiate $\\sqrt{x}\\,(x^2 + 3)$.",
+        "steps": [
+          "$f = x^{1/2}$, $f' = \\frac{1}{2\\sqrt{x}}$; $g = x^2 + 3$, $g' = 2x$.",
+          "$\\frac{x^2 + 3}{2\\sqrt{x}} + 2x\\sqrt{x}$.",
+          "Common denominator: $\\frac{x^2 + 3 + 4x^2}{2\\sqrt{x}} = \\frac{5x^2 + 3}{2\\sqrt{x}}$."
+        ],
+        "a": "$\\frac{5x^2 + 3}{2\\sqrt{x}}$"
+      },
+      {
+        "t": "ex",
+        "title": "From a table",
+        "q": "$f(2) = 3$, $f'(2) = -1$, $g(2) = 5$, $g'(2) = 4$. Find $(fg)'(2)$.",
+        "steps": [
+          "$$(fg)'(2) = f'(2)g(2) + f(2)g'(2) = (-1)(5) + (3)(4)$$.",
+          "$= -5 + 12 = 7$."
+        ],
+        "a": "$7$"
+      },
+      {
+        "t": "h",
+        "text": "More factors, and when to expand"
+      },
+      {
+        "t": "p",
+        "html": "With three factors, differentiate one at a time and keep the other two: $(fgh)' = f'gh + fg'h + fgh'$. The area picture becomes a box whose volume grows on three faces. When both factors are short polynomials, multiplying out first and using the power rule is just as good; the product rule shines when a factor cannot be multiplied out, such as $x^2\\sin x$ or $\\sqrt{x}\\,e^x$."
+      },
+      {
+        "t": "mistake",
+        "html": "Writing $(fg)' = f'g'$. Test it on $x \\cdot x = x^2$: the true derivative is $2x$, but $f'g' = 1 \\cdot 1 = 1$. The picture explains the error: the area grows along two sides, so there must be two terms. Check any product rule answer by expanding first, when that is possible."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 1, 3.3 Differentiation Rules"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

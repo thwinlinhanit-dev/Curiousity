@@ -1,0 +1,100 @@
+{
+  "id": "calc1.ftc-accumulation",
+  "slug": "ftc-accumulation",
+  "ladder": "math",
+  "course": "calc1",
+  "unit": "integrals",
+  "title": "Accumulation Functions and FTC Part 1",
+  "short": "d/dx ∫ₐˣ f(t) dt = f(x).",
+  "trouble": "Students forget the chain rule factor when the upper limit is a function of x.",
+  "prereqs": [
+    "calc1.integral-properties",
+    "calc1.chain-rule"
+  ],
+  "xp": 3,
+  "viz": [
+    "ftc"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Fix the left end of an interval and let the right end move. The area accumulated so far is a new function of $x$. The Fundamental Theorem says its rate of change is the height of the curve at the moving edge. This ties <a href=\"/math/calculus-1/integral-properties/\">integrals</a> to derivatives, and the <a href=\"/math/calculus-1/chain-rule/\">The Chain Rule</a> extends it."
+      },
+      {
+        "t": "key",
+        "html": "<b>Fundamental Theorem of Calculus, Part 1.</b> If $f$ is continuous and $\\role[area so far]{integral}{A(x)} = \\displaystyle\\int_a^{\\role[upper limit]{input}{x}} f(t)\\,dt$, then $\\role[rate the area grows]{rate}{A'(x)} = \\role[height at the upper limit]{output}{f(x)}$. With a function as the upper limit: $$\\dfrac{d}{dx}\\displaystyle\\int_a^{u(x)} f(t)\\,dt = f\\big(u(x)\\big)\\cdot u'(x)$$."
+      },
+      {
+        "t": "viz",
+        "name": "ftc",
+        "opts": {
+          "f": "2 - x",
+          "a": 0,
+          "x": 1,
+          "xmin": -1,
+          "xmax": 5,
+          "ghost": true,
+          "play": true,
+          "task": "Press play. When the curve is above the axis, $A$ climbs; below it, $A$ falls. Where the curve crosses zero, $A$ peaks.",
+          "roleLinks": {
+            "x (upper": "input"
+          }
+        },
+        "cap": "Top: the area under $f(t) = 2 - t$ from 0 to $x$. Bottom: that area as a function, $A(x)$. The slope of $A$ is always the height of $f$."
+      },
+      {
+        "t": "why",
+        "html": "Increase $x$ by a little, $h$. The extra area is a thin strip from $x$ to $x + h$, almost a rectangle of height $f(x)$ and width $h$: $A(x + h) - A(x) \\approx f(x)\\,h$. So $\\frac{A(x + h) - A(x)}{h} \\approx f(x)$, and the approximation becomes exact as $h \\to 0$ because $f$ is continuous. Area grows at a rate equal to the height of the leading edge."
+      },
+      {
+        "t": "ex",
+        "title": "Basic",
+        "q": "Find $\\dfrac{d}{dx}\\displaystyle\\int_1^x \\sqrt{1 + t^3}\\,dt$.",
+        "steps": [
+          "FTC Part 1: replace $t$ with $x$ in the integrand.",
+          "No antiderivative is needed (and $\\sqrt{1 + t^3}$ has none among familiar functions)."
+        ],
+        "a": "$\\sqrt{1 + x^3}$"
+      },
+      {
+        "t": "ex",
+        "title": "A function in the upper limit",
+        "q": "Find $\\dfrac{d}{dx}\\displaystyle\\int_0^{x^2}\\cos t\\,dt$.",
+        "steps": [
+          "The upper limit is $u = x^2$. Chain rule: $\\cos(u)\\cdot u'$.",
+          "$= \\cos(x^2)\\cdot 2x$.",
+          "Check: the integral equals $\\sin(x^2)$, whose derivative is $2x\\cos(x^2)$."
+        ],
+        "a": "$2x\\cos(x^2)$"
+      },
+      {
+        "t": "ex",
+        "title": "Variable in the lower limit",
+        "q": "Find $\\dfrac{d}{dx}\\displaystyle\\int_x^5 e^{t^2}\\,dt$.",
+        "steps": [
+          "Flip the limits: $-\\int_5^x e^{t^2}\\,dt$.",
+          "FTC Part 1: $-e^{x^2}$."
+        ],
+        "a": "$-e^{x^2}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Forgetting the chain rule factor when the upper limit is a function of $x$: writing $\\cos(x^2)$ instead of $2x\\cos(x^2)$ in the second example. Check: if the upper limit is not plain $x$, there must be a factor $u'(x)$ in your answer."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 1, 5.3 The Fundamental Theorem of Calculus"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.01SC Single Variable Calculus, Unit 3: The Fundamental Theorem"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

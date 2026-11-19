@@ -1,0 +1,128 @@
+{
+  "id": "mech.acceleration-derivative",
+  "slug": "acceleration-derivative",
+  "ladder": "physics",
+  "course": "mech",
+  "unit": "kinematics",
+  "title": "Acceleration as a Derivative",
+  "short": "a = dv/dt = d²x/dt², and zero velocity at an instant says nothing about the acceleration.",
+  "trouble": "Students think an object with zero velocity at an instant must have zero acceleration there.",
+  "prereqs": [
+    "mech.velocity-derivative",
+    "phys1.acceleration"
+  ],
+  "xp": 1,
+  "viz": [
+    "ph-motion",
+    "derivgraph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/physics/physics-1/acceleration/\">Acceleration and Its Sign</a> defined acceleration as the rate at which velocity changes. With <a href=\"/physics/mechanics/velocity-derivative/\">Velocity as a Derivative</a> in hand, that rate is one more derivative."
+      },
+      {
+        "t": "key",
+        "html": "$$\\role{acceleration}{a}(t) = \\dfrac{\\role[tiny change in velocity]{velocity}{dv}}{\\role[tiny time interval]{time}{dt}} = \\dfrac{d^2\\role{position}{x}}{\\role{time}{dt^2}}.$$ Acceleration is the slope of the $v$–$t$ graph and the concavity of the $x$–$t$ graph. Its units are $(\\text{m/s})/\\text{s} = \\text{m/s}^2$. The velocity at an instant and the acceleration at that instant are separate facts: either can be zero while the other is not."
+      },
+      {
+        "t": "why",
+        "html": "The derivative at an instant depends on how a quantity is <i>changing</i> there, not on its value there. A velocity can pass through zero while it is changing quickly, like a ball at the top of its flight: just before the top its velocity is a little upward, just after it is a little downward. The change from $+$ to $-$ happens at a steady rate of $9.8\\ \\text{m/s}$ every second, so $a = -9.8\\ \\text{m/s}^2$ (up positive) right through the top."
+      },
+      {
+        "t": "viz",
+        "name": "ph-motion",
+        "opts": {
+          "vertical": true,
+          "v0": 14.7,
+          "graphs": [
+            "x",
+            "v",
+            "a"
+          ],
+          "task": "Pause at the top of the flight. Read the velocity and the acceleration there."
+        },
+        "cap": "A ball thrown up at 14.7 m/s. At the top (1.5 s) the $v$–$t$ line crosses zero, but its slope, the acceleration, is still $-9.8\\ \\text{m/s}^2$."
+      },
+      {
+        "t": "ex",
+        "title": "Differentiate twice",
+        "q": "A particle has $x(t) = t^3 - 6t^2 + 5t$ (m, s). Find its velocity and acceleration at $t = 1\\ \\text{s}$.",
+        "steps": [
+          "$v(t) = 3t^2 - 12t + 5$, so $v(1) = 3 - 12 + 5 = -4\\ \\text{m/s}$.",
+          "$a(t) = \\dfrac{dv}{dt} = 6t - 12$, so $a(1) = -6\\ \\text{m/s}^2$.",
+          "Both are negative: the particle moves in $-x$ and its velocity is becoming more negative, so it is speeding up."
+        ],
+        "a": "$v = -4\\ \\text{m/s}$, $a = -6\\ \\text{m/s}^2$ (speeding up in the $-x$ direction)."
+      },
+      {
+        "t": "ex",
+        "title": "At rest, but accelerating",
+        "q": "For $x(t) = 2t^3 - 9t^2 + 12t$ (m, s), the particle is at rest at $t = 1\\ \\text{s}$. What is its acceleration then?",
+        "steps": [
+          "$v(t) = 6t^2 - 18t + 12 = 6(t - 1)(t - 2)$, which is zero at $t = 1$.",
+          "$a(t) = 12t - 18$, so $a(1) = -6\\ \\text{m/s}^2$.",
+          "The velocity is passing from positive to negative: the particle is turning around, and the nonzero acceleration is what turns it."
+        ],
+        "a": "$a(1) = -6\\ \\text{m/s}^2$."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking that zero velocity at an instant means zero acceleration. If the acceleration were also zero, the velocity would stay at zero and the object would sit still. A ball at the top of its throw doesn't hover. Check: look at the velocity a moment before and a moment after. If they differ, the acceleration is not zero."
+      },
+      {
+        "t": "table",
+        "head": [
+          "$v$",
+          "$a$",
+          "What happens"
+        ],
+        "rows": [
+          [
+            "$+$",
+            "$+$",
+            "moving in $+x$, speeding up"
+          ],
+          [
+            "$+$",
+            "$-$",
+            "moving in $+x$, slowing down"
+          ],
+          [
+            "$-$",
+            "$-$",
+            "moving in $-x$, speeding up"
+          ],
+          [
+            "$-$",
+            "$+$",
+            "moving in $-x$, slowing down"
+          ],
+          [
+            "$0$",
+            "$\\neq 0$",
+            "turning around (or starting from rest)"
+          ]
+        ],
+        "cap": "Same signs: speeding up. Opposite signs: slowing down."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 1, 3.3 Average and Instantaneous Acceleration"
+      },
+      {
+        "name": "OpenStax University Physics Volume 1, 3.5 Free Fall"
+      },
+      {
+        "name": "MIT OpenCourseWare 8.01 Classical Mechanics (scope and sequence)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

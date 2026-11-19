@@ -1,0 +1,125 @@
+{
+  "id": "imicro.public-goods-samuelson",
+  "slug": "public-goods-samuelson",
+  "ladder": "economics",
+  "course": "imicro",
+  "unit": "failure-information",
+  "title": "Providing Public Goods Efficiently",
+  "short": "Provide more of a public good while the sum of everyone's marginal benefits is above its marginal cost.",
+  "trouble": "Students add demand curves horizontally, as for private goods, instead of vertically, even though everyone uses the same units of a public good.",
+  "prereqs": [
+    "micro.public-goods",
+    "imicro.mrs"
+  ],
+  "xp": 3,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/economics/microeconomics/public-goods/\">Public Goods and Free Riders</a> explained why markets supply too little of goods that no one can be kept from and that everyone uses at once. With <a href=\"/economics/intermediate-microeconomics/mrs/\">The Marginal Rate of Substitution</a> we can state exactly how much is efficient, a rule Paul Samuelson gave in 1954."
+      },
+      {
+        "t": "key",
+        "html": "For a public good $G$ with marginal cost $MC$, the efficient amount satisfies the <b>Samuelson condition</b> $$\\sum_i MB_i(G) = MC(G).$$ Because everyone uses the same units, individual marginal benefits are added <b>vertically</b> (at each quantity), not horizontally as for private goods."
+      },
+      {
+        "t": "why",
+        "html": "One more unit of a streetlight program lights the street for everyone at once. Its value to society is the sum of what each person would pay for that unit: $MB_1 + MB_2 + \\cdots$. Efficiency adds units while that sum exceeds the cost. Compare a private good, where one more unit goes to one person and markets add quantities at a price (<a href=\"/economics/intermediate-microeconomics/market-demand/\">Adding Up to Market Demand</a>). If each person decides alone how much to contribute, she stops where <i>her own</i> marginal benefit equals the cost, ignoring the benefit to others, so voluntary contributions fall short: free riding."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "fns": [
+            {
+              "f": "max(0, 20 - x)",
+              "label": "MB1",
+              "color": "blue",
+              "dash": true
+            },
+            {
+              "f": "max(0, 30 - 2*x)",
+              "label": "MB2",
+              "color": "teal",
+              "dash": true
+            },
+            {
+              "f": "max(0, 20 - x) + max(0, 30 - 2*x)",
+              "label": "sum",
+              "color": "purple"
+            },
+            {
+              "f": "23",
+              "label": "MC",
+              "color": "orange"
+            }
+          ],
+          "points": [
+            {
+              "x": 9,
+              "y": 23,
+              "label": "G*"
+            }
+          ],
+          "xmin": 0,
+          "xmax": 22,
+          "ymin": 0,
+          "ymax": 52,
+          "xlabel": "G",
+          "ylabel": "$ per unit",
+          "roots": false,
+          "intersections": false,
+          "zoom": false
+        },
+        "cap": "Two people's marginal benefits and their vertical sum. The sum crosses the cost of \\$23 at $G^* = 9$. On her own, person 2 would stop at 3.5 and person 1 would buy none."
+      },
+      {
+        "t": "ex",
+        "title": "The efficient amount",
+        "q": "$MB_1 = 20 - G$, $MB_2 = 30 - 2G$, $MC = 23$.",
+        "steps": [
+          "Both are positive for $G < 15$, so there $\\sum MB = 50 - 3G$.",
+          "$50 - 3G = 23$ gives $G^* = 9$.",
+          "At 9: $MB_1 = 11$, $MB_2 = 12$, summing to 23. Charging each person her own marginal benefit (a Lindahl price) would cover the cost exactly."
+        ],
+        "a": "$G^* = 9$."
+      },
+      {
+        "t": "ex",
+        "title": "Free riding",
+        "q": "Same people, but each decides alone how much to buy.",
+        "steps": [
+          "Person 1: $20 - G \\ge 23$ never holds, so she buys nothing on her own.",
+          "Person 2: $30 - 2G = 23$ at $G = 3.5$, so he provides 3.5.",
+          "At 3.5, person 1's benefit (16.5 per unit) is below the cost, so she adds nothing and rides free. Total: 3.5, far below 9."
+        ],
+        "a": "3.5 units."
+      },
+      {
+        "t": "mistake",
+        "html": "Adding demand curves horizontally, as for private goods. That would answer \"how many units would they buy in total at a price of \\$23,\" treating each unit as consumed by one person. For a public good every unit serves both, so add the heights (willingness to pay) at each quantity. Check: at your answer, the marginal benefits of all users should add up to the marginal cost."
+      },
+      {
+        "t": "note",
+        "html": "The hard part in practice is learning the $MB_i$: if a person's share of the bill depends on what she reports, she has a reason to understate her benefit. Governments fund public goods through taxes, and economists study mechanisms that make honest reporting worthwhile."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, ch. 13.3 Public Goods"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.04 Intermediate Microeconomic Theory (course scope and lecture topics)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

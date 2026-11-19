@@ -1,0 +1,128 @@
+{
+  "id": "chem.exo-endo",
+  "slug": "exo-endo",
+  "ladder": "chemistry",
+  "course": "chem",
+  "unit": "energy",
+  "title": "Exothermic and Endothermic Reactions",
+  "short": "Exothermic reactions release energy to the surroundings; endothermic reactions take it in.",
+  "trouble": "Students mix up the system and the surroundings: a cold pack feels cold because the reaction takes heat from your hand, not because it gives off cold.",
+  "prereqs": [
+    "chem.heat-temperature",
+    "chem.physical-chemical-changes",
+    "physsci.energy-forms"
+  ],
+  "xp": 1,
+  "viz": [
+    "ch-energydiagram"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A burning match gives off heat; an instant cold pack soaks it up. In <a href=\"/chemistry/chemistry/physical-chemical-changes/\">Physical and Chemical Changes</a> you saw that reactions make new substances; here you track the energy, the stored energy of <a href=\"/physics/physical-science/energy-forms/\">Forms of Energy</a>, as <a href=\"/chemistry/chemistry/heat-temperature/\">heat</a> flows in or out."
+      },
+      {
+        "t": "key",
+        "html": "Split the world into the <b>system</b> (the reacting substances) and the <b>surroundings</b> (everything else). An <b>exothermic</b> process releases energy to the surroundings, which warm up: $\\Delta H < 0$. An <b>endothermic</b> process takes energy from the surroundings, which cool down: $\\Delta H > 0$."
+      },
+      {
+        "t": "why",
+        "html": "Chemical energy is stored in the arrangement of atoms and the bonds between them. If the products hold less chemical energy than the reactants, the difference leaves as heat (or light). If they hold more, the reaction must take that energy in. $\\Delta H$ is the energy of the products minus that of the reactants, so its sign tells the direction of the flow."
+      },
+      {
+        "t": "viz",
+        "name": "ch-energydiagram",
+        "opts": {
+          "mode": "profile",
+          "dH": -90,
+          "Ea": 120,
+          "surroundings": true
+        },
+        "cap": "An energy diagram. The products sit below the reactants, so energy is released to the surroundings: an exothermic reaction with $\\Delta H = -90\\ \\text{kJ}$. The hump is the activation energy you will meet later."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Process",
+          "Type",
+          "What you notice"
+        ],
+        "rows": [
+          [
+            "methane burning",
+            "exothermic",
+            "heat and light"
+          ],
+          [
+            "hand warmer (iron rusting)",
+            "exothermic",
+            "gets warm"
+          ],
+          [
+            "water freezing",
+            "exothermic",
+            "heat leaves the water"
+          ],
+          [
+            "instant cold pack",
+            "endothermic",
+            "gets cold"
+          ],
+          [
+            "ice melting",
+            "endothermic",
+            "cools its surroundings"
+          ],
+          [
+            "photosynthesis",
+            "endothermic",
+            "takes in light energy"
+          ]
+        ],
+        "cap": "Everyday exothermic and endothermic processes."
+      },
+      {
+        "t": "ex",
+        "title": "A cold pack",
+        "q": "Squeezing an instant cold pack dissolves ammonium nitrate in water, and the pack gets cold. Is the process exothermic or endothermic?",
+        "steps": [
+          "The system is the dissolving salt; the surroundings include the water, the bag and your hand.",
+          "The surroundings get colder, so they lost energy to the system."
+        ],
+        "a": "Endothermic ($\\Delta H > 0$)."
+      },
+      {
+        "t": "ex",
+        "title": "Reading a diagram",
+        "q": "On an energy diagram, the reactants are at $250\\ \\text{kJ}$ and the products at $100\\ \\text{kJ}$. Find $\\Delta H$.",
+        "steps": [
+          "$$\\Delta H = E_{\\text{products}} - E_{\\text{reactants}} = 100 - 250$$",
+          "$\\Delta H = -150\\ \\text{kJ}$: energy is released."
+        ],
+        "a": "$-150\\ \\text{kJ}$, exothermic."
+      },
+      {
+        "t": "mistake",
+        "html": "Mixing up the system and the surroundings. A cold pack feels cold because the reaction takes heat from your hand, not because it gives off \"cold\". Check: decide what is the system, then ask whether the surroundings warmed (exothermic) or cooled (endothermic)."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 5.1 Energy Basics"
+      },
+      {
+        "name": "OpenStax Chemistry 2e, 5.3 Enthalpy"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-PS1-4"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

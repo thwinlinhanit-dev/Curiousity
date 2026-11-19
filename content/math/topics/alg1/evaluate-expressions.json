@@ -1,0 +1,124 @@
+{
+  "id": "alg1.evaluate-expressions",
+  "slug": "evaluate-expressions",
+  "ladder": "math",
+  "course": "alg1",
+  "unit": "expressions",
+  "title": "Evaluating Expressions with Negatives and Powers",
+  "short": "Substitute values, including negatives, and follow the order of operations.",
+  "trouble": "Students substitute x = −3 into x² without parentheses and get −9, or treat −3² as (−3)².",
+  "prereqs": [
+    "g6.evaluate-expressions",
+    "g7.integer-operations"
+  ],
+  "xp": 1,
+  "viz": [],
+  "figureArchetype": "LessonFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You already know how to <a href=\"/math/grade-6/evaluate-expressions/\">evaluate an expression</a> and how to <a href=\"/math/grade-7/integer-operations/\">work with signed numbers</a>. Algebra puts the two together, and that is where small sign slips creep in. One habit prevents most of them: <b>put every substituted value in parentheses</b>."
+      },
+      {
+        "t": "why",
+        "html": "An exponent applies to the thing directly in front of it. In $x^2$ that thing is $x$, so when $x = -3$ the whole value $-3$ is squared: $x^2 = (-3)(-3) = 9$. But in $-3^2$ the exponent sits on the $3$ alone, and the minus sign means “the opposite of”: $-3^2 = -(3 \\cdot 3) = -9$. Parentheses keep the value in one piece, so the exponent acts on all of it."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Written",
+          "Means",
+          "Value"
+        ],
+        "rows": [
+          [
+            "$(-3)^2$",
+            "$(-3)(-3)$",
+            "$9$"
+          ],
+          [
+            "$-3^2$",
+            "$-(3 \\cdot 3)$",
+            "$-9$"
+          ],
+          [
+            "$-(-3)^2$",
+            "$-\\big((-3)(-3)\\big)$",
+            "$-9$"
+          ],
+          [
+            "$(-2)^3$",
+            "$(-2)(-2)(-2)$",
+            "$-8$"
+          ]
+        ],
+        "cap": "Where the parentheses go decides the sign."
+      },
+      {
+        "t": "key",
+        "html": "Substitute each value in parentheses, then follow the order of operations: grouping (parentheses and fraction bars), exponents, multiplication and division from left to right, then addition and subtraction from left to right."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A quadratic at a negative number",
+        "q": "Evaluate $x^2 - 4x + 1$ when $x = -3$.",
+        "steps": [
+          "Substitute in parentheses: $(-3)^2 - 4(-3) + 1$.",
+          "Exponent first: $(-3)^2 = 9$.",
+          "Multiply: $-4(-3) = 12$.",
+          "Add from left to right: $9 + 12 + 1 = 22$."
+        ],
+        "a": "$22$"
+      },
+      {
+        "t": "ex",
+        "title": "A minus sign in front of a power",
+        "q": "Evaluate $-x^2 + 2xy$ when $x = -2$ and $y = 5$.",
+        "steps": [
+          "Substitute: $-(-2)^2 + 2(-2)(5)$.",
+          "Exponent first: $(-2)^2 = 4$, so the first term is $-4$.",
+          "Multiply: $2(-2)(5) = -20$.",
+          "Add: $-4 + (-20) = -24$."
+        ],
+        "a": "$-24$"
+      },
+      {
+        "t": "ex",
+        "title": "A fraction bar groups",
+        "q": "Evaluate $\\dfrac{a^2 - b}{a + b}$ when $a = -4$ and $b = 2$.",
+        "steps": [
+          "The fraction bar works like parentheses around the top and around the bottom.",
+          "Top: $(-4)^2 - 2 = 16 - 2 = 14$.",
+          "Bottom: $-4 + 2 = -2$.",
+          "Divide: $\\frac{14}{-2} = -7$."
+        ],
+        "a": "$-7$"
+      },
+      {
+        "t": "mistake",
+        "html": "Substituting $x = -3$ into $x^2$ without parentheses gives $-3^2 = -9$, which is wrong: a square of any real number is never negative. Check: if you squared a value and got a negative answer, a parenthesis is missing."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Elementary Algebra 2e, section 1.2 Use the Language of Algebra"
+      },
+      {
+        "name": "OpenStax, Elementary Algebra 2e, section 1.4 Multiply and Divide Integers"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, A-SSE.A.1"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

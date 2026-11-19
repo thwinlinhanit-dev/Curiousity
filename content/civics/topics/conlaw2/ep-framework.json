@@ -1,0 +1,184 @@
+{
+  "id": "conlaw2.ep-framework",
+  "slug": "ep-framework",
+  "ladder": "civics",
+  "course": "conlaw2",
+  "unit": "equal-protection",
+  "title": "The Equal Protection Framework",
+  "short": "Equal protection analysis asks what classification a law makes and then applies the matching tier; the Fifth Amendment's Due Process Clause imposes the same requirement on the federal government (Bolling v. Sharpe, 1954).",
+  "trouble": "Students think the Equal Protection Clause applies to the federal government by its words. It names the states; Bolling reached federal action through the Fifth Amendment (\"reverse incorporation\").",
+  "prereqs": [
+    "conlaw1.choosing-the-tier",
+    "conlaw2.incorporation"
+  ],
+  "xp": 3,
+  "viz": [
+    "cv-scrutiny",
+    "cv-case"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "note",
+        "html": "<b>Note:</b> This is an educational course, not legal advice."
+      },
+      {
+        "t": "p",
+        "html": "The Equal Protection Clause says no state shall \"deny to any person within its jurisdiction the equal protection of the laws.\" Every law draws lines: drivers under 16 may not drive, only licensed doctors may prescribe. So the clause cannot forbid all classifications. It asks whether a line is <b>justified</b>, and how hard the government must work to justify it depends on <b>what kind of line</b> it is. You learned the three tiers in <a href=\"/american-history/constitutional-law-1/choosing-the-tier/\">Con Law I: choosing the tier</a>; this unit applies them."
+      },
+      {
+        "t": "viz",
+        "name": "cv-scrutiny",
+        "opts": {
+          "mode": "tiers"
+        },
+        "cap": "The three tiers side by side."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Step",
+          "Question",
+          "Example"
+        ],
+        "rows": [
+          [
+            "1. Find the classification",
+            "Whom does the law treat differently, and on what basis? On its face, or in purpose?",
+            "a law limiting a job to citizens classifies by alienage"
+          ],
+          [
+            "2. Choose the tier",
+            "Suspect (race, national origin, state alienage) → strict; quasi-suspect (sex, legitimacy) → intermediate; everything else → rational basis. A burden on a fundamental right → strict",
+            "a sex-based rule gets intermediate scrutiny"
+          ],
+          [
+            "3. Apply the test",
+            "Interest (compelling, important, legitimate) and fit (narrowly tailored, substantially related, rationally related); who bears the burden",
+            "under strict scrutiny the government must prove both"
+          ],
+          [
+            "4. Conclude",
+            "Valid or invalid, on its face or as applied",
+            ""
+          ]
+        ]
+      },
+      {
+        "t": "why",
+        "html": "Why tiers at all? The idea traces to <a href=\"/american-history/constitutional-law-2/end-of-lochner/\">Carolene Products' footnote four</a>: most laws are the ordinary give and take of politics, and courts should defer; but laws aimed at groups that prejudice shuts out of politics deserve a closer look. The Court has looked at a group's history of discrimination, whether the trait is unchangeable and unrelated to ability, and the group's political power."
+      },
+      {
+        "t": "viz",
+        "name": "cv-case",
+        "opts": {
+          "id": "bolling",
+          "facts": "Bolling v. Sharpe was decided the same day as Brown v. Board of Education. It challenged segregated public schools in the District of Columbia, which is governed by Congress, not a state.",
+          "reasoning": "The Equal Protection Clause names the states. But the Fifth Amendment's Due Process Clause, which binds the federal government, includes a guarantee against unjustified discrimination. The Court said it would be \"unthinkable\" for the Constitution to impose a lesser duty on the federal government than on the states."
+        }
+      },
+      {
+        "t": "key",
+        "html": "Equal protection analysis: <b>identify the classification</b>, <b>pick the tier</b> (strict, intermediate, rational basis), then <b>apply its test</b>. The clause binds states; <i>Bolling v. Sharpe</i> (1954) applies the same guarantee to the federal government through the <b>Fifth Amendment's Due Process Clause</b> (\"reverse incorporation\")."
+      },
+      {
+        "t": "ex",
+        "title": "A federal law",
+        "q": "Congress passes a law that gives a federal benefit only to men. Which clause does a challenger use?",
+        "steps": [
+          "The Fourteenth Amendment's Equal Protection Clause says \"No State shall…,\" so it does not reach Congress by its words.",
+          "Bolling v. Sharpe: the Fifth Amendment's Due Process Clause contains an equal protection component that binds the federal government.",
+          "The analysis is the same: a sex classification gets intermediate scrutiny."
+        ],
+        "a": "The Fifth Amendment's Due Process Clause, with the same equal protection analysis."
+      },
+      {
+        "t": "ex",
+        "title": "Pick the tier",
+        "q": "A state law sets a lower tuition rate for state residents than for nonresidents at its universities. What tier?",
+        "steps": [
+          "The classification is residence, not race, sex or alienage.",
+          "Residence is not a suspect or quasi-suspect class, and charging nonresidents more does not burden a fundamental right in the Court's cases.",
+          "So rational basis applies, and such rates have been upheld."
+        ],
+        "a": "Rational basis."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking the Equal Protection Clause applies to the federal government by its words. It names the states. <i>Bolling</i> reached federal action through the Fifth Amendment (\"reverse incorporation\"), and the Court applies the same tiers to federal and state laws (<i>Adarand Constructors, Inc. v. Peña</i> (1995) confirmed this for race)."
+      },
+      {
+        "t": "viz",
+        "name": "cv-sort",
+        "opts": {
+          "bins": [
+            "Strict scrutiny",
+            "Intermediate scrutiny",
+            "Rational basis"
+          ],
+          "cards": [
+            {
+              "text": "A state law that classifies by race",
+              "bin": 0,
+              "why": "Race is a suspect class."
+            },
+            {
+              "text": "A state law limiting welfare to citizens",
+              "bin": 0,
+              "why": "State alienage classifications are generally suspect (Graham v. Richardson)."
+            },
+            {
+              "text": "A rule that treats men and women differently",
+              "bin": 1,
+              "why": "Sex is quasi-suspect."
+            },
+            {
+              "text": "A law treating children born outside marriage differently",
+              "bin": 1,
+              "why": "Legitimacy gets intermediate scrutiny."
+            },
+            {
+              "text": "A mandatory retirement age",
+              "bin": 2,
+              "why": "Age is not suspect (Murgia)."
+            },
+            {
+              "text": "A tax on vending machines but not on stores",
+              "bin": 2,
+              "why": "Ordinary economic regulation."
+            }
+          ],
+          "shuffle": true,
+          "reveal": true
+        },
+        "cap": "Sort each law to its tier."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Grokipedia, \"Bolling v. Sharpe\"",
+        "url": "https://grokipedia.com/page/Bolling_v._Sharpe"
+      },
+      {
+        "name": "Bolling v. Sharpe, 347 U.S. 497 (1954) (Wikisource)",
+        "url": "https://en.wikisource.org/wiki/Bolling_v._Sharpe"
+      },
+      {
+        "name": "Grokipedia, \"United States v. Carolene Products Co.\"",
+        "url": "https://grokipedia.com/page/United_States_v._Carolene_Products_Co."
+      },
+      {
+        "name": "Constitution Annotated (Congressional Research Service), constitution.congress.gov: the essays on the clause"
+      },
+      {
+        "name": "OpenStax, American Government 3e, chapter 5, \"Civil Rights\""
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

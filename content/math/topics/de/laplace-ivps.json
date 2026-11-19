@@ -1,0 +1,110 @@
+{
+  "id": "de.laplace-ivps",
+  "slug": "laplace-ivps",
+  "ladder": "math",
+  "course": "de",
+  "unit": "laplace",
+  "title": "Solving Initial Value Problems with Laplace",
+  "short": "Transform, solve for Y, and invert.",
+  "trouble": "",
+  "prereqs": [
+    "de.inverse-laplace",
+    "de.real-roots"
+  ],
+  "xp": 3,
+  "viz": [],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Now the pieces fit together: <a href=\"/math/differential-equations/laplace-properties/\">derivatives become multiplication by $s$</a>, the equation becomes algebra, and <a href=\"/math/differential-equations/inverse-laplace/\">inverse transforms</a> bring the answer back. The initial conditions enter at the start, so there is no general solution to fit afterwards."
+      },
+      {
+        "t": "key",
+        "html": "<b>Transform</b> both sides (using $\\mathcal{L}\\{y'\\} = sY - y(0)$, $\\mathcal{L}\\{y''\\}$ $= s^{2}Y - sy(0) - y'(0)$), <b>solve</b> the algebraic equation for $Y(s)$, split it into <b>partial fractions</b>, and <b>invert</b>."
+      },
+      {
+        "t": "why",
+        "html": "For $ay'' + by' + cy = g$, transforming gives $(as^{2} + bs + c)Y$ $= G(s)$ $+ (\\text{terms from the initial values})$. The polynomial multiplying $Y$ is the characteristic polynomial, so its roots, the poles of $Y$, are exactly the exponents in the homogeneous solution. The poles of $G$ add the particular solution. Partial fractions sorts everything into pieces you can invert."
+      },
+      {
+        "t": "ex",
+        "title": "First order",
+        "q": "Solve $y' + 2y = 6$, $y(0) = 1$.",
+        "steps": [
+          "Transform: $sY - 1 + 2Y = \\frac{6}{s}$, so $Y = \\frac{1}{s + 2} + \\frac{6}{s(s + 2)}$.",
+          "Partial fractions: $\\frac{6}{s(s + 2)} = \\frac{3}{s} - \\frac{3}{s + 2}$.",
+          "$Y = \\frac{3}{s} - \\frac{2}{s + 2}$."
+        ],
+        "a": "$y = 3 - 2e^{-2t}$"
+      },
+      {
+        "t": "ex",
+        "title": "Second order",
+        "q": "Solve $y'' - y' - 2y = 0$, $y(0) = 1$, $y'(0) = 5$.",
+        "steps": [
+          "$(s^{2}Y - s - 5) - (sY - 1) - 2Y$ $= 0$, so $(s^{2} - s - 2)Y = s + 4$.",
+          "$Y = \\frac{s + 4}{(s - 2)(s + 1)}$ $= \\frac{2}{s - 2} - \\frac{1}{s + 1}$ (cover-up: $\\frac{6}{3} = 2$ and $\\frac{3}{-3} = -1$).",
+          "Invert."
+        ],
+        "a": "$y = 2e^{2t} - e^{-t}$, the same answer as the characteristic-equation method"
+      },
+      {
+        "t": "ex",
+        "title": "A constant force",
+        "q": "Solve $y'' + 4y = 8$, $y(0) = 0$, $y'(0) = 0$.",
+        "steps": [
+          "$(s^{2} + 4)Y = \\frac{8}{s}$, so $Y = \\frac{8}{s(s^{2} + 4)}$.",
+          "Partial fractions: $\\frac{8}{s(s^{2} + 4)} = \\frac{2}{s} - \\frac{2s}{s^{2} + 4}$."
+        ],
+        "a": "$y = 2 - 2\\cos 2t$"
+      },
+      {
+        "t": "mistake",
+        "html": "Inverting a product piece by piece, as if $\\mathcal{L}^{-1}\\left\\{\\frac{6}{s(s + 2)}\\right\\}$ were $6\\cdot 1\\cdot e^{-2t}$. The inverse of a product is not the product of inverses; split into partial fractions first (or use convolution, coming soon). Also include the initial-value terms when you transform."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "fns": [
+            {
+              "f": "2 - 2*cos(2x)",
+              "label": "y"
+            },
+            {
+              "f": "2",
+              "dash": true,
+              "color": "gold",
+              "label": "y_p"
+            }
+          ],
+          "xmin": 0,
+          "xmax": 8,
+          "ymin": -0.5,
+          "ymax": 4.5,
+          "xlabel": "t"
+        },
+        "cap": "The solution $y = 2 - 2\\cos 2t$ of the last example: an undamped spring released at rest under a constant force oscillates about its new equilibrium $y = 2$."
+      },
+      {
+        "t": "note",
+        "html": "When is this better than the characteristic-equation method? For smooth forcing like $e^{t}$ or $\\cos t$ the two methods take about the same effort. The transform method shines when the forcing switches on and off or acts in an instant (the next two topics), because it needs no separate solution on each piece. It assumes the initial values are given at $t = 0$; for conditions at $t = 5$, shift time first with $\\tau = t - 5$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Paul's Online Math Notes, Differential Equations: Solving IVP's with Laplace Transforms"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.03SC Differential Equations (Fall 2011), Unit III: Fourier Series and Laplace Transform"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

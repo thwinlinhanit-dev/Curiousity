@@ -1,0 +1,127 @@
+{
+  "id": "de.existence-uniqueness-de",
+  "slug": "existence-uniqueness-de",
+  "ladder": "math",
+  "course": "de",
+  "unit": "first-order",
+  "title": "Initial Value Problems, Existence and Uniqueness",
+  "short": "Know when exactly one solution passes through a point.",
+  "trouble": "Students assume every initial value problem has exactly one solution, missing cases like y′ = √y with y(0) = 0.",
+  "prereqs": [
+    "de.classify-des",
+    "calc2.slope-fields-euler"
+  ],
+  "xp": 2,
+  "viz": [
+    "slopefield"
+  ],
+  "figureArchetype": "FieldFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "An <b>initial value problem</b> (IVP) pairs an equation $y' = f(t, y)$ with a starting value $y(t_0) = y_0$. In <a href=\"/math/calculus-2/slope-fields-euler/\">Direction Fields and Euler's Method</a> you traced a curve from a point by following the slopes. It is natural to assume exactly one curve leaves each point. Usually that is true, but not always, and the exceptions are worth knowing."
+      },
+      {
+        "t": "key",
+        "html": "<b>Theorem.</b> If $f$ and $\\partial f/\\partial y$ are continuous on a rectangle containing $(t_0, y_0)$, then the IVP has exactly one solution on some interval around $t_0$.<br><b>Linear case.</b> For $y' + p(t)y = g(t)$, if $p$ and $g$ are continuous on an open interval $I$ containing $t_0$, the unique solution exists on all of $I$."
+      },
+      {
+        "t": "why",
+        "html": "Suppose $y_1$ and $y_2$ both solve the IVP and let $w = y_1 - y_2$, so $w(t_0) = 0$. By the mean value theorem, $$w' = f(t, y_1) - f(t, y_2) = \\frac{\\partial f}{\\partial y}(t, \\xi)\\,w$$ for some $\\xi$ between $y_1$ and $y_2$. If $|\\partial f/\\partial y| \\le K$, then $|w|$ can grow at most like $|w(t_0)|e^{K|t - t_0|} = 0$. A bounded $\\partial f/\\partial y$ keeps two solutions from peeling apart. When $\\partial f/\\partial y$ blows up, that protection is gone."
+      },
+      {
+        "t": "h",
+        "text": "When uniqueness fails"
+      },
+      {
+        "t": "ex",
+        "title": "Two solutions from one point",
+        "q": "Solve $y' = 3y^{2/3}$, $y(0) = 0$.",
+        "steps": [
+          "$y = 0$ works: both sides are 0.",
+          "Try $y = t^{3}$: $y' = 3t^{2}$ and $3y^{2/3} = 3(t^{3})^{2/3} = 3t^{2}$. It works too, with $y(0) = 0$.",
+          "In fact $y = 0$ until any time $c \\ge 0$, followed by $y = (t - c)^{3}$, is also a solution: infinitely many.",
+          "Here $\\partial f/\\partial y = 2y^{-1/3}$, which is undefined at $y = 0$, so the theorem never promised uniqueness."
+        ],
+        "a": "The IVP has more than one solution."
+      },
+      {
+        "t": "mistake",
+        "html": "Assuming every initial value problem has exactly one solution. For $y' = \\sqrt{y}$ with $y(0) = 0$, both $y = 0$ and $y = \\frac{t^{2}}{4}$ (for $t \\ge 0$) work. Before trusting a single answer, check the hypotheses: are $f$ and $\\partial f/\\partial y$ continuous at the starting point? Here $\\partial f/\\partial y = \\frac{1}{2\\sqrt{y}}$ is not."
+      },
+      {
+        "t": "h",
+        "text": "How far a solution lasts"
+      },
+      {
+        "t": "p",
+        "html": "For a linear equation the answer comes from the coefficients alone: divide by the leading coefficient to reach standard form, list every $t$ where $p$ or $g$ is undefined or discontinuous, and take the gap that contains $t_0$."
+      },
+      {
+        "t": "ex",
+        "title": "The interval for a linear IVP",
+        "q": "On what interval is the solution of $(t - 3)y' + (\\ln t)y = 2t$, $y(1) = 2$, guaranteed to exist and be unique?",
+        "steps": [
+          "Standard form: $y' + \\frac{\\ln t}{t - 3}y = \\frac{2t}{t - 3}$.",
+          "$p = \\frac{\\ln t}{t - 3}$ needs $t > 0$ and $t \\ne 3$; $g = \\frac{2t}{t - 3}$ needs $t \\ne 3$.",
+          "The trouble points split the line into $(0, 3)$ and $(3, \\infty)$; $t_0 = 1$ lies in $(0, 3)$."
+        ],
+        "a": "$(0, 3)$"
+      },
+      {
+        "t": "ex",
+        "title": "A short life without any trouble point",
+        "q": "Does $y' = y^{2}$, $y(0) = 1$ have a unique solution, and for how long?",
+        "steps": [
+          "$f = y^{2}$ and $\\partial f/\\partial y = 2y$ are continuous everywhere, so there is exactly one solution near $t = 0$.",
+          "Separating variables gives $y = \\frac{1}{1 - t}$.",
+          "It blows up as $t \\to 1^{-}$, even though the equation looks perfectly smooth."
+        ],
+        "a": "Unique, but it exists only for $t < 1$. For nonlinear equations the theorem promises just some interval."
+      },
+      {
+        "t": "viz",
+        "name": "slopefield",
+        "opts": {
+          "f": "3*(y^2)^(1/3)",
+          "point": [
+            0,
+            0
+          ],
+          "curves": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              1
+            ]
+          ],
+          "xmin": -2,
+          "xmax": 2.5,
+          "ymin": -2,
+          "ymax": 3
+        },
+        "cap": "Slopes of $y' = 3y^{2/3}$. The blue curve from $(0, 0)$ stays on the equilibrium $y = 0$, while the teal curves, shifted copies of $y = (t - c)^{3}$, leave the same line with slope 0. Several solutions touch at each point of $y = 0$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Paul's Online Math Notes, Differential Equations: Intervals of Validity"
+      },
+      {
+        "name": "OpenStax Calculus Volume 2, 4.1 Basics of Differential Equations"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.03SC Differential Equations (Fall 2011), Unit I: First Order Differential Equations"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

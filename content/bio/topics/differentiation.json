@@ -1,0 +1,95 @@
+{
+  "id": "apbio.differentiation",
+  "slug": "differentiation",
+  "ladder": "bio",
+  "course": "apbio",
+  "unit": "expression",
+  "title": "Gene Expression and Specialization",
+  "short": "Different cell types switch on different sets of genes using different transcription factors, which is why a muscle cell and a nerve cell with the same genome make different proteins.",
+  "trouble": "Students think differentiated cells have thrown away the genes they do not use. Nearly all body cells keep the whole genome.",
+  "prereqs": [
+    "apbio.eukaryotic-regulation"
+  ],
+  "xp": 2,
+  "viz": [
+    "bi-cell",
+    "bi-central"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A muscle cell and a nerve cell in the same body carry the same genome. Yet one is packed with contractile proteins and the other with ion channels. <a href=\"/biology/advanced-biology/eukaryotic-regulation/\">Gene regulation in eukaryotes</a> explains how: each cell type keeps a different set of genes switched on."
+      },
+      {
+        "t": "key",
+        "html": "Cell types differ because they express <b>different sets of genes</b>, controlled by different combinations of <b>transcription factors</b>. Nearly every cell keeps the whole genome; it is the pattern of expression, held in place by epigenetic marks, that makes a cell specialized."
+      },
+      {
+        "t": "viz",
+        "name": "bi-cell",
+        "opts": {
+          "type": "animal"
+        },
+        "cap": "Every body cell has a nucleus with the same genes; what differs is which ones are read."
+      },
+      {
+        "t": "list",
+        "items": [
+          "<b>Combinatorial control</b>: a gene's enhancers may need several activators at once. With a few dozen transcription factors in different combinations, cells can set up many distinct patterns.",
+          "<b>Master regulators</b>: some transcription factors switch on a whole program. MyoD, for example, turns on many muscle genes, including more MyoD.",
+          "<b>Evidence the genes are still there</b>: a single cell from a carrot root, grown in a dish, can grow into a whole carrot plant. Many plants regrow from cuttings of a stem or a leaf."
+        ]
+      },
+      {
+        "t": "why",
+        "html": "Why does the pattern last? Specialization is reinforced by feedback: a master regulator often activates its own gene, so once on, it stays on. Epigenetic marks then lock it in and are copied at each division. Signals from neighboring cells, as in <a href=\"/biology/advanced-biology/signaling-types/\">cell signaling</a>, decide which program starts in the first place."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Which genes are on?",
+        "q": "Gene X needs activators A and B. Gene Y needs A and C. Gene Z needs B and D. A cell makes activators A and B only. Which genes are expressed?",
+        "steps": [
+          "X: needs A and B; both present. On.",
+          "Y: needs C; absent. Off.",
+          "Z: needs D; absent. Off."
+        ],
+        "a": "Only gene X."
+      },
+      {
+        "t": "ex",
+        "title": "Same genes, different proteins",
+        "q": "A liver cell makes albumin; a skin cell does not. Does the skin cell have the albumin gene?",
+        "steps": [
+          "Nearly all cells keep the full genome.",
+          "The skin cell lacks the transcription factors (and open chromatin) needed to read the albumin gene."
+        ],
+        "a": "Yes. It has the gene but does not express it."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking specialized cells have thrown away the genes they do not use. Nearly all body cells keep the whole genome (mature red blood cells in mammals, which lose their nucleus, are a famous exception). A check: if a plant can regrow from one specialized cell, that cell must still hold every gene."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Biology 2e, 16.1 Regulation of Gene Expression"
+      },
+      {
+        "name": "OpenStax, Biology 2e, 16.4 Eukaryotic Transcriptional Gene Regulation"
+      },
+      {
+        "name": "OpenStax, Biology for AP Courses, 16.4 Eukaryotic Transcriptional Gene Regulation"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,706 @@
+{
+  "key": "astrophys",
+  "ladder": "physics",
+  "title": "Astrophysics",
+  "short": "Astrophysics",
+  "after": [
+    "astro",
+    "modern"
+  ],
+  "units": [
+    {
+      "key": "starlight",
+      "title": "Starlight",
+      "blurb": "Magnitudes and distances, dust, colors, the Planck function, and what spectral lines say about temperature."
+    },
+    {
+      "key": "binaries-exoplanets",
+      "title": "Binary Stars and Exoplanets",
+      "blurb": "Masses from orbits, radial-velocity curves, eclipses and transits, and planet temperatures."
+    },
+    {
+      "key": "stellar-structure",
+      "title": "How Stars Work",
+      "blurb": "Hydrostatic equilibrium, the virial theorem, fusion and tunneling, energy transport and the limits on stellar luminosity."
+    },
+    {
+      "key": "stellar-death",
+      "title": "Stellar Evolution and Compact Objects",
+      "blurb": "Evolutionary tracks, degenerate matter, white dwarfs and neutron stars, black holes, tides, accretion and gravitational waves."
+    },
+    {
+      "key": "cosmos",
+      "title": "Galaxies and Cosmology",
+      "blurb": "Rotation curves and dark matter, supermassive black holes, redshift and the scale factor, the Friedmann equation, the CMB and the first elements."
+    }
+  ],
+  "topics": [
+    {
+      "id": "astrophys.magnitude-equations",
+      "slug": "magnitude-equations",
+      "course": "astrophys",
+      "unit": "starlight",
+      "title": "Magnitude Arithmetic",
+      "short": "Magnitudes compare fluxes on a log scale: m₁ − m₂ = −2.5 log(F₁/F₂).",
+      "prereqs": [
+        "astro.magnitudes",
+        "alg2.log-properties"
+      ],
+      "viz": [
+        "ph-cosmic"
+      ]
+    },
+    {
+      "id": "astrophys.distance-modulus",
+      "slug": "distance-modulus",
+      "course": "astrophys",
+      "unit": "starlight",
+      "title": "Absolute Magnitude and the Distance Modulus",
+      "short": "A star's absolute magnitude is its magnitude seen from 10 pc, and m − M = 5 log(d/10 pc).",
+      "prereqs": [
+        "astrophys.magnitude-equations"
+      ],
+      "viz": [
+        "ph-cosmic"
+      ]
+    },
+    {
+      "id": "astrophys.extinction",
+      "slug": "extinction",
+      "course": "astrophys",
+      "unit": "starlight",
+      "title": "Interstellar Dust: Extinction and Reddening",
+      "short": "Dust dims and reddens starlight, adding A to the distance modulus: m − M = 5 log(d/10 pc) + A.",
+      "prereqs": [
+        "astrophys.distance-modulus"
+      ],
+      "viz": [
+        "astrophys-filters",
+        "ph-cosmic"
+      ]
+    },
+    {
+      "id": "astrophys.color-index",
+      "slug": "color-index",
+      "course": "astrophys",
+      "unit": "starlight",
+      "title": "Color Index and Temperature",
+      "short": "The color index B − V compares two magnitudes, and a smaller value means a hotter star.",
+      "prereqs": [
+        "astrophys.magnitude-equations"
+      ],
+      "viz": [
+        "astrophys-filters",
+        "ph-blackbody"
+      ]
+    },
+    {
+      "id": "astrophys.planck-function",
+      "slug": "planck-function",
+      "course": "astrophys",
+      "unit": "starlight",
+      "title": "The Planck Function",
+      "short": "B_λ(T) gives a blackbody's spectrum; its peak gives Wien's law and its area gives σT⁴.",
+      "prereqs": [
+        "modern.planck-blackbody",
+        "calc2.improper-integrals"
+      ],
+      "viz": [
+        "ph-blackbody"
+      ]
+    },
+    {
+      "id": "astrophys.effective-temperature",
+      "slug": "effective-temperature",
+      "course": "astrophys",
+      "unit": "starlight",
+      "title": "Effective Temperature and Stellar Radii",
+      "short": "Use L = 4πR²σT_eff⁴ with real values to find the radii of dwarfs, giants and supergiants.",
+      "prereqs": [
+        "astrophys.planck-function",
+        "astro.luminosity-radius-temperature"
+      ],
+      "viz": [
+        "ph-hr"
+      ]
+    },
+    {
+      "id": "astrophys.boltzmann-excitation",
+      "slug": "boltzmann-excitation",
+      "course": "astrophys",
+      "unit": "starlight",
+      "title": "Excitation and the Strength of Spectral Lines",
+      "short": "The fraction of atoms in an excited level follows (g_b/g_a)e^(−ΔE/kT), which is why hydrogen lines peak in A stars.",
+      "prereqs": [
+        "astrophys.color-index",
+        "modern.hydrogen-series"
+      ],
+      "viz": [
+        "ph-spectrum"
+      ]
+    },
+    {
+      "id": "astrophys.ionization-sequence",
+      "slug": "ionization-sequence",
+      "course": "astrophys",
+      "unit": "starlight",
+      "title": "Ionization and the Spectral Sequence",
+      "short": "Rising temperature ionizes each element in turn, so the spectral classes are a temperature sequence, not a sequence of composition.",
+      "prereqs": [
+        "astrophys.boltzmann-excitation",
+        "astro.spectral-classes"
+      ],
+      "viz": [
+        "ph-spectrum"
+      ]
+    },
+    {
+      "id": "astrophys.visual-binaries",
+      "slug": "visual-binaries",
+      "course": "astrophys",
+      "unit": "binaries-exoplanets",
+      "title": "Masses from Visual Binaries",
+      "short": "Parallax turns angular separation into a, Kepler's third law gives M₁ + M₂, and the center of mass splits it.",
+      "prereqs": [
+        "astro.binary-stars",
+        "mech.kepler-third-from-newton"
+      ],
+      "viz": [
+        "ph-orbit"
+      ]
+    },
+    {
+      "id": "astrophys.spectroscopic-binaries",
+      "slug": "spectroscopic-binaries",
+      "course": "astrophys",
+      "unit": "binaries-exoplanets",
+      "title": "Spectroscopic Binaries",
+      "short": "Doppler shifts trace each star's orbit, and their speeds give the mass ratio m₁/m₂ = v₂/v₁.",
+      "prereqs": [
+        "astrophys.visual-binaries",
+        "astro.doppler-light"
+      ],
+      "viz": [
+        "ph-orbit",
+        "ph-spectrum"
+      ]
+    },
+    {
+      "id": "astrophys.eclipsing-binaries",
+      "slug": "eclipsing-binaries",
+      "course": "astrophys",
+      "unit": "binaries-exoplanets",
+      "title": "Eclipsing Binaries",
+      "short": "The timing of eclipses gives the stars' radii, and the depths compare their surface temperatures.",
+      "prereqs": [
+        "astrophys.spectroscopic-binaries"
+      ],
+      "viz": [
+        "astrophys-eclipse",
+        "ph-orbit"
+      ]
+    },
+    {
+      "id": "astrophys.exoplanet-transits",
+      "slug": "exoplanet-transits",
+      "course": "astrophys",
+      "unit": "binaries-exoplanets",
+      "title": "Exoplanet Transits",
+      "short": "A transit's depth (R_p/R_*)² gives the planet's size, and its period gives the orbit.",
+      "prereqs": [
+        "astro.exoplanets",
+        "astrophys.eclipsing-binaries"
+      ],
+      "viz": [
+        "astrophys-eclipse",
+        "ph-orbit"
+      ]
+    },
+    {
+      "id": "astrophys.exoplanet-wobble",
+      "slug": "exoplanet-wobble",
+      "course": "astrophys",
+      "unit": "binaries-exoplanets",
+      "title": "Exoplanet Masses from Wobbles",
+      "short": "A planet's pull sets its star's velocity amplitude, which gives the planet's mass times sin i.",
+      "prereqs": [
+        "astrophys.spectroscopic-binaries"
+      ],
+      "viz": [
+        "ph-orbit"
+      ]
+    },
+    {
+      "id": "astrophys.planet-temperature",
+      "slug": "planet-temperature",
+      "course": "astrophys",
+      "unit": "binaries-exoplanets",
+      "title": "Planet Temperatures and the Habitable Zone",
+      "short": "Balancing absorbed starlight against emitted heat gives T = T_*(1 − A)^(1/4)√(R_*/(2d)).",
+      "prereqs": [
+        "astrophys.exoplanet-transits",
+        "astrophys.effective-temperature"
+      ],
+      "viz": [
+        "ph-blackbody"
+      ]
+    },
+    {
+      "id": "astrophys.hydrostatic-equilibrium",
+      "slug": "hydrostatic-equilibrium",
+      "course": "astrophys",
+      "unit": "stellar-structure",
+      "title": "Hydrostatic Equilibrium",
+      "short": "In a star, pressure balances gravity layer by layer: dP/dr = −Gm(r)ρ/r².",
+      "prereqs": [
+        "mech.shell-theorem",
+        "phys2.pressure-depth"
+      ],
+      "viz": [
+        "ph-star"
+      ]
+    },
+    {
+      "id": "astrophys.central-conditions",
+      "slug": "central-conditions",
+      "course": "astrophys",
+      "unit": "stellar-structure",
+      "title": "Estimating a Star's Center",
+      "short": "Order-of-magnitude estimates give P_c ~ GM²/R⁴ and T_c ~ GMm_p/(kR), millions of kelvins for the Sun.",
+      "prereqs": [
+        "astrophys.hydrostatic-equilibrium",
+        "phys2.kinetic-theory"
+      ],
+      "viz": [
+        "ph-star"
+      ]
+    },
+    {
+      "id": "astrophys.virial-theorem",
+      "slug": "virial-theorem",
+      "course": "astrophys",
+      "unit": "stellar-structure",
+      "title": "The Virial Theorem",
+      "short": "For a gas ball held by its own gravity, 2K + U = 0, so losing energy makes it contract and heat up.",
+      "prereqs": [
+        "astrophys.central-conditions",
+        "mech.orbital-energy"
+      ],
+      "viz": [
+        "ph-star"
+      ]
+    },
+    {
+      "id": "astrophys.kelvin-helmholtz",
+      "slug": "kelvin-helmholtz",
+      "course": "astrophys",
+      "unit": "stellar-structure",
+      "title": "Gravity as a Power Source",
+      "short": "Contraction alone could power the Sun for only the Kelvin–Helmholtz time GM²/(RL), about 30 million years.",
+      "prereqs": [
+        "astrophys.virial-theorem"
+      ],
+      "viz": [
+        "ph-star"
+      ]
+    },
+    {
+      "id": "astrophys.fusion-chains",
+      "slug": "fusion-chains",
+      "course": "astrophys",
+      "unit": "stellar-structure",
+      "title": "The Proton–Proton Chain and the CNO Cycle",
+      "short": "Four protons become helium-4 and release 26.7 MeV; the CNO cycle takes over in hotter, heavier stars.",
+      "prereqs": [
+        "modern.q-values",
+        "astro.sun-fusion"
+      ],
+      "viz": [
+        "ph-nucleus"
+      ]
+    },
+    {
+      "id": "astrophys.fusion-tunneling",
+      "slug": "fusion-tunneling",
+      "course": "astrophys",
+      "unit": "stellar-structure",
+      "title": "Why Fusion Needs Tunneling",
+      "short": "The Coulomb barrier is far higher than kT in the Sun's core, so protons fuse only by tunneling.",
+      "prereqs": [
+        "astrophys.fusion-chains",
+        "modern.tunneling",
+        "astrophys.central-conditions"
+      ],
+      "viz": [
+        "ph-quantum"
+      ]
+    },
+    {
+      "id": "astrophys.energy-transport",
+      "slug": "energy-transport",
+      "course": "astrophys",
+      "unit": "stellar-structure",
+      "title": "Radiation and Convection Inside Stars",
+      "short": "Photons random-walk outward, so N steps of length ℓ cover only √N·ℓ, and the trip out of the Sun takes on the order of 100,000 years.",
+      "prereqs": [
+        "astrophys.central-conditions"
+      ],
+      "viz": [
+        "ph-star"
+      ]
+    },
+    {
+      "id": "astrophys.mass-luminosity",
+      "slug": "mass-luminosity",
+      "course": "astrophys",
+      "unit": "stellar-structure",
+      "title": "The Mass–Luminosity Relation",
+      "short": "On the main sequence L ∝ M^3.5 roughly, so lifetimes go as M^(−2.5).",
+      "prereqs": [
+        "astrophys.energy-transport",
+        "astro.main-sequence-lifetime"
+      ],
+      "viz": [
+        "ph-hr"
+      ]
+    },
+    {
+      "id": "astrophys.eddington-limit",
+      "slug": "eddington-limit",
+      "course": "astrophys",
+      "unit": "stellar-structure",
+      "title": "The Eddington Luminosity",
+      "short": "Radiation pressure on electrons balances gravity at L_Edd ≈ 3.3 × 10⁴ (M/M_⊙) L_⊙.",
+      "prereqs": [
+        "astrophys.mass-luminosity",
+        "em.em-wave-energy"
+      ],
+      "viz": [
+        "ph-star"
+      ]
+    },
+    {
+      "id": "astrophys.solar-neutrinos",
+      "slug": "solar-neutrinos",
+      "course": "astrophys",
+      "unit": "stellar-structure",
+      "title": "Solar Neutrinos",
+      "short": "Neutrinos leave the core at once, letting us see fusion directly, and their changing flavors solved the solar neutrino problem.",
+      "prereqs": [
+        "astrophys.fusion-chains",
+        "modern.particle-families"
+      ],
+      "viz": []
+    },
+    {
+      "id": "astrophys.evolution-tracks",
+      "slug": "evolution-tracks",
+      "course": "astrophys",
+      "unit": "stellar-death",
+      "title": "Evolutionary Tracks",
+      "short": "A star's path across the H–R diagram follows the changes in its core.",
+      "prereqs": [
+        "astrophys.mass-luminosity",
+        "astro.red-giants"
+      ],
+      "viz": [
+        "ph-hr"
+      ]
+    },
+    {
+      "id": "astrophys.degeneracy-pressure",
+      "slug": "degeneracy-pressure",
+      "course": "astrophys",
+      "unit": "stellar-death",
+      "title": "Electron Degeneracy Pressure",
+      "short": "The exclusion principle makes packed electrons push back even when they are cold.",
+      "prereqs": [
+        "modern.exclusion-principle"
+      ],
+      "viz": [
+        "ph-quantum"
+      ]
+    },
+    {
+      "id": "astrophys.white-dwarf-mass-radius",
+      "slug": "white-dwarf-mass-radius",
+      "course": "astrophys",
+      "unit": "stellar-death",
+      "title": "The White Dwarf Mass–Radius Relation",
+      "short": "Degeneracy gives R ∝ M^(−1/3), so heavier white dwarfs are smaller.",
+      "prereqs": [
+        "astrophys.degeneracy-pressure",
+        "astro.red-giants"
+      ],
+      "viz": [
+        "astrophys-plot"
+      ]
+    },
+    {
+      "id": "astrophys.chandrasekhar-limit",
+      "slug": "chandrasekhar-limit",
+      "course": "astrophys",
+      "unit": "stellar-death",
+      "title": "The Chandrasekhar Limit",
+      "short": "Electrons moving near light speed can hold up at most about 1.4 solar masses.",
+      "prereqs": [
+        "astrophys.white-dwarf-mass-radius",
+        "modern.relativistic-energy"
+      ],
+      "viz": []
+    },
+    {
+      "id": "astrophys.core-collapse",
+      "slug": "core-collapse",
+      "course": "astrophys",
+      "unit": "stellar-death",
+      "title": "Core-Collapse Supernovae",
+      "short": "An iron core collapses in under a second, and neutrinos carry off about 10⁴⁶ J.",
+      "prereqs": [
+        "astrophys.chandrasekhar-limit",
+        "astro.supernovae"
+      ],
+      "viz": [
+        "ph-nucleus"
+      ]
+    },
+    {
+      "id": "astrophys.neutron-star-physics",
+      "slug": "neutron-star-physics",
+      "course": "astrophys",
+      "unit": "stellar-death",
+      "title": "Neutron Stars",
+      "short": "A collapsing core keeps its angular momentum and magnetic flux, so neutron stars spin fast with huge fields.",
+      "prereqs": [
+        "astrophys.core-collapse",
+        "phys1.angular-momentum-conservation"
+      ],
+      "viz": [
+        "ph-rotation"
+      ]
+    },
+    {
+      "id": "astrophys.pulsar-spindown",
+      "slug": "pulsar-spindown",
+      "course": "astrophys",
+      "unit": "stellar-death",
+      "title": "Pulsar Spin-Down",
+      "short": "A pulsar's lost rotational energy, dE/dt = Iωω̇, powers the nebula around it.",
+      "prereqs": [
+        "astrophys.neutron-star-physics",
+        "mech.rotational-work-power"
+      ],
+      "viz": [
+        "astrophys-pulsar"
+      ]
+    },
+    {
+      "id": "astrophys.schwarzschild-radius",
+      "slug": "schwarzschild-radius",
+      "course": "astrophys",
+      "unit": "stellar-death",
+      "title": "The Schwarzschild Radius",
+      "short": "r_s = 2GM/c², about 3 km for each solar mass.",
+      "prereqs": [
+        "astro.black-holes",
+        "mech.escape-speed"
+      ],
+      "viz": [
+        "ph-orbit"
+      ]
+    },
+    {
+      "id": "astrophys.gravitational-redshift",
+      "slug": "gravitational-redshift",
+      "course": "astrophys",
+      "unit": "stellar-death",
+      "title": "Gravitational Redshift and Time Dilation",
+      "short": "A clock at radius r runs slow by √(1 − r_s/r) compared with one far away.",
+      "prereqs": [
+        "astrophys.schwarzschild-radius",
+        "modern.time-dilation"
+      ],
+      "viz": [
+        "ph-relativity"
+      ]
+    },
+    {
+      "id": "astrophys.tidal-forces",
+      "slug": "tidal-forces",
+      "course": "astrophys",
+      "unit": "stellar-death",
+      "title": "Tidal Forces and the Roche Limit",
+      "short": "The difference in gravity across a body, about 2GMmΔr/r³, tears apart moons and stretches matter near black holes.",
+      "prereqs": [
+        "mech.shell-theorem",
+        "calc1.linear-approximation"
+      ],
+      "viz": [
+        "ph-orbit"
+      ]
+    },
+    {
+      "id": "astrophys.accretion-power",
+      "slug": "accretion-power",
+      "course": "astrophys",
+      "unit": "stellar-death",
+      "title": "Accretion Power",
+      "short": "Matter falling onto a compact object releases about GMṁ/R, far more per kilogram than fusion near a neutron star.",
+      "prereqs": [
+        "astrophys.schwarzschild-radius",
+        "astrophys.neutron-star-physics"
+      ],
+      "viz": []
+    },
+    {
+      "id": "astrophys.gravitational-waves",
+      "slug": "gravitational-waves",
+      "course": "astrophys",
+      "unit": "stellar-death",
+      "title": "Gravitational Waves",
+      "short": "Orbiting compact objects radiate gravitational waves and spiral inward; LIGO first detected merging black holes in 2015.",
+      "prereqs": [
+        "astrophys.schwarzschild-radius"
+      ],
+      "viz": [
+        "astrophys-chirp"
+      ]
+    },
+    {
+      "id": "astrophys.rotation-curves",
+      "slug": "rotation-curves",
+      "course": "astrophys",
+      "unit": "cosmos",
+      "title": "Rotation Curves and Dark Matter",
+      "short": "v(r) = √(GM(r)/r), so a flat rotation curve needs mass that grows in proportion to r.",
+      "prereqs": [
+        "mech.shell-theorem",
+        "astro.dark-matter"
+      ],
+      "viz": [
+        "ph-orbit"
+      ]
+    },
+    {
+      "id": "astrophys.supermassive-black-holes",
+      "slug": "supermassive-black-holes",
+      "course": "astrophys",
+      "unit": "cosmos",
+      "title": "Supermassive Black Holes",
+      "short": "Stars orbiting the center of the Milky Way weigh its black hole at about 4 million suns.",
+      "prereqs": [
+        "astrophys.rotation-curves",
+        "astrophys.schwarzschild-radius"
+      ],
+      "viz": [
+        "astrophys-s2"
+      ]
+    },
+    {
+      "id": "astrophys.distance-ladder",
+      "slug": "distance-ladder",
+      "course": "astrophys",
+      "unit": "cosmos",
+      "title": "The Cosmic Distance Ladder",
+      "short": "Parallax calibrates Cepheids, Cepheids calibrate type Ia supernovae, and each rung reaches farther.",
+      "prereqs": [
+        "astrophys.distance-modulus",
+        "astro.standard-candles"
+      ],
+      "viz": [
+        "ph-cosmic"
+      ]
+    },
+    {
+      "id": "astrophys.redshift-scale-factor",
+      "slug": "redshift-scale-factor",
+      "course": "astrophys",
+      "unit": "cosmos",
+      "title": "Redshift and the Scale Factor",
+      "short": "1 + z = λ_observed/λ_emitted = a(now)/a(then): light stretches as space expands.",
+      "prereqs": [
+        "astro.hubble-law",
+        "modern.relativistic-doppler"
+      ],
+      "viz": [
+        "ph-cosmic"
+      ]
+    },
+    {
+      "id": "astrophys.hubble-time",
+      "slug": "hubble-time",
+      "course": "astrophys",
+      "unit": "cosmos",
+      "title": "Hubble's Law in Practice",
+      "short": "For small z, d ≈ cz/H₀, and 1/H₀ sets the age scale of the universe.",
+      "prereqs": [
+        "astrophys.redshift-scale-factor",
+        "astro.age-of-universe"
+      ],
+      "viz": [
+        "ph-cosmic"
+      ]
+    },
+    {
+      "id": "astrophys.friedmann-equation",
+      "slug": "friedmann-equation",
+      "course": "astrophys",
+      "unit": "cosmos",
+      "title": "The Friedmann Equation and Critical Density",
+      "short": "H² = 8πGρ/3 − kc²/a², so a flat universe has the critical density 3H²/(8πG).",
+      "prereqs": [
+        "astrophys.hubble-time",
+        "mech.orbital-energy"
+      ],
+      "viz": [
+        "ph-cosmic"
+      ]
+    },
+    {
+      "id": "astrophys.cosmic-eras",
+      "slug": "cosmic-eras",
+      "course": "astrophys",
+      "unit": "cosmos",
+      "title": "Matter, Radiation and Dark Energy Through Time",
+      "short": "Matter thins as a⁻³, radiation as a⁻⁴, and dark energy stays constant, so each ruled in turn.",
+      "prereqs": [
+        "astrophys.friedmann-equation"
+      ],
+      "viz": [
+        "astrophys-plot",
+        "ph-cosmic"
+      ]
+    },
+    {
+      "id": "astrophys.cmb",
+      "slug": "cmb",
+      "course": "astrophys",
+      "unit": "cosmos",
+      "title": "The Cosmic Microwave Background",
+      "short": "The background's temperature scales as 1/a: 2.725 K today, about 3000 K when atoms formed.",
+      "prereqs": [
+        "astrophys.redshift-scale-factor",
+        "astrophys.planck-function"
+      ],
+      "viz": [
+        "ph-blackbody",
+        "ph-cosmic"
+      ]
+    },
+    {
+      "id": "astrophys.nucleosynthesis",
+      "slug": "nucleosynthesis",
+      "course": "astrophys",
+      "unit": "cosmos",
+      "title": "Big Bang Nucleosynthesis",
+      "short": "In its first minutes the universe made about 25% helium by mass, matching what we measure.",
+      "prereqs": [
+        "astrophys.cmb",
+        "astrophys.fusion-chains"
+      ],
+      "viz": [
+        "astrophys-plot"
+      ]
+    }
+  ]
+}

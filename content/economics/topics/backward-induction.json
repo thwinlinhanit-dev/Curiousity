@@ -1,0 +1,89 @@
+{
+  "id": "imicro.backward-induction",
+  "slug": "backward-induction",
+  "ladder": "economics",
+  "course": "imicro",
+  "unit": "games",
+  "title": "Sequential Games and Backward Induction",
+  "short": "Solve a game tree from the end: each player looks ahead to how others will respond, which rules out empty threats.",
+  "trouble": "Students solve the tree from the top down, or believe a threat that would hurt the player who carries it out.",
+  "prereqs": [
+    "imicro.pure-nash"
+  ],
+  "xp": 2,
+  "viz": [
+    "ec-gametree"
+  ],
+  "figureArchetype": "FieldFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In many games players move in turn and can see what came before: a firm decides whether to enter, then the incumbent decides how to respond. <a href=\"/economics/intermediate-microeconomics/pure-nash/\">Best Responses and Nash Equilibrium</a> still applies, but timing lets us find which equilibria make sense."
+      },
+      {
+        "t": "key",
+        "html": "Solve a game tree by <b>backward induction</b>: start at the last decisions, pick each mover's best choice there, carry those payoffs up, and repeat until the first move. The result is a <b>subgame-perfect equilibrium</b>. It rules out <b>empty threats</b>: plans a player would not actually carry out when the time came."
+      },
+      {
+        "t": "why",
+        "html": "At the last move nothing follows, so the mover simply takes the best payoff. One step earlier, the mover knows exactly what will happen after each choice, so she compares those known outcomes. Working up the tree this way gives every player a choice that is best at every point where they might have to move, even points that are never reached. A threat that would hurt the threatener if carried out fails that test, so a forward-looking rival ignores it."
+      },
+      {
+        "t": "viz",
+        "name": "ec-gametree",
+        "opts": {
+          "preset": "entry",
+          "solve": true
+        },
+        "cap": "An entry game. Press Solve to walk backward from the incumbent's choice to the entrant's. Show the threat to see why \"I will fight\" is not believable."
+      },
+      {
+        "t": "ex",
+        "title": "An entry game",
+        "q": "Stay out: (entrant 0, incumbent 100). Enter, then Fight: (−10, 20). Enter, then Accommodate: (30, 40).",
+        "steps": [
+          "Last move: after entry the incumbent compares 20 (Fight) with 40 (Accommodate) and accommodates.",
+          "First move: the entrant compares 30 (Enter, knowing it will be accommodated) with 0 (Stay out) and enters.",
+          "Subgame-perfect outcome: Enter, then Accommodate, payoffs (30, 40)."
+        ],
+        "a": "Enter, then Accommodate."
+      },
+      {
+        "t": "ex",
+        "title": "The empty threat",
+        "q": "In the same game, (Stay out, \"Fight if you enter\") is a Nash equilibrium of the matrix form. Why isn't it subgame perfect?",
+        "steps": [
+          "If the entrant believes the threat, staying out is a best response, and the incumbent's threat costs it nothing because it never has to act.",
+          "But if entry did happen, fighting would give the incumbent 20 instead of 40. It would not fight.",
+          "Backward induction removes plans that are not best at the moment they would be carried out."
+        ],
+        "a": "The threat is not credible."
+      },
+      {
+        "t": "mistake",
+        "html": "Solving the tree from the top down, or believing a threat that would hurt the player who carries it out. At the first move you can't know what is best until you know what will follow, so always start at the end. Check: at every decision point in your answer, is the mover choosing her best payoff given what follows? If not, the plan is not subgame perfect."
+      },
+      {
+        "t": "note",
+        "html": "Commitment can make a threat credible by changing the payoffs in advance, for example an incumbent that builds extra capacity before entry, so that fighting a price war becomes its best response. That is the leader's advantage in <a href=\"/economics/intermediate-microeconomics/stackelberg/\">Stackelberg Leadership</a>."
+      },
+      {
+        "t": "p",
+        "html": "Work through more trees in <a href=\"/business/game-theory/sequential-games/\">Sequential Games and Backward Induction</a>."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, ch. 10.2 Oligopoly (game theory)"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.12 Economic Applications of Game Theory (course scope)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

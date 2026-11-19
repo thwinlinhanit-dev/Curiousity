@@ -1,0 +1,116 @@
+{
+  "id": "g7.number-line-distance",
+  "slug": "number-line-distance",
+  "ladder": "math",
+  "course": "g7",
+  "unit": "add-subtract",
+  "title": "Distance Between Two Numbers",
+  "short": "The distance from a to b is |a − b|.",
+  "trouble": "",
+  "prereqs": [
+    "g7.subtract-integers",
+    "g6.absolute-value"
+  ],
+  "xp": 2,
+  "viz": [
+    "numberline"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The <a href=\"/math/grade-6/absolute-value/\">absolute value</a> of a number is its distance from $0$. With <a href=\"/math/grade-7/subtract-integers/\">subtraction</a> you can find the distance between any two numbers."
+      },
+      {
+        "t": "key",
+        "html": "The distance between $a$ and $b$ on a number line is $|a - b|$. Subtracting in either order works, because $|a - b| = |b - a|$."
+      },
+      {
+        "t": "why",
+        "html": "$a - b$ tells how far you move to get from $b$ to $a$, and its sign tells the direction. A distance has no direction, so we drop the sign with the absolute value. When the numbers are on opposite sides of $0$, you can also add their distances from $0$."
+      },
+      {
+        "t": "viz",
+        "name": "numberline",
+        "opts": {
+          "min": -6,
+          "max": 9,
+          "step": 1,
+          "labels": "whole",
+          "points": [
+            {
+              "v": -4,
+              "label": "A",
+              "color": "red"
+            },
+            {
+              "v": 7,
+              "label": "B",
+              "color": "blue"
+            }
+          ],
+          "hops": [
+            {
+              "from": -4,
+              "by": 11,
+              "n": 1
+            }
+          ],
+          "value": false
+        },
+        "cap": "From $A = -4$ to $B = 7$ is one jump of 11: $|7 - (-4)| = 11$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Opposite sides of zero",
+        "q": "How far apart are $-4$ and $7$?",
+        "steps": [
+          "$|-4 - 7| = |-11| = 11$.",
+          "Check: $-4$ is 4 from $0$ and $7$ is 7 from $0$, and $4 + 7 = 11$ ✓."
+        ],
+        "a": "11"
+      },
+      {
+        "t": "ex",
+        "title": "Both negative",
+        "q": "How far apart are $-12$ and $-3$?",
+        "steps": [
+          "$|-12 - (-3)| = |-12 + 3| = |-9| = 9$.",
+          "Both are on the same side of $0$, so do not add their distances from $0$: $12 - 3 = 9$ ✓."
+        ],
+        "a": "9"
+      },
+      {
+        "t": "ex",
+        "title": "Above and below sea level",
+        "q": "A bird flies at 15 m above sea level and a fish swims at 6.5 m below ($-6.5$ m). How far apart are they?",
+        "steps": [
+          "$|15 - (-6.5)| = |15 + 6.5| = 21.5$."
+        ],
+        "a": "21.5 m"
+      },
+      {
+        "t": "mistake",
+        "html": "Getting a negative distance, like $-4 - 7 = -11$, and stopping there. Distances are never negative: take the absolute value. Another slip is adding the distances from $0$ when both numbers are on the same side."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Prealgebra 2e, Section 3.3 Subtract Integers"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 7.NS.A.1c"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

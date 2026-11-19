@@ -1,0 +1,134 @@
+{
+  "id": "weather.station-model",
+  "slug": "station-model",
+  "ladder": "earth",
+  "course": "weather",
+  "unit": "fronts",
+  "title": "Reading a Station Model",
+  "short": "Decode a weather station's plot: temperature, dew point, pressure, wind barbs and cloud cover.",
+  "trouble": "Students read the wind barb as pointing where the wind goes; the barb's staff points toward the direction the wind comes from.",
+  "prereqs": [
+    "weather.dew-point",
+    "weather.pressure-units"
+  ],
+  "xp": 2,
+  "viz": [
+    "es-weather-map"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A surface weather map is built from hundreds of station reports, each drawn as a tiny symbol called a <b>station model</b>. In one glance it gives the temperature, the <a href=\"/earth-and-space/weather-and-climate/dew-point/\">dew point</a>, the <a href=\"/earth-and-space/weather-and-climate/pressure-units/\">pressure</a>, the wind and the sky. U.S. maps give temperatures in °F and wind in knots (1 knot ≈ 1.15 mph)."
+      },
+      {
+        "t": "key",
+        "html": "Around the station circle: <b>temperature</b> at the upper left and <b>dew point</b> at the lower left; a three-digit <b>pressure code</b> at the upper right; the 3-hour <b>pressure change</b> at the lower right; the <b>sky cover</b> as the fraction of the circle filled in; the <b>weather</b> symbol to the left. The <b>wind barb</b>'s staff points toward where the wind comes <b>from</b>; on its end, a pennant is 50 knots, a full barb 10 knots and a half barb 5 knots."
+      },
+      {
+        "t": "why",
+        "html": "The pressure code saves space. Sea-level pressures almost always lie between about 950 and 1050 hPa, so the leading 9 or 10 can be left off: the code is the last three digits of the pressure in tenths of a hectopascal. To decode, put a decimal point before the last digit, then put 10 in front if the code is below 500, or 9 if it is 500 or more. The wind barb is drawn like an arrow's feathered tail: the staff starts at the station and points into the wind, the way a weathervane's arrow points."
+      },
+      {
+        "t": "viz",
+        "name": "es-weather-map",
+        "opts": {
+          "mode": "station",
+          "station": {
+            "T": 72,
+            "Td": 61,
+            "p": 1008.4,
+            "tend": -1.2,
+            "dir": 320,
+            "kt": 15,
+            "cover": 6,
+            "wx": "none"
+          }
+        },
+        "cap": "A station model. Change the sliders and watch each part of the symbol change: the barb swings to the direction the wind comes from, and its feathers add up to the speed."
+      },
+      {
+        "t": "ex",
+        "title": "Decoding the pressure",
+        "q": "Decode the pressure codes 084 and 986.",
+        "steps": [
+          "084: put the decimal before the last digit, 08.4. The code is below 500, so put 10 in front: 1008.4 hPa.",
+          "986: 98.6, and the code is 500 or more, so put 9 in front: 998.6 hPa."
+        ],
+        "a": "1008.4 hPa and 998.6 hPa"
+      },
+      {
+        "t": "ex",
+        "title": "Reading the wind",
+        "q": "A station's barb has its staff pointing toward the northwest, with one full barb and one half barb. What is the wind?",
+        "steps": [
+          "The staff points to where the wind comes from: the northwest.",
+          "Speed: one full barb (10 kt) plus one half barb (5 kt) = 15 knots.",
+          "A northwest wind at 15 kt, about 17 mph."
+        ],
+        "a": "From the northwest at 15 knots"
+      },
+      {
+        "t": "ex",
+        "title": "Encoding",
+        "q": "A station measures 1023.7 hPa. What code goes at the upper right?",
+        "steps": [
+          "In tenths: 10237. Keep the last three digits: 237."
+        ],
+        "a": "237"
+      },
+      {
+        "t": "mistake",
+        "html": "Reading the wind barb as pointing where the wind goes. The staff points toward the direction the wind comes <b>from</b>, just like the name: a \"north wind\" comes from the north. Check: on a map, barbs around a Northern Hemisphere low should show air circling counterclockwise and slanting inward, which only works if you read the staffs as \"from.\""
+      },
+      {
+        "t": "table",
+        "head": [
+          "Symbol",
+          "Meaning"
+        ],
+        "rows": [
+          [
+            "empty circle",
+            "clear"
+          ],
+          [
+            "circle ¼ filled",
+            "about 2/8 of the sky covered (few clouds)"
+          ],
+          [
+            "circle ½ filled",
+            "about 4/8 covered (scattered)"
+          ],
+          [
+            "circle ¾ filled",
+            "about 6/8 covered (broken)"
+          ],
+          [
+            "filled circle",
+            "overcast"
+          ],
+          [
+            "dots, asterisks, ≡",
+            "rain, snow, fog"
+          ]
+        ],
+        "cap": "Sky cover is counted in eighths of the sky."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "NOAA National Weather Service, JetStream online school for weather: Weather maps: the station model"
+      },
+      {
+        "name": "NOAA National Weather Service: Weather Prediction Center, How to read surface weather maps (station plot)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

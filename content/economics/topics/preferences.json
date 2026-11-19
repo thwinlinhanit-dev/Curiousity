@@ -1,0 +1,162 @@
+{
+  "id": "imicro.preferences",
+  "slug": "preferences",
+  "ladder": "economics",
+  "course": "imicro",
+  "unit": "preferences",
+  "title": "Preferences and Their Axioms",
+  "short": "Completeness, transitivity, more-is-better and a taste for variety let us rank bundles of goods consistently.",
+  "trouble": "Students think rational preferences must be selfish or sensible. The axioms ask only that rankings be complete and consistent, whatever a person likes.",
+  "prereqs": [
+    "micro.marginal-utility"
+  ],
+  "xp": 1,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/economics/microeconomics/marginal-utility/\">Total and Marginal Utility</a> you counted \"utils\" as if satisfaction came in units you could add up. Intermediate microeconomics starts one step earlier and asks for much less. All we assume is that a person can <b>rank</b> bundles of goods: for any two bundles A and B, she can say which she prefers, or that she likes them equally. Everything else in consumer theory, from demand curves to welfare measures, is built on top of that ranking."
+      },
+      {
+        "t": "p",
+        "html": "A <b>bundle</b> is a list of amounts, such as $(x, y) = (3, 5)$: 3 units of good $x$ and 5 of good $y$. We write $A \\succ B$ for \"A is preferred to B,\" $A \\sim B$ for \"A and B are equally good\" (indifference), and $A \\succeq B$ for \"A is at least as good as B.\""
+      },
+      {
+        "t": "key",
+        "html": "Preferences are <b>rational</b> when they are <b>complete</b> (any two bundles can be compared) and <b>transitive</b> (if $A \\succeq B$ and $B \\succeq C$, then $A \\succeq C$). Two more assumptions give the usual shapes: <b>more is better</b> (monotonicity: more of a good, with no less of anything, is preferred) and <b>convexity</b> (a taste for variety: a mix of two equally good bundles is at least as good as either one)."
+      },
+      {
+        "t": "why",
+        "html": "Completeness and transitivity are what let us line every bundle up in one consistent order, with ties allowed. Without transitivity the order can loop: if $A \\succ B$, $B \\succ C$ and $C \\succ A$, there is no \"best\" bundle, and a trader could charge you a small fee to swap C for B, then B for A, then A for C, and walk you around the circle forever. More-is-better makes indifference curves slope down, because to stay equally happy with more of one good you must give up some of the other. Convexity makes them bow toward the origin: people usually prefer a balanced mix to extremes."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "fns": [
+            "24/x"
+          ],
+          "shade": {
+            "fn": 0,
+            "a": 2,
+            "b": 12
+          },
+          "points": [
+            {
+              "x": 4,
+              "y": 6,
+              "label": "A"
+            },
+            {
+              "x": 6,
+              "y": 7,
+              "label": "B",
+              "color": "green"
+            },
+            {
+              "x": 3,
+              "y": 4,
+              "label": "C",
+              "color": "red"
+            },
+            {
+              "x": 8,
+              "y": 3,
+              "label": "D",
+              "color": "purple"
+            }
+          ],
+          "xmin": 0,
+          "xmax": 12,
+          "ymin": 0,
+          "ymax": 12,
+          "xlabel": "x",
+          "ylabel": "y",
+          "roots": false,
+          "intersections": false,
+          "zoom": false
+        },
+        "cap": "The curve through A is every bundle exactly as good as A; the shaded region below it is everything worse, and the region above it is everything better. B has more of both goods than A, so it is better. C has less of both, so it is worse. D has more $x$ and less $y$: more-is-better alone cannot rank it, but this person's curve says D is just as good as A."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Axiom",
+          "What it says",
+          "What it rules out"
+        ],
+        "rows": [
+          [
+            "Complete",
+            "Any two bundles can be compared",
+            "\"I can't say\" between two bundles"
+          ],
+          [
+            "Transitive",
+            "$A \\succeq B$ and $B \\succeq C$ give $A \\succeq C$",
+            "Rankings that go in a circle"
+          ],
+          [
+            "More is better",
+            "More of a good (and no less of others) is preferred",
+            "Ranking 3 apples below 2 apples, other things equal"
+          ],
+          [
+            "Convex",
+            "Mixes of equally good bundles are at least as good",
+            "Disliking every balanced mix"
+          ]
+        ],
+        "cap": "The two rationality axioms and the two shape assumptions."
+      },
+      {
+        "t": "ex",
+        "title": "Ranking with more-is-better",
+        "q": "Maya likes both goods. Rank what you can: $A = (5, 3)$, $B = (5, 4)$, $C = (4, 6)$.",
+        "steps": [
+          "Compare A and B: same $x$, and B has one more $y$. B has more of something and less of nothing, so $B \\succ A$.",
+          "Compare A and C: C has less $x$ but more $y$. More-is-better cannot decide; it depends on how Maya trades $x$ for $y$.",
+          "Compare B and C: the same story, one good up and one down. Undecided."
+        ],
+        "a": "$B \\succ A$; C cannot be ranked against A or B without more information about her tastes."
+      },
+      {
+        "t": "ex",
+        "title": "Chaining with transitivity",
+        "q": "For Omar, $A \\succ B$, $B \\sim C$ and $C \\succ D$. How does A compare with D?",
+        "steps": [
+          "From $A \\succ B$ and $B \\sim C$: transitivity gives $A \\succ C$ (a strict link keeps the chain strict).",
+          "From $A \\succ C$ and $C \\succ D$: $A \\succ D$."
+        ],
+        "a": "$A \\succ D$."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking \"rational\" means selfish or sensible. The axioms say nothing about <i>what</i> a person likes. Someone who would rather give \\$50 to a food bank than spend it on herself, or who prefers sweets to vegetables, can have perfectly rational preferences. Rationality here means only that the rankings are complete and consistent. Check: when you are tempted to call a preference irrational, ask whether it breaks completeness or transitivity. If it doesn't, it is rational in the economist's sense."
+      },
+      {
+        "t": "note",
+        "html": "These axioms are a model, and a useful one. Behavioral economics studies where real choices depart from them, for example when the way an option is framed changes which one people pick. Economists broadly agree the axioms are a good starting point; how much the departures matter for a given question is studied case by case."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, ch. 6 Consumer Choices and appendix B Indifference Curves"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.04 Intermediate Microeconomic Theory (course scope and lecture topics)"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.01 Principles of Microeconomics (course scope and lecture topics)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

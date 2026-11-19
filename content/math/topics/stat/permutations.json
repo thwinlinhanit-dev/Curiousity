@@ -1,0 +1,171 @@
+{
+  "id": "stat.permutations",
+  "slug": "permutations",
+  "ladder": "math",
+  "course": "stat",
+  "unit": "probability-rules",
+  "title": "Permutations",
+  "short": "Count arrangements when order matters.",
+  "trouble": "Students use a permutation when order does not matter, counting each group several times.",
+  "prereqs": [
+    "g7.sample-spaces"
+  ],
+  "xp": 2,
+  "viz": [
+    "tree"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Probability with equally likely outcomes needs counts, and listing every outcome (as with <a href=\"/math/grade-7/sample-spaces/\">trees and tables</a>) stops being practical quickly. Counting rules do the listing for you. The first is for arrangements, where order matters."
+      },
+      {
+        "t": "key",
+        "html": "<b>Multiplication principle</b>: if a task has steps with $n_1, n_2, \\ldots$ choices, there are $n_1 \\cdot n_2 \\cdots$ ways to do it. Arranging $n$ different objects in a row: $n! = n(n-1)\\cdots 2 \\cdot 1$ ways. Arranging $r$ of $n$ different objects in order:\n$$_{n}P_{r} = n(n-1)\\cdots(n - r + 1) = \\dfrac{n!}{(n-r)!}.$$"
+      },
+      {
+        "t": "why",
+        "html": "Fill the positions one at a time. The first position can hold any of the $n$ objects. Whichever you chose, $n - 1$ remain for the second position, and so on. Every first choice combines with every second choice, which is why the counts multiply; a tree diagram shows the branches multiplying. For $_nP_r$ you stop after $r$ positions, which is $n!$ with the unused tail $(n - r)!$ divided away. (By convention $0! = 1$, so $_nP_n = n!$.)"
+      },
+      {
+        "t": "viz",
+        "name": "tree",
+        "opts": {
+          "tree": {
+            "kids": [
+              {
+                "label": "A",
+                "p": "1/3",
+                "kids": [
+                  {
+                    "label": "B",
+                    "p": "1/2",
+                    "kids": [
+                      {
+                        "label": "C",
+                        "p": "1"
+                      }
+                    ]
+                  },
+                  {
+                    "label": "C",
+                    "p": "1/2",
+                    "kids": [
+                      {
+                        "label": "B",
+                        "p": "1"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "label": "B",
+                "p": "1/3",
+                "kids": [
+                  {
+                    "label": "A",
+                    "p": "1/2",
+                    "kids": [
+                      {
+                        "label": "C",
+                        "p": "1"
+                      }
+                    ]
+                  },
+                  {
+                    "label": "C",
+                    "p": "1/2",
+                    "kids": [
+                      {
+                        "label": "A",
+                        "p": "1"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "label": "C",
+                "p": "1/3",
+                "kids": [
+                  {
+                    "label": "A",
+                    "p": "1/2",
+                    "kids": [
+                      {
+                        "label": "B",
+                        "p": "1"
+                      }
+                    ]
+                  },
+                  {
+                    "label": "B",
+                    "p": "1/2",
+                    "kids": [
+                      {
+                        "label": "A",
+                        "p": "1"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "cap": "Arranging A, B and C: 3 choices, then 2, then 1, for 3! = 6 arrangements, each with probability 1/6 if the order is random."
+      },
+      {
+        "t": "ex",
+        "title": "A full arrangement",
+        "q": "In how many orders can 5 different books stand on a shelf?",
+        "steps": [
+          "5 choices for the first spot, 4 for the second, 3, 2, then 1.",
+          "$5! = 5 \\cdot 4 \\cdot 3 \\cdot 2 \\cdot 1 = 120$."
+        ],
+        "a": "120"
+      },
+      {
+        "t": "ex",
+        "title": "Some of the objects, in order",
+        "q": "A club of 10 elects a president, a vice president and a secretary (different people). How many outcomes are possible?",
+        "steps": [
+          "Order matters: being president is different from being secretary.",
+          "$_{10}P_{3} = 10 \\cdot 9 \\cdot 8 = 720$."
+        ],
+        "a": "720"
+      },
+      {
+        "t": "ex",
+        "title": "Repeated letters",
+        "q": "How many different arrangements of the letters in LEVEL are there?",
+        "steps": [
+          "If all 5 letters were different: $5! = 120$.",
+          "But the two Ls can swap without changing the word, and so can the two Es: each word was counted $2! \\cdot 2! = 4$ times.",
+          "$\\dfrac{120}{4} = 30$."
+        ],
+        "a": "30"
+      },
+      {
+        "t": "mistake",
+        "html": "Using a permutation when order does not matter. Choosing 3 people for a committee is not like electing three officers: the committee {Ann, Ben, Cal} is one group however you list it, but $_{10}P_3$ counts it 6 times. Check: if you swap two of the chosen, is it a different outcome? If not, see <a href=\"/math/probability-and-statistics/combinations/\">combinations</a>."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Algebra 2e, section 9.5 Counting Principles"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, S-CP.B.9 (Use permutations and combinations to compute probabilities)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

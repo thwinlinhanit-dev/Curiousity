@@ -1,0 +1,89 @@
+{
+  "id": "hsbio.meiosis-variation",
+  "slug": "meiosis-variation",
+  "ladder": "bio",
+  "course": "hsbio",
+  "unit": "division",
+  "title": "How Meiosis Makes Variation",
+  "short": "Crossing over swaps pieces between homologs, and independent assortment lines each pair up on its own: with n pairs there are 2ⁿ ways to sort the chromosomes, so every cell made is unique.",
+  "trouble": "Students think crossing over happens between sister chromatids or that each pair's orientation affects the others. Crossing over is between homologs, and each pair lines up independently.",
+  "prereqs": [
+    "hsbio.meiosis"
+  ],
+  "xp": 3,
+  "viz": [
+    "bi-meiosis"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Brothers and sisters share the same two parents but are not identical (unless they are identical twins). The reason is in <a href=\"/biology/high-school-biology/meiosis/\">meiosis</a>: two steps shuffle the chromosomes, so every gamete gets a different mix."
+      },
+      {
+        "t": "key",
+        "html": "<b>Crossing over</b> swaps matching pieces between homologous chromosomes in prophase I. <b>Independent assortment</b> lines each pair up on its own in metaphase I: with $n$ pairs there are $2^n$ ways to sort the chromosomes. Together they make every gamete unique."
+      },
+      {
+        "t": "viz",
+        "name": "bi-meiosis",
+        "opts": {
+          "pairs": 2,
+          "flip": [
+            true,
+            false
+          ]
+        },
+        "cap": "Step to metaphase I, then press \"Flip a pair\" to see the other way a pair could line up. Each way sends a different mix of chromosomes to each pole, and you can follow crossing over in prophase I."
+      },
+      {
+        "t": "why",
+        "html": "Independent assortment is like flipping a coin for each pair. With 2 pairs, each gamete can get either chromosome of pair 1 and either of pair 2: $2 \\times 2 = 2^2 = 4$ combinations. With 3 pairs, $2^3 = 8$. Humans have 23 pairs, so $2^{23} = 8{,}388{,}608$ combinations, before crossing over adds even more. Crossing over happens when homologs pair up tightly: a non-sister chromatid of each homolog breaks at the same point and swaps the pieces, making chromosomes with new combinations of alleles."
+      },
+      {
+        "t": "ex",
+        "title": "Count the combinations",
+        "q": "A fruit fly has $2n = 8$. How many different combinations of chromosomes can its gametes have from independent assortment alone?",
+        "steps": [
+          "The number of pairs is $n = 8 \\div 2 = 4$.",
+          "Each pair sorts two ways: $2^4 = 16$."
+        ],
+        "a": "$16$"
+      },
+      {
+        "t": "ex",
+        "title": "Two gametes combine",
+        "q": "For a species with $n = 3$, how many chromosome combinations are possible when one gamete from each of two parents combines (independent assortment only)?",
+        "steps": [
+          "Each parent can make $2^3 = 8$ kinds of gamete.",
+          "Any of one parent's 8 can pair with any of the other's 8: $8 \\times 8 = 64$."
+        ],
+        "a": "$64$"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking crossing over happens between sister chromatids, or that each pair's orientation affects the others. Sister chromatids are identical, so swapping pieces between them would change nothing; crossing over is between <b>homologs</b> (non-sister chromatids). And each pair lines up <b>independently</b>, like separate coin flips, which is why the count is $2^n$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Concepts of Biology, 7.2 Meiosis"
+      },
+      {
+        "name": "OpenStax, Biology 2e, 11.1 The Process of Meiosis"
+      },
+      {
+        "name": "Grokipedia, Meiosis",
+        "url": "https://grokipedia.com/page/Meiosis"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-LS3-2: Inheritable genetic variations may result from new genetic combinations through meiosis"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

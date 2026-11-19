@@ -1,0 +1,722 @@
+{
+  "key": "astro",
+  "title": "Astronomy",
+  "slug": "astronomy",
+  "after": [
+    "earthsci",
+    "physsci",
+    "alg1"
+  ],
+  "units": [
+    {
+      "key": "sky",
+      "title": "The Sky",
+      "blurb": "Read the turning sky, the seasons, the Moon's phases and eclipses from Earth's motions."
+    },
+    {
+      "key": "orbits",
+      "title": "Gravity and Orbits",
+      "blurb": "From Copernicus and Kepler to Newton: how planets move and how orbits weigh the heavens."
+    },
+    {
+      "key": "light",
+      "title": "Light and Telescopes",
+      "blurb": "Light is our messenger: its colors give temperatures, its lines give composition and its shifts give motion."
+    },
+    {
+      "key": "solar-system",
+      "title": "The Solar System",
+      "blurb": "The planets, their moons and the small bodies, how they formed, and planets around other stars."
+    },
+    {
+      "key": "sun",
+      "title": "The Sun",
+      "blurb": "Our star's layers, its fusion power, its lifetime and its magnetic activity."
+    },
+    {
+      "key": "stars",
+      "title": "Measuring the Stars",
+      "blurb": "Distances, brightnesses, temperatures and masses of stars, and the H–R diagram that ties them together."
+    },
+    {
+      "key": "stellar-lives",
+      "title": "The Lives of Stars",
+      "blurb": "How stars form, how long they last, and what they leave behind."
+    },
+    {
+      "key": "universe",
+      "title": "Galaxies and the Universe",
+      "blurb": "Our galaxy, other galaxies, dark matter, and the expanding universe since the Big Bang."
+    }
+  ],
+  "topics": [
+    {
+      "id": "astro.celestial-sphere",
+      "slug": "celestial-sphere",
+      "unit": "sky",
+      "title": "The Celestial Sphere",
+      "prereqs": [
+        "earthsci.day-and-night",
+        "g7.angle-relationships"
+      ],
+      "viz": [
+        "ph-sky"
+      ]
+    },
+    {
+      "id": "astro.altitude-latitude",
+      "slug": "altitude-latitude",
+      "unit": "sky",
+      "title": "Altitude, Azimuth and Your Latitude",
+      "prereqs": [
+        "astro.celestial-sphere"
+      ],
+      "viz": [
+        "ph-sky"
+      ]
+    },
+    {
+      "id": "astro.celestial-coordinates",
+      "slug": "celestial-coordinates",
+      "unit": "sky",
+      "title": "Right Ascension and Declination",
+      "prereqs": [
+        "astro.altitude-latitude"
+      ],
+      "viz": [
+        "ph-sky"
+      ]
+    },
+    {
+      "id": "astro.solar-sidereal-day",
+      "slug": "solar-sidereal-day",
+      "unit": "sky",
+      "title": "Solar and Sidereal Days",
+      "prereqs": [
+        "astro.celestial-sphere"
+      ],
+      "viz": [
+        "ph-sky"
+      ]
+    },
+    {
+      "id": "astro.seasons",
+      "slug": "seasons",
+      "unit": "sky",
+      "title": "The Sun's Path Through the Year",
+      "prereqs": [
+        "earthsci.seasons",
+        "astro.celestial-coordinates"
+      ],
+      "viz": [
+        "ph-sky"
+      ]
+    },
+    {
+      "id": "astro.sun-noon-altitude",
+      "slug": "sun-noon-altitude",
+      "unit": "sky",
+      "title": "The Sun's Noon Altitude",
+      "prereqs": [
+        "astro.seasons",
+        "g7.add-subtract-rationals"
+      ],
+      "viz": [
+        "ph-sky"
+      ]
+    },
+    {
+      "id": "astro.moon-phases",
+      "slug": "moon-phases",
+      "unit": "sky",
+      "title": "Moon Phases and Moonrise Times",
+      "prereqs": [
+        "earthsci.moon-phases",
+        "astro.celestial-sphere"
+      ],
+      "viz": [
+        "ph-sky",
+        "astro-moonclock"
+      ]
+    },
+    {
+      "id": "astro.synodic-month",
+      "slug": "synodic-month",
+      "unit": "sky",
+      "title": "Synodic and Sidereal Months",
+      "prereqs": [
+        "astro.moon-phases",
+        "astro.solar-sidereal-day"
+      ],
+      "viz": [
+        "ph-sky"
+      ]
+    },
+    {
+      "id": "astro.eclipses",
+      "slug": "eclipses",
+      "unit": "sky",
+      "title": "Eclipse Seasons",
+      "prereqs": [
+        "earthsci.eclipses",
+        "astro.moon-phases"
+      ],
+      "viz": [
+        "ph-sky"
+      ]
+    },
+    {
+      "id": "astro.heliocentric-model",
+      "slug": "heliocentric-model",
+      "unit": "orbits",
+      "title": "From an Earth-Centered to a Sun-Centered Sky",
+      "prereqs": [
+        "astro.celestial-sphere"
+      ],
+      "viz": [
+        "astro-retrograde",
+        "ph-orbit"
+      ]
+    },
+    {
+      "id": "astro.kepler-first-law",
+      "slug": "kepler-first-law",
+      "unit": "orbits",
+      "title": "Kepler's First Law: Ellipses",
+      "prereqs": [
+        "astro.heliocentric-model"
+      ],
+      "viz": [
+        "ph-orbit"
+      ]
+    },
+    {
+      "id": "astro.kepler-second-law",
+      "slug": "kepler-second-law",
+      "unit": "orbits",
+      "title": "Kepler's Second Law: Equal Areas",
+      "prereqs": [
+        "astro.kepler-first-law"
+      ],
+      "viz": [
+        "ph-orbit"
+      ]
+    },
+    {
+      "id": "astro.kepler-third-law",
+      "slug": "kepler-third-law",
+      "unit": "orbits",
+      "title": "Kepler's Third Law",
+      "prereqs": [
+        "astro.kepler-second-law",
+        "alg1.rational-exponents"
+      ],
+      "viz": [
+        "ph-orbit"
+      ]
+    },
+    {
+      "id": "astro.weighing-with-orbits",
+      "slug": "weighing-with-orbits",
+      "unit": "orbits",
+      "title": "Weighing Stars and Planets with Orbits",
+      "prereqs": [
+        "astro.kepler-third-law",
+        "physsci.gravity-mass-distance"
+      ],
+      "viz": [
+        "ph-orbit"
+      ]
+    },
+    {
+      "id": "astro.orbits-escape",
+      "slug": "orbits-escape",
+      "unit": "orbits",
+      "title": "Orbital Speed and Escape Speed",
+      "prereqs": [
+        "astro.weighing-with-orbits",
+        "earthsci.gravity-orbits"
+      ],
+      "viz": [
+        "ph-orbit"
+      ]
+    },
+    {
+      "id": "astro.tides",
+      "slug": "tides",
+      "unit": "orbits",
+      "title": "Spring and Neap Tides",
+      "prereqs": [
+        "earthsci.tides",
+        "astro.moon-phases",
+        "physsci.gravity-mass-distance"
+      ],
+      "viz": [
+        "astro-springneap",
+        "ph-orbit"
+      ]
+    },
+    {
+      "id": "astro.light-travel-time",
+      "slug": "light-travel-time",
+      "unit": "light",
+      "title": "Looking Back in Time",
+      "prereqs": [
+        "earthsci.stars-galaxies",
+        "physsci.em-spectrum",
+        "g8.scientific-operations"
+      ],
+      "viz": [
+        "ph-cosmic"
+      ]
+    },
+    {
+      "id": "astro.color-temperature",
+      "slug": "color-temperature",
+      "unit": "light",
+      "title": "Color and Temperature: Wien's Law",
+      "prereqs": [
+        "physsci.em-spectrum",
+        "chem.temperature-scales"
+      ],
+      "viz": [
+        "ph-blackbody"
+      ]
+    },
+    {
+      "id": "astro.luminosity-radius-temperature",
+      "slug": "luminosity-radius-temperature",
+      "unit": "light",
+      "title": "Luminosity, Size and Temperature",
+      "prereqs": [
+        "astro.color-temperature",
+        "g8.exponent-properties"
+      ],
+      "viz": [
+        "ph-blackbody",
+        "ph-hr"
+      ]
+    },
+    {
+      "id": "astro.spectral-lines",
+      "slug": "spectral-lines",
+      "unit": "light",
+      "title": "Spectral Lines and Kirchhoff's Laws",
+      "prereqs": [
+        "chem.emission-spectra"
+      ],
+      "viz": [
+        "ph-spectrum"
+      ]
+    },
+    {
+      "id": "astro.doppler-light",
+      "slug": "doppler-light",
+      "unit": "light",
+      "title": "The Doppler Shift of Light",
+      "prereqs": [
+        "astro.spectral-lines"
+      ],
+      "viz": [
+        "ph-spectrum",
+        "ph-doppler"
+      ]
+    },
+    {
+      "id": "astro.telescopes",
+      "slug": "telescopes",
+      "unit": "light",
+      "title": "Telescopes: Light-Gathering and Resolution",
+      "prereqs": [
+        "physsci.refraction-intro"
+      ],
+      "viz": [
+        "astro-aperture",
+        "ph-rays"
+      ]
+    },
+    {
+      "id": "astro.observing-the-spectrum",
+      "slug": "observing-the-spectrum",
+      "unit": "light",
+      "title": "Observing Across the Spectrum",
+      "prereqs": [
+        "astro.telescopes",
+        "physsci.em-spectrum"
+      ],
+      "viz": [
+        "ph-spectrum"
+      ]
+    },
+    {
+      "id": "astro.planet-families",
+      "slug": "planet-families",
+      "unit": "solar-system",
+      "title": "Planet Densities: Rock or Gas?",
+      "prereqs": [
+        "earthsci.solar-system-objects",
+        "earthsci.density",
+        "g8.volume-spheres",
+        "g8.scientific-operations"
+      ],
+      "viz": [
+        "ph-cosmic"
+      ]
+    },
+    {
+      "id": "astro.solar-system-formation",
+      "slug": "solar-system-formation",
+      "unit": "solar-system",
+      "title": "How the Solar System Formed",
+      "prereqs": [
+        "astro.planet-families"
+      ],
+      "viz": [
+        "astro-disk"
+      ]
+    },
+    {
+      "id": "astro.small-bodies",
+      "slug": "small-bodies",
+      "unit": "solar-system",
+      "title": "Comets and Meteor Showers",
+      "prereqs": [
+        "astro.solar-system-formation"
+      ],
+      "viz": [
+        "ph-orbit"
+      ]
+    },
+    {
+      "id": "astro.exoplanets",
+      "slug": "exoplanets",
+      "unit": "solar-system",
+      "title": "Finding Planets Around Other Stars",
+      "prereqs": [
+        "astro.doppler-light",
+        "astro.weighing-with-orbits"
+      ],
+      "viz": [
+        "ph-orbit"
+      ]
+    },
+    {
+      "id": "astro.sun-layers",
+      "slug": "sun-layers",
+      "unit": "sun",
+      "title": "Layers of the Sun",
+      "prereqs": [
+        "astro.luminosity-radius-temperature"
+      ],
+      "viz": [
+        "ph-star"
+      ]
+    },
+    {
+      "id": "astro.sun-fusion",
+      "slug": "sun-fusion",
+      "unit": "sun",
+      "title": "How the Sun Shines",
+      "prereqs": [
+        "astro.sun-layers",
+        "chem.fission-fusion"
+      ],
+      "viz": [
+        "ph-nucleus",
+        "ph-star"
+      ]
+    },
+    {
+      "id": "astro.sun-lifetime",
+      "slug": "sun-lifetime",
+      "unit": "sun",
+      "title": "The Sun's Lifetime",
+      "prereqs": [
+        "astro.sun-fusion",
+        "g8.scientific-operations"
+      ],
+      "viz": [
+        "ph-hr"
+      ]
+    },
+    {
+      "id": "astro.solar-activity",
+      "slug": "solar-activity",
+      "unit": "sun",
+      "title": "Sunspots and the Solar Cycle",
+      "prereqs": [
+        "astro.sun-layers",
+        "physsci.magnets"
+      ],
+      "viz": [
+        "ph-star"
+      ]
+    },
+    {
+      "id": "astro.parallax",
+      "slug": "parallax",
+      "unit": "stars",
+      "title": "Parallax and the Parsec",
+      "prereqs": [
+        "astro.celestial-coordinates",
+        "astro.kepler-third-law"
+      ],
+      "viz": [
+        "ph-cosmic"
+      ]
+    },
+    {
+      "id": "astro.brightness-distance",
+      "slug": "brightness-distance",
+      "unit": "stars",
+      "title": "Brightness and Distance",
+      "prereqs": [
+        "astro.luminosity-radius-temperature",
+        "astro.parallax"
+      ],
+      "viz": [
+        "ph-cosmic"
+      ]
+    },
+    {
+      "id": "astro.magnitudes",
+      "slug": "magnitudes",
+      "unit": "stars",
+      "title": "The Magnitude Scale",
+      "prereqs": [
+        "astro.brightness-distance",
+        "alg1.exponential-functions"
+      ],
+      "viz": [
+        "ph-cosmic"
+      ]
+    },
+    {
+      "id": "astro.spectral-classes",
+      "slug": "spectral-classes",
+      "unit": "stars",
+      "title": "Spectral Classes",
+      "prereqs": [
+        "astro.spectral-lines",
+        "astro.color-temperature"
+      ],
+      "viz": [
+        "ph-spectrum",
+        "ph-hr"
+      ]
+    },
+    {
+      "id": "astro.hr-diagram",
+      "slug": "hr-diagram",
+      "unit": "stars",
+      "title": "The H–R Diagram",
+      "prereqs": [
+        "astro.spectral-classes",
+        "astro.luminosity-radius-temperature"
+      ],
+      "viz": [
+        "ph-hr"
+      ]
+    },
+    {
+      "id": "astro.binary-stars",
+      "slug": "binary-stars",
+      "unit": "stars",
+      "title": "Binary Stars and Stellar Masses",
+      "prereqs": [
+        "astro.weighing-with-orbits",
+        "astro.hr-diagram"
+      ],
+      "viz": [
+        "ph-orbit",
+        "ph-hr"
+      ]
+    },
+    {
+      "id": "astro.star-formation",
+      "slug": "star-formation",
+      "unit": "stellar-lives",
+      "title": "How Stars Are Born",
+      "prereqs": [
+        "astro.sun-fusion"
+      ],
+      "viz": [
+        "ph-star"
+      ]
+    },
+    {
+      "id": "astro.main-sequence-lifetime",
+      "slug": "main-sequence-lifetime",
+      "unit": "stellar-lives",
+      "title": "Main-Sequence Lifetimes",
+      "prereqs": [
+        "astro.sun-lifetime",
+        "astro.binary-stars"
+      ],
+      "viz": [
+        "ph-hr"
+      ]
+    },
+    {
+      "id": "astro.red-giants",
+      "slug": "red-giants",
+      "unit": "stellar-lives",
+      "title": "Red Giants and White Dwarfs",
+      "prereqs": [
+        "astro.main-sequence-lifetime"
+      ],
+      "viz": [
+        "ph-hr"
+      ]
+    },
+    {
+      "id": "astro.star-cluster-ages",
+      "slug": "star-cluster-ages",
+      "unit": "stellar-lives",
+      "title": "Reading a Cluster's Age",
+      "prereqs": [
+        "astro.red-giants"
+      ],
+      "viz": [
+        "ph-hr"
+      ]
+    },
+    {
+      "id": "astro.supernovae",
+      "slug": "supernovae",
+      "unit": "stellar-lives",
+      "title": "Supernovae and the Elements",
+      "prereqs": [
+        "astro.red-giants"
+      ],
+      "viz": [
+        "ph-nucleus"
+      ]
+    },
+    {
+      "id": "astro.neutron-stars",
+      "slug": "neutron-stars",
+      "unit": "stellar-lives",
+      "title": "Neutron Stars and Pulsars",
+      "prereqs": [
+        "astro.supernovae"
+      ],
+      "viz": [
+        "astro-pulsar"
+      ]
+    },
+    {
+      "id": "astro.black-holes",
+      "slug": "black-holes",
+      "unit": "stellar-lives",
+      "title": "Black Holes",
+      "prereqs": [
+        "astro.neutron-stars",
+        "astro.orbits-escape"
+      ],
+      "viz": [
+        "ph-orbit"
+      ]
+    },
+    {
+      "id": "astro.milky-way",
+      "slug": "milky-way",
+      "unit": "universe",
+      "title": "The Milky Way",
+      "prereqs": [
+        "astro.light-travel-time"
+      ],
+      "viz": [
+        "ph-cosmic"
+      ]
+    },
+    {
+      "id": "astro.galaxy-types",
+      "slug": "galaxy-types",
+      "unit": "universe",
+      "title": "Kinds of Galaxies",
+      "prereqs": [
+        "astro.milky-way"
+      ],
+      "viz": [
+        "astro-galaxies"
+      ]
+    },
+    {
+      "id": "astro.dark-matter",
+      "slug": "dark-matter",
+      "unit": "universe",
+      "title": "Dark Matter",
+      "prereqs": [
+        "astro.milky-way",
+        "astro.weighing-with-orbits"
+      ],
+      "viz": [
+        "ph-orbit"
+      ]
+    },
+    {
+      "id": "astro.standard-candles",
+      "slug": "standard-candles",
+      "unit": "universe",
+      "title": "Standard Candles",
+      "prereqs": [
+        "astro.brightness-distance",
+        "astro.supernovae"
+      ],
+      "viz": [
+        "ph-cosmic"
+      ]
+    },
+    {
+      "id": "astro.hubble-law",
+      "slug": "hubble-law",
+      "unit": "universe",
+      "title": "Hubble's Law",
+      "prereqs": [
+        "astro.doppler-light",
+        "astro.standard-candles"
+      ],
+      "viz": [
+        "ph-cosmic"
+      ]
+    },
+    {
+      "id": "astro.age-of-universe",
+      "slug": "age-of-universe",
+      "unit": "universe",
+      "title": "The Age of the Universe",
+      "prereqs": [
+        "astro.hubble-law"
+      ],
+      "viz": [
+        "ph-cosmic"
+      ]
+    },
+    {
+      "id": "astro.big-bang-evidence",
+      "slug": "big-bang-evidence",
+      "unit": "universe",
+      "title": "Evidence for the Big Bang",
+      "prereqs": [
+        "astro.age-of-universe"
+      ],
+      "viz": [
+        "ph-cosmic",
+        "ph-blackbody"
+      ]
+    },
+    {
+      "id": "astro.dark-energy",
+      "slug": "dark-energy",
+      "unit": "universe",
+      "title": "The Accelerating Universe",
+      "prereqs": [
+        "astro.big-bang-evidence"
+      ],
+      "viz": [
+        "ph-cosmic"
+      ]
+    }
+  ]
+}

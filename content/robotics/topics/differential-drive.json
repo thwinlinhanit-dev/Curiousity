@@ -1,0 +1,72 @@
+{
+  "id": "rbmobile.differential-drive",
+  "slug": "differential-drive",
+  "ladder": "robotics",
+  "course": "rbmobile",
+  "unit": "motion",
+  "title": "Differential Drive",
+  "short": "Two wheels: v = (vR + vL)/2, ω = (vR − vL)/W, and the turning radius is v / ω.",
+  "trouble": "Students divide by half the wheel track instead of the whole track, or mix up which wheel is faster for a left turn.",
+  "prereqs": [
+    "rbmech.wheel-speed",
+    "rbctrl.p-control"
+  ],
+  "xp": 2,
+  "viz": [
+    "rb-diffdrive"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Most small robots and robot vacuums steer like a tank: no steering wheel, just two drive wheels that can run at different speeds."
+      },
+      {
+        "t": "key",
+        "html": "With right and left wheel speeds $v_R$, $v_L$ and the wheels $W$ apart: forward speed $v = \\dfrac{v_R + v_L}{2}$, turn rate $\\omega = \\dfrac{v_R - v_L}{W}$ (radians per second, positive = left), and the center drives a circle of radius $v/\\omega$."
+      },
+      {
+        "t": "viz",
+        "name": "rb-diffdrive",
+        "opts": {
+          "vl": 0.3,
+          "vr": 0.5
+        },
+        "cap": "Set the two wheel speeds and watch the path. Equal speeds go straight; opposite speeds spin in place."
+      },
+      {
+        "t": "why",
+        "html": "Picture the robot turning about a point on its axle line. Both wheels turn at the same rate $\\omega$ about that point, but the outer wheel is $W$ farther away, so it must move $\\omega W$ faster. That gives $v_R - v_L = \\omega W$."
+      },
+      {
+        "t": "ex",
+        "title": "Turn rate",
+        "q": "$v_L = 0.2$, $v_R = 0.4$ m/s, $W = 0.15$ m.",
+        "steps": [
+          "$v = 0.3\\ \\text{m/s}$.",
+          "$\\omega = 0.2/0.15 \\approx 1.33\\ \\text{rad/s}$.",
+          "Radius $= 0.3/1.33 \\approx 0.23\\ \\text{m}$."
+        ],
+        "a": "1.33 rad/s, curving left on a 0.23 m radius."
+      },
+      {
+        "t": "mistake",
+        "html": "Dividing by half the wheel track instead of the whole track, or mixing up which wheel is faster in a left turn (the right one)."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Roland Siegwart, Illah R. Nourbakhsh and Davide Scaramuzza, Introduction to Autonomous Mobile Robots, 2nd ed. (MIT Press, 2011)"
+      },
+      {
+        "name": "Kevin M. Lynch and Frank C. Park, Modern Robotics: Mechanics, Planning, and Control (Cambridge University Press, 2017), free preprint and videos",
+        "url": "https://hades.mech.northwestern.edu/index.php/Modern_Robotics"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

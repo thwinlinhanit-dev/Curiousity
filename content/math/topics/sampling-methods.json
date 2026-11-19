@@ -1,0 +1,115 @@
+{
+  "id": "stat.sampling-methods",
+  "slug": "sampling-methods",
+  "ladder": "math",
+  "course": "stat",
+  "unit": "collecting-data",
+  "title": "Sampling Methods",
+  "short": "Simple random, stratified, cluster and systematic samples.",
+  "trouble": "",
+  "prereqs": [
+    "g7.random-samples"
+  ],
+  "xp": 1,
+  "viz": [
+    "sampling"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In Grade 7 you saw that a <a href=\"/math/grade-7/random-samples/\">random sample</a> gives every member of a population a fair chance to be chosen. Asking every member (a census) is usually too slow or too costly, so we study a sample and use it to learn about the whole population. How the sample is chosen decides whether that works."
+      },
+      {
+        "t": "key",
+        "html": "The <b>population</b> is the whole group we want to learn about; a <b>parameter</b> is a number describing it (like the true proportion $p$). A <b>sample</b> is the part we observe; a <b>statistic</b> is a number computed from it (like $\\hat{p}$). Random designs: <b>simple random sample</b> (every group of size n equally likely), <b>stratified</b> (split into similar groups, then sample randomly within each), <b>cluster</b> (randomly choose whole groups and take everyone in them), <b>systematic</b> (a random start, then every kth one)."
+      },
+      {
+        "t": "why",
+        "html": "Chance is fair in a way people are not. When a person picks \"typical\" individuals, their choices lean toward whoever is easy to reach or seems interesting. A random method cannot play favorites, so on average its samples look like the population. And because the randomness is planned, we can calculate how much sample results vary, which is the key to every margin of error later in the course."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Method",
+          "How chance is used",
+          "Good when"
+        ],
+        "rows": [
+          [
+            "Simple random",
+            "Draw n names at random from the full list",
+            "You have a complete list"
+          ],
+          [
+            "Stratified",
+            "Random sample inside each group (stratum)",
+            "Groups differ, and each must be represented"
+          ],
+          [
+            "Cluster",
+            "Pick whole groups at random; take everyone in them",
+            "Groups are alike and easy to reach as units"
+          ],
+          [
+            "Systematic",
+            "Random start, then every kth on the list",
+            "The list has no repeating pattern"
+          ]
+        ],
+        "cap": "Four random sampling designs."
+      },
+      {
+        "t": "ex",
+        "title": "Naming the design",
+        "q": "A principal wants 80 of the school's 1,200 students. Plan A: number all students and let a computer pick 80. Plan B: pick 20 at random from each grade, 9 through 12. Plan C: pick 3 homerooms at random and survey everyone in them. Name each design.",
+        "steps": [
+          "Plan A: every set of 80 students is equally likely, so it is a simple random sample.",
+          "Plan B: the population is split by grade (strata) and each grade is sampled: stratified.",
+          "Plan C: whole homerooms (clusters) are chosen, and everyone in them is surveyed: cluster."
+        ],
+        "a": "A is simple random, B is stratified, C is cluster."
+      },
+      {
+        "t": "ex",
+        "title": "A systematic sample",
+        "q": "A list has 1,500 customers and you want 60. How do you take a systematic sample?",
+        "steps": [
+          "Spread the picks evenly: $1{,}500 \\div 60 = 25$.",
+          "Choose a random starting number from 1 to 25, say 7, then take customers 7, 32, 57, and so on."
+        ],
+        "a": "Take every 25th customer after a random start."
+      },
+      {
+        "t": "viz",
+        "name": "sampling",
+        "opts": {
+          "pop": "skewed",
+          "pops": [
+            "skewed",
+            "uniform"
+          ],
+          "n": 10
+        },
+        "cap": "Each random sample gives a slightly different mean. Random sampling makes that variation predictable: the sample means center on the population mean."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking a convenience sample is random because the people were not chosen on purpose. \"The first 50 people at the mall entrance\" uses no chance at all; those people share where and when they shop. Check: could you write down how chance picked each member?"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Introductory Statistics 2e, section 1.2 Data, Sampling, and Variation in Data and Sampling"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, S-IC.B.3 (Recognize the purposes of and differences among sample surveys, experiments, and observational studies)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

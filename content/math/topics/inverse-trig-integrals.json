@@ -1,0 +1,128 @@
+{
+  "id": "calc1.inverse-trig-integrals",
+  "slug": "inverse-trig-integrals",
+  "ladder": "math",
+  "course": "calc1",
+  "unit": "integrals",
+  "title": "Integrals Giving Inverse Trig Functions",
+  "short": "∫ 1/(1 + x²) dx = tan⁻¹ x + C.",
+  "trouble": "Students write ln(1 + x²) for ∫ 1/(1 + x²) dx.",
+  "prereqs": [
+    "calc1.exp-log-integrals",
+    "calc1.inverse-derivatives"
+  ],
+  "xp": 3,
+  "viz": [],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Reading the <a href=\"/math/calculus-1/inverse-derivatives/\">inverse trig derivatives</a> backward gives two new antiderivatives. They answer integrals that look like <a href=\"/math/calculus-1/exp-log-integrals/\">log integrals</a> but are not."
+      },
+      {
+        "t": "key",
+        "html": "$$\\int\\frac{1}{1 + x^2}\\,dx = \\arctan x + C, \\qquad \\int\\frac{1}{\\sqrt{1 - x^2}}\\,dx = \\arcsin x + C,$$ and, for $a > 0$, $$\\int\\frac{1}{a^2 + x^2}\\,dx = \\frac{1}{a}\\arctan\\frac{x}{a} + C, \\qquad \\int\\frac{1}{\\sqrt{a^2 - x^2}}\\,dx = \\arcsin\\frac{x}{a} + C.$$"
+      },
+      {
+        "t": "why",
+        "html": "The first pair is the derivative table read backward. For the versions with $a$, factor $a^2$ out of the bottom and substitute $u = \\frac{x}{a}$: $\\frac{1}{a^2 + x^2} = \\frac{1}{a^2}\\cdot\\frac{1}{1 + (x/a)^2}$, and $dx = a\\,du$, so the integral becomes $\\frac{1}{a}\\int\\frac{du}{1 + u^2} = \\frac{1}{a}\\arctan u$. The arcsine case works the same way, and the $a$s cancel completely."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "f": "1/(1+x^2)",
+          "shade": {
+            "fn": 0,
+            "a": 0,
+            "b": 1
+          },
+          "xmin": -4,
+          "xmax": 4,
+          "ymin": -0.2,
+          "ymax": 1.3
+        },
+        "cap": "The area under $\\frac{1}{1 + x^2}$ from 0 to 1 is $\\arctan 1 - \\arctan 0 = \\frac{\\pi}{4}$. A curve with no circle in sight produces $\\pi$."
+      },
+      {
+        "t": "ex",
+        "title": "With a constant",
+        "q": "Find $\\displaystyle\\int\\frac{dx}{9 + x^2}$.",
+        "steps": [
+          "$a^2 = 9$, so $a = 3$.",
+          "$\\frac{1}{3}\\arctan\\frac{x}{3} + C$. Check: $\\frac{d}{dx}\\frac{1}{3}\\arctan\\frac{x}{3} = \\frac{1}{3}\\cdot\\frac{1/3}{1 + x^2/9} = \\frac{1}{9 + x^2}$."
+        ],
+        "a": "$\\frac{1}{3}\\arctan\\frac{x}{3} + C$"
+      },
+      {
+        "t": "ex",
+        "title": "A definite arcsine",
+        "q": "Evaluate $\\displaystyle\\int_0^1\\frac{dx}{\\sqrt{4 - x^2}}$.",
+        "steps": [
+          "$a = 2$: antiderivative $\\arcsin\\frac{x}{2}$.",
+          "$\\arcsin\\frac{1}{2} - \\arcsin 0 = \\frac{\\pi}{6} - 0$."
+        ],
+        "a": "$\\frac{\\pi}{6}$"
+      },
+      {
+        "t": "ex",
+        "title": "Complete the square",
+        "q": "Find $\\displaystyle\\int\\frac{dx}{x^2 + 4x + 13}$.",
+        "steps": [
+          "Complete the square: $x^2 + 4x + 13 = (x + 2)^2 + 9$.",
+          "$u = x + 2$, $du = dx$: $\\int\\frac{du}{u^2 + 9} = \\frac{1}{3}\\arctan\\frac{u}{3} + C$."
+        ],
+        "a": "$\\frac{1}{3}\\arctan\\frac{x + 2}{3} + C$"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Integrand",
+          "Method",
+          "Antiderivative"
+        ],
+        "rows": [
+          [
+            "$\\frac{x}{1 + x^2}$",
+            "$u = 1 + x^2$",
+            "$\\frac{1}{2}\\ln(1 + x^2)$"
+          ],
+          [
+            "$\\frac{1}{1 + x^2}$",
+            "standard form",
+            "$\\arctan x$"
+          ],
+          [
+            "$\\frac{x}{\\sqrt{1 - x^2}}$",
+            "$u = 1 - x^2$",
+            "$-\\sqrt{1 - x^2}$"
+          ],
+          [
+            "$\\frac{1}{\\sqrt{1 - x^2}}$",
+            "standard form",
+            "$\\arcsin x$"
+          ]
+        ],
+        "cap": "Look-alikes: an $x$ on top usually means substitution; no $x$ on top points to an inverse trig function."
+      },
+      {
+        "t": "p",
+        "html": "Integrals like $\\int\\frac{dx}{1 - x^2}$ (no root, a minus sign) need yet another method, partial fractions, which comes in Calculus 2. The shape of the denominator tells you which tool to reach for."
+      },
+      {
+        "t": "mistake",
+        "html": "Writing $\\ln(1 + x^2)$ for $\\int\\frac{1}{1 + x^2}\\,dx$. The log answer needs the derivative of the bottom on top: $\\int\\frac{2x}{1 + x^2}\\,dx = \\ln(1 + x^2) + C$. With no $x$ on top, the answer is an arctangent. Check by differentiating: $\\frac{d}{dx}\\ln(1 + x^2) = \\frac{2x}{1 + x^2}$, not $\\frac{1}{1 + x^2}$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 1, 5.7 Integrals Resulting in Inverse Trigonometric Functions"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

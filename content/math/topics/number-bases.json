@@ -1,0 +1,126 @@
+{
+  "id": "nt.number-bases",
+  "slug": "number-bases",
+  "ladder": "math",
+  "course": "nt",
+  "unit": "divisibility",
+  "title": "Writing Numbers in Other Bases",
+  "short": "Convert to base b by dividing by b again and again, then read the remainders from last to first.",
+  "trouble": "Students write the remainders in the order they found them, which puts the digits backward.",
+  "prereqs": [
+    "nt.division-algorithm"
+  ],
+  "xp": 2,
+  "viz": [],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "We write numbers in base 10: $2024$ means $2 \\cdot 10^{3} + 0 \\cdot 10^{2} + 2 \\cdot 10 + 4$. Nothing is special about ten except our fingers. Computers use base 2, programmers use base 16, and the <a href=\"/math/number-theory/division-algorithm/\">division algorithm</a> is exactly the tool for moving between bases."
+      },
+      {
+        "t": "p",
+        "html": "<b>Base $b$.</b> Fix an integer $b \\ge 2$. Every positive integer $n$ can be written in exactly one way as $$n = d_k b^{k} + d_{k-1} b^{k-1} + \\cdots + d_1 b + d_0,$$ with digits $0 \\le d_i \\le b - 1$ and $d_k \\neq 0$. We write $n = (d_k d_{k-1} \\dots d_0)_b$, or $d_k \\dots d_0$ with a subscript $b$. Base 16 needs six extra digits: A = 10, B = 11, …, F = 15."
+      },
+      {
+        "t": "why",
+        "html": "Divide $n$ by $b$: every term except $d_0$ is a multiple of $b$, so $$n = b\\,(d_k b^{k-1} + \\cdots + d_1) + d_0, \\qquad 0 \\le d_0 < b.$$ By the uniqueness in the division algorithm, $d_0$ <b>is</b> the remainder of $n$ divided by $b$, and the quotient is the number whose digits are $d_k \\dots d_1$. Repeat on the quotient and the remainders peel off the digits one at a time, <b>last digit first</b>. That same uniqueness is why the digits are unique."
+      },
+      {
+        "t": "ex",
+        "title": "Decimal to binary",
+        "q": "Write $44$ in base 2.",
+        "steps": [
+          "$44 = 2 \\cdot 22 + 0$",
+          "$22 = 2 \\cdot 11 + 0$",
+          "$11 = 2 \\cdot 5 + 1$",
+          "$5 = 2 \\cdot 2 + 1$",
+          "$2 = 2 \\cdot 1 + 0$, and $1 = 2 \\cdot 0 + 1$. Stop when the quotient is $0$.",
+          "The remainders were $0, 0, 1, 1, 0, 1$. Read them from the <b>last</b> to the first: $101100$.",
+          "Check: $1 \\cdot 32 + 0 \\cdot 16 + 1 \\cdot 8 + 1 \\cdot 4 + 0 \\cdot 2 + 0 = 44$."
+        ],
+        "a": "$44 = 101100_2$."
+      },
+      {
+        "t": "ex",
+        "title": "Decimal to base 7",
+        "q": "Write $2024$ in base 7.",
+        "steps": [
+          "$2024 = 7 \\cdot 289 + 1$",
+          "$289 = 7 \\cdot 41 + 2$",
+          "$41 = 7 \\cdot 5 + 6$",
+          "$5 = 7 \\cdot 0 + 5$",
+          "Read the remainders upward: $5621_7$. Check: $5 \\cdot 343 + 6 \\cdot 49 + 2 \\cdot 7 + 1 = 1715 + 294 + 14 + 1 = 2024$."
+        ],
+        "a": "$2024 = 5621_7$."
+      },
+      {
+        "t": "ex",
+        "title": "Hexadecimal to decimal",
+        "q": "Write $\\mathrm{2F3}_{16}$ in base 10.",
+        "steps": [
+          "The digits are $2$, $\\mathrm{F} = 15$ and $3$, standing for $16^{2}$, $16^{1}$ and $16^{0}$.",
+          "$2 \\cdot 256 + 15 \\cdot 16 + 3 = 512 + 240 + 3 = 755$."
+        ],
+        "a": "$755$."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Power of 2",
+          "$2^{0}$",
+          "$2^{1}$",
+          "$2^{2}$",
+          "$2^{3}$",
+          "$2^{4}$",
+          "$2^{5}$",
+          "$2^{6}$",
+          "$2^{7}$"
+        ],
+        "rows": [
+          [
+            "Value",
+            "1",
+            "2",
+            "4",
+            "8",
+            "16",
+            "32",
+            "64",
+            "128"
+          ]
+        ],
+        "cap": "Place values in base 2. Each hex digit stands for 4 binary digits, since $16 = 2^{4}$."
+      },
+      {
+        "t": "mistake",
+        "html": "Writing the remainders in the order you found them. For $44$ that gives $001101_2 = 13$, not $44$: the first remainder is the <b>ones</b> digit, which goes on the right. Always check by expanding the answer back into base 10."
+      },
+      {
+        "t": "p",
+        "html": "Base 16 is popular because it is a shorthand for base 2: split the binary digits into groups of four from the right and replace each group by one hex digit. For example $101100_2 = 0010\\ 1100_2 = \\mathrm{2C}_{16}$, since $0010_2 = 2$ and $1100_2 = 12 = \\mathrm{C}$. Check: $2 \\cdot 16 + 12 = 44$."
+      },
+      {
+        "t": "p",
+        "html": "Binary will come back in <a href=\"/math/number-theory/modular-powers/\">fast powers</a>, where the binary digits of an exponent tell you which squares to multiply."
+      },
+      {
+        "t": "key",
+        "html": "To write $n$ in base $b$, divide by $b$ again and again; the remainders are the digits, from the ones digit up. To go back, multiply each digit by its power of $b$ and add."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Lehman, Leighton and Meyer, Mathematics for Computer Science (MIT OpenCourseWare 6.042J), chapter on number theory: the division theorem"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.781 Theory of Numbers (Spring 2012), lecture notes on the integers and the division algorithm"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

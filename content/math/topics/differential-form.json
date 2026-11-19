@@ -1,0 +1,101 @@
+{
+  "id": "calc4.differential-form",
+  "slug": "differential-form",
+  "ladder": "math",
+  "course": "calc4",
+  "unit": "line-integrals",
+  "title": "Line Integrals in the Form ∫P dx + Q dy",
+  "short": "Write and compute work with differentials.",
+  "trouble": "",
+  "prereqs": [
+    "calc4.work-line-integrals"
+  ],
+  "xp": 2,
+  "viz": [
+    "lineintegral"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Line integrals of vector fields are often written without vectors at all: $\\int_C P\\,dx + Q\\,dy$. This is the same thing as $\\int_C \\mathbf{F} \\cdot d\\mathbf{r}$ for $\\mathbf{F} = \\langle P, Q \\rangle$, written component by component. The notation is handy when the curve is a graph or is made of horizontal and vertical pieces. It builds on <a href=\"/math/calculus-4/work-line-integrals/\">line integrals of vector fields</a>."
+      },
+      {
+        "t": "key",
+        "html": "With $d\\mathbf{r} = \\langle dx, dy, dz \\rangle$,\n  $$\\int_C \\mathbf{F} \\cdot d\\mathbf{r} = \\int_C P\\,dx + Q\\,dy + R\\,dz = \\int_a^b \\left[P\\,x'(t) + Q\\,y'(t) + R\\,z'(t)\\right] dt.$$\n  On a horizontal segment $dy = 0$; on a vertical segment $dx = 0$. On a graph $y = g(x)$ you can use $x$ itself as the parameter: $dy = g'(x)\\,dx$."
+      },
+      {
+        "t": "why",
+        "html": "$dx = x'(t)\\,dt$ is the differential of $x = x(t)$, the same substitution as in <a href=\"/math/calculus-1/u-substitution/\">u-substitution</a>. Writing $\\langle P, Q \\rangle \\cdot \\langle x'(t), y'(t) \\rangle\\,dt$ out in components gives $P\\,x'(t)\\,dt + Q\\,y'(t)\\,dt$, which is $P\\,dx + Q\\,dy$. On a horizontal segment $y$ is constant, so $y'(t) = 0$ and the $Q$ term disappears."
+      },
+      {
+        "t": "viz",
+        "name": "lineintegral",
+        "opts": {
+          "P": "y",
+          "Q": "x^2",
+          "x": "t",
+          "y": "t^2",
+          "t0": 0,
+          "t1": 1,
+          "xmin": -0.6,
+          "xmax": 1.6,
+          "ymin": -0.4,
+          "ymax": 1.4
+        },
+        "cap": "The field $\\langle y, x^2 \\rangle$ along the parabola $y = x^2$ from $(0, 0)$ to $(1, 1)$: the running total ends at $\\frac{5}{6}$, the value found in the first example."
+      },
+      {
+        "t": "p",
+        "html": "Orientation still matters in this notation: reversing the curve changes the sign of $\\int_C P\\,dx + Q\\,dy$, because every $dx$ and $dy$ changes sign. The pieces $\\int_C P\\,dx$ and $\\int_C Q\\,dy$ can also be computed separately and added, which helps when one of them is easy. For the path from $(0, 0)$ to $(1, 0)$ and then up to $(1, 1)$, $\\int_C y\\,dx$ is ${}0$ on the first piece (where $y = 0$) and ${}0$ on the second (where $dx = 0$), so only $\\int_C x^2\\,dy$ needs work. In space, $\\int_C P\\,dx + Q\\,dy + R\\,dz$ works the same way, with $dz = z'(t)\\,dt$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Along a parabola",
+        "q": "Evaluate $\\int_C y\\,dx + x^2\\,dy$, where $C$ is $y = x^2$ from $(0, 0)$ to $(1, 1)$.",
+        "steps": [
+          "Use $x$ as the parameter: $y = x^2$, $dy = 2x\\,dx$, $x$ from ${}0$ to ${}1$.",
+          "The integrand becomes $x^2\\,dx + x^2 \\cdot 2x\\,dx = (x^2 + 2x^3)\\,dx$.",
+          "$\\int_0^1 (x^2 + 2x^3)\\,dx = \\frac{1}{3} + \\frac{1}{2} = \\frac{5}{6}$."
+        ],
+        "a": "$\\frac{5}{6}$"
+      },
+      {
+        "t": "ex",
+        "title": "Along two segments",
+        "q": "Evaluate the same integral $\\int_C y\\,dx + x^2\\,dy$ along $(0, 0) \\to (1, 0) \\to (1, 1)$.",
+        "steps": [
+          "First piece: $y = 0$, $dy = 0$, $x$ from ${}0$ to ${}1$: $\\int_0^1 0\\,dx = 0$.",
+          "Second piece: $x = 1$, $dx = 0$, $y$ from ${}0$ to ${}1$: $\\int_0^1 1\\,dy = 1$.",
+          "Total ${}1$, not $\\frac{5}{6}$: for this field the path matters."
+        ],
+        "a": "${}1$"
+      },
+      {
+        "t": "ex",
+        "title": "Around a circle",
+        "q": "Evaluate $\\oint_C x\\,dy - y\\,dx$ around the unit circle, counterclockwise.",
+        "steps": [
+          "$x = \\cos t$, $y = \\sin t$: $dx = -\\sin t\\,dt$, $dy = \\cos t\\,dt$.",
+          "$$x\\,dy - y\\,dx = (\\cos^2 t + \\sin^2 t)\\,dt = dt.$$",
+          "$\\int_0^{2\\pi} dt = 2\\pi$, twice the area of the disk. (<a href=\"/math/calculus-4/greens-area/\">Green's theorem</a> explains why.)"
+        ],
+        "a": "${}2\\pi$"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 3, 6.2 Line Integrals"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,117 @@
+{
+  "id": "lifesci.scientific-names",
+  "slug": "scientific-names",
+  "ladder": "bio",
+  "course": "lifesci",
+  "unit": "classifying",
+  "title": "Scientific Names",
+  "short": "Every species has a two-part scientific name, genus then species, like Canis lupus for the gray wolf. The genus starts with a capital, and the whole name is written in italics.",
+  "trouble": "Students capitalize both words or think two animals with the same second word are close relatives. Only the genus is capitalized, and the genus, not the second word, shows close kinship.",
+  "prereqs": [
+    "lifesci.classification-ranks"
+  ],
+  "xp": 1,
+  "viz": [
+    "bi-classify"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "One animal can have many common names: cougar, mountain lion, puma, panther. Scientists everywhere use one name instead. The system comes from the <a href=\"/biology/life-science/classification-ranks/\">ranks</a>: each species gets a two-part name, its genus and then a specific name."
+      },
+      {
+        "t": "key",
+        "html": "A scientific name is <b>genus + specific name</b>, like <i>Canis lupus</i> for the gray wolf. The genus starts with a capital letter, the specific name is all lowercase, and the whole name is printed in <i>italics</i> (underlined when handwritten)."
+      },
+      {
+        "t": "why",
+        "html": "Carl Linnaeus made this two-part system standard, for plants in 1753 and for animals in 1758. Because the first word is the genus, the name itself tells you something: animals that share a genus are close relatives. <i>Canis lupus</i> (gray wolf) and <i>Canis latrans</i> (coyote) are close kin; <i>Vulpes vulpes</i> (red fox) is in another genus."
+      },
+      {
+        "t": "viz",
+        "name": "bi-classify",
+        "opts": {
+          "bins": [
+            "Genus Ursus (bears)",
+            "Genus Quercus (oaks)",
+            "Neither"
+          ],
+          "cards": [
+            {
+              "text": "Ursus arctos (brown bear)",
+              "bin": 0
+            },
+            {
+              "text": "Ursus americanus (black bear)",
+              "bin": 0
+            },
+            {
+              "text": "Homarus americanus (lobster)",
+              "bin": 2,
+              "why": "Same second word as the black bear, but a different genus: a lobster is not a bear."
+            },
+            {
+              "text": "Quercus rubra (red oak)",
+              "bin": 1
+            },
+            {
+              "text": "Quercus alba (white oak)",
+              "bin": 1
+            },
+            {
+              "text": "Acer rubrum (red maple)",
+              "bin": 2,
+              "why": "\"Rubrum\" just means red. The genus Acer is the maples."
+            }
+          ],
+          "reveal": true
+        },
+        "cap": "Sort by genus. Watch out for shared second words."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Write it right",
+        "q": "How do you write the scientific name of the human?",
+        "steps": [
+          "Genus: Homo, with a capital H.",
+          "Specific name: sapiens, all lowercase.",
+          "Print it in italics."
+        ],
+        "a": "<i>Homo sapiens</i>"
+      },
+      {
+        "t": "ex",
+        "title": "Close relatives?",
+        "q": "Which two are most closely related: <i>Ursus americanus</i>, <i>Homarus americanus</i>, <i>Ursus arctos</i>?",
+        "steps": [
+          "Compare the first words: two are <i>Ursus</i>.",
+          "The shared word \"americanus\" only means \"from America\"."
+        ],
+        "a": "<i>Ursus americanus</i> and <i>Ursus arctos</i> (two bears)."
+      },
+      {
+        "t": "mistake",
+        "html": "Capitalizing both words, or thinking two species with the same second word are relatives. Only the genus is capitalized, and only a shared genus shows close kinship. Check the first word, not the second."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Concepts of Biology, 12.1 Organizing Life on Earth (binomial nomenclature)"
+      },
+      {
+        "name": "Grokipedia, Binomial nomenclature (Linnaeus, 1753 and 1758)",
+        "url": "https://grokipedia.com/page/Binomial_nomenclature"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

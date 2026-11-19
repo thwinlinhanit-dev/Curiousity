@@ -1,0 +1,108 @@
+{
+  "id": "num.step-size-tradeoff",
+  "slug": "step-size-tradeoff",
+  "ladder": "math",
+  "course": "num",
+  "unit": "numerical-calculus",
+  "title": "The Best Step Size",
+  "short": "Shrinking h cuts truncation error but magnifies round-off, so the total error is smallest at a moderate h, about 10⁻⁸ for a forward difference in double precision.",
+  "trouble": "Students make h as small as possible. Below the best h, round-off error grows like ε/h and swamps the answer.",
+  "prereqs": [
+    "num.finite-differences",
+    "num.cancellation"
+  ],
+  "xp": 3,
+  "viz": [
+    "num-error"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/math/numerical-analysis/finite-differences/\">Finite-Difference Derivatives</a> get better as $h$ shrinks, so why not take $h = 10^{-15}$? Because $f(x + h)$ and $f(x)$ become nearly equal, and subtracting them is <a href=\"/math/numerical-analysis/cancellation/\">Round-Off and Cancellation</a>. Each stored value of $f$ has a rounding error of size about $\\varepsilon|f|$ (with $\\varepsilon \\approx 10^{-16}$), and dividing their difference by a tiny $h$ magnifies that error."
+      },
+      {
+        "t": "p",
+        "html": "For the forward difference (with $|f| \\approx 1$ and $|f''| \\le M$) the two errors add up to about $$E(h) = \\underbrace{\\frac{M}{2}h}_{\\text{truncation}} + \\underbrace{\\frac{2\\varepsilon}{h}}_{\\text{round-off}}.$$ The first term falls as $h$ shrinks; the second grows."
+      },
+      {
+        "t": "key",
+        "html": "The total error is smallest at a moderate $h$. For the forward difference, $h^{*} = 2\\sqrt{\\varepsilon/M} \\approx 10^{-8}$ and the best error is about $10^{-8}$: only half the digits survive. For the central difference, $h^{*} \\approx (3\\varepsilon/M)^{1/3} \\approx 10^{-5}$ and the best error is about $\\varepsilon^{2/3} \\approx 10^{-11}$."
+      },
+      {
+        "t": "why",
+        "html": "Minimize $E(h) = \\frac{M}{2}h + \\frac{2\\varepsilon}{h}$: $E'(h) = \\frac{M}{2} - \\frac{2\\varepsilon}{h^{2}} = 0$ gives $h^{*} = 2\\sqrt{\\varepsilon/M}$, and then $E(h^{*}) = 2\\sqrt{M\\varepsilon}$, where the two parts are equal. For the central difference, $E(h) = \\frac{M}{6}h^{2} + \\frac{\\varepsilon}{h}$ (now $M$ bounds $|f'''|$), and $E'(h) = \\frac{M}{3}h - \\frac{\\varepsilon}{h^{2}} = 0$ gives $h^{*} = (3\\varepsilon/M)^{1/3}$. A higher-order formula lets you stop at a larger $h$, before round-off has grown much."
+      },
+      {
+        "t": "viz",
+        "name": "num-error",
+        "opts": {
+          "method": "forward",
+          "methods": [
+            "forward",
+            "central"
+          ],
+          "f": "sin(x)",
+          "x0": 1,
+          "hmin": 1e-13,
+          "hmax": 1,
+          "refs": [
+            1,
+            2
+          ],
+          "task": "Find the bottom of the V for each formula. Use the probe to read the error at $h = 10^{-12}$."
+        },
+        "cap": "The error of difference formulas for sin x at x = 1, over twelve decades of h. On the right, truncation falls with slope 1 or 2; on the left, round-off rises like ε/h."
+      },
+      {
+        "t": "ex",
+        "title": "The best h for a forward difference",
+        "q": "With $M = 1$ and $\\varepsilon = 10^{-16}$, find $h^{*}$ and the best possible error.",
+        "steps": [
+          "$h^{*} = 2\\sqrt{10^{-16}/1} = 2 \\times 10^{-8}$.",
+          "$E(h^{*}) = 2\\sqrt{1 \\times 10^{-16}} = 2 \\times 10^{-8}$.",
+          "So about 8 correct digits at best, however much effort goes in."
+        ],
+        "a": "$h^{*} = 2 \\times 10^{-8}$, error about $2 \\times 10^{-8}$"
+      },
+      {
+        "t": "ex",
+        "title": "Real numbers",
+        "q": "Forward and central differences for $f(x) = \\sin x$ at $x = 1$ in double precision gave these errors. What do they show?",
+        "steps": [
+          "Forward: $h = 10^{-2}$: $4.2 \\times 10^{-3}$; $10^{-4}$: $4.2 \\times 10^{-5}$; $10^{-6}$: $4.2 \\times 10^{-7}$; $10^{-8}$: $3 \\times 10^{-9}$; $10^{-10}$: $6 \\times 10^{-8}$; $10^{-12}$: $4 \\times 10^{-5}$.",
+          "Central: $h = 10^{-2}$: $9 \\times 10^{-6}$; $10^{-4}$: $9 \\times 10^{-10}$; $10^{-6}$: $3 \\times 10^{-11}$; then it grows again.",
+          "Down to $h = 10^{-6}$ the forward error falls by 100 per factor-of-100 step in $h$ (order 1). Below $10^{-8}$ it rises: at $h = 10^{-12}$ it is as bad as at $h = 10^{-4}$. The central difference bottoms out lower, near $h = 10^{-5}$ or $10^{-6}$."
+        ],
+        "a": "a V shape, with its bottom near the predicted best h"
+      },
+      {
+        "t": "ex",
+        "title": "Round-off alone",
+        "q": "How big is the round-off part $\\frac{2\\varepsilon}{h}$ at $h = 10^{-12}$?",
+        "steps": [
+          "$\\frac{2 \\times 10^{-16}}{10^{-12}} = 2 \\times 10^{-4}$.",
+          "That matches the size of the observed error: at tiny $h$, almost everything you compute is round-off."
+        ],
+        "a": "about $2 \\times 10^{-4}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Making $h$ as small as possible. Below the best $h$, the round-off error grows like $\\varepsilon/h$ and swamps the answer; at $h = 10^{-15}$ the forward difference may have no correct digits at all. Check by trying a few values of $h$ a factor of 10 apart: if the answers stop agreeing as $h$ shrinks, you have passed the bottom of the V."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Tobin A. Driscoll and Richard J. Braun, Fundamentals of Numerical Computation (University of Delaware, free online edition): chapter \"Piecewise interpolation\", section \"Convergence of finite differences\" (round-off error)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.330, Introduction to Numerical Analysis: lecture notes on numerical differentiation and round-off"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,100 @@
+{
+  "id": "phys2.uniform-field",
+  "slug": "uniform-field",
+  "ladder": "physics",
+  "course": "phys2",
+  "unit": "electrostatics",
+  "title": "Charges in a Uniform Field",
+  "short": "Between parallel plates E is uniform, so a charge feels a constant force qE and moves like a projectile.",
+  "trouble": "Students forget that an electron is pushed opposite to the field.",
+  "prereqs": [
+    "phys2.electric-field",
+    "phys1.projectile-horizontal"
+  ],
+  "xp": 3,
+  "viz": [
+    "ph-efield"
+  ],
+  "figureArchetype": "FieldFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Between two large, flat, oppositely charged plates, the <a href=\"/physics/physics-2/electric-field/\">electric field</a> is the same everywhere: the same size and the same direction. A charge there feels a constant force, so it moves just like a ball in <a href=\"/physics/physics-1/projectile-horizontal/\">projectile motion</a>, with the electric force playing the part of gravity."
+      },
+      {
+        "t": "why",
+        "html": "Each plate is a sheet of charge whose field does not weaken with distance (for points close to a large sheet). Between the plates the two fields point the same way and add; outside they point opposite ways and cancel. So the field is uniform between the plates and nearly zero outside. A uniform field gives a constant force $qE$ and a constant acceleration $a = qE/m$, and all of constant-acceleration kinematics applies."
+      },
+      {
+        "t": "key",
+        "html": "In a uniform field, $a = \\dfrac{qE}{m}$, constant. A positive charge accelerates along $\\vec E$; an electron accelerates <b>opposite</b> to $\\vec E$. A charge entering sideways follows a parabola: constant speed along the plates, constant acceleration across them."
+      },
+      {
+        "t": "viz",
+        "name": "ph-efield",
+        "opts": {
+          "mode": "plates",
+          "V": 100,
+          "d": 0.02,
+          "task": "Change the voltage and the entry speed. Watch the parabola."
+        },
+        "cap": "An electron between charged plates bends toward the positive plate, against the field."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A proton's acceleration",
+        "q": "Find the acceleration of a proton in a uniform field of $2.0 \\times 10^{4}\\,\\text{N/C}$.",
+        "steps": [
+          "$$a = \\dfrac{eE}{m_p} = \\dfrac{(1.60 \\times 10^{-19})(2.0 \\times 10^{4})}{1.67 \\times 10^{-27}} = 1.92 \\times 10^{12}\\,\\text{m/s}^2.$$",
+          "About $10^{11}$ times $g$, which is why gravity is ignored here."
+        ],
+        "a": "$1.92 \\times 10^{12}\\,\\text{m/s}^2$, along the field"
+      },
+      {
+        "t": "ex",
+        "title": "Bending an electron beam",
+        "q": "An electron enters the gap between plates $4.0\\,\\text{cm}$ long at $2.0 \\times 10^{6}\\,\\text{m/s}$, moving parallel to them. The field is $500\\,\\text{N/C}$. How far sideways is it pushed?",
+        "steps": [
+          "Time between the plates: $t = \\dfrac{0.040\\,\\text{m}}{2.0 \\times 10^{6}\\,\\text{m/s}} = 2.0 \\times 10^{-8}\\,\\text{s}$.",
+          "Sideways acceleration: $a = \\dfrac{(1.60 \\times 10^{-19})(500)}{9.11 \\times 10^{-31}} = 8.78 \\times 10^{13}\\,\\text{m/s}^2$.",
+          "$$y = \\tfrac{1}{2}at^2 = \\tfrac{1}{2}(8.78 \\times 10^{13})(2.0 \\times 10^{-8})^2 = 0.0176\\,\\text{m} = 1.76\\,\\text{cm},$$ toward the positive plate."
+        ],
+        "a": "$1.76\\,\\text{cm}$"
+      },
+      {
+        "t": "ex",
+        "title": "A floating oil drop",
+        "q": "An oil drop of mass $3.27 \\times 10^{-15}\\,\\text{kg}$ hangs at rest in a downward field of $1.0 \\times 10^{5}\\,\\text{N/C}$. What is its charge?",
+        "steps": [
+          "At rest: the electric force balances the weight, $|q|E = mg$, so $|q| = \\dfrac{(3.27 \\times 10^{-15})(9.8)}{1.0 \\times 10^{5}} = 3.20 \\times 10^{-19}\\,\\text{C}$.",
+          "That is $2e$. The force must point up, against the downward field, so the drop is negative: $q = -2e$. Millikan found charges like this were always whole multiples of $e$."
+        ],
+        "a": "$-3.20 \\times 10^{-19}\\,\\text{C} = -2e$"
+      },
+      {
+        "t": "mistake",
+        "html": "Forgetting that an electron is pushed opposite to the field. $\\vec F = q\\vec E$, and for an electron $q$ is negative. In a field pointing up, an electron accelerates down. Check: an electron always moves toward the positive plate."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e, section 19.2 Electric Potential in a Uniform Electric Field"
+      },
+      {
+        "name": "OpenStax, University Physics Volume 2, section 5.4 Electric Field"
+      },
+      {
+        "name": "College Board, AP Physics 2 Course and Exam Description, Unit 10: Electric Force, Field, and Potential"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

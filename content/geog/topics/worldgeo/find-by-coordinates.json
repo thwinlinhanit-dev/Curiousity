@@ -1,0 +1,113 @@
+{
+  "id": "worldgeo.find-by-coordinates",
+  "slug": "find-by-coordinates",
+  "ladder": "geog",
+  "course": "worldgeo",
+  "unit": "lat-long",
+  "title": "Find a Place by Its Coordinates",
+  "short": "Go to the latitude line, then along it to the longitude line, and name the city or country where they meet.",
+  "trouble": "Students count in the wrong direction from 0°: west longitudes grow toward the left of a map, and south latitudes grow downward.",
+  "prereqs": [
+    "worldgeo.read-coordinates"
+  ],
+  "xp": 2,
+  "viz": [
+    "gg-latlon",
+    "gg-map"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Now turn it around: someone gives you coordinates, and you find the place. This is how ships, planes and rescuers find a spot on a map. You will use what you learned in <a href=\"/geography/world-geography/read-coordinates/\">Reading Coordinates</a>."
+      },
+      {
+        "t": "key",
+        "html": "Find the <b>latitude</b> first (go up for N, down for S from the equator), then move along that parallel to the <b>longitude</b> (right for E, left for W of the prime meridian). The place is where the two lines cross."
+      },
+      {
+        "t": "ex",
+        "title": "Find 35° N, 140° E",
+        "q": "Which big city is at about 35° N, 140° E?",
+        "steps": [
+          "Start at the equator and go up (north) to 35° N, a little past the 30° line.",
+          "Move right (east) from the prime meridian to 140° E, far into Asia.",
+          "The lines cross on the island of Honshu, in Japan."
+        ],
+        "a": "Tokyo, Japan."
+      },
+      {
+        "t": "viz",
+        "name": "gg-latlon",
+        "opts": {
+          "cities": [
+            "Tokyo",
+            "Cairo",
+            "Rio de Janeiro",
+            "New York"
+          ],
+          "cityMarks": true,
+          "step": 60
+        },
+        "cap": "Four cities, lettered. Which letter is at about 35° N, 140° E? (It is the one in eastern Asia.)"
+      },
+      {
+        "t": "why",
+        "html": "On almost every world map, north is at the top and east is on the right. So north latitudes grow upward from the equator and south latitudes grow downward; east longitudes grow to the right of the prime meridian and west longitudes grow to the left. Knowing which way the numbers grow is the whole trick."
+      },
+      {
+        "t": "ex",
+        "title": "A southern city",
+        "q": "Which city is at about 23° S, 43° W: Rio de Janeiro, Cairo or New York?",
+        "steps": [
+          "23° S is below the equator, so the city is in the Southern Hemisphere.",
+          "43° W is left of the prime meridian: the Americas or the Atlantic.",
+          "Of the three, only Rio de Janeiro is south of the equator and in the Americas."
+        ],
+        "a": "Rio de Janeiro, Brazil."
+      },
+      {
+        "t": "mistake",
+        "html": "Counting the wrong way from 0°. West longitudes get bigger as you go <b>left</b> on the map, and south latitudes get bigger as you go <b>down</b>. A quick check: a place at 23° S, 43° W must be below the equator and left of the prime meridian. If your finger ends up in Africa or Asia, a letter was read backward."
+      },
+      {
+        "t": "viz",
+        "name": "gg-latlon",
+        "opts": {
+          "mode": "place",
+          "target": [
+            -43,
+            -23
+          ],
+          "step": 15,
+          "snap": 1,
+          "bbox": [
+            -90,
+            -60,
+            0,
+            30
+          ],
+          "lines": [
+            "equator"
+          ]
+        },
+        "cap": "Practice: drag the pin to 23° S, 43° W, then press Check."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Prime meridian (Grokipedia)",
+        "url": "https://grokipedia.com/page/Prime_meridian"
+      },
+      {
+        "name": "C3 Framework for Social Studies State Standards (NCSS, 2013), Geography, Dimension 2, grades 6-8"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

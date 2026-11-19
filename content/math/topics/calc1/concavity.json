@@ -1,0 +1,87 @@
+{
+  "id": "calc1.concavity",
+  "slug": "concavity",
+  "ladder": "math",
+  "course": "calc1",
+  "unit": "applications",
+  "title": "Concavity and the Second Derivative Test",
+  "short": "The sign of f″ tells which way the graph bends.",
+  "trouble": "Students call every point where f″ = 0 an inflection point, without checking a sign change.",
+  "prereqs": [
+    "calc1.first-derivative-test",
+    "calc1.higher-derivatives"
+  ],
+  "xp": 2,
+  "viz": [
+    "derivgraph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Knowing where a graph rises and falls (<a href=\"/math/calculus-1/first-derivative-test/\">Increasing, Decreasing and the First Derivative Test</a>) is not the whole story: a rising graph can bend upward like a cup or downward like a cap. The second derivative from <a href=\"/math/calculus-1/higher-derivatives/\">Higher Derivatives</a> measures the bending."
+      },
+      {
+        "t": "key",
+        "html": "$f$ is <b>concave up</b> where $f'' > 0$ (slopes increasing, graph bends up) and <b>concave down</b> where $f'' < 0$. An <b>inflection point</b> is where the concavity changes. <b>Second derivative test:</b> if $f'(c) = 0$ and $f''(c) > 0$, local min; if $f''(c) < 0$, local max; if $f''(c) = 0$, the test says nothing."
+      },
+      {
+        "t": "why",
+        "html": "$f''$ is the derivative of $f'$, so $f'' > 0$ means the slope is increasing. Walking left to right, the tangent line keeps turning counterclockwise, and the graph curves upward, lying above its tangent lines. At a flat point ($f'(c) = 0$) with $f''(c) > 0$, the slope goes from negative to positive, which is the first derivative test's local min."
+      },
+      {
+        "t": "viz",
+        "name": "derivgraph",
+        "opts": {
+          "f": "x^3-3x",
+          "x": -1.6,
+          "second": true,
+          "xmin": -2.2,
+          "xmax": 2.2,
+          "task": "Find where $f''$ crosses zero and see the graph of $f$ switch from cap to cup there."
+        },
+        "cap": "$f(x) = x^3 - 3x$: $f''(x) = 6x$ is negative for $x < 0$ (cap) and positive for $x > 0$ (cup). The inflection point is at $x = 0$."
+      },
+      {
+        "t": "ex",
+        "title": "Concavity and an inflection point",
+        "q": "For $f(x) = x^3 - 6x^2 + 5$, find the intervals of concavity and the inflection point.",
+        "steps": [
+          "$f'(x) = 3x^2 - 12x$, $f''(x) = 6x - 12$.",
+          "$f'' < 0$ for $x < 2$: concave down. $f'' > 0$ for $x > 2$: concave up.",
+          "The concavity changes at $x = 2$, where $f(2) = 8 - 24 + 5 = -11$."
+        ],
+        "a": "Concave down on $(-\\infty, 2)$, up on $(2, \\infty)$; inflection point $(2, -11)$."
+      },
+      {
+        "t": "ex",
+        "title": "The second derivative test",
+        "q": "Classify the critical numbers of $f(x) = x^3 - 3x$.",
+        "steps": [
+          "$f'(x) = 3x^2 - 3 = 0$ at $x = \\pm 1$. $f''(x) = 6x$.",
+          "$f''(1) = 6 > 0$: local min. $f''(-1) = -6 < 0$: local max."
+        ],
+        "a": "Local max at $x = -1$, local min at $x = 1$."
+      },
+      {
+        "t": "mistake",
+        "html": "Calling every point with $f''(c) = 0$ an inflection point. For $f(x) = x^4$, $f''(x) = 12x^2$ is 0 at $x = 0$, but it is positive on both sides: the graph is a cup all the way through. An inflection point needs a <em>sign change</em> of $f''$. Check the sign on both sides, just as with the first derivative test."
+      },
+      {
+        "t": "note",
+        "html": "When $f''(c) = 0$ at a critical number, fall back on the first derivative test. $x^4$ (min), $-x^4$ (max) and $x^3$ (neither) all have $f'(0) = f''(0) = 0$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 1, 4.5 Derivatives and the Shape of a Graph"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

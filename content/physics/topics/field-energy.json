@@ -1,0 +1,100 @@
+{
+  "id": "em.field-energy",
+  "slug": "field-energy",
+  "ladder": "physics",
+  "course": "em",
+  "unit": "conductors-capacitors",
+  "title": "Energy Stored in the Electric Field",
+  "short": "The energy of a charged capacitor lives in its field, with density u = ½ε₀E².",
+  "trouble": "Students think the energy sits on the charges on the plates, not in the space between them.",
+  "prereqs": [
+    "em.capacitance-geometry",
+    "phys2.capacitor-energy"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-efield"
+  ],
+  "figureArchetype": "FieldFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A charged capacitor stores <a href=\"/physics/physics-2/capacitor-energy/\">energy</a> $U = \\tfrac{1}{2}CV^2$. But where is it? Not in the charges themselves, it turns out, but in the space between the plates, wherever there is electric field. That idea, that fields carry energy, is what lets light carry energy across empty space."
+      },
+      {
+        "t": "key",
+        "html": "An electric field stores energy with density\n        $$u = \\tfrac{1}{2}\\varepsilon_0 E^2\\quad(\\text{J/m}^3),$$\n        and the total is $U = \\int u\\,dV$ over all the space where the field is."
+      },
+      {
+        "t": "why",
+        "html": "Take a <a href=\"/physics/electricity-and-magnetism/capacitance-geometry/\">parallel-plate capacitor</a>: $C = \\varepsilon_0 A/d$ and $V = Ed$. Then\n        $$U = \\tfrac{1}{2}CV^2 = \\tfrac{1}{2}\\frac{\\varepsilon_0 A}{d}(Ed)^2 = \\tfrac{1}{2}\\varepsilon_0 E^2\\,(Ad).$$\n        $Ad$ is the volume between the plates, the only place the field is. So the energy is $\\tfrac{1}{2}\\varepsilon_0 E^2$ per cubic meter of field. The formula is general: it holds for any field, not just a capacitor's."
+      },
+      {
+        "t": "viz",
+        "name": "ph-efield",
+        "opts": {
+          "mode": "capacitor",
+          "A": 0.01,
+          "d": 0.001,
+          "kappa": 3,
+          "V": 12,
+          "battery": false
+        },
+        "cap": "An isolated capacitor. Widen the gap: the charge and the field stay the same, but there is more field-filled volume, so the stored energy grows. The work you do pulling the plates apart goes into that new field."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A strong field",
+        "q": "Dry air breaks down at a field of roughly $3.0 \\times 10^{6}\\ \\text{V/m}$. How much energy is stored per cubic meter in a field that strong?",
+        "steps": [
+          "$u = \\tfrac{1}{2}(8.85 \\times 10^{-12})(3.0 \\times 10^{6})^2 = 39.8\\ \\text{J/m³}$.",
+          "About $40\\ \\text{J}$ per cubic meter: modest, which is one reason air-gap capacitors cannot store much energy."
+        ],
+        "a": "$u \\approx 39.8\\ \\text{J/m³}$"
+      },
+      {
+        "t": "ex",
+        "title": "Two ways to the same energy",
+        "q": "A capacitor with $200\\ \\text{cm}^2$ plates $1.0\\ \\text{mm}$ apart is charged to $100\\ \\text{V}$. Find the stored energy from the field, then check it with $\\tfrac{1}{2}CV^2$.",
+        "steps": [
+          "$E = V/d = 100/0.0010 = 1.0 \\times 10^{5}\\ \\text{V/m}$, so $u = \\tfrac{1}{2}\\varepsilon_0 E^2 = 0.0442\\ \\text{J/m³}$.",
+          "Volume $= Ad = (0.020)(0.0010) = 2.0 \\times 10^{-5}\\ \\text{m}^3$, so $U = 885\\ \\text{nJ}$.",
+          "Check: $C = \\varepsilon_0 A/d = 177\\ \\text{pF}$ and $\\tfrac{1}{2}CV^2 = 885\\ \\text{nJ}$. The same."
+        ],
+        "a": "$U \\approx 885\\ \\text{nJ}$"
+      },
+      {
+        "t": "ex",
+        "title": "A charged sphere's field",
+        "q": "A metal sphere of radius $R$ carries $Q$. Find the energy in its field, and how much of it lies within $2R$ of the center.",
+        "steps": [
+          "Outside, $E = kQ/r^2$; inside the metal, $E = 0$. Shells of volume $4\\pi r^2\\,dr$ hold $u\\,4\\pi r^2\\,dr$.",
+          "$$U = \\int_R^\\infty \\tfrac{1}{2}\\varepsilon_0\\frac{k^2Q^2}{r^4}\\,4\\pi r^2\\,dr = \\frac{kQ^2}{2}\\int_R^\\infty\\frac{dr}{r^2} = \\frac{kQ^2}{2R}$$ (using $4\\pi\\varepsilon_0 k = 1$). That matches $\\tfrac{1}{2}QV$ with $V = kQ/R$.",
+          "Stopping the integral at $2R$ gives $\\dfrac{kQ^2}{2}\\left(\\dfrac{1}{R} - \\dfrac{1}{2R}\\right)$: half the energy lies within one radius of the surface."
+        ],
+        "a": "$U = \\dfrac{kQ^2}{2R}$; half of it within $2R$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>\"The energy sits on the charges on the plates.\"</b> For still charges both pictures give the same total, so it is easy to think the energy is in the charges. But fields can move away from their charges: a radio wave keeps carrying energy long after the antenna's charges have stopped. Check yourself with the isolated capacitor: pulling the plates apart changes neither charge, yet the energy grows, exactly in step with the volume of field."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 2, 8.3 Energy Stored in a Capacitor"
+      },
+      {
+        "name": "MIT OpenCourseWare, 8.02 Physics II: Electricity and Magnetism"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

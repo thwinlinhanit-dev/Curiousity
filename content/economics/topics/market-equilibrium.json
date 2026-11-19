@@ -1,0 +1,101 @@
+{
+  "id": "micro.market-equilibrium",
+  "slug": "market-equilibrium",
+  "ladder": "economics",
+  "course": "micro",
+  "unit": "supply-demand",
+  "title": "Market Equilibrium",
+  "short": "The price where quantity demanded equals quantity supplied, found on a graph or by setting the two equations equal.",
+  "trouble": "Students solve Qd = Qs for the price and then report that number as the quantity, or plug the price into only one equation without checking the other.",
+  "prereqs": [
+    "micro.law-of-supply",
+    "g8.variables-both-sides"
+  ],
+  "xp": 2,
+  "viz": [
+    "ec-market"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Put demand and supply on one graph. Where they cross, buyers' and sellers' plans match. Finding that point with equations is the skill from <a href=\"/math/pre-algebra/variables-both-sides/\">Variables on Both Sides</a>: set the two quantities equal. You know supply from <a href=\"/economics/microeconomics/law-of-supply/\">The Law of Supply</a>."
+      },
+      {
+        "t": "key",
+        "html": "The <b>equilibrium price</b> $P^*$ is the price at which quantity demanded equals quantity supplied; that common amount is the <b>equilibrium quantity</b> $Q^*$. For $Q_d = a - bP$ and $Q_s = c + dP$: $$a - bP = c + dP \\;\\Rightarrow\\; P^* = \\frac{a - c}{b + d}, \\qquad Q^* = a - bP^*.$$"
+      },
+      {
+        "t": "why",
+        "html": "At any other price, the plans don't match, and someone has a reason to change the price. Above $P^*$, sellers offer more than buyers want, unsold goods pile up and sellers cut prices. Below $P^*$, buyers want more than is offered, they bid prices up, and sellers raise them. Only at $P^*$ does nobody have that reason. That is what \"equilibrium\" means: a resting point."
+      },
+      {
+        "t": "viz",
+        "name": "ec-market",
+        "opts": {
+          "demand": {
+            "a": 20,
+            "b": 2
+          },
+          "supply": {
+            "c": -4,
+            "d": 2
+          },
+          "price": 4,
+          "show": [
+            "eq",
+            "gaps"
+          ],
+          "money": true
+        },
+        "cap": "Drag the price line. Away from \\$6 there is a gap between quantity demanded and quantity supplied, and the arrow shows which way the price is pushed."
+      },
+      {
+        "t": "ex",
+        "title": "Solve for the equilibrium",
+        "q": "$Q_d = 20 - 2P$ and $Q_s = -4 + 2P$. Find the equilibrium price and quantity.",
+        "steps": [
+          "Set them equal: $20 - 2P = -4 + 2P$.",
+          "Add $2P$ and 4 to both sides: $24 = 4P$, so $P^* = 6$.",
+          "Quantity: $Q_d = 20 - 2(6) = 8$. Check with supply: $-4 + 2(6) = 8$. ✓"
+        ],
+        "a": "$P^* = \\$6$, $Q^* = 8$."
+      },
+      {
+        "t": "ex",
+        "title": "Inverse forms",
+        "q": "Demand is $P = 15 - Q$ and supply is $P = 3 + 0.5Q$. Find the equilibrium.",
+        "steps": [
+          "Here each equation gives a price, so set the prices equal: $15 - Q = 3 + 0.5Q$.",
+          "$12 = 1.5Q$, so $Q^* = 8$.",
+          "$P^* = 15 - 8 = 7$. Check: $3 + 0.5(8) = 7$. ✓"
+        ],
+        "a": "$Q^* = 8$, $P^* = \\$7$."
+      },
+      {
+        "t": "note",
+        "html": "Equilibrium doesn't mean everyone is happy with the price; it means no one has a reason to change it. Real markets take time to get there, and they keep moving because the curves keep shifting, which is the subject of the next lessons."
+      },
+      {
+        "t": "mistake",
+        "html": "Solving $Q_d = Q_s$ for the price and then reporting that number as the quantity, or plugging the price into only one equation. In the first example, $P = 6$ but $Q = 8$. Check: put $P^*$ into <i>both</i> equations; they must give the same quantity, and that quantity is $Q^*$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, 3.1 Demand, Supply, and Equilibrium in Markets for Goods and Services"
+      },
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, Appendix A The Use of Mathematics in Principles of Economics"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.01 Principles of Microeconomics (scope and sequence)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,81 @@
+{
+  "id": "rocket.nozzles-concept",
+  "slug": "nozzles-concept",
+  "ladder": "physics",
+  "course": "rocket",
+  "unit": "thrust",
+  "title": "Nozzles in Concept",
+  "short": "Why a rocket nozzle narrows and then widens: pressure turns into exhaust speed, and faster exhaust means more thrust from the same mass flow.",
+  "trouble": "Students assume a wider pipe always slows a gas, which is true below the speed of sound but not above it.",
+  "prereqs": [
+    "rocket.rocket-equation",
+    "physsci.pressure"
+  ],
+  "xp": 2,
+  "viz": [
+    "rocket-nozzle"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "note",
+        "html": "<b>From the story.</b> The guided-missile book the boys studied was written for engineers, far beyond model rockets. One idea from that world is how a rocket turns hot, high-pressure gas into speed. Here it is as physics only, with no building details. (More in <a href=\"/october-sky/\">October Sky</a>.)"
+      },
+      {
+        "t": "p",
+        "html": "Inside a rocket engine the gas is at high pressure. Pressure pushes the gas toward the opening, and the nozzle's job is to turn as much of that pressure as possible into exhaust speed, because faster exhaust means more thrust from the same mass flow."
+      },
+      {
+        "t": "p",
+        "html": "Gas behaves in a surprising way. Slower than the speed of sound, a narrowing passage speeds it up. At the narrowest point, the <b>throat</b>, it reaches the speed of sound. Beyond that, faster than sound, a <em>widening</em> passage speeds it up further, while its pressure and temperature fall. That is why rocket nozzles narrow and then flare out."
+      },
+      {
+        "t": "key",
+        "html": "Thrust: $T = \\dot m\\,v_e + (p_e - p_a)A_e$. The first part is momentum carried away each second; the second is the pressure at the exit $p_e$ compared with the outside air $p_a$, over the exit area $A_e$. Faster exhaust and well-matched exit pressure both mean more thrust."
+      },
+      {
+        "t": "viz",
+        "name": "rocket-nozzle",
+        "cap": "Tracer dots speed up the whole way through: in the narrowing part (slower than sound), through the throat (the speed of sound), and in the widening part (faster than sound)."
+      },
+      {
+        "t": "ex",
+        "title": "Two parts of thrust",
+        "q": "An engine has $\\dot m = 2\\ \\text{kg/s}$, $v_e = 2{,}500\\ \\text{m/s}$, $p_e = 80{,}000\\ \\text{Pa}$, $p_a = 101{,}000\\ \\text{Pa}$ and $A_e = 0.1\\ \\text{m}^2$. Find the thrust.",
+        "steps": [
+          "Momentum part: $2(2{,}500) = 5{,}000\\ \\text{N}$.",
+          "Pressure part: $(80{,}000 - 101{,}000)(0.1) = -2{,}100\\ \\text{N}$.",
+          "Total $2{,}900\\ \\text{N}$. At sea level this exit is too large; the outside air pushes back. High up, where $p_a$ is small, the same engine does better."
+        ],
+        "a": "$2{,}900\\ \\text{N}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Assuming a wider pipe always slows a gas. That is true below the speed of sound and backwards above it."
+      },
+      {
+        "t": "note",
+        "html": "This lesson is about the physics of flow only. Making nozzles or motors is not something to try; use certified, commercially made motors."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "NASA Glenn Research Center, Beginner's Guide to Aeronautics: Nozzle Design",
+        "url": "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/nozzle-design"
+      },
+      {
+        "name": "Smithsonian Air & Space, “The Big Creek Missile Agency” (Homer Hickam's account of the Rocket Boys)",
+        "url": "https://www.smithsonianmag.com/air-space-magazine/the-big-creek-missile-agency-85069719/"
+      },
+      {
+        "name": "National Association of Rocketry, Model Rocket Safety Code",
+        "url": "https://nar.org/ModelRocketSafetyCode"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

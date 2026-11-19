@@ -1,0 +1,103 @@
+{
+  "id": "phys1.rotational-second-law",
+  "slug": "rotational-second-law",
+  "ladder": "physics",
+  "course": "phys1",
+  "unit": "rotation",
+  "title": "Newton's Second Law for Rotation",
+  "short": "The net torque equals Iα.",
+  "trouble": "Students use the force instead of the torque, or the mass instead of the rotational inertia.",
+  "prereqs": [
+    "phys1.rotational-inertia",
+    "phys1.second-law-systems"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-rotation",
+    "ph-torque"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/physics/physics-1/second-law-systems/\">Newton's second law</a> says a net force gives a mass an acceleration. The rotational version swaps each piece for its twin: net torque, <a href=\"/physics/physics-1/rotational-inertia/\">rotational inertia</a> and angular acceleration."
+      },
+      {
+        "t": "why",
+        "html": "For one bead of mass $m$ at radius $r$, a push along its circle gives $\\tau = mr^2\\alpha$. A rigid object is many beads that all share the same $\\alpha$, so the torques add: $\\Sigma\\tau = (\\Sigma mr^2)\\alpha = I\\alpha$. The forces the beads exert on each other come in third-law pairs along the lines between them, and their torques cancel, so only outside torques remain."
+      },
+      {
+        "t": "key",
+        "html": "$$\\role[net torque]{torque}{\\Sigma\\tau} = \\role[rotational inertia]{mass}{I}\\role{angacc}{\\alpha}.$$ The net torque about an axis equals the rotational inertia about that axis times the angular acceleration. Torque plays the role of force and $I$ plays the role of mass. Use signs: counterclockwise positive."
+      },
+      {
+        "t": "viz",
+        "name": "ph-rotation",
+        "opts": {
+          "mode": "pulley",
+          "m": 1,
+          "M": 2,
+          "R": 0.2
+        },
+        "cap": "A falling mass pulls a cord wrapped around a heavy disk. The cord's tension gives the torque $TR$, and the disk's $I = \\tfrac{1}{2}MR^2$ sets how quickly it spins up."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A pulled string",
+        "q": "A string wrapped around a $5.0\\ \\text{kg}$ solid disk of radius $0.20\\ \\text{m}$ is pulled with $10\\ \\text{N}$. The disk turns on a fixed, frictionless axle. Find $\\alpha$.",
+        "steps": [
+          "Torque: the string pulls along the rim, so $\\tau = RF = (0.20)(10) = 2.0\\ \\text{N·m}$.",
+          "$I = \\tfrac{1}{2}(5.0)(0.20)^2 = 0.10\\ \\text{kg·m}^2$.",
+          "$\\alpha = \\dfrac{\\tau}{I} = \\dfrac{2.0}{0.10} = 20\\ \\text{rad/s}^2$."
+        ],
+        "a": "$20\\ \\text{rad/s}^2$"
+      },
+      {
+        "t": "ex",
+        "title": "Braking a wheel",
+        "q": "A wheel with $I = 1.2\\ \\text{kg·m}^2$ turns at $120$ rpm. A brake stops it in $6.0\\ \\text{s}$. What steady torque does the brake apply?",
+        "steps": [
+          "$\\omega_0 = 120 \\times \\dfrac{2\\pi}{60} = 12.6\\ \\text{rad/s}$.",
+          "$\\alpha = \\dfrac{0 - 12.6}{6.0} = -2.09\\ \\text{rad/s}^2$.",
+          "$\\tau = I\\alpha = (1.2)(-2.09) = -2.5\\ \\text{N·m}$: $2.5\\ \\text{N·m}$ against the turning."
+        ],
+        "a": "$2.5\\ \\text{N·m}$"
+      },
+      {
+        "t": "ex",
+        "title": "Two ropes, opposite ways",
+        "q": "A wheel ($I = 0.10\\ \\text{kg·m}^2$) has a rope at radius $0.10\\ \\text{m}$ pulling $20\\ \\text{N}$ counterclockwise and one at $0.25\\ \\text{m}$ pulling $10\\ \\text{N}$ clockwise. Find $\\alpha$.",
+        "steps": [
+          "$$\\Sigma\\tau = (0.10)(20) - (0.25)(10) = 2.0 - 2.5 = -0.5\\ \\text{N·m}.$$",
+          "$\\alpha = \\dfrac{-0.5}{0.10} = -5.0\\ \\text{rad/s}^2$: clockwise, though the counterclockwise rope pulls twice as hard."
+        ],
+        "a": "$-5.0\\ \\text{rad/s}^2$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Using the force instead of the torque, or the mass instead of the rotational inertia.</b> Writing $\\alpha = F/m$ gives units of $\\text{m/s}^2$, not $\\text{rad/s}^2$: a sign the formula doesn't fit. In rotation, every force enters through its torque ($rF\\sin\\theta$), and every mass through $I$. Check the units: $\\text{N·m} \\div \\text{kg·m}^2 = \\text{1/s}^2$, which is rad/s²."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Physics 2e, Section 10.3 (Dynamics of Rotational Motion: Rotational Inertia)"
+      },
+      {
+        "name": "OpenStax University Physics Volume 1, Section 10.7 (Newton's Second Law for Rotation)"
+      },
+      {
+        "name": "College Board, AP Physics 1 Course and Exam Description, Unit 5: Torque and Rotational Dynamics"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,105 @@
+{
+  "id": "g6.one-step-add-subtract",
+  "slug": "one-step-add-subtract",
+  "ladder": "math",
+  "course": "g6",
+  "unit": "equations",
+  "title": "One-Step Equations with Adding and Subtracting",
+  "short": "Undo adding by subtracting the same amount from both sides.",
+  "trouble": "Students subtract from one side only, or add when they should subtract.",
+  "prereqs": [
+    "g6.solutions-of-equations"
+  ],
+  "xp": 1,
+  "viz": [
+    "balance",
+    "tapediagram"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You can check a <a href=\"/math/grade-6/solutions-of-equations/\">solution</a> by substituting. Now you will find it. Think of the equation as a balance: both sides weigh the same."
+      },
+      {
+        "t": "key",
+        "html": "To undo adding a number, subtract it from <b>both</b> sides. To undo subtracting a number, add it to both sides. $x + 5 = 12$ becomes $x = 12 - 5 = 7$."
+      },
+      {
+        "t": "viz",
+        "name": "balance",
+        "opts": {
+          "eq": "x + 5 = 12",
+          "task": true
+        },
+        "cap": "Take the same thing off both pans to keep the scale level. Try \"One side only\" to see it tip."
+      },
+      {
+        "t": "why",
+        "html": "If two amounts are equal and you take 5 away from each, they are still equal. Take 5 from only one side and the scale tips: the sides are no longer equal. Subtracting 5 is the right move because it undoes adding 5: $(x + 5) - 5 = x$, which leaves $x$ alone on its side."
+      },
+      {
+        "t": "ex",
+        "title": "Undo adding",
+        "q": "Solve $x + 5 = 12$.",
+        "steps": [
+          "Subtract 5 from both sides: $x + 5 - 5 = 12 - 5$.",
+          "$x = 7$.",
+          "Check: $7 + 5 = 12$."
+        ],
+        "a": "$x = 7$"
+      },
+      {
+        "t": "ex",
+        "title": "Undo subtracting",
+        "q": "Solve $n - 3.5 = 8.2$.",
+        "steps": [
+          "Add 3.5 to both sides: $n = 8.2 + 3.5$.",
+          "$n = 11.7$.",
+          "Check: $11.7 - 3.5 = 8.2$."
+        ],
+        "a": "$n = 11.7$"
+      },
+      {
+        "t": "ex",
+        "title": "With fractions",
+        "q": "Solve $\\frac{2}{3} + y = \\frac{5}{4}$.",
+        "steps": [
+          "Subtract $\\frac{2}{3}$ from both sides: $y = \\frac{5}{4} - \\frac{2}{3}$.",
+          "Common denominator 12: $\\frac{15}{12} - \\frac{8}{12} = \\frac{7}{12}$.",
+          "Check: $\\frac{8}{12} + \\frac{7}{12} = \\frac{15}{12} = \\frac{5}{4}$."
+        ],
+        "a": "$y = \\frac{7}{12}$"
+      },
+      {
+        "t": "viz",
+        "name": "tapediagram",
+        "opts": {
+          "model": "partwhole",
+          "whole": 12,
+          "a": 5,
+          "unknown": "b"
+        },
+        "cap": "The same equation as a tape: 12 is made of 5 and the unknown part, $x$."
+      },
+      {
+        "t": "mistake",
+        "html": "Subtracting on one side only, or adding when you should subtract. For $x + 5 = 12$, writing $x = 12 + 5 = 17$ undoes nothing. Quick check: substitute your answer. $17 + 5 = 22$, not 12, so it is wrong; $7 + 5 = 12$ is right."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Prealgebra 2e, section 2.3 Solving Equations Using the Subtraction and Addition Properties of Equality"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 6.EE.B.7: solving one-step equations"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

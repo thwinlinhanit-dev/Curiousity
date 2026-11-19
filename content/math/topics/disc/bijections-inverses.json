@@ -1,0 +1,127 @@
+{
+  "id": "disc.bijections-inverses",
+  "slug": "bijections-inverses",
+  "ladder": "math",
+  "course": "disc",
+  "unit": "sets-functions",
+  "title": "Bijections and Inverse Functions",
+  "short": "A function has an inverse exactly when it is one-to-one and onto, and (g ∘ f)⁻¹ = f⁻¹ ∘ g⁻¹.",
+  "trouble": "Students undo a composition in the order it was applied instead of the reverse order.",
+  "prereqs": [
+    "disc.injective-surjective",
+    "alg2.inverse-functions"
+  ],
+  "xp": 2,
+  "viz": [
+    "disc-relation"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In algebra you found <a href=\"/math/algebra-2/inverse-functions/\">inverse functions</a> by swapping $x$ and $y$ and solving. Now we can say exactly when that works, using <a href=\"/math/discrete-math/injective-surjective/\">one-to-one and onto</a>, and how inverses behave when functions are chained."
+      },
+      {
+        "t": "key",
+        "html": "A function $f : A \\to B$ has an <b>inverse</b> $f^{-1} : B \\to A$, with $f^{-1}(f(a)) = a$ and $f(f^{-1}(b)) = b$, exactly when $f$ is a bijection. For bijections $f : A \\to B$ and $g : B \\to C$, $(g \\circ f)^{-1} = f^{-1} \\circ g^{-1}$: undo the last step first."
+      },
+      {
+        "t": "why",
+        "html": "Reverse every arrow of $f$. For the reversed arrows to form a function from $B$, each element of $B$ needs exactly one arrow coming back. \"At least one\" is exactly onto; \"at most one\" is exactly one-to-one. So the inverse exists precisely for bijections. For the composition, $g \\circ f$ means \"apply $f$, then $g$.\" To get back you must peel off $g$ first, then $f$, just as you take off your shoes before your socks."
+      },
+      {
+        "t": "viz",
+        "name": "disc-relation",
+        "opts": {
+          "mode": "map",
+          "A": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "B": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "pairs": [
+            [
+              "1",
+              "c"
+            ],
+            [
+              "2",
+              "a"
+            ],
+            [
+              "3",
+              "d"
+            ],
+            [
+              "4",
+              "b"
+            ]
+          ]
+        },
+        "cap": "A bijection. Press \"Reverse the arrows\": every element of $B$ has exactly one arrow back, so the reversed arrows form the inverse function. Remove an arrow, or add one, and see the inverse break."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Inverting a formula",
+        "q": "Show that $f : \\mathbb{R} \\to \\mathbb{R}$, $f(x) = 3x - 2$, is a bijection, and find $f^{-1}$.",
+        "steps": [
+          "Solve $y = 3x - 2$ for $x$: $x = \\frac{y + 2}{3}$. Every real $y$ gives exactly one real $x$, so $f$ is onto and one-to-one.",
+          "So $f^{-1}(y) = \\frac{y + 2}{3}$, or, renaming the variable, $f^{-1}(x) = \\frac{x + 2}{3}$.",
+          "Check: $f(f^{-1}(x)) = 3 \\cdot \\frac{x + 2}{3} - 2 = x$."
+        ],
+        "a": "$f^{-1}(x) = \\frac{x + 2}{3}$"
+      },
+      {
+        "t": "ex",
+        "title": "Undoing a composition",
+        "q": "Let $f(x) = 2x + 1$ and $g(x) = x^{3}$ on $\\mathbb{R}$. Find $(g \\circ f)^{-1}(x)$.",
+        "steps": [
+          "$(g \\circ f)(x) = (2x + 1)^{3}$: first double and add $1$, then cube.",
+          "Undo in reverse order: first undo the cube, $g^{-1}(x) = \\sqrt[3]{x}$; then undo $f$, $f^{-1}(x) = \\frac{x - 1}{2}$.",
+          "So $(g \\circ f)^{-1}(x) = f^{-1}(g^{-1}(x)) = \\frac{\\sqrt[3]{x} - 1}{2}$.",
+          "Check at $x = 2$: $(2 \\cdot 2 + 1)^{3} = 125$, and $\\frac{\\sqrt[3]{125} - 1}{2} = \\frac{5 - 1}{2} = 2$."
+        ],
+        "a": "$\\frac{\\sqrt[3]{x} - 1}{2}$"
+      },
+      {
+        "t": "ex",
+        "title": "A permutation and its inverse",
+        "q": "The bijection $f$ on $\\{1, 2, 3, 4\\}$ has $f(1) = 3$, $f(2) = 1$, $f(3) = 4$, $f(4) = 2$. Find $f^{-1}(1)$ and $f^{-1}(4)$.",
+        "steps": [
+          "$f^{-1}(1)$ is the input that $f$ sends to $1$: $f(2) = 1$, so $f^{-1}(1) = 2$.",
+          "$f(3) = 4$, so $f^{-1}(4) = 3$."
+        ],
+        "a": "$2$ and $3$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Undoing a composition in the original order.</b> $(g \\circ f)^{-1}$ is not $g^{-1} \\circ f^{-1}$; that would try to undo $f$ while $g$'s effect is still on top. In the example, $g^{-1}(f^{-1}(125)) = \\sqrt[3]{62}$, which is not $2$. Check by plugging one number through: apply $g \\circ f$, then your inverse, and see whether you get the number back."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Oscar Levin, Discrete Mathematics: An Open Introduction (3rd ed.), section \"Functions\" (inverse functions)"
+      },
+      {
+        "name": "MIT OpenCourseWare 6.042J Mathematics for Computer Science (Lehman, Leighton and Meyer), chapter \"Mathematical Data Types\" (bijections)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

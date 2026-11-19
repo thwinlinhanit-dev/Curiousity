@@ -1,0 +1,115 @@
+{
+  "id": "imicro.auctions",
+  "slug": "auctions",
+  "ladder": "economics",
+  "course": "imicro",
+  "unit": "games",
+  "title": "Auctions",
+  "short": "In a second-price sealed-bid auction, bidding your true value is a dominant strategy; in a first-price auction bidders shade their bids.",
+  "trouble": "Students shade their bids in a second-price auction, which can only cost them a profitable win.",
+  "prereqs": [
+    "imicro.pure-nash",
+    "micro.dominant-strategies"
+  ],
+  "xp": 2,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Auctions sell spectrum licenses, artwork, ad slots and government bonds. Their rules are games, and the ideas from <a href=\"/economics/intermediate-microeconomics/pure-nash/\">Best Responses and Nash Equilibrium</a> and <a href=\"/economics/microeconomics/dominant-strategies/\">Payoff Matrices and Dominant Strategies</a> predict how people bid."
+      },
+      {
+        "t": "key",
+        "html": "In a <b>second-price sealed-bid auction</b> (highest bid wins, pays the second-highest bid), bidding your true value is a dominant strategy. In a <b>first-price</b> auction (winner pays her own bid), bidders shade their bids; with $n$ bidders whose values are independent and uniform, the equilibrium bid is $b(v) = \\dfrac{n - 1}{n}v$. With values uniform on $[0, V]$, both formats give the seller the same expected revenue, $\\dfrac{n - 1}{n + 1}V$ (revenue equivalence)."
+      },
+      {
+        "t": "why",
+        "html": "In a second-price auction your bid decides only <i>whether</i> you win; the price is set by someone else's bid $B$. Bidding your value $v$ wins exactly when $B < v$, the cases where winning is profitable. Bidding less can only lose some of those profitable wins; bidding more can only add wins at prices above $v$. In a first-price auction your bid is your price, so you trade a lower chance of winning for a bigger margin, and you shade more when there are fewer rivals."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "fns": [
+            {
+              "f": "(n-1)/n*x",
+              "label": "bid"
+            },
+            {
+              "f": "x",
+              "label": "value",
+              "dash": true
+            }
+          ],
+          "params": {
+            "n": [
+              2,
+              10,
+              2,
+              1
+            ]
+          },
+          "xmin": 0,
+          "xmax": 100,
+          "ymin": 0,
+          "ymax": 100,
+          "xlabel": "value",
+          "ylabel": "bid",
+          "roots": false,
+          "intersections": false,
+          "zoom": false
+        },
+        "cap": "Equilibrium first-price bids with $n$ bidders and values uniform on [0, 100]. With 2 bidders each bids half her value; as $n$ grows, bids approach values."
+      },
+      {
+        "t": "ex",
+        "title": "Second price",
+        "q": "Sealed bids: Ana \\$120, Ben \\$90, Chloe \\$75. Ana's value is \\$130.",
+        "steps": [
+          "Ana wins and pays the second-highest bid, \\$90.",
+          "Her surplus: $130 - 90 = 40$. Had she bid \\$100 or \\$200, she would still win and still pay \\$90."
+        ],
+        "a": "Ana pays \\$90."
+      },
+      {
+        "t": "ex",
+        "title": "First price",
+        "q": "Four bidders, values uniform on [0, 100]. What does a bidder with value 80 bid, and what is the seller's expected revenue?",
+        "steps": [
+          "$b = \\tfrac{3}{4}(80) = 60$.",
+          "Expected revenue: $\\dfrac{4 - 1}{4 + 1}(100) = 60$, the same as in a second-price auction, where the price is the expected second-highest value."
+        ],
+        "a": "Bid 60; expected revenue 60."
+      },
+      {
+        "t": "mistake",
+        "html": "Shading your bid in a second-price auction \"to keep some surplus.\" Your surplus there is your value minus the <i>second</i> bid, which your own bid doesn't change. Shading only matters when it makes you lose an auction you would have won at a price below your value. Check: compare the outcome of bidding your value with any other bid for every possible highest rival bid; truthful bidding is never worse."
+      },
+      {
+        "t": "note",
+        "html": "William Vickrey analyzed the second-price auction in 1961. Revenue equivalence needs strong assumptions (independent private values, risk-neutral bidders, symmetric bidders); when they fail, for example with risk-averse bidders, first-price auctions tend to raise more."
+      },
+      {
+        "t": "p",
+        "html": "Try different formats in the <a href=\"/business/game-theory/auctions/\">Auctions</a> chapter of Game Theory."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "MIT OpenCourseWare 14.12 Economic Applications of Game Theory (course scope)"
+      },
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, ch. 10.2 Oligopoly (game theory)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

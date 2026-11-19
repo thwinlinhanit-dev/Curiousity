@@ -1,0 +1,92 @@
+/* The Lab Notebook — design tokens (PHYSICS_SPEC/04) */
+:root {
+  --paper: #f5f1e8;
+  --paper-2: #ebe5d8;
+  --ink: #1a1d21;
+  --ink-2: #4a4f55;
+  --ink-3: #5f656b;
+  --rule: #d8d2c4;
+  --signal: #a8321f;
+  --danger: #8e1b12;
+  --danger-on: #ffffff;
+  --on-signal: #ffffff;
+  --velocity: #2e6fb7;
+  --accel: #c8472f;
+  --displacement: #1a1d21;
+  --mastered: #3e7d5a;
+  --underway: #8a6410;
+  --review: #6b3fa0;
+  --notstarted: #b9b3a6;
+
+  --font-display: ui-serif, Georgia, "Times New Roman", serif;
+  --font-body: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "IBM Plex Mono", "JetBrains Mono", ui-monospace, monospace;
+
+  --sp-1: 4px; --sp-2: 8px; --sp-3: 12px; --sp-4: 16px;
+  --sp-5: 24px; --sp-6: 32px; --sp-7: 48px; --sp-8: 64px;
+  --radius: 5px;
+
+  --fs-0: 13px; --fs-1: 15px; --fs-2: 18px;
+  --fs-3: 24px; --fs-4: 34px; --fs-5: 48px;
+}
+
+/* "The Instrument" — dark slate canvas, cyan velocity, amber acceleration. */
+[data-theme="dark"] {
+  --paper: #111820;
+  --paper-2: #1b2530;
+  --ink: #eef1f3;
+  --ink-2: #b6c0c9;
+  --ink-3: #9ba8b5;
+  --rule: #2c3845;
+  --signal: #ff7a5c;
+  --danger: #ff6b5b;
+  --danger-on: #1b100c;
+  --on-signal: #1b100c;
+  --velocity: #5ec8e8;
+  --accel: #f0a35e;
+  --displacement: #eef1f3;
+  --mastered: #6dd3a0;
+  --underway: #e8c464;
+  --review: #b695f0;
+  --notstarted: #5b6875;
+}
+
+/* Respect reduced motion across the whole app. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--fs-1);
+  line-height: 1.6;
+}
+button, input, select, textarea { font: inherit; }
+@media (max-width: 640px) {
+  input, select, textarea { font-size: 16px; }
+}
+:focus-visible { outline: 2px solid var(--signal); outline-offset: 2px; }
+.skip-link {
+  position: absolute; left: var(--sp-3); top: -100px; z-index: 100;
+  background: var(--paper); color: var(--signal); border: 1px solid var(--signal);
+  padding: var(--sp-2) var(--sp-3); border-radius: var(--radius); text-decoration: none;
+}
+.skip-link:focus { top: var(--sp-2); }
+.theme-switching *, .theme-switching *::before, .theme-switching *::after {
+  transition: none !important; animation: none !important;
+}
+.tabular, .progress-stats b, .step-counter, .figure-controls [aria-live] { font-variant-numeric: tabular-nums; }
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}

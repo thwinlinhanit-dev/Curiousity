@@ -1,0 +1,438 @@
+{
+  "key": "memsys",
+  "ladder": "memory",
+  "title": "Memory Systems",
+  "short": "Memory Systems",
+  "after": [
+    "memsk"
+  ],
+  "units": [
+    {
+      "key": "pegs",
+      "title": "Number Pegs",
+      "blurb": "Peg systems: a fixed picture for each number, by rhyme or by shape, so items can be hung on positions."
+    },
+    {
+      "key": "major",
+      "title": "The Major System",
+      "blurb": "Ten consonant sounds for the ten digits: turning numbers into words and words back into numbers, a 00 to 99 list, long numbers and dates."
+    },
+    {
+      "key": "cards",
+      "title": "Cards and PAO",
+      "blurb": "A code for every card, the person-action-object method, and counting images and stops for a deck."
+    },
+    {
+      "key": "journeys",
+      "title": "Journeys and Palaces",
+      "blurb": "Long routes, keeping their order, how many stops a job needs, and reusing palaces without mix-ups."
+    },
+    {
+      "key": "links",
+      "title": "Links and Stories",
+      "blurb": "The link method, the story method, and choosing the right system for a list."
+    },
+    {
+      "key": "words",
+      "title": "Poems and Speeches",
+      "blurb": "First-letter cues, learning verse line by line, and speaking from a journey of key points."
+    },
+    {
+      "key": "training",
+      "title": "How Memory Athletes Train",
+      "blurb": "Memory competitions, what the 2017 training study found, and a sensible training plan."
+    }
+  ],
+  "topics": [
+    {
+      "id": "memsys.peg-idea",
+      "slug": "peg-idea",
+      "course": "memsys",
+      "unit": "pegs",
+      "title": "What a Peg System Is",
+      "short": "A peg system gives each number a fixed, easy picture; to remember an item at a position, you hang it on that number's peg.",
+      "prereqs": [
+        "memsk.palace-basics"
+      ],
+      "viz": [
+        "mm-palace"
+      ]
+    },
+    {
+      "id": "memsys.number-rhyme",
+      "slug": "number-rhyme",
+      "course": "memsys",
+      "unit": "pegs",
+      "title": "Number-Rhyme Pegs",
+      "short": "Each number from 1 to 10 has a peg word that rhymes with it: one-bun, two-shoe, three-tree, and so on.",
+      "prereqs": [
+        "memsys.peg-idea"
+      ],
+      "viz": [
+        "mm-card"
+      ]
+    },
+    {
+      "id": "memsys.number-shape",
+      "slug": "number-shape",
+      "course": "memsys",
+      "unit": "pegs",
+      "title": "Number-Shape Pegs",
+      "short": "Each digit gets a peg that looks like its shape: 2 is a swan, 8 is a snowman, 5 is a hook.",
+      "prereqs": [
+        "memsys.peg-idea"
+      ],
+      "viz": [
+        "mm-card"
+      ]
+    },
+    {
+      "id": "memsys.peg-lists",
+      "slug": "peg-lists",
+      "course": "memsys",
+      "unit": "pegs",
+      "title": "Using Pegs for a List",
+      "short": "With pegs you can recall a list in order, backward, or by position; ten pegs hold ten items.",
+      "prereqs": [
+        "memsys.number-rhyme",
+        "memsys.number-shape"
+      ],
+      "viz": [
+        "mm-card"
+      ]
+    },
+    {
+      "id": "memsys.major-sounds",
+      "slug": "major-sounds",
+      "course": "memsys",
+      "unit": "major",
+      "title": "The Ten Sounds",
+      "short": "The Major System gives each digit a consonant sound: 0 s/z, 1 t/d, 2 n, 3 m, 4 r, 5 l, 6 j/sh/ch, 7 k/g, 8 f/v, 9 p/b.",
+      "prereqs": [
+        "memsys.peg-idea"
+      ],
+      "viz": [
+        "mm-card"
+      ]
+    },
+    {
+      "id": "memsys.major-rules",
+      "slug": "major-rules",
+      "course": "memsys",
+      "unit": "major",
+      "title": "Sounds, Not Spelling",
+      "short": "Code what you hear: silent letters count for nothing, a double letter that makes one sound is one digit, and c, g, x follow their sound.",
+      "prereqs": [
+        "memsys.major-sounds"
+      ],
+      "viz": [
+        "mm-card"
+      ]
+    },
+    {
+      "id": "memsys.digits-to-sounds",
+      "slug": "digits-to-sounds",
+      "course": "memsys",
+      "unit": "major",
+      "title": "Digits to Sounds",
+      "short": "To turn a number into sounds, take each digit in order and write its consonant sound.",
+      "prereqs": [
+        "memsys.major-sounds"
+      ],
+      "viz": [
+        "mm-chunks"
+      ]
+    },
+    {
+      "id": "memsys.decode-words",
+      "slug": "decode-words",
+      "course": "memsys",
+      "unit": "major",
+      "title": "Words to Digits",
+      "short": "To read a Major word as a number, say it and turn each consonant sound into its digit.",
+      "prereqs": [
+        "memsys.major-rules",
+        "memsys.digits-to-sounds"
+      ],
+      "viz": [
+        "mm-card"
+      ]
+    },
+    {
+      "id": "memsys.major-list",
+      "slug": "major-list",
+      "course": "memsys",
+      "unit": "major",
+      "title": "Your 00 to 99 List",
+      "short": "Most users fix one picture word for every two-digit number, 00 to 99, and learn it as a big peg list.",
+      "prereqs": [
+        "memsys.decode-words"
+      ],
+      "viz": [
+        "mm-chunks"
+      ]
+    },
+    {
+      "id": "memsys.long-numbers",
+      "slug": "long-numbers",
+      "course": "memsys",
+      "unit": "major",
+      "title": "Long Numbers",
+      "short": "Split a long number into pairs, turn each pair into its list word, and place the pictures along a journey or chain them in a story.",
+      "prereqs": [
+        "memsys.major-list",
+        "memsk.palace-walk"
+      ],
+      "viz": [
+        "mm-chunks",
+        "mm-palace"
+      ]
+    },
+    {
+      "id": "memsys.dates",
+      "slug": "dates",
+      "course": "memsys",
+      "unit": "major",
+      "title": "Dates and Years",
+      "short": "A year is four digits: two Major words in one image, tied to the event.",
+      "prereqs": [
+        "memsys.major-list"
+      ],
+      "viz": [
+        "mm-card"
+      ]
+    },
+    {
+      "id": "memsys.card-codes",
+      "slug": "card-codes",
+      "course": "memsys",
+      "unit": "cards",
+      "title": "A Code for Every Card",
+      "short": "Before memorizing a deck you fix one image for each of the 52 cards, so seeing a card brings its image at once.",
+      "prereqs": [
+        "memsys.major-list"
+      ],
+      "viz": [
+        "mm-card"
+      ]
+    },
+    {
+      "id": "memsys.pao",
+      "slug": "pao",
+      "course": "memsys",
+      "unit": "cards",
+      "title": "Person, Action, Object",
+      "short": "In PAO, each card or number gets a person, an action and an object; three cards in a row make one picture.",
+      "prereqs": [
+        "memsys.card-codes"
+      ],
+      "viz": [
+        "mm-card"
+      ]
+    },
+    {
+      "id": "memsys.pao-capacity",
+      "slug": "pao-capacity",
+      "course": "memsys",
+      "unit": "cards",
+      "title": "Counting Images and Stops",
+      "short": "Count pictures by dividing items by items per picture, then stops by dividing pictures by pictures per stop, rounding up each time.",
+      "prereqs": [
+        "memsys.pao",
+        "memsys.long-numbers"
+      ],
+      "viz": [
+        "mm-palace"
+      ]
+    },
+    {
+      "id": "memsys.journeys",
+      "slug": "journeys",
+      "course": "memsys",
+      "unit": "journeys",
+      "title": "Building a Long Journey",
+      "short": "A journey is a memory palace stretched across many rooms or places, with stops in a fixed order, often numbered in fives.",
+      "prereqs": [
+        "memsk.palace-route",
+        "memsys.peg-lists"
+      ],
+      "viz": [
+        "mm-palace"
+      ]
+    },
+    {
+      "id": "memsys.journey-order",
+      "slug": "journey-order",
+      "course": "memsys",
+      "unit": "journeys",
+      "title": "Keeping a Journey in Order",
+      "short": "A journey's power is its order: each stop has a number, so you can recall forward, backward, or from any stop.",
+      "prereqs": [
+        "memsys.journeys"
+      ],
+      "viz": [
+        "mm-palace"
+      ]
+    },
+    {
+      "id": "memsys.palace-capacity",
+      "slug": "palace-capacity",
+      "course": "memsys",
+      "unit": "journeys",
+      "title": "How Many Stops?",
+      "short": "Work out how many stops a job needs, and how much a palace of a given size holds.",
+      "prereqs": [
+        "memsys.journey-order",
+        "memsys.pao-capacity"
+      ],
+      "viz": [
+        "mm-palace"
+      ]
+    },
+    {
+      "id": "memsys.reuse-palaces",
+      "slug": "reuse-palaces",
+      "course": "memsys",
+      "unit": "journeys",
+      "title": "Reusing Palaces",
+      "short": "A palace can be reused once old images fade; competitors rotate several journeys so lists don't blur together.",
+      "prereqs": [
+        "memsys.journey-order"
+      ],
+      "viz": [
+        "mm-palace"
+      ]
+    },
+    {
+      "id": "memsys.link-method",
+      "slug": "link-method",
+      "course": "memsys",
+      "unit": "links",
+      "title": "The Link Method",
+      "short": "Link each item to the next with a vivid picture, so each one leads to the one after it.",
+      "prereqs": [
+        "memsk.make-it-vivid"
+      ],
+      "viz": [
+        "mm-card"
+      ]
+    },
+    {
+      "id": "memsys.story-method",
+      "slug": "story-method",
+      "course": "memsys",
+      "unit": "links",
+      "title": "The Story Method",
+      "short": "Turn the list into one short, silly story in which each item causes the next.",
+      "prereqs": [
+        "memsys.link-method"
+      ],
+      "viz": [
+        "mm-card"
+      ]
+    },
+    {
+      "id": "memsys.choose-system",
+      "slug": "choose-system",
+      "course": "memsys",
+      "unit": "links",
+      "title": "Which System Fits?",
+      "short": "Pick by the job: links and stories for short lists, pegs for numbered lists, journeys for long ordered lists, the Major System for numbers, PAO for cards.",
+      "prereqs": [
+        "memsys.story-method",
+        "memsys.pao",
+        "memsys.journeys"
+      ],
+      "viz": [
+        "mm-palace"
+      ]
+    },
+    {
+      "id": "memsys.first-letters",
+      "slug": "first-letters",
+      "course": "memsys",
+      "unit": "words",
+      "title": "First-Letter Cues",
+      "short": "Write just the first letter of each word of a line; reading the letters forces you to recall the words.",
+      "prereqs": [
+        "memsk.acrostics"
+      ],
+      "viz": [
+        "mm-card"
+      ]
+    },
+    {
+      "id": "memsys.poem-by-line",
+      "slug": "poem-by-line",
+      "course": "memsys",
+      "unit": "words",
+      "title": "Learning a Poem Line by Line",
+      "short": "Build up a poem cumulatively: learn line 1, then lines 1 and 2, then 1 to 3, always reciting from the start before adding.",
+      "prereqs": [
+        "memsys.first-letters"
+      ],
+      "viz": [
+        "mm-card"
+      ]
+    },
+    {
+      "id": "memsys.speech-outline",
+      "slug": "speech-outline",
+      "course": "memsys",
+      "unit": "words",
+      "title": "Speaking From a Journey",
+      "short": "For a speech, memorize the key points in order on a journey, and the opening and closing word for word; speak the rest naturally.",
+      "prereqs": [
+        "memsys.choose-system",
+        "memsys.poem-by-line"
+      ],
+      "viz": [
+        "mm-palace"
+      ]
+    },
+    {
+      "id": "memsys.competitions",
+      "slug": "competitions",
+      "course": "memsys",
+      "unit": "training",
+      "title": "Memory Sports",
+      "short": "In memory competitions people memorize cards, numbers, words, names and faces under time limits, using the systems in this course.",
+      "prereqs": [
+        "memsys.pao",
+        "memsys.long-numbers"
+      ],
+      "viz": [
+        "mm-palace"
+      ]
+    },
+    {
+      "id": "memsys.training-study",
+      "slug": "training-study",
+      "course": "memsys",
+      "unit": "training",
+      "title": "What Training Does",
+      "short": "In a 2017 study, ordinary adults who trained the method of loci for 40 days went from about 26 to about 62 of 72 words, and kept much of the gain four months later.",
+      "prereqs": [
+        "memsys.competitions"
+      ],
+      "viz": [
+        "mm-palace"
+      ]
+    },
+    {
+      "id": "memsys.training-plan",
+      "slug": "training-plan",
+      "course": "memsys",
+      "unit": "training",
+      "title": "A Sensible Training Plan",
+      "short": "Train the codes first, then speed: short daily sessions, a timer, a log of your scores, and spaced review of permanent lists.",
+      "prereqs": [
+        "memsys.training-study",
+        "memsys.reuse-palaces"
+      ],
+      "viz": [
+        "mm-calendar"
+      ]
+    }
+  ]
+}

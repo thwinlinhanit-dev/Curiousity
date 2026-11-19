@@ -1,0 +1,119 @@
+{
+  "id": "g5.add-subtract-decimals",
+  "slug": "add-subtract-decimals",
+  "ladder": "math",
+  "course": "g5",
+  "unit": "decimal-operations",
+  "title": "Adding and Subtracting Decimals",
+  "short": "Line up the decimal points so tenths add to tenths.",
+  "trouble": "Children line up the last digits, as with whole numbers, so 3.5 + 1.25 becomes 1.60.",
+  "prereqs": [
+    "g5.thousandths",
+    "g4.add-subtract-algorithm"
+  ],
+  "xp": 1,
+  "viz": [
+    "decimalgrid",
+    "placevalue"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You add and subtract whole numbers with the <a href=\"/math/grade-4/add-subtract-algorithm/\">standard algorithm</a>: ones under ones, tens under tens. Decimals work the same way once the places line up, and you can read them to <a href=\"/math/grade-5/thousandths/\">thousandths</a>."
+      },
+      {
+        "t": "key",
+        "html": "Line up the decimal points, so tenths are under tenths and hundredths under hundredths. Fill empty places with zeros. Then add or subtract as with whole numbers, and keep the point in line."
+      },
+      {
+        "t": "why",
+        "html": "You can only add like things: tenths to tenths, hundredths to hundredths, just as you add ones to ones. Lining up the points lines up the places. Writing $3.5$ as $3.50$ changes nothing about its value, but it shows that $3.5$ has 0 hundredths."
+      },
+      {
+        "t": "viz",
+        "name": "decimalgrid",
+        "opts": {
+          "v": "0.5",
+          "compare": "0.25"
+        },
+        "cap": "$0.5$ is 50 hundredths and $0.25$ is 25 hundredths. Together they make 75 hundredths: $0.5 + 0.25 = 0.75$."
+      },
+      {
+        "t": "table",
+        "head": [
+          "",
+          "ones",
+          "tenths",
+          "hundredths"
+        ],
+        "rows": [
+          [
+            "",
+            "3",
+            "5",
+            "0"
+          ],
+          [
+            "+",
+            "1",
+            "2",
+            "5"
+          ],
+          [
+            "=",
+            "4",
+            "7",
+            "5"
+          ]
+        ],
+        "cap": "$3.5 + 1.25$ with the places lined up."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Different numbers of places",
+        "q": "Find $3.5 + 1.25$.",
+        "steps": [
+          "Write $3.5$ as $3.50$.",
+          "Hundredths: $0 + 5 = 5$. Tenths: $5 + 2 = 7$. Ones: $3 + 1 = 4$.",
+          "Estimate: $3.5 + 1 = 4.5$. Close."
+        ],
+        "a": "$4.75$"
+      },
+      {
+        "t": "ex",
+        "title": "Subtract from a whole number",
+        "q": "Find $6 - 2.37$.",
+        "steps": [
+          "Write $6$ as $6.00$.",
+          "Regroup: $6.00$ is 5 ones, 9 tenths, 10 hundredths.",
+          "$10 - 7 = 3$ hundredths, $9 - 3 = 6$ tenths, $5 - 2 = 3$ ones.",
+          "Check by adding: $3.63 + 2.37 = 6.00$."
+        ],
+        "a": "$3.63$"
+      },
+      {
+        "t": "mistake",
+        "html": "Lining up the last digits, as with whole numbers, so $3.5 + 1.25$ becomes $1.60$. That adds 5 tenths to 5 hundredths. Check with an estimate: $3.5 + 1.25$ is more than $3.5$, so $1.60$ cannot be right."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Prealgebra 2e, 5.2 Decimal Operations (add and subtract decimals)"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 5.NBT.B.7: add and subtract decimals to hundredths"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

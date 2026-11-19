@@ -1,0 +1,94 @@
+{
+  "id": "astrophys.core-collapse",
+  "slug": "core-collapse",
+  "ladder": "physics",
+  "course": "astrophys",
+  "unit": "stellar-death",
+  "title": "Core-Collapse Supernovae",
+  "short": "An iron core collapses in under a second, and neutrinos carry off about 10⁴⁶ J.",
+  "trouble": "Students think most of a supernova's energy leaves as light.",
+  "prereqs": [
+    "astrophys.chandrasekhar-limit",
+    "astro.supernovae"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-nucleus"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A star of more than about 8 solar masses fuses heavier and heavier elements in its core: hydrogen, helium, carbon, neon, oxygen, silicon. The last step builds iron and nickel, at the peak of the binding-energy curve, where fusion stops paying. An iron core grows until it passes the <a href=\"/physics/astrophysics/chandrasekhar-limit/\">Chandrasekhar limit</a>, and then it falls in on itself. You saw the outline in <a href=\"/physics/astronomy/supernovae/\">Supernovae and the Elements</a>; here are the numbers."
+      },
+      {
+        "t": "why",
+        "html": "Two processes rob the core of the electrons' support. Electrons are captured by protons ($p + e^- \\to n + \\nu_e$), and energetic photons break iron nuclei apart, which absorbs energy. Pressure falls, and the core collapses almost freely: a body falling under its own gravity takes about $t_{ff} = \\sqrt{3\\pi/(32G\\bar\\rho)}$, under a second at these densities, and the inner core's infall reaches about a quarter of the speed of light. It stops when it reaches nuclear density, at a radius of about 10 to 20 km, as a <b>proto-neutron star</b>. The gravitational energy released is about $$\\tfrac35\\frac{GM^2}{R} \\approx \\tfrac35\\frac{(6.67 \\times 10^{-11})(2.8 \\times 10^{30})^2}{1.2 \\times 10^{4}} \\approx 3 \\times 10^{46}\\text{ J}.$$"
+      },
+      {
+        "t": "key",
+        "html": "A core-collapse supernova releases about $3 \\times 10^{46}$ J. About 99% leaves as <b>neutrinos</b> within about ten seconds, about 1% becomes the kinetic energy of the exploding envelope, and only about 0.01% emerges as light, still enough to outshine a galaxy for weeks."
+      },
+      {
+        "t": "viz",
+        "name": "ph-nucleus",
+        "opts": {
+          "mode": "binding",
+          "select": 56
+        },
+        "cap": "Binding energy per nucleon peaks near iron and nickel. Fusing up to the peak releases energy; going past it costs energy, so an iron core has no fuel left."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "The collapse time",
+        "q": "An iron core of $1.4\\,M_\\odot$ and radius 3,000 km loses its pressure support. Estimate its free-fall time.",
+        "steps": [
+          "$\\bar\\rho = 2.79 \\times 10^{30}/(\\tfrac43\\pi(3 \\times 10^{6})^3) = 2.5 \\times 10^{10}$ kg/m³.",
+          "$t_{ff} = \\sqrt{3\\pi/(32 \\times 6.67 \\times 10^{-11} \\times 2.5 \\times 10^{10})}$."
+        ],
+        "a": "About 0.4 s."
+      },
+      {
+        "t": "ex",
+        "title": "The energy budget",
+        "q": "Estimate $\\tfrac35GM^2/R$ for a $1.4\\,M_\\odot$ core that ends as a 12 km neutron star.",
+        "steps": [
+          "$M = 2.79 \\times 10^{30}$ kg; $GM^2 = 5.2 \\times 10^{50}$ J·m.",
+          "$0.6 \\times 5.2 \\times 10^{50}/1.2 \\times 10^{4}$."
+        ],
+        "a": "About $2.6 \\times 10^{46}$ J, about 200 times the Sun's output over its whole 10-billion-year life."
+      },
+      {
+        "t": "ex",
+        "title": "Neutrinos from Supernova 1987A",
+        "q": "In 1987 a star in the Large Magellanic Cloud (about 50 kpc away) exploded. If $3 \\times 10^{46}$ J went into neutrinos of about 12 MeV each, how many crossed each cm² at Earth?",
+        "steps": [
+          "Number: $3 \\times 10^{46}/(12 \\times 1.602 \\times 10^{-13}\\text{ J}) \\approx 1.5 \\times 10^{58}$.",
+          "Spread over $4\\pi(1.5 \\times 10^{21}\\text{ m})^2 = 3.0 \\times 10^{43}$ m²."
+        ],
+        "a": "About $5 \\times 10^{10}$ per cm². Detectors in Japan, the United States and Russia caught about two dozen of them, a few hours before the light was first seen."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking most of a supernova's energy leaves as light. The light is spectacular, but it is roughly one part in ten thousand of the total. Almost all of the energy is carried off by neutrinos, which escape the dense core within seconds; the 1987A neutrinos arrived before the light because the light had to wait for the shock to reach the star's surface. Check the budget: about $10^{42}$ J of light against a few times $10^{46}$ J in all."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Astronomy 2e, section 23.2 (Evolution of Massive Stars: An Explosive Finish) and section 23.3 (Supernova Observations)"
+      },
+      {
+        "name": "MIT OpenCourseWare 8.282J Introduction to Astronomy (Spring 2006)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,101 @@
+{
+  "id": "stat.significance-tests",
+  "slug": "significance-tests",
+  "ladder": "math",
+  "course": "stat",
+  "unit": "inference",
+  "title": "The Logic of Significance Tests",
+  "short": "Ask how surprising the data would be if the null hypothesis were true.",
+  "trouble": "Students read the p-value as the probability that the null hypothesis is true.",
+  "prereqs": [
+    "stat.sampling-distribution-proportion"
+  ],
+  "xp": 3,
+  "viz": [
+    "normal",
+    "sampling"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A coin lands heads 64 times in 100 flips. Is it unfair, or could a fair coin do that by chance? You answered questions like this with <a href=\"/math/probability-and-statistics/simulation-models/\">simulations</a>. A significance test does the same thing with the <a href=\"/math/probability-and-statistics/sampling-distribution-proportion/\">sampling distribution</a> in place of the simulation."
+      },
+      {
+        "t": "key",
+        "html": "A significance test starts with a <b>null hypothesis</b> $H_0$ (no effect, no difference; a specific parameter value) and an <b>alternative</b> $H_a$ (what we suspect). The <b>p-value</b> is the probability, <b>computed assuming $H_0$ is true</b>, of getting a result at least as extreme as the one observed. If the p-value is below the significance level $\\alpha$ (often $0.05$), we <b>reject</b> $H_0$: the data give convincing evidence for $H_a$. Otherwise we <b>fail to reject</b> $H_0$."
+      },
+      {
+        "t": "why",
+        "html": "The logic is like a proof by contradiction, with chance in it. Suppose $H_0$ is true. Then we know exactly how the statistic behaves and can ask how surprising our data are. A tiny p-value means: \"if $H_0$ were true, we would almost never see data like these.\" Either something very unusual happened, or $H_0$ is wrong; we take the second option. A large p-value means the data are the kind of thing $H_0$ produces routinely, so they give no reason to doubt it. Like a court verdict of \"not guilty,\" failing to reject is not a proof of innocence."
+      },
+      {
+        "t": "viz",
+        "name": "normal",
+        "opts": {
+          "mu": 0,
+          "sigma": 1,
+          "a": 2.8,
+          "b": 3,
+          "shade": "right",
+          "sliders": false,
+          "xlabel": "z"
+        },
+        "cap": "Under H₀ the statistic z follows this curve. The p-value is the shaded tail beyond the observed z. Switch to \"Outside\" for a two-sided test."
+      },
+      {
+        "t": "ex",
+        "title": "A coin",
+        "q": "A coin lands heads 64 times in 100 flips. Test $H_0: p = 0.5$ against $H_a: p \\ne 0.5$. ($P(Z < 2.80) = 0.9974$.)",
+        "steps": [
+          "If $H_0$ is true, $\\hat{p}$ is about normal with mean 0.5 and SD $\\sqrt{0.5 \\cdot 0.5/100} = 0.05$.",
+          "$z = \\dfrac{0.64 - 0.5}{0.05} = 2.8$.",
+          "Two-sided: count results this extreme in either direction. $$P(Z > 2.8) = 1 - 0.9974 = 0.0026$$ so the p-value is $2 \\times 0.0026 = 0.0052$.",
+          "$0.0052 < 0.05$: reject $H_0$. A fair coin would almost never give a result this lopsided."
+        ],
+        "a": "p-value $\\approx 0.005$; convincing evidence the coin is unfair."
+      },
+      {
+        "t": "ex",
+        "title": "Reading a p-value",
+        "q": "A study of a new tutoring program reports a p-value of $0.03$ for $H_0$: the program has no effect. Which reading is correct?",
+        "steps": [
+          "Correct: if the program truly had no effect, results at least this large would happen only about 3% of the time.",
+          "Not correct: \"there is a 3% chance the program has no effect.\" The p-value was computed by assuming no effect; it cannot also be the probability of that assumption."
+        ],
+        "a": "It is a probability about the data, given $H_0$."
+      },
+      {
+        "t": "ex",
+        "title": "A large p-value",
+        "q": "Another test gives a p-value of $0.08$ at $\\alpha = 0.05$. What should you conclude?",
+        "steps": [
+          "$0.08 > 0.05$: fail to reject $H_0$.",
+          "This does not show $H_0$ is true. The data are simply not strong enough to rule it out; a larger study might."
+        ],
+        "a": "Fail to reject $H_0$; not convincing evidence."
+      },
+      {
+        "t": "mistake",
+        "html": "Reading the p-value as the probability that the null hypothesis is true. The p-value is $P(\\text{data this extreme} \\mid H_0)$, and that is a different thing from $P(H_0 \\mid \\text{data})$, just as in <a href=\"/math/probability-and-statistics/bayes-rule/\">Bayes' rule</a> a test's accuracy differs from the chance that a positive result is right. Check your sentence: it should begin \"If $H_0$ were true, …\"."
+      },
+      {
+        "t": "note",
+        "html": "\"Statistically significant\" means \"hard to explain by chance,\" not \"large\" or \"important.\" With a huge sample, a tiny, unimportant difference can have a very small p-value. Always report the size of the effect too."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Introductory Statistics 2e, section 9.1 Null and Alternative Hypotheses"
+      },
+      {
+        "name": "OpenStax, Introductory Statistics 2e, section 9.4 Rare Events, the Sample, Decision and Conclusion"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

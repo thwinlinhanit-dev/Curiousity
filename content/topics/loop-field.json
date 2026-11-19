@@ -1,0 +1,96 @@
+{
+  "id": "em.loop-field",
+  "slug": "loop-field",
+  "course": "em",
+  "courseTitle": "Electricity and Magnetism",
+  "unit": "magnetism",
+  "unitTitle": "Magnetic Fields",
+  "title": "Fields of Loops and Arcs",
+  "short": "At the center of a loop B = μ₀I/(2R), and on the axis the field falls off with distance.",
+  "trouble": "Students use the formula for a long straight wire at the center of a loop.",
+  "prereqs": [
+    "em.biot-savart"
+  ],
+  "xp": 3,
+  "viz": [
+    "ph-magnetism"
+  ],
+  "figureArchetype": "FieldFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "With <a href=\"/physics/electricity-and-magnetism/biot-savart/\">Biot–Savart</a> we can find the field of a current loop, the building block of solenoids, electromagnets and, on a tiny scale, magnetic atoms. As with the <a href=\"/physics/electricity-and-magnetism/field-of-ring-disk/\">charged ring</a>, symmetry does most of the work."
+      },
+      {
+        "t": "why",
+        "html": "<b>At the center:</b> every piece $d\\ell$ is the same distance $R$ away and at right angles to the line to the center, and every piece's field points the same way (along the axis). So $B = \\dfrac{\\mu_0 I}{4\\pi R^2}\\oint d\\ell = \\dfrac{\\mu_0 I}{4\\pi R^2}(2\\pi R) = \\dfrac{\\mu_0 I}{2R}$. An arc covering angle $\\phi$ gives the same fraction of that: $\\dfrac{\\mu_0 I\\phi}{4\\pi R}$.<br><b>On the axis:</b> each piece is $\\sqrt{z^2 + R^2}$ away; the sideways parts cancel around the loop, and the parts along the axis carry a factor $R/\\sqrt{z^2 + R^2}$."
+      },
+      {
+        "t": "key",
+        "html": "Center of a loop: $B = \\dfrac{\\mu_0 I}{2R}$ (times $N$ for $N$ turns). Center of an arc of angle $\\phi$ (radians): $B = \\dfrac{\\mu_0 I\\phi}{4\\pi R}$. On the axis:\n        $$B = \\frac{\\mu_0 IR^2}{2(z^2 + R^2)^{3/2}},$$\n        which far away falls as $1/z^3$, the field of a magnetic dipole."
+      },
+      {
+        "t": "viz",
+        "name": "ph-magnetism",
+        "opts": {
+          "mode": "loop"
+        },
+        "cap": "The field of a current loop: lines through the middle, curling back around the wire, like the field of a short bar magnet."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A flat coil",
+        "q": "A flat coil of 20 turns with radius $5.0\\ \\text{cm}$ carries $2.0\\ \\text{A}$. Find $B$ at its center.",
+        "steps": [
+          "$B = \\dfrac{\\mu_0 NI}{2R} = \\dfrac{(4\\pi \\times 10^{-7})(20)(2.0)}{2(0.050)} = 5.03 \\times 10^{-4}\\ \\text{T}$, about $503\\ \\mu\\text{T}$, ten times Earth's field."
+        ],
+        "a": "$B \\approx 503\\ \\mu\\text{T}$"
+      },
+      {
+        "t": "ex",
+        "title": "A quarter circle",
+        "q": "A quarter-circle arc of radius $4.0\\ \\text{cm}$ carries $5.0\\ \\text{A}$. Find its field at the center.",
+        "steps": [
+          "$\\phi = \\pi/2$: $B = \\dfrac{\\mu_0 I\\phi}{4\\pi R} = \\dfrac{(4\\pi \\times 10^{-7})(5.0)(\\pi/2)}{4\\pi(0.040)} = 1.96 \\times 10^{-5}\\ \\text{T}$.",
+          "That is one quarter of a full loop's $\\mu_0 I/(2R)$, as it should be."
+        ],
+        "a": "$B \\approx 19.6\\ \\mu\\text{T}$"
+      },
+      {
+        "t": "ex",
+        "title": "Moving out along the axis",
+        "q": "How strong is a loop's field on its axis at $z = 2R$, compared with the center?",
+        "steps": [
+          "$\\dfrac{B(z)}{B(0)} = \\dfrac{R^3}{(z^2 + R^2)^{3/2}} = \\dfrac{1}{(4 + 1)^{3/2}} = 0.0894$.",
+          "Less than a tenth, two radii out. Far away, $B \\approx \\dfrac{\\mu_0 IR^2}{2z^3}$."
+        ],
+        "a": "about $0.0894$ of the center value"
+      },
+      {
+        "t": "p",
+        "html": "Far from a loop, its field has the same shape as a bar magnet's, and both are called <b>magnetic dipoles</b>. Earth's field far out in space looks much like this. Close to a pair of coils the field can be shaped instead: two identical coils, one radius apart and carrying the same current, make a field that is very nearly uniform in the space between them, a common way to make a known field in a lab."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Using the long-straight-wire formula at the center of a loop.</b> $\\mu_0 I/(2\\pi R)$ is the field a distance $R$ from a straight wire, a different shape. At the center of a loop, all the wire is the same distance away and bent around the point, so its contributions add more effectively, giving $\\mu_0 I/(2R)$, larger by a factor of $\\pi$. Check: which shape is the wire? A loop's formula has no $\\pi$ in it."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 2, 12.4 Magnetic Field of a Current Loop"
+      },
+      {
+        "name": "MIT OpenCourseWare, 8.02 Physics II: Electricity and Magnetism"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

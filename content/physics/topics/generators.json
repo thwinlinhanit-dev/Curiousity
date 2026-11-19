@@ -1,0 +1,95 @@
+{
+  "id": "physsci.generators",
+  "slug": "generators",
+  "ladder": "physics",
+  "course": "physsci",
+  "unit": "electricity",
+  "title": "Generators and Induction",
+  "short": "Moving a magnet near a coil makes a current, so generators turn motion into electricity.",
+  "trouble": "Students think a magnet resting inside a coil makes a steady current.",
+  "prereqs": [
+    "physsci.electromagnets",
+    "physsci.energy-conservation-intro"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-induction"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "If a current can make a magnetic field (an <a href=\"/physics/physical-science/electromagnets/\">electromagnet</a>), can a magnet make a current? In 1831 Michael Faraday found that it can, but only while something is <b>changing</b>. That discovery runs almost every power plant in the world."
+      },
+      {
+        "t": "key",
+        "html": "Moving a magnet near a coil, or a coil near a magnet, <b>induces</b> a current in the coil. The current flows only while the magnetic field through the coil is changing. Faster motion, a stronger magnet or more turns make a bigger current. A <b>generator</b> uses this to turn motion into electrical energy."
+      },
+      {
+        "t": "why",
+        "html": "Push a magnet into a coil and the field inside the coil grows, so a current flows. Hold it still and nothing changes, so the current stops. Pull it out and the current flows the other way. In a generator, a coil spins between magnets, so the field through it changes all the time, and by <a href=\"/physics/physical-science/energy-conservation-intro/\">conservation of energy</a>, the electrical energy comes from the work done turning the coil."
+      },
+      {
+        "t": "viz",
+        "name": "ph-induction",
+        "opts": {
+          "mode": "magnet-coil"
+        },
+        "cap": "A magnet pushed into a coil, held still, then pulled out. The upper graph shows how much magnetic field passes through the coil; the lower graph shows the induced voltage. The voltage appears only while that field is changing, and it flips sign when the magnet comes back out."
+      },
+      {
+        "t": "viz",
+        "name": "ph-induction",
+        "opts": {
+          "mode": "generator"
+        },
+        "cap": "A generator: a coil turning in a magnetic field produces a current that reverses direction every half turn."
+      },
+      {
+        "t": "ex",
+        "title": "Magnet and coil",
+        "q": "A magnet is pushed into a coil, held still inside it, then pulled out. When does the meter show a current?",
+        "steps": [
+          "Pushing in: the field in the coil grows, so a current flows.",
+          "Held still: no change, no current.",
+          "Pulling out: the field shrinks, so a current flows the other way."
+        ],
+        "a": "Only while the magnet moves; opposite ways in and out"
+      },
+      {
+        "t": "ex",
+        "title": "Where the energy comes from",
+        "q": "A wind turbine's blades turn a generator. What energy change happens?",
+        "steps": [
+          "The wind's kinetic energy turns the blades.",
+          "The generator turns that motion into electrical energy (plus some heat)."
+        ],
+        "a": "Kinetic energy into electrical energy"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking a magnet resting inside a coil makes a steady current. A current is induced only while the field through the coil is changing. A still magnet gives a steady field and no current. Check: watch the meter while the magnet is still."
+      },
+      {
+        "t": "note",
+        "html": "In most power plants, steam, falling water or wind spins a turbine connected to a generator. The current in your outlets swings back and forth 60 times each second (60 Hz) in North America."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e, 23.1 Induced Emf and Magnetic Flux"
+      },
+      {
+        "name": "OpenStax, College Physics 2e, 23.5 Electric Generators"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-PS2-5"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

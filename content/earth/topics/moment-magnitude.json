@@ -1,0 +1,91 @@
+{
+  "id": "geology.moment-magnitude",
+  "slug": "moment-magnitude",
+  "ladder": "earth",
+  "course": "geology",
+  "unit": "earthquakes",
+  "title": "Moment Magnitude and Energy",
+  "short": "Magnitude grows with the logarithm of the fault's area times its slip, and each step up means about 32 times more energy.",
+  "trouble": "Students think magnitude 10 is the top of a 1-to-10 scale; the scale has no top, but no known fault is long enough to make a magnitude 10.",
+  "prereqs": [
+    "earthsci.earthquake-magnitude",
+    "geology.elastic-rebound",
+    "alg2.log-properties"
+  ],
+  "xp": 3,
+  "viz": [
+    "es-seismic"
+  ],
+  "figureArchetype": "WaveFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/earth-and-space/earth-science/earthquake-magnitude/\">Earthquake Magnitude</a> you learned that each step on the magnitude scale means much stronger shaking. Seismologists today use <b>moment magnitude</b>, $M_w$, because it measures the earthquake at its source, the <a href=\"/earth-and-space/geology/elastic-rebound/\">fault slip</a> itself, and it keeps working for the largest quakes. It runs on <a href=\"/math/algebra-2/log-properties/\">logarithms</a>."
+      },
+      {
+        "t": "why",
+        "html": "The size of an earthquake is how much rock broke and how far it moved. Seismic moment captures that: $M_0 = \\mu A D$, where $A$ is the area of fault that slipped, $D$ the average slip, and $\\mu \\approx 3 \\times 10^{10}\\,\\text{Pa}$ the rock's stiffness, giving newton-meters. Moments range over many powers of ten, so the magnitude takes a log: $M_w = \\tfrac{2}{3}(\\log_{10} M_0 - 9.1)$. Because of the $\\tfrac23$, multiplying $M_0$ by 1,000 adds 2 to the magnitude, and each step of 1 means about $10^{1.5} \\approx 32$ times more energy (and seismic waves about 10 times larger)."
+      },
+      {
+        "t": "key",
+        "html": "$M_w = \\tfrac{2}{3}(\\log_{10} M_0 - 9.1)$ with $M_0 = \\mu A D$. Each magnitude step means about 32 times more energy; two steps mean about 1,000 times."
+      },
+      {
+        "t": "viz",
+        "name": "es-seismic",
+        "opts": {
+          "mode": "magnitude",
+          "M1": 5,
+          "M2": 7,
+          "blocks": true
+        },
+        "cap": "Compare two earthquakes' waves and energy, and build a magnitude from a fault's area and slip."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Magnitude from a fault",
+        "q": "A fault ruptures over an area 100 km long and 20 km deep, with 2 m of average slip ($\\mu = 3 \\times 10^{10}\\,\\text{Pa}$). What is $M_w$?",
+        "steps": [
+          "$A = 100 \\times 20 = 2,000\\,\\text{km}^2 = 2 \\times 10^{9}\\,\\text{m}^2$.",
+          "$M_0 = (3 \\times 10^{10})(2 \\times 10^{9})(2) = 1.2 \\times 10^{20}\\,\\text{N·m}$.",
+          "$\\log_{10} M_0 = 20.08$, so $M_w = \\tfrac23(20.08 - 9.1) \\approx 7.3$."
+        ],
+        "a": "About $M_w = 7.3$."
+      },
+      {
+        "t": "ex",
+        "title": "Energy ratio",
+        "q": "How much more energy does a magnitude 8 release than a magnitude 6?",
+        "steps": [
+          "$10^{1.5 \\times 2} = 10^{3} = 1,000$ times."
+        ],
+        "a": "About 1,000 times."
+      },
+      {
+        "t": "note",
+        "html": "The original Richter scale (1935) used the height of waves on one kind of seismograph. For very large earthquakes those waves stop growing, so the old scale saturates near magnitude 7 to 8. Moment magnitude is built from the fault itself, so it keeps working for the largest quakes."
+      },
+      {
+        "t": "mistake",
+        "html": "Many people think magnitude 10 is the top of a 1-to-10 scale. The scale has no top: magnitude grows with fault area times slip. But size is limited by real faults. The largest recorded earthquake, Chile 1960, was about $M_w$ 9.5, on a rupture roughly 1,000 km long; a magnitude 10 would need a rupture far longer than any known fault. Check with $M_0 = \\mu A D$: what area would it take?"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "USGS Earthquake Hazards Program, Earthquake Magnitude, Energy Release, and Shaking Intensity"
+      },
+      {
+        "name": "MIT OpenCourseWare, 12.001 Introduction to Geology"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

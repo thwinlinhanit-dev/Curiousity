@@ -1,0 +1,89 @@
+{
+  "id": "astro.sun-fusion",
+  "slug": "sun-fusion",
+  "ladder": "physics",
+  "course": "astro",
+  "unit": "sun",
+  "title": "How the Sun Shines",
+  "short": "Fusing hydrogen into helium turns about 0.7% of the mass into energy, by E = mc².",
+  "trouble": "Students think the Sun burns like a fire.",
+  "prereqs": [
+    "astro.sun-layers",
+    "chem.fission-fusion"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-nucleus",
+    "ph-star"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The <a href=\"/physics/astronomy/sun-layers/\">Sun's core</a> is the power plant. You met fusion in <a href=\"/chemistry/chemistry/fission-fusion/\">Fission and Fusion</a>: light nuclei joining into heavier ones, with a little mass disappearing as energy. In the Sun the fuel is hydrogen and the product is helium."
+      },
+      {
+        "t": "why",
+        "html": "Four hydrogen nuclei (protons) end up as one helium-4 nucleus, through a series of steps called the proton–proton chain (along the way two protons turn into neutrons, giving off positrons and neutrinos). Weigh both sides with atomic masses: $4 \\times 1.007825 = 4.031300$ u before, $4.002603$ u after. The difference, $0.028697$ u, is $0.71\\%$ of the starting mass, and it leaves as energy, $E = mc^2$: $0.028697 \\times 931.5 = 26.7$ MeV per helium nucleus. Protons repel each other, so fusion needs extreme heat and pressure: about 15 million K and enormous density in the core, where nuclei collide fast enough, with help from quantum tunneling, to fuse."
+      },
+      {
+        "t": "key",
+        "html": "The Sun fuses hydrogen into helium in its core; about $0.7\\%$ of the mass becomes energy by $E = mc^2$. To give off $3.83 \\times 10^{26}$ W it turns about $4.3 \\times 10^{9}$ kg of mass into energy every second."
+      },
+      {
+        "t": "viz",
+        "name": "ph-nucleus",
+        "opts": {
+          "mode": "ppchain"
+        },
+        "cap": "The proton–proton chain step by step: four protons become one helium-4 nucleus, two positrons, two neutrinos and energy."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "One kilogram of hydrogen",
+        "q": "How much energy comes from fusing $1$ kg of hydrogen into helium?",
+        "steps": [
+          "Mass converted: $0.007 \\times 1 = 0.007$ kg.",
+          "$E = mc^2 = 0.007 \\times (3.00 \\times 10^{8})^2 = 6.3 \\times 10^{14}$ J.",
+          "Burning $1$ kg of coal gives about $3 \\times 10^{7}$ J: fusion gives about 20 million times as much."
+        ],
+        "a": "$6.3 \\times 10^{14}$ J."
+      },
+      {
+        "t": "ex",
+        "title": "The Sun's mass loss",
+        "q": "The Sun gives off $3.83 \\times 10^{26}$ W. How much mass does it turn into energy each second, and how much hydrogen does it fuse?",
+        "steps": [
+          "Mass per second $= \\frac{L}{c^2} = \\frac{3.83 \\times 10^{26}}{9.00 \\times 10^{16}} = 4.26 \\times 10^{9}$ kg/s, over 4 million tonnes a second.",
+          "That is $0.7\\%$ of the hydrogen fused: $\\frac{4.26 \\times 10^{9}}{0.007} = 6.1 \\times 10^{11}$ kg/s, about 600 million tonnes every second.",
+          "Even at that rate, the Sun's $2 \\times 10^{30}$ kg lasts billions of years."
+        ],
+        "a": "$4.26 \\times 10^{9}$ kg/s converted; $6.1 \\times 10^{11}$ kg/s of hydrogen fused."
+      },
+      {
+        "t": "mistake",
+        "html": "The Sun is not burning like a fire. Burning is a chemical reaction that needs oxygen and releases only about $10^{7}$ J per kilogram; a Sun made of coal would burn out in a few thousand years. Check: Earth's rocks are billions of years old, and only nuclear fusion, millions of times richer than burning, can keep the Sun shining that long."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Astronomy 2e, section 16.1, Sources of Sunshine: Thermal and Gravitational Energy"
+      },
+      {
+        "name": "OpenStax, Astronomy 2e, section 16.2, Mass, Energy, and the Theory of Relativity"
+      },
+      {
+        "name": "NGSS HS-ESS1-1"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

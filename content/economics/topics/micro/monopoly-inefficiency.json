@@ -1,0 +1,95 @@
+{
+  "id": "micro.monopoly-inefficiency",
+  "slug": "monopoly-inefficiency",
+  "ladder": "economics",
+  "course": "micro",
+  "unit": "imperfect-competition",
+  "title": "Monopoly and Deadweight Loss",
+  "short": "A monopoly sells less at a higher price than a competitive market would, so P > MC and some surplus is lost.",
+  "trouble": "Students count the monopolist's extra profit as the deadweight loss. Most of it is surplus moved from consumers to the firm; the deadweight loss is the triangle no one gets.",
+  "prereqs": [
+    "micro.monopoly-price-output",
+    "micro.efficiency"
+  ],
+  "xp": 2,
+  "viz": [
+    "ec-monopoly"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Compare the monopoly outcome (<a href=\"/economics/microeconomics/monopoly-price-output/\">The Monopolist's Price and Output</a>) with what a competitive market would do with the same costs. The comparison uses allocative efficiency, $P = MC$, from <a href=\"/economics/microeconomics/efficiency/\">Allocative and Productive Efficiency</a>."
+      },
+      {
+        "t": "key",
+        "html": "A monopoly produces <b>less</b> and charges <b>more</b> than a competitive market would: $P > MC$ at its output. The units between the monopoly quantity and the competitive quantity are worth more to buyers than they cost to make, but they aren't produced. That lost surplus is the <b>deadweight loss</b>. Much of the monopoly's profit is surplus moved from consumers to the firm, which is a transfer, not a loss."
+      },
+      {
+        "t": "why",
+        "html": "A competitive market with the same constant cost would produce until $P = MC$. The monopoly stops earlier because selling more would mean cutting its price on every unit. Consumer surplus shrinks for two reasons: buyers who still buy pay more (that part becomes the monopoly's profit), and some buyers who would have bought at the competitive price don't buy at all (that part is lost to everyone)."
+      },
+      {
+        "t": "viz",
+        "name": "ec-monopoly",
+        "opts": {
+          "demand": {
+            "p0": 20,
+            "s": 1
+          },
+          "mc": {
+            "m0": 4,
+            "m1": 0
+          },
+          "show": [
+            "profit",
+            "cs",
+            "dwl",
+            "competitive"
+          ]
+        },
+        "cap": "Blue: consumer surplus under monopoly. Gold: profit, most of which used to be consumer surplus. Hatched: the deadweight loss between 8 and 16 units."
+      },
+      {
+        "t": "ex",
+        "title": "Measure the deadweight loss",
+        "q": "Demand is $P = 20 - Q$ and MC is a constant \\$4. Find the competitive outcome, the monopoly outcome and the deadweight loss.",
+        "steps": [
+          "Competitive: $P = MC = \\$4$, so $Q = 16$.",
+          "Monopoly (from the last lesson): $Q = 8$, $P = \\$12$.",
+          "$DWL = \\tfrac{1}{2} \\times (\\$12 - \\$4) \\times (16 - 8) = \\$32$."
+        ],
+        "a": "Competition: 16 units at \\$4. Monopoly: 8 at \\$12. DWL \\$32."
+      },
+      {
+        "t": "ex",
+        "title": "Where did consumer surplus go?",
+        "q": "In the same market, compare consumer surplus under competition with the monopoly outcome.",
+        "steps": [
+          "Competition: $CS = \\tfrac{1}{2} \\times 16 \\times (20 - 4) = \\$128$.",
+          "Monopoly: $CS = \\tfrac{1}{2} \\times 8 \\times (20 - 12) = \\$32$; profit $= \\$64$; DWL $= \\$32$.",
+          "$\\$32 + \\$64 + \\$32 = \\$128$: the old consumer surplus is split among consumers, the firm and nobody."
+        ],
+        "a": "\\$128 becomes \\$32 (consumers) + \\$64 (monopoly) + \\$32 (lost)."
+      },
+      {
+        "t": "mistake",
+        "html": "Counting the monopolist's extra profit as the deadweight loss. The profit rectangle is a transfer from buyers to the firm; society as a whole loses only the triangle. Check: an area someone receives (consumers, the firm, the government) is not deadweight loss."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, 9.2 How a Profit-Maximizing Monopoly Chooses Output and Price"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.01 Principles of Microeconomics (scope and sequence)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

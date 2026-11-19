@@ -1,0 +1,102 @@
+{
+  "id": "calc4.curl-divergence-meaning",
+  "slug": "curl-divergence-meaning",
+  "ladder": "math",
+  "course": "calc4",
+  "unit": "vector-fields",
+  "title": "What Curl and Divergence Measure",
+  "short": "Read sources, sinks and spin from a picture of a field.",
+  "trouble": "Students think any field with curved arrows has nonzero curl.",
+  "prereqs": [
+    "calc4.divergence-curl"
+  ],
+  "xp": 2,
+  "viz": [
+    "vectorfield"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The formulas for <a href=\"/math/calculus-4/divergence-curl/\">divergence and curl</a> are easy to compute and easy to misread. Here is what they measure, in the language of a flowing fluid with velocity field $\\mathbf{F} = \\langle P, Q \\rangle$. Divergence is <b>net outflow per unit area</b>. Curl is <b>circulation per unit area</b>: how strongly the flow turns a tiny paddle wheel."
+      },
+      {
+        "t": "key",
+        "html": "Near a point, for a tiny region of area $\\Delta A$:\n  $$\\text{net outflow} \\approx (\\nabla \\cdot \\mathbf{F})\\,\\Delta A, \\qquad \\text{circulation counterclockwise} \\approx (Q_x - P_y)\\,\\Delta A.$$\n  $\\nabla \\cdot \\mathbf{F} > 0$: a <b>source</b> (more flows out than in). $\\nabla \\cdot \\mathbf{F} < 0$: a <b>sink</b>. $Q_x - P_y > 0$: a paddle wheel turns counterclockwise; $< 0$: clockwise. In space, the curl vector points along the axis of the spin (right-hand rule), and its length is twice the paddle wheel's angular speed."
+      },
+      {
+        "t": "why",
+        "html": "<b>Outflow from a small box</b> $[x, x + \\Delta x] \\times [y, y + \\Delta y]$. Out through the right side flows about $P(x + \\Delta x, y)\\,\\Delta y$; in through the left side about $P(x, y)\\,\\Delta y$. Net: $$[P(x + \\Delta x, y) - P(x, y)]\\,\\Delta y \\approx P_x\\,\\Delta x\\,\\Delta y.$$ Top and bottom give $Q_y\\,\\Delta x\\,\\Delta y$ the same way. Total: $(P_x + Q_y)\\,\\Delta A$.<br>\n  <b>Circulation around the same box</b>, counterclockwise: bottom $P(x, y)\\,\\Delta x$, top $-P(x, y + \\Delta y)\\,\\Delta x$, right $Q(x + \\Delta x, y)\\,\\Delta y$, left $-Q(x, y)\\,\\Delta y$. These add to about $(Q_x - P_y)\\,\\Delta A$.<br>\n  <b>A rigid rotation</b> $\\mathbf{v} = \\omega\\langle -y, x \\rangle$ has $Q_x - P_y = \\omega + \\omega = 2\\omega$: curl is twice the angular velocity."
+      },
+      {
+        "t": "viz",
+        "name": "vectorfield",
+        "opts": {
+          "P": "y",
+          "Q": "0",
+          "probe": "curl",
+          "at": [
+            0.5,
+            0.5
+          ],
+          "presets": true,
+          "task": "Straight arrows, yet the paddle wheel turns. Drag it around, then try the \"Rotation\" and \"Spiral out\" buttons."
+        },
+        "cap": "The shear field $\\langle y, 0 \\rangle$: like a river that flows faster near one bank. The top of the paddle wheel is pushed harder than the bottom, so it turns clockwise: $Q_x - P_y = 0 - 1 = -1$ everywhere."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Shear flow",
+        "q": "Find the divergence and scalar curl of $\\langle y, 0 \\rangle$ and describe the flow.",
+        "steps": [
+          "$P_x + Q_y = 0 + 0 = 0$: no spreading, no bunching.",
+          "$Q_x - P_y = 0 - 1 = -1$: a paddle wheel turns clockwise, at every point.",
+          "All arrows are horizontal, but they get longer as $y$ grows. The difference in speed across the wheel is what turns it."
+        ],
+        "a": "divergence ${}0$, curl $-1$"
+      },
+      {
+        "t": "ex",
+        "title": "Radial flow",
+        "q": "Describe $\\langle x, y \\rangle$ with divergence and curl.",
+        "steps": [
+          "$P_x + Q_y = 1 + 1 = 2$: every point is a source; any small region loses fluid at rate ${}2$ per unit area.",
+          "$Q_x - P_y = 0 - 0 = 0$: no spin anywhere."
+        ],
+        "a": "divergence ${}2$, curl ${}0$"
+      },
+      {
+        "t": "ex",
+        "title": "A whirlpool with no curl",
+        "q": "Find the scalar curl of $\\mathbf{F} = \\left\\langle \\frac{-y}{x^2 + y^2}, \\frac{x}{x^2 + y^2} \\right\\rangle$ away from the origin.",
+        "steps": [
+          "$Q_x = \\frac{(x^2 + y^2) - x \\cdot 2x}{(x^2 + y^2)^2} = \\frac{y^2 - x^2}{(x^2 + y^2)^2}$.",
+          "$P_y = -\\frac{(x^2 + y^2) - y \\cdot 2y}{(x^2 + y^2)^2} = \\frac{y^2 - x^2}{(x^2 + y^2)^2}$.",
+          "$Q_x - P_y = 0$. The arrows circle the origin, but their length ${}1/r$ drops off just fast enough that a paddle wheel away from the origin does not turn. (All the spin is concentrated at the origin; see <a href=\"/math/calculus-4/greens-holes/\">Green's theorem for regions with holes</a>.)"
+        ],
+        "a": "${}0$ for $(x, y) \\ne (0, 0)$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Judging curl by the shape of the arrows.</b> Curved arrows do not mean curl, and straight arrows do not mean zero curl. The whirlpool field above circles the origin with zero curl; the shear field $\\langle y, 0 \\rangle$ has straight arrows and curl $-1$. Curl compares how the field changes across a point, so compute $Q_x - P_y$ rather than looking at the overall pattern."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 3, 6.5 Divergence and Curl"
+      },
+      {
+        "name": "MIT OpenCourseWare, 18.02SC Multivariable Calculus (Fall 2010), Part C: Line Integrals and Green's Theorem"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,131 @@
+{
+  "id": "phys2.capacitor-combinations",
+  "slug": "capacitor-combinations",
+  "ladder": "physics",
+  "course": "phys2",
+  "unit": "circuits",
+  "title": "Capacitors in Series and Parallel",
+  "short": "Parallel capacitances add, and series capacitances combine by reciprocals, the opposite of resistors.",
+  "trouble": "Students add series capacitances directly, as they would series resistors.",
+  "prereqs": [
+    "phys2.capacitors",
+    "phys2.parallel-resistors"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-circuit"
+  ],
+  "figureArchetype": "FieldFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Circuits often combine several <a href=\"/physics/physics-2/capacitors/\">capacitors</a>. The rules look like the ones for <a href=\"/physics/physics-2/parallel-resistors/\">resistors</a>, but switched: the series rule for capacitors is the parallel rule for resistors, and the other way around."
+      },
+      {
+        "t": "why",
+        "html": "In parallel, each capacitor has the same voltage and their charges add: $Q = C_1V + C_2V$, so $C_{\\text{eq}} = C_1 + C_2$. It is like making the plates bigger. In series, the inner plates are connected only to each other, so the charge they hold is pulled across from one to the other: every capacitor carries the same charge $Q$. Their voltages add: $V = \\dfrac{Q}{C_1} + \\dfrac{Q}{C_2}$, so $\\dfrac{1}{C_{\\text{eq}}} = \\dfrac{1}{C_1} + \\dfrac{1}{C_2}$. It is like making the gap wider."
+      },
+      {
+        "t": "key",
+        "html": "Parallel: $C_{\\text{eq}} = C_1 + C_2 + \\cdots$ (same $V$, charges add). Series: $\\dfrac{1}{C_{\\text{eq}}} = \\dfrac{1}{C_1} + \\dfrac{1}{C_2} + \\cdots$ (same $Q$, voltages add), smaller than any one of them."
+      },
+      {
+        "t": "table",
+        "head": [
+          "",
+          "Resistors",
+          "Capacitors"
+        ],
+        "rows": [
+          [
+            "Series",
+            "$R_1 + R_2$",
+            "$\\dfrac{C_1C_2}{C_1 + C_2}$"
+          ],
+          [
+            "Parallel",
+            "$\\dfrac{R_1R_2}{R_1 + R_2}$",
+            "$C_1 + C_2$"
+          ],
+          [
+            "Shared in series",
+            "current",
+            "charge"
+          ],
+          [
+            "Shared in parallel",
+            "voltage",
+            "voltage"
+          ]
+        ],
+        "cap": "The two sets of rules are mirror images."
+      },
+      {
+        "t": "viz",
+        "name": "ph-circuit",
+        "opts": {
+          "circuit": "V(12) series(C1:3, C2:6)"
+        },
+        "cap": "A $3\\,\\mu\\text{F}$ and a $6\\,\\mu\\text{F}$ capacitor in series: they hold the same charge, so the smaller one takes more of the voltage."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Both ways",
+        "q": "Find the equivalent capacitance of $3\\,\\mu\\text{F}$ and $6\\,\\mu\\text{F}$ in parallel, then in series.",
+        "steps": [
+          "Parallel: $3 + 6 = 9\\,\\mu\\text{F}$.",
+          "Series: $\\dfrac{3 \\times 6}{3 + 6} = 2\\,\\mu\\text{F}$, less than either."
+        ],
+        "a": "$9\\,\\mu\\text{F}$; $2\\,\\mu\\text{F}$"
+      },
+      {
+        "t": "ex",
+        "title": "Charge and voltage in series",
+        "q": "The $3\\,\\mu\\text{F}$ and $6\\,\\mu\\text{F}$ capacitors are in series across $12\\,\\text{V}$. Find the charge and each voltage.",
+        "steps": [
+          "$Q = C_{\\text{eq}}V = (2\\,\\mu\\text{F})(12\\,\\text{V}) = 24\\,\\mu\\text{C}$ on each.",
+          "$V_3 = \\dfrac{24}{3} = 8\\,\\text{V}$ and $V_6 = \\dfrac{24}{6} = 4\\,\\text{V}$; they add to $12\\,\\text{V}$."
+        ],
+        "a": "$24\\,\\mu\\text{C}$; $8\\,\\text{V}$ and $4\\,\\text{V}$"
+      },
+      {
+        "t": "ex",
+        "title": "A combination",
+        "q": "A $6\\,\\mu\\text{F}$ capacitor is in series with a parallel pair of $2\\,\\mu\\text{F}$ and $4\\,\\mu\\text{F}$. Find $C_{\\text{eq}}$.",
+        "steps": [
+          "Parallel pair: $2 + 4 = 6\\,\\mu\\text{F}$.",
+          "In series with $6\\,\\mu\\text{F}$: $\\dfrac{6 \\times 6}{6 + 6} = 3\\,\\mu\\text{F}$."
+        ],
+        "a": "$3\\,\\mu\\text{F}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Adding series capacitances directly, as you would series resistors. Putting capacitors in series is like widening the gap, which <em>lowers</em> capacitance. Check: a series combination is always smaller than its smallest capacitor, and a parallel one bigger than its biggest."
+      },
+      {
+        "t": "note",
+        "html": "In series, the smaller capacitor ends up with the larger voltage, because both hold the same charge and $V = Q/C$. That is the opposite of series resistors, where the larger resistor takes the larger voltage."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e, section 19.6 Capacitors in Series and Parallel"
+      },
+      {
+        "name": "OpenStax, University Physics Volume 2, section 8.2 Capacitors in Series and in Parallel"
+      },
+      {
+        "name": "College Board, AP Physics 2 Course and Exam Description, Unit 11: Electric Circuits"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

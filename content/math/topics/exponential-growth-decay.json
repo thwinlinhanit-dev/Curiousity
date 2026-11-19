@@ -1,0 +1,124 @@
+{
+  "id": "alg1.exponential-growth-decay",
+  "slug": "exponential-growth-decay",
+  "ladder": "math",
+  "course": "alg1",
+  "unit": "exponential",
+  "title": "Growth and Decay Rates",
+  "short": "A 5% increase multiplies by 1.05; a 5% decrease by 0.95.",
+  "trouble": "Students use 0.05 as the growth factor instead of 1.05, or 1.05 for a decrease.",
+  "prereqs": [
+    "alg1.exponential-functions",
+    "g7.percent-change"
+  ],
+  "xp": 2,
+  "viz": [
+    "exponential"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Percent changes that repeat are exponential. You know <a href=\"/math/grade-7/percent-change/\">percent increase and decrease</a>; in an <a href=\"/math/algebra-1/exponential-functions/\">exponential function</a> that percent becomes the base."
+      },
+      {
+        "t": "why",
+        "html": "If a population grows $5\\%$ in a year, the new population is the old one plus $5\\%$ of it: $P + 0.05P = P(1 + 0.05) = 1.05P$. So one year of growth means <em>multiplying by $1.05$</em>, and $t$ years means multiplying by $1.05$ again and again: $P_0 \\cdot 1.05^t$. A $5\\%$ decrease keeps $95\\%$: multiply by $1 - 0.05 = 0.95$. Each year's change is a percent of the <em>current</em> amount, which is why the yearly change grows (or shrinks) over time."
+      },
+      {
+        "t": "viz",
+        "name": "exponential",
+        "opts": {
+          "a": 100,
+          "b": 1.05,
+          "table": true,
+          "trace": true,
+          "xmin": -1,
+          "xmax": 15,
+          "ymin": -10,
+          "ymax": 220
+        },
+        "cap": "$y = 100 \\cdot 1.05^x$: each step multiplies by $1.05$. Move $b$ below $1$ to see decay."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Change per period",
+          "Growth or decay factor $b$"
+        ],
+        "rows": [
+          [
+            "grows $5\\%$",
+            "$1 + 0.05 = 1.05$"
+          ],
+          [
+            "grows $20\\%$",
+            "$1.2$"
+          ],
+          [
+            "shrinks $5\\%$",
+            "$1 - 0.05 = 0.95$"
+          ],
+          [
+            "shrinks $30\\%$",
+            "$0.7$"
+          ],
+          [
+            "doubles",
+            "$2$"
+          ],
+          [
+            "halves",
+            "$0.5$"
+          ]
+        ],
+        "cap": "From percent to factor."
+      },
+      {
+        "t": "key",
+        "html": "A growth rate $r$ gives the factor $b = 1 + r$; a decay rate $r$ gives $b = 1 - r$. The model is $A = A_0 \\cdot b^t$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Growth",
+        "q": "A painting worth \\$1000 gains $10\\%$ of its value each year. What is it worth after $3$ years?",
+        "steps": [
+          "Factor: $1 + 0.10 = 1.1$.",
+          "$1000 \\cdot 1.1^3 = 1000 \\cdot 1.331 = 1331$."
+        ],
+        "a": "\\$1331 (not \\$1300: each year's $10\\%$ is of a larger amount)."
+      },
+      {
+        "t": "ex",
+        "title": "Decay",
+        "q": "A car worth \\$20,000 loses $15\\%$ of its value per year. Write a model and find the rate from a model.",
+        "steps": [
+          "Factor: $1 - 0.15 = 0.85$, so $V = 20000 \\cdot 0.85^t$.",
+          "Going the other way, $A = 50 \\cdot 0.92^t$ keeps $92\\%$ each year: a decay rate of $8\\%$."
+        ],
+        "a": "$V = 20000 \\cdot 0.85^t$; $0.92$ means $8\\%$ decay."
+      },
+      {
+        "t": "mistake",
+        "html": "Using $0.05$ as the growth factor for $5\\%$ growth, or $1.05$ for a $5\\%$ decrease. Multiplying by $0.05$ would leave only $5\\%$ of the amount. Check: after one period the amount should change only a little, so the factor should be close to $1$, above it for growth and below it for decay."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Algebra 2e, section 6.1 Exponential Functions"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, F-LE.A.1c: recognize situations in which a quantity grows or decays by a constant percent rate per unit interval"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,104 @@
+{
+  "id": "phys2.entropy",
+  "slug": "entropy",
+  "ladder": "physics",
+  "course": "phys2",
+  "unit": "thermodynamics",
+  "title": "Entropy and the Second Law",
+  "short": "Heat flows from hot to cold on its own; ΔS = Q/T, and the total entropy of an isolated system never decreases.",
+  "trouble": "Students think entropy can never go down anywhere, even inside a refrigerator.",
+  "prereqs": [
+    "phys2.carnot-limit"
+  ],
+  "xp": 3,
+  "viz": [
+    "ph-thermal"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Why does heat flow from hot to cold and never the other way on its own? Why can't the <a href=\"/physics/physics-2/carnot-limit/\">Carnot limit</a> be beaten? One quantity answers both: <b>entropy</b>."
+      },
+      {
+        "t": "why",
+        "html": "Define the entropy change of something that takes in heat $Q$ at a steady kelvin temperature $T$ as $\\Delta S = Q/T$. Now let heat $Q$ flow from a hot reservoir to a cold one. The hot one loses $Q/T_H$, the cold one gains $Q/T_C$, and since $T_C < T_H$ the gain is bigger: the total goes up. Heat flowing from cold to hot would make the total go down, and that is exactly what never happens by itself. At the level of molecules, entropy counts the ways to arrange the energy; spread-out energy has far more arrangements, so it is overwhelmingly likely."
+      },
+      {
+        "t": "key",
+        "html": "$\\Delta S = \\dfrac{Q}{T}$ for heat $Q$ at kelvin temperature $T$. <b>Second law:</b> the total entropy of an isolated system never decreases. It rises in every real process and stays the same only in an ideal, reversible one."
+      },
+      {
+        "t": "viz",
+        "name": "ph-thermal",
+        "opts": {
+          "mode": "entropy",
+          "Th": 600,
+          "Tc": 300,
+          "Q": 1000,
+          "task": "Bring the two reservoir temperatures closer. The total entropy gain shrinks but stays positive."
+        },
+        "cap": "An entropy ledger: the hot reservoir loses some, the cold one gains more. Explore it in the <a href=\"/science-lab/thermodynamics/second-law/\">Entropy and the Second Law</a> chapter of the Science Lab."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Heat flowing downhill",
+        "q": "$1200\\,\\text{J}$ flows from a reservoir at $600\\,\\text{K}$ to one at $300\\,\\text{K}$. Find the total entropy change.",
+        "steps": [
+          "Hot: $\\Delta S_H = -\\dfrac{1200}{600} = -2.0\\,\\text{J/K}$. Cold: $\\Delta S_C = +\\dfrac{1200}{300} = +4.0\\,\\text{J/K}$.",
+          "Total: $+2.0\\,\\text{J/K}$. Positive, so it happens on its own."
+        ],
+        "a": "$+2.0\\,\\text{J/K}$"
+      },
+      {
+        "t": "ex",
+        "title": "Melting ice",
+        "q": "Find the entropy change of $0.10\\,\\text{kg}$ of ice melting at $0\\,^\\circ\\text{C}$.",
+        "steps": [
+          "Heat: $Q = mL_f = (0.10)(3.34 \\times 10^{5}) = 33{,}400\\,\\text{J}$, taken in at $273\\,\\text{K}$.",
+          "$\\Delta S = \\dfrac{33{,}400}{273} = 122\\,\\text{J/K}$."
+        ],
+        "a": "$122\\,\\text{J/K}$"
+      },
+      {
+        "t": "ex",
+        "title": "Inside a refrigerator",
+        "q": "A refrigerator takes $600\\,\\text{J}$ from food at $270\\,\\text{K}$ and, using $200\\,\\text{J}$ of work, gives $800\\,\\text{J}$ to a kitchen at $300\\,\\text{K}$. Find the total entropy change.",
+        "steps": [
+          "Food: $-\\dfrac{600}{270} = -2.22\\,\\text{J/K}$. Kitchen: $+\\dfrac{800}{300} = +2.67\\,\\text{J/K}$.",
+          "Total: $+0.44\\,\\text{J/K}$. The food's entropy fell, but the total rose."
+        ],
+        "a": "$+0.44\\,\\text{J/K}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking entropy can never go down anywhere. It can go down in one part of a system, such as the food in a refrigerator or water freezing into ice, as long as the entropy of the surroundings rises by more. The second law is about the <em>total</em> for an isolated system. Check: list every object that exchanges heat, and add up their $Q/T$ values."
+      },
+      {
+        "t": "note",
+        "html": "For Carnot's ideal engine the total is exactly zero: $Q_H/T_H = Q_C/T_C$, which gives its efficiency $1 - T_C/T_H$. Any real engine adds entropy, so it gives off more heat and does less work."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e, section 15.6 Entropy and the Second Law of Thermodynamics: Disorder and the Unavailability of Energy"
+      },
+      {
+        "name": "OpenStax, University Physics Volume 2, section 4.6 Entropy"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-PS3-4"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,121 @@
+{
+  "id": "gchem1.dissolution-energy",
+  "slug": "dissolution-energy",
+  "ladder": "chemistry",
+  "course": "gchem1",
+  "unit": "solutions",
+  "title": "The Energy of Dissolving",
+  "short": "Pulling solute apart and pulling solvent apart cost energy, forming new attractions releases it, and the total is ΔH of solution.",
+  "trouble": "Students think dissolving is always endothermic, or that a solid can dissolve only if dissolving releases heat.",
+  "prereqs": [
+    "chem.dissolving",
+    "chem.exo-endo"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-energydiagram"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Some salts warm the water as they dissolve, others chill it. Instant cold packs use ammonium nitrate; some hot packs use calcium chloride. <a href=\"/chemistry/chemistry/dissolving/\">Why Things Dissolve</a> explained the particle picture and <a href=\"/chemistry/chemistry/exo-endo/\">Exothermic and Endothermic Reactions</a> the energy words. Here they meet."
+      },
+      {
+        "t": "key",
+        "html": "Dissolving is three steps. (1) Separate the solute particles: costs energy ($\\Delta H_1 > 0$). (2) Make room among the solvent particles: costs energy ($\\Delta H_2 > 0$). (3) Let solute and solvent attract each other: releases energy ($\\Delta H_3 < 0$). $$\\Delta H_\\text{soln} = \\Delta H_1 + \\Delta H_2 + \\Delta H_3$$ If step 3 releases more than steps 1 and 2 cost, dissolving is exothermic; otherwise it is endothermic."
+      },
+      {
+        "t": "why",
+        "html": "Pulling apart anything that attracts takes energy in, and new attractions forming give energy out. For an ionic solid, step 1 is the lattice energy, and steps 2 and 3 together are the <b>hydration</b> of the ions, as water molecules turn their oppositely charged ends toward each ion. The two large numbers nearly cancel, so $\\Delta H_\\text{soln}$ is a small difference that can have either sign. Why would anything dissolve if it costs energy? Because dissolving also spreads the particles out over many more possible arrangements, which favors mixing on its own (you will meet this as entropy in General Chemistry 2). That is why ammonium nitrate dissolves readily while absorbing heat."
+      },
+      {
+        "t": "viz",
+        "name": "ch-energydiagram",
+        "opts": {
+          "mode": "dissolve",
+          "dH": [
+            60,
+            40,
+            -110
+          ]
+        },
+        "cap": "The three steps of dissolving as an energy staircase. Here the mixing step releases more than the two separation steps cost, so $\\Delta H_\\text{soln} = -10\\ \\text{kJ/mol}$: exothermic."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Solute",
+          "$\\Delta H_\\text{soln}$ (kJ/mol)",
+          "The water"
+        ],
+        "rows": [
+          [
+            "$\\mathrm{NH_4NO_3}$",
+            "+25.7",
+            "cools"
+          ],
+          [
+            "$\\mathrm{KNO_3}$",
+            "+34.9",
+            "cools"
+          ],
+          [
+            "$\\mathrm{NaCl}$",
+            "+3.9",
+            "barely changes"
+          ],
+          [
+            "$\\mathrm{NaOH}$",
+            "−44.5",
+            "warms"
+          ],
+          [
+            "$\\mathrm{CaCl_2}$",
+            "−81.3",
+            "warms"
+          ]
+        ],
+        "cap": "Enthalpies of solution at 25 °C (CRC Handbook)."
+      },
+      {
+        "t": "ex",
+        "title": "Adding the steps",
+        "q": "For a solute, $\\Delta H_1 = +45\\ \\text{kJ/mol}$, $\\Delta H_2 = +20\\ \\text{kJ/mol}$ and $\\Delta H_3 = -52\\ \\text{kJ/mol}$. Find $\\Delta H_\\text{soln}$ and say whether the solution warms or cools.",
+        "steps": [
+          "$\\Delta H_\\text{soln} = 45 + 20 - 52 = +13\\ \\text{kJ/mol}$.",
+          "Positive: endothermic. The energy comes from the water, so the solution cools."
+        ],
+        "a": "$+13\\ \\text{kJ/mol}$; it cools."
+      },
+      {
+        "t": "ex",
+        "title": "Lattice energy against hydration",
+        "q": "Sodium chloride has a lattice energy of $787\\ \\text{kJ/mol}$, and the hydration of its ions releases $783\\ \\text{kJ/mol}$. Find $\\Delta H_\\text{soln}$.",
+        "steps": [
+          "Step 1 (break the lattice): $+787$. Steps 2 and 3 together (hydration): $-783$.",
+          "$\\Delta H_\\text{soln} = 787 - 783 = +4\\ \\text{kJ/mol}$, nearly zero."
+        ],
+        "a": "$+4\\ \\text{kJ/mol}$ (measured: $+3.9$)."
+      },
+      {
+        "t": "mistake",
+        "html": "Two opposite beliefs: that dissolving is always endothermic (\"breaking things apart takes energy\"), or that a solid can dissolve only if dissolving releases heat. The table shows both signs, and ammonium nitrate dissolves well while absorbing heat. Check: the sign of $\\Delta H_\\text{soln}$ tells you whether the solution warms or cools, not whether the solute dissolves."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 11.1 The Dissolution Process"
+      },
+      {
+        "name": "College Board, AP Chemistry Course and Exam Description (effective fall 2024), Unit 3: Properties of Substances and Mixtures"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

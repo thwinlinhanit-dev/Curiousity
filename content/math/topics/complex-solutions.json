@@ -1,0 +1,123 @@
+{
+  "id": "alg2.complex-solutions",
+  "slug": "complex-solutions",
+  "ladder": "math",
+  "course": "alg2",
+  "unit": "quadratics-complex",
+  "title": "Quadratics with Complex Solutions",
+  "short": "A negative discriminant gives two complex conjugate solutions.",
+  "trouble": "",
+  "prereqs": [
+    "alg2.complex-arithmetic",
+    "alg1.quadratic-formula"
+  ],
+  "xp": 2,
+  "viz": [
+    "parabola",
+    "complexplane"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Now the <a href=\"/math/algebra-1/quadratic-formula/\">The Quadratic Formula</a> never fails. When the discriminant $b^2 - 4ac$ is negative, its square root is imaginary, and the formula hands you two complex solutions. You have the tools from <a href=\"/math/algebra-2/complex-arithmetic/\">Adding and Multiplying Complex Numbers</a> to simplify them."
+      },
+      {
+        "t": "key",
+        "html": "If $b^2 - 4ac < 0$, the solutions of $ax^2 + bx + c = 0$ are $x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$ with $\\sqrt{b^2 - 4ac} = \\sqrt{4ac - b^2}\\,i$. They form a conjugate pair $p + qi$ and $p - qi$."
+      },
+      {
+        "t": "why",
+        "html": "The formula comes from completing the square, which never needed the discriminant to be positive. When it is negative, the $\\pm$ adds and subtracts the same imaginary amount from the same real number $-\\frac{b}{2a}$, so the two answers are conjugates. On the graph this means the parabola never touches the $x$-axis: there are no real zeros, but the equation still has two solutions off the real line."
+      },
+      {
+        "t": "viz",
+        "name": "parabola",
+        "opts": {
+          "form": "standard",
+          "a": 1,
+          "b": -2,
+          "c": 5,
+          "show": [
+            "vertex",
+            "axis",
+            "roots"
+          ],
+          "ymin": -3,
+          "ymax": 10
+        },
+        "cap": "$y = x^2 - 2x + 5$ floats above the $x$-axis, so it has no real zeros. Its solutions are $1 + 2i$ and $1 - 2i$."
+      },
+      {
+        "t": "viz",
+        "name": "complexplane",
+        "opts": {
+          "z": [
+            1,
+            2
+          ],
+          "op": "conj",
+          "ops": [
+            "conj"
+          ],
+          "snap": 0.5,
+          "range": 4
+        },
+        "cap": "The two solutions $1 \\pm 2i$ are mirror images across the real axis: complex conjugates."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A conjugate pair",
+        "q": "Solve $x^2 - 2x + 5 = 0$.",
+        "steps": [
+          "$a = 1$, $b = -2$, $c = 5$. Discriminant: $4 - 20 = -16$.",
+          "$\\sqrt{-16} = 4i$.",
+          "$x = \\frac{2 \\pm 4i}{2} = 1 \\pm 2i$."
+        ],
+        "a": "$1 + 2i$ and $1 - 2i$"
+      },
+      {
+        "t": "ex",
+        "title": "Check one solution",
+        "q": "Show that $x = 1 + 2i$ satisfies $x^2 - 2x + 5 = 0$.",
+        "steps": [
+          "$(1 + 2i)^2 = 1 + 4i + 4i^2 = -3 + 4i$.",
+          "$-2(1 + 2i) = -2 - 4i$.",
+          "Add: $-3 + 4i - 2 - 4i + 5 = 0$."
+        ],
+        "a": "It checks."
+      },
+      {
+        "t": "ex",
+        "title": "A root that does not simplify",
+        "q": "Solve $2x^2 + 2x + 1 = 0$.",
+        "steps": [
+          "Discriminant: $4 - 8 = -4$, and $\\sqrt{-4} = 2i$.",
+          "$x = \\frac{-2 \\pm 2i}{4} = -\\frac{1}{2} \\pm \\frac{1}{2}i$."
+        ],
+        "a": "$-\\frac{1}{2} + \\frac{1}{2}i$ and $-\\frac{1}{2} - \\frac{1}{2}i$"
+      },
+      {
+        "t": "mistake",
+        "html": "Stopping at \"no solution.\" That answer is right only if the question asks for <b>real</b> solutions. Another slip is dividing only one term by $2a$: in $\\frac{2 \\pm 4i}{2}$ both the 2 and the $4i$ get divided, giving $1 \\pm 2i$, not $1 \\pm 4i$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Algebra 2e, Section 2.5 Quadratic Equations"
+      },
+      {
+        "name": "Common Core State Standards, N-CN.C.7"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

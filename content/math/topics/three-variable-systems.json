@@ -1,0 +1,106 @@
+{
+  "id": "alg2.three-variable-systems",
+  "slug": "three-variable-systems",
+  "ladder": "math",
+  "course": "alg2",
+  "unit": "quadratics-complex",
+  "title": "Systems in Three Variables",
+  "short": "Eliminate one variable twice to reduce to two equations.",
+  "trouble": "Students eliminate a different variable from each pair, leaving two equations that still have three unknowns.",
+  "prereqs": [
+    "alg1.systems-elimination-multiply"
+  ],
+  "xp": 3,
+  "viz": [],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "With two unknowns you used <a href=\"/math/algebra-1/systems-elimination-multiply/\">elimination</a>: scale the equations so a variable cancels, then add. Three unknowns need three equations, and the same idea works in two rounds."
+      },
+      {
+        "t": "key",
+        "html": "Pick one variable. Use two different pairs of equations to eliminate that <b>same</b> variable twice. That leaves two equations in the other two variables, which you solve as before. Then substitute back to find the last variable, and check all three equations."
+      },
+      {
+        "t": "why",
+        "html": "Adding a multiple of one true equation to another gives a new true equation, so elimination never changes the solutions. Each round removes one unknown. Picture each equation as a flat plane in space: the solution is the single point where all three planes meet."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Step",
+          "What you do",
+          "What is left"
+        ],
+        "rows": [
+          [
+            "1",
+            "(1) and (2): eliminate $x$",
+            "equation (4) in $y$ and $z$"
+          ],
+          [
+            "2",
+            "(1) and (3): eliminate $x$ again",
+            "equation (5) in $y$ and $z$"
+          ],
+          [
+            "3",
+            "(4) and (5): eliminate $y$",
+            "one equation in $z$"
+          ],
+          [
+            "4",
+            "back-substitute",
+            "$y$, then $x$"
+          ]
+        ],
+        "cap": "A plan for a 3-by-3 system"
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A full solution",
+        "q": "Solve $x + y + z = 6$, $2x - y + z = 3$, $x + 2y - z = 2$.",
+        "steps": [
+          "(1) + (2) eliminates $y$: $3x + 2z = 9$. Call it (4).",
+          "$2 \\times$(1) $-$ (3) eliminates $y$ again: $2x + 2y + 2z - x - 2y + z = 12 - 2$, so $x + 3z = 10$. Call it (5).",
+          "From (5), $x = 10 - 3z$. Into (4): $30 - 9z + 2z = 9$, so $z = 3$.",
+          "Then $x = 1$, and from (1) $y = 6 - 1 - 3 = 2$.",
+          "Check (2): $2 - 2 + 3 = 3$. Check (3): $1 + 4 - 3 = 2$."
+        ],
+        "a": "$(1, 2, 3)$"
+      },
+      {
+        "t": "ex",
+        "title": "One equation is missing a variable",
+        "q": "Solve $x + y = 5$, $y + z = 7$, $x + z = 8$.",
+        "steps": [
+          "Add all three: $2x + 2y + 2z = 20$, so $x + y + z = 10$.",
+          "Subtract each original: $z = 10 - 5 = 5$, $x = 10 - 7 = 3$, $y = 10 - 8 = 2$."
+        ],
+        "a": "$(3, 2, 5)$"
+      },
+      {
+        "t": "mistake",
+        "html": "Eliminating $x$ from one pair and $y$ from another. Then both new equations still contain different leftover variables, and you are no closer. Decide which variable goes first and eliminate that same one from two different pairs. Check your final triple in all three original equations, not just the last one you used."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Algebra 2e, Section 7.2 Systems of Linear Equations: Three Variables"
+      },
+      {
+        "name": "Common Core State Standards, A-REI.C.6"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

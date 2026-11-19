@@ -1,0 +1,128 @@
+{
+  "id": "calc2.shells",
+  "slug": "shells",
+  "ladder": "math",
+  "course": "calc2",
+  "unit": "applications",
+  "title": "Cylindrical Shells",
+  "short": "V = 2π∫(radius)(height) dx.",
+  "trouble": "Students use the wrong radius when the axis of rotation is not an axis of coordinates.",
+  "prereqs": [
+    "calc2.disks-washers"
+  ],
+  "xp": 3,
+  "viz": [
+    "solids"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "With <a href=\"/math/calculus-2/disks-washers/\">disks and washers</a> you slice across the axis of rotation. Sometimes that forces you to solve a curve for $x$ in terms of $y$, which can be hard or impossible. Cylindrical shells slice parallel to the axis instead."
+      },
+      {
+        "t": "why",
+        "html": "Take a thin vertical strip at $x$, of height $h(x)$ and width $\\Delta x$, and spin it around the $y$-axis. It sweeps out a thin-walled tube: a shell. Cut the shell down one side and unroll it. You get a nearly flat slab with length $2\\pi x$ (the circumference), height $h(x)$ and thickness $\\Delta x$. So its volume is about $2\\pi x\\,h(x)\\,\\Delta x$, and adding shells gives\n$$V = \\int_a^b 2\\pi x\\,h(x)\\,dx.$$"
+      },
+      {
+        "t": "key",
+        "html": "$$V = 2\\pi\\int_a^b (\\text{radius})(\\text{height})\\,dx,$$\nwhere the radius is the distance from the strip to the axis of rotation and the height is top curve minus bottom curve."
+      },
+      {
+        "t": "ex",
+        "title": "About the y-axis",
+        "q": "Revolve the region between $y = 2x - x^{2}$ and the $x$-axis about the $y$-axis.",
+        "steps": [
+          "The curve meets the axis at $x = 0$ and $x = 2$. A strip at $x$ has height $2x - x^{2}$ and radius $x$.",
+          "$$\\begin{aligned} V &= 2\\pi\\int_0^2 x(2x - x^{2})\\,dx \\\\ &= 2\\pi\\left[\\frac{2x^{3}}{3} - \\frac{x^{4}}{4}\\right]_0^2 \\\\ &= 2\\pi\\left(\\frac{16}{3} - 4\\right). \\end{aligned}$$",
+          "$V = \\frac{8\\pi}{3}$. With washers you would first have to solve $y = 2x - x^{2}$ for $x$, getting two branches $x = 1 \\pm\\sqrt{1 - y}$."
+        ],
+        "a": "$\\frac{8\\pi}{3}$"
+      },
+      {
+        "t": "viz",
+        "name": "solids",
+        "opts": {
+          "f": "2x-x^2",
+          "a": 0,
+          "b": 2,
+          "axis": "y",
+          "angle": 270,
+          "x0": 1.5
+        },
+        "cap": "Shells: each vertical strip spins into a thin cylinder around the $y$-axis. Slide the strip and watch the radius and height in the readout."
+      },
+      {
+        "t": "ex",
+        "title": "An axis to the left",
+        "q": "Revolve the same region about the line $x = -1$.",
+        "steps": [
+          "The axis is 1 unit to the left of the $y$-axis, so a strip at $x$ is $x + 1$ from it.",
+          "$$\\begin{aligned} V &= 2\\pi\\int_0^2 (x + 1)(2x - x^{2})\\,dx \\\\ &= 2\\pi\\int_0^2 (2x + x^{2} - x^{3})\\,dx. \\end{aligned}$$",
+          "$= 2\\pi\\left(4 + \\frac{8}{3} - 4\\right) = \\frac{16\\pi}{3}$."
+        ],
+        "a": "$\\frac{16\\pi}{3}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Using $x$ as the radius when the axis is not the $y$-axis. The radius is a distance from the axis, so it must be 0 on the axis and grow as you move away. For the axis $x = -1$ the radius is $x + 1$; for an axis $x = 3$ to the right of the region it is $3 - x$. Check by plugging in one point: the strip at $x = 0$ is 1 unit from $x = -1$, and $0 + 1 = 1$."
+      },
+      {
+        "t": "ex",
+        "title": "An axis to the right",
+        "q": "Revolve the same region about the line $x = 3$.",
+        "steps": [
+          "Now the radius is $3 - x$.",
+          "$$\\begin{aligned} V &= 2\\pi\\int_0^2 (3 - x)(2x - x^{2})\\,dx \\\\ &= 2\\pi\\int_0^2 (6x - 5x^{2} + x^{3})\\,dx \\\\ &= 2\\pi\\left(12 - \\frac{40}{3} + 4\\right) \\\\ &= \\frac{16\\pi}{3}. \\end{aligned}$$",
+          "Same as for $x = -1$. The region is symmetric about $x = 1$, and both axes are 2 units from that center."
+        ],
+        "a": "$\\frac{16\\pi}{3}$"
+      },
+      {
+        "t": "table",
+        "head": [
+          "",
+          "Disks and washers",
+          "Shells"
+        ],
+        "rows": [
+          [
+            "Slices",
+            "perpendicular to the axis",
+            "parallel to the axis"
+          ],
+          [
+            "Piece",
+            "$\\pi(R^{2} - r^{2})\\,\\Delta x$",
+            "$2\\pi(\\text{radius})(\\text{height})\\,\\Delta x$"
+          ],
+          [
+            "Axis vertical: integrate in",
+            "$y$",
+            "$x$"
+          ],
+          [
+            "Axis horizontal: integrate in",
+            "$x$",
+            "$y$"
+          ]
+        ],
+        "cap": "Pick the method whose variable makes the curves easy to write."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 2, Section 2.3: Volumes of Revolution: Cylindrical Shells"
+      },
+      {
+        "name": "Paul’s Online Math Notes (Lamar University), Calculus II: Volumes of Solids of Revolution / Method of Cylinders"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,83 @@
+{
+  "id": "physsci.potential-energy",
+  "slug": "potential-energy",
+  "course": "physsci",
+  "courseTitle": "Physical Science",
+  "unit": "energy",
+  "unitTitle": "Energy, Work and Heat",
+  "title": "Gravitational Potential Energy",
+  "short": "Lifting an object stores energy: PE = mgh, measured from a chosen level.",
+  "trouble": "Students switch reference levels partway through a problem, measuring one height from the floor and another from the table.",
+  "prereqs": [
+    "physsci.energy-forms",
+    "physsci.mass-weight"
+  ],
+  "xp": 1,
+  "viz": [
+    "ph-energy"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Lift a book onto a shelf and you have stored energy in it: let it fall and that energy turns into motion. Energy stored by height is <b>gravitational potential energy</b>, one of the stored <a href=\"/physics/physical-science/energy-forms/\">forms of energy</a>. It depends on the <a href=\"/physics/physical-science/mass-weight/\">weight</a> $mg$ and on the height."
+      },
+      {
+        "t": "key",
+        "html": "$$\\text{PE} = m\\,g\\,h$$ where $h$ is the height above a level you choose as zero, and $g = 9.8\\,\\mathrm{N/kg}$. Only <b>changes</b> in PE matter, so pick one zero level and keep it for the whole problem."
+      },
+      {
+        "t": "why",
+        "html": "To lift an object at a steady speed, you push up with a force equal to its weight, $mg$, through the height $h$. That takes $mg \\times h$ of energy, and it is stored as PE. Measuring heights from the floor or from a table gives different PE values, but the same <b>difference</b> between two heights, and differences are what turn into motion."
+      },
+      {
+        "t": "viz",
+        "name": "ph-energy",
+        "opts": {
+          "scene": "drop",
+          "h0": 5,
+          "m": 2
+        },
+        "cap": "A 2 kg ball dropped from 5 m. At the top, all its energy is potential: $2 \\times 9.8 \\times 5 = 98$ J. Watch it turn into kinetic energy on the way down."
+      },
+      {
+        "t": "ex",
+        "title": "Lift a box",
+        "q": "A 4 kg box is lifted from the floor onto a shelf 1.5 m high. How much potential energy does it gain?",
+        "steps": [
+          "$\\text{PE} = m\\,g\\,h = 4 \\times 9.8 \\times 1.5$.",
+          "$= 58.8$ J."
+        ],
+        "a": "58.8 J"
+      },
+      {
+        "t": "ex",
+        "title": "Same change, any zero",
+        "q": "A 2 kg book moves from a 0.8 m table to a 2.0 m shelf. Find the change in PE using the floor as zero, then using the table as zero.",
+        "steps": [
+          "Floor as zero: $2 \\times 9.8 \\times 2.0 - 2 \\times 9.8 \\times 0.8 = 39.2 - 15.68 = 23.52$ J.",
+          "Table as zero: the shelf is $1.2$ m up and the table is at 0, so $2 \\times 9.8 \\times 1.2 - 0 = 23.52$ J.",
+          "Same change either way."
+        ],
+        "a": "23.52 J both ways"
+      },
+      {
+        "t": "mistake",
+        "html": "Switching zero levels partway through, for example measuring one height from the floor and another from the table. Mixing them gives a wrong change. Check: write down your zero level first, and measure every height from it."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e, 7.3 Gravitational Potential Energy"
+      },
+      {
+        "name": "Next Generation Science Standards, MS-PS3-2"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

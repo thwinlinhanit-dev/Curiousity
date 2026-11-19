@@ -1,0 +1,101 @@
+{
+  "id": "ra.countable-sets",
+  "slug": "countable-sets",
+  "ladder": "math",
+  "course": "ra",
+  "unit": "real-numbers",
+  "title": "Countable and Uncountable Sets",
+  "short": "A set is countable when its elements can be listed a₁, a₂, a₃, …; the rationals are countable, but Cantor's diagonal argument shows the reals are not.",
+  "trouble": "Students think the diagonal number might appear later in the list. It differs from the nth number in the nth digit, so it differs from every number on the list.",
+  "prereqs": [
+    "disc.bijections-inverses",
+    "ra.completeness"
+  ],
+  "xp": 2,
+  "viz": [
+    "ra-diagonal"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Some infinite sets are bigger than others. In <a href=\"/math/discrete-math/bijections-inverses/\">Discrete Math</a> you saw that a bijection matches two sets element for element; here we compare infinite sets the same way. The surprise, due to Georg Cantor, is that the real numbers cannot be listed at all, even though the rationals can. The proof uses decimal expansions of numbers in $(0, 1)$, which exist thanks to <a href=\"/math/real-analysis/completeness/\">completeness</a>."
+      },
+      {
+        "t": "key",
+        "html": "A set is <b>countable</b> when it is finite or there is a bijection between it and the positive integers, that is, its elements can be listed $a_1, a_2, a_3, \\ldots$ with every element appearing. $\\mathbb{Z}$, $\\mathbb{Q}$ and $\\mathbb{Z} \\times \\mathbb{Z}$ are countable. The interval $(0, 1)$, and so $\\mathbb{R}$, is <b>uncountable</b>."
+      },
+      {
+        "t": "why",
+        "html": "<b>Pairs are countable.</b> List the pairs $(m, n)$ of positive integers by diagonals $m + n = 2, 3, 4, \\ldots$: $(1, 1), (1, 2), (2, 1), (1, 3), (2, 2), (3, 1), \\ldots$ Each diagonal is finite, so every pair gets a position, and $\\frac{m}{n}$ then lists every positive rational (with repeats, which we skip). <b>$(0, 1)$ is not.</b> Suppose $x_1, x_2, x_3, \\ldots$ were a list of all of $(0, 1)$. Build $x = 0.d_1 d_2 d_3 \\ldots$ where $d_k = 4$ if the $k$th digit of $x_k$ is $5$, and $d_k = 5$ otherwise. Then $x \\in (0, 1)$, and $x$ differs from $x_k$ in the $k$th digit, so $x \\ne x_k$ for every $k$. Using only the digits $4$ and $5$ means $x$ has a unique decimal expansion (no $\\ldots 999$ tail), so \"differs in a digit\" really means \"is a different number.\" So the list missed $x$: no list can contain all of $(0, 1)$. $\\blacksquare$"
+      },
+      {
+        "t": "viz",
+        "name": "ra-diagonal",
+        "opts": {
+          "mode": "diagonal",
+          "rows": [
+            "31415",
+            "27182",
+            "14142",
+            "16180",
+            "57751"
+          ]
+        },
+        "cap": "Build the diagonal number one digit at a time. Each new digit is chosen to disagree with the digit on the diagonal."
+      },
+      {
+        "t": "viz",
+        "name": "ra-diagonal",
+        "opts": {
+          "mode": "pairing",
+          "size": 6
+        },
+        "cap": "The diagonal listing of pairs: step through it and watch every pair receive a position."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A position in the pair listing",
+        "q": "In the diagonal listing, what is the position of $(3, 2)$?",
+        "steps": [
+          "It lies on the diagonal $m + n = 5$.",
+          "The earlier diagonals $m + n = 2, 3, 4$ hold $1 + 2 + 3 = 6$ pairs.",
+          "Within its diagonal it is number $m = 3$, so its position is $6 + 3 = 9$."
+        ],
+        "a": "Position $9$."
+      },
+      {
+        "t": "ex",
+        "title": "Building the diagonal number",
+        "q": "A list begins $x_1 = 0.5172\\ldots$, $x_2 = 0.3909\\ldots$, $x_3 = 0.4455\\ldots$, $x_4 = 0.8125\\ldots$. Give the first four digits of Cantor's $x$.",
+        "steps": [
+          "The diagonal digits are $5, 9, 5, 5$.",
+          "Change each: $5 \\to 4$, anything else $\\to 5$. So $x = 0.4544\\ldots$"
+        ],
+        "a": "$0.4544$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>\"The diagonal number is just further down the list.\"</b> It cannot be: if it were $x_{1000}$, then its $1000$th digit would have to equal the $1000$th digit of $x_{1000}$, but it was built to differ there. The argument does not search the list; it shows every single line fails. Another slip is thinking a list that \"goes on forever\" must eventually include everything. The integers $2, 4, 6, \\ldots$ go on forever and still miss every odd number."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Jiří Lebl, Basic Analysis I: Introduction to Real Analysis, sections 0.3 (cardinality) and 1.4 (the size of $\\mathbb{R}$)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.100A Real Analysis, lecture notes on countable and uncountable sets"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

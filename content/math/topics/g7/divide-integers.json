@@ -1,0 +1,137 @@
+{
+  "id": "g7.divide-integers",
+  "slug": "divide-integers",
+  "ladder": "math",
+  "course": "g7",
+  "unit": "multiply-divide",
+  "title": "Dividing Integers",
+  "short": "The sign rules for dividing match those for multiplying.",
+  "trouble": "",
+  "prereqs": [
+    "g7.multiply-integers"
+  ],
+  "xp": 1,
+  "viz": [
+    "numberline"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Division undoes multiplication, so the sign rules you learned for <a href=\"/math/grade-7/multiply-integers/\">multiplying integers</a> carry straight over."
+      },
+      {
+        "t": "key",
+        "html": "Divide the absolute values. Same signs give a positive quotient; different signs give a negative one. Also, $-\\frac{a}{b} = \\frac{-a}{b} = \\frac{a}{-b}$."
+      },
+      {
+        "t": "why",
+        "html": "$-24 \\div 6$ asks: what times 6 is $-24$? Since $(-4) \\times 6 = -24$, the answer is $-4$. And $-24 \\div (-6)$ asks: what times $-6$ is $-24$? Since $4 \\times (-6) = -24$, the answer is $4$. Every division fact comes from a multiplication fact, so it follows the same sign rules."
+      },
+      {
+        "t": "viz",
+        "name": "numberline",
+        "opts": {
+          "min": -14,
+          "max": 2,
+          "step": 2,
+          "labels": "whole",
+          "points": [
+            {
+              "v": -12,
+              "label": "−12",
+              "color": "red"
+            }
+          ],
+          "hops": [
+            {
+              "from": 0,
+              "by": -4,
+              "n": 3
+            }
+          ],
+          "value": false
+        },
+        "cap": "$-12 \\div 3$: split a move of 12 to the left into 3 equal moves. Each one is $-4$."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Multiplication fact",
+          "Division facts it gives"
+        ],
+        "rows": [
+          [
+            "$(-4) \\times 6 = -24$",
+            "$-24 \\div 6 = -4$ and $-24 \\div (-4) = 6$"
+          ],
+          [
+            "$4 \\times (-6) = -24$",
+            "$-24 \\div (-6) = 4$ and $-24 \\div 4 = -6$"
+          ],
+          [
+            "$(-4) \\times (-6) = 24$",
+            "$24 \\div (-6) = -4$ and $24 \\div (-4) = -6$"
+          ]
+        ],
+        "cap": "One family of facts, three ways."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Different signs",
+        "q": "Find $-36 \\div 9$.",
+        "steps": [
+          "$36 \\div 9 = 4$.",
+          "Different signs: negative. Check: $(-4) \\times 9 = -36$ ✓."
+        ],
+        "a": "$-4$"
+      },
+      {
+        "t": "ex",
+        "title": "Same signs",
+        "q": "Find $\\frac{-56}{-8}$.",
+        "steps": [
+          "$56 \\div 8 = 7$.",
+          "Same signs: positive. Check: $7 \\times (-8) = -56$ ✓."
+        ],
+        "a": "$7$"
+      },
+      {
+        "t": "ex",
+        "title": "A steady drop",
+        "q": "A stock lost \\$18 in 6 days, the same amount each day. What was the change each day?",
+        "steps": [
+          "The total change is $-18$ dollars, split into 6 equal parts.",
+          "$-18 \\div 6 = -3$: down \\$3 a day."
+        ],
+        "a": "$-3$ dollars per day"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking that a negative divided by a negative is negative, so $-56 \\div (-8) = -7$. Check with multiplication: $-7 \\times (-8) = 56$, not $-56$. Every division can be checked this way."
+      },
+      {
+        "t": "note",
+        "html": "$\\frac{-3}{4}$, $\\frac{3}{-4}$ and $-\\frac{3}{4}$ are the same number: one negative sign anywhere makes the quotient negative. But $\\frac{-3}{-4} = \\frac{3}{4}$ is positive. And dividing by $0$ is never allowed: no number times $0$ gives $-24$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Prealgebra 2e, Section 3.4 Multiply and Divide Integers"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 7.NS.A.2b"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,94 @@
+{
+  "id": "g6.area-trapezoid",
+  "slug": "area-trapezoid",
+  "ladder": "math",
+  "course": "g6",
+  "unit": "geometry",
+  "title": "Area of a Trapezoid",
+  "short": "Two copies make a parallelogram: A = ½(b₁ + b₂)h.",
+  "trouble": "",
+  "prereqs": [
+    "g6.area-triangle"
+  ],
+  "xp": 2,
+  "viz": [
+    "areaformulas"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A trapezoid has one pair of parallel sides, called its bases. The same trick that worked for the <a href=\"/math/grade-6/area-triangle/\">triangle</a>, two copies make a parallelogram, works here too."
+      },
+      {
+        "t": "key",
+        "html": "The area of a trapezoid is $A = \\frac{1}{2}(b_1 + b_2)h$: add the two parallel sides, multiply by the height, and take half."
+      },
+      {
+        "t": "viz",
+        "name": "areaformulas",
+        "opts": {
+          "shape": "trapezoid",
+          "b": 7,
+          "b2": 3,
+          "h": 4
+        },
+        "cap": "Press <b>Rearrange</b>: a turned copy of the trapezoid completes a parallelogram whose base is $7 + 3$."
+      },
+      {
+        "t": "why",
+        "html": "Put a copy of the trapezoid next to it, turned upside down. The long base of one lines up with the short base of the other, so together they make a parallelogram with base $b_1 + b_2$ and the same height. Its area is $(b_1 + b_2)h$, and the trapezoid is half of it."
+      },
+      {
+        "t": "ex",
+        "title": "Use the formula",
+        "q": "A trapezoid has bases 10 ft and 6 ft and height 4 ft. Find its area.",
+        "steps": [
+          "Add the bases: $10 + 6 = 16$.",
+          "Multiply by the height: $16 \\times 4 = 64$.",
+          "Take half: $32$."
+        ],
+        "a": "32 square feet"
+      },
+      {
+        "t": "ex",
+        "title": "With decimals",
+        "q": "Find the area of a trapezoid with bases 7.5 m and 4.5 m and height 3 m.",
+        "steps": [
+          "$7.5 + 4.5 = 12$.",
+          "$\\frac{1}{2} \\times 12 \\times 3 = 18$."
+        ],
+        "a": "18 square meters"
+      },
+      {
+        "t": "ex",
+        "title": "Another way: split it",
+        "q": "A trapezoid has bases 9 and 5 and height 4, with its slanted side on the right. Split it into a rectangle and a triangle.",
+        "steps": [
+          "Rectangle: $5 \\times 4 = 20$.",
+          "Triangle: base $9 - 5 = 4$, height 4: $\\frac{1}{2} \\times 4 \\times 4 = 8$.",
+          "Total $20 + 8 = 28$. The formula agrees: $\\frac{1}{2}(9 + 5) \\times 4 = 28$."
+        ],
+        "a": "28 square units"
+      },
+      {
+        "t": "mistake",
+        "html": "Using a slanted side instead of the height, or adding all four sides. Only the two parallel sides go in the formula, and the height must be straight across between them. Quick check: the area must be between $b_2 \\times h$ and $b_1 \\times h$ (for the first example, between $6 \\times 4 = 24$ and $10 \\times 4 = 40$)."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Prealgebra 2e, section 9.4 Use Properties of Rectangles, Triangles, and Trapezoids"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 6.G.A.1: area of trapezoids"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

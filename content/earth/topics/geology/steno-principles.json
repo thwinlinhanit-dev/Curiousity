@@ -1,0 +1,172 @@
+{
+  "id": "geology.steno-principles",
+  "slug": "steno-principles",
+  "ladder": "earth",
+  "course": "geology",
+  "unit": "geologic-time",
+  "title": "Steno's Principles and Faunal Succession",
+  "short": "Original horizontality, lateral continuity, inclusions and the order of fossils extend superposition to read any outcrop.",
+  "trouble": "Students think tilted layers were laid down tilted; sediment settles in flat layers, so the tilting came later.",
+  "prereqs": [
+    "earthsci.cross-cutting",
+    "earthsci.fossils"
+  ],
+  "xp": 2,
+  "viz": [
+    "es-strata"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/earth-and-space/earth-science/cross-cutting/\">Cross-Cutting Relationships</a> and <a href=\"/earth-and-space/earth-science/fossils/\">Fossils</a> you began reading rock layers in order. In 1669 Nicolas Steno wrote down the rules that make it possible, and two centuries of geologists added more. Together they let you order the events in any outcrop without a single number."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Principle",
+          "What it says"
+        ],
+        "rows": [
+          [
+            "Superposition",
+            "In undisturbed layers, each layer is younger than the one below it."
+          ],
+          [
+            "Original horizontality",
+            "Sediment settles in flat, horizontal layers; tilted or folded layers were disturbed later."
+          ],
+          [
+            "Lateral continuity",
+            "Layers spread sideways until they thin out, so matching layers across a canyon were once joined."
+          ],
+          [
+            "Cross-cutting relationships",
+            "A dike, fault or erosion surface is younger than the rock it cuts."
+          ],
+          [
+            "Inclusions",
+            "Pieces of one rock inside another are older than the rock that holds them."
+          ],
+          [
+            "Faunal succession",
+            "Fossils appear in a definite order through the layers, so a fossil assemblage marks a span of time."
+          ]
+        ],
+        "cap": "The principles of relative dating."
+      },
+      {
+        "t": "why",
+        "html": "Each principle is physics or biology. Gravity settles grains in flat sheets, oldest at the bottom. A crack can only cut rock that is already there, and a pebble can only be eroded from rock that already existed. Species appear and go extinct once, never to return, so the order of fossils is the same everywhere; William Smith used this around 1800 to match layers across England."
+      },
+      {
+        "t": "key",
+        "html": "Read layers bottom to top (superposition), remember that layers start flat (original horizontality) and continuous (lateral continuity), and place anything that cuts across or is included in them in its proper turn (cross-cutting, inclusions). Fossils order layers everywhere."
+      },
+      {
+        "t": "viz",
+        "name": "es-strata",
+        "opts": {
+          "events": [
+            {
+              "t": "deposit",
+              "rock": "sandstone"
+            },
+            {
+              "t": "deposit",
+              "rock": "shale",
+              "fossil": "trilobite"
+            },
+            {
+              "t": "deposit",
+              "rock": "limestone",
+              "fossil": "brachiopod"
+            },
+            {
+              "t": "deposit",
+              "rock": "siltstone"
+            },
+            {
+              "t": "tilt",
+              "deg": 18
+            },
+            {
+              "t": "intrude",
+              "kind": "dike",
+              "x": 0.5,
+              "w": 0.08
+            },
+            {
+              "t": "erode",
+              "depth": 0.06
+            },
+            {
+              "t": "deposit",
+              "rock": "conglomerate"
+            },
+            {
+              "t": "deposit",
+              "rock": "sandstone"
+            },
+            {
+              "t": "fault",
+              "x": 1.3,
+              "dip": 60,
+              "dipDir": "left",
+              "kind": "normal",
+              "slip": 0.06
+            }
+          ],
+          "replay": true
+        },
+        "cap": "Step through the history of this cross-section one event at a time, then turn on letters to test yourself."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Which is older?",
+        "q": "Sandstone sits on top of granite. Rounded pebbles of the granite are found in the bottom of the sandstone, and the granite at the contact is not baked. Which is older?",
+        "steps": [
+          "Inclusions: the granite pebbles in the sandstone must have existed before the sandstone.",
+          "No baking: the granite was not hot magma when the sand arrived; it had cooled, been exposed and eroded.",
+          "So the granite is older."
+        ],
+        "a": "The granite."
+      },
+      {
+        "t": "ex",
+        "title": "Tilted layers",
+        "q": "Layers of sandstone and shale stand at $40^\\circ$. What happened, and in what order?",
+        "steps": [
+          "Original horizontality: the layers were laid down flat.",
+          "So first they were deposited, oldest at the bottom, then later tilted by folding or faulting."
+        ],
+        "a": "Deposited flat, then tilted."
+      },
+      {
+        "t": "mistake",
+        "html": "It is natural to think tilted layers were laid down tilted. Loose sediment can't build steep layers over large areas; it settles in nearly flat sheets. So steep layers record a later event. Check: cross-beds are the small, local exception, and they are cut off at the top by the next flat layer."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "USGS, Geologic Time (general-interest publication)"
+      },
+      {
+        "name": "MIT OpenCourseWare, 12.001 Introduction to Geology"
+      },
+      {
+        "name": "OpenStax, Astronomy 2e, section 8.2, Earth's Crust"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

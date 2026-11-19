@@ -1,0 +1,103 @@
+{
+  "id": "geology.melting",
+  "slug": "melting",
+  "ladder": "earth",
+  "course": "geology",
+  "unit": "igneous",
+  "title": "How Rocks Melt",
+  "short": "Rock in the mantle melts when the pressure drops, when water is added, or when hot magma heats the crust around it.",
+  "trouble": "Students think magma forms only by heating; under mid-ocean ridges and hot spots rock melts because it rises and the pressure drops, and at subduction zones water lowers its melting point.",
+  "prereqs": [
+    "geology.geothermal-gradient",
+    "earthsci.plate-boundaries"
+  ],
+  "xp": 2,
+  "viz": [
+    "es-interior",
+    "es-boundary"
+  ],
+  "figureArchetype": "WaveFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/earth-and-space/geology/geothermal-gradient/\">The geothermal gradient</a> told us the mantle is hot, over $1,300^\\circ\\text{C}$ at 100 km. Yet the mantle is almost entirely solid: the S waves that cross it prove that. So magma must form only in special places, where something tips solid rock past its melting point. <a href=\"/earth-and-space/earth-science/plate-boundaries/\">Plate boundaries</a> are exactly those places."
+      },
+      {
+        "t": "why",
+        "html": "A rock melts when its temperature rises above its melting point (the <b>solidus</b>). There are three ways to get there, and only one involves adding heat. <b>Pressure</b> squeezes atoms together and makes melting harder, so the melting point of mantle rock rises steeply with depth. <b>Water</b> breaks bonds in the rock's minerals and lowers the melting point by hundreds of degrees."
+      },
+      {
+        "t": "list",
+        "items": [
+          "<b>Decompression melting</b> (mid-ocean ridges, hot spots, rifts): hot mantle rises and keeps nearly all its heat, but the pressure drops, so its melting point falls below its temperature.",
+          "<b>Flux melting</b> (subduction zones): the sinking plate releases water into the hot mantle above it, lowering that rock's melting point.",
+          "<b>Heat transfer</b>: hot basalt magma rising into the crust can melt the crust around it, which melts at lower temperatures than the mantle."
+        ]
+      },
+      {
+        "t": "key",
+        "html": "Most magma forms without extra heat: rising rock melts because the pressure drops, and wet rock melts because water lowers the melting point. Hot magma can also melt the crust it rises into."
+      },
+      {
+        "t": "viz",
+        "name": "es-interior",
+        "opts": {
+          "mode": "geotherm",
+          "maxDepth": 200,
+          "path": "decompression",
+          "solidus": "both"
+        },
+        "cap": "Temperature against depth. Follow the rising rock (the path) as it crosses the dry melting curve. The wet curve sits hundreds of degrees lower."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Where rising mantle starts to melt",
+        "q": "Under a ridge, rising rock at depth $z$ km is about $T = 1,350 + 0.4z$ °C, and its melting point is about $T_m = 1,120 + 4z$ °C. At what depth does it start to melt?",
+        "steps": [
+          "Set them equal: $1,350 + 0.4z = 1,120 + 4z$.",
+          "$230 = 3.6z$, so $z \\approx 64\\,\\text{km}$.",
+          "Above 64 km, the rock is hotter than its melting point and a few percent of it melts. That melt rises and builds new ocean crust."
+        ],
+        "a": "About $64\\,\\text{km}$."
+      },
+      {
+        "t": "ex",
+        "title": "Wet or dry?",
+        "q": "At 100 km, mantle rock is at $1,100^\\circ\\text{C}$. Dry rock there melts at about $1,300^\\circ\\text{C}$; with water, about $850^\\circ\\text{C}$. What happens above a sinking slab?",
+        "steps": [
+          "Dry: $1,100 < 1,300$, so the rock stays solid.",
+          "With water from the slab: $1,100 > 850$, so it partly melts.",
+          "That is how the Andes and the Cascades get their magma."
+        ],
+        "a": "It melts only where the slab supplies water."
+      },
+      {
+        "t": "mistake",
+        "html": "It is natural to think magma forms by heating rock up. Under ridges and hot spots, though, rock melts as it rises and the pressure drops; at subduction zones, it melts because water is added. Check yourself: under a mid-ocean ridge nothing is heating the mantle, yet it produces about 20 cubic kilometers of new crust every year."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Astronomy 2e, section 8.2, Earth's Crust"
+      },
+      {
+        "name": "USGS, This Dynamic Earth: The Story of Plate Tectonics (Kious and Tilling)"
+      },
+      {
+        "name": "NGSS HS-ESS2-3 (nextgenscience.org)"
+      },
+      {
+        "name": "MIT OpenCourseWare, 12.001 Introduction to Geology"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

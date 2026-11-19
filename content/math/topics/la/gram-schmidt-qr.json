@@ -1,0 +1,119 @@
+{
+  "id": "la.gram-schmidt-qr",
+  "slug": "gram-schmidt-qr",
+  "ladder": "math",
+  "course": "la",
+  "unit": "orthogonality",
+  "title": "Gram–Schmidt and QR",
+  "short": "Turn any basis into an orthonormal one.",
+  "trouble": "",
+  "prereqs": [
+    "la.orthogonal-projections"
+  ],
+  "xp": 3,
+  "viz": [
+    "vectors3d"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/math/linear-algebra/orthogonal-projections/\">Projections</a> are easy with an orthogonal basis and awkward without one. The Gram–Schmidt process turns any basis into an orthogonal one, spanning the same subspace, by removing the overlap one vector at a time."
+      },
+      {
+        "t": "key",
+        "html": "Given a basis $\\mathbf{x}_1, \\dots, \\mathbf{x}_p$: set $\\mathbf{v}_1 = \\mathbf{x}_1$, and for each next vector subtract its projections onto the vectors already built: $$\\mathbf{v}_k = \\mathbf{x}_k - \\frac{\\mathbf{x}_k\\cdot\\mathbf{v}_1}{\\mathbf{v}_1\\cdot\\mathbf{v}_1}\\mathbf{v}_1 - \\cdots - \\frac{\\mathbf{x}_k\\cdot\\mathbf{v}_{k-1}}{\\mathbf{v}_{k-1}\\cdot\\mathbf{v}_{k-1}}\\mathbf{v}_{k-1}.$$ Then $\\{\\mathbf{v}_1, \\dots, \\mathbf{v}_p\\}$ is an orthogonal basis of the same subspace. Divide each by its length for an orthonormal basis."
+      },
+      {
+        "t": "why",
+        "html": "At step $k$, $\\mathbf{v}_1, \\dots, \\mathbf{v}_{k-1}$ are orthogonal and span the same space as $\\mathbf{x}_1, \\dots, \\mathbf{x}_{k-1}$. The subtracted part is the projection of $\\mathbf{x}_k$ onto that space (the orthogonal-basis formula), so what remains, $\\mathbf{v}_k$, is orthogonal to all of it. It is not $\\mathbf{0}$, because $\\mathbf{x}_k$ is not in the span of the earlier $\\mathbf{x}$'s. And $\\mathbf{v}_k$ is $\\mathbf{x}_k$ minus a combination of earlier vectors, so the span does not change."
+      },
+      {
+        "t": "ex",
+        "title": "Two vectors",
+        "q": "Apply Gram–Schmidt to $\\mathbf{x}_1 = \\begin{bmatrix} 1 \\\\ 1 \\\\ 0 \\end{bmatrix}$, $\\mathbf{x}_2 = \\begin{bmatrix} 1 \\\\ 0 \\\\ 1 \\end{bmatrix}$, then normalize.",
+        "steps": [
+          "$\\mathbf{v}_1 = \\mathbf{x}_1 = (1, 1, 0)$.",
+          "$\\mathbf{x}_2\\cdot\\mathbf{v}_1 = 1$ and $\\mathbf{v}_1\\cdot\\mathbf{v}_1 = 2$, so $\\mathbf{v}_2$ $= (1, 0, 1) - \\frac{1}{2}(1, 1, 0)$ $= \\left(\\frac{1}{2}, -\\frac{1}{2}, 1\\right)$.",
+          "Scaling does not change orthogonality, so use $\\mathbf{v}_2 = (1, -1, 2)$ to avoid fractions. Check: $\\mathbf{v}_1\\cdot\\mathbf{v}_2 = 1 - 1 + 0 = 0$. ✓",
+          "Normalize: $\\mathbf{q}_1 = \\frac{1}{\\sqrt{2}}(1, 1, 0)$ and $\\mathbf{q}_2 = \\frac{1}{\\sqrt{6}}(1, -1, 2)$."
+        ],
+        "a": "$\\left\\{\\frac{1}{\\sqrt{2}}(1, 1, 0),\\ \\frac{1}{\\sqrt{6}}(1, -1, 2)\\right\\}$"
+      },
+      {
+        "t": "viz",
+        "name": "la-proj",
+        "opts": {
+          "y": [
+            1,
+            0,
+            1
+          ],
+          "w1": [
+            1,
+            1,
+            0
+          ],
+          "w2": null,
+          "edit": false,
+          "yaw": -0.6,
+          "pitch": 0.5,
+          "names": {
+            "y": "x₂",
+            "yhat": "p",
+            "z": "v₂",
+            "w1": "v₁",
+            "W": "the line through v₁"
+          }
+        },
+        "cap": "Gram–Schmidt step 2: from $\\mathbf{x}_2$ remove its projection $\\mathbf{p}$ onto $\\mathbf{v}_1$; what is left, $\\mathbf{v}_2$, is perpendicular to $\\mathbf{v}_1$."
+      },
+      {
+        "t": "h",
+        "text": "The QR factorization"
+      },
+      {
+        "t": "p",
+        "html": "Run Gram–Schmidt on the columns of an $m \\times n$ matrix $A$ with independent columns, normalize, and put the results in the columns of $Q$. Each $\\mathbf{x}_k$ is a combination of $\\mathbf{q}_1, \\dots, \\mathbf{q}_k$ only, so $A = QR$ with $R$ upper triangular (and positive diagonal). Since $Q^{T}Q = I$, the triangle is easy to find: $R = Q^{T}A$."
+      },
+      {
+        "t": "ex",
+        "title": "A QR factorization",
+        "q": "Find $A = QR$ for $A = \\begin{bmatrix} 1 & 4 \\\\ 2 & 5 \\\\ 2 & 2 \\end{bmatrix}$.",
+        "steps": [
+          "$\\mathbf{v}_1 = (1, 2, 2)$, with length $3$.",
+          "$\\mathbf{x}_2\\cdot\\mathbf{v}_1 = 4 + 10 + 4 = 18$ and $\\mathbf{v}_1\\cdot\\mathbf{v}_1 = 9$, so $\\mathbf{v}_2$ $= (4, 5, 2) - 2(1, 2, 2)$ $= (2, 1, -2)$, also of length $3$.",
+          "$Q = \\begin{bmatrix} \\frac{1}{3} & \\frac{2}{3} \\\\ \\frac{2}{3} & \\frac{1}{3} \\\\ \\frac{2}{3} & -\\frac{2}{3} \\end{bmatrix}$ (columns $\\mathbf{v}_1/3$ and $\\mathbf{v}_2/3$).",
+          "$R = Q^{T}A = \\begin{bmatrix} 3 & 6 \\\\ 0 & 3 \\end{bmatrix}$. Check: $QR = \\begin{bmatrix} 1 & 4 \\\\ 2 & 5 \\\\ 2 & 2 \\end{bmatrix} = A$. ✓"
+        ],
+        "a": "$Q = \\begin{bmatrix} \\frac{1}{3} & \\frac{2}{3} \\\\ \\frac{2}{3} & \\frac{1}{3} \\\\ \\frac{2}{3} & -\\frac{2}{3} \\end{bmatrix}$, $R = \\begin{bmatrix} 3 & 6 \\\\ 0 & 3 \\end{bmatrix}$"
+      },
+      {
+        "t": "p",
+        "html": "For three vectors the pattern continues: $\\mathbf{v}_3$ $= \\mathbf{x}_3 - \\frac{\\mathbf{x}_3\\cdot\\mathbf{v}_1}{\\mathbf{v}_1\\cdot\\mathbf{v}_1}\\mathbf{v}_1 - \\frac{\\mathbf{x}_3\\cdot\\mathbf{v}_2}{\\mathbf{v}_2\\cdot\\mathbf{v}_2}\\mathbf{v}_2$. Each new vector costs one more projection. If some $\\mathbf{v}_k$ comes out as $\\mathbf{0}$, then $\\mathbf{x}_k$ was a combination of the earlier vectors: the input was not independent, and you can simply drop it."
+      },
+      {
+        "t": "mistake",
+        "html": "Subtracting projections onto the original $\\mathbf{x}$'s instead of the new $\\mathbf{v}$'s. The formula only works with the orthogonal vectors built so far. Check each new vector by dotting it with all earlier ones: every dot product must be $0$."
+      },
+      {
+        "t": "note",
+        "html": "Computers use QR to solve least-squares problems, because it avoids forming $A^{T}A$, which can lose accuracy."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Margalit and Rabinoff, Interactive Linear Algebra (Georgia Tech), §6.4 Orthogonal Sets"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.06 Linear Algebra (Gilbert Strang, Spring 2010), Lecture 17: Orthogonal Matrices and Gram-Schmidt"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

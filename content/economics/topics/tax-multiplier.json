@@ -1,0 +1,99 @@
+{
+  "id": "macro.tax-multiplier",
+  "slug": "tax-multiplier",
+  "ladder": "economics",
+  "course": "macro",
+  "unit": "ad-as",
+  "title": "The Tax Multiplier",
+  "short": "A tax cut raises GDP by MPC/MPS times its size, less than the same increase in government purchases.",
+  "trouble": "Students use the spending multiplier for a tax change, forgetting that part of a tax cut is saved before any spending happens, or miss the sign: a tax increase lowers GDP.",
+  "prereqs": [
+    "macro.spending-multiplier"
+  ],
+  "xp": 2,
+  "viz": [
+    "ec-multiplier"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Fiscal policy can also change taxes. A tax cut works through the same rounds as the <a href=\"/economics/macroeconomics/spending-multiplier/\">The Spending Multiplier</a>, with one difference at the start."
+      },
+      {
+        "t": "key",
+        "html": "$$\\text{tax multiplier} = -\\dfrac{MPC}{MPS}$$ A tax cut of $\\Delta T$ raises real GDP by $\\dfrac{MPC}{MPS} \\times \\Delta T$ (with the price level unchanged); a tax increase lowers it. Transfer payments work like a tax cut. A change in $G$ matched by an equal change in taxes has a <b>balanced-budget multiplier</b> of 1."
+      },
+      {
+        "t": "why",
+        "html": "When the government buys \\$100 of goods, the first round is \\$100 of spending. When it cuts taxes by \\$100, households save part before spending anything: with $MPC = 0.8$, the first round is only \\$80. After that, the rounds are the same, each 0.8 times the last. So the total is $80 \\times 5 = 400$, which is $\\dfrac{0.8}{0.2} \\times 100$. The tax multiplier (4 here) is exactly one less than the spending multiplier (5). The minus sign says that raising taxes lowers GDP."
+      },
+      {
+        "t": "viz",
+        "name": "ec-multiplier",
+        "opts": {
+          "mode": "tax",
+          "first": 100,
+          "mpc": 0.8,
+          "rounds": 12
+        },
+        "cap": "A \\$100 tax cut: round 1 is only MPC × \\$100, because part of the cut is saved. Compare the limit with the spending multiplier's."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A tax increase",
+        "q": "The MPC is 0.75. Taxes rise by \\$40 billion. With the price level unchanged, how does real GDP change?",
+        "steps": [
+          "Tax multiplier $= -\\dfrac{0.75}{0.25} = -3$.",
+          "$\\Delta GDP = -3 \\times 40 = -120$ billion dollars."
+        ],
+        "a": "Falls by \\$120 billion"
+      },
+      {
+        "t": "ex",
+        "title": "Spending versus tax cut",
+        "q": "The MPC is 0.9. Which raises GDP more: \\$10 billion more in government purchases or a \\$10 billion tax cut? By how much?",
+        "steps": [
+          "Spending: $\\dfrac{1}{0.1} \\times 10 = 100$.",
+          "Tax cut: $\\dfrac{0.9}{0.1} \\times 10 = 90$.",
+          "Purchases raise GDP \\$10 billion more: the first round the government spends directly."
+        ],
+        "a": "Purchases, by \\$10 billion"
+      },
+      {
+        "t": "ex",
+        "title": "Balanced budget",
+        "q": "The government raises purchases by \\$50 billion and raises taxes by \\$50 billion. MPC = 0.8.",
+        "steps": [
+          "Purchases: $+5 \\times 50 = +250$. Taxes: $-4 \\times 50 = -200$.",
+          "Net: $+50$ billion, the size of the spending change."
+        ],
+        "a": "GDP rises \\$50 billion"
+      },
+      {
+        "t": "mistake",
+        "html": "Using the spending multiplier for a tax change, forgetting that part of a tax cut is saved before any spending happens, or missing the sign: a tax <i>increase</i> lowers GDP. Check: the tax multiplier's size is one less than the spending multiplier's, and its sign is opposite to the tax change."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Macroeconomics 3e, 11.2 The Building Blocks of Keynesian Analysis"
+      },
+      {
+        "name": "OpenStax Principles of Macroeconomics 3e, 16.4 Using Fiscal Policy to Fight Recession, Unemployment, and Inflation"
+      },
+      {
+        "name": "College Board, AP Macroeconomics Course and Exam Description (topic list)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,89 @@
+{
+  "id": "geology.magnetic-stripes",
+  "slug": "magnetic-stripes",
+  "ladder": "earth",
+  "course": "geology",
+  "unit": "plate-tectonics",
+  "title": "Magnetic Stripes and Spreading Rates",
+  "short": "Match seafloor stripes to the reversal timeline to find how fast a ridge spreads, as a half rate or a full rate.",
+  "trouble": "Students mix up half and full spreading rates; each plate moves away from the ridge at the half rate, and the two plates separate at twice that.",
+  "prereqs": [
+    "geology.paleomagnetism"
+  ],
+  "xp": 2,
+  "viz": [
+    "es-boundary"
+  ],
+  "figureArchetype": "FieldFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In the 1950s and 1960s, ships towing magnetometers back and forth across the oceans found something no one expected: the seafloor's magnetism runs in long stripes, alternately stronger and weaker, parallel to the mid-ocean ridges and mirrored on both sides. <a href=\"/earth-and-space/geology/paleomagnetism/\">Paleomagnetism</a> explains them, and they became the clinching evidence for <a href=\"/earth-and-space/earth-science/seafloor-spreading/\">seafloor spreading</a>."
+      },
+      {
+        "t": "why",
+        "html": "At a ridge crest, basalt erupts, cools and records the field of the moment. Then the plates move apart and that strip of new crust is split and carried away to both sides, while fresh lava fills the middle. When the field flips, the next crust records the opposite direction. So the seafloor becomes a tape recorder of reversals, playing out in both directions from the crest. Rocks on land had already given the dates of the reversals, so each stripe boundary has an age, and distance ÷ age gives the speed."
+      },
+      {
+        "t": "key",
+        "html": "Magnetic stripes match the reversal time line, so distance from the crest ÷ age gives the half spreading rate: how fast each plate moves away from the ridge. The plates separate at the full rate, twice that. Conveniently, 1 km per million years = 1 mm per year."
+      },
+      {
+        "t": "viz",
+        "name": "es-boundary",
+        "opts": {
+          "type": "ridge",
+          "stripes": true,
+          "time": 3,
+          "speed": 2.5
+        },
+        "cap": "Spreading at a ridge. Run time forward and watch new stripes form at the crest and march outward on both sides."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Spreading rate from a stripe",
+        "q": "The boundary of the most recent reversal, 0.77 million years old, lies 19.3 km from the crest. What is the half spreading rate?",
+        "steps": [
+          "Rate $= \\dfrac{19.3\\,\\text{km}}{0.77\\,\\text{million years}} \\approx 25\\,\\text{km per million years}$.",
+          "$1\\,\\text{km}$ per million years is $10^6\\,\\text{mm} \\div 10^6\\,\\text{yr} = 1\\,\\text{mm/yr}$, so the half rate is about $25\\,\\text{mm/yr}$.",
+          "The full rate, the speed at which the plates separate, is about $50\\,\\text{mm/yr}$."
+        ],
+        "a": "About $25\\,\\text{mm/yr}$ (full rate about $50$)."
+      },
+      {
+        "t": "ex",
+        "title": "How old is the seafloor?",
+        "q": "A ridge spreads at a half rate of 30 mm/yr. How old is the seafloor 600 km from the crest?",
+        "steps": [
+          "30 mm/yr is 30 km per million years.",
+          "$600 \\div 30 = 20$ million years."
+        ],
+        "a": "20 million years."
+      },
+      {
+        "t": "mistake",
+        "html": "Half and full spreading rates are easy to mix up. The half rate is how fast one plate moves away from the ridge; the two plates move apart at twice that. Check which you have: a stripe's distance from the crest gives the half rate; the distance between the matching stripes on both sides gives the full rate."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "USGS, This Dynamic Earth: The Story of Plate Tectonics (Kious and Tilling)"
+      },
+      {
+        "name": "OpenStax, Astronomy 2e, section 8.2, Earth's Crust"
+      },
+      {
+        "name": "NGSS HS-ESS1-5 (nextgenscience.org)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

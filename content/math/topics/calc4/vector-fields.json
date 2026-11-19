@@ -1,0 +1,111 @@
+{
+  "id": "calc4.vector-fields",
+  "slug": "vector-fields",
+  "ladder": "math",
+  "course": "calc4",
+  "unit": "vector-fields",
+  "title": "Vector Fields",
+  "short": "A vector field attaches an arrow to every point.",
+  "trouble": "Students read the arrows as a path to follow instead of a velocity at each point.",
+  "prereqs": [
+    "calc3.vectors-in-space",
+    "calc3.multivariable-functions"
+  ],
+  "xp": 1,
+  "viz": [
+    "vectorfield"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A weather map with wind arrows, the current in a river, the pull of the Earth on a satellite: each one attaches a <b>vector</b> to every point of a region. You already know <a href=\"/math/calculus-3/vectors-in-space/\">vectors</a> and <a href=\"/math/calculus-3/multivariable-functions/\">functions of several variables</a>. A vector field puts the two together: a function whose input is a point and whose output is a vector."
+      },
+      {
+        "t": "key",
+        "html": "A <b>vector field</b> on a region $D$ in the plane assigns to each point $(x, y)$ a vector\n  $$\\mathbf{F}(x, y) = \\langle P(x, y), Q(x, y) \\rangle.$$\n  In space, $\\mathbf{F}(x, y, z) = \\langle P, Q, R \\rangle$. To draw it, pick points and draw the arrow $\\mathbf{F}(x, y)$ with its <b>tail at the point</b>. A <b>flow line</b> is a curve $\\mathbf{r}(t)$ whose velocity always matches the field: $\\mathbf{r}'(t) = \\mathbf{F}(\\mathbf{r}(t))$."
+      },
+      {
+        "t": "p",
+        "html": "The components $P$ and $Q$ are ordinary scalar functions, so everything you know about continuity and partial derivatives applies to each one. A field is continuous when its components are, and it is \"smooth\" when its components have continuous partial derivatives. Most fields in this course are smooth except perhaps at a few points, such as the origin for the field of a point charge."
+      },
+      {
+        "t": "p",
+        "html": "Some fields to know. The <b>rotation field</b> $\\langle -y, x \\rangle$ circles the origin counterclockwise. The <b>radial field</b> $\\langle x, y \\rangle$ points straight away from the origin. A <b>constant field</b> such as $\\langle 3, -1 \\rangle$ is the same arrow everywhere, like a steady wind. Newton's law of gravitation gives an <b>inverse-square field</b>: a mass $M$ at the origin pulls a mass $m$ at $\\mathbf{r} = \\langle x, y, z \\rangle$ with force\n  $$\\mathbf{F} = -\\frac{GMm}{|\\mathbf{r}|^3}\\,\\mathbf{r},$$\n  which points toward the origin and has length $GMm/|\\mathbf{r}|^2$."
+      },
+      {
+        "t": "why",
+        "html": "<b>Why draw the tail at the point?</b> Think of a river. The arrow at $(x, y)$ is the velocity of the bit of water that is at $(x, y)$ right now. It says which way that water is heading and how fast, so it starts where the water is. A flow line is the path one bit of water actually takes. Its velocity at each moment is the arrow at the place where it is at that moment, which is exactly $\\mathbf{r}'(t) = \\mathbf{F}(\\mathbf{r}(t))$.<br>\n  <b>Why the rotation field circles:</b> $\\langle -y, x \\rangle \\cdot \\langle x, y \\rangle = -xy + yx = 0$, so each arrow is perpendicular to the line from the origin, and $|\\langle -y, x \\rangle| = \\sqrt{x^2 + y^2}$ is the distance to the origin. Arrows tangent to circles, longer farther out."
+      },
+      {
+        "t": "viz",
+        "name": "vectorfield",
+        "opts": {
+          "P": "-y",
+          "Q": "x",
+          "presets": true,
+          "probe": "div",
+          "at": [
+            1.5,
+            1
+          ],
+          "particles": true,
+          "task": "Watch the particles: each one follows a flow line, always tangent to the arrows. Then try the other fields."
+        },
+        "cap": "The rotation field $\\langle -y, x \\rangle$ with moving particles. No particle travels in a straight line along one arrow; each turns as the arrows under it turn. The buttons switch to other common fields."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Evaluating a field",
+        "q": "Find $\\mathbf{F}(2, -1)$ and its length for $\\mathbf{F}(x, y) = \\langle x - y, xy \\rangle$.",
+        "steps": [
+          "Substitute: $P(2, -1) = 2 - (-1) = 3$ and $Q(2, -1) = 2 \\cdot (-1) = -2$.",
+          "So the arrow at $(2, -1)$ is $\\langle 3, -2 \\rangle$, pointing right and down.",
+          "Its length is $\\sqrt{9 + 4} = \\sqrt{13}$. In a velocity field, that is the speed there."
+        ],
+        "a": "$\\langle 3, -2 \\rangle$, length $\\sqrt{13}$"
+      },
+      {
+        "t": "ex",
+        "title": "Sketching the rotation field",
+        "q": "Sketch $\\mathbf{F}(x, y) = \\langle -y, x \\rangle$ from a few arrows.",
+        "steps": [
+          "At $(1, 0)$: $\\langle 0, 1 \\rangle$, up. At $(0, 1)$: $\\langle -1, 0 \\rangle$, left. At $(-1, 0)$: $\\langle 0, -1 \\rangle$, down. At $(0, -1)$: $\\langle 1, 0 \\rangle$, right.",
+          "At $(2, 0)$: $\\langle 0, 2 \\rangle$, twice as long as at $(1, 0)$.",
+          "The arrows go around the origin counterclockwise, getting longer with distance, as the Why box shows."
+        ],
+        "a": "counterclockwise circles, length equal to the distance from the origin"
+      },
+      {
+        "t": "ex",
+        "title": "Checking a flow line",
+        "q": "Is $\\mathbf{r}(t) = \\langle 2\\cos t, 2\\sin t \\rangle$ a flow line of $\\mathbf{F} = \\langle -y, x \\rangle$?",
+        "steps": [
+          "$\\mathbf{r}'(t) = \\langle -2\\sin t, 2\\cos t \\rangle$.",
+          "$$\\mathbf{F}(\\mathbf{r}(t)) = \\langle -y, x \\rangle = \\langle -2\\sin t, 2\\cos t \\rangle.$$",
+          "They are equal for every $t$, so yes: a particle in this flow goes around the circle of radius ${}2$, counterclockwise."
+        ],
+        "a": "yes"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Reading an arrow as a path.</b> The arrow at a point is a velocity at that instant, not a trip. In the rotation field the arrow at $(1, 0)$ points straight up, but a particle starting there does not move straight up; one moment later it is at a new point with a new arrow, and it curves around the circle. To get paths, solve $\\mathbf{r}'(t) = \\mathbf{F}(\\mathbf{r}(t))$ or follow the arrows a little at a time."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 3, 6.1 Vector Fields"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

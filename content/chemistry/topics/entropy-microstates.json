@@ -1,0 +1,98 @@
+{
+  "id": "gchem2.entropy-microstates",
+  "slug": "entropy-microstates",
+  "ladder": "chemistry",
+  "course": "gchem2",
+  "unit": "thermodynamics",
+  "title": "Entropy and Microstates",
+  "short": "Entropy counts the ways to arrange particles and energy: S = k ln W.",
+  "trouble": "Students think of entropy only as messiness, so they misjudge cases like two gases mixing or energy spreading out.",
+  "prereqs": [
+    "gchem1.first-law",
+    "alg2.logarithms"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-microstates"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The <a href=\"/chemistry/general-chemistry-1/first-law/\">first law</a> says energy is conserved, but it does not say which way things go. Heat flows from hot to cold, gases spread out, ice melts in a warm room, and never the reverse on their own. The quantity that tracks this direction is entropy, and it comes from counting. You will need <a href=\"/math/algebra-2/logarithms/\">logarithms</a>."
+      },
+      {
+        "t": "key",
+        "html": "A <b>microstate</b> is one specific arrangement of all the particles and their energy. $W$ is the number of microstates that look the same from outside. Entropy is $S = k\\ln W$, with $k = 1.38 \\times 10^{-23}\\ \\text{J/K}$ (Boltzmann's constant). Systems drift toward the conditions with the most microstates, so entropy tends to increase."
+      },
+      {
+        "t": "why",
+        "html": "Every microstate is equally likely. Put 4 gas molecules in a box with two halves: there are $2^4 = 16$ microstates. Only 1 has all four on the left, but 6 have two on each side. So the spread-out state is 6 times more likely than the bunched-up one. With $6 \\times 10^{23}$ molecules, the odds against all of them gathering on one side are beyond astronomical, which is why it never happens. The logarithm makes entropy add up properly: two systems together have $W = W_1W_2$, so $S = S_1 + S_2$."
+      },
+      {
+        "t": "viz",
+        "name": "ch-microstates",
+        "opts": {
+          "mode": "gas",
+          "N": 10
+        },
+        "cap": "Ten particles in a box with a divider. Count the ways to have k on the left: the even split has by far the most arrangements."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Counting arrangements",
+        "q": "Ten gas molecules move freely in a box. What is the chance that all ten are in the left half at once? How many microstates have exactly five on each side?",
+        "steps": [
+          "Each molecule has 2 choices, so there are $2^{10} = 1024$ microstates in all.",
+          "All on the left: 1 microstate, a chance of $1/1024$.",
+          "Five and five: choose which 5 are on the left, $\\binom{10}{5} = 252$ microstates (about 25% of all)."
+        ],
+        "a": "$1/1024$; 252 microstates."
+      },
+      {
+        "t": "ex",
+        "title": "A gas doubling its volume",
+        "q": "One mole of an ideal gas expands into a vacuum, doubling its volume. Find $\\Delta S$.",
+        "steps": [
+          "Each molecule now has twice as many places to be, so $W$ is multiplied by $2^{N_A}$.",
+          "$\\Delta S = k\\ln(2^{N_A}) = N_Ak\\ln 2 = R\\ln 2$, since $N_Ak = R$.",
+          "$\\Delta S = (8.314)(0.693) = 5.76\\ \\text{J/K}$. No heat flowed and no energy changed, yet entropy rose."
+        ],
+        "a": "$+5.76\\ \\text{J/K}$."
+      },
+      {
+        "t": "viz",
+        "name": "ch-microstates",
+        "opts": {
+          "mode": "energy",
+          "q": 6,
+          "NA": 3,
+          "NB": 3
+        },
+        "cap": "Two small solids sharing six quanta of energy. Starting with all the energy in A, the most likely split spreads it over both: that spreading is heat flowing from hot to cold."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking of entropy only as messiness. Messiness misleads: two gases mixing and energy spreading from a hot object to a cold one both raise entropy, though neither looks messier. Check: ask how many ways the particles and the energy can be arranged."
+      },
+      {
+        "t": "p",
+        "html": "Count arrangements yourself, and watch heat flow from hot to cold by pure chance, in the Science Lab's <a href=\"/science-lab/thermodynamics/second-law/\">Entropy and the Second Law</a> chapter."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 16.2 Entropy"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

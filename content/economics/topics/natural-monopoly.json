@@ -1,0 +1,99 @@
+{
+  "id": "micro.natural-monopoly",
+  "slug": "natural-monopoly",
+  "ladder": "economics",
+  "course": "micro",
+  "unit": "imperfect-competition",
+  "title": "Regulating a Natural Monopoly",
+  "short": "When one firm can serve a market most cheaply, regulators may set P = MC (efficient but loss-making) or P = ATC (a fair return).",
+  "trouble": "Students expect a P = MC price rule to let the firm break even. With average cost falling, marginal cost is below average total cost, so the firm loses money.",
+  "prereqs": [
+    "micro.monopoly-inefficiency",
+    "micro.long-run-costs"
+  ],
+  "xp": 3,
+  "viz": [
+    "ec-monopoly"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Some industries are monopolies because one firm really is cheapest: economies of scale (<a href=\"/economics/microeconomics/long-run-costs/\">Economies and Diseconomies of Scale</a>) run across the whole market. Breaking them up would raise costs, but leaving them alone brings the deadweight loss of <a href=\"/economics/microeconomics/monopoly-inefficiency/\">Monopoly and Deadweight Loss</a>. Regulators look for a middle path."
+      },
+      {
+        "t": "key",
+        "html": "A <b>natural monopoly</b> has average total cost falling over the whole range of market demand, usually because of a big fixed cost. Two common price rules: <b>$P = MC$</b> is allocatively efficient but, since MC is below ATC, the firm <b>loses money</b> and needs a subsidy; <b>$P = ATC$</b> (average-cost pricing) lets the firm break even with a small deadweight loss."
+      },
+      {
+        "t": "why",
+        "html": "When average cost is falling, each extra unit costs less than the average so far: $MC < ATC$. So a price equal to MC is below the cost per unit, and the firm loses $(ATC - MC) \\times Q$, which with a constant MC is exactly its fixed cost. Setting the price at ATC covers every cost, including a normal return, so the firm can stay in business without a subsidy, at the cost of producing a bit less than the efficient amount."
+      },
+      {
+        "t": "viz",
+        "name": "ec-monopoly",
+        "opts": {
+          "mode": "natural",
+          "demand": {
+            "p0": 20,
+            "s": 1
+          },
+          "mc": {
+            "m0": 4,
+            "m1": 0
+          },
+          "atc": {
+            "F": 48
+          }
+        },
+        "cap": "Average total cost falls across the whole market. Try each regulation: with $P = MC$ the firm needs a subsidy; with $P = ATC$ it breaks even."
+      },
+      {
+        "t": "ex",
+        "title": "Unregulated, and P = MC",
+        "q": "A water utility faces demand $P = 20 - Q$, has a constant marginal cost of \\$4 and a fixed cost of \\$48. Find its outcome unregulated and under a $P = MC$ rule.",
+        "steps": [
+          "Unregulated: $MR = 20 - 2Q = 4$ gives $Q = 8$ and $P = \\$12$; profit $= (12 - 4)(8) - 48 = \\$16$.",
+          "$P = MC$: $20 - Q = 4$ gives $Q = 16$ and $P = \\$4$.",
+          "At \\$4 the price covers each unit's marginal cost but none of the \\$48 fixed cost: a loss of \\$48, which a subsidy would have to cover."
+        ],
+        "a": "Unregulated: 8 units at \\$12. $P = MC$: 16 units at \\$4, losing \\$48."
+      },
+      {
+        "t": "ex",
+        "title": "Average-cost pricing",
+        "q": "For the same utility, find the price and quantity under a $P = ATC$ rule.",
+        "steps": [
+          "$ATC = \\dfrac{48}{Q} + 4$. Set it equal to demand: $20 - Q = \\dfrac{48}{Q} + 4$.",
+          "Multiply by $Q$ and rearrange: $Q^2 - 16Q + 48 = 0$, so $(Q - 4)(Q - 12) = 0$.",
+          "Take the larger root, $Q = 12$ (more output at a lower price): $P = 20 - 12 = \\$8$, and $ATC = 48/12 + 4 = \\$8$. Zero economic profit."
+        ],
+        "a": "12 units at \\$8: the firm breaks even."
+      },
+      {
+        "t": "mistake",
+        "html": "Expecting a $P = MC$ rule to let the firm break even. With average cost falling, MC is below ATC, so price equal to MC can't cover the average cost. Check: compare MC and ATC at the regulated quantity; if MC is lower, the firm loses $(ATC - MC) \\times Q$."
+      },
+      {
+        "t": "note",
+        "html": "Real regulators also worry that a firm guaranteed to cover its costs has little reason to cut them. Rules that cap prices for several years at a time try to keep that incentive; which approach works best is debated."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, 11.3 Regulating Natural Monopolies"
+      },
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, 9.1 How Monopolies Form: Barriers to Entry"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.01 Principles of Microeconomics (scope and sequence)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

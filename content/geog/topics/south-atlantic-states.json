@@ -1,0 +1,123 @@
+{
+  "id": "usgeo.south-atlantic-states",
+  "slug": "south-atlantic-states",
+  "ladder": "geog",
+  "course": "usgeo",
+  "unit": "states-capitals",
+  "title": "States of the South Atlantic",
+  "short": "Find the South Atlantic states, from Delaware and Maryland down the coast to Florida, plus West Virginia and Washington, D.C.",
+  "trouble": "Students forget that Delaware, Maryland and West Virginia count as part of the South in the Census Bureau's regions.",
+  "prereqs": [
+    "usgeo.regions"
+  ],
+  "xp": 2,
+  "viz": [
+    "gg-map",
+    "gg-outline"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The <a href=\"/geography/us-geography/regions/\">South</a> is the biggest Census region, so we take it in two parts. First, the <b>South Atlantic</b>: the states along the coast from Delaware down to Florida."
+      },
+      {
+        "t": "key",
+        "html": "The South Atlantic division has eight states, Delaware, Maryland, Virginia, West Virginia, North Carolina, South Carolina, Georgia and Florida, plus the District of Columbia."
+      },
+      {
+        "t": "viz",
+        "name": "gg-map",
+        "opts": {
+          "map": "us",
+          "region": [
+            "DE",
+            "MD",
+            "VA",
+            "WV",
+            "NC",
+            "SC",
+            "GA",
+            "FL"
+          ],
+          "labels": true
+        },
+        "cap": "The states of this region, with their names."
+      },
+      {
+        "t": "why",
+        "html": "Why is West Virginia in a division named for the Atlantic when it has no coast? The Census Bureau groups states that are close together and share history. West Virginia was part of Virginia until 1863, so it stays in the same division as its old partner."
+      },
+      {
+        "t": "list",
+        "items": [
+          "Delaware is the small state on the coast east of Maryland.",
+          "Maryland wraps around Chesapeake Bay; Washington, D.C., sits on its southwest edge.",
+          "Virginia is below Maryland, and West Virginia is the mountain state to its west.",
+          "North Carolina is long and wide; South Carolina is the triangle below it.",
+          "Georgia is next, and Florida is the long peninsula at the bottom."
+        ]
+      },
+      {
+        "t": "ex",
+        "title": "Coast or no coast",
+        "q": "Which South Atlantic state has no ocean coast?",
+        "steps": [
+          "Go down the coast: Delaware, Maryland, Virginia, North Carolina, South Carolina, Georgia, Florida all touch the Atlantic.",
+          "West Virginia sits behind Virginia, in the mountains."
+        ],
+        "a": "West Virginia."
+      },
+      {
+        "t": "mistake",
+        "html": "Students forget that <b>Delaware, Maryland and West Virginia</b> count as the South in the Census Bureau's regions. The Census groups them with the South Atlantic. Another mix-up: North and South Carolina. North Carolina is the bigger, wider one; South Carolina is the smaller triangle below it."
+      },
+      {
+        "t": "viz",
+        "name": "gg-outline",
+        "opts": {
+          "map": "us",
+          "ids": [
+            "NC",
+            "SC"
+          ],
+          "context": true
+        },
+        "cap": "The look-alikes side by side, with their neighbors drawn faintly."
+      },
+      {
+        "t": "viz",
+        "name": "gg-map",
+        "opts": {
+          "map": "us",
+          "region": [
+            "DE",
+            "MD",
+            "VA",
+            "WV",
+            "NC",
+            "SC",
+            "GA",
+            "FL"
+          ],
+          "mode": "find"
+        },
+        "cap": "Practice: find each state when its name appears."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "U.S. Census Bureau, Census Regions and Divisions of the United States (list of states by region and division)",
+        "url": "https://www2.census.gov/geo/docs/maps-data/maps/reg_div.txt"
+      },
+      {
+        "name": "Natural Earth (public domain map data): admin-1 states, rivers, lakes and physical regions, drawn by the Geography Ladder's map kit"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

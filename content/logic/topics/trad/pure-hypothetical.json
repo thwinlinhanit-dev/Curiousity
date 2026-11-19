@@ -1,0 +1,110 @@
+{
+  "id": "trad.pure-hypothetical",
+  "slug": "pure-hypothetical",
+  "ladder": "logic",
+  "course": "trad",
+  "unit": "hypothetical",
+  "title": "Pure Hypothetical Syllogism",
+  "short": "From \"If P, then Q\" and \"If Q, then R\", conclude \"If P, then R\"; the links must run in the same direction.",
+  "trouble": "Learners chain conditionals that do not share a middle in the right place, such as \"If P then Q\" and \"If R then Q\".",
+  "prereqs": [
+    "trad.hypothetical-fallacies"
+  ],
+  "xp": 2,
+  "viz": [
+    "lg-truthtable"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/logic/traditional-logic/modus-ponens/\">modus ponens</a> only one premise is hypothetical. In a <b>pure hypothetical syllogism</b>, every statement is: the premises link conditionals into a chain."
+      },
+      {
+        "t": "table",
+        "head": [
+          "",
+          "Form",
+          "Example"
+        ],
+        "rows": [
+          [
+            "Premise",
+            "If P, then Q.",
+            "If the alarm rings, Sam wakes up."
+          ],
+          [
+            "Premise",
+            "If Q, then R.",
+            "If Sam wakes up, Sam catches the bus."
+          ],
+          [
+            "Conclusion",
+            "So if P, then R.",
+            "So if the alarm rings, Sam catches the bus."
+          ]
+        ],
+        "cap": "Pure hypothetical syllogism (also called hypothetical syllogism, HS)."
+      },
+      {
+        "t": "key",
+        "html": "From \"If P, then Q\" and \"If Q, then R\", conclude \"If P, then R\". The consequent of the first must be the antecedent of the second; the links must run in the same direction."
+      },
+      {
+        "t": "why",
+        "html": "Imagine P happens. By the first premise, Q happens. By the second, R happens. So whenever P happens, R does: that is \"If P, then R\". The chain works like the categorical chain in a sorites: Q is the middle term, and it must sit at the end of one link and the start of the next."
+      },
+      {
+        "t": "viz",
+        "name": "lg-truthtable",
+        "opts": {
+          "premises": [
+            "p → q",
+            "q → r"
+          ],
+          "conclusion": "p → r"
+        },
+        "cap": "Three letters, eight rows: no row makes both premises true and the conclusion false."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A longer chain",
+        "q": "What follows? \"If it snows tonight, school opens late. If the math quiz moves to Friday, Kim has an extra day to study. If school opens late, the math quiz moves to Friday.\"",
+        "steps": [
+          "Order the links: snow → school opens late → quiz moves to Friday → extra day.",
+          "Each consequent is the next antecedent."
+        ],
+        "a": "If it snows tonight, Kim has an extra day to study."
+      },
+      {
+        "t": "ex",
+        "title": "Links that do not chain",
+        "q": "What follows? \"If the power goes out, the freezer stops. If the door is left open, the freezer stops.\"",
+        "steps": [
+          "Both conditionals end at the same consequent.",
+          "Nothing runs from \"power out\" to \"door open\" or back."
+        ],
+        "a": "nothing follows about how the two antecedents are related"
+      },
+      {
+        "t": "mistake",
+        "html": "Chaining conditionals that do not share a middle in the right place, such as \"If P then Q\" and \"If R then Q\". Both arrows point into Q, so nothing connects P and R. Check: draw the arrows; you must be able to follow them from start to end without going backward."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Patrick J. Hurley, A Concise Introduction to Logic, 6.6 Argument Forms and Fallacies"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

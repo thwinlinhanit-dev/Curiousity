@@ -1,0 +1,117 @@
+{
+  "id": "cplx.maximum-modulus",
+  "slug": "maximum-modulus",
+  "ladder": "math",
+  "course": "cplx",
+  "unit": "integration",
+  "title": "The Maximum Modulus Principle",
+  "short": "On a bounded region, a nonconstant analytic function that is continuous up to the boundary reaches its largest |f| on the boundary, never inside.",
+  "trouble": "Students hunt for the maximum of |f| at a critical point inside the region, as with real functions of two variables.",
+  "prereqs": [
+    "cplx.cauchy-integral-formula"
+  ],
+  "xp": 2,
+  "viz": [
+    "cplx-domaincolor"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Take <a href=\"/math/complex-analysis/cauchy-integral-formula/\">Cauchy's formula</a> on a circle centered at $a$: it says $f(a)$ is the average of $f$ over the circle. An average can never be bigger than every value it averages, and that simple observation controls where $|f|$ can be largest."
+      },
+      {
+        "t": "key",
+        "html": "<b>Maximum modulus principle.</b> If $f$ is analytic and not constant on a bounded region $D$ and continuous on its closure, then $|f|$ reaches its maximum on the boundary of $D$, never at an interior point.\n      <br>If moreover $f$ has no zeros in $D$, the minimum of $|f|$ is on the boundary too (apply the principle to $\\frac{1}{f}$)."
+      },
+      {
+        "t": "why",
+        "html": "With $z = a + re^{it}$ in Cauchy's formula, $dz = ire^{it}dt$ and $z - a = re^{it}$, so $f(a) = \\frac{1}{2\\pi}\\int_0^{2\\pi} f(a + re^{it})\\,dt$: the <b>mean value property</b>. Suppose $|f|$ had its largest value $M$ at an interior point $a$. Then $M = |f(a)| \\le \\frac{1}{2\\pi}\\int |f(a + re^{it})|\\,dt \\le M$, so equality holds and $|f| = M$ on every small circle around $a$. Then $|f|$ is constant near $a$, which (by the Cauchy–Riemann equations) forces $f$ to be constant."
+      },
+      {
+        "t": "viz",
+        "name": "cplx-domaincolor",
+        "opts": {
+          "f": "z^2+z+1",
+          "window": {
+            "x": [
+              -2.5,
+              2.5
+            ],
+            "y": [
+              -2.5,
+              2.5
+            ]
+          },
+          "disk": {
+            "c": [
+              0,
+              0
+            ],
+            "r": 1
+          },
+          "probe": false
+        },
+        "cap": "$f(z) = z^2 + z + 1$ on the closed unit disk: the largest $|f|$ is marked, on the edge at $z = 1$ where $|f| = 3$. Inside the disk the brightness rings never reach that level."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A linear function",
+        "q": "Find the maximum of $|z + 3 - 4i|$ on $|z| \\le 2$ and where it happens.",
+        "steps": [
+          "The maximum is on the circle $|z| = 2$.",
+          "$|z + (3 - 4i)| \\le |z| + |3 - 4i| = 2 + 5 = 7$, with equality when $z$ points the same way as $3 - 4i$.",
+          "$z = 2\\cdot\\frac{3 - 4i}{5} = \\frac{6}{5} - \\frac{8}{5}i$, where the value is $7$."
+        ],
+        "a": "$7$, at $\\frac{6}{5} - \\frac{8}{5}i$"
+      },
+      {
+        "t": "ex",
+        "title": "An exponential",
+        "q": "Find the maximum of $|e^{iz}|$ on $|z| \\le 1$.",
+        "steps": [
+          "$|e^{iz}| = e^{\\operatorname{Re}(iz)} = e^{-y}$.",
+          "On the closed disk, $-y$ is largest at $z = -i$, where $-y = 1$.",
+          "The maximum is $e$, at $z = -i$, on the boundary."
+        ],
+        "a": "$e$, at $-i$"
+      },
+      {
+        "t": "ex",
+        "title": "A minimum",
+        "q": "Find the minimum of $|z + 3|$ on $|z| \\le 1$.",
+        "steps": [
+          "$z + 3$ has its only zero at $-3$, outside the disk, so the minimum is on the boundary.",
+          "$|z + 3| \\ge 3 - |z| = 2$, reached at $z = -1$."
+        ],
+        "a": "$2$"
+      },
+      {
+        "t": "note",
+        "html": "The same idea works for the real part: a harmonic function $u$ (such as $\\operatorname{Re} f$) takes its maximum and minimum over a closed bounded region on the boundary. In heat flow this says the steady temperature inside a plate is never hotter than the hottest point of its edge."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Hunting for the maximum at a critical point inside.</b> In multivariable calculus you set the gradient to zero and test interior points. For $|f|$ with $f$ analytic, interior critical points are never maxima (and $f'(z_0) = 0$ is a different thing altogether). Go straight to the boundary: parametrize it, or use the triangle inequality and check when equality holds."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Beck, Marchesi, Pixton and Sabalka, A First Course in Complex Analysis, chapter 5 (Consequences of Cauchy's Theorem)"
+      },
+      {
+        "name": "Beck, Marchesi, Pixton and Sabalka, A First Course in Complex Analysis, chapter 6 (Harmonic Functions)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

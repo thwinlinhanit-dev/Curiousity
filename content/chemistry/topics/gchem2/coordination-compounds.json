@@ -1,0 +1,105 @@
+{
+  "id": "gchem2.coordination-compounds",
+  "slug": "coordination-compounds",
+  "ladder": "chemistry",
+  "course": "gchem2",
+  "unit": "coordination",
+  "title": "Coordination Compounds",
+  "short": "A central metal ion, its ligands and its coordination number; find the metal's oxidation state.",
+  "trouble": "Students count every atom of a ligand as a bond to the metal, or ignore the ligands' charges when they find the metal's oxidation state.",
+  "prereqs": [
+    "gchem2.complex-ions",
+    "gchem1.oxidation-numbers"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-vsepr"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/chemistry/general-chemistry-2/complex-ions/\">complex ions</a> a metal ion accepts electron pairs from several Lewis bases at once. Compounds that contain such complexes are coordination compounds. To describe one, you need its parts, its coordination number and the metal's <a href=\"/chemistry/general-chemistry-1/oxidation-numbers/\">oxidation number</a>."
+      },
+      {
+        "t": "key",
+        "html": "The metal and its bonded <b>ligands</b> form the coordination sphere, written in square brackets; <b>counter ions</b> outside the brackets balance the charge. The <b>coordination number</b> is the number of donor atoms bonded to the metal (2, 4 and 6 are most common). The metal's oxidation state follows from charge balance: metal + ligand charges = charge of the complex."
+      },
+      {
+        "t": "why",
+        "html": "Each ligand donates at least one lone pair, and each donated pair is one bond to the metal. A <b>monodentate</b> ligand ($\\mathrm{NH_3}$, $\\mathrm{H_2O}$, $\\mathrm{Cl^-}$, $\\mathrm{CN^-}$) uses one donor atom. A <b>bidentate</b> ligand such as ethylenediamine ($\\mathrm{H_2NCH_2CH_2NH_2}$, \"en\") or oxalate ($\\mathrm{C_2O_4^{2-}}$) grips with two, forming a ring with the metal; EDTA uses six. So the coordination number counts donor atoms, not ligands. Six donors usually sit at the corners of an octahedron; four sit at the corners of a tetrahedron or a square."
+      },
+      {
+        "t": "viz",
+        "name": "ch-vsepr",
+        "opts": {
+          "mode": "complex",
+          "geometry": "oct",
+          "metal": "Co",
+          "ligands": [
+            "NH3",
+            "NH3",
+            "NH3",
+            "NH3",
+            "NH3",
+            "Cl"
+          ],
+          "charge": 2
+        },
+        "cap": "The complex ion $\\mathrm{[Co(NH_3)_5Cl]^{2+}}$: six donor atoms at the corners of an octahedron. Drag to turn it."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Pentaamminechloridocobalt(III) chloride",
+        "q": "For $\\mathrm{[Co(NH_3)_5Cl]Cl_2}$, find the charge of the complex ion, the oxidation state of cobalt and the coordination number.",
+        "steps": [
+          "Two $\\mathrm{Cl^-}$ counter ions outside the brackets: total $-2$, so the complex is $+2$.",
+          "Inside: five neutral $\\mathrm{NH_3}$ and one $\\mathrm{Cl^-}$. $x + 5(0) + (-1) = +2$, so $x = +3$.",
+          "Six donor atoms (5 N and 1 Cl): coordination number 6."
+        ],
+        "a": "Complex $+2$; Co is $+3$; coordination number 6."
+      },
+      {
+        "t": "ex",
+        "title": "A bidentate ligand",
+        "q": "For $\\mathrm{K_3[Fe(C_2O_4)_3]}$, find the oxidation state of iron and its coordination number.",
+        "steps": [
+          "Three $\\mathrm{K^+}$: the complex is $-3$.",
+          "Three oxalates at $-2$ each: $x + 3(-2) = -3$, so $x = +3$.",
+          "Each oxalate binds through two O atoms: $3 \\times 2 = 6$ donor atoms."
+        ],
+        "a": "Fe is $+3$; coordination number 6."
+      },
+      {
+        "t": "ex",
+        "title": "Counting ions",
+        "q": "How many ions does each formula unit of $\\mathrm{[Co(NH_3)_6]Cl_3}$ release in water? Of $\\mathrm{[Co(NH_3)_4Cl_2]Cl}$?",
+        "steps": [
+          "Only what is outside the brackets separates; the ligands stay bound.",
+          "$\\mathrm{[Co(NH_3)_6]^{3+}}$ + 3 $\\mathrm{Cl^-}$: 4 ions. $\\mathrm{[Co(NH_3)_4Cl_2]^{+}}$ + 1 $\\mathrm{Cl^-}$: 2 ions.",
+          "Alfred Werner used exactly these counts, from electrical conductivity and from how much chloride precipitated with silver nitrate, to work out the structures in the 1890s."
+        ],
+        "a": "4 and 2."
+      },
+      {
+        "t": "mistake",
+        "html": "Counting every atom of a ligand as a bond to the metal (so that $\\mathrm{NH_3}$ would count 4), or ignoring the ligands' charges when finding the metal's oxidation state. Only donor atoms bond to the metal, and chloride, cyanide and oxalate all carry charge. Check: metal charge plus ligand charges must equal the bracket's charge, and counter ions must make the whole compound neutral."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 19.2 Coordination Chemistry of Transition Metals"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

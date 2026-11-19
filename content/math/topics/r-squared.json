@@ -1,0 +1,110 @@
+{
+  "id": "stat.r-squared",
+  "slug": "r-squared",
+  "ladder": "math",
+  "course": "stat",
+  "unit": "regression",
+  "title": "r² and the Quality of Fit",
+  "short": "r² is the fraction of the variation in y explained by the line.",
+  "trouble": "Students read r² = 0.64 as \"64% of the points are on the line.\"",
+  "prereqs": [
+    "stat.residual-plots"
+  ],
+  "xp": 2,
+  "viz": [
+    "scatter"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A <a href=\"/math/probability-and-statistics/residual-plots/\">residual plot</a> tells you whether a line is the right shape. The next question is how much the line helps. The answer is $r^2$, the square of the <a href=\"/math/probability-and-statistics/correlation/\">correlation</a>, which has a clear meaning of its own."
+      },
+      {
+        "t": "key",
+        "html": "$$r^2 = 1 - \\dfrac{\\text{SSE}}{\\text{SST}},$$ where $\\text{SST} = \\sum (y - \\bar{y})^2$ is the variation in y with no model and $\\text{SSE} = \\sum (y - \\hat{y})^2$ is the variation left after the line. $r^2$ is the <b>fraction of the variation in y explained by the linear relationship with x</b>."
+      },
+      {
+        "t": "why",
+        "html": "Without x, the best single guess for every y is $\\bar{y}$, and its total squared error is SST. With the line, the squared error drops to SSE. The fraction removed, $(\\text{SST} - \\text{SSE})/\\text{SST} = 1 - \\text{SSE}/\\text{SST}$, is how much knowing x helped. For the least-squares line this fraction is exactly the square of $r$ (a fact that follows from the z-score derivation of the line)."
+      },
+      {
+        "t": "viz",
+        "name": "scatter",
+        "opts": {
+          "points": [
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              5,
+              6
+            ]
+          ],
+          "fit": true,
+          "residuals": true,
+          "squares": true,
+          "xlabel": "x",
+          "ylabel": "y"
+        },
+        "cap": "The squares are the squared residuals (SSE). Make the points line up and watch r² approach 1."
+      },
+      {
+        "t": "ex",
+        "title": "From r to r²",
+        "q": "The correlation between hours of sunlight and plant growth is $r = 0.8$. Interpret $r^2$.",
+        "steps": [
+          "$r^2 = 0.8^2 = 0.64$.",
+          "About 64% of the variation in plant growth is explained by the linear relationship with hours of sunlight.",
+          "The other 36% comes from other things (water, soil, genetics) and chance."
+        ],
+        "a": "$r^2 = 0.64$: 64% of the variation in growth is explained."
+      },
+      {
+        "t": "ex",
+        "title": "From sums of squares",
+        "q": "For a data set, $\\text{SST} = 200$ and $\\text{SSE} = 50$. The slope is negative. Find $r^2$ and $r$.",
+        "steps": [
+          "$r^2 = 1 - \\dfrac{50}{200} = 0.75$.",
+          "$r = \\pm\\sqrt{0.75} \\approx \\pm 0.866$.",
+          "r has the same sign as the slope: $r \\approx -0.866$."
+        ],
+        "a": "$r^2 = 0.75$, $r \\approx -0.866$."
+      },
+      {
+        "t": "mistake",
+        "html": "Reading $r^2 = 0.64$ as \"64% of the points are on the line\" or \"predictions are right 64% of the time.\" $r^2$ is about variation in y, not about individual points. Check your sentence: it should say \"of the variation in [y] is explained by the linear relationship with [x].\""
+      },
+      {
+        "t": "note",
+        "html": "Squaring hides the sign: $r = 0.8$ and $r = -0.8$ both give $r^2 = 0.64$. To recover r from $r^2$, take the square root and use the sign of the slope."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Introductory Statistics 2e, section 12.3 The Regression Equation"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, S-ID.C.8"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

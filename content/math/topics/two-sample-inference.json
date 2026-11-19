@@ -1,0 +1,144 @@
+{
+  "id": "stat.two-sample-inference",
+  "slug": "two-sample-inference",
+  "ladder": "math",
+  "course": "stat",
+  "unit": "inference",
+  "title": "Two-Sample Intervals and Tests",
+  "short": "Compare two proportions or two means.",
+  "trouble": "Students treat paired data as two independent samples.",
+  "prereqs": [
+    "stat.test-mean",
+    "stat.randomization-tests"
+  ],
+  "xp": 3,
+  "viz": [
+    "normal"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Most real questions compare two groups: a new drug against a placebo, one school against another, before against after. Two-sample methods combine the <a href=\"/math/probability-and-statistics/test-mean/\">one-sample t procedures</a> with the rule that <a href=\"/math/probability-and-statistics/combining-random-variables/\">variances of independent quantities add</a>. But first you must decide whether the data are two independent samples or pairs."
+      },
+      {
+        "t": "key",
+        "html": "<b>Independent samples</b>: for means, $$SE = \\sqrt{\\dfrac{s_1^2}{n_1} + \\dfrac{s_2^2}{n_2}}, \\quad t = \\dfrac{\\bar{x}_1 - \\bar{x}_2}{SE}$$ (df from software, or conservatively the smaller $n - 1$). For proportions, $$SE = \\sqrt{\\hat{p}_1(1 - \\hat{p}_1)/n_1 + \\hat{p}_2(1 - \\hat{p}_2)/n_2}$$ for an interval; a test uses the pooled $\\hat{p}$. <b>Paired data</b> (the same subjects twice, or matched pairs): take the differences and run a one-sample t procedure on them."
+      },
+      {
+        "t": "why",
+        "html": "$\\bar{x}_1$ and $\\bar{x}_2$ come from independent samples, so the variance of their difference is the sum of their variances, $s_1^2/n_1 + s_2^2/n_2$. In paired data the two measurements on one person are strongly related: a strong reader scores high both before and after. Taking differences cancels that person-to-person variation, leaving only the change, so the standard error is much smaller. Treating paired data as independent throws that advantage away."
+      },
+      {
+        "t": "ex",
+        "title": "Two independent groups",
+        "q": "Group 1: $n_1 = 25$, $\\bar{x}_1 = 78$, $s_1 = 10$. Group 2: $n_2 = 16$, $\\bar{x}_2 = 70$, $s_2 = 12$. Find the standard error, t, and a 95% interval for $\\mu_1 - \\mu_2$ (conservative df $= 15$, $t^* = 2.131$).",
+        "steps": [
+          "$$SE = \\sqrt{\\dfrac{100}{25} + \\dfrac{144}{16}} = \\sqrt{4 + 9} = \\sqrt{13} \\approx 3.61$$",
+          "$t = \\dfrac{78 - 70}{3.61} \\approx 2.22$.",
+          "Interval: $8 \\pm 2.131 \\times 3.61 \\approx 8 \\pm 7.68$, from about 0.32 to 15.68.",
+          "The interval is entirely above 0, consistent with a two-sided test rejecting \"no difference\" at the 0.05 level."
+        ],
+        "a": "SE ≈ 3.61, t ≈ 2.22, interval (0.3, 15.7)."
+      },
+      {
+        "t": "viz",
+        "name": "stat-curve",
+        "opts": {
+          "dist": "t",
+          "df": 15,
+          "x": 2.22,
+          "tail": "two",
+          "compare": true
+        },
+        "cap": "The two-sided p-value for t = 2.22 with 15 degrees of freedom: about 0.04 in the two shaded tails."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Student",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "rows": [
+          [
+            "Before",
+            "62",
+            "70",
+            "55",
+            "81",
+            "74",
+            "68",
+            "59",
+            "77"
+          ],
+          [
+            "After",
+            "66",
+            "73",
+            "57",
+            "85",
+            "75",
+            "72",
+            "64",
+            "78"
+          ],
+          [
+            "Difference",
+            "4",
+            "3",
+            "2",
+            "4",
+            "1",
+            "4",
+            "5",
+            "1"
+          ]
+        ],
+        "cap": "Reading scores for 8 students before and after a summer program."
+      },
+      {
+        "t": "ex",
+        "title": "Paired data",
+        "q": "Use the table to test whether scores rose. Compare with the (wrong) independent-samples analysis.",
+        "steps": [
+          "Differences: mean $\\bar{d} = 3$, standard deviation $s_d \\approx 1.51$.",
+          "Paired t: $SE = 1.51/\\sqrt{8} \\approx 0.53$, so $t = 3/0.53 \\approx 5.61$ with 7 df: a p-value well below 0.01.",
+          "Treated as independent: the SDs of the before and after scores are about 9.1 and 8.7, so $SE \\approx 4.45$ and $t \\approx 0.67$: no evidence at all.",
+          "The students differ a lot from each other, but each one improved a little. Only the paired analysis sees that."
+        ],
+        "a": "Paired: t ≈ 5.6, strong evidence; independent (wrong): t ≈ 0.7."
+      },
+      {
+        "t": "mistake",
+        "html": "Treating paired data as two independent samples. When each value in one group is linked to one value in the other (same person, twins, matched plots), analyze the differences. Check: could you draw a line from each \"before\" value to its own \"after\" value?"
+      },
+      {
+        "t": "note",
+        "html": "For two proportions, for example 60 of 200 against 45 of 200: $\\hat{p}_1 = 0.30$, $\\hat{p}_2 = 0.225$, and the pooled $\\hat{p} = 105/400 = 0.2625$ gives $$SE = \\sqrt{0.2625 \\cdot 0.7375\\,(1/200 + 1/200)} \\approx 0.044$$ and $z \\approx 1.70$ (two-sided p ≈ 0.09)."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Introductory Statistics 2e, section 10.1 Two Population Means with Unknown Standard Deviations"
+      },
+      {
+        "name": "OpenStax, Introductory Statistics 2e, section 10.3 Comparing Two Independent Population Proportions"
+      },
+      {
+        "name": "OpenStax, Introductory Statistics 2e, section 10.4 Matched or Paired Samples"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

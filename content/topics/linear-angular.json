@@ -1,0 +1,119 @@
+{
+  "id": "phys1.linear-angular",
+  "slug": "linear-angular",
+  "course": "phys1",
+  "courseTitle": "Physics 1: Motion, Forces and Energy",
+  "unit": "rotation",
+  "unitTitle": "Torque and Rotational Dynamics",
+  "title": "Linking Linear and Rotational Motion",
+  "short": "A point at radius r moves with v = rω and tangential acceleration a = rα.",
+  "trouble": "Students think every point on a spinning wheel moves at the same speed.",
+  "prereqs": [
+    "phys1.angular-quantities",
+    "phys1.centripetal-acceleration"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-rotation",
+    "ph-circular"
+  ],
+  "figureArchetype": "BodyFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A spinning wheel has one <a href=\"/physics/physics-1/angular-quantities/\">angular velocity</a>, yet its parts move at different speeds. Linking the two kinds of quantity explains why, and it ties turning to <a href=\"/physics/physics-1/centripetal-acceleration/\">centripetal acceleration</a>."
+      },
+      {
+        "t": "why",
+        "html": "A point at radius $r$ that turns through $\\Delta\\theta$ travels the arc $\\Delta s = r\\Delta\\theta$. Divide by the time: its speed is $v = \\dfrac{\\Delta s}{\\Delta t} = r\\dfrac{\\Delta\\theta}{\\Delta t} = r\\omega$. If $\\omega$ changes, $v$ changes $r$ times as fast: the tangential acceleration is $\\role[tangential acceleration]{acceleration}{a_t} = \\role[distance from the axis]{position}{r}\\role{angacc}{\\alpha}$. And moving in a circle at speed $v$ always needs the centripetal acceleration $a_c = \\dfrac{v^2}{r} = r\\omega^2$, toward the center."
+      },
+      {
+        "t": "key",
+        "html": "For a point at distance $r$ from the axis (angles in radians): speed $\\role[speed]{velocity}{v} = \\role[distance from the axis]{position}{r}\\role{angvel}{\\omega}$, tangential acceleration $\\role[tangential acceleration]{acceleration}{a_t} = \\role[distance from the axis]{position}{r}\\role{angacc}{\\alpha}$ (along the path), centripetal acceleration $\\role[centripetal acceleration]{acceleration}{a_c} = \\role[distance from the axis]{position}{r}\\role{angvel}{\\omega}^2$ (toward the center). All points share one $\\omega$ and $\\alpha$, but $v$, $a_t$ and $a_c$ grow with $r$."
+      },
+      {
+        "t": "viz",
+        "name": "ph-rotation",
+        "opts": {
+          "mode": "wheel",
+          "omega0": 1.5,
+          "task": "The green arrows are velocities. The rim point moves four times as fast as the point a quarter of the way out.",
+          "roleLinks": {
+            "Angular speed": "angvel"
+          }
+        },
+        "cap": "Same $\\omega$, different speeds: on the graph $v = r\\omega$ is a straight line through the origin."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Speed on a merry-go-round",
+        "q": "A merry-go-round turns at $0.80\\ \\text{rad/s}$. How fast does a child $2.5\\ \\text{m}$ from the center move? And one $1.0\\ \\text{m}$ from the center?",
+        "steps": [
+          "$$v = r\\omega = (2.5\\ \\text{m})(0.80\\ \\text{rad/s}) = 2.0\\ \\text{m/s}.$$",
+          "$v = (1.0)(0.80) = 0.80\\ \\text{m/s}$. Same $\\omega$, but the outer child covers a bigger circle in the same time."
+        ],
+        "a": "$2.0\\ \\text{m/s}$ and $0.80\\ \\text{m/s}$"
+      },
+      {
+        "t": "ex",
+        "title": "Accelerations of a rim point",
+        "q": "A disk of radius $0.20\\ \\text{m}$ turns at $5.0\\ \\text{rad/s}$ and is speeding up at $8.0\\ \\text{rad/s}^2$. Find the tangential and centripetal accelerations of a rim point.",
+        "steps": [
+          "$a_t = r\\alpha = (0.20)(8.0) = 1.6\\ \\text{m/s}^2$, along the direction of motion.",
+          "$a_c = r\\omega^2 = (0.20)(5.0)^2 = 5.0\\ \\text{m/s}^2$, toward the center.",
+          "They are at right angles, so the total is $\\sqrt{1.6^2 + 5.0^2} = 5.2\\ \\text{m/s}^2$."
+        ],
+        "a": "$a_t = 1.6\\ \\text{m/s}^2$, $a_c = 5.0\\ \\text{m/s}^2$"
+      },
+      {
+        "t": "ex",
+        "title": "Linked by a belt",
+        "q": "A belt joins a $5.0\\ \\text{cm}$ motor pulley turning at $1200$ rpm to a $20\\ \\text{cm}$ pulley. How fast does the big pulley turn?",
+        "steps": [
+          "A belt that doesn't slip moves at one speed, so both rims have the same $v$: $r_1\\omega_1 = r_2\\omega_2$.",
+          "$\\omega_2 = (1200\\ \\text{rpm})\\dfrac{5.0}{20} = 300$ rpm."
+        ],
+        "a": "$300$ rpm"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Thinking every point on a spinning wheel moves at the same speed.</b> Every point has the same <i>angular</i> velocity, but its speed is $v = r\\omega$: the hub barely moves while the rim races. Check with extremes: the point on the axle ($r = 0$) has $v = 0$."
+      },
+      {
+        "t": "viz",
+        "name": "ph-circular",
+        "opts": {
+          "mode": "nonuniform",
+          "r": 2,
+          "v": 3,
+          "dvdt": 1,
+          "roleLinks": {
+            "Speed v": "velocity",
+            "Radius r": "position"
+          }
+        },
+        "cap": "A point speeding up on a circle: the tangential part of its acceleration changes its speed, and the centripetal part turns its velocity."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Physics 2e, Section 6.1 (Rotation Angle and Angular Velocity), 6.2 (Centripetal Acceleration) and 10.1 (Angular Acceleration)"
+      },
+      {
+        "name": "OpenStax University Physics Volume 1, Section 10.3 (Relating Angular and Translational Quantities)"
+      },
+      {
+        "name": "College Board, AP Physics 1 Course and Exam Description, Unit 5: Torque and Rotational Dynamics"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

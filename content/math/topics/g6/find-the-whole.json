@@ -1,0 +1,102 @@
+{
+  "id": "g6.find-the-whole",
+  "slug": "find-the-whole",
+  "ladder": "math",
+  "course": "g6",
+  "unit": "ratios",
+  "title": "Finding the Whole from a Part",
+  "short": "If 12 is 40% of a number, find the number.",
+  "trouble": "Students multiply 12 by 40% instead of asking what number 12 is 40% of.",
+  "prereqs": [
+    "g6.percent-of-a-number"
+  ],
+  "xp": 2,
+  "viz": [
+    "percentbar",
+    "tapediagram"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Sometimes you know a part and its percent, but not the whole. \"12 is 40% of what number?\" You can still use what you know about <a href=\"/math/grade-6/percent-of-a-number/\">percents of a number</a>: work backward to 100%."
+      },
+      {
+        "t": "key",
+        "html": "If a part is $p\\%$ of the whole, use the part to find 10% (or 1%, or another easy percent), then multiply up to 100%."
+      },
+      {
+        "t": "viz",
+        "name": "percentbar",
+        "opts": {
+          "find": "whole",
+          "part": 12,
+          "pct": 40
+        },
+        "cap": "The part, 12, sits at 40%. The whole bar is 100%, and it is unknown. Press <b>Next step</b> to find 10% and then 100%."
+      },
+      {
+        "t": "why",
+        "html": "The part and the whole are in the same ratio as the percent and 100: $12 : \\text{whole} = 40 : 100$. Equivalent ratios do the rest: divide by 4 to get \"3 is 10%\", then multiply by 10 to get \"30 is 100%\"."
+      },
+      {
+        "t": "table",
+        "head": [
+          "amount",
+          "12",
+          "3",
+          "30"
+        ],
+        "rows": [
+          [
+            "percent",
+            "40%",
+            "10%",
+            "100%"
+          ]
+        ],
+        "cap": "A ratio table from the part to the whole: ÷ 4, then × 10."
+      },
+      {
+        "t": "ex",
+        "title": "Work back to 100%",
+        "q": "12 is 40% of what number?",
+        "steps": [
+          "40% is 4 groups of 10%, so 10% is $12 \\div 4 = 3$.",
+          "100% is 10 groups of 10%: $3 \\times 10 = 30$.",
+          "Check: 40% of 30 is $4 \\times 3 = 12$."
+        ],
+        "a": "30"
+      },
+      {
+        "t": "ex",
+        "title": "Saving for a bike",
+        "q": "Ana has saved \\$45. That is 60% of the price of a bike. What is the price?",
+        "steps": [
+          "60% is 3 groups of 20%, so 20% is $\\$45 \\div 3 = \\$15$.",
+          "100% is 5 groups of 20%: $5 \\times \\$15 = \\$75$.",
+          "Check: 60% of \\$75 is \\$45."
+        ],
+        "a": "\\$75"
+      },
+      {
+        "t": "mistake",
+        "html": "Multiplying the part by the percent. $12 \\times 40\\% = 4.8$ answers a different question: \"What is 40% of 12?\" Here 12 is the <i>part</i>, not the whole. Quick check: when the percent is less than 100%, the whole must be bigger than the part. 4.8 is smaller than 12, so it cannot be the whole."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Prealgebra 2e, section 6.2 Solve General Applications of Percent"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 6.RP.A.3c: finding the whole from a part and the percent"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

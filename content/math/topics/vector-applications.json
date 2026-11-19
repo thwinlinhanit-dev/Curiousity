@@ -1,0 +1,106 @@
+{
+  "id": "pre.vector-applications",
+  "slug": "vector-applications",
+  "ladder": "math",
+  "course": "pre",
+  "unit": "triangles-vectors",
+  "title": "Velocity and Force Problems",
+  "short": "Find a resultant for wind, current and forces.",
+  "trouble": "Students add the speeds instead of the velocity vectors.",
+  "prereqs": [
+    "pre.vector-operations",
+    "pre.triangle-applications"
+  ],
+  "xp": 3,
+  "viz": [
+    "vectors2d"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Vectors earn their keep in physics. A plane in a crosswind, a boat in a current, a crate pulled by two ropes: in each case several <a href=\"/math/precalculus/vector-operations/\">vectors add</a> to one resultant, and <a href=\"/math/precalculus/triangle-applications/\">triangle methods</a> find its size and direction."
+      },
+      {
+        "t": "key",
+        "html": "Velocities add as vectors: ground velocity = velocity through the air (or water) + wind (or current). Forces add the same way, and an object is in <b>equilibrium</b> when the forces on it add to the zero vector. Find the resultant with components, or with the law of cosines when you know two sizes and the angle between them."
+      },
+      {
+        "t": "why",
+        "html": "In one hour a plane moves through the air along its heading, while the air itself moves with the wind. The plane's actual move is both moves, tip to tail. Speeds would only add if the two motions pointed the same way."
+      },
+      {
+        "t": "viz",
+        "name": "vectors2d",
+        "opts": {
+          "u": [
+            0,
+            4
+          ],
+          "v": [
+            3,
+            0
+          ],
+          "op": "add",
+          "ops": [
+            "add"
+          ]
+        },
+        "cap": "A heading straight up (north) plus a wind to the right (east). The resultant is the hypotenuse."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A crosswind",
+        "q": "A plane heads due north at $120$ mph in a wind blowing toward the east at $50$ mph. Find its ground speed and direction.",
+        "steps": [
+          "Velocity vectors: $\\langle 0, 120 \\rangle + \\langle 50, 0 \\rangle = \\langle 50, 120 \\rangle$.",
+          "Speed: $\\sqrt{50^2 + 120^2} = \\sqrt{16900} = 130$ mph.",
+          "Direction: $\\tan^{-1}\\frac{50}{120} \\approx 22.6^\\circ$ east of north, a bearing of about $22.6^\\circ$."
+        ],
+        "a": "$130$ mph on a bearing of about $22.6^\\circ$"
+      },
+      {
+        "t": "ex",
+        "title": "Two forces",
+        "q": "Two ropes pull a crate with forces of $5$ N and $3$ N, with $60^\\circ$ between them. Find the size of the resultant.",
+        "steps": [
+          "Tip to tail, the two forces make a triangle whose angle between them is $180^\\circ - 60^\\circ = 120^\\circ$.",
+          "$$|\\mathbf{F}|^2 = 5^2 + 3^2 - 2(5)(3)\\cos 120^\\circ = 25 + 9 + 15 = 49.$$"
+        ],
+        "a": "$7$ N"
+      },
+      {
+        "t": "ex",
+        "title": "Crossing a river",
+        "q": "A boat aims straight across a river $\\frac{1}{2}$ mile wide at $4$ mph. The current flows at $3$ mph. How long does the crossing take, and how far downstream does it land?",
+        "steps": [
+          "The across part of the velocity is $4$ mph, so the time is $\\frac{1/2}{4} = \\frac{1}{8}$ hour ($7.5$ minutes).",
+          "Meanwhile the current carries it $3 \\cdot \\frac{1}{8} = \\frac{3}{8}$ mile downstream.",
+          "(Its actual speed is $\\sqrt{4^2 + 3^2} = 5$ mph.)"
+        ],
+        "a": "$\\frac{1}{8}$ hour; $\\frac{3}{8}$ mile downstream"
+      },
+      {
+        "t": "mistake",
+        "html": "Adding the speeds: $120 + 50 = 170$ mph. That would only be right with the wind straight behind the plane. Draw the two velocity arrows tip to tail; the resultant is the third side of the triangle, never longer than the two sides together."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Precalculus 2e, Section 8.8 Vectors"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, N-VM.A.3"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

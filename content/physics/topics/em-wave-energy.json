@@ -1,0 +1,99 @@
+{
+  "id": "em.em-wave-energy",
+  "slug": "em-wave-energy",
+  "ladder": "physics",
+  "course": "em",
+  "unit": "ac-maxwell",
+  "title": "Energy and Momentum of Light",
+  "short": "Intensity I = ½cε₀E₀² flows along the Poynting vector, and light presses on surfaces with pressure I/c.",
+  "trouble": "Students think absorbed light and reflected light push equally hard, when reflection gives twice the push.",
+  "prereqs": [
+    "em.em-waves-maxwell",
+    "em.magnetic-energy"
+  ],
+  "xp": 3,
+  "viz": [
+    "ph-wave"
+  ],
+  "figureArchetype": "WaveFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Sunlight warms your skin: <a href=\"/physics/electricity-and-magnetism/em-waves-maxwell/\">electromagnetic waves</a> carry energy. Each field holds energy, <a href=\"/physics/electricity-and-magnetism/field-energy/\">$\\tfrac{1}{2}\\varepsilon_0E^2$</a> for the electric field and <a href=\"/physics/electricity-and-magnetism/magnetic-energy/\">$B^2/2\\mu_0$</a> for the magnetic one, and the wave carries both along at $c$. Less obviously, light also carries momentum, so it pushes on whatever absorbs or reflects it."
+      },
+      {
+        "t": "key",
+        "html": "Average intensity (power per area):\n        $$I = \\tfrac{1}{2}c\\varepsilon_0E_0^2 = \\frac{E_0B_0}{2\\mu_0},$$\n        flowing along the <b>Poynting vector</b> $\\vec{S} = \\dfrac{1}{\\mu_0}\\vec{E}\\times\\vec{B}$. Light carries momentum $p = U/c$, so it presses on a surface with pressure $I/c$ if absorbed and $2I/c$ if reflected straight back."
+      },
+      {
+        "t": "why",
+        "html": "With $B = E/c$ and $c^2 = 1/(\\mu_0\\varepsilon_0)$, the magnetic energy density is $\\dfrac{B^2}{2\\mu_0} = \\dfrac{E^2}{2\\mu_0c^2} = \\tfrac{1}{2}\\varepsilon_0E^2$: exactly equal to the electric one. So the total is $u = \\varepsilon_0E^2$, which averages to $\\tfrac{1}{2}\\varepsilon_0E_0^2$ over a cycle. This energy moves at $c$, so the energy crossing a square meter each second is $I = c\\bar{u}$. For momentum: as light is absorbed, its electric field drives charges in the surface sideways, and the magnetic force $q\\vec{v}\\times\\vec{B}$ on those moving charges points along the direction of travel. Working it through gives a push of $U/c$ for energy $U$ absorbed."
+      },
+      {
+        "t": "viz",
+        "name": "ph-wave",
+        "opts": {
+          "mode": "em"
+        },
+        "cap": "The fields of a light wave: energy is stored equally in $\\vec{E}$ and $\\vec{B}$ and flows along $\\vec{E}\\times\\vec{B}$, the direction the wave moves."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Sunlight's fields",
+        "q": "Sunlight above Earth's atmosphere delivers about $1360\\ \\text{W/m}^2$ (NASA). Treating it as one wave, find $E_0$ and $B_0$.",
+        "steps": [
+          "$E_0 = \\sqrt{\\dfrac{2I}{c\\varepsilon_0}} = \\sqrt{\\dfrac{2(1360)}{(3.00 \\times 10^{8})(8.85 \\times 10^{-12})}} = 1010\\ \\text{V/m}$.",
+          "$B_0 = E_0/c = 3.37\\ \\text{μT}$, much less than Earth's own magnetic field."
+        ],
+        "a": "$E_0 \\approx 1010\\ \\text{V/m}$, $B_0 \\approx 3.37\\ \\text{μT}$"
+      },
+      {
+        "t": "ex",
+        "title": "Pressure and a solar sail",
+        "q": "Find the radiation pressure of that sunlight on an absorbing surface and on a mirror, and the force on an $800\\ \\text{m}^2$ reflecting sail.",
+        "steps": [
+          "Absorbed: $I/c = 1360/(3.00 \\times 10^{8}) = 4.53\\ \\text{μPa}$. Reflected: twice that, $9.07\\ \\text{μPa}$.",
+          "Sail: $F = (9.07 \\times 10^{-6})(800) = 7.25\\ \\text{mN}$. Tiny, but it never stops, and in space nothing slows the sail down."
+        ],
+        "a": "$4.53\\ \\text{μPa}$, $9.07\\ \\text{μPa}$; $7.25\\ \\text{mN}$"
+      },
+      {
+        "t": "ex",
+        "title": "Spreading from a source",
+        "q": "A lamp radiates $100\\ \\text{W}$ of light evenly in all directions. Find the intensity and $E_0$ at $2.0\\ \\text{m}$.",
+        "steps": [
+          "The power spreads over a sphere: $I = \\dfrac{100}{4\\pi(2.0)^2} = 1.99\\ \\text{W/m²}$.",
+          "$E_0 = \\sqrt{2I/(c\\varepsilon_0)} = 38.7\\ \\text{V/m}$. Intensity falls as $1/r^2$, so $E_0$ falls as $1/r$."
+        ],
+        "a": "$I \\approx 1.99\\ \\text{W/m²}$, $E_0 \\approx 38.7\\ \\text{V/m}$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>\"Absorbed and reflected light push equally hard.\"</b> The push equals the light's change in momentum. Absorbed light arrives with momentum $p$ and ends with none: change $p$. Reflected light leaves with $-p$: change $2p$. So a mirror feels twice the force, like a ball that bounces off a wall compared with one that sticks. Check the formulas: $I/c$ for absorption, $2I/c$ for reflection."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 2, 16.3 Energy Carried by Electromagnetic Waves"
+      },
+      {
+        "name": "OpenStax University Physics Volume 2, 16.4 Momentum and Radiation Pressure"
+      },
+      {
+        "name": "MIT OpenCourseWare, 8.02 Physics II: Electricity and Magnetism"
+      },
+      {
+        "name": "NASA, Sun Fact Sheet (solar irradiance at Earth)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

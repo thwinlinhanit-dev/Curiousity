@@ -1,0 +1,160 @@
+{
+  "id": "g8.slope-from-graph",
+  "slug": "slope-from-graph",
+  "ladder": "math",
+  "course": "g8",
+  "unit": "slope",
+  "title": "Rise Over Run from a Graph",
+  "short": "Count the vertical and horizontal change between two points.",
+  "trouble": "Students divide run by rise, or count grid squares without checking the axis scale.",
+  "prereqs": [
+    "g8.slope-rate-of-change"
+  ],
+  "xp": 1,
+  "viz": [
+    "slope"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "On a graph, the <a href=\"/math/pre-algebra/slope-rate-of-change/\">rate of change</a> can be counted directly from the grid."
+      },
+      {
+        "t": "why",
+        "html": "Between two points on a line, the <b>run</b> is the horizontal change and the <b>rise</b> is the vertical change. They are exactly the change in $x$ and the change in $y$, so $$\\text{slope} = \\frac{\\text{rise}}{\\text{run}}$$"
+      },
+      {
+        "t": "key",
+        "html": "Pick two points where the line crosses grid corners. Going from left to right, count the rise (up is positive, down is negative) and the run, then divide rise by run. Check each axis’s scale before counting squares."
+      },
+      {
+        "t": "viz",
+        "name": "slope",
+        "opts": {
+          "p1": [
+            -2,
+            -1
+          ],
+          "p2": [
+            2,
+            5
+          ],
+          "slide": false
+        },
+        "cap": "Drag either point. The triangle shows the run and the rise, and the slope is rise ÷ run."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Up and to the right",
+        "q": "A line passes through the grid points $(-2, -1)$ and $(2, 5)$. Find its slope.",
+        "steps": [
+          "Run: from $x = -2$ to $x = 2$ is 4 to the right.",
+          "Rise: from $y = -1$ to $y = 5$ is 6 up.",
+          "Slope $= \\frac{6}{4} = \\frac{3}{2}$."
+        ],
+        "a": "$\\frac{3}{2}$"
+      },
+      {
+        "t": "ex",
+        "title": "A falling line",
+        "q": "A line goes through $(-3, 4)$ and $(3, 0)$. Find its slope.",
+        "steps": [
+          "Run: 6 to the right.",
+          "Rise: from 4 down to 0, which is $-4$.",
+          "Slope $= \\frac{-4}{6} = -\\frac{2}{3}$. A line that falls from left to right has a negative slope."
+        ],
+        "a": "$-\\frac{2}{3}$"
+      },
+      {
+        "t": "viz",
+        "name": "g8-plot",
+        "opts": {
+          "xmin": 0,
+          "xmax": 12,
+          "ymin": 0,
+          "ymax": 30,
+          "xstep": 2,
+          "ystep": 5,
+          "equal": false,
+          "height": 300,
+          "lines": [
+            {
+              "p": [
+                [
+                  2,
+                  5
+                ],
+                [
+                  8,
+                  15
+                ]
+              ],
+              "color": "blue"
+            }
+          ],
+          "points": [
+            {
+              "x": 2,
+              "y": 5,
+              "color": "red",
+              "coords": true
+            },
+            {
+              "x": 8,
+              "y": 15,
+              "color": "red",
+              "coords": true
+            }
+          ],
+          "tri": {
+            "p1": [
+              2,
+              5
+            ],
+            "p2": [
+              8,
+              15
+            ],
+            "run": "6",
+            "rise": "10"
+          }
+        },
+        "cap": "Here each square is 2 across and 5 up."
+      },
+      {
+        "t": "ex",
+        "title": "Mind the scale",
+        "q": "In the graph just above, find the slope.",
+        "steps": [
+          "The line goes 3 squares right and 2 squares up.",
+          "But each square across is 2 units and each square up is 5 units: run $= 3 \\cdot 2 = 6$, rise $= 2 \\cdot 5 = 10$.",
+          "Slope $= \\frac{10}{6} = \\frac{5}{3}$. Counting squares alone would give $\\frac{2}{3}$."
+        ],
+        "a": "$\\frac{5}{3}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Dividing run by rise, or counting grid squares without reading the scale. Slope is rise over run, the change in $y$ over the change in $x$. Read actual coordinates from the axes before you count."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Elementary Algebra 2e, Section 4.4: Understand Slope of a Line"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 8, 8.EE.B.6 (similar triangles and slope)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

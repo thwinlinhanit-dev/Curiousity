@@ -1,0 +1,93 @@
+{
+  "id": "aa.polynomial-division",
+  "slug": "polynomial-division",
+  "ladder": "math",
+  "course": "aa",
+  "unit": "polynomials",
+  "title": "Division and Roots in F[x]",
+  "short": "Over a field, f = qg + r with deg r < deg g; c is a root of f exactly when x − c divides f, so a nonzero polynomial of degree n has at most n roots.",
+  "trouble": "Students divide by a leading coefficient as if they were in ℚ instead of multiplying by its inverse mod p, or apply the root bound in ℤₙ[x], where x² − 1 has four roots mod 8.",
+  "prereqs": [
+    "aa.polynomial-rings",
+    "alg2.polynomial-long-division",
+    "alg2.remainder-factor-theorems"
+  ],
+  "xp": 2,
+  "viz": [],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/math/algebra-2/polynomial-long-division/\">Long division</a> of polynomials works over any field, because each step divides by a leading coefficient. That single fact gives the remainder theorem, the factor theorem and a bound on the number of roots."
+      },
+      {
+        "t": "why",
+        "html": "<b>Division algorithm.</b> Let $F$ be a field and $g \\ne 0$ in $F[x]$. For every $f$ there are unique $q, r$ with $$f = qg + r, \\qquad r = 0 \\text{ or } \\deg r \\lt \\deg g.$$ <b>Existence:</b> while $\\deg f \\ge \\deg g$, subtract $\\frac{a}{b}x^{m - n}g$, where $ax^{m}$ and $bx^{n}$ are the leading terms; this kills the leading term of $f$ and lowers its degree. (Here $\\frac{a}{b}$ means $a$ times the inverse of $b$, which exists in a field.) <b>Uniqueness:</b> if $qg + r = q'g + r'$, then $(q - q')g = r' - r$; the right side has degree less than $\\deg g$, so both sides are $0$. $\\square$"
+      },
+      {
+        "t": "p",
+        "html": "<b>Remainder and factor theorems.</b> Dividing by $x - c$ leaves the constant $f(c)$ (substitute $x = c$ into $f = q(x)(x - c) + r$). So $c$ is a root exactly when $x - c$ divides $f$, as in <a href=\"/math/algebra-2/remainder-factor-theorems/\">algebra 2</a>. <b>Root bound:</b> a nonzero polynomial of degree $n$ over a field (or integral domain) has at most $n$ roots, because each root splits off a factor $x - c$ and degrees add."
+      },
+      {
+        "t": "ex",
+        "title": "Dividing in $\\mathbb{Z}_{3}[x]$",
+        "q": "Divide $f = x^{3} + 2x + 1$ by $g = 2x + 1$ in $\\mathbb{Z}_{3}[x]$.",
+        "steps": [
+          "The leading coefficient of $g$ is $2$, and $2^{-1} = 2$ in $\\mathbb{Z}_{3}$. First quotient term: $x^{3} \\cdot 2 / x = 2x^{2}$. Subtract $2x^{2}(2x + 1) = 4x^{3} + 2x^{2} = x^{3} + 2x^{2}$: left $-2x^{2} + 2x + 1 = x^{2} + 2x + 1$.",
+          "Next term: $x^{2} \\cdot 2/x = 2x$. Subtract $2x(2x + 1) = x^{2} + 2x$: left $1$.",
+          "So $q = 2x^{2} + 2x$ and $r = 1$. Check: $(2x^{2} + 2x)(2x + 1) + 1 = 4x^{3} + 6x^{2} + 2x + 1 = x^{3} + 2x + 1$."
+        ],
+        "a": "$q = 2x^{2} + 2x$, $r = 1$."
+      },
+      {
+        "t": "ex",
+        "title": "Remainder without dividing",
+        "q": "Find the remainder of $x^{4} + 2x^{2} + 5$ divided by $x - 3$ in $\\mathbb{Z}_{7}[x]$.",
+        "steps": [
+          "Remainder $= f(3) = 81 + 18 + 5 = 104$.",
+          "$104 = 14 \\cdot 7 + 6$."
+        ],
+        "a": "$6$."
+      },
+      {
+        "t": "ex",
+        "title": "Over $\\mathbb{Q}$",
+        "q": "Divide $2x^{3} - 3x^{2} + x + 5$ by $x - 2$ in $\\mathbb{Q}[x]$.",
+        "steps": [
+          "$2x^{3} \\div x = 2x^{2}$; subtract $2x^{3} - 4x^{2}$: left $x^{2} + x + 5$.",
+          "$x^{2} \\div x = x$; subtract $x^{2} - 2x$: left $3x + 5$.",
+          "$3x \\div x = 3$; subtract $3x - 6$: left $11$. Check: $f(2) = 16 - 12 + 2 + 5 = 11$."
+        ],
+        "a": "$q = 2x^{2} + x + 3$, $r = 11$."
+      },
+      {
+        "t": "mistake",
+        "html": "Dividing by a leading coefficient as if you were in $\\mathbb{Q}$: in $\\mathbb{Z}_{3}$, \"divide by 2\" means multiply by $2^{-1} = 2$, never write $\\frac{1}{2}$. And the root bound needs a field (or integral domain): in $\\mathbb{Z}_{8}$, $x^{2} - 1$ has the four roots $1, 3, 5, 7$, because $(x - 3)(x - 5) = x^{2} - 8x + 15 = x^{2} - 1$ there too."
+      },
+      {
+        "t": "note",
+        "html": "<b>Division finds factors.</b> A zero remainder hands you the factorization. Over $\\mathbb{Z}_{5}$, dividing $x^{3} + 1$ by $x + 1$ leaves $(-1)^{3} + 1 = 0$, and the quotient gives $x^{3} + 1 = (x + 1)(x^{2} + 4x + 1)$."
+      },
+      {
+        "t": "key",
+        "html": "Over a field, $f = qg + r$ with $\\deg r \\lt \\deg g$, uniquely. Dividing by $x - c$ leaves $f(c)$, so $c$ is a root iff $(x - c) \\mid f$, and a degree-$n$ polynomial has at most $n$ roots."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Thomas W. Judson, Abstract Algebra: Theory and Applications (open textbook), chapter 17, Polynomials (section 17.2, The Division Algorithm)"
+      },
+      {
+        "name": "John A. Beachy and William D. Blair, Abstract Algebra, online study guide (Northern Illinois University), section 4.2, Polynomials"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.702 Algebra II (Spring 2011), lecture notes on polynomial rings"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

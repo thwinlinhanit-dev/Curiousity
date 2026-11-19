@@ -1,0 +1,82 @@
+{
+  "id": "g4.decompose-fractions",
+  "slug": "decompose-fractions",
+  "ladder": "math",
+  "course": "g4",
+  "unit": "fraction-operations",
+  "title": "Breaking Fractions into Sums",
+  "short": "5/8 = 1/8 + 1/8 + 3/8 and other ways.",
+  "trouble": "",
+  "prereqs": [
+    "g3.build-fractions"
+  ],
+  "xp": 1,
+  "viz": [
+    "fractionbar"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In Grade 3 you <a href=\"/math/grade-3/build-fractions/\">built fractions from unit fractions</a>: $\\dfrac{3}{4}$ is three pieces of size $\\dfrac{1}{4}$. Turn that around and you can break a fraction into parts in many ways."
+      },
+      {
+        "t": "key",
+        "html": "A fraction can be split into a sum of fractions with the same denominator, as long as the numerators add up: $\\dfrac{5}{8} = \\dfrac{1}{8} + \\dfrac{1}{8} + \\dfrac{3}{8} = \\dfrac{2}{8} + \\dfrac{3}{8}$. Mixed numbers split the same way: $2\\dfrac{1}{8} = 1 + 1 + \\dfrac{1}{8} = \\dfrac{8}{8} + \\dfrac{8}{8} + \\dfrac{1}{8}$."
+      },
+      {
+        "t": "why",
+        "html": "$\\dfrac{5}{8}$ is just 5 eighth-pieces. You can sort 5 pieces into piles any way you like (1 and 4, or 2 and 3, or 1, 1 and 3) and you still have 5 eighths."
+      },
+      {
+        "t": "viz",
+        "name": "fractionline",
+        "opts": {
+          "d": 8,
+          "max": 1,
+          "point": "5/8",
+          "hops": true
+        },
+        "cap": "Five hops of $\\dfrac{1}{8}$ reach $\\dfrac{5}{8}$. Group the hops however you like."
+      },
+      {
+        "t": "ex",
+        "title": "Missing part",
+        "q": "Fill in: $\\dfrac{5}{8} = \\dfrac{2}{8} + \\dfrac{?}{8}$",
+        "steps": [
+          "Count eighths: 2 plus what makes 5?",
+          "$5 - 2 = 3$."
+        ],
+        "a": "$\\dfrac{3}{8}$"
+      },
+      {
+        "t": "ex",
+        "title": "Split a mixed number",
+        "q": "Write $2\\dfrac{1}{4}$ as a sum of fourths.",
+        "steps": [
+          "Each whole is $\\dfrac{4}{4}$.",
+          "$2\\dfrac{1}{4} = \\dfrac{4}{4} + \\dfrac{4}{4} + \\dfrac{1}{4}$."
+        ],
+        "a": "$\\dfrac{4}{4} + \\dfrac{4}{4} + \\dfrac{1}{4}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Changing the denominators while splitting, like writing $\\dfrac{5}{8} = \\dfrac{2}{4} + \\dfrac{3}{4}$. The pieces must stay eighths. Check by adding the numerators back: they should make 5, over the same 8."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 4, 4.NF.B.3b (decompose a fraction into a sum of fractions with the same denominator)"
+      },
+      {
+        "name": "OpenStax Prealgebra 2e, section 4.4 Add and Subtract Fractions with Common Denominators"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

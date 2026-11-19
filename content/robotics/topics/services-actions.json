@@ -1,0 +1,80 @@
+{
+  "id": "rbros.services-actions",
+  "slug": "services-actions",
+  "ladder": "robotics",
+  "course": "rbros",
+  "unit": "graph",
+  "title": "Services and Actions",
+  "short": "A topic streams, a service asks once and waits for one reply, and an action runs a long task with feedback and can be canceled.",
+  "trouble": "Students use a service for a long task, so the caller freezes until it is done.",
+  "prereqs": [
+    "rbros.nodes-topics"
+  ],
+  "xp": 2,
+  "viz": [],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Topics stream data. Sometimes a node needs to ask a question, or start a long job."
+      },
+      {
+        "t": "key",
+        "html": "A <b>service</b> is one request and one reply, like asking a question. An <b>action</b> is for long jobs: you send a goal, get steady <b>feedback</b>, receive a <b>result</b>, and can <b>cancel</b> along the way."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Tool",
+          "Pattern",
+          "Good for"
+        ],
+        "rows": [
+          [
+            "Topic",
+            "Stream, many listeners",
+            "Sensor data, robot state"
+          ],
+          [
+            "Service",
+            "Ask once, get one answer",
+            "\"Reset the odometry\", \"what is the map?\""
+          ],
+          [
+            "Action",
+            "Goal, feedback, result, cancel",
+            "\"Drive to the kitchen\", \"move the arm there\""
+          ]
+        ]
+      },
+      {
+        "t": "why",
+        "html": "Picking the right tool keeps the robot responsive. A service call to a two-minute job would leave the caller with no news and no way to stop it."
+      },
+      {
+        "t": "ex",
+        "title": "Pick one",
+        "q": "Dock to the charger, which takes about a minute, and let the user stop it.",
+        "steps": [
+          "Long, needs progress and a way to stop."
+        ],
+        "a": "An action."
+      },
+      {
+        "t": "mistake",
+        "html": "Using a service for a long task, so the caller waits with no progress and cannot cancel."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "ROS 2 Documentation (Jazzy), beginner tutorials and concepts",
+        "url": "https://docs.ros.org/en/jazzy/"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

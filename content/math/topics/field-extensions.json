@@ -1,0 +1,101 @@
+{
+  "id": "aa.field-extensions",
+  "slug": "field-extensions",
+  "ladder": "math",
+  "course": "aa",
+  "unit": "fields",
+  "title": "Field Extensions",
+  "short": "If p(x) is irreducible over F, then F[x]/(p(x)) is a field containing a root of p; ℚ(√2) = {a + b√2 : a, b ∈ ℚ} is one, with inverses found by the conjugate.",
+  "trouble": "Students invert a + b√2 term by term, as 1/a + 1/(b√2); multiply by the conjugate a − b√2 instead.",
+  "prereqs": [
+    "aa.irreducibility-tests",
+    "aa.prime-maximal-ideals",
+    "aa.polynomial-gcd",
+    "la.basis"
+  ],
+  "xp": 2,
+  "viz": [],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "$x^{2} - 2$ has no root in $\\mathbb{Q}$, so we enlarge $\\mathbb{Q}$ to a field that has one. There are two ways to do it, and they give the same field: adjoin $\\sqrt{2}$ inside $\\mathbb{R}$, or build the root out of nothing as a <a href=\"/math/abstract-algebra/quotient-rings/\">quotient ring</a>."
+      },
+      {
+        "t": "p",
+        "html": "<b>Definitions.</b> A field $K$ containing a field $F$ is an <b>extension</b> of $F$. For $\\alpha \\in K$, $F(\\alpha)$ is the smallest subfield of $K$ containing $F$ and $\\alpha$. Since $K$ is a <a href=\"/math/linear-algebra/basis/\">vector space</a> over $F$, the <b>degree</b> $[K : F]$ is its dimension."
+      },
+      {
+        "t": "why",
+        "html": "<b>Kronecker's construction.</b> If $p(x)$ is <a href=\"/math/abstract-algebra/irreducibility-tests/\">irreducible</a> over $F$ of degree $n$, then $K = F[x]/(p(x))$ is a field (the ideal $(p)$ is <a href=\"/math/abstract-algebra/prime-maximal-ideals/\">maximal</a>), it contains a copy of $F$ (the constants), and the class $\\alpha = x + (p)$ is a root of $p$, because $p(\\alpha) = p(x) + (p) = 0$. Every element is a unique remainder $$a_{0} + a_{1}\\alpha + \\cdots + a_{n-1}\\alpha^{n-1},$$ so $1, \\alpha, \\dots, \\alpha^{n-1}$ is a basis and $[K : F] = n$. Multiplication: multiply as polynomials, then use $p(\\alpha) = 0$. Inverses: by the <a href=\"/math/abstract-algebra/polynomial-gcd/\">Euclidean algorithm</a>, or for square roots by the conjugate."
+      },
+      {
+        "t": "p",
+        "html": "<b>$\\mathbb{Q}(\\sqrt{d})$</b> for $d$ not a perfect square is $\\{a + b\\sqrt{d} : a, b \\in \\mathbb{Q}\\}$, which is $\\mathbb{Q}[x]/(x^{2} - d)$. The inverse of $a + b\\sqrt{d} \\ne 0$ is $$\\frac{a - b\\sqrt{d}}{a^{2} - db^{2}},$$ where $a^{2} - db^{2} \\ne 0$ because $\\sqrt{d}$ is irrational."
+      },
+      {
+        "t": "ex",
+        "title": "Multiplying",
+        "q": "In $\\mathbb{Q}(\\sqrt{3})$, compute $(1 + 2\\sqrt{3})(3 - \\sqrt{3})$.",
+        "steps": [
+          "$3 - \\sqrt{3} + 6\\sqrt{3} - 2 \\cdot 3 = -3 + 5\\sqrt{3}$."
+        ],
+        "a": "$-3 + 5\\sqrt{3}$."
+      },
+      {
+        "t": "ex",
+        "title": "Inverting",
+        "q": "Write $\\dfrac{1}{1 + 2\\sqrt{3}}$ as $a + b\\sqrt{3}$.",
+        "steps": [
+          "Multiply top and bottom by the conjugate $1 - 2\\sqrt{3}$: the bottom becomes $1 - 4 \\cdot 3 = -11$.",
+          "$\\dfrac{1 - 2\\sqrt{3}}{-11} = -\\dfrac{1}{11} + \\dfrac{2}{11}\\sqrt{3}$.",
+          "Check: $(1 + 2\\sqrt{3})(-1 + 2\\sqrt{3}) = -1 + 2\\sqrt{3} - 2\\sqrt{3} + 12 = 11$."
+        ],
+        "a": "$-\\frac{1}{11} + \\frac{2}{11}\\sqrt{3}$."
+      },
+      {
+        "t": "ex",
+        "title": "A cubic extension",
+        "q": "Let $\\theta = \\sqrt[3]{2}$. In $\\mathbb{Q}(\\theta)$, compute $(1 + \\theta)(\\theta + \\theta^{2})$.",
+        "steps": [
+          "Expand: $\\theta + \\theta^{2} + \\theta^{2} + \\theta^{3} = \\theta + 2\\theta^{2} + \\theta^{3}$.",
+          "$\\theta^{3} = 2$: the product is $2 + \\theta + 2\\theta^{2}$.",
+          "Every element of $\\mathbb{Q}(\\theta)$ is $a + b\\theta + c\\theta^{2}$, and $[\\mathbb{Q}(\\theta) : \\mathbb{Q}] = 3$."
+        ],
+        "a": "$2 + \\theta + 2\\theta^{2}$."
+      },
+      {
+        "t": "p",
+        "html": "The same recipe gives $\\mathbb{C} = \\mathbb{R}[x]/(x^{2} + 1)$, with $i$ the class of $x$, and it gives the finite fields of the last two lessons."
+      },
+      {
+        "t": "note",
+        "html": "<b>Irreducible is essential.</b> If $p$ factors, $F[x]/(p)$ is not a field: in $\\mathbb{Q}[x]/(x^{2} - 1)$, the classes of $x - 1$ and $x + 1$ are nonzero, but their product is $0$. So a proof that $F[x]/(p)$ is a field starts by proving $p$ irreducible, with the <a href=\"/math/abstract-algebra/irreducibility-tests/\">tests</a> of the last unit."
+      },
+      {
+        "t": "mistake",
+        "html": "Inverting term by term: $\\dfrac{1}{1 + 2\\sqrt{3}}$ is not $1 + \\dfrac{1}{2\\sqrt{3}}$, just as $\\frac{1}{1 + 2} \\ne 1 + \\frac{1}{2}$. Multiply by the conjugate, and check by multiplying back: the product must be exactly $1$."
+      },
+      {
+        "t": "key",
+        "html": "For irreducible $p$ of degree $n$, $F[x]/(p)$ is a field of degree $n$ over $F$ containing a root $\\alpha$, with basis $1, \\alpha, \\dots, \\alpha^{n-1}$. In $\\mathbb{Q}(\\sqrt{d})$, invert with the conjugate."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Thomas W. Judson, Abstract Algebra: Theory and Applications (open textbook), chapter 21, Fields (section 21.1, Extension Fields)"
+      },
+      {
+        "name": "John A. Beachy and William D. Blair, Abstract Algebra, online study guide (Northern Illinois University), section 6.1, Algebraic Elements"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.702 Algebra II (Spring 2011), lecture notes on field extensions"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

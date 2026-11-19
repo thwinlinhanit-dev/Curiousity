@@ -1,0 +1,91 @@
+{
+  "id": "ra.epsilon-n-proofs",
+  "slug": "epsilon-n-proofs",
+  "ladder": "math",
+  "course": "ra",
+  "unit": "sequences",
+  "title": "Writing ε–N Proofs",
+  "short": "Work backward on scratch paper to find N in terms of ε; then write the proof forward: let ε > 0, choose N, take n ≥ N and show |aₙ − L| < ε.",
+  "trouble": "Students hand in the scratch work, which starts from the inequality they want to prove, or choose an N that depends on n.",
+  "prereqs": [
+    "ra.sequence-limit"
+  ],
+  "xp": 3,
+  "viz": [
+    "ra-epsband"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Finding an $N$ for one $\\varepsilon$, as in <a href=\"/math/real-analysis/sequence-limit/\">the definition</a>, is a computation. A proof must handle every $\\varepsilon > 0$ at once, so $N$ becomes a formula in $\\varepsilon$. Every ε–N proof is written in two passes: scratch work backward, then a clean argument forward."
+      },
+      {
+        "t": "key",
+        "html": "<b>Scratch work</b> (not part of the proof): simplify $|a_n - L|$, bound it by something simple like $\\frac{C}{n}$, and solve $\\frac{C}{n} < \\varepsilon$ to see that $N > \\frac{C}{\\varepsilon}$ will do. <b>The proof</b>: \"Let $\\varepsilon > 0$. Choose an integer $N > \\frac{C}{\\varepsilon}$. Let $n \\ge N$. Then $|a_n - L| \\le \\frac{C}{n} \\le \\frac{C}{N} < \\varepsilon$.\""
+      },
+      {
+        "t": "why",
+        "html": "The order of the sentences follows the order of the quantifiers in the definition: for every $\\varepsilon$ (let $\\varepsilon > 0$), there is an $N$ (choose it, using only $\\varepsilon$), such that for all $n \\ge N$ (let $n \\ge N$), the inequality holds (the estimate). The scratch work runs the other way, starting from the inequality we want, which is why it cannot be handed in as a proof: it assumes what it is trying to show. Replacing $|a_n - L|$ by a simpler upper bound is allowed and makes the algebra easy; the bound only has to be true and to go to $0$."
+      },
+      {
+        "t": "p",
+        "html": "<b>Model proof.</b> Claim: $\\frac{3n + 1}{n + 2} \\to 3$. Scratch: $\\left|\\frac{3n + 1}{n + 2} - 3\\right| = \\frac{5}{n + 2} < \\frac{5}{n}$, and $\\frac{5}{n} < \\varepsilon$ when $n > \\frac{5}{\\varepsilon}$. <b>Proof.</b> Let $\\varepsilon > 0$. By the Archimedean property choose an integer $N > \\frac{5}{\\varepsilon}$. For every $n \\ge N$, $\\left|\\frac{3n + 1}{n + 2} - 3\\right| = \\frac{5}{n + 2} < \\frac{5}{n} \\le \\frac{5}{N} < \\varepsilon$. $\\blacksquare$"
+      },
+      {
+        "t": "viz",
+        "name": "ra-epsband",
+        "opts": {
+          "f": "(3n+1)/(n+2)",
+          "L": "3",
+          "eps": 0.25,
+          "N": 21,
+          "nmax": 60
+        },
+        "cap": "The proof's choice $N > \\frac{5}{\\varepsilon}$ for $\\frac{3n + 1}{n + 2} \\to 3$: try several $\\varepsilon$ and check that $N = \\frac{5}{\\varepsilon}$ (rounded up) always lands in the green."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Simplify, then bound",
+        "q": "For $a_n = \\frac{2n - 7}{n + 4}$ and $L = 2$, find a constant $C$ with $|a_n - L| < \\frac{C}{n}$, and write the choice of $N$.",
+        "steps": [
+          "$a_n - 2 = \\frac{2n - 7 - 2n - 8}{n + 4} = \\frac{-15}{n + 4}$, so $|a_n - 2| = \\frac{15}{n + 4}$.",
+          "Dropping the $4$ makes the denominator smaller and the fraction bigger: $\\frac{15}{n + 4} < \\frac{15}{n}$. So $C = 15$.",
+          "Choose an integer $N > \\frac{15}{\\varepsilon}$."
+        ],
+        "a": "$C = 15$, $N > \\frac{15}{\\varepsilon}$."
+      },
+      {
+        "t": "ex",
+        "title": "A bound that needs care",
+        "q": "For $a_n = \\frac{n}{n^{2} + 1}$ and $L = 0$, find a simple bound and the choice of $N$.",
+        "steps": [
+          "$\\left|\\frac{n}{n^{2} + 1}\\right| = \\frac{n}{n^{2} + 1} < \\frac{n}{n^{2}} = \\frac{1}{n}$.",
+          "So $N > \\frac{1}{\\varepsilon}$ works: for $n \\ge N$, $|a_n| < \\frac{1}{n} \\le \\frac{1}{N} < \\varepsilon$."
+        ],
+        "a": "$|a_n| < \\frac{1}{n}$; choose $N > \\frac{1}{\\varepsilon}$."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Handing in the scratch work.</b> \"Suppose $\\frac{5}{n + 2} < \\varepsilon$; then $n > \\frac{5}{\\varepsilon} - 2$, so the limit is $3$\" starts from the conclusion. Another common slip is an $N$ that depends on $n$ (like \"choose $N = n + 1$\"): $N$ must be fixed before $n$ is chosen, from $\\varepsilon$ alone. And a proof that picks $\\varepsilon = 0.01$ proves the inequality for that one $\\varepsilon$, not convergence."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Jiří Lebl, Basic Analysis I: Introduction to Real Analysis, section 2.1 (examples of limits)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.100A Real Analysis, lecture notes on convergent sequences (proof examples)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

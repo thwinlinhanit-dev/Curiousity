@@ -1,0 +1,98 @@
+{
+  "id": "pre.polar-coordinates",
+  "slug": "polar-coordinates",
+  "ladder": "math",
+  "course": "pre",
+  "unit": "polar-complex",
+  "title": "Polar Coordinates",
+  "short": "Locate points by distance r and angle θ.",
+  "trouble": "Students forget that one point has many polar names, including ones with negative r.",
+  "prereqs": [
+    "pre.unit-circle-sine-cosine"
+  ],
+  "xp": 1,
+  "viz": [
+    "polar"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Rectangular coordinates say \"go across, then up.\" There is another natural way to give directions: \"face this way, then walk this far.\" That is what you did with the <a href=\"/math/precalculus/unit-circle-sine-cosine/\">unit circle</a>, and it works for any distance from the origin, which in this setting is called the <b>pole</b>."
+      },
+      {
+        "t": "key",
+        "html": "The polar coordinates $(r, \\theta)$ name the point you reach by facing angle $\\theta$ (from the positive $x$-axis) and moving $r$ units. If $r < 0$, move $|r|$ units backward, onto the opposite ray. Every point has many names: $$(r, \\theta) = (r, \\theta + 2k\\pi) = (-r, \\theta + \\pi + 2k\\pi).$$"
+      },
+      {
+        "t": "why",
+        "html": "Adding a full turn to $\\theta$ points you along the same ray, so the point does not change. Walking backward along the ray at angle $\\theta$ is the same as walking forward along the ray at angle $\\theta + \\pi$, which points the opposite way. So $(-r, \\theta)$ and $(r, \\theta + \\pi)$ are the same point."
+      },
+      {
+        "t": "viz",
+        "name": "polar",
+        "opts": {
+          "point": [
+            3,
+            120
+          ],
+          "units": "deg",
+          "task": "Move the point to $(r, \\theta) = (2, 225^\\circ)$.",
+          "target": [
+            -1.414,
+            -1.414
+          ]
+        },
+        "cap": "Drag the point. The readout gives its polar and rectangular coordinates."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Plotting",
+        "q": "Plot $\\left(3, \\frac{5\\pi}{6}\\right)$.",
+        "steps": [
+          "Face $\\frac{5\\pi}{6} = 150^\\circ$, up and to the left.",
+          "Move $3$ units along that ray. The point is in Quadrant II."
+        ],
+        "a": "In Quadrant II, $3$ units from the pole"
+      },
+      {
+        "t": "ex",
+        "title": "Other names",
+        "q": "Give three other polar names for $\\left(2, \\frac{\\pi}{3}\\right)$.",
+        "steps": [
+          "Add a full turn: $\\left(2, \\frac{7\\pi}{3}\\right)$. Subtract one: $\\left(2, -\\frac{5\\pi}{3}\\right)$.",
+          "Use a negative $r$ with the opposite angle: $\\left(-2, \\frac{\\pi}{3} + \\pi\\right) = \\left(-2, \\frac{4\\pi}{3}\\right)$."
+        ],
+        "a": "$\\left(2, \\frac{7\\pi}{3}\\right)$, $\\left(2, -\\frac{5\\pi}{3}\\right)$, $\\left(-2, \\frac{4\\pi}{3}\\right)$"
+      },
+      {
+        "t": "ex",
+        "title": "A negative $r$",
+        "q": "Where is $\\left(-4, \\frac{\\pi}{4}\\right)$?",
+        "steps": [
+          "Face $\\frac{\\pi}{4}$ (Quadrant I), then walk $4$ units backward.",
+          "You land on the ray at $\\frac{\\pi}{4} + \\pi = \\frac{5\\pi}{4}$, in Quadrant III."
+        ],
+        "a": "Quadrant III; the same point as $\\left(4, \\frac{5\\pi}{4}\\right)$"
+      },
+      {
+        "t": "mistake",
+        "html": "Forgetting that one point has many polar names, and so marking $\\left(-2, \\frac{4\\pi}{3}\\right)$ wrong when it equals $\\left(2, \\frac{\\pi}{3}\\right)$. To compare two names, rewrite both with $r > 0$ and $0 \\le \\theta < 2\\pi$. In rectangular coordinates each point has exactly one name; in polar coordinates it never does."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Precalculus 2e, Section 8.3 Polar Coordinates"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

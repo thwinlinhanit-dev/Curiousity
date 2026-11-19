@@ -1,0 +1,114 @@
+{
+  "id": "pre.phase-shift-midline",
+  "slug": "phase-shift-midline",
+  "ladder": "math",
+  "course": "pre",
+  "unit": "trig-graphs",
+  "title": "Phase Shift and Midline",
+  "short": "y = A sin(B(x − h)) + k shifts by h and centers on y = k.",
+  "trouble": "Students read the shift of sin(2x − π) as π instead of π/2.",
+  "prereqs": [
+    "pre.amplitude-period"
+  ],
+  "xp": 2,
+  "viz": [
+    "trigwave"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Two more transformations complete the picture: sliding the wave sideways and lifting it up or down. They work the same way as <a href=\"/math/algebra-2/combined-transformations/\">shifts of any graph</a>, with one catch when $B \\ne 1$."
+      },
+      {
+        "t": "key",
+        "html": "In $$\\role{output}{y} = \\role[amplitude]{coefficient}{A}\\sin\\big(\\role[frequency factor]{frequency}{B}(\\role{input}{x} - \\role[horizontal shift]{shift}{h})\\big) + \\role{midline}{k},$$ the graph shifts right by $h$ (left if $h < 0$), and the <b>midline</b> is $y = k$. The maximum is $k + |A|$ and the minimum is $k - |A|$. If the equation is written $y = A\\sin(Bx - C) + k$, factor out $B$ first: the shift is $h = \\frac{C}{B}$."
+      },
+      {
+        "t": "why",
+        "html": "The basic wave starts a cycle where its input is $0$. Here the input is $B(x - h)$, which is $0$ when $x = h$. So the cycle that used to start at $0$ now starts at $h$. Adding $k$ raises every point by $k$, so the center line moves from $y = 0$ to $y = k$, and the wave still swings $|A|$ above and below it."
+      },
+      {
+        "t": "viz",
+        "name": "trigwave",
+        "opts": {
+          "fn": "sin",
+          "use": [
+            "B",
+            "C",
+            "D"
+          ],
+          "B": 2,
+          "C": 0,
+          "D": 0,
+          "parent": true,
+          "task": "Build $y = \\sin(2x - \\pi)$: set $B = 2$ and find the shift that matches.",
+          "target": {
+            "B": 2,
+            "C": "pi/2"
+          },
+          "roleLinks": {
+            "A:": "coefficient",
+            "B:": "frequency",
+            "C:": "shift",
+            "D:": "midline"
+          }
+        },
+        "cap": "The gold dot marks where a cycle starts. The readout warns when the shift is not the number you see inside the parentheses."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "All the features",
+        "q": "Describe $y = 3\\sin\\left(x - \\frac{\\pi}{4}\\right) + 2$.",
+        "steps": [
+          "$A = 3$: amplitude $3$.",
+          "$h = \\frac{\\pi}{4}$: shifted right $\\frac{\\pi}{4}$. $B = 1$, so the period is $2\\pi$.",
+          "$k = 2$: midline $y = 2$, maximum $2 + 3 = 5$, minimum $2 - 3 = -1$."
+        ],
+        "a": "Amplitude $3$, period $2\\pi$, right $\\frac{\\pi}{4}$, midline $y = 2$, range $[-1, 5]$"
+      },
+      {
+        "t": "ex",
+        "title": "Factor first",
+        "q": "Find the phase shift of $y = \\cos\\left(2x + \\frac{\\pi}{3}\\right)$.",
+        "steps": [
+          "Factor $2$ out of the inside: $2x + \\frac{\\pi}{3} = 2\\left(x + \\frac{\\pi}{6}\\right)$.",
+          "So $h = -\\frac{\\pi}{6}$: the graph shifts left $\\frac{\\pi}{6}$.",
+          "Check: the inside is $0$ when $2x + \\frac{\\pi}{3} = 0$, that is $x = -\\frac{\\pi}{6}$. ✓"
+        ],
+        "a": "Left $\\frac{\\pi}{6}$"
+      },
+      {
+        "t": "ex",
+        "title": "Building an equation",
+        "q": "Write a sine function with amplitude $2$, period $\\pi$, a shift of $\\frac{\\pi}{4}$ to the right and midline $y = -1$.",
+        "steps": [
+          "$A = 2$, $k = -1$, $h = \\frac{\\pi}{4}$.",
+          "$B = \\dfrac{2\\pi}{\\pi} = 2$."
+        ],
+        "a": "$y = 2\\sin\\left(2\\left(x - \\frac{\\pi}{4}\\right)\\right) - 1$"
+      },
+      {
+        "t": "mistake",
+        "html": "Reading the shift of $\\sin(2x - \\pi)$ as $\\pi$. The number inside is $C = Bh$, not $h$. Quick check: set the inside equal to $0$ and solve. $2x - \\pi = 0$ gives $x = \\frac{\\pi}{2}$, so the shift is $\\frac{\\pi}{2}$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Precalculus 2e, Section 6.1 Graphs of the Sine and Cosine Functions"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, F-BF.B.3"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

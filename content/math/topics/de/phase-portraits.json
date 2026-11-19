@@ -1,0 +1,144 @@
+{
+  "id": "de.phase-portraits",
+  "slug": "phase-portraits",
+  "ladder": "math",
+  "course": "de",
+  "unit": "systems",
+  "title": "Phase Portraits",
+  "short": "Nodes, saddles, spirals and centers from the eigenvalues.",
+  "trouble": "Students decide stability from the eigenvectors instead of the signs of the eigenvalues.",
+  "prereqs": [
+    "de.eigen-solutions"
+  ],
+  "xp": 3,
+  "viz": [
+    "phaseplane"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A phase portrait draws the trajectories of $\\mathbf{x}' = A\\mathbf{x}$ in the $(x, y)$ plane, without time on an axis. You can predict its shape from the eigenvalues alone, which is often all you need: will the system settle, blow up, or circle forever? This builds on <a href=\"/math/differential-equations/eigen-solutions/\">eigenvalue solutions</a>."
+      },
+      {
+        "t": "key",
+        "html": "For $2\\times 2$ systems with $\\det A \\ne 0$: real eigenvalues of opposite sign, <b>saddle</b>; both negative, <b>stable node</b> (sink); both positive, <b>unstable node</b> (source). Complex $\\alpha \\pm \\beta i$: <b>spiral sink</b> if $\\alpha < 0$, <b>spiral source</b> if $\\alpha > 0$, <b>center</b> if $\\alpha = 0$. With $\\tau = \\operatorname{tr}A$, $\\Delta = \\det A$: saddle iff $\\Delta < 0$; otherwise stable iff $\\tau < 0$; spirals iff $\\tau^{2} < 4\\Delta$."
+      },
+      {
+        "t": "why",
+        "html": "Every solution is a combination of $e^{\\lambda_1t}\\mathbf{v}_1$ and $e^{\\lambda_2t}\\mathbf{v}_2$. Negative eigenvalues make both parts shrink, so everything flows to the origin; a positive one makes its part grow. In a saddle, the component along the stable eigenvector dies out while the other grows, so trajectories come in along one line and leave along the other. Complex eigenvalues bring $\\cos\\beta t$ and $\\sin\\beta t$, so the motion rotates, while $e^{\\alpha t}$ decides whether it spirals in or out. The eigenvalues are the roots of $\\lambda^{2} - \\tau\\lambda + \\Delta = 0$, which is why $\\tau$ and $\\Delta$ are enough."
+      },
+      {
+        "t": "ex",
+        "title": "From the eigenvalues",
+        "q": "The eigenvalues are $-1$ and $-4$. Classify the origin.",
+        "steps": [
+          "Both are real and negative: every solution decays."
+        ],
+        "a": "stable node (sink)"
+      },
+      {
+        "t": "ex",
+        "title": "From the matrix",
+        "q": "Classify the origin for $A = \\begin{bmatrix} 1 & -5 \\\\ 1 & -3 \\end{bmatrix}$.",
+        "steps": [
+          "$\\tau = -2$ and $\\Delta = -3 + 5 = 2 > 0$, so not a saddle; $\\tau < 0$, so stable.",
+          "$\\tau^{2} - 4\\Delta = 4 - 8 = -4 < 0$: complex eigenvalues $-1 \\pm i$."
+        ],
+        "a": "spiral sink"
+      },
+      {
+        "t": "ex",
+        "title": "A parameter",
+        "q": "For $A = \\begin{bmatrix} 0 & 1 \\\\ -k & -2 \\end{bmatrix}$ (a damped spring), when is the origin a spiral sink?",
+        "steps": [
+          "$\\tau = -2$, $\\Delta = k$, $\\tau^{2} - 4\\Delta = 4 - 4k$.",
+          "Saddle if $k < 0$. For $k > 0$ it is stable; spirals need $4 - 4k < 0$."
+        ],
+        "a": "$k > 1$ (and $0 < k < 1$ gives a stable node: the overdamped spring)"
+      },
+      {
+        "t": "mistake",
+        "html": "Deciding stability from the eigenvectors. Eigenvectors only set the directions of the straight-line solutions; whether motion along them grows or shrinks is decided by the signs of the eigenvalues (or of their real part). Two eigenvectors pointing anywhere can belong to a sink, a source or a saddle."
+      },
+      {
+        "t": "viz",
+        "name": "phaseplane",
+        "opts": {
+          "m": [
+            [
+              1,
+              -5
+            ],
+            [
+              1,
+              -3
+            ]
+          ],
+          "point": [
+            2,
+            1
+          ],
+          "presets": true,
+          "range": 4
+        },
+        "cap": "The phase plane of the second example. Use the presets to compare a saddle, a sink, a source, spirals and a center, and edit the matrix entries to see how the trace and determinant move the type."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Eigenvalues",
+          "Type",
+          "Stable?"
+        ],
+        "rows": [
+          [
+            "real, opposite signs",
+            "saddle",
+            "no"
+          ],
+          [
+            "real, both negative",
+            "stable node",
+            "yes"
+          ],
+          [
+            "real, both positive",
+            "unstable node",
+            "no"
+          ],
+          [
+            "$\\alpha \\pm \\beta i$, $\\alpha < 0$",
+            "spiral sink",
+            "yes"
+          ],
+          [
+            "$\\alpha \\pm \\beta i$, $\\alpha > 0$",
+            "spiral source",
+            "no"
+          ],
+          [
+            "$\\pm\\beta i$",
+            "center",
+            "neutrally"
+          ]
+        ],
+        "cap": "The classification at a glance."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Paul's Online Math Notes, Differential Equations: Phase Plane"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.03SC Differential Equations (Fall 2011), Unit IV: First-order Systems"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

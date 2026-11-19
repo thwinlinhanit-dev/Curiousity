@@ -1,0 +1,130 @@
+{
+  "id": "humangeo.distance-decay",
+  "slug": "distance-decay",
+  "ladder": "geog",
+  "course": "humangeo",
+  "unit": "thinking",
+  "title": "Distance Decay and Time-Space Compression",
+  "short": "Interaction falls off with distance (distance decay), but faster travel and communication make far places feel closer (time-space compression).",
+  "trouble": "Students think distance no longer matters because of the internet. Most trips, trade and migration are still short; distance decay weakens but does not vanish.",
+  "prereqs": [
+    "humangeo.scale-of-analysis"
+  ],
+  "xp": 2,
+  "viz": [
+    "gg-diffusion",
+    "gg-sort"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Think about where you went last week. Most trips were probably short: school, a store, a friend's house. Long trips were rare. That everyday pattern is one of the oldest ideas in geography, and it explains how ideas and goods spread, which you will see again in <a href=\"/geography/human-geography/diffusion/\">How Things Spread</a>."
+      },
+      {
+        "t": "key",
+        "html": "<b>Distance decay</b>: interaction between places falls off as the distance between them grows. <b>Time-space compression</b>: faster, cheaper travel and communication make distant places feel closer, so the decay becomes weaker."
+      },
+      {
+        "t": "viz",
+        "name": "humangeo-decay",
+        "opts": {
+          "what": "trips",
+          "compress": 0.1
+        },
+        "cap": "The share of trips by distance. Move the slider to see what faster travel does."
+      },
+      {
+        "t": "why",
+        "html": "Every trip, phone call or shipment costs time, money or effort, and the cost grows with distance. So people make many short trips and few long ones. The geographer Waldo Tobler put it this way in 1970: everything is related to everything else, but near things are more related than distant things. The geographer David Harvey used the term time-space compression (1989) for how railroads, jets and now the internet have shrunk those costs."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Reading a decay pattern",
+        "q": "A grocery store finds that 60% of its shoppers live within 2 km, 25% live 2 to 5 km away, and 15% live farther. What does this show?",
+        "steps": [
+          "The share of shoppers falls as distance grows.",
+          "That is distance decay.",
+          "The store's customers form a functional region around it that weakens toward the edges."
+        ],
+        "a": "Distance decay: most shoppers come from nearby."
+      },
+      {
+        "t": "ex",
+        "title": "Time-space compression",
+        "q": "In 1850 a letter from New York to San Francisco took weeks; today an email arrives in seconds. What changed, and what did not?",
+        "steps": [
+          "The time to send a message fell almost to zero: that is time-space compression.",
+          "The distance in kilometers stayed exactly the same.",
+          "What changed is the cost of crossing that distance."
+        ],
+        "a": "Communication became nearly instant, so the two cities feel closer, but their distance did not change."
+      },
+      {
+        "t": "mistake",
+        "html": "Many students think distance no longer matters because of the internet. It still does. Most trips, most trade between countries and most migration are still between places that are fairly close. Time-space compression <i>weakens</i> distance decay; it does not erase it. Studies of phone calls and online friendships still find the most contact between nearby places."
+      },
+      {
+        "t": "viz",
+        "name": "gg-sort",
+        "opts": {
+          "bins": [
+            "Distance decay",
+            "Time-space compression"
+          ],
+          "cards": [
+            {
+              "text": "Most of a town's commuters live within 20 km",
+              "bin": 0
+            },
+            {
+              "text": "Video calls let a family talk across an ocean every day",
+              "bin": 1
+            },
+            {
+              "text": "A country trades most with its neighbors",
+              "bin": 0
+            },
+            {
+              "text": "A cross-country trip took months by wagon, and about six hours by jet today",
+              "bin": 1
+            },
+            {
+              "text": "A small library's users mostly live in the same neighborhood",
+              "bin": 0
+            }
+          ],
+          "reveal": true
+        },
+        "cap": "Which idea does each example show?"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "College Board, AP Human Geography: course units and topics",
+        "url": "https://apstudents.collegeboard.org/courses/ap-human-geography"
+      },
+      {
+        "name": "Distance decay (Grokipedia)",
+        "url": "https://grokipedia.com/page/Distance_decay"
+      },
+      {
+        "name": "Tobler's first law of geography (Grokipedia)",
+        "url": "https://grokipedia.com/page/Tobler%27s_first_law_of_geography"
+      },
+      {
+        "name": "Time–space compression (Grokipedia)",
+        "url": "https://grokipedia.com/page/Time%E2%80%93space_compression"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

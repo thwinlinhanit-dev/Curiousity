@@ -1,0 +1,115 @@
+{
+  "id": "mech.derive-kinematics",
+  "slug": "derive-kinematics",
+  "ladder": "physics",
+  "course": "mech",
+  "unit": "kinematics",
+  "title": "Deriving the Constant-Acceleration Equations",
+  "short": "Integrating a constant acceleration twice gives the familiar equations and shows exactly when they apply.",
+  "trouble": "Students use constant-acceleration equations for an acceleration that changes with time.",
+  "prereqs": [
+    "mech.motion-from-acceleration",
+    "phys1.kinematic-equations"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/physics/physics-1/kinematic-equations/\">The Constant-Acceleration Equations</a> gave you the constant-acceleration equations as tools. <a href=\"/physics/mechanics/motion-from-acceleration/\">Velocity and Position from Acceleration</a> lets you derive them in a few lines, and the derivation shows exactly when they are allowed."
+      },
+      {
+        "t": "why",
+        "html": "Set $a$ equal to a constant and integrate. $$v(t) = v_0 + \\int_0^t a\\,dt' = v_0 + at.$$ Integrate again: $$x(t) = x_0 + \\int_0^t (v_0 + at')\\,dt' = x_0 + v_0t + \\tfrac{1}{2}at^2.$$ For the third equation, use the chain rule: $a = \\dfrac{dv}{dt} = \\dfrac{dv}{dx}\\dfrac{dx}{dt} = v\\dfrac{dv}{dx}$. Then $\\int_{v_0}^{v} v\\,dv = \\int_{x_0}^{x} a\\,dx$ gives $\\tfrac{1}{2}v^2 - \\tfrac{1}{2}v_0^2 = a(x - x_0)$, or $$v^2 = v_0^2 + 2a\\,\\Delta x.$$"
+      },
+      {
+        "t": "key",
+        "html": "$v = v_0 + at$, $x = x_0 + v_0t + \\tfrac{1}{2}at^2$ and $v^2 = v_0^2 + 2a\\Delta x$ hold <b>only when the acceleration is constant</b>, because pulling $a$ out of each integral assumed it never changes. When $a$ depends on time, position or velocity, integrate the real $a$ instead."
+      },
+      {
+        "t": "viz",
+        "name": "ph-graph",
+        "opts": {
+          "pts": [
+            [
+              0,
+              4
+            ],
+            [
+              6,
+              16
+            ]
+          ],
+          "xlab": "t",
+          "ylab": "v",
+          "xunit": "s",
+          "yunit": "m/s",
+          "tool": "area",
+          "a": 0,
+          "b": 4,
+          "task": "Move the right edge. The area is a rectangle $v_0 t$ plus a triangle $\\tfrac{1}{2}at^2$."
+        },
+        "cap": "With constant $a = 2\\ \\text{m/s}^2$ and $v_0 = 4\\ \\text{m/s}$, the $v$–$t$ graph is a straight line, and the area under it is $\\Delta x = v_0t + \\tfrac{1}{2}at^2$."
+      },
+      {
+        "t": "ex",
+        "title": "Using the equation without time",
+        "q": "A cart moving at $6\\ \\text{m/s}$ speeds up at a constant $2\\ \\text{m/s}^2$ over $16\\ \\text{m}$. How fast is it moving then?",
+        "steps": [
+          "The acceleration is constant, so $v^2 = v_0^2 + 2a\\Delta x$ applies.",
+          "$v^2 = 36 + 2(2)(16) = 100\\ \\text{m}^2/\\text{s}^2$.",
+          "$v = 10\\ \\text{m/s}$."
+        ],
+        "a": "$10\\ \\text{m/s}$."
+      },
+      {
+        "t": "ex",
+        "title": "When the shortcut fails",
+        "q": "A sled starts from rest with $a(t) = 3t$ (m/s², s). How far does it go in 2 s? Compare with $\\tfrac{1}{2}at^2$ using $a(2)$.",
+        "steps": [
+          "The acceleration grows with time, so integrate: $v(t) = \\tfrac{3}{2}t^2$ and $x(t) = \\tfrac{1}{2}t^3$.",
+          "$x(2) = \\tfrac{1}{2}(8) = 4\\ \\text{m}$.",
+          "The shortcut with $a(2) = 6\\ \\text{m/s}^2$ gives $\\tfrac{1}{2}(6)(2)^2 = 12\\ \\text{m}$, three times too far: it pretends the sled had its final acceleration all along."
+        ],
+        "a": "$4\\ \\text{m}$ (the constant-acceleration formula would wrongly give 12 m)."
+      },
+      {
+        "t": "mistake",
+        "html": "Using the constant-acceleration equations for a spring, air drag, a rocket burn or any force that changes. They will give a number, but a wrong one. Check before you start: is the net force, and so the acceleration, the same at every moment of the motion? If not, write $a(t)$, $a(x)$ or $a(v)$ and integrate."
+      },
+      {
+        "t": "note",
+        "html": "One more equation falls out of the area picture: under a straight $v$–$t$ line, the area is a trapezoid, so $\\Delta x = \\tfrac{1}{2}(v_0 + v)t$. The average velocity is the plain average of the starting and final velocities, but only because the graph is a straight line. For a curved $v$–$t$ graph, the average velocity is $\\dfrac{1}{t}\\int_0^t v\\,dt'$ instead."
+      },
+      {
+        "t": "list",
+        "items": [
+          "Free fall without air resistance: $a = -g$, constant. The equations apply.",
+          "A block sliding down a straight frictionless ramp: $a = g\\sin\\theta$, constant. They apply.",
+          "A mass on a spring: $a = -(k/m)x$ changes with position. They don't.",
+          "A falling raindrop with drag: $a$ shrinks as it speeds up. They don't."
+        ]
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 1, 3.4 Motion with Constant Acceleration"
+      },
+      {
+        "name": "OpenStax University Physics Volume 1, 3.6 Finding Velocity and Displacement from Acceleration"
+      },
+      {
+        "name": "MIT OpenCourseWare 8.01 Classical Mechanics (scope and sequence)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

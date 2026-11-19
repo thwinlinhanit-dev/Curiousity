@@ -1,0 +1,88 @@
+{
+  "id": "g4.partial-quotients",
+  "slug": "partial-quotients",
+  "ladder": "math",
+  "course": "g4",
+  "unit": "division",
+  "title": "Dividing with Partial Quotients",
+  "short": "Take away easy multiples of the divisor until little is left.",
+  "trouble": "",
+  "prereqs": [
+    "g4.divide-tens-hundreds"
+  ],
+  "xp": 2,
+  "viz": [
+    "areamodel"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "When a dividend is too big for one fact, take it apart. You know <a href=\"/math/grade-4/divide-tens-hundreds/\">how to divide tens and hundreds</a>; partial quotients takes away big, easy groups of the divisor until little is left."
+      },
+      {
+        "t": "key",
+        "html": "To find $492 \\div 4$, subtract easy multiples of 4 (like 100 fours or 10 fours) and keep track of how many groups you took. When what is left is less than 4, add up the groups. That sum is the quotient; what is left is the remainder."
+      },
+      {
+        "t": "why",
+        "html": "Division asks \"how many groups of 4 are in 492?\" You can count the groups in chunks: 100 groups use 400, 20 groups use 80, 3 groups use 12. Every 4 is counted once, so $100 + 20 + 3 = 123$ groups in all. The area model shows the same thing: a rectangle with area 492 and one side 4 is built from strips of length 100, 20 and 3."
+      },
+      {
+        "t": "viz",
+        "name": "areamodel",
+        "opts": {
+          "a": 4,
+          "b": [
+            100,
+            20,
+            3
+          ]
+        },
+        "cap": "An area model for $492 \\div 4$: the parts $400 + 80 + 12 = 492$, so the missing side is $100 + 20 + 3 = 123$."
+      },
+      {
+        "t": "ex",
+        "title": "No remainder",
+        "q": "Find $492 \\div 4$.",
+        "steps": [
+          "Take away 100 fours: $492 - 400 = 92$.",
+          "Take away 20 fours: $92 - 80 = 12$.",
+          "Take away 3 fours: $12 - 12 = 0$.",
+          "Add the groups: $100 + 20 + 3 = 123$."
+        ],
+        "a": "$123$"
+      },
+      {
+        "t": "ex",
+        "title": "With a remainder",
+        "q": "Find $1{,}283 \\div 5$.",
+        "steps": [
+          "Take away 200 fives: $1{,}283 - 1{,}000 = 283$.",
+          "Take away 50 fives: $283 - 250 = 33$.",
+          "Take away 6 fives: $33 - 30 = 3$. Now 3 is less than 5.",
+          "Groups: $200 + 50 + 6 = 256$, with 3 left."
+        ],
+        "a": "$256$ R $3$"
+      },
+      {
+        "t": "note",
+        "html": "Any friendly chunks work. If you take away only 10 fives at a time, you still reach the same answer. Bigger chunks just take fewer steps."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 4, 4.NBT.B.6 (divide using place value, properties of operations and the relationship between multiplication and division)"
+      },
+      {
+        "name": "OpenStax Prealgebra 2e, section 1.5 Divide Whole Numbers"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

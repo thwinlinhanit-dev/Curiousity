@@ -1,0 +1,149 @@
+{
+  "id": "gchem1.enthalpy-of-formation",
+  "slug": "enthalpy-of-formation",
+  "ladder": "chemistry",
+  "course": "gchem1",
+  "unit": "thermochemistry",
+  "title": "Standard Enthalpies of Formation",
+  "short": "ΔH°(reaction) = Σ ΔH°f(products) − Σ ΔH°f(reactants).",
+  "trouble": "Students subtract in the wrong order, or forget that an element in its standard state, such as O₂(g), has ΔH°f = 0.",
+  "prereqs": [
+    "gchem1.hess-law"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-energydiagram"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/chemistry/general-chemistry-1/hess-law/\">Hess's Law</a> works with any set of reactions. One set is chosen as the universal reference: the reactions that form each compound from its elements. With one table of those, you can find $\\Delta H$ for thousands of reactions."
+      },
+      {
+        "t": "key",
+        "html": "The <b>standard enthalpy of formation</b>, $\\Delta H^\\circ_\\text{f}$, is $\\Delta H$ for making 1 mol of a substance from its elements in their standard states (1 bar, usually 298 K). For an element in its standard state, such as $\\mathrm{O_2(g)}$, $\\mathrm{C}$(graphite) or $\\mathrm{Fe(s)}$, $\\Delta H^\\circ_\\text{f} = 0$. Then $$\\Delta H^\\circ_\\text{rxn} = \\sum n\\,\\Delta H^\\circ_\\text{f}(\\text{products}) - \\sum n\\,\\Delta H^\\circ_\\text{f}(\\text{reactants}).$$"
+      },
+      {
+        "t": "why",
+        "html": "Imagine taking the reaction in two Hess's-law steps through the elements. First break every reactant down into its elements: that is the reverse of forming them, $-\\sum n\\Delta H^\\circ_\\text{f}(\\text{reactants})$. Then build the products from those same elements: $+\\sum n\\Delta H^\\circ_\\text{f}(\\text{products})$. The elements are the common starting line, set at zero. That is why \"products minus reactants\" works, and why an element in its standard state adds nothing."
+      },
+      {
+        "t": "viz",
+        "name": "ch-energydiagram",
+        "opts": {
+          "mode": "hess",
+          "levels": [
+            {
+              "label": "C(s) + 2H2(g) + 2O2(g)",
+              "E": 0
+            },
+            {
+              "label": "CH4(g) + 2O2(g)",
+              "E": -74.6
+            },
+            {
+              "label": "CO2(g) + 2H2O(l)",
+              "E": -965.1
+            }
+          ]
+        },
+        "cap": "The elements sit at zero. Methane lies 74.6 kJ below them; the combustion products lie 965.1 kJ below. Combustion drops from one to the other: $-965.1 - (-74.6) = -890.5\\ \\text{kJ}$."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Substance",
+          "$\\Delta H^\\circ_\\text{f}$ (kJ/mol)"
+        ],
+        "rows": [
+          [
+            "$\\mathrm{CO_2(g)}$",
+            "−393.5"
+          ],
+          [
+            "$\\mathrm{H_2O(l)}$",
+            "−285.8"
+          ],
+          [
+            "$\\mathrm{H_2O(g)}$",
+            "−241.8"
+          ],
+          [
+            "$\\mathrm{CH_4(g)}$",
+            "−74.6"
+          ],
+          [
+            "$\\mathrm{CaCO_3(s)}$",
+            "−1207.6"
+          ],
+          [
+            "$\\mathrm{CaO(s)}$",
+            "−634.9"
+          ],
+          [
+            "$\\mathrm{O_2(g)}$, $\\mathrm{C}$(graphite)",
+            "0"
+          ]
+        ],
+        "cap": "Standard enthalpies of formation at 298 K (OpenStax Chemistry 2e, Appendix G, from the NIST Chemistry WebBook)."
+      },
+      {
+        "t": "note",
+        "html": "Watch the state symbols. $\\Delta H^\\circ_\\text{f}$ is $-285.8\\ \\text{kJ/mol}$ for $\\mathrm{H_2O(l)}$ but $-241.8\\ \\text{kJ/mol}$ for $\\mathrm{H_2O(g)}$. The 44.0 kJ difference is the enthalpy of vaporizing a mole of water at 25 °C, so always use the value that matches the state written in the equation."
+      },
+      {
+        "t": "ex",
+        "title": "Burning methane",
+        "q": "Find $\\Delta H^\\circ$ for $\\mathrm{CH_4(g)} + 2\\,\\mathrm{O_2(g)} \\to \\mathrm{CO_2(g)} + 2\\,\\mathrm{H_2O(l)}$.",
+        "steps": [
+          "Products: $(-393.5) + 2(-285.8) = -965.1\\ \\text{kJ}$.",
+          "Reactants: $(-74.6) + 2(0) = -74.6\\ \\text{kJ}$.",
+          "$\\Delta H^\\circ = -965.1 - (-74.6) = -890.5\\ \\text{kJ}$."
+        ],
+        "a": "$-890.5\\ \\text{kJ}$"
+      },
+      {
+        "t": "ex",
+        "title": "Decomposing limestone",
+        "q": "Find $\\Delta H^\\circ$ for $\\mathrm{CaCO_3(s)} \\to \\mathrm{CaO(s)} + \\mathrm{CO_2(g)}$.",
+        "steps": [
+          "Products: $-634.9 + (-393.5) = -1028.4\\ \\text{kJ}$. Reactant: $-1207.6\\ \\text{kJ}$.",
+          "$\\Delta H^\\circ = -1028.4 - (-1207.6) = +179.2\\ \\text{kJ}$: endothermic, which is why lime kilns must be heated strongly."
+        ],
+        "a": "$+179.2\\ \\text{kJ}$"
+      },
+      {
+        "t": "ex",
+        "title": "Working backward to a formation enthalpy",
+        "q": "Ethanol burns by $\\mathrm{C_2H_5OH(l)} + 3\\,\\mathrm{O_2} \\to 2\\,\\mathrm{CO_2} + 3\\,\\mathrm{H_2O(l)}$, $\\Delta H^\\circ = -1366.8\\ \\text{kJ}$. Find $\\Delta H^\\circ_\\text{f}$ of ethanol.",
+        "steps": [
+          "Products: $2(-393.5) + 3(-285.8) = -1644.4\\ \\text{kJ}$.",
+          "$-1366.8 = -1644.4 - \\Delta H^\\circ_\\text{f}(\\text{ethanol})$, since $\\mathrm{O_2}$ contributes 0.",
+          "$\\Delta H^\\circ_\\text{f} = -1644.4 + 1366.8 = -277.6\\ \\text{kJ/mol}$."
+        ],
+        "a": "$-277.6\\ \\text{kJ/mol}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Subtracting in the wrong order (reactants minus products, which flips the sign), or giving $\\mathrm{O_2(g)}$ a nonzero value. Check: combustion reactions should come out strongly negative; and any element in its standard state contributes exactly zero, however many moles of it there are."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 5.3 Enthalpy (standard enthalpy of formation)"
+      },
+      {
+        "name": "College Board, AP Chemistry Course and Exam Description (effective fall 2024), Unit 6: Thermochemistry"
+      },
+      {
+        "name": "NIST, Chemistry WebBook"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

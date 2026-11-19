@@ -1,0 +1,95 @@
+{
+  "id": "g4.mixed-numbers",
+  "slug": "mixed-numbers",
+  "ladder": "math",
+  "course": "g4",
+  "unit": "fraction-operations",
+  "title": "Mixed Numbers and Fractions Greater Than 1",
+  "short": "2 1/3 and 7/3 name the same amount.",
+  "trouble": "Children convert 2 1/3 to 3/3 by multiplying only the whole number or adding 2 + 1.",
+  "prereqs": [
+    "g4.add-like-fractions",
+    "g3.whole-numbers-as-fractions"
+  ],
+  "xp": 2,
+  "viz": [
+    "fractionbar",
+    "fractionline"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You know that <a href=\"/math/grade-3/whole-numbers-as-fractions/\">whole numbers can be written as fractions</a> ($1 = \\dfrac{3}{3}$, $2 = \\dfrac{6}{3}$) and how to <a href=\"/math/grade-4/add-like-fractions/\">add like fractions</a>. Put those together and an amount bigger than 1 can be written two ways."
+      },
+      {
+        "t": "key",
+        "html": "$2\\dfrac{1}{3}$ (a <b>mixed number</b>) and $\\dfrac{7}{3}$ (a fraction greater than 1) name the same amount. Mixed to fraction: wholes × denominator, plus the numerator: $2 \\times 3 + 1 = 7$, so $\\dfrac{7}{3}$. Fraction to mixed: divide, $7 \\div 3 = 2$ R 1, so $2\\dfrac{1}{3}$."
+      },
+      {
+        "t": "why",
+        "html": "Each whole is 3 thirds. Two wholes are $3 + 3 = 6$ thirds, and the extra $\\dfrac{1}{3}$ makes 7 thirds. Going back, every 3 thirds you can group make one whole; 7 thirds make 2 groups with 1 third left over."
+      },
+      {
+        "t": "viz",
+        "name": "fractioncircle",
+        "opts": {
+          "fracs": [
+            "7/3"
+          ],
+          "edit": false
+        },
+        "cap": "$\\dfrac{7}{3}$: two full circles of thirds and one more third. That is $2\\dfrac{1}{3}$."
+      },
+      {
+        "t": "viz",
+        "name": "fractionline",
+        "opts": {
+          "d": 3,
+          "max": 3,
+          "point": "7/3",
+          "labels": "mixed",
+          "hops": true
+        },
+        "cap": "Seven hops of $\\dfrac{1}{3}$ land at $2\\dfrac{1}{3}$."
+      },
+      {
+        "t": "ex",
+        "title": "Mixed number to fraction",
+        "q": "Write $3\\dfrac{2}{5}$ as a fraction.",
+        "steps": [
+          "Each whole is 5 fifths, so 3 wholes are $3 \\times 5 = 15$ fifths.",
+          "Add the 2 fifths: $15 + 2 = 17$."
+        ],
+        "a": "$\\dfrac{17}{5}$"
+      },
+      {
+        "t": "ex",
+        "title": "Fraction to mixed number",
+        "q": "Write $\\dfrac{11}{4}$ as a mixed number.",
+        "steps": [
+          "How many groups of 4 fourths are in 11 fourths? $11 \\div 4 = 2$ R 3.",
+          "2 wholes and 3 fourths are left."
+        ],
+        "a": "$2\\dfrac{3}{4}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Multiplying only the whole number ($3 \\times 2 = 6$, so \"$\\dfrac{6}{5}$\") or just adding $3 + 2$. The wholes must be turned into fifths first: 3 wholes are 15 fifths, then add the 2 fifths. Check: $\\dfrac{17}{5}$ is a bit more than $\\dfrac{15}{5} = 3$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 4, 4.NF.B.3b (decompose fractions, including mixed numbers)"
+      },
+      {
+        "name": "OpenStax Prealgebra 2e, section 4.1 Visualize Fractions (improper fractions and mixed numbers)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

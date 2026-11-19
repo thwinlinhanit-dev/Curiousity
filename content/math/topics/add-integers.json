@@ -1,0 +1,106 @@
+{
+  "id": "g7.add-integers",
+  "slug": "add-integers",
+  "ladder": "math",
+  "course": "g7",
+  "unit": "add-subtract",
+  "title": "Adding Integers",
+  "short": "Move right for positive, left for negative.",
+  "trouble": "With different signs, students add the absolute values, so −7 + 3 comes out as −10.",
+  "prereqs": [
+    "g7.opposites-make-zero"
+  ],
+  "xp": 1,
+  "viz": [
+    "integerline",
+    "counters"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Since <a href=\"/math/grade-7/opposites-make-zero/\">opposites make zero</a>, you can add any two signed numbers. Think of each number as a move on the number line: positive moves right, negative moves left."
+      },
+      {
+        "t": "key",
+        "html": "<b>Same signs:</b> add the absolute values and keep the sign. <b>Different signs:</b> subtract the smaller absolute value from the larger, and give the answer the sign of the number farther from $0$."
+      },
+      {
+        "t": "why",
+        "html": "With different signs the moves go opposite ways, so part of one cancels part of the other. In $-7 + 3$, three of the seven steps left are undone by the three steps right (three zero pairs). The 4 steps left that remain give $-4$. That is why you subtract: the cancelled part disappears."
+      },
+      {
+        "t": "viz",
+        "name": "integerline",
+        "opts": {
+          "a": -7,
+          "b": 3,
+          "op": "+",
+          "guess": true
+        },
+        "cap": "$-7 + 3$: drag the gold marker to where you think you land, then show the move."
+      },
+      {
+        "t": "viz",
+        "name": "counters",
+        "opts": {
+          "mode": "zero",
+          "pos": 3,
+          "neg": 7
+        },
+        "cap": "3 positive and 7 negative counters: 3 zero pairs cancel, and 4 negative counters are left, so the value is $-4$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Different signs",
+        "q": "Find $-7 + 3$.",
+        "steps": [
+          "The signs are different. Subtract the absolute values: $7 - 3 = 4$.",
+          "$-7$ is farther from $0$, so the answer is negative."
+        ],
+        "a": "$-4$"
+      },
+      {
+        "t": "ex",
+        "title": "Both negative",
+        "q": "Find $-5 + (-8)$.",
+        "steps": [
+          "Both moves go left. Add the absolute values: $5 + 8 = 13$.",
+          "Keep the negative sign."
+        ],
+        "a": "$-13$"
+      },
+      {
+        "t": "ex",
+        "title": "The positive one is smaller",
+        "q": "Find $9 + (-14)$.",
+        "steps": [
+          "Different signs: $14 - 9 = 5$.",
+          "$-14$ is farther from $0$, so the sum is negative."
+        ],
+        "a": "$-5$"
+      },
+      {
+        "t": "mistake",
+        "html": "Adding the absolute values when the signs are different, so that $-7 + 3$ comes out as $-10$. Picture the move: from $-7$, adding $3$ moves <b>right</b>, toward $0$, so the answer must be bigger than $-7$. Check your answer's size against a quick sketch."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Prealgebra 2e, Section 3.2 Add Integers"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 7.NS.A.1b"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

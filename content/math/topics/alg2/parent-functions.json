@@ -1,0 +1,190 @@
+{
+  "id": "alg2.parent-functions",
+  "slug": "parent-functions",
+  "ladder": "math",
+  "course": "alg2",
+  "unit": "functions",
+  "title": "Parent Functions",
+  "short": "Know the shapes of x, x², x³, |x|, √x, ∛x and 1/x.",
+  "trouble": "",
+  "prereqs": [
+    "alg1.function-transformations",
+    "alg1.domain-range"
+  ],
+  "xp": 1,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In Algebra 1 you moved and stretched graphs (<a href=\"/math/algebra-1/function-transformations/\">Shifting and Stretching Graphs</a>) and found domains and ranges (<a href=\"/math/algebra-1/domain-range/\">Domain and Range</a>). Most graphs in Algebra 2 are built from a short list of basic shapes called <b>parent functions</b>. Knowing them by heart works like knowing your times tables: once you see the parent inside a formula, the graph is half drawn."
+      },
+      {
+        "t": "key",
+        "html": "Seven parents to know: $y = x$, $y = x^2$, $y = x^3$, $y = |x|$, $y = \\sqrt{x}$, $y = \\sqrt[3]{x}$ and $y = \\frac{1}{x}$. For each one, learn its shape, three or four anchor points, its domain and its range."
+      },
+      {
+        "t": "why",
+        "html": "Each parent does one thing to $x$, and its shape follows from that one thing. Squaring and taking absolute value erase the sign, so $x^2$ and $|x|$ are mirror-symmetric and never negative. Cubing keeps the sign, so $x^3$ runs from the lower left to the upper right. No real number squares to a negative, so $\\sqrt{x}$ starts at the origin and only goes right. And $\\frac{1}{x}$ can't use $x = 0$; as $x$ grows, $\\frac{1}{x}$ shrinks toward 0, so the graph hugs both axes without touching them."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Parent",
+          "Anchor points",
+          "Domain",
+          "Range"
+        ],
+        "rows": [
+          [
+            "$y = x$",
+            "$(-1, -1)$, $(0, 0)$, $(1, 1)$",
+            "$(-\\infty, \\infty)$",
+            "$(-\\infty, \\infty)$"
+          ],
+          [
+            "$y = x^2$",
+            "$(-2, 4)$, $(-1, 1)$, $(0, 0)$, $(1, 1)$, $(2, 4)$",
+            "$(-\\infty, \\infty)$",
+            "$[0, \\infty)$"
+          ],
+          [
+            "$y = x^3$",
+            "$(-2, -8)$, $(-1, -1)$, $(0, 0)$, $(1, 1)$, $(2, 8)$",
+            "$(-\\infty, \\infty)$",
+            "$(-\\infty, \\infty)$"
+          ],
+          [
+            "$y = \\lvert x\\rvert$",
+            "$(-2, 2)$, $(0, 0)$, $(2, 2)$",
+            "$(-\\infty, \\infty)$",
+            "$[0, \\infty)$"
+          ],
+          [
+            "$y = \\sqrt{x}$",
+            "$(0, 0)$, $(1, 1)$, $(4, 2)$, $(9, 3)$",
+            "$[0, \\infty)$",
+            "$[0, \\infty)$"
+          ],
+          [
+            "$y = \\sqrt[3]{x}$",
+            "$(-8, -2)$, $(-1, -1)$, $(0, 0)$, $(1, 1)$, $(8, 2)$",
+            "$(-\\infty, \\infty)$",
+            "$(-\\infty, \\infty)$"
+          ],
+          [
+            "$y = \\frac{1}{x}$",
+            "$(-1, -1)$, $(\\frac{1}{2}, 2)$, $(1, 1)$, $(2, \\frac{1}{2})$",
+            "$x \\ne 0$",
+            "$y \\ne 0$"
+          ]
+        ],
+        "cap": "The seven parent functions"
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "fns": [
+            "x^2",
+            "x^3",
+            "abs(x)"
+          ],
+          "xmin": -4,
+          "xmax": 4,
+          "ymin": -6,
+          "ymax": 6,
+          "table": [
+            -2,
+            -1,
+            0,
+            1,
+            2
+          ],
+          "task": "Compare the rows of the table: which parent keeps the sign of a negative input?"
+        },
+        "cap": "The three parents that are defined for every $x$ and pass through $(1, 1)$. The table shows how differently they treat negative inputs."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "fns": [
+            "sqrt(x)",
+            "x^(1/3)"
+          ],
+          "points": [
+            {
+              "x": 1,
+              "y": 1,
+              "drag": true,
+              "on": 1,
+              "label": "P"
+            }
+          ],
+          "xmin": -9,
+          "xmax": 9,
+          "ymin": -4,
+          "ymax": 4,
+          "target": {
+            "point": 0,
+            "x": -8,
+            "y": -2,
+            "tol": 0.05
+          },
+          "task": "Move P to the point where x = −8."
+        },
+        "cap": "The square root and cube root are close relatives, but only the cube root accepts negative inputs. Here $f(x) = \\sqrt{x}$ and $g(x) = \\sqrt[3]{x}$. Drag the point along $g$ to $x = -8$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Naming a parent from its points",
+        "q": "A parent function passes through $(-8, -2)$, $(0, 0)$ and $(27, 3)$. Which one is it?",
+        "steps": [
+          "The outputs are much smaller than the inputs, and a negative input gives a negative output. That rules out $x^2$, $|x|$ and $\\sqrt{x}$.",
+          "Try the cube root: $\\sqrt[3]{-8} = -2$ because $(-2)^3 = -8$, and $\\sqrt[3]{27} = 3$ because $3^3 = 27$.",
+          "Every point matches, and $y = x$, $y = x^3$ and $y = \\frac{1}{x}$ each miss at least one."
+        ],
+        "a": "$y = \\sqrt[3]{x}$"
+      },
+      {
+        "t": "ex",
+        "title": "Domain and range in interval notation",
+        "q": "Give the domain and range of $y = \\sqrt{x}$ and of $y = \\frac{1}{x}$.",
+        "steps": [
+          "$\\sqrt{x}$ needs $x \\ge 0$, so the domain is $[0, \\infty)$. Its outputs are never negative and reach every $y \\ge 0$, so the range is $[0, \\infty)$.",
+          "$\\frac{1}{x}$ refuses only $x = 0$: domain $(-\\infty, 0) \\cup (0, \\infty)$.",
+          "It can never output 0 (a fraction with numerator 1 is never 0), and any other $y$ comes from $x = \\frac{1}{y}$: range $(-\\infty, 0) \\cup (0, \\infty)$."
+        ],
+        "a": "$\\sqrt{x}$: domain and range $[0, \\infty)$. $\\frac{1}{x}$: domain and range $(-\\infty, 0) \\cup (0, \\infty)$."
+      },
+      {
+        "t": "mistake",
+        "html": "Treating the cube root like the square root and saying $\\sqrt[3]{x}$ is undefined for negatives. Only <b>even</b> roots need a nonnegative input. Check: $(-2)^3 = -8$, so $\\sqrt[3]{-8} = -2$ is a perfectly good real number."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Algebra 2e, Section 3.1 Functions and Function Notation (toolkit functions)"
+      },
+      {
+        "name": "OpenStax College Algebra 2e, Section 3.2 Domain and Range"
+      },
+      {
+        "name": "Common Core State Standards, F-IF.C.7b"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

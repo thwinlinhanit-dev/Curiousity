@@ -1,0 +1,104 @@
+{
+  "id": "gchem2.common-ion",
+  "slug": "common-ion",
+  "ladder": "chemistry",
+  "course": "gchem2",
+  "unit": "solubility",
+  "title": "The Common-Ion Effect",
+  "short": "A salt dissolves less in a solution that already holds one of its ions.",
+  "trouble": "Students use the molar solubility in pure water even when a common ion is already present.",
+  "prereqs": [
+    "gchem2.ksp",
+    "gchem2.le-chatelier-quantitative"
+  ],
+  "xp": 3,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/chemistry/chemistry/le-chatelier/\">Le Chatelier’s principle</a> applies to dissolving too. If the water already contains one of a salt's ions, the <a href=\"/chemistry/general-chemistry-2/ksp/\">solubility equilibrium</a> is pushed back toward the solid, and less of the salt dissolves. This is the <a href=\"/chemistry/general-chemistry-2/le-chatelier-quantitative/\">Q-and-K argument</a> once more."
+      },
+      {
+        "t": "key",
+        "html": "In a solution that already holds an ion at concentration $c$, set up $K_{sp}$ with that ion at $c$ plus what the salt adds. When $c$ is much larger than what the salt adds, use $c$ alone: for a 1:1 salt, $s = K_{sp}/c$."
+      },
+      {
+        "t": "why",
+        "html": "Adding $\\mathrm{Cl^-}$ to saturated AgCl raises $Q = [\\mathrm{Ag^+}][\\mathrm{Cl^-}]$ above $K_{sp}$, so AgCl precipitates until $Q = K_{sp}$ again. In a solution that starts with $0.10\\ \\text{M}$ $\\mathrm{Cl^-}$, $[\\mathrm{Ag^+}]$ can reach only $K_{sp}/0.10$ before the product hits the limit. The salt's own contribution to $[\\mathrm{Cl^-}]$ is then negligible."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "f": "(-x+sqrt(x^2+7.2))/2",
+          "xmin": 0,
+          "xmax": 10,
+          "ymin": 0,
+          "ymax": 1.5,
+          "xlabel": "Cl⁻ already present (10⁻⁵ M)",
+          "ylabel": "solubility of AgCl (10⁻⁵ M)",
+          "trace": true,
+          "zoom": false
+        },
+        "cap": "The molar solubility of AgCl (exact, from $s(s + c) = K_{sp}$) against the chloride already present, both in units of $10^{-5}\\ \\text{M}$. Even a little common ion cuts the solubility sharply."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "AgCl in salt water",
+        "q": "Find the molar solubility of AgCl ($K_{sp} = 1.8 \\times 10^{-10}$) in $0.10\\ \\text{M}$ NaCl.",
+        "steps": [
+          "$[\\mathrm{Ag^+}] = s$, $[\\mathrm{Cl^-}] = 0.10 + s \\approx 0.10$.",
+          "$s(0.10) = 1.8 \\times 10^{-10}$, so $s = 1.8 \\times 10^{-9}\\ \\text{M}$.",
+          "Check: $s$ is tiny next to 0.10. In pure water $s = 1.3 \\times 10^{-5}\\ \\text{M}$, about 7000 times more."
+        ],
+        "a": "$1.8 \\times 10^{-9}\\ \\text{M}$."
+      },
+      {
+        "t": "ex",
+        "title": "A 1:2 salt with a common anion",
+        "q": "Find the molar solubility of $\\mathrm{PbI_2}$ ($K_{sp} = 9.8 \\times 10^{-9}$) in $0.10\\ \\text{M}$ KI.",
+        "steps": [
+          "$[\\mathrm{Pb^{2+}}] = s$, $[\\mathrm{I^-}] = 0.10 + 2s \\approx 0.10$.",
+          "$K_{sp} = s(0.10)^2$, so $s = \\dfrac{9.8 \\times 10^{-9}}{0.010} = 9.8 \\times 10^{-7}\\ \\text{M}$."
+        ],
+        "a": "$9.8 \\times 10^{-7}\\ \\text{M}$."
+      },
+      {
+        "t": "ex",
+        "title": "A common cation",
+        "q": "Find the molar solubility of $\\mathrm{CaF_2}$ ($K_{sp} = 3.5 \\times 10^{-11}$) in $0.010\\ \\text{M}$ $\\mathrm{Ca(NO_3)_2}$.",
+        "steps": [
+          "$[\\mathrm{Ca^{2+}}] = 0.010 + s \\approx 0.010$; $[\\mathrm{F^-}] = 2s$.",
+          "$K_{sp} = (0.010)(2s)^2 = 0.040s^2$, so $s = \\sqrt{\\dfrac{3.5 \\times 10^{-11}}{0.040}} = 3.0 \\times 10^{-5}\\ \\text{M}$.",
+          "Check: $3.0 \\times 10^{-5}$ is 0.3% of 0.010, so dropping it was fine. (In pure water $s = 2.1 \\times 10^{-4}\\ \\text{M}$.)"
+        ],
+        "a": "$3.0 \\times 10^{-5}\\ \\text{M}$."
+      },
+      {
+        "t": "p",
+        "html": "Chemists use the common-ion effect on purpose. To remove a metal ion from solution as completely as possible, they add a modest excess of the precipitating ion: the extra anion pushes the leftover metal ion concentration far below what it would be in a saturated solution of the pure salt."
+      },
+      {
+        "t": "mistake",
+        "html": "Using the molar solubility in pure water even when a common ion is already present. The ion already in solution counts in $K_{sp}$. Check: the solubility with a common ion must come out smaller than in pure water."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 15.1 Precipitation and Dissolution"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

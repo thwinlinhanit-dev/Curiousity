@@ -1,0 +1,102 @@
+{
+  "id": "phys1.connected-objects",
+  "slug": "connected-objects",
+  "ladder": "physics",
+  "course": "phys1",
+  "unit": "forces",
+  "title": "Connected Objects and Tension",
+  "short": "Treat linked objects as one system to find a, then one object alone to find the tension.",
+  "trouble": "Students think the rope's tension equals the applied force or the hanging weight.",
+  "prereqs": [
+    "phys1.second-law-systems",
+    "phys1.systems-center-of-mass"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-dynamics",
+    "ph-fbd"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Trains of carts, a block pulled by a hanging weight, two boxes pushed together: the objects move together, so they share one acceleration. The trick is choosing the right <a href=\"/physics/physics-1/systems-center-of-mass/\">system</a> for each question, then using <a href=\"/physics/physics-1/second-law-systems/\">Newton's Second Law Along an Axis</a>."
+      },
+      {
+        "t": "key",
+        "html": "To find the shared acceleration, treat all the linked objects as one system: the forces between them are internal and cancel. To find a rope tension or a contact force, take one object alone: then that force is external and appears in its equation."
+      },
+      {
+        "t": "why",
+        "html": "Each choice of system leaves out different forces. The whole train hides the ropes between the cars, so its equation has only the outside pull and the total mass. A single car shows its rope as an ordinary force. Both equations are true at once, and using them in that order gives each unknown with the least algebra."
+      },
+      {
+        "t": "viz",
+        "name": "ph-dynamics",
+        "opts": {
+          "scene": "train",
+          "m1": 2,
+          "m2": 2,
+          "m3": 2,
+          "F": 12,
+          "task": "Compare the two rope tensions with the applied force."
+        },
+        "cap": "Three 2 kg carts pulled with 12 N: a = 2 m/s². The rope to the last cart pulls 4 N, the next one 8 N; only the front gets the full 12 N."
+      },
+      {
+        "t": "viz",
+        "name": "ph-fbd",
+        "opts": {
+          "mode": "pairs"
+        },
+        "cap": "Two blocks pushed together: the contact forces between them are internal to the pair."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Two carts and a rope",
+        "q": "On a frictionless track you pull a $3\\ \\text{kg}$ cart with $20\\ \\text{N}$; a rope links it to a $2\\ \\text{kg}$ cart behind. Find $a$ and the tension.",
+        "steps": [
+          "Whole system: $a = \\dfrac{20}{3 + 2} = 4\\ \\text{m/s}^2$.",
+          "Rear cart alone: the rope is its only horizontal force, so $T = (2)(4) = 8\\ \\text{N}$."
+        ],
+        "a": "$a = 4\\ \\text{m/s}^2$, $T = 8\\ \\text{N}$"
+      },
+      {
+        "t": "ex",
+        "title": "A hanging weight",
+        "q": "A $4\\ \\text{kg}$ block on a frictionless table is tied over a light pulley to a hanging $1\\ \\text{kg}$ block. Find $a$ and $T$.",
+        "steps": [
+          "System along the string: the only unbalanced force is the hanging weight, $9.8\\ \\text{N}$, moving $5\\ \\text{kg}$ in all.",
+          "$a = \\dfrac{9.8}{5} = 1.96\\ \\text{m/s}^2$.",
+          "Table block alone: $T = (4)(1.96) = 7.84\\ \\text{N}$, less than the hanging block's $9.8\\ \\text{N}$ weight."
+        ],
+        "a": "$a = 1.96\\ \\text{m/s}^2$, $T = 7.84\\ \\text{N}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking a rope's tension equals the applied force, or equals the hanging weight. The rope only has to accelerate what is behind it, so its tension is a fraction of the pull; and if a hanging block is accelerating downward, the rope must pull up on it with less than its weight. Check: compare your tension with the forces on each side of the rope; it should fall between them."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Physics 2e, Section 4.7 Further Applications of Newton's Laws of Motion"
+      },
+      {
+        "name": "OpenStax University Physics Volume 1, Section 6.1 Solving Problems with Newton's Laws"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-PS2-1"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

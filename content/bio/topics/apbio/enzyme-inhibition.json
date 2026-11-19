@@ -1,0 +1,161 @@
+{
+  "id": "apbio.enzyme-inhibition",
+  "slug": "enzyme-inhibition",
+  "ladder": "bio",
+  "course": "apbio",
+  "unit": "energetics",
+  "title": "Competitive and Noncompetitive Inhibition",
+  "short": "A competitive inhibitor blocks the active site, and enough substrate outcompetes it. A noncompetitive (allosteric) inhibitor binds elsewhere and changes the enzyme's shape, lowering Vmax no matter how much substrate.",
+  "trouble": "Students think every inhibitor binds the active site, or that more substrate overcomes any inhibitor. Only competitive inhibition can be overcome by substrate.",
+  "prereqs": [
+    "apbio.enzyme-kinetics"
+  ],
+  "xp": 3,
+  "viz": [
+    "bi-enzyme",
+    "bi-chart"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Cells switch enzymes off as often as on. Drugs and poisons often work the same way. An inhibitor is a molecule that slows an enzyme, and where it binds decides how it behaves on the <a href=\"/biology/advanced-biology/enzyme-kinetics/\">rate curve</a>."
+      },
+      {
+        "t": "list",
+        "items": [
+          "<b>Competitive inhibitor</b>: resembles the substrate and binds the <b>active site</b>. Substrate and inhibitor compete for the same spot.",
+          "<b>Noncompetitive (allosteric) inhibitor</b>: binds <b>elsewhere</b>, at an allosteric site, and changes the enzyme's shape so the active site works poorly."
+        ]
+      },
+      {
+        "t": "key",
+        "html": "Enough substrate outcompetes a competitive inhibitor: $V_{max}$ is unchanged, but more substrate is needed to reach it (the apparent $K_m$ rises). A noncompetitive inhibitor lowers $V_{max}$, and no amount of substrate brings it back."
+      },
+      {
+        "t": "viz",
+        "name": "bi-enzyme",
+        "opts": {
+          "mode": "fit",
+          "inhibitor": "comp"
+        },
+        "cap": "A competitive inhibitor sits in the active site."
+      },
+      {
+        "t": "viz",
+        "name": "bi-enzyme",
+        "opts": {
+          "mode": "fit",
+          "inhibitor": "non"
+        },
+        "cap": "A noncompetitive inhibitor binds another site and changes the active site's shape."
+      },
+      {
+        "t": "why",
+        "html": "Picture a crowd of substrate molecules. With a competitive inhibitor, each empty active site gets whichever molecule bumps into it first. Flood the solution with substrate and the inhibitor almost never wins. With a noncompetitive inhibitor, the inhibited enzymes are out of action whatever the substrate does; they are like workers who went home. The rest still work at full speed, so the curve has the same shape but a lower ceiling."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Reading the curves",
+        "q": "Without inhibitor, an enzyme levels off at 40 µmol/min. With inhibitor X, the rate is low at small [S] but reaches nearly 40 at very high [S]. With inhibitor Y, it levels off at 20. Name each type.",
+        "steps": [
+          "X: the ceiling is unchanged; high substrate overcomes it. That is competitive.",
+          "Y: the ceiling is halved and stays down. That is noncompetitive."
+        ],
+        "a": "X is competitive; Y is noncompetitive."
+      },
+      {
+        "t": "viz",
+        "name": "bi-chart",
+        "opts": {
+          "kind": "line",
+          "x": [
+            0,
+            2,
+            5,
+            10,
+            20,
+            50,
+            100
+          ],
+          "series": [
+            {
+              "name": "No inhibitor",
+              "values": [
+                0,
+                20,
+                28.6,
+                33.3,
+                36.4,
+                38.5,
+                39.2
+              ]
+            },
+            {
+              "name": "Inhibitor X (competitive)",
+              "values": [
+                0,
+                8,
+                15.4,
+                22.2,
+                28.6,
+                34.5,
+                37
+              ]
+            },
+            {
+              "name": "Inhibitor Y (noncompetitive)",
+              "values": [
+                0,
+                10,
+                14.3,
+                16.7,
+                18.2,
+                19.2,
+                19.6
+              ]
+            }
+          ],
+          "xlabel": "Substrate (mM)",
+          "ylabel": "Rate (µmol/min)",
+          "ymin": 0,
+          "ymax": 42
+        },
+        "cap": "The first example as curves (Vmax 40, Km 2 mM; X raises the apparent Km to 8 mM; Y halves Vmax)."
+      },
+      {
+        "t": "ex",
+        "title": "Feedback inhibition",
+        "q": "In a pathway A → B → C → D, product D binds an allosteric site on the enzyme that turns A into B. What happens when D builds up?",
+        "steps": [
+          "D binds the first enzyme and changes its shape.",
+          "Less A becomes B, so less C and D are made.",
+          "When D is used up, it lets go and the pathway restarts."
+        ],
+        "a": "The pathway slows itself: feedback inhibition keeps D from piling up and saves resources."
+      },
+      {
+        "t": "mistake",
+        "html": "Assuming every inhibitor binds the active site, or that more substrate overcomes any inhibitor. Only competitive inhibition can be overcome by substrate. Test it on a graph: if the curve with inhibitor reaches the same top, it is competitive; if its top is lower, it is noncompetitive."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Biology 2e, 6.5 Enzymes (enzyme regulation)"
+      },
+      {
+        "name": "OpenStax, Biology for AP Courses, 6.5 Enzymes"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

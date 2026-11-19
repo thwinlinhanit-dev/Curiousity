@@ -1,0 +1,91 @@
+{
+  "id": "mech.rolling-dynamics",
+  "slug": "rolling-dynamics",
+  "ladder": "physics",
+  "course": "mech",
+  "unit": "rotation",
+  "title": "Rolling Dynamics",
+  "short": "Static friction makes rolling work: on a ramp a = g sin θ/(1 + I/(MR²)).",
+  "trouble": "Students think static friction takes energy from an object rolling without slipping.",
+  "prereqs": [
+    "phys1.rolling",
+    "phys1.rotational-second-law"
+  ],
+  "xp": 3,
+  "viz": [
+    "ph-rotation"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/physics/physics-1/rolling/\">Rolling Without Slipping</a> showed with energy that a hoop loses a race down a ramp to a solid ball. <a href=\"/physics/physics-1/rotational-second-law/\">Newton's Second Law for Rotation</a> lets us find the forces and the acceleration directly, and see what static friction is doing."
+      },
+      {
+        "t": "why",
+        "html": "Take an object of mass $M$, radius $R$ and $I = cMR^2$ rolling down a ramp at angle $\\theta$. Along the ramp: $$Mg\\sin\\theta - f = Ma.$$ About the center, only friction has a lever arm: $$fR = I\\alpha = cMR^2\\alpha.$$ Rolling without slipping links them: $a = R\\alpha$. So $f = cMa$, and substituting, $Mg\\sin\\theta = Ma(1 + c)$."
+      },
+      {
+        "t": "key",
+        "html": "$$a = \\dfrac{g\\sin\\theta}{1 + I/(MR^2)}, \\qquad f = \\dfrac{I}{R^2}a.$$ Mass and radius cancel; only the shape factor $c = I/(MR^2)$ matters: solid ball 0.4, solid disk 0.5, hollow ball 0.67, hoop 1. Static friction must supply $f$, so rolling needs $\\mu_s \\ge \\dfrac{c}{1 + c}\\tan\\theta$."
+      },
+      {
+        "t": "viz",
+        "name": "ph-rotation",
+        "opts": {
+          "mode": "race",
+          "angle": 15,
+          "task": "Run the race. Then change the angle: the order never changes."
+        },
+        "cap": "Hoop, solid disk, solid ball and hollow ball race down the same ramp. The smaller $I/(MR^2)$, the bigger the acceleration."
+      },
+      {
+        "t": "ex",
+        "title": "A ball on a ramp",
+        "q": "A solid ball rolls without slipping down a $30^\\circ$ ramp. Find its acceleration and the least $\\mu_s$ that allows rolling.",
+        "steps": [
+          "$a = \\dfrac{9.8\\sin 30^\\circ}{1 + 0.4} = \\dfrac{4.9}{1.4} = 3.5\\ \\text{m/s}^2$ (sliding without friction it would be $4.9\\ \\text{m/s}^2$).",
+          "Friction needed: $f = 0.4Ma = 0.4(3.5)M = 1.4M$ (in newtons, with $M$ in kilograms).",
+          "$\\mu_s \\ge \\dfrac{f}{Mg\\cos\\theta} = \\dfrac{0.4}{1.4}\\tan 30^\\circ = 0.165$."
+        ],
+        "a": "$a = 3.5\\ \\text{m/s}^2$; $\\mu_s \\ge 0.165$."
+      },
+      {
+        "t": "ex",
+        "title": "Speed at the bottom",
+        "q": "A hoop and a solid ball each roll from rest down a ramp, dropping $1.0\\ \\text{m}$. Find each one's speed at the bottom.",
+        "steps": [
+          "Energy: $Mgh = \\tfrac{1}{2}Mv^2(1 + c)$, so $v = \\sqrt{\\dfrac{2gh}{1 + c}}$.",
+          "Hoop ($c = 1$): $v = \\sqrt{9.8} = 3.13\\ \\text{m/s}$.",
+          "Solid ball ($c = 0.4$): $v = \\sqrt{19.6/1.4} = 3.74\\ \\text{m/s}$. The hoop puts half its energy into spinning; the ball only 2/7."
+        ],
+        "a": "Hoop $3.13\\ \\text{m/s}$; ball $3.74\\ \\text{m/s}$."
+      },
+      {
+        "t": "note",
+        "html": "Why don't mass and radius matter? A bigger or heavier object of the same shape has more weight pulling it down the ramp, but proportionally more inertia, both for moving and for spinning. Only the <i>shape</i>, through $I/(MR^2)$, decides how the energy splits between moving and spinning."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking static friction drains energy from a rolling object, so energy conservation fails. The contact point of a rolling object is momentarily at rest ($v_{\\text{contact}} = v - R\\omega = 0$), so friction acting there does no work. It moves energy from \"moving\" to \"spinning\" without losing any. Check: the energy method above, which ignores friction, gives the same answer as the force method, which includes it. (Kinetic friction during skidding is different; see <a href=\"/physics/mechanics/skidding-to-rolling/\">From Skidding to Rolling</a>.)"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 1, 11.1 Rolling Motion"
+      },
+      {
+        "name": "OpenStax University Physics Volume 1, 10.7 Newton's Second Law for Rotation"
+      },
+      {
+        "name": "MIT OpenCourseWare 8.01 Classical Mechanics (scope and sequence)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

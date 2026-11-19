@@ -1,0 +1,125 @@
+{
+  "id": "g8.irrational-numbers",
+  "slug": "irrational-numbers",
+  "ladder": "math",
+  "course": "g8",
+  "unit": "roots",
+  "title": "Irrational Numbers",
+  "short": "√2 and π have decimals that never end or repeat.",
+  "trouble": "Students think π equals 22/7 or 3.14 exactly, or that every square root is irrational.",
+  "prereqs": [
+    "g8.repeating-decimals",
+    "g8.square-roots"
+  ],
+  "xp": 2,
+  "viz": [
+    "numberline"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You know two facts: every fraction’s decimal ends or repeats, and every <a href=\"/math/pre-algebra/repeating-decimals/\">repeating decimal</a> is a fraction. So what about a decimal that never ends and never repeats? Some <a href=\"/math/pre-algebra/square-roots/\">square roots</a> are exactly that."
+      },
+      {
+        "t": "key",
+        "html": "A <b>rational</b> number can be written as a fraction $\\frac{a}{b}$ of integers ($b \\ne 0$); its decimal ends or repeats. An <b>irrational</b> number cannot be written that way; its decimal goes on forever without repeating. Rational and irrational numbers together make up the real numbers."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Rational",
+          "Irrational"
+        ],
+        "rows": [
+          [
+            "$-7$, $\\frac{3}{8}$, $0.25$",
+            "$\\sqrt{2}$, $\\sqrt{5}$, $\\sqrt{10}$"
+          ],
+          [
+            "$0.\\overline{3}$, $\\sqrt{49} = 7$",
+            "$\\pi$, $2\\pi$"
+          ],
+          [
+            "$\\frac{22}{7} = 3.\\overline{142857}$",
+            "$0.1010010001\\ldots$"
+          ]
+        ],
+        "cap": "Some examples of each kind."
+      },
+      {
+        "t": "why",
+        "html": "Why can’t $\\sqrt{2}$ be a fraction? Squares of fractions come close to 2 but never land on it: $\\left(\\frac{7}{5}\\right)^{2} = 1.96$ and $\\left(\\frac{17}{12}\\right)^{2} \\approx 2.007$. Here is the reason. Suppose a fraction $\\frac{a}{b}$ in lowest terms had $\\frac{a^{2}}{b^{2}} = 2$. Then $a^{2} = 2b^{2}$ is even, so $a$ is even (an odd number squared is odd). Write $a = 2c$: then $4c^{2} = 2b^{2}$, so $b^{2} = 2c^{2}$ and $b$ is even too. But in lowest terms $a$ and $b$ can’t both be even. So no such fraction exists."
+      },
+      {
+        "t": "viz",
+        "name": "numberline",
+        "opts": {
+          "min": 0,
+          "max": 4,
+          "step": 1,
+          "sub": 10,
+          "labels": "whole",
+          "zoom": true,
+          "value": false,
+          "points": [
+            {
+              "v": "1.41421356",
+              "label": "√2",
+              "color": "blue",
+              "drag": false
+            },
+            {
+              "v": "3.14159265",
+              "label": "π",
+              "color": "red",
+              "drag": false
+            }
+          ]
+        },
+        "cap": "$\\sqrt{2}$ and $\\pi$ have exact places on the number line, even though their decimals never end."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A root that is rational",
+        "q": "Is $\\sqrt{0.81}$ rational or irrational?",
+        "steps": [
+          "$0.9 \\times 0.9 = 0.81$, so $\\sqrt{0.81} = 0.9$.",
+          "$0.9 = \\frac{9}{10}$, a fraction."
+        ],
+        "a": "rational"
+      },
+      {
+        "t": "ex",
+        "title": "Close is not equal",
+        "q": "Is $\\frac{22}{7}$ equal to $\\pi$?",
+        "steps": [
+          "$\\frac{22}{7} = 3.142857142857\\ldots$, a repeating decimal, so it is rational.",
+          "$\\pi = 3.14159265\\ldots$ is irrational, and the two differ in the third decimal place."
+        ],
+        "a": "No; $\\frac{22}{7}$ is only an approximation of $\\pi$."
+      },
+      {
+        "t": "mistake",
+        "html": "Two opposite slips. Thinking $\\pi$ equals $\\frac{22}{7}$ or $3.14$ exactly: those are handy approximations, and $\\pi$’s digits never end or repeat. And thinking every square root is irrational: perfect squares have whole-number roots, like $\\sqrt{25} = 5$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Prealgebra 2e, Section 7.1: Rational and Irrational Numbers"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 8, 8.NS.A.1"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

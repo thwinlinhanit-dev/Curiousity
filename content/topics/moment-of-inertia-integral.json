@@ -1,0 +1,91 @@
+{
+  "id": "mech.moment-of-inertia-integral",
+  "slug": "moment-of-inertia-integral",
+  "course": "mech",
+  "courseTitle": "Mechanics with Calculus",
+  "unit": "rotation",
+  "unitTitle": "Rotation of Rigid Bodies",
+  "title": "Moment of Inertia by Integration",
+  "short": "I = ∫r² dm gives the rotational inertia of rods, rings, disks and spheres.",
+  "trouble": "Students use the distance to the center of mass instead of the distance to the axis.",
+  "prereqs": [
+    "phys1.rotational-inertia",
+    "mech.center-of-mass-integral"
+  ],
+  "xp": 3,
+  "viz": [
+    "ph-rotation"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/physics/physics-1/rotational-inertia/\">Rotational Inertia</a> defined $I = \\sum mr^2$ for point masses: mass far from the axis counts more. For a solid object, slice it into tiny pieces as in <a href=\"/physics/mechanics/center-of-mass-integral/\">Center of Mass by Integration</a> and add up $r^2\\,dm$."
+      },
+      {
+        "t": "key",
+        "html": "$$\\role[moment of inertia]{mass}{I} = \\int \\role[distance from the axis]{position}{r}^2\\,\\role[tiny piece of mass]{mass}{dm},$$ where $r$ is each piece's distance <b>from the axis of rotation</b>. Results worth knowing: thin rod about its center $\\tfrac{1}{12}ML^2$, about one end $\\tfrac{1}{3}ML^2$; thin hoop $MR^2$; solid disk or cylinder about its axle $\\tfrac{1}{2}MR^2$; solid sphere $\\tfrac{2}{5}MR^2$; thin spherical shell $\\tfrac{2}{3}MR^2$."
+      },
+      {
+        "t": "why",
+        "html": "Kinetic energy explains the $r^2$. A piece at distance $r$ moves at $v = r\\omega$, so its energy is $\\tfrac{1}{2}dm\\,(r\\omega)^2$. Adding over the body: $K = \\tfrac{1}{2}\\left(\\int r^2\\,dm\\right)\\omega^2 = \\tfrac{1}{2}I\\omega^2$. Doubling a piece's distance from the axis doubles its speed and quadruples its energy at the same $\\omega$."
+      },
+      {
+        "t": "viz",
+        "name": "ph-rotation",
+        "opts": {
+          "mode": "slices",
+          "density": "3*x",
+          "L": 2,
+          "task": "Each slice contributes $x^2\\,dm$. The readout compares $I$ about the left end with $I$ about the center of mass."
+        },
+        "cap": "A 2 m rod with $\\lambda = 3x$ kg/m: $I$ about the light end is $\\int_0^2 x^2(3x)\\,dx = 12\\ \\text{kg·m}^2$."
+      },
+      {
+        "t": "ex",
+        "title": "A uniform rod",
+        "q": "Find $I$ for a uniform $2\\ \\text{kg}$ rod of length $1.2\\ \\text{m}$ about an axis through one end, perpendicular to the rod.",
+        "steps": [
+          "$dm = \\dfrac{M}{L}dx$ at distance $x$ from the end.",
+          "$I = \\dfrac{M}{L}\\int_0^L x^2\\,dx = \\dfrac{M}{L}\\cdot\\dfrac{L^3}{3} = \\tfrac{1}{3}ML^2$.",
+          "$I = \\tfrac{1}{3}(2)(1.2)^2 = 0.96\\ \\text{kg·m}^2$. (About the center it would be $\\tfrac{1}{12}ML^2 = 0.24\\ \\text{kg·m}^2$, a quarter as much.)"
+        ],
+        "a": "$0.96\\ \\text{kg·m}^2$."
+      },
+      {
+        "t": "ex",
+        "title": "A solid disk from rings",
+        "q": "Show that a uniform disk of mass $M$ and radius $R$ has $I = \\tfrac{1}{2}MR^2$ about its axle.",
+        "steps": [
+          "Use rings: a ring of radius $r$ and width $dr$ has mass $dm = \\sigma\\,2\\pi r\\,dr$, with $\\sigma = M/(\\pi R^2)$, and all of it is at distance $r$.",
+          "$$I = \\int_0^R r^2\\,\\sigma\\,2\\pi r\\,dr = 2\\pi\\sigma\\dfrac{R^4}{4} = \\dfrac{M}{\\pi R^2}\\cdot\\dfrac{\\pi R^4}{2} = \\tfrac{1}{2}MR^2$$"
+        ],
+        "a": "$I = \\tfrac{1}{2}MR^2$."
+      },
+      {
+        "t": "note",
+        "html": "Two objects with the same mass and size can have very different $I$: a hoop puts all its mass at the rim ($MR^2$), a solid disk spreads it inward ($\\tfrac{1}{2}MR^2$). That difference decides races down ramps in <a href=\"/physics/mechanics/rolling-dynamics/\">Rolling Dynamics</a>. For axes that don't pass through the center of mass, <a href=\"/physics/mechanics/parallel-axis/\">The Parallel-Axis Theorem</a> saves you from integrating again."
+      },
+      {
+        "t": "mistake",
+        "html": "Using each piece's distance from the center of mass, or from the middle of the object, when the axis is somewhere else. For a rod spinning about its end, the far end is a distance $L$ from the axis, not $L/2$. Check: draw the axis first and measure every $r$ from it. Also check the ranking: the same mass gives the largest $I$ when it sits farthest from the axis."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 1, 10.5 Calculating Moments of Inertia"
+      },
+      {
+        "name": "OpenStax University Physics Volume 1, 10.4 Moment of Inertia and Rotational Kinetic Energy"
+      },
+      {
+        "name": "MIT OpenCourseWare 8.01 Classical Mechanics (scope and sequence)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

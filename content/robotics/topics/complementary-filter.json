@@ -1,0 +1,77 @@
+{
+  "id": "rbsense.complementary-filter",
+  "slug": "complementary-filter",
+  "ladder": "robotics",
+  "course": "rbsense",
+  "unit": "estimation",
+  "title": "The Complementary Filter",
+  "short": "Trust the gyro over short times and the accelerometer over long times: θ = α(θ + ω Δt) + (1 − α) θ_acc.",
+  "trouble": "Students swap the weights and trust the noisy accelerometer most.",
+  "prereqs": [
+    "rbsense.imu",
+    "rbsense.noise-averaging"
+  ],
+  "xp": 3,
+  "viz": [
+    "rb-noise"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The gyro is smooth but drifts; the accelerometer is right on average but jumpy. Blend them and get the best of both."
+      },
+      {
+        "t": "key",
+        "html": "The <b>complementary filter</b>: $\\theta \\leftarrow \\alpha\\,(\\theta + \\omega\\,\\Delta t) + (1 - \\alpha)\\,\\theta_{\\text{acc}}$, with $\\alpha$ close to 1, such as 0.98."
+      },
+      {
+        "t": "viz",
+        "name": "rb-noise",
+        "opts": {
+          "filter": "comp"
+        },
+        "cap": "The blended angle follows quick changes like the gyro and stays anchored like the accelerometer."
+      },
+      {
+        "t": "why",
+        "html": "Each step mostly trusts the gyro's quick update, so the result is smooth. But each step also pulls 2% toward the accelerometer, so over a second or two any drift is pulled back out. That is why it is called complementary: one sensor covers the other's weakness."
+      },
+      {
+        "t": "ex",
+        "title": "One step",
+        "q": "$\\alpha = 0.98$, last $\\theta = 10^\\circ$, gyro 20 °/s, $\\Delta t = 0.01$, accelerometer 12°.",
+        "steps": [
+          "Gyro guess: $10 + 0.2 = 10.2$.",
+          "$0.98 \\times 10.2 + 0.02 \\times 12 = 9.996 + 0.24 = 10.236$."
+        ],
+        "a": "About 10.24°."
+      },
+      {
+        "t": "mistake",
+        "html": "Swapping the weights and trusting the noisy accelerometer most."
+      },
+      {
+        "t": "h",
+        "text": "Hands-on: a tilt meter"
+      },
+      {
+        "t": "p",
+        "html": "Wire an IMU board to your microcontroller. Print three angles side by side: accelerometer alone, gyro alone, and the complementary blend. Tilt the board and hold it; then shake it. Which one would you trust to balance a robot?"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Sebastian Thrun, Wolfram Burgard and Dieter Fox, Probabilistic Robotics (MIT Press, 2005)"
+      },
+      {
+        "name": "Roland Siegwart, Illah R. Nourbakhsh and Davide Scaramuzza, Introduction to Autonomous Mobile Robots, 2nd ed. (MIT Press, 2011)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

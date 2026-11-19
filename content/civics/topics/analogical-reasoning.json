@@ -1,0 +1,128 @@
+{
+  "id": "law.analogical-reasoning",
+  "slug": "analogical-reasoning",
+  "ladder": "civics",
+  "course": "law",
+  "unit": "reasoning",
+  "title": "Reasoning by Analogy",
+  "short": "Lawyers argue that a case is like a precedent in the ways that matter (analogizing) or unlike it (distinguishing); the key is identifying which facts are material to the rule's purpose.",
+  "trouble": "Students compare cases on surface facts (both involve dogs). Ask what features the earlier court relied on, then whether the new case shares them.",
+  "prereqs": [
+    "law.deductive-reasoning",
+    "informal.analogies"
+  ],
+  "xp": 2,
+  "viz": [
+    "cv-case",
+    "cv-sort"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Deduction works when the rule is clear. But often the rule lives in earlier cases, and the question is whether a new case is enough like them. That is <b>reasoning by analogy</b>, the method at the heart of the <a href=\"/american-history/intro-to-law/common-law/\">common law</a>. You may know the general form from <a href=\"/logic/informal-logic/analogies/\">arguments from analogy</a> on the Logic Ladder; it builds on <a href=\"/american-history/intro-to-law/deductive-reasoning/\">rules as syllogisms</a>."
+      },
+      {
+        "t": "key",
+        "html": "Lawyers argue that a case is <b>like</b> a precedent in the ways that matter (<b>analogizing</b>) or <b>unlike</b> it (<b>distinguishing</b>). The key is to identify which facts are <b>material</b>: the facts that mattered to the earlier court's reasons."
+      },
+      {
+        "t": "why",
+        "html": "Like cases should be treated alike, but every two cases are alike in some ways and different in others. Two cases may both happen on a Tuesday; that does not matter. They may both involve a defendant who <i>knew</i> of a danger; that may matter a great deal. The earlier court's <b>reasons</b> tell you which similarities count. So an analogy has three steps: (1) find the reason the precedent gave; (2) find the facts that reason depended on; (3) ask whether the new case shares those facts."
+      },
+      {
+        "t": "viz",
+        "name": "cv-case",
+        "opts": {
+          "name": "Hale v. Ortiz (an invented precedent)",
+          "year": "a state supreme court",
+          "facts": "Ortiz kept a dog that had bitten two people before. Ortiz knew this, left the gate open, and the dog bit Hale.",
+          "q": "Is an owner liable for a bite by a dog the owner knew was dangerous?",
+          "holding": "Yes. An owner who knows an animal is dangerous and fails to restrain it is liable for the harm.",
+          "reasoning": "The owner's knowledge of the danger, plus the failure to control it, makes it fair to put the loss on the owner."
+        },
+        "cap": "An invented precedent. Which of its facts were material?"
+      },
+      {
+        "t": "ex",
+        "title": "Analogize",
+        "q": "New case: Vic keeps a goat that has butted and injured three visitors, and Vic knows it. Vic leaves the pen open, and the goat injures Wren. Does Hale v. Ortiz help Wren?",
+        "steps": [
+          "Reason in Hale: knowledge of the animal's danger plus failure to restrain it.",
+          "Here: Vic knew of the danger (three injuries) and failed to restrain the goat (open pen).",
+          "That it is a goat, not a dog, does not touch the reason."
+        ],
+        "a": "Yes. The material facts match; Wren analogizes to Hale."
+      },
+      {
+        "t": "ex",
+        "title": "Distinguish",
+        "q": "New case: Uma's dog had never bitten or threatened anyone. It slipped its leash and bit Tam. Does Hale control?",
+        "steps": [
+          "Hale turned on the owner's <b>knowledge</b> of a dangerous animal.",
+          "Uma had no reason to know her dog was dangerous.",
+          "Both cases involve a dog bite, but that is a surface likeness."
+        ],
+        "a": "Uma can distinguish Hale: the material fact of knowledge is missing (Tam may need another theory, such as negligence or a statute)."
+      },
+      {
+        "t": "viz",
+        "name": "cv-sort",
+        "opts": {
+          "bins": [
+            "Material to Hale's reason",
+            "Not material"
+          ],
+          "shuffle": true,
+          "reveal": true,
+          "cards": [
+            {
+              "text": "The owner knew the animal had hurt people before",
+              "bin": 0
+            },
+            {
+              "text": "The animal was a dog",
+              "bin": 1
+            },
+            {
+              "text": "The owner left the gate open",
+              "bin": 0
+            },
+            {
+              "text": "The bite happened on a Tuesday",
+              "bin": 1
+            },
+            {
+              "text": "The victim's name was Hale",
+              "bin": 1
+            }
+          ]
+        },
+        "cap": "Sort the facts of the precedent."
+      },
+      {
+        "t": "mistake",
+        "html": "Comparing cases on surface facts (both involve dogs). Ask what features the earlier court <b>relied on</b>, then whether the new case shares them. A strong analogy matches the reasons, not the props. Check: could you change this fact without changing the earlier court's reasoning? If so, it is not material."
+      },
+      {
+        "t": "try"
+      },
+      {
+        "t": "note",
+        "html": "This is an educational course, not legal advice."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Grokipedia, \"Analogy\"",
+        "url": "https://grokipedia.com/page/Analogy"
+      },
+      {
+        "name": "Grokipedia, \"Precedent\"",
+        "url": "https://grokipedia.com/page/Precedent"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

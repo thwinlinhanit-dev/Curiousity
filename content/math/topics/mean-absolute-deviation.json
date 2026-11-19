@@ -1,0 +1,132 @@
+{
+  "id": "g6.mean-absolute-deviation",
+  "slug": "mean-absolute-deviation",
+  "ladder": "math",
+  "course": "g6",
+  "unit": "statistics",
+  "title": "Mean Absolute Deviation",
+  "short": "The average distance of the data from the mean.",
+  "trouble": "Students average the signed differences, which always gives 0.",
+  "prereqs": [
+    "g6.mean",
+    "g6.absolute-value"
+  ],
+  "xp": 2,
+  "viz": [
+    "dotplot"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The IQR measures spread around the median. To measure spread around the <a href=\"/math/grade-6/mean/\">mean</a>, we use distances, which are <a href=\"/math/grade-6/absolute-value/\">absolute values</a>."
+      },
+      {
+        "t": "key",
+        "html": "The <b>mean absolute deviation</b> (MAD) is the average distance of the values from the mean. Find the mean, find each value's distance from it, then find the mean of those distances."
+      },
+      {
+        "t": "viz",
+        "name": "dotplot",
+        "opts": {
+          "data": [
+            10,
+            12,
+            15,
+            18,
+            20
+          ],
+          "show": [
+            "mean",
+            "mad"
+          ],
+          "label": "value"
+        },
+        "cap": "Each orange line is one value’s distance from the mean. The MAD is the average length of the lines."
+      },
+      {
+        "t": "why",
+        "html": "If you subtract the mean from each value and keep the signs, the results always add to 0: the mean is the balance point, so what is above it exactly cancels what is below it. Averaging those signed differences would say every data set has no spread. Distances are never negative, so they cannot cancel, and their average measures how far a typical value is from the mean."
+      },
+      {
+        "t": "ex",
+        "title": "Find the MAD",
+        "q": "Find the MAD of 10, 12, 15, 18, 20.",
+        "steps": [
+          "Mean: $75 \\div 5 = 15$.",
+          "Distances from 15: 5, 3, 0, 3, 5.",
+          "Mean distance: $16 \\div 5 = 3.2$."
+        ],
+        "a": "3.2"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Value",
+          "Value − mean",
+          "Distance"
+        ],
+        "rows": [
+          [
+            "10",
+            "$-5$",
+            "5"
+          ],
+          [
+            "12",
+            "$-3$",
+            "3"
+          ],
+          [
+            "15",
+            "$0$",
+            "0"
+          ],
+          [
+            "18",
+            "$3$",
+            "3"
+          ],
+          [
+            "20",
+            "$5$",
+            "5"
+          ],
+          [
+            "Total",
+            "$0$",
+            "16"
+          ]
+        ],
+        "cap": "The signed differences cancel to 0; the distances add to 16."
+      },
+      {
+        "t": "ex",
+        "title": "Compare spreads",
+        "q": "Set A: 4, 5, 6, 7, 8. Set B: 2, 4, 6, 8, 10. Both have mean 6. Which has the greater MAD?",
+        "steps": [
+          "A: distances 2, 1, 0, 1, 2, so MAD $= 6 \\div 5 = 1.2$.",
+          "B: distances 4, 2, 0, 2, 4, so MAD $= 12 \\div 5 = 2.4$."
+        ],
+        "a": "Set B: its values are farther from the mean."
+      },
+      {
+        "t": "mistake",
+        "html": "Averaging the signed differences, which always gives 0. Quick check: the MAD can only be 0 when every value equals the mean. If your data vary and you got 0, take the absolute values."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Introductory Statistics 2e, section 2.7 Measures of the Spread of the Data"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 6.SP.B.5c: mean absolute deviation as a measure of variability"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

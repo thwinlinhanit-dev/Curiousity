@@ -1,0 +1,239 @@
+{
+  "id": "from-scratch.telegraph",
+  "slug": "telegraph",
+  "ladder": "inventors",
+  "course": "from-scratch",
+  "unit": "signals",
+  "title": "A Telegraph, Like Morse's",
+  "short": "A key closes a circuit; an electromagnet far away clicks; dots and dashes carry letters.",
+  "trouble": "Learners send letters with no gaps between them, so the receiver can't tell where one letter ends.",
+  "prereqs": [
+    "from-scratch.electromagnet",
+    "invelec.morse"
+  ],
+  "xp": 2,
+  "viz": [
+    "fs-morse"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Samuel Morse was a well-known American painter. In 1832, sailing home from Europe, he heard fellow passengers talk about electromagnets and imagined sending messages along a wire. With help from the chemist Leonard Gale, who knew Joseph Henry's work, and from the machinist Alfred Vail, he built and rebuilt instruments through the 1830s."
+      },
+      {
+        "t": "p",
+        "html": "In Britain, William Cooke and Charles Wheatstone opened a working telegraph in 1837 that pointed needles at letters. Morse's system was simpler: a key that opens and closes a circuit, and at the far end an electromagnet that clicks or marks paper. Letters became patterns of short and long signals. Congress paid for a line from Washington to Baltimore, and on 24 May 1844 Morse sent the words \"What hath God wrought\" from the Supreme Court chamber in the Capitol. Within a few years telegraph wires crossed the country."
+      },
+      {
+        "t": "note",
+        "html": "<b>Meet the inventor.</b> Morse's full story is in <a href=\"/inventors/age-of-electricity/morse/\">Samuel Morse: The Telegraph and Its Code</a>."
+      },
+      {
+        "t": "key",
+        "html": "A <b>telegraph</b> is a battery, a <b>key</b> (a switch), a long wire, and a <b>sounder</b>: an electromagnet that pulls down an iron bar with a click while the key is pressed. <b>Morse code</b> turns each letter into dots and dashes. In International Morse code a dot is 1 unit long, a dash 3 units; the gap inside a letter is 1 unit, between letters 3 units, and between words 7 units."
+      },
+      {
+        "t": "p",
+        "html": "Morse and Vail's first code, now called American Morse, had some odd spacings and longer dashes. A simpler version, International Morse code, became the world standard in the 1800s and is the one used by radio amateurs today. Common letters got short codes: E is a single dot, T a single dash."
+      },
+      {
+        "t": "viz",
+        "name": "fs-morse",
+        "opts": {
+          "wpm": 8,
+          "msg": "SOS"
+        },
+        "cap": "Tap the key for dots, hold it for dashes, and pause between letters. Or type a message and press Send it."
+      },
+      {
+        "t": "why",
+        "html": "Telegraph operators did not read the clicks one by one. They learned to hear whole letters, even whole words, as rhythms. Practice by sound, not by counting dots."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Letter",
+          "Code",
+          "Letter",
+          "Code",
+          "Letter",
+          "Code"
+        ],
+        "rows": [
+          [
+            "A",
+            "·–",
+            "J",
+            "·–––",
+            "S",
+            "···"
+          ],
+          [
+            "B",
+            "–···",
+            "K",
+            "–·–",
+            "T",
+            "–"
+          ],
+          [
+            "C",
+            "–·–·",
+            "L",
+            "·–··",
+            "U",
+            "··–"
+          ],
+          [
+            "D",
+            "–··",
+            "M",
+            "––",
+            "V",
+            "···–"
+          ],
+          [
+            "E",
+            "·",
+            "N",
+            "–·",
+            "W",
+            "·––"
+          ],
+          [
+            "F",
+            "··–·",
+            "O",
+            "–––",
+            "X",
+            "–··–"
+          ],
+          [
+            "G",
+            "––·",
+            "P",
+            "·––·",
+            "Y",
+            "–·––"
+          ],
+          [
+            "H",
+            "····",
+            "Q",
+            "––·–",
+            "Z",
+            "––··"
+          ],
+          [
+            "I",
+            "··",
+            "R",
+            "·–·",
+            "",
+            ""
+          ]
+        ],
+        "cap": "International Morse code letters"
+      },
+      {
+        "t": "h",
+        "text": "Let's think it through"
+      },
+      {
+        "t": "ex",
+        "title": "Decode it",
+        "q": "·––· ·– ·–· ·· ···",
+        "steps": [
+          "·––· is P, ·– is A, ·–· is R, ·· is I, ··· is S."
+        ],
+        "a": "PARIS, the word used to time Morse speed: it is exactly 50 units long, gaps included."
+      },
+      {
+        "t": "ex",
+        "title": "How fast is a dot?",
+        "q": "At 10 words per minute, how long is a dot?",
+        "steps": [
+          "10 words of 50 units is 500 units a minute.",
+          "$60\\,000 \\text{ ms} \\div 500 = 120$ ms. The shortcut: $1200 \\div 10 = 120$ ms."
+        ],
+        "a": "120 milliseconds; a dash is 360 ms."
+      },
+      {
+        "t": "mistake",
+        "html": "Running letters together. Without a clear 3-unit gap, ·· (I) and · (E) twice look exactly the same. Gaps carry meaning too."
+      },
+      {
+        "t": "h",
+        "text": "Build it: a two-room telegraph"
+      },
+      {
+        "t": "note",
+        "html": "<div class=\"fs-parts\"><b>Parts (about \\$10 to \\$20)</b><ul><li>Two AA alkaline batteries in a holder with leads (3 V; about \\$2)</li><li>An active buzzer rated for 3 to 5 V (it beeps by itself when powered; about \\$1), or an LED with a resistor of about 100 Ω</li><li>For the key: a wooden clothespin, two thumbtacks or brass paper fasteners, a strip of stiff card or a craft stick, and a steel paper clip</li><li>About 10 meters of thin two-core speaker wire or bell wire, to reach another room</li><li>Optional, for a clicking sounder: your nail electromagnet from the earlier project, a springy steel strip (a hacksaw-blade offcut with smoothed ends, or a long steel paper clip bent into an arm) and a small block of wood</li><li>Tape and a piece of cardboard for a base</li></ul></div>"
+      },
+      {
+        "t": "note",
+        "html": "<div class=\"fs-steps\"><b>Step by step</b><ol><li>Make the key: tape the card or craft stick to the base so one end can be pressed down. Put a thumbtack under the free end and another on the underside of the stick, so they touch only when you press. Or squeeze a clothespin with a fastener on each jaw: they touch when pinched.</li><li>Wire it up in one loop: battery + to the key, key to the long wire, long wire to the buzzer's + (red) lead, the buzzer's other lead back down the second long wire to the battery's −.</li><li>Run the long wire under a door to another room, or to the far end of the house, along the floor where no one will trip.</li><li>Press the key: the buzzer in the other room sounds. Send SOS: ··· ––– ···.</li><li>Agree on a code sheet with your partner and send short words. Then swap rooms.</li><li>Optional sounder: mount the electromagnet upright on the wood block and fix the steel strip so its free end hangs just above the nail head. Put it in place of the buzzer. Each press pulls the strip down with a click. Tap briefly: the coil draws a lot of current.</li></ol></div>"
+      },
+      {
+        "t": "h",
+        "text": "What to look for"
+      },
+      {
+        "t": "list",
+        "items": [
+          "The far buzzer sounds exactly as long as you hold the key: the wire carries your timing.",
+          "Signals arrive instantly, even across the house. On real lines, signals crossed whole countries in a fraction of a second.",
+          "With practice you start hearing letters as rhythms: di-dah for A, dah-di-dah-dit for C."
+        ]
+      },
+      {
+        "t": "h",
+        "text": "Troubleshooting"
+      },
+      {
+        "t": "list",
+        "items": [
+          "<b>No sound?</b> Check the buzzer's red lead goes toward the battery's +. Check the key's two contacts really touch.",
+          "<b>Buzzes all the time?</b> The key's contacts are touching when they shouldn't. Bend the stick up a little.",
+          "<b>Weak over long wire?</b> Thin wire has more resistance. Use thicker wire or a shorter run."
+        ]
+      },
+      {
+        "t": "h",
+        "text": "Iterate like Morse and Vail"
+      },
+      {
+        "t": "list",
+        "items": [
+          "Vail made the key spring back by itself. Improve your key so it returns sharply and makes clean contact.",
+          "Long lines lose strength. Henry's and Morse's answer was the <b>relay</b>: a weak current works an electromagnet that closes a second circuit with its own battery. Draw how a relay would pass a message down a very long line.",
+          "Design a code of your own for the ten digits, then compare it with the real one. Which is faster to send?"
+        ]
+      },
+      {
+        "t": "note",
+        "html": "<div class=\"fs-safe\"><b>Safety</b><ul><li>Use only ordinary AA or AAA batteries (alkaline). Never use a wall outlet, a plug-in power supply or a lithium rechargeable pack for these projects.</li><li>Never connect anything in this project to house wiring, a telephone jack or a wall outlet.</li><li>Tape long wires down along the floor or wall so no one trips.</li><li>If you use the electromagnet sounder, tap the key briefly; the coil gets hot if held down.</li></ul></div>"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Library of Congress, First telegraph message, 24 May 1844",
+        "url": "https://www.loc.gov/item/mcc.019/"
+      },
+      {
+        "name": "Grokipedia, Morse code",
+        "url": "https://grokipedia.com/page/Morse_code"
+      },
+      {
+        "name": "International Telecommunication Union, Recommendation ITU-R M.1677: International Morse code",
+        "url": "https://www.itu.int/dms_pubrec/itu-r/rec/m/R-REC-M.1677-0-200405-S!!PDF-E.pdf"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

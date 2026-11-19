@@ -1,0 +1,119 @@
+{
+  "id": "apbio.energy-budgets",
+  "slug": "energy-budgets",
+  "ladder": "bio",
+  "course": "apbio",
+  "unit": "ecology",
+  "title": "Energy Budgets and Metabolism",
+  "short": "Endotherms spend much of their energy keeping warm, so they need more food per gram than ectotherms; smaller endotherms have higher metabolic rates per gram. Net intake goes to growth and offspring.",
+  "trouble": "Students think bigger animals burn more energy per gram. Per gram, a shrew burns far more than an elephant, because its high SA:V loses heat fast.",
+  "prereqs": [
+    "hsbio.energy-flow",
+    "apbio.surface-volume"
+  ],
+  "xp": 2,
+  "viz": [
+    "bi-chart",
+    "bi-pyramid"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Every organism spends the energy in its food on staying alive, moving, growing and making offspring. How the budget is split depends on how the animal controls its temperature, and on its size, which brings back <a href=\"/biology/advanced-biology/surface-volume/\">surface area to volume</a>. <a href=\"/biology/high-school-biology/energy-flow/\">Energy flow</a> through an ecosystem is the sum of all these budgets."
+      },
+      {
+        "t": "list",
+        "items": [
+          "<b>Endotherms</b> (birds and mammals) keep a warm, steady body temperature using heat from their own metabolism. That costs a lot: they need far more food than an <b>ectotherm</b> of the same size.",
+          "<b>Ectotherms</b> (most fish, amphibians, reptiles and invertebrates) take their body heat mostly from the environment. They need less food, but they are slower in the cold.",
+          "<b>Per gram</b>, small endotherms burn energy much faster than large ones: a shrew or a mouse has a far higher metabolic rate per gram than an elephant."
+        ]
+      },
+      {
+        "t": "key",
+        "html": "Endotherms spend much of their energy keeping warm, so they need more food per gram than ectotherms. The smaller an endotherm, the higher its metabolic rate <b>per gram</b>. What is left of an animal's intake after metabolism goes to growth, storage and offspring."
+      },
+      {
+        "t": "viz",
+        "name": "bi-chart",
+        "opts": {
+          "kind": "bar",
+          "x": [
+            "Mouse",
+            "Cat",
+            "Human",
+            "Horse",
+            "Elephant"
+          ],
+          "series": [
+            {
+              "name": "Resting metabolic rate per gram (relative to the elephant)",
+              "values": [
+                16,
+                5,
+                3,
+                1.6,
+                1
+              ]
+            }
+          ],
+          "ylabel": "Relative rate per gram",
+          "ymin": 0
+        },
+        "cap": "Smaller mammals burn energy faster per gram (rounded, illustrative ratios following the well-known pattern)."
+      },
+      {
+        "t": "why",
+        "html": "Why should a small endotherm burn more per gram? Heat is made in the whole volume of the body but lost through the surface. A small body has a high SA : V ratio, so it loses heat quickly for its size and must make heat quickly to keep up. A large animal has relatively little surface and holds its heat. Ectotherms do not pay this cost, which is why a lizard can live on a small fraction of the food a mouse of the same mass needs."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A caterpillar's budget",
+        "q": "A caterpillar eats leaves containing 300 J. It passes 150 J as feces and uses 100 J in cellular respiration. How much energy goes into growth?",
+        "steps": [
+          "Energy absorbed: $300 - 150 = 150$ J.",
+          "Left after respiration: $150 - 100 = 50$ J.",
+          "Only 50 of the 300 J becomes new caterpillar tissue: food for the next level of the food chain."
+        ],
+        "a": "50 J (one sixth of what it ate)."
+      },
+      {
+        "t": "ex",
+        "title": "Who needs more food?",
+        "q": "A 30-gram mouse and a 30-gram lizard live in the same desert. Which needs more food per day, and why?",
+        "steps": [
+          "The mouse is an endotherm; the lizard an ectotherm.",
+          "The mouse must make its own heat all day and night.",
+          "The lizard warms itself in the sun and lets its body cool at night."
+        ],
+        "a": "The mouse, by a wide margin: most of its energy goes to keeping warm."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking bigger animals burn more energy per gram. An elephant uses more energy in <i>total</i> than a shrew, but far less <i>per gram</i>. Always check whether a question asks about the whole animal or per unit of mass."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Biology 2e, 33.1 Animal Form and Structure (bioenergetics and body size)"
+      },
+      {
+        "name": "OpenStax, Biology 2e, 46.2 Energy Flow through Ecosystems"
+      },
+      {
+        "name": "OpenStax, Biology for AP Courses, 46.2 Energy Flow through Ecosystems"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

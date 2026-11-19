@@ -1,0 +1,114 @@
+{
+  "id": "imicro.coase-theorem",
+  "slug": "coase-theorem",
+  "ladder": "economics",
+  "course": "imicro",
+  "unit": "failure-information",
+  "title": "The Coase Theorem",
+  "short": "With clear property rights and low bargaining costs, the parties reach the efficient outcome whoever holds the rights; only who pays whom differs.",
+  "trouble": "Students think the efficient amount of the harmful activity depends on who holds the right, when (with no income effects) the right decides only who pays whom.",
+  "prereqs": [
+    "imicro.externality-optimum"
+  ],
+  "xp": 2,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/economics/intermediate-microeconomics/externality-optimum/\">The Efficient Amount of an Externality</a> fixed an externality with a tax. Ronald Coase (1960) pointed out that when only a few parties are involved, they may fix it themselves by bargaining, as long as the law says clearly who has which right."
+      },
+      {
+        "t": "key",
+        "html": "<b>Coase theorem:</b> with clear property rights, costless bargaining and no income effects, the parties reach the efficient amount of the harmful activity <b>whoever holds the right</b>. The assignment of the right decides only who pays whom."
+      },
+      {
+        "t": "why",
+        "html": "Let the activity's marginal benefit to its owner be $MB(Q)$ and the marginal damage to the neighbor $MD(Q)$. If the owner has the right and would choose more than $Q^*$, each extra unit beyond $Q^*$ is worth less to the owner than it costs the neighbor, so the neighbor can pay the owner to cut back and both gain. If the neighbor has the right and would allow nothing, each unit up to $Q^*$ is worth more to the owner than it costs the neighbor, so the owner can pay for permission. Either way, bargaining stops at $Q^*$, where $MB = MD$. The payment lies between what the giving side loses and what the receiving side gains."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "fns": [
+            {
+              "f": "30 - 2*x",
+              "label": "MB (factory)",
+              "color": "blue"
+            },
+            {
+              "f": "x",
+              "label": "MD (laundry)",
+              "color": "red"
+            }
+          ],
+          "shade": {
+            "fn": 0,
+            "fn2": 1,
+            "a": 10,
+            "b": 15
+          },
+          "xmin": 0,
+          "xmax": 18,
+          "ymin": 0,
+          "ymax": 32,
+          "xlabel": "Q",
+          "ylabel": "$ per unit",
+          "roots": false,
+          "intersections": true,
+          "zoom": false
+        },
+        "cap": "A factory's benefit from smoke and a laundry's damage. They cross at $Q^* = 10$. The shaded area between 10 and 15 is the net gain from cutting back from the factory's preferred 15 units to 10."
+      },
+      {
+        "t": "ex",
+        "title": "The efficient amount and the payments",
+        "q": "$MB = 30 - 2Q$ for the factory, $MD = Q$ for the laundry. The factory has the right to pollute.",
+        "steps": [
+          "Efficient: $30 - 2Q = Q$, so $Q^* = 10$. On its own the factory would go to $Q = 15$ (where $MB = 0$).",
+          "Cutting from 15 to 10 costs the factory $$\\int_{10}^{15}(30 - 2Q)\\,dQ = [30Q - Q^2]_{10}^{15} = 225 - 200 = 25$$",
+          "It spares the laundry $\\int_{10}^{15}Q\\,dQ = \\tfrac{1}{2}(225 - 100) = 62.5$.",
+          "Any payment from the laundry between \\$25 and \\$62.50 makes both better off; they settle at 10."
+        ],
+        "a": "$Q^* = 10$; the laundry pays between \\$25 and \\$62.50."
+      },
+      {
+        "t": "ex",
+        "title": "The other assignment",
+        "q": "Now the laundry has the right to clean air.",
+        "steps": [
+          "Starting from $Q = 0$, allowing 10 units costs the laundry $\\int_0^{10}Q\\,dQ = 50$ and is worth $\\int_0^{10}(30 - 2Q)\\,dQ = 200$ to the factory.",
+          "The factory pays between \\$50 and \\$200, and again $Q = 10$."
+        ],
+        "a": "Same $Q^* = 10$; now the factory pays."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking the efficient amount depends on who holds the right. With costless bargaining and no income effects, it doesn't: both assignments led to 10 units. What changes is the direction of the payment, which matters a great deal to the two parties' wealth. Check: compute $Q^*$ from $MB = MD$ alone; the legal rule should never enter that equation."
+      },
+      {
+        "t": "note",
+        "html": "The theorem's conditions are demanding. Bargaining costs rise with the number of people affected (a factory and a million neighbors can't easily negotiate), and holdouts, unclear rights and large income effects can block or change the outcome. Coase's own emphasis was that because real transaction costs are often high, the legal assignment of rights matters for efficiency in practice."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, ch. 12 Environmental Protection and Negative Externalities"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.04 Intermediate Microeconomic Theory (course scope and lecture topics)"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.03 Microeconomic Theory and Public Policy (course scope)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

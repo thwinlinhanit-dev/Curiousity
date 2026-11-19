@@ -1,0 +1,131 @@
+{
+  "id": "alg2.polynomial-inequalities",
+  "slug": "polynomial-inequalities",
+  "ladder": "math",
+  "course": "alg2",
+  "unit": "polynomials",
+  "title": "Polynomial and Rational Inequalities",
+  "short": "Use a sign chart built from zeros and undefined points.",
+  "trouble": "Students multiply both sides by an expression whose sign they do not know.",
+  "prereqs": [
+    "alg2.quadratic-inequalities",
+    "alg2.sketch-polynomials"
+  ],
+  "xp": 3,
+  "viz": [
+    "numberline",
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/math/algebra-2/quadratic-inequalities/\">Quadratic inequalities</a> used the zeros to split the number line. The same sign-chart method works for any polynomial, and for fractions of polynomials, once you add the points where a denominator is 0. You already know how a <a href=\"/math/algebra-2/sketch-polynomials/\">polynomial's graph</a> changes sign."
+      },
+      {
+        "t": "key",
+        "html": "Move everything to one side and factor. Mark the zeros of the numerator and the zeros of the denominator on a number line. Test one number in each piece. Keep the pieces with the sign you want. Include numerator zeros only for $\\ge$ or $\\le$; never include a zero of a denominator."
+      },
+      {
+        "t": "why",
+        "html": "Polynomials (and fractions of polynomials, away from their undefined points) are continuous: they can't change sign without passing through 0 or through a break. So the critical numbers are the only places a sign can change, and each piece between them has a single sign. Multiplying both sides by an expression is risky because if the expression is negative the inequality flips, and you don't know its sign in advance. A sign chart avoids that."
+      },
+      {
+        "t": "viz",
+        "name": "alg2-signchart",
+        "opts": {
+          "factors": [
+            {
+              "t": "x + 3",
+              "z": -3,
+              "m": 1
+            },
+            {
+              "t": "x − 1",
+              "z": 1,
+              "m": 1
+            },
+            {
+              "t": "x − 4",
+              "z": 4,
+              "m": 1
+            }
+          ],
+          "rel": ">=",
+          "xmin": -5,
+          "xmax": 6,
+          "x": 2
+        },
+        "cap": "$(x + 3)(x - 1)(x - 4) \\ge 0$. Each factor's sign, the product's sign, and the solution set."
+      },
+      {
+        "t": "viz",
+        "name": "alg2-signchart",
+        "opts": {
+          "factors": [
+            {
+              "t": "x − 2",
+              "z": 2,
+              "m": 1
+            },
+            {
+              "t": "x + 1",
+              "z": -1,
+              "m": 1,
+              "den": true
+            }
+          ],
+          "rel": "<=",
+          "xmin": -4,
+          "xmax": 5,
+          "x": 0
+        },
+        "cap": "$\\frac{x - 2}{x + 1} \\le 0$. The denominator's zero, $-1$, is never part of the answer."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A cubic",
+        "q": "Solve $(x + 3)(x - 1)(x - 4) \\ge 0$.",
+        "steps": [
+          "Zeros: $-3$, $1$, $4$.",
+          "Test: $x = -4$ gives $(-)(-)(-) < 0$; $x = 0$ gives $(+)(-)(-) > 0$; $x = 2$ gives $(+)(+)(-) < 0$; $x = 5$ gives $(+)(+)(+) > 0$.",
+          "Keep the positive pieces and the zeros."
+        ],
+        "a": "$[-3, 1] \\cup [4, \\infty)$"
+      },
+      {
+        "t": "ex",
+        "title": "A fraction",
+        "q": "Solve $\\frac{x - 2}{x + 1} \\le 0$.",
+        "steps": [
+          "Critical numbers: $2$ (numerator) and $-1$ (denominator).",
+          "The quotient is negative between them and positive outside.",
+          "Include $x = 2$ (the quotient is 0 there) but not $x = -1$ (undefined)."
+        ],
+        "a": "$(-1, 2]$"
+      },
+      {
+        "t": "mistake",
+        "html": "Multiplying both sides by $x + 1$ to clear the fraction. That gives $x - 2 \\le 0$, so $x \\le 2$, which wrongly includes $x = -5$: there $\\frac{-7}{-4} > 0$. When $x + 1$ is negative, multiplying flips the inequality. Use a sign chart, and test a number from your answer in the original inequality."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Intermediate Algebra 2e, Section 7.6 Solve Rational Inequalities"
+      },
+      {
+        "name": "OpenStax College Algebra 2e, Section 5.3 Graphs of Polynomial Functions"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

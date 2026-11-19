@@ -1,0 +1,111 @@
+{
+  "id": "disc.functions",
+  "slug": "functions",
+  "ladder": "math",
+  "course": "disc",
+  "unit": "sets-functions",
+  "title": "Functions Between Sets",
+  "short": "A function assigns each element of its domain exactly one element of its codomain; the range is the set of outputs actually reached.",
+  "trouble": "Students use \"codomain\" and \"range\" as if they meant the same set.",
+  "prereqs": [
+    "disc.sets",
+    "alg1.domain-range"
+  ],
+  "xp": 1,
+  "viz": [
+    "disc-relation"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In algebra a function was usually a formula, and you found its <a href=\"/math/algebra-1/domain-range/\">domain and range</a>. In discrete math a function can be any rule between <a href=\"/math/discrete-math/sets/\">sets</a>: from people to birthdays, from strings to lengths, from a set to itself. The definition focuses on what makes something a function at all."
+      },
+      {
+        "t": "key",
+        "html": "A <b>function</b> $f : A \\to B$ assigns to each element of the <b>domain</b> $A$ exactly one element $f(a)$ of the <b>codomain</b> $B$. The <b>range</b> (or image) is the set of outputs actually reached, $f(A) = \\{f(a) : a \\in A\\}$; it is a subset of the codomain and can be much smaller."
+      },
+      {
+        "t": "why",
+        "html": "\"Exactly one\" has two parts: every element of $A$ gets an output (none is skipped), and no element gets two. In an arrow diagram, that means exactly one arrow leaves each dot of $A$; the dots of $B$ may receive any number of arrows, including none. The codomain is part of the definition, a promise about where outputs are allowed to land, while the range records where they actually land. Keeping the two apart is what makes the next lesson's idea of \"onto\" possible."
+      },
+      {
+        "t": "viz",
+        "name": "disc-relation",
+        "opts": {
+          "mode": "map",
+          "A": [
+            "-2",
+            "-1",
+            "0",
+            "1",
+            "2"
+          ],
+          "B": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "rule": "x^2",
+          "range": true
+        },
+        "cap": "An arrow diagram. Each element of $A$ needs exactly one arrow out. Switch the codomain to \"outputs only\" and notice that the elements never hit disappear: those form the difference between codomain and range."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Function or not?",
+        "q": "Let $A = \\{1, 2, 3\\}$ and $B = \\{a, b\\}$. Which of these is a function from $A$ to $B$? (i) $\\{(1, a), (2, a), (3, b)\\}$; (ii) $\\{(1, a), (2, b)\\}$; (iii) $\\{(1, a), (1, b), (2, a), (3, a)\\}$.",
+        "steps": [
+          "(i) Each of $1, 2, 3$ has exactly one output. Two inputs share the output $a$, which is allowed: <b>a function</b>.",
+          "(ii) $3$ has no output: <b>not</b> a function from $A$.",
+          "(iii) $1$ has two outputs: <b>not</b> a function."
+        ],
+        "a": "Only (i)"
+      },
+      {
+        "t": "ex",
+        "title": "Range versus codomain",
+        "q": "Let $f : \\{-2, -1, 0, 1, 2\\} \\to \\mathbb{Z}$ be $f(x) = x^{2}$. Find the range.",
+        "steps": [
+          "Outputs: $f(-2) = 4$, $f(-1) = 1$, $f(0) = 0$, $f(1) = 1$, $f(2) = 4$.",
+          "Range: $\\{0, 1, 4\\}$. The codomain is still $\\mathbb{Z}$; most integers are simply never reached."
+        ],
+        "a": "$\\{0, 1, 4\\}$"
+      },
+      {
+        "t": "ex",
+        "title": "Counting functions",
+        "q": "How many functions are there from $A = \\{1, 2, 3\\}$ to $B = \\{a, b\\}$?",
+        "steps": [
+          "Each of the $3$ elements of $A$ independently chooses one of $2$ outputs.",
+          "Product rule: $2 \\cdot 2 \\cdot 2 = 2^{3} = 8$. In general there are $|B|^{|A|}$ functions from $A$ to $B$."
+        ],
+        "a": "$8$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Treating codomain and range as the same set.</b> For $f : \\mathbb{Z} \\to \\mathbb{Z}$, $f(x) = 2x$, the codomain is $\\mathbb{Z}$, but the range is only the even integers. Saying \"the range is $\\mathbb{Z}$\" claims that $3$ is an output, and it is not. Check: the codomain is given in the arrow $f : A \\to B$; the range you must work out by asking which outputs actually occur."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Oscar Levin, Discrete Mathematics: An Open Introduction (3rd ed.), section \"Functions\""
+      },
+      {
+        "name": "MIT OpenCourseWare 6.042J Mathematics for Computer Science (Lehman, Leighton and Meyer), chapter \"Mathematical Data Types\" (functions)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

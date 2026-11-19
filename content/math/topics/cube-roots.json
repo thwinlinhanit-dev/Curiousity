@@ -1,0 +1,103 @@
+{
+  "id": "g8.cube-roots",
+  "slug": "cube-roots",
+  "ladder": "math",
+  "course": "g8",
+  "unit": "roots",
+  "title": "Cube Roots",
+  "short": "∛64 = 4 because 4³ = 64.",
+  "trouble": "",
+  "prereqs": [
+    "g8.square-roots"
+  ],
+  "xp": 1,
+  "viz": [
+    "volume"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Cubing uses a number as a factor three times: $4^{3} = 4 \\cdot 4 \\cdot 4 = 64$. A cube root undoes cubing, the way a <a href=\"/math/pre-algebra/square-roots/\">square root</a> undoes squaring."
+      },
+      {
+        "t": "why",
+        "html": "A cube with edges 4 units long is built from 4 layers of $4 \\times 4$ unit cubes: $4 \\cdot 4 \\cdot 4 = 64$ cubes. So if a cube holds 64 unit cubes, its edge is 4. We write $\\sqrt[3]{64} = 4$."
+      },
+      {
+        "t": "viz",
+        "name": "volume",
+        "opts": {
+          "l": 4,
+          "w": 4,
+          "h": 4,
+          "max": 6
+        },
+        "cap": "A $4 \\times 4 \\times 4$ cube holds 64 unit cubes. Drag to turn it, and try other sizes."
+      },
+      {
+        "t": "key",
+        "html": "$\\sqrt[3]{n}$ is the number whose cube is $n$. The perfect cubes are $1, 8, 27, 64, 125, 216, 343, 512, 729, 1000, \\ldots$"
+      },
+      {
+        "t": "p",
+        "html": "Unlike square roots, cube roots of negative numbers exist. Three negative factors make a negative, so $(-4)^{3} = -64$ and $\\sqrt[3]{-64} = -4$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A perfect cube",
+        "q": "Find $\\sqrt[3]{125}$.",
+        "steps": [
+          "Which number, used three times as a factor, gives 125?",
+          "$5 \\cdot 5 \\cdot 5 = 125$."
+        ],
+        "a": "$5$"
+      },
+      {
+        "t": "ex",
+        "title": "A negative number",
+        "q": "Find $\\sqrt[3]{-27}$.",
+        "steps": [
+          "$3^{3} = 27$, so try $-3$.",
+          "$(-3)(-3)(-3) = 9 \\cdot (-3) = -27$."
+        ],
+        "a": "$-3$"
+      },
+      {
+        "t": "ex",
+        "title": "A fraction",
+        "q": "Find $\\sqrt[3]{\\dfrac{8}{27}}$.",
+        "steps": [
+          "Take the cube root of the top and of the bottom: $\\sqrt[3]{8} = 2$ and $\\sqrt[3]{27} = 3$.",
+          "Check: $\\frac{2}{3} \\cdot \\frac{2}{3} \\cdot \\frac{2}{3} = \\frac{8}{27}$."
+        ],
+        "a": "$\\frac{2}{3}$"
+      },
+      {
+        "t": "note",
+        "html": "Most numbers are not perfect cubes. Their cube roots still have a place between whole numbers: $3^{3} = 27$ and $4^{3} = 64$, so $\\sqrt[3]{50}$ is between 3 and 4."
+      },
+      {
+        "t": "mistake",
+        "html": "Dividing by 3, as in $\\sqrt[3]{27} = 9$. Check by cubing: $9^{3} = 729$. The cube root of 27 is 3, because $3 \\cdot 3 \\cdot 3 = 27$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Intermediate Algebra 2e, Section 8.1: Simplify Expressions with Roots"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 8, 8.EE.A.2"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

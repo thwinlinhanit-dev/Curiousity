@@ -1,0 +1,114 @@
+{
+  "id": "imicro.lerner-index",
+  "slug": "lerner-index",
+  "ladder": "economics",
+  "course": "imicro",
+  "unit": "market-power",
+  "title": "Markups and the Lerner Index",
+  "short": "(p − MC)/p = 1/|ε|, so a monopoly with positive marginal cost never prices where demand is inelastic.",
+  "trouble": "Students think a firm with market power picks a price where demand is inelastic. When marginal cost is positive, demand is always elastic at the profit-maximizing price.",
+  "prereqs": [
+    "imicro.monopoly-calculus",
+    "imicro.point-elasticity"
+  ],
+  "xp": 3,
+  "viz": [
+    "ec-monopoly"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "How high is a monopoly's price above its marginal cost? Combine <a href=\"/economics/intermediate-microeconomics/monopoly-calculus/\">Monopoly with Calculus</a> with <a href=\"/economics/intermediate-microeconomics/point-elasticity/\">Point Elasticity with Calculus</a> and the answer depends on one number: how elastic demand is at the chosen price."
+      },
+      {
+        "t": "key",
+        "html": "At the profit-maximizing price, $$L = \\frac{p - MC}{p} = \\frac{1}{|\\varepsilon|}.$$ $L$ is the <b>Lerner index</b>, the markup as a share of price. The less elastic demand is, the bigger the markup. A firm with positive marginal cost never chooses a price where demand is inelastic ($|\\varepsilon| < 1$)."
+      },
+      {
+        "t": "why",
+        "html": "Rewrite marginal revenue with the elasticity: $$MR = p + q\\,\\frac{dp}{dq} = p\\left(1 + \\frac{q}{p}\\frac{dp}{dq}\\right) = p\\left(1 + \\frac{1}{\\varepsilon}\\right) = p\\left(1 - \\frac{1}{|\\varepsilon|}\\right).$$ Set $MR = MC$: $p - MC = p/|\\varepsilon|$, which is the rule. If $|\\varepsilon| < 1$, MR is negative: cutting output a little would raise revenue <i>and</i> save cost, so that can't be the best choice. With $MC > 0$ the optimum needs $MR > 0$, so $|\\varepsilon| > 1$."
+      },
+      {
+        "t": "viz",
+        "name": "ec-monopoly",
+        "opts": {
+          "demand": {
+            "p0": 100,
+            "s": 2
+          },
+          "mc": {
+            "m0": 20,
+            "m1": 0
+          },
+          "show": [
+            "profit",
+            "cs",
+            "dwl",
+            "competitive"
+          ]
+        },
+        "cap": "$p = 100 - 2q$, MC = 20: the monopoly sells 20 units at \\$60. There $|\\varepsilon| = 1.5$ and the markup is $40/60 = 2/3 = 1/1.5$. The optimum is on the upper, elastic half of the demand line."
+      },
+      {
+        "t": "ex",
+        "title": "Price from the markup rule",
+        "q": "At its optimum a firm faces $\\varepsilon = -3$, and its marginal cost is \\$20. What price does it charge?",
+        "steps": [
+          "$\\dfrac{p - 20}{p} = \\dfrac{1}{3}$, so $p - 20 = p/3$.",
+          "$\\tfrac{2}{3}p = 20$, so $p = 30$."
+        ],
+        "a": "\\$30."
+      },
+      {
+        "t": "ex",
+        "title": "Elasticity from prices",
+        "q": "A profit-maximizing firm charges \\$50 with marginal cost \\$30. What is the elasticity of demand at that price?",
+        "steps": [
+          "$L = \\dfrac{50 - 30}{50} = 0.4$.",
+          "$|\\varepsilon| = 1/0.4 = 2.5$, so $\\varepsilon = -2.5$."
+        ],
+        "a": "$-2.5$."
+      },
+      {
+        "t": "ex",
+        "title": "Checking with a linear demand",
+        "q": "For $p = 100 - 2q$ and $MC = 20$, the optimum is $q = 20$, $p = 60$. Verify the rule.",
+        "steps": [
+          "$\\dfrac{dq}{dp} = -\\tfrac{1}{2}$, so $\\varepsilon = -\\tfrac{1}{2}\\cdot\\dfrac{60}{20} = -1.5$.",
+          "$L = \\dfrac{60 - 20}{60} = \\dfrac{2}{3} = \\dfrac{1}{1.5}$."
+        ],
+        "a": "It holds."
+      },
+      {
+        "t": "p",
+        "html": "For constant-elasticity demand $q = Ap^{-k}$, the rule gives the price directly: $p = MC\\cdot\\dfrac{k}{k - 1}$. With $k = 2$ the price is twice marginal cost; with $k = 5$ it is 25% above; as $k$ grows the markup shrinks toward zero, the competitive limit."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking a firm with market power picks a price where demand is inelastic, because \"buyers can't do without it.\" If demand were inelastic at its price, a price rise would raise revenue while cutting the quantity it must produce: more revenue, less cost. It would keep raising the price until demand became elastic. Check: compute $|\\varepsilon|$ at the claimed optimum. With $MC > 0$ it must exceed 1."
+      },
+      {
+        "t": "note",
+        "html": "The Lerner index is a common measure of market power, with a caution: in industries with large fixed costs (software, medicines), prices well above marginal cost can go with zero economic profit, because the markup pays for the fixed cost. A high markup alone does not prove high profit."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, ch. 9.2 How a Profit-Maximizing Monopoly Chooses Output and Price"
+      },
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, ch. 5 Elasticity"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.04 Intermediate Microeconomic Theory (course scope and lecture topics)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

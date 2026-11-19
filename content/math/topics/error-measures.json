@@ -1,0 +1,118 @@
+{
+  "id": "num.error-measures",
+  "slug": "error-measures",
+  "ladder": "math",
+  "course": "num",
+  "unit": "error",
+  "title": "Absolute and Relative Error",
+  "short": "Absolute error is |approximation − true value|; relative error divides by |true value| and tells how many significant digits are correct.",
+  "trouble": "Students divide by the approximation instead of the true value, or compare absolute errors of numbers of very different sizes.",
+  "prereqs": [
+    "g7.percent-error",
+    "g8.scientific-notation"
+  ],
+  "xp": 1,
+  "viz": [
+    "num-measure"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Almost every number a computer produces is an approximation: a rounded constant, a truncated series, the last step of an iteration. Before we can compare methods we need a precise way to say how good an approximation is. You met the idea as <a href=\"/math/grade-7/percent-error/\">Percent Error</a>; here we sharpen it and connect it to <a href=\"/math/pre-algebra/scientific-notation/\">scientific notation</a> and significant digits."
+      },
+      {
+        "t": "p",
+        "html": "Let $x$ be the true value and $\\tilde{x}$ an approximation of it. The <b>absolute error</b> is $$|\\tilde{x} - x|,$$ and, when $x \\ne 0$, the <b>relative error</b> is $$\\frac{|\\tilde{x} - x|}{|x|}.$$ The absolute error carries the units of $x$. The relative error has no units; multiplied by 100 it is the percent error."
+      },
+      {
+        "t": "key",
+        "html": "Absolute error measures the size of the mistake. Relative error measures it in units of the true value, so it says how many leading digits are right: a relative error near $10^{-t}$ means about $t$ correct significant digits."
+      },
+      {
+        "t": "why",
+        "html": "Write $x = m \\times 10^{e}$ with $1 \\le |m| < 10$. If $\\tilde{x}$ agrees with $x$ through the $t$-th significant digit, their difference is at most about half a unit in that place, $\\tfrac{1}{2} \\times 10^{e - t + 1}$. Dividing by $|x| \\ge 10^{e}$ gives a relative error of at most $5 \\times 10^{-t}$, whatever $e$ is. The size of the number cancels out; that is why relative error is the natural measure for numbers of any size, and why floating-point arithmetic is designed around it."
+      },
+      {
+        "t": "ex",
+        "title": "Both errors",
+        "q": "A tank holds $x = 250$ L, and a gauge reads $\\tilde{x} = 248$ L. Find the absolute and relative errors.",
+        "steps": [
+          "Absolute error: $|248 - 250| = 2$ L.",
+          "Relative error: $\\frac{2}{250} = 0.008$, or $0.8\\%$.",
+          "Divide by the <b>true</b> value, $250$, not by the reading."
+        ],
+        "a": "$2$ L and $0.008$"
+      },
+      {
+        "t": "ex",
+        "title": "Comparing approximations of different sizes",
+        "q": "Which is the better approximation: $3.14$ for $\\pi$, or $384{,}000$ km for the average distance to the Moon, $384{,}400$ km?",
+        "steps": [
+          "Absolute errors: $|3.14 - \\pi| \\approx 0.00159$ and $400$ km. The second looks enormous.",
+          "Relative errors: $\\frac{0.00159}{3.14159} \\approx 5.1 \\times 10^{-4}$ and $\\frac{400}{384{,}400} \\approx 1.0 \\times 10^{-3}$.",
+          "Measured relative to their size, $3.14$ is about twice as good, though both are right to about 3 significant digits."
+        ],
+        "a": "$3.14$ for $\\pi$"
+      },
+      {
+        "t": "viz",
+        "name": "num-measure",
+        "opts": {
+          "pairs": [
+            [
+              "5",
+              "4.99"
+            ],
+            [
+              "384400",
+              "384000"
+            ]
+          ],
+          "labels": [
+            "length of a room (m)",
+            "distance to the Moon (km)"
+          ],
+          "task": "Which approximation is better? Compare the errors both ways, then change the units and see which errors change."
+        },
+        "cap": "A room measured to the nearest centimeter and the distance to the Moon rounded to the nearest thousand km. The absolute error depends on the size and the units of the number; the relative error does not."
+      },
+      {
+        "t": "p",
+        "html": "A common way to make \"correct digits\" exact: $\\tilde{x}$ approximates $x$ to $t$ <b>significant digits</b> when $t$ is the largest whole number with $$\\frac{|\\tilde{x} - x|}{|x|} \\le 5 \\times 10^{-t}.$$"
+      },
+      {
+        "t": "ex",
+        "title": "Counting significant digits",
+        "q": "How many significant digits does $\\tilde{x} = 2.718$ have as an approximation of $e = 2.71828183\\ldots$?",
+        "steps": [
+          "Absolute error: $|2.718 - 2.71828183| = 0.00028183$.",
+          "Relative error: $0.00028183 \\div 2.71828183 \\approx 1.04 \\times 10^{-4}$.",
+          "It is at most $5 \\times 10^{-4}$ but more than $5 \\times 10^{-5}$, so $t = 4$, matching the 4 digits written."
+        ],
+        "a": "$4$"
+      },
+      {
+        "t": "mistake",
+        "html": "Dividing by the approximation instead of the true value, or comparing absolute errors of numbers of very different sizes. An error of 400 km in the distance to the Moon is better, relatively, than an error of 1 m in the length of a room. Quick check: a relative error should not change when you change units (meters to centimeters); an absolute error does."
+      },
+      {
+        "t": "note",
+        "html": "In practice the true value is unknown. Error <i>bounds</i>, estimates and comparisons between two approximations take its place, as later topics show."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Tobin A. Driscoll and Richard J. Braun, Fundamentals of Numerical Computation (University of Delaware, free online edition): chapter \"Introduction\", section \"Floating-point numbers\" (absolute and relative accuracy)"
+      },
+      {
+        "name": "Autar Kaw, Holistic Numerical Methods (University of South Florida): Introduction to Numerical Methods, \"Measuring Errors\""
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

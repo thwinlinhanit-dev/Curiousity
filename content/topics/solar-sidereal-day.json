@@ -1,0 +1,97 @@
+{
+  "id": "astro.solar-sidereal-day",
+  "slug": "solar-sidereal-day",
+  "course": "astro",
+  "courseTitle": "Astronomy",
+  "unit": "sky",
+  "unitTitle": "The Sky",
+  "title": "Solar and Sidereal Days",
+  "short": "Earth spins once in 23 h 56 min, but noon to noon takes 24 h because Earth also moves along its orbit.",
+  "trouble": "Students think one day is exactly one full spin of Earth.",
+  "prereqs": [
+    "astro.celestial-sphere"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-sky"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A day seems simple: Earth spins once. But \"once\" relative to what? On the <a href=\"/physics/astronomy/celestial-sphere/\">celestial sphere</a> there are two choices, the Sun and the distant stars, and they give two different days."
+      },
+      {
+        "t": "list",
+        "items": [
+          "A <b>solar day</b> is noon to noon, the Sun back on your meridian: $24$ h on average. Our clocks keep this day.",
+          "A <b>sidereal day</b> (\"star day\") is one turn relative to the distant stars: $23$ h $56$ min $4$ s."
+        ]
+      },
+      {
+        "t": "why",
+        "html": "While Earth spins, it also moves along its orbit, about $360^\\circ \\div 365.25 \\approx 1^\\circ$ per day, in the same direction as it spins. After one full $360^\\circ$ turn the stars are back where they were, but the Sun now lies about $1^\\circ$ farther east among them. Earth must turn that extra $1^\\circ$ to bring the Sun back to the meridian. At $15^\\circ$ per hour, $1^\\circ$ takes about 4 minutes, so a solar day is about 4 minutes longer than a sidereal day. In rates: $\\dfrac{1}{\\text{sidereal day}} = \\dfrac{1}{\\text{solar day}} + \\dfrac{1}{\\text{year}}$."
+      },
+      {
+        "t": "key",
+        "html": "A sidereal day (one spin relative to the stars) is 23 h 56 min; a solar day (noon to noon) is 24 h, because Earth also moves about $1^\\circ$ along its orbit each day and must turn about $361^\\circ$ to face the Sun again."
+      },
+      {
+        "t": "viz",
+        "name": "ph-sky",
+        "opts": {
+          "mode": "day",
+          "task": "Press Play. The arrow is a marker on the ground. Watch when it points at the distant star, then when it points at the Sun."
+        },
+        "cap": "Earth spinning while it moves along its orbit (the orbital motion is exaggerated about 26 times so you can see it)."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Stars rise earlier",
+        "q": "Orion's bright star Rigel rises at 11:00 pm tonight. About when will it rise 30 days from now?",
+        "steps": [
+          "Each night a star rises about 4 minutes earlier, because the clock keeps solar days and the star keeps sidereal days.",
+          "$30 \\times 4 = 120$ min $= 2$ h earlier.",
+          "So about 9:00 pm. That is why the evening sky changes with the seasons."
+        ],
+        "a": "About 9:00 pm."
+      },
+      {
+        "t": "ex",
+        "title": "Count the spins",
+        "q": "How many times does Earth turn relative to the stars in one year?",
+        "steps": [
+          "In $365.25$ solar days the Sun appears to go once around the sky relative to the stars.",
+          "That means Earth makes one more turn relative to the stars than relative to the Sun.",
+          "$365.25 + 1 = 366.25$ sidereal days per year."
+        ],
+        "a": "$366.25$ times."
+      },
+      {
+        "t": "mistake",
+        "html": "\"A day is one spin of Earth\" is only true for the sidereal day. From noon to noon Earth turns about $361^\\circ$, not $360^\\circ$. Check with the numbers: $366.25$ sidereal days of $23.934$ h make $8766$ h, the same as $365.25$ solar days of $24$ h."
+      },
+      {
+        "t": "note",
+        "html": "Astronomers set their telescopes by sidereal time, because a star crosses the meridian at the same sidereal time every day: the sidereal time equals the right ascension on your meridian (see <a href=\"/physics/astronomy/celestial-coordinates/\">right ascension</a>)."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Astronomy 2e, section 4.3, Keeping Time"
+      },
+      {
+        "name": "OpenStax, Astronomy 2e, section 4.1, Earth and Sky"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

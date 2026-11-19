@@ -1,0 +1,949 @@
+{
+  "key": "draw",
+  "ladder": "art",
+  "title": "Drawing Basics",
+  "short": "Drawing Basics",
+  "after": [
+    "ydraw"
+  ],
+  "units": [
+    {
+      "key": "materials",
+      "title": "Tools and Materials",
+      "blurb": "Pencil grades, paper and erasers, how to hold the pencil, and charcoal, ink and colored pencil."
+    },
+    {
+      "key": "line",
+      "title": "Line",
+      "blurb": "Line weight, contour, blind contour, cross-contour and gesture: the ways a line can look and what each one trains."
+    },
+    {
+      "key": "forms",
+      "title": "Shapes and Forms",
+      "blurb": "Positive and negative space, flat shapes into solid forms, boxes, ellipses and building objects from forms."
+    },
+    {
+      "key": "value",
+      "title": "Value and Shading",
+      "blurb": "The value scale, hatching, cross-hatching, stippling, smooth tone and contrast."
+    },
+    {
+      "key": "light",
+      "title": "Light and Shadow",
+      "blurb": "One light source; highlight, core shadow, reflected light and cast shadow; shading a sphere and a box."
+    },
+    {
+      "key": "measure",
+      "title": "Proportion and Measuring",
+      "blurb": "Comparing sizes, sighting with a pencil, angles and plumb lines, the grid method and checking a drawing."
+    },
+    {
+      "key": "perspective",
+      "title": "Perspective",
+      "blurb": "Overlap, size and placement; the horizon line; one-, two- and three-point perspective; atmospheric perspective."
+    },
+    {
+      "key": "composition",
+      "title": "Composition",
+      "blurb": "The rule of thirds, the focal point, balance, leading lines and thumbnail sketches."
+    },
+    {
+      "key": "subjects",
+      "title": "Still Life, Texture and Cloth",
+      "blurb": "Setting up a still life, drawing texture, shiny and see-through things, and folds."
+    },
+    {
+      "key": "faces",
+      "title": "Drawing Faces",
+      "blurb": "Proportions of the head, eyes, nose and mouth, turning the head, and expressions."
+    },
+    {
+      "key": "figures",
+      "title": "Hands and Figures",
+      "blurb": "Hands, figure proportions in heads, the line of action, the mannequin and the clothed figure."
+    },
+    {
+      "key": "practice",
+      "title": "Practice Plans",
+      "blurb": "Warm-ups, a sketchbook habit and drawing from life and from photos."
+    }
+  ],
+  "topics": [
+    {
+      "id": "draw.pencil-grades",
+      "slug": "pencil-grades",
+      "course": "draw",
+      "unit": "materials",
+      "title": "Pencil Grades: H, HB and B",
+      "short": "H pencils are harder and make lighter lines; B pencils are softer and make darker lines. A bigger number means more of either.",
+      "prereqs": [],
+      "viz": [
+        "ar-value",
+        "ar-sort"
+      ]
+    },
+    {
+      "id": "draw.paper-erasers",
+      "slug": "paper-erasers",
+      "course": "draw",
+      "unit": "materials",
+      "title": "Paper and Erasers",
+      "short": "Drawing paper has some tooth to grip graphite. A kneaded eraser lifts tone when you press and dab; a vinyl eraser cleans crisp edges.",
+      "prereqs": [
+        "draw.pencil-grades"
+      ],
+      "viz": [
+        "ar-sort"
+      ]
+    },
+    {
+      "id": "draw.pencil-grip",
+      "slug": "pencil-grip",
+      "course": "draw",
+      "unit": "materials",
+      "title": "Holding the Pencil",
+      "short": "Hold near the point, as for writing, for small, careful details. Hold farther back or overhand, and move from the elbow, for long, loose lines and broad shading.",
+      "prereqs": [
+        "draw.pencil-grades"
+      ],
+      "viz": [
+        "ar-canvas"
+      ]
+    },
+    {
+      "id": "draw.other-media",
+      "slug": "other-media",
+      "course": "draw",
+      "unit": "materials",
+      "title": "Charcoal, Ink and Colored Pencil",
+      "short": "Charcoal is soft, dark and smudgy; ink is permanent; colored pencil builds color in light layers.",
+      "prereqs": [
+        "draw.paper-erasers"
+      ],
+      "viz": [
+        "ar-marks",
+        "ar-sort"
+      ]
+    },
+    {
+      "id": "draw.line-weight",
+      "slug": "line-weight",
+      "course": "draw",
+      "unit": "line",
+      "title": "Line Weight and Line Quality",
+      "short": "Vary the weight of your lines: heavier for near edges and shadow sides, lighter for far edges and lit sides.",
+      "prereqs": [
+        "draw.pencil-grip"
+      ],
+      "viz": [
+        "ar-lines",
+        "ar-canvas"
+      ]
+    },
+    {
+      "id": "draw.contour",
+      "slug": "contour",
+      "course": "draw",
+      "unit": "line",
+      "title": "Contour Drawing",
+      "short": "A contour line follows the edges of a form slowly, as your eye follows the object, including the edges inside the outline.",
+      "prereqs": [
+        "draw.line-weight"
+      ],
+      "viz": [
+        "ar-lines",
+        "ar-canvas"
+      ]
+    },
+    {
+      "id": "draw.blind-contour",
+      "slug": "blind-contour",
+      "course": "draw",
+      "unit": "line",
+      "title": "Blind Contour Drawing",
+      "short": "Draw a contour while looking only at the object, never at the paper. It trains the eye and hand to move together.",
+      "prereqs": [
+        "draw.contour"
+      ],
+      "viz": [
+        "ar-canvas"
+      ]
+    },
+    {
+      "id": "draw.cross-contour",
+      "slug": "cross-contour",
+      "course": "draw",
+      "unit": "line",
+      "title": "Cross-Contour Lines",
+      "short": "Lines that wrap across a form, like stripes around a ball, show its roundness.",
+      "prereqs": [
+        "draw.contour"
+      ],
+      "viz": [
+        "ar-lines",
+        "ar-shade"
+      ]
+    },
+    {
+      "id": "draw.gesture",
+      "slug": "gesture",
+      "course": "draw",
+      "unit": "line",
+      "title": "Gesture Drawing",
+      "short": "A gesture drawing takes half a minute to two minutes and catches the movement and weight of a pose, not its details.",
+      "prereqs": [
+        "draw.line-weight"
+      ],
+      "viz": [
+        "ar-proportion",
+        "ar-canvas"
+      ]
+    },
+    {
+      "id": "draw.negative-space",
+      "slug": "negative-space",
+      "course": "draw",
+      "unit": "forms",
+      "title": "Positive and Negative Space",
+      "short": "Positive space is the object; negative space is the space around and between. Drawing the negative shapes helps you see true shapes.",
+      "prereqs": [
+        "draw.contour"
+      ],
+      "viz": [
+        "ar-design",
+        "ar-canvas"
+      ]
+    },
+    {
+      "id": "draw.shapes-to-forms",
+      "slug": "shapes-to-forms",
+      "course": "draw",
+      "unit": "forms",
+      "title": "From Shapes to Forms",
+      "short": "A shape is flat; a form has depth. A circle becomes a sphere, a square a cube, a triangle a cone and a rectangle a cylinder.",
+      "prereqs": [
+        "draw.negative-space"
+      ],
+      "viz": [
+        "ar-shade",
+        "ar-sort"
+      ]
+    },
+    {
+      "id": "draw.drawing-boxes",
+      "slug": "drawing-boxes",
+      "course": "draw",
+      "unit": "forms",
+      "title": "Drawing a Box",
+      "short": "Draw the nearest corner first. Edges that are parallel on the box either stay parallel or come together as they go back; they never spread apart.",
+      "prereqs": [
+        "draw.shapes-to-forms"
+      ],
+      "viz": [
+        "ar-persp",
+        "ar-canvas"
+      ]
+    },
+    {
+      "id": "draw.ellipses",
+      "slug": "ellipses",
+      "course": "draw",
+      "unit": "forms",
+      "title": "Circles in Depth: Ellipses",
+      "short": "A circle seen at an angle is an ellipse. It looks thinner near eye level and rounder the farther it is above or below eye level.",
+      "prereqs": [
+        "draw.shapes-to-forms"
+      ],
+      "viz": [
+        "ar-persp",
+        "ar-canvas"
+      ]
+    },
+    {
+      "id": "draw.construction",
+      "slug": "construction",
+      "course": "draw",
+      "unit": "forms",
+      "title": "Building Objects from Forms",
+      "short": "Break a complicated object into simple forms (boxes, cylinders, spheres and cones), draw those lightly, then refine.",
+      "prereqs": [
+        "draw.drawing-boxes",
+        "draw.ellipses"
+      ],
+      "viz": [
+        "ar-shapes",
+        "ar-canvas"
+      ]
+    },
+    {
+      "id": "draw.value-scale",
+      "slug": "value-scale",
+      "course": "draw",
+      "unit": "value",
+      "title": "Value and the Value Scale",
+      "short": "Value is how light or dark a tone is. A value scale steps evenly from white to black, often in 5, 7 or 9 steps.",
+      "prereqs": [
+        "draw.pencil-grades"
+      ],
+      "viz": [
+        "ar-value"
+      ]
+    },
+    {
+      "id": "draw.hatching",
+      "slug": "hatching",
+      "course": "draw",
+      "unit": "value",
+      "title": "Hatching",
+      "short": "Parallel lines make tone. Lines closer together, or heavier, read darker.",
+      "prereqs": [
+        "draw.value-scale"
+      ],
+      "viz": [
+        "ar-marks",
+        "ar-canvas"
+      ]
+    },
+    {
+      "id": "draw.cross-hatching",
+      "slug": "cross-hatching",
+      "course": "draw",
+      "unit": "value",
+      "title": "Cross-Hatching",
+      "short": "Layers of hatching that cross at an angle build darker values.",
+      "prereqs": [
+        "draw.hatching"
+      ],
+      "viz": [
+        "ar-marks",
+        "ar-canvas"
+      ]
+    },
+    {
+      "id": "draw.stippling",
+      "slug": "stippling",
+      "course": "draw",
+      "unit": "value",
+      "title": "Stippling",
+      "short": "Dots make tone: more dots, closer together, read darker.",
+      "prereqs": [
+        "draw.value-scale"
+      ],
+      "viz": [
+        "ar-marks",
+        "ar-canvas"
+      ]
+    },
+    {
+      "id": "draw.smooth-tone",
+      "slug": "smooth-tone",
+      "course": "draw",
+      "unit": "value",
+      "title": "Smooth Tone and Blending",
+      "short": "Build smooth tone with light, even layers of small strokes; a blending stump or tissue can soften it.",
+      "prereqs": [
+        "draw.value-scale"
+      ],
+      "viz": [
+        "ar-marks",
+        "ar-value"
+      ]
+    },
+    {
+      "id": "draw.contrast-key",
+      "slug": "contrast-key",
+      "course": "draw",
+      "unit": "value",
+      "title": "Contrast and Key",
+      "short": "High contrast puts very light next to very dark. A high-key picture is mostly light values; a low-key picture is mostly dark.",
+      "prereqs": [
+        "draw.cross-hatching",
+        "draw.smooth-tone"
+      ],
+      "viz": [
+        "ar-value",
+        "ar-sort"
+      ]
+    },
+    {
+      "id": "draw.light-direction",
+      "slug": "light-direction",
+      "course": "draw",
+      "unit": "light",
+      "title": "Where the Light Comes From",
+      "short": "Choose one light source. Every lit side faces it, and every shadow side and cast shadow points away from it.",
+      "prereqs": [
+        "draw.value-scale"
+      ],
+      "viz": [
+        "ar-shade"
+      ]
+    },
+    {
+      "id": "draw.light-on-form",
+      "slug": "light-on-form",
+      "course": "draw",
+      "unit": "light",
+      "title": "Highlight, Core Shadow and Reflected Light",
+      "short": "Light on a round form runs highlight, light, halftone, core shadow and reflected light, and the cast shadow lies on the ground beside it.",
+      "prereqs": [
+        "draw.light-direction",
+        "draw.shapes-to-forms"
+      ],
+      "viz": [
+        "ar-shade"
+      ]
+    },
+    {
+      "id": "draw.cast-shadows",
+      "slug": "cast-shadows",
+      "course": "draw",
+      "unit": "light",
+      "title": "Cast Shadows",
+      "short": "A cast shadow falls away from the light. It is darkest and sharpest where the object touches the surface and softens as it goes out.",
+      "prereqs": [
+        "draw.light-direction"
+      ],
+      "viz": [
+        "ar-shade"
+      ]
+    },
+    {
+      "id": "draw.shading-sphere",
+      "slug": "shading-sphere",
+      "course": "draw",
+      "unit": "light",
+      "title": "Shading a Sphere",
+      "short": "Put the values in order around the ball: highlight, light, halftone, core shadow, reflected light, then the cast shadow.",
+      "prereqs": [
+        "draw.light-on-form",
+        "draw.cast-shadows",
+        "draw.smooth-tone"
+      ],
+      "viz": [
+        "ar-shade",
+        "ar-canvas"
+      ]
+    },
+    {
+      "id": "draw.shading-planes",
+      "slug": "shading-planes",
+      "course": "draw",
+      "unit": "light",
+      "title": "Shading a Box: Three Planes",
+      "short": "Each flat side of a box gets one even value: the side facing the light is lightest and the side turned away is darkest.",
+      "prereqs": [
+        "draw.light-direction",
+        "draw.drawing-boxes"
+      ],
+      "viz": [
+        "ar-shade"
+      ]
+    },
+    {
+      "id": "draw.proportion",
+      "slug": "proportion",
+      "course": "draw",
+      "unit": "measure",
+      "title": "Proportion: Comparing Sizes",
+      "short": "Proportion is how sizes compare. Choose one part as your unit and measure the rest in it: \"the bottle is three caps tall.\"",
+      "prereqs": [
+        "draw.construction",
+        "g6.ratio-language"
+      ],
+      "viz": [
+        "ar-proportion"
+      ]
+    },
+    {
+      "id": "draw.sighting",
+      "slug": "sighting",
+      "course": "draw",
+      "unit": "measure",
+      "title": "Sighting with a Pencil",
+      "short": "Hold the pencil at arm's length with the elbow straight, close one eye, and mark a length with your thumb to compare it with others.",
+      "prereqs": [
+        "draw.proportion"
+      ],
+      "viz": [
+        "ar-proportion"
+      ]
+    },
+    {
+      "id": "draw.angles-plumb",
+      "slug": "angles-plumb",
+      "course": "draw",
+      "unit": "measure",
+      "title": "Angles and Plumb Lines",
+      "short": "Hold the pencil truly vertical or horizontal to judge an edge's angle and to see what lines up above or beside what.",
+      "prereqs": [
+        "draw.sighting"
+      ],
+      "viz": [
+        "ar-proportion"
+      ]
+    },
+    {
+      "id": "draw.grid-method",
+      "slug": "grid-method",
+      "course": "draw",
+      "unit": "measure",
+      "title": "The Grid Method",
+      "short": "Divide the picture and the paper into matching grids and copy one square at a time. Bigger squares on the paper enlarge the drawing.",
+      "prereqs": [
+        "draw.proportion",
+        "g7.scale-drawings"
+      ],
+      "viz": [
+        "ar-proportion",
+        "ar-canvas"
+      ]
+    },
+    {
+      "id": "draw.checking",
+      "slug": "checking",
+      "course": "draw",
+      "unit": "measure",
+      "title": "Checking Your Drawing",
+      "short": "Step back, squint to see the big values, and look at the drawing in a mirror to spot crooked or lopsided shapes.",
+      "prereqs": [
+        "draw.sighting"
+      ],
+      "viz": [
+        "ar-value",
+        "ar-canvas"
+      ]
+    },
+    {
+      "id": "draw.depth-cues",
+      "slug": "depth-cues",
+      "course": "draw",
+      "unit": "perspective",
+      "title": "Showing Depth: Overlap, Size and Placement",
+      "short": "Things in front overlap things behind; farther things look smaller and, below eye level, sit higher on the page.",
+      "prereqs": [
+        "draw.drawing-boxes"
+      ],
+      "viz": [
+        "ar-persp",
+        "ar-compose"
+      ]
+    },
+    {
+      "id": "draw.horizon-line",
+      "slug": "horizon-line",
+      "course": "draw",
+      "unit": "perspective",
+      "title": "The Horizon Line Is Eye Level",
+      "short": "In perspective, the horizon line is the viewer's eye level. You see the tops of things below it and the bottoms of things above it.",
+      "prereqs": [
+        "draw.depth-cues"
+      ],
+      "viz": [
+        "ar-persp"
+      ]
+    },
+    {
+      "id": "draw.one-point",
+      "slug": "one-point",
+      "course": "draw",
+      "unit": "perspective",
+      "title": "One-Point Perspective",
+      "short": "Facing a box straight on, its edges that go back from you all meet at one vanishing point on the horizon line.",
+      "prereqs": [
+        "draw.horizon-line"
+      ],
+      "viz": [
+        "ar-persp",
+        "ar-canvas"
+      ]
+    },
+    {
+      "id": "draw.one-point-scenes",
+      "slug": "one-point-scenes",
+      "course": "draw",
+      "unit": "perspective",
+      "title": "Roads, Rooms and Rails",
+      "short": "Roads, railroad tracks, hallways and rooms seen straight on narrow toward one vanishing point, and equal spaces look shorter as they go back.",
+      "prereqs": [
+        "draw.one-point"
+      ],
+      "viz": [
+        "ar-persp"
+      ]
+    },
+    {
+      "id": "draw.two-point",
+      "slug": "two-point",
+      "course": "draw",
+      "unit": "perspective",
+      "title": "Two-Point Perspective",
+      "short": "Turn the box so a corner faces you. Its edges go back to two vanishing points on the horizon, and vertical edges stay vertical.",
+      "prereqs": [
+        "draw.one-point"
+      ],
+      "viz": [
+        "ar-persp",
+        "ar-canvas"
+      ]
+    },
+    {
+      "id": "draw.three-point",
+      "slug": "three-point",
+      "course": "draw",
+      "unit": "perspective",
+      "title": "Three-Point Perspective",
+      "short": "Looking far up at a tall building or far down from one, the vertical edges also meet, at a third vanishing point above or below.",
+      "prereqs": [
+        "draw.two-point"
+      ],
+      "viz": [
+        "ar-persp"
+      ]
+    },
+    {
+      "id": "draw.atmospheric",
+      "slug": "atmospheric",
+      "course": "draw",
+      "unit": "perspective",
+      "title": "Atmospheric Perspective",
+      "short": "Faraway things look lighter, bluer, softer and less detailed because of the air between us and them.",
+      "prereqs": [
+        "draw.depth-cues"
+      ],
+      "viz": [
+        "ar-persp",
+        "ar-artwork"
+      ]
+    },
+    {
+      "id": "draw.rule-of-thirds",
+      "slug": "rule-of-thirds",
+      "course": "draw",
+      "unit": "composition",
+      "title": "The Rule of Thirds",
+      "short": "Divide the picture into thirds both ways; placing the main subject near one of the lines or crossings often looks livelier than dead center.",
+      "prereqs": [
+        "draw.depth-cues"
+      ],
+      "viz": [
+        "ar-compose"
+      ]
+    },
+    {
+      "id": "draw.focal-point",
+      "slug": "focal-point",
+      "course": "draw",
+      "unit": "composition",
+      "title": "The Focal Point",
+      "short": "The focal point is where the eye goes first. Artists make it with the strongest contrast, the most detail, isolation or lines that lead to it.",
+      "prereqs": [
+        "draw.rule-of-thirds"
+      ],
+      "viz": [
+        "ar-compose",
+        "ar-artwork"
+      ]
+    },
+    {
+      "id": "draw.balance",
+      "slug": "balance",
+      "course": "draw",
+      "unit": "composition",
+      "title": "Balance",
+      "short": "Symmetrical balance mirrors the two halves; asymmetrical balance offsets a big, quiet shape with a small, strong one; radial balance spreads from a center.",
+      "prereqs": [
+        "draw.rule-of-thirds"
+      ],
+      "viz": [
+        "ar-design",
+        "ar-compose"
+      ]
+    },
+    {
+      "id": "draw.leading-lines",
+      "slug": "leading-lines",
+      "course": "draw",
+      "unit": "composition",
+      "title": "Leading Lines",
+      "short": "Roads, rivers, fences, gazes and edges lead the eye through a picture, ideally toward the focal point.",
+      "prereqs": [
+        "draw.focal-point"
+      ],
+      "viz": [
+        "ar-compose"
+      ]
+    },
+    {
+      "id": "draw.thumbnails",
+      "slug": "thumbnails",
+      "course": "draw",
+      "unit": "composition",
+      "title": "Thumbnails and Viewfinders",
+      "short": "Small quick sketches try out several arrangements and crops before the real drawing; a cardboard viewfinder helps choose the view.",
+      "prereqs": [
+        "draw.balance",
+        "draw.leading-lines"
+      ],
+      "viz": [
+        "ar-compose",
+        "ar-canvas"
+      ]
+    },
+    {
+      "id": "draw.still-life",
+      "slug": "still-life",
+      "course": "draw",
+      "unit": "subjects",
+      "title": "Setting Up a Still Life",
+      "short": "Group objects of different heights and sizes, overlap some, leave uneven gaps, and light them from one side.",
+      "prereqs": [
+        "draw.shading-sphere",
+        "draw.thumbnails"
+      ],
+      "viz": [
+        "ar-compose",
+        "ar-artwork"
+      ]
+    },
+    {
+      "id": "draw.texture",
+      "slug": "texture",
+      "course": "draw",
+      "unit": "subjects",
+      "title": "Drawing Texture",
+      "short": "Texture comes from your marks and the value pattern: short strokes for fur, long ones for wood grain, crisp contrast for rough stone.",
+      "prereqs": [
+        "draw.cross-hatching",
+        "draw.stippling"
+      ],
+      "viz": [
+        "ar-marks",
+        "ar-sort"
+      ]
+    },
+    {
+      "id": "draw.shiny-glass",
+      "slug": "shiny-glass",
+      "course": "draw",
+      "unit": "subjects",
+      "title": "Shiny and See-Through Things",
+      "short": "Shiny things show sharp highlights and reflections with strong contrast; glass shows what is behind it, slightly bent, plus a few bright edges.",
+      "prereqs": [
+        "draw.light-on-form"
+      ],
+      "viz": [
+        "ar-shade"
+      ]
+    },
+    {
+      "id": "draw.folds",
+      "slug": "folds",
+      "course": "draw",
+      "unit": "subjects",
+      "title": "Folds in Cloth",
+      "short": "Cloth hangs from points of support, and folds spread out from them. Shade each fold like a small cylinder.",
+      "prereqs": [
+        "draw.light-on-form"
+      ],
+      "viz": [
+        "ar-shade",
+        "ar-canvas"
+      ]
+    },
+    {
+      "id": "draw.head-proportions",
+      "slug": "head-proportions",
+      "course": "draw",
+      "unit": "faces",
+      "title": "Proportions of the Head",
+      "short": "On an adult head seen from the front, the eyes are about halfway down, the face is about five eyes wide, and the nose ends about halfway from the eyes to the chin.",
+      "prereqs": [
+        "draw.proportion"
+      ],
+      "viz": [
+        "ar-face",
+        "ar-proportion"
+      ]
+    },
+    {
+      "id": "draw.eyes",
+      "slug": "eyes",
+      "course": "draw",
+      "unit": "faces",
+      "title": "Drawing Eyes",
+      "short": "An eye is a ball in a socket: the lids wrap around it, the upper lid casts a shadow on it, and the upper lid covers part of the iris.",
+      "prereqs": [
+        "draw.head-proportions",
+        "draw.light-on-form"
+      ],
+      "viz": [
+        "ar-face"
+      ]
+    },
+    {
+      "id": "draw.nose-mouth",
+      "slug": "nose-mouth",
+      "course": "draw",
+      "unit": "faces",
+      "title": "The Nose and Mouth",
+      "short": "Draw the nose with its planes and shadows rather than a hard outline. The corners of the mouth line up roughly below the pupils.",
+      "prereqs": [
+        "draw.head-proportions"
+      ],
+      "viz": [
+        "ar-face"
+      ]
+    },
+    {
+      "id": "draw.head-turns",
+      "slug": "head-turns",
+      "course": "draw",
+      "unit": "faces",
+      "title": "Profile and Three-Quarter Views",
+      "short": "When the head turns, the center line curves around it and the far eye looks narrower; in profile, the ear sits just behind the middle of the head.",
+      "prereqs": [
+        "draw.head-proportions"
+      ],
+      "viz": [
+        "ar-face"
+      ]
+    },
+    {
+      "id": "draw.expressions",
+      "slug": "expressions",
+      "course": "draw",
+      "unit": "faces",
+      "title": "Expressions",
+      "short": "Eyebrows, eyelids and mouth change together: raised brows and an open mouth for surprise, lowered brows and a tight mouth for anger.",
+      "prereqs": [
+        "draw.eyes",
+        "draw.nose-mouth"
+      ],
+      "viz": [
+        "ar-face"
+      ]
+    },
+    {
+      "id": "draw.hands",
+      "slug": "hands",
+      "course": "draw",
+      "unit": "figures",
+      "title": "Drawing Hands",
+      "short": "Start with the mitten shape of the palm and fingers together. The middle finger is about as long as the palm, and the knuckles line up on a curve.",
+      "prereqs": [
+        "draw.proportion",
+        "draw.construction"
+      ],
+      "viz": [
+        "ar-proportion",
+        "ar-canvas"
+      ]
+    },
+    {
+      "id": "draw.figure-proportions",
+      "slug": "figure-proportions",
+      "course": "draw",
+      "unit": "figures",
+      "title": "Figure Proportions in Heads",
+      "short": "Artists measure the body in head heights: an adult is about seven and a half heads tall, and a young child only four or five.",
+      "prereqs": [
+        "draw.head-proportions"
+      ],
+      "viz": [
+        "ar-proportion"
+      ]
+    },
+    {
+      "id": "draw.line-of-action",
+      "slug": "line-of-action",
+      "course": "draw",
+      "unit": "figures",
+      "title": "The Line of Action",
+      "short": "One curved line through the whole pose shows its movement; the head, chest and hips hang on it.",
+      "prereqs": [
+        "draw.gesture",
+        "draw.figure-proportions"
+      ],
+      "viz": [
+        "ar-proportion",
+        "ar-canvas"
+      ]
+    },
+    {
+      "id": "draw.mannequin",
+      "slug": "mannequin",
+      "course": "draw",
+      "unit": "figures",
+      "title": "The Mannequin Figure",
+      "short": "Build the body from simple forms: an egg for the head, boxes for the chest and hips, cylinders for the limbs and balls at the joints.",
+      "prereqs": [
+        "draw.line-of-action",
+        "draw.construction"
+      ],
+      "viz": [
+        "ar-proportion",
+        "ar-canvas"
+      ]
+    },
+    {
+      "id": "draw.clothed-figure",
+      "slug": "clothed-figure",
+      "course": "draw",
+      "unit": "figures",
+      "title": "The Clothed Figure",
+      "short": "Draw the gesture and forms first, then hang the clothes on them. Folds pull from the shoulders, elbows, waist and knees.",
+      "prereqs": [
+        "draw.mannequin",
+        "draw.folds"
+      ],
+      "viz": [
+        "ar-proportion"
+      ]
+    },
+    {
+      "id": "draw.warm-ups",
+      "slug": "warm-ups",
+      "course": "draw",
+      "unit": "practice",
+      "title": "Warm-Ups",
+      "short": "A few minutes of straight lines, circles, ellipses and value scales loosens the hand before a drawing.",
+      "prereqs": [
+        "draw.ellipses",
+        "draw.value-scale"
+      ],
+      "viz": [
+        "ar-canvas"
+      ]
+    },
+    {
+      "id": "draw.sketchbook",
+      "slug": "sketchbook",
+      "course": "draw",
+      "unit": "practice",
+      "title": "A Sketchbook Habit",
+      "short": "Short, regular practice adds up: draw a little most days, from life when you can, and date every page.",
+      "prereqs": [
+        "draw.warm-ups"
+      ],
+      "viz": [
+        "ar-sort"
+      ]
+    },
+    {
+      "id": "draw.life-photos",
+      "slug": "life-photos",
+      "course": "draw",
+      "unit": "practice",
+      "title": "Drawing from Life and from Photos",
+      "short": "Life drawing shows real depth and light; photos flatten form and can bend near things. Use your own photos or free-to-use ones, and give credit.",
+      "prereqs": [
+        "draw.sketchbook",
+        "draw.checking"
+      ],
+      "viz": [
+        "ar-sort"
+      ]
+    }
+  ]
+}

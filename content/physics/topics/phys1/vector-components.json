@@ -1,0 +1,105 @@
+{
+  "id": "phys1.vector-components",
+  "slug": "vector-components",
+  "ladder": "physics",
+  "course": "phys1",
+  "unit": "motion-2d",
+  "title": "Vectors and Their Components",
+  "short": "Split a vector into x- and y-components with sine and cosine.",
+  "trouble": "Students use sine for the x-component every time, instead of checking which side is next to the angle.",
+  "prereqs": [
+    "phys1.average-velocity",
+    "geo.trig-ratios"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-vectors",
+    "vectors2d"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Displacement, <a href=\"/physics/physics-1/average-velocity/\">velocity</a>, acceleration and force all have a size and a direction: they are <b>vectors</b>. In two dimensions the easiest way to handle a vector is to split it into an $x$-part and a $y$-part, using the <a href=\"/math/geometry/trig-ratios/\">Sine, Cosine and Tangent</a> you know from geometry."
+      },
+      {
+        "t": "key",
+        "html": "A vector of magnitude $A$ at angle $\\theta$ from the $+x$ axis has components $A_x = A\\cos\\theta$ and $A_y = A\\sin\\theta$. In general: the component along the side <b>adjacent</b> to the angle uses cosine; the one <b>opposite</b> uses sine."
+      },
+      {
+        "t": "why",
+        "html": "Draw the vector as the hypotenuse of a right triangle whose legs lie along the axes. The legs are the components. Cosine is adjacent over hypotenuse, so the adjacent leg is $A\\cos\\theta$; sine is opposite over hypotenuse, so the opposite leg is $A\\sin\\theta$. Which leg is \"adjacent\" depends on which axis the angle is measured from, not on whether it is $x$ or $y$."
+      },
+      {
+        "t": "viz",
+        "name": "ph-vectors",
+        "opts": {
+          "mode": "components",
+          "vecs": [
+            {
+              "mag": 50,
+              "ang": 30,
+              "label": "F"
+            }
+          ],
+          "units": "N",
+          "task": "Drag the tip of F. Watch which component shrinks as the angle grows."
+        },
+        "cap": "A 50 N force at 30°: Fx = 50 cos 30° = 43.3 N and Fy = 50 sin 30° = 25 N."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Angle from the horizontal",
+        "q": "A rope pulls a sled with $80\\ \\text{N}$ at $25^\\circ$ above the horizontal. Find the components.",
+        "steps": [
+          "The angle is measured from $x$, so $x$ is adjacent: $F_x = 80\\cos 25^\\circ \\approx 72.5\\ \\text{N}$.",
+          "$F_y = 80\\sin 25^\\circ \\approx 33.8\\ \\text{N}$."
+        ],
+        "a": "$F_x \\approx 72.5\\ \\text{N}$, $F_y \\approx 33.8\\ \\text{N}$"
+      },
+      {
+        "t": "ex",
+        "title": "Angle from the vertical",
+        "q": "A kicked ball leaves at $15\\ \\text{m/s}$, $20^\\circ$ from the vertical, leaning toward $+x$. Find $v_x$.",
+        "steps": [
+          "Now the angle is measured from the $y$ axis, so $y$ is adjacent and $x$ is opposite.",
+          "$v_x = 15\\sin 20^\\circ \\approx 5.13\\ \\text{m/s}$ and $v_y = 15\\cos 20^\\circ \\approx 14.1\\ \\text{m/s}$."
+        ],
+        "a": "$v_x \\approx 5.13\\ \\text{m/s}$"
+      },
+      {
+        "t": "ex",
+        "title": "Directions with signs",
+        "q": "A hiker's displacement is $300\\ \\text{m}$ at $40^\\circ$ south of west. With east $+x$ and north $+y$, find the components.",
+        "steps": [
+          "\"South of west\": start pointing west, turn $40^\\circ$ toward south. The angle is measured from the $x$ axis (west).",
+          "Sizes: $300\\cos 40^\\circ \\approx 230\\ \\text{m}$ (along $x$) and $300\\sin 40^\\circ \\approx 193\\ \\text{m}$ (along $y$).",
+          "Signs: west is $-x$ and south is $-y$, so $d_x \\approx -230\\ \\text{m}$ and $d_y \\approx -193\\ \\text{m}$."
+        ],
+        "a": "$d_x \\approx -230\\ \\text{m}$, $d_y \\approx -193\\ \\text{m}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Using sine for the $x$-component every time (or cosine every time). It depends on where the angle is measured from. Quick checks: as $\\theta \\to 0$ from an axis, the component along that axis should approach the whole vector (cosine does that). And the two components must satisfy $A_x^2 + A_y^2 = A^2$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Physics 2e, Section 3.3 Vector Addition and Subtraction: Analytical Methods"
+      },
+      {
+        "name": "OpenStax University Physics Volume 1, Section 2.2 Coordinate Systems and Components of a Vector"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

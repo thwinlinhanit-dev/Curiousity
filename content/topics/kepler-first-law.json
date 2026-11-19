@@ -1,0 +1,129 @@
+{
+  "id": "astro.kepler-first-law",
+  "slug": "kepler-first-law",
+  "course": "astro",
+  "courseTitle": "Astronomy",
+  "unit": "orbits",
+  "unitTitle": "Gravity and Orbits",
+  "title": "Kepler's First Law: Ellipses",
+  "short": "Planets move on ellipses with the Sun at one focus, and eccentricity measures how stretched each one is.",
+  "trouble": "Students think planetary orbits are long, thin ellipses, when most are nearly circles.",
+  "prereqs": [
+    "astro.heliocentric-model"
+  ],
+  "xp": 1,
+  "viz": [
+    "ph-orbit"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Copernicus kept one old idea from the <a href=\"/physics/astronomy/heliocentric-model/\">Earth-centered model</a>: orbits had to be perfect circles. His predictions were better than Ptolemy's, but Mars still drifted away from them. Johannes Kepler spent years fitting Tycho Brahe's careful measurements of Mars and in 1609 found the answer: the orbit is not a circle but an <b>ellipse</b>."
+      },
+      {
+        "t": "list",
+        "items": [
+          "An ellipse is a stretched circle. It has two special points inside it, the <b>foci</b>. For every point on the ellipse, the distances to the two foci add up to the same total, $2a$.",
+          "The <b>semi-major axis</b> $a$ is half the long axis; it is the planet's average distance from the Sun.",
+          "The <b>eccentricity</b> $e = c/a$, where $c$ is the distance from the center to a focus. $e = 0$ is a circle; $e$ close to $1$ is long and thin."
+        ]
+      },
+      {
+        "t": "why",
+        "html": "Kepler's first law: each planet moves on an ellipse with the Sun at one focus; the other focus is empty. Since the Sun sits a distance $c = ae$ from the center, the closest point (<b>perihelion</b>) is $a - ae = a(1 - e)$ from the Sun and the farthest point (<b>aphelion</b>) is $a + ae = a(1 + e)$. Adding them gives $2a$; subtracting gives $2ae$. Newton later showed that an inverse-square force like gravity produces exactly these ellipses."
+      },
+      {
+        "t": "key",
+        "html": "Orbits are ellipses with the Sun at one focus. Perihelion $= a(1 - e)$, aphelion $= a(1 + e)$, and $a$ is their average. For the planets, $e$ is small: their ellipses are nearly circles."
+      },
+      {
+        "t": "viz",
+        "name": "ph-orbit",
+        "opts": {
+          "mode": "kepler",
+          "a": 1,
+          "e": 0.5,
+          "task": "Drag the eccentricity slider from 0 to 0.9. Watch how far the Sun moves from the center, then set it to 0.017, Earth's value."
+        },
+        "cap": "An elliptical orbit with the Sun at one focus. The dashed line is the long axis, from perihelion to aphelion."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Body",
+          "$a$ (AU)",
+          "$e$"
+        ],
+        "rows": [
+          [
+            "Venus",
+            "0.723",
+            "0.007"
+          ],
+          [
+            "Earth",
+            "1.000",
+            "0.017"
+          ],
+          [
+            "Mars",
+            "1.524",
+            "0.093"
+          ],
+          [
+            "Mercury",
+            "0.387",
+            "0.206"
+          ],
+          [
+            "Pluto",
+            "39.5",
+            "0.249"
+          ],
+          [
+            "Halley's Comet",
+            "17.8",
+            "0.967"
+          ]
+        ],
+        "cap": "Semi-major axes and eccentricities (NASA planetary fact sheets)."
+      },
+      {
+        "t": "h",
+        "text": "Worked example"
+      },
+      {
+        "t": "ex",
+        "title": "Mercury's range",
+        "q": "Mercury has $a = 0.387$ AU and $e = 0.206$. How close and how far from the Sun does it get?",
+        "steps": [
+          "Perihelion: $0.387 \\times (1 - 0.206) = 0.387 \\times 0.794 = 0.307$ AU.",
+          "Aphelion: $0.387 \\times (1 + 0.206) = 0.387 \\times 1.206 = 0.467$ AU.",
+          "Check: the average of $0.307$ and $0.467$ is $0.387$ AU, which is $a$."
+        ],
+        "a": "From $0.307$ AU to $0.467$ AU."
+      },
+      {
+        "t": "mistake",
+        "html": "Textbook drawings stretch planetary orbits so the ellipse is easy to see, and many people come away thinking orbits are long, thin ovals. Real planetary orbits are nearly circles: Earth's $e = 0.017$ means the Sun is only $1.7\\%$ of the way from the center to the edge. Long, thin orbits belong to comets. Check: Earth's distance from the Sun changes by only about $3\\%$ over the year."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Astronomy 2e, section 3.1, The Laws of Planetary Motion"
+      },
+      {
+        "name": "NASA Planetary Fact Sheets (orbital elements)"
+      },
+      {
+        "name": "NGSS HS-ESS1-4"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

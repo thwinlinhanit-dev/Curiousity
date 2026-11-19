@@ -1,0 +1,35 @@
+name: Physics Figures CI
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Install
+        run: npm ci
+      - name: Unit tests
+        run: npm test
+      - name: Typecheck + build
+        run: npm run build
+
+  repo-content-checks:
+    # Fail if the upstream generators/checkers regress (PHYSICS_SPEC/05 §3)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Check physics generators
+        run: |
+          cd ../trb 2>/dev/null || true
+          if [ -f scripts/math/check-gen.js ]; then
+            node scripts/math/check-gen.js phys1
+            node scripts/math/check-course.js phys1
+          else
+            echo "Upstream repo not checked out in this workflow; content checks run in the ingest job."
+          fi

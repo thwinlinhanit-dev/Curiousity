@@ -1,0 +1,134 @@
+{
+  "id": "calc3.dot-product-projections",
+  "slug": "dot-product-projections",
+  "ladder": "math",
+  "course": "calc3",
+  "unit": "space",
+  "title": "The Dot Product and Projections",
+  "short": "u · v = |u||v| cos θ, and the projection of one vector on another.",
+  "trouble": "Students mix up the scalar projection and the vector projection.",
+  "prereqs": [
+    "calc3.vectors-in-space",
+    "pre.vector-projection"
+  ],
+  "xp": 2,
+  "viz": [
+    "vectors3d"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In precalculus you met <a href=\"/math/precalculus/dot-product/\">the dot product</a> and <a href=\"/math/precalculus/vector-projection/\">projections</a> in the plane. In space they work the same way with one more term: $\\mathbf{u} \\cdot \\mathbf{v} = u_1v_1 + u_2v_2 + u_3v_3$. The result is a number, and that number measures how much the two vectors point the same way."
+      },
+      {
+        "t": "key",
+        "html": "$$\\mathbf{u} \\cdot \\mathbf{v} = u_1v_1 + u_2v_2 + u_3v_3 = |\\mathbf{u}||\\mathbf{v}|\\cos\\theta.$$\n  Positive: the angle is acute. Zero: the vectors are <b>orthogonal</b>. Negative: obtuse. Projecting $\\mathbf{u}$ onto $\\mathbf{v}$:\n  $$\\operatorname{comp}_{\\mathbf{v}}\\mathbf{u} = \\frac{\\mathbf{u} \\cdot \\mathbf{v}}{|\\mathbf{v}|} \\ \\text{(a number)}, \\qquad \\operatorname{proj}_{\\mathbf{v}}\\mathbf{u} = \\frac{\\mathbf{u} \\cdot \\mathbf{v}}{|\\mathbf{v}|^2}\\,\\mathbf{v} \\ \\text{(a vector)}.$$"
+      },
+      {
+        "t": "why",
+        "html": "Why does a sum of products know the angle? Put $\\mathbf{u}$, $\\mathbf{v}$ and $\\mathbf{u} - \\mathbf{v}$ into a triangle. The law of cosines says\n  $$|\\mathbf{u} - \\mathbf{v}|^2 = |\\mathbf{u}|^2 + |\\mathbf{v}|^2 - 2|\\mathbf{u}||\\mathbf{v}|\\cos\\theta.$$\n  Expanding the left side with components gives $$(u_1 - v_1)^2 + (u_2 - v_2)^2 + (u_3 - v_3)^2 = |\\mathbf{u}|^2 + |\\mathbf{v}|^2 - 2(u_1v_1 + u_2v_2 + u_3v_3).$$ Compare the two: $u_1v_1 + u_2v_2 + u_3v_3 = |\\mathbf{u}||\\mathbf{v}|\\cos\\theta$.<br>For the projection, the shadow of $\\mathbf{u}$ on the line of $\\mathbf{v}$ has signed length $|\\mathbf{u}|\\cos\\theta = \\frac{\\mathbf{u} \\cdot \\mathbf{v}}{|\\mathbf{v}|}$. To turn that length into a vector, multiply by the unit vector $\\frac{\\mathbf{v}}{|\\mathbf{v}|}$: that is where $|\\mathbf{v}|^2$ comes from."
+      },
+      {
+        "t": "viz",
+        "name": "vectors3d",
+        "opts": {
+          "u": [
+            1,
+            2,
+            2
+          ],
+          "v": [
+            2,
+            -1,
+            1
+          ],
+          "op": "dot",
+          "ops": [
+            "dot"
+          ],
+          "range": 3
+        },
+        "cap": "The gold arrow is the projection of $\\mathbf{u}$ onto $\\mathbf{v}$. Change the components: when the dot product is negative, the shadow points against $\\mathbf{v}$."
+      },
+      {
+        "t": "table",
+        "head": [
+          "",
+          "Scalar projection",
+          "Vector projection"
+        ],
+        "rows": [
+          [
+            "Formula",
+            "$\\frac{\\mathbf{u} \\cdot \\mathbf{v}}{|\\mathbf{v}|}$",
+            "$\\frac{\\mathbf{u} \\cdot \\mathbf{v}}{|\\mathbf{v}|^2}\\mathbf{v}$"
+          ],
+          [
+            "What it is",
+            "a signed length (a number)",
+            "an arrow along $\\mathbf{v}$"
+          ],
+          [
+            "Its size",
+            "$|\\mathbf{u}||\\cos\\theta|$",
+            "the same, $|\\mathbf{u}||\\cos\\theta|$"
+          ]
+        ],
+        "cap": "Same shadow, two ways to report it."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "An angle",
+        "q": "Find the angle between $\\mathbf{u} = \\langle 1, 1, 0 \\rangle$ and $\\mathbf{v} = \\langle 1, 0, 1 \\rangle$.",
+        "steps": [
+          "$\\mathbf{u} \\cdot \\mathbf{v} = 1 + 0 + 0 = 1$; $|\\mathbf{u}| = |\\mathbf{v}| = \\sqrt{2}$.",
+          "$\\cos\\theta = \\frac{1}{\\sqrt{2}\\sqrt{2}} = \\frac{1}{2}$.",
+          "$\\theta = 60^\\circ$ (or $\\frac{\\pi}{3}$)."
+        ],
+        "a": "${}60^\\circ$"
+      },
+      {
+        "t": "ex",
+        "title": "Both projections",
+        "q": "Project $\\mathbf{u} = \\langle 4, 5, -1 \\rangle$ onto $\\mathbf{v} = \\langle 1, 2, 2 \\rangle$.",
+        "steps": [
+          "$\\mathbf{u} \\cdot \\mathbf{v} = 4 + 10 - 2 = 12$ and $|\\mathbf{v}| = 3$.",
+          "Scalar projection: $\\frac{12}{3} = 4$.",
+          "Vector projection: $\\frac{12}{9}\\langle 1, 2, 2 \\rangle = \\left\\langle \\frac{4}{3}, \\frac{8}{3}, \\frac{8}{3} \\right\\rangle$, which has length ${}4$.",
+          "Check: what is left, $\\mathbf{u} - \\operatorname{proj}_{\\mathbf{v}}\\mathbf{u} = \\left\\langle \\frac{8}{3}, \\frac{7}{3}, -\\frac{11}{3} \\right\\rangle$, is orthogonal to $\\mathbf{v}$: $\\frac{8 + 14 - 22}{3} = 0$."
+        ],
+        "a": "$\\operatorname{comp}_{\\mathbf{v}}\\mathbf{u} = 4$, $\\operatorname{proj}_{\\mathbf{v}}\\mathbf{u} = \\left\\langle \\frac{4}{3}, \\frac{8}{3}, \\frac{8}{3} \\right\\rangle$"
+      },
+      {
+        "t": "ex",
+        "title": "Work",
+        "q": "A constant force $\\mathbf{F} = \\langle 2, 0, 5 \\rangle$ N pushes a crate from $(0, 0, 0)$ to $(3, 4, 1)$ m. Find the work done.",
+        "steps": [
+          "Only the part of the force along the motion does work: $W = \\mathbf{F} \\cdot \\mathbf{D}$.",
+          "$\\mathbf{D} = \\langle 3, 4, 1 \\rangle$, so $W = 6 + 0 + 5 = 11$ J."
+        ],
+        "a": "${}11$ J"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Mixing up the two projections.</b> The scalar projection is a number; the vector projection is a vector. Dividing by $|\\mathbf{v}|$ once gives the number; dividing by $|\\mathbf{v}|^2$ and then multiplying by $\\mathbf{v}$ gives the vector. Quick check: the length of your vector projection must equal the absolute value of the scalar projection. Also watch the order: \"onto $\\mathbf{v}$\" means you divide by the length of $\\mathbf{v}$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 3, 2.3 The Dot Product"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

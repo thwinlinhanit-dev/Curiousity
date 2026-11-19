@@ -1,0 +1,123 @@
+{
+  "id": "trad.existential-import",
+  "slug": "existential-import",
+  "ladder": "logic",
+  "course": "trad",
+  "unit": "propositions",
+  "title": "Existential Import",
+  "short": "In the modern (Boolean) reading, A and E say nothing about whether S exists; I and O do. The traditional reading assumes the subject class is not empty.",
+  "trouble": "Learners assume \"All unicorns are white\" claims there are unicorns. On the Boolean reading it only says there are no non-white unicorns.",
+  "prereqs": [
+    "trad.venn-propositions"
+  ],
+  "xp": 3,
+  "viz": [
+    "lg-venn3",
+    "lg-square"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A <a href=\"/logic/traditional-logic/venn-propositions/\">Venn diagram</a> for \"All S are P\" shades region 1 and puts no X anywhere. So the picture does not say that any S exist. That raises a real question: does \"All S are P\" claim that there are S?"
+      },
+      {
+        "t": "key",
+        "html": "On the <b>modern (Boolean) reading</b>, A and E say nothing about whether the subject class has members; only I and O assert that something exists. On the <b>traditional (Aristotelian) reading</b>, every statement assumes its subject class is not empty."
+      },
+      {
+        "t": "why",
+        "html": "Consider \"All trespassers will be prosecuted.\" The sign is true even if no one ever trespasses: it says there are no unprosecuted trespassers, not that trespassers exist. That is the Boolean reading of A: an empty region, nothing more. \"Some trespassers were prosecuted\", by contrast, says at least one exists. The traditional reading instead adds an assumption to every statement, which suits talk about familiar classes (birds, books) and fails for empty ones (unicorns)."
+      },
+      {
+        "t": "viz",
+        "name": "lg-venn3",
+        "opts": {
+          "terms": [
+            "unicorns",
+            "white creatures"
+          ],
+          "circles": 2,
+          "props": [
+            "All unicorns are white creatures"
+          ]
+        },
+        "cap": "Boolean reading: only region 1 is shaded. No X, so no claim that unicorns exist."
+      },
+      {
+        "t": "table",
+        "head": [
+          "",
+          "Boolean (modern)",
+          "Traditional"
+        ],
+        "rows": [
+          [
+            "A, E assert S exists?",
+            "no",
+            "yes (assumed)"
+          ],
+          [
+            "I, O assert S exists?",
+            "yes",
+            "yes"
+          ],
+          [
+            "If S is empty",
+            "A and E true, I and O false",
+            "the reading does not apply"
+          ]
+        ],
+        "cap": "Existential import on the two readings."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "An empty subject class",
+        "q": "There are no dragons. On the Boolean reading, is \"All dragons are creatures that breathe fire\" true?",
+        "steps": [
+          "A says that region 1 (dragons that do not breathe fire) is empty.",
+          "With no dragons at all, that region is certainly empty."
+        ],
+        "a": "true"
+      },
+      {
+        "t": "ex",
+        "title": "A particular statement",
+        "q": "There are no dragons. Is \"Some dragons are friendly creatures\" true on the Boolean reading?",
+        "steps": [
+          "I says there is at least one thing in region 2 (dragons that are friendly creatures).",
+          "There are no dragons, so nothing is there."
+        ],
+        "a": "false"
+      },
+      {
+        "t": "mistake",
+        "html": "Assuming \"All unicorns are white\" claims there are unicorns. On the Boolean reading it only says there are no non-white unicorns, which is true because there are no unicorns at all. Check: is there an X in the diagram? Only an X asserts existence."
+      },
+      {
+        "t": "note",
+        "html": "This course uses the Boolean reading by default and says so whenever the traditional reading is used, as in the square of opposition and conditionally valid syllogisms."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Patrick J. Hurley, A Concise Introduction to Logic, 4.3 Venn Diagrams and the Modern Square of Opposition"
+      },
+      {
+        "name": "Patrick J. Hurley, A Concise Introduction to Logic, 4.6 Venn Diagrams and the Traditional Standpoint"
+      },
+      {
+        "name": "Stanford Encyclopedia of Philosophy, \"The Traditional Square of Opposition\""
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

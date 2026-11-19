@@ -1,0 +1,843 @@
+{
+  "key": "sym",
+  "ladder": "logic",
+  "title": "Symbolic Logic",
+  "short": "Symbolic Logic",
+  "after": [
+    "trad"
+  ],
+  "units": [
+    {
+      "key": "symbols",
+      "title": "Symbols and Translation",
+      "blurb": "Statements as letters joined by five connectives (¬ ∧ ∨ → ↔): reading formulas, finding the main connective, and translating English to symbols and back."
+    },
+    {
+      "key": "truth-tables",
+      "title": "Truth Tables",
+      "blurb": "Truth values, full truth tables, tautologies and equivalences, and deciding validity by a full table or a short one."
+    },
+    {
+      "key": "inference",
+      "title": "Natural Deduction: Rules of Inference",
+      "blurb": "Formal proofs line by line with the eight rules of inference: MP, MT, HS, DS, CD, Simp, Conj and Add."
+    },
+    {
+      "key": "replacement",
+      "title": "Rules of Replacement",
+      "blurb": "Equivalences that can rewrite any part of a line: DN, DM, Com, Assoc, Dist, Trans, Impl, Equiv, Exp and Taut."
+    },
+    {
+      "key": "cp-ip",
+      "title": "Conditional and Indirect Proof",
+      "blurb": "Proofs with assumptions: conditional proof (CP), indirect proof (IP), and nested subproofs, which can prove theorems from no premises at all."
+    },
+    {
+      "key": "predicate",
+      "title": "Predicate Logic: Translation and Truth",
+      "blurb": "Inside the statement: predicates, names and quantifiers (∀ ∃), translating categorical and harder sentences, quantifier negation, and truth in a small world."
+    },
+    {
+      "key": "predicate-proofs",
+      "title": "Predicate Logic: Proofs",
+      "blurb": "The four quantifier rules (UI, EI, UG, EG) and their restrictions, and proofs that use them with CP, IP and QN."
+    },
+    {
+      "key": "relations",
+      "title": "Relations and Identity",
+      "blurb": "Predicates of two or more places, the order of quantifiers, properties of relations, and identity for \"only\", \"at least\", \"at most\" and \"exactly\"."
+    },
+    {
+      "key": "metatheory",
+      "title": "Soundness and Completeness",
+      "blurb": "Stepping back: the difference between provable and valid, and why a good proof system is both sound and complete."
+    }
+  ],
+  "topics": [
+    {
+      "id": "sym.simple-compound",
+      "slug": "simple-compound",
+      "course": "sym",
+      "unit": "symbols",
+      "title": "Simple and Compound Statements",
+      "short": "A simple statement has no other statement as a part; a compound statement is built from simpler ones with words like not, and, or, if.",
+      "prereqs": [
+        "trad.hypothetical-propositions"
+      ],
+      "viz": [
+        "lg-sort"
+      ]
+    },
+    {
+      "id": "sym.connectives",
+      "slug": "connectives",
+      "course": "sym",
+      "unit": "symbols",
+      "title": "The Five Connectives",
+      "short": "Negation ¬, conjunction ∧, disjunction ∨, conditional → and biconditional ↔ build compound formulas from statement letters.",
+      "prereqs": [
+        "sym.simple-compound"
+      ],
+      "viz": [
+        "lg-truthtable"
+      ]
+    },
+    {
+      "id": "sym.main-connective",
+      "slug": "main-connective",
+      "course": "sym",
+      "unit": "symbols",
+      "title": "The Main Connective and Scope",
+      "short": "Parentheses group a formula; the main connective is the one with the widest scope, applied last, and it decides what kind of statement the formula is.",
+      "prereqs": [
+        "sym.connectives"
+      ],
+      "viz": [
+        "lg-truthtable"
+      ]
+    },
+    {
+      "id": "sym.translate-not-and-or",
+      "slug": "translate-not-and-or",
+      "course": "sym",
+      "unit": "symbols",
+      "title": "Translating Not, And and Or",
+      "short": "\"But\", \"although\" and \"yet\" are ∧; \"neither p nor q\" is ¬(p ∨ q) or ¬p ∧ ¬q; \"not both\" is ¬(p ∧ q).",
+      "prereqs": [
+        "sym.main-connective"
+      ],
+      "viz": [
+        "lg-sort"
+      ]
+    },
+    {
+      "id": "sym.translate-conditionals",
+      "slug": "translate-conditionals",
+      "course": "sym",
+      "unit": "symbols",
+      "title": "Translating Conditionals",
+      "short": "\"If p, q\", \"q if p\", \"p only if q\", \"q provided that p\", \"p is sufficient for q\" and \"q is necessary for p\" are all p → q; \"p unless q\" is ¬q → p, or p ∨ q.",
+      "prereqs": [
+        "sym.translate-not-and-or"
+      ],
+      "viz": [
+        "lg-sort"
+      ]
+    },
+    {
+      "id": "sym.translate-biconditional",
+      "slug": "translate-biconditional",
+      "course": "sym",
+      "unit": "symbols",
+      "title": "Biconditionals and Longer Sentences",
+      "short": "\"p if and only if q\" and \"p just in case q\" are p ↔ q; longer sentences are translated from the main connective inward.",
+      "prereqs": [
+        "sym.translate-conditionals"
+      ],
+      "viz": [
+        "lg-sort"
+      ]
+    },
+    {
+      "id": "sym.symbols-to-english",
+      "slug": "symbols-to-english",
+      "course": "sym",
+      "unit": "symbols",
+      "title": "From Symbols Back to English",
+      "short": "Read a formula aloud in plain English that keeps its grouping, using \"either…or\", \"both…and\" and \"it is not the case that\".",
+      "prereqs": [
+        "sym.translate-biconditional"
+      ],
+      "viz": [
+        "lg-sort"
+      ]
+    },
+    {
+      "id": "sym.truth-functions",
+      "slug": "truth-functions",
+      "course": "sym",
+      "unit": "truth-tables",
+      "title": "Truth Values of the Connectives",
+      "short": "Each connective is a truth function: the truth value of the compound depends only on the values of its parts.",
+      "prereqs": [
+        "sym.connectives"
+      ],
+      "viz": [
+        "lg-truthtable"
+      ]
+    },
+    {
+      "id": "sym.compute-truth-value",
+      "slug": "compute-truth-value",
+      "course": "sym",
+      "unit": "truth-tables",
+      "title": "Computing a Truth Value",
+      "short": "Given the values of the letters, work from the innermost parts outward to find the value of the whole formula.",
+      "prereqs": [
+        "sym.truth-functions",
+        "sym.main-connective"
+      ],
+      "viz": [
+        "lg-truthtable"
+      ]
+    },
+    {
+      "id": "sym.truth-tables",
+      "slug": "truth-tables",
+      "course": "sym",
+      "unit": "truth-tables",
+      "title": "Building a Truth Table",
+      "short": "A formula with n letters has 2ⁿ rows; list them in a fixed order and fill a column for each part, ending with the main connective.",
+      "prereqs": [
+        "sym.compute-truth-value"
+      ],
+      "viz": [
+        "lg-truthtable"
+      ]
+    },
+    {
+      "id": "sym.tautology-contradiction",
+      "slug": "tautology-contradiction",
+      "course": "sym",
+      "unit": "truth-tables",
+      "title": "Tautologies, Contradictions and Contingent Statements",
+      "short": "A tautology is true in every row, a self-contradiction false in every row, and a contingent statement true in some rows and false in others.",
+      "prereqs": [
+        "sym.truth-tables"
+      ],
+      "viz": [
+        "lg-truthtable"
+      ]
+    },
+    {
+      "id": "sym.equivalence",
+      "slug": "equivalence",
+      "course": "sym",
+      "unit": "truth-tables",
+      "title": "Logical Equivalence",
+      "short": "Two formulas are logically equivalent when they have the same truth value in every row; then their biconditional is a tautology.",
+      "prereqs": [
+        "sym.tautology-contradiction"
+      ],
+      "viz": [
+        "lg-truthtable"
+      ]
+    },
+    {
+      "id": "sym.de-morgan",
+      "slug": "de-morgan",
+      "course": "sym",
+      "unit": "truth-tables",
+      "title": "De Morgan's Laws",
+      "short": "¬(p ∧ q) is equivalent to ¬p ∨ ¬q, and ¬(p ∨ q) to ¬p ∧ ¬q: moving a negation inside flips ∧ and ∨.",
+      "prereqs": [
+        "sym.equivalence"
+      ],
+      "viz": [
+        "lg-truthtable"
+      ]
+    },
+    {
+      "id": "sym.conditional-family",
+      "slug": "conditional-family",
+      "course": "sym",
+      "unit": "truth-tables",
+      "title": "Converse, Inverse and Contrapositive",
+      "short": "p → q is equivalent to its contrapositive ¬q → ¬p, but not to its converse q → p or its inverse ¬p → ¬q.",
+      "prereqs": [
+        "sym.equivalence"
+      ],
+      "viz": [
+        "lg-truthtable"
+      ]
+    },
+    {
+      "id": "sym.statement-relations",
+      "slug": "statement-relations",
+      "course": "sym",
+      "unit": "truth-tables",
+      "title": "Consistent, Inconsistent and Contradictory",
+      "short": "Statements are consistent if some row makes them all true; two statements are contradictory if they have opposite values in every row.",
+      "prereqs": [
+        "sym.tautology-contradiction"
+      ],
+      "viz": [
+        "lg-truthtable"
+      ]
+    },
+    {
+      "id": "sym.validity-truth-table",
+      "slug": "validity-truth-table",
+      "course": "sym",
+      "unit": "truth-tables",
+      "title": "Validity by Truth Table",
+      "short": "An argument is valid when no row makes every premise true and the conclusion false.",
+      "prereqs": [
+        "sym.tautology-contradiction",
+        "informal.validity"
+      ],
+      "viz": [
+        "lg-truthtable"
+      ]
+    },
+    {
+      "id": "sym.short-truth-table",
+      "slug": "short-truth-table",
+      "course": "sym",
+      "unit": "truth-tables",
+      "title": "The Short Truth Table Method",
+      "short": "Assume the premises true and the conclusion false, then work out the forced values; if that leads to a contradiction, the argument is valid.",
+      "prereqs": [
+        "sym.validity-truth-table"
+      ],
+      "viz": [
+        "lg-truthtable"
+      ]
+    },
+    {
+      "id": "sym.argument-forms",
+      "slug": "argument-forms",
+      "course": "sym",
+      "unit": "truth-tables",
+      "title": "Valid and Invalid Argument Forms",
+      "short": "Modus ponens, modus tollens, hypothetical and disjunctive syllogism are valid forms; affirming the consequent and denying the antecedent are invalid.",
+      "prereqs": [
+        "sym.validity-truth-table",
+        "sym.conditional-family",
+        "trad.hypothetical-fallacies"
+      ],
+      "viz": [
+        "lg-truthtable"
+      ]
+    },
+    {
+      "id": "sym.proofs-intro",
+      "slug": "proofs-intro",
+      "course": "sym",
+      "unit": "inference",
+      "title": "What a Formal Proof Is",
+      "short": "A proof is a numbered list of lines; each is a premise or follows from earlier lines by a rule, written beside it with the line numbers it uses.",
+      "prereqs": [
+        "sym.argument-forms"
+      ],
+      "viz": [
+        "lg-proof"
+      ]
+    },
+    {
+      "id": "sym.mp-mt",
+      "slug": "mp-mt",
+      "course": "sym",
+      "unit": "inference",
+      "title": "Modus Ponens and Modus Tollens (MP, MT)",
+      "short": "MP: from p → q and p, infer q. MT: from p → q and ¬q, infer ¬p. The letters can stand for any formulas.",
+      "prereqs": [
+        "sym.proofs-intro"
+      ],
+      "viz": [
+        "lg-proof"
+      ]
+    },
+    {
+      "id": "sym.hs-ds",
+      "slug": "hs-ds",
+      "course": "sym",
+      "unit": "inference",
+      "title": "Hypothetical and Disjunctive Syllogism (HS, DS)",
+      "short": "HS: from p → q and q → r, infer p → r. DS: from p ∨ q and ¬p, infer q.",
+      "prereqs": [
+        "sym.mp-mt"
+      ],
+      "viz": [
+        "lg-proof"
+      ]
+    },
+    {
+      "id": "sym.simp-conj-add",
+      "slug": "simp-conj-add",
+      "course": "sym",
+      "unit": "inference",
+      "title": "Simplification, Conjunction and Addition (Simp, Conj, Add)",
+      "short": "Simp: from p ∧ q, infer p. Conj: from p and q, infer p ∧ q. Add: from p, infer p ∨ q for any q at all.",
+      "prereqs": [
+        "sym.hs-ds"
+      ],
+      "viz": [
+        "lg-proof"
+      ]
+    },
+    {
+      "id": "sym.cd",
+      "slug": "cd",
+      "course": "sym",
+      "unit": "inference",
+      "title": "Constructive Dilemma (CD)",
+      "short": "CD: from (p → q) ∧ (r → s) and p ∨ r, infer q ∨ s.",
+      "prereqs": [
+        "sym.simp-conj-add"
+      ],
+      "viz": [
+        "lg-proof"
+      ]
+    },
+    {
+      "id": "sym.substitution-instances",
+      "slug": "substitution-instances",
+      "course": "sym",
+      "unit": "inference",
+      "title": "Matching a Rule to Whole Lines",
+      "short": "A rule of inference applies only to whole lines whose main connectives match the rule's pattern, with any formulas in place of p, q, r and s.",
+      "prereqs": [
+        "sym.cd"
+      ],
+      "viz": [
+        "lg-proof"
+      ]
+    },
+    {
+      "id": "sym.justify-lines",
+      "slug": "justify-lines",
+      "course": "sym",
+      "unit": "inference",
+      "title": "Justifying Proof Lines",
+      "short": "Name the rule and the earlier lines that justify each line of a finished proof.",
+      "prereqs": [
+        "sym.substitution-instances"
+      ],
+      "viz": [
+        "lg-proof"
+      ]
+    },
+    {
+      "id": "sym.first-proofs",
+      "slug": "first-proofs",
+      "course": "sym",
+      "unit": "inference",
+      "title": "Building Short Proofs",
+      "short": "Supply the missing lines of short proofs, choosing each step by what the conclusion needs.",
+      "prereqs": [
+        "sym.justify-lines"
+      ],
+      "viz": [
+        "lg-proof"
+      ]
+    },
+    {
+      "id": "sym.proof-strategy",
+      "slug": "proof-strategy",
+      "course": "sym",
+      "unit": "inference",
+      "title": "Proof Strategy: Working Backward",
+      "short": "Find the conclusion inside the premises, then plan which rule would produce it and what that rule needs.",
+      "prereqs": [
+        "sym.first-proofs"
+      ],
+      "viz": [
+        "lg-proof"
+      ]
+    },
+    {
+      "id": "sym.replacement-intro",
+      "slug": "replacement-intro",
+      "course": "sym",
+      "unit": "replacement",
+      "title": "Rules of Replacement",
+      "short": "A replacement rule says two forms are equivalent, so either can replace the other anywhere, even inside a line, in either direction.",
+      "prereqs": [
+        "sym.proof-strategy",
+        "sym.de-morgan"
+      ],
+      "viz": [
+        "lg-proof"
+      ]
+    },
+    {
+      "id": "sym.dm-dn",
+      "slug": "dm-dn",
+      "course": "sym",
+      "unit": "replacement",
+      "title": "De Morgan and Double Negation (DM, DN)",
+      "short": "DM: ¬(p ∧ q) :: ¬p ∨ ¬q and ¬(p ∨ q) :: ¬p ∧ ¬q. DN: p :: ¬¬p.",
+      "prereqs": [
+        "sym.replacement-intro"
+      ],
+      "viz": [
+        "lg-proof"
+      ]
+    },
+    {
+      "id": "sym.com-assoc-dist",
+      "slug": "com-assoc-dist",
+      "course": "sym",
+      "unit": "replacement",
+      "title": "Commutation, Association and Distribution (Com, Assoc, Dist)",
+      "short": "Com swaps the sides of ∧ or ∨; Assoc regroups three parts joined by the same connective; Dist spreads ∧ over ∨ and ∨ over ∧.",
+      "prereqs": [
+        "sym.dm-dn"
+      ],
+      "viz": [
+        "lg-proof"
+      ]
+    },
+    {
+      "id": "sym.trans-impl",
+      "slug": "trans-impl",
+      "course": "sym",
+      "unit": "replacement",
+      "title": "Transposition and Material Implication (Trans, Impl)",
+      "short": "Trans: p → q :: ¬q → ¬p. Impl: p → q :: ¬p ∨ q.",
+      "prereqs": [
+        "sym.com-assoc-dist",
+        "sym.conditional-family"
+      ],
+      "viz": [
+        "lg-proof"
+      ]
+    },
+    {
+      "id": "sym.equiv-exp-taut",
+      "slug": "equiv-exp-taut",
+      "course": "sym",
+      "unit": "replacement",
+      "title": "Equivalence, Exportation and Tautology (Equiv, Exp, Taut)",
+      "short": "Equiv: p ↔ q :: (p → q) ∧ (q → p), or (p ∧ q) ∨ (¬p ∧ ¬q). Exp: (p ∧ q) → r :: p → (q → r). Taut: p :: p ∧ p and p :: p ∨ p.",
+      "prereqs": [
+        "sym.trans-impl"
+      ],
+      "viz": [
+        "lg-proof"
+      ]
+    },
+    {
+      "id": "sym.replacement-proofs",
+      "slug": "replacement-proofs",
+      "course": "sym",
+      "unit": "replacement",
+      "title": "Proofs with All Eighteen Rules",
+      "short": "Combine rules of inference and replacement, often reshaping a line with replacement until an inference rule fits.",
+      "prereqs": [
+        "sym.equiv-exp-taut"
+      ],
+      "viz": [
+        "lg-proof"
+      ]
+    },
+    {
+      "id": "sym.conditional-proof",
+      "slug": "conditional-proof",
+      "course": "sym",
+      "unit": "cp-ip",
+      "title": "Conditional Proof (CP)",
+      "short": "To prove p → q, assume p, derive q inside an indented subproof, then close it and write p → q.",
+      "prereqs": [
+        "sym.replacement-proofs"
+      ],
+      "viz": [
+        "lg-proof"
+      ]
+    },
+    {
+      "id": "sym.indirect-proof",
+      "slug": "indirect-proof",
+      "course": "sym",
+      "unit": "cp-ip",
+      "title": "Indirect Proof (IP)",
+      "short": "To prove p, assume ¬p, derive a contradiction q ∧ ¬q, then close the subproof and write p.",
+      "prereqs": [
+        "sym.conditional-proof"
+      ],
+      "viz": [
+        "lg-proof"
+      ]
+    },
+    {
+      "id": "sym.nested-subproofs",
+      "slug": "nested-subproofs",
+      "course": "sym",
+      "unit": "cp-ip",
+      "title": "Nested Subproofs",
+      "short": "Subproofs can sit inside other subproofs; each must be closed, innermost first, and a theorem can be proved this way from no premises at all.",
+      "prereqs": [
+        "sym.indirect-proof"
+      ],
+      "viz": [
+        "lg-proof"
+      ]
+    },
+    {
+      "id": "sym.predicates-constants",
+      "slug": "predicates-constants",
+      "course": "sym",
+      "unit": "predicate",
+      "title": "Predicates and Names",
+      "short": "A predicate letter stands for a property (F: is friendly) and a lowercase name for an individual (a: Ava); Fa says that Ava is friendly.",
+      "prereqs": [
+        "sym.simple-compound",
+        "trad.categorical-propositions"
+      ],
+      "viz": [
+        "lg-quantworld"
+      ]
+    },
+    {
+      "id": "sym.quantifiers",
+      "slug": "quantifiers",
+      "course": "sym",
+      "unit": "predicate",
+      "title": "The Quantifiers ∀ and ∃",
+      "short": "∀x Fx says everything is F; ∃x Fx says at least one thing is F. A variable is bound when a quantifier covers it.",
+      "prereqs": [
+        "sym.predicates-constants"
+      ],
+      "viz": [
+        "lg-quantworld"
+      ]
+    },
+    {
+      "id": "sym.translate-categorical",
+      "slug": "translate-categorical",
+      "course": "sym",
+      "unit": "predicate",
+      "title": "Translating A, E, I and O",
+      "short": "A: ∀x(Sx → Px). E: ∀x(Sx → ¬Px). I: ∃x(Sx ∧ Px). O: ∃x(Sx ∧ ¬Px).",
+      "prereqs": [
+        "sym.quantifiers",
+        "trad.aeio"
+      ],
+      "viz": [
+        "lg-quantworld"
+      ]
+    },
+    {
+      "id": "sym.translate-harder",
+      "slug": "translate-harder",
+      "course": "sym",
+      "unit": "predicate",
+      "title": "Translating Harder Quantified Sentences",
+      "short": "Handle \"only\", \"none but\", \"all except\", complex subjects (red cars) and complex predicates (fast or loud) inside one quantifier.",
+      "prereqs": [
+        "sym.translate-categorical",
+        "trad.only-exceptives"
+      ],
+      "viz": [
+        "lg-quantworld"
+      ]
+    },
+    {
+      "id": "sym.quantifier-negation",
+      "slug": "quantifier-negation",
+      "course": "sym",
+      "unit": "predicate",
+      "title": "Quantifier Negation",
+      "short": "¬∀x Fx is equivalent to ∃x ¬Fx, and ¬∃x Fx to ∀x ¬Fx: moving a negation across a quantifier flips ∀ and ∃.",
+      "prereqs": [
+        "sym.translate-categorical",
+        "sym.de-morgan"
+      ],
+      "viz": [
+        "lg-quantworld"
+      ]
+    },
+    {
+      "id": "sym.truth-in-world",
+      "slug": "truth-in-world",
+      "course": "sym",
+      "unit": "predicate",
+      "title": "Truth in a Small World",
+      "short": "In a world with a few named objects, ∀x Fx is true when every object is F, and ∃x Fx when at least one is.",
+      "prereqs": [
+        "sym.quantifier-negation"
+      ],
+      "viz": [
+        "lg-quantworld"
+      ]
+    },
+    {
+      "id": "sym.counterexample-interpretation",
+      "slug": "counterexample-interpretation",
+      "course": "sym",
+      "unit": "predicate",
+      "title": "Counterexample Worlds",
+      "short": "Show an argument invalid by describing a small world where all its premises are true and its conclusion false.",
+      "prereqs": [
+        "sym.truth-in-world",
+        "sym.validity-truth-table"
+      ],
+      "viz": [
+        "lg-quantworld"
+      ]
+    },
+    {
+      "id": "sym.ui-eg",
+      "slug": "ui-eg",
+      "course": "sym",
+      "unit": "predicate-proofs",
+      "title": "Universal Instantiation and Existential Generalization (UI, EG)",
+      "short": "UI: from ∀x Fx, infer Fa for any name. EG: from Fa, infer ∃x Fx.",
+      "prereqs": [
+        "sym.quantifier-negation",
+        "sym.replacement-proofs"
+      ],
+      "viz": [
+        "lg-proof"
+      ]
+    },
+    {
+      "id": "sym.ei",
+      "slug": "ei",
+      "course": "sym",
+      "unit": "predicate-proofs",
+      "title": "Existential Instantiation (EI)",
+      "short": "EI: from ∃x Fx, infer Fa only for a name a that is new: not in any earlier line, the premises or the conclusion.",
+      "prereqs": [
+        "sym.ui-eg"
+      ],
+      "viz": [
+        "lg-proof"
+      ]
+    },
+    {
+      "id": "sym.ug",
+      "slug": "ug",
+      "course": "sym",
+      "unit": "predicate-proofs",
+      "title": "Universal Generalization (UG)",
+      "short": "UG: from Fy, infer ∀x Fx only when y is a variable standing for any object, not a name and not one introduced by EI.",
+      "prereqs": [
+        "sym.ei"
+      ],
+      "viz": [
+        "lg-proof"
+      ]
+    },
+    {
+      "id": "sym.quantifier-proofs",
+      "slug": "quantifier-proofs",
+      "course": "sym",
+      "unit": "predicate-proofs",
+      "title": "Proofs with Quantifiers",
+      "short": "Strip the quantifiers (EI before UI), reason with the propositional rules, then put quantifiers back with UG or EG.",
+      "prereqs": [
+        "sym.ug"
+      ],
+      "viz": [
+        "lg-proof"
+      ]
+    },
+    {
+      "id": "sym.quantifier-cp-ip",
+      "slug": "quantifier-cp-ip",
+      "course": "sym",
+      "unit": "predicate-proofs",
+      "title": "Conditional and Indirect Proof with Quantifiers",
+      "short": "CP, IP and quantifier negation (QN) work in predicate logic too, as long as each quantifier rule's restrictions are kept.",
+      "prereqs": [
+        "sym.quantifier-proofs",
+        "sym.nested-subproofs"
+      ],
+      "viz": [
+        "lg-proof"
+      ]
+    },
+    {
+      "id": "sym.relations",
+      "slug": "relations",
+      "course": "sym",
+      "unit": "relations",
+      "title": "Relational Predicates",
+      "short": "A relational predicate links two or more objects in order: Lab says a likes b, which is not the same as Lba.",
+      "prereqs": [
+        "sym.translate-harder"
+      ],
+      "viz": [
+        "lg-quantworld"
+      ]
+    },
+    {
+      "id": "sym.quantifier-order",
+      "slug": "quantifier-order",
+      "course": "sym",
+      "unit": "relations",
+      "title": "Quantifier Order",
+      "short": "∀x∃y Lxy (everyone likes someone) differs from ∃y∀x Lxy (someone is liked by everyone); the order of mixed quantifiers matters.",
+      "prereqs": [
+        "sym.relations",
+        "sym.truth-in-world"
+      ],
+      "viz": [
+        "lg-quantworld"
+      ]
+    },
+    {
+      "id": "sym.relation-properties",
+      "slug": "relation-properties",
+      "course": "sym",
+      "unit": "relations",
+      "title": "Properties of Relations",
+      "short": "A relation can be reflexive (Rxx for all x), symmetric (Rxy → Ryx) and transitive (Rxy ∧ Ryz → Rxz), or fail any of them.",
+      "prereqs": [
+        "sym.quantifier-order"
+      ],
+      "viz": [
+        "lg-quantworld"
+      ]
+    },
+    {
+      "id": "sym.identity",
+      "slug": "identity",
+      "course": "sym",
+      "unit": "relations",
+      "title": "Identity",
+      "short": "a = b says a and b are the same object; identity lets us say \"only\", \"someone other than\" and \"the same\".",
+      "prereqs": [
+        "sym.relations"
+      ],
+      "viz": [
+        "lg-quantworld"
+      ]
+    },
+    {
+      "id": "sym.counting-identity",
+      "slug": "counting-identity",
+      "course": "sym",
+      "unit": "relations",
+      "title": "At Least, At Most and Exactly",
+      "short": "With identity we can count: \"at least two F\" is ∃x∃y(Fx ∧ Fy ∧ x ≠ y); \"at most one\" and \"exactly one\" follow the same pattern.",
+      "prereqs": [
+        "sym.identity"
+      ],
+      "viz": [
+        "lg-quantworld"
+      ]
+    },
+    {
+      "id": "sym.identity-proofs",
+      "slug": "identity-proofs",
+      "course": "sym",
+      "unit": "relations",
+      "title": "Proofs with Identity",
+      "short": "The identity rules: a = a may be written anywhere, a = b gives b = a, and from Fa and a = b infer Fb.",
+      "prereqs": [
+        "sym.counting-identity",
+        "sym.quantifier-order",
+        "sym.quantifier-proofs"
+      ],
+      "viz": [
+        "lg-proof"
+      ]
+    },
+    {
+      "id": "sym.soundness-completeness",
+      "slug": "soundness-completeness",
+      "course": "sym",
+      "unit": "metatheory",
+      "title": "Soundness and Completeness",
+      "short": "Provable (⊢) is about rules; valid (⊨) is about truth. A system is sound if everything provable is valid, and complete if everything valid is provable; our rules are both.",
+      "prereqs": [
+        "sym.identity-proofs",
+        "sym.counterexample-interpretation"
+      ],
+      "viz": []
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "id": "gchem2.weak-titration-curves",
+  "slug": "weak-titration-curves",
+  "ladder": "chemistry",
+  "course": "gchem2",
+  "unit": "acids-bases",
+  "title": "Weak Acid–Strong Base Titration Curves",
+  "short": "Halfway to equivalence the pH equals the pKa, and at equivalence the pH is above 7.",
+  "trouble": "Students think the equivalence point is always at pH 7.",
+  "prereqs": [
+    "gchem2.strong-titration-curves",
+    "gchem2.henderson-hasselbalch"
+  ],
+  "xp": 3,
+  "viz": [
+    "ch-titration"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Titrating a weak acid with a strong base gives a different curve from the <a href=\"/chemistry/general-chemistry-2/strong-titration-curves/\">strong–strong case</a>. Between the start and the equivalence point the flask holds a buffer, so the <a href=\"/chemistry/general-chemistry-2/henderson-hasselbalch/\">Henderson–Hasselbalch equation</a> does most of the work."
+      },
+      {
+        "t": "key",
+        "html": "Start: weak-acid pH. Before equivalence: a buffer, $\\text{pH} = \\text{p}K_a + \\log(n_{\\mathrm{A^-}}/n_\\mathrm{HA})$; at the halfway point $\\text{pH} = \\text{p}K_a$. At equivalence: only $\\mathrm{A^-}$, a weak base, so the pH is above 7. After: excess $\\mathrm{OH^-}$ sets the pH."
+      },
+      {
+        "t": "why",
+        "html": "Each portion of NaOH turns some HA into $\\mathrm{A^-}$. Halfway, half is converted, so $n_{\\mathrm{A^-}} = n_\\mathrm{HA}$ and the log term is zero. That is how $\\text{p}K_a$ values are measured. At equivalence every HA has become $\\mathrm{A^-}$, which takes protons from water and makes $\\mathrm{OH^-}$, so the pH is basic. The jump at equivalence is smaller than for a strong acid, because the curve starts higher."
+      },
+      {
+        "t": "viz",
+        "name": "ch-titration",
+        "opts": {
+          "acid": {
+            "type": "weak",
+            "Ka": 0.000018,
+            "C": 0.1,
+            "V": 25
+          },
+          "base": {
+            "C": 0.1
+          },
+          "vol": 12.5
+        },
+        "cap": "25.0 mL of 0.100 M acetic acid with 0.100 M NaOH. At 12.5 mL (halfway) the pH equals the pKa, 4.74; the equivalence point is near pH 8.7."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Acetic acid with NaOH",
+        "q": "$25.0\\ \\text{mL}$ of $0.100\\ \\text{M}$ acetic acid ($K_a = 1.8 \\times 10^{-5}$) is titrated with $0.100\\ \\text{M}$ NaOH. Find the pH at $0$, $12.5$, $20.0$ and $25.0\\ \\text{mL}$.",
+        "steps": [
+          "0 mL: weak acid, $x = \\sqrt{(1.8 \\times 10^{-5})(0.100)} = 1.34 \\times 10^{-3}$; pH 2.87. (Solving exactly gives 2.88, the value on the curve above; the small-x shortcut is off by 0.01.)",
+          "12.5 mL: half neutralized, pH $= \\text{p}K_a = 4.74$.",
+          "20.0 mL: HA $2.50 - 2.00 = 0.50\\ \\text{mmol}$, $\\mathrm{A^-}$ $2.00\\ \\text{mmol}$; $\\text{pH} = 4.74 + \\log 4.0 = 5.34$.",
+          "25.0 mL: $2.50\\ \\text{mmol}$ $\\mathrm{A^-}$ in $50.0\\ \\text{mL}$ = $0.0500\\ \\text{M}$. $K_b = 5.6 \\times 10^{-10}$, $$[\\mathrm{OH^-}] = \\sqrt{(5.6 \\times 10^{-10})(0.0500)} = 5.3 \\times 10^{-6}$$; pOH 5.28, pH 8.72."
+        ],
+        "a": "2.87, 4.74, 5.34, 8.72."
+      },
+      {
+        "t": "ex",
+        "title": "pKa from a curve",
+        "q": "In a titration of an unknown weak acid, equivalence comes at $18.0\\ \\text{mL}$ of base, and the pH at $9.0\\ \\text{mL}$ is 3.75. What is $K_a$?",
+        "steps": [
+          "$9.0\\ \\text{mL}$ is halfway to equivalence, so $\\text{p}K_a = 3.75$.",
+          "$K_a = 10^{-3.75} = 1.8 \\times 10^{-4}$ (formic acid has this value)."
+        ],
+        "a": "$K_a = 1.8 \\times 10^{-4}$."
+      },
+      {
+        "t": "note",
+        "html": "After equivalence, the excess hydroxide sets the pH just as in the strong-acid case, so the two curves become the same from there on."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking the equivalence point is always at pH 7. It is at 7 only when both acid and base are strong. With a weak acid, the conjugate base left at equivalence makes the solution basic; with a weak base titrated by a strong acid, the conjugate acid makes it acidic. Check: ask what species is in the flask at equivalence."
+      },
+      {
+        "t": "p",
+        "html": "You can run this titration on the bench in the <a href=\"/science-lab/chem-lab/\">Mixing Lab</a>."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 14.7 Acid-Base Titrations"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

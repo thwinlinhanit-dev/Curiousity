@@ -1,0 +1,107 @@
+{
+  "id": "gchem2.nuclear-stability",
+  "slug": "nuclear-stability",
+  "ladder": "chemistry",
+  "course": "gchem2",
+  "unit": "nuclear",
+  "title": "Nuclear Stability and Decay Modes",
+  "short": "The neutron-to-proton ratio predicts whether a nucleus will beta decay, emit a positron, capture an electron or alpha decay.",
+  "trouble": "Students predict beta decay for a nucleus with too few neutrons, when it needs positron emission or electron capture.",
+  "prereqs": [
+    "chem.radioactive-decay"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-nuclide"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/chemistry/chemistry/radioactive-decay/\">radioactive decay</a> you met alpha, beta and gamma radiation. Now the question is which nuclei decay, and how. The answer comes from the balance between protons and neutrons."
+      },
+      {
+        "t": "key",
+        "html": "Stable nuclei lie in a narrow <b>band of stability</b>: $N/Z \\approx 1$ for light elements, rising to about 1.5 for the heaviest. A nucleus above the band (too many neutrons) undergoes beta decay, $\\mathrm{n \\to p + e^-}$. A nucleus below it (too few neutrons) undergoes positron emission, $\\mathrm{p \\to n + e^+}$, or electron capture, $\\mathrm{p + e^- \\to n}$. Every nucleus with $Z > 83$ is unstable, and heavy ones usually alpha decay."
+      },
+      {
+        "t": "why",
+        "html": "Two forces compete. The strong nuclear force attracts every nucleon to its close neighbors, protons and neutrons alike, but reaches only about the width of a nucleon. The electric repulsion between protons reaches across the whole nucleus, so in a big nucleus every proton pushes on every other. Extra neutrons add attraction without adding repulsion, which is why heavy stable nuclei need more neutrons than protons. Beyond bismuth, no number of neutrons is enough. A nucleus off the band moves toward it: beta decay turns a neutron into a proton (lowering $N/Z$), while positron emission and electron capture do the reverse."
+      },
+      {
+        "t": "viz",
+        "name": "ch-nuclide",
+        "opts": {
+          "mode": "chart",
+          "nuc": "C-14",
+          "arrows": true
+        },
+        "cap": "The chart of nuclides: stable nuclei form a band that bends toward more neutrons as Z grows. Pick a nuclide to see which way each kind of decay would move it."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Too many neutrons",
+        "q": "Carbon-14 is radioactive. Predict how it decays and the product.",
+        "steps": [
+          "$Z = 6$, $N = 14 - 6 = 8$: $N/Z = 1.33$. Carbon's stable isotopes, C-12 and C-13, have 6 and 7 neutrons, so C-14 has too many.",
+          "Beta decay turns a neutron into a proton: $Z$ goes from 6 to 7, $A$ stays 14.",
+          "The equation: $$ {}^{14}_{6}\\mathrm{C} \\to {}^{14}_{7}\\mathrm{N} + {}^{0}_{-1}\\mathrm{e}$$"
+        ],
+        "a": "Beta decay, to nitrogen-14."
+      },
+      {
+        "t": "ex",
+        "title": "Too few neutrons",
+        "q": "Fluorine-18 is used in PET scans. Its only stable isotope is fluorine-19. Predict its decay.",
+        "steps": [
+          "F-18 has $Z = 9$, $N = 9$; stable F-19 has 10 neutrons. F-18 is short of neutrons.",
+          "It needs to turn a proton into a neutron: positron emission (its main mode) or electron capture. $Z$ drops to 8.",
+          "The equation: $$ {}^{18}_{9}\\mathrm{F} \\to {}^{18}_{8}\\mathrm{O} + {}^{0}_{+1}\\mathrm{e}$$ The positron meets an electron in the body, and the two gamma rays from that meeting are what the scanner detects."
+        ],
+        "a": "Positron emission (or electron capture), to oxygen-18."
+      },
+      {
+        "t": "ex",
+        "title": "Too heavy",
+        "q": "Predict the decay of uranium-238.",
+        "steps": [
+          "$Z = 92 > 83$: no stable isotope exists, and heavy nuclei shed mass by alpha decay.",
+          "Alpha decay removes 2 protons and 2 neutrons: $$ {}^{238}_{92}\\mathrm{U} \\to {}^{234}_{90}\\mathrm{Th} + {}^{4}_{2}\\mathrm{He}$$"
+        ],
+        "a": "Alpha decay, to thorium-234."
+      },
+      {
+        "t": "mistake",
+        "html": "Predicting beta decay for a nucleus with too few neutrons. Beta decay makes a proton from a neutron, which would leave it even shorter of neutrons. Check: compare $N$ with the stable isotopes of the same element, then pick the decay that moves $N/Z$ toward them."
+      },
+      {
+        "t": "note",
+        "html": "Nuclei with even numbers of both protons and neutrons are especially common among stable ones, and so are nuclei with 2, 8, 20, 28, 50, 82 or 126 protons or neutrons (the \"magic numbers\"), which fill nuclear shells."
+      },
+      {
+        "t": "p",
+        "html": "Add protons and neutrons one at a time and watch the nucleus become stable or unstable in the Science Lab's <a href=\"/science-lab/atom/\">Build an Atom</a>."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 21.1 Nuclear Structure and Stability"
+      },
+      {
+        "name": "OpenStax Chemistry 2e, Section 21.3 Radioactive Decay"
+      },
+      {
+        "name": "National Nuclear Data Center (Brookhaven), NuDat 3 and the 2020 Atomic Mass Evaluation"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

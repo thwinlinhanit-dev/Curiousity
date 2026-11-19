@@ -1,0 +1,92 @@
+{
+  "id": "physsci.speed",
+  "slug": "speed",
+  "ladder": "physics",
+  "course": "physsci",
+  "unit": "motion",
+  "title": "Average Speed",
+  "short": "Average speed is total distance divided by total time: s = d/t.",
+  "trouble": "Students average two speeds for a trip instead of dividing the total distance by the total time.",
+  "prereqs": [
+    "chem.si-prefixes",
+    "g6.unit-rate-problems"
+  ],
+  "xp": 1,
+  "viz": [
+    "ph-motion"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You already know <a href=\"/math/grade-6/unit-rate-problems/\">unit rates and constant speed</a>: 120 miles in 3 hours is 40 miles per hour. Physics uses the same idea, measured in <a href=\"/chemistry/chemistry/si-prefixes/\">SI units</a>: distance in meters (m), time in seconds (s), so speed comes out in <b>meters per second</b> (m/s)."
+      },
+      {
+        "t": "key",
+        "html": "<b>Average speed</b> is the total distance divided by the total time: $$s = \\dfrac{d}{t}$$ Rearranged, $d = s\\,t$ and $t = \\dfrac{d}{s}$."
+      },
+      {
+        "t": "why",
+        "html": "Speed answers the question \"how many meters each second?\" If you run 100 m in 20 s at a steady pace, every second covers the same share: $100 \\div 20 = 5$ meters each second. When the pace changes, the average speed is the steady speed that would cover the same distance in the same time."
+      },
+      {
+        "t": "viz",
+        "name": "ph-motion",
+        "opts": {
+          "x0": 0,
+          "v0": 2,
+          "a": 0,
+          "tmax": 6,
+          "graphs": [
+            "x"
+          ],
+          "show": [
+            "odometer"
+          ]
+        },
+        "cap": "A cart at a steady 2 m/s. The dots of the motion map are evenly spaced: equal distances in equal times. Press Play and watch the distance grow by 2 m every second."
+      },
+      {
+        "t": "ex",
+        "title": "A sprint",
+        "q": "In 2009 Usain Bolt ran 100 m in 9.58 s. What was his average speed?",
+        "steps": [
+          "Use $s = \\dfrac{d}{t}$ with $d = 100\\,\\mathrm{m}$ and $t = 9.58\\,\\mathrm{s}$.",
+          "$s = \\dfrac{100\\,\\mathrm{m}}{9.58\\,\\mathrm{s}} \\approx 10.4\\,\\mathrm{m/s}$.",
+          "He started from rest, so his top speed was higher than this average."
+        ],
+        "a": "About $10.4\\,\\mathrm{m/s}$"
+      },
+      {
+        "t": "ex",
+        "title": "A trip in two parts",
+        "q": "A bus drives 60 km at 60 km/h, then hits traffic and drives the next 60 km at 30 km/h. What is its average speed for the whole trip?",
+        "steps": [
+          "Time for part 1: $t_1 = \\dfrac{60\\,\\mathrm{km}}{60\\,\\mathrm{km/h}} = 1\\,\\mathrm{h}$.",
+          "Time for part 2: $t_2 = \\dfrac{60\\,\\mathrm{km}}{30\\,\\mathrm{km/h}} = 2\\,\\mathrm{h}$.",
+          "Total distance $120\\,\\mathrm{km}$, total time $3\\,\\mathrm{h}$.",
+          "$s = \\dfrac{120\\,\\mathrm{km}}{3\\,\\mathrm{h}} = 40\\,\\mathrm{km/h}$."
+        ],
+        "a": "$40\\,\\mathrm{km/h}$, not 45 km/h"
+      },
+      {
+        "t": "mistake",
+        "html": "Averaging the two speeds: $(60 + 30) \\div 2 = 45$ km/h. That would only work if the bus spent <b>equal times</b> at each speed. Here it spent twice as long crawling at 30 km/h, so the average leans toward 30. Check: always divide the <b>total distance</b> by the <b>total time</b>."
+      },
+      {
+        "t": "note",
+        "html": "Light is the fastest thing there is: about 300,000 km every second. Even so, sunlight takes about 8 minutes and 20 seconds to cover the 150 million km to Earth, so you see the Sun as it was a few minutes ago."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e, 2.3 Time, Velocity, and Speed"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,159 @@
+{
+  "id": "law.jurisdiction",
+  "slug": "jurisdiction",
+  "ladder": "civics",
+  "course": "law",
+  "unit": "courts",
+  "title": "Jurisdiction",
+  "short": "A court needs subject-matter jurisdiction (federal courts hear federal-question cases and diversity cases between citizens of different states over $75,000) and personal jurisdiction over the defendant (enough contacts with the state that suit there is fair).",
+  "trouble": "Students think diversity jurisdiction needs only one plaintiff and one defendant from different states. It requires complete diversity: no plaintiff may share citizenship with any defendant.",
+  "prereqs": [
+    "law.state-court-structure"
+  ],
+  "xp": 3,
+  "viz": [
+    "cv-court",
+    "cv-sort"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Before a court can decide who wins, it must have the power to hear the case at all. That power is <b>jurisdiction</b>. A court needs two kinds: power over the <b>kind of case</b>, and power over the <b>defendant</b>. This builds on <a href=\"/american-history/intro-to-law/state-court-structure/\">state courts</a> and the federal courts."
+      },
+      {
+        "t": "key",
+        "html": "<b>Subject-matter jurisdiction:</b> federal courts hear only listed kinds of cases, chiefly <b>federal-question</b> cases (arising under federal law) and <b>diversity</b> cases between citizens of different states where more than <b>\\$75,000</b> is at stake. <b>Personal jurisdiction:</b> the defendant must have enough <b>contacts</b> with the state that a suit there is fair."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Federal subject-matter jurisdiction",
+          "Requirements"
+        ],
+        "rows": [
+          [
+            "Federal question (28 U.S.C. § 1331)",
+            "the claim arises under the Constitution, a federal statute or a treaty"
+          ],
+          [
+            "Diversity (28 U.S.C. § 1332)",
+            "<b>complete diversity</b> (no plaintiff is a citizen of the same state as any defendant) and an amount in controversy that <b>exceeds \\$75,000</b>, not counting interest and costs"
+          ]
+        ]
+      },
+      {
+        "t": "why",
+        "html": "State trial courts of general jurisdiction can hear almost any case. Federal courts are <b>courts of limited jurisdiction</b>: Article III lists the kinds of cases they may hear, and Congress decides how much of that list to give them. Diversity jurisdiction exists so that an out-of-state party need not fear a home-town court. The Supreme Court read the statute to require <b>complete</b> diversity in <i>Strawbridge v. Curtiss</i> (1806). If a case could have been filed in federal court but was filed in state court, the defendant may usually <b>remove</b> it to federal court.<br><br>Personal jurisdiction protects defendants under the Due Process Clause. In <i>International Shoe Co. v. Washington</i> (1945) the Court held that a state may hear a suit against an out-of-state defendant with \"certain minimum contacts\" with the state, so that the suit does not offend \"traditional notions of fair play and substantial justice\" (326 U.S. at 316). A defendant can always be sued where it is \"at home\": an individual's home state, or a corporation's state of incorporation and principal place of business."
+      },
+      {
+        "t": "ex",
+        "title": "Complete diversity",
+        "q": "Ana (Ohio) and Ben (Michigan) sue Carla (Indiana) and DeShawn (Michigan) in federal court for \\$200,000 under state contract law. Is there diversity jurisdiction?",
+        "steps": [
+          "No federal law is involved, so diversity is the only route.",
+          "Amount: \\$200,000 exceeds \\$75,000. That part is met.",
+          "Citizenship: plaintiff Ben and defendant DeShawn are both from Michigan.",
+          "Complete diversity fails if any plaintiff shares a state with any defendant."
+        ],
+        "a": "No. Ben and DeShawn are both Michigan citizens."
+      },
+      {
+        "t": "ex",
+        "title": "A corporation's citizenship",
+        "q": "Pat (Texas) sues Acme Inc., incorporated in Delaware with its headquarters in Texas, for \\$90,000. Diversity?",
+        "steps": [
+          "A corporation is a citizen of its state of incorporation <b>and</b> the state of its principal place of business.",
+          "Acme is a citizen of Delaware and Texas.",
+          "Pat is from Texas, so a plaintiff and a defendant share a state."
+        ],
+        "a": "No diversity. The case belongs in state court unless a federal question appears."
+      },
+      {
+        "t": "ex",
+        "title": "Exactly \\$75,000",
+        "q": "A New Jersey citizen sues a Florida citizen for exactly \\$75,000. Diversity?",
+        "steps": [
+          "The parties are diverse.",
+          "The amount must <b>exceed</b> \\$75,000. Exactly \\$75,000 does not."
+        ],
+        "a": "No. The claim must be more than \\$75,000."
+      },
+      {
+        "t": "viz",
+        "name": "cv-sort",
+        "opts": {
+          "bins": [
+            "Federal question",
+            "Diversity",
+            "State court only"
+          ],
+          "shuffle": true,
+          "reveal": true,
+          "cards": [
+            {
+              "text": "A claim under a federal civil rights statute",
+              "bin": 0
+            },
+            {
+              "text": "A \\$500,000 car-crash claim, Iowa plaintiff, Utah defendant",
+              "bin": 1
+            },
+            {
+              "text": "A \\$20,000 contract claim between citizens of different states",
+              "bin": 2
+            },
+            {
+              "text": "A claim that a city violated the First Amendment",
+              "bin": 0
+            },
+            {
+              "text": "A \\$1 million claim, Iowa plaintiff, Iowa defendant, state law",
+              "bin": 2
+            }
+          ]
+        },
+        "cap": "Which path, if any, into federal court?"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking diversity jurisdiction needs only one plaintiff and one defendant from different states. It requires <b>complete</b> diversity: no plaintiff may share citizenship with <b>any</b> defendant. Check by listing every party's state (two for a corporation) and looking for any match across the \"v.\""
+      },
+      {
+        "t": "try"
+      },
+      {
+        "t": "note",
+        "html": "This is an educational course, not legal advice."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Grokipedia, \"Diversity jurisdiction\"",
+        "url": "https://grokipedia.com/page/Diversity_jurisdiction"
+      },
+      {
+        "name": "Grokipedia, \"Federal question jurisdiction\"",
+        "url": "https://grokipedia.com/page/Federal_question_jurisdiction"
+      },
+      {
+        "name": "Grokipedia, \"Personal jurisdiction\"",
+        "url": "https://grokipedia.com/page/Personal_jurisdiction"
+      },
+      {
+        "name": "Grokipedia, \"International Shoe Co. v. Washington\"",
+        "url": "https://grokipedia.com/page/International_Shoe_Co._v._Washington"
+      },
+      {
+        "name": "International Shoe Co. v. Washington, 326 U.S. 310 (1945), opinion text (FindLaw)",
+        "url": "https://caselaw.findlaw.com/us-supreme-court/326/310.html"
+      },
+      {
+        "name": "Grokipedia, \"Removal jurisdiction\"",
+        "url": "https://grokipedia.com/page/Removal_jurisdiction"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

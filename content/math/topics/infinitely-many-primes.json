@@ -1,0 +1,97 @@
+{
+  "id": "nt.infinitely-many-primes",
+  "slug": "infinitely-many-primes",
+  "ladder": "math",
+  "course": "nt",
+  "unit": "primes",
+  "title": "Infinitely Many Primes",
+  "short": "Euclid's argument: p₁p₂⋯pₖ + 1 has a prime factor that is not on the list p₁, …, pₖ.",
+  "trouble": "Students think p₁p₂⋯pₖ + 1 must itself be prime, but 2 · 3 · 5 · 7 · 11 · 13 + 1 = 30031 = 59 · 509.",
+  "prereqs": [
+    "nt.primality-sieve",
+    "nt.unique-factorization",
+    "disc.contradiction-proof"
+  ],
+  "xp": 2,
+  "viz": [],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The <a href=\"/math/number-theory/primality-sieve/\">sieve</a> lists the primes up to any bound, and they keep coming: 2, 3, 5, 7, 11, … but they also thin out. Could they stop altogether? Euclid answered this around 300 BC with one of the most famous arguments in mathematics, a <a href=\"/math/discrete-math/contradiction-proof/\">proof by contradiction</a>."
+      },
+      {
+        "t": "p",
+        "html": "<b>Theorem.</b> There are infinitely many primes."
+      },
+      {
+        "t": "why",
+        "html": "Suppose there were only finitely many: $p_1, p_2, \\dots, p_k$. Let $$N = p_1 p_2 \\cdots p_k + 1.$$ Since $N > 1$, it has a prime factor $q$ (its smallest divisor above 1 is prime, or use <a href=\"/math/number-theory/unique-factorization/\">unique factorization</a>). Could $q$ be one of the $p_i$? Then $q$ would divide both $N$ and $p_1 \\cdots p_k$, so it would divide their difference, $1$. That is impossible. So $q$ is a prime that is not on the list, contradicting the assumption that the list had every prime."
+      },
+      {
+        "t": "p",
+        "html": "Read carefully, the proof gives a recipe: <b>any</b> finite list of primes misses one, and the prime factors of $N$ are new. It does not say that $N$ itself is prime."
+      },
+      {
+        "t": "ex",
+        "title": "The new prime may be N itself",
+        "q": "Apply the recipe to the list $2, 3, 5$.",
+        "steps": [
+          "$N = 2 \\cdot 3 \\cdot 5 + 1 = 31$.",
+          "$31$ is prime, and it is not on the list."
+        ],
+        "a": "$31$."
+      },
+      {
+        "t": "ex",
+        "title": "Or a small prime that was left out",
+        "q": "Apply the recipe to the list $3, 5$.",
+        "steps": [
+          "$N = 3 \\cdot 5 + 1 = 16 = 2^{4}$.",
+          "$N$ is not prime, but its prime factor $2$ is missing from the list. The recipe still works."
+        ],
+        "a": "The new prime is $2$."
+      },
+      {
+        "t": "ex",
+        "title": "A famous composite",
+        "q": "Is $2 \\cdot 3 \\cdot 5 \\cdot 7 \\cdot 11 \\cdot 13 + 1$ prime?",
+        "steps": [
+          "$N = 30{,}030 + 1 = 30{,}031$. None of $2, 3, 5, 7, 11, 13$ divides it: each leaves remainder $1$.",
+          "Keep testing primes: $17, 19, \\dots, 53$ all leave remainders, and then $30{,}031 = 59 \\cdot 509$.",
+          "So $N$ is composite, but both of its prime factors are new, exactly as the proof promised."
+        ],
+        "a": "No: $30{,}031 = 59 \\cdot 509$."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking that $p_1 p_2 \\cdots p_k + 1$ must be prime. It need not be: $30{,}031 = 59 \\cdot 509$. The proof never claims it is prime; it only uses that it has <b>some</b> prime factor, and that no listed prime can be that factor."
+      },
+      {
+        "t": "note",
+        "html": "The same idea proves more. Every prime factor of $n! + 1$ is larger than $n$ (each prime up to $n$ leaves remainder 1), so there is always a prime above any $n$. A variation with $N = 4p_1 \\cdots p_k - 1$ shows there are infinitely many primes of the form $4k + 3$."
+      },
+      {
+        "t": "p",
+        "html": "Euclid's theorem was only the start. In 1837 Dirichlet proved that whenever $\\gcd(a, b) = 1$, the progression $a, a + b, a + 2b, \\dots$ contains infinitely many primes, for example infinitely many primes end in the digit 7. His proof needed calculus; Euclid's needs one line of algebra."
+      },
+      {
+        "t": "key",
+        "html": "Multiply any finite list of primes and add 1. The result has a prime factor that is not on the list, so no list can contain them all."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "William Stein, Elementary Number Theory: Primes, Congruences, and Secrets (Springer, 2009; free online edition), chapter 1, Prime Numbers (there are infinitely many primes)"
+      },
+      {
+        "name": "Lehman, Leighton and Meyer, Mathematics for Computer Science (MIT OpenCourseWare 6.042J), chapter on number theory: prime numbers"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,127 @@
+{
+  "id": "phys1.forces-at-angles",
+  "slug": "forces-at-angles",
+  "ladder": "physics",
+  "course": "phys1",
+  "unit": "forces",
+  "title": "Forces at Angles",
+  "short": "Resolve each force into components; the x and y directions each obey Newton's second law separately.",
+  "trouble": "Students forget that a rope pulling up at an angle also lowers the normal force.",
+  "prereqs": [
+    "phys1.second-law-systems",
+    "phys1.vector-addition"
+  ],
+  "xp": 3,
+  "viz": [
+    "ph-fbd",
+    "ph-vectors"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Ropes pull at angles, handles push at angles. A force at an angle acts partly along each axis, so you split it with <a href=\"/physics/physics-1/vector-components/\">components</a> and use <a href=\"/physics/physics-1/second-law-systems/\">the second law</a> along each axis separately."
+      },
+      {
+        "t": "key",
+        "html": "Resolve every force into $x$- and $y$-components. Then $\\Sigma F_x = ma_x$ and $\\Sigma F_y = ma_y$ are two separate equations. A force at an angle changes both sums, including the normal force."
+      },
+      {
+        "t": "why",
+        "html": "The $x$ and $y$ directions are independent, as they were for <a href=\"/physics/physics-1/vector-addition/\">adding vectors</a>: the horizontal part of a pull can only change horizontal motion, and its vertical part only vertical motion. A rope pulling up at an angle lifts part of the object's weight, so the floor pushes up less, and friction ($\\mu N$) gets smaller too."
+      },
+      {
+        "t": "viz",
+        "name": "ph-fbd",
+        "opts": {
+          "scene": "block",
+          "forces": [
+            {
+              "type": "gravity",
+              "mag": 196
+            },
+            {
+              "type": "normal",
+              "mag": 171
+            },
+            {
+              "type": "tension",
+              "mag": 50,
+              "angle": 30
+            },
+            {
+              "type": "friction",
+              "mag": 34.2
+            }
+          ],
+          "show": [
+            "components"
+          ],
+          "task": "Compare the normal force with the weight. The rope's upward part makes up the difference."
+        },
+        "cap": "A 20 kg box pulled with 50 N at 30°: the rope lifts 25 N, so the normal force is 196 − 25 = 171 N."
+      },
+      {
+        "t": "list",
+        "items": [
+          "Draw the free-body diagram and split each slanted force into components.",
+          "Write $\\Sigma F_y = ma_y$ first (often $a_y = 0$) and solve for the normal force.",
+          "Use that normal force for any friction: $f = \\mu F_N$.",
+          "Write $\\Sigma F_x = ma_x$ and solve for the acceleration."
+        ]
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Normal force with a slanted pull",
+        "q": "A rope pulls a $20\\ \\text{kg}$ box along a level floor with $50\\ \\text{N}$ at $30^\\circ$ above the horizontal. Find the normal force.",
+        "steps": [
+          "Rope components: $50\\cos 30^\\circ \\approx 43.3\\ \\text{N}$ forward, $50\\sin 30^\\circ = 25\\ \\text{N}$ up.",
+          "$\\Sigma F_y = 0$: $F_N + 25 - 196 = 0$, so $F_N = 171\\ \\text{N}$."
+        ],
+        "a": "$171\\ \\text{N}$"
+      },
+      {
+        "t": "ex",
+        "title": "Adding friction",
+        "q": "Same box, with $\\mu_k = 0.2$. Find its acceleration.",
+        "steps": [
+          "$f_k = \\mu_k F_N = 0.2 \\times 171 = 34.2\\ \\text{N}$ (not $0.2 \\times 196$).",
+          "$\\Sigma F_x = 43.3 - 34.2 = 9.1\\ \\text{N}$, so $a = \\dfrac{9.1}{20} \\approx 0.46\\ \\text{m/s}^2$."
+        ],
+        "a": "about $0.46\\ \\text{m/s}^2$"
+      },
+      {
+        "t": "ex",
+        "title": "Pushing down at an angle",
+        "q": "You push a $15\\ \\text{kg}$ mower with $60\\ \\text{N}$ along its handle, $35^\\circ$ below the horizontal. Find the normal force.",
+        "steps": [
+          "The push's vertical part is $60\\sin 35^\\circ \\approx 34.4\\ \\text{N}$ <b>down</b>.",
+          "$$F_N = mg + 34.4 = 147 + 34.4 \\approx 181\\ \\text{N}.$$"
+        ],
+        "a": "about $181\\ \\text{N}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Forgetting that a rope pulling up at an angle also lowers the normal force (and that a push down at an angle raises it), then using $\\mu mg$ for friction. Check: write the $y$-equation before the $x$-equation, and find $F_N$ from it first."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Physics 2e, Section 4.7 Further Applications of Newton's Laws of Motion"
+      },
+      {
+        "name": "OpenStax University Physics Volume 1, Section 6.1 Solving Problems with Newton's Laws"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

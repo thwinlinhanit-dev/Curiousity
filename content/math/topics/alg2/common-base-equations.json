@@ -1,0 +1,106 @@
+{
+  "id": "alg2.common-base-equations",
+  "slug": "common-base-equations",
+  "ladder": "math",
+  "course": "alg2",
+  "unit": "exponential-log",
+  "title": "Exponential Equations with a Common Base",
+  "short": "Rewrite both sides with the same base and set exponents equal.",
+  "trouble": "",
+  "prereqs": [
+    "alg2.exponential-graphs",
+    "alg1.rational-exponent-rules"
+  ],
+  "xp": 2,
+  "viz": [
+    "exponential"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Some exponential equations can be solved without logarithms: if both sides can be written as powers of the same base, the exponents must match. You will use the <a href=\"/math/algebra-1/rational-exponent-rules/\">exponent rules</a> and the shape of the <a href=\"/math/algebra-2/exponential-graphs/\">exponential graph</a>."
+      },
+      {
+        "t": "key",
+        "html": "Rewrite both sides as powers of one base $b$ (with $b > 0$, $b \\ne 1$). Then $b^m = b^n$ means $m = n$. Set the exponents equal and solve."
+      },
+      {
+        "t": "why",
+        "html": "An exponential function $b^x$ with $b > 0$, $b \\ne 1$ is always increasing or always decreasing, so it never takes the same value twice. It is one-to-one, which means equal outputs come from equal inputs. That is exactly the step $b^m = b^n \\Rightarrow m = n$."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "fns": [
+            "2^(x + 1)",
+            "32"
+          ],
+          "intersections": true,
+          "xmin": -2,
+          "xmax": 7,
+          "ymin": -5,
+          "ymax": 45
+        },
+        "cap": "$f(x) = 2^{x + 1}$ meets the line $g(x) = 32$ exactly once, at $x = 4$, because $2^5 = 32$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A direct match",
+        "q": "Solve $2^{x + 1} = 32$.",
+        "steps": [
+          "$32 = 2^5$, so $2^{x + 1} = 2^5$.",
+          "$x + 1 = 5$."
+        ],
+        "a": "$x = 4$"
+      },
+      {
+        "t": "ex",
+        "title": "Different bases, same family",
+        "q": "Solve $4^{x} = 8^{x - 1}$.",
+        "steps": [
+          "Use base 2: $4 = 2^2$ and $8 = 2^3$, so $2^{2x} = 2^{3(x - 1)}$.",
+          "$2x = 3x - 3$."
+        ],
+        "a": "$x = 3$"
+      },
+      {
+        "t": "ex",
+        "title": "A fraction and a negative exponent",
+        "q": "Solve $\\left(\\frac{1}{9}\\right)^{x} = 27$.",
+        "steps": [
+          "$\\frac{1}{9} = 3^{-2}$ and $27 = 3^3$: $3^{-2x} = 3^3$.",
+          "$-2x = 3$."
+        ],
+        "a": "$x = -\\frac{3}{2}$"
+      },
+      {
+        "t": "note",
+        "html": "Not every equation has a common base. $2^x = 10$ can't be written that way, because 10 is not a power of 2. Those equations need logarithms, which come next in <a href=\"/math/algebra-2/logarithms/\">What a Logarithm Is</a> and <a href=\"/math/algebra-2/solve-exponential-equations/\">Solving Exponential Equations with Logs</a>."
+      },
+      {
+        "t": "mistake",
+        "html": "Forgetting to multiply exponents when rewriting a base: $8^{x - 1}$ is $(2^3)^{x - 1} = 2^{3x - 3}$, not $2^{3x - 1}$. Put the whole old exponent in parentheses. Check the answer by substituting: $4^3 = 64$ and $8^2 = 64$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Algebra 2e, Section 6.6 Exponential and Logarithmic Equations (using like bases)"
+      },
+      {
+        "name": "Common Core State Standards, F-LE.A.4"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

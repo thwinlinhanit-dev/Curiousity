@@ -1,0 +1,108 @@
+{
+  "id": "de.higher-order",
+  "slug": "higher-order",
+  "ladder": "math",
+  "course": "de",
+  "unit": "second-order",
+  "title": "Higher-Order Linear Equations",
+  "short": "Extend the characteristic-equation method to order n.",
+  "trouble": "",
+  "prereqs": [
+    "de.undetermined-coefficients"
+  ],
+  "xp": 3,
+  "viz": [],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The characteristic-equation method from <a href=\"/math/differential-equations/real-roots/\">distinct real roots</a>, <a href=\"/math/differential-equations/complex-roots-de/\">complex roots</a> and <a href=\"/math/differential-equations/repeated-roots/\">repeated roots</a> works for any order. An $n$th-order linear equation with constant coefficients needs $n$ independent solutions, one for each root counted with multiplicity."
+      },
+      {
+        "t": "key",
+        "html": "For $a_ny^{(n)} + \\dots + a_1y' + a_0y = 0$, solve $a_nr^{n} + \\dots + a_1r + a_0 = 0$. A real root $r$ of multiplicity $m$ gives $e^{rt}, te^{rt}, \\dots, t^{m-1}e^{rt}$. A complex pair $\\alpha \\pm \\beta i$ of multiplicity $m$ gives $t^{j}e^{\\alpha t}\\cos\\beta t$ and $t^{j}e^{\\alpha t}\\sin\\beta t$ for $j = 0, \\dots, m - 1$."
+      },
+      {
+        "t": "why",
+        "html": "With $D = \\frac{d}{dt}$, the equation is $a_n(D - r_1)(D - r_2)\\cdots(D - r_n)y$ $= 0$: the operator factors just like the polynomial, because constant-coefficient operators commute. Each factor $(D - r)$ kills $e^{rt}$, and $(D - r)^{m}$ kills $t^{j}e^{rt}$ for $j < m$ (each application lowers the power of $t$ by one, as in the repeated-root lesson). Counting with multiplicity, there are exactly $n$ such solutions, and they are independent."
+      },
+      {
+        "t": "ex",
+        "title": "Three distinct roots",
+        "q": "Find the general solution of $y''' - 2y'' - y' + 2y = 0$.",
+        "steps": [
+          "$r^{3} - 2r^{2} - r + 2$ $= r^{2}(r - 2) - (r - 2)$ $= (r - 2)(r - 1)(r + 1)$.",
+          "Roots $2, 1, -1$."
+        ],
+        "a": "$y = c_1e^{2t} + c_2e^{t} + c_3e^{-t}$"
+      },
+      {
+        "t": "ex",
+        "title": "Real and imaginary roots",
+        "q": "Find the general solution of $y^{(4)} - 16y = 0$.",
+        "steps": [
+          "$r^{4} - 16 = (r^{2} - 4)(r^{2} + 4)$: roots $\\pm 2$ and $\\pm 2i$."
+        ],
+        "a": "$y$ $= c_1e^{2t} + c_2e^{-2t} + c_3\\cos 2t$ $+ c_4\\sin 2t$"
+      },
+      {
+        "t": "ex",
+        "title": "A double root with initial values",
+        "q": "Solve $y''' - 3y' + 2y = 0$, $y(0) = 0$, $y'(0) = 0$, $y''(0) = 9$.",
+        "steps": [
+          "$r = 1$ is a root; dividing gives $r^{3} - 3r + 2 = (r - 1)^{2}(r + 2)$.",
+          "$y = (c_1 + c_2t)e^{t} + c_3e^{-2t}$.",
+          "Conditions: $c_1 + c_3 = 0$; $c_1 + c_2 - 2c_3 = 0$; $c_1 + 2c_2 + 4c_3 = 9$.",
+          "From the first two, $c_3 = -c_1$ and $c_2 = -3c_1$; the third gives $-9c_1 = 9$."
+        ],
+        "a": "$c_1 = -1$, $c_2 = 3$, $c_3 = 1$: $y = (3t - 1)e^{t} + e^{-2t}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Stopping with too few solutions: a cubic has three roots counted with multiplicity, so the general solution needs three constants. Find one root by trying divisors of the constant term, divide it out, and factor what is left. For a repeated root, include the extra powers of $t$."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "fns": [
+            {
+              "f": "(3x - 1)*e^(x) + e^(-2x)",
+              "label": "y"
+            }
+          ],
+          "xmin": -1,
+          "xmax": 1.5,
+          "ymin": -1,
+          "ymax": 12,
+          "xlabel": "t",
+          "points": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        "cap": "The solution of the third example. It leaves the origin flat ($y'(0) = 0$) but curving upward ($y''(0) = 9$), and the $te^{t}$ term soon dominates."
+      },
+      {
+        "t": "note",
+        "html": "Higher-order equations appear naturally. Two masses joined by springs give a pair of second-order equations that combine into one fourth-order equation, and the bending of a loaded beam obeys $EIy^{(4)} = w(x)$. To find the roots of the characteristic polynomial by hand, list the candidates from the rational root test (factors of $a_0$ divided by factors of $a_n$), test them, and divide out each root you find. Undetermined coefficients and variation of parameters extend to any order in the same way."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Paul's Online Math Notes, Differential Equations: Higher Order Differential Equations: Linear Homogeneous Differential Equations"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.03SC Differential Equations (Fall 2011), Unit II: Second Order Constant Coefficient Linear Equations"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

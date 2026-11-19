@@ -1,0 +1,128 @@
+{
+  "id": "astro.seasons",
+  "slug": "seasons",
+  "course": "astro",
+  "courseTitle": "Astronomy",
+  "unit": "sky",
+  "unitTitle": "The Sky",
+  "title": "The Sun's Path Through the Year",
+  "short": "The Sun's declination swings between +23.4° and −23.4°, which sets the solstices, the equinoxes, the tropics and the polar circles.",
+  "trouble": "Students think the tropics and polar circles are arbitrary lines, rather than set by Earth's 23.4° tilt.",
+  "prereqs": [
+    "earthsci.seasons",
+    "astro.celestial-coordinates"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-sky"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/earth-and-space/earth-science/seasons/\">Why We Have Seasons</a> you learned that Earth's tilted axis changes how high the Sun climbs and how long it stays up. With <a href=\"/physics/astronomy/celestial-coordinates/\">declination</a> we can say exactly how: the Sun's declination changes through the year, and that one number sets the solstices, the equinoxes, the tropics and the polar circles."
+      },
+      {
+        "t": "why",
+        "html": "Earth's axis is tilted $23.4^\\circ$ from the perpendicular to its orbit, and it keeps pointing the same way in space all year. So the celestial equator (above Earth's equator) is tilted $23.4^\\circ$ from the <b>ecliptic</b>, the Sun's yearly path among the stars. As the Sun travels the ecliptic, its declination swings from $+23.4^\\circ$ to $-23.4^\\circ$ and back. When the North Pole leans toward the Sun (June), the Sun is $23.4^\\circ$ north of the celestial equator; when it leans away (December), $23.4^\\circ$ south."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Date (about)",
+          "Name",
+          "Sun's declination",
+          "Sun overhead at noon"
+        ],
+        "rows": [
+          [
+            "March 20",
+            "March equinox",
+            "$0^\\circ$",
+            "the equator"
+          ],
+          [
+            "June 21",
+            "June solstice",
+            "$+23.4^\\circ$",
+            "$23.4^\\circ$ N, the Tropic of Cancer"
+          ],
+          [
+            "September 22",
+            "September equinox",
+            "$0^\\circ$",
+            "the equator"
+          ],
+          [
+            "December 21",
+            "December solstice",
+            "$-23.4^\\circ$",
+            "$23.4^\\circ$ S, the Tropic of Capricorn"
+          ]
+        ],
+        "cap": "The Sun's declination through the year."
+      },
+      {
+        "t": "key",
+        "html": "The Sun's declination swings between $+23.4^\\circ$ and $-23.4^\\circ$ because of Earth's tilt. The tropics ($23.4^\\circ$ N and S) are as far as the overhead Sun can go; the polar circles ($90^\\circ - 23.4^\\circ = 66.6^\\circ$) mark where it can stay up, or down, for a whole day."
+      },
+      {
+        "t": "viz",
+        "name": "ph-sky",
+        "opts": {
+          "mode": "seasons",
+          "lat": 40,
+          "task": "Press Play. The axis keeps pointing the same way while Earth goes around. Watch the Sun's declination and how much ground one beam of sunlight covers.",
+          "lab": "/science-lab/night-sky/"
+        },
+        "cap": "Earth's orbit seen at an angle, with the tilted axis, and the noon sunlight at latitude $40^\\circ$ N."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "The midnight Sun",
+        "q": "On the June solstice, poleward of what latitude does the Sun never set?",
+        "steps": [
+          "On the June solstice the Sun is at declination $+23.4^\\circ$, so it is $90^\\circ - 23.4^\\circ = 66.6^\\circ$ from the north celestial pole.",
+          "From <a href=\"/physics/astronomy/altitude-latitude/\">altitude and latitude</a>: a star is circumpolar where the pole's altitude (your latitude) is at least its distance from the pole.",
+          "So the Sun stays up all day at latitude $66.6^\\circ$ N and beyond: the Arctic Circle."
+        ],
+        "a": "North of $66.6^\\circ$ N."
+      },
+      {
+        "t": "ex",
+        "title": "Another planet",
+        "q": "Mars's axis is tilted $25.2^\\circ$. Where would Mars's tropics and polar circles be?",
+        "steps": [
+          "Tropics sit at the tilt: $25.2^\\circ$ N and S.",
+          "Polar circles sit at $90^\\circ$ minus the tilt: $90^\\circ - 25.2^\\circ = 64.8^\\circ$."
+        ],
+        "a": "Tropics at $25.2^\\circ$; polar circles at $64.8^\\circ$."
+      },
+      {
+        "t": "mistake",
+        "html": "The tropics and polar circles are not arbitrary lines drawn by mapmakers, and they are not where Earth is closest to the Sun. They come from the tilt alone: the tropics at the tilt angle, the polar circles at $90^\\circ$ minus the tilt. A quick check: if Earth had no tilt, the Sun would stay on the celestial equator all year, the tropics would shrink to the equator, and there would be no midnight Sun anywhere except right at the poles."
+      },
+      {
+        "t": "note",
+        "html": "Seasons do not come from Earth's distance: Earth is closest to the Sun in early January, in northern winter, and the distance changes only about 3%. Set dates through the year in the <a href=\"/science-lab/night-sky/\">Sky and Solar System</a> lab and watch Earth travel around the Sun."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Astronomy 2e, section 4.2, The Seasons"
+      },
+      {
+        "name": "NGSS MS-ESS1-1: Earth–Sun–Moon system models"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

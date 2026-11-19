@@ -1,0 +1,154 @@
+{
+  "id": "sym.truth-functions",
+  "slug": "truth-functions",
+  "ladder": "logic",
+  "course": "sym",
+  "unit": "truth-tables",
+  "title": "Truth Values of the Connectives",
+  "short": "Each connective is a truth function: the truth value of the compound depends only on the values of its parts.",
+  "trouble": "The conditional with a false antecedent: learners call p → q false or \"not applicable\" when p is false. It is true; the promise was not broken.",
+  "prereqs": [
+    "sym.connectives"
+  ],
+  "xp": 1,
+  "viz": [
+    "lg-truthtable"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/logic/symbolic-logic/connectives/\">The Five Connectives</a> you learned five symbols. Now we pin down exactly what each one means. The meaning of a connective is a rule: given the truth values of the parts, it tells you the truth value of the whole. Logicians call such a rule a <b>truth function</b>."
+      },
+      {
+        "t": "key",
+        "html": "Each connective is a truth function. $\\neg p$ flips the value of $p$. $p \\land q$ is true only when both are true. $p \\lor q$ is false only when both are false. $p \\to q$ is false only when $p$ is true and $q$ is false. $p \\leftrightarrow q$ is true when $p$ and $q$ have the same value."
+      },
+      {
+        "t": "table",
+        "head": [
+          "$p$",
+          "$q$",
+          "$p \\land q$",
+          "$p \\lor q$",
+          "$p \\to q$",
+          "$p \\leftrightarrow q$"
+        ],
+        "rows": [
+          [
+            "T",
+            "T",
+            "T",
+            "T",
+            "T",
+            "T"
+          ],
+          [
+            "T",
+            "F",
+            "F",
+            "T",
+            "F",
+            "F"
+          ],
+          [
+            "F",
+            "T",
+            "F",
+            "T",
+            "T",
+            "F"
+          ],
+          [
+            "F",
+            "F",
+            "F",
+            "F",
+            "T",
+            "T"
+          ]
+        ],
+        "cap": "The four binary connectives, row by row. $\\neg p$ is F when $p$ is T, and T when $p$ is F."
+      },
+      {
+        "t": "why",
+        "html": "Why is a conditional true when its antecedent is false? Think of $p \\to q$ as a promise: \"If you finish your chores, you can go to the movies.\" The promise is broken in one situation only: you finish your chores and are not allowed to go. If you did not finish them, nothing was promised, so the promise was not broken. Logic counts a claim that was not broken as true. This reading is called the <b>material conditional</b>, and it is the one every later rule assumes."
+      },
+      {
+        "t": "viz",
+        "name": "lg-truthtable",
+        "opts": {
+          "formulas": [
+            "p → q"
+          ]
+        },
+        "cap": "The conditional: one F, in the row where the antecedent is true and the consequent false."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A false antecedent",
+        "q": "Let $p$ be F and $q$ be T. What is the value of $p \\to q$?",
+        "steps": [
+          "The only row that makes a conditional F has $p$ T and $q$ F.",
+          "Here $p$ is F, so the conditional is not broken."
+        ],
+        "a": "T"
+      },
+      {
+        "t": "ex",
+        "title": "Inclusive or",
+        "q": "Let $p$ and $q$ both be T. What is $p \\lor q$?",
+        "steps": [
+          "A disjunction is F only when both disjuncts are F.",
+          "Here both are T."
+        ],
+        "a": "T"
+      },
+      {
+        "t": "ex",
+        "title": "The biconditional",
+        "q": "Let $p$ be F and $q$ be F. What is $p \\leftrightarrow q$?",
+        "steps": [
+          "A biconditional is T when both sides match.",
+          "Both are F, so they match."
+        ],
+        "a": "T"
+      },
+      {
+        "t": "mistake",
+        "html": "Calling $p \\to q$ false, or \"not applicable\", when $p$ is false. In logic every formula is true or false in every row, and a conditional with a false antecedent is true. A check: the only F in the conditional column is the row T, F."
+      },
+      {
+        "t": "list",
+        "items": [
+          "Negation: flip.",
+          "Conjunction: one F makes it F.",
+          "Disjunction: one T makes it T.",
+          "Conditional: F only for T → F.",
+          "Biconditional: T when the values match."
+        ]
+      },
+      {
+        "t": "p",
+        "html": "Because each connective is a truth function, the value of any formula, however long, is settled by the values of its letters. That is the fact behind every truth table in this unit, starting with <a href=\"/logic/symbolic-logic/compute-truth-value/\">Computing a Truth Value</a>."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Patrick J. Hurley and Lori Watson, A Concise Introduction to Logic, 13th ed., section 6.2, Truth Functions"
+      },
+      {
+        "name": "forall x: Calgary, an open introduction to formal logic (P. D. Magnus, Tim Button and others; Open Logic Project), chapter on characteristic truth tables"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,66 @@
+{
+  "id": "exam.rough-ramp-spring",
+  "slug": "rough-ramp-spring",
+  "ladder": "physics",
+  "course": "exam",
+  "unit": "mechanics",
+  "title": "Down a Rough Ramp Into a Spring",
+  "short": "Friction takes energy on the ramp; what is left squeezes a spring.",
+  "trouble": "Students use mg instead of mg cos θ for the normal force on the ramp.",
+  "prereqs": [
+    "phys1.friction-energy",
+    "phys1.spring-potential-energy",
+    "phys1.friction-on-inclines"
+  ],
+  "xp": 3,
+  "viz": [
+    "exam-rough-ramp-spring"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Energy bookkeeping in three stops: the top of the ramp, the bottom, and the spring at full squeeze. Friction is the one thing that takes energy out, as in <a href=\"/physics/physics-1/friction-energy/\">Friction and Energy</a>. Each problem here is one short scene and a chain of questions. Answer them in order: each later question uses what you found before, so a slip early on carries through. Keep full precision between steps and round only at the end."
+      },
+      {
+        "t": "key",
+        "html": "On a ramp the normal force is $mg\\cos\\theta$, so friction does $|W_f| = \\mu mg\\cos\\theta\\cdot L$. Then $$\\tfrac{1}{2}mv^2 = mgL\\sin\\theta - |W_f|$$ at the bottom, and on a smooth floor $\\tfrac{1}{2}kx^2 = \\tfrac{1}{2}mv^2$."
+      },
+      {
+        "t": "viz",
+        "name": "exam-rough-ramp-spring",
+        "opts": {
+          "ang": 30,
+          "L": 3,
+          "mu": 0.2
+        },
+        "cap": "Friction pulls up the slope while the crate slides down; the smooth floor and spring lose nothing."
+      },
+      {
+        "t": "ex",
+        "title": "A crate into a spring",
+        "q": "A $2.0\\ \\text{kg}$ crate slides $3.0\\ \\text{m}$ down a $30^\\circ$ ramp ($\\mu = 0.2$), then into a $400\\ \\text{N/m}$ spring on a smooth floor. Find (1) the work done by friction, (2) the speed at the bottom and (3) the squeeze.",
+        "steps": [
+          "(1) $|W_f| = (0.2)(2.0)(9.8)\\cos 30^\\circ(3.0) = 10.2\\ \\text{J}$.",
+          "(2) $\\tfrac{1}{2}mv^2 = (2.0)(9.8)(3.0)\\sin 30^\\circ - 10.2 = 19.2\\ \\text{J}$, so $v = 4.38\\ \\text{m/s}$.",
+          "(3) $x = \\sqrt{2(19.2)/400} = 0.310\\ \\text{m}$."
+        ],
+        "a": "$10.2\\ \\text{J}$, $4.38\\ \\text{m/s}$, $0.310\\ \\text{m}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Using $\\mu mg$ for friction on a slope. The ramp only presses back with $mg\\cos\\theta$. Check: on a vertical wall ($\\theta = 90^\\circ$) there would be no normal force at all."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e (Rice University), chapters on kinematics, energy and momentum"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

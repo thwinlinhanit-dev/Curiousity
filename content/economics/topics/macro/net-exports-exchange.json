@@ -1,0 +1,112 @@
+{
+  "id": "macro.net-exports-exchange",
+  "slug": "net-exports-exchange",
+  "ladder": "economics",
+  "course": "macro",
+  "unit": "open-economy",
+  "title": "Exchange Rates and Net Exports",
+  "short": "A stronger currency makes exports dearer abroad and imports cheaper at home, lowering net exports and AD.",
+  "trouble": "Students assume a strong currency is always good for a country's output, missing its effect on exporters.",
+  "prereqs": [
+    "macro.forex-shifts",
+    "macro.ad-shifters"
+  ],
+  "xp": 2,
+  "viz": [
+    "ec-forex",
+    "ec-adas"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Exchange rates matter for the whole economy because they change the prices of exports and imports, and so <a href=\"/economics/macroeconomics/ad-shifters/\">aggregate demand</a>. Use what you learned in <a href=\"/economics/macroeconomics/forex-shifts/\">What Moves Exchange Rates</a>."
+      },
+      {
+        "t": "key",
+        "html": "When the dollar <b>appreciates</b>, U.S. goods get dearer abroad and foreign goods get cheaper here: exports fall, imports rise, <b>net exports fall</b> and AD shifts left. When the dollar <b>depreciates</b>, net exports rise and AD shifts right."
+      },
+      {
+        "t": "why",
+        "html": "A \\$50 pair of U.S.-made boots costs a European $50 \\times 0.80 = 40$ euros at 0.80 euros per dollar, but $50 \\times 1.10 = 55$ euros at 1.10. Same boots, same dollar price, but 15 euros dearer to the buyer. Europeans buy fewer. Meanwhile each dollar buys more euros, so European goods get cheaper for Americans, who buy more of them. Exports fall, imports rise, NX falls. A strong currency helps some people (importers, tourists abroad, buyers of imports) and hurts others (exporters and firms competing with imports); it is not simply \"good\" or \"bad.\""
+      },
+      {
+        "t": "viz",
+        "name": "ec-forex",
+        "opts": {
+          "mirror": false,
+          "nx": true
+        },
+        "cap": "Pick an event: the text follows the new exchange rate through to net exports and AD."
+      },
+      {
+        "t": "viz",
+        "name": "ec-adas",
+        "opts": {
+          "mode": "shock",
+          "events": [
+            {
+              "label": "The dollar appreciates",
+              "curve": "AD",
+              "dir": -1,
+              "why": "Exports fall and imports rise, so net exports fall"
+            },
+            {
+              "label": "The dollar depreciates",
+              "curve": "AD",
+              "dir": 1,
+              "why": "Exports rise and imports fall, so net exports rise"
+            }
+          ]
+        },
+        "cap": "The same change in the AD–AS model: net exports are part of AD."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Price abroad",
+        "q": "A U.S. software license sells for \\$80. The rate moves from 0.90 to 1.20 euros per dollar. What does it cost in Europe before and after?",
+        "steps": [
+          "Before: $80 \\times 0.90 = 72$ euros. After: $80 \\times 1.20 = 96$ euros.",
+          "The dollar appreciated, so U.S. exports got dearer abroad: they tend to fall."
+        ],
+        "a": "72 euros, then 96 euros"
+      },
+      {
+        "t": "ex",
+        "title": "Price at home",
+        "q": "A German camera costs 90 euros. One dollar buys 1.2 euros. What does it cost an American?",
+        "steps": [
+          "Dollars = euros ÷ (euros per dollar).",
+          "$90 \\div 1.2 = 75$ dollars."
+        ],
+        "a": "\\$75"
+      },
+      {
+        "t": "p",
+        "html": "The effect works through the whole economy. A currency that depreciates in a slump makes the country's goods cheaper abroad, which cushions the fall in AD; a currency that soars can slow growth by squeezing exporters. For the dollar, these changes come from the market: its value floats, and U.S. authorities have rarely bought or sold currencies to steer it in recent decades. The effects also take time, because buyers need months to switch suppliers."
+      },
+      {
+        "t": "mistake",
+        "html": "Assuming a strong currency is always good for a country's output, missing its effect on exporters. Check: follow the chain: stronger dollar → U.S. goods dearer abroad → exports fall, imports rise → NX and AD fall."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Macroeconomics 3e, 15.3 Macroeconomic Effects of Exchange Rates"
+      },
+      {
+        "name": "College Board, AP Macroeconomics Course and Exam Description (topic list)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

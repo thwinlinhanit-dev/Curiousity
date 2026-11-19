@@ -1,0 +1,122 @@
+{
+  "id": "micro.ppc",
+  "slug": "ppc",
+  "ladder": "economics",
+  "course": "micro",
+  "unit": "ppc-trade",
+  "title": "The Production Possibilities Curve",
+  "short": "Points on the curve are efficient, points inside waste resources, and points outside cannot be produced yet.",
+  "trouble": "Students call a point inside the curve impossible, or think the curve shows what people want rather than what can be produced.",
+  "prereqs": [
+    "micro.opportunity-cost",
+    "g8.qualitative-graphs"
+  ],
+  "xp": 1,
+  "viz": [
+    "ec-ppc"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A whole economy faces the same kind of tradeoff as a shopper with a budget, only with workers and machines instead of dollars. You know opportunity cost from <a href=\"/economics/microeconomics/opportunity-cost/\">Opportunity Cost</a>, and you know how to read the story a graph tells from <a href=\"/math/pre-algebra/qualitative-graphs/\">Describing Graphs in Words</a>. Put them together and you get the <b>production possibilities curve</b> (PPC)."
+      },
+      {
+        "t": "key",
+        "html": "A <b>PPC</b> shows the largest combinations of two goods an economy can produce when it uses all its resources with today's technology. A point <b>on</b> the curve is <b>efficient</b>. A point <b>inside</b> is possible but <b>inefficient</b>: some resources are idle or misused. A point <b>outside</b> is <b>unattainable</b> for now."
+      },
+      {
+        "t": "why",
+        "html": "On the curve, every worker and machine is busy, so the only way to get more robots is to move some of them away from wheat: more of one means less of the other. Inside the curve, some workers or machines sit idle (as in a recession), so the economy could have more of <i>both</i> goods just by using them. Outside the curve, there aren't enough resources, or good enough technology, to make that much, although growth may make it possible later."
+      },
+      {
+        "t": "viz",
+        "name": "ec-ppc",
+        "opts": {
+          "goods": [
+            "Robots",
+            "Wheat"
+          ],
+          "shape": "bowed",
+          "max": [
+            50,
+            100
+          ],
+          "point": [
+            20,
+            50
+          ]
+        },
+        "cap": "Drag the point. Inside the curve it is possible but wasteful; on it, efficient; outside, out of reach for now. \"Put idle resources to work\" moves an inside point toward the curve."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Point",
+          "Robots",
+          "Wheat (tons)"
+        ],
+        "rows": [
+          [
+            "A",
+            "0",
+            "100"
+          ],
+          [
+            "B",
+            "10",
+            "90"
+          ],
+          [
+            "C",
+            "20",
+            "75"
+          ],
+          [
+            "D",
+            "30",
+            "50"
+          ],
+          [
+            "E",
+            "40",
+            "0"
+          ]
+        ],
+        "cap": "A production possibilities table: each row is one point on the curve."
+      },
+      {
+        "t": "ex",
+        "title": "Reading points against the table",
+        "q": "Using the table, classify each combination: (a) 20 robots and 60 tons of wheat; (b) 30 robots and 60 tons of wheat; (c) 10 robots and 90 tons of wheat.",
+        "steps": [
+          "(a) With 20 robots the economy can make at most 75 tons (point C). 60 is less than 75: <b>inside</b>, inefficient.",
+          "(b) With 30 robots the most is 50 tons (point D). 60 is more than 50: <b>outside</b>, unattainable for now.",
+          "(c) Exactly point B: <b>on</b> the curve, efficient."
+        ],
+        "a": "(a) inefficient, (b) unattainable, (c) efficient."
+      },
+      {
+        "t": "mistake",
+        "html": "Calling a point inside the curve \"impossible.\" It is perfectly possible; it is just wasteful, because the same resources could make more. Another mix-up: thinking the PPC shows what people <i>want</i>. It shows only what the economy <i>can</i> make. Which point on the curve a society picks depends on what people want, but their wants don't move the curve. Check: for a given amount of the horizontal good, read the most the curve allows of the other, then compare."
+      },
+      {
+        "t": "note",
+        "html": "A PPC holds three things fixed: the amount of resources, the technology, and the time period. Change one of them and the whole curve moves, which is the subject of <a href=\"/economics/microeconomics/ppc-shifts/\">Growth and Shifts of the PPC</a>."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, 2.2 The Production Possibilities Frontier and Social Choices"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.01 Principles of Microeconomics (scope and sequence)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

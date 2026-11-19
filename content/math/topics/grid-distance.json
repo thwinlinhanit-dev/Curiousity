@@ -1,0 +1,116 @@
+{
+  "id": "g6.grid-distance",
+  "slug": "grid-distance",
+  "ladder": "math",
+  "course": "g6",
+  "unit": "negatives",
+  "title": "Distance on the Coordinate Plane",
+  "short": "Find distances between points that share a coordinate.",
+  "trouble": "Students subtract coordinates with different signs and get a distance that is too small, as from −3 to 4.",
+  "prereqs": [
+    "g6.four-quadrants",
+    "g6.absolute-value"
+  ],
+  "xp": 2,
+  "viz": [
+    "geoboard"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "When two points share a coordinate, the segment between them is horizontal or vertical, and its length comes straight from the other coordinates. You will use <a href=\"/math/grade-6/absolute-value/\">absolute value</a> to handle points in different quadrants."
+      },
+      {
+        "t": "key",
+        "html": "If two points have the same y (or the same x), the distance is the gap between the other coordinates. On the same side of 0, subtract their absolute values; on opposite sides, add them."
+      },
+      {
+        "t": "viz",
+        "name": "geoboard",
+        "opts": {
+          "axes": true,
+          "xmin": -6,
+          "xmax": 6,
+          "ymin": -4,
+          "ymax": 5,
+          "points": {
+            "A": [
+              -3,
+              2
+            ],
+            "B": [
+              4,
+              2
+            ]
+          },
+          "objects": [
+            [
+              "seg",
+              "A",
+              "B"
+            ]
+          ],
+          "coords": true,
+          "show": {
+            "len": true,
+            "ang": false,
+            "area": false
+          }
+        },
+        "cap": "A(−3, 2) and B(4, 2) share y = 2. Drag the points and watch the length."
+      },
+      {
+        "t": "why",
+        "html": "From $x = -3$ to $x = 4$: walk 3 units to reach 0, then 4 more units. That is $3 + 4 = 7$, which is $|-3| + |4|$. From 2 to 6 on the same side, you only walk the extra part: $6 - 2 = 4$. Counting the grid squares gives the same answers."
+      },
+      {
+        "t": "ex",
+        "title": "Opposite sides of 0",
+        "q": "Find the distance between $(-3, 2)$ and $(4, 2)$.",
+        "steps": [
+          "Same y, so the segment is horizontal. Use the x-coordinates, $-3$ and $4$.",
+          "They are on opposite sides of 0: $|-3| + |4| = 3 + 4 = 7$."
+        ],
+        "a": "7 units"
+      },
+      {
+        "t": "ex",
+        "title": "Same side of 0",
+        "q": "Find the distance between $(2, -1)$ and $(2, -6)$.",
+        "steps": [
+          "Same x, so the segment is vertical. Use $-1$ and $-6$.",
+          "Both are below 0: $|-6| - |-1| = 6 - 1 = 5$."
+        ],
+        "a": "5 units"
+      },
+      {
+        "t": "ex",
+        "title": "On a map",
+        "q": "On a town map, the school is at $(-5, 1)$ and the library at $(3, 1)$. Each unit is one block. How far apart are they?",
+        "steps": [
+          "Same y: use $-5$ and $3$, on opposite sides of 0.",
+          "$5 + 3 = 8$."
+        ],
+        "a": "8 blocks"
+      },
+      {
+        "t": "mistake",
+        "html": "Subtracting the digits across 0: from $-3$ to 4, \"$4 - 3 = 1$\". That ignores the 3 units on the negative side. Quick check: count the squares, or ask whether 0 is between the two numbers. If it is, add."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Prealgebra 2e, section 11.1 Use the Rectangular Coordinate System"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 6.NS.C.8: distances between points with a shared coordinate"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

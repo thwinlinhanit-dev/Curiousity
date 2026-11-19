@@ -1,0 +1,102 @@
+{
+  "id": "stat.binomial-distribution",
+  "slug": "binomial-distribution",
+  "ladder": "math",
+  "course": "stat",
+  "unit": "random-variables",
+  "title": "The Binomial Distribution",
+  "short": "Count successes in n independent trials with the same p.",
+  "trouble": "Students use the binomial model when trials are not independent or n is not fixed.",
+  "prereqs": [
+    "stat.expected-value",
+    "stat.combinations"
+  ],
+  "xp": 3,
+  "viz": [
+    "dice"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Count the successes in a fixed number of independent tries: heads in 10 flips, made free throws in 5 shots, defective bulbs in a box. This situation comes up so often that its distribution has a name and a formula, built from <a href=\"/math/probability-and-statistics/combinations/\">combinations</a> and the <a href=\"/math/probability-and-statistics/expected-value/\">expected value</a>."
+      },
+      {
+        "t": "key",
+        "html": "If there are $n$ independent trials, each a success with the same probability $p$, the number of successes $X$ is <b>binomial</b>:\n$$P(X = k) = \\binom{n}{k}p^k(1 - p)^{n - k}, \\quad k = 0, 1, \\ldots, n.$$\nIts mean is $\\mu = np$ and its standard deviation is $\\sigma = \\sqrt{np(1 - p)}$."
+      },
+      {
+        "t": "why",
+        "html": "Take one particular sequence with $k$ successes and $n - k$ failures, such as SSFSF. By independence, its probability is the product $$p \\cdot p \\cdot (1 - p) \\cdot p \\cdot (1 - p) = p^k(1 - p)^{n - k}$$ and every such sequence has that same probability. How many sequences are there? Choose which $k$ of the $n$ positions are successes: $\\binom{n}{k}$. Multiply. For the mean, X is a sum of $n$ trials that are each 1 (success) or 0, each with mean $p$, so $\\mu = np$; their variances $p(1 - p)$ add because the trials are independent."
+      },
+      {
+        "t": "list",
+        "items": [
+          "<b>B</b>inary: each trial is a success or a failure.",
+          "<b>I</b>ndependent trials.",
+          "<b>N</b>umber of trials fixed in advance.",
+          "<b>S</b>ame probability of success each time."
+        ]
+      },
+      {
+        "t": "ex",
+        "title": "Free throws",
+        "q": "A player makes 70% of free throws, independently. In 5 shots, find $P(\\text{exactly 4 made})$.",
+        "steps": [
+          "Binomial with $n = 5$, $p = 0.7$.",
+          "$$P(X = 4) = \\binom{5}{4}(0.7)^4(0.3)^1 = 5 \\times 0.2401 \\times 0.3$$",
+          "$= 0.36015$."
+        ],
+        "a": "About $0.360$."
+      },
+      {
+        "t": "ex",
+        "title": "At least one",
+        "q": "Roll a fair die 4 times. Find the probability of at least one six.",
+        "steps": [
+          "\"At least one\" is the complement of \"none.\"",
+          "$P(X = 0) = \\left(\\frac{5}{6}\\right)^4 = \\frac{625}{1296}$.",
+          "$$P(X \\ge 1) = 1 - \\frac{625}{1296} = \\frac{671}{1296} \\approx 0.518$$"
+        ],
+        "a": "About $0.518$."
+      },
+      {
+        "t": "ex",
+        "title": "Mean and spread",
+        "q": "In a random sample of 100 voters, where 20% of all voters support a measure, find the mean and SD of the number of supporters.",
+        "steps": [
+          "$\\mu = np = 100(0.2) = 20$.",
+          "$\\sigma = \\sqrt{100(0.2)(0.8)} = \\sqrt{16} = 4$."
+        ],
+        "a": "Mean 20, SD 4."
+      },
+      {
+        "t": "viz",
+        "name": "dice",
+        "opts": {
+          "kind": "coins",
+          "n": 10,
+          "theory": true
+        },
+        "cap": "The number of heads in 10 flips is binomial with n = 10, p = 1/2. Flip many times and compare the bars with the outlined probabilities."
+      },
+      {
+        "t": "mistake",
+        "html": "Using the binomial model when the trials are not independent or n is not fixed. Drawing 5 cards without replacement and counting hearts is not binomial (the chance changes after each draw); rolling until a six appears is not binomial (n is not fixed; see the geometric distribution). Check all four BINS conditions first."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Introductory Statistics 2e, section 4.3 Binomial Distribution"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, S-MD.A.3 (Develop a probability distribution for a random variable)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

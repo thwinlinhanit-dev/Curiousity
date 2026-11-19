@@ -1,0 +1,94 @@
+{
+  "id": "imicro.production-functions",
+  "slug": "production-functions",
+  "ladder": "economics",
+  "course": "imicro",
+  "unit": "production",
+  "title": "Production Functions and Marginal Products",
+  "short": "Q = f(K, L); the marginal product of labor is ∂Q/∂L.",
+  "trouble": "Students treat the marginal product as output per worker, which is the average product.",
+  "prereqs": [
+    "micro.production-function",
+    "calc3.partial-derivatives"
+  ],
+  "xp": 2,
+  "viz": [
+    "surface"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/economics/microeconomics/production-function/\">Short-Run Production</a> counted the extra output from each added worker in a table. A production function $Q = f(K, L)$ says how much output any mix of capital $K$ and labor $L$ can make, and <a href=\"/math/calculus-3/partial-derivatives/\">Partial Derivatives</a> turns \"the extra output from a little more labor\" into an exact rate. The firm side of the course mirrors the consumer side: production functions play the role of utility functions, but their numbers are real output, not just rankings."
+      },
+      {
+        "t": "key",
+        "html": "$$MP_L = \\frac{\\partial Q}{\\partial L}, \\qquad MP_K = \\frac{\\partial Q}{\\partial K}, \\qquad AP_L = \\frac{Q}{L}.$$ The marginal product is the extra output from a little more of one input, the others held fixed; the average product is output per unit of that input. <b>Diminishing marginal product</b> of labor means $\\partial^2 Q/\\partial L^2 < 0$."
+      },
+      {
+        "t": "why",
+        "html": "The marginal product is a slope: hold $K$ fixed, and $Q$ becomes a function of $L$ alone, whose derivative is $MP_L$. The average product is a different number, and the two are linked: $$\\frac{d}{dL}\\left(\\frac{Q}{L}\\right) = \\frac{L\\cdot MP_L - Q}{L^2} = \\frac{MP_L - AP_L}{L}.$$ So the average rises while the marginal worker adds more than the average and falls once she adds less, the same way a new test score pulls your average up only if it beats your average."
+      },
+      {
+        "t": "viz",
+        "name": "surface",
+        "opts": {
+          "f": "x^(1/3)*y^(2/3)",
+          "xmin": 0,
+          "xmax": 12,
+          "ymin": 0,
+          "ymax": 12,
+          "contours": 8,
+          "floor": true,
+          "slice": "x",
+          "at": 8,
+          "view": "3d"
+        },
+        "cap": "$Q = K^{1/3}L^{2/3}$ with $x$ = capital and $y$ = labor. The slice holds $K = 8$; the trace $Q = 2L^{2/3}$ is the short-run production function, and its slope is $MP_L$, which flattens as $L$ grows."
+      },
+      {
+        "t": "ex",
+        "title": "Marginal and average product",
+        "q": "$Q = 10K^{1/2}L^{1/2}$. At $K = 16$, $L = 4$, find $MP_L$ and $AP_L$.",
+        "steps": [
+          "$Q = 10(4)(2) = 80$.",
+          "$MP_L = 5K^{1/2}L^{-1/2} = 5\\cdot\\dfrac{4}{2} = 10$.",
+          "$AP_L = 80/4 = 20$.",
+          "The fifth worker adds about 10 units, half the average. For Cobb-Douglas, $MP_L = \\beta\\cdot AP_L$, with $\\beta = \\tfrac{1}{2}$ here."
+        ],
+        "a": "$MP_L = 10$, $AP_L = 20$."
+      },
+      {
+        "t": "ex",
+        "title": "A short-run production function",
+        "q": "With its building fixed, a bakery makes $Q = 20L + 3L^2 - 0.1L^3$. Find $MP_L$ and $AP_L$ at $L = 10$, and where diminishing marginal returns begin.",
+        "steps": [
+          "$MP_L = 20 + 6L - 0.3L^2 = 20 + 60 - 30 = 50$.",
+          "$AP_L = 20 + 3L - 0.1L^2 = 20 + 30 - 10 = 40$.",
+          "$MP_L$ peaks where $6 - 0.6L = 0$: $L = 10$. Beyond 10 workers each new worker adds less than the last, though output keeps rising until $MP_L$ reaches zero."
+        ],
+        "a": "$MP_L = 50$, $AP_L = 40$; diminishing returns set in after $L = 10$."
+      },
+      {
+        "t": "mistake",
+        "html": "Treating the marginal product as output per worker. Output per worker is the average product. In the first example the average is 20 while the next worker adds only 10, and a firm deciding whether to hire needs the 10. Check: \"marginal\" always means a derivative (or the change from one more unit), never a ratio of totals."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, ch. 7.2 Production in the Short Run"
+      },
+      {
+        "name": "OpenStax Calculus Volume 3, 4.3 Partial Derivatives"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.04 Intermediate Microeconomic Theory (course scope and lecture topics)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

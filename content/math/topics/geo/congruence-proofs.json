@@ -1,0 +1,86 @@
+{
+  "id": "geo.congruence-proofs",
+  "slug": "congruence-proofs",
+  "ladder": "math",
+  "course": "geo",
+  "unit": "congruence",
+  "title": "Proofs with Congruent Triangles",
+  "short": "Prove triangles congruent, then use matching parts.",
+  "trouble": "Students use matching parts as a reason before proving the triangles congruent.",
+  "prereqs": [
+    "geo.aas-hl"
+  ],
+  "xp": 3,
+  "viz": [
+    "geoboard"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Most proofs about triangles follow one pattern: find three pairs of congruent parts, prove the triangles congruent with one of the criteria from <a href=\"/math/geometry/aas-hl/\">AAS and Hypotenuse-Leg</a> and <a href=\"/math/geometry/congruence-criteria/\">SSS, SAS and ASA</a>, then use the fact that <b>corresponding parts of congruent triangles are congruent</b> (CPCTC) to get the part you really want."
+      },
+      {
+        "t": "list",
+        "items": [
+          "<b>A shared side:</b> $\\overline{BD} \\cong \\overline{BD}$ by the Reflexive Property.",
+          "<b>Vertical angles</b> where two segments cross: congruent by the Vertical Angles Theorem.",
+          "<b>Parallel lines:</b> alternate interior angles are congruent.",
+          "<b>Midpoints and bisectors:</b> they give two congruent segments or angles, by definition.",
+          "<b>Perpendicular lines:</b> they give right angles, and all right angles are congruent. cap: Hidden congruent parts to look for."
+        ]
+      },
+      {
+        "t": "why",
+        "html": "CPCTC is not a new idea: once a rigid motion carries one triangle onto the other (that is what congruent means), every part lands on its partner. The criteria let us know such a motion exists without finding it."
+      },
+      {
+        "t": "ex",
+        "title": "A kite (SSS, then CPCTC)",
+        "q": "<b>Given:</b> $\\overline{AB} \\cong \\overline{CB}$ and $\\overline{AD} \\cong \\overline{CD}$. <b>Prove:</b> $\\angle A \\cong \\angle C$.<div class=\"ml-viz\" data-viz=\"geo-fig\" data-opts='{\"pts\":{\"B\":[0,4],\"A\":[-2.6,1.3],\"C\":[2.6,1.3],\"D\":[0,-1.8]},\"polys\":[[\"A\",\"B\",\"C\",\"D\",{\"fill\":\"blue\"}]],\"segs\":[[\"B\",\"D\",{\"dash\":1}],[\"A\",\"B\",{\"tick\":1}],[\"C\",\"B\",{\"tick\":1}],[\"A\",\"D\",{\"tick\":2}],[\"C\",\"D\",{\"tick\":2}]],\"height\":210,\"label\":\"Kite ABCD with diagonal BD\"}' aria-label=\"Kite ABCD with diagonal BD\"></div>",
+        "steps": [
+          "1. $\\overline{AB} \\cong \\overline{CB}$, $\\overline{AD} \\cong \\overline{CD}$ — Given.",
+          "2. $\\overline{BD} \\cong \\overline{BD}$ — Reflexive Property.",
+          "3. $\\triangle ABD \\cong \\triangle CBD$ — SSS.",
+          "4. $\\angle A \\cong \\angle C$ — CPCTC."
+        ],
+        "a": "Proved: the triangles are congruent first, then their matching angles."
+      },
+      {
+        "t": "ex",
+        "title": "Crossing segments (SAS)",
+        "q": "<b>Given:</b> $E$ is the midpoint of $\\overline{AD}$ and of $\\overline{BC}$. <b>Prove:</b> $\\overline{AB} \\cong \\overline{DC}$.<div class=\"ml-viz\" data-viz=\"geo-fig\" data-opts='{\"pts\":{\"A\":[0,3],\"B\":[0,0],\"C\":[6,3],\"D\":[6,0],\"E\":[3,1.5]},\"polys\":[[\"A\",\"B\",\"E\",{\"fill\":\"blue\"}],[\"D\",\"C\",\"E\",{\"fill\":\"green\"}]],\"segs\":[[\"A\",\"E\",{\"tick\":1}],[\"E\",\"D\",{\"tick\":1}],[\"B\",\"E\",{\"tick\":2}],[\"E\",\"C\",{\"tick\":2}]],\"height\":190,\"label\":\"Segments AD and BC crossing at their common midpoint E\"}' aria-label=\"Segments AD and BC crossing at their common midpoint E\"></div>",
+        "steps": [
+          "1. $E$ is the midpoint of $\\overline{AD}$ and $\\overline{BC}$ — Given.",
+          "2. $\\overline{AE} \\cong \\overline{DE}$ and $\\overline{BE} \\cong \\overline{CE}$ — Definition of midpoint.",
+          "3. $\\angle AEB \\cong \\angle DEC$ — Vertical Angles Theorem.",
+          "4. $\\triangle ABE \\cong \\triangle DCE$ — SAS (the vertical angles are between the pairs of sides).",
+          "5. $\\overline{AB} \\cong \\overline{DC}$ — CPCTC."
+        ],
+        "a": "$\\overline{AB} \\cong \\overline{DC}$"
+      },
+      {
+        "t": "key",
+        "html": "Plan backward from the goal: which two triangles contain the parts you want? Find three pairs of congruent parts (look for shared sides, vertical angles, parallel lines, midpoints), name the criterion, and finish with CPCTC."
+      },
+      {
+        "t": "mistake",
+        "html": "Using CPCTC before the triangles are proved congruent. CPCTC is only a valid reason on a line <i>after</i> the congruence statement. If a proof says \"$\\overline{AB} \\cong \\overline{DC}$ by CPCTC\" in step 2, it is using what it has not yet shown. Check: every CPCTC line should point back to an earlier \"$\\triangle \\ldots \\cong \\triangle \\ldots$\" line."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Euclid, <i>Elements</i>, Book I, Propositions 4, 8 and 15"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, High School Geometry, G-SRT.B.5"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

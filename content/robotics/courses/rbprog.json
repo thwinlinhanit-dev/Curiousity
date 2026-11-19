@@ -1,0 +1,92 @@
+{
+  "key": "rbprog",
+  "ladder": "robotics",
+  "title": "Programming Robots",
+  "short": "Programming",
+  "after": [
+    "rbelec"
+  ],
+  "units": [
+    {
+      "key": "python",
+      "title": "Python on a Raspberry Pi",
+      "blurb": "Reading code like the computer does, and turning sensor readings into decisions."
+    },
+    {
+      "key": "structure",
+      "title": "Programs That Run Forever",
+      "blurb": "State machines and steady control loops."
+    },
+    {
+      "key": "embedded",
+      "title": "C on a Microcontroller",
+      "blurb": "Integer sizes, overflow and bit masks: the bugs that bite on small chips."
+    }
+  ],
+  "topics": [
+    {
+      "id": "rbprog.trace-code",
+      "slug": "trace-code",
+      "course": "rbprog",
+      "unit": "python",
+      "title": "Tracing Code by Hand",
+      "short": "Follow a program one line at a time, writing down every variable, to know what it will do.",
+      "prereqs": [
+        "rbkids.block-coding",
+        "g6.variables-meaning"
+      ],
+      "viz": []
+    },
+    {
+      "id": "rbprog.sensor-decisions",
+      "slug": "sensor-decisions",
+      "course": "rbprog",
+      "unit": "python",
+      "title": "Decisions from Sensors",
+      "short": "if, elif and else turn readings into actions; the order of the tests matters.",
+      "prereqs": [
+        "rbprog.trace-code"
+      ],
+      "viz": []
+    },
+    {
+      "id": "rbprog.state-machines",
+      "slug": "state-machines",
+      "course": "rbprog",
+      "unit": "structure",
+      "title": "State Machines",
+      "short": "A robot is always in one state; each input moves it along a rule to the next.",
+      "prereqs": [
+        "rbprog.sensor-decisions"
+      ],
+      "viz": [
+        "rb-fsm"
+      ]
+    },
+    {
+      "id": "rbprog.loop-timing",
+      "slug": "loop-timing",
+      "course": "rbprog",
+      "unit": "structure",
+      "title": "Loop Timing",
+      "short": "A control loop runs at a steady rate: period = 1 / frequency, and all the work must fit inside it.",
+      "prereqs": [
+        "rbprog.state-machines"
+      ],
+      "viz": []
+    },
+    {
+      "id": "rbprog.integers-and-bits",
+      "slug": "integers-and-bits",
+      "course": "rbprog",
+      "unit": "embedded",
+      "title": "Integers, Overflow and Bit Masks",
+      "short": "An 8-bit unsigned number wraps from 255 to 0; masks set, clear and test single bits.",
+      "prereqs": [
+        "rbprog.trace-code",
+        "rbelec.analog-input"
+      ],
+      "viz": []
+    }
+  ]
+}

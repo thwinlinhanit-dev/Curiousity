@@ -1,0 +1,88 @@
+{
+  "id": "geo.sss-sas-similarity",
+  "slug": "sss-sas-similarity",
+  "ladder": "math",
+  "course": "geo",
+  "unit": "similarity",
+  "title": "SSS and SAS Similarity",
+  "short": "Proportional sides, with or without an included angle, prove similarity.",
+  "trouble": "Students compare sides in the wrong order and get ratios that do not match.",
+  "prereqs": [
+    "geo.aa-similarity"
+  ],
+  "xp": 2,
+  "viz": [
+    "geoboard"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/math/geometry/aa-similarity/\">Proving AA Similarity</a> uses angles only. Two more tests use side ratios, matching the congruence criteria SSS and SAS, but with \"proportional\" in place of \"congruent.\""
+      },
+      {
+        "t": "list",
+        "items": [
+          "<b>SSS Similarity:</b> all three pairs of corresponding sides are in the same ratio.",
+          "<b>SAS Similarity:</b> two pairs of sides are in the same ratio, and the angles between them are congruent."
+        ]
+      },
+      {
+        "t": "why",
+        "html": "The proofs copy the AA proof. Dilate the first triangle by the common ratio $k$. Its sides now equal the second triangle's sides (SSS case), or two sides and the included angle match (SAS case). So the dilated triangle is congruent to the second one by SSS or SAS, and a dilation followed by a rigid motion is a similarity."
+      },
+      {
+        "t": "key",
+        "html": "To compare sides, put each triangle's sides in order from shortest to longest and divide matching sides. If all the ratios are equal (SSS), or two are equal with a congruent included angle (SAS), the triangles are similar."
+      },
+      {
+        "t": "ex",
+        "title": "SSS in the right order",
+        "q": "Triangle 1 has sides $8$, $12$, $10$. Triangle 2 has sides $15$, $18$, $12$. Similar?",
+        "steps": [
+          "Sort: triangle 1: $8, 10, 12$. Triangle 2: $12, 15, 18$.",
+          "Ratios: $\\frac{12}{8} = 1.5$, $\\frac{15}{10} = 1.5$, $\\frac{18}{12} = 1.5$."
+        ],
+        "a": "Yes, similar by SSS, with scale factor $1.5$."
+      },
+      {
+        "t": "ex",
+        "title": "SAS",
+        "q": "In $\\triangle ABC$, $AB = 6$, $AC = 9$ and $m\\angle A = 50^\\circ$. In $\\triangle DEF$, $DE = 8$, $DF = 12$ and $m\\angle D = 50^\\circ$. Similar?<div class=\"ml-viz\" data-viz=\"geo-fig\" data-opts='{\"pts\":{\"A\":[0,0],\"B\":[2.31,2.76],\"C\":[5.4,0],\"D\":[7,0],\"E\":[10.09,3.68],\"F\":[14.2,0]},\"polys\":[[\"A\",\"B\",\"C\",{\"fill\":\"blue\"}],[\"D\",\"E\",\"F\",{\"fill\":\"green\"}]],\"groups\":[[\"A\",\"B\",\"C\"],[\"D\",\"E\",\"F\"]],\"segs\":[[\"A\",\"B\",{\"lab\":\"6\"}],[\"A\",\"C\",{\"lab\":\"9\"}],[\"D\",\"E\",{\"lab\":\"8\"}],[\"D\",\"F\",{\"lab\":\"12\"}]],\"angs\":[[\"C\",\"A\",\"B\",{\"lab\":\"50°\"}],[\"F\",\"D\",\"E\",{\"lab\":\"50°\"}]],\"height\":190,\"label\":\"Two triangles with two sides and the included angle labeled\"}' aria-label=\"Two triangles with two sides and the included angle labeled\"></div>",
+        "steps": [
+          "$\\frac{DE}{AB} = \\frac{8}{6} = \\frac{4}{3}$ and $\\frac{DF}{AC} = \\frac{12}{9} = \\frac{4}{3}$: the same ratio.",
+          "The angles between those sides, $\\angle A$ and $\\angle D$, are both $50^\\circ$."
+        ],
+        "a": "Yes, $\\triangle ABC \\sim \\triangle DEF$ by SAS."
+      },
+      {
+        "t": "ex",
+        "title": "Making them similar",
+        "q": "Triangle 1 has sides $4$, $6$, $8$. Triangle 2 has sides $6$, $9$ and $x$, with $x$ the longest. Find $x$.",
+        "steps": [
+          "Shortest pair: $\\frac{6}{4} = 1.5$, middle pair: $\\frac{9}{6} = 1.5$.",
+          "So $x = 1.5 \\cdot 8 = 12$."
+        ],
+        "a": "$x = 12$"
+      },
+      {
+        "t": "mistake",
+        "html": "Comparing sides in the order they happen to be listed. \"$8$, $12$, $10$\" and \"$15$, $18$, $12$\" give ratios $\\frac{15}{8}$, $\\frac{18}{12}$, $\\frac{12}{10}$, which do not match, even though the triangles are similar. Sort both lists first: shortest with shortest, longest with longest."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Euclid, <i>Elements</i>, Book VI, Propositions 5 and 6"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, High School Geometry, G-SRT.B.5"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

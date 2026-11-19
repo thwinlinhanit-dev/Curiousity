@@ -1,0 +1,112 @@
+{
+  "id": "stat.continuous-distributions",
+  "slug": "continuous-distributions",
+  "ladder": "math",
+  "course": "stat",
+  "unit": "random-variables",
+  "title": "Continuous Random Variables",
+  "short": "Probability is area under a density curve.",
+  "trouble": "Students think P(X = 3) is positive for a continuous variable.",
+  "prereqs": [
+    "stat.normal-probabilities",
+    "stat.discrete-random-variables"
+  ],
+  "xp": 2,
+  "viz": [
+    "normal"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A waiting time, a height, an exact weight: these can take any value in an interval, not just separate values like <a href=\"/math/probability-and-statistics/discrete-random-variables/\">counts</a>. You have already met one continuous model, the <a href=\"/math/probability-and-statistics/normal-probabilities/\">normal curve</a>, where probability was area. This lesson makes that the general rule."
+      },
+      {
+        "t": "key",
+        "html": "A <b>continuous random variable</b> is described by a <b>density curve</b>: a curve on or above the x-axis with total area 1 under it. The probability that $X$ falls in an interval is the <b>area</b> under the curve over that interval. Any single exact value has probability 0, so $P(X \\le c) = P(X < c)$."
+      },
+      {
+        "t": "why",
+        "html": "With infinitely many possible values, no single value can carry a positive amount of probability, or the total would be infinite. Instead probability is spread out like paint over an interval, and the height of the curve tells how thickly it is spread. An interval of width 0 holds no paint. That is why we ask about ranges: \"between 4.9 and 5.1 grams,\" never \"exactly 5 grams.\""
+      },
+      {
+        "t": "viz",
+        "name": "stat-chart",
+        "opts": {
+          "kind": "hist",
+          "bins": [
+            [
+              0,
+              20,
+              0.05
+            ]
+          ],
+          "marks": [
+            {
+              "x": 5,
+              "label": "c = 5",
+              "color": "red"
+            },
+            {
+              "x": 12,
+              "label": "d = 12",
+              "color": "purple"
+            }
+          ],
+          "xlabel": "waiting time (minutes)",
+          "ylabel": "density"
+        },
+        "cap": "A uniform density on 0 to 20 minutes: height 1/20 = 0.05, so the total area is 20 × 0.05 = 1."
+      },
+      {
+        "t": "ex",
+        "title": "A uniform wait",
+        "q": "A bus arrives at a random time in the next 20 minutes, all times equally likely. Find the probability you wait less than 5 minutes, and between 5 and 12 minutes.",
+        "steps": [
+          "The density is flat at height $\\frac{1}{20}$ from 0 to 20.",
+          "Less than 5: a rectangle of width 5, area $5 \\times \\frac{1}{20} = \\frac{1}{4}$.",
+          "Between 5 and 12: width 7, area $\\frac{7}{20} = 0.35$."
+        ],
+        "a": "$\\frac14$ and $\\frac{7}{20}$."
+      },
+      {
+        "t": "ex",
+        "title": "A single value",
+        "q": "For the same bus, find $P(X = 7)$ and $P(X \\le 7)$.",
+        "steps": [
+          "A single point has width 0, so its area is 0: $P(X = 7) = 0$.",
+          "$P(X \\le 7) = P(X < 7) = \\frac{7}{20}$."
+        ],
+        "a": "$0$ and $\\frac{7}{20}$."
+      },
+      {
+        "t": "ex",
+        "title": "A triangle",
+        "q": "$X$ has density $f(x) = \\frac{x}{8}$ for $0 \\le x \\le 4$. Check that it is a density, then find $P(X < 2)$.",
+        "steps": [
+          "Total area: a triangle with base 4 and height $f(4) = \\frac{1}{2}$: $\\frac{1}{2} \\cdot 4 \\cdot \\frac{1}{2} = 1$.",
+          "Area left of 2: base 2, height $f(2) = \\frac{1}{4}$: $\\frac{1}{2} \\cdot 2 \\cdot \\frac{1}{4} = \\frac{1}{4}$."
+        ],
+        "a": "$\\frac{1}{4}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking $P(X = 3)$ is positive for a continuous variable, or reading the height of the density as a probability. Heights can even exceed 1 (a uniform density on 0 to 0.5 has height 2). Check: probabilities are areas, so a single point gets 0."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Introductory Statistics 2e, section 5.1 Continuous Probability Functions"
+      },
+      {
+        "name": "OpenStax, Introductory Statistics 2e, section 5.2 The Uniform Distribution"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

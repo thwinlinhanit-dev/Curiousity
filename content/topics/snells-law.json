@@ -1,0 +1,99 @@
+{
+  "id": "phys2.snells-law",
+  "slug": "snells-law",
+  "course": "phys2",
+  "courseTitle": "Physics 2: Fluids, Heat, Electricity, Light and Atoms",
+  "unit": "geometric-optics",
+  "unitTitle": "Geometric Optics",
+  "title": "Snell's Law",
+  "short": "n₁ sin θ₁ = n₂ sin θ₂, with angles measured from the normal.",
+  "trouble": "Students measure the angles from the surface instead of the normal.",
+  "prereqs": [
+    "phys2.index-of-refraction",
+    "geo.inverse-trig-angles"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-refraction"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "When light crosses into a material with a different <a href=\"/physics/physics-2/index-of-refraction/\">index of refraction</a> at an angle, it bends. Snell's law gives the exact angle. You will undo a sine with <a href=\"/math/geometry/inverse-trig-angles/\">inverse trig</a> to find it."
+      },
+      {
+        "t": "key",
+        "html": "$$\\role[index of refraction, first medium]{constant}{n_1} \\sin\\role[angle in the first medium]{angle}{\\theta_1} = \\role[index of refraction, second medium]{constant}{n_2} \\sin\\role[angle in the second medium]{angle}{\\theta_2},$$ with both angles measured from the <b>normal</b>. Going into a higher index, light bends <b>toward</b> the normal; going into a lower index, it bends <b>away</b>. Light that hits head-on ($\\theta_1 = 0$) goes straight through."
+      },
+      {
+        "t": "why",
+        "html": "Picture a row of marchers crossing from pavement into mud at a slant. The end that reaches the mud first slows down first, so the row swings around. Light's wavefronts do the same. In one period, the wavefront moves $\\lambda_1$ in material 1 and $\\lambda_2$ in material 2, and the two pieces share the same stretch $s$ of the boundary: $\\lambda_1 = s\\sin\\theta_1$ and $\\lambda_2 = s\\sin\\theta_2$. Divide: $\\dfrac{\\sin\\theta_1}{\\sin\\theta_2} = \\dfrac{\\lambda_1}{\\lambda_2} = \\dfrac{v_1}{v_2} = \\dfrac{n_2}{n_1}$, which is Snell's law."
+      },
+      {
+        "t": "viz",
+        "name": "ph-refraction",
+        "opts": {
+          "mode": "ray",
+          "n1": 1,
+          "n2": 1.5,
+          "angle": 40,
+          "lab": "/science-lab/optics/",
+          "task": "Set the angle to 0°. Does the ray bend?",
+          "roleLinks": {
+            "Angle of incidence": "angle"
+          }
+        },
+        "cap": "A ray going from air into glass. The angles are marked from the dashed normal, not from the surface."
+      },
+      {
+        "t": "mistake",
+        "html": "Measuring angles from the surface instead of from the normal. If a problem says the ray makes $25^\\circ$ with the surface, the angle of incidence is $65^\\circ$. Quick check: going into a denser material, your refracted angle (from the normal) must come out <b>smaller</b> than the incident angle."
+      },
+      {
+        "t": "ex",
+        "title": "Air into water",
+        "q": "Light in air hits water ($n = 1.33$) at $40^\\circ$ from the normal. Find the angle of refraction.",
+        "steps": [
+          "$(1.00)\\sin 40^\\circ = 1.33\\sin\\theta_2$.",
+          "$\\sin\\theta_2 = \\dfrac{0.643}{1.33} = 0.483$.",
+          "$\\theta_2 = \\sin^{-1}(0.483) = 28.9^\\circ$. Smaller than $40^\\circ$: it bent toward the normal."
+        ],
+        "a": "$28.9^\\circ$"
+      },
+      {
+        "t": "ex",
+        "title": "Glass into water",
+        "q": "Light in glass ($n = 1.50$) hits a boundary with water ($n = 1.33$) at $30^\\circ$. Find the angle in the water.",
+        "steps": [
+          "$1.50\\sin 30^\\circ = 1.33\\sin\\theta_2$, so $\\sin\\theta_2 = \\dfrac{0.750}{1.33} = 0.564$.",
+          "$\\theta_2 = 34.3^\\circ$. Larger: going into a lower index, it bent away from the normal."
+        ],
+        "a": "$34.3^\\circ$"
+      },
+      {
+        "t": "ex",
+        "title": "Measuring an index",
+        "q": "A ray enters a clear plastic from air at $50^\\circ$ and travels at $31^\\circ$ inside. Find the plastic's index.",
+        "steps": [
+          "$n_2 = \\dfrac{n_1\\sin\\theta_1}{\\sin\\theta_2} = \\dfrac{\\sin 50^\\circ}{\\sin 31^\\circ}$.",
+          "$n_2 = \\dfrac{0.766}{0.515} = 1.49$."
+        ],
+        "a": "$n \\approx 1.49$"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Physics 2e, Section 25.3: The Law of Refraction"
+      },
+      {
+        "name": "OpenStax University Physics Volume 3, Section 1.3: Refraction"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

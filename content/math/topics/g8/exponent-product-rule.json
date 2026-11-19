@@ -1,0 +1,100 @@
+{
+  "id": "g8.exponent-product-rule",
+  "slug": "exponent-product-rule",
+  "ladder": "math",
+  "course": "g8",
+  "unit": "exponents",
+  "title": "Multiplying Powers",
+  "short": "x³ · x⁴ = x⁷ because you count all the factors.",
+  "trouble": "Students multiply the bases or the exponents, writing 2³ · 2⁴ = 4⁷ or 2¹².",
+  "prereqs": [
+    "g6.whole-number-exponents"
+  ],
+  "xp": 1,
+  "viz": [],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You know from <a href=\"/math/grade-6/whole-number-exponents/\">whole-number exponents</a> that an exponent counts factors: $2^{4} = 2 \\cdot 2 \\cdot 2 \\cdot 2$. That one idea is all you need to multiply powers. There is nothing new to memorize, only something to count."
+      },
+      {
+        "t": "why",
+        "html": "$x^{3} \\cdot x^{4}$ means three factors of $x$ followed by four more: $(x \\cdot x \\cdot x) \\cdot (x \\cdot x \\cdot x \\cdot x)$. Multiplication can be regrouped any way you like, so this is just seven factors of $x$ in a row, which is $x^{7}$. The exponents are only counting, so they add."
+      },
+      {
+        "t": "key",
+        "html": "When you multiply powers with the <b>same base</b>, keep the base and add the exponents: $$a^{m} \\cdot a^{n} = a^{m+n}$$"
+      },
+      {
+        "t": "viz",
+        "name": "g8-powers",
+        "opts": {
+          "mode": "product",
+          "base": "x",
+          "m": 3,
+          "n": 4
+        },
+        "cap": "Three factors of $x$ and four more. Press “Put them together,” then change the exponents and count again."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Count the factors",
+        "q": "Write $5^{2} \\cdot 5^{6}$ as one power.",
+        "steps": [
+          "$5^{2}$ is 2 factors of 5, and $5^{6}$ is 6 more.",
+          "Together that is $2 + 6 = 8$ factors of 5.",
+          "The base stays 5: $5^{2} \\cdot 5^{6} = 5^{8}$."
+        ],
+        "a": "$5^{8}$"
+      },
+      {
+        "t": "ex",
+        "title": "A hidden exponent",
+        "q": "Simplify $y^{5} \\cdot y \\cdot y^{3}$.",
+        "steps": [
+          "A plain $y$ is one factor, so $y = y^{1}$.",
+          "Add all the exponents: $5 + 1 + 3 = 9$."
+        ],
+        "a": "$y^{9}$"
+      },
+      {
+        "t": "ex",
+        "title": "Numbers in front",
+        "q": "Simplify $(4a^{3})(-2a^{5})$.",
+        "steps": [
+          "Multiplication can happen in any order, so group the numbers and the powers: $\\big(4 \\cdot (-2)\\big)\\big(a^{3} \\cdot a^{5}\\big)$.",
+          "The numbers multiply: $4 \\cdot (-2) = -8$.",
+          "The powers of $a$ add exponents: $a^{3+5} = a^{8}$."
+        ],
+        "a": "$-8a^{8}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Writing $2^{3} \\cdot 2^{4} = 4^{7}$ (multiplying the bases) or $2^{12}$ (multiplying the exponents). Neither one matches the count of factors. Check with real numbers: $2^{3} \\cdot 2^{4} = 8 \\cdot 16 = 128$, and $2^{7} = 128$. But $4^{7} = 16{,}384$ and $2^{12} = 4{,}096$."
+      },
+      {
+        "t": "note",
+        "html": "The rule needs the same base. $2^{3} \\cdot 3^{4}$ can’t become one power, because the factors are different numbers. In $x^{2}y^{3}$ the letters are different, so nothing combines."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Prealgebra 2e, Section 10.2: Use Multiplication Properties of Exponents"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 8, 8.EE.A.1 (properties of integer exponents)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

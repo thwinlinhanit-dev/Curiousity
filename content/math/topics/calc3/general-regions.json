@@ -1,0 +1,111 @@
+{
+  "id": "calc3.general-regions",
+  "slug": "general-regions",
+  "ladder": "math",
+  "course": "calc3",
+  "unit": "multiple-integrals",
+  "title": "Double Integrals over General Regions",
+  "short": "Let the inner limits depend on the outer variable.",
+  "trouble": "Students put variables in the outer limits of integration.",
+  "prereqs": [
+    "calc3.iterated-integrals",
+    "calc2.area-between-curves"
+  ],
+  "xp": 3,
+  "viz": [],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Most regions are not rectangles. In <a href=\"/math/calculus-2/area-between-curves/\">area between curves</a> you sliced a region vertically, with each slice running from a lower curve to an upper curve. Do the same for a double integral, and let the inner limits be those curves."
+      },
+      {
+        "t": "key",
+        "html": "<b>Type I</b> (vertical slices): $D = \\{a \\le x \\le b,\\ g_1(x) \\le y \\le g_2(x)\\}$ gives $$\\displaystyle\\iint_D f\\,dA = \\int_a^b\\int_{g_1(x)}^{g_2(x)} f(x, y)\\,dy\\,dx.$$ <br>\n  <b>Type II</b> (horizontal slices): $D = \\{c \\le y \\le d,\\ h_1(y) \\le x \\le h_2(y)\\}$ gives $\\displaystyle\\int_c^d\\int_{h_1(y)}^{h_2(y)} f\\,dx\\,dy$.<br>\n  Inner limits may depend on the outer variable; <b>outer limits are always constants</b>. The area of $D$ is $\\iint_D 1\\,dA$."
+      },
+      {
+        "t": "why",
+        "html": "Fix $x$ and look at the vertical line through the region: it enters at the lower boundary $y = g_1(x)$ and leaves at the upper boundary $y = g_2(x)$. The inner integral adds $f$ along that slice only, so it naturally depends on $x$. The outer integral then sweeps the slices across, from the leftmost to the rightmost $x$ in the region; those are fixed numbers, because they describe the whole region, not one slice. After integrating, no variable may be left, and that happens only if the outer limits are constants."
+      },
+      {
+        "t": "viz",
+        "name": "calc3-region",
+        "opts": {
+          "I": {
+            "lo": "x^2",
+            "hi": "x",
+            "a": 0,
+            "b": 1,
+            "loT": "y = x²",
+            "hiT": "y = x"
+          },
+          "II": {
+            "lo": "y",
+            "hi": "sqrt(y)",
+            "c": 0,
+            "d": 1,
+            "loT": "x = y",
+            "hiT": "x = √y"
+          },
+          "order": "dydx",
+          "xmin": -0.3,
+          "xmax": 1.4,
+          "ymin": -0.3,
+          "ymax": 1.25
+        },
+        "cap": "The region between $y = x^2$ and $y = x$. Move the slice: its ends always sit on the two curves. Switch to horizontal slices to describe the same region with $x$ inside."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Between two curves",
+        "q": "Evaluate $\\iint_D (x + y)\\,dA$ where $D$ is the region between $y = x^2$ and $y = x$.",
+        "steps": [
+          "The curves meet at $x = 0$ and $x = 1$, and $x \\ge x^2$ there: ${}0 \\le x \\le 1$, $x^2 \\le y \\le x$.",
+          "Inner: $$\\int_{x^2}^{x}(x + y)\\,dy = \\left[xy + \\frac{y^2}{2}\\right]_{x^2}^{x} = \\frac{3x^2}{2} - x^3 - \\frac{x^4}{2}.$$",
+          "Outer: $$\\int_0^1 \\left(\\frac{3x^2}{2} - x^3 - \\frac{x^4}{2}\\right) dx = \\frac{1}{2} - \\frac{1}{4} - \\frac{1}{10} = \\frac{3}{20}.$$"
+        ],
+        "a": "$\\frac{3}{20}$"
+      },
+      {
+        "t": "ex",
+        "title": "An area",
+        "q": "Find the area between $y = x^2$ and $y = 2x$.",
+        "steps": [
+          "They meet at $x = 0$ and $x = 2$; the line is on top.",
+          "Area $$= \\int_0^2\\int_{x^2}^{2x} dy\\,dx = \\int_0^2 (2x - x^2)\\,dx = 4 - \\frac{8}{3} = \\frac{4}{3}.$$"
+        ],
+        "a": "$\\frac{4}{3}$"
+      },
+      {
+        "t": "ex",
+        "title": "Horizontal slices are easier",
+        "q": "Find the area of the region bounded by $x = y^2$ and $x = y + 2$.",
+        "steps": [
+          "Vertical slices would need two pieces, but horizontally the region runs from the parabola $x = y^2$ (left) to the line $x = y + 2$ (right).",
+          "They meet where $y^2 = y + 2$: $y = -1$ and $y = 2$.",
+          "Area $$= \\int_{-1}^{2} (y + 2 - y^2)\\,dy = \\left[\\frac{y^2}{2} + 2y - \\frac{y^3}{3}\\right]_{-1}^{2} = \\frac{10}{3} + \\frac{7}{6} = \\frac{9}{2}.$$"
+        ],
+        "a": "$\\frac{9}{2}$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Putting variables in the outer limits.</b> An answer like $\\int_{x^2}^{x}\\int_0^1 \\ldots\\,dy\\,dx$ is upside down: after the inner integral you would integrate in $x$ between limits that contain $x$, which makes no sense. The outer integral describes the whole region with numbers; the inner one describes a single slice with curves. Check: your final answer must be a number."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 3, 5.2 Double Integrals over General Regions"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

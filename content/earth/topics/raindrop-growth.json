@@ -1,0 +1,93 @@
+{
+  "id": "weather.raindrop-growth",
+  "slug": "raindrop-growth",
+  "ladder": "earth",
+  "course": "weather",
+  "unit": "clouds-precipitation",
+  "title": "How Raindrops Grow",
+  "short": "A raindrop holds about a million cloud droplets; drops grow by bumping and joining, or from ice crystals that grow at the droplets' expense.",
+  "trouble": "Students think cloud droplets simply get heavy and fall; a droplet is so small that rising air holds it up, so it must grow about 100 times wider first.",
+  "prereqs": [
+    "weather.cloud-types",
+    "g8.volume-spheres"
+  ],
+  "xp": 3,
+  "viz": [
+    "es-clouds"
+  ],
+  "figureArchetype": "CollisionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A cloud is made of droplets so small that thousands would fit across a millimeter. Most clouds never rain. To fall as rain, droplets must grow enormously, and you can measure how much with the <a href=\"/math/pre-algebra/volume-spheres/\">volume of a sphere</a>. The <a href=\"/earth-and-space/weather-and-climate/cloud-types/\">type of cloud</a> and its temperature decide which of two growth processes does it."
+      },
+      {
+        "t": "key",
+        "html": "A typical cloud droplet has a radius of about 10 μm; a raindrop about 1 mm (1000 μm), 100 times wider. Volume grows as the cube of the radius, so one raindrop holds about $100^3 = 1{,}000{,}000$ cloud droplets. Drops grow by <b>collision and coalescence</b> (bigger drops fall faster, hit smaller ones and join them) or by the <b>ice-crystal process</b> (in clouds colder than 0 °C, ice crystals grow while the water droplets around them evaporate)."
+      },
+      {
+        "t": "why",
+        "html": "A droplet 10 μm in radius falls only about a centimeter per second through still air, so even a gentle updraft holds it up, and it would evaporate long before it fell out of the cloud. A 2 mm raindrop falls about 6.5 m/s. So size is everything. In a cold cloud, vapor condenses onto ice more readily than onto water: at −10 °C, saturation over ice is about 10% lower than over water. Air that is just saturated for the water droplets is supersaturated for the ice crystals, so the crystals grow fast and the droplets shrink. The crystals become snowflakes heavy enough to fall, and many melt into rain on the way down. Much of the rain in the middle latitudes starts as snow high in the cloud."
+      },
+      {
+        "t": "viz",
+        "name": "es-clouds",
+        "opts": {
+          "mode": "growth"
+        },
+        "cap": "A cloud droplet (radius r) beside a raindrop (radius R). Change the sizes and the updraft: the count (R ÷ r)³ shows how many droplets one raindrop holds, and the fall speeds show which ones the updraft can hold up."
+      },
+      {
+        "t": "ex",
+        "title": "How many droplets?",
+        "q": "How many cloud droplets of radius 10 μm make one raindrop of radius 1 mm?",
+        "steps": [
+          "Same units: 1 mm = 1000 μm.",
+          "Ratio of radii: $1000 \\div 10 = 100$.",
+          "Volume goes as the cube: $100^3 = 1{,}000{,}000$ droplets."
+        ],
+        "a": "About a million"
+      },
+      {
+        "t": "ex",
+        "title": "A drizzle drop",
+        "q": "A drizzle drop has a radius of 0.1 mm. How many 10 μm droplets does it hold?",
+        "steps": [
+          "0.1 mm = 100 μm, and $100 \\div 10 = 10$.",
+          "$10^3 = 1000$ droplets: a drizzle drop is still a thousand times smaller in volume than a raindrop."
+        ],
+        "a": "About 1000"
+      },
+      {
+        "t": "ex",
+        "title": "Too slow to fall",
+        "q": "A droplet falls about 1.2 cm/s. How long would it take to fall 1 km?",
+        "steps": [
+          "1 km = 100,000 cm.",
+          "Time: $100{,}000 \\div 1.2 \\approx 83{,}000$ s, about 23 hours. It would evaporate in the drier air below the cloud long before."
+        ],
+        "a": "About 23 hours"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking cloud droplets simply get heavy and fall. A droplet is so small that the slightest updraft holds it up, and in the dry air below the cloud it would evaporate in seconds to minutes. It must grow about 100 times wider, a million times in volume, before it can fall out as rain. Check: (R ÷ r)³ should come out near a million for real raindrops."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "NOAA National Weather Service, JetStream online school for weather: Precipitation: the Bergeron process and collision–coalescence"
+      },
+      {
+        "name": "Wallace and Hobbs, Atmospheric Science: An Introductory Survey, 2nd ed., chapter 6 (cloud microphysics)"
+      },
+      {
+        "name": "Gunn and Kinzer (1949), The terminal velocity of fall for water droplets in stagnant air, Journal of Meteorology"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

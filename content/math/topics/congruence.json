@@ -1,0 +1,103 @@
+{
+  "id": "nt.congruence",
+  "slug": "congruence",
+  "ladder": "math",
+  "course": "nt",
+  "unit": "congruences",
+  "title": "Congruence mod n",
+  "short": "a ≡ b (mod n) when n ∣ (a − b), that is, when a and b leave the same remainder on division by n.",
+  "trouble": "Students drop the sign of a negative number and write −3 ≡ 3 (mod 7). In fact −3 ≡ 4 (mod 7).",
+  "prereqs": [
+    "nt.division-algorithm",
+    "disc.equivalence-relations"
+  ],
+  "xp": 1,
+  "viz": [
+    "nt-clock"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Clocks, calendars and odd/even all ignore multiples of some fixed number: 15 hours after 11 o'clock is 2 o'clock, because only the remainder mod 12 matters. Gauss turned this into an algebra with one new symbol, and it is the language of the rest of this course."
+      },
+      {
+        "t": "p",
+        "html": "<b>Definition.</b> Let $n \\ge 1$. Integers $a$ and $b$ are <b>congruent mod $n$</b>, written $$a \\equiv b \\pmod{n},$$ when $n \\mid (a - b)$. The number $n$ is the <b>modulus</b>. For example $38 \\equiv 3 \\pmod{7}$, because $38 - 3 = 35 = 7 \\cdot 5$."
+      },
+      {
+        "t": "why",
+        "html": "<b>Congruent means \"same remainder\".</b> Use the <a href=\"/math/number-theory/division-algorithm/\">division algorithm</a>: $a = nq + r$ and $b = nq' + r'$ with $0 \\le r, r' < n$. Then $a - b = n(q - q') + (r - r')$, so $n \\mid (a - b)$ exactly when $n \\mid (r - r')$. But $r - r'$ lies strictly between $-n$ and $n$, and the only multiple of $n$ there is $0$. So $a \\equiv b \\pmod{n}$ exactly when $r = r'$."
+      },
+      {
+        "t": "p",
+        "html": "Congruence mod $n$ is an <a href=\"/math/discrete-math/equivalence-relations/\">equivalence relation</a>: $a \\equiv a$; if $a \\equiv b$ then $b \\equiv a$; if $a \\equiv b$ and $b \\equiv c$ then $a \\equiv c$ (add $a - b$ and $b - c$). Its classes, the <b>residue classes</b>, are the $n$ sets of integers with remainder $0, 1, \\dots, n - 1$. The <b>least nonnegative residue</b> of $a$ is its remainder, the one representative from $0$ to $n - 1$."
+      },
+      {
+        "t": "viz",
+        "name": "nt-clock",
+        "opts": {
+          "n": 7,
+          "mode": "add",
+          "x": 0,
+          "a": -3,
+          "task": "Change <b>add</b> to $-10$, then to $11$. Where do you land each time?"
+        },
+        "cap": "Mod 7 the number line wraps around a clock with 7 points. Going back 3 from 0 lands on 4, so $-3 \\equiv 4 \\pmod{7}$; the gray labels outside show the negative names of each point."
+      },
+      {
+        "t": "ex",
+        "title": "Least nonnegative residues",
+        "q": "Find the least nonnegative residues of $38$ and $-3$ mod $7$.",
+        "steps": [
+          "$38 = 7 \\cdot 5 + 3$, so $38 \\equiv 3 \\pmod{7}$.",
+          "$-3 = 7 \\cdot (-1) + 4$, so $-3 \\equiv 4 \\pmod{7}$.",
+          "Many numbers name the same class: $38 \\equiv 3 \\equiv 10 \\equiv -4 \\pmod{7}$."
+        ],
+        "a": "$3$ and $4$."
+      },
+      {
+        "t": "ex",
+        "title": "Which moduli work?",
+        "q": "For which $n > 1$ is $41 \\equiv 17 \\pmod{n}$?",
+        "steps": [
+          "We need $n \\mid 41 - 17 = 24$.",
+          "The divisors of $24$ above $1$: $2, 3, 4, 6, 8, 12, 24$."
+        ],
+        "a": "$n = 2, 3, 4, 6, 8, 12$ or $24$."
+      },
+      {
+        "t": "ex",
+        "title": "Odd squares mod 8",
+        "q": "Show that the square of an odd number is $\\equiv 1 \\pmod{8}$, using classes mod 8.",
+        "steps": [
+          "An odd number is $\\equiv 1, 3, 5$ or $7 \\pmod{8}$.",
+          "$1^{2} = 1$, $3^{2} = 9 \\equiv 1$, $5^{2} = 25 \\equiv 1$, $7^{2} = 49 \\equiv 1 \\pmod{8}$.",
+          "So every odd square is $\\equiv 1 \\pmod{8}$ (squares of congruent numbers are congruent, as the next lesson shows)."
+        ],
+        "a": "Always $1$."
+      },
+      {
+        "t": "mistake",
+        "html": "Dropping the sign: \"$-3 \\equiv 3 \\pmod{7}$.\" Test it with the definition: $-3 - 3 = -6$, and $7 \\nmid -6$. On the clock, $-3$ is three steps <i>back</i> from 0, which is the point $4$: $-3 \\equiv 4 \\pmod{7}$. To reduce a negative number, add multiples of $n$ until you land between $0$ and $n - 1$."
+      },
+      {
+        "t": "key",
+        "html": "$a \\equiv b \\pmod{n}$ means $n \\mid (a - b)$, which is the same as \"$a$ and $b$ leave the same remainder.\" Every integer is congruent to exactly one of $0, 1, \\dots, n - 1$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "William Stein, Elementary Number Theory: Primes, Congruences, and Secrets (Springer, 2009; free online edition), chapter 2, The Ring of Integers Modulo n (congruences modulo n)"
+      },
+      {
+        "name": "Lehman, Leighton and Meyer, Mathematics for Computer Science (MIT OpenCourseWare 6.042J), chapter on number theory: modular arithmetic"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,105 @@
+{
+  "id": "g7.subtract-integers",
+  "slug": "subtract-integers",
+  "ladder": "math",
+  "course": "g7",
+  "unit": "add-subtract",
+  "title": "Subtracting Integers",
+  "short": "Subtracting a number is adding its opposite.",
+  "trouble": "Students compute 3 − (−5) as −2, treating subtracting a negative like subtracting a positive.",
+  "prereqs": [
+    "g7.add-integers"
+  ],
+  "xp": 2,
+  "viz": [
+    "integerline"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You can <a href=\"/math/grade-7/add-integers/\">add any signed numbers</a>. Subtracting turns out to be adding in disguise."
+      },
+      {
+        "t": "key",
+        "html": "Subtracting a number is the same as adding its opposite: $$a - b = a + (-b)$$ So $3 - (-5) = 3 + 5 = 8$, and $-4 - 6 = -4 + (-6) = -10$."
+      },
+      {
+        "t": "why",
+        "html": "Subtraction asks \"how far from $b$ to $a$?\" or \"what do I add to $b$ to get $a$?\" For $3 - (-5)$: from $-5$ to $3$ is 8 steps right, so the answer is $8$. With counters: to take 5 negative counters away from 3 positive ones, first add 5 zero pairs (that changes nothing), then remove the 5 negatives. Eight positives are left. Taking away a negative leaves you with more."
+      },
+      {
+        "t": "viz",
+        "name": "integerline",
+        "opts": {
+          "a": 3,
+          "b": -5,
+          "op": "-"
+        },
+        "cap": "$3 - (-5)$ is the same move as $3 + 5$: it goes right, the opposite way from adding $-5$."
+      },
+      {
+        "t": "viz",
+        "name": "counters",
+        "opts": {
+          "mode": "zero",
+          "pos": 3,
+          "neg": 0
+        },
+        "cap": "Try \"Take away −1\" five times. Each time, the counters ask for a zero pair first. You end with 8 positive counters."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Subtracting a negative",
+        "q": "Find $3 - (-5)$.",
+        "steps": [
+          "Add the opposite: $3 + 5$.",
+          "$3 + 5 = 8$."
+        ],
+        "a": "$8$"
+      },
+      {
+        "t": "ex",
+        "title": "Subtracting a positive",
+        "q": "Find $-4 - 6$.",
+        "steps": [
+          "Add the opposite: $-4 + (-6)$.",
+          "Both negative: $-(4 + 6) = -10$."
+        ],
+        "a": "$-10$"
+      },
+      {
+        "t": "ex",
+        "title": "A temperature difference",
+        "q": "The high was $-2^\\circ$F and the low was $-9^\\circ$F. How much warmer was the high?",
+        "steps": [
+          "Difference = high $-$ low: $-2 - (-9)$.",
+          "Add the opposite: $-2 + 9 = 7$.",
+          "Check on a thermometer: from $-9$ up to $-2$ is 7 degrees ✓."
+        ],
+        "a": "7 degrees"
+      },
+      {
+        "t": "mistake",
+        "html": "Treating \"minus a negative\" like \"minus a positive,\" so that $3 - (-5)$ becomes $-2$. Remember the two changes: the minus sign becomes plus, and $-5$ becomes $5$. Check: subtraction undoes addition, so $8 + (-5)$ should give back $3$ ✓."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Prealgebra 2e, Section 3.3 Subtract Integers"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 7.NS.A.1c"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,138 @@
+{
+  "id": "de.autonomous-phase-line",
+  "slug": "autonomous-phase-line",
+  "ladder": "math",
+  "course": "de",
+  "unit": "first-order",
+  "title": "Autonomous Equations and the Phase Line",
+  "short": "Equilibria and their stability come from the sign of f(y).",
+  "trouble": "Students call an equilibrium stable when solutions approach from only one side.",
+  "prereqs": [
+    "calc2.logistic-equation"
+  ],
+  "xp": 2,
+  "viz": [
+    "slopefield"
+  ],
+  "figureArchetype": "FieldFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "When the right side does not mention $t$, as in $y' = f(y)$, the equation is <b>autonomous</b>. The <a href=\"/math/calculus-2/logistic-equation/\">logistic equation</a> is the standard example. You can learn almost everything about its solutions without solving it, just by looking at the sign of $f$."
+      },
+      {
+        "t": "key",
+        "html": "<b>Equilibria</b> are the constants $y^{*}$ with $f(y^{*}) = 0$. Between equilibria, solutions increase where $f > 0$ and decrease where $f < 0$, and they never cross an equilibrium. An equilibrium is <b>stable</b> if solutions on both sides move toward it, <b>unstable</b> if both move away, and <b>semi-stable</b> if one side approaches and the other leaves."
+      },
+      {
+        "t": "why",
+        "html": "A constant $y = y^{*}$ with $f(y^{*}) = 0$ solves the equation. By uniqueness, no other solution can touch it, so a solution that starts between two equilibria stays between them. Its slope $f(y)$ keeps one sign there, so it is monotone and must level off at an equilibrium (or run off to $\\pm\\infty$). Near $y^{*}$, $f(y) \\approx f'(y^{*})(y - y^{*})$, so the gap behaves like $e^{f'(y^{*})t}$: $f'(y^{*}) < 0$ means stable, $f'(y^{*}) > 0$ unstable."
+      },
+      {
+        "t": "h",
+        "text": "Drawing the phase line"
+      },
+      {
+        "t": "p",
+        "html": "Mark the equilibria on a vertical line, test the sign of $f$ in each gap, and draw an arrow up where $f > 0$ and down where $f < 0$. The arrows tell you each equilibrium's type at a glance."
+      },
+      {
+        "t": "ex",
+        "title": "Two equilibria",
+        "q": "Classify the equilibria of $y' = y^{2} - 4y + 3$.",
+        "steps": [
+          "Factor: $f(y) = (y - 1)(y - 3)$, so the equilibria are $y = 1$ and $y = 3$.",
+          "Signs: on $(-\\infty, 1)$, $f > 0$ (up); on $(1, 3)$, $f < 0$ (down); on $(3, \\infty)$, $f > 0$ (up).",
+          "At $y = 1$ the arrows point toward it from both sides; at $y = 3$ they point away."
+        ],
+        "a": "$y = 1$ is stable, $y = 3$ is unstable. (Check: $f'(1) = -2 < 0$, $f'(3) = 2 > 0$.)"
+      },
+      {
+        "t": "ex",
+        "title": "A semi-stable equilibrium",
+        "q": "Classify the equilibria of $y' = (y - 2)^{2}(y + 1)$.",
+        "steps": [
+          "Equilibria: $y = -1$ and $y = 2$.",
+          "Below $-1$: $f < 0$ (down). Between $-1$ and $2$: $f > 0$ (up). Above 2: $f > 0$ (up).",
+          "At $y = 2$, solutions below rise toward it, but solutions above rise away. Here $f'(2) = 0$, so the derivative test is silent."
+        ],
+        "a": "$y = -1$ is unstable and $y = 2$ is semi-stable."
+      },
+      {
+        "t": "ex",
+        "title": "Long-run behavior",
+        "q": "For $y' = y(4 - y)$, describe $y(t)$ if $y(0) = 1$ and if $y(0) = 6$.",
+        "steps": [
+          "Equilibria $y = 0$ and $y = 4$; $f > 0$ on $(0, 4)$ and $f < 0$ above 4.",
+          "From $y(0) = 1$ the solution rises and cannot pass 4, so it levels off at 4.",
+          "From $y(0) = 6$ it falls toward 4."
+        ],
+        "a": "In both cases $y(t) \\to 4$, the stable equilibrium."
+      },
+      {
+        "t": "viz",
+        "name": "de-phaseline",
+        "opts": {
+          "f": "(y-2)^2*(y+1)",
+          "ymin": -2,
+          "ymax": 3.5,
+          "tmax": 3,
+          "y0": 1,
+          "curves": 8,
+          "task": "Drag the starting value $y(0)$ above and below $y = 2$."
+        },
+        "cap": "Left: the graph of $f(y)$ turned on its side, with the phase line and its arrows. Right: solutions $y(t)$. Dots: filled = stable, hollow = unstable, half-filled = semi-stable."
+      },
+      {
+        "t": "mistake",
+        "html": "Calling an equilibrium stable because solutions approach it from one side. Stability needs every nearby solution, on both sides, to approach. At $y = 2$ above, a solution that starts at $2.01$ moves away, so $y = 2$ is not stable. Check both neighbors of every equilibrium."
+      },
+      {
+        "t": "viz",
+        "name": "slopefield",
+        "opts": {
+          "f": "y^2 - 4*y + 3",
+          "point": [
+            0,
+            2.5
+          ],
+          "curves": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0.5
+            ],
+            [
+              0,
+              3.1
+            ]
+          ],
+          "xmin": -1,
+          "xmax": 4,
+          "ymin": -1,
+          "ymax": 4.5
+        },
+        "cap": "The direction field of $y' = (y - 1)(y - 3)$: the slopes are the same along every horizontal line, which is what autonomous means."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Paul's Online Math Notes, Differential Equations: Equilibrium Solutions"
+      },
+      {
+        "name": "OpenStax Calculus Volume 2, 4.4 The Logistic Equation"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.03SC Differential Equations (Fall 2011), Unit I: First Order Differential Equations"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

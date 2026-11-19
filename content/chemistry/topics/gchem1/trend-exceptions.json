@@ -1,0 +1,110 @@
+{
+  "id": "gchem1.trend-exceptions",
+  "slug": "trend-exceptions",
+  "ladder": "chemistry",
+  "course": "gchem1",
+  "unit": "trends",
+  "title": "Exceptions in Ionization Energy",
+  "short": "The dips at boron and oxygen come from starting a new subshell and from the first paired electron.",
+  "trouble": "Students apply \"ionization energy rises across a period\" to every pair, missing the dips at boron and oxygen.",
+  "prereqs": [
+    "gchem1.effective-nuclear-charge",
+    "gchem1.orbital-diagrams"
+  ],
+  "xp": 3,
+  "viz": [
+    "ch-periodic",
+    "ch-pes"
+  ],
+  "figureArchetype": "FieldFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/chemistry/general-chemistry-1/effective-nuclear-charge/\">Shielding and Effective Nuclear Charge</a> predicts that first ionization energy rises steadily across a period. The data almost agree, with two dips in every period: boron is below beryllium, and oxygen is below nitrogen. Your <a href=\"/chemistry/general-chemistry-1/orbital-diagrams/\">Orbital Diagrams and Magnetism</a> explain both."
+      },
+      {
+        "t": "key",
+        "html": "<b>Group 13 dip</b> (B < Be, Al < Mg): the electron removed from boron is the first one in a new, higher-energy $p$ subshell, partly shielded by the filled $s$ subshell. <b>Group 16 dip</b> (O < N, S < P): the electron removed from oxygen is the first <i>paired</i> electron in the $p$ subshell, and the repulsion from its partner makes it easier to remove."
+      },
+      {
+        "t": "why",
+        "html": "Beryllium loses a $2s$ electron; boron loses a $2p$ electron. A $2s$ electron spends more time close to the nucleus than a $2p$ electron does (it penetrates the $1s$ core), so the $2p$ electron is higher in energy and the boron atom's extra proton doesn't make up for it. In nitrogen, the three $2p$ electrons are in three separate orbitals (Hund's rule). Oxygen's fourth $2p$ electron must share an orbital, and two electrons in one orbital repel strongly. Removing one of them relieves that repulsion, so it costs less than removing one of nitrogen's unpaired electrons. After each dip, the rise resumes, because $Z_\\text{eff}$ keeps growing."
+      },
+      {
+        "t": "viz",
+        "name": "ch-periodic",
+        "opts": {
+          "mode": "chart",
+          "prop": "ie1",
+          "el": "O",
+          "modes": [
+            "chart"
+          ]
+        },
+        "cap": "First ionization energy against atomic number. The overall climb across each period is broken by dips at B, O, Al and S."
+      },
+      {
+        "t": "viz",
+        "name": "ch-pes",
+        "opts": {
+          "el": "O",
+          "compare": "N"
+        },
+        "cap": "Photoelectron spectra of oxygen (filled) and nitrogen (dashed). Oxygen's 1s and 2s peaks sit farther left, as its larger nuclear charge predicts, but its 2p peak sits slightly to the right of nitrogen's: one 2p electron in oxygen is easier to remove."
+      },
+      {
+        "t": "ex",
+        "title": "Ranking with a dip",
+        "q": "Rank Be, B and C by first ionization energy.",
+        "steps": [
+          "Across period 2 the general trend is up, so C should be highest.",
+          "Boron's electron is the first $2p$ electron, higher in energy than beryllium's $2s$ electrons, so B < Be.",
+          "Data: B 801, Be 900, C 1087 kJ/mol."
+        ],
+        "a": "B < Be < C"
+      },
+      {
+        "t": "ex",
+        "title": "Explaining O against N",
+        "q": "Nitrogen's first ionization energy is 1402 kJ/mol and oxygen's is 1314 kJ/mol. Explain.",
+        "steps": [
+          "N: $2p$ ↑ ↑ ↑, three unpaired electrons. O: $2p$ ↑↓ ↑ ↑.",
+          "The electron removed from oxygen shares an orbital with another electron, and that pair repels.",
+          "The repulsion more than offsets oxygen's extra proton, so its first electron is easier to remove."
+        ],
+        "a": "Paired-electron repulsion in oxygen's $2p^4$."
+      },
+      {
+        "t": "ex",
+        "title": "Period 3",
+        "q": "Which has the higher first ionization energy, phosphorus or sulfur?",
+        "steps": [
+          "P: $[\\text{Ne}]\\,3s^2 3p^3$, three unpaired $3p$ electrons. S: $3p^4$, with one pair.",
+          "The same dip as N and O: sulfur's paired electron is easier to remove."
+        ],
+        "a": "Phosphorus (1012 against 1000 kJ/mol)."
+      },
+      {
+        "t": "mistake",
+        "html": "Applying \"ionization energy rises across a period\" to every pair, so ranking B above Be or O above N. The trend describes the overall climb, not each step. Check every pair that crosses from group 2 to 13 or from group 15 to 16: those two steps go down."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 6.5 Periodic Variations in Element Properties"
+      },
+      {
+        "name": "College Board, AP Chemistry Course and Exam Description (effective fall 2024), Unit 1: Atomic Structure and Properties"
+      },
+      {
+        "name": "NIST, Atomic Spectra Database, ionization energies"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

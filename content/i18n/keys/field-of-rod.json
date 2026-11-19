@@ -1,0 +1,126 @@
+[
+  {
+    "key": "title",
+    "source": "The Field of a Charged Rod"
+  },
+  {
+    "key": "short",
+    "source": "Add up dE = k dq/r² as components to find the field of a charged rod."
+  },
+  {
+    "key": "trouble",
+    "source": "Students add the sizes of the pieces dE without splitting them into components, or miss the components that cancel by symmetry."
+  },
+  {
+    "key": "block.0.html",
+    "source": "You know how to <a href=\"/physics/physics-2/field-superposition/\">add the fields of several point charges</a>: find each one's field at the point, then add them as vectors. A charged rod is the same problem with infinitely many charges. Cut it into pieces $dq = \\lambda\\,dx$ (<a href=\"/physics/electricity-and-magnetism/charge-densities/\">charge densities</a>), treat each piece as a point charge, and add the pieces with an integral."
+  },
+  {
+    "key": "block.1.html",
+    "source": "Each piece makes $dE = \\dfrac{k\\,dq}{r^2}$, pointing away from the piece (for positive charge). Split it into components and integrate each one separately:\n        $$E_x = \\int dE_x, \\qquad E_y = \\int dE_y.$$\n        Use symmetry first: components that cancel in mirror-image pairs integrate to zero."
+  },
+  {
+    "key": "block.2.html",
+    "source": "An integral adds numbers, not arrows. Two arrows of size 3 at right angles add to 4.2, not 6. So we turn one vector sum into two ordinary sums, one per component, where plain addition is correct. The size $dE$ may be added directly only when every piece's field points the same way, as for a point on the rod's own line."
+  },
+  {
+    "key": "block.3.cap",
+    "source": "A $10\\ \\text{nC}$ rod $40\\ \\text{cm}$ long, with P $10\\ \\text{cm}$ above its middle. With more pieces the vector sum settles on the exact integral, $4020\\ \\text{N/C}$; adding the sizes stays about 24% too high."
+  },
+  {
+    "key": "block.4.text",
+    "source": "A recipe for any shape"
+  },
+  {
+    "key": "block.6.text",
+    "source": "Worked examples"
+  },
+  {
+    "key": "block.7.q",
+    "source": "A rod $0.20\\ \\text{m}$ long carries $8.0\\ \\text{nC}$ spread evenly. Find the field at a point on the rod's line, $0.10\\ \\text{m}$ beyond one end."
+  },
+  {
+    "key": "block.7.title",
+    "source": "On the rod's own line"
+  },
+  {
+    "key": "block.7.a",
+    "source": "$E \\approx 2400\\ \\text{N/C}$, along the rod's line, away from the rod"
+  },
+  {
+    "key": "block.7.step.0",
+    "source": "Put P at the origin and the rod from $x = a = 0.10\\ \\text{m}$ to $x = a + L = 0.30\\ \\text{m}$. Every piece pushes along the same line, so here the sizes may be added."
+  },
+  {
+    "key": "block.7.step.1",
+    "source": "$$E = \\int_a^{a+L}\\frac{k\\lambda\\,dx}{x^2} = k\\lambda\\left(\\frac{1}{a} - \\frac{1}{a+L}\\right) = \\frac{kQ}{a(a+L)}$$ using $\\lambda L = Q$."
+  },
+  {
+    "key": "block.7.step.2",
+    "source": "$$E = \\frac{(8.99 \\times 10^{9})(8.0 \\times 10^{-9})}{(0.10)(0.30)} = 2400\\ \\text{N/C}$$"
+  },
+  {
+    "key": "block.7.step.3",
+    "source": "Check: far away ($a \\gg L$) this is $kQ/a^2$, a point charge."
+  },
+  {
+    "key": "block.8.q",
+    "source": "A rod $0.40\\ \\text{m}$ long carries $10\\ \\text{nC}$. Find the field $d = 0.10\\ \\text{m}$ above its midpoint."
+  },
+  {
+    "key": "block.8.title",
+    "source": "Above the middle"
+  },
+  {
+    "key": "block.8.a",
+    "source": "$E \\approx 4020\\ \\text{N/C}$"
+  },
+  {
+    "key": "block.8.step.0",
+    "source": "Rod from $x = -L/2$ to $L/2$, P at $(0, d)$. A piece at $x$ is $r = \\sqrt{x^2 + d^2}$ away."
+  },
+  {
+    "key": "block.8.step.1",
+    "source": "Mirror pieces at $\\pm x$ cancel each other's $x$-parts. The $y$-part of each is $dE\\cos\\theta = \\dfrac{k\\lambda\\,dx}{r^2}\\cdot\\dfrac{d}{r}$."
+  },
+  {
+    "key": "block.8.step.2",
+    "source": "$$E = k\\lambda d\\int_{-L/2}^{L/2}\\frac{dx}{(x^2 + d^2)^{3/2}}$$ With <a href=\"/math/calculus-1/substitution-definite/\">the substitution</a> $x = d\\tan\\theta$, $dx = d\\sec^2\\theta\\,d\\theta$, the integrand becomes $\\cos\\theta\\,d\\theta/d^2$, so the antiderivative is $\\dfrac{x}{d^2\\sqrt{x^2 + d^2}}$."
+  },
+  {
+    "key": "block.8.step.3",
+    "source": "$$E = \\frac{k\\lambda L}{d\\sqrt{d^2 + L^2/4}} = \\frac{kQ}{d\\sqrt{d^2 + L^2/4}}$$"
+  },
+  {
+    "key": "block.8.step.4",
+    "source": "$$E = \\frac{(8.99 \\times 10^{9})(10 \\times 10^{-9})}{(0.10)\\sqrt{0.010 + 0.040}} = 4020\\ \\text{N/C}$$ pointing straight away from the rod."
+  },
+  {
+    "key": "block.9.q",
+    "source": "Check the result $E = kQ/\\left(d\\sqrt{d^2 + L^2/4}\\right)$ far away and very close."
+  },
+  {
+    "key": "block.9.title",
+    "source": "Two checks on the answer"
+  },
+  {
+    "key": "block.9.a",
+    "source": "Both limits come out right, a good sign the integral is correct."
+  },
+  {
+    "key": "block.9.step.0",
+    "source": "Far away, $d \\gg L$: the square root is about $d$, so $E \\approx kQ/d^2$. From far off, the rod looks like a point."
+  },
+  {
+    "key": "block.9.step.1",
+    "source": "Very close, $d \\ll L$: the root is about $L/2$, so $E \\approx \\dfrac{2kQ}{dL} = \\dfrac{2k\\lambda}{d}$. Up close, the rod looks endless. <a href=\"/physics/electricity-and-magnetism/gauss-lines-planes/\">Gauss's law</a> will give the same $2k\\lambda/d$ in one line."
+  },
+  {
+    "key": "block.10.html",
+    "source": "<b>Adding the sizes $dE$.</b> Integrating $k\\lambda\\,dx/r^2$ without the factor $d/r$ treats every piece's field as if it pointed straight up. For the second example that gives $\\dfrac{2k\\lambda}{d}\\arctan\\dfrac{L}{2d} = 4980\\ \\text{N/C}$, about 24% too big. The sideways parts point left and right and cancel; only the parts along the bisector survive. Quick check: unless every piece pushes along the same line, the true field is <i>smaller</i> than the sum of the sizes."
+  },
+  {
+    "key": "block.11.html",
+    "source": "At a point that is not on a line of symmetry (above one end of the rod, say), nothing cancels. Then you must integrate both $dE_x$ and $dE_y$, and the field tilts away from the rod."
+  }
+]

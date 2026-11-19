@@ -1,0 +1,98 @@
+{
+  "id": "stat.sampling-distribution-proportion",
+  "slug": "sampling-distribution-proportion",
+  "ladder": "math",
+  "course": "stat",
+  "unit": "sampling-distributions",
+  "title": "Sampling Distribution of a Proportion",
+  "short": "Sample proportions center on p with spread √(p(1 − p)/n).",
+  "trouble": "Students confuse the distribution of one sample's data with the distribution of the statistic.",
+  "prereqs": [
+    "stat.simulation-models",
+    "stat.binomial-distribution",
+    "stat.normal-probabilities"
+  ],
+  "xp": 3,
+  "viz": [
+    "sampling"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Poll 1,000 voters and 52% support a measure; poll another 1,000 and you might get 49%. The sample proportion $\\hat{p}$ is itself a random variable. Its distribution over all possible samples, the <b>sampling distribution</b>, follows from the <a href=\"/math/probability-and-statistics/binomial-distribution/\">binomial distribution</a> and is close to a <a href=\"/math/probability-and-statistics/normal-probabilities/\">normal curve</a>. You saw this kind of variation in <a href=\"/math/probability-and-statistics/simulation-models/\">simulations</a>."
+      },
+      {
+        "t": "key",
+        "html": "For random samples of size $n$ from a population with proportion $p$, the sample proportion $\\hat{p}$ has\n$$\\mu_{\\hat{p}} = p, \\qquad \\sigma_{\\hat{p}} = \\sqrt{\\dfrac{p(1 - p)}{n}}.$$\nWhen $np \\ge 10$ and $n(1 - p) \\ge 10$, the sampling distribution of $\\hat{p}$ is approximately normal."
+      },
+      {
+        "t": "why",
+        "html": "The number of successes $X$ in the sample is binomial (when the population is large, or at least 10 times the sample), with mean $np$ and SD $\\sqrt{np(1 - p)}$. Since $\\hat{p} = X/n$, divide both by $n$: the mean becomes $p$ and the SD becomes $\\sqrt{np(1 - p)}/n = \\sqrt{p(1 - p)/n}$. With enough expected successes and failures, the binomial bars fill in a bell shape, so a normal curve fits."
+      },
+      {
+        "t": "viz",
+        "name": "sampling",
+        "opts": {
+          "pop": "coin",
+          "pops": [
+            "coin"
+          ],
+          "n": 25
+        },
+        "cap": "Each sample gives one proportion of heads. Take 1,000 samples, then move n: the proportions always center on 0.5, and their spread shrinks like 1/√n."
+      },
+      {
+        "t": "ex",
+        "title": "Center and spread",
+        "q": "40% of a city's adults have a library card. For random samples of 150 adults, describe the sampling distribution of $\\hat{p}$.",
+        "steps": [
+          "Center: $\\mu_{\\hat{p}} = 0.4$.",
+          "Spread: $$\\sigma_{\\hat{p}} = \\sqrt{\\dfrac{0.4 \\cdot 0.6}{150}} = \\sqrt{0.0016} = 0.04$$",
+          "Shape: $np = 60$ and $n(1 - p) = 90$ are both at least 10, so approximately normal."
+        ],
+        "a": "About normal, mean 0.4, SD 0.04."
+      },
+      {
+        "t": "ex",
+        "title": "A probability",
+        "q": "In that setting, how likely is a sample with $\\hat{p} \\ge 0.48$? ($P(Z < 2.00) = 0.9772$.)",
+        "steps": [
+          "$z = \\dfrac{0.48 - 0.4}{0.04} = 2$.",
+          "$$P(\\hat{p} \\ge 0.48) = P(Z \\ge 2) = 1 - 0.9772 = 0.0228$$"
+        ],
+        "a": "About $0.023$: a sample this high would be unusual."
+      },
+      {
+        "t": "ex",
+        "title": "A bigger sample",
+        "q": "What happens to $\\sigma_{\\hat{p}}$ with samples of 600 instead of 150?",
+        "steps": [
+          "n is 4 times as large, so $\\sigma_{\\hat{p}}$ is divided by $\\sqrt{4} = 2$.",
+          "$\\sqrt{0.24/600} = \\sqrt{0.0004} = 0.02$."
+        ],
+        "a": "It halves, to 0.02."
+      },
+      {
+        "t": "mistake",
+        "html": "Confusing the distribution of one sample's data with the distribution of the statistic. One sample's data are just yeses and nos (0s and 1s); they are not bell-shaped at all. The bell shape describes $\\hat{p}$ across many different samples. Check: is the question about individuals, or about a statistic computed from a whole sample?"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Introductory Statistics 2e, section 4.3 Binomial Distribution"
+      },
+      {
+        "name": "OpenStax, Introductory Statistics 2e, section 8.3 A Population Proportion"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, S-IC.A.1 (Understand statistics as a process for making inferences about population parameters based on a random sample)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

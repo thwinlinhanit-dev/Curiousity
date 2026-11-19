@@ -1,0 +1,107 @@
+{
+  "id": "alg1.literal-equations",
+  "slug": "literal-equations",
+  "ladder": "math",
+  "course": "alg1",
+  "unit": "equations",
+  "title": "Solving for a Variable",
+  "short": "Rearrange a formula to isolate the letter you want.",
+  "trouble": "Students divide only one term by the coefficient, writing (y − b)/m as y − b/m.",
+  "prereqs": [
+    "alg1.justify-solution-steps",
+    "alg1.expression-structure"
+  ],
+  "xp": 2,
+  "viz": [
+    "balance"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A formula like $P = 2l + 2w$ is an equation with several letters. Sometimes you know the perimeter and the width and want the length, so you <em>solve for</em> $l$. The moves are the same ones that <a href=\"/math/algebra-1/justify-solution-steps/\">keep an equation balanced</a>; you just treat the other letters as numbers. Knowing the <a href=\"/math/algebra-1/expression-structure/\">terms and factors</a> of each side tells you what to undo."
+      },
+      {
+        "t": "table",
+        "head": [
+          "With numbers",
+          "With letters"
+        ],
+        "rows": [
+          [
+            "$3x + 5 = 20$",
+            "$ax + b = c$"
+          ],
+          [
+            "$3x = 20 - 5$",
+            "$ax = c - b$"
+          ],
+          [
+            "$x = \\frac{20 - 5}{3}$",
+            "$x = \\frac{c - b}{a}$"
+          ]
+        ],
+        "cap": "The same steps, side by side. In the second column, $a$ must not be $0$."
+      },
+      {
+        "t": "why",
+        "html": "Each letter stands for a number, so the properties of equality work for letters exactly as they do for numbers. The only new care is division: dividing by a letter is allowed only when that letter is not $0$. And when you divide a side, you divide the whole side, which is why the result is a fraction with the whole side on top."
+      },
+      {
+        "t": "key",
+        "html": "Find the letter you want, notice what is being done to it, and undo those operations in reverse order, doing the same thing to both sides each time."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Perimeter",
+        "q": "Solve $P = 2l + 2w$ for $l$.",
+        "steps": [
+          "$l$ is multiplied by $2$, then $2w$ is added. Undo the addition first: subtract $2w$ from both sides: $P - 2w = 2l$.",
+          "Undo the multiplication: divide both sides by $2$: $\\frac{P - 2w}{2} = l$."
+        ],
+        "a": "$l = \\frac{P - 2w}{2}$ (also $l = \\frac{P}{2} - w$)."
+      },
+      {
+        "t": "ex",
+        "title": "Slope-intercept form",
+        "q": "Solve $y = mx + b$ for $x$.",
+        "steps": [
+          "Subtract $b$ from both sides: $y - b = mx$.",
+          "Divide both sides by $m$ (assume $m \\ne 0$): $x = \\frac{y - b}{m}$. The whole side $y - b$ is divided."
+        ],
+        "a": "$x = \\frac{y - b}{m}$"
+      },
+      {
+        "t": "ex",
+        "title": "The letter appears twice",
+        "q": "Solve $A = P + Prt$ for $P$.",
+        "steps": [
+          "$P$ is in two terms, so factor it out: $A = P(1 + rt)$.",
+          "Now $P$ is multiplied by $(1 + rt)$. Divide both sides by it: $P = \\frac{A}{1 + rt}$."
+        ],
+        "a": "$P = \\frac{A}{1 + rt}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Dividing only one term, writing $x = y - \\frac{b}{m}$ instead of $x = \\frac{y - b}{m}$. Check with numbers: if $y = 11$, $b = 3$ and $m = 2$, then $11 = 2x + 3$ gives $x = 4$. The correct form gives $\\frac{11 - 3}{2} = 4$; the slip gives $11 - 1.5 = 9.5$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Elementary Algebra 2e, section 2.6 Solve a Formula for a Specific Variable"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, A-CED.A.4: rearrange formulas to highlight a quantity of interest"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

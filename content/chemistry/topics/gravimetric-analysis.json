@@ -1,0 +1,118 @@
+{
+  "id": "gchem1.gravimetric-analysis",
+  "slug": "gravimetric-analysis",
+  "ladder": "chemistry",
+  "course": "gchem1",
+  "unit": "solution-reactions",
+  "title": "Gravimetric Analysis",
+  "short": "Weigh a precipitate to find how much of an ion a sample held.",
+  "trouble": "Students take the precipitate's mass as the mass of the ion, forgetting to multiply by the ion's share of the precipitate's mass.",
+  "prereqs": [
+    "gchem1.solution-stoichiometry",
+    "gchem1.net-ionic-equations"
+  ],
+  "xp": 3,
+  "viz": [],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "How much chloride is in a sample of rock salt, or sulfur in a fertilizer? One of the oldest and most accurate answers is to weigh it, after turning it into a pure solid. Gravimetric analysis combines <a href=\"/chemistry/general-chemistry-1/net-ionic-equations/\">a precipitation reaction</a> with <a href=\"/chemistry/general-chemistry-1/solution-stoichiometry/\">Solution Stoichiometry</a>."
+      },
+      {
+        "t": "key",
+        "html": "Dissolve the sample, add an excess of a reagent that precipitates the ion you want completely (chloride as AgCl, sulfate as $\\mathrm{BaSO_4}$), then filter, dry and weigh the solid. $$\\text{mass of ion} = \\text{mass of precipitate} \\times \\frac{\\text{mass of the ion in one formula unit}}{\\text{molar mass of the precipitate}}$$ Then divide by the sample's mass for the percent."
+      },
+      {
+        "t": "why",
+        "html": "The excess reagent makes sure every ion of interest ends up in the precipitate, and a very insoluble precipitate with a definite formula carries a known fraction of that ion. AgCl, for example, is always $35.45/143.32 = 24.74\\%$ chlorine by mass, whatever sample it came from (definite proportions again). A balance can weigh a solid to 0.0001 g, which makes this method very precise."
+      },
+      {
+        "t": "viz",
+        "name": "ch-particles",
+        "opts": {
+          "mode": "mix",
+          "a": {
+            "f": "AgNO3",
+            "n": 4
+          },
+          "b": {
+            "f": "NaCl",
+            "n": 3
+          },
+          "spectators": true
+        },
+        "cap": "Silver ions added in excess: every chloride ion ends up in solid AgCl, with some silver left over in solution."
+      },
+      {
+        "t": "ex",
+        "title": "Chloride in a salt sample",
+        "q": "A $0.500\\ \\text{g}$ sample is dissolved and treated with excess $\\mathrm{AgNO_3}$. The dried AgCl ($143.32\\ \\text{g/mol}$) weighs $1.025\\ \\text{g}$. What percent of the sample is chloride?",
+        "steps": [
+          "Chloride's share of AgCl: $35.45/143.32 = 0.2474$.",
+          "Mass of chloride: $1.025 \\times 0.2474 = 0.2535\\ \\text{g}$.",
+          "Percent: $0.2535/0.500 \\times 100 = 50.7\\%$."
+        ],
+        "a": "$50.7\\%$"
+      },
+      {
+        "t": "ex",
+        "title": "Sulfur in a fertilizer",
+        "q": "A $0.800\\ \\text{g}$ fertilizer sample gives $1.167\\ \\text{g}$ of $\\mathrm{BaSO_4}$ ($233.40\\ \\text{g/mol}$) when its sulfate is precipitated. Find the percent sulfur.",
+        "steps": [
+          "Sulfur's share of $\\mathrm{BaSO_4}$: $32.07/233.40 = 0.1374$.",
+          "Mass of S: $1.167 \\times 0.1374 = 0.1604\\ \\text{g}$.",
+          "Percent: $0.1604/0.800 \\times 100 = 20.0\\%$."
+        ],
+        "a": "$20.0\\%$ sulfur."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Ion sought",
+          "Precipitate",
+          "Fraction of its mass"
+        ],
+        "rows": [
+          [
+            "chloride",
+            "AgCl",
+            "35.45/143.32 = 0.2474"
+          ],
+          [
+            "sulfate (as S)",
+            "$\\mathrm{BaSO_4}$",
+            "32.07/233.40 = 0.1374"
+          ],
+          [
+            "silver",
+            "AgCl",
+            "107.87/143.32 = 0.7526"
+          ]
+        ],
+        "cap": "The gravimetric factor: the share of the precipitate's mass that is the substance sought."
+      },
+      {
+        "t": "mistake",
+        "html": "Taking the precipitate's mass as the mass of the ion: \"1.025 g of AgCl means 1.025 g of chloride.\" Most of that mass is silver, which came from the reagent, not the sample. Check: the ion's mass must be smaller than the precipitate's, and the percent can never exceed 100%."
+      },
+      {
+        "t": "note",
+        "html": "The precipitate must be truly insoluble and must contain nothing else; washing it removes spectator ions, and drying removes water, before it is weighed. The same arithmetic works in reverse: from the mass of an ion you expect, you can predict how much precipitate to look for, and a result far from it warns of an incomplete reaction or an impure solid."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 4.5 Quantitative Chemical Analysis"
+      },
+      {
+        "name": "College Board, AP Chemistry Course and Exam Description (effective fall 2024), Unit 4: Chemical Reactions"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,110 @@
+{
+  "id": "mech.rotational-work-power",
+  "slug": "rotational-work-power",
+  "ladder": "physics",
+  "course": "mech",
+  "unit": "rotation",
+  "title": "Work and Power in Rotation",
+  "short": "W = ∫τ dθ and P = τω.",
+  "trouble": "Students multiply the torque by an angle in degrees, or by the arc length.",
+  "prereqs": [
+    "mech.angular-calculus",
+    "mech.work-integral",
+    "phys1.rotational-kinetic-energy"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-rotation"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/physics/physics-1/rotational-kinetic-energy/\">Rotational Kinetic Energy and Work by Torque</a> said a torque turning something through $\\Delta\\theta$ does work $\\tau\\Delta\\theta$. <a href=\"/physics/mechanics/work-integral/\">Work by a Variable Force</a> and <a href=\"/physics/mechanics/angular-calculus/\">Angular Velocity and Acceleration with Calculus</a> extend that to torques that change, and to the rate of work."
+      },
+      {
+        "t": "key",
+        "html": "$$W = \\int_{\\theta_1}^{\\theta_2} \\tau\\,d\\theta, \\qquad P = \\dfrac{dW}{dt} = \\tau\\omega, \\qquad W_{\\text{net}} = \\Delta\\left(\\tfrac{1}{2}I\\omega^2\\right),$$ with angles in radians and $\\omega$ in rad/s."
+      },
+      {
+        "t": "why",
+        "html": "A force $F$ applied tangentially at radius $r$ moves its point of application along an arc $ds = r\\,d\\theta$. The work is $F\\,ds = (Fr)\\,d\\theta = \\tau\\,d\\theta$. Divide by $dt$ for the power: $\\tau\\,d\\theta/dt = \\tau\\omega$. The work-energy theorem becomes $\\int\\tau_{\\text{net}}\\,d\\theta = \\Delta K_{\\text{rot}}$, the turning version of <a href=\"/physics/mechanics/work-energy-derivation/\">The Work-Energy Theorem from Newton's Second Law</a>."
+      },
+      {
+        "t": "viz",
+        "name": "ph-graph",
+        "opts": {
+          "fn": "20 - 4*x",
+          "domain": [
+            0,
+            5
+          ],
+          "xlab": "θ",
+          "ylab": "τ",
+          "xunit": "rad",
+          "yunit": "N·m",
+          "tool": "area",
+          "a": 0,
+          "b": 3,
+          "task": "The area under the torque–angle graph is the work done."
+        },
+        "cap": "A spring motor whose torque fades as it unwinds, $\\tau = 20 - 4\\theta$. The area from 0 to 3 rad is $42\\ \\text{J}$."
+      },
+      {
+        "t": "ex",
+        "title": "Engine power",
+        "q": "An engine delivers $300\\ \\text{N·m}$ of torque at $3000\\ \\text{rpm}$. What is its power?",
+        "steps": [
+          "$\\omega = 3000 \\times \\dfrac{2\\pi}{60} = 314\\ \\text{rad/s}$.",
+          "$P = \\tau\\omega = 300(314) = 94\\,200\\ \\text{W} \\approx 94.2\\ \\text{kW}$."
+        ],
+        "a": "About $94.2\\ \\text{kW}$."
+      },
+      {
+        "t": "ex",
+        "title": "Spinning up a flywheel",
+        "q": "A steady $5\\ \\text{N·m}$ torque turns a flywheel ($I = 2\\ \\text{kg·m}^2$), starting from rest, through 10 revolutions. How fast does it spin?",
+        "steps": [
+          "Angle in radians: $10(2\\pi) = 62.8\\ \\text{rad}$; work $W = 5(62.8) = 314\\ \\text{J}$.",
+          "$\\tfrac{1}{2}(2)\\omega^2 = 314$, so $\\omega = 17.7\\ \\text{rad/s}$."
+        ],
+        "a": "$17.7\\ \\text{rad/s}$."
+      },
+      {
+        "t": "ex",
+        "title": "A torque that fades",
+        "q": "A spring motor's torque falls as it unwinds, $\\tau(\\theta) = 20 - 4\\theta$ (N·m, rad). How much work does it do from $\\theta = 0$ to $3\\ \\text{rad}$?",
+        "steps": [
+          "$W = \\int_0^3 (20 - 4\\theta)\\,d\\theta = \\left[20\\theta - 2\\theta^2\\right]_0^3 = 60 - 18$.",
+          "$W = 42\\ \\text{J}$, the shaded area in the picture. Using the starting torque for the whole turn would give $60\\ \\text{J}$, too much."
+        ],
+        "a": "$42\\ \\text{J}$."
+      },
+      {
+        "t": "mistake",
+        "html": "Multiplying the torque by an angle in degrees, or by an arc length. Turning $5\\ \\text{N·m}$ through $90^\\circ$ does $5 \\times \\pi/2 = 7.85\\ \\text{J}$, not $450\\ \\text{J}$. And torque times arc length has units of N·m², not joules. Check: in $W = \\tau\\theta$, the radian is what makes N·m of torque become N·m of energy."
+      },
+      {
+        "t": "note",
+        "html": "Friction torques work the same way with a minus sign. A grinding wheel ($I = 0.5\\ \\text{kg·m}^2$) spinning at $40\\ \\text{rad/s}$ stores $\\tfrac{1}{2}(0.5)(40)^2 = 400\\ \\text{J}$; if a $2\\ \\text{N·m}$ friction torque stops it, it turns through $400/2 = 200\\ \\text{rad}$, about 32 revolutions, before stopping."
+      },
+      {
+        "t": "note",
+        "html": "Gears and bicycle gears trade torque for speed at nearly constant power: $P = \\tau\\omega$, so a gear that turns the wheel half as fast can deliver about twice the torque. That is why a low gear helps on a hill."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 1, 10.8 Work and Power for Rotational Motion"
+      },
+      {
+        "name": "MIT OpenCourseWare 8.01 Classical Mechanics (scope and sequence)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

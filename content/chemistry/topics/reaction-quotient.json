@@ -1,0 +1,133 @@
+{
+  "id": "gchem2.reaction-quotient",
+  "slug": "reaction-quotient",
+  "ladder": "chemistry",
+  "course": "gchem2",
+  "unit": "equilibrium",
+  "title": "The Reaction Quotient",
+  "short": "Compare Q with K to see which way a reaction will go.",
+  "trouble": "Students say a reaction with Q < K shifts toward the reactants.",
+  "prereqs": [
+    "gchem2.equilibrium-expressions"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-equilibrium"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The <a href=\"/chemistry/general-chemistry-2/equilibrium-expressions/\">equilibrium expression</a> can be evaluated for any mixture, not only one at equilibrium. The result is called the reaction quotient, $Q$. Comparing it with $K$ tells you which way the reaction will go."
+      },
+      {
+        "t": "key",
+        "html": "$Q$ has the same form as $K$ but uses the current concentrations. If $Q < K$, the reaction goes forward (toward products). If $Q > K$, it goes in reverse (toward reactants). If $Q = K$, it is at equilibrium."
+      },
+      {
+        "t": "why",
+        "html": "A reaction always moves toward equilibrium, where $Q = K$. If $Q$ is too small, there is too little product compared with reactant; making more product raises the top of the fraction and lowers the bottom, so $Q$ climbs to $K$. If $Q$ is too big, the reverse reaction brings it down."
+      },
+      {
+        "t": "viz",
+        "name": "ch-equilibrium",
+        "opts": {
+          "rxn": "2NO2<=>N2O4",
+          "c0": {
+            "NO2": 1
+          },
+          "events": [
+            {
+              "t": 30,
+              "type": "add",
+              "sp": "N2O4",
+              "amt": 0.4
+            }
+          ],
+          "show": [
+            "Q"
+          ]
+        },
+        "cap": "Partway through, extra $\\mathrm{N_2O_4}$ is added. Q jumps above K, and the reaction runs in reverse until Q falls back to K."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Q below K",
+        "q": "For $\\mathrm{N_2O_4(g) \\rightleftharpoons 2NO_2(g)}$, $K_c = 4.6 \\times 10^{-3}$ at $298\\ \\text{K}$. A flask holds $0.10\\ \\text{M}$ $\\mathrm{N_2O_4}$ and $0.010\\ \\text{M}$ $\\mathrm{NO_2}$. Which way does it go?",
+        "steps": [
+          "$$Q = \\dfrac{[\\mathrm{NO_2}]^2}{[\\mathrm{N_2O_4}]} = \\dfrac{(0.010)^2}{0.10} = 1.0 \\times 10^{-3}$$",
+          "$Q < K$: there is too little $\\mathrm{NO_2}$. The reaction goes forward, making more $\\mathrm{NO_2}$."
+        ],
+        "a": "Forward, toward $\\mathrm{NO_2}$."
+      },
+      {
+        "t": "ex",
+        "title": "Q above K",
+        "q": "For $\\mathrm{H_2(g) + I_2(g) \\rightleftharpoons 2HI(g)}$, $K_c = 54.3$ at $703\\ \\text{K}$. A mixture has $[\\mathrm{HI}] = 0.50\\ \\text{M}$ and $[\\mathrm{H_2}] = [\\mathrm{I_2}] = 0.050\\ \\text{M}$. Which way does it go?",
+        "steps": [
+          "$$Q = \\dfrac{(0.50)^2}{(0.050)(0.050)} = \\dfrac{0.25}{0.0025} = 100$$",
+          "$Q > K$: too much HI. The reverse reaction runs, turning some HI into $\\mathrm{H_2}$ and $\\mathrm{I_2}$."
+        ],
+        "a": "In reverse, toward $\\mathrm{H_2}$ and $\\mathrm{I_2}$."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Comparison",
+          "Too much of…",
+          "Reaction goes"
+        ],
+        "rows": [
+          [
+            "$Q < K$",
+            "reactants",
+            "forward (to the right)"
+          ],
+          [
+            "$Q = K$",
+            "—",
+            "nowhere: at equilibrium"
+          ],
+          [
+            "$Q > K$",
+            "products",
+            "in reverse (to the left)"
+          ]
+        ],
+        "cap": "Q against K."
+      },
+      {
+        "t": "ex",
+        "title": "A solid in the mixture",
+        "q": "For $\\mathrm{CaCO_3(s) \\rightleftharpoons CaO(s) + CO_2(g)}$ at a certain temperature, $K_p = 0.25$. A sealed flask holds both solids and $\\mathrm{CO_2}$ at $0.40\\ \\text{atm}$. Which way does it go?",
+        "steps": [
+          "Solids are left out, so $Q = P_{\\mathrm{CO_2}} = 0.40$.",
+          "$Q > K_p$: too much $\\mathrm{CO_2}$. Some of it reacts with CaO to re-form $\\mathrm{CaCO_3}$ until the pressure falls to 0.25 atm."
+        ],
+        "a": "In reverse, toward $\\mathrm{CaCO_3}$."
+      },
+      {
+        "t": "mistake",
+        "html": "Saying a reaction with $Q < K$ shifts toward reactants. It is the other way: small $Q$ means not enough products yet. Check with the extreme case: a flask with only reactants has $Q = 0$, and it obviously reacts forward."
+      },
+      {
+        "t": "note",
+        "html": "$Q$ is also the bridge to free energy: <a href=\"/chemistry/general-chemistry-2/free-energy-k/\">ΔG = ΔG° + RT ln Q</a> is negative exactly when $Q < K$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 13.2 Equilibrium Constants"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

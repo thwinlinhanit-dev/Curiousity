@@ -1,0 +1,101 @@
+{
+  "id": "g3.multiply-by-multiples-of-10",
+  "slug": "multiply-by-multiples-of-10",
+  "ladder": "math",
+  "course": "g3",
+  "unit": "multiplication",
+  "title": "Multiplying by Multiples of 10",
+  "short": "4 × 30 is 4 groups of 3 tens, so 12 tens.",
+  "trouble": "Students learn \"just add a zero\" without knowing why, which later breaks with decimals.",
+  "prereqs": [
+    "g3.associative-multiplication",
+    "g2.place-value-hundreds"
+  ],
+  "xp": 2,
+  "viz": [
+    "base10",
+    "placevalue"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You know <a href=\"/math/grade-2/place-value-hundreds/\">place value</a> and all your facts. Now use them for numbers like $4 \\times 30$. The trick is to think in <b>tens</b>."
+      },
+      {
+        "t": "viz",
+        "name": "base10",
+        "opts": {
+          "blocks": {
+            "t": 12
+          },
+          "edit": false
+        },
+        "cap": "$4 \\times 30$ is 4 groups of 3 tens: 12 tens. Tap the tens to trade 10 of them for a hundred: 1 hundred and 2 tens, which is 120."
+      },
+      {
+        "t": "why",
+        "html": "$30$ is 3 tens. So $4 \\times 30$ is 4 groups of 3 tens, which is $4 \\times 3 = 12$ tens. Twelve tens is 120. The fact $4 \\times 3$ does all the work; the tens tell you what kind of thing you have 12 of."
+      },
+      {
+        "t": "key",
+        "html": "To multiply by a multiple of 10, use the fact, then count tens: $6 \\times 70 = 6 \\times 7$ tens $= 42$ tens $= 420$."
+      },
+      {
+        "t": "ex",
+        "title": "Count tens",
+        "q": "Find $4 \\times 30$.",
+        "steps": [
+          "$30$ is 3 tens.",
+          "$4 \\times 3$ tens $= 12$ tens.",
+          "12 tens is 120."
+        ],
+        "a": "$120$"
+      },
+      {
+        "t": "ex",
+        "title": "Bigger",
+        "q": "Find $9 \\times 80$.",
+        "steps": [
+          "$9 \\times 8 = 72$, so $9 \\times 80$ is 72 tens.",
+          "72 tens is 720."
+        ],
+        "a": "$720$"
+      },
+      {
+        "t": "ex",
+        "title": "A missing factor",
+        "q": "$\\square \\times 50 = 300$",
+        "steps": [
+          "$300$ is 30 tens, and $50$ is 5 tens.",
+          "What times 5 makes 30? $6 \\times 5 = 30$."
+        ],
+        "a": "$6$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>\"Just add a zero\" without knowing why.</b> The zero is there because the answer is a number of <b>tens</b>: 12 tens is written 120. Thinking in tens keeps working later, when \"add a zero\" stops working (with decimals, for example)."
+      },
+      {
+        "t": "viz",
+        "name": "placevalue",
+        "opts": {
+          "n": 42,
+          "shift": true,
+          "edit": false
+        },
+        "cap": "Press \"× 10\" to see 42 become 420: every digit moves one place to the left."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 3, 3.NBT.A.3 (multiply one-digit numbers by multiples of 10 using place value)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

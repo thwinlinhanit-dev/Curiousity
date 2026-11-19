@@ -1,0 +1,95 @@
+{
+  "id": "gchem1.photoelectron-spectroscopy",
+  "slug": "photoelectron-spectroscopy",
+  "ladder": "chemistry",
+  "course": "gchem1",
+  "unit": "quantum",
+  "title": "Photoelectron Spectroscopy",
+  "short": "Each peak shows the energy needed to remove electrons from one subshell, and its height counts those electrons.",
+  "trouble": "Students read a taller peak as a higher energy rather than more electrons, or forget that the highest binding energies belong to the electrons nearest the nucleus.",
+  "prereqs": [
+    "chem.electron-configuration",
+    "gchem1.photons"
+  ],
+  "xp": 3,
+  "viz": [
+    "ch-pes"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "How do we know configurations such as $1s^2 2s^2 2p^6 3s^1$ are real? One direct way is <b>photoelectron spectroscopy</b> (PES), the <a href=\"/chemistry/general-chemistry-1/photons/\">photoelectric effect</a> turned into a measuring tool. It lets you read an <a href=\"/chemistry/chemistry/electron-configuration/\">Electron Configurations</a> straight off a graph."
+      },
+      {
+        "t": "p",
+        "html": "A sample of atoms is hit with X-ray or far-UV photons of one known energy, energetic enough to knock out an electron from any subshell. The instrument measures each ejected electron's kinetic energy. Energy is conserved, so the energy that held the electron, its <b>binding energy</b>, is $$\\text{BE} = h\\nu - KE.$$"
+      },
+      {
+        "t": "key",
+        "html": "A photoelectron spectrum has one peak per subshell. A peak's <b>position</b> is the binding energy of that subshell's electrons (the farther left on the usual axis, the more tightly held). A peak's <b>height</b> (its area) is proportional to the <b>number of electrons</b> in that subshell."
+      },
+      {
+        "t": "why",
+        "html": "All electrons in one subshell are held equally tightly, so they come out with the same kinetic energy and pile into one peak; twice as many electrons make a peak twice as big. Electrons nearest the nucleus (1s) feel almost the whole nuclear charge at a short distance, and the attraction between opposite charges is strongest when the charges are close, so they need the most energy to remove. Outer electrons are farther away and shielded, so they need much less. Compare two elements: one more proton pulls every subshell in harder, so every peak shifts to higher binding energy."
+      },
+      {
+        "t": "viz",
+        "name": "ch-pes",
+        "opts": {
+          "el": "Na",
+          "compare": "Mg"
+        },
+        "cap": "Sodium (filled) and magnesium (dashed). Sodium's peaks, from left: 1s (2 electrons), 2s (2), 2p (6), 3s (1). Every magnesium peak sits farther left. Binding energy increases to the left, as on the AP exam."
+      },
+      {
+        "t": "ex",
+        "title": "Reading a spectrum",
+        "q": "An element's spectrum has peaks at $104$, $6.84$, $3.67$ and $0.50\\ \\text{MJ/mol}$ with relative heights $2 : 2 : 6 : 1$. Identify the element.",
+        "steps": [
+          "Order the peaks from highest binding energy: 104 (1s), 6.84 (2s), 3.67 (2p), 0.50 (3s).",
+          "Heights give electrons: $1s^2\\,2s^2\\,2p^6\\,3s^1$.",
+          "$2 + 2 + 6 + 1 = 11$ electrons: sodium."
+        ],
+        "a": "Sodium."
+      },
+      {
+        "t": "ex",
+        "title": "Binding energy from the measurement",
+        "q": "In a PES experiment, photons of $159\\ \\text{MJ/mol}$ eject electrons with kinetic energies of $55.0$, $152.2$ and $155.3\\ \\text{MJ/mol}$. Find the binding energy of each peak and name the subshells.",
+        "steps": [
+          "$\\text{BE} = h\\nu - KE$: $159 - 55.0 = 104$, $159 - 152.2 = 6.8$, $159 - 155.3 = 3.7\\ \\text{MJ/mol}$.",
+          "The slowest electrons were the most tightly held: 104 is 1s, 6.8 is 2s, 3.7 is 2p."
+        ],
+        "a": "$104$, $6.8$ and $3.7\\ \\text{MJ/mol}$: 1s, 2s and 2p."
+      },
+      {
+        "t": "ex",
+        "title": "Comparing two elements",
+        "q": "Which has its 1s peak at the higher binding energy, nitrogen or oxygen? Why?",
+        "steps": [
+          "Both 1s subshells hold 2 electrons right next to the nucleus.",
+          "Oxygen's nucleus has 8 protons to nitrogen's 7, so it pulls its 1s electrons harder."
+        ],
+        "a": "Oxygen."
+      },
+      {
+        "t": "mistake",
+        "html": "Reading a taller peak as a higher energy. Height is a count of electrons; energy is the horizontal position. In sodium the 2p peak is the tallest because it holds 6 electrons, though its binding energy is far below 1s. And the peak with the <i>highest</i> binding energy belongs to the electrons <i>nearest</i> the nucleus, not the outermost ones. Check: the rightmost peak is the valence subshell, and its binding energy is close to the first ionization energy (sodium: 0.50 MJ/mol, or 496 kJ/mol)."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "College Board, AP Chemistry Course and Exam Description (effective fall 2024), Unit 1: Atomic Structure and Properties"
+      },
+      {
+        "name": "OpenStax Chemistry 2e, 6.4 Electronic Structure of Atoms (Electron Configurations)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

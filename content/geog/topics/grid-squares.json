@@ -1,0 +1,92 @@
+{
+  "id": "maps.grid-squares",
+  "slug": "grid-squares",
+  "ladder": "geog",
+  "course": "maps",
+  "unit": "grids",
+  "title": "Finding a Square on a Grid",
+  "short": "A grid map has letters along one edge and numbers along another, so every square has a name like B3.",
+  "trouble": "Children read the number first or look at the line instead of the square. Find the letter's column, then go along to the number's row: the square where they meet.",
+  "prereqs": [
+    "maps.location-words"
+  ],
+  "xp": 1,
+  "viz": [
+    "gg-town"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Some maps have lines that make <b>squares</b>, like a checkerboard. This is called a <b>grid</b>. It helps us say exactly where something is."
+      },
+      {
+        "t": "viz",
+        "name": "gg-town",
+        "opts": {
+          "layout": "maple",
+          "highlightCell": [
+            1,
+            3
+          ],
+          "key": false,
+          "compass": false,
+          "big": true
+        },
+        "cap": "A grid map of Maple Town. Letters run across the top; numbers run down the side. Square B4 is colored."
+      },
+      {
+        "t": "key",
+        "html": "On a grid map, every square has a name: a <b>letter</b> from the top and a <b>number</b> from the side, like <b>B4</b>."
+      },
+      {
+        "t": "ex",
+        "title": "Name the colored square",
+        "q": "What is the name of the colored square?",
+        "steps": [
+          "Go straight up from the square to the top edge. The letter is B.",
+          "Go straight across to the side edge. The number is 4.",
+          "Letter first, then number."
+        ],
+        "a": "B4."
+      },
+      {
+        "t": "why",
+        "html": "One letter and one number are enough to point to one square, and only one. It is quicker than saying \"the third row, near the middle, kind of on the left.\""
+      },
+      {
+        "t": "mistake",
+        "html": "Children read the number first, or count from the wrong corner. Always say the letter first, and read the letters and numbers printed on the edges instead of counting."
+      },
+      {
+        "t": "viz",
+        "name": "gg-town",
+        "opts": {
+          "layout": "maple",
+          "mode": "find",
+          "answer": [
+            2,
+            2
+          ],
+          "big": true,
+          "readme": "Ask your child to tap square C3 and press Check."
+        },
+        "cap": "Find square C3."
+      },
+      {
+        "t": "note",
+        "html": "<b>For the grown-up.</b> Play a game of \"battleship\" on graph paper: hide a sticker in a square and give the square's name."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "C3 Framework for Social Studies State Standards (National Council for the Social Studies, 2013), Geography, D2.Geo.1.K-2 and D2.Geo.2.K-2: maps of familiar places and where places are"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

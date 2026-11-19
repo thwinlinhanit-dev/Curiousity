@@ -1,0 +1,169 @@
+{
+  "id": "weather.wind-chill-heat-index",
+  "slug": "wind-chill-heat-index",
+  "ladder": "earth",
+  "course": "weather",
+  "unit": "storms",
+  "title": "Wind Chill and Heat Index",
+  "short": "Wind makes cold air feel colder and humid air makes heat feel hotter, by changing how fast your body loses heat.",
+  "trouble": "Students think wind chill lowers the temperature of things; wind only speeds cooling, so a car or a water pipe never gets colder than the air itself.",
+  "prereqs": [
+    "weather.relative-humidity"
+  ],
+  "xp": 1,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A thermometer gives the air's temperature, but your body cares how fast it loses heat. Wind carries heat away faster; humid air slows the cooling of sweat, which ties back to <a href=\"/earth-and-space/weather-and-climate/relative-humidity/\">relative humidity</a>. The National Weather Service turns these effects into two \"feels like\" numbers."
+      },
+      {
+        "t": "key",
+        "html": "<b>Wind chill</b> is the temperature that would cool exposed skin as fast in calm air as the real temperature does in the wind. The <b>heat index</b> is how hot it feels when humidity slows the evaporation of sweat. Both are read from NWS charts in °F and mph. Wind chill applies at 50 °F or below with winds over 3 mph; the heat index is figured for shade, and full sunshine can raise it by up to about 15 °F."
+      },
+      {
+        "t": "why",
+        "html": "Your body is warmer than cold air around it and loses heat into it. In still air, a thin layer of warmed air clings to your skin and insulates it; wind strips that layer away, so heat flows out faster: it feels colder. In heat, your body cools mainly by evaporating sweat, which takes latent heat from your skin. In humid air (a high dew point), sweat evaporates slowly, so you cool less: it feels hotter. Neither effect changes the air's real temperature."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "fns": [
+            {
+              "f": "35.74+0.6215*20-35.75*x^0.16+0.4275*20*x^0.16",
+              "from": 3,
+              "to": 60,
+              "label": "wind chill at 20 °F"
+            }
+          ],
+          "xmin": 0,
+          "xmax": 60,
+          "ymin": -20,
+          "ymax": 30,
+          "xlabel": "wind (mph)",
+          "ylabel": "feels like (°F)",
+          "trace": {
+            "x": 20
+          },
+          "zoom": false
+        },
+        "cap": "The NWS wind chill at an air temperature of 20 °F, against wind speed. Drag the point: at 20 mph it feels like about 4 °F. The first 10 or 15 mph of wind do the most."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Air temperature",
+          "Wind 10 mph",
+          "Wind 20 mph",
+          "Wind 30 mph"
+        ],
+        "rows": [
+          [
+            "30 °F",
+            "21",
+            "17",
+            "15"
+          ],
+          [
+            "20 °F",
+            "9",
+            "4",
+            "1"
+          ],
+          [
+            "10 °F",
+            "−4",
+            "−9",
+            "−12"
+          ],
+          [
+            "0 °F",
+            "−16",
+            "−22",
+            "−26"
+          ]
+        ],
+        "cap": "Wind chill (°F), from the NWS formula."
+      },
+      {
+        "t": "ex",
+        "title": "Reading the wind chill chart",
+        "q": "It is 10 °F with a 20 mph wind. What is the wind chill?",
+        "steps": [
+          "Find the row for 10 °F and the column for 20 mph.",
+          "The chart gives −9 °F: exposed skin cools as fast as it would in still air at −9 °F."
+        ],
+        "a": "−9 °F"
+      },
+      {
+        "t": "ex",
+        "title": "Can the wind freeze the car?",
+        "q": "The air is 38 °F with a 25 mph wind, and the wind chill is 27 °F. Can the wind make the water in a parked car's radiator freeze?",
+        "steps": [
+          "Wind only speeds up cooling toward the air temperature.",
+          "A parked car makes no heat of its own, so the wind brings it down to 38 °F and no lower.",
+          "No: 38 °F is above freezing, so the wind can't freeze the water."
+        ],
+        "a": "No"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking wind chill lowers the temperature of things. Wind makes warm objects lose heat faster, but it can only bring them down to the air temperature, never below it. A car, a water pipe or a thermometer in the wind settles at the air's temperature, not the wind chill. Check: wind chill matters for people and animals, which make their own heat."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Air temperature",
+          "RH 40%",
+          "RH 50%",
+          "RH 60%",
+          "RH 70%"
+        ],
+        "rows": [
+          [
+            "90 °F",
+            "91",
+            "95",
+            "100",
+            "106"
+          ],
+          [
+            "96 °F",
+            "101",
+            "108",
+            "116",
+            "126"
+          ],
+          [
+            "100 °F",
+            "109",
+            "118",
+            "129",
+            "—"
+          ]
+        ],
+        "cap": "Heat index (°F), from the NWS formula (in the shade)."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "NOAA National Weather Service: Wind Chill Chart and wind chill formula (2001)"
+      },
+      {
+        "name": "NOAA National Weather Service: Heat Index chart and the heat index equation (Weather Prediction Center)"
+      },
+      {
+        "name": "OpenStax, College Physics 2e, 14.3 Phase Change and Latent Heat (evaporative cooling)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,158 @@
+{
+  "id": "sym.counting-identity",
+  "slug": "counting-identity",
+  "ladder": "logic",
+  "course": "sym",
+  "unit": "relations",
+  "title": "At Least, At Most and Exactly",
+  "short": "With identity we can count: \"at least two F\" is ∃x∃y(Fx ∧ Fy ∧ x ≠ y); \"at most one\" and \"exactly one\" follow the same pattern.",
+  "trouble": "Learners write ∃x∃y(Fx ∧ Fy) for \"at least two\". Without x ≠ y, x and y can be the same object.",
+  "prereqs": [
+    "sym.identity"
+  ],
+  "xp": 3,
+  "viz": [
+    "lg-quantworld"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Identity (<a href=\"/logic/symbolic-logic/identity/\">Identity</a>) lets logic count, without any numbers. \"At least two\", \"at most one\" and \"exactly one\" can all be written with quantifiers, $=$ and $\\neq$."
+      },
+      {
+        "t": "table",
+        "head": [
+          "English",
+          "Symbols"
+        ],
+        "rows": [
+          [
+            "At least one thing is $F$.",
+            "$\\exists x Fx$"
+          ],
+          [
+            "At least two things are $F$.",
+            "$\\exists x\\exists y((Fx \\land Fy) \\land x \\ne y)$"
+          ],
+          [
+            "At most one thing is $F$.",
+            "$\\forall x\\forall y((Fx \\land Fy) \\to x = y)$"
+          ],
+          [
+            "Exactly one thing is $F$.",
+            "$\\exists x(Fx \\land \\forall y(Fy \\to y = x))$"
+          ]
+        ],
+        "cap": "Counting with identity."
+      },
+      {
+        "t": "key",
+        "html": "\"At least two\" needs two variables and $x \\neq y$ to make them different. \"At most one\" says any two $F$ things are identical. \"Exactly one\" is at least one and at most one: something is $F$, and anything $F$ is that thing."
+      },
+      {
+        "t": "why",
+        "html": "Two variables do not have to name two different things. $\\exists x\\exists y(Fx \\land Fy)$ is true in a world with a single $F$ object: let $x$ and $y$ both be that object. So to say \"two\", you must say the two are distinct, which is what $x \\neq y$ does. In the other direction, \"at most one\" cannot list the objects; instead it says that whenever you find $F$ things, they turn out to be one and the same."
+      },
+      {
+        "t": "viz",
+        "name": "lg-quantworld",
+        "opts": {
+          "preset": "shapes",
+          "objects": [
+            {
+              "n": "a",
+              "has": [
+                "C",
+                "R"
+              ]
+            },
+            {
+              "n": "b",
+              "has": [
+                "S",
+                "R"
+              ]
+            },
+            {
+              "n": "c",
+              "has": [
+                "C",
+                "B"
+              ]
+            }
+          ],
+          "sentences": [
+            "∃x∃y((Rx ∧ Ry) ∧ x ≠ y)",
+            "∀x∀y((Rx ∧ Ry) → x = y)",
+            "∃x(Sx ∧ ∀y(Sy → y = x))",
+            "∃x∃y(Cx ∧ Cy)"
+          ],
+          "edit": true
+        },
+        "cap": "Two red shapes and one square. Edit the colors and watch the counts change."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "At least two",
+        "q": "Let $Sx$: $x$ is a square. Translate \"There are at least two squares.\"",
+        "steps": [
+          "Two variables, both squares, and different from each other."
+        ],
+        "a": "$\\exists x\\exists y((Sx \\land Sy) \\land x \\ne y)$"
+      },
+      {
+        "t": "ex",
+        "title": "At most one",
+        "q": "Translate \"There is at most one square.\"",
+        "steps": [
+          "Any two squares are the same square."
+        ],
+        "a": "$\\forall x\\forall y((Sx \\land Sy) \\to x = y)$"
+      },
+      {
+        "t": "ex",
+        "title": "Exactly one",
+        "q": "Translate \"There is exactly one square.\" Is it true in the world above?",
+        "steps": [
+          "Something is a square, and any square is that thing.",
+          "In the world, $b$ is the only square."
+        ],
+        "a": "$\\exists x(Sx \\land \\forall y(Sy \\to y = x))$; true."
+      },
+      {
+        "t": "mistake",
+        "html": "Writing $\\exists x\\exists y(Fx \\land Fy)$ for \"at least two\". Without $x \\neq y$, both variables can be the same object, so the formula says only \"at least one\". Whenever you mean \"two different things\", add the $\\neq$."
+      },
+      {
+        "t": "p",
+        "html": "These formulas can be checked in a world like the one above. For \"at least two red shapes\", look for two different red objects: $a$ and $b$ will do. For \"at most one\", look for two different objects with the property; finding them makes the sentence false. For \"exactly one\", find one and check there is no second."
+      },
+      {
+        "t": "p",
+        "html": "The pattern extends to any number. \"At least three\" needs three variables, all pairwise different: $x \\neq y$, $x \\neq z$ and $y \\neq z$. It gets long, but it shows something remarkable: counting, which seems to need numbers, can be done with logic alone."
+      },
+      {
+        "t": "note",
+        "html": "\"At most one\" is true when nothing is $F$ at all, since then there are no two $F$ things to compare. That is why \"exactly one\" adds $\\exists x Fx$ to it."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Patrick J. Hurley and Lori Watson, A Concise Introduction to Logic, 13th ed., section 8.7, numerical statements"
+      },
+      {
+        "name": "forall x: Calgary, an open introduction to formal logic (P. D. Magnus, Tim Button and others; Open Logic Project), chapter on identity, counting"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

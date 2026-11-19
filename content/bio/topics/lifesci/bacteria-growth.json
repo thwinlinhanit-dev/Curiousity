@@ -1,0 +1,96 @@
+{
+  "id": "lifesci.bacteria-growth",
+  "slug": "bacteria-growth",
+  "ladder": "bio",
+  "course": "lifesci",
+  "unit": "microbes",
+  "title": "How Bacteria Multiply",
+  "short": "A bacterium splits into two, then those two split, and so on. With food and warmth the number doubles each generation: 1, 2, 4, 8, 16.",
+  "trouble": "Students add 2 each generation (2, 4, 6, 8) instead of doubling (2, 4, 8, 16), or expect the doubling to go on forever. Food and space run out, so growth slows and stops.",
+  "prereqs": [
+    "lifesci.bacteria",
+    "g6.whole-number-exponents"
+  ],
+  "xp": 2,
+  "viz": [
+    "bi-population",
+    "bi-chart"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A <a href=\"/biology/life-science/bacteria/\">bacterium</a> multiplies by splitting in two. It copies its DNA, grows, and divides into two new cells. Then each of those divides. This is a place to use <a href=\"/math/grade-6/whole-number-exponents/\">exponents</a>."
+      },
+      {
+        "t": "key",
+        "html": "With food and warmth, the number of bacteria <b>doubles</b> each generation: 1, 2, 4, 8, 16 … After $n$ generations, one bacterium becomes $2^n$; a starting number $N$ becomes $N \\times 2^n$. Growth slows and stops when food and space run out."
+      },
+      {
+        "t": "viz",
+        "name": "bi-population",
+        "opts": {
+          "model": "doubling",
+          "gens": 6,
+          "N0": 1
+        },
+        "cap": "Six generations of doubling, from one bacterium."
+      },
+      {
+        "t": "why",
+        "html": "Every bacterium divides, the new ones included, so the number is multiplied by 2 each time, not increased by 2. That is why the counts take off. In ideal lab conditions <i>E. coli</i> can divide about every 20 minutes, so one cell could become $2^{3} = 8$ in an hour and $2^{30}$, over a billion, in ten hours, if nothing ran out."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Count the doublings",
+        "q": "One bacterium divides every generation. How many are there after 5 generations?",
+        "steps": [
+          "$1 \\to 2 \\to 4 \\to 8 \\to 16 \\to 32$.",
+          "Or: $2^5 = 32$."
+        ],
+        "a": "32 bacteria."
+      },
+      {
+        "t": "ex",
+        "title": "Use the time",
+        "q": "A sample starts with 10 bacteria that divide every 30 minutes. How many after 2 hours?",
+        "steps": [
+          "Generations: $120 \\div 30 = 4$.",
+          "Number: $10 \\times 2^4 = 10 \\times 16 = 160$."
+        ],
+        "a": "160 bacteria."
+      },
+      {
+        "t": "viz",
+        "name": "bi-population",
+        "opts": {
+          "model": "compare"
+        },
+        "cap": "Doubling forever (J-curve) compared with real growth that levels off when food and space run out (S-curve)."
+      },
+      {
+        "t": "mistake",
+        "html": "Adding 2 each generation (2, 4, 6, 8) instead of doubling (2, 4, 8, 16), or expecting doubling to go on forever. Check: each generation should be twice the one before. And in any real dish, food runs low and wastes build up, so the curve levels off."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Biology 2e, 22.2 Structure of Prokaryotes (binary fission)"
+      },
+      {
+        "name": "Grokipedia, Generation time (E. coli about 20 minutes)",
+        "url": "https://grokipedia.com/page/Generation_time"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

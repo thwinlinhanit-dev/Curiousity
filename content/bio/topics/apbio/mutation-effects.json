@@ -1,0 +1,124 @@
+{
+  "id": "apbio.mutation-effects",
+  "slug": "mutation-effects",
+  "ladder": "bio",
+  "course": "apbio",
+  "unit": "expression",
+  "title": "Mutations and Their Effects",
+  "short": "Read a mutation's effect from the codon table: silent, missense, nonsense or frameshift. Its effect on the organism depends on where it falls and on the environment, and mutations are the raw material of variation.",
+  "trouble": "Students assume a mutation's effect is the same in every environment. Sickle-cell hemoglobin, for example, has different effects where malaria is common.",
+  "prereqs": [
+    "apbio.translation-details",
+    "hsbio.mutations"
+  ],
+  "xp": 3,
+  "viz": [
+    "bi-central"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/biology/high-school-biology/mutations/\">Mutations</a> you met mutations as changes in DNA. With the codon table and <a href=\"/biology/advanced-biology/translation-details/\">translation</a> in hand, you can predict exactly what a point mutation does to a protein."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Kind",
+          "What changes",
+          "Example (mRNA)"
+        ],
+        "rows": [
+          [
+            "Silent",
+            "A base changes but the codon still means the same amino acid",
+            "GGA → GGG: Gly → Gly"
+          ],
+          [
+            "Missense",
+            "A base change gives a different amino acid",
+            "GAG → GUG: Glu → Val"
+          ],
+          [
+            "Nonsense",
+            "A base change turns a codon into a stop codon",
+            "UGG → UGA: Trp → stop"
+          ],
+          [
+            "Frameshift",
+            "An insertion or deletion of bases (not a multiple of 3) shifts every codon after it",
+            "AUG UUC GGA → AUG UCG GA…"
+          ]
+        ],
+        "cap": "Kinds of point mutations, read from the codon table."
+      },
+      {
+        "t": "viz",
+        "name": "bi-central",
+        "opts": {
+          "mode": "mutation",
+          "mrna": "AUGGUGCACCUGACUCCUGAGGAGAAG",
+          "mutant": "AUGGUGCACCUGACUCCUGUGGAGAAG",
+          "table": true
+        },
+        "cap": "The first nine codons of the β-globin mRNA, and the single change (GAG → GUG) that makes sickle-cell hemoglobin. The first Met is removed later, so the changed amino acid is the sixth of the finished chain."
+      },
+      {
+        "t": "key",
+        "html": "Read the effect from the codon table: <b>silent</b> (same amino acid), <b>missense</b> (different amino acid), <b>nonsense</b> (early stop) or <b>frameshift</b> (reading frame shifted). What the change does to the organism depends on where it falls in the protein and on the environment."
+      },
+      {
+        "t": "why",
+        "html": "Why are some mutations harmless? The code is redundant: most amino acids have several codons, often differing only in the third base, so many third-base changes are silent. Missense changes matter most when they hit an active site or swap R-group families (<a href=\"/biology/advanced-biology/amino-acid-properties/\">Amino Acid R Groups</a>). Frameshifts and early stops usually wreck the protein. Mutations are also the raw material of variation: without them, natural selection would have nothing new to act on."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Classify the change",
+        "q": "An mRNA reads AUG UGG CCA UAA. A mutation changes the G at position 6 to A. What kind of mutation is it?",
+        "steps": [
+          "The second codon UGG becomes UGA.",
+          "UGG means Trp; UGA is a stop codon.",
+          "The protein ends after Met."
+        ],
+        "a": "A nonsense mutation."
+      },
+      {
+        "t": "ex",
+        "title": "The environment matters",
+        "q": "Sickle-cell hemoglobin comes from one missense change (Glu → Val). Two copies of the allele cause sickle cell disease. Why is the allele more common in regions where malaria is common?",
+        "steps": [
+          "People with one copy of the allele are resistant to malaria.",
+          "Where malaria is common, that is a survival advantage, so the allele is passed on more often.",
+          "Where malaria is absent, there is no such advantage."
+        ],
+        "a": "The same allele helps carriers in one environment and not in another: its effect on fitness depends on the environment."
+      },
+      {
+        "t": "mistake",
+        "html": "Assuming a mutation has the same effect in every environment. Whether a change helps, harms or does nothing depends on conditions: the sickle-cell allele is the classic case. Also check frameshifts carefully: deleting three bases removes one codon and keeps the frame; deleting one or two shifts everything after it."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Biology 2e, 15.1 The Genetic Code"
+      },
+      {
+        "name": "OpenStax, Biology 2e, 14.6 DNA Repair (mutations)"
+      },
+      {
+        "name": "UC Berkeley Understanding Evolution: sickle cell anemia",
+        "url": "https://evolution.berkeley.edu/glossary/sickle-cell-anemia/"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

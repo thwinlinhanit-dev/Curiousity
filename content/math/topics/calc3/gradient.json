@@ -1,0 +1,98 @@
+{
+  "id": "calc3.gradient",
+  "slug": "gradient",
+  "ladder": "math",
+  "course": "calc3",
+  "unit": "partials",
+  "title": "The Gradient",
+  "short": "∇f points uphill fastest, with length equal to the steepest rate.",
+  "trouble": "Students draw the gradient on the surface instead of in the domain.",
+  "prereqs": [
+    "calc3.directional-derivatives"
+  ],
+  "xp": 2,
+  "viz": [
+    "gradient",
+    "surface"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The vector $\\nabla f = \\langle f_x, f_y \\rangle$ that appeared in <a href=\"/math/calculus-3/directional-derivatives/\">directional derivatives</a> deserves its own name: the <b>gradient</b> (\"del $f$\"). It packs every directional derivative into one arrow, and that arrow has a clear meaning."
+      },
+      {
+        "t": "key",
+        "html": "At each point, $\\nabla f$ points in the direction in which $f$ increases fastest, and its length $|\\nabla f|$ is that fastest rate. $f$ decreases fastest in the direction $-\\nabla f$, and does not change at all in the directions perpendicular to $\\nabla f$."
+      },
+      {
+        "t": "why",
+        "html": "For a unit vector $\\mathbf{u}$ at angle $\\theta$ to the gradient,\n  $$D_{\\mathbf{u}}f = \\nabla f \\cdot \\mathbf{u} = |\\nabla f|\\,|\\mathbf{u}|\\cos\\theta = |\\nabla f|\\cos\\theta.$$\n  Since $\\cos\\theta$ is between $-1$ and ${}1$, the rate is largest ($|\\nabla f|$) at $\\theta = 0$, smallest ($-|\\nabla f|$) at $\\theta = \\pi$, and zero at $\\theta = \\pm\\frac{\\pi}{2}$. Nothing about the formula for $f$ entered: this is true for every differentiable function."
+      },
+      {
+        "t": "viz",
+        "name": "gradient",
+        "opts": {
+          "f": "x^2 + 2y^2",
+          "point": [
+            1.5,
+            1
+          ],
+          "dir": 200,
+          "ascent": true
+        },
+        "cap": "The red arrow is $\\nabla f$, drawn in the $xy$-plane, the map. The gold dashed path follows the gradient: the route of steepest climb, crossing every contour at a right angle. Drag the point to see how the arrow changes."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Fastest increase",
+        "q": "For $f(x, y) = x^2 + 2y^2$ at $(1, 1)$, find the direction and rate of fastest increase.",
+        "steps": [
+          "$\\nabla f = \\langle 2x, 4y \\rangle = \\langle 2, 4 \\rangle$.",
+          "Direction: $\\frac{\\langle 2, 4 \\rangle}{\\sqrt{20}} = \\left\\langle \\frac{1}{\\sqrt{5}}, \\frac{2}{\\sqrt{5}} \\right\\rangle$.",
+          "Rate: $|\\nabla f| = \\sqrt{20} = 2\\sqrt{5} \\approx 4.47$."
+        ],
+        "a": "direction $\\frac{1}{\\sqrt{5}}\\langle 1, 2 \\rangle$, rate ${}2\\sqrt{5}$"
+      },
+      {
+        "t": "ex",
+        "title": "A hiker",
+        "q": "A hill has height $h(x, y) = 100 - 0.01x^2 - 0.02y^2$ meters, with $x$ east and $y$ north in meters. At $(30, 10)$, which way should a hiker head to climb most steeply, and how steep is it?",
+        "steps": [
+          "$$\\nabla h = \\langle -0.02x, -0.04y \\rangle = \\langle -0.6, -0.4 \\rangle$$ at $(30, 10)$: head west-southwest, toward the summit at the origin.",
+          "Steepest slope: $|\\nabla h| = \\sqrt{0.36 + 0.16} = \\sqrt{0.52} \\approx 0.72$ meters up per meter walked."
+        ],
+        "a": "toward $\\langle -0.6, -0.4 \\rangle$; slope about ${}0.72$"
+      },
+      {
+        "t": "ex",
+        "title": "No change",
+        "q": "In which directions is the rate of change of $f(x, y) = x^2 + 2y^2$ zero at $(1, 1)$?",
+        "steps": [
+          "Perpendicular to $\\nabla f = \\langle 2, 4 \\rangle$: swap the components and change one sign, $\\pm\\langle -4, 2 \\rangle$.",
+          "As unit vectors: $\\pm\\frac{1}{\\sqrt{5}}\\langle -2, 1 \\rangle$. These run along the level curve through $(1, 1)$."
+        ],
+        "a": "$\\pm\\frac{1}{\\sqrt{5}}\\langle -2, 1 \\rangle$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Drawing the gradient on the surface.</b> $\\nabla f$ has two components, so it lives in the $xy$-plane: it tells the hiker which way to step on the map. It is not tangent to the surface $z = f(x, y)$ and does not point up the hill in 3-D. (The steepest path on the surface rises above it, in the direction $\\langle f_x, f_y, |\\nabla f|^2 \\rangle$.) Check: your gradient arrow should cross the level curves of a contour map at right angles."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 3, 4.6 Directional Derivatives and the Gradient"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

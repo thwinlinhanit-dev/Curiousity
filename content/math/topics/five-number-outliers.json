@@ -1,0 +1,107 @@
+{
+  "id": "stat.five-number-outliers",
+  "slug": "five-number-outliers",
+  "ladder": "math",
+  "course": "stat",
+  "unit": "describing-data",
+  "title": "Five-Number Summary and Outliers",
+  "short": "Use the 1.5 × IQR rule to flag outliers.",
+  "trouble": "",
+  "prereqs": [
+    "stat.center-resistance",
+    "g6.box-plots"
+  ],
+  "xp": 2,
+  "viz": [
+    "boxplot"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A <a href=\"/math/grade-6/box-plots/\">box plot</a> is drawn from the five-number summary: minimum, $Q_1$, median, $Q_3$, maximum. Because it is built from medians, it is <a href=\"/math/probability-and-statistics/center-resistance/\">resistant</a> like the median. Here we add a rule that decides which values are far enough out to call outliers."
+      },
+      {
+        "t": "key",
+        "html": "$Q_1$ is the median of the lower half of the sorted data and $Q_3$ the median of the upper half (leave out the middle value when $n$ is odd). $\\text{IQR} = Q_3 - Q_1$. A value is an <b>outlier</b> if it is below $Q_1 - 1.5 \\cdot \\text{IQR}$ or above $Q_3 + 1.5 \\cdot \\text{IQR}$. These two cutoffs are called fences."
+      },
+      {
+        "t": "why",
+        "html": "The IQR measures the width of the middle half of the data, so it is a resistant yardstick for spread. A value more than one and a half yardsticks beyond the box is unusually far from the bulk of the data. The 1.5 is a convention (from the statistician John Tukey), chosen so that in bell-shaped data only about 0.7% of values get flagged: most flags are worth a second look."
+      },
+      {
+        "t": "ex",
+        "title": "Odd number of values",
+        "q": "Find the five-number summary and any outliers: $3, 7, 8, 9, 10, 11, 12, 13, 14, 15, 31$.",
+        "steps": [
+          "The 11 values are sorted. The median is the 6th: $11$.",
+          "Lower half (without the 11): $3, 7, 8, 9, 10$, so $Q_1 = 8$. Upper half: $12, 13, 14, 15, 31$, so $Q_3 = 14$.",
+          "$\\text{IQR} = 14 - 8 = 6$, and $1.5 \\times 6 = 9$.",
+          "Fences: $8 - 9 = -1$ and $14 + 9 = 23$.",
+          "Only $31$ is outside the fences."
+        ],
+        "a": "Min 3, $Q_1 = 8$, median 11, $Q_3 = 14$, max 31; the outlier is 31."
+      },
+      {
+        "t": "ex",
+        "title": "Even number of values",
+        "q": "Find the fences for $22, 25, 27, 28, 30, 31, 33, 34, 36, 60$.",
+        "steps": [
+          "Median: average of the 5th and 6th values, $(30 + 31)/2 = 30.5$.",
+          "Lower half $22, 25, 27, 28, 30$: $Q_1 = 27$. Upper half $31, 33, 34, 36, 60$: $Q_3 = 34$.",
+          "$\\text{IQR} = 7$ and $1.5 \\times 7 = 10.5$.",
+          "Fences: $27 - 10.5 = 16.5$ and $34 + 10.5 = 44.5$. The value $60$ is an outlier."
+        ],
+        "a": "Fences 16.5 and 44.5; 60 is an outlier."
+      },
+      {
+        "t": "viz",
+        "name": "boxplot",
+        "opts": {
+          "data": [
+            3,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            31
+          ],
+          "fences": true,
+          "quarters": true,
+          "min": 0,
+          "max": 35
+        },
+        "cap": "With fences on, the whisker stops at the last value inside the fence and the outlier gets its own mark. Drag the 31 inward and watch it stop being an outlier."
+      },
+      {
+        "t": "mistake",
+        "html": "Two slips to avoid. Using the range instead of the IQR to build the fences (the range includes the outlier itself). And forgetting the lower fence: outliers can be unusually small too. Check: list both fences and compare the smallest and largest values with them."
+      },
+      {
+        "t": "note",
+        "html": "An outlier is a flag, not a verdict. It may be a typing error, a measurement problem, or the most interesting value in the data. Never delete one without a reason."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Introductory Statistics 2e, section 2.3 Measures of the Location of the Data"
+      },
+      {
+        "name": "OpenStax, Introductory Statistics 2e, section 2.4 Box Plots"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, S-ID.A.3 (Interpret differences in shape, center, and spread)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

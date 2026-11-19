@@ -1,0 +1,125 @@
+{
+  "id": "de.numerical-methods",
+  "slug": "numerical-methods",
+  "ladder": "math",
+  "course": "de",
+  "unit": "first-order",
+  "title": "Improved Euler and Runge–Kutta Methods",
+  "short": "Average slopes for much better accuracy.",
+  "trouble": "",
+  "prereqs": [
+    "calc2.slope-fields-euler"
+  ],
+  "xp": 2,
+  "viz": [
+    "slopefield"
+  ],
+  "figureArchetype": "FieldFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/math/calculus-2/slope-fields-euler/\">Euler's method</a> steps forward along the slope at the start of each step: $y_{n+1} = y_n + hf(t_n, y_n)$. It is simple, but its error shrinks only in proportion to $h$. Better methods sample the slope at more than one place in each step."
+      },
+      {
+        "t": "key",
+        "html": "<b>Improved Euler (Heun):</b> $k_1 = f(t_n, y_n)$, $k_2 = f(t_n + h,\\ y_n + hk_1)$, $y_{n+1} = y_n + \\frac{h}{2}(k_1 + k_2)$.<br><b>Runge–Kutta (RK4):</b> $k_1 = f(t_n, y_n)$, $k_2 = f(t_n + \\frac{h}{2}, y_n + \\frac{h}{2}k_1)$, $k_3 = f(t_n + \\frac{h}{2}, y_n + \\frac{h}{2}k_2)$, $k_4 = f(t_n + h, y_n + hk_3)$, $$y_{n+1} = y_n + \\frac{h}{6}(k_1 + 2k_2 + 2k_3 + k_4).$$"
+      },
+      {
+        "t": "why",
+        "html": "Taylor's theorem gives $y(t + h)$ $= y + hy' + \\frac{h^{2}}{2}y'' + \\dots$. Euler keeps only $hy'$, so each step is off by about $\\frac{h^{2}}{2}y''$; after $T/h$ steps the errors add up to something proportional to $h$. Improved Euler averages the slope at both ends of the step, like the trapezoid rule, and that average matches the $h^{2}$ term too: the total error is proportional to $h^{2}$. RK4 weights four slopes like Simpson's rule and reaches $h^{4}$."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Method",
+          "Slopes per step",
+          "Global error",
+          "Halve $h$: error shrinks by"
+        ],
+        "rows": [
+          [
+            "Euler",
+            "1",
+            "$\\approx Ch$",
+            "2"
+          ],
+          [
+            "Improved Euler",
+            "2",
+            "$\\approx Ch^{2}$",
+            "4"
+          ],
+          [
+            "Runge–Kutta (RK4)",
+            "4",
+            "$\\approx Ch^{4}$",
+            "16"
+          ]
+        ],
+        "cap": "Accuracy versus work."
+      },
+      {
+        "t": "ex",
+        "title": "One step of improved Euler",
+        "q": "For $y' = t + y$, $y(0) = 1$, take one step with $h = 0.1$. The exact solution is $y = 2e^{t} - t - 1$.",
+        "steps": [
+          "$k_1 = f(0, 1) = 1$.",
+          "Euler prediction: $1 + 0.1(1) = 1.1$ at $t = 0.1$, so $k_2 = f(0.1, 1.1) = 1.2$.",
+          "$y_1 = 1 + \\frac{0.1}{2}(1 + 1.2)$ $= 1.11$.",
+          "Exact: $y(0.1) = 2e^{0.1} - 1.1$ $\\approx 1.110342$. Euler alone gives $1.1$ (error $0.0103$); improved Euler's error is $0.00034$."
+        ],
+        "a": "$y(0.1) \\approx 1.11$"
+      },
+      {
+        "t": "ex",
+        "title": "One step of RK4",
+        "q": "For $y' = y$, $y(0) = 1$, take one RK4 step with $h = 0.5$.",
+        "steps": [
+          "$k_1 = 1$; $k_2 = f(0.25, 1.25) = 1.25$; $k_3 = f(0.25, 1.3125)$ $= 1.3125$; $k_4 = f(0.5, 1.65625)$ $= 1.65625$.",
+          "$y_1$ $= 1$ $+ \\frac{0.5}{6}(1 + 2.5 + 2.625 + 1.65625)$ $= 1 + \\frac{0.5}{6}(7.78125)$ $\\approx 1.648438$.",
+          "Exact: $e^{0.5} \\approx 1.648721$, an error of about $0.0003$ with a single large step."
+        ],
+        "a": "$y(0.5) \\approx 1.6484$"
+      },
+      {
+        "t": "viz",
+        "name": "slopefield",
+        "opts": {
+          "f": "x + y",
+          "point": [
+            0,
+            1
+          ],
+          "euler": true,
+          "h": 0.5,
+          "xmin": -1,
+          "xmax": 2,
+          "ymin": -1,
+          "ymax": 8
+        },
+        "cap": "Euler's method (orange) on $y' = t + y$ from $(0, 1)$. Its path falls below the true solution (blue) because the slope keeps increasing during each step. Shrink $h$ and watch the error shrink roughly in proportion; the methods above shrink it much faster."
+      },
+      {
+        "t": "mistake",
+        "html": "In improved Euler, evaluating $k_2$ at the old value $y_n$ instead of at the Euler prediction $y_n + hk_1$, or using $h$ instead of $\\frac{h}{2}$ in the average. In RK4, the middle slopes use half a step, $t_n + \\frac{h}{2}$, but the final update uses the whole $h$. A quick check: your answer should be close to plain Euler's, and closer to the exact value when you know it."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 2, 4.2 Direction Fields and Numerical Methods"
+      },
+      {
+        "name": "Paul's Online Math Notes, Differential Equations: Euler's Method"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.03SC Differential Equations (Fall 2011), Unit I: First Order Differential Equations"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

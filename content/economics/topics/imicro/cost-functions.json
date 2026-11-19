@@ -1,0 +1,119 @@
+{
+  "id": "imicro.cost-functions",
+  "slug": "cost-functions",
+  "ladder": "economics",
+  "course": "imicro",
+  "unit": "production",
+  "title": "Cost Functions and Marginal Cost",
+  "short": "C(q) gives the least cost of making q; MC = C′(q) and AC = C(q)/q.",
+  "trouble": "Students differentiate average cost to get marginal cost, or let fixed cost show up in marginal cost.",
+  "prereqs": [
+    "imicro.cost-minimization",
+    "micro.short-run-costs",
+    "calc1.power-rule"
+  ],
+  "xp": 2,
+  "viz": [
+    "ec-costcurves"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Solving <a href=\"/economics/intermediate-microeconomics/cost-minimization/\">Cost Minimization</a> for every output gives the <b>cost function</b>: the least cost of producing each $q$. From it come the cost measures of <a href=\"/economics/microeconomics/short-run-costs/\">Short-Run Costs</a>, now with the <a href=\"/math/calculus-1/power-rule/\">Constant, Power and Sum Rules</a> doing the work."
+      },
+      {
+        "t": "key",
+        "html": "$C(q)$ is the least cost of producing $q$. In the short run $C(q) = F + VC(q)$, with fixed cost $F = C(0)$. Then $$MC(q) = C'(q), \\qquad AC(q) = \\frac{C(q)}{q}, \\qquad AVC(q) = \\frac{VC(q)}{q}.$$"
+      },
+      {
+        "t": "why",
+        "html": "Marginal cost is the extra cost of a little more output: the slope of total cost, $\\lim \\Delta C/\\Delta q$. Fixed cost doesn't change with $q$, so its derivative is zero: a rent, a license fee or a lump-sum tax moves $AC$ but leaves $MC$ alone. Where the cost function comes from production: with $Q = \\sqrt{KL}$ and capital fixed at $\\bar K$, making $q$ needs $L = q^2/\\bar K$, so $$C(q) = r\\bar K + \\frac{w}{\\bar K}q^2, \\qquad MC(q) = \\frac{2w}{\\bar K}q.$$ Marginal cost rises because labor's marginal product falls."
+      },
+      {
+        "t": "viz",
+        "name": "ec-costcurves",
+        "opts": {
+          "cost": {
+            "F": 100,
+            "a": 10,
+            "b": 1,
+            "c": 0.1
+          },
+          "show": [
+            "tc",
+            "vc",
+            "mc",
+            "atc",
+            "avc",
+            "afc"
+          ],
+          "q": 8
+        },
+        "cap": "$C(q) = 100 + 10q - q^2 + 0.1q^3$. Above, $TC$ and $VC$ differ by the fixed 100 at every $q$; below, $MC$ (the slope of either one) crosses $AVC$ and $ATC$ at their lowest points."
+      },
+      {
+        "t": "ex",
+        "title": "Reading a cost function",
+        "q": "$C(q) = 100 + 10q - q^2 + 0.1q^3$. At $q = 8$, find $MC$, $AVC$ and $AC$.",
+        "steps": [
+          "$MC(q) = 10 - 2q + 0.3q^2$, so $MC(8) = 10 - 16 + 19.2 = 13.2$.",
+          "$AVC(q) = 10 - q + 0.1q^2$, so $AVC(8) = 8.4$.",
+          "$AC(8) = \\dfrac{100}{8} + 8.4 = 12.5 + 8.4 = 20.9$."
+        ],
+        "a": "$MC = 13.2$, $AVC = 8.4$, $AC = 20.9$."
+      },
+      {
+        "t": "ex",
+        "title": "Cost from a production function",
+        "q": "$Q = \\sqrt{KL}$, $\\bar K = 4$, $w = 2$, $r = 5$. Find $C(q)$ and $MC(q)$.",
+        "steps": [
+          "Labor needed: $\\sqrt{4L} = q$, so $L = q^2/4$.",
+          "$C(q) = 5(4) + 2\\cdot\\dfrac{q^2}{4} = 20 + \\dfrac{q^2}{2}$.",
+          "$MC(q) = q$. The \\$20 of capital is fixed and drops out."
+        ],
+        "a": "$C(q) = 20 + q^2/2$, $MC(q) = q$."
+      },
+      {
+        "t": "ex",
+        "title": "A long-run cost function",
+        "q": "With $Q = \\sqrt{KL}$ and both inputs free, the cheapest way to make $q$ costs $C(q) = 2q\\sqrt{wr}$. With $w = 9$ and $r = 4$, find $MC$ and $AC$.",
+        "steps": [
+          "$C(q) = 2q\\sqrt{36} = 12q$.",
+          "$MC = 12$ and $AC = 12q/q = 12$, at every output.",
+          "Constant returns to scale with fixed input prices give a flat cost per unit: every unit costs the same as the last."
+        ],
+        "a": "$MC = AC = 12$."
+      },
+      {
+        "t": "list",
+        "items": [
+          "$MC$ decides how much to produce: compare it with price or marginal revenue.",
+          "$AVC$ decides whether to produce at all in the short run (the shutdown rule).",
+          "$AC$ decides whether the firm earns a profit, and whether firms enter or leave in the long run."
+        ]
+      },
+      {
+        "t": "mistake",
+        "html": "Differentiating average cost to get marginal cost, or letting fixed cost appear in marginal cost. $MC$ is the derivative of <i>total</i> cost; the derivative of $AC$ tells you where $AC$ is rising or falling, which is a different question (see <a href=\"/economics/intermediate-microeconomics/minimum-average-cost/\">Where Average Cost Is Lowest</a>). Check: change the fixed cost in your formula. If your MC changes, something is wrong."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, ch. 7.3 Costs in the Short Run"
+      },
+      {
+        "name": "OpenStax Calculus Volume 1, 3.3 Differentiation Rules"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.04 Intermediate Microeconomic Theory (course scope and lecture topics)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,93 @@
+{
+  "id": "trad.contradictories",
+  "slug": "contradictories",
+  "ladder": "logic",
+  "course": "trad",
+  "unit": "opposition",
+  "title": "Contradictories",
+  "short": "A and O, and E and I, are contradictories: exactly one of each pair is true.",
+  "trouble": "Learners give \"No S are P\" as the contradictory of \"All S are P\". It is the contrary; to deny \"all\" you need only \"some are not\".",
+  "prereqs": [
+    "trad.square"
+  ],
+  "xp": 1,
+  "viz": [
+    "lg-square"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "On the <a href=\"/logic/traditional-logic/square/\">square of opposition</a>, the diagonals join A with O and E with I. These pairs are <b>contradictories</b>."
+      },
+      {
+        "t": "key",
+        "html": "Contradictories cannot both be true and cannot both be false: exactly one of them is true. The contradictory of \"All S are P\" is \"Some S are not P\"; the contradictory of \"No S are P\" is \"Some S are P\"."
+      },
+      {
+        "t": "why",
+        "html": "Each pair talks about the same region of a Venn diagram and says opposite things about it. \"All S are P\" says region 1 (S outside P) is empty; \"Some S are not P\" says region 1 has something in it. A region is either empty or not, so exactly one of the two is right. The same goes for E and I with region 2. Because this reason uses no assumption about existence, the contradictories hold on every reading."
+      },
+      {
+        "t": "viz",
+        "name": "lg-venn3",
+        "opts": {
+          "terms": [
+            "students",
+            "swimmers"
+          ],
+          "circles": 2,
+          "props": [
+            "All students are swimmers",
+            "Some students are not swimmers"
+          ]
+        },
+        "cap": "A shades region 1; O puts an X in region 1. Exactly one can be right."
+      },
+      {
+        "t": "h",
+        "text": "Worked example"
+      },
+      {
+        "t": "ex",
+        "title": "Denying a universal",
+        "q": "What is the contradictory of \"All the cookies are burned\"? (Standard form: All cookies on the tray are burned cookies.)",
+        "steps": [
+          "It is an A statement, so its contradictory is the O with the same terms.",
+          "To show that not all the cookies are burned, you only need one cookie that is not."
+        ],
+        "a": "Some cookies on the tray are not burned cookies."
+      },
+      {
+        "t": "ex",
+        "title": "Denying a negative",
+        "q": "What is the contradictory of \"No hikers are poets\"?",
+        "steps": [
+          "It is an E statement, so its contradictory is the I with the same terms.",
+          "To show that \"none\" is wrong, one hiker who is a poet is enough."
+        ],
+        "a": "Some hikers are poets."
+      },
+      {
+        "t": "mistake",
+        "html": "Giving \"No S are P\" as the contradictory of \"All S are P\". That is the contrary, and both can be false at once (some cookies burned, some not). To deny \"all\", you need only \"some are not\". Check: could your two statements both be false? If yes, they are not contradictories."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Patrick J. Hurley, A Concise Introduction to Logic, 4.5 The Traditional Square of Opposition"
+      },
+      {
+        "name": "Aristotle, On Interpretation 7"
+      },
+      {
+        "name": "Stanford Encyclopedia of Philosophy, \"The Traditional Square of Opposition\""
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

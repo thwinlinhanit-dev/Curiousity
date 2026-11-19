@@ -1,0 +1,117 @@
+{
+  "id": "aa.class-equation",
+  "slug": "class-equation",
+  "ladder": "math",
+  "course": "aa",
+  "unit": "actions",
+  "title": "Conjugacy Classes and the Class Equation",
+  "short": "Conjugacy classes are the orbits of G acting on itself by x ↦ gxg⁻¹; in Sₙ they are the cycle types, and |G| = |Z(G)| + the sum of [G : C(x)] over the classes with more than one element.",
+  "trouble": "Students count the one-element classes of the center again in the sum, or forget that every class size divides |G|.",
+  "prereqs": [
+    "aa.orbit-stabilizer",
+    "aa.normal-subgroups",
+    "aa.permutation-order"
+  ],
+  "xp": 3,
+  "viz": [],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Let a group act on itself by conjugation, $g \\cdot x = gxg^{-1}$. The <a href=\"/math/abstract-algebra/orbit-stabilizer/\">orbits</a> are called <b>conjugacy classes</b>, and counting them gives an equation with real consequences for groups of prime-power order."
+      },
+      {
+        "t": "p",
+        "html": "<b>Definitions.</b> The <b>conjugacy class</b> of $x$ is $\\{gxg^{-1} : g \\in G\\}$. The stabilizer of $x$ is its <b>centralizer</b> $C(x) = \\{g : gx = xg\\}$. The class of $x$ is $\\{x\\}$ alone exactly when $x$ commutes with everything, that is, when $x$ is in the <b>center</b> $Z(G)$."
+      },
+      {
+        "t": "why",
+        "html": "<b>The class equation.</b> The classes partition $G$. Collect the one-element classes (the center) and pick one $x_{i}$ from each larger class; by orbit–stabilizer each class has $[G : C(x_{i})]$ elements, so $$|G| = |Z(G)| + \\sum_{i} [G : C(x_{i})],$$ and every term divides $|G|$.<br><b>Application.</b> If $|G| = p^{n}$ with $p$ prime and $n \\ge 1$, then $Z(G) \\ne \\{e\\}$. <i>Proof:</i> each $[G : C(x_{i})]$ is a divisor of $p^{n}$ bigger than $1$, so a multiple of $p$. Then $|Z(G)| = |G| - \\sum [G : C(x_{i})]$ is a multiple of $p$, and it is at least $1$ (it contains $e$), so it is at least $p$. $\\square$"
+      },
+      {
+        "t": "p",
+        "html": "<b>Classes in $S_{n}$.</b> Conjugating relabels: $\\sigma(a_{1}\\;\\dots\\;a_{k})\\sigma^{-1} = (\\sigma(a_{1})\\;\\dots\\;\\sigma(a_{k}))$. So two permutations are conjugate exactly when they have the same cycle type, and the classes of $S_{n}$ match the partitions of $n$."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Group",
+          "Class equation"
+        ],
+        "rows": [
+          [
+            "$S_{3}$",
+            "$6 = 1 + 2 + 3$"
+          ],
+          [
+            "$D_{4}$",
+            "$8 = 1 + 1 + 2 + 2 + 2$"
+          ],
+          [
+            "$Q_{8}$",
+            "$8 = 1 + 1 + 2 + 2 + 2$"
+          ],
+          [
+            "$S_{4}$",
+            "$24 = 1 + 3 + 6 + 6 + 8$"
+          ],
+          [
+            "$A_{4}$",
+            "$12 = 1 + 3 + 4 + 4$"
+          ]
+        ],
+        "cap": "Class equations of small groups; the 1s are the elements of the center."
+      },
+      {
+        "t": "ex",
+        "title": "The class equation of $D_{4}$",
+        "q": "Find the conjugacy classes of $D_{4}$.",
+        "steps": [
+          "$Z(D_{4}) = \\{e, r^{2}\\}$: the half turn commutes with everything.",
+          "$srs^{-1} = r^{-1} = r^{3}$, so $\\{r, r^{3}\\}$ is a class.",
+          "$rsr^{-1} = r^{2}s$, so $\\{s, r^{2}s\\}$ is a class, and likewise $\\{rs, r^{3}s\\}$.",
+          "$8 = 1 + 1 + 2 + 2 + 2$."
+        ],
+        "a": "Five classes."
+      },
+      {
+        "t": "ex",
+        "title": "A class in $S_{4}$",
+        "q": "How many elements are conjugate to $(1\\;2)(3\\;4)$ in $S_{4}$?",
+        "steps": [
+          "All permutations of the same cycle type: two disjoint transpositions.",
+          "Pair up $\\{1, 2, 3, 4\\}$: $(1\\;2)(3\\;4)$, $(1\\;3)(2\\;4)$, $(1\\;4)(2\\;3)$."
+        ],
+        "a": "$3$."
+      },
+      {
+        "t": "mistake",
+        "html": "Counting the central elements twice: they appear as the term $|Z(G)|$, so the sum runs only over classes with more than one element. A quick check on any class equation: every term divides $|G|$, and the terms add up to $|G|$. For $D_{4}$, $1 + 1 + 2 + 2 + 2 = 8$."
+      },
+      {
+        "t": "note",
+        "html": "<b>One more step: groups of order $p^{2}$ are abelian.</b> Suppose $|G| = p^{2}$ and $Z(G) \\ne G$. Then $|Z(G)| = p$. Pick $x \\notin Z(G)$: its centralizer $C(x)$ contains all of $Z(G)$ and also $x$, so $|C(x)| \\gt p$, and by Lagrange $C(x) = G$. That says $x$ commutes with everything, so $x \\in Z(G)$, a contradiction. $\\square$"
+      },
+      {
+        "t": "key",
+        "html": "Conjugacy classes are the orbits of conjugation; the class of $x$ has $[G : C(x)]$ elements. $|G| = |Z(G)| + \\sum [G : C(x_{i})]$. In $S_{n}$ the classes are the cycle types; groups of order $p^{n}$ have a nontrivial center."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Thomas W. Judson, Abstract Algebra: Theory and Applications (open textbook), chapter 14, Group Actions (section 14.2, The Class Equation)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.701 Algebra I (Fall 2010), lecture notes on the class equation"
+      },
+      {
+        "name": "John A. Beachy and William D. Blair, Abstract Algebra, online study guide (Northern Illinois University), section 7.2, Conjugacy"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

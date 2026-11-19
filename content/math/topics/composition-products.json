@@ -1,0 +1,138 @@
+{
+  "id": "la.composition-products",
+  "slug": "composition-products",
+  "ladder": "math",
+  "course": "la",
+  "unit": "linear-maps",
+  "title": "Composition as Matrix Multiplication",
+  "short": "Doing S after T has matrix ST.",
+  "trouble": "Students multiply in the order the maps are applied, getting TS.",
+  "prereqs": [
+    "la.geometric-maps",
+    "la.matrix-algebra"
+  ],
+  "xp": 2,
+  "viz": [
+    "matrix2d"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Doing one <a href=\"/math/linear-algebra/geometric-maps/\">plane map</a> after another gives a new map. This is where <a href=\"/math/linear-algebra/matrix-algebra/\">matrix multiplication</a> comes from, and it explains why the order of a product matters."
+      },
+      {
+        "t": "p",
+        "html": "If $T(\\mathbf{x}) = A\\mathbf{x}$ and $S(\\mathbf{x}) = B\\mathbf{x}$, the <b>composition</b> $S \\circ T$ means \"first $T$, then $S$\": $(S \\circ T)(\\mathbf{x}) = S(T(\\mathbf{x}))$."
+      },
+      {
+        "t": "key",
+        "html": "\"First $T$ (matrix $A$), then $S$ (matrix $B$)\" has standard matrix $BA$. The first map is written on the <b>right</b>, next to $\\mathbf{x}$."
+      },
+      {
+        "t": "why",
+        "html": "$S(T(\\mathbf{x})) = B(A\\mathbf{x}) = (BA)\\mathbf{x}$, by the associative law, which is exactly what matrix multiplication was built to satisfy. Read a product right to left, the way the vector travels: in $BA\\mathbf{x}$, the vector meets $A$ first."
+      },
+      {
+        "t": "ex",
+        "title": "Rotate, then reflect",
+        "q": "Find the matrix of \"rotate $90^\\circ$ counterclockwise, then reflect across the $x$-axis\".",
+        "steps": [
+          "Rotation: $A = \\begin{bmatrix} 0 & -1 \\\\ 1 & 0 \\end{bmatrix}$. Reflection: $B = \\begin{bmatrix} 1 & 0 \\\\ 0 & -1 \\end{bmatrix}$.",
+          "First $A$, then $B$: $BA$ $= \\begin{bmatrix} 1 & 0 \\\\ 0 & -1 \\end{bmatrix}\\begin{bmatrix} 0 & -1 \\\\ 1 & 0 \\end{bmatrix}$ $= \\begin{bmatrix} 0 & -1 \\\\ -1 & 0 \\end{bmatrix}$.",
+          "Check with $\\mathbf{e}_1$: rotating gives $(0, 1)$; reflecting that gives $(0, -1)$, which is column 1 of $BA$. ✓",
+          "The result is the reflection across $y = -x$."
+        ],
+        "a": "$\\begin{bmatrix} 0 & -1 \\\\ -1 & 0 \\end{bmatrix}$"
+      },
+      {
+        "t": "ex",
+        "title": "The other order",
+        "q": "Now reflect first, then rotate.",
+        "steps": [
+          "$AB$ $= \\begin{bmatrix} 0 & -1 \\\\ 1 & 0 \\end{bmatrix}\\begin{bmatrix} 1 & 0 \\\\ 0 & -1 \\end{bmatrix}$ $= \\begin{bmatrix} 0 & 1 \\\\ 1 & 0 \\end{bmatrix}$: the reflection across $y = x$.",
+          "A different map, so $AB \\neq BA$. The pictures below show both."
+        ],
+        "a": "$\\begin{bmatrix} 0 & 1 \\\\ 1 & 0 \\end{bmatrix}$"
+      },
+      {
+        "t": "viz",
+        "name": "matrix2d",
+        "opts": {
+          "m": [
+            [
+              0,
+              -1
+            ],
+            [
+              -1,
+              0
+            ]
+          ],
+          "presets": false,
+          "eigen": false,
+          "vector": null,
+          "t": 0
+        },
+        "cap": "Rotate $90^\\circ$, then reflect across the $x$-axis: $BA$. Press \"Apply A\" (here the product) and watch the F."
+      },
+      {
+        "t": "viz",
+        "name": "matrix2d",
+        "opts": {
+          "m": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "presets": false,
+          "eigen": false,
+          "vector": null,
+          "t": 0
+        },
+        "cap": "Reflect first, then rotate: $AB$. A different reflection."
+      },
+      {
+        "t": "ex",
+        "title": "Angle addition from matrices",
+        "q": "Show that rotating by $\\alpha$ and then by $\\beta$ is rotating by $\\alpha + \\beta$, and see what that says about cosines.",
+        "steps": [
+          "$$R_\\beta R_\\alpha = \\begin{bmatrix} \\cos\\beta & -\\sin\\beta \\\\ \\sin\\beta & \\cos\\beta \\end{bmatrix}\\begin{bmatrix} \\cos\\alpha & -\\sin\\alpha \\\\ \\sin\\alpha & \\cos\\alpha \\end{bmatrix}$$",
+          "The top-left entry is $\\cos\\beta\\cos\\alpha - \\sin\\beta\\sin\\alpha$, and the bottom-left is $\\sin\\beta\\cos\\alpha + \\cos\\beta\\sin\\alpha$.",
+          "Geometrically the product is $R_{\\alpha + \\beta}$, whose first column is $(\\cos(\\alpha + \\beta), \\sin(\\alpha + \\beta))$. Matching entries gives the angle addition formulas."
+        ],
+        "a": "$\\cos(\\alpha + \\beta) = \\cos\\alpha\\cos\\beta - \\sin\\alpha\\sin\\beta$"
+      },
+      {
+        "t": "mistake",
+        "html": "Multiplying in the order the maps are applied, getting $AB$ for \"first $A$, then $B$\". Check with one vector: apply the maps to $\\mathbf{e}_1$ by hand, one at a time, and compare with column 1 of your product."
+      },
+      {
+        "t": "p",
+        "html": "The same rule works for longer chains and for maps between different spaces. \"First $A$, then $B$, then $C$\" is $CBA$. If $T: \\mathbb{R}^n \\to \\mathbb{R}^m$ and $S: \\mathbb{R}^m \\to \\mathbb{R}^p$, then $A$ is $m \\times n$, $B$ is $p \\times m$, and $BA$ is $p \\times n$: the sizes match exactly because the output space of $T$ is the input space of $S$. To undo a chain, undo the last step first: $(BA)^{-1} = A^{-1}B^{-1}$."
+      },
+      {
+        "t": "note",
+        "html": "Rotations about the origin commute with each other ($R_\\alpha R_\\beta = R_\\beta R_\\alpha$), but rotations and reflections generally do not."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Margalit and Rabinoff, Interactive Linear Algebra (Georgia Tech), §3.4 Matrix Multiplication"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.06 Linear Algebra (Gilbert Strang, Spring 2010), Lecture 30: Linear Transformations and Their Matrices"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

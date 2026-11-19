@@ -1,0 +1,118 @@
+{
+  "id": "calc2.work",
+  "slug": "work",
+  "ladder": "math",
+  "course": "calc2",
+  "unit": "applications",
+  "title": "Work",
+  "short": "Work is force times distance, added up over thin pieces.",
+  "trouble": "Students use one distance for the whole tank when each layer of liquid travels a different distance.",
+  "prereqs": [
+    "calc1.ftc-evaluate"
+  ],
+  "xp": 3,
+  "viz": [],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In physics, work is force times distance: lifting a 50 N box 2 m takes $W = 50 \\cdot 2 = 100$ joules (newton-meters). That rule needs a constant force over the whole distance. When the force changes as you go, or different parts of an object move different distances, you add up small pieces, which is what <a href=\"/math/calculus-1/ftc-evaluate/\">definite integrals</a> do."
+      },
+      {
+        "t": "why",
+        "html": "Split the motion from $x = a$ to $x = b$ into short steps $\\Delta x$. Over one short step the force hardly changes, so the work on that step is about $F(x_i)\\,\\Delta x$. Adding the steps gives a Riemann sum for $\\int_a^b F(x)\\,dx$.\nFor a tank of liquid, slice the liquid instead of the motion. A thin layer at height $y$ has a weight (density times volume) and must travel some distance $d(y)$ to the outlet. Its work is weight times $d(y)$. Different layers travel different distances, which is why you need an integral."
+      },
+      {
+        "t": "key",
+        "html": "Varying force: $W = \\int_a^b F(x)\\,dx$. Hooke's law for springs: $F(x) = kx$, with $x$ the stretch beyond natural length.\nPumping: $$W = \\int (\\text{layer weight})(\\text{lift distance}),$$ summed over thin layers of the liquid: each layer's weight times the distance it travels. Water weighs $9800$ N/m³ (or $62.4$ lb/ft³)."
+      },
+      {
+        "t": "ex",
+        "title": "A spring",
+        "q": "A force of 10 N holds a spring stretched 0.2 m beyond its natural length. How much work does it take to stretch it from 0.2 m to 0.5 m?",
+        "steps": [
+          "$10 = k(0.2)$, so $k = 50$ N/m.",
+          "$$\\begin{aligned} W &= \\int_{0.2}^{0.5} 50x\\,dx \\\\ &= 25\\left(0.5^{2} - 0.2^{2}\\right) \\\\ &= 25(0.21). \\end{aligned}$$",
+          "$W = 5.25$ J."
+        ],
+        "a": "$5.25$ J"
+      },
+      {
+        "t": "ex",
+        "title": "A hanging rope",
+        "q": "A 20 m rope weighing 3 N/m hangs from a roof. How much work does it take to pull it all up?",
+        "steps": [
+          "A short piece $y$ meters below the top weighs $3\\,\\Delta y$ newtons and travels $y$ meters.",
+          "$W = \\int_0^{20} 3y\\,dy = 3\\cdot\\frac{20^{2}}{2} = 600$ J."
+        ],
+        "a": "$600$ J"
+      },
+      {
+        "t": "ex",
+        "title": "Emptying a tank",
+        "q": "A cylindrical tank of radius 2 m and height 5 m is full of water. Find the work needed to pump all the water out over the top.",
+        "steps": [
+          "Measure $y$ up from the bottom. The layer at height $y$ is a disk of volume $\\pi(2)^{2}\\Delta y$ and weight $9800\\cdot 4\\pi\\,\\Delta y$ N.",
+          "That layer rises $5 - y$ meters to the top.",
+          "$$\\begin{aligned} W &= \\int_0^5 9800\\cdot 4\\pi\\,(5 - y)\\,dy \\\\ &= 39200\\pi\\left[5y - \\frac{y^{2}}{2}\\right]_0^5 \\\\ &= 39200\\pi\\cdot 12.5. \\end{aligned}$$",
+          "$W = 490000\\pi \\approx 1.54\\times 10^{6}$ J."
+        ],
+        "a": "$490000\\pi$ J"
+      },
+      {
+        "t": "viz",
+        "name": "calc2-tank",
+        "opts": {
+          "shape": "cylinder",
+          "H": 5,
+          "R": 2,
+          "y": 1
+        },
+        "cap": "The tank from the example, seen from the side. Slide the gold layer up and down: its weight stays the same, but its trip to the top changes, so its share of the work changes. The darker the layer, the farther it travels."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Layer at height $y$ (m)",
+          "Distance to the top (m)",
+          "Work for a $0.1$ m layer (J)"
+        ],
+        "rows": [
+          [
+            "$0.5$",
+            "$4.5$",
+            "$9800\\cdot 4\\pi\\cdot 0.1\\cdot 4.5 \\approx 55{,}400$"
+          ],
+          [
+            "$2.5$",
+            "$2.5$",
+            "$\\approx 30{,}800$"
+          ],
+          [
+            "$4.5$",
+            "$0.5$",
+            "$\\approx 6{,}200$"
+          ]
+        ],
+        "cap": "Layers near the bottom cost much more work than layers near the top."
+      },
+      {
+        "t": "mistake",
+        "html": "Using one distance for the whole tank, such as the full height. Here total weight times 5 m gives $9800\\cdot 20\\pi\\cdot 5 = 980000\\pi$ J, twice the right answer, because only the bottom layer travels the full 5 m. Check: set up the work of one thin layer, with its own distance, before integrating. Also keep $y$'s meaning fixed: if $y$ is the height from the bottom, the distance to the top is $5 - y$, not $y$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 2, Section 2.5: Physical Applications (work)"
+      },
+      {
+        "name": "Paul’s Online Math Notes (Lamar University), Calculus II: Work"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

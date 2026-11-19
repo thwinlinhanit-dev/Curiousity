@@ -1,0 +1,133 @@
+{
+  "id": "stat.least-squares-line",
+  "slug": "least-squares-line",
+  "ladder": "math",
+  "course": "stat",
+  "unit": "regression",
+  "title": "The Least-Squares Regression Line",
+  "short": "The line that makes the sum of squared residuals smallest.",
+  "trouble": "Students predict far outside the range of the data.",
+  "prereqs": [
+    "stat.correlation",
+    "alg1.linear-models-context"
+  ],
+  "xp": 2,
+  "viz": [
+    "scatter"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In Algebra 1 you wrote <a href=\"/math/algebra-1/linear-models-context/\">linear models</a> and drew lines of fit by eye. Different people draw different lines. The <b>least-squares regression line</b> is the one line everyone agrees on, and it is built from the <a href=\"/math/probability-and-statistics/correlation/\">correlation</a> and the two standard deviations."
+      },
+      {
+        "t": "key",
+        "html": "The least-squares line $\\hat{y} = a + bx$ makes the sum of squared residuals $\\sum (y - \\hat{y})^2$ as small as possible. Its slope and intercept are\n$$b = r\\dfrac{s_y}{s_x}, \\qquad a = \\bar{y} - b\\bar{x}.$$\nThe line always passes through the point of means $(\\bar{x}, \\bar{y})$."
+      },
+      {
+        "t": "why",
+        "html": "Work in z-scores first. A line through the origin $\\hat{z}_y = m z_x$ has squared error $$\\sum (z_y - m z_x)^2 = \\sum z_y^2 - 2m\\sum z_x z_y + m^2 \\sum z_x^2$$ Each sum of squared z-scores is $n - 1$, and $\\sum z_x z_y = (n - 1)r$, so the error is $(n - 1)(1 - 2mr + m^2)$, a parabola in $m$ with its lowest point at $m = r$. So the best line in z-units is $\\hat{z}_y = r z_x$: one SD up in x predicts $r$ SDs up in y. Turning z-scores back into x and y gives $b = r s_y/s_x$, and the line goes through $(\\bar{x}, \\bar{y})$."
+      },
+      {
+        "t": "viz",
+        "name": "scatter",
+        "opts": {
+          "points": [
+            [
+              2,
+              64
+            ],
+            [
+              3,
+              70
+            ],
+            [
+              4,
+              66
+            ],
+            [
+              5,
+              74
+            ],
+            [
+              6,
+              72
+            ],
+            [
+              6.5,
+              80
+            ],
+            [
+              7,
+              78
+            ],
+            [
+              8,
+              82
+            ],
+            [
+              9,
+              79
+            ],
+            [
+              10,
+              88
+            ]
+          ],
+          "fit": true,
+          "residuals": true,
+          "squares": true,
+          "userLine": true,
+          "xlabel": "hours studied",
+          "ylabel": "score"
+        },
+        "cap": "Each square is a squared residual. Turn on \"My own line\" and try to make the total area smaller than the least-squares line's. You can't."
+      },
+      {
+        "t": "ex",
+        "title": "Building the line from summaries",
+        "q": "For students' study hours (x) and scores (y): $\\bar{x} = 6$, $s_x = 2$, $\\bar{y} = 75$, $s_y = 10$, $r = 0.6$. Find the least-squares line and predict the score for 8 hours.",
+        "steps": [
+          "Slope: $b = 0.6 \\cdot \\dfrac{10}{2} = 3$ points per hour.",
+          "Intercept: $a = 75 - 3(6) = 57$.",
+          "Line: $\\hat{y} = 57 + 3x$.",
+          "Predict: $\\hat{y} = 57 + 3(8) = 81$."
+        ],
+        "a": "$\\hat{y} = 57 + 3x$; about 81 points."
+      },
+      {
+        "t": "ex",
+        "title": "A prediction too far",
+        "q": "The students in that data studied between 2 and 10 hours. What does the line predict for 30 hours, and should you trust it?",
+        "steps": [
+          "$\\hat{y} = 57 + 3(30) = 147$ points.",
+          "The test is out of 100, so the prediction is impossible.",
+          "The data only show the pattern between 2 and 10 hours. Beyond that, the line has no support."
+        ],
+        "a": "147, which is nonsense: this is extrapolation."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Extrapolation</b>: using the line for x-values far outside the range of the data. The straight-line pattern may bend, level off or stop. Check: is the x you are plugging in between the smallest and largest x in the data?"
+      },
+      {
+        "t": "note",
+        "html": "Because $b = r s_y/s_x$ and $|r| < 1$, a student 1 SD above average in study time is predicted to be only $r$ SDs above average in score. Predictions are pulled toward the mean: this is \"regression to the mean.\" The econometrics course builds on this line in <a href=\"/business/econometrics/simple-regression/\">Simple Regression: Fitting a Line</a>."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Introductory Statistics 2e, section 12.3 The Regression Equation"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, S-ID.B.6a (Fit a function to the data; use functions fitted to data to solve problems)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

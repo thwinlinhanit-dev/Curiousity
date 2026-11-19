@@ -1,0 +1,154 @@
+{
+  "id": "geo.points-lines-planes",
+  "slug": "points-lines-planes",
+  "ladder": "math",
+  "course": "geo",
+  "unit": "tools",
+  "title": "Points, Lines and Planes",
+  "short": "Build every definition from point, line, plane and distance.",
+  "trouble": "Students treat a drawing as proof that lines meet or are equal, instead of using definitions.",
+  "prereqs": [
+    "g4.points-lines-rays"
+  ],
+  "xp": 1,
+  "viz": [
+    "geoboard"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/math/grade-4/points-lines-rays/\">Points, Lines, Segments and Rays</a> you learned to name points, lines, segments and rays by looking at them. Geometry now builds a careful system out of those same ideas. A few words stay undefined, a few basic facts are accepted as starting points, and every other word and fact is built from those."
+      },
+      {
+        "t": "h",
+        "text": "Three undefined terms"
+      },
+      {
+        "t": "p",
+        "html": "A <b>point</b> marks a location and has no size. A <b>line</b> is perfectly straight, has no thickness, and goes on forever in both directions. A <b>plane</b> is a flat surface that goes on forever. We describe these instead of defining them, because a definition has to use simpler words, and these are the simplest we have."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Figure",
+          "Symbol",
+          "What it means"
+        ],
+        "rows": [
+          [
+            "line $AB$",
+            "$\\overleftrightarrow{AB}$",
+            "all points on the straight path through $A$ and $B$, in both directions"
+          ],
+          [
+            "segment $AB$",
+            "$\\overline{AB}$",
+            "$A$, $B$, and every point between them"
+          ],
+          [
+            "ray $AB$",
+            "$\\overrightarrow{AB}$",
+            "starts at $A$ and goes through $B$ forever (the endpoint is always written first)"
+          ],
+          [
+            "length of $\\overline{AB}$",
+            "$AB$",
+            "a number: the distance from $A$ to $B$"
+          ]
+        ],
+        "cap": "A segment is a figure; its length is a number."
+      },
+      {
+        "t": "why",
+        "html": "A <b>postulate</b> is a statement we accept without proof, the way a building rests on its foundation. Through any two points there is exactly one line. Two different lines meet in at most one point. Three points that are not on one line lie in exactly one plane. If two points lie in a plane, the whole line through them does too. Two planes that meet, meet in a line. Every theorem later in this course rests on short chains of facts like these."
+      },
+      {
+        "t": "key",
+        "html": "<b>Segment Addition Postulate:</b> if $B$ is between $A$ and $C$ on a segment, then $AB + BC = AC$. The two parts add up to the whole."
+      },
+      {
+        "t": "viz",
+        "name": "geoboard",
+        "cap": "Drag $B$. Its distances to $A$ and $C$ add up to $AC$ only when $B$ sits on segment $AC$. Anywhere else, the sum is bigger.",
+        "opts": {
+          "points": {
+            "A": [
+              1,
+              4
+            ],
+            "B": [
+              5,
+              4
+            ],
+            "C": [
+              9,
+              4
+            ]
+          },
+          "objects": [
+            [
+              "poly",
+              "A",
+              "B",
+              "C"
+            ]
+          ],
+          "show": {
+            "len": true,
+            "ang": false,
+            "area": false
+          },
+          "xmin": 0,
+          "xmax": 10,
+          "ymin": 0,
+          "ymax": 7
+        }
+      },
+      {
+        "t": "ex",
+        "title": "Finding a part",
+        "q": "Points $P$, $Q$ and $R$ are collinear, and $Q$ is between $P$ and $R$. If $PR = 23$ and $PQ = 9$, find $QR$.<div class=\"ml-viz\" data-viz=\"geo-fig\" data-opts='{\"pts\":{\"P\":[0,0],\"Q\":[9,0],\"R\":[23,0]},\"segs\":[[\"P\",\"Q\",{\"lab\":\"9\"}],[\"Q\",\"R\",{\"lab\":\"?\"}]],\"labpos\":{\"P\":\"n\",\"Q\":\"n\",\"R\":\"n\"},\"texts\":[[11.5,-2.6,\"PR = 23\",{\"color\":\"blue\"}]],\"height\":130,\"label\":\"P, Q and R on a line with PQ = 9 and PR = 23\"}' aria-label=\"P, Q and R on a line with PQ = 9 and PR = 23\"></div>",
+        "steps": [
+          "$Q$ is between $P$ and $R$, so $PQ + QR = PR$.",
+          "Substitute: $9 + QR = 23$.",
+          "Subtract 9 from both sides: $QR = 14$."
+        ],
+        "a": "$QR = 14$"
+      },
+      {
+        "t": "ex",
+        "title": "With algebra",
+        "q": "$Q$ is between $P$ and $R$. $PQ = 2x + 1$, $QR = x + 5$ and $PR = 21$. Find $PQ$.",
+        "steps": [
+          "Part + part = whole: $(2x + 1) + (x + 5) = 21$.",
+          "Combine like terms: $3x + 6 = 21$, so $3x = 15$ and $x = 5$.",
+          "$PQ = 2(5) + 1 = 11$. Check: $QR = 10$ and $11 + 10 = 21$."
+        ],
+        "a": "$PQ = 11$"
+      },
+      {
+        "t": "mistake",
+        "html": "Trusting the picture. A sketch may make two segments look equal, or two lines look parallel, but a drawing is never exact. From an unmarked diagram you may assume only how points sit: which points are on a line, which point is between two others, and where lines cross. Equal lengths, equal angles, right angles and parallel lines must be given (in words or with tick marks, arcs and arrows) or proved."
+      },
+      {
+        "t": "note",
+        "html": "Notation matters: $\\overline{AB}$ is the segment, and $AB$ (no bar) is its length. You can add lengths, but not segments."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Contemporary Mathematics, 10.1 Points, Lines, and Planes"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, High School Geometry, G-CO.A.1"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

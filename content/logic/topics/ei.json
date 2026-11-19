@@ -1,0 +1,131 @@
+{
+  "id": "sym.ei",
+  "slug": "ei",
+  "ladder": "logic",
+  "course": "sym",
+  "unit": "predicate-proofs",
+  "title": "Existential Instantiation (EI)",
+  "short": "EI: from ∃x Fx, infer Fa only for a name a that is new: not in any earlier line, the premises or the conclusion.",
+  "trouble": "Reusing a name: from ∃x Fx and ∃x Gx, learners write Fa and then Ga, as if the same thing had both properties.",
+  "prereqs": [
+    "sym.ui-eg"
+  ],
+  "xp": 3,
+  "viz": [
+    "lg-proof"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Existential instantiation (EI) takes the quantifier off an existential statement. It is the one rule with a real catch, and the catch is about names. It joins UI and EG from <a href=\"/logic/symbolic-logic/ui-eg/\">Universal Instantiation and Existential Generalization (UI, EG)</a>."
+      },
+      {
+        "t": "key",
+        "html": "EI: from $\\exists x Fx$, infer $Fa$ for a name $a$ that is <b>new</b>: it appears in no earlier line, no premise and not in the conclusion."
+      },
+      {
+        "t": "why",
+        "html": "$\\exists x Fx$ says something is $F$, but not which thing. EI gives that unknown thing a temporary name. The name must be new because we know nothing else about the thing. If $a$ already appeared, say in $Ga$, then writing $Fa$ would claim that the $F$ thing is the same as the $G$ thing, which the premises never said. A fresh name carries no information except what $\\exists x Fx$ provides."
+      },
+      {
+        "t": "viz",
+        "name": "lg-proof",
+        "opts": {
+          "premises": [
+            "∀x(Fx → Gx)",
+            "∃x Fx"
+          ],
+          "conclusion": "∃x Gx",
+          "lines": [
+            {
+              "f": "Fa",
+              "j": "EI 2",
+              "note": "a is new: in no earlier line and not in the conclusion."
+            },
+            {
+              "f": "Fa → Ga",
+              "j": "UI 1",
+              "note": "UI may use any name, including a."
+            },
+            {
+              "f": "Ga",
+              "j": "MP 4, 3"
+            },
+            {
+              "f": "∃x Gx",
+              "j": "EG 5"
+            }
+          ],
+          "steps": true,
+          "goalLine": true,
+          "quantifiers": true
+        },
+        "cap": "EI first, with a new name; then UI with the same name."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Pick a name",
+        "q": "Line 1 is $Fa \\land Gb$ and line 2 is $\\exists x Hx$. Which names may EI use on line 2?",
+        "steps": [
+          "$a$ and $b$ already appear.",
+          "Any other name is new."
+        ],
+        "a": "$c$ (or any unused name): $Hc$."
+      },
+      {
+        "t": "ex",
+        "title": "Two existentials",
+        "q": "Premises $\\exists x Fx$ and $\\exists x Gx$. May you write $Fa$ by EI 1 and then $Ga$ by EI 2?",
+        "steps": [
+          "After line 3, $a$ is no longer new.",
+          "Line 2 needs a different name: $Gb$."
+        ],
+        "a": "No; the second EI must use a new name."
+      },
+      {
+        "t": "ex",
+        "title": "Order matters",
+        "q": "Premises $\\forall x(Fx \\to Gx)$ and $\\exists x Fx$. Why use EI before UI?",
+        "steps": [
+          "UI works with any name, so it can use a name EI already introduced.",
+          "EI needs a new name, so if UI goes first with $a$, EI cannot use $a$ any more."
+        ],
+        "a": "Do EI first, then UI with the same name."
+      },
+      {
+        "t": "mistake",
+        "html": "Reusing a name: from $\\exists x Fx$ and $\\exists x Gx$, writing $Fa$ and then $Ga$, as if the same thing had both properties. Then $\\exists x(Fx \\land Gx)$ would seem to follow, but it does not: one person may be a doctor and another a pilot without anyone being both. Before every EI, scan the lines above and the conclusion for the name you plan to use."
+      },
+      {
+        "t": "p",
+        "html": "Notice that EI, unlike UI, can be used only once per existential line in a useful way: every later use would need yet another new name, and each name would stand for a possibly different thing. That is the honest bookkeeping the rule enforces."
+      },
+      {
+        "t": "p",
+        "html": "The strategy that follows from this rule is one of the most useful in predicate proofs: <b>EI before UI</b>. Instantiate the existential premises first, each with its own new name, then instantiate the universal premises with those same names."
+      },
+      {
+        "t": "note",
+        "html": "The name EI introduces must not appear in the conclusion either. A conclusion like $Fa$ cannot be reached by instantiating $\\exists x Fx$ to $a$: knowing that something is $F$ does not show that $a$ in particular is."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Patrick J. Hurley and Lori Watson, A Concise Introduction to Logic, 13th ed., section 8.2, existential instantiation and its restriction"
+      },
+      {
+        "name": "forall x: Calgary, an open introduction to formal logic (P. D. Magnus, Tim Button and others; Open Logic Project), chapter on basic rules for FOL"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

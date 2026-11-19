@@ -1,0 +1,123 @@
+{
+  "id": "alg1.justify-solution-steps",
+  "slug": "justify-solution-steps",
+  "ladder": "math",
+  "course": "alg1",
+  "unit": "equations",
+  "title": "Why Each Step Keeps the Balance",
+  "short": "Every step does the same thing to both sides, so the solutions stay the same.",
+  "trouble": "Students \"move a term across and flip its sign\" as a magic rule, then apply it to a term inside a product.",
+  "prereqs": [
+    "g8.variables-both-sides"
+  ],
+  "xp": 1,
+  "viz": [
+    "balance"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You can already solve <a href=\"/math/pre-algebra/variables-both-sides/\">equations with variables on both sides</a>. This lesson is about <em>why</em> those moves are allowed. Once you know the reason, you never need a memorized trick like “move it across and flip the sign,” and you can tell at once when a step is wrong."
+      },
+      {
+        "t": "why",
+        "html": "An equation says two amounts are equal, like a level balance. If two amounts are equal and you do the same thing to both of them, they stay equal: add the same number, subtract the same number, multiply by the same number, or divide by the same nonzero number. Each of these moves can also be undone, so the new equation has <b>exactly the same solutions</b> as the old one. No solution is lost and none is added. That is the whole idea behind solving."
+      },
+      {
+        "t": "viz",
+        "name": "balance",
+        "opts": {
+          "eq": "3x + 2 = x + 8",
+          "oneSide": true,
+          "task": true
+        },
+        "cap": "Each bag is one $x$. Take the same thing off both sides and the scale stays level; take it off one side only and it tips."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Equation",
+          "What was done",
+          "Why it is allowed"
+        ],
+        "rows": [
+          [
+            "$3x + 2 = x + 8$",
+            "start",
+            ""
+          ],
+          [
+            "$2x + 2 = 8$",
+            "subtract $x$ from both sides",
+            "equals minus equals are equal"
+          ],
+          [
+            "$2x = 6$",
+            "subtract $2$ from both sides",
+            "equals minus equals are equal"
+          ],
+          [
+            "$x = 3$",
+            "divide both sides by $2$",
+            "equals divided by the same nonzero number are equal"
+          ]
+        ],
+        "cap": "Every line has the same solution, $x = 3$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Giving a reason for each step",
+        "q": "Solve $5x - 7 = 2x + 8$ and justify each step.",
+        "steps": [
+          "Subtract $2x$ from both sides: $3x - 7 = 8$. (Same amount from both sides.)",
+          "Add $7$ to both sides: $3x = 15$. (Same amount to both sides.)",
+          "Divide both sides by $3$: $x = 5$. (Same nonzero divisor on both sides.)",
+          "Check: $5(5) - 7 = 18$ and $2(5) + 8 = 18$."
+        ],
+        "a": "$x = 5$"
+      },
+      {
+        "t": "ex",
+        "title": "Rewriting one side is different",
+        "q": "Solve $4(x - 2) = 2x + 6$.",
+        "steps": [
+          "Distribute on the left: $4x - 8 = 2x + 6$. This only rewrites the left side in an equal form, so the right side does not change.",
+          "Subtract $2x$ from both sides: $2x - 8 = 6$.",
+          "Add $8$ to both sides: $2x = 14$.",
+          "Divide both sides by $2$: $x = 7$. Check: $4(5) = 20$ and $14 + 6 = 20$."
+        ],
+        "a": "$x = 7$"
+      },
+      {
+        "t": "mistake",
+        "html": "Using “move a term across and flip its sign” on something that is not a term. In $3(x + 4) = 21$, the $4$ is inside a product, so “moving it” to get $3x = 21 - 4$ is wrong. The left side is $3$ times $(x + 4)$; undo the multiplication first ($x + 4 = 7$) or distribute first ($3x + 12 = 21$). Check any answer by putting it back into the original equation."
+      },
+      {
+        "t": "note",
+        "html": "The one move that is never allowed is multiplying both sides by $0$: it turns every equation into $0 = 0$ and cannot be undone."
+      },
+      {
+        "t": "key",
+        "html": "Every step must do the same thing to both whole sides (add, subtract, multiply, or divide by a nonzero number), or rewrite one side in an equal form. Then each new equation has exactly the same solutions as the one before."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Elementary Algebra 2e, section 2.3 Solve Equations with Variables and Constants on Both Sides"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, A-REI.A.1: explain each step in solving an equation"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

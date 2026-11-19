@@ -1,0 +1,986 @@
+{
+  "key": "geology",
+  "ladder": "earth",
+  "title": "Geology",
+  "short": "Geology",
+  "after": [
+    "earthsci",
+    "geo"
+  ],
+  "units": [
+    {
+      "key": "earth-interior",
+      "title": "Earth's Origin and Interior",
+      "blurb": "How Earth formed and sorted into layers, how earthquake waves reveal the inside, and how heat, buoyancy and magnetism shape the crust."
+    },
+    {
+      "key": "minerals",
+      "title": "Minerals",
+      "blurb": "How atoms build crystals, the silicate families that make up most rock, and the other mineral groups."
+    },
+    {
+      "key": "igneous",
+      "title": "Igneous Rocks and Volcanoes",
+      "blurb": "How rock melts, how magma crystallizes and is named, where it cools underground, and why some eruptions explode."
+    },
+    {
+      "key": "sedimentary",
+      "title": "Sediments and Sedimentary Rocks",
+      "blurb": "How weathering makes sediment, how flowing water sorts it, and how layers record the places they formed."
+    },
+    {
+      "key": "metamorphic",
+      "title": "Metamorphism",
+      "blurb": "How heat, pressure and fluids change rock, how to read metamorphic grade, and where metamorphism happens."
+    },
+    {
+      "key": "deformation",
+      "title": "Folds and Faults",
+      "blurb": "How rocks bend and break under stress, and how geologists describe tilted and folded layers."
+    },
+    {
+      "key": "geologic-time",
+      "title": "Geologic Time",
+      "blurb": "Ordering events with Steno's principles and unconformities, dating rocks with radioactive clocks, and the great events of Earth's history."
+    },
+    {
+      "key": "plate-tectonics",
+      "title": "Plate Tectonics in Depth",
+      "blurb": "Measuring plate motion, what drives it, the anatomy of each kind of boundary, and how oceans open and close."
+    },
+    {
+      "key": "earthquakes",
+      "title": "Earthquakes",
+      "blurb": "Why faults slip, locating an earthquake, measuring its size and shaking, forecasting the odds, and tsunamis."
+    },
+    {
+      "key": "landscapes",
+      "title": "Landscapes",
+      "blurb": "Slopes, rivers, floods, groundwater and glaciers: the processes that shape the land and the numbers that describe them."
+    },
+    {
+      "key": "resources",
+      "title": "Earth Resources",
+      "blurb": "How ore deposits and fossil fuels form, and how reserves are counted."
+    }
+  ],
+  "topics": [
+    {
+      "id": "geology.earth-formation",
+      "slug": "earth-formation",
+      "course": "geology",
+      "unit": "earth-interior",
+      "title": "How Earth Formed and Layered",
+      "short": "Earth grew from colliding rock and metal about 4.54 billion years ago and, while hot, sorted itself by density into core, mantle and crust.",
+      "prereqs": [
+        "earthsci.geologic-time-scale"
+      ],
+      "viz": [
+        "es-interior",
+        "es-deep-time"
+      ]
+    },
+    {
+      "id": "geology.seismic-interior",
+      "slug": "seismic-interior",
+      "course": "geology",
+      "unit": "earth-interior",
+      "title": "Seeing Inside Earth with Seismic Waves",
+      "short": "S waves can't cross the liquid outer core and P waves bend at its edge, leaving shadow zones that map the core.",
+      "prereqs": [
+        "earthsci.seismic-waves"
+      ],
+      "viz": [
+        "es-interior",
+        "es-seismic"
+      ]
+    },
+    {
+      "id": "geology.geothermal-gradient",
+      "slug": "geothermal-gradient",
+      "course": "geology",
+      "unit": "earth-interior",
+      "title": "Heat Flow and the Geothermal Gradient",
+      "short": "Temperature rises about 25 °C per kilometer in the upper crust, fed by heat left from Earth's formation and by radioactive decay.",
+      "prereqs": [
+        "earthsci.half-life"
+      ],
+      "viz": [
+        "es-interior"
+      ]
+    },
+    {
+      "id": "geology.isostasy",
+      "slug": "isostasy",
+      "course": "geology",
+      "unit": "earth-interior",
+      "title": "Isostasy: How Crust Floats",
+      "short": "Crust floats on the mantle like ice on water, so high mountains have deep roots and land rises when an ice sheet melts.",
+      "prereqs": [
+        "earthsci.lithosphere-asthenosphere",
+        "alg1.literal-equations"
+      ],
+      "viz": [
+        "es-density"
+      ]
+    },
+    {
+      "id": "geology.paleomagnetism",
+      "slug": "paleomagnetism",
+      "course": "geology",
+      "unit": "earth-interior",
+      "title": "Earth's Magnetic Field in Rocks",
+      "short": "Earth's field flips now and then, and iron-rich minerals in cooling lava record its direction, building a timeline of reversals.",
+      "prereqs": [
+        "geology.seismic-interior",
+        "geo.trig-ratios"
+      ],
+      "viz": [
+        "es-boundary"
+      ]
+    },
+    {
+      "id": "geology.crystal-structure",
+      "slug": "crystal-structure",
+      "course": "geology",
+      "unit": "minerals",
+      "title": "Atoms, Ions and Crystals",
+      "short": "A mineral is ions stacked in a repeating pattern, and ions of similar size and charge can trade places, so a mineral's makeup can vary.",
+      "prereqs": [
+        "earthsci.what-is-a-mineral",
+        "chem.ions"
+      ],
+      "viz": [
+        "es-minerals"
+      ]
+    },
+    {
+      "id": "geology.silica-tetrahedron",
+      "slug": "silica-tetrahedron",
+      "course": "geology",
+      "unit": "minerals",
+      "title": "The Silica Tetrahedron",
+      "short": "One silicon bonded to four oxygens, SiO₄ with a charge of −4, is the building block of most minerals in the crust.",
+      "prereqs": [
+        "geology.crystal-structure"
+      ],
+      "viz": [
+        "es-minerals"
+      ]
+    },
+    {
+      "id": "geology.silicate-families",
+      "slug": "silicate-families",
+      "course": "geology",
+      "unit": "minerals",
+      "title": "Silicate Families",
+      "short": "Tetrahedra link as singles, chains, double chains, sheets or 3-D frameworks, which sets each mineral's silicon-to-oxygen ratio and how it breaks.",
+      "prereqs": [
+        "geology.silica-tetrahedron"
+      ],
+      "viz": [
+        "es-minerals"
+      ]
+    },
+    {
+      "id": "geology.nonsilicates",
+      "slug": "nonsilicates",
+      "course": "geology",
+      "unit": "minerals",
+      "title": "Carbonates, Oxides, Sulfides and Other Groups",
+      "short": "Sort minerals by their negative ion: carbonates (CO₃), oxides (O), sulfides (S), sulfates (SO₄), halides (Cl, F) and native elements.",
+      "prereqs": [
+        "geology.crystal-structure"
+      ],
+      "viz": [
+        "es-minerals"
+      ]
+    },
+    {
+      "id": "geology.melting",
+      "slug": "melting",
+      "course": "geology",
+      "unit": "igneous",
+      "title": "How Rocks Melt",
+      "short": "Rock in the mantle melts when the pressure drops, when water is added, or when hot magma heats the crust around it.",
+      "prereqs": [
+        "geology.geothermal-gradient",
+        "earthsci.plate-boundaries"
+      ],
+      "viz": [
+        "es-interior",
+        "es-boundary"
+      ]
+    },
+    {
+      "id": "geology.bowen-series",
+      "slug": "bowen-series",
+      "course": "geology",
+      "unit": "igneous",
+      "title": "Bowen's Reaction Series",
+      "short": "As magma cools, minerals crystallize in order: olivine and calcium-rich feldspar first, quartz last.",
+      "prereqs": [
+        "geology.melting",
+        "geology.silicate-families"
+      ],
+      "viz": [
+        "es-igneous"
+      ]
+    },
+    {
+      "id": "geology.magma-composition",
+      "slug": "magma-composition",
+      "course": "geology",
+      "unit": "igneous",
+      "title": "Mafic to Felsic",
+      "short": "Magmas range from mafic (low in silica, hot, runny and dark) to felsic (high in silica, cooler, sticky and light).",
+      "prereqs": [
+        "geology.bowen-series"
+      ],
+      "viz": [
+        "es-igneous"
+      ]
+    },
+    {
+      "id": "geology.igneous-classification",
+      "slug": "igneous-classification",
+      "course": "geology",
+      "unit": "igneous",
+      "title": "Naming Igneous Rocks",
+      "short": "Name an igneous rock from its texture and composition: granite and rhyolite, diorite and andesite, gabbro and basalt.",
+      "prereqs": [
+        "geology.magma-composition"
+      ],
+      "viz": [
+        "es-rock-key",
+        "es-igneous"
+      ]
+    },
+    {
+      "id": "geology.intrusions",
+      "slug": "intrusions",
+      "course": "geology",
+      "unit": "igneous",
+      "title": "Plutons, Dikes and Sills",
+      "short": "Magma that cools underground forms batholiths, dikes that cut across layers and sills that slip between them.",
+      "prereqs": [
+        "geology.igneous-classification",
+        "earthsci.cross-cutting"
+      ],
+      "viz": [
+        "es-strata"
+      ]
+    },
+    {
+      "id": "geology.eruption-styles",
+      "slug": "eruption-styles",
+      "course": "geology",
+      "unit": "igneous",
+      "title": "Gentle and Explosive Eruptions",
+      "short": "Viscosity and gas decide whether magma oozes out as lava or blasts out as ash; the VEI rates eruptions by volume, ten times more per step.",
+      "prereqs": [
+        "geology.magma-composition",
+        "earthsci.volcanoes"
+      ],
+      "viz": [
+        "es-volcano"
+      ]
+    },
+    {
+      "id": "geology.volcanic-hazards",
+      "slug": "volcanic-hazards",
+      "course": "geology",
+      "unit": "igneous",
+      "title": "Volcanic Hazards and Monitoring",
+      "short": "Pyroclastic flows, lahars, ash, gases and lava each threaten in their own way; swelling ground, gas and small earthquakes can give warning.",
+      "prereqs": [
+        "geology.eruption-styles"
+      ],
+      "viz": [
+        "es-volcano"
+      ]
+    },
+    {
+      "id": "geology.chemical-weathering",
+      "slug": "chemical-weathering",
+      "course": "geology",
+      "unit": "sedimentary",
+      "title": "Chemical Weathering Reactions",
+      "short": "Feldspar turns to clay, iron minerals rust and calcite dissolves, while quartz resists and piles up as sand.",
+      "prereqs": [
+        "earthsci.weathering-rates",
+        "geology.bowen-series"
+      ],
+      "viz": [
+        "es-weathering"
+      ]
+    },
+    {
+      "id": "geology.grain-size",
+      "slug": "grain-size",
+      "course": "geology",
+      "unit": "sedimentary",
+      "title": "Grain Size and the Wentworth Scale",
+      "short": "Sort sediment by size, from clay under 1/256 mm to boulders over 256 mm, and use the phi scale, φ = −log₂ d.",
+      "prereqs": [
+        "earthsci.sedimentary-rocks",
+        "alg2.logarithms"
+      ],
+      "viz": [
+        "es-sediment"
+      ]
+    },
+    {
+      "id": "geology.sediment-transport",
+      "slug": "sediment-transport",
+      "course": "geology",
+      "unit": "sedimentary",
+      "title": "How Flowing Water Moves Sediment",
+      "short": "Faster water moves bigger grains; the Hjulström diagram shows when a grain is picked up, carried or dropped.",
+      "prereqs": [
+        "geology.grain-size",
+        "earthsci.erosion-deposition"
+      ],
+      "viz": [
+        "es-sediment"
+      ]
+    },
+    {
+      "id": "geology.sorting-rounding",
+      "slug": "sorting-rounding",
+      "course": "geology",
+      "unit": "sedimentary",
+      "title": "Sorting, Rounding and Maturity",
+      "short": "The farther sediment travels, the better sorted and rounder it gets and the more of it is quartz.",
+      "prereqs": [
+        "geology.sediment-transport",
+        "geology.chemical-weathering"
+      ],
+      "viz": [
+        "es-sediment"
+      ]
+    },
+    {
+      "id": "geology.sedimentary-classification",
+      "slug": "sedimentary-classification",
+      "course": "geology",
+      "unit": "sedimentary",
+      "title": "Naming Sedimentary Rocks",
+      "short": "Name clastic rocks by grain size and shape (conglomerate, breccia, sandstone, shale) and chemical and biochemical rocks by makeup (limestone, rock salt, chert, coal).",
+      "prereqs": [
+        "geology.sorting-rounding"
+      ],
+      "viz": [
+        "es-rock-key"
+      ]
+    },
+    {
+      "id": "geology.sedimentary-structures",
+      "slug": "sedimentary-structures",
+      "course": "geology",
+      "unit": "sedimentary",
+      "title": "Reading Sedimentary Structures",
+      "short": "Cross-beds, ripple marks, mud cracks and graded beds show current direction, waves, drying out and which way was up.",
+      "prereqs": [
+        "geology.sedimentary-classification"
+      ],
+      "viz": [
+        "es-sediment"
+      ]
+    },
+    {
+      "id": "geology.depositional-environments",
+      "slug": "depositional-environments",
+      "course": "geology",
+      "unit": "sedimentary",
+      "title": "Depositional Environments",
+      "short": "Match rocks and structures to the place they formed: river, delta, beach, reef, deep sea, desert dunes or glacier.",
+      "prereqs": [
+        "geology.sedimentary-structures"
+      ],
+      "viz": [
+        "es-sediment"
+      ]
+    },
+    {
+      "id": "geology.pressure-depth",
+      "slug": "pressure-depth",
+      "course": "geology",
+      "unit": "metamorphic",
+      "title": "Heat and Pressure with Depth",
+      "short": "Pressure grows by about 26 MPa for each kilometer of rock overhead (P = ρgh), and temperature rises along the geotherm.",
+      "prereqs": [
+        "geology.geothermal-gradient",
+        "alg1.literal-equations"
+      ],
+      "viz": [
+        "es-interior"
+      ]
+    },
+    {
+      "id": "geology.metamorphic-grade",
+      "slug": "metamorphic-grade",
+      "course": "geology",
+      "unit": "metamorphic",
+      "title": "Foliation and Metamorphic Grade",
+      "short": "As heat and pressure rise, shale becomes slate, phyllite, schist and then gneiss, and index minerals like garnet appear in order.",
+      "prereqs": [
+        "geology.pressure-depth",
+        "earthsci.metamorphic-rocks"
+      ],
+      "viz": [
+        "es-rock-key",
+        "es-interior"
+      ]
+    },
+    {
+      "id": "geology.metamorphic-classification",
+      "slug": "metamorphic-classification",
+      "course": "geology",
+      "unit": "metamorphic",
+      "title": "Naming Metamorphic Rocks",
+      "short": "Name a metamorphic rock by its foliation and its parent: marble from limestone, quartzite from sandstone, gneiss from granite or shale.",
+      "prereqs": [
+        "geology.metamorphic-grade"
+      ],
+      "viz": [
+        "es-rock-key"
+      ]
+    },
+    {
+      "id": "geology.metamorphic-settings",
+      "slug": "metamorphic-settings",
+      "course": "geology",
+      "unit": "metamorphic",
+      "title": "Where Metamorphism Happens",
+      "short": "Contact metamorphism bakes rock beside magma, regional metamorphism comes with mountain building, and subduction makes high-pressure, low-temperature rocks.",
+      "prereqs": [
+        "geology.metamorphic-classification",
+        "geology.melting"
+      ],
+      "viz": [
+        "es-interior"
+      ]
+    },
+    {
+      "id": "geology.stress-strain",
+      "slug": "stress-strain",
+      "course": "geology",
+      "unit": "deformation",
+      "title": "Stress and Strain",
+      "short": "Rocks are squeezed, stretched or sheared; near the surface they break (brittle), while deep and hot they bend (ductile).",
+      "prereqs": [
+        "geology.pressure-depth"
+      ],
+      "viz": [
+        "es-structures"
+      ]
+    },
+    {
+      "id": "geology.folds",
+      "slug": "folds",
+      "course": "geology",
+      "unit": "deformation",
+      "title": "Anticlines, Synclines and Domes",
+      "short": "Folds arch up (anticlines) or sag down (synclines); once eroded, an anticline shows its oldest rocks in the middle.",
+      "prereqs": [
+        "geology.stress-strain",
+        "earthsci.superposition"
+      ],
+      "viz": [
+        "es-structures"
+      ]
+    },
+    {
+      "id": "geology.faults",
+      "slug": "faults",
+      "course": "geology",
+      "unit": "deformation",
+      "title": "Normal, Reverse and Strike-Slip Faults",
+      "short": "Name the hanging wall and footwall and read the slip: pulling apart makes normal faults, squeezing makes reverse and thrust faults, and shearing makes strike-slip faults.",
+      "prereqs": [
+        "geology.stress-strain"
+      ],
+      "viz": [
+        "es-structures"
+      ]
+    },
+    {
+      "id": "geology.strike-dip",
+      "slug": "strike-dip",
+      "course": "geology",
+      "unit": "deformation",
+      "title": "Strike and Dip",
+      "short": "Strike is the compass direction of a level line on a tilted layer, dip is its downward tilt, and with trigonometry they give how deep the layer lies.",
+      "prereqs": [
+        "geology.folds",
+        "geo.trig-ratios"
+      ],
+      "viz": [
+        "es-structures"
+      ]
+    },
+    {
+      "id": "geology.steno-principles",
+      "slug": "steno-principles",
+      "course": "geology",
+      "unit": "geologic-time",
+      "title": "Steno's Principles and Faunal Succession",
+      "short": "Original horizontality, lateral continuity, inclusions and the order of fossils extend superposition to read any outcrop.",
+      "prereqs": [
+        "earthsci.cross-cutting",
+        "earthsci.fossils"
+      ],
+      "viz": [
+        "es-strata"
+      ]
+    },
+    {
+      "id": "geology.unconformities",
+      "slug": "unconformities",
+      "course": "geology",
+      "unit": "geologic-time",
+      "title": "Unconformities",
+      "short": "A buried erosion surface marks missing time: an angular unconformity, a nonconformity or a disconformity.",
+      "prereqs": [
+        "geology.steno-principles"
+      ],
+      "viz": [
+        "es-strata"
+      ]
+    },
+    {
+      "id": "geology.correlation",
+      "slug": "correlation",
+      "course": "geology",
+      "unit": "geologic-time",
+      "title": "Correlating Rock Layers",
+      "short": "Match layers from place to place by rock type, by key beds such as volcanic ash, and by index fossils.",
+      "prereqs": [
+        "geology.steno-principles"
+      ],
+      "viz": [
+        "es-strata"
+      ]
+    },
+    {
+      "id": "geology.geologic-history",
+      "slug": "geologic-history",
+      "course": "geology",
+      "unit": "geologic-time",
+      "title": "Reconstructing a Region's History",
+      "short": "Put a cross-section's events in order: deposition, folding, faulting, intrusion, erosion and more deposition.",
+      "prereqs": [
+        "geology.unconformities",
+        "geology.intrusions",
+        "geology.faults",
+        "geology.folds"
+      ],
+      "viz": [
+        "es-strata"
+      ]
+    },
+    {
+      "id": "geology.radiometric-dating",
+      "slug": "radiometric-dating",
+      "course": "geology",
+      "unit": "geologic-time",
+      "title": "Radiometric Dating",
+      "short": "From the ratio of daughter to parent atoms, find how many half-lives have passed: a ratio of 1 means one half-life, 3 means two, 7 means three.",
+      "prereqs": [
+        "earthsci.half-life",
+        "chem.radioactive-decay",
+        "alg2.solve-exponential-equations"
+      ],
+      "viz": [
+        "es-halflife"
+      ]
+    },
+    {
+      "id": "geology.isotope-systems",
+      "slug": "isotope-systems",
+      "course": "geology",
+      "unit": "geologic-time",
+      "title": "Choosing a Radioactive Clock",
+      "short": "Match the clock to the job: carbon-14 for recent remains, potassium–argon and uranium–lead for igneous rock millions to billions of years old.",
+      "prereqs": [
+        "geology.radiometric-dating"
+      ],
+      "viz": [
+        "es-halflife"
+      ]
+    },
+    {
+      "id": "geology.bracketing-ages",
+      "slug": "bracketing-ages",
+      "course": "geology",
+      "unit": "geologic-time",
+      "title": "Combining Relative and Absolute Ages",
+      "short": "Date a sedimentary layer by the dated igneous rocks around it: younger than what lies below it, older than what cuts it or covers it.",
+      "prereqs": [
+        "geology.isotope-systems",
+        "geology.geologic-history"
+      ],
+      "viz": [
+        "es-strata"
+      ]
+    },
+    {
+      "id": "geology.earth-history",
+      "slug": "earth-history",
+      "course": "geology",
+      "unit": "geologic-time",
+      "title": "Major Events in Earth's History",
+      "short": "Place the big events on the time scale: the oldest minerals, first life, oxygen in the air, the Cambrian explosion and the great mass extinctions.",
+      "prereqs": [
+        "geology.radiometric-dating",
+        "geology.earth-formation"
+      ],
+      "viz": [
+        "es-deep-time"
+      ]
+    },
+    {
+      "id": "geology.magnetic-stripes",
+      "slug": "magnetic-stripes",
+      "course": "geology",
+      "unit": "plate-tectonics",
+      "title": "Magnetic Stripes and Spreading Rates",
+      "short": "Match seafloor stripes to the reversal timeline to find how fast a ridge spreads, as a half rate or a full rate.",
+      "prereqs": [
+        "geology.paleomagnetism"
+      ],
+      "viz": [
+        "es-boundary"
+      ]
+    },
+    {
+      "id": "geology.gps-plate-motion",
+      "slug": "gps-plate-motion",
+      "course": "geology",
+      "unit": "plate-tectonics",
+      "title": "Measuring Plate Motion with GPS",
+      "short": "GPS stations move millimeters to centimeters a year; subtracting their velocity vectors shows how two plates move relative to each other.",
+      "prereqs": [
+        "earthsci.plate-motion-rates",
+        "g8.pythagorean-theorem"
+      ],
+      "viz": [
+        "es-plates",
+        "vectors2d"
+      ]
+    },
+    {
+      "id": "geology.driving-forces",
+      "slug": "driving-forces",
+      "course": "geology",
+      "unit": "plate-tectonics",
+      "title": "What Drives the Plates",
+      "short": "Sinking slabs pull plates, high ridges push them, and the mantle convects beneath; the pull of sinking slabs is the largest force.",
+      "prereqs": [
+        "earthsci.convection",
+        "geology.magnetic-stripes"
+      ],
+      "viz": [
+        "es-boundary"
+      ]
+    },
+    {
+      "id": "geology.subduction-zones",
+      "slug": "subduction-zones",
+      "course": "geology",
+      "unit": "plate-tectonics",
+      "title": "Subduction Zones",
+      "short": "The denser plate sinks, earthquakes trace the slab hundreds of kilometers down, and water from the slab melts the mantle above to feed arc volcanoes.",
+      "prereqs": [
+        "geology.driving-forces",
+        "geology.melting"
+      ],
+      "viz": [
+        "es-boundary"
+      ]
+    },
+    {
+      "id": "geology.collisions-and-rifts",
+      "slug": "collisions-and-rifts",
+      "course": "geology",
+      "unit": "plate-tectonics",
+      "title": "Continental Collisions and Rifts",
+      "short": "Continents are too buoyant to sink far, so they crumple into high mountains when they meet and stretch into rift valleys when they split.",
+      "prereqs": [
+        "geology.subduction-zones",
+        "geology.isostasy"
+      ],
+      "viz": [
+        "es-boundary"
+      ]
+    },
+    {
+      "id": "geology.transform-faults",
+      "slug": "transform-faults",
+      "course": "geology",
+      "unit": "plate-tectonics",
+      "title": "Transform Faults",
+      "short": "Transform faults offset mid-ocean ridges and let plates slide past each other, and only the part between the ridge segments is active.",
+      "prereqs": [
+        "earthsci.boundary-features",
+        "geology.faults"
+      ],
+      "viz": [
+        "es-boundary"
+      ]
+    },
+    {
+      "id": "geology.wilson-cycle",
+      "slug": "wilson-cycle",
+      "course": "geology",
+      "unit": "plate-tectonics",
+      "title": "The Wilson Cycle",
+      "short": "Oceans open and close in a cycle (rift, young ocean, wide ocean, subduction, closing and collision), with supercontinents like Pangaea in between.",
+      "prereqs": [
+        "geology.collisions-and-rifts"
+      ],
+      "viz": [
+        "es-plates"
+      ]
+    },
+    {
+      "id": "geology.elastic-rebound",
+      "slug": "elastic-rebound",
+      "course": "geology",
+      "unit": "earthquakes",
+      "title": "Elastic Rebound",
+      "short": "Rock on both sides of a locked fault bends slowly, then snaps back in an earthquake; slip rate and slip per quake give the average time between quakes.",
+      "prereqs": [
+        "geology.faults",
+        "earthsci.seismic-waves"
+      ],
+      "viz": [
+        "es-structures"
+      ]
+    },
+    {
+      "id": "geology.locating-earthquakes",
+      "slug": "locating-earthquakes",
+      "course": "geology",
+      "unit": "earthquakes",
+      "title": "Distance from the S–P Time",
+      "short": "P waves outrun S waves, so the gap between their arrivals grows with distance: d = Δt·vP·vS/(vP − vS).",
+      "prereqs": [
+        "earthsci.seismic-waves",
+        "alg1.literal-equations"
+      ],
+      "viz": [
+        "es-seismic"
+      ]
+    },
+    {
+      "id": "geology.epicenter",
+      "slug": "epicenter",
+      "course": "geology",
+      "unit": "earthquakes",
+      "title": "Finding the Epicenter",
+      "short": "Draw a circle of the right distance around each of three stations; the epicenter is where all three circles meet.",
+      "prereqs": [
+        "geology.locating-earthquakes",
+        "g8.distance-between-points"
+      ],
+      "viz": [
+        "es-seismic"
+      ]
+    },
+    {
+      "id": "geology.moment-magnitude",
+      "slug": "moment-magnitude",
+      "course": "geology",
+      "unit": "earthquakes",
+      "title": "Moment Magnitude and Energy",
+      "short": "Magnitude grows with the logarithm of the fault's area times its slip, and each step up means about 32 times more energy.",
+      "prereqs": [
+        "earthsci.earthquake-magnitude",
+        "geology.elastic-rebound",
+        "alg2.log-properties"
+      ],
+      "viz": [
+        "es-seismic"
+      ]
+    },
+    {
+      "id": "geology.intensity",
+      "slug": "intensity",
+      "course": "geology",
+      "unit": "earthquakes",
+      "title": "Intensity and Ground Shaking",
+      "short": "Intensity measures the shaking at one place on the Modified Mercalli scale; it depends on distance, depth and soft ground, not only on magnitude.",
+      "prereqs": [
+        "geology.moment-magnitude"
+      ],
+      "viz": [
+        "es-seismic"
+      ]
+    },
+    {
+      "id": "geology.earthquake-odds",
+      "slug": "earthquake-odds",
+      "course": "geology",
+      "unit": "earthquakes",
+      "title": "Earthquake Forecasts as Probabilities",
+      "short": "Turn a yearly chance into the chance of at least one event in n years: 1 − (1 − p)ⁿ.",
+      "prereqs": [
+        "geology.elastic-rebound",
+        "g7.compound-probability",
+        "alg1.exponential-functions"
+      ],
+      "viz": [
+        "es-chance"
+      ]
+    },
+    {
+      "id": "geology.tsunamis",
+      "slug": "tsunamis",
+      "course": "geology",
+      "unit": "earthquakes",
+      "title": "Tsunamis",
+      "short": "A sudden jolt of the seafloor lifts the whole water column; the wave crosses deep ocean as fast as a jet (v = √(gd)) and slows and grows tall near shore.",
+      "prereqs": [
+        "geology.subduction-zones"
+      ],
+      "viz": [
+        "graph"
+      ]
+    },
+    {
+      "id": "geology.mass-wasting",
+      "slug": "mass-wasting",
+      "course": "geology",
+      "unit": "landscapes",
+      "title": "Landslides and Slope Stability",
+      "short": "A slope fails when the downhill pull beats the friction and strength holding it; water and steeper slopes tip the balance.",
+      "prereqs": [
+        "earthsci.erosion-deposition",
+        "geo.trig-ratios"
+      ],
+      "viz": [
+        "es-landscape"
+      ]
+    },
+    {
+      "id": "geology.stream-flow",
+      "slug": "stream-flow",
+      "course": "geology",
+      "unit": "landscapes",
+      "title": "Stream Gradient and Discharge",
+      "short": "A stream's gradient is its drop per distance, and its discharge is width × depth × speed, in cubic meters per second.",
+      "prereqs": [
+        "earthsci.landforms",
+        "alg1.units-quantities"
+      ],
+      "viz": [
+        "es-landscape",
+        "es-topo"
+      ]
+    },
+    {
+      "id": "geology.river-landforms",
+      "slug": "river-landforms",
+      "course": "geology",
+      "unit": "landscapes",
+      "title": "Meanders, Floodplains and Base Level",
+      "short": "Rivers wear away the outside of bends and build on the inside, spread floodplains, and cut down toward base level.",
+      "prereqs": [
+        "geology.stream-flow",
+        "geology.sediment-transport"
+      ],
+      "viz": [
+        "es-landscape"
+      ]
+    },
+    {
+      "id": "geology.flood-frequency",
+      "slug": "flood-frequency",
+      "course": "geology",
+      "unit": "landscapes",
+      "title": "What a 100-Year Flood Means",
+      "short": "Rank a river's yearly peak flows to find recurrence intervals; a 100-year flood has a 1% chance of happening in any year.",
+      "prereqs": [
+        "geology.river-landforms",
+        "geology.earthquake-odds"
+      ],
+      "viz": [
+        "es-chance"
+      ]
+    },
+    {
+      "id": "geology.groundwater-flow",
+      "slug": "groundwater-flow",
+      "course": "geology",
+      "unit": "landscapes",
+      "title": "Groundwater Flow and Darcy's Law",
+      "short": "Groundwater flows from high head to low head, and Darcy's law, Q = K·A·Δh/L, tells how much.",
+      "prereqs": [
+        "earthsci.groundwater",
+        "alg1.literal-equations"
+      ],
+      "viz": [
+        "es-water"
+      ]
+    },
+    {
+      "id": "geology.glaciers",
+      "slug": "glaciers",
+      "course": "geology",
+      "unit": "landscapes",
+      "title": "Glaciers: Mass Balance and Flow",
+      "short": "A glacier gains snow up high and loses ice down low; its end advances or retreats with the balance, but the ice always flows downhill.",
+      "prereqs": [
+        "earthsci.landforms"
+      ],
+      "viz": [
+        "es-landscape"
+      ]
+    },
+    {
+      "id": "geology.ore-deposits",
+      "slug": "ore-deposits",
+      "course": "geology",
+      "unit": "resources",
+      "title": "How Ore Deposits Form",
+      "short": "Ores are rare places where geology concentrated a metal; magma, hot water, weathering, evaporation and rivers can all do it.",
+      "prereqs": [
+        "earthsci.natural-resources",
+        "geology.chemical-weathering"
+      ],
+      "viz": []
+    },
+    {
+      "id": "geology.fossil-fuels",
+      "slug": "fossil-fuels",
+      "course": "geology",
+      "unit": "resources",
+      "title": "How Oil, Gas and Coal Form",
+      "short": "Buried remains of tiny sea life cook into oil at about 60 to 120 °C and collect under a seal in a trap, while buried swamp plants become coal.",
+      "prereqs": [
+        "geology.depositional-environments",
+        "earthsci.natural-resources"
+      ],
+      "viz": [
+        "es-structures"
+      ]
+    },
+    {
+      "id": "geology.resource-reserves",
+      "slug": "resource-reserves",
+      "course": "geology",
+      "unit": "resources",
+      "title": "Resources, Reserves and How Long They Last",
+      "short": "Reserves are the part of a resource that can be produced at a profit today, so the years they last change with price, technology and discovery.",
+      "prereqs": [
+        "geology.ore-deposits",
+        "geology.fossil-fuels"
+      ],
+      "viz": [
+        "graph"
+      ]
+    }
+  ]
+}

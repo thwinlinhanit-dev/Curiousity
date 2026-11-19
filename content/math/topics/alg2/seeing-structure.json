@@ -1,0 +1,139 @@
+{
+  "id": "alg2.seeing-structure",
+  "slug": "seeing-structure",
+  "ladder": "math",
+  "course": "alg2",
+  "unit": "polynomials",
+  "title": "Seeing Structure in Expressions",
+  "short": "Treat a chunk like (x + 1) or x² as a single quantity to rewrite an expression.",
+  "trouble": "Students expand everything first instead of noticing that x⁴ − 9 is a difference of squares.",
+  "prereqs": [
+    "alg1.factor-completely"
+  ],
+  "xp": 2,
+  "viz": [],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Good factoring starts with looking, not computing. In <a href=\"/math/algebra-1/factor-completely/\">Factoring Completely</a> you learned the patterns: common factors, trinomials, differences of squares. Here you learn to spot those patterns when they are wearing a disguise, by treating a whole chunk of an expression as one quantity."
+      },
+      {
+        "t": "key",
+        "html": "If part of an expression repeats or is a perfect square, give it a single name, such as $u = x^2$ or $u = x + 1$. Factor the simpler expression in $u$, then put the chunk back. $x^4 - 9$ is $u^2 - 9$ with $u = x^2$, so it equals $(x^2 - 3)(x^2 + 3)$."
+      },
+      {
+        "t": "why",
+        "html": "Algebra rules don't care what a letter stands for. The identity $u^2 - b^2 = (u - b)(u + b)$ is true when $u$ is a number, so it is true when $u$ is any expression that stands for a number, including $x^2$ or $(x + 1)$. Renaming a chunk just lets your eyes see a familiar shape."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Expression",
+          "Chunk",
+          "Familiar shape",
+          "Factored"
+        ],
+        "rows": [
+          [
+            "$x^4 - 81$",
+            "$u = x^2$",
+            "$u^2 - 81$",
+            "$(x^2 - 9)(x^2 + 9)$ $= (x - 3)(x + 3)(x^2 + 9)$"
+          ],
+          [
+            "$(x + 2)^2 - 25$",
+            "$u = x + 2$",
+            "$u^2 - 25$",
+            "$(x - 3)(x + 7)$"
+          ],
+          [
+            "$(x - 1)^2 + 5(x - 1) + 6$",
+            "$u = x - 1$",
+            "$u^2 + 5u + 6$",
+            "$(x + 1)(x + 2)$"
+          ],
+          [
+            "$53^2 - 47^2$",
+            "numbers",
+            "$a^2 - b^2$",
+            "$6 \\cdot 100 = 600$"
+          ]
+        ],
+        "cap": "Disguised patterns"
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A fourth power",
+        "q": "Factor $x^4 - 16$ completely.",
+        "steps": [
+          "Let $u = x^2$: $u^2 - 16 = (u - 4)(u + 4)$.",
+          "Put $x^2$ back: $(x^2 - 4)(x^2 + 4)$.",
+          "$x^2 - 4$ is again a difference of squares: $(x - 2)(x + 2)$. The sum $x^2 + 4$ does not factor over the real numbers."
+        ],
+        "a": "$(x - 2)(x + 2)(x^2 + 4)$"
+      },
+      {
+        "t": "ex",
+        "title": "A shifted square",
+        "q": "Factor $(x + 2)^2 - 25$.",
+        "steps": [
+          "Let $u = x + 2$: $u^2 - 25 = (u - 5)(u + 5)$.",
+          "Put it back: $(x + 2 - 5)(x + 2 + 5)$ $= (x - 3)(x + 7)$.",
+          "Check by expanding both: $(x + 2)^2 - 25 = x^2 + 4x - 21$ and $(x - 3)(x + 7) = x^2 + 4x - 21$."
+        ],
+        "a": "$(x - 3)(x + 7)$"
+      },
+      {
+        "t": "ex",
+        "title": "Arithmetic by structure",
+        "q": "Find $53^2 - 47^2$ without a calculator.",
+        "steps": [
+          "Difference of squares: $(53 - 47)(53 + 47) = 6 \\cdot 100$."
+        ],
+        "a": "$600$"
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "fns": [
+            "(x + 2)^2 - 25",
+            {
+              "f": "(x - 3)(x + 7)",
+              "dash": true
+            }
+          ],
+          "roots": true,
+          "xmin": -10,
+          "xmax": 6,
+          "ymin": -30,
+          "ymax": 20
+        },
+        "cap": "$f(x) = (x + 2)^2 - 25$ and its factored form $g(x) = (x - 3)(x + 7)$ (dashed) draw the same parabola. The factored form shows the zeros, 3 and $-7$, at a glance."
+      },
+      {
+        "t": "mistake",
+        "html": "Expanding everything first. Turning $(x + 2)^2 - 25$ into $x^2 + 4x - 21$ works, but it hides the pattern and gives you a harder trinomial to factor. With $x^4 - 9$, expanding doesn't even help. Look for squares (and other repeated chunks) before you multiply anything out."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Intermediate Algebra 2e, Section 6.4 General Strategy for Factoring Polynomials"
+      },
+      {
+        "name": "Common Core State Standards, A-SSE.A.1b and A-SSE.A.2"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

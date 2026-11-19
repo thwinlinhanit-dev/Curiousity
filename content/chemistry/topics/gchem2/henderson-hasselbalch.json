@@ -1,0 +1,101 @@
+{
+  "id": "gchem2.henderson-hasselbalch",
+  "slug": "henderson-hasselbalch",
+  "ladder": "chemistry",
+  "course": "gchem2",
+  "unit": "acids-bases",
+  "title": "The Henderson–Hasselbalch Equation",
+  "short": "pH = pKa + log([A⁻]/[HA]) for a buffer.",
+  "trouble": "Students put the acid over the base inside the log, which flips the sign of the correction.",
+  "prereqs": [
+    "gchem2.buffers",
+    "alg2.log-properties"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-buffer"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A <a href=\"/chemistry/general-chemistry-2/buffers/\">buffer</a>'s pH depends on the ratio of base to acid. Rearranging $K_a$ and taking <a href=\"/math/algebra-2/log-properties/\">logarithms</a> gives a formula that shows this directly."
+      },
+      {
+        "t": "key",
+        "html": "$$\\text{pH} = \\text{p}K_a + \\log\\frac{[\\mathrm{A^-}]}{[\\mathrm{HA}]}$$\nWhen the two are equal, $\\text{pH} = \\text{p}K_a$. Every factor of 10 in the ratio moves the pH by 1."
+      },
+      {
+        "t": "why",
+        "html": "Start from $K_a = \\dfrac{[\\mathrm{H_3O^+}][\\mathrm{A^-}]}{[\\mathrm{HA}]}$ and solve for $[\\mathrm{H_3O^+}] = K_a\\dfrac{[\\mathrm{HA}]}{[\\mathrm{A^-}]}$. Take $-\\log$ of both sides: $-\\log[\\mathrm{H_3O^+}] = -\\log K_a - \\log\\dfrac{[\\mathrm{HA}]}{[\\mathrm{A^-}]}$, that is, $\\text{pH} = \\text{p}K_a + \\log\\dfrac{[\\mathrm{A^-}]}{[\\mathrm{HA}]}$. In a buffer both are present in large amounts, so so little ionizes that you can use the amounts you mixed. Since both share the same volume, a ratio of moles works as well as a ratio of molarities."
+      },
+      {
+        "t": "viz",
+        "name": "ch-buffer",
+        "opts": {
+          "mode": "species",
+          "pKa": 4.74,
+          "pH": 5
+        },
+        "cap": "The fractions of HA and A⁻ against pH. They cross at pH = pKa, and one unit away the ratio is 10 to 1."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "pH of an acetate buffer",
+        "q": "A buffer has $[\\mathrm{CH_3COO^-}] = 0.15\\ \\text{M}$ and $[\\mathrm{CH_3COOH}] = 0.10\\ \\text{M}$ ($\\text{p}K_a = 4.74$). Find its pH.",
+        "steps": [
+          "Ratio: $\\dfrac{0.15}{0.10} = 1.5$; $\\log 1.5 = 0.18$.",
+          "$\\text{pH} = 4.74 + 0.18 = 4.92$. More base than acid, so the pH is above the $\\text{p}K_a$, as it should be."
+        ],
+        "a": "$\\text{pH} = 4.92$."
+      },
+      {
+        "t": "ex",
+        "title": "Designing a buffer",
+        "q": "What ratio $[\\mathrm{CH_3COO^-}]/[\\mathrm{CH_3COOH}]$ gives pH 5.00?",
+        "steps": [
+          "$5.00 = 4.74 + \\log(\\text{ratio})$, so $\\log(\\text{ratio}) = 0.26$.",
+          "$\\text{ratio} = 10^{0.26} = 1.82$."
+        ],
+        "a": "$1.82$."
+      },
+      {
+        "t": "ex",
+        "title": "A base buffer",
+        "q": "An ammonia buffer has $[\\mathrm{NH_3}] = 0.10\\ \\text{M}$ and $[\\mathrm{NH_4^+}] = 0.20\\ \\text{M}$. $K_b(\\mathrm{NH_3}) = 1.8 \\times 10^{-5}$. Find the pH.",
+        "steps": [
+          "The acid is $\\mathrm{NH_4^+}$: $\\text{p}K_a = 14.00 - \\text{p}K_b = 14.00 - 4.74 = 9.26$ (using $K_a = 5.6 \\times 10^{-10}$ gives 9.25).",
+          "$\\text{pH} = 9.25 + \\log\\dfrac{0.10}{0.20} = 9.25 - 0.30 = 8.95$."
+        ],
+        "a": "$\\text{pH} = 8.95$."
+      },
+      {
+        "t": "p",
+        "html": "For a base buffer you can work with $K_b$ instead: $\\text{pOH} = \\text{p}K_b + \\log\\dfrac{[\\mathrm{HB^+}]}{[\\mathrm{B}]}$, then $\\text{pH} = 14.00 - \\text{pOH}$. It gives the same answer as using the $\\text{p}K_a$ of the conjugate acid, which is usually quicker. Read the other way, the equation says the $\\text{p}K_a$ of an acid is the pH at which it is exactly half ionized, which is how $\\text{p}K_a$ values are measured."
+      },
+      {
+        "t": "mistake",
+        "html": "Putting the acid over the base inside the log, which flips the sign of the correction. Check: more base than acid must give a pH above the $\\text{p}K_a$; more acid, below. Remember \"base over acid,\" as in the order the reaction makes them."
+      },
+      {
+        "t": "note",
+        "html": "The equation works well when both concentrations are at least about 100 times $K_a$ and the ratio is between 0.1 and 10. Outside those limits, solve the equilibrium in full."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 14.6 Buffers"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

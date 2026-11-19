@@ -1,0 +1,117 @@
+{
+  "id": "gchem2.kp-kc",
+  "slug": "kp-kc",
+  "ladder": "chemistry",
+  "course": "gchem2",
+  "unit": "equilibrium",
+  "title": "Kp and Kc",
+  "short": "For gases, Kp = Kc(RT)^Δn, where Δn counts only moles of gas.",
+  "trouble": "Students count solids and liquids in Δn, or use R = 8.314 J/(mol·K) where 0.08206 L·atm/(mol·K) belongs.",
+  "prereqs": [
+    "gchem2.equilibrium-expressions",
+    "chem.ideal-gas-law"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-gasbox"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "For gases you can write $K$ with partial pressures instead of concentrations. The <a href=\"/chemistry/chemistry/ideal-gas-law/\">ideal gas law</a> connects the two: $P = \\dfrac{n}{V}RT$, and $\\dfrac{n}{V}$ is the molar concentration. So each pressure is a concentration times $RT$."
+      },
+      {
+        "t": "key",
+        "html": "$K_p = K_c(RT)^{\\Delta n}$, where $\\Delta n$ = (moles of gas on the product side) − (moles of gas on the reactant side), $R = 0.08206\\ \\text{L·atm/(mol·K)}$ and $T$ is in kelvins."
+      },
+      {
+        "t": "why",
+        "html": "Replace each pressure in $K_p$ with $[\\mathrm{X}]RT$. Every product term brings a factor $RT$ to its coefficient's power on top, and every reactant term the same on the bottom. All the concentration factors together make $K_c$; the leftover factors of $RT$ give $(RT)^{c+d-a-b} = (RT)^{\\Delta n}$. Solids and liquids have no partial pressure, so they do not count in $\\Delta n$. The value of $R$ must match the units: pressures in atm and concentrations in mol/L call for $0.08206\\ \\text{L·atm/(mol·K)}$."
+      },
+      {
+        "t": "viz",
+        "name": "ch-gasbox",
+        "opts": {
+          "species": [
+            {
+              "f": "N2",
+              "n": 1
+            },
+            {
+              "f": "H2",
+              "n": 3
+            }
+          ],
+          "T": 500,
+          "V": 24.6,
+          "lock": "V"
+        },
+        "cap": "Each gas has its own partial pressure, set by its amount per liter and the temperature: $P = (n/V)RT$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Fewer moles of gas",
+        "q": "For $\\mathrm{N_2(g) + 3H_2(g) \\rightleftharpoons 2NH_3(g)}$, $K_c = 0.50$ at $673\\ \\text{K}$. Find $K_p$.",
+        "steps": [
+          "$\\Delta n = 2 - (1 + 3) = -2$.",
+          "$RT = (0.08206)(673) = 55.2$.",
+          "$$K_p = 0.50 \\times (55.2)^{-2} = \\dfrac{0.50}{3.05 \\times 10^{3}} = 1.6 \\times 10^{-4}$$"
+        ],
+        "a": "$K_p = 1.6 \\times 10^{-4}$."
+      },
+      {
+        "t": "ex",
+        "title": "More moles of gas",
+        "q": "For $\\mathrm{PCl_5(g) \\rightleftharpoons PCl_3(g) + Cl_2(g)}$, $K_c = 0.042$ at $523\\ \\text{K}$. Find $K_p$.",
+        "steps": [
+          "$\\Delta n = 2 - 1 = +1$.",
+          "$$K_p = (0.042)(0.08206 \\times 523) = (0.042)(42.9) = 1.8$$"
+        ],
+        "a": "$K_p = 1.8$."
+      },
+      {
+        "t": "ex",
+        "title": "A solid in the equation",
+        "q": "For $\\mathrm{C(s) + CO_2(g) \\rightleftharpoons 2CO(g)}$, what is $\\Delta n$, and when would $K_p = K_c$?",
+        "steps": [
+          "Count gases only: $\\Delta n = 2 - 1 = +1$. Carbon, a solid, does not count.",
+          "$K_p = K_c$ only when $\\Delta n = 0$, as in $\\mathrm{H_2(g) + I_2(g) \\rightleftharpoons 2HI(g)}$; then $(RT)^0 = 1$."
+        ],
+        "a": "$\\Delta n = 1$; equal only when $\\Delta n = 0$."
+      },
+      {
+        "t": "ex",
+        "title": "Going back to Kc",
+        "q": "At $673\\ \\text{K}$, $K_p = 1.6 \\times 10^{-4}$ for $\\mathrm{N_2 + 3H_2 \\rightleftharpoons 2NH_3}$. Recover $K_c$.",
+        "steps": [
+          "Solve the relation for $K_c$: $K_c = K_p(RT)^{-\\Delta n} = K_p(RT)^{2}$.",
+          "$$K_c = (1.6 \\times 10^{-4})(55.2)^2 = (1.6 \\times 10^{-4})(3.05 \\times 10^{3}) = 0.49$$ matching the 0.50 we started from (the small gap is rounding)."
+        ],
+        "a": "$K_c \\approx 0.50$."
+      },
+      {
+        "t": "p",
+        "html": "Strictly, both constants are written with activities, so both are pure numbers: pressures are divided by the standard pressure and concentrations by $1\\ \\text{M}$. That is why we report $K_p$ and $K_c$ without units, even though the conversion factor $(RT)^{\\Delta n}$ looks as if it carries some."
+      },
+      {
+        "t": "mistake",
+        "html": "Counting solids and liquids in $\\Delta n$, or using $R = 8.314\\ \\text{J/(mol·K)}$. Only gases have partial pressures, and $8.314$ belongs with energies, not with atm and liters. Check: if $\\Delta n$ is negative, $K_p$ should be smaller than $K_c$ at ordinary temperatures (where $RT > 1$)."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 13.2 Equilibrium Constants"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

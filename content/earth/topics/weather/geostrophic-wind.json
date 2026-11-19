@@ -1,0 +1,92 @@
+{
+  "id": "weather.geostrophic-wind",
+  "slug": "geostrophic-wind",
+  "ladder": "earth",
+  "course": "weather",
+  "unit": "pressure-wind",
+  "title": "Winds Aloft Follow the Isobars",
+  "short": "High above the ground, the pressure push and the Coriolis turn balance, so the wind blows along the isobars.",
+  "trouble": "Students expect upper winds to cross the isobars toward low pressure; aloft they run along them, with low pressure on the left of the wind in the Northern Hemisphere.",
+  "prereqs": [
+    "weather.coriolis",
+    "weather.gas-law-air"
+  ],
+  "xp": 3,
+  "viz": [
+    "es-wind"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Air pushed toward low pressure is turned by the <a href=\"/earth-and-space/weather-and-climate/coriolis/\">Coriolis effect</a>. High above the ground, where nothing rubs against it, the turning goes on until the two forces balance. The result is one of the most useful facts in meteorology: upper-level winds blow <b>along</b> the isobars."
+      },
+      {
+        "t": "key",
+        "html": "Aloft, the pressure gradient force and the Coriolis force balance, and the wind blows parallel to the isobars, with <b>low pressure on its left</b> in the Northern Hemisphere (on its right in the Southern). This <b>geostrophic wind</b> has speed $$V = \\frac{1}{\\rho f}\\,\\frac{\\Delta p}{\\Delta n}$$ so it is faster where the isobars are closer together."
+      },
+      {
+        "t": "why",
+        "html": "Start a parcel at rest: the pressure gradient force pulls it toward the low. As it speeds up, the Coriolis force, at right angles to its motion and growing with its speed, bends it to the right (in the north). It keeps bending until it moves along the isobars; then the Coriolis force points straight back toward the high, exactly opposite the pressure gradient force. Balanced forces mean no more change: the wind blows steadily along the lines. Setting the two equal, $\\frac{1}{\\rho}\\frac{\\Delta p}{\\Delta n} = fV$, gives the formula. The density comes from <a href=\"/earth-and-space/weather-and-climate/gas-law-air/\">the gas law</a>, and thinner air aloft blows faster for the same gradient."
+      },
+      {
+        "t": "viz",
+        "name": "es-wind",
+        "opts": {
+          "mode": "isobars",
+          "friction": false,
+          "forces": true,
+          "release": {
+            "x": 0.3,
+            "y": 0.15
+          }
+        },
+        "cap": "A parcel released from rest aloft: pushed toward the low, turned by the Coriolis force, it swings around until it runs along the isobars with the low on its left."
+      },
+      {
+        "t": "ex",
+        "title": "Speed of the wind aloft",
+        "q": "At 45° N ($f = 1.03 \\times 10^{-4}$ s⁻¹), the pressure changes by 4 hPa over 200 km, and the air density is 1.2 kg/m³. Find the geostrophic wind.",
+        "steps": [
+          "$\\Delta p = 400$ Pa, $\\Delta n = 200{,}000$ m, so $\\frac{\\Delta p}{\\Delta n} = 0.002$ Pa/m.",
+          "$V = \\dfrac{0.002}{1.2 \\times 1.03 \\times 10^{-4}} \\approx 16$ m/s.",
+          "At 5.5 km, where the density is about 0.7 kg/m³, the same gradient gives about 28 m/s."
+        ],
+        "a": "About 16 m/s"
+      },
+      {
+        "t": "ex",
+        "title": "Which way does it blow?",
+        "q": "Over the United States, high pressure lies to the south and low pressure to the north. Which way does the wind blow aloft?",
+        "steps": [
+          "Northern Hemisphere: low pressure on the wind's left.",
+          "If the low is to the north and on your left, you are facing east.",
+          "The wind blows toward the east: a west wind, the familiar westerlies."
+        ],
+        "a": "From west to east"
+      },
+      {
+        "t": "mistake",
+        "html": "Expecting upper winds to cross the isobars toward low pressure. Above the friction of the ground, the winds run along the isobars, with low pressure on the left in the Northern Hemisphere. Check: stand with your back to the wind aloft in the north, and the low is on your left."
+      },
+      {
+        "t": "note",
+        "html": "Near the equator, $f$ is tiny, so the formula gives huge speeds and the balance breaks down. Geostrophic balance is a middle- and high-latitude idea."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "NOAA National Weather Service, JetStream online school for weather: Wind: the geostrophic wind"
+      },
+      {
+        "name": "Wallace and Hobbs, Atmospheric Science: An Introductory Survey, 2nd ed., chapter 7 (atmospheric dynamics: the geostrophic wind)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

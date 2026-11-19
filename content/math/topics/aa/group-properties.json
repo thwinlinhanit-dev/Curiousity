@@ -1,0 +1,124 @@
+{
+  "id": "aa.group-properties",
+  "slug": "group-properties",
+  "ladder": "math",
+  "course": "aa",
+  "unit": "groups",
+  "title": "First Proofs: Uniqueness, Cancellation and Inverses",
+  "short": "From the axioms alone: the identity and inverses are unique, ab = ac gives b = c, and (ab)⁻¹ = b⁻¹a⁻¹.",
+  "trouble": "Students write (ab)⁻¹ = a⁻¹b⁻¹, which holds only when a and b commute, or cancel on opposite sides: ab = ca does not give b = c.",
+  "prereqs": [
+    "aa.group-axioms",
+    "disc.direct-proof"
+  ],
+  "xp": 2,
+  "viz": [
+    "aa-cayley"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Now we prove things from the <a href=\"/math/abstract-algebra/group-axioms/\">group axioms</a> alone. Every fact in this lesson then holds in every group at once: for integers, matrices, permutations and symmetries alike. The proofs are short, and they show the habits of a good proof: name your objects, justify each equals sign by an axiom or an earlier result, and end exactly at the claim."
+      },
+      {
+        "t": "h",
+        "text": "The identity and inverses are unique"
+      },
+      {
+        "t": "why",
+        "html": "<b>Theorem.</b> A group has exactly one identity, and each element has exactly one inverse.<br><b>Proof.</b> Suppose $e$ and $e'$ are both identities. Then $e = ee'$ (because $e'$ is an identity) and $ee' = e'$ (because $e$ is an identity), so $e = e'$.<br>Suppose $b$ and $c$ are both inverses of $a$. Then $$b = be = b(ac) = (ba)c = ec = c,$$ using in turn: $e$ is the identity, $ac = e$, associativity, $ba = e$, and the identity again. $\\square$"
+      },
+      {
+        "t": "p",
+        "html": "Because inverses are unique, to show that some $y$ <i>is</i> the inverse of $x$, it is enough to check $xy = e$. (From $xy = e$, multiply on the left by $x^{-1}$ to get $y = x^{-1}$.)"
+      },
+      {
+        "t": "h",
+        "text": "Cancellation and solving equations"
+      },
+      {
+        "t": "p",
+        "html": "<b>Theorem.</b> If $ab = ac$ then $b = c$, and if $ba = ca$ then $b = c$. The equations $ax = b$ and $xa = b$ have the unique solutions $x = a^{-1}b$ and $x = ba^{-1}$."
+      },
+      {
+        "t": "p",
+        "html": "<b>Proof of left cancellation.</b> Multiply $ab = ac$ on the left by $a^{-1}$: $a^{-1}(ab) = a^{-1}(ac)$. By associativity $(a^{-1}a)b = (a^{-1}a)c$, so $eb = ec$ and $b = c$. $\\square$ A consequence you can see: in a Cayley table, each row and each column contains every element exactly once."
+      },
+      {
+        "t": "h",
+        "text": "The inverse of a product"
+      },
+      {
+        "t": "p",
+        "html": "<b>Theorem.</b> $(ab)^{-1} = b^{-1}a^{-1}$, and $(a^{-1})^{-1} = a$.<br><b>Proof.</b> By associativity, $(ab)(b^{-1}a^{-1}) = a(bb^{-1})a^{-1} = aea^{-1} = aa^{-1} = e$, so $b^{-1}a^{-1}$ is the inverse of $ab$. And $a^{-1}a = e$ says $a$ is the inverse of $a^{-1}$. $\\square$ Think of socks and shoes: you put on socks, then shoes, and take them off in the reverse order."
+      },
+      {
+        "t": "ex",
+        "title": "Socks and shoes with matrices",
+        "q": "In the group of $2 \\times 2$ integer matrices with determinant $1$, let $A = \\begin{pmatrix} 1 & 1 \\\\ 0 & 1 \\end{pmatrix}$ and $B = \\begin{pmatrix} 1 & 0 \\\\ 1 & 1 \\end{pmatrix}$. Find $(AB)^{-1}$.",
+        "steps": [
+          "$A^{-1} = \\begin{pmatrix} 1 & -1 \\\\ 0 & 1 \\end{pmatrix}$ and $B^{-1} = \\begin{pmatrix} 1 & 0 \\\\ -1 & 1 \\end{pmatrix}$.",
+          "$(AB)^{-1} = B^{-1}A^{-1} = \\begin{pmatrix} 1 & -1 \\\\ -1 & 2 \\end{pmatrix}$.",
+          "Check: $AB = \\begin{pmatrix} 2 & 1 \\\\ 1 & 1 \\end{pmatrix}$, and $\\begin{pmatrix} 2 & 1 \\\\ 1 & 1 \\end{pmatrix}\\begin{pmatrix} 1 & -1 \\\\ -1 & 2 \\end{pmatrix} = I$.",
+          "The other order, $A^{-1}B^{-1} = \\begin{pmatrix} 2 & -1 \\\\ -1 & 1 \\end{pmatrix}$, is the inverse of $BA$, not of $AB$."
+        ],
+        "a": "$\\begin{pmatrix} 1 & -1 \\\\ -1 & 2 \\end{pmatrix}$."
+      },
+      {
+        "t": "ex",
+        "title": "A short proof",
+        "q": "Prove: if $x^{2} = e$ for every $x$ in a group $G$, then $G$ is abelian.",
+        "steps": [
+          "Let $a, b \\in G$. Since $x^{2} = e$ means $x = x^{-1}$, every element is its own inverse.",
+          "So $ab = (ab)^{-1}$, because $ab$ is an element too.",
+          "$(ab)^{-1} = b^{-1}a^{-1} = ba$.",
+          "Therefore $ab = ba$. $\\square$"
+        ],
+        "a": "$ab = (ab)^{-1} = b^{-1}a^{-1} = ba$."
+      },
+      {
+        "t": "viz",
+        "name": "aa-cayley",
+        "opts": {
+          "group": "S3",
+          "sel": [
+            "(1 2)",
+            "(1 3)"
+          ],
+          "modes": [
+            "product",
+            "inverse"
+          ],
+          "task": "Tap the cell for $(1\\;2)(1\\;3)$, then the one for $(1\\;3)(1\\;2)$."
+        },
+        "cap": "The Cayley table of $S_{3}$, the six rearrangements of $\\{1, 2, 3\\}$ (a later lesson explains the notation). Cancellation is why every row and column contains each element once. The two products you tapped differ: this group is not abelian, so the order in $(ab)^{-1} = b^{-1}a^{-1}$ matters."
+      },
+      {
+        "t": "mistake",
+        "html": "Writing $(ab)^{-1} = a^{-1}b^{-1}$. That would need $ba^{-1} = a^{-1}b$, which is only true when $a$ and $b$ commute; the matrix example shows it failing. Another slip: cancelling on opposite sides. From $ab = ca$ you can only conclude $c = aba^{-1}$, not $b = c$. To check a proof, ask of each equals sign: <i>which axiom, applied on which side?</i>"
+      },
+      {
+        "t": "key",
+        "html": "From the axioms alone: the identity and inverses are unique, you may cancel on the same side ($ab = ac \\Rightarrow b = c$), $ax = b$ has the unique solution $x = a^{-1}b$, and $(ab)^{-1} = b^{-1}a^{-1}$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Thomas W. Judson, Abstract Algebra: Theory and Applications (open textbook), chapter 3, Groups (section 3.2, Basic Properties of Groups)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.703 Modern Algebra (Spring 2013), lecture 1 and 2, groups and their basic properties"
+      },
+      {
+        "name": "John A. Beachy and William D. Blair, Abstract Algebra, online study guide (Northern Illinois University), section 3.1"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,94 @@
+{
+  "id": "micro.excise-tax",
+  "slug": "excise-tax",
+  "ladder": "economics",
+  "course": "micro",
+  "unit": "surplus-policy",
+  "title": "Per-Unit Taxes",
+  "short": "A tax drives a wedge between the price buyers pay and the price sellers keep, raising revenue and causing a deadweight loss.",
+  "trouble": "Students expect the market price to rise by the full amount of the tax, or compute tax revenue with the quantity from before the tax.",
+  "prereqs": [
+    "micro.deadweight-loss",
+    "micro.supply-shifters"
+  ],
+  "xp": 2,
+  "viz": [
+    "ec-intervention"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A per-unit tax (an <b>excise tax</b>) works like a supply shifter (<a href=\"/economics/microeconomics/supply-shifters/\">What Shifts Supply</a>): sellers now need more per unit to be willing to sell. The result is a smaller market, a gain for the government and a deadweight loss (<a href=\"/economics/microeconomics/deadweight-loss/\">Total Surplus and Deadweight Loss</a>)."
+      },
+      {
+        "t": "key",
+        "html": "A tax of $t$ per unit drives a <b>wedge</b> between the price buyers pay, $P_b$, and the price sellers keep, $P_s$: $P_b - P_s = t$. The quantity falls to $Q_t$, where buyers' quantity at $P_b$ equals sellers' quantity at $P_s$. <b>Tax revenue</b> $= t \\times Q_t$. <b>Deadweight loss</b> $= \\tfrac{1}{2} \\times t \\times (Q^* - Q_t)$."
+      },
+      {
+        "t": "why",
+        "html": "Collected from sellers, the tax means a seller who needed \\$4 to sell a unit now needs \\$4 plus the tax: the supply curve shifts up by $t$. The new crossing with demand gives the buyers' price and quantity; sellers keep that price minus $t$. Revenue is a rectangle of height $t$ and width $Q_t$, money that moves from buyers and sellers to the government. The units between $Q_t$ and $Q^*$ would have been worth more to buyers than they cost sellers, but the tax stops them: that triangle is lost."
+      },
+      {
+        "t": "viz",
+        "name": "ec-intervention",
+        "opts": {
+          "demand": {
+            "a": 20,
+            "b": 2
+          },
+          "supply": {
+            "c": -4,
+            "d": 2
+          },
+          "mode": "tax",
+          "level": 3,
+          "money": true
+        },
+        "cap": "A \\$3 tax: buyers pay \\$7.50, sellers keep \\$4.50, 5 units are sold, revenue is \\$15 and the deadweight loss is \\$4.50. Slide the tax to see the triangle grow."
+      },
+      {
+        "t": "ex",
+        "title": "A \\$3 tax",
+        "q": "$Q_d = 20 - 2P$ and $Q_s = -4 + 2P$. A \\$3 per-unit tax is collected from sellers. Find $P_b$, $P_s$, the quantity, the revenue and the deadweight loss.",
+        "steps": [
+          "Sellers keep $P_b - 3$: set $20 - 2P_b = -4 + 2(P_b - 3)$.",
+          "$20 - 2P_b = -10 + 2P_b$, so $30 = 4P_b$ and $P_b = 7.5$; $P_s = 4.5$.",
+          "$Q_t = 20 - 2(7.5) = 5$ (down from 8).",
+          "Revenue $= \\$3 \\times 5 = \\$15$. $DWL = \\tfrac{1}{2} \\times 3 \\times (8 - 5) = \\$4.50$."
+        ],
+        "a": "$P_b = \\$7.50$, $P_s = \\$4.50$, $Q = 5$, revenue \\$15, DWL \\$4.50."
+      },
+      {
+        "t": "ex",
+        "title": "Collected from buyers instead",
+        "q": "Suppose the same \\$3 tax is collected from buyers at the register. What changes?",
+        "steps": [
+          "Now demand shifts down by \\$3: buyers will pay sellers at most their old willingness minus the tax.",
+          "Solve $20 - 2(P_s + 3) = -4 + 2P_s$: $14 - 2P_s = -4 + 2P_s$, so $P_s = 4.5$ and buyers pay $4.5 + 3 = 7.5$ in total."
+        ],
+        "a": "Nothing that matters: the same \\$7.50, \\$4.50 and 5 units."
+      },
+      {
+        "t": "mistake",
+        "html": "Expecting the price to rise by the full tax, or computing revenue with the old quantity. Here the buyers' price rose by \\$1.50, not \\$3, and revenue is $3 \\times 5$, not $3 \\times 8 = \\$24$. Check: $P_b - P_s$ must equal the tax, and both prices must give the same new quantity."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, 5.3 Elasticity and Pricing"
+      },
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, 3.5 Demand, Supply, and Efficiency"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.01 Principles of Microeconomics (scope and sequence)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

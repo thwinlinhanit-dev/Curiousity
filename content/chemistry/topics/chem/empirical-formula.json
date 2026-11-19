@@ -1,0 +1,97 @@
+{
+  "id": "chem.empirical-formula",
+  "slug": "empirical-formula",
+  "ladder": "chemistry",
+  "course": "chem",
+  "unit": "mole",
+  "title": "Empirical Formulas",
+  "short": "Turn masses into moles, then into the simplest whole-number ratio.",
+  "trouble": "Students round a ratio such as 1 : 1.5 to 1 : 2 instead of doubling it to 2 : 3, or use the mass ratio as if it were the mole ratio.",
+  "prereqs": [
+    "chem.percent-composition",
+    "chem.mass-mole-conversions",
+    "g6.equivalent-ratios"
+  ],
+  "xp": 3,
+  "viz": [
+    "ratiotable"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "When chemists make or discover a new compound, one of the first measurements is how much of each element it contains. <a href=\"/chemistry/chemistry/percent-composition/\">Percent Composition</a> worked forward from a formula to percents. Here we work backward, from masses to the formula, using <a href=\"/chemistry/chemistry/mass-mole-conversions/\">Grams, Moles and Particles</a> and <a href=\"/math/grade-6/equivalent-ratios/\">Equivalent Ratios and Ratio Tables</a>."
+      },
+      {
+        "t": "key",
+        "html": "The <b>empirical formula</b> gives the simplest whole-number ratio of atoms. <b>1.</b> Take a 100 g sample, so each percent becomes grams. <b>2.</b> Convert each mass to moles. <b>3.</b> Divide every mole value by the smallest. <b>4.</b> If the results are not all whole numbers, multiply them all by the same small number (×2 for 1.5, ×3 for 1.33 or 1.67, ×4 for 1.25)."
+      },
+      {
+        "t": "why",
+        "html": "Subscripts count atoms, and moles count atoms, so the formula is the ratio of <b>moles</b>, not of grams. Grams can't be compared directly because the atoms have different masses: 70 g of iron is far fewer atoms than 30 g of oxygen would suggest. Dividing by the smallest makes one element 1. A value like 1.5 is a real ratio (3 : 2), not rounding noise, so you scale up rather than round."
+      },
+      {
+        "t": "viz",
+        "name": "ratiotable",
+        "opts": {
+          "a": 2,
+          "b": 3,
+          "names": [
+            "Fe",
+            "O"
+          ],
+          "snap": "half",
+          "pins": [
+            1
+          ],
+          "task": {
+            "a": 1
+          }
+        },
+        "cap": "Iron and oxygen atoms in the ratio 2 : 3. Move the marker to 1 Fe and read the O: 1.5. A ratio of 1 : 1.5 is the same as 2 : 3, so double everything."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Iron oxide",
+        "q": "A compound is 69.94% iron and 30.06% oxygen by mass. Find its empirical formula. (Fe 55.85, O 16.00)",
+        "steps": [
+          "In 100 g: 69.94 g Fe and 30.06 g O.",
+          "Moles: Fe $\\dfrac{69.94}{55.85} = 1.252$; O $\\dfrac{30.06}{16.00} = 1.879$.",
+          "Divide by the smaller (1.252): Fe 1, O 1.500.",
+          "1.5 is not whole: multiply both by 2. Fe 2, O 3."
+        ],
+        "a": "$\\mathrm{Fe_2O_3}$"
+      },
+      {
+        "t": "ex",
+        "title": "A hydrocarbon",
+        "q": "A compound is 81.68% carbon and 18.32% hydrogen. Find its empirical formula. (C 12.01, H 1.01)",
+        "steps": [
+          "Moles in 100 g: C $\\dfrac{81.68}{12.01} = 6.801$; H $\\dfrac{18.32}{1.01} = 18.14$.",
+          "Divide by 6.801: C 1, H 2.667.",
+          "2.667 is $2\\tfrac{2}{3}$: multiply by 3. C 3, H 8.00."
+        ],
+        "a": "$\\mathrm{C_3H_8}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Rounding a ratio such as 1 : 1.5 to 1 : 2 instead of doubling it to 2 : 3, or using the mass ratio as if it were the mole ratio. Only round values that are within about 0.1 of a whole number. If you see .5, .33, .67 or .25, multiply. And always convert grams to moles before comparing."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 3.2 Determining Empirical and Molecular Formulas"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

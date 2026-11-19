@@ -1,0 +1,105 @@
+{
+  "id": "imicro.indifference-curves",
+  "slug": "indifference-curves",
+  "ladder": "economics",
+  "course": "imicro",
+  "unit": "preferences",
+  "title": "Indifference Curves",
+  "short": "All bundles a person likes equally lie on one curve; when more is better, the curves slope down and never cross.",
+  "trouble": "Students draw indifference curves that cross, or read a higher curve as having more of every good rather than as being preferred.",
+  "prereqs": [
+    "imicro.preferences",
+    "alg1.graphs-as-solutions"
+  ],
+  "xp": 1,
+  "viz": [
+    "ec-choice"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Once a person can rank bundles, we can draw the ranking. Fix one bundle and collect every bundle she likes exactly as much. That set is an <b>indifference curve</b>. If her preferences come from a utility function $U(x, y)$, the curve is the graph of the equation $U(x, y) = k$, just as in <a href=\"/math/algebra-1/graphs-as-solutions/\">A Graph Shows Every Solution</a>: every point on it satisfies the equation, and no other point does."
+      },
+      {
+        "t": "key",
+        "html": "An indifference curve is a set of bundles with equal utility, $U(x, y) = k$. Under the usual assumptions the curves slope down, never cross, fill the whole graph (one through every bundle), and curves farther from the origin are preferred."
+      },
+      {
+        "t": "why",
+        "html": "<b>Down-sloping:</b> start at a bundle and add some $x$. Under more-is-better that is an improvement, so to get back to the same level you must take some $y$ away. <b>Never crossing:</b> suppose two curves met at bundle C. Pick A on the higher curve and B on the lower one. Then $A \\sim C$ and $C \\sim B$, so by transitivity $A \\sim B$, even though A sits on the higher curve and is strictly preferred. That contradiction means curves of one person cannot cross. <b>One through every bundle:</b> completeness lets every bundle be compared with every other, so each one has its own set of equally good bundles."
+      },
+      {
+        "t": "viz",
+        "name": "ec-choice",
+        "opts": {
+          "income": 120,
+          "prices": [
+            6,
+            6
+          ],
+          "utility": {
+            "type": "cobbdouglas",
+            "a": 0.5,
+            "b": 0.5
+          },
+          "levels": [
+            4,
+            6,
+            8
+          ],
+          "bundle": [
+            4,
+            9
+          ],
+          "task": "Drag the bundle along one curve, then off it. Its utility stays the same only on the curve."
+        },
+        "cap": "Indifference curves of $U = \\sqrt{xy}$, at the levels 4, 6 and 8. The bundle (4, 9) has $\\sqrt{36} = 6$, so it lies on the middle curve, and so do (6, 6) and (9, 4)."
+      },
+      {
+        "t": "ex",
+        "title": "Finding a point on a curve",
+        "q": "With $U(x, y) = xy$, bundle (4, 9) is on one of Grace's indifference curves. Which bundle with $x = 6$ is on the same curve?",
+        "steps": [
+          "The curve through (4, 9) has $U = 4 \\cdot 9 = 36$.",
+          "Every bundle on it satisfies $xy = 36$. At $x = 6$: $6y = 36$, so $y = 6$.",
+          "Check: $U(6, 6) = 36$. Grace gave up 3 units of $y$ for 2 more units of $x$ and is exactly as well off."
+        ],
+        "a": "$(6, 6)$."
+      },
+      {
+        "t": "ex",
+        "title": "A higher curve without more of everything",
+        "q": "With $U(x, y) = xy$, compare $A = (2, 10)$ and $B = (5, 5)$.",
+        "steps": [
+          "$U(A) = 20$ and $U(B) = 25$.",
+          "B is on a higher indifference curve, so B is preferred, even though it has less $y$ than A.",
+          "\"Higher\" means preferred, not \"more of every good.\" The balanced bundle wins here because this person values variety (her curves bow toward the origin)."
+        ],
+        "a": "B is on the higher curve."
+      },
+      {
+        "t": "mistake",
+        "html": "Drawing indifference curves that cross, or reading a higher curve as \"more of every good.\" Curves of one person never cross (the transitivity argument above). And a bundle on a higher curve can contain less of one good, as B did. Check: to compare two bundles, compute their utilities (or find their curves). Only when one bundle has more of both goods can you rank them without the curves."
+      },
+      {
+        "t": "p",
+        "html": "Indifference curves are the consumer's side of the picture. In <a href=\"/economics/intermediate-microeconomics/budget-set/\">Budget Sets</a> we add what she can afford, and in <a href=\"/economics/intermediate-microeconomics/optimal-choice/\">The Best Affordable Bundle</a> we put the two together."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, appendix B Indifference Curves"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.04 Intermediate Microeconomic Theory (course scope and lecture topics)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

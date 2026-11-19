@@ -1,0 +1,111 @@
+{
+  "id": "stat.influential-points",
+  "slug": "influential-points",
+  "ladder": "math",
+  "course": "stat",
+  "unit": "regression",
+  "title": "Outliers and Influential Points",
+  "short": "Some points pull the line toward themselves.",
+  "trouble": "",
+  "prereqs": [
+    "stat.r-squared"
+  ],
+  "xp": 2,
+  "viz": [
+    "scatter"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The least-squares line minimizes squared residuals, and squaring makes big misses very costly. So a single unusual point can drag the whole line toward itself. This lesson sorts unusual points by what they do to the <a href=\"/math/probability-and-statistics/least-squares-line/\">line</a> and to <a href=\"/math/probability-and-statistics/r-squared/\">$r$ and $r^2$</a>."
+      },
+      {
+        "t": "key",
+        "html": "An <b>outlier</b> has a large residual (it is far from the line in the y-direction). A <b>high-leverage</b> point has an x-value far from the others. A point is <b>influential</b> if removing it changes the slope (or the whole line) a lot. High-leverage points that do not follow the pattern are usually the influential ones."
+      },
+      {
+        "t": "why",
+        "html": "Think of the line as a seesaw balanced at $(\\bar{x}, \\bar{y})$. A point near the middle of the x-values pushes near the pivot: it can lift the line a little but cannot tilt it much. A point far out in x pushes at the end of a long lever, so if it sits off the pattern it can tilt the line a lot. A far-out point that lies right on the pattern agrees with the line, so it changes little (it even makes $r$ look stronger)."
+      },
+      {
+        "t": "viz",
+        "name": "scatter",
+        "opts": {
+          "points": [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              12,
+              2
+            ]
+          ],
+          "fit": true,
+          "residuals": false,
+          "xlabel": "x",
+          "ylabel": "y"
+        },
+        "cap": "Drag the point at x = 12 up and down. It swings the line around. Then drag it to x = 3 and do the same: the line barely tilts."
+      },
+      {
+        "t": "ex",
+        "title": "Measuring influence",
+        "q": "Five points $(1, 2), (2, 4), (3, 5), (4, 4), (5, 6)$ have least-squares slope $0.8$ and $r \\approx 0.85$. Adding $P = (12, 2)$ changes the slope to about $-0.11$ and $r$ to about $-0.27$. Describe P.",
+        "steps": [
+          "P has x = 12, far beyond the other x-values (1 to 5): high leverage.",
+          "It falls far below where the pattern predicts ($1.8 + 0.8 \\cdot 12 = 11.4$).",
+          "Including it flips the slope from positive to slightly negative: it is very influential."
+        ],
+        "a": "P is a high-leverage, influential point."
+      },
+      {
+        "t": "ex",
+        "title": "An outlier with little influence",
+        "q": "Instead, add $(3, 12)$ to the five points. The slope stays $0.8$ and $r$ drops to about $0.33$. Describe this point.",
+        "steps": [
+          "Its x-value, 3, is the mean of the x-values: no leverage at all.",
+          "It is far above the line: a large residual, so it is an outlier.",
+          "It lifts the line (the intercept rises from 1.8 to 3.1) but cannot tilt it, and it weakens $r$ a lot."
+        ],
+        "a": "An outlier, but not influential on the slope."
+      },
+      {
+        "t": "note",
+        "html": "Report what you find with and without an influential point, and look for a reason: a typing error, a different kind of individual, or a real but rare case. Do not quietly delete points you dislike."
+      },
+      {
+        "t": "mistake",
+        "html": "Assuming every outlier is influential, or that a point is harmless because its residual is small. An influential point pulls the line toward itself, so its own residual can look small. Check by refitting without the point and comparing slopes."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Introductory Statistics 2e, section 12.6 Outliers"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

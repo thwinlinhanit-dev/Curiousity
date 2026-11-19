@@ -1,0 +1,153 @@
+{
+  "id": "from-scratch.electromagnet",
+  "slug": "electromagnet",
+  "ladder": "inventors",
+  "course": "from-scratch",
+  "unit": "power",
+  "title": "A Nail Electromagnet, Like Sturgeon's and Henry's",
+  "short": "Current in a coil makes a magnet; more turns and more current make it stronger, and an iron core multiplies it.",
+  "trouble": "Builders leave the enamel on magnet-wire ends, so no current flows, or hold the connection so long the wire gets hot.",
+  "prereqs": [
+    "from-scratch.lemon-battery"
+  ],
+  "xp": 2,
+  "viz": [
+    "fs-magnet"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In 1820 the Danish scientist Hans Christian Ørsted noticed that a wire carrying current made a nearby compass needle swing. Electricity could make magnetism. Inventors raced to use it."
+      },
+      {
+        "t": "p",
+        "html": "In England, William Sturgeon bent an iron bar into a horseshoe, varnished it so bare wire would not short against the iron, and wound about 16 loose turns of bare copper wire around it. Shown in 1825, his little magnet weighed 7 ounces and lifted 9 pounds when the current flowed, and dropped it the instant the current stopped."
+      },
+      {
+        "t": "p",
+        "html": "In Albany, New York, a teacher named Joseph Henry had a better idea. He insulated his wire, wrapping it in silk, so the turns could touch without shorting. Now he could wind hundreds of turns, layer upon layer. Around 1831 he built a magnet for Yale College that held up more than 2,000 pounds. Henry's work also made the long-distance telegraph possible."
+      },
+      {
+        "t": "key",
+        "html": "Current in a wire makes a magnetic field around it. Wind the wire into a <b>coil</b> and the fields of all the turns add up. The strength grows with the <b>ampere-turns</b>: current × number of turns. Put <b>iron</b> inside, and the iron becomes a magnet too, making the field hundreds of times stronger, until the iron <b>saturates</b> and can take no more."
+      },
+      {
+        "t": "p",
+        "html": "For a long coil with no iron, the field inside is $B = \\mu_0 \\dfrac{N I}{L}$, where $N$ is the number of turns, $I$ the current, $L$ the coil's length and $\\mu_0 = 4\\pi \\times 10^{-7}$ T·m/A. Double the turns or double the current and the field doubles."
+      },
+      {
+        "t": "viz",
+        "name": "fs-magnet",
+        "opts": {
+          "turns": 40
+        },
+        "cap": "Change the turns, the cells and the core. Watch the current, the heat and how many paper clips it lifts."
+      },
+      {
+        "t": "why",
+        "html": "Why does the wire get hot? A meter or two of thin copper wire has only a fraction of an ohm of resistance. Connected straight to a battery, it is almost a short circuit. Several amps can flow, limited mostly by the battery itself, and a few watts of heat go into the wire. That is also why Henry's insulated, many-turn coils were the real breakthrough: lots of turns give strength without needing an enormous current."
+      },
+      {
+        "t": "h",
+        "text": "Let's think it through"
+      },
+      {
+        "t": "ex",
+        "title": "Which is stronger?",
+        "q": "Magnet A: 30 turns carrying 2 A. Magnet B: 60 turns carrying 1 A. Same nail.",
+        "steps": [
+          "A: $30 \\times 2 = 60$ ampere-turns.",
+          "B: $60 \\times 1 = 60$ ampere-turns."
+        ],
+        "a": "About the same strength."
+      },
+      {
+        "t": "ex",
+        "title": "How much wire?",
+        "q": "A nail coil is about 0.8 cm across. How much wire do 50 turns use?",
+        "steps": [
+          "One turn is a circumference: $\\pi \\times 0.8 \\approx 2.5$ cm.",
+          "$50 \\times 2.5 = 125$ cm."
+        ],
+        "a": "About 1.25 m, plus some extra at each end for connecting."
+      },
+      {
+        "t": "mistake",
+        "html": "Leaving the enamel on magnet wire. Magnet wire looks bare but has a thin, clear coat of insulation. Sand the last 2 cm of each end until the bright copper shows, or no current can flow."
+      },
+      {
+        "t": "h",
+        "text": "Build it: a nail electromagnet"
+      },
+      {
+        "t": "note",
+        "html": "<div class=\"fs-parts\"><b>Parts (about \\$8 to \\$15)</b><ul><li>A large steel or iron nail, about 8 to 10 cm long (under \\$1). A steel bolt works too.</li><li>About 2 to 3 meters of thin magnet wire (enameled copper, about 26 gauge; a small spool is about \\$5 to \\$8) or thin plastic-insulated hookup wire</li><li>1 or 2 AA alkaline batteries and a battery holder with wire leads (about \\$2)</li><li>A pile of small steel paper clips or staples</li><li>Fine sandpaper, and tape</li><li>Optional: a compass, and a simple push-button or slide switch (about \\$1)</li></ul></div>"
+      },
+      {
+        "t": "note",
+        "html": "<div class=\"fs-steps\"><b>Step by step</b><ol><li>Leave about 20 cm of wire free, then wind the wire tightly around the nail, turn beside turn, all in the same direction. Count as you go: 30 turns to start.</li><li>Tape the coil so it does not unwind, leaving 20 cm free at the other end.</li><li>Sand the last 2 cm of each wire end until the copper is bright (skip this for plastic-insulated wire; a grown-up strips 2 cm of plastic instead).</li><li>Connect one end to the battery holder. Touch the other end to the other terminal only while you test, or wire in a switch.</li><li>Hold the nail's point over the paper clips, connect, and count how many it lifts. Disconnect. Do the clips drop?</li><li>Add 20 more turns, in the same direction, over the top of the first layer. Test again and compare. Then try two cells.</li></ol></div>"
+      },
+      {
+        "t": "h",
+        "text": "What to look for"
+      },
+      {
+        "t": "list",
+        "items": [
+          "The nail picks up clips only while the current flows, and lets them go when you disconnect. (A steel nail may keep a little magnetism afterward.)",
+          "More turns lift more clips. Two cells lift more than one.",
+          "A compass near the nail swings to point at one end. Turn the battery around and the compass points the other way: the poles swap."
+        ]
+      },
+      {
+        "t": "h",
+        "text": "Troubleshooting"
+      },
+      {
+        "t": "list",
+        "items": [
+          "<b>Nothing happens?</b> The enamel is still on the wire ends, or a clip is loose. Sand again and check every connection.",
+          "<b>Weak?</b> Make sure every turn goes the same way around the nail. Turns wound backward cancel out the others.",
+          "<b>Battery dies fast?</b> It will: this circuit draws a lot. Connect only while testing."
+        ]
+      },
+      {
+        "t": "h",
+        "text": "Iterate like Henry"
+      },
+      {
+        "t": "list",
+        "items": [
+          "Make a table of turns (20, 40, 60, 80) against clips lifted. Is it a straight line? Where does it start to level off?",
+          "Compare cores: an iron nail, a steel bolt, an aluminum rod, a pencil, a plastic straw. Which ones help?",
+          "Henry learned to arrange coils for different jobs: many turns of thin wire for long lines, a few turns of thick wire for heavy lifting. Try two coils on one nail, wired one after the other, then side by side."
+        ]
+      },
+      {
+        "t": "note",
+        "html": "<div class=\"fs-safe\"><b>Safety</b><ul><li>Use only ordinary AA or AAA batteries (alkaline). Never use a wall outlet, a plug-in power supply or a lithium rechargeable pack for these projects.</li><li>A bare wire straight across a battery is a short circuit. The wire and battery get hot within seconds, so make the connection only briefly, then let go. If anything feels hot, disconnect it and let it cool.</li><li>Use a switch or touch the wire on and off, rather than taping it to the battery and leaving it.</li><li>A grown-up does the cutting and stripping of wire, and any work with a craft knife.</li><li>Wire ends can be sharp. Point them away from eyes.</li></ul></div>"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Grokipedia, William Sturgeon",
+        "url": "https://grokipedia.com/page/William_Sturgeon"
+      },
+      {
+        "name": "Smithsonian Institution Archives, Joseph Henry constructs large electromagnet for Yale College",
+        "url": "https://siarchives.si.edu/collections/siris_sic_12432"
+      },
+      {
+        "name": "Grokipedia, History of the battery",
+        "url": "https://grokipedia.com/page/History_of_the_battery"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,105 @@
+{
+  "id": "macro.money-creation",
+  "slug": "money-creation",
+  "ladder": "economics",
+  "course": "macro",
+  "unit": "money",
+  "title": "How Banks Create Money",
+  "short": "When banks lend out excess reserves, new deposits appear; the simple money multiplier is 1 divided by the reserve ratio.",
+  "trouble": "Students think a cash deposit by itself raises the money supply (it only changes the form of money held), and apply the multiplier to the whole deposit instead of to the excess reserves.",
+  "prereqs": [
+    "macro.bank-balance-sheets"
+  ],
+  "xp": 3,
+  "viz": [
+    "ec-tacct",
+    "ec-multiplier"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A bank with <a href=\"/economics/macroeconomics/bank-balance-sheets/\">excess reserves</a> can lend them. When it does, something surprising happens: new money appears."
+      },
+      {
+        "t": "key",
+        "html": "When banks lend out excess reserves, the loans are spent and deposited in other banks, creating new deposits. In the simple model, each new dollar of excess reserves can support up to $\\dfrac{1}{rr}$ dollars of new money, where $rr$ is the reserve ratio: the <b>money multiplier</b> is $\\dfrac{1}{rr}$. A single bank can lend only its own excess reserves."
+      },
+      {
+        "t": "why",
+        "html": "Say $rr = 10\\%$ and someone deposits \\$1,000 of cash. The money supply has not changed yet: \\$1,000 of currency became \\$1,000 of deposits. The bank keeps \\$100 and lends \\$900. The borrower spends it; the seller deposits \\$900 in Bank B. Now there is \\$1,900 of deposits, while \\$900 of the original cash circulates as reserves: \\$900 of money is new. Bank B keeps \\$90 and lends \\$810, and so on. The new money adds up to $$900 + 810 + 729 + \\cdots = \\dfrac{900}{0.10} = 9{,}000.$$"
+      },
+      {
+        "t": "viz",
+        "name": "ec-tacct",
+        "opts": {
+          "rr": 0.1,
+          "steps": [
+            "deposit",
+            "lend",
+            "spend"
+          ],
+          "chain": 3
+        },
+        "cap": "Step through deposit → lend → spend a few times. The ribbon tracks the money supply: it grows only when a bank lends."
+      },
+      {
+        "t": "viz",
+        "name": "ec-multiplier",
+        "opts": {
+          "mode": "bank",
+          "first": 900,
+          "rr": 0.1,
+          "rounds": 15
+        },
+        "cap": "The same chain as rounds of new deposits: \\$900 of excess reserves, 10% kept at each bank, adding up toward \\$9,000."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A cash deposit",
+        "q": "The reserve requirement is 20% and \\$5,000 of cash is deposited. What is the most the money supply can grow?",
+        "steps": [
+          "Excess reserves created: $5{,}000 \\times (1 - 0.20) = 4{,}000$.",
+          "Multiplier $= \\dfrac{1}{0.20} = 5$; new money $= 4{,}000 \\times 5 = 20{,}000$ dollars.",
+          "Total deposits can grow by $5{,}000 \\times 5 = 25{,}000$, but \\$5,000 of that was already money (as cash)."
+        ],
+        "a": "\\$20,000"
+      },
+      {
+        "t": "ex",
+        "title": "The central bank buys bonds from banks",
+        "q": "$rr = 10\\%$. The central bank buys \\$2 million of bonds from banks, paying with new reserves.",
+        "steps": [
+          "No deposits change, so all \\$2 million are excess reserves.",
+          "Maximum new money $= 2{,}000{,}000 \\times 10 = 20{,}000{,}000$ dollars."
+        ],
+        "a": "\\$20 million"
+      },
+      {
+        "t": "p",
+        "html": "In real economies, the change is smaller than the maximum, because people hold some cash and banks may keep extra reserves. And since 2020, with reserve requirements at zero and reserves plentiful, U.S. bank lending is limited mainly by banks' capital, regulation and the demand for loans. The simple multiplier is still a useful model of how lending creates deposits."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking a cash deposit by itself raises the money supply (it only changes the form of money held), and applying the multiplier to the whole deposit instead of to the excess reserves. Check: start from the excess reserves, then multiply."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Macroeconomics 3e, 13.4 How Banks Create Money"
+      },
+      {
+        "name": "College Board, AP Macroeconomics Course and Exam Description (topic list)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

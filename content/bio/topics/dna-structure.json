@@ -1,0 +1,101 @@
+{
+  "id": "hsbio.dna-structure",
+  "slug": "dna-structure",
+  "ladder": "bio",
+  "course": "hsbio",
+  "unit": "dna",
+  "title": "The Structure of DNA",
+  "short": "DNA is a double helix of two antiparallel strands. Sugars and phosphates form the backbone; bases pair in the middle, A with T and G with C, by hydrogen bonds.",
+  "trouble": "Students pair A with G or think equal amounts of all four bases is the rule. A pairs with T and G with C, so %A = %T and %G = %C, but A and G can differ (Chargaff's rule).",
+  "prereqs": [
+    "hsbio.nucleic-acids",
+    "hsbio.chromosomes"
+  ],
+  "xp": 2,
+  "viz": [
+    "bi-dna"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/biology/high-school-biology/nucleic-acids/\">Nucleic Acids</a> you met the nucleotide: a sugar, a phosphate and a base. DNA is two long chains of nucleotides wound around each other. Its shape explains both how it stores information and how it is copied."
+      },
+      {
+        "t": "viz",
+        "name": "bi-dna",
+        "opts": {
+          "mode": "helix",
+          "seq": "ATGCGTACCA"
+        },
+        "cap": "The double helix: two sugar-phosphate backbones on the outside, base pairs like the rungs of a twisted ladder."
+      },
+      {
+        "t": "key",
+        "html": "DNA is a <b>double helix</b>. Sugars and phosphates form each strand's backbone. The bases point inward and pair: <b>A with T</b> (two hydrogen bonds) and <b>G with C</b> (three). The two strands run in opposite directions: they are <b>antiparallel</b>, one 5′→3′ and the other 3′→5′."
+      },
+      {
+        "t": "why",
+        "html": "Why only A–T and G–C? A and G are large bases with two rings; T and C are small, with one ring. A large base always pairs with a small one, so the ladder has the same width all along. Of the large-small pairs, only A–T and G–C line up their hydrogen bonds. So each strand fixes the other: if you know one, you know its partner."
+      },
+      {
+        "t": "viz",
+        "name": "bi-dna",
+        "opts": {
+          "seq": "GATTACA",
+          "mode": "fill"
+        },
+        "cap": "Build the partner strand: tap each box to pick the base that pairs with the one above."
+      },
+      {
+        "t": "ex",
+        "title": "Writing the partner strand",
+        "q": "One strand reads 5′-ATGCCA-3′. Write the partner strand lined up under it.",
+        "steps": [
+          "Pair base by base: A→T, T→A, G→C, C→G, C→G, A→T.",
+          "The partner runs the other way, so label its ends 3′ and 5′."
+        ],
+        "a": "3′-TACGGT-5′"
+      },
+      {
+        "t": "ex",
+        "title": "Chargaff's rule",
+        "q": "In a sample of DNA, 30% of the bases are A. What percent are G?",
+        "steps": [
+          "Every A pairs with a T, so T is also 30%.",
+          "A + T = 60%, which leaves 40% for G + C.",
+          "G pairs with C, so they are equal: 40% ÷ 2."
+        ],
+        "a": "20% G (and 20% C)."
+      },
+      {
+        "t": "p",
+        "html": "The pairing rule came from two lines of evidence. Erwin Chargaff measured the bases in DNA from many species and found that A always matched T and G matched C, though the A amount differed from species to species. X-ray pictures of DNA taken by Rosalind Franklin showed a helix. In 1953 James Watson and Francis Crick put these facts together in the double-helix model."
+      },
+      {
+        "t": "mistake",
+        "html": "Two common slips: pairing A with G, and thinking all four bases must be 25%. The rule is A = T and G = C. A and G can be quite different: human DNA has more A–T pairs than G–C pairs. Check your answer: %A + %T + %G + %C must make 100."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Concepts of Biology, 9.1 The Structure of DNA"
+      },
+      {
+        "name": "OpenStax, Biology 2e, 14.2 DNA Structure and Sequencing"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-LS1-1: From Molecules to Organisms: Structures and Processes"
+      },
+      {
+        "name": "Grokipedia, Chargaff's rules",
+        "url": "https://grokipedia.com/page/Chargaff%27s_rules"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

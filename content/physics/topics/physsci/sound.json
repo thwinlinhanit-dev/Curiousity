@@ -1,0 +1,121 @@
+{
+  "id": "physsci.sound",
+  "slug": "sound",
+  "ladder": "physics",
+  "course": "physsci",
+  "unit": "waves",
+  "title": "Sound: Pitch and Loudness",
+  "short": "Pitch comes from frequency and loudness from amplitude, and sound needs a medium to travel.",
+  "trouble": "Students link pitch to loudness, thinking louder sounds are higher.",
+  "prereqs": [
+    "physsci.wave-types",
+    "physsci.wave-speed"
+  ],
+  "xp": 1,
+  "viz": [
+    "ph-wave"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Sound is a <a href=\"/physics/physical-science/wave-types/\">longitudinal wave</a> of squeezes and stretches in the air (or in water, or a solid). Like any wave it has a frequency and an amplitude, and those are exactly what your ears hear as <b>pitch</b> and <b>loudness</b>. It travels at a <a href=\"/physics/physical-science/wave-speed/\">speed</a> set by the material."
+      },
+      {
+        "t": "key",
+        "html": "<b>Pitch</b> comes from frequency: higher frequency, higher note. <b>Loudness</b> comes from amplitude: bigger squeezes, louder sound. Sound needs a <b>medium</b>; it travels at about 343 m/s in air at 20 °C and cannot cross empty space."
+      },
+      {
+        "t": "why",
+        "html": "Your eardrum is pushed in and out by the air's squeezes and stretches. Faster squeezes (more per second) make it vibrate faster, which your brain hears as a higher note. Bigger squeezes push it harder, which you hear as louder. Pitch and loudness are separate dials: a whisper can be high and a drum can be loud and low."
+      },
+      {
+        "t": "viz",
+        "name": "ph-wave",
+        "opts": {
+          "mode": "travel",
+          "f": 0.6,
+          "v": 1.2,
+          "A": 0.4,
+          "long": true,
+          "graphs": [
+            "history"
+          ]
+        },
+        "cap": "A sound wave in the air, slowed way down (real sounds vibrate tens to thousands of times a second). Raise the frequency for a higher pitch (the history graph wiggles faster); raise the amplitude for a louder sound (the wiggles get taller)."
+      },
+      {
+        "t": "ex",
+        "title": "Two notes",
+        "q": "Note A is 440 Hz with a small amplitude. Note B is 220 Hz with a large amplitude. Which is higher, and which is louder?",
+        "steps": [
+          "Pitch follows frequency: A (440 Hz) is higher.",
+          "Loudness follows amplitude: B is louder."
+        ],
+        "a": "A is higher; B is louder"
+      },
+      {
+        "t": "ex",
+        "title": "How far was the lightning?",
+        "q": "You see a lightning flash and hear the thunder 6 s later. About how far away was the strike?",
+        "steps": [
+          "The light arrives almost instantly; the sound takes 6 s.",
+          "$d = v\\,t = 343\\,\\mathrm{m/s} \\times 6\\,\\mathrm{s} \\approx 2{,}060$ m, about 2 km.",
+          "Rule of thumb: about 3 seconds per kilometer."
+        ],
+        "a": "About 2 km"
+      },
+      {
+        "t": "mistake",
+        "html": "Linking pitch to loudness, as if louder sounds were higher. Turning up the volume on a song doesn't change its notes. Check: pitch goes with frequency, loudness with amplitude."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Medium",
+          "Speed of sound (about)"
+        ],
+        "rows": [
+          [
+            "Air at 20 °C",
+            "343 m/s"
+          ],
+          [
+            "Water",
+            "1,500 m/s"
+          ],
+          [
+            "Steel",
+            "more than 5,000 m/s"
+          ],
+          [
+            "Empty space",
+            "none: sound can't travel"
+          ]
+        ],
+        "cap": "Sound travels faster in liquids and solids, where the particles are closer together and more tightly linked."
+      },
+      {
+        "t": "note",
+        "html": "People hear frequencies from about 20 Hz to 20,000 Hz. Dogs hear higher; bats and dolphins use sounds far above our range."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e, 17.1 Sound"
+      },
+      {
+        "name": "OpenStax, College Physics 2e, 17.2 Speed of Sound, Frequency, and Wavelength"
+      },
+      {
+        "name": "Next Generation Science Standards, MS-PS4-1"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

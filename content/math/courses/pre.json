@@ -1,0 +1,939 @@
+{
+  "key": "pre",
+  "ladder": "math",
+  "title": "Precalculus and Trigonometry",
+  "short": "Precalculus",
+  "after": [
+    "alg2"
+  ],
+  "units": [
+    {
+      "key": "angles-unit-circle",
+      "title": "Angles and the Unit Circle",
+      "blurb": "Measure angles in radians and define sine and cosine for every angle."
+    },
+    {
+      "key": "trig-graphs",
+      "title": "Graphs of Trig Functions",
+      "blurb": "Graph sinusoids, model periodic change, and define the inverse trig functions."
+    },
+    {
+      "key": "identities-equations",
+      "title": "Identities and Equations",
+      "blurb": "Prove identities, use sum and multiple-angle formulas, and solve trig equations."
+    },
+    {
+      "key": "triangles-vectors",
+      "title": "Oblique Triangles and Vectors",
+      "blurb": "Handle the ambiguous case, then use vectors for forces and motion."
+    },
+    {
+      "key": "polar-complex",
+      "title": "Polar Coordinates and Complex Numbers",
+      "blurb": "Describe points and curves with polar coordinates, and multiply complex numbers as rotations."
+    },
+    {
+      "key": "parametric",
+      "title": "Parametric Equations",
+      "blurb": "Describe motion with a parameter and eliminate it to find the path."
+    },
+    {
+      "key": "conics",
+      "title": "Conic Sections",
+      "blurb": "Write and graph parabolas, ellipses and hyperbolas, and identify a conic from its equation."
+    },
+    {
+      "key": "matrices",
+      "title": "Matrices",
+      "blurb": "Add, multiply and invert matrices, and use them to solve systems and transform the plane."
+    },
+    {
+      "key": "analysis",
+      "title": "Toward Calculus",
+      "blurb": "Decompose fractions, prove by induction, and meet difference quotients and limits."
+    }
+  ],
+  "topics": [
+    {
+      "id": "pre.standard-position",
+      "slug": "standard-position",
+      "course": "pre",
+      "unit": "angles-unit-circle",
+      "title": "Angles in Standard Position",
+      "short": "Draw angles from the positive x-axis, including negative and coterminal angles.",
+      "prereqs": [
+        "geo.angles-bisectors",
+        "geo.solve-right-triangles"
+      ],
+      "viz": [
+        "unitcircle",
+        "angle"
+      ]
+    },
+    {
+      "id": "pre.radian-measure",
+      "slug": "radian-measure",
+      "course": "pre",
+      "unit": "angles-unit-circle",
+      "title": "Radian Measure",
+      "short": "One radian is the angle whose arc equals the radius.",
+      "prereqs": [
+        "pre.standard-position",
+        "geo.arc-length"
+      ],
+      "viz": [
+        "unitcircle",
+        "circlepi"
+      ]
+    },
+    {
+      "id": "pre.degrees-radians",
+      "slug": "degrees-radians",
+      "course": "pre",
+      "unit": "angles-unit-circle",
+      "title": "Converting Degrees and Radians",
+      "short": "Multiply by π/180 or 180/π.",
+      "prereqs": [
+        "pre.radian-measure"
+      ],
+      "viz": [
+        "unitcircle"
+      ]
+    },
+    {
+      "id": "pre.arc-sector-radians",
+      "slug": "arc-sector-radians",
+      "course": "pre",
+      "unit": "angles-unit-circle",
+      "title": "Arc Length, Sector Area and Angular Speed",
+      "short": "s = rθ and A = ½r²θ when θ is in radians.",
+      "prereqs": [
+        "pre.degrees-radians",
+        "geo.sector-area"
+      ],
+      "viz": [
+        "unitcircle"
+      ]
+    },
+    {
+      "id": "pre.unit-circle-sine-cosine",
+      "slug": "unit-circle-sine-cosine",
+      "course": "pre",
+      "unit": "angles-unit-circle",
+      "title": "Sine and Cosine on the Unit Circle",
+      "short": "(cos θ, sin θ) is the point at angle θ on the unit circle.",
+      "prereqs": [
+        "pre.degrees-radians"
+      ],
+      "viz": [
+        "unitcircle"
+      ]
+    },
+    {
+      "id": "pre.special-angles",
+      "slug": "special-angles",
+      "course": "pre",
+      "unit": "angles-unit-circle",
+      "title": "Exact Values at Special Angles",
+      "short": "Use 30-60-90 and 45-45-90 triangles to find exact values.",
+      "prereqs": [
+        "pre.unit-circle-sine-cosine",
+        "geo.special-right-triangles"
+      ],
+      "viz": [
+        "unitcircle"
+      ]
+    },
+    {
+      "id": "pre.reference-angles",
+      "slug": "reference-angles",
+      "course": "pre",
+      "unit": "angles-unit-circle",
+      "title": "Reference Angles and Signs by Quadrant",
+      "short": "Find values in any quadrant from a reference angle and a sign.",
+      "prereqs": [
+        "pre.special-angles"
+      ],
+      "viz": [
+        "unitcircle"
+      ]
+    },
+    {
+      "id": "pre.symmetry-periodicity",
+      "slug": "symmetry-periodicity",
+      "course": "pre",
+      "unit": "angles-unit-circle",
+      "title": "Symmetry and Periodicity",
+      "short": "sin(−θ) = −sin θ, cos(−θ) = cos θ, and both repeat every 2π.",
+      "prereqs": [
+        "pre.reference-angles"
+      ],
+      "viz": [
+        "unitcircle",
+        "trigwave"
+      ]
+    },
+    {
+      "id": "pre.six-trig-functions",
+      "slug": "six-trig-functions",
+      "course": "pre",
+      "unit": "angles-unit-circle",
+      "title": "All Six Trig Functions",
+      "short": "Tangent, cotangent, secant and cosecant from sine and cosine.",
+      "prereqs": [
+        "pre.reference-angles"
+      ],
+      "viz": [
+        "unitcircle"
+      ]
+    },
+    {
+      "id": "pre.pythagorean-identity",
+      "slug": "pythagorean-identity",
+      "course": "pre",
+      "unit": "angles-unit-circle",
+      "title": "The Pythagorean Identity",
+      "short": "sin²θ + cos²θ = 1, and finding one value from another.",
+      "prereqs": [
+        "pre.six-trig-functions"
+      ],
+      "viz": [
+        "unitcircle"
+      ]
+    },
+    {
+      "id": "pre.sine-cosine-graphs",
+      "slug": "sine-cosine-graphs",
+      "course": "pre",
+      "unit": "trig-graphs",
+      "title": "Graphs of Sine and Cosine",
+      "short": "Unroll the unit circle into a wave.",
+      "prereqs": [
+        "pre.symmetry-periodicity"
+      ],
+      "viz": [
+        "trigwave",
+        "unitcircle"
+      ]
+    },
+    {
+      "id": "pre.amplitude-period",
+      "slug": "amplitude-period",
+      "course": "pre",
+      "unit": "trig-graphs",
+      "title": "Amplitude and Period",
+      "short": "In y = A sin(Bx), the amplitude is |A| and the period is 2π/B.",
+      "prereqs": [
+        "pre.sine-cosine-graphs",
+        "alg2.combined-transformations"
+      ],
+      "viz": [
+        "trigwave",
+        "transformfn"
+      ]
+    },
+    {
+      "id": "pre.phase-shift-midline",
+      "slug": "phase-shift-midline",
+      "course": "pre",
+      "unit": "trig-graphs",
+      "title": "Phase Shift and Midline",
+      "short": "y = A sin(B(x − h)) + k shifts by h and centers on y = k.",
+      "prereqs": [
+        "pre.amplitude-period"
+      ],
+      "viz": [
+        "trigwave"
+      ]
+    },
+    {
+      "id": "pre.sinusoidal-models",
+      "slug": "sinusoidal-models",
+      "course": "pre",
+      "unit": "trig-graphs",
+      "title": "Modeling with Sinusoids",
+      "short": "Fit a sine curve to tides, daylight and Ferris wheels.",
+      "prereqs": [
+        "pre.phase-shift-midline"
+      ],
+      "viz": [
+        "trigwave"
+      ]
+    },
+    {
+      "id": "pre.tangent-reciprocal-graphs",
+      "slug": "tangent-reciprocal-graphs",
+      "course": "pre",
+      "unit": "trig-graphs",
+      "title": "Graphs of Tangent, Secant and Cosecant",
+      "short": "Find asymptotes where cosine or sine is zero.",
+      "prereqs": [
+        "pre.sine-cosine-graphs",
+        "pre.six-trig-functions"
+      ],
+      "viz": [
+        "trigwave"
+      ]
+    },
+    {
+      "id": "pre.damped-oscillation",
+      "slug": "damped-oscillation",
+      "course": "pre",
+      "unit": "trig-graphs",
+      "title": "Damped Oscillation",
+      "short": "Multiply a sinusoid by a decaying exponential.",
+      "prereqs": [
+        "pre.phase-shift-midline",
+        "alg2.exponential-graphs"
+      ],
+      "viz": [
+        "trigwave",
+        "springmass"
+      ]
+    },
+    {
+      "id": "pre.inverse-trig",
+      "slug": "inverse-trig",
+      "course": "pre",
+      "unit": "trig-graphs",
+      "title": "Inverse Trig Functions",
+      "short": "Restrict sine, cosine and tangent so they have inverses.",
+      "prereqs": [
+        "pre.sine-cosine-graphs",
+        "alg2.restrict-domain-inverse"
+      ],
+      "viz": [
+        "unitcircle"
+      ]
+    },
+    {
+      "id": "pre.inverse-trig-compositions",
+      "slug": "inverse-trig-compositions",
+      "course": "pre",
+      "unit": "trig-graphs",
+      "title": "Compositions with Inverse Trig",
+      "short": "Evaluate expressions like sin⁻¹(sin 5π/6) and cos(tan⁻¹ x).",
+      "prereqs": [
+        "pre.inverse-trig"
+      ],
+      "viz": [
+        "unitcircle"
+      ]
+    },
+    {
+      "id": "pre.fundamental-identities",
+      "slug": "fundamental-identities",
+      "course": "pre",
+      "unit": "identities-equations",
+      "title": "Reciprocal, Quotient and Pythagorean Identities",
+      "short": "Rewrite trig expressions in terms of sine and cosine.",
+      "prereqs": [
+        "pre.pythagorean-identity"
+      ],
+      "viz": [
+        "unitcircle"
+      ]
+    },
+    {
+      "id": "pre.verify-identities",
+      "slug": "verify-identities",
+      "course": "pre",
+      "unit": "identities-equations",
+      "title": "Verifying Identities",
+      "short": "Transform one side until it matches the other.",
+      "prereqs": [
+        "pre.fundamental-identities",
+        "alg2.add-subtract-rational"
+      ],
+      "viz": []
+    },
+    {
+      "id": "pre.sum-difference-formulas",
+      "slug": "sum-difference-formulas",
+      "course": "pre",
+      "unit": "identities-equations",
+      "title": "Sum and Difference Formulas",
+      "short": "sin(a + b) = sin a cos b + cos a sin b.",
+      "prereqs": [
+        "pre.fundamental-identities",
+        "pre.special-angles"
+      ],
+      "viz": [
+        "unitcircle"
+      ]
+    },
+    {
+      "id": "pre.double-angle",
+      "slug": "double-angle",
+      "course": "pre",
+      "unit": "identities-equations",
+      "title": "Double-Angle Formulas",
+      "short": "sin 2θ = 2 sin θ cos θ and three forms of cos 2θ.",
+      "prereqs": [
+        "pre.sum-difference-formulas"
+      ],
+      "viz": [
+        "unitcircle"
+      ]
+    },
+    {
+      "id": "pre.half-angle",
+      "slug": "half-angle",
+      "course": "pre",
+      "unit": "identities-equations",
+      "title": "Half-Angle and Power-Reducing Formulas",
+      "short": "Rewrite sin²θ and cos²θ in terms of cos 2θ.",
+      "prereqs": [
+        "pre.double-angle"
+      ],
+      "viz": []
+    },
+    {
+      "id": "pre.solve-trig-basic",
+      "slug": "solve-trig-basic",
+      "course": "pre",
+      "unit": "identities-equations",
+      "title": "Solving Basic Trig Equations",
+      "short": "Find every solution in one period, then all solutions.",
+      "prereqs": [
+        "pre.inverse-trig",
+        "pre.reference-angles"
+      ],
+      "viz": [
+        "unitcircle",
+        "trigwave"
+      ]
+    },
+    {
+      "id": "pre.solve-trig-advanced",
+      "slug": "solve-trig-advanced",
+      "course": "pre",
+      "unit": "identities-equations",
+      "title": "Trig Equations with Factoring and Multiple Angles",
+      "short": "Factor, use identities, and handle 2θ and 3θ.",
+      "prereqs": [
+        "pre.solve-trig-basic",
+        "pre.double-angle"
+      ],
+      "viz": [
+        "unitcircle",
+        "trigwave"
+      ]
+    },
+    {
+      "id": "pre.ambiguous-case",
+      "slug": "ambiguous-case",
+      "course": "pre",
+      "unit": "triangles-vectors",
+      "title": "The Ambiguous Case",
+      "short": "With two sides and a non-included angle there may be 0, 1 or 2 triangles.",
+      "prereqs": [
+        "geo.law-of-sines",
+        "pre.inverse-trig"
+      ],
+      "viz": [
+        "geoboard",
+        "angle"
+      ]
+    },
+    {
+      "id": "pre.triangle-applications",
+      "slug": "triangle-applications",
+      "course": "pre",
+      "unit": "triangles-vectors",
+      "title": "Bearings and Triangle Applications",
+      "short": "Solve navigation and surveying problems with the laws of sines and cosines.",
+      "prereqs": [
+        "pre.ambiguous-case",
+        "geo.law-of-cosines"
+      ],
+      "viz": [
+        "angle"
+      ]
+    },
+    {
+      "id": "pre.herons-formula",
+      "slug": "herons-formula",
+      "course": "pre",
+      "unit": "triangles-vectors",
+      "title": "Heron's Formula",
+      "short": "Find a triangle's area from its three sides.",
+      "prereqs": [
+        "pre.triangle-applications"
+      ],
+      "viz": [
+        "geoboard"
+      ]
+    },
+    {
+      "id": "pre.vectors-intro",
+      "slug": "vectors-intro",
+      "course": "pre",
+      "unit": "triangles-vectors",
+      "title": "Vectors",
+      "short": "A vector has a size and a direction.",
+      "prereqs": [
+        "pre.unit-circle-sine-cosine"
+      ],
+      "viz": [
+        "vectors2d"
+      ]
+    },
+    {
+      "id": "pre.vector-components",
+      "slug": "vector-components",
+      "course": "pre",
+      "unit": "triangles-vectors",
+      "title": "Vector Components and Magnitude",
+      "short": "v = ⟨|v| cos θ, |v| sin θ⟩.",
+      "prereqs": [
+        "pre.vectors-intro",
+        "geo.distance-midpoint"
+      ],
+      "viz": [
+        "vectors2d"
+      ]
+    },
+    {
+      "id": "pre.vector-operations",
+      "slug": "vector-operations",
+      "course": "pre",
+      "unit": "triangles-vectors",
+      "title": "Adding and Scaling Vectors",
+      "short": "Add tip to tail; scaling stretches or flips.",
+      "prereqs": [
+        "pre.vector-components"
+      ],
+      "viz": [
+        "vectors2d"
+      ]
+    },
+    {
+      "id": "pre.vector-applications",
+      "slug": "vector-applications",
+      "course": "pre",
+      "unit": "triangles-vectors",
+      "title": "Velocity and Force Problems",
+      "short": "Find a resultant for wind, current and forces.",
+      "prereqs": [
+        "pre.vector-operations",
+        "pre.triangle-applications"
+      ],
+      "viz": [
+        "vectors2d"
+      ]
+    },
+    {
+      "id": "pre.dot-product",
+      "slug": "dot-product",
+      "course": "pre",
+      "unit": "triangles-vectors",
+      "title": "The Dot Product and the Angle Between Vectors",
+      "short": "u · v = |u||v| cos θ.",
+      "prereqs": [
+        "pre.vector-operations"
+      ],
+      "viz": [
+        "vectors2d"
+      ]
+    },
+    {
+      "id": "pre.vector-projection",
+      "slug": "vector-projection",
+      "course": "pre",
+      "unit": "triangles-vectors",
+      "title": "Vector Projections and Work",
+      "short": "Split a vector into parts along and across another vector.",
+      "prereqs": [
+        "pre.dot-product"
+      ],
+      "viz": [
+        "vectors2d"
+      ]
+    },
+    {
+      "id": "pre.polar-coordinates",
+      "slug": "polar-coordinates",
+      "course": "pre",
+      "unit": "polar-complex",
+      "title": "Polar Coordinates",
+      "short": "Locate points by distance r and angle θ.",
+      "prereqs": [
+        "pre.unit-circle-sine-cosine"
+      ],
+      "viz": [
+        "polar"
+      ]
+    },
+    {
+      "id": "pre.polar-rectangular",
+      "slug": "polar-rectangular",
+      "course": "pre",
+      "unit": "polar-complex",
+      "title": "Converting Polar and Rectangular",
+      "short": "x = r cos θ, y = r sin θ, and back again.",
+      "prereqs": [
+        "pre.polar-coordinates",
+        "pre.vector-components"
+      ],
+      "viz": [
+        "polar"
+      ]
+    },
+    {
+      "id": "pre.polar-graphs",
+      "slug": "polar-graphs",
+      "course": "pre",
+      "unit": "polar-complex",
+      "title": "Graphs of Polar Equations",
+      "short": "Sketch circles, cardioids, roses and limaçons.",
+      "prereqs": [
+        "pre.polar-rectangular"
+      ],
+      "viz": [
+        "polar"
+      ]
+    },
+    {
+      "id": "pre.complex-plane",
+      "slug": "complex-plane",
+      "course": "pre",
+      "unit": "polar-complex",
+      "title": "Complex Numbers in the Plane",
+      "short": "Plot a + bi and find its modulus.",
+      "prereqs": [
+        "alg2.complex-arithmetic",
+        "geo.distance-midpoint"
+      ],
+      "viz": [
+        "complexplane"
+      ]
+    },
+    {
+      "id": "pre.complex-polar-form",
+      "slug": "complex-polar-form",
+      "course": "pre",
+      "unit": "polar-complex",
+      "title": "Polar Form of a Complex Number",
+      "short": "z = r(cos θ + i sin θ).",
+      "prereqs": [
+        "pre.complex-plane",
+        "pre.polar-rectangular"
+      ],
+      "viz": [
+        "complexplane",
+        "polar"
+      ]
+    },
+    {
+      "id": "pre.de-moivre",
+      "slug": "de-moivre",
+      "course": "pre",
+      "unit": "polar-complex",
+      "title": "Multiplying, Powers and De Moivre's Theorem",
+      "short": "Multiply moduli and add angles; zⁿ = rⁿ(cos nθ + i sin nθ).",
+      "prereqs": [
+        "pre.complex-polar-form"
+      ],
+      "viz": [
+        "complexplane"
+      ]
+    },
+    {
+      "id": "pre.complex-roots",
+      "slug": "complex-roots",
+      "course": "pre",
+      "unit": "polar-complex",
+      "title": "nth Roots of Complex Numbers",
+      "short": "A nonzero number has n nth roots spread evenly around a circle.",
+      "prereqs": [
+        "pre.de-moivre"
+      ],
+      "viz": [
+        "complexplane"
+      ]
+    },
+    {
+      "id": "pre.parametric-equations",
+      "slug": "parametric-equations",
+      "course": "pre",
+      "unit": "parametric",
+      "title": "Parametric Equations",
+      "short": "x and y both depend on a third variable t.",
+      "prereqs": [
+        "alg2.parent-functions",
+        "pre.unit-circle-sine-cosine"
+      ],
+      "viz": [
+        "graph"
+      ]
+    },
+    {
+      "id": "pre.eliminate-parameter",
+      "slug": "eliminate-parameter",
+      "course": "pre",
+      "unit": "parametric",
+      "title": "Eliminating the Parameter",
+      "short": "Solve for t or use an identity to get one equation in x and y.",
+      "prereqs": [
+        "pre.parametric-equations",
+        "pre.pythagorean-identity"
+      ],
+      "viz": [
+        "graph"
+      ]
+    },
+    {
+      "id": "pre.projectile-motion",
+      "slug": "projectile-motion",
+      "course": "pre",
+      "unit": "parametric",
+      "title": "Projectile Motion with Parametric Equations",
+      "short": "Model a launched object with x = v₀t cos θ and y = h + v₀t sin θ − 16t².",
+      "prereqs": [
+        "pre.eliminate-parameter",
+        "pre.vector-components"
+      ],
+      "viz": [
+        "graph",
+        "vectors2d"
+      ]
+    },
+    {
+      "id": "pre.parabolas-conics",
+      "slug": "parabolas-conics",
+      "course": "pre",
+      "unit": "conics",
+      "title": "Parabolas as Conics",
+      "short": "Use focus, directrix and vertex for parabolas opening any way.",
+      "prereqs": [
+        "geo.parabola-focus-directrix"
+      ],
+      "viz": [
+        "parabola"
+      ]
+    },
+    {
+      "id": "pre.ellipses",
+      "slug": "ellipses",
+      "course": "pre",
+      "unit": "conics",
+      "title": "Ellipses",
+      "short": "The sum of distances to two foci is constant; c² = a² − b².",
+      "prereqs": [
+        "geo.circle-completing-square"
+      ],
+      "viz": [
+        "graph"
+      ]
+    },
+    {
+      "id": "pre.hyperbolas",
+      "slug": "hyperbolas",
+      "course": "pre",
+      "unit": "conics",
+      "title": "Hyperbolas",
+      "short": "The difference of distances to two foci is constant; c² = a² + b².",
+      "prereqs": [
+        "pre.ellipses"
+      ],
+      "viz": [
+        "graph"
+      ]
+    },
+    {
+      "id": "pre.classify-conics",
+      "slug": "classify-conics",
+      "course": "pre",
+      "unit": "conics",
+      "title": "Identifying Conics from Equations",
+      "short": "Complete the square to name and graph any conic.",
+      "prereqs": [
+        "pre.hyperbolas",
+        "pre.parabolas-conics"
+      ],
+      "viz": [
+        "graph"
+      ]
+    },
+    {
+      "id": "pre.matrix-basics",
+      "slug": "matrix-basics",
+      "course": "pre",
+      "unit": "matrices",
+      "title": "Matrices and Matrix Arithmetic",
+      "short": "Add matrices and multiply them by numbers.",
+      "prereqs": [
+        "alg2.three-variable-systems"
+      ],
+      "viz": []
+    },
+    {
+      "id": "pre.matrix-multiplication",
+      "slug": "matrix-multiplication",
+      "course": "pre",
+      "unit": "matrices",
+      "title": "Multiplying Matrices",
+      "short": "Each entry is a row times a column.",
+      "prereqs": [
+        "pre.matrix-basics"
+      ],
+      "viz": [
+        "matrix2d"
+      ]
+    },
+    {
+      "id": "pre.gaussian-elimination",
+      "slug": "gaussian-elimination",
+      "course": "pre",
+      "unit": "matrices",
+      "title": "Solving Systems with Row Operations",
+      "short": "Write an augmented matrix and row-reduce it.",
+      "prereqs": [
+        "pre.matrix-basics"
+      ],
+      "viz": []
+    },
+    {
+      "id": "pre.determinants",
+      "slug": "determinants",
+      "course": "pre",
+      "unit": "matrices",
+      "title": "Determinants of 2 × 2 and 3 × 3 Matrices",
+      "short": "ad − bc, and expansion by minors.",
+      "prereqs": [
+        "pre.matrix-multiplication"
+      ],
+      "viz": [
+        "matrix2d"
+      ]
+    },
+    {
+      "id": "pre.matrix-inverse",
+      "slug": "matrix-inverse",
+      "course": "pre",
+      "unit": "matrices",
+      "title": "Inverse Matrices",
+      "short": "A⁻¹ exists exactly when det A ≠ 0.",
+      "prereqs": [
+        "pre.determinants"
+      ],
+      "viz": [
+        "matrix2d"
+      ]
+    },
+    {
+      "id": "pre.matrix-equations",
+      "slug": "matrix-equations",
+      "course": "pre",
+      "unit": "matrices",
+      "title": "Solving Systems with Inverse Matrices",
+      "short": "Write AX = B and multiply by A⁻¹ on the left.",
+      "prereqs": [
+        "pre.matrix-inverse",
+        "pre.gaussian-elimination"
+      ],
+      "viz": []
+    },
+    {
+      "id": "pre.matrix-transformations",
+      "slug": "matrix-transformations",
+      "course": "pre",
+      "unit": "matrices",
+      "title": "Matrices as Transformations",
+      "short": "A 2 × 2 matrix moves the plane, and |det| scales area.",
+      "prereqs": [
+        "pre.matrix-multiplication",
+        "pre.determinants"
+      ],
+      "viz": [
+        "matrix2d"
+      ]
+    },
+    {
+      "id": "pre.partial-fractions",
+      "slug": "partial-fractions",
+      "course": "pre",
+      "unit": "analysis",
+      "title": "Partial Fraction Decomposition",
+      "short": "Split a rational expression into simpler fractions.",
+      "prereqs": [
+        "alg2.add-subtract-rational",
+        "alg2.three-variable-systems"
+      ],
+      "viz": []
+    },
+    {
+      "id": "pre.induction",
+      "slug": "induction",
+      "course": "pre",
+      "unit": "analysis",
+      "title": "Proof by Induction",
+      "short": "Prove a base case, then show each case implies the next.",
+      "prereqs": [
+        "alg2.sigma-notation"
+      ],
+      "viz": [
+        "sequence"
+      ]
+    },
+    {
+      "id": "pre.logistic-models",
+      "slug": "logistic-models",
+      "course": "pre",
+      "unit": "analysis",
+      "title": "Logistic Growth",
+      "short": "Growth that slows near a carrying capacity.",
+      "prereqs": [
+        "alg2.exponential-log-models"
+      ],
+      "viz": [
+        "exponential"
+      ]
+    },
+    {
+      "id": "pre.difference-quotient",
+      "slug": "difference-quotient",
+      "course": "pre",
+      "unit": "analysis",
+      "title": "The Difference Quotient",
+      "short": "[f(x + h) − f(x)]/h is the slope of a secant line.",
+      "prereqs": [
+        "alg2.function-composition",
+        "alg1.average-rate-of-change"
+      ],
+      "viz": [
+        "secant"
+      ]
+    },
+    {
+      "id": "pre.limits-intro",
+      "slug": "limits-intro",
+      "course": "pre",
+      "unit": "analysis",
+      "title": "The Idea of a Limit",
+      "short": "A limit is the value a function approaches, not necessarily its value.",
+      "prereqs": [
+        "pre.difference-quotient",
+        "alg2.graph-rational-functions"
+      ],
+      "viz": [
+        "limit"
+      ]
+    },
+    {
+      "id": "pre.limits-graphs-tables",
+      "slug": "limits-graphs-tables",
+      "course": "pre",
+      "unit": "analysis",
+      "title": "Estimating Limits from Graphs and Tables",
+      "short": "Read limits from the left and the right.",
+      "prereqs": [
+        "pre.limits-intro"
+      ],
+      "viz": [
+        "limit"
+      ]
+    }
+  ]
+}

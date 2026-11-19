@@ -1,0 +1,115 @@
+{
+  "id": "design.readable-contrast",
+  "slug": "readable-contrast",
+  "ladder": "art",
+  "course": "design",
+  "unit": "analysis",
+  "title": "Readable Color: Contrast for Text",
+  "short": "Text needs enough value contrast with its background to read easily; web guidelines ask for a contrast ratio of at least 4.5 to 1 for normal text.",
+  "trouble": "People pair colors that differ in hue but are close in value, like red text on green, which is hard to read.",
+  "prereqs": [
+    "design.contrast-principle",
+    "design.hue-value-saturation"
+  ],
+  "xp": 2,
+  "viz": [
+    "ar-wheel",
+    "ar-value"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Design is not only for paintings. Every sign, poster, app and web page asks one practical color question: <b>can people read the text?</b> The answer depends mostly on <b>value contrast</b> between the letters and the background, not on how different the hues are."
+      },
+      {
+        "t": "viz",
+        "name": "design-text",
+        "opts": {
+          "pairs": [
+            [
+              "#111111",
+              "#ffffff"
+            ],
+            [
+              "#767676",
+              "#ffffff"
+            ],
+            [
+              "#e03127",
+              "#3aa64a"
+            ],
+            [
+              "#fde13a",
+              "#ffffff"
+            ]
+          ],
+          "text": "Can you read this?"
+        },
+        "cap": "Four text samples with their contrast ratios."
+      },
+      {
+        "t": "key",
+        "html": "Readable text needs enough <b>value contrast</b>. The web's accessibility guidelines (WCAG) ask for a contrast ratio of at least <b>4.5 to 1</b> for normal text and <b>3 to 1</b> for large text."
+      },
+      {
+        "t": "why",
+        "html": "The ratio compares how much light each color gives off, its <b>relative luminance</b> $L$, from 0 for black to 1 for white. With $L_1$ the lighter color and $L_2$ the darker one: $$\\text{ratio} = \\frac{L_1 + 0.05}{L_2 + 0.05}$$ It runs from 1 to 1 (no contrast) up to 21 to 1 (black on white). \"Large text\" means about 18 point, or 14 point bold."
+      },
+      {
+        "t": "ex",
+        "title": "Does gray text pass?",
+        "q": "White has $L = 1$. The gray #767676 has $L \\approx 0.181$. Does gray text on white pass the 4.5 to 1 guideline for normal text?",
+        "steps": [
+          "$L_1 = 1$ (white, the lighter one); $L_2 = 0.181$.",
+          "Ratio $= \\frac{1 + 0.05}{0.181 + 0.05} = \\frac{1.05}{0.231} \\approx 4.5$, about 4.54 to 1.",
+          "4.54 is at least 4.5, so it passes, just barely."
+        ],
+        "a": "Yes, at about 4.54 to 1."
+      },
+      {
+        "t": "mistake",
+        "html": "Pairing colors that differ in hue but are close in value, like red text on green. The painter's red and green here are about 1.5 to 1: hard for anyone to read, and harder still for the roughly 1 in 12 men who have red-green color blindness. Check the ratio with a contrast tool, or view the design in gray: if the text fades, so will readers' patience."
+      },
+      {
+        "t": "viz",
+        "name": "design-swatches",
+        "opts": {
+          "colors": [
+            "#e03127",
+            "#3aa64a"
+          ],
+          "names": [
+            "red",
+            "green"
+          ],
+          "gray": true
+        },
+        "cap": "The same red and green, shown in gray: nearly the same value."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "W3C, Understanding WCAG 2.2, Success Criterion 1.4.3 Contrast (Minimum)",
+        "url": "https://w3.org/WAI/WCAG22/Understanding/contrast-minimum.html"
+      },
+      {
+        "name": "Grokipedia: Contrast ratio",
+        "url": "https://grokipedia.com/page/Contrast_ratio"
+      },
+      {
+        "name": "Grokipedia: Web Content Accessibility Guidelines",
+        "url": "https://grokipedia.com/page/Web_Content_Accessibility_Guidelines"
+      },
+      {
+        "name": "Grokipedia: Color blindness",
+        "url": "https://grokipedia.com/page/Color_blindness"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

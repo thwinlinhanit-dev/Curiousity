@@ -1,0 +1,118 @@
+{
+  "id": "phys1.average-velocity",
+  "slug": "average-velocity",
+  "ladder": "physics",
+  "course": "phys1",
+  "unit": "kinematics",
+  "title": "Average Velocity",
+  "short": "Average velocity is Δx/Δt, with a sign; average speed uses total distance instead.",
+  "trouble": "Students find average velocity by averaging the starting and ending speeds even when the acceleration changes.",
+  "prereqs": [
+    "phys1.position-displacement",
+    "physsci.velocity"
+  ],
+  "xp": 1,
+  "viz": [
+    "ph-motion"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/physics/physical-science/velocity/\">Velocity: Speed with a Direction</a> is speed with a direction. With positions on an axis, we can make that exact. Over a time interval $\\Delta t$, divide the <a href=\"/physics/physics-1/position-displacement/\">displacement</a> by the time."
+      },
+      {
+        "t": "key",
+        "html": "Average velocity: $v_{avg} = \\dfrac{\\Delta x}{\\Delta t}$, with a sign. Average speed: $\\dfrac{\\text{total distance}}{\\Delta t}$, never negative."
+      },
+      {
+        "t": "why",
+        "html": "The average velocity is the one steady velocity that would carry you from the same start to the same end in the same time. That is why only the displacement matters: a steady motion can't turn around, so it only \"sees\" where you began and where you finished. Average speed answers a different question: how fast, on average, you covered ground."
+      },
+      {
+        "t": "viz",
+        "name": "ph-motion",
+        "opts": {
+          "x0": 0,
+          "v0": 4,
+          "segments": [
+            {
+              "dur": 2,
+              "a": 0
+            },
+            {
+              "dur": 2,
+              "a": -4
+            },
+            {
+              "dur": 2,
+              "a": 0
+            }
+          ],
+          "graphs": [
+            "x",
+            "v"
+          ],
+          "show": [
+            "odometer"
+          ],
+          "task": "Play it through. Compare the displacement after 6 s with the distance."
+        },
+        "cap": "The cart drives right, brakes, reverses and drives left. Its average velocity uses the displacement; its average speed uses the odometer."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "One leg",
+        "q": "A toy car moves from $x = 2\\ \\text{m}$ to $x = -10\\ \\text{m}$ in $4\\ \\text{s}$. Find its average velocity.",
+        "steps": [
+          "$\\Delta x = -10 - 2 = -12\\ \\text{m}$.",
+          "$v_{avg} = \\dfrac{-12\\ \\text{m}}{4\\ \\text{s}} = -3\\ \\text{m/s}$, so it moved in the $-x$ direction at 3 m/s on average."
+        ],
+        "a": "$-3\\ \\text{m/s}$"
+      },
+      {
+        "t": "ex",
+        "title": "Velocity and speed differ",
+        "q": "You walk $40\\ \\text{m}$ east in $30\\ \\text{s}$, then $10\\ \\text{m}$ west in $10\\ \\text{s}$. Take east as $+x$.",
+        "steps": [
+          "Displacement: $+40 + (-10) = 30\\ \\text{m}$. Time: $40\\ \\text{s}$.",
+          "$v_{avg} = \\dfrac{30}{40} = 0.75\\ \\text{m/s}$ (east).",
+          "Distance: $40 + 10 = 50\\ \\text{m}$, so the average speed is $\\dfrac{50}{40} = 1.25\\ \\text{m/s}$."
+        ],
+        "a": "$v_{avg} = 0.75\\ \\text{m/s}$; average speed $1.25\\ \\text{m/s}$."
+      },
+      {
+        "t": "ex",
+        "title": "The averaging trap",
+        "q": "You drive $60\\ \\text{km}$ at $30\\ \\text{km/h}$, then $60\\ \\text{km}$ at $60\\ \\text{km/h}$. What is your average speed?",
+        "steps": [
+          "Times: $\\dfrac{60}{30} = 2\\ \\text{h}$ and $\\dfrac{60}{60} = 1\\ \\text{h}$.",
+          "Average speed $= \\dfrac{120\\ \\text{km}}{3\\ \\text{h}} = 40\\ \\text{km/h}$.",
+          "Not $45\\ \\text{km/h}$: you spent twice as long at the slow speed, so it counts twice as much."
+        ],
+        "a": "$40\\ \\text{km/h}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Averaging the starting and ending speeds, or the speeds of the legs, as if each counted equally. That only works when each speed lasts the same amount of time (or when the velocity changes at a steady rate). Safe method: always go back to the definition, total displacement (or distance) divided by total time."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Physics 2e, Section 2.3 Time, Velocity, and Speed"
+      },
+      {
+        "name": "OpenStax University Physics Volume 1, Section 3.1 Position, Displacement, and Average Velocity"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

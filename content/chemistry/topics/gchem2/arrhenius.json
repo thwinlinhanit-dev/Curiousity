@@ -1,0 +1,110 @@
+{
+  "id": "gchem2.arrhenius",
+  "slug": "arrhenius",
+  "ladder": "chemistry",
+  "course": "gchem2",
+  "unit": "kinetics",
+  "title": "The Arrhenius Equation",
+  "short": "k = Ae^(−Ea/RT), so rate constants at two temperatures reveal the activation energy.",
+  "trouble": "Students use Celsius temperatures, or put Ea in kJ/mol beside R in J/(mol·K).",
+  "prereqs": [
+    "gchem2.first-order",
+    "chem.activation-energy-catalysts",
+    "alg2.log-properties"
+  ],
+  "xp": 3,
+  "viz": [
+    "ch-maxwell"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Reactions speed up when heated, often a lot. <a href=\"/chemistry/chemistry/activation-energy-catalysts/\">Activation energy</a> explains why: only collisions with enough energy react, and heating raises the share of such collisions sharply. The Arrhenius equation turns that into a formula, and <a href=\"/math/algebra-2/log-properties/\">logarithms</a> make it easy to use."
+      },
+      {
+        "t": "key",
+        "html": "$k = Ae^{-E_a/RT}$. Taking logs, $\\ln k = \\ln A - \\dfrac{E_a}{R}\\cdot\\dfrac{1}{T}$, so a plot of $\\ln k$ against $1/T$ is a line with slope $-E_a/R$. For two temperatures,\n$$\\ln\\frac{k_2}{k_1} = -\\frac{E_a}{R}\\left(\\frac{1}{T_2} - \\frac{1}{T_1}\\right)$$\nwith $T$ in kelvins and $E_a$ in J/mol when $R = 8.314\\ \\text{J/(mol·K)}$."
+      },
+      {
+        "t": "why",
+        "html": "In a gas, the fraction of collisions with at least $E_a$ of energy is about $e^{-E_a/RT}$ (from the Maxwell–Boltzmann distribution). $A$ collects the rest: how often molecules collide and how often they meet in the right orientation. Because $T$ sits in an exponent, a small rise in temperature makes a large change in $k$. Subtract the logarithmic form at $T_1$ from the one at $T_2$ and $\\ln A$ cancels, which gives the two-point form."
+      },
+      {
+        "t": "viz",
+        "name": "ch-maxwell",
+        "opts": {
+          "x": "energy",
+          "curves": [
+            {
+              "f": "N2",
+              "T": 300
+            },
+            {
+              "f": "N2",
+              "T": 400
+            }
+          ],
+          "Ea": 10,
+          "slider": true
+        },
+        "cap": "Energy distributions at two temperatures. The shaded tail is the fraction of molecules with at least $E_a$ (set low here so the tail is visible). Raise the temperature with the slider: the tail grows much faster than the temperature does."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Activation energy from two rate constants",
+        "q": "A rate constant doubles when the temperature rises from $25\\ ^\\circ\\text{C}$ to $35\\ ^\\circ\\text{C}$. What is $E_a$?",
+        "steps": [
+          "Kelvins: $T_1 = 298\\ \\text{K}$, $T_2 = 308\\ \\text{K}$. $$\\dfrac{1}{T_2} - \\dfrac{1}{T_1} = 0.0032468 - 0.0033557 = -1.0895 \\times 10^{-4}\\ \\text{K}^{-1}$$",
+          "$\\ln 2 = -\\dfrac{E_a}{8.314}(-1.0895 \\times 10^{-4})$, so $E_a = \\dfrac{(8.314)(0.693)}{1.0895 \\times 10^{-4}}$ J/mol. That is $52\\,900\\ \\text{J/mol}$, or $52.9\\ \\text{kJ/mol}$.",
+          "This is the source of the old rule of thumb that a 10-degree rise doubles a rate near room temperature; it holds only for activation energies near 50 kJ/mol."
+        ],
+        "a": "$52.9\\ \\text{kJ/mol}$."
+      },
+      {
+        "t": "ex",
+        "title": "A rate constant at a new temperature",
+        "q": "$E_a = 75.0\\ \\text{kJ/mol}$ and $k = 2.0 \\times 10^{-3}\\ \\text{s}^{-1}$ at $300\\ \\text{K}$. Find $k$ at $320\\ \\text{K}$.",
+        "steps": [
+          "Use J/mol: $E_a = 75\\,000\\ \\text{J/mol}$. $\\dfrac{1}{320} - \\dfrac{1}{300} = -2.083 \\times 10^{-4}\\ \\text{K}^{-1}$.",
+          "$$\\ln\\dfrac{k_2}{k_1} = -\\dfrac{75\\,000}{8.314}(-2.083 \\times 10^{-4}) = 1.879$$ so $\\dfrac{k_2}{k_1} = e^{1.879} = 6.55$.",
+          "$k_2 = (6.55)(2.0 \\times 10^{-3}) = 1.3 \\times 10^{-2}\\ \\text{s}^{-1}$."
+        ],
+        "a": "$1.3 \\times 10^{-2}\\ \\text{s}^{-1}$, about 6.5 times faster for 20 degrees."
+      },
+      {
+        "t": "ex",
+        "title": "From an Arrhenius plot",
+        "q": "A plot of $\\ln k$ against $1/T$ has slope $-6.00 \\times 10^3\\ \\text{K}$. Find $E_a$.",
+        "steps": [
+          "Slope $= -E_a/R$, so $$E_a = (6.00 \\times 10^3\\ \\text{K})(8.314\\ \\text{J/(mol·K)}) = 4.99 \\times 10^4\\ \\text{J/mol}$$",
+          "That is $49.9\\ \\text{kJ/mol}$."
+        ],
+        "a": "$49.9\\ \\text{kJ/mol}$."
+      },
+      {
+        "t": "mistake",
+        "html": "Using Celsius temperatures, or putting $E_a$ in kJ/mol beside $R$ in J/(mol·K). Celsius gives wrong ratios (and division by zero at $0\\ ^\\circ\\text{C}$), and mixed units make $E_a$ off by a factor of 1000. Check: $E_a/RT$ must be a pure number, typically between 10 and 40 for reactions you can watch."
+      },
+      {
+        "t": "p",
+        "html": "Try it on the bench: in the <a href=\"/science-lab/chem-lab/\">Mixing Lab</a> you can warm a reaction and add a catalyst, and watch how much faster it goes."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 12.5 Collision Theory"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

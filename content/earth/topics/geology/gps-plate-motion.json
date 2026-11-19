@@ -1,0 +1,85 @@
+{
+  "id": "geology.gps-plate-motion",
+  "slug": "gps-plate-motion",
+  "ladder": "earth",
+  "course": "geology",
+  "unit": "plate-tectonics",
+  "title": "Measuring Plate Motion with GPS",
+  "short": "GPS stations move millimeters to centimeters a year; subtracting their velocity vectors shows how two plates move relative to each other.",
+  "trouble": "Students read each station's arrow as motion relative to its neighbor; to see whether a boundary opens or closes, subtract one station's velocity from the other's.",
+  "prereqs": [
+    "earthsci.plate-motion-rates",
+    "g8.pythagorean-theorem"
+  ],
+  "xp": 3,
+  "viz": [
+    "es-plates",
+    "vectors2d"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/earth-and-space/earth-science/plate-motion-rates/\">Plates move</a> a few centimeters a year, about as fast as fingernails grow. Magnetic stripes give average rates over millions of years. Today, GPS stations bolted to bedrock measure plate motion directly, to a fraction of a millimeter per year, every day."
+      },
+      {
+        "t": "why",
+        "html": "A GPS station's velocity is an arrow (a vector) with an east part and a north part, measured against a fixed global frame. That frame is a convenience; what matters at a plate boundary is how one side moves <b>relative to</b> the other. Relative velocity is a subtraction, done part by part: $\\vec v_{B \\text{ rel } A} = (v_{E,B} - v_{E,A},\\; v_{N,B} - v_{N,A})$. Its size comes from the <a href=\"/math/pre-algebra/pythagorean-theorem/\">Pythagorean theorem</a>, $\\sqrt{v_E^2 + v_N^2}$. And whether the boundary opens or closes depends on whether the relative velocity points away from or toward the other station."
+      },
+      {
+        "t": "key",
+        "html": "A GPS velocity has east and north parts. Subtract one station's velocity from the other's to get relative motion; use Pythagoras for its speed, and its direction along the line between them to see whether the gap opens or closes."
+      },
+      {
+        "t": "viz",
+        "name": "es-plates",
+        "opts": {
+          "mode": "gps"
+        },
+        "cap": "GPS stations on both sides of a fault. Pick a pair and compare their arrows with their difference (dashed)."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A station's speed",
+        "q": "A station moves 21 mm/yr east and 20 mm/yr north. How fast is it moving?",
+        "steps": [
+          "$\\sqrt{21^2 + 20^2} = \\sqrt{441 + 400} = \\sqrt{841} = 29\\,\\text{mm/yr}$."
+        ],
+        "a": "$29\\,\\text{mm/yr}$."
+      },
+      {
+        "t": "ex",
+        "title": "Opening or closing?",
+        "q": "Station B is 100 km east of station A. A moves 10 mm/yr east and 5 mm/yr north; B moves 30 mm/yr east and 20 mm/yr north. How does B move relative to A?",
+        "steps": [
+          "East: $30 - 10 = 20\\,\\text{mm/yr}$. North: $20 - 5 = 15\\,\\text{mm/yr}$.",
+          "Relative speed: $\\sqrt{20^2 + 15^2} = 25\\,\\text{mm/yr}$.",
+          "B lies east of A and moves 20 mm/yr farther east, so the gap opens by 20 mm/yr; the 15 mm/yr north part slides B sideways past A."
+        ],
+        "a": "$25\\,\\text{mm/yr}$: opening and sliding."
+      },
+      {
+        "t": "mistake",
+        "html": "It is natural to read each station's arrow as its motion relative to its neighbor. Two stations with big arrows pointing the same way might hardly be moving relative to each other at all. Check by subtracting: only the difference shows what the boundary between them is doing."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "USGS, This Dynamic Earth: The Story of Plate Tectonics (Kious and Tilling)"
+      },
+      {
+        "name": "NGSS HS-ESS1-5 (nextgenscience.org)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

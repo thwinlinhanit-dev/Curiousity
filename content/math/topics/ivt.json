@@ -1,0 +1,97 @@
+{
+  "id": "ra.ivt",
+  "slug": "ivt",
+  "ladder": "math",
+  "course": "ra",
+  "unit": "continuity",
+  "title": "The Intermediate Value Theorem",
+  "short": "A continuous function on [a, b] takes every value between f(a) and f(b); the proof uses c = sup{x : f(x) < 0}, and bisection traps c to any accuracy.",
+  "trouble": "Students apply the theorem to a function that is not continuous on the whole closed interval, like 1/x on [−1, 1], or think it tells where the root is.",
+  "prereqs": [
+    "ra.continuity",
+    "calc1.intermediate-value-theorem"
+  ],
+  "xp": 2,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The intermediate value theorem from <a href=\"/math/calculus-1/intermediate-value-theorem/\">Calculus 1</a> looks obvious in a picture, but it is false over the rationals: $x^{2} - 2$ goes from negative to positive on $[1, 2]$ and is never $0$ at a rational point. Its proof needs completeness and <a href=\"/math/real-analysis/continuity/\">continuity</a> together."
+      },
+      {
+        "t": "key",
+        "html": "<b>Intermediate value theorem.</b> If $f$ is continuous on $[a, b]$ and $f(a) < y < f(b)$ (or $f(a) > y > f(b)$), then $f(c) = y$ for some $c \\in (a, b)$. In particular a continuous function that changes sign on $[a, b]$ has a root there."
+      },
+      {
+        "t": "why",
+        "html": "It is enough to handle $f(a) < 0 < f(b)$ (subtract $y$ otherwise). Let $c = \\sup\\{x \\in [a, b] : f(x) < 0\\}$, which exists by completeness. <b>$f(c) < 0$ is impossible:</b> by continuity $f$ would stay negative a little to the right of $c$, so $c$ would not be an upper bound (and $c \\ne b$ since $f(b) > 0$). <b>$f(c) > 0$ is impossible:</b> $f$ would stay positive on an interval $(c - \\delta, c]$, so $c - \\delta$ would already be an upper bound, smaller than $c$ (and $c \\ne a$ since $f(a) < 0$). So $f(c) = 0$. $\\blacksquare$ A second proof halves the interval again and again, keeping the half where the sign changes; the nested intervals close in on a root. That proof is also an algorithm: bisection."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "f": "x^3+2x-5",
+          "xmin": -1,
+          "xmax": 3,
+          "ymin": -8,
+          "ymax": 10,
+          "trace": true
+        },
+        "cap": "$f(x) = x^{3} + 2x - 5$ changes sign on $[1, 2]$: trace the curve and see where it crosses."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Bisection by hand",
+        "q": "For $f(x) = x^{3} + 2x - 5$ on $[1, 2]$ ($f(1) = -2 < 0 < 7 = f(2)$), run three bisection steps.",
+        "steps": [
+          "$m = \\frac{3}{2}$: $f = \\frac{27}{8} + 3 - 5 > 0$, keep $[1, \\frac{3}{2}]$.",
+          "$m = \\frac{5}{4}$: $f = \\frac{125}{64} + \\frac{5}{2} - 5 = -\\frac{35}{64} < 0$, keep $[\\frac{5}{4}, \\frac{3}{2}]$.",
+          "$m = \\frac{11}{8}$: $f = \\frac{1331}{512} + \\frac{11}{4} - 5 > 0$, keep $[\\frac{5}{4}, \\frac{11}{8}]$."
+        ],
+        "a": "The root lies in $\\left[\\frac{5}{4}, \\frac{11}{8}\\right]$, an interval of length $\\frac{1}{8}$."
+      },
+      {
+        "t": "ex",
+        "title": "Counting forced roots",
+        "q": "A continuous $f$ has $f(-2) = 3$, $f(-1) = -1$, $f(0) = -4$, $f(1) = 2$, $f(2) = 5$. How many roots must it have in $[-2, 2]$?",
+        "steps": [
+          "Sign changes: between $-2$ and $-1$, and between $0$ and $1$."
+        ],
+        "a": "At least $2$ (there could be more)."
+      },
+      {
+        "t": "ex",
+        "title": "When the theorem does not apply",
+        "q": "$f(x) = \\frac{1}{x}$ has $f(-1) = -1 < 0 < 1 = f(1)$. Does the IVT give a root in $[-1, 1]$?",
+        "steps": [
+          "$f$ is not continuous on $[-1, 1]$: it is not even defined at $0$."
+        ],
+        "a": "No, and indeed $\\frac{1}{x}$ is never $0$."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Skipping the hypothesis, or reading too much into the conclusion.</b> The function must be continuous on the whole closed interval; one bad point can let it jump over $0$. And the theorem only says a root exists, somewhere in $(a, b)$: it does not say there is only one, or where it is. For uniqueness you need more (for example, a strictly increasing function)."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Jiří Lebl, Basic Analysis I: Introduction to Real Analysis, section 3.3 (Bolzano's intermediate value theorem)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.100A Real Analysis, lecture notes on the intermediate value theorem"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

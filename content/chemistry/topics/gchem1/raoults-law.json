@@ -1,0 +1,95 @@
+{
+  "id": "gchem1.raoults-law",
+  "slug": "raoults-law",
+  "ladder": "chemistry",
+  "course": "gchem1",
+  "unit": "solutions",
+  "title": "Vapor Pressure Lowering",
+  "short": "A nonvolatile solute lowers the solvent's vapor pressure: P = χ(solvent) × P°.",
+  "trouble": "Students use the solute's mole fraction where the solvent's belongs.",
+  "prereqs": [
+    "gchem1.concentration-units",
+    "gchem1.vapor-pressure"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-phasediagram"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Dissolve sugar in water and the water evaporates a little more slowly. <a href=\"/chemistry/general-chemistry-1/vapor-pressure/\">Vapor Pressure and Boiling</a> explained where vapor pressure comes from; <a href=\"/chemistry/general-chemistry-1/concentration-units/\">mole fraction</a> measures how much of the surface the solvent still holds."
+      },
+      {
+        "t": "key",
+        "html": "For a <b>nonvolatile</b> solute (one that doesn't evaporate), the solution's vapor pressure is $$P_\\text{solution} = \\chi_\\text{solvent}\\,P^\\circ_\\text{solvent},$$ where $P^\\circ$ is the pure solvent's vapor pressure. The <b>lowering</b> is $\\Delta P = \\chi_\\text{solute}\\,P^\\circ$. For ionic solutes, count every ion as a particle."
+      },
+      {
+        "t": "why",
+        "html": "Solvent molecules escape from the surface; solute particles at the surface take up some of that space but never escape. If 10% of the particles are solute, only 90% of the surface is solvent, so the escaping rate, and the vapor pressure, drops to 90% of the pure solvent's. Condensation adjusts to match, so the new equilibrium pressure is $\\chi_\\text{solvent}P^\\circ$. The identity of the solute doesn't matter, only the number of its particles: a <b>colligative property</b> (\"depending on the collection\")."
+      },
+      {
+        "t": "viz",
+        "name": "ch-phasediagram",
+        "opts": {
+          "mode": "solution",
+          "m": 1,
+          "i": 1
+        },
+        "cap": "The solution's liquid–gas curve (dashed) sits below the pure solvent's at every temperature. That gap leads to the boiling-point elevation and freezing-point depression in the next lesson."
+      },
+      {
+        "t": "ex",
+        "title": "Sugar water",
+        "q": "A solution contains $1.00\\ \\text{mol}$ of glucose in $9.00\\ \\text{mol}$ of water at $25^\\circ\\text{C}$, where pure water's vapor pressure is $23.8\\ \\text{mmHg}$. Find the solution's vapor pressure.",
+        "steps": [
+          "$\\chi_\\text{water} = \\dfrac{9.00}{9.00 + 1.00} = 0.900$.",
+          "$P = 0.900 \\times 23.8 = 21.4\\ \\text{mmHg}$."
+        ],
+        "a": "$21.4\\ \\text{mmHg}$ (lowered by 2.4)."
+      },
+      {
+        "t": "ex",
+        "title": "From masses",
+        "q": "$50.0\\ \\text{g}$ of sucrose ($342.3\\ \\text{g/mol}$) is dissolved in $250.0\\ \\text{g}$ of water at $30^\\circ\\text{C}$ ($P^\\circ = 31.8\\ \\text{mmHg}$). By how much is the vapor pressure lowered?",
+        "steps": [
+          "Moles: sucrose $50.0/342.3 = 0.1461$; water $250.0/18.02 = 13.87$.",
+          "$$\\chi_\\text{sucrose} = \\dfrac{0.1461}{0.1461 + 13.87} = 0.01042$$",
+          "$\\Delta P = 0.01042 \\times 31.8 = 0.331\\ \\text{mmHg}$."
+        ],
+        "a": "$0.331\\ \\text{mmHg}$"
+      },
+      {
+        "t": "ex",
+        "title": "An ionic solute",
+        "q": "$0.500\\ \\text{mol}$ of NaCl is dissolved in $10.0\\ \\text{mol}$ of water at $25^\\circ\\text{C}$ ($P^\\circ = 23.8\\ \\text{mmHg}$). Estimate the vapor pressure, treating the salt as fully split into ions.",
+        "steps": [
+          "NaCl gives 2 ions: $1.00\\ \\text{mol}$ of solute particles.",
+          "$\\chi_\\text{water} = \\dfrac{10.0}{10.0 + 1.00} = 0.909$.",
+          "$P = 0.909 \\times 23.8 = 21.6\\ \\text{mmHg}$."
+        ],
+        "a": "About $21.6\\ \\text{mmHg}$."
+      },
+      {
+        "t": "note",
+        "html": "If the solute is volatile too, as in a mixture of two liquids, each one contributes its own share: $P_\\text{total} = \\chi_A P^\\circ_A + \\chi_B P^\\circ_B$. The vapor is then richer in the more volatile liquid, which is the principle behind distillation."
+      },
+      {
+        "t": "mistake",
+        "html": "Using the solute's mole fraction where the solvent's belongs: \"$P = 0.100 \\times 23.8 = 2.38$ mmHg.\" That would mean a little sugar wipes out 90% of the vapor pressure. Check: a dilute solution's vapor pressure should be only a little below the pure solvent's; $\\chi_\\text{solvent}$ is the number close to 1."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 11.4 Colligative Properties"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

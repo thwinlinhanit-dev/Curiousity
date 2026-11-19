@@ -1,0 +1,97 @@
+{
+  "id": "astro.celestial-sphere",
+  "slug": "celestial-sphere",
+  "course": "astro",
+  "courseTitle": "Astronomy",
+  "unit": "sky",
+  "unitTitle": "The Sky",
+  "title": "The Celestial Sphere",
+  "short": "The sky looks like a dome that turns once a day around the celestial poles, because Earth spins.",
+  "trouble": "Students think the stars themselves move across the sky each night, rather than Earth turning beneath them.",
+  "prereqs": [
+    "earthsci.day-and-night",
+    "g7.angle-relationships"
+  ],
+  "xp": 1,
+  "viz": [
+    "ph-sky"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/earth-and-space/earth-science/day-and-night/\">Earth's Spin: Day and Night</a> you saw that Earth turns once a day, which makes the Sun rise in the east and set in the west. The same spin moves the whole night sky. Watch for a few hours and every star slides west together, the pattern never changing shape. Astronomers describe this with a simple model: the <b>celestial sphere</b>, a giant imaginary ball around Earth with the stars painted on the inside."
+      },
+      {
+        "t": "why",
+        "html": "The stars are so far away that, as Earth turns, their <em>directions</em> stay fixed in space. We are the ones moving. Earth spins toward the east about an axis through its poles, so from the ground the whole sphere seems to turn the other way, toward the west, around two fixed points straight above Earth's poles: the <b>north and south celestial poles</b>. A full turn is $360^\\circ$, the angles around a point (<a href=\"/math/grade-7/angle-relationships/\">angle pairs</a> work the same way on the sky), and it takes about 24 hours, so the sky turns $360^\\circ \\div 24 = 15^\\circ$ every hour."
+      },
+      {
+        "t": "key",
+        "html": "The celestial sphere is a map of directions. Because Earth spins, the sky seems to turn once a day around the celestial poles, westward at $15^\\circ$ per hour. The stars are not moving across the sky; we are turning beneath them."
+      },
+      {
+        "t": "viz",
+        "name": "ph-sky",
+        "opts": {
+          "mode": "sphere",
+          "lat": 40,
+          "date": 80,
+          "time": 21,
+          "task": "Press Play and watch the Sun's path and the pole. Then drag the latitude slider: the whole sky tilts, but it always turns around the same pole.",
+          "lab": "/science-lab/night-sky/"
+        },
+        "cap": "The sky for an observer at latitude $40^\\circ$ N. The dashed green circle is the celestial equator; the gold point is the north celestial pole, near Polaris."
+      },
+      {
+        "t": "h",
+        "text": "Landmarks on the sphere"
+      },
+      {
+        "t": "list",
+        "items": [
+          "<b>Celestial poles</b>: the points straight above Earth's North and South Poles. Polaris, the North Star, sits less than $1^\\circ$ from the north celestial pole.",
+          "<b>Celestial equator</b>: Earth's equator projected onto the sky, halfway between the poles.",
+          "<b>Horizon</b>: where the sky meets the ground for you; half the sphere is always below it.",
+          "<b>Zenith</b>: the point straight overhead. <b>Meridian</b>: the line from due north, through the zenith, to due south."
+        ]
+      },
+      {
+        "t": "h",
+        "text": "Worked example"
+      },
+      {
+        "t": "ex",
+        "title": "Star trails",
+        "q": "A camera pointed at Polaris keeps its shutter open, and each star draws an arc around the pole. Every arc spans $60^\\circ$. How long was the exposure?",
+        "steps": [
+          "The sky turns $360^\\circ$ in about 24 h, so $15^\\circ$ per hour.",
+          "Time $= 60^\\circ \\div 15^\\circ$ per hour $= 4$ h.",
+          "Every trail has the same angle because the whole sky turns as one piece, which is what a spinning Earth predicts."
+        ],
+        "a": "About 4 hours."
+      },
+      {
+        "t": "mistake",
+        "html": "It is natural to say the stars \"move across the sky\", but the stars barely change position over a lifetime. If each star moved on its own, the patterns would twist and stretch during the night. They don't: the Big Dipper keeps its shape while it circles Polaris. A quick check: in a long-exposure photo every star trail has the same angle around the pole. One thing is turning, and it is Earth."
+      },
+      {
+        "t": "note",
+        "html": "The celestial sphere is a model, not a real shell. The stars sit at very different distances; the sphere only records their directions, which is all we need to describe how the sky turns. Try it in the <a href=\"/science-lab/night-sky/\">Sky and Solar System</a> lab: pick a date and a place and see which stars are up."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Astronomy 2e, section 2.1, The Sky Above"
+      },
+      {
+        "name": "OpenStax, Astronomy 2e, section 4.1, Earth and Sky"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

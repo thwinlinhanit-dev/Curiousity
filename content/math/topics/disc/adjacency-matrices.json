@@ -1,0 +1,129 @@
+{
+  "id": "disc.adjacency-matrices",
+  "slug": "adjacency-matrices",
+  "ladder": "math",
+  "course": "disc",
+  "unit": "graphs",
+  "title": "Adjacency Matrices and Counting Walks",
+  "short": "Store a graph as a matrix A; the (i, j) entry of Aᵏ counts the walks of length k from i to j.",
+  "trouble": "Students think Aᵏ counts paths, but the walks it counts may repeat vertices and edges.",
+  "prereqs": [
+    "disc.connectivity",
+    "disc.special-graphs",
+    "pre.matrix-multiplication"
+  ],
+  "xp": 2,
+  "viz": [
+    "disc-graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A computer stores a graph as a table of zeros and ones. That table, a matrix, does more than store: <a href=\"/math/precalculus/matrix-multiplication/\">matrix multiplication</a> turns out to count routes through the graph. This uses the walks from <a href=\"/math/discrete-math/connectivity/\">connectivity</a> and the named graphs from <a href=\"/math/discrete-math/special-graphs/\">special graphs</a>."
+      },
+      {
+        "t": "key",
+        "html": "For a graph with vertices $1, \\ldots, n$, the <b>adjacency matrix</b> $A$ has entry $A_{ij} = 1$ when $i$ and $j$ are joined and $0$ otherwise. It is symmetric, its diagonal is $0$, and row $i$ adds up to $\\deg(i)$. The $(i, j)$ entry of $A^{k}$ is the number of walks of length $k$ from $i$ to $j$."
+      },
+      {
+        "t": "why",
+        "html": "Look at $A^{2}$: $(A^{2})_{ij} = \\sum_{m} A_{im}A_{mj}$. A term is $1$ exactly when $m$ is joined to both $i$ and $j$, that is, when $i \\to m \\to j$ is a walk of length $2$. So the sum counts those walks, one per middle vertex. The same idea extends: $(A^{k+1})_{ij} = \\sum_{m} (A^{k})_{im}A_{mj}$ counts walks of length $k$ from $i$ to some $m$, followed by one more step to $j$, and induction gives the result for every $k$."
+      },
+      {
+        "t": "viz",
+        "name": "disc-graph",
+        "opts": {
+          "graph": {
+            "v": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "e": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "B",
+                "C"
+              ],
+              [
+                "C",
+                "D"
+              ],
+              [
+                "D",
+                "A"
+              ],
+              [
+                "A",
+                "C"
+              ]
+            ]
+          },
+          "mode": "matrix",
+          "k": 2,
+          "layout": "circle"
+        },
+        "cap": "The adjacency matrix and its square. Click an entry of $A^{2}$ to list the walks it counts."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Reading a matrix",
+        "q": "Vertices $1, 2, 3, 4$ have $$A = \\begin{bmatrix} 0 & 1 & 1 & 0 \\\\ 1 & 0 & 1 & 1 \\\\ 1 & 1 & 0 & 1 \\\\ 0 & 1 & 1 & 0 \\end{bmatrix}.$$ Find the degree of vertex $2$, the number of edges, and the number of walks of length $2$ from $1$ to $4$.",
+        "steps": [
+          "Row $2$ adds to $3$: degree $3$.",
+          "All entries add to $10$; each edge appears twice, so there are $5$ edges.",
+          "$(A^{2})_{14}$ = row $1$ times column $4$: $0 \\cdot 0 + 1 \\cdot 1 + 1 \\cdot 1 + 0 \\cdot 0 = 2$. The walks are $1 \\to 2 \\to 4$ and $1 \\to 3 \\to 4$."
+        ],
+        "a": "degree $3$; $5$ edges; $2$ walks"
+      },
+      {
+        "t": "ex",
+        "title": "The diagonal of $A^{2}$",
+        "q": "Why is $(A^{2})_{ii} = \\deg(i)$?",
+        "steps": [
+          "A walk of length $2$ from $i$ back to $i$ goes out along an edge and comes back along the same edge.",
+          "There is one such walk for each neighbor of $i$, so their number is $\\deg(i)$."
+        ],
+        "a": "Each neighbor gives one out-and-back walk."
+      },
+      {
+        "t": "ex",
+        "title": "Counting triangles",
+        "q": "Explain why the number of triangles is $\\frac{1}{6}$ of the sum of the diagonal entries of $A^{3}$.",
+        "steps": [
+          "A diagonal entry $(A^{3})_{ii}$ counts closed walks of length $3$ from $i$; in a simple graph each one goes around a triangle.",
+          "One triangle $\\{a, b, c\\}$ produces $6$ such walks: $3$ starting points times $2$ directions.",
+          "So the diagonal sum is $6$ times the number of triangles."
+        ],
+        "a": "Each triangle is counted $6$ times."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Thinking $A^{k}$ counts paths.</b> The walks it counts may repeat vertices and edges: in the first example, $(A^{2})_{11} = 2$ counts $1 \\to 2 \\to 1$ and $1 \\to 3 \\to 1$, which go back and forth along one edge. Check: list a few of the walks behind an entry; if some repeat a vertex, the entry is counting walks, as it always does."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "MIT OpenCourseWare 6.042J Mathematics for Computer Science (Lehman, Leighton and Meyer), chapter \"Directed Graphs and Partial Orders\" (adjacency matrices and walk counting)"
+      },
+      {
+        "name": "Oscar Levin, Discrete Mathematics: An Open Introduction (3rd ed.), section \"Definitions\" in the graph theory chapter (adjacency matrices)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

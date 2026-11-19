@@ -1,0 +1,101 @@
+{
+  "id": "geology.seismic-interior",
+  "slug": "seismic-interior",
+  "ladder": "earth",
+  "course": "geology",
+  "unit": "earth-interior",
+  "title": "Seeing Inside Earth with Seismic Waves",
+  "short": "S waves can't cross the liquid outer core and P waves bend at its edge, leaving shadow zones that map the core.",
+  "trouble": "Students think scientists found Earth's layers by drilling; the deepest hole reached only about 12 km, and the layers were found from how seismic waves travel.",
+  "prereqs": [
+    "earthsci.seismic-waves"
+  ],
+  "xp": 2,
+  "viz": [
+    "es-interior",
+    "es-seismic"
+  ],
+  "figureArchetype": "WaveFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/earth-and-space/earth-science/seismic-waves/\">Earthquakes and Seismic Waves</a> you met the two body waves: fast P waves that push and pull, and slower S waves that shake side to side. No one has ever drilled through the crust; the deepest hole stops at about 12 km. Yet we have a detailed map of the inside, down to the center 6,371 km below us. Seismic waves drew it."
+      },
+      {
+        "t": "why",
+        "html": "Two facts do the work. First, a wave bends (refracts) when its speed changes, just as light bends entering water. Rock gets stiffer with depth, so waves speed up and curve back toward the surface. Second, S waves are shear waves: they need the material to spring back when it is twisted. Solids do; liquids don't. So <b>S waves cannot travel through a liquid</b>, while P waves can, only more slowly."
+      },
+      {
+        "t": "list",
+        "items": [
+          "<b>The S-wave shadow.</b> Beyond about $103^\\circ$ around Earth from an earthquake, no direct S waves arrive. Something liquid and huge blocks them: the outer core.",
+          "<b>The P-wave shadow.</b> From about $103^\\circ$ to $142^\\circ$, no direct P waves arrive either. P waves slow sharply as they enter the outer core (from about 13.7 to 8 km/s), bend away and land beyond $142^\\circ$.",
+          "<b>The inner core.</b> In 1936 Inge Lehmann noticed faint P waves inside the shadow zone. They had bounced off a solid inner core, where P waves speed up again."
+        ]
+      },
+      {
+        "t": "viz",
+        "name": "es-interior",
+        "opts": {
+          "mode": "rays",
+          "rays": "both"
+        },
+        "cap": "P waves (blue) and S waves (red) leaving an earthquake at the top. Watch the S waves stop at the outer core, and the gap the P waves leave between about $103^\\circ$ and $142^\\circ$."
+      },
+      {
+        "t": "key",
+        "html": "The layers were found by seismic waves, not drilling. S waves stop at a liquid outer core, leaving a shadow beyond $103^\\circ$; P waves bend at the core and leave a shadow from about $103^\\circ$ to $142^\\circ$. The size of the shadows gives the size of the core."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Which station hears what?",
+        "q": "Stations stand $60^\\circ$, $125^\\circ$ and $160^\\circ$ around Earth from an earthquake. What does each record?",
+        "steps": [
+          "$60^\\circ$ is less than $103^\\circ$: waves reach it through the solid mantle, so it records both P and S.",
+          "$125^\\circ$ is between $103^\\circ$ and $142^\\circ$: in the P-wave shadow and beyond the S limit, so no direct P or S.",
+          "$160^\\circ$ is beyond $142^\\circ$: P waves arrive after crossing the core, but no S waves."
+        ],
+        "a": "$60^\\circ$: P and S. $125^\\circ$: neither. $160^\\circ$: P only."
+      },
+      {
+        "t": "ex",
+        "title": "How far is 103°?",
+        "q": "Earth's radius is 6,371 km. How far along the surface is $103^\\circ$ from an earthquake?",
+        "steps": [
+          "Circumference: $2\\pi r = 2\\pi(6,371) \\approx 40,030\\,\\text{km}$.",
+          "$103^\\circ$ is $\\tfrac{103}{360}$ of a full turn: $\\tfrac{103}{360} \\times 40,030 \\approx 11,450\\,\\text{km}$.",
+          "Every large earthquake throws a shadow more than 11,000 km away, and stations worldwide see it each time."
+        ],
+        "a": "About $11,450\\,\\text{km}$."
+      },
+      {
+        "t": "mistake",
+        "html": "Many people think the layers were found by drilling, or that lava comes up from the core. The deepest borehole, in Russia, reached about 12.3 km: just $0.2\\%$ of the way to the center. Lava comes from partly melted rock in the upper mantle and crust. Check yourself: on a globe 20 cm across, the deepest hole would be about 0.4 mm deep."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Astronomy 2e, section 8.1, The Global Perspective"
+      },
+      {
+        "name": "USGS Earthquake Hazards Program, Earthquake Magnitude, Energy Release, and Shaking Intensity"
+      },
+      {
+        "name": "NGSS HS-ESS2-3 (nextgenscience.org)"
+      },
+      {
+        "name": "MIT OpenCourseWare, 12.001 Introduction to Geology"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

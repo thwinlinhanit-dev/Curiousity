@@ -1,0 +1,112 @@
+{
+  "id": "calc1.limits-by-factoring",
+  "slug": "limits-by-factoring",
+  "ladder": "math",
+  "course": "calc1",
+  "unit": "limits",
+  "title": "Limits by Factoring and Canceling",
+  "short": "Rewrite 0/0 forms to remove the troublesome factor.",
+  "trouble": "Students conclude that a 0/0 form means the limit is 0 or does not exist.",
+  "prereqs": [
+    "calc1.limit-laws",
+    "alg2.simplify-rational"
+  ],
+  "xp": 2,
+  "viz": [
+    "limit"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The <a href=\"/math/calculus-1/limit-laws/\">Limit Laws</a> fail when the denominator tends to 0. If the numerator also tends to 0, the expression has the form $\\frac{0}{0}$. That form is not an answer: it is a sign that the top and bottom share a factor. Your factoring skills from <a href=\"/math/algebra-2/simplify-rational/\">Simplifying Rational Expressions</a> are exactly what is needed."
+      },
+      {
+        "t": "key",
+        "html": "To find a $\\frac{0}{0}$ limit of a rational function at $x = a$: factor top and bottom, cancel the common factor $(x - a)$, then substitute. Canceling is allowed because a limit never uses $x = a$ itself."
+      },
+      {
+        "t": "why",
+        "html": "If $f(x) = g(x)$ for every $x$ near $a$ except possibly $a$ itself, then $f$ and $g$ have the same limit at $a$: the limit only looks at those nearby values. After canceling, $\\frac{(x-a)(x+5)}{x-a}$ and $x + 5$ are equal everywhere except at $a$, so they share a limit, and the second one can be found by substitution."
+      },
+      {
+        "t": "p",
+        "html": "Why can't $\\frac{0}{0}$ be given a value? Because different $\\frac{0}{0}$ forms have different limits. At $x = 0$: $\\frac{x}{x} \\to 1$, $\\frac{x^2}{x} \\to 0$, and $\\frac{3x}{x} \\to 3$, while $\\frac{x}{x^2}$ blows up. The form alone does not decide the answer; the shared factor does."
+      },
+      {
+        "t": "viz",
+        "name": "limit",
+        "opts": {
+          "f": "(x^2-x-6)/(x-3)",
+          "a": 3,
+          "fa": "none",
+          "h": 0.7,
+          "table": true
+        },
+        "cap": "$\\frac{x^2-x-6}{x-3}$ is the line $y = x + 2$ with a hole at $(3, 5)$."
+      },
+      {
+        "t": "ex",
+        "title": "Cancel a linear factor",
+        "q": "Find $\\displaystyle\\lim_{x \\to 3} \\frac{x^2 - x - 6}{x - 3}$.",
+        "steps": [
+          "Substituting gives $\\frac{9 - 3 - 6}{0} = \\frac{0}{0}$, so $(x - 3)$ must be a factor of the top.",
+          "Factor: $x^2 - x - 6 = (x - 3)(x + 2)$.",
+          "Cancel: for $x \\ne 3$ the expression equals $x + 2$.",
+          "Substitute: $3 + 2 = 5$."
+        ],
+        "a": "$5$"
+      },
+      {
+        "t": "ex",
+        "title": "Factors on both levels",
+        "q": "Find $\\displaystyle\\lim_{x \\to 2} \\frac{x^2 - 4}{x^2 - 5x + 6}$.",
+        "steps": [
+          "Substituting gives $\\frac{0}{0}$.",
+          "Factor: $\\frac{(x - 2)(x + 2)}{(x - 2)(x - 3)}$.",
+          "Cancel $(x - 2)$: $\\frac{x + 2}{x - 3}$.",
+          "Substitute: $\\frac{4}{-1} = -4$."
+        ],
+        "a": "$-4$"
+      },
+      {
+        "t": "ex",
+        "title": "A difference of cubes",
+        "q": "Find $\\displaystyle\\lim_{x \\to 2} \\frac{x^3 - 8}{x - 2}$.",
+        "steps": [
+          "$\\frac{0}{0}$ again. Use $a^3 - b^3 = (a - b)(a^2 + ab + b^2)$: $x^3 - 8 = (x - 2)(x^2 + 2x + 4)$.",
+          "Cancel: the expression is $x^2 + 2x + 4$ for $x \\ne 2$.",
+          "Substitute: $4 + 4 + 4 = 12$."
+        ],
+        "a": "$12$ (this will turn out to be the slope of $y = x^3$ at $x = 2$)"
+      },
+      {
+        "t": "h",
+        "text": "Factoring patterns that come up"
+      },
+      {
+        "t": "list",
+        "items": [
+          "Trinomials: if $x = a$ makes the top 0, then $(x - a)$ is a factor; the other factor follows from the constant term.",
+          "Difference of squares: $x^2 - a^2 = (x - a)(x + a)$.",
+          "Cubes: $x^3 - a^3 = (x - a)(x^2 + ax + a^2)$ and $x^3 + a^3 = (x + a)(x^2 - ax + a^2)$.",
+          "Complex fractions: combine the small fractions into one, then look for the factor."
+        ]
+      },
+      {
+        "t": "mistake",
+        "html": "Seeing $\\frac{0}{0}$ and concluding \"the limit is 0\" or \"the limit does not exist.\" Neither follows. In the first example the limit is 5. Check: compute $f(2.999)$ and $f(3.001)$ with a calculator. They will sit near your answer if it is right, and nowhere near 0."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 1, 2.3 The Limit Laws"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

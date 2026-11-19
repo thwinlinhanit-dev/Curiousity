@@ -1,0 +1,130 @@
+{
+  "id": "g6.describe-distributions",
+  "slug": "describe-distributions",
+  "ladder": "math",
+  "course": "g6",
+  "unit": "statistics",
+  "title": "Describing a Distribution",
+  "short": "Describe the center, spread and shape, and choose mean or median.",
+  "trouble": "Students report the mean for skewed data with an outlier, where the median describes it better.",
+  "prereqs": [
+    "g6.box-plots",
+    "g6.mean-absolute-deviation"
+  ],
+  "xp": 2,
+  "viz": [
+    "dotplot",
+    "boxplot"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Now you can measure center (mean, median) and spread (IQR, <a href=\"/math/grade-6/mean-absolute-deviation/\">MAD</a>), and you can draw <a href=\"/math/grade-6/box-plots/\">box plots</a>. To describe a data set well, say three things: its center, its spread and its shape."
+      },
+      {
+        "t": "key",
+        "html": "For data that are roughly symmetric, the mean and MAD describe it well. For data that are skewed or have outliers, use the median and IQR, because extreme values pull the mean and MAD but barely move the median and IQR."
+      },
+      {
+        "t": "viz",
+        "name": "dotplot",
+        "opts": {
+          "data": [
+            22,
+            24,
+            25,
+            25,
+            26,
+            28,
+            30
+          ],
+          "min": 20,
+          "max": 60,
+          "show": [
+            "mean",
+            "median"
+          ],
+          "label": "minutes"
+        },
+        "cap": "Drag the 30 all the way to the right end. The mean slides toward it; the median stays put."
+      },
+      {
+        "t": "why",
+        "html": "The mean uses the size of every value, so one value far away drags it toward itself. The median only uses the order, so moving the largest value farther away does not change which value is in the middle. Spread works the same way: the MAD averages distances, which an outlier makes bigger, while the IQR ignores the top and bottom quarters."
+      },
+      {
+        "t": "ex",
+        "title": "An outlier",
+        "q": "Phone-call times in minutes: 22, 24, 25, 25, 26, 28, 95. Which describes a typical call better, the mean or the median?",
+        "steps": [
+          "Mean: $245 \\div 7 = 35$.",
+          "Median: the 4th value, 25.",
+          "Six of the seven calls are 28 minutes or less, so 35 is not typical. The 95 pulled the mean up."
+        ],
+        "a": "The median, 25 minutes."
+      },
+      {
+        "t": "ex",
+        "title": "Describe the shape",
+        "q": "Most students read 1 to 3 books, a few read 6, 8 or 10. Describe the shape.",
+        "steps": [
+          "The values pile up on the left and trail off in a long tail to the right."
+        ],
+        "a": "Skewed right; describe it with the median and IQR."
+      },
+      {
+        "t": "viz",
+        "name": "boxplot",
+        "opts": {
+          "data": [
+            19,
+            19,
+            20,
+            20,
+            21,
+            21,
+            22
+          ],
+          "data2": [
+            14,
+            16,
+            17,
+            22,
+            26,
+            28,
+            30
+          ],
+          "names": [
+            "Team A",
+            "Team B"
+          ],
+          "min": 10,
+          "max": 32
+        },
+        "cap": "Two teams with similar centers but very different spreads."
+      },
+      {
+        "t": "mistake",
+        "html": "Reporting the mean for skewed data with an outlier. Quick check: compare the mean and median. If they are far apart, the data are skewed or have an outlier, and the median is the better description of a typical value."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Introductory Statistics 2e, section 2.6 Skewness and the Mean, Median, and Mode"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 6.SP.B.5d: choosing measures of center and spread for the shape of the data"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 6.SP.A.2: center, spread and shape of a distribution"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

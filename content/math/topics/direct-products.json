@@ -1,0 +1,110 @@
+{
+  "id": "aa.direct-products",
+  "slug": "direct-products",
+  "ladder": "math",
+  "course": "aa",
+  "unit": "products",
+  "title": "Direct Products",
+  "short": "In G × H the operation works coordinate by coordinate; the order of (g, h) is lcm(|g|, |h|), and ℤₘ × ℤₙ ≅ ℤₘₙ exactly when gcd(m, n) = 1.",
+  "trouble": "Students multiply the orders instead of taking the lcm, or think ℤ₂ × ℤ₂ ≅ ℤ₄ because both have four elements.",
+  "prereqs": [
+    "aa.isomorphisms",
+    "aa.order-of-powers",
+    "nt.chinese-remainder"
+  ],
+  "xp": 2,
+  "viz": [
+    "aa-cayley"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The easiest way to build a new group from two old ones is to let them run side by side. This is also, as we will see, how every finite abelian group is built."
+      },
+      {
+        "t": "p",
+        "html": "<b>Definition.</b> The <b>direct product</b> $G \\times H$ is the set of pairs $(g, h)$ with the operation done coordinate by coordinate: $(g, h)(g', h') = (gg', hh')$. The identity is $(e, e)$, the inverse of $(g, h)$ is $(g^{-1}, h^{-1})$, and $|G \\times H| = |G|\\,|H|$. For additive groups we write $(a, b) + (a', b') = (a + a', b + b')$."
+      },
+      {
+        "t": "why",
+        "html": "<b>Order of a pair.</b> $|(g, h)| = \\operatorname{lcm}(|g|, |h|)$.<br><b>Proof.</b> $(g, h)^{m} = (g^{m}, h^{m})$ is the identity exactly when $g^{m} = e$ and $h^{m} = e$, that is, when $|g| \\mid m$ and $|h| \\mid m$ (<a href=\"/math/abstract-algebra/element-order/\">order lemma</a>). The least such $m$ is the lcm. $\\square$<br><b>Theorem.</b> $\\mathbb{Z}_{m} \\times \\mathbb{Z}_{n}$ is cyclic, and then $\\cong \\mathbb{Z}_{mn}$, exactly when $\\gcd(m, n) = 1$.<br><b>Proof.</b> Every element $(a, b)$ has order dividing $\\operatorname{lcm}(m, n)$, and $(1, 1)$ has order exactly $\\operatorname{lcm}(m, n)$. The group has $mn$ elements, so it is cyclic exactly when $\\operatorname{lcm}(m, n) = mn$, that is, when $\\gcd(m, n) = 1$; then $(1, 1)$ generates it, and <a href=\"/math/abstract-algebra/isomorphisms/\">every cyclic group</a> of order $mn$ is $\\cong \\mathbb{Z}_{mn}$. $\\square$ This is the <a href=\"/math/number-theory/chinese-remainder/\">Chinese remainder theorem</a> in group language."
+      },
+      {
+        "t": "viz",
+        "name": "aa-cayley",
+        "opts": {
+          "group": "ZxZ",
+          "m": 2,
+          "n": 3,
+          "sel": [
+            "(1,1)",
+            "(1,1)"
+          ],
+          "modes": [
+            "product"
+          ]
+        },
+        "cap": "$\\mathbb{Z}_{2} \\times \\mathbb{Z}_{3}$: adding $(1, 1)$ to itself visits all six pairs before returning to $(0, 0)$, so it is cyclic, a copy of $\\mathbb{Z}_{6}$."
+      },
+      {
+        "t": "ex",
+        "title": "Order of an element",
+        "q": "Find the order of $(4, 6)$ in $\\mathbb{Z}_{12} \\times \\mathbb{Z}_{15}$.",
+        "steps": [
+          "$|4| = 12/\\gcd(12, 4) = 3$ in $\\mathbb{Z}_{12}$; $|6| = 15/\\gcd(15, 6) = 5$ in $\\mathbb{Z}_{15}$.",
+          "$|(4, 6)| = \\operatorname{lcm}(3, 5) = 15$."
+        ],
+        "a": "$15$."
+      },
+      {
+        "t": "ex",
+        "title": "Cyclic or not",
+        "q": "Is $\\mathbb{Z}_{4} \\times \\mathbb{Z}_{6}$ cyclic? What is the largest order of an element?",
+        "steps": [
+          "$\\gcd(4, 6) = 2 \\ne 1$, so it is not cyclic.",
+          "The largest order is $\\operatorname{lcm}(4, 6) = 12$, reached by $(1, 1)$, while the group has $24$ elements."
+        ],
+        "a": "Not cyclic; largest order $12$."
+      },
+      {
+        "t": "ex",
+        "title": "Counting elements of order 2",
+        "q": "How many elements of order $2$ does $\\mathbb{Z}_{2} \\times \\mathbb{Z}_{4}$ have?",
+        "steps": [
+          "Order dividing $2$ means $2(a, b) = (0, 0)$: $a \\in \\{0, 1\\}$ and $b \\in \\{0, 2\\}$, giving $4$ elements.",
+          "Remove $(0, 0)$: $(1, 0)$, $(0, 2)$, $(1, 2)$."
+        ],
+        "a": "$3$, while $\\mathbb{Z}_{8}$ has only one. So $\\mathbb{Z}_{2} \\times \\mathbb{Z}_{4} \\not\\cong \\mathbb{Z}_{8}$."
+      },
+      {
+        "t": "p",
+        "html": "Many familiar groups are products in disguise. $U(8) \\cong \\mathbb{Z}_{2} \\times \\mathbb{Z}_{2}$ and $U(15) \\cong \\mathbb{Z}_{2} \\times \\mathbb{Z}_{4}$; in general, by the Chinese remainder theorem, $U(mn) \\cong U(m) \\times U(n)$ when $\\gcd(m, n) = 1$."
+      },
+      {
+        "t": "mistake",
+        "html": "Multiplying the orders instead of taking the lcm: in $\\mathbb{Z}_{4} \\times \\mathbb{Z}_{6}$ the element $(1, 1)$ has order $12$, not $24$. And \"same size means same group\": $\\mathbb{Z}_{2} \\times \\mathbb{Z}_{2}$ and $\\mathbb{Z}_{4}$ both have four elements, but every element of $\\mathbb{Z}_{2} \\times \\mathbb{Z}_{2}$ has order at most $2$, so it is not cyclic."
+      },
+      {
+        "t": "key",
+        "html": "$G \\times H$ works coordinate by coordinate, with $|(g, h)| = \\operatorname{lcm}(|g|, |h|)$. $\\mathbb{Z}_{m} \\times \\mathbb{Z}_{n} \\cong \\mathbb{Z}_{mn}$ exactly when $\\gcd(m, n) = 1$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Thomas W. Judson, Abstract Algebra: Theory and Applications (open textbook), chapter 9, Isomorphisms (section 9.2, Direct Products)"
+      },
+      {
+        "name": "John A. Beachy and William D. Blair, Abstract Algebra, online study guide (Northern Illinois University), section 3.3, Constructing Examples (direct products)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.703 Modern Algebra (Spring 2013), lecture on products"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

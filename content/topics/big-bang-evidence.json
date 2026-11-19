@@ -1,0 +1,100 @@
+{
+  "id": "astro.big-bang-evidence",
+  "slug": "big-bang-evidence",
+  "course": "astro",
+  "courseTitle": "Astronomy",
+  "unit": "universe",
+  "unitTitle": "Galaxies and the Universe",
+  "title": "Evidence for the Big Bang",
+  "short": "The expansion, the cosmic microwave background and the amounts of hydrogen and helium all point to a hot, dense early universe.",
+  "trouble": "Students picture the Big Bang as an explosion at one point in an empty space.",
+  "prereqs": [
+    "astro.age-of-universe"
+  ],
+  "xp": 1,
+  "viz": [
+    "ph-cosmic",
+    "ph-blackbody"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The <a href=\"/physics/astronomy/age-of-universe/\">age of the universe</a> comes from running the expansion backward. Going back, everything was closer together, denser and hotter, until about 13.8 billion years ago the universe was extremely hot and dense. That is the <b>Big Bang</b> theory: not an explosion at a point, but the expansion and cooling of space from that hot, dense state. Three separate lines of evidence support it."
+      },
+      {
+        "t": "list",
+        "items": [
+          "<b>The expansion.</b> Galaxies recede according to Hubble's law, so they were once much closer.",
+          "<b>The cosmic microwave background (CMB).</b> A faint glow of microwaves from every direction, a nearly perfect blackbody at $2.725$ K, found by Arno Penzias and Robert Wilson in 1965. It is light released about 380,000 years after the Big Bang, when the universe had cooled to about 3000 K and atoms could form, letting light travel freely. Expansion has since stretched it a thousandfold into microwaves.",
+          "<b>The light elements.</b> In the first few minutes the universe was a nuclear furnace that made helium from hydrogen before it cooled too much. Theory predicts about $75\\%$ hydrogen and $25\\%$ helium by mass, with traces of deuterium and lithium, which is what we find in the oldest stars and gas."
+        ]
+      },
+      {
+        "t": "why",
+        "html": "Stretching space stretches light: a wavelength grows in proportion to the size of the universe, $1 + z = \\frac{\\text{size now}}{\\text{size then}}$. By Wien's law, a longer peak wavelength means a lower temperature, so the radiation's temperature falls as the universe grows: $T = T_{\\text{now}}(1 + z)$. The CMB came from redshift about 1100, when the temperature was $2.725 \\times 1101 \\approx 3000$ K, just when hydrogen atoms could form. A hot, dense past predicts this glow everywhere, with exactly a blackbody's shape, and that is what satellites (COBE, WMAP, Planck) measured."
+      },
+      {
+        "t": "key",
+        "html": "The Big Bang is the expansion and cooling of the universe from a hot, dense state about 13.8 billion years ago. Evidence: the expansion, the cosmic microwave background at $2.725$ K, and the amounts of hydrogen and helium."
+      },
+      {
+        "t": "viz",
+        "name": "ph-blackbody",
+        "opts": {
+          "presets": [
+            "CMB"
+          ]
+        },
+        "cap": "The cosmic microwave background: a blackbody at $2.725$ K, peaking near $1$ mm (log scales)."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Why \"microwave\"?",
+        "q": "Where does a $2.725$ K blackbody peak? Use $\\lambda_{\\text{peak}} = \\frac{2.90 \\times 10^{6}\\ \\text{nm·K}}{T}$.",
+        "steps": [
+          "$\\lambda_{\\text{peak}} = \\frac{2.90 \\times 10^{6}}{2.725} = 1.06 \\times 10^{6}$ nm $= 1.06$ mm.",
+          "Millimeter waves are microwaves, hence the name."
+        ],
+        "a": "About $1.06$ mm."
+      },
+      {
+        "t": "ex",
+        "title": "Hotter in the past",
+        "q": "How hot was the background radiation at redshift $z = 1100$?",
+        "steps": [
+          "$T = 2.725 \\times (1 + 1100) = 3000$ K.",
+          "At that temperature hydrogen nuclei can just hold on to their electrons, so the universe turned transparent."
+        ],
+        "a": "About $3000$ K."
+      },
+      {
+        "t": "mistake",
+        "html": "It is natural to picture the Big Bang as a bomb going off at one spot in empty space, with galaxies flying out from there. The evidence says space itself expanded everywhere at once. There is no center, and the CMB arrives evenly from every direction because every part of space was part of the hot early universe. Check: if galaxies flew out from one point, we could find the point; Hubble's law looks the same from every galaxy."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Astronomy 2e, section 29.2, A Model of the Universe"
+      },
+      {
+        "name": "OpenStax, Astronomy 2e, section 29.3, The Beginning of the Universe"
+      },
+      {
+        "name": "OpenStax, Astronomy 2e, section 29.4, The Cosmic Microwave Background"
+      },
+      {
+        "name": "NGSS HS-ESS1-2"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

@@ -1,0 +1,92 @@
+{
+  "id": "earthsci.density",
+  "slug": "density",
+  "ladder": "earth",
+  "course": "earthsci",
+  "unit": "inside-earth",
+  "title": "Density",
+  "short": "Density is mass per volume; it decides what floats and what sinks, and how Earth sorted itself into layers.",
+  "trouble": "Students say heavy things sink and light things float, mixing up mass with density; a huge log floats while a small pebble sinks.",
+  "prereqs": [
+    "g6.unit-rate",
+    "g5.volume-of-prism"
+  ],
+  "xp": 2,
+  "viz": [
+    "es-density"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Which is heavier, a kilogram of feathers or a kilogram of rock? Neither: they have the same mass. But the feathers take up far more space. <b>Density</b> tells how tightly mass is packed into a space. It is a <a href=\"/math/grade-6/unit-rate/\">unit rate</a>: grams for each cubic centimeter."
+      },
+      {
+        "t": "key",
+        "html": "$$\\text{density} = \\frac{\\text{mass}}{\\text{volume}}$$ in g/cm³. Water's density is 1 g/cm³. An object floats in a fluid if it is less dense than the fluid, and sinks if it is denser."
+      },
+      {
+        "t": "why",
+        "html": "A floating object pushes water out of the way. The water pushes back up with a force equal to the weight of the water moved aside. If the object is less dense than water, it only has to sink partway before it has moved its own weight of water, so it floats. A denser object can't move enough water even when it is all the way under, so it sinks. The same rule sorted Earth: dense iron sank to the middle, and light rock rose to the top."
+      },
+      {
+        "t": "viz",
+        "name": "es-density",
+        "opts": {
+          "mode": "float",
+          "modes": [
+            "float",
+            "column"
+          ]
+        },
+        "cap": "Drop blocks of different materials into the tank and change the fluid. A block floats when it is less dense than the fluid, whatever its size. The Column tab stacks fluids by density."
+      },
+      {
+        "t": "ex",
+        "title": "Density of a rock",
+        "q": "A rectangular block of granite is 3 cm by 4 cm by 5 cm and has a mass of 162 g. What is its density?",
+        "steps": [
+          "Volume of a <a href=\"/math/grade-5/volume-of-prism/\">rectangular prism</a>: $3 \\times 4 \\times 5 = 60$ cm³.",
+          "Density: $162 \\div 60 = 2.7$ g/cm³.",
+          "That is denser than water (1 g/cm³), so granite sinks."
+        ],
+        "a": "2.7 g/cm³"
+      },
+      {
+        "t": "ex",
+        "title": "How much is underwater?",
+        "q": "Ice has a density of about 0.92 g/cm³. What fraction of a floating ice cube sits below the water line in fresh water?",
+        "steps": [
+          "A floating object sinks until it has moved its own weight of water.",
+          "Fraction under = density of object ÷ density of fluid = $0.92 \\div 1.00 = 0.92$.",
+          "So about 92% is under water and only about 8% sticks out."
+        ],
+        "a": "About 92%"
+      },
+      {
+        "t": "mistake",
+        "html": "Saying heavy things sink and light things float. That mixes up mass with density. A huge log is heavy, yet it floats because wood is less dense than water; a tiny pebble sinks because rock is denser. Check: compare densities in g/cm³, not masses."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e, 11.2 Density"
+      },
+      {
+        "name": "OpenStax, College Physics 2e, 11.7 Archimedes' Principle"
+      },
+      {
+        "name": "Next Generation Science Standards, MS-PS1-2"
+      },
+      {
+        "name": "U.S. Geological Survey, Water Science School, Water Density"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,176 @@
+{
+  "id": "geo.side-splitter",
+  "slug": "side-splitter",
+  "ladder": "math",
+  "course": "geo",
+  "unit": "similarity",
+  "title": "The Triangle Proportionality Theorem",
+  "short": "A line parallel to one side divides the other two sides proportionally.",
+  "trouble": "Students set the small segment against the whole side on one side and against a part on the other.",
+  "prereqs": [
+    "geo.sss-sas-similarity"
+  ],
+  "xp": 3,
+  "viz": [
+    "geoboard"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "When a line parallel to one side of a triangle cuts the other two sides, it creates a small triangle similar to the big one, as you saw in <a href=\"/math/geometry/aa-similarity/\">Proving AA Similarity</a> and <a href=\"/math/geometry/sss-sas-similarity/\">SSS and SAS Similarity</a>. That similarity says something neat about the pieces of the sides."
+      },
+      {
+        "t": "why",
+        "html": "In $\\triangle ABC$ with $\\overline{DE} \\parallel \\overline{BC}$, $\\triangle ADE \\sim \\triangle ABC$ by AA, so $\\frac{AB}{AD} = \\frac{AC}{AE}$. Write $AB = AD + DB$ and $AC = AE + EC$: $\\frac{AD + DB}{AD} = \\frac{AE + EC}{AE}$, which is $1 + \\frac{DB}{AD} = 1 + \\frac{EC}{AE}$. Subtract 1 and flip both sides: $\\frac{AD}{DB} = \\frac{AE}{EC}$. The converse is true too: if the sides are cut in the same ratio, the segment is parallel to the third side."
+      },
+      {
+        "t": "viz",
+        "name": "geo-fig",
+        "cap": "$\\overline{DE} \\parallel \\overline{BC}$ cuts both sides in the same ratio: $\\frac{AD}{DB} = \\frac{AE}{EC}$ (red over gold on each side).",
+        "opts": {
+          "pts": {
+            "A": [
+              2.5,
+              5
+            ],
+            "B": [
+              0,
+              0
+            ],
+            "C": [
+              8,
+              0
+            ],
+            "D": [
+              1.5,
+              3
+            ],
+            "E": [
+              4.7,
+              3
+            ]
+          },
+          "polys": [
+            [
+              "A",
+              "B",
+              "C",
+              {
+                "fill": "blue"
+              }
+            ]
+          ],
+          "segs": [
+            [
+              "D",
+              "E",
+              {
+                "arrow": 1,
+                "color": "blue"
+              }
+            ],
+            [
+              "B",
+              "C",
+              {
+                "arrow": 1
+              }
+            ],
+            [
+              "A",
+              "D",
+              {
+                "lab": "AD",
+                "color": "red"
+              }
+            ],
+            [
+              "D",
+              "B",
+              {
+                "lab": "DB",
+                "color": "gold"
+              }
+            ],
+            [
+              "A",
+              "E",
+              {
+                "lab": "AE",
+                "color": "red"
+              }
+            ],
+            [
+              "E",
+              "C",
+              {
+                "lab": "EC",
+                "color": "gold"
+              }
+            ]
+          ],
+          "height": 230,
+          "label": "Triangle ABC cut by DE parallel to BC"
+        }
+      },
+      {
+        "t": "key",
+        "html": "<b>Triangle Proportionality Theorem:</b> a line parallel to one side of a triangle divides the other two sides proportionally, $\\frac{AD}{DB} = \\frac{AE}{EC}$. Conversely, a segment that divides two sides proportionally is parallel to the third side."
+      },
+      {
+        "t": "ex",
+        "title": "Parts and parts",
+        "q": "$\\overline{DE} \\parallel \\overline{BC}$, $AD = 6$, $DB = 4$ and $AE = 9$. Find $EC$.",
+        "steps": [
+          "$\\frac{AD}{DB} = \\frac{AE}{EC}$: $\\frac{6}{4} = \\frac{9}{EC}$.",
+          "Cross-multiply: $6 \\cdot EC = 36$, so $EC = 6$."
+        ],
+        "a": "$EC = 6$"
+      },
+      {
+        "t": "ex",
+        "title": "With algebra",
+        "q": "$\\overline{DE} \\parallel \\overline{BC}$, $AD = x$, $DB = x + 3$, $AE = 10$ and $EC = 16$. Find $x$.",
+        "steps": [
+          "$\\frac{x}{x + 3} = \\frac{10}{16}$.",
+          "Cross-multiply: $16x = 10x + 30$, so $6x = 30$ and $x = 5$.",
+          "Check: $\\frac{5}{8} = \\frac{10}{16}$."
+        ],
+        "a": "$x = 5$"
+      },
+      {
+        "t": "ex",
+        "title": "Is it parallel?",
+        "q": "$D$ is on $\\overline{AB}$ and $E$ is on $\\overline{AC}$ with $AD = 5$, $DB = 7$, $AE = 8$ and $EC = 11$. Is $\\overline{DE} \\parallel \\overline{BC}$?",
+        "steps": [
+          "Compare $\\frac{5}{7}$ and $\\frac{8}{11}$ by cross-multiplying: $5 \\cdot 11 = 55$ and $7 \\cdot 8 = 56$.",
+          "They are not equal, so the sides are not cut proportionally."
+        ],
+        "a": "No (though it is close to parallel)."
+      },
+      {
+        "t": "p",
+        "html": "<b>A useful corollary.</b> If three or more parallel lines cut two transversals, they cut them proportionally. Join the transversals with a segment and apply the theorem in each of the two triangles it makes. So if the parallel lines cut one transversal into pieces $4$ and $6$, and the matching first piece on the other transversal is $10$, the second is $\\frac{6}{4} \\cdot 10 = 15$."
+      },
+      {
+        "t": "mistake",
+        "html": "Mixing a part on one side with a whole on the other, like $\\frac{AD}{AB} = \\frac{AE}{EC}$. Use parts with parts ($\\frac{AD}{DB} = \\frac{AE}{EC}$) or wholes with wholes ($\\frac{AD}{AB} = \\frac{AE}{AC}$). Check by labeling every segment in your proportion on the picture."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Euclid, <i>Elements</i>, Book VI, Proposition 2"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, High School Geometry, G-SRT.B.4"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

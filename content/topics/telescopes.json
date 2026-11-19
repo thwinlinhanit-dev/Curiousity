@@ -1,0 +1,100 @@
+{
+  "id": "astro.telescopes",
+  "slug": "telescopes",
+  "course": "astro",
+  "courseTitle": "Astronomy",
+  "unit": "light",
+  "unitTitle": "Light and Telescopes",
+  "title": "Telescopes: Light-Gathering and Resolution",
+  "short": "A telescope's light-gathering power grows with the square of its diameter, and a bigger aperture shows finer detail.",
+  "trouble": "Students think a telescope's main job is to magnify.",
+  "prereqs": [
+    "physsci.refraction-intro"
+  ],
+  "xp": 2,
+  "viz": [
+    "astro-aperture",
+    "ph-rays"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You know from <a href=\"/physics/physical-science/refraction-intro/\">Refraction and Lenses</a> that a lens bends light to a focus. A telescope uses a big lens (a <b>refractor</b>) or a curved mirror (a <b>reflector</b>) to bring light from a distant object to a focus, where an eye, a camera or a spectrograph collects it. Every large research telescope today is a reflector, because a mirror can be supported from behind and has no color fringes."
+      },
+      {
+        "t": "why",
+        "html": "Most things in the sky are faint, so a telescope's first job is to <b>gather light</b>. It catches every photon that lands on its mirror, so the light gathered is proportional to the area, $\\pi D^2/4$: double the diameter, four times the light. Its second job is to <b>resolve</b> detail. Light spreading as waves (diffraction) blurs every point into a tiny disk, of angular size about $1.22\\lambda/D$ radians; in arcseconds, $\\theta \\approx 2.5 \\times 10^{5}\\,\\dfrac{\\lambda}{D}$. A wider aperture makes a smaller blur. <b>Magnification</b>, $f_{\\text{objective}}/f_{\\text{eyepiece}}$, comes third: it only spreads out whatever light and detail the aperture captured."
+      },
+      {
+        "t": "key",
+        "html": "Light-gathering power grows as $D^2$; the finest resolvable angle is about $2.5 \\times 10^{5}\\,\\lambda/D$ arcseconds. Both depend on the aperture $D$, which is why astronomers build ever larger mirrors."
+      },
+      {
+        "t": "viz",
+        "name": "astro-aperture",
+        "opts": {
+          "d1": 0.2,
+          "d2": 1,
+          "task": "Drag the two apertures. Watch how much light each collects, and whether it can split the close pair of stars."
+        },
+        "cap": "Two telescopes side by side: the collecting areas (with photons arriving) and how each one images a close pair of stars."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A big mirror against your eye",
+        "q": "How much more light does the $10$ m Keck telescope collect than a dark-adapted eye with a $7$ mm pupil?",
+        "steps": [
+          "Same units: $10$ m $= 10{,}000$ mm.",
+          "Ratio of areas $= \\left(\\frac{10{,}000}{7}\\right)^2 = 1429^2 = 2.0 \\times 10^{6}$.",
+          "About two million times the light: it sees objects millions of times fainter."
+        ],
+        "a": "About $2 \\times 10^{6}$ times."
+      },
+      {
+        "t": "ex",
+        "title": "Hubble's sharpness",
+        "q": "What is the finest detail the $2.4$ m Hubble Space Telescope can resolve at $500$ nm?",
+        "steps": [
+          "$\\lambda = 500$ nm $= 5.00 \\times 10^{-7}$ m.",
+          "$\\theta = 2.5 \\times 10^{5} \\times \\frac{5.00 \\times 10^{-7}}{2.4} = 0.052$ arcseconds.",
+          "Ground telescopes this size are blurred by the turbulent air to about $0.5$ to $1$ arcsecond, unless they use adaptive optics; Hubble, above the air, reaches its full sharpness."
+        ],
+        "a": "About $0.05$ arcseconds."
+      },
+      {
+        "t": "mistake",
+        "html": "Many people think a telescope's main job is to magnify. Stars are so far away that even the biggest telescope shows them as points; what it shows is <em>more</em> of them, fainter ones, and finer detail in extended objects. Extra magnification without more aperture only makes a bigger, dimmer blur. Check: telescopes are named by their diameter (a \"10 m telescope\"), never by their magnification."
+      },
+      {
+        "t": "viz",
+        "name": "ph-rays",
+        "opts": {
+          "element": "telescope"
+        },
+        "cap": "A refracting telescope: the objective forms an image that the eyepiece views. Magnification is the ratio of their focal lengths."
+      },
+      {
+        "t": "note",
+        "html": "Try lenses and focal lengths on the <a href=\"/science-lab/optics/\">Optics Bench</a>."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Astronomy 2e, section 6.1, Telescopes"
+      },
+      {
+        "name": "OpenStax, Astronomy 2e, section 6.2, Telescopes Today"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

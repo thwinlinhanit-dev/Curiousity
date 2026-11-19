@@ -1,0 +1,116 @@
+{
+  "id": "gchem2.first-order",
+  "slug": "first-order",
+  "ladder": "chemistry",
+  "course": "gchem2",
+  "unit": "kinetics",
+  "title": "First-Order Reactions",
+  "short": "ln[A] falls in a straight line with time, and the half-life, t½ = 0.693/k, never changes.",
+  "trouble": "Students think a first-order half-life gets longer or shorter as the reactant runs down.",
+  "prereqs": [
+    "gchem2.rate-laws",
+    "alg2.number-e",
+    "alg2.solve-exponential-equations"
+  ],
+  "xp": 3,
+  "viz": [
+    "ch-kineticsplot"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A first-order <a href=\"/chemistry/general-chemistry-2/rate-laws/\">rate law</a>, $\\text{rate} = k[\\mathrm{A}]$, says that the reactant disappears at a rate proportional to how much is left. That is the same rule as <a href=\"/math/algebra-2/number-e/\">continuous exponential decay</a>, so the concentration follows an exponential curve."
+      },
+      {
+        "t": "key",
+        "html": "For a first-order reaction,\n$$\\ln[\\mathrm{A}] = \\ln[\\mathrm{A}]_0 - kt \\qquad\\text{or}\\qquad [\\mathrm{A}] = [\\mathrm{A}]_0\\,e^{-kt},$$\nand the half-life $t_{1/2} = \\dfrac{\\ln 2}{k} = \\dfrac{0.693}{k}$ is the same no matter how much reactant there is."
+      },
+      {
+        "t": "why",
+        "html": "The rate law says $-\\dfrac{d[\\mathrm{A}]}{dt} = k[\\mathrm{A}]$: the fraction that reacts in each small time interval is always the same, $k\\,dt$. Separating and integrating, $\\int \\dfrac{d[\\mathrm{A}]}{[\\mathrm{A}]} = -k\\int dt$ gives $\\ln[\\mathrm{A}] - \\ln[\\mathrm{A}]_0 = -kt$. For the half-life, set $[\\mathrm{A}] = \\tfrac{1}{2}[\\mathrm{A}]_0$: $\\ln\\tfrac{1}{2} = -kt_{1/2}$, so $t_{1/2} = \\ln 2 / k$. The starting amount cancels out, and that is why the half-life never changes."
+      },
+      {
+        "t": "viz",
+        "name": "ch-kineticsplot",
+        "opts": {
+          "order": 1,
+          "k": 0.1,
+          "A0": 1,
+          "plot": "A",
+          "halves": true
+        },
+        "cap": "A first-order curve with half-life markers. Each half-life is the same length: from 1.0 to 0.50 M takes as long as from 0.50 to 0.25 M."
+      },
+      {
+        "t": "viz",
+        "name": "ch-kineticsplot",
+        "opts": {
+          "order": 1,
+          "k": 0.1,
+          "A0": 1,
+          "plot": "lnA",
+          "halves": false
+        },
+        "cap": "The same data as $\\ln[\\mathrm{A}]$ against time: a straight line with slope $-k$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Half-life and amount left",
+        "q": "A first-order reaction has $k = 0.0200\\ \\text{min}^{-1}$ and $[\\mathrm{A}]_0 = 0.400\\ \\text{M}$. Find the half-life and $[\\mathrm{A}]$ after $50.0\\ \\text{min}$.",
+        "steps": [
+          "$t_{1/2} = \\dfrac{0.693}{0.0200\\ \\text{min}^{-1}} = 34.7\\ \\text{min}$.",
+          "$kt = (0.0200)(50.0) = 1.00$, so $$[\\mathrm{A}] = 0.400\\,e^{-1.00} = (0.400)(0.368) = 0.147\\ \\text{M}$$"
+        ],
+        "a": "$t_{1/2} = 34.7\\ \\text{min}$; $[\\mathrm{A}] = 0.147\\ \\text{M}$."
+      },
+      {
+        "t": "ex",
+        "title": "How long to reach 10%",
+        "q": "For the same reaction, how long until 10.0% of A is left?",
+        "steps": [
+          "Rearrange: $t = \\dfrac{1}{k}\\ln\\dfrac{[\\mathrm{A}]_0}{[\\mathrm{A}]}$, and $\\dfrac{[\\mathrm{A}]_0}{[\\mathrm{A}]} = \\dfrac{100}{10.0} = 10.0$.",
+          "$$t = \\dfrac{\\ln 10.0}{0.0200\\ \\text{min}^{-1}} = \\dfrac{2.303}{0.0200} = 115\\ \\text{min}$$ That is 3.32 half-lives, as it should be: $(\\tfrac{1}{2})^{3.32} = 0.100$."
+        ],
+        "a": "$115\\ \\text{min}$."
+      },
+      {
+        "t": "ex",
+        "title": "Fractions of a half-life",
+        "q": "A reactant has a half-life of $12.0\\ \\text{min}$. What fraction is left after $30.0\\ \\text{min}$?",
+        "steps": [
+          "$30.0 / 12.0 = 2.5$ half-lives.",
+          "Fraction left $= \\left(\\tfrac{1}{2}\\right)^{2.5} = 0.177$. This form is the same law: $\\left(\\tfrac{1}{2}\\right)^{t/t_{1/2}} = e^{-kt}$ because $k = \\ln 2/t_{1/2}$."
+        ],
+        "a": "$0.177$ (17.7%)."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking the half-life gets longer (or shorter) as the reactant runs down. For first order the fraction that reacts per minute is fixed, so every half-life is the same length. Check: if a problem shows half-lives that change, the reaction is not first order."
+      },
+      {
+        "t": "p",
+        "html": "Two measurements are enough to find $k$ for a first-order reaction: $k = \\dfrac{1}{t_2 - t_1}\\ln\\dfrac{[\\mathrm{A}]_1}{[\\mathrm{A}]_2}$. Because only the ratio of concentrations enters, you can use anything proportional to concentration, such as absorbance or the pressure of a gas, without converting it first. Many real processes behave this way: the decomposition of $\\mathrm{N_2O_5}$, the loss of many drugs from the bloodstream, and every radioactive decay."
+      },
+      {
+        "t": "note",
+        "html": "Radioactive decay is the most famous first-order process, which is why <a href=\"/chemistry/general-chemistry-2/decay-kinetics/\">half-lives of isotopes</a> are constants you can look up."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 12.4 Integrated Rate Laws"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

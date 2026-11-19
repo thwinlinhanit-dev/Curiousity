@@ -1,0 +1,83 @@
+{
+  "id": "rbprog.sensor-decisions",
+  "slug": "sensor-decisions",
+  "ladder": "robotics",
+  "course": "rbprog",
+  "unit": "python",
+  "title": "Decisions from Sensors",
+  "short": "if, elif and else turn readings into actions; the order of the tests matters.",
+  "trouble": "Students write tests in an order where an early, broad test hides a later, narrow one.",
+  "prereqs": [
+    "rbprog.trace-code"
+  ],
+  "xp": 2,
+  "viz": [],
+  "figureArchetype": "LessonFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A sensor reading is just a number. A program turns that number into a choice."
+      },
+      {
+        "t": "key",
+        "html": "Use <b>if</b>, <b>elif</b> and <b>else</b>. Python checks the tests <b>in order</b> and runs only the first one that is true. Put narrow tests before broad ones."
+      },
+      {
+        "t": "ex",
+        "title": "Order matters",
+        "q": "<code>if d &lt; 50:<br>&nbsp;&nbsp;&nbsp;&nbsp;action = 'slow'<br>elif d &lt; 15:<br>&nbsp;&nbsp;&nbsp;&nbsp;action = 'stop'<br>else:<br>&nbsp;&nbsp;&nbsp;&nbsp;action = 'go'</code><br>What happens at d = 10?",
+        "steps": [
+          "d &lt; 50 is true, so action = 'slow'.",
+          "The elif is never checked. The robot never stops!"
+        ],
+        "a": "'slow'. Fix it by testing d &lt; 15 first."
+      },
+      {
+        "t": "ex",
+        "title": "Two sensors",
+        "q": "A line follower has left and right sensors that read True on the line. Left True, right False: which way should it steer?",
+        "steps": [
+          "The line is under the left sensor, so the line is to the left.",
+          "Steer left to center it."
+        ],
+        "a": "Left."
+      },
+      {
+        "t": "why",
+        "html": "Most robot behavior is a stack of decisions like these, run many times a second. Getting the order right is the difference between a robot that stops at the wall and one that hits it."
+      },
+      {
+        "t": "mistake",
+        "html": "Writing an early, broad test that hides a later, narrow one. Test the most specific case first."
+      },
+      {
+        "t": "h",
+        "text": "Hands-on: a night-light robot"
+      },
+      {
+        "t": "p",
+        "html": "Put a light sensor in a voltage divider on an analog pin. Print the reading every half second while you cover and uncover it. Pick a threshold halfway between dark and bright, and turn an LED on below it. Then add a second threshold for \"very dark\" and blink."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "The Python Tutorial, Python Software Foundation",
+        "url": "https://docs.python.org/3/tutorial/"
+      },
+      {
+        "name": "Raspberry Pi Foundation, Raspberry Pi Projects",
+        "url": "https://projects.raspberrypi.org/"
+      },
+      {
+        "name": "Arduino Documentation",
+        "url": "https://docs.arduino.cc/"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

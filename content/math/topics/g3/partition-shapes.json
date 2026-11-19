@@ -1,0 +1,102 @@
+{
+  "id": "g3.partition-shapes",
+  "slug": "partition-shapes",
+  "ladder": "math",
+  "course": "g3",
+  "unit": "shapes",
+  "title": "Splitting Shapes into Equal Areas",
+  "short": "Each of 6 equal parts is 1/6 of the shape's area.",
+  "trouble": "Students think equal parts must have the same shape, not just the same area.",
+  "prereqs": [
+    "g3.quadrilaterals",
+    "g3.unit-fractions",
+    "g3.area-unit-squares"
+  ],
+  "xp": 2,
+  "viz": [
+    "shapes",
+    "fractionbar"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You know <a href=\"/math/grade-3/equal-parts/\">equal parts</a> and <a href=\"/math/grade-3/unit-fractions/\">unit fractions</a>, and you can measure <a href=\"/math/grade-3/area-unit-squares/\">area</a>. Put them together: when a shape is split into parts with equal area, each part is a unit fraction of the whole area."
+      },
+      {
+        "t": "viz",
+        "name": "g3-frac",
+        "opts": {
+          "model": "rect",
+          "d": 4,
+          "n": 0,
+          "shade": [
+            0,
+            2
+          ],
+          "pattern": "mix4",
+          "square": true
+        },
+        "cap": "A square split into 4 parts: two small rectangles and two triangles. The shaded rectangle and the shaded triangle look different, but each is $\\frac{1}{4}$ of the square."
+      },
+      {
+        "t": "why",
+        "html": "What matters for a fraction of a shape is how much <b>space</b> each part covers, not what the part looks like. The left half of the square is cut into 2 equal rectangles, so each is half of a half: $\\frac{1}{4}$. The right half is cut corner to corner into 2 equal triangles, so each is also half of a half: $\\frac{1}{4}$. Different shapes, same area."
+      },
+      {
+        "t": "key",
+        "html": "If a shape is split into $b$ parts with equal area, each part is $\\frac{1}{b}$ of the area of the shape. The parts do not need to have the same shape."
+      },
+      {
+        "t": "ex",
+        "title": "Six parts",
+        "q": "A rectangle is split into 6 parts with equal area. What fraction of the area is one part?",
+        "steps": [
+          "6 equal-area parts.",
+          "Each part is $\\frac{1}{6}$ of the area."
+        ],
+        "a": "$\\frac{1}{6}$"
+      },
+      {
+        "t": "ex",
+        "title": "Triangles",
+        "q": "A square is cut along both diagonals into 4 triangles. What fraction of the area is each triangle?",
+        "steps": [
+          "The 4 triangles are the same size.",
+          "So each is $\\frac{1}{4}$ of the square."
+        ],
+        "a": "$\\frac{1}{4}$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Thinking equal parts must look the same.</b> A rectangle piece and a triangle piece can have the same area. Check by comparing each part with a half of the shape, or by counting unit squares, instead of by looking at the shapes."
+      },
+      {
+        "t": "viz",
+        "name": "g3-frac",
+        "opts": {
+          "model": "rect",
+          "d": 6,
+          "n": 1,
+          "pattern": "grid",
+          "gr": [
+            2,
+            3
+          ]
+        },
+        "cap": "6 parts with equal area: the shaded part is $\\frac{1}{6}$ of the rectangle."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 3, 3.G.A.2 (partition shapes into parts with equal areas; express the area of each part as a unit fraction)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

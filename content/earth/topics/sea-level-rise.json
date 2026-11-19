@@ -1,0 +1,88 @@
+{
+  "id": "weather.sea-level-rise",
+  "slug": "sea-level-rise",
+  "ladder": "earth",
+  "course": "weather",
+  "unit": "climate-change",
+  "title": "Why Sea Level Rises",
+  "short": "Seas rise as warming water expands and as ice on land melts or slides into the ocean.",
+  "trouble": "Students think melting sea ice raises sea level; floating ice already pushes aside its own weight of water, so only ice from land adds to the sea.",
+  "prereqs": [
+    "weather.climate-forcings"
+  ],
+  "xp": 2,
+  "viz": [
+    "es-climate-data"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "As Earth warms (<a href=\"/earth-and-space/weather-and-climate/climate-forcings/\">what changes climate</a>), the oceans rise for two reasons. Satellites have measured the global sea level since 1993, and tide gauges go back much further."
+      },
+      {
+        "t": "key",
+        "html": "Sea level rises because <b>seawater expands</b> as it warms, and because <b>ice on land</b> (glaciers and the Greenland and Antarctic ice sheets) melts or slides into the sea. Global mean sea level rose about 20 cm from 1901 to 2018, and about 10 cm since 1993 alone, at a rate that has more than doubled (IPCC 2021; NASA). Melting <b>sea ice</b>, which already floats, adds almost nothing."
+      },
+      {
+        "t": "why",
+        "html": "Water, like most materials, takes up more space when warmer: seawater expands by roughly 0.01 to 0.03% for each degree, depending on its temperature. Spread over an ocean thousands of meters deep, that adds up. Land ice is new water for the ocean: when it melts or flows into the sea, the ocean gains that water. Floating ice is different. By Archimedes' principle, floating ice already pushes aside its own weight of water, so when it melts it fills almost exactly the hole it made. Since 1971, about half of the rise has come from warming water and most of the rest from melting glaciers and ice sheets (IPCC 2021)."
+      },
+      {
+        "t": "viz",
+        "name": "es-climate-data",
+        "opts": {
+          "mode": "series",
+          "preset": "sealevel",
+          "trend": true
+        },
+        "cap": "Global mean sea level since 1993 from satellites (a smooth curve fitted to NASA's record): about 10 cm of rise, getting steeper."
+      },
+      {
+        "t": "ex",
+        "title": "A melting ice cap",
+        "q": "An ice cap on land holds 1000 km³ of ice (density 0.917 g/cm³). If it all melted, about how much would global sea level rise? The ocean covers about 361,000,000 km².",
+        "steps": [
+          "Water from the ice: $1000 \\times 0.917 = 917$ km³.",
+          "Spread over the ocean: $917 \\div 361{,}000{,}000 \\approx 2.54 \\times 10^{-6}$ km.",
+          "That is about 2.5 mm. Greenland's ice, about 2.9 million km³, would add about 7 m."
+        ],
+        "a": "About 2.5 mm"
+      },
+      {
+        "t": "ex",
+        "title": "Warming water",
+        "q": "The top 700 m of the ocean warms by 0.5 °C, and seawater expands by 0.0002 of its height per °C. About how much does sea level rise?",
+        "steps": [
+          "Rise = depth × expansion per °C × warming = $700 \\times 0.0002 \\times 0.5$.",
+          "$= 0.07$ m, about 7 cm."
+        ],
+        "a": "About 7 cm"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking melting sea ice raises sea level. Sea ice already floats, displacing its own weight of water, so melting it barely changes the level, just as melting ice cubes don't make a full glass overflow. Only ice that sits on land (glaciers, Greenland, Antarctica) adds water to the ocean. Check: ask whether the ice is floating or resting on land."
+      },
+      {
+        "t": "note",
+        "html": "Projected rise by 2100 (compared with 1995–2014) is likely about 0.3 to 0.6 m if emissions are cut deeply and about 0.6 to 1.0 m with very high emissions (IPCC 2021). The rise continues for centuries, because the deep ocean and the ice sheets respond slowly."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "IPCC Sixth Assessment Report, Working Group I (2021): Summary for Policymakers A.1.7 and B.5.3, and chapter 9 (ocean, cryosphere and sea level change)"
+      },
+      {
+        "name": "NASA: Sea Level Change portal: satellite sea level since 1993"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-ESS3-5"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

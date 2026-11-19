@@ -1,0 +1,158 @@
+{
+  "id": "calc1.inverse-derivatives",
+  "slug": "inverse-derivatives",
+  "ladder": "math",
+  "course": "calc1",
+  "unit": "rules",
+  "title": "Derivatives of Inverse Functions and Inverse Trig",
+  "short": "d/dx sin⁻¹ x = 1/√(1 − x²).",
+  "trouble": "Students use 1/f′(x) instead of 1/f′(f⁻¹(x)).",
+  "prereqs": [
+    "calc1.implicit-differentiation",
+    "pre.inverse-trig"
+  ],
+  "xp": 3,
+  "viz": [],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "An inverse function undoes the original: the graph of $f^{-1}$ is the graph of $f$ reflected across $y = x$. Reflection swaps rise and run, so slopes turn into their reciprocals. <a href=\"/math/calculus-1/implicit-differentiation/\">Implicit Differentiation</a> turns that picture into formulas, including those for the <a href=\"/math/precalculus/inverse-trig/\">Inverse Trig Functions</a>."
+      },
+      {
+        "t": "key",
+        "html": "If $f(a) = b$ and $f'(a) \\ne 0$, then $$(f^{-1})'(b) = \\frac{1}{f'(a)} = \\frac{1}{f'\\big(f^{-1}(b)\\big)}.$$ In particular, $$\\frac{d}{dx}\\arcsin x = \\frac{1}{\\sqrt{1 - x^2}}, \\qquad \\frac{d}{dx}\\arctan x = \\frac{1}{1 + x^2}, \\qquad \\frac{d}{dx}\\arccos x = -\\frac{1}{\\sqrt{1 - x^2}}.$$"
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "fns": [
+            {
+              "f": "x^2",
+              "from": 0,
+              "label": "f"
+            },
+            {
+              "f": "sqrt(x)",
+              "color": "purple",
+              "label": "f⁻¹"
+            },
+            {
+              "f": "x",
+              "color": "gray",
+              "dash": true,
+              "label": "id"
+            },
+            {
+              "f": "4x-4",
+              "color": "red",
+              "label": "T₁"
+            },
+            {
+              "f": "x/4+1",
+              "color": "orange",
+              "label": "T₂"
+            }
+          ],
+          "points": [
+            [
+              2,
+              4
+            ],
+            [
+              4,
+              2
+            ]
+          ],
+          "xmin": -1,
+          "xmax": 7,
+          "ymin": -1,
+          "ymax": 7,
+          "equal": true
+        },
+        "cap": "$f(x) = x^2$ has slope 4 at $(2, 4)$ (tangent $T_1$). The inverse $\\sqrt{x}$ has slope $\\frac{1}{4}$ at the mirror point $(4, 2)$ (tangent $T_2$). The dashed line is $y = x$."
+      },
+      {
+        "t": "why",
+        "html": "Let $y = f^{-1}(x)$, so $f(y) = x$. Differentiate both sides implicitly: $f'(y)\\frac{dy}{dx} = 1$, so $\\frac{dy}{dx} = \\frac{1}{f'(y)}$. For arcsine: $y = \\arcsin x$ means $\\sin y = x$ with $-\\frac{\\pi}{2} \\le y \\le \\frac{\\pi}{2}$. Then $\\cos y\\,\\frac{dy}{dx} = 1$, and on that range $\\cos y = \\sqrt{1 - \\sin^2 y} = \\sqrt{1 - x^2}$ (positive). For arctangent: $\\tan y = x$ gives $\\sec^2 y\\,\\frac{dy}{dx} = 1$, and $\\sec^2 y = 1 + \\tan^2 y = 1 + x^2$."
+      },
+      {
+        "t": "ex",
+        "title": "An inverse without a formula",
+        "q": "$f(x) = x^3 + x$ is one-to-one. Find $(f^{-1})'(2)$.",
+        "steps": [
+          "Find the matching input: $f(1) = 1 + 1 = 2$, so $f^{-1}(2) = 1$.",
+          "$f'(x) = 3x^2 + 1$, so $f'(1) = 4$.",
+          "$(f^{-1})'(2) = \\frac{1}{4}$."
+        ],
+        "a": "$\\frac{1}{4}$, even though we cannot write $f^{-1}$ with a simple formula."
+      },
+      {
+        "t": "ex",
+        "title": "Inverse trig with the chain rule",
+        "q": "Differentiate $\\arcsin(2x)$ and $\\arctan(x^2)$.",
+        "steps": [
+          "$\\frac{1}{\\sqrt{1 - (2x)^2}}\\cdot 2 = \\frac{2}{\\sqrt{1 - 4x^2}}$.",
+          "$\\frac{1}{1 + (x^2)^2}\\cdot 2x = \\frac{2x}{1 + x^4}$."
+        ],
+        "a": "$\\frac{2}{\\sqrt{1 - 4x^2}}$ and $\\frac{2x}{1 + x^4}$"
+      },
+      {
+        "t": "ex",
+        "title": "A derivative that reveals a constant",
+        "q": "Differentiate $\\arctan x + \\arctan\\left(\\frac{1}{x}\\right)$ for $x > 0$. What does the answer tell you?",
+        "steps": [
+          "$\\frac{d}{dx}\\arctan x = \\frac{1}{1 + x^2}$.",
+          "Chain rule: $$\\frac{d}{dx}\\arctan\\left(\\frac{1}{x}\\right) = \\frac{1}{1 + \\frac{1}{x^2}} \\cdot \\left(-\\frac{1}{x^2}\\right) = -\\frac{1}{x^2 + 1}$$.",
+          "The sum of the derivatives is 0, so the function is constant for $x > 0$. At $x = 1$ it equals $\\frac{\\pi}{4} + \\frac{\\pi}{4} = \\frac{\\pi}{2}$."
+        ],
+        "a": "The derivative is $0$, so $\\arctan x + \\arctan\\frac{1}{x} = \\frac{\\pi}{2}$ for every $x > 0$: the two angles of a right triangle."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Function",
+          "Derivative",
+          "Domain of the derivative"
+        ],
+        "rows": [
+          [
+            "$\\arcsin x$",
+            "$\\frac{1}{\\sqrt{1 - x^2}}$",
+            "$-1 < x < 1$"
+          ],
+          [
+            "$\\arccos x$",
+            "$-\\frac{1}{\\sqrt{1 - x^2}}$",
+            "$-1 < x < 1$"
+          ],
+          [
+            "$\\arctan x$",
+            "$\\frac{1}{1 + x^2}$",
+            "all real $x$"
+          ]
+        ],
+        "cap": "Derivatives of the inverse trig functions."
+      },
+      {
+        "t": "p",
+        "html": "At $x = \\pm 1$ the arcsine graph has vertical tangents, matching the horizontal tangents of $\\sin y$ at $y = \\pm\\frac{\\pi}{2}$: a flat slope reflects into a vertical one. The arctangent's slope is largest at 0 (slope 1) and fades toward 0 far out, as the graph levels off toward its asymptotes $y = \\pm\\frac{\\pi}{2}$."
+      },
+      {
+        "t": "mistake",
+        "html": "Using $\\frac{1}{f'(b)}$ instead of $\\frac{1}{f'(a)}$. In the first example, $\\frac{1}{f'(2)} = \\frac{1}{13}$, which is wrong. The slope of the inverse at $x = 2$ matches the slope of $f$ at the mirror point, whose $x$-coordinate is $f^{-1}(2) = 1$. Check: always find $a = f^{-1}(b)$ first."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 1, 3.7 Derivatives of Inverse Functions"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,100 @@
+{
+  "id": "hsbio.x-linked",
+  "slug": "x-linked",
+  "ladder": "bio",
+  "course": "hsbio",
+  "unit": "genetics",
+  "title": "X-Linked Traits",
+  "short": "Genes on the X chromosome show a special pattern: XY individuals have one X, so a single recessive allele shows. Red-green color blindness is a common example.",
+  "trouble": "Students give a Y chromosome an allele for an X-linked gene, or think X-linked traits are passed from father to son. A son gets his X from his mother; his father passes him a Y.",
+  "prereqs": [
+    "hsbio.monohybrid",
+    "hsbio.chromosomes"
+  ],
+  "xp": 3,
+  "viz": [
+    "bi-punnett",
+    "bi-pedigree"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/biology/high-school-biology/chromosomes/\">Chromosomes and Their Numbers</a> you met the X and Y chromosomes. XX individuals are female and XY individuals are male. The X carries many genes that have nothing to do with being male or female; the much smaller Y carries few. Genes on the X are called <b>X-linked</b>."
+      },
+      {
+        "t": "key",
+        "html": "An XX individual has two copies of each X-linked gene; an XY individual has <b>one</b>. So one recessive X-linked allele shows in an XY individual. Write the alleles on the X: X<sup>A</sup>, X<sup>a</sup>. The Y has no allele for these genes."
+      },
+      {
+        "t": "why",
+        "html": "A son gets his Y from his father, so his only X comes from his mother. A daughter gets one X from each parent. That is why X-linked recessive traits, like red-green color blindness, are much more common in males: one recessive allele is enough. A female needs two, and a female with one is a <b>carrier</b> with normal vision."
+      },
+      {
+        "t": "viz",
+        "name": "bi-punnett",
+        "opts": {
+          "p1": "XAXa",
+          "p2": "XAY",
+          "traits": {
+            "A": "normal vision",
+            "a": "color blind"
+          }
+        },
+        "cap": "A carrier mother × a father with normal vision."
+      },
+      {
+        "t": "ex",
+        "title": "A carrier mother",
+        "q": "X<sup>A</sup>X<sup>a</sup> × X<sup>A</sup>Y (a = color blindness). What are the chances for sons and for daughters?",
+        "steps": [
+          "Mother's gametes: X<sup>A</sup> or X<sup>a</sup>. Father's: X<sup>A</sup> or Y.",
+          "Daughters get the father's X<sup>A</sup>: X<sup>A</sup>X<sup>A</sup> or X<sup>A</sup>X<sup>a</sup>. All have normal vision; half are carriers.",
+          "Sons get the father's Y: X<sup>A</sup>Y or X<sup>a</sup>Y. Half are color blind."
+        ],
+        "a": "Daughters: none affected (½ carriers). Sons: ½ color blind."
+      },
+      {
+        "t": "ex",
+        "title": "Two ways to ask",
+        "q": "In the same cross, what is the chance that a child is a color-blind son?",
+        "steps": [
+          "Of the four equally likely boxes, only X<sup>a</sup>Y is a color-blind son.",
+          "Compare: \"the chance a son is color blind\" counts only the two son boxes, so it is ½."
+        ],
+        "a": "¼ (one box of four)."
+      },
+      {
+        "t": "ex",
+        "title": "A color-blind father",
+        "q": "X<sup>A</sup>X<sup>A</sup> × X<sup>a</sup>Y. Can a son be color blind?",
+        "steps": [
+          "Sons get their X from the mother, who has only X<sup>A</sup>.",
+          "Daughters get the father's X<sup>a</sup>, so they are all carriers."
+        ],
+        "a": "No son is color blind; every daughter is a carrier."
+      },
+      {
+        "t": "mistake",
+        "html": "Two slips. One is giving the Y chromosome an allele (X<sup>A</sup>Y<sup>a</sup>): the Y has no copy of X-linked genes. The other is thinking an X-linked trait passes from father to son. A father gives his son a Y, never his X, so he cannot pass an X-linked allele to a son."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Concepts of Biology, 8.3 Extensions of the Laws of Inheritance (X-linked traits)"
+      },
+      {
+        "name": "OpenStax, Biology 2e, 12.3 Laws of Inheritance (sex-linked traits)"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-LS3-1: Heredity: Inheritance and Variation of Traits"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

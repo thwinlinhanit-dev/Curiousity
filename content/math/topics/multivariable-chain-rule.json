@@ -1,0 +1,85 @@
+{
+  "id": "calc3.multivariable-chain-rule",
+  "slug": "multivariable-chain-rule",
+  "ladder": "math",
+  "course": "calc3",
+  "unit": "partials",
+  "title": "The Chain Rule for Several Variables",
+  "short": "Add up the effects through every path of dependence.",
+  "trouble": "Students leave out one of the paths from the output to the variable.",
+  "prereqs": [
+    "calc3.partial-derivatives"
+  ],
+  "xp": 3,
+  "viz": [],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Suppose the temperature at a point is $T(x, y)$ and you walk along a path $x(t)$, $y(t)$. How fast does the temperature you feel change? It changes because $x$ changes and because $y$ changes, and both effects add. This is the <a href=\"/math/calculus-3/partial-derivatives/\">partial derivative</a> version of the one-variable chain rule."
+      },
+      {
+        "t": "key",
+        "html": "If $z = f(x, y)$ with $x = x(t)$ and $y = y(t)$:\n  $$\\frac{dz}{dt} = \\frac{\\partial z}{\\partial x}\\frac{dx}{dt} + \\frac{\\partial z}{\\partial y}\\frac{dy}{dt}.$$\n  If $x$ and $y$ depend on $s$ and $t$, then $\\frac{\\partial z}{\\partial s} = \\frac{\\partial z}{\\partial x}\\frac{\\partial x}{\\partial s} + \\frac{\\partial z}{\\partial y}\\frac{\\partial y}{\\partial s}$. In general: multiply along each path of a tree diagram and add over all paths."
+      },
+      {
+        "t": "why",
+        "html": "By the <a href=\"/math/calculus-3/differentials-error/\">linear approximation</a>, a small change gives $\\Delta z \\approx f_x\\,\\Delta x + f_y\\,\\Delta y$. Divide by $\\Delta t$:\n  $$\\frac{\\Delta z}{\\Delta t} \\approx f_x\\frac{\\Delta x}{\\Delta t} + f_y\\frac{\\Delta y}{\\Delta t}.$$\n  As $\\Delta t \\to 0$ the approximation becomes exact and each quotient becomes a derivative. Each term is one route by which $t$ influences $z$."
+      },
+      {
+        "t": "p",
+        "html": "A <b>tree diagram</b> keeps track of the routes. Put $z$ at the top, the intermediate variables in the middle, and the independent variables at the bottom. Label each branch with its derivative. For $\\frac{\\partial z}{\\partial s}$, follow every path from $z$ down to $s$, multiply the labels along it, and add.<svg viewBox=\"0 0 380 190\" role=\"img\" aria-label=\"Tree diagram: z branches to x and y; x and y each branch to s and t. Each branch is labeled with a partial derivative.\" style=\"width:100%;max-width:380px;display:block;margin:.4rem auto;color:currentColor\">\n<g stroke=\"currentColor\" stroke-width=\"1.6\" fill=\"none\" opacity=\".75\"><line x1=\"190\" y1=\"34\" x2=\"95\" y2=\"88\"/><line x1=\"190\" y1=\"34\" x2=\"285\" y2=\"88\"/><line x1=\"95\" y1=\"108\" x2=\"45\" y2=\"160\"/><line x1=\"95\" y1=\"108\" x2=\"145\" y2=\"160\"/><line x1=\"285\" y1=\"108\" x2=\"235\" y2=\"160\"/><line x1=\"285\" y1=\"108\" x2=\"335\" y2=\"160\"/></g>\n<g fill=\"currentColor\" font-family=\"Georgia,serif\" font-style=\"italic\" font-size=\"20\" text-anchor=\"middle\"><text x=\"190\" y=\"26\">z</text><text x=\"95\" y=\"104\">x</text><text x=\"285\" y=\"104\">y</text><text x=\"45\" y=\"180\">s</text><text x=\"145\" y=\"180\">t</text><text x=\"235\" y=\"180\">s</text><text x=\"335\" y=\"180\">t</text></g>\n<g fill=\"currentColor\" font-family=\"system-ui,sans-serif\" font-size=\"12\" text-anchor=\"middle\" opacity=\".85\"><text x=\"122\" y=\"56\">∂z/∂x</text><text x=\"262\" y=\"56\">∂z/∂y</text><text x=\"52\" y=\"134\">∂x/∂s</text><text x=\"142\" y=\"134\">∂x/∂t</text><text x=\"242\" y=\"134\">∂y/∂s</text><text x=\"332\" y=\"134\">∂y/∂t</text></g></svg>"
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Along a path",
+        "q": "Let $z = x^2y$ with $x = \\cos t$, $y = \\sin t$. Find $\\frac{dz}{dt}$, and its value at $t = 0$.",
+        "steps": [
+          "$\\frac{\\partial z}{\\partial x} = 2xy$, $\\frac{\\partial z}{\\partial y} = x^2$, $\\frac{dx}{dt} = -\\sin t$, $\\frac{dy}{dt} = \\cos t$.",
+          "$$\\frac{dz}{dt} = 2xy(-\\sin t) + x^2\\cos t = -2\\cos t\\sin^2 t + \\cos^3 t.$$",
+          "At $t = 0$: ${}0 + 1 = 1$. Check: $z(t) = \\cos^2 t\\sin t$, whose derivative at ${}0$ is also ${}1$."
+        ],
+        "a": "$\\frac{dz}{dt} = \\cos^3 t - 2\\cos t\\sin^2 t$; it equals ${}1$ at $t = 0$"
+      },
+      {
+        "t": "ex",
+        "title": "Two independent variables",
+        "q": "Let $z = x^2 + xy$ with $x = s + t$ and $y = st$. Find $\\frac{\\partial z}{\\partial s}$ at $(s, t) = (1, 2)$.",
+        "steps": [
+          "Paths to $s$: $z \\to x \\to s$ and $z \\to y \\to s$.",
+          "$\\frac{\\partial z}{\\partial x} = 2x + y$, $\\frac{\\partial x}{\\partial s} = 1$, $\\frac{\\partial z}{\\partial y} = x$, $\\frac{\\partial y}{\\partial s} = t$.",
+          "At $(1, 2)$: $x = 3$, $y = 2$, so $\\frac{\\partial z}{\\partial s} = (6 + 2)(1) + 3(2) = 14$."
+        ],
+        "a": "${}14$"
+      },
+      {
+        "t": "ex",
+        "title": "Three intermediate variables",
+        "q": "If $w = f(x, y, z)$ and $x$, $y$, $z$ are functions of $t$, write $\\frac{dw}{dt}$.",
+        "steps": [
+          "Three routes lead from $w$ to $t$, one through each intermediate variable.",
+          "$\\frac{dw}{dt} = \\frac{\\partial w}{\\partial x}\\frac{dx}{dt} + \\frac{\\partial w}{\\partial y}\\frac{dy}{dt} + \\frac{\\partial w}{\\partial z}\\frac{dz}{dt}$, which is $\\nabla w \\cdot \\mathbf{r}'(t)$."
+        ],
+        "a": "three terms, one per path"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Leaving out a path.</b> If $y$ also depends on $t$ but you write only $\\frac{\\partial z}{\\partial x}\\frac{dx}{dt}$, you have counted the change through $x$ and ignored the change through $y$. Draw the tree and count the paths from the top variable to the bottom one: that is the number of terms. Check with a direct substitution when the functions are simple."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 3, 4.5 The Chain Rule"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

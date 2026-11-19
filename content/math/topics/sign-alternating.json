@@ -1,0 +1,97 @@
+{
+  "id": "aa.sign-alternating",
+  "slug": "sign-alternating",
+  "ladder": "math",
+  "course": "aa",
+  "unit": "permutations",
+  "title": "Even and Odd Permutations",
+  "short": "Every permutation is a product of transpositions, always an even number or always an odd number of them; a k-cycle is even when k is odd, and the even permutations form Aₙ, of order n!/2.",
+  "trouble": "Students call a 3-cycle odd because 3 is odd; a k-cycle is a product of k − 1 transpositions, so a 3-cycle is even.",
+  "prereqs": [
+    "aa.permutation-order",
+    "aa.subgroups"
+  ],
+  "xp": 2,
+  "viz": [
+    "aa-perm"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Every shuffle of a deck can be done by swapping two cards at a time. In the language of <a href=\"/math/abstract-algebra/cycle-notation/\">cycles</a>: every permutation is a product of transpositions. The surprise is that the <i>number</i> of swaps, though not fixed, is always even or always odd for a given permutation."
+      },
+      {
+        "t": "p",
+        "html": "<b>Transpositions generate $S_{n}$.</b> A $k$-cycle is a product of $k - 1$ transpositions: $$(a_{1}\\;a_{2}\\;\\dots\\;a_{k}) = (a_{1}\\;a_{k})(a_{1}\\;a_{k-1})\\cdots(a_{1}\\;a_{3})(a_{1}\\;a_{2}),$$ multiplied right to left as usual. For example $(1\\;2\\;3\\;4) = (1\\;4)(1\\;3)(1\\;2)$. Since every permutation is a product of cycles, it is a product of transpositions."
+      },
+      {
+        "t": "why",
+        "html": "<b>Theorem.</b> A permutation cannot be both a product of an even number and of an odd number of transpositions.<br><b>Proof.</b> For $\\sigma \\in S_{n}$, let $c(\\sigma)$ be its number of cycles, counting fixed points as 1-cycles, and let $N(\\sigma) = n - c(\\sigma)$; the identity has $N = 0$. Multiplying by a transposition $(a\\;b)$ changes $c$ by exactly one: if $a$ and $b$ lie in the same cycle, that cycle splits in two; if they lie in different cycles, the two merge. So each transposition changes the parity of $N$. A product of $m$ transpositions therefore has $N \\equiv m \\pmod{2}$, and the parity of $m$ is fixed by $\\sigma$ alone. $\\square$"
+      },
+      {
+        "t": "p",
+        "html": "So we may define the <b>sign</b>: $\\operatorname{sgn}(\\sigma) = +1$ if $\\sigma$ is <b>even</b> (an even number of transpositions) and $-1$ if <b>odd</b>. From the cycle formula, a $k$-cycle has sign $(-1)^{k-1}$: <b>odd-length cycles are even</b>. Signs multiply: $\\operatorname{sgn}(\\sigma\\tau) = \\operatorname{sgn}(\\sigma)\\operatorname{sgn}(\\tau)$, because the transposition counts add."
+      },
+      {
+        "t": "p",
+        "html": "<b>The alternating group.</b> The even permutations form a <a href=\"/math/abstract-algebra/subgroups/\">subgroup</a> $A_{n}$ (the identity is even, and products and inverses of even permutations are even). For $n \\ge 2$, multiplying by $(1\\;2)$ swaps the even and odd permutations one for one, so exactly half are even: $|A_{n}| = n!/2$."
+      },
+      {
+        "t": "viz",
+        "name": "aa-perm",
+        "opts": {
+          "p": "(1 2 3 4)(5 6)",
+          "n": 6
+        },
+        "cap": "$(1\\;2\\;3\\;4)(5\\;6)$ needs $3 + 1 = 4$ transpositions, so it is even, even though it contains a 4-cycle and a 2-cycle, which are odd one at a time."
+      },
+      {
+        "t": "ex",
+        "title": "Signs from cycle types",
+        "q": "Decide whether $(1\\;2\\;3)$, $(1\\;2\\;3\\;4)$ and $(1\\;2)(3\\;4)$ are even or odd.",
+        "steps": [
+          "$(1\\;2\\;3)$: $3 - 1 = 2$ transpositions, even.",
+          "$(1\\;2\\;3\\;4)$: $3$ transpositions, odd.",
+          "$(1\\;2)(3\\;4)$: $1 + 1 = 2$, even."
+        ],
+        "a": "Even, odd, even."
+      },
+      {
+        "t": "ex",
+        "title": "The elements of $A_{4}$",
+        "q": "List the cycle types in $A_{4}$ and check that there are $12$ elements.",
+        "steps": [
+          "Even types in $S_{4}$: the identity; 3-cycles; products of two disjoint transpositions. (Transpositions and 4-cycles are odd.)",
+          "Counts: $1$ identity, $4 \\cdot 3 \\cdot 2/3 = 8$ three-cycles, and $3$ double transpositions $(1\\;2)(3\\;4)$, $(1\\;3)(2\\;4)$, $(1\\;4)(2\\;3)$.",
+          "$1 + 8 + 3 = 12 = 4!/2$."
+        ],
+        "a": "$|A_{4}| = 12$."
+      },
+      {
+        "t": "mistake",
+        "html": "Calling a 3-cycle odd \"because 3 is odd\". The sign of a $k$-cycle is $(-1)^{k-1}$: count the $k - 1$ transpositions, not the $k$ entries. So 3-cycles are even and 2-cycles (transpositions) are odd."
+      },
+      {
+        "t": "key",
+        "html": "Every permutation is a product of transpositions, always an even number or always an odd number of them. A $k$-cycle is even when $k$ is odd. The even permutations form $A_{n}$, with $n!/2$ elements."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Thomas W. Judson, Abstract Algebra: Theory and Applications (open textbook), chapter 5, Permutation Groups (section 5.1, Transpositions and the Alternating Groups)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.703 Modern Algebra (Spring 2013), lecture on the sign of a permutation"
+      },
+      {
+        "name": "John A. Beachy and William D. Blair, Abstract Algebra, online study guide (Northern Illinois University), section 2.3 and section 3.6, Permutation Groups"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

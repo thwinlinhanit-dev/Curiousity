@@ -1,0 +1,98 @@
+{
+  "id": "astro.exoplanets",
+  "slug": "exoplanets",
+  "course": "astro",
+  "courseTitle": "Astronomy",
+  "unit": "solar-system",
+  "unitTitle": "The Solar System",
+  "title": "Finding Planets Around Other Stars",
+  "short": "A passing planet dims its star by (R_planet/R_star)², and a planet's tug makes its star wobble.",
+  "trouble": "Students think most exoplanets were found by taking pictures of them.",
+  "prereqs": [
+    "astro.doppler-light",
+    "astro.weighing-with-orbits"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-orbit"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "For centuries, planets around other stars were a guess. The first one around a Sun-like star, 51 Pegasi b, was found in 1995, and today more than 5,000 are confirmed (NASA Exoplanet Archive). Hardly any were seen directly: a planet is billions of times fainter than its star and lost in its glare. Instead astronomers watch the star, using ideas you already know: <a href=\"/physics/astronomy/doppler-light/\">Doppler shifts</a> and <a href=\"/physics/astronomy/weighing-with-orbits/\">orbits</a>."
+      },
+      {
+        "t": "why",
+        "html": "<b>Transits.</b> If a planet's orbit is edge-on to us, the planet crosses its star's face once per orbit and blocks a small disk of light. The fraction blocked is the ratio of the two disks' areas: $\\dfrac{\\pi R_p^2}{\\pi R_\\star^2} = \\left(\\dfrac{R_p}{R_\\star}\\right)^2$. The depth gives the planet's size; the time between dips gives its period. <b>Wobble.</b> A star and its planet both orbit their common center of mass, so the star moves in a small circle, and its spectral lines shift back and forth. Balancing momenta, $M_\\star v_\\star = m_p v_p$, so the size of the wobble gives the planet's mass."
+      },
+      {
+        "t": "key",
+        "html": "Transit depth $= \\left(\\dfrac{R_p}{R_\\star}\\right)^2$ gives a planet's size; the star's Doppler wobble, $v_\\star = v_p\\,\\dfrac{m_p}{M_\\star}$, gives its mass. Together they give its density: rocky or gassy."
+      },
+      {
+        "t": "viz",
+        "name": "ph-orbit",
+        "opts": {
+          "mode": "transit",
+          "rp": 0.1
+        },
+        "cap": "A planet one-tenth of its star's radius crossing the star. The light curve dips by $0.1^2 = 1\\%$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Jupiter and Earth from afar",
+        "q": "Jupiter's radius is about $0.10$ of the Sun's; Earth's is about $\\frac{1}{109}$. How much would each dim the Sun during a transit?",
+        "steps": [
+          "Jupiter: $(0.10)^2 = 0.01 = 1\\%$.",
+          "Earth: $\\left(\\frac{1}{109}\\right)^2 = 8.4 \\times 10^{-5}$, about $0.008\\%$.",
+          "Finding Earth-sized planets needs measuring starlight to better than one part in 10,000, which is why the Kepler and TESS telescopes observe from space."
+        ],
+        "a": "$1\\%$ and about $0.008\\%$."
+      },
+      {
+        "t": "ex",
+        "title": "The Sun's wobble",
+        "q": "Jupiter orbits at $13.1$ km/s and has $\\frac{1}{1047}$ of the Sun's mass. How fast does Jupiter make the Sun wobble?",
+        "steps": [
+          "$v_\\odot = v_J \\frac{m_J}{M_\\odot} = 13.1\\ \\text{km/s} \\times \\frac{1}{1047} = 0.0125$ km/s.",
+          "That is $12.5$ m/s, about the speed of a fast bicycle, measured from light-years away by its Doppler shift."
+        ],
+        "a": "About $12.5$ m/s."
+      },
+      {
+        "t": "mistake",
+        "html": "It is natural to imagine exoplanets being found in photographs, but only a small share have been imaged directly. Most were found by the transit method (thousands by the Kepler and TESS missions) or by the star's wobble. Check: a planet like Jupiter seen from a nearby star would be about a billion times fainter than the Sun beside it."
+      },
+      {
+        "t": "viz",
+        "name": "ph-orbit",
+        "opts": {
+          "mode": "binary",
+          "m2": 0.3
+        },
+        "cap": "A star and a companion circling their center of mass, with the Doppler (radial velocity) curves. A planet makes its star wobble in the same way, only much less."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Astronomy 2e, section 21.4, Planets beyond the Solar System: Search and Discovery"
+      },
+      {
+        "name": "OpenStax, Astronomy 2e, section 21.5, Exoplanets Everywhere: What We Are Learning"
+      },
+      {
+        "name": "NASA Exoplanet Archive (discovery counts by method)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

@@ -1,0 +1,86 @@
+{
+  "id": "chem.charles-law",
+  "slug": "charles-law",
+  "ladder": "chemistry",
+  "course": "chem",
+  "unit": "gases",
+  "title": "Charles's Law",
+  "short": "At constant pressure, a gas's volume is proportional to its kelvin temperature.",
+  "trouble": "Students use Celsius temperatures, so warming from 10 °C to 20 °C seems to double the volume.",
+  "prereqs": [
+    "chem.kinetic-molecular-theory",
+    "g7.proportional-equations"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-gasbox",
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A balloon taken from a warm room into the cold shrinks. <a href=\"/chemistry/chemistry/kinetic-molecular-theory/\">Kinetic Molecular Theory</a> explains it, and the relation turns out to be a <a href=\"/math/grade-7/proportional-equations/\">proportional one</a>, as long as temperature is measured from absolute zero."
+      },
+      {
+        "t": "key",
+        "html": "At constant pressure, for a fixed amount of gas, volume is proportional to the <b>kelvin</b> temperature: $$\\frac{V_1}{T_1} = \\frac{V_2}{T_2}$$"
+      },
+      {
+        "t": "why",
+        "html": "Warmer particles move faster, so they hit the walls harder and more often. If the container can grow, like a balloon or a free piston, it expands until the pressure inside again matches the pressure outside. Measured carefully, the volume of every gas shrinks along a straight line that would reach zero at $-273.15^\\circ\\text{C}$. That point is absolute zero, and it is why the gas laws only work in kelvins."
+      },
+      {
+        "t": "viz",
+        "name": "ch-gasbox",
+        "opts": {
+          "n": 1,
+          "T": 300,
+          "lock": "P",
+          "graph": "VT"
+        },
+        "cap": "The piston floats, so the pressure stays the same. Heat the gas: the volume grows in proportion to the kelvin temperature. On a wide screen, the live $V$–$T$ line, extended, points back to $0\\ \\text{K}$."
+      },
+      {
+        "t": "ex",
+        "title": "In kelvins",
+        "q": "A gas has a volume of $2.50\\ \\text{L}$ at $300\\ \\text{K}$. What is its volume at $450\\ \\text{K}$, at the same pressure?",
+        "steps": [
+          "$V_2 = V_1 \\times \\dfrac{T_2}{T_1} = 2.50\\ \\text{L} \\times \\dfrac{450\\ \\text{K}}{300\\ \\text{K}}$.",
+          "$V_2 = 3.75\\ \\text{L}$."
+        ],
+        "a": "$3.75\\ \\text{L}$."
+      },
+      {
+        "t": "ex",
+        "title": "Starting in Celsius",
+        "q": "A balloon holds $1.50\\ \\text{L}$ at $20^\\circ\\text{C}$. What is its volume at $100^\\circ\\text{C}$, at the same pressure?",
+        "steps": [
+          "Change to kelvins: $T_1 = 293.15\\ \\text{K}$, $T_2 = 373.15\\ \\text{K}$.",
+          "$V_2 = 1.50\\ \\text{L} \\times \\dfrac{373.15}{293.15} = 1.91\\ \\text{L}$.",
+          "Check: warmer, so a little bigger, far from the 5 times that $100 \\div 20$ would suggest."
+        ],
+        "a": "$1.91\\ \\text{L}$."
+      },
+      {
+        "t": "mistake",
+        "html": "Using Celsius temperatures in the ratio. Warming from $10^\\circ\\text{C}$ to $20^\\circ\\text{C}$ does not double the volume: in kelvins it is $283.15$ to $293.15$, a rise of only 3.5%. Check: if the temperatures you divide could be zero or negative, they are not in kelvins."
+      },
+      {
+        "t": "note",
+        "html": "Try it in <a href=\"/science-lab/gas/\">Gas in a Box</a>: let the piston float, heat the gas, and read the volume against the kelvin temperature."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 9.2 Relating Pressure, Volume, Amount, and Temperature: The Ideal Gas Law"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,90 @@
+{
+  "id": "g5.prime-factorization",
+  "slug": "prime-factorization",
+  "ladder": "math",
+  "course": "g5",
+  "unit": "expressions",
+  "title": "Prime Factorization",
+  "short": "Write a number as a product of primes with a factor tree.",
+  "trouble": "Children stop at a composite factor like 4 and call the factor tree finished.",
+  "prereqs": [
+    "g4.prime-composite"
+  ],
+  "xp": 2,
+  "viz": [
+    "arraygrid"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A <a href=\"/math/grade-4/prime-composite/\">prime number</a> has exactly two factors, 1 and itself. Every other whole number greater than 1 is composite: it splits into smaller factors. Keep splitting, and you reach the primes that build the number."
+      },
+      {
+        "t": "key",
+        "html": "To find the prime factorization, split the number into two factors, then split any factor that is not prime. Stop only when every branch ends in a prime. Then write the number as the product of those primes."
+      },
+      {
+        "t": "why",
+        "html": "Each split makes the factors smaller, so the splitting has to stop, and it can only stop at primes. However you begin, you end with the same primes: $60 = 6 \\times 10$ and $60 = 4 \\times 15$ both lead to $2 \\times 2 \\times 3 \\times 5$."
+      },
+      {
+        "t": "viz",
+        "name": "g5-factortree",
+        "opts": {
+          "n": 60,
+          "first": [
+            6,
+            10
+          ]
+        },
+        "cap": "A factor tree for 60, started as $6 \\times 10$. Split the numbers that are not prime. Then press &ldquo;Start over&rdquo; and try a different first split: the primes at the ends come out the same."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A factor tree for 60",
+        "q": "Write 60 as a product of primes.",
+        "steps": [
+          "$60 = 6 \\times 10$. Neither 6 nor 10 is prime.",
+          "$6 = 2 \\times 3$ and $10 = 2 \\times 5$. All four are prime.",
+          "Put them in order: $2 \\times 2 \\times 3 \\times 5$. Check: $4 \\times 3 \\times 5 = 60$."
+        ],
+        "a": "$60 = 2 \\times 2 \\times 3 \\times 5$"
+      },
+      {
+        "t": "ex",
+        "title": "Peel off small primes",
+        "q": "Write 126 as a product of primes.",
+        "steps": [
+          "126 is even: $126 = 2 \\times 63$.",
+          "63 is not even, but $6 + 3 = 9$, so 3 divides it: $63 = 3 \\times 21$.",
+          "$21 = 3 \\times 7$. Now every factor is prime."
+        ],
+        "a": "$126 = 2 \\times 3 \\times 3 \\times 7$"
+      },
+      {
+        "t": "mistake",
+        "html": "Stopping at a composite factor, like writing $60 = 2 \\times 2 \\times 15$. The number 15 is not prime ($15 = 3 \\times 5$), so the tree is not finished. Check each factor: can it be divided by 2, 3, 5 or 7 without leaving a remainder? If so, split it."
+      },
+      {
+        "t": "note",
+        "html": "You can write repeated primes with an exponent, like $2^{2} \\times 3 \\times 5$. You will meet exponents properly with powers of ten."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Prealgebra 2e, 2.5 Prime Factorization and the Least Common Multiple"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

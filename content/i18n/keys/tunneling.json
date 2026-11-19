@@ -1,0 +1,102 @@
+[
+  {
+    "key": "title",
+    "source": "Finite Wells and Tunneling"
+  },
+  {
+    "key": "short",
+    "source": "Wave functions leak into barriers, so a particle can tunnel through one with probability about e^(−2κL)."
+  },
+  {
+    "key": "trouble",
+    "source": "Students think a particle can never be found where its energy is less than the potential energy."
+  },
+  {
+    "key": "block.0.html",
+    "source": "A ball rolling toward a hill it can't climb always rolls back. A quantum particle sometimes doesn't: it can appear on the other side of a barrier that is higher than its energy. This <b>tunneling</b> follows from the decaying wave you met with the <a href=\"/physics/waves-optics-modern-physics/schrodinger-equation/\">Schrödinger equation</a>, and it runs a surprising amount of the world: the fusion that powers the Sun, alpha decay of nuclei, flash memory, and the scanning tunneling microscope that images single atoms."
+  },
+  {
+    "key": "block.1.html",
+    "source": "Inside a barrier of height $U_0$ and width $L$, a particle of energy $E < U_0$ has a wave function that decays like $e^{-\\kappa x}$, with $$\\kappa = \\frac{\\sqrt{2m(U_0 - E)}}{\\hbar}.$$ For a barrier that is not too thin, the chance of getting through is about $$T \\approx e^{-2\\kappa L}.$$ For an electron, $\\kappa = 5.12\\ \\text{nm}^{-1}\\times\\sqrt{(U_0 - E)/1\\ \\text{eV}}$."
+  },
+  {
+    "key": "block.2.html",
+    "source": "Where $U > E$, the Schrödinger equation becomes $\\psi'' = \\kappa^2\\psi$, so $\\psi$ grows or decays exponentially instead of oscillating. Coming from the left, the physical solution decays: across the barrier, the amplitude shrinks by about $e^{-\\kappa L}$. On the far side, $E > U$ again and the wave oscillates with that small amplitude. Probability goes as amplitude squared, so $T \\approx \\left(e^{-\\kappa L}\\right)^2 = e^{-2\\kappa L}$. (A more careful solution adds a factor of order 1 in front; the exponential dominates.) The exponent makes tunneling extremely sensitive to the width and the height of the barrier."
+  },
+  {
+    "key": "block.3.cap",
+    "source": "An electron wave (E = 3 eV) meeting a 5 eV barrier. Inside, the wave decays exponentially; what is left on the far side is the transmitted wave. Make the barrier wider and watch the transmission collapse."
+  },
+  {
+    "key": "block.4.text",
+    "source": "Worked examples"
+  },
+  {
+    "key": "block.5.q",
+    "source": "An electron with $E = 3.0$ eV meets a barrier with $U_0 = 5.0$ eV and width 0.50 nm. Estimate the chance it tunnels through."
+  },
+  {
+    "key": "block.5.title",
+    "source": "Through a thin gap"
+  },
+  {
+    "key": "block.5.a",
+    "source": "About 7 in 10,000"
+  },
+  {
+    "key": "block.5.step.0",
+    "source": "$\\kappa = 5.12\\sqrt{2.0}\\ \\text{nm}^{-1} = 7.24\\ \\text{nm}^{-1}$."
+  },
+  {
+    "key": "block.5.step.1",
+    "source": "$2\\kappa L = 2(7.24)(0.50) = 7.24$."
+  },
+  {
+    "key": "block.5.step.2",
+    "source": "$T \\approx e^{-7.24} = 7.2 \\times 10^{-4}$."
+  },
+  {
+    "key": "block.6.q",
+    "source": "What happens to $T$ if the barrier is 1.00 nm wide instead?"
+  },
+  {
+    "key": "block.6.title",
+    "source": "Twice as wide"
+  },
+  {
+    "key": "block.6.a",
+    "source": "About 1,400 times smaller"
+  },
+  {
+    "key": "block.6.step.0",
+    "source": "The exponent doubles: $2\\kappa L = 14.5$."
+  },
+  {
+    "key": "block.6.step.1",
+    "source": "$T \\approx e^{-14.5} = 5.1 \\times 10^{-7}$: the old $T$ squared."
+  },
+  {
+    "key": "block.7.q",
+    "source": "An STM's tip is held a small distance above a metal; electrons tunnel across a barrier about 4.5 eV high (above their energy). If the gap widens by 0.10 nm, by what factor does the tunneling current fall?"
+  },
+  {
+    "key": "block.7.title",
+    "source": "The scanning tunneling microscope"
+  },
+  {
+    "key": "block.7.a",
+    "source": "It drops to about 1/9; that sensitivity lets an STM map bumps smaller than an atom"
+  },
+  {
+    "key": "block.7.step.0",
+    "source": "$\\kappa = 5.12\\sqrt{4.5} = 10.9\\ \\text{nm}^{-1}$."
+  },
+  {
+    "key": "block.7.step.1",
+    "source": "The current is proportional to $T$, which changes by $e^{-2\\kappa\\Delta L} = e^{-2(10.9)(0.10)} = e^{-2.17} = 0.114$."
+  },
+  {
+    "key": "block.8.html",
+    "source": "Thinking a particle can never be found where its energy is less than the potential energy. Classically, kinetic energy would be negative there, which is impossible. But the wave function does not stop at the edge; it decays over a distance of about $1/\\kappa$, and if the barrier is thin it reaches the other side. Check with a number: for $\\kappa = 7$ nm⁻¹, the wave is still $e^{-1}$ of its size 0.14 nm into the barrier."
+  }
+]

@@ -1,0 +1,85 @@
+{
+  "id": "g4.factor-pairs",
+  "slug": "factor-pairs",
+  "ladder": "math",
+  "course": "g4",
+  "unit": "factors",
+  "title": "Factor Pairs",
+  "short": "List all pairs of whole numbers that multiply to a number.",
+  "trouble": "Children stop before finding every pair, or forget 1 and the number itself.",
+  "prereqs": [
+    "g3.fact-families"
+  ],
+  "xp": 1,
+  "viz": [
+    "arraygrid"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/math/grade-3/fact-families/\">fact families</a> you saw that $3 \\times 4 = 12$ and $12 \\div 4 = 3$ go together. Two whole numbers that multiply to make a number are a <b>factor pair</b> of that number."
+      },
+      {
+        "t": "key",
+        "html": "To list every factor pair of 24, try 1, 2, 3, … in order. Keep each number that divides 24 with no remainder, together with its partner: $1 \\times 24$, $2 \\times 12$, $3 \\times 8$, $4 \\times 6$. Stop when the pairs meet in the middle."
+      },
+      {
+        "t": "why",
+        "html": "Each factor pair is a rectangle of unit squares: 24 squares can make a 1-by-24, 2-by-12, 3-by-8 or 4-by-6 rectangle. Once the short side passes the long side, you are only turning rectangles you already found, so the list is complete."
+      },
+      {
+        "t": "viz",
+        "name": "arraygrid",
+        "opts": {
+          "rows": 2,
+          "cols": 6,
+          "style": "squares",
+          "max": 12,
+          "task": {
+            "target": 12,
+            "all": true
+          }
+        },
+        "cap": "Drag the corner to find every rectangle made of exactly 12 squares. Each one is a factor pair of 12."
+      },
+      {
+        "t": "ex",
+        "title": "List all the pairs",
+        "q": "Find all the factor pairs of 24.",
+        "steps": [
+          "1 works: $1 \\times 24$. 2 works: $2 \\times 12$. 3 works: $3 \\times 8$. 4 works: $4 \\times 6$.",
+          "5 does not divide 24. The next number, 6, is already in the pair $4 \\times 6$, so the pairs have met."
+        ],
+        "a": "$1 \\times 24$, $2 \\times 12$, $3 \\times 8$, $4 \\times 6$"
+      },
+      {
+        "t": "ex",
+        "title": "A square number",
+        "q": "Find all the factors of 36.",
+        "steps": [
+          "Pairs: $1 \\times 36$, $2 \\times 18$, $3 \\times 12$, $4 \\times 9$, $6 \\times 6$.",
+          "5 does not divide 36, and the pairs meet at $6 \\times 6$. List 6 only once."
+        ],
+        "a": "1, 2, 3, 4, 6, 9, 12, 18, 36"
+      },
+      {
+        "t": "mistake",
+        "html": "Stopping too soon (missing $4 \\times 6$) or forgetting $1 \\times 24$. Start at 1 and test every number in order until the pairs meet. Check: the factors should come in partners that multiply back to the number."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 4, 4.OA.B.4 (find all factor pairs for a whole number in the range 1 to 100)"
+      },
+      {
+        "name": "OpenStax Prealgebra 2e, section 2.4 Find Multiples and Factors"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

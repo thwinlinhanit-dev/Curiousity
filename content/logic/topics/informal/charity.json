@@ -1,0 +1,109 @@
+{
+  "id": "informal.charity",
+  "slug": "charity",
+  "ladder": "logic",
+  "course": "informal",
+  "unit": "evaluating",
+  "title": "The Principle of Charity",
+  "short": "Before judging an argument, state it in its strongest reasonable form, the way its author would accept.",
+  "trouble": "Learners read charity as agreeing. Charity is about understanding the argument fairly; you may still find it weak after that.",
+  "prereqs": [
+    "informal.unstated-premises",
+    "informal.straw-man"
+  ],
+  "xp": 2,
+  "viz": [
+    "lg-argmap"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Before judging an argument you must state it, often filling in <a href=\"/logic/informal-logic/unstated-premises/\">unstated premises</a>. How you fill them in matters. A twisted version is a <a href=\"/logic/informal-logic/straw-man/\">straw man</a>."
+      },
+      {
+        "t": "key",
+        "html": "The <b>principle of charity</b>: before judging an argument, state it in its strongest reasonable form, the way its author would accept."
+      },
+      {
+        "t": "why",
+        "html": "If you reject a weak version of an argument, you have learned nothing about the real one, and the author can rightly say you missed the point. Judging the strongest reasonable version means that if you still find it weak, your judgment counts."
+      },
+      {
+        "t": "viz",
+        "name": "lg-argmap",
+        "opts": {
+          "nodes": [
+            {
+              "id": 1,
+              "text": "The library closes at five."
+            },
+            {
+              "id": 2,
+              "text": "Many students cannot get there before five."
+            },
+            {
+              "id": 3,
+              "text": "If many students can't visit before five, later hours would let them use it.",
+              "kind": "unstated"
+            },
+            {
+              "id": 4,
+              "text": "The library should stay open later.",
+              "kind": "conclusion"
+            }
+          ],
+          "links": [
+            {
+              "from": [
+                1,
+                2,
+                3
+              ],
+              "to": 4
+            }
+          ]
+        },
+        "cap": "A charitable unstated premise: just what the argument needs, and something the speaker would accept."
+      },
+      {
+        "t": "ex",
+        "title": "Restate fairly",
+        "q": "Max says: \"We should have less homework on weekends.\" Which restatement is charitable? (a) \"Weekend homework should be lighter, so students have time to rest.\" (b) \"Max thinks students should never do any work.\"",
+        "steps": [
+          "(a) keeps Max's claim and gives it a sensible reason.",
+          "(b) turns it into an extreme view he never stated."
+        ],
+        "a": "(a)."
+      },
+      {
+        "t": "ex",
+        "title": "Fill the gap charitably",
+        "q": "\"The dog needs a bigger cage. It can barely turn around.\" Which premise fills the gap?",
+        "steps": [
+          "Option: \"An animal that can barely turn around in its cage needs more room.\" It links the premise to the conclusion and is easy to accept.",
+          "Option: \"Every animal should live in the biggest cage ever built.\" It is much stronger than needed and makes the speaker look silly."
+        ],
+        "a": "The first."
+      },
+      {
+        "t": "mistake",
+        "html": "Reading charity as agreeing. Charity is about understanding the argument fairly. After that, you may still find it weak, and you should say so."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy, \"Informal Logic\""
+      },
+      {
+        "name": "Patrick Hurley, A Concise Introduction to Logic, chapter 1 (extended arguments)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

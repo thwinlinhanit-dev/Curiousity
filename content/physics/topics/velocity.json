@@ -1,0 +1,91 @@
+{
+  "id": "physsci.velocity",
+  "slug": "velocity",
+  "ladder": "physics",
+  "course": "physsci",
+  "unit": "motion",
+  "title": "Velocity: Speed with a Direction",
+  "short": "Velocity tells how fast and which way, so turning around changes it even at the same speed.",
+  "trouble": "Students think two cars going 50 km/h in opposite directions have the same velocity.",
+  "prereqs": [
+    "physsci.distance-displacement"
+  ],
+  "xp": 1,
+  "viz": [
+    "ph-motion",
+    "ph-vectors"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A weather report might say the wind blows \"at 20 km/h from the northwest.\" That is more than a <a href=\"/physics/physical-science/speed/\">speed</a>; it also says which way. Speed together with direction is called <b>velocity</b>, and it is built from <a href=\"/physics/physical-science/distance-displacement/\">displacement</a> the way speed is built from distance."
+      },
+      {
+        "t": "key",
+        "html": "<b>Velocity</b> is speed with a direction: how fast and which way. Average velocity = displacement ÷ time. On a line we show the direction with a sign: + one way, − the other."
+      },
+      {
+        "t": "why",
+        "html": "Two cars both going 50 km/h, one north and one south, are clearly not doing the same thing: in an hour they end up 100 km apart. Speed can't tell them apart, but velocity can: $+50$ km/h and $-50$ km/h. That is why changing direction changes your velocity even when the speedometer doesn't move."
+      },
+      {
+        "t": "viz",
+        "name": "ph-motion",
+        "opts": {
+          "x0": 10,
+          "v0": -2,
+          "a": 0,
+          "tmax": 5,
+          "graphs": [
+            "x",
+            "v"
+          ]
+        },
+        "cap": "A cart moving left at 2 m/s. With right as positive, its velocity is −2 m/s: the v-graph sits below zero, and the position shrinks as time passes."
+      },
+      {
+        "t": "ex",
+        "title": "Speed and velocity on one trip",
+        "q": "A runner jogs 300 m east, then 100 m west, in a total of 100 s. Find her average speed and her average velocity.",
+        "steps": [
+          "Distance: $300 + 100 = 400$ m. Average speed: $400 \\div 100 = 4$ m/s.",
+          "Displacement (east positive): $300 - 100 = +200$ m.",
+          "Average velocity: $+200\\,\\mathrm{m} \\div 100\\,\\mathrm{s} = +2$ m/s, which means 2 m/s east."
+        ],
+        "a": "Average speed 4 m/s; average velocity 2 m/s east"
+      },
+      {
+        "t": "ex",
+        "title": "Same speed, new velocity",
+        "q": "A cyclist rides at 6 m/s east, turns around and rides at 6 m/s west. Take east as positive. How did her velocity change?",
+        "steps": [
+          "Before: $v = +6$ m/s. After: $v = -6$ m/s.",
+          "Change: $-6 - (+6) = -12$ m/s, even though her speed stayed 6 m/s."
+        ],
+        "a": "From $+6$ m/s to $-6$ m/s"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking two cars going 50 km/h in opposite directions have the same velocity. They have the same <b>speed</b>; their velocities are $+50$ and $-50$ km/h. Check: if two velocities are equal, the objects move together and the gap between them never changes."
+      },
+      {
+        "t": "note",
+        "html": "Earth carries you around the Sun at about 30 km/s. That speed hardly changes during the year, but the direction turns all the way around, so Earth's velocity is always changing."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e, 2.3 Time, Velocity, and Speed"
+      },
+      {
+        "name": "OpenStax, College Physics 2e, 2.2 Vectors, Scalars, and Coordinate Systems"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

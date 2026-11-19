@@ -1,0 +1,129 @@
+{
+  "id": "hsbio.photosynthesis",
+  "slug": "photosynthesis",
+  "ladder": "bio",
+  "course": "hsbio",
+  "unit": "energy",
+  "title": "Photosynthesis",
+  "short": "6CO₂ + 6H₂O + light → C₆H₁₂O₆ + 6O₂. In the chloroplast, the light-dependent reactions split water and make ATP and NADPH; the Calvin cycle uses them to build sugar from CO₂.",
+  "trouble": "Students think the oxygen released comes from carbon dioxide. It comes from splitting water; the carbon and oxygen of CO₂ end up in the sugar.",
+  "prereqs": [
+    "hsbio.atp",
+    "lifesci.photosynthesis"
+  ],
+  "xp": 3,
+  "viz": [
+    "bi-energy",
+    "bi-plant"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/biology/life-science/photosynthesis/\">Photosynthesis</a> you learned the inputs and outputs: carbon dioxide, water and light in, sugar and oxygen out. Now we look inside the chloroplast to see how the light's energy ends up in sugar, using the <a href=\"/biology/high-school-biology/atp/\">ATP</a> you just met."
+      },
+      {
+        "t": "key",
+        "html": "$$6\\text{CO}_2 + 6\\text{H}_2\\text{O} + \\text{light} \\rightarrow \\text{C}_6\\text{H}_{12}\\text{O}_6 + 6\\text{O}_2$$ The <b>light-dependent reactions</b> (in the thylakoid membranes) use light to split water, releasing O₂ and making ATP and NADPH. The <b>Calvin cycle</b> (in the stroma) uses that ATP and NADPH to build sugar from CO₂."
+      },
+      {
+        "t": "viz",
+        "name": "bi-energy",
+        "opts": {
+          "mode": "photo-stages"
+        },
+        "cap": "Two stages: the light reactions make ATP and NADPH; the Calvin cycle spends them to fix carbon."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Stage",
+          "Where",
+          "In",
+          "Out"
+        ],
+        "rows": [
+          [
+            "Light reactions",
+            "Thylakoid membranes",
+            "Light, H₂O, ADP, NADP⁺",
+            "O₂, ATP, NADPH"
+          ],
+          [
+            "Calvin cycle",
+            "Stroma",
+            "CO₂, ATP, NADPH",
+            "Sugar (G3P), ADP, NADP⁺"
+          ]
+        ],
+        "cap": "The stroma is the fluid around the thylakoids. The Calvin cycle is also called the light-independent reactions; G3P is used to build glucose."
+      },
+      {
+        "t": "why",
+        "html": "Chlorophyll absorbs mostly red and blue light and reflects green, which is why leaves look green. Absorbed light excites electrons in chlorophyll. Those electrons pass down a chain of proteins in the thylakoid membrane, and their energy is used to make ATP and to load NADPH, a carrier of high-energy electrons. The electrons have to be replaced, and they come from <b>water</b>: splitting H₂O gives electrons, H⁺ and oxygen gas. In the Calvin cycle, the enzyme <b>rubisco</b> attaches CO₂ to a five-carbon sugar, and ATP and NADPH turn the products into the three-carbon sugar G3P. It takes six turns of the cycle, fixing six CO₂, to make one glucose."
+      },
+      {
+        "t": "ex",
+        "title": "Count the molecules",
+        "q": "A leaf fixes 18 molecules of CO₂. How many glucose molecules can it make, and how many O₂ molecules does it release?",
+        "steps": [
+          "Each glucose needs 6 CO₂: $18 \\div 6 = 3$ glucose.",
+          "The equation releases one O₂ for each CO₂ fixed: 18 O₂."
+        ],
+        "a": "$3$ glucose and $18$ O₂"
+      },
+      {
+        "t": "ex",
+        "title": "Trace the oxygen",
+        "q": "In 1941, Samuel Ruben, Martin Kamen and their colleagues gave algae water made with a heavy isotope of oxygen, oxygen-18. Where did the oxygen-18 show up?",
+        "steps": [
+          "The light reactions split water and release its oxygen as O₂.",
+          "So the heavy oxygen appeared in the oxygen gas the algae gave off.",
+          "The oxygen atoms of CO₂ end up in the sugar instead."
+        ],
+        "a": "In the O₂ gas given off"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking the oxygen released comes from carbon dioxide. It comes from splitting <b>water</b> in the light-dependent reactions. The carbon and oxygen atoms of CO₂ end up in the sugar. Check with the isotope experiment: label the water, and the O₂ given off carries the label."
+      },
+      {
+        "t": "viz",
+        "name": "bi-energy",
+        "opts": {
+          "mode": "photo"
+        },
+        "cap": "Inputs and outputs of the chloroplast."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Concepts of Biology, 5.1 Overview of Photosynthesis; 5.2 The Light-Dependent Reactions; 5.3 The Calvin Cycle"
+      },
+      {
+        "name": "OpenStax, Biology 2e, 8.1–8.3 Photosynthesis"
+      },
+      {
+        "name": "Grokipedia, Photosynthesis",
+        "url": "https://grokipedia.com/page/Photosynthesis"
+      },
+      {
+        "name": "Grokipedia, Calvin cycle",
+        "url": "https://grokipedia.com/page/Calvin_cycle"
+      },
+      {
+        "name": "Govindjee and R. E. Blankenship (2018), on the 1941 oxygen-18 experiment of Ruben, Randall, Kamen and Hyde (University of Illinois)",
+        "url": "https://www.life.illinois.edu/govindjee/recent_papers_files/Govindjee_and_Blankenship-2018.pdf"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-LS1-5: Use a model to illustrate how photosynthesis transforms light energy into stored chemical energy"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,104 @@
+{
+  "id": "nt.pell-equation",
+  "slug": "pell-equation",
+  "ladder": "math",
+  "course": "nt",
+  "unit": "diophantine",
+  "title": "Pell's Equation",
+  "short": "For d > 0 not a perfect square, x² − dy² = 1 has a smallest solution with y > 0, found among the convergents of √d, and the powers of x₁ + y₁√d give all the others.",
+  "trouble": "Students offer x = 1, y = 0 as the fundamental solution. It is the trivial one; the fundamental solution is the smallest with y > 0.",
+  "prereqs": [
+    "nt.irrational-continued-fractions"
+  ],
+  "xp": 3,
+  "viz": [
+    "nt-lattice"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In the last lesson, the convergent $\\frac{8}{3}$ of $\\sqrt{7}$ satisfied $8^{2} - 7 \\cdot 3^{2} = 1$. That was no accident. The equation $x^{2} - dy^{2} = 1$, named (by a historical mix-up) after John Pell, is solved completely by the <a href=\"/math/number-theory/irrational-continued-fractions/\">continued fraction of $\\sqrt{d}$</a>."
+      },
+      {
+        "t": "p",
+        "html": "<b>Pell's equation.</b> Let $d > 0$ be an integer that is not a perfect square. We want integers with $x^{2} - dy^{2} = 1$. The <b>trivial solution</b> is $(1, 0)$. The <b>fundamental solution</b> $(x_1, y_1)$ is the solution in positive integers with the smallest $y$."
+      },
+      {
+        "t": "p",
+        "html": "<b>Theorem.</b> The fundamental solution always exists, and $\\frac{x_1}{y_1}$ is a convergent of $\\sqrt{d}$. Every solution in positive integers comes from its powers: $$x_k + y_k\\sqrt{d} = \\left(x_1 + y_1\\sqrt{d}\\right)^{k}, \\qquad k = 1, 2, 3, \\dots$$"
+      },
+      {
+        "t": "why",
+        "html": "<b>Why convergents.</b> Factor: $(x - y\\sqrt{d})(x + y\\sqrt{d}) = 1$, so $\\dfrac{x}{y} - \\sqrt{d} = \\dfrac{1}{y(x + y\\sqrt{d})} < \\dfrac{1}{2y^{2}}$. A fraction that close to $\\sqrt{d}$ must be one of its convergents (a theorem of Legendre). <b>Why powers.</b> The \"norm\" $N(x + y\\sqrt{d}) = x^{2} - dy^{2}$ is multiplicative: $N(\\alpha\\beta) = N(\\alpha)N(\\beta)$, since $(x - y\\sqrt{d})$ behaves like a conjugate. So a power of a number of norm 1 has norm 1 again, and a descent argument shows nothing else occurs."
+      },
+      {
+        "t": "viz",
+        "name": "nt-lattice",
+        "opts": {
+          "mode": "pell",
+          "d": 2,
+          "count": 4
+        },
+        "cap": "The hyperbola $x^{2} - 2y^{2} = 1$ and its whole-number points $(3, 2)$, $(17, 12)$, $(99, 70)$, $(577, 408)$. Press <b>Next point</b>: each is the last one times $3 + 2\\sqrt{2}$, and the view zooms out because they grow so fast."
+      },
+      {
+        "t": "ex",
+        "title": "A small search",
+        "q": "Find the fundamental solution of $x^{2} - 2y^{2} = 1$.",
+        "steps": [
+          "Try $y = 1$: $1 + 2 = 3$, not a square. $y = 2$: $1 + 8 = 9 = 3^{2}$.",
+          "So $(x_1, y_1) = (3, 2)$. It is the convergent $\\frac{3}{2}$ of $\\sqrt{2} = [1; 2, 2, \\dots]$."
+        ],
+        "a": "$(3, 2)$."
+      },
+      {
+        "t": "ex",
+        "title": "The next solution",
+        "q": "Use $(3, 2)$ to find the next solution of $x^{2} - 2y^{2} = 1$.",
+        "steps": [
+          "$(3 + 2\\sqrt{2})^{2} = 9 + 12\\sqrt{2} + 8 = 17 + 12\\sqrt{2}$.",
+          "So $(x_2, y_2) = (17, 12)$. Check: $289 - 2 \\cdot 144 = 1$."
+        ],
+        "a": "$(17, 12)$."
+      },
+      {
+        "t": "ex",
+        "title": "With the continued fraction",
+        "q": "Find the fundamental solution of $x^{2} - 7y^{2} = 1$.",
+        "steps": [
+          "$\\sqrt{7} = [2; \\overline{1, 1, 1, 4}]$ has convergents $\\frac{2}{1}, \\frac{3}{1}, \\frac{5}{2}, \\frac{8}{3}, \\dots$",
+          "$p^{2} - 7q^{2}$ for these: $4 - 7 = -3$, $9 - 7 = 2$, $25 - 28 = -3$, $64 - 63 = 1$.",
+          "The first $+1$ is at $\\frac{8}{3}$."
+        ],
+        "a": "$(8, 3)$."
+      },
+      {
+        "t": "p",
+        "html": "Solutions can be startlingly large. For $d = 13$ the fundamental solution is $(649, 180)$; for $d = 61$ it is $x = 1{,}766{,}319{,}049$, $y = 226{,}153{,}980$, a challenge Fermat set for other mathematicians in 1657. A search over $y$ would take ages; the continued fraction finds it in a few dozen steps."
+      },
+      {
+        "t": "mistake",
+        "html": "Offering $x = 1$, $y = 0$ as the fundamental solution. It solves the equation, but it is the trivial one, and its powers are all $(1, 0)$ again. The fundamental solution is the smallest with $y > 0$; for $d = 2$ that is $(3, 2)$."
+      },
+      {
+        "t": "key",
+        "html": "$x^{2} - dy^{2} = 1$: the fundamental solution is the first convergent $\\frac{p}{q}$ of $\\sqrt{d}$ with $p^{2} - dq^{2} = 1$, and all positive solutions are the powers $(x_1 + y_1\\sqrt{d})^{k}$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "William Stein, Elementary Number Theory: Primes, Congruences, and Secrets (Springer, 2009; free online edition), chapter 5, Continued Fractions (Pell's equation)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.781 Theory of Numbers (Spring 2012), lecture notes on Pell's equation"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

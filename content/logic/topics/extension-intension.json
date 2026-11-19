@@ -1,0 +1,149 @@
+{
+  "id": "trad.extension-intension",
+  "slug": "extension-intension",
+  "ladder": "logic",
+  "course": "trad",
+  "unit": "terms",
+  "title": "Extension and Comprehension",
+  "short": "A term's extension is the set of things it applies to; its comprehension (intension) is the set of features it implies.",
+  "trouble": "Learners expect both to grow together. As comprehension grows (dog, then black dog, then small black dog), extension shrinks or stays the same.",
+  "prereqs": [
+    "trad.terms"
+  ],
+  "xp": 2,
+  "viz": [
+    "lg-sort"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A <a href=\"/logic/traditional-logic/terms/\">term</a> does two jobs at once. It points to things, and it carries an idea of what those things are like. Traditional logic gives each job a name."
+      },
+      {
+        "t": "key",
+        "html": "The <b>extension</b> of a term is the set of things it applies to. Its <b>comprehension</b> (also called intension) is the set of features it implies. Add a feature, and the comprehension grows while the extension shrinks or stays the same."
+      },
+      {
+        "t": "why",
+        "html": "Every feature you add is one more test a thing must pass. \"Dog\" applies to every dog. \"Black dog\" applies only to the dogs that also pass the \"black\" test, so fewer things fit. \"Small black dog\" adds a third test, and fewer still pass. The tests pile up (comprehension grows) as the crowd that passes them thins out (extension shrinks). If every member already had the feature, the crowd stays the same size, which is why we say \"shrinks or stays the same\"."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Term",
+          "Comprehension (features)",
+          "Extension (things)"
+        ],
+        "rows": [
+          [
+            "animals",
+            "living, able to move and sense",
+            "every animal"
+          ],
+          [
+            "mammals",
+            "+ hair, nurses its young",
+            "every mammal"
+          ],
+          [
+            "dogs",
+            "+ the features of a dog",
+            "every dog"
+          ],
+          [
+            "sheepdogs",
+            "+ bred to herd sheep",
+            "only the sheepdogs"
+          ]
+        ],
+        "cap": "Down the table, comprehension grows and extension shrinks."
+      },
+      {
+        "t": "viz",
+        "name": "lg-sort",
+        "opts": {
+          "bins": [
+            "Extension of \"rectangle\"",
+            "Comprehension of \"rectangle\""
+          ],
+          "cards": [
+            {
+              "text": "the door of your classroom (as a shape)",
+              "bin": 0,
+              "why": "A thing the term applies to."
+            },
+            {
+              "text": "has four right angles",
+              "bin": 1,
+              "why": "A feature every rectangle has."
+            },
+            {
+              "text": "a sheet of printer paper",
+              "bin": 0,
+              "why": "One of the things that is a rectangle."
+            },
+            {
+              "text": "has four sides",
+              "bin": 1,
+              "why": "Part of what \"rectangle\" means."
+            },
+            {
+              "text": "the flag of Canada (its outline)",
+              "bin": 0,
+              "why": "A thing the term applies to."
+            },
+            {
+              "text": "is a closed plane figure",
+              "bin": 1,
+              "why": "A feature implied by the term."
+            }
+          ]
+        },
+        "cap": "Things go in the extension; features go in the comprehension."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Ordering terms",
+        "q": "Which has the greatest extension, and which the greatest comprehension: \"lemons\", \"fruits\", \"citrus fruits\"?",
+        "steps": [
+          "Line them up from wide to narrow: fruits → citrus fruits → lemons. Every lemon is a citrus fruit, and every citrus fruit is a fruit.",
+          "The widest term applies to the most things: \"fruits\" has the greatest extension.",
+          "The narrowest term carries the most features (fruit, citrus, and lemon): \"lemons\" has the greatest comprehension."
+        ],
+        "a": "extension: fruits; comprehension: lemons"
+      },
+      {
+        "t": "ex",
+        "title": "Thing or feature?",
+        "q": "For the term \"planet\", is \"Mars\" part of the extension or the comprehension? What about \"orbits a star\"?",
+        "steps": [
+          "Mars is one of the things the word \"planet\" applies to: extension.",
+          "\"Orbits a star\" is a feature every planet has: comprehension."
+        ],
+        "a": "Mars: extension; orbits a star: comprehension"
+      },
+      {
+        "t": "mistake",
+        "html": "Expecting both to grow together. A richer idea is a narrower idea: as comprehension grows (dog, black dog, small black dog), extension shrinks or stays the same. Check with a picture: each new feature is a smaller circle drawn inside the last one."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Patrick J. Hurley, A Concise Introduction to Logic, 2.2 The Intension and Extension of Terms"
+      },
+      {
+        "name": "Antoine Arnauld and Pierre Nicole, Logic or the Art of Thinking (the Port-Royal Logic), on comprehension and extension"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

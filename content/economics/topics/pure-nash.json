@@ -1,0 +1,91 @@
+{
+  "id": "imicro.pure-nash",
+  "slug": "pure-nash",
+  "ladder": "economics",
+  "course": "imicro",
+  "unit": "games",
+  "title": "Best Responses and Nash Equilibrium",
+  "short": "Mark each player's best responses; any cell where both are best responses is a Nash equilibrium, and there may be several.",
+  "trouble": "Students stop after finding one equilibrium, missing that coordination games have two or more.",
+  "prereqs": [
+    "micro.nash-equilibrium"
+  ],
+  "xp": 2,
+  "viz": [
+    "ec-payoff"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/economics/microeconomics/nash-equilibrium/\">Nash Equilibrium and the Prisoner's Dilemma</a> introduced the prisoner's dilemma, where each player has one obvious choice. Most games are less tidy: what is best for you depends on what the other player does. The tool for any game in a matrix is the best response."
+      },
+      {
+        "t": "key",
+        "html": "A <b>best response</b> is a player's best choice given what the other player does. A <b>Nash equilibrium</b> is a pair of choices that are best responses to each other: no player can gain by changing alone. To find all pure-strategy equilibria, mark each player's best responses; every cell with both payoffs marked is an equilibrium. A game can have none, one, or several."
+      },
+      {
+        "t": "why",
+        "html": "Underlining checks the definition cell by cell. For the row player, go column by column and underline the largest first number: that is her best reply to that column. For the column player, go row by row and underline the largest second number. A cell with both underlined is one where neither player could do better by switching alone, which is exactly what equilibrium means. Nothing in the definition says the result is good for the players, or unique."
+      },
+      {
+        "t": "viz",
+        "name": "ec-payoff",
+        "opts": {
+          "preset": "coordination",
+          "show": [
+            "best",
+            "nash"
+          ]
+        },
+        "cap": "A coordination game: both players gain from choosing the same option. Both (A, A) and (B, B) are equilibria; once either is reached, no one wants to switch alone."
+      },
+      {
+        "t": "ex",
+        "title": "Two equilibria",
+        "q": "Two firms pick a charging-plug standard. Payoffs (Firm 1, Firm 2): both pick A: (3, 3); both pick B: (2, 2); they differ: (0, 0). Find all pure-strategy equilibria.",
+        "steps": [
+          "If Firm 2 picks A, Firm 1's best response is A (3 > 0); if Firm 2 picks B, it is B (2 > 0).",
+          "The same holds for Firm 2.",
+          "(A, A) and (B, B) both have both payoffs underlined. (A, A) is better for both, but (B, B) is still an equilibrium: once there, neither gains by switching alone."
+        ],
+        "a": "Two: (A, A) and (B, B)."
+      },
+      {
+        "t": "ex",
+        "title": "A three-by-three game",
+        "q": "Row picks Top, Middle or Bottom; Column picks Left, Center or Right. Payoffs: Top (4, 4), (3, 2), (4, 5); Middle (9, 7), (6, 1), (5, 0); Bottom (8, 7), (8, 6), (8, 0).",
+        "steps": [
+          "Row's best responses: vs Left, Middle (9); vs Center, Bottom (8); vs Right, Bottom (8).",
+          "Column's best responses: vs Top, Right (5); vs Middle, Left (7); vs Bottom, Left (7).",
+          "Only (Middle, Left) has both marked."
+        ],
+        "a": "One equilibrium: (Middle, Left), with payoffs (9, 7)."
+      },
+      {
+        "t": "mistake",
+        "html": "Stopping after finding one equilibrium. Coordination games, like the plug standard, have two or more, and which one people reach depends on history, expectations or a focal point. Check every cell before you stop: the count matters, because a game with several equilibria needs something outside the matrix to predict what happens."
+      },
+      {
+        "t": "p",
+        "html": "See more examples and practice in the <a href=\"/business/game-theory/nash-equilibrium/\">Nash Equilibrium</a> chapter of Game Theory."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, ch. 10.2 Oligopoly (game theory)"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.12 Economic Applications of Game Theory (course scope)"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.04 Intermediate Microeconomic Theory (course scope and lecture topics)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

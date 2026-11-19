@@ -1,0 +1,131 @@
+{
+  "id": "num.romberg",
+  "slug": "romberg",
+  "ladder": "math",
+  "course": "num",
+  "unit": "numerical-calculus",
+  "title": "Romberg Integration",
+  "short": "Apply Richardson extrapolation to trapezoid estimates again and again to fill a triangle of better and better values.",
+  "trouble": "Students use the factor 4 in every column. Column m uses (4ᵐ · finer − coarser)/(4ᵐ − 1).",
+  "prereqs": [
+    "num.composite-rules",
+    "num.richardson"
+  ],
+  "xp": 3,
+  "viz": [
+    "num-error"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The trapezoid rule's error is not just $O(h^{2})$: for a smooth integrand it is a whole series in <b>even</b> powers, $$T(h) = I + c_1h^{2} + c_2h^{4} + c_3h^{6} + \\cdots$$ (the Euler–Maclaurin formula). <a href=\"/math/numerical-analysis/richardson/\">Richardson extrapolation</a> can cancel these terms one after another, using <a href=\"/math/numerical-analysis/composite-rules/\">trapezoid</a> values with $h$ halved each time."
+      },
+      {
+        "t": "key",
+        "html": "Fill a triangle: $R(k, 0) = T(h/2^{k})$, and $$R(k, m) = \\frac{4^{m}R(k, m - 1) - R(k - 1, m - 1)}{4^{m} - 1}.$$ Column $m$ has error $O(h^{2m + 2})$. Column 1 is Simpson's rule; column 2 is Boole's rule."
+      },
+      {
+        "t": "why",
+        "html": "Each column removes the next even power. Column 0 has error $c_1h^{2} + \\cdots$; halving $h$ divides the $h^{2}$ term by 4, so $\\frac{4R(k, 0) - R(k - 1, 0)}{3}$ removes it and leaves $O(h^{4})$. In column 1 the leading term is $h^{4}$, which halving divides by $16 = 4^{2}$, so the factor becomes 16. In column $m$ it is $4^{m}$. And halving $h$ in the trapezoid rule reuses all the old points: only the new midpoints need new function values."
+      },
+      {
+        "t": "ex",
+        "title": "A Romberg triangle",
+        "q": "Compute $R(2, 2)$ for $\\int_0^1 e^{x}\\,dx$ from $T(1)$, $T(\\frac{1}{2})$, $T(\\frac{1}{4})$.",
+        "steps": [
+          "$T(1) = \\frac{1 + e}{2} = 1.8591409$, $T(\\frac{1}{2}) = 1.7539311$, $T(\\frac{1}{4}) = 1.7272219$.",
+          "Column 1: $R(1, 1) = \\frac{4(1.7539311) - 1.8591409}{3} = 1.7188612$ and $R(2, 1) = \\frac{4(1.7272219) - 1.7539311}{3} = 1.7183188$.",
+          "Column 2: $R(2, 2) = \\frac{16(1.7183188) - 1.7188612}{15} = 1.7182827$.",
+          "The exact value $e - 1 = 1.7182818$: error $9 \\times 10^{-7}$ from only 5 function values, while $T(\\frac{1}{4})$ alone was off by $9 \\times 10^{-3}$."
+        ],
+        "a": "$R(2, 2) \\approx 1.7182827$"
+      },
+      {
+        "t": "table",
+        "head": [
+          "$k$",
+          "$R(k, 0)$",
+          "$R(k, 1)$",
+          "$R(k, 2)$"
+        ],
+        "rows": [
+          [
+            "0",
+            "$1.8591409$",
+            "",
+            ""
+          ],
+          [
+            "1",
+            "$1.7539311$",
+            "$1.7188612$",
+            ""
+          ],
+          [
+            "2",
+            "$1.7272219$",
+            "$1.7183188$",
+            "$1.7182827$"
+          ]
+        ],
+        "cap": "The Romberg triangle for the integral of eˣ from 0 to 1. Each column is far more accurate than the one before."
+      },
+      {
+        "t": "viz",
+        "name": "num-error",
+        "opts": {
+          "method": "trap",
+          "f": "exp(x)",
+          "interval": [
+            0,
+            1
+          ],
+          "richardson": true,
+          "refs": [
+            2,
+            4,
+            6
+          ],
+          "task": "Untick and tick the Richardson box, and read the slopes of the three lines."
+        },
+        "cap": "Trapezoid errors (blue) for the integral of eˣ from 0 to 1, with the first two Romberg columns: slopes 2, 4 and 6, until round-off stops them."
+      },
+      {
+        "t": "ex",
+        "title": "Which factor?",
+        "q": "In which column does the factor $64$ appear, and why?",
+        "steps": [
+          "$64 = 4^{3}$: column 3.",
+          "Its inputs (column 2) have leading error $h^{6}$, and halving $h$ divides that by $2^{6} = 64$."
+        ],
+        "a": "column 3"
+      },
+      {
+        "t": "p",
+        "html": "In practice the triangle grows one row at a time, and the computation stops when two neighboring diagonal entries agree to the required tolerance. For smooth integrands this converges very fast. It relies on the even-power error series, so it works poorly for integrands with a singularity or a kink; <a href=\"/math/numerical-analysis/adaptive-quadrature/\">adaptive integration</a> handles those better."
+      },
+      {
+        "t": "note",
+        "html": "Cost: row $k$ needs the trapezoid rule with $2^{k}$ panels, but only its $2^{k-1}$ new midpoints are new function values. The whole triangle up to row $k$ therefore costs $2^{k} + 1$ evaluations of $f$, the same as the single finest trapezoid rule; the extrapolation itself is nearly free."
+      },
+      {
+        "t": "mistake",
+        "html": "Using the factor 4 in every column. Only column 1 uses 4; column 2 needs 16 and column $m$ needs $4^{m}$. Using 4 again cancels the $h^{2}$ term that is already gone and leaves the $h^{4}$ term in place, so the column gives no improvement. Check: each column should agree with the true value to clearly more digits than the column before."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Autar Kaw, Holistic Numerical Methods (University of South Florida): Integration, \"Romberg Rule\""
+      },
+      {
+        "name": "MIT OpenCourseWare 18.330, Introduction to Numerical Analysis: lecture notes on numerical integration (Romberg)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

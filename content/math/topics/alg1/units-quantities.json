@@ -1,0 +1,93 @@
+{
+  "id": "alg1.units-quantities",
+  "slug": "units-quantities",
+  "ladder": "math",
+  "course": "alg1",
+  "unit": "expressions",
+  "title": "Units and Conversion Factors",
+  "short": "Multiply by unit fractions to convert rates and keep track of units.",
+  "trouble": "Students multiply by a conversion factor upside down because they do not check which units cancel.",
+  "prereqs": [
+    "g6.convert-units-ratios"
+  ],
+  "xp": 2,
+  "viz": [
+    "ratiotable"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You have <a href=\"/math/grade-6/convert-units-ratios/\">converted units with ratios</a> before. In algebra and science you often convert <em>rates</em>, like miles per hour into feet per second, where two units change at once. One tool handles all of it: multiplying by unit fractions."
+      },
+      {
+        "t": "why",
+        "html": "Since $12$ inches and $1$ foot are the same length, the fraction $\\frac{12\\text{ in}}{1\\text{ ft}}$ equals $1$. Multiplying by $1$ never changes an amount; it only changes how the amount is written. Units also behave like factors: a unit on top cancels the same unit on the bottom, just as $\\frac{3}{3} = 1$. So you choose each unit fraction so that the unit you want to remove cancels."
+      },
+      {
+        "t": "viz",
+        "name": "ratiotable",
+        "opts": {
+          "a": 1,
+          "b": 12,
+          "names": [
+            "feet",
+            "inches"
+          ],
+          "max": 6,
+          "snap": "half"
+        },
+        "cap": "Feet and inches always keep the ratio $1 : 12$, so $\\frac{12\\text{ in}}{1\\text{ ft}}$ is the same as $1$."
+      },
+      {
+        "t": "key",
+        "html": "Multiply by unit fractions equal to $1$, placing each old unit opposite where it already sits so it cancels. Check that only the units you want are left."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Two units at once",
+        "q": "Convert $60$ miles per hour to feet per second.",
+        "steps": [
+          "Write the rate as a fraction: $\\frac{60\\text{ mi}}{1\\text{ h}}$.",
+          "Miles are on top, so use $\\frac{5280\\text{ ft}}{1\\text{ mi}}$ (miles on the bottom). Hours are on the bottom, so use $\\frac{1\\text{ h}}{3600\\text{ s}}$ (hours on top).",
+          "$\\frac{60\\text{ mi}}{1\\text{ h}} \\cdot \\frac{5280\\text{ ft}}{1\\text{ mi}} \\cdot \\frac{1\\text{ h}}{3600\\text{ s}}$. Miles and hours cancel.",
+          "$\\frac{60 \\cdot 5280}{3600} = \\frac{316800}{3600} = 88$."
+        ],
+        "a": "$88$ feet per second."
+      },
+      {
+        "t": "ex",
+        "title": "Square units",
+        "q": "Convert $3$ square yards to square feet.",
+        "steps": [
+          "A square yard is a square $3$ ft by $3$ ft, so it holds $3 \\cdot 3 = 9$ square feet.",
+          "With unit fractions: $3\\text{ yd}^2 \\cdot \\frac{3\\text{ ft}}{1\\text{ yd}} \\cdot \\frac{3\\text{ ft}}{1\\text{ yd}}$. Both yards cancel.",
+          "$3 \\cdot 9 = 27$."
+        ],
+        "a": "$27$ square feet."
+      },
+      {
+        "t": "mistake",
+        "html": "Multiplying by a conversion fraction upside down, such as $\\frac{1\\text{ mi}}{5280\\text{ ft}}$ when you start in miles. The units then do not cancel: you would get $\\frac{\\text{mi}^2}{\\text{ft}}$. Check two things: the units left over are the ones you want, and the size makes sense (a smaller unit needs a bigger number)."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Elementary Algebra 2e, section 1.10 Systems of Measurement"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, N-Q.A.1: use units to understand problems and guide the solution"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

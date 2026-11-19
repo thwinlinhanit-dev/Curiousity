@@ -1,0 +1,117 @@
+{
+  "id": "nt.pythagorean-triples",
+  "slug": "pythagorean-triples",
+  "ladder": "math",
+  "course": "nt",
+  "unit": "diophantine",
+  "title": "Pythagorean Triples",
+  "short": "Every primitive triple is (m² − n², 2mn, m² + n²), up to the order of the legs, with m > n > 0, m and n coprime and of opposite parity.",
+  "trouble": "Students use an m and n that are both odd or share a factor, and get a triple that is not primitive: m = 3, n = 1 gives (8, 6, 10).",
+  "prereqs": [
+    "nt.unique-factorization",
+    "g8.pythagorean-theorem"
+  ],
+  "xp": 2,
+  "viz": [
+    "nt-lattice"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The <a href=\"/math/pre-algebra/pythagorean-theorem/\">Pythagorean theorem</a> turns right triangles into the equation $a^{2} + b^{2} = c^{2}$. Whole-number solutions like $(3, 4, 5)$ and $(5, 12, 13)$ have fascinated people for nearly 4,000 years; a Babylonian clay tablet, Plimpton 322, lists fifteen of them. Here is the complete list."
+      },
+      {
+        "t": "p",
+        "html": "<b>Definitions.</b> A <b>Pythagorean triple</b> is a triple of positive integers with $a^{2} + b^{2} = c^{2}$. It is <b>primitive</b> when $\\gcd(a, b, c) = 1$. Every triple is a multiple of a primitive one: $(6, 8, 10) = 2 \\cdot (3, 4, 5)$."
+      },
+      {
+        "t": "p",
+        "html": "<b>Theorem.</b> The primitive triples, with $b$ the even leg, are exactly $$a = m^{2} - n^{2}, \\qquad b = 2mn, \\qquad c = m^{2} + n^{2},$$ where $m > n > 0$, $\\gcd(m, n) = 1$, and one of $m$, $n$ is even. Each primitive triple comes from exactly one such pair."
+      },
+      {
+        "t": "why",
+        "html": "That these are triples is algebra: $(m^{2} - n^{2})^{2} + (2mn)^{2} = m^{4} + 2m^{2}n^{2} + n^{4} = (m^{2} + n^{2})^{2}$. That there are no others uses <a href=\"/math/number-theory/unique-factorization/\">unique factorization</a>. In a primitive triple exactly one leg is even (squares are $0$ or $1 \\bmod 4$, so two odd legs would make $c^{2} \\equiv 2 \\pmod{4}$, impossible). Write $b^{2} = c^{2} - a^{2} = (c - a)(c + a)$. Both factors are even, and $\\frac{c - a}{2}$ and $\\frac{c + a}{2}$ are coprime; their product is the square $\\left(\\frac{b}{2}\\right)^{2}$, so each is a square, $n^{2}$ and $m^{2}$. Then $c = m^{2} + n^{2}$ and $a = m^{2} - n^{2}$."
+      },
+      {
+        "t": "viz",
+        "name": "nt-lattice",
+        "opts": {
+          "mode": "circle",
+          "m": 2,
+          "n": 1
+        },
+        "cap": "Divide by $c^{2}$: a triple is a point with rational coordinates on the unit circle. The line through $(-1, 0)$ with slope $\\frac{n}{m}$ meets the circle again at $\\left(\\frac{m^{2} - n^{2}}{m^{2} + n^{2}}, \\frac{2mn}{m^{2} + n^{2}}\\right)$. Move the sliders; try $m = 3$, $n = 1$."
+      },
+      {
+        "t": "ex",
+        "title": "From m and n",
+        "q": "Find the triples for $(m, n) = (3, 2)$ and $(4, 1)$.",
+        "steps": [
+          "$(3, 2)$: $9 - 4 = 5$, $2 \\cdot 3 \\cdot 2 = 12$, $9 + 4 = 13$. So $(5, 12, 13)$.",
+          "$(4, 1)$: $16 - 1 = 15$, $8$, $17$. So $(15, 8, 17)$: $225 + 64 = 289 = 17^{2}$."
+        ],
+        "a": "$(5, 12, 13)$ and $(15, 8, 17)$."
+      },
+      {
+        "t": "ex",
+        "title": "Back to m and n",
+        "q": "Which $m$ and $n$ give the primitive triple $(21, 20, 29)$?",
+        "steps": [
+          "The odd leg is $21 = m^{2} - n^{2}$ and $29 = m^{2} + n^{2}$.",
+          "Add: $2m^{2} = 50$, so $m = 5$. Subtract: $2n^{2} = 8$, so $n = 2$.",
+          "Check: $2mn = 20$."
+        ],
+        "a": "$m = 5$, $n = 2$."
+      },
+      {
+        "t": "table",
+        "head": [
+          "$(m, n)$",
+          "(2, 1)",
+          "(3, 2)",
+          "(4, 1)",
+          "(4, 3)",
+          "(5, 2)",
+          "(5, 4)",
+          "(6, 1)"
+        ],
+        "rows": [
+          [
+            "triple",
+            "(3, 4, 5)",
+            "(5, 12, 13)",
+            "(15, 8, 17)",
+            "(7, 24, 25)",
+            "(21, 20, 29)",
+            "(9, 40, 41)",
+            "(35, 12, 37)"
+          ]
+        ],
+        "cap": "The primitive triples with hypotenuse below 42."
+      },
+      {
+        "t": "mistake",
+        "html": "Using $m$ and $n$ that are both odd, or that share a factor, and expecting a primitive triple. $m = 3$, $n = 1$ gives $(8, 6, 10) = 2 \\cdot (4, 3, 5)$, and $m = 4$, $n = 2$ gives $(12, 16, 20) = 4 \\cdot (3, 4, 5)$. Both conditions matter: coprime, and opposite parity. Check the result with $\\gcd$."
+      },
+      {
+        "t": "key",
+        "html": "Every primitive Pythagorean triple is $(m^{2} - n^{2}, 2mn, m^{2} + n^{2})$ for coprime $m > n > 0$ of opposite parity, and every triple is a multiple of a primitive one."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "MIT OpenCourseWare 18.781 Theory of Numbers (Spring 2012), lecture notes on Pythagorean triples and rational points on the circle"
+      },
+      {
+        "name": "Euclid, Elements, Book X, the lemma before Proposition 29 (the classical construction of Pythagorean triples)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

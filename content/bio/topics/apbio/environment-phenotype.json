@@ -1,0 +1,121 @@
+{
+  "id": "apbio.environment-phenotype",
+  "slug": "environment-phenotype",
+  "ladder": "bio",
+  "course": "apbio",
+  "unit": "heredity",
+  "title": "Environment and Phenotype",
+  "short": "The same genotype can show different phenotypes in different conditions: hydrangea flower color follows soil pH, and Himalayan rabbits grow dark fur where their body is cooler.",
+  "trouble": "Students think a phenotype that changes with the environment means the genes changed. The genotype is the same; the environment changes how it is expressed.",
+  "prereqs": [
+    "hsbio.polygenic"
+  ],
+  "xp": 2,
+  "viz": [
+    "bi-chart",
+    "bi-picture"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/biology/high-school-biology/polygenic/\">Polygenic Traits and the Environment</a> you saw that height depends on many genes and on food. The environment can do more than nudge a trait up or down: the same genotype can produce strikingly different phenotypes in different conditions."
+      },
+      {
+        "t": "key",
+        "html": "Phenotype depends on genotype <b>and</b> environment. The same genotype can show different phenotypes in different conditions, while the genes themselves stay the same."
+      },
+      {
+        "t": "list",
+        "items": [
+          "<b>Hydrangeas</b> (bigleaf hydrangea): flowers are blue in acidic soil (below about pH 5.5) and pink in neutral to alkaline soil (above about pH 6.5). In acidic soil the plant can take up aluminum, which turns the flower pigment blue.",
+          "<b>Himalayan rabbits</b>: the gene for an enzyme that makes dark pigment has an allele whose enzyme works only at cooler temperatures. The ears, nose, feet and tail are cooler than the body, so fur grows dark there and white elsewhere.",
+          "<b>Genetically identical plants</b> (cuttings of one parent) grown in sun and shade, or at low and high elevation, can differ greatly in height and leaf shape."
+        ]
+      },
+      {
+        "t": "viz",
+        "name": "bi-chart",
+        "opts": {
+          "kind": "bar",
+          "x": [
+            "pH 5.0",
+            "pH 5.5",
+            "pH 6.0",
+            "pH 6.5",
+            "pH 7.0"
+          ],
+          "series": [
+            {
+              "name": "Plants with blue flowers (%)",
+              "values": [
+                95,
+                80,
+                45,
+                10,
+                5
+              ]
+            }
+          ],
+          "ylabel": "Blue flowers (%)",
+          "ymin": 0,
+          "ymax": 100
+        },
+        "cap": "Cuttings of one hydrangea grown in soils of different pH (illustrative values following the pattern described by university extension services)."
+      },
+      {
+        "t": "why",
+        "html": "Genes code for proteins, but what a protein does depends on its surroundings. An enzyme folds and works only within a range of temperature (<a href=\"/biology/high-school-biology/enzyme-conditions/\">Temperature, pH and Enzymes</a>), and a pigment's color can depend on the ions around it. So a phenotype is the result of genes acting in a particular environment. Biologists call the range of phenotypes one genotype can produce its <b>norm of reaction</b>."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Two gardens",
+        "q": "Two cuttings of the same bigleaf hydrangea are planted in two gardens. One blooms blue and one pink. Do the plants have different genes for flower color?",
+        "steps": [
+          "Cuttings of one plant have the same genotype.",
+          "The difference must come from the environment: soil pH.",
+          "The blue one is likely in acidic soil, where aluminum is available."
+        ],
+        "a": "No. Same genotype; different soil pH gives different phenotypes."
+      },
+      {
+        "t": "ex",
+        "title": "A rabbit in the cold",
+        "q": "A Himalayan rabbit is raised somewhere much colder than usual. Predict its fur.",
+        "steps": [
+          "The pigment enzyme works only at cooler temperatures.",
+          "In the cold, more of the body surface is cool enough.",
+          "Dark fur appears over a larger area than usual."
+        ],
+        "a": "The dark areas spread farther over its body, though its genes are unchanged."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking that a phenotype that changes with the environment means the genes changed. The genotype is the same; the environment changes how it is expressed. A check: could you move the organism (or a clone of it) back and get the old phenotype? If yes, the change was in expression, not in the DNA."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Biology 2e, 12.2 Characteristics and Traits"
+      },
+      {
+        "name": "UMass Amherst Center for Agriculture, Food and the Environment: Growing Tips: Hydrangeas, Color and Fertilizing",
+        "url": "https://www.umass.edu/agriculture-food-environment/home-lawn-garden/fact-sheets/growing-tips-hydrangeas-color-fertilizing"
+      },
+      {
+        "name": "Grokipedia: Himalayan rabbit",
+        "url": "https://grokipedia.com/page/Himalayan_rabbit"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,100 @@
+{
+  "id": "disc.lattice-paths",
+  "slug": "lattice-paths",
+  "ladder": "math",
+  "course": "disc",
+  "unit": "counting",
+  "title": "Lattice Paths and Binary Strings",
+  "short": "A path of right and up steps is a string of R's and U's, so a grid m steps wide and n steps tall has C(m + n, n) shortest paths.",
+  "trouble": "Students count grid squares instead of steps, or count the paths through a point by adding the two parts instead of multiplying them.",
+  "prereqs": [
+    "disc.binomial-identities"
+  ],
+  "xp": 2,
+  "viz": [
+    "disc-encode"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A good way to count a hard set is to match its objects one-to-one with strings, and strings are easy to count. Grid paths are the classic example, and they explain the <a href=\"/math/discrete-math/binomial-identities/\">identities of Pascal's triangle</a>."
+      },
+      {
+        "t": "key",
+        "html": "A shortest path from $(0, 0)$ to $(m, n)$ along grid lines, moving right (R) or up (U), is the same thing as a string of $m$ R's and $n$ U's. So there are $\\binom{m+n}{n}$ such paths. Paths through a point: multiply the paths to it by the paths from it."
+      },
+      {
+        "t": "why",
+        "html": "Every shortest path uses exactly $m$ right steps and $n$ up steps, in some order, and every such order traces a different path. This is a bijection between paths and strings, so the counts are equal. A string of length $m + n$ is decided by choosing which $n$ of the positions are U's: $\\binom{m+n}{n}$. Through a point $P$, a path is a first half (to $P$) followed by a second half (from $P$), and any first half fits any second half: that is the product rule."
+      },
+      {
+        "t": "viz",
+        "name": "disc-encode",
+        "opts": {
+          "mode": "paths",
+          "m": 4,
+          "n": 3,
+          "counts": true,
+          "through": [
+            2,
+            1
+          ]
+        },
+        "cap": "Draw a path with R and U (or the arrow keys). The string records your path; the numbers count the paths to each point. The gold point shows the \"through\" count in the readout."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Counting paths",
+        "q": "How many shortest paths go from the bottom-left to the top-right corner of a grid $4$ blocks wide and $3$ blocks tall?",
+        "steps": [
+          "Each path is a string of $4$ R's and $3$ U's: $7$ steps.",
+          "Choose where the $3$ U's go: $\\binom{7}{3} = 35$."
+        ],
+        "a": "$35$"
+      },
+      {
+        "t": "ex",
+        "title": "Through a point",
+        "q": "In the same grid, how many shortest paths pass through $(2, 1)$?",
+        "steps": [
+          "To $(2, 1)$: $2$ R's and $1$ U, $\\binom{3}{1} = 3$ paths.",
+          "From $(2, 1)$ to $(4, 3)$: $2$ R's and $2$ U's, $\\binom{4}{2} = 6$ paths.",
+          "Multiply: $3 \\cdot 6 = 18$."
+        ],
+        "a": "$18$"
+      },
+      {
+        "t": "ex",
+        "title": "Avoiding a point",
+        "q": "In the same grid, how many shortest paths avoid $(2, 1)$?",
+        "steps": [
+          "All paths minus the paths through it: $35 - 18 = 17$.",
+          "Check with the grid counts: set the count at $(2, 1)$ to $0$ and add up again from the corner; the far corner gets $17$."
+        ],
+        "a": "$17$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Counting squares, or adding the two halves.</b> A grid $4$ blocks wide has $5$ vertical lines, but a path takes only $4$ steps to the right; counting the squares or the lines instead of the steps gives the wrong string length. And paths through a point are (paths to it) times (paths from it), not plus. Check: the string must have exactly as many R's as the width and as many U's as the height."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Oscar Levin, Discrete Mathematics: An Open Introduction (3rd ed.), sections \"Binomial Coefficients\" (lattice paths) and \"Combinatorial Proofs\""
+      },
+      {
+        "name": "MIT OpenCourseWare 6.042J Mathematics for Computer Science (Lehman, Leighton and Meyer), chapter \"Cardinality Rules\" (the bijection rule)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

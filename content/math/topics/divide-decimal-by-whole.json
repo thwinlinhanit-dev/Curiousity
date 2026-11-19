@@ -1,0 +1,123 @@
+{
+  "id": "g5.divide-decimal-by-whole",
+  "slug": "divide-decimal-by-whole",
+  "ladder": "math",
+  "course": "g5",
+  "unit": "decimal-operations",
+  "title": "Dividing a Decimal by a Whole Number",
+  "short": "Share the tenths and hundredths just like ones.",
+  "trouble": "",
+  "prereqs": [
+    "g5.add-subtract-decimals",
+    "g5.divide-two-digit-divisors"
+  ],
+  "xp": 2,
+  "viz": [
+    "base10",
+    "decimalgrid"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You can <a href=\"/math/grade-5/divide-two-digit-divisors/\">divide whole numbers</a> and you can <a href=\"/math/grade-5/add-subtract-decimals/\">work with tenths and hundredths</a>. Dividing a decimal by a whole number is fair sharing, with tenths and hundredths shared just like ones."
+      },
+      {
+        "t": "key",
+        "html": "Divide as with whole numbers, and put the decimal point in the quotient straight above the point in the dividend. If the division does not come out even, write zeros after the last digit and keep going."
+      },
+      {
+        "t": "why",
+        "html": "Sharing $6.3$ among 3 is sharing 6 ones and 3 tenths: each person gets 2 ones and 1 tenth, $2.1$. Thinking in the smallest unit helps: $9.36$ is 936 hundredths, and $936 \\div 4 = 234$ hundredths, which is $2.34$. A zero at the end, $3.4 = 3.40$, adds no value but gives you hundredths to share."
+      },
+      {
+        "t": "viz",
+        "name": "tapediagram",
+        "opts": {
+          "tapes": [
+            {
+              "parts": [
+                2.1,
+                2.1,
+                2.1
+              ],
+              "labels": [
+                "2.1",
+                "2.1",
+                "2.1"
+              ],
+              "colors": [
+                "blue",
+                "blue",
+                "blue"
+              ]
+            }
+          ],
+          "braces": [
+            {
+              "tape": 0,
+              "from": 0,
+              "to": 3,
+              "label": "6.3"
+            }
+          ]
+        },
+        "cap": "$6.3$ shared equally by 3: each part is $2.1$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Share ones and tenths",
+        "q": "Find $6.3 \\div 3$.",
+        "steps": [
+          "6 ones $\\div 3 = 2$ ones.",
+          "3 tenths $\\div 3 = 1$ tenth."
+        ],
+        "a": "$2.1$"
+      },
+      {
+        "t": "ex",
+        "title": "Long division with a point",
+        "q": "Find $9.36 \\div 4$.",
+        "steps": [
+          "$9 \\div 4 = 2$ with 1 left over. Write 2, then the point above the point.",
+          "Bring down the 3: 13 tenths. $13 \\div 4 = 3$ with 1 left over.",
+          "Bring down the 6: 16 hundredths. $16 \\div 4 = 4$.",
+          "Check: $2.34 \\times 4 = 9.36$."
+        ],
+        "a": "$2.34$"
+      },
+      {
+        "t": "ex",
+        "title": "Write a zero to keep going",
+        "q": "Find $3.4 \\div 4$.",
+        "steps": [
+          "4 does not go into 3 ones, so write 0 ones and the point.",
+          "34 tenths $\\div 4 = 8$ with 2 tenths left.",
+          "Write $3.4$ as $3.40$: the 2 tenths become 20 hundredths. $20 \\div 4 = 5$."
+        ],
+        "a": "$0.85$"
+      },
+      {
+        "t": "mistake",
+        "html": "Losing the decimal point and writing $9.36 \\div 4 = 234$ or $23.4$. Check with an estimate: $9 \\div 4$ is a little more than 2, so the answer is $2.34$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Prealgebra 2e, 5.2 Decimal Operations (divide decimals)"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 5.NBT.B.7: divide decimals to hundredths"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

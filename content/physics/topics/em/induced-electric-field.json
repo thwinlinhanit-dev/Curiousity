@@ -1,0 +1,97 @@
+{
+  "id": "em.induced-electric-field",
+  "slug": "induced-electric-field",
+  "ladder": "physics",
+  "course": "em",
+  "unit": "induction",
+  "title": "Induced Electric Fields",
+  "short": "A changing magnetic field makes a curling electric field: ∮E · dl = −dΦ/dt, with or without a wire.",
+  "trouble": "Students think induced currents need a wire for the electric field to exist.",
+  "prereqs": [
+    "em.faraday-calculus",
+    "em.amperes-law"
+  ],
+  "xp": 3,
+  "viz": [
+    "ph-induction"
+  ],
+  "figureArchetype": "FieldFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "When <a href=\"/physics/electricity-and-magnetism/faraday-calculus/\">Faraday's law</a> drives a current around a loop, something must push the charges along the wire. A magnetic force needs moving charges, but here the charges may start at rest. The push is an <b>electric field</b>, made not by charges but by the changing magnetic field itself. It exists whether or not a wire is there to feel it."
+      },
+      {
+        "t": "key",
+        "html": "$$\\oint \\vec{E}\\cdot d\\vec{\\ell} = -\\frac{d\\Phi_B}{dt}$$\n        around any closed path, in matter or in empty space. Inside a long solenoid of radius $R$ whose field changes, the induced field circles the axis with $E = \\dfrac{r}{2}\\dfrac{dB}{dt}$ ($r < R$) and $E = \\dfrac{R^2}{2r}\\dfrac{dB}{dt}$ ($r > R$)."
+      },
+      {
+        "t": "why",
+        "html": "The emf of a loop is the work per unit charge done around it, $\\oint \\vec{E}\\cdot d\\vec{\\ell}$. Faraday's law says this equals $-d\\Phi_B/dt$. Unlike the field of still charges, this field curls around: its integral around a closed loop is not zero, so it has no potential (you cannot speak of the voltage between two points). Around a solenoid, symmetry says the field lines are circles, so $\\oint\\vec{E}\\cdot d\\vec{\\ell} = E(2\\pi r)$, which equals the rate of change of the flux inside the circle. This is the method of <a href=\"/physics/electricity-and-magnetism/amperes-law/\">Ampère's law</a>, used for $\\vec{E}$."
+      },
+      {
+        "t": "viz",
+        "name": "ph-induction",
+        "opts": {
+          "mode": "changing-B",
+          "show": [
+            "induced-field"
+          ]
+        },
+        "cap": "A changing magnetic field with the electric field it induces, circling around it. The field is there even where there is no wire."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Inside a solenoid",
+        "q": "The field inside a solenoid of radius $5.0\\ \\text{cm}$ grows at $0.20\\ \\text{T/s}$. Find the induced field $2.0\\ \\text{cm}$ from the axis.",
+        "steps": [
+          "Circle of radius $r$: $E(2\\pi r) = \\pi r^2\\dfrac{dB}{dt}$, so $E = \\dfrac{r}{2}\\dfrac{dB}{dt}$.",
+          "$E = \\dfrac{0.020}{2}(0.20) = 2.00\\ \\text{mV/m}$."
+        ],
+        "a": "$E = 2.00\\ \\text{mV/m}$"
+      },
+      {
+        "t": "ex",
+        "title": "Outside, where B is zero",
+        "q": "Find the induced field $10\\ \\text{cm}$ from the axis of the same solenoid, outside it.",
+        "steps": [
+          "The circle encloses all of the changing flux, $\\pi R^2 B$: $E(2\\pi r) = \\pi R^2\\dfrac{dB}{dt}$.",
+          "$E = \\dfrac{R^2}{2r}\\dfrac{dB}{dt} = \\dfrac{(0.050)^2(0.20)}{2(0.10)} = 2.50\\ \\text{mV/m}$, in a place where the magnetic field itself is nearly zero."
+        ],
+        "a": "$E = 2.50\\ \\text{mV/m}$"
+      },
+      {
+        "t": "ex",
+        "title": "Any loop around it",
+        "q": "A wire ring of any size encircles the solenoid. What emf is induced?",
+        "steps": [
+          "$|\\varepsilon| = \\dfrac{d\\Phi}{dt} = \\pi R^2\\dfrac{dB}{dt} = \\pi(0.050)^2(0.20) = 1.57\\ \\text{mV}$.",
+          "Bigger rings feel a weaker field over a longer path, and the product stays the same."
+        ],
+        "a": "$|\\varepsilon| \\approx 1.57\\ \\text{mV}$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>\"The induced field needs a wire to exist.\"</b> The wire only provides free charges for the field to push, so that a current flows. The field itself is made by the changing magnetic field, in empty space as well as in metal. Electrons circling in a vacuum tube can be sped up this way; a machine called the betatron did exactly that. Check: Faraday's law mentions a closed path, not a conductor."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 2, 13.4 Induced Electric Fields"
+      },
+      {
+        "name": "MIT OpenCourseWare, 8.02 Physics II: Electricity and Magnetism"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

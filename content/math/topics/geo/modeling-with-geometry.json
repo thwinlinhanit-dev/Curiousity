@@ -1,0 +1,92 @@
+{
+  "id": "geo.modeling-with-geometry",
+  "slug": "modeling-with-geometry",
+  "ladder": "math",
+  "course": "geo",
+  "unit": "measurement",
+  "title": "Modeling, Density and Design",
+  "short": "Model objects with shapes, use density, and solve design problems.",
+  "trouble": "Students mix units such as people per square mile and people per square kilometer.",
+  "prereqs": [
+    "geo.scaling-solids",
+    "geo.surface-area-solids"
+  ],
+  "xp": 3,
+  "viz": [
+    "volume"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Real objects are not perfect cylinders or boxes, but they are often close. <b>Modeling</b> means choosing a shape that fits well enough, using the volume and area tools from <a href=\"/math/geometry/surface-area-solids/\">Surface Area of Solids</a> and <a href=\"/math/geometry/scaling-solids/\">Scaling Area and Volume</a>, and then checking whether the answer makes sense."
+      },
+      {
+        "t": "list",
+        "items": [
+          "Choose a model: a tree trunk as a cylinder, a scoop of ice cream as a sphere, a roof as a prism.",
+          "Measure or estimate the dimensions, with units.",
+          "Compute, keeping the units visible in every step.",
+          "Check: is the size reasonable? Would a different model change the answer much?"
+        ]
+      },
+      {
+        "t": "why",
+        "html": "<b>Density</b> is an amount per unit of space: grams per cubic centimeter, people per square mile, plants per square foot. Because it is a ratio, you can rearrange it: $\\text{amount} = \\text{density} \\times \\text{size}$. Writing the units as fractions shows what cancels, which is the safest way to convert between units."
+      },
+      {
+        "t": "key",
+        "html": "Model the object with a shape, compute with units attached, and use density as \"amount per unit of length, area or volume.\" Convert units by multiplying by fractions equal to 1, like $\\frac{1 \\text{ mi}^2}{2.59 \\text{ km}^2}$."
+      },
+      {
+        "t": "ex",
+        "title": "Mass from density",
+        "q": "An aluminum block is $5$ cm by $4$ cm by $3$ cm. Aluminum's density is $2.7$ g/cm$^3$. Find its mass.",
+        "steps": [
+          "Volume: $5 \\cdot 4 \\cdot 3 = 60$ cm$^3$.",
+          "Mass $= 2.7 \\frac{\\text{g}}{\\text{cm}^3} \\cdot 60 \\text{ cm}^3 = 162$ g."
+        ],
+        "a": "$162$ g"
+      },
+      {
+        "t": "ex",
+        "title": "Population density and units",
+        "q": "A city has $1{,}200$ people per square mile. About how many people per square kilometer is that? ($1$ mi$^2 \\approx 2.59$ km$^2$.)",
+        "steps": [
+          "${}1{,}200 \\frac{\\text{people}}{\\text{mi}^2} \\cdot \\frac{1 \\text{ mi}^2}{2.59 \\text{ km}^2} \\approx 463 \\frac{\\text{people}}{\\text{km}^2}$.",
+          "Check: a square kilometer is smaller than a square mile, so fewer people fit in each one."
+        ],
+        "a": "About $463$ people per km$^2$"
+      },
+      {
+        "t": "ex",
+        "title": "A design question",
+        "q": "A company ships $36$ cylindrical cans, each with diameter $3$ in and height $5$ in, upright in a box that is $6$ cans by $6$ cans in one layer. How much of the box's volume do the cans fill?<div class=\"ml-viz\" data-viz=\"geo-fig\" data-opts='{\"pts\":{\"P\":[0,0],\"Q\":[6,0],\"R\":[6,6],\"S\":[0,6],\"c1\":[1.5,1.5],\"c2\":[4.5,1.5],\"c3\":[1.5,4.5],\"c4\":[4.5,4.5]},\"hide\":[\"P\",\"Q\",\"R\",\"S\",\"c1\",\"c2\",\"c3\",\"c4\"],\"polys\":[[\"P\",\"Q\",\"R\",\"S\",{\"fill\":false}]],\"segs\":[[\"P\",\"Q\",{\"lab\":\"6 in\"}]],\"circles\":[[\"c1\",1.5,{\"fill\":\"blue\"}],[\"c2\",1.5,{\"fill\":\"blue\"}],[\"c3\",1.5,{\"fill\":\"blue\"}],[\"c4\",1.5,{\"fill\":\"blue\"}]],\"height\":180,\"label\":\"Top view of one corner of the box: four cans, each 3 inches across, in a 6 by 6 inch square\"}' aria-label=\"Top view of one corner of the box: four cans, each 3 inches across, in a 6 by 6 inch square\"></div>",
+        "steps": [
+          "Box: $18 \\times 18 \\times 5 = 1620$ in$^3$.",
+          "Cans: $36 \\cdot \\pi \\cdot 1.5^2 \\cdot 5 = 405\\pi \\approx 1272.3$ in$^3$.",
+          "Fraction: $\\frac{405\\pi}{1620} = \\frac{\\pi}{4} \\approx 0.785$, about $79\\%$."
+        ],
+        "a": "About $79\\%$ (the same for any square packing of cylinders: $\\frac{\\pi}{4}$)"
+      },
+      {
+        "t": "mistake",
+        "html": "Mixing units, like dividing people by square kilometers when the area is in square miles, or converting areas with the length factor. $1$ mi $\\approx 1.61$ km, but $1$ mi$^2 \\approx 1.61^2 \\approx 2.59$ km$^2$. Write units in every step; if they do not cancel to the units you want, something is off."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Common Core State Standards for Mathematics, High School Geometry, G-MG.A.1, G-MG.A.2 and G-MG.A.3"
+      },
+      {
+        "name": "OpenStax Contemporary Mathematics, 10.7 Volume and Surface Area"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,79 @@
+{
+  "id": "rbros.nodes-topics",
+  "slug": "nodes-topics",
+  "ladder": "robotics",
+  "course": "rbros",
+  "unit": "graph",
+  "title": "Nodes and Topics",
+  "short": "Each job is a node; nodes publish and subscribe to named topics at steady rates.",
+  "trouble": "Students make one giant program, or forget that a topic with no publisher just stays silent.",
+  "prereqs": [
+    "rbprog.state-machines",
+    "rbprog.loop-timing"
+  ],
+  "xp": 2,
+  "viz": [
+    "rb-ros"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Real robots run many programs at once: one reads the lidar, one plans a path, one drives the motors. ROS 2 (Robot Operating System 2) is a free set of tools that lets them talk. It is not an operating system; it runs on top of one."
+      },
+      {
+        "t": "key",
+        "html": "Each program is a <b>node</b> that does one job. Nodes send <b>messages</b> on named <b>topics</b>. A <b>publisher</b> sends; any number of <b>subscribers</b> receive. Neither needs to know about the other, only the topic's name and message type."
+      },
+      {
+        "t": "viz",
+        "name": "rb-ros",
+        "opts": {
+          "rate": 10
+        },
+        "cap": "Nodes passing messages on topics. Stop the camera node and see who notices."
+      },
+      {
+        "t": "why",
+        "html": "Splitting a robot into small nodes means each can be written, tested and restarted alone. Swap a real camera for a simulated one, and the rest of the robot never knows. That is why most research and many companies build on ROS 2."
+      },
+      {
+        "t": "ex",
+        "title": "Message count",
+        "q": "A lidar node publishes at 10 Hz. How many scans in a minute?",
+        "steps": [
+          "$10 \\times 60 = 600$."
+        ],
+        "a": "600."
+      },
+      {
+        "t": "mistake",
+        "html": "Building one giant program, or forgetting that a topic with no publisher stays silent. A node waiting for a topic that nobody publishes just waits."
+      },
+      {
+        "t": "h",
+        "text": "Try it"
+      },
+      {
+        "t": "note",
+        "html": "<div class=\"rb-parts\"><b>Getting set up</b><ul><li>ROS 2 runs best on Ubuntu Linux. Each ROS 2 release is tied to an Ubuntu version; the official documentation lists which goes with which.</li><li><b>\\$0:</b> install it on a spare computer or in a virtual machine, and use the built-in turtlesim and the Gazebo simulator; no robot needed.</li><li><b>About \\$100 to \\$200 more:</b> a Raspberry Pi 4 or 5 on your mobile robot, talking to your laptop over Wi-Fi.</li></ul></div>"
+      },
+      {
+        "t": "p",
+        "html": "Work through the official beginner tutorials in order: install, turtlesim, nodes, topics. Run <code>ros2 topic list</code> and <code>ros2 topic echo</code> to watch messages go by. Then write a tiny publisher and subscriber of your own in Python."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "ROS 2 Documentation (Jazzy), beginner tutorials and concepts",
+        "url": "https://docs.ros.org/en/jazzy/"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

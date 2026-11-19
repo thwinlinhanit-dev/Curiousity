@@ -1,0 +1,117 @@
+{
+  "id": "gchem2.initial-rates",
+  "slug": "initial-rates",
+  "ladder": "chemistry",
+  "course": "gchem2",
+  "unit": "kinetics",
+  "title": "The Method of Initial Rates",
+  "short": "Compare experiments in which only one concentration changes to find each order, then k and its units.",
+  "trouble": "Students compare two experiments in which more than one concentration changed, or give k without its units.",
+  "prereqs": [
+    "gchem2.rate-laws",
+    "alg2.common-base-equations"
+  ],
+  "xp": 3,
+  "viz": [
+    "ch-kineticsplot"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A <a href=\"/chemistry/general-chemistry-2/rate-laws/\">rate law</a> has orders you must measure. The cleanest way is to run the reaction several times, change one starting concentration at a time, and measure the initial rate of each run. The math is <a href=\"/math/algebra-2/common-base-equations/\">solving an equation with the unknown in the exponent</a>."
+      },
+      {
+        "t": "key",
+        "html": "Pick two experiments in which only $[\\mathrm{A}]$ changes. Then $\\dfrac{\\text{rate}_2}{\\text{rate}_1} = \\left(\\dfrac{[\\mathrm{A}]_2}{[\\mathrm{A}]_1}\\right)^m$, which gives the order $m$. Repeat for each reactant, then put any one experiment into the rate law to find $k$, with its units."
+      },
+      {
+        "t": "why",
+        "html": "Divide the rate law for experiment 2 by the one for experiment 1. The rate constant cancels (same temperature), and every concentration that did not change cancels too. What remains links the rate ratio to the one concentration ratio. Initial rates are used because at the start nothing else has changed: no product has built up and no reactant has been used."
+      },
+      {
+        "t": "viz",
+        "name": "ch-kineticsplot",
+        "opts": {
+          "order": 2,
+          "k": 1,
+          "A0": 1,
+          "plot": "A",
+          "tangent": true,
+          "halves": false
+        },
+        "cap": "The initial rate is the slope of the tangent at $t = 0$. Move the point back to the start to see it."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Experiment",
+          "$[\\mathrm{A}]$ (M)",
+          "$[\\mathrm{B}]$ (M)",
+          "Initial rate (M/s)"
+        ],
+        "rows": [
+          [
+            "1",
+            "0.10",
+            "0.10",
+            "$2.0 \\times 10^{-3}$"
+          ],
+          [
+            "2",
+            "0.20",
+            "0.10",
+            "$8.0 \\times 10^{-3}$"
+          ],
+          [
+            "3",
+            "0.10",
+            "0.30",
+            "$6.0 \\times 10^{-3}$"
+          ]
+        ],
+        "cap": "Data for the first example: A + B → products."
+      },
+      {
+        "t": "ex",
+        "title": "Two orders and k",
+        "q": "Use the table above to find the rate law and $k$.",
+        "steps": [
+          "Experiments 1 and 2: only $[\\mathrm{A}]$ changes, and it doubles. The rate goes from $2.0 \\times 10^{-3}$ to $8.0 \\times 10^{-3}$: a factor of 4. $2^m = 4$, so $m = 2$.",
+          "Experiments 1 and 3: only $[\\mathrm{B}]$ changes, by a factor of 3. The rate also triples: $3^n = 3$, so $n = 1$.",
+          "Rate law: $\\text{rate} = k[\\mathrm{A}]^2[\\mathrm{B}]$. From experiment 1: $$k = \\dfrac{2.0 \\times 10^{-3}\\ \\text{M/s}}{(0.10\\ \\text{M})^2(0.10\\ \\text{M})} = 2.0\\ \\text{M}^{-2}\\,\\text{s}^{-1}$$",
+          "Check with experiment 3: $(2.0)(0.10)^2(0.30) = 6.0 \\times 10^{-3}\\ \\text{M/s}$. It matches."
+        ],
+        "a": "$\\text{rate} = k[\\mathrm{A}]^2[\\mathrm{B}]$ with $k = 2.0\\ \\text{M}^{-2}\\,\\text{s}^{-1}$."
+      },
+      {
+        "t": "ex",
+        "title": "When the factor is not a whole number",
+        "q": "When $[\\mathrm{X}]$ goes from $0.40\\ \\text{M}$ to $0.60\\ \\text{M}$ (everything else fixed), the initial rate goes from $3.2 \\times 10^{-4}$ to $7.2 \\times 10^{-4}\\ \\text{M/s}$. What is the order in X?",
+        "steps": [
+          "Concentration ratio $\\dfrac{0.60}{0.40} = 1.5$; rate ratio $\\dfrac{7.2}{3.2} = 2.25$.",
+          "$1.5^m = 2.25$. Take logarithms: $m = \\dfrac{\\log 2.25}{\\log 1.5} = \\dfrac{0.352}{0.176} = 2.0$."
+        ],
+        "a": "Second order in X."
+      },
+      {
+        "t": "mistake",
+        "html": "Comparing two experiments in which two concentrations changed at once. If $[\\mathrm{A}]$ and $[\\mathrm{B}]$ both doubled and the rate went up 8 times, you cannot tell which reactant caused how much of it. Look for a pair that differs in one concentration only. And always give $k$ with its units: a number alone does not say what the rate law is."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 12.3 Rate Laws"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

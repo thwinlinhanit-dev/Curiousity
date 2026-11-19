@@ -1,0 +1,128 @@
+{
+  "id": "cplx.contour-integrals",
+  "slug": "contour-integrals",
+  "ladder": "math",
+  "course": "cplx",
+  "unit": "integration",
+  "title": "Contour Integrals",
+  "short": "∫_C f(z) dz = ∫ f(z(t)) z′(t) dt; once around the unit circle, ∮ dz/z = 2πi.",
+  "trouble": "Students leave out the factor z′(t) and integrate f(z(t)) dt instead.",
+  "prereqs": [
+    "cplx.contours",
+    "cplx.complex-exponential",
+    "calc4.work-line-integrals"
+  ],
+  "xp": 3,
+  "viz": [
+    "cplx-contour"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The integral of $f$ along a <a href=\"/math/complex-analysis/contours/\">contour</a> is built like a <a href=\"/math/calculus-4/work-line-integrals/\">work integral</a>: chop the curve into small pieces, multiply the value of $f$ by the small step $dz$, and add. Parametrizing turns it into an ordinary integral in $t$."
+      },
+      {
+        "t": "key",
+        "html": "$$\\int_C f(z)\\,dz = \\int_a^b f\\big(z(t)\\big)\\,z'(t)\\,dt.$$\n      The answer does not depend on how $C$ is parametrized, only on the curve and its direction; reversing the direction changes the sign. The most important single integral: for any circle $C$ centered at $a$, traced once counterclockwise,\n      $$\\oint_C \\frac{dz}{z - a} = 2\\pi i, \\qquad \\oint_C (z - a)^n\\,dz = 0 \\quad (n \\ne -1).$$"
+      },
+      {
+        "t": "why",
+        "html": "$dz = z'(t)\\,dt$ is the small step along the curve, just as $d\\mathbf{r} = \\mathbf{r}'(t)\\,dt$ in a line integral; a change of parameter rescales $dt$ and $z'(t)$ in opposite ways, which is why the parametrization does not matter. For the key integral, put $z = a + re^{it}$: then $(z - a)^n z'(t) = r^ne^{int} \\cdot ire^{it} = ir^{n + 1}e^{i(n + 1)t}$. If $n = -1$ this is the constant $i$, and integrating over $[0, 2\\pi]$ gives $2\\pi i$. Otherwise $\\int_0^{2\\pi} e^{i(n + 1)t}\\,dt = 0$, since cosine and sine integrate to $0$ over whole periods."
+      },
+      {
+        "t": "viz",
+        "name": "cplx-contour",
+        "opts": {
+          "f": "1/z",
+          "contour": {
+            "type": "circle",
+            "c": [
+              0,
+              0
+            ],
+            "r": 1.5
+          },
+          "zprime": true,
+          "window": {
+            "x": [
+              -3,
+              3
+            ],
+            "y": [
+              -2.5,
+              2.5
+            ]
+          }
+        },
+        "cap": "$\\oint \\frac{dz}{z}$ around circles: the numerical value stays $2\\pi i \\approx 6.283i$ however you resize the circle, as long as it goes around $0$. Tick the box to see the wrong value you get by leaving out $z'(t)$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A segment",
+        "q": "Compute $\\displaystyle\\int_C z^2\\,dz$ along the segment from $0$ to $1 + i$.",
+        "steps": [
+          "$z(t) = (1 + i)t$, $z'(t) = 1 + i$, $0 \\le t \\le 1$.",
+          "$\\int_0^1 (1 + i)^2t^2(1 + i)\\,dt = (1 + i)^3\\int_0^1 t^2\\,dt = \\frac{(1 + i)^3}{3}$.",
+          "$(1 + i)^3 = (1 + i)(2i) = -2 + 2i$, so the integral is $-\\frac{2}{3} + \\frac{2}{3}i$."
+        ],
+        "a": "$-\\frac{2}{3} + \\frac{2}{3}i$"
+      },
+      {
+        "t": "ex",
+        "title": "The conjugate around a circle",
+        "q": "Compute $\\displaystyle\\oint_{|z| = 2} \\overline{z}\\,dz$.",
+        "steps": [
+          "$z = 2e^{it}$, $\\overline{z} = 2e^{-it}$, $dz = 2ie^{it}\\,dt$.",
+          "The integrand is $2e^{-it} \\cdot 2ie^{it} = 4i$.",
+          "$\\int_0^{2\\pi} 4i\\,dt = 8\\pi i$. (In general $\\oint_{|z| = r}\\overline{z}\\,dz = 2\\pi ir^2$, not $0$.)"
+        ],
+        "a": "$8\\pi i$"
+      },
+      {
+        "t": "ex",
+        "title": "Half of a circle",
+        "q": "Compute $\\displaystyle\\int_C \\frac{dz}{z}$ along the upper half of $|z| = 1$ from $1$ to $-1$.",
+        "steps": [
+          "$z = e^{it}$ for $0 \\le t \\le \\pi$; $\\frac{z'(t)}{z(t)} = \\frac{ie^{it}}{e^{it}} = i$.",
+          "$\\int_0^\\pi i\\,dt = \\pi i$. The lower half from $1$ to $-1$ gives $-\\pi i$: the integral depends on the path."
+        ],
+        "a": "$\\pi i$"
+      },
+      {
+        "t": "list",
+        "items": [
+          "Parametrize: $z(t)$ for $a \\le t \\le b$, in the right direction; compute $z'(t)$.",
+          "Substitute: $f(z(t))\\,z'(t)$ is an ordinary complex-valued function of $t$.",
+          "Integrate the real and imaginary parts (or integrate $e^{ikt}$ directly).",
+          "For a path made of pieces, add the integrals of the pieces."
+        ]
+      },
+      {
+        "t": "note",
+        "html": "Contour integrals are linear ($\\int_C (af + bg)\\,dz = a\\int_C f\\,dz + b\\int_C g\\,dz$) and add over pieces of a path, exactly like line integrals."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Leaving out $z'(t)$.</b> Writing $\\int f(z(t))\\,dt$ treats the integral as an average over the parameter, not a sum of $f\\,dz$. For $\\oint_{|z| = 1}\\frac{dz}{z}$ it gives $\\int_0^{2\\pi} e^{-it}\\,dt = 0$ instead of $2\\pi i$. Quick check: the integral of the constant $1$ over a segment from $z_1$ to $z_2$ must be $z_2 - z_1$; that only comes out right with the factor $z'(t)$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Beck, Marchesi, Pixton and Sabalka, A First Course in Complex Analysis, chapter 4 (Integration)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.04, Complex Variables with Applications (Spring 2018), course notes: line integrals and Cauchy's theorem"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

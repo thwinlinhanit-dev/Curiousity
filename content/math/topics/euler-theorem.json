@@ -1,0 +1,114 @@
+{
+  "id": "nt.euler-theorem",
+  "slug": "euler-theorem",
+  "ladder": "math",
+  "course": "nt",
+  "unit": "fermat-euler",
+  "title": "Euler's Theorem",
+  "short": "If gcd(a, n) = 1, then a^φ(n) ≡ 1 (mod n); use it to find the last digits of huge powers.",
+  "trouble": "Students reduce the exponent mod n instead of mod φ(n), or use the theorem when gcd(a, n) > 1.",
+  "prereqs": [
+    "nt.euler-phi",
+    "nt.fermat-little"
+  ],
+  "xp": 3,
+  "viz": [
+    "nt-powers"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/math/number-theory/fermat-little/\">Fermat's theorem</a> shrinks exponents for a prime modulus. Euler found the version for any modulus: replace $p - 1$ by <a href=\"/math/number-theory/euler-phi/\">$\\varphi(n)$</a>, the number of units. It is the theorem that makes RSA work."
+      },
+      {
+        "t": "p",
+        "html": "<b>Euler's theorem.</b> If $\\gcd(a, n) = 1$, then $$a^{\\varphi(n)} \\equiv 1 \\pmod{n}.$$ For a prime, $\\varphi(p) = p - 1$ and this is Fermat's theorem. As before, exponents may be reduced mod $\\varphi(n)$: if $e \\equiv r \\pmod{\\varphi(n)}$, then $a^{e} \\equiv a^{r}$."
+      },
+      {
+        "t": "why",
+        "html": "Copy Fermat's proof, using only the units. Let $u_1, \\dots, u_{\\varphi(n)}$ be the units mod $n$. Multiplying each by $a$ (itself a unit) gives units again, all different (cancel $a$ with its inverse), so $au_1, \\dots, au_{\\varphi(n)}$ are the same units in a new order. Multiply everything: $$a^{\\varphi(n)} \\, u_1 \\cdots u_{\\varphi(n)} \\equiv u_1 \\cdots u_{\\varphi(n)} \\pmod{n}.$$ The product of units is a unit, so it cancels."
+      },
+      {
+        "t": "viz",
+        "name": "nt-powers",
+        "opts": {
+          "mode": "exponent",
+          "n": 10,
+          "a": 7,
+          "e": 222
+        },
+        "cap": "The last digit of a power of 7 cycles through 7, 9, 3, 1, a period of $\\varphi(10) = 4$. So the last digit of $7^{222}$ is the last digit of $7^{2}$, since $222 = 4 \\cdot 55 + 2$."
+      },
+      {
+        "t": "ex",
+        "title": "Last digit",
+        "q": "Find the last digit of $7^{222}$.",
+        "steps": [
+          "We want $7^{222} \\bmod 10$. $\\gcd(7, 10) = 1$ and $\\varphi(10) = 4$.",
+          "$222 = 4 \\cdot 55 + 2$, so $7^{222} \\equiv 7^{2} = 49 \\equiv 9$."
+        ],
+        "a": "$9$."
+      },
+      {
+        "t": "ex",
+        "title": "Last two digits",
+        "q": "Find the last two digits of $3^{1000}$.",
+        "steps": [
+          "Work mod 100. $\\varphi(100) = \\varphi(4)\\varphi(25) = 2 \\cdot 20 = 40$, and $\\gcd(3, 100) = 1$.",
+          "$1000 = 40 \\cdot 25$, so $3^{1000} = (3^{40})^{25} \\equiv 1 \\pmod{100}$."
+        ],
+        "a": "The last two digits are $01$."
+      },
+      {
+        "t": "ex",
+        "title": "An exponent tower",
+        "q": "Find $3^{3^{3}} \\bmod 10$.",
+        "steps": [
+          "The exponent is $3^{3} = 27$. Reduce it mod $\\varphi(10) = 4$: $27 \\equiv 3$.",
+          "$3^{27} \\equiv 3^{3} = 27 \\equiv 7 \\pmod{10}$."
+        ],
+        "a": "$7$."
+      },
+      {
+        "t": "ex",
+        "title": "Inverses from Euler",
+        "q": "Find $5^{-1} \\bmod 12$ using Euler's theorem.",
+        "steps": [
+          "$5 \\cdot 5^{\\varphi(12) - 1} = 5^{\\varphi(12)} \\equiv 1$, so $5^{-1} \\equiv 5^{\\varphi(12) - 1} = 5^{3}$. In general $a^{-1} \\equiv a^{\\varphi(n) - 1}$ for a unit $a$.",
+          "$5^{3} = 125 = 12 \\cdot 10 + 5$, so $5^{-1} \\equiv 5$. Check: $5 \\cdot 5 = 25 \\equiv 1 \\pmod{12}$."
+        ],
+        "a": "$5$."
+      },
+      {
+        "t": "mistake",
+        "html": "Reducing the exponent mod $n$ instead of mod $\\varphi(n)$, or using the theorem when $\\gcd(a, n) > 1$. Mod 10, $2^{\\varphi(10)} = 2^{4} = 16 \\equiv 6$, not 1: the powers of 2 never reach 1 mod 10, because 2 is not a unit. When $\\gcd(a, n) > 1$, factor $n$ and use the <a href=\"/math/number-theory/chinese-remainder/\">CRT</a>, or look for the repeating pattern directly."
+      },
+      {
+        "t": "p",
+        "html": "This theorem is the engine of <a href=\"/math/number-theory/rsa/\">RSA</a>. If $ed \\equiv 1 \\pmod{\\varphi(n)}$, then $ed = 1 + k\\varphi(n)$, and for every unit $m$, $(m^{e})^{d} = m \\cdot (m^{\\varphi(n)})^{k} \\equiv m$. Raising to the power $e$ scrambles $m$; raising to the power $d$ unscrambles it."
+      },
+      {
+        "t": "note",
+        "html": "$\\varphi(n)$ is a period, not always the shortest one. Mod 15, $\\varphi(15) = 8$, yet $2^{4} = 16 \\equiv 1$ already. The shortest period is the <a href=\"/math/number-theory/order-mod-n/\">order</a> of $a$, which always divides $\\varphi(n)$."
+      },
+      {
+        "t": "key",
+        "html": "If $\\gcd(a, n) = 1$, then $a^{\\varphi(n)} \\equiv 1 \\pmod{n}$, so reduce exponents mod $\\varphi(n)$. Check the gcd first."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "William Stein, Elementary Number Theory: Primes, Congruences, and Secrets (Springer, 2009; free online edition), chapter 2, The Ring of Integers Modulo n (Euler's theorem)"
+      },
+      {
+        "name": "Lehman, Leighton and Meyer, Mathematics for Computer Science (MIT OpenCourseWare 6.042J), chapter on number theory: Euler's theorem"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

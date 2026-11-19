@@ -1,0 +1,62 @@
+{
+  "id": "exam.string-pulley",
+  "slug": "string-pulley",
+  "ladder": "physics",
+  "course": "exam",
+  "unit": "waves",
+  "title": "A String Over a Pulley",
+  "short": "A hanging mass sets the wave speed; the length and the number of loops set the frequency.",
+  "trouble": "Students think the wave speed is proportional to the tension rather than its square root.",
+  "prereqs": [
+    "phys2.standing-waves-strings",
+    "phys2.wave-speed-medium"
+  ],
+  "xp": 3,
+  "viz": [
+    "exam-string-pulley"
+  ],
+  "figureArchetype": "WaveFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The classic string-and-pulley setup ties the wave speed of <a href=\"/physics/physics-2/wave-speed-medium/\">Wave Speed in a Medium</a> to the loops of <a href=\"/physics/physics-2/standing-waves-strings/\">Standing Waves on Strings</a>. The hanging mass sets the tension. Each problem here is one short scene and a chain of questions. Answer them in order: each later question uses what you found before, so a slip early on carries through. Keep full precision between steps and round only at the end."
+      },
+      {
+        "t": "key",
+        "html": "$$T = Mg, \\qquad v = \\sqrt{\\frac{T}{\\mu}}, \\qquad L = n\\frac{\\lambda}{2}, \\qquad f = \\frac{v}{\\lambda} = \\frac{nv}{2L}.$$ At a fixed frequency, $n \\propto 1/v \\propto 1/\\sqrt{M}$."
+      },
+      {
+        "t": "viz",
+        "name": "exam-string-pulley",
+        "opts": {
+          "n": 3
+        },
+        "cap": "Each loop is half a wavelength; the dots are the nodes, which never move."
+      },
+      {
+        "t": "ex",
+        "title": "Three loops",
+        "q": "A string with $\\mu = 2.0\\ \\text{g/m}$ runs $1.2\\ \\text{m}$ to a pulley holding $1.0\\ \\text{kg}$ and shows 3 loops. Find (1) the wave speed and (2) the frequency.",
+        "steps": [
+          "(1) $v = \\sqrt{(1.0)(9.8)/0.002} = 70.0\\ \\text{m/s}$.",
+          "(2) $\\lambda = 2(1.2)/3 = 0.8\\ \\text{m}$, so $f = 70.0/0.8 = 87.5\\ \\text{Hz}$."
+        ],
+        "a": "$70.0\\ \\text{m/s}$, $87.5\\ \\text{Hz}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Treating speed as proportional to tension. It goes as the square root: 4 times the hanging mass only doubles the speed. Check units: $\\sqrt{\\text{N}/(\\text{kg/m})} = \\text{m/s}$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e (Rice University), chapters 16 and 17 on waves and sound"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

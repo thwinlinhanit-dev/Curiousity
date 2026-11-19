@@ -1,0 +1,103 @@
+{
+  "id": "calc3.triple-applications",
+  "slug": "triple-applications",
+  "ladder": "math",
+  "course": "calc3",
+  "unit": "multiple-integrals",
+  "title": "Mass and Moments of Solids",
+  "short": "Find mass, centers of mass and moments of inertia.",
+  "trouble": "",
+  "prereqs": [
+    "calc3.triple-integrals",
+    "calc3.double-integral-applications"
+  ],
+  "xp": 3,
+  "viz": [],
+  "figureArchetype": "EnergyFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The ideas from <a href=\"/math/calculus-3/double-integral-applications/\">plates</a> carry over to solid objects: integrate density to get mass, weight by position to find the balance point, and weight by squared distance from an axis to get the moment of inertia, which measures how hard the object is to spin."
+      },
+      {
+        "t": "key",
+        "html": "For a solid $E$ with density $\\rho(x, y, z)$ (mass per unit volume):\n  $$m = \\iiint_E \\rho\\,dV, \\qquad \\bar{z} = \\frac{1}{m}\\iiint_E z\\rho\\,dV \\ \\ (\\text{likewise } \\bar{x}, \\bar{y}), \\qquad I_z = \\iiint_E (x^2 + y^2)\\rho\\,dV.$$"
+      },
+      {
+        "t": "why",
+        "html": "A small piece of volume $\\Delta V$ has mass $\\rho\\,\\Delta V$. The center of mass averages positions weighted by mass. For spinning about the $z$-axis, a piece at distance $d$ from the axis moving at angular speed $\\omega$ has speed $d\\omega$ and kinetic energy $\\frac{1}{2}(\\rho\\,\\Delta V)(d\\omega)^2$; adding the pieces gives $\\frac{1}{2}I_z\\omega^2$ with $I_z = \\iiint d^2\\rho\\,dV$ and $d^2 = x^2 + y^2$. Mass far from the axis counts much more."
+      },
+      {
+        "t": "viz",
+        "name": "param3d",
+        "opts": {
+          "surface": true,
+          "x": "2sin(u)*cos(v)",
+          "y": "2sin(u)*sin(v)",
+          "z": "2cos(u)",
+          "u0": 0,
+          "u1": "pi/2",
+          "v0": 0,
+          "v1": "2pi",
+          "u": 0.8,
+          "v": 1
+        },
+        "cap": "A solid half-ball of radius 2 (its curved surface shown). By symmetry its center of mass is on the $z$-axis; the second example finds it at height $\\frac{3}{8}$ of the radius."
+      },
+      {
+        "t": "p",
+        "html": "Two shortcuts save work. <b>Symmetry:</b> if the solid and its density are symmetric across a plane, the center of mass lies in that plane, so for a solid of revolution about the $z$-axis only $\\bar{z}$ needs computing. <b>Coordinates:</b> moments about the $z$-axis contain $x^2 + y^2 = r^2$, which is simplest in cylindrical coordinates, while balls and cones centered at the origin are simplest in spherical ones. For instance, a solid ball of radius $a$ and mass $m$ has $I_z = \\frac{2}{5}ma^2$, a standard result found in spherical coordinates, where $x^2 + y^2$ becomes the square of the distance to the axis."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Mass of a cube",
+        "q": "Find the mass of the cube $[0, 1]^3$ with density $\\rho = x + y + z$.",
+        "steps": [
+          "$m = \\int_0^1\\int_0^1\\int_0^1 (x + y + z)\\,dz\\,dy\\,dx$.",
+          "Each of the three terms integrates to $\\frac{1}{2}$ over the cube, so $m = \\frac{3}{2}$."
+        ],
+        "a": "$\\frac{3}{2}$"
+      },
+      {
+        "t": "ex",
+        "title": "Balance point of a half-ball",
+        "q": "Find $\\bar{z}$ for the solid upper half-ball of radius $a$ with constant density.",
+        "steps": [
+          "Mass (density 1): the volume $\\frac{2}{3}\\pi a^3$.",
+          "Moment: $\\iiint z\\,dV = \\frac{\\pi a^4}{4}$ (from the spherical-coordinates lesson).",
+          "$\\bar{z} = \\frac{\\pi a^4/4}{2\\pi a^3/3} = \\frac{3a}{8}$: below the middle height $\\frac{a}{2}$, since the half-ball is wider at the bottom."
+        ],
+        "a": "$\\bar{z} = \\frac{3a}{8}$"
+      },
+      {
+        "t": "ex",
+        "title": "Spinning a cylinder",
+        "q": "Find $I_z$ for the solid cylinder $x^2 + y^2 \\le R^2$, ${}0 \\le z \\le H$, with density ${}1$.",
+        "steps": [
+          "Cylindrical coordinates: $I_z = \\int_0^{2\\pi}\\int_0^R\\int_0^H r^2 \\cdot r\\,dz\\,dr\\,d\\theta$.",
+          "$= 2\\pi \\cdot H \\cdot \\frac{R^4}{4} = \\frac{\\pi R^4H}{2}$.",
+          "With mass $M = \\pi R^2H$, that is $\\frac{1}{2}MR^2$, the formula physics books quote."
+        ],
+        "a": "$\\frac{\\pi R^4H}{2}$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Dividing by the volume when the density varies.</b> $\\bar{z} = \\frac{\\iiint z\\rho\\,dV}{\\iiint \\rho\\,dV}$; using the volume in the denominator is right only for constant density. Also, $I_z$ uses the squared distance from the axis, $x^2 + y^2$, not from the origin, $x^2 + y^2 + z^2$. Use symmetry as a check: a center of mass must lie on any axis of symmetry."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 3, 5.6 Calculating Centers of Mass and Moments of Inertia"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,92 @@
+{
+  "id": "g8.slope-similar-triangles",
+  "slug": "slope-similar-triangles",
+  "ladder": "math",
+  "course": "g8",
+  "unit": "slope",
+  "title": "Why Slope Is the Same Everywhere",
+  "short": "Slope triangles on a line are similar, so their ratios match.",
+  "trouble": "",
+  "prereqs": [
+    "g8.slope-from-graph",
+    "g7.scale-drawings"
+  ],
+  "xp": 2,
+  "viz": [
+    "slope"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Does it matter which two points you use to <a href=\"/math/pre-algebra/slope-from-graph/\">find a slope</a>? No, and <a href=\"/math/grade-7/scale-drawings/\">scale drawings</a> explain why."
+      },
+      {
+        "t": "why",
+        "html": "Draw two slope triangles on the same line. Their bottom sides are both horizontal, their upright sides are both vertical, and their long sides lie along the same line. So their angles match, and one triangle is a scaled copy of the other, like a scale drawing. Scaling multiplies every side by the same factor $k$, so $$\\frac{\\text{rise}_2}{\\text{run}_2} = \\frac{k \\cdot \\text{rise}_1}{k \\cdot \\text{run}_1} = \\frac{\\text{rise}_1}{\\text{run}_1}$$"
+      },
+      {
+        "t": "key",
+        "html": "All slope triangles on one line are similar, so they all give the same rise ÷ run. That is why a line has a single slope, and why any two of its points give it."
+      },
+      {
+        "t": "viz",
+        "name": "slope",
+        "opts": {
+          "p1": [
+            -3,
+            -2
+          ],
+          "p2": [
+            0,
+            0
+          ],
+          "slide": true
+        },
+        "cap": "Slide the triangle along the line, or drag the points farther apart. Rise ÷ run stays the same."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Scale a triangle",
+        "q": "On a line, one slope triangle has rise 2 and run 3. A bigger slope triangle on the same line has run 12. What is its rise?",
+        "steps": [
+          "The run grew from 3 to 12, a scale factor of 4.",
+          "The rise grows by the same factor: $2 \\cdot 4 = 8$.",
+          "Check: $\\frac{8}{12} = \\frac{2}{3}$."
+        ],
+        "a": "8"
+      },
+      {
+        "t": "ex",
+        "title": "Same line or not?",
+        "q": "Could a triangle with rise 4 and run 6 and another with rise 6 and run 9 be slope triangles on the same line?",
+        "steps": [
+          "$\\frac{4}{6} = \\frac{2}{3}$ and $\\frac{6}{9} = \\frac{2}{3}$.",
+          "The ratios match, so yes (if the lines also share a point)."
+        ],
+        "a": "yes"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking a bigger slope triangle means a steeper line. A bigger triangle on the same line has a bigger rise and a bigger run in the same proportion, so the slope is unchanged."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 8, 8.EE.B.6 (use similar triangles to explain why the slope is the same between any two points)"
+      },
+      {
+        "name": "OpenStax Elementary Algebra 2e, Section 4.4: Understand Slope of a Line"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

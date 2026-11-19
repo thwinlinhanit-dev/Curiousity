@@ -1,0 +1,123 @@
+{
+  "id": "lifesci.cell-size",
+  "slug": "cell-size",
+  "ladder": "bio",
+  "course": "lifesci",
+  "unit": "cells",
+  "title": "Why Cells Are Small",
+  "short": "As a cell grows, its volume grows faster than its surface, so a big cell could not move food in and wastes out fast enough. Small cells have more surface for their size.",
+  "trouble": "Students think a cell that doubles in width doubles its surface and volume too. Its surface grows 4 times and its volume 8 times, so the surface-to-volume ratio falls.",
+  "prereqs": [
+    "lifesci.plant-animal-cells",
+    "g6.nets-surface-area",
+    "g5.volume-of-prism"
+  ],
+  "xp": 2,
+  "viz": [
+    "bi-cell",
+    "bi-chart"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Why don't cells just grow bigger? The answer is geometry. You know how to find <a href=\"/math/grade-6/nets-surface-area/\">surface area</a> and <a href=\"/math/grade-5/volume-of-prism/\">volume</a>. A cell takes in food and gets rid of wastes through its <b>surface</b>, but its whole <b>volume</b> needs them."
+      },
+      {
+        "t": "viz",
+        "name": "lifesci-cubes",
+        "opts": {
+          "sides": [
+            1,
+            2,
+            4
+          ]
+        },
+        "cap": "Cubes of side 1, 2 and 4 µm. Move the slider to grow the last cube."
+      },
+      {
+        "t": "key",
+        "html": "When a cell gets wider, its volume grows faster than its surface. Double the width: the surface area grows 4 times, but the volume grows 8 times. So a large cell has too little surface for its inside, and small cells exchange materials faster."
+      },
+      {
+        "t": "why",
+        "html": "Surface area uses side × side, so it grows with the square of the width. Volume uses side × side × side, so it grows with the cube. For a cube, surface area ÷ volume $= 6s^2 \\div s^3 = 6 \\div s$: the bigger $s$ gets, the smaller this ratio."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Find the ratio",
+        "q": "A cube-shaped cell has sides of 2 µm. Find its surface area, its volume and the ratio.",
+        "steps": [
+          "Surface area: $6 \\times 2 \\times 2 = 24$ µm².",
+          "Volume: $2 \\times 2 \\times 2 = 8$ µm³.",
+          "Ratio: $24 \\div 8 = 3$."
+        ],
+        "a": "24 µm², 8 µm³, ratio 3 : 1."
+      },
+      {
+        "t": "ex",
+        "title": "Doubling the width",
+        "q": "The cell grows to 4 µm on each side. How do its surface and volume change?",
+        "steps": [
+          "Surface area: $6 \\times 4 \\times 4 = 96$ µm², which is $96 \\div 24 = 4$ times as much.",
+          "Volume: $4 \\times 4 \\times 4 = 64$ µm³, which is $64 \\div 8 = 8$ times as much.",
+          "Ratio: $96 \\div 64 = 1.5$, half of what it was."
+        ],
+        "a": "Surface ×4, volume ×8, ratio cut in half."
+      },
+      {
+        "t": "viz",
+        "name": "bi-chart",
+        "opts": {
+          "kind": "line",
+          "x": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "series": [
+            {
+              "name": "Surface area ÷ volume",
+              "values": [
+                6,
+                3,
+                2,
+                1.5,
+                1.2,
+                1
+              ]
+            }
+          ],
+          "xlabel": "Side of the cube (µm)",
+          "ylabel": "Surface : volume",
+          "values": true
+        },
+        "cap": "The ratio falls fast as a cell grows."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking a cell that doubles in width doubles its surface and volume too. Surface grows 4 times and volume 8 times. Check with small cubes: a 2 × 2 × 2 cube is built from 8 unit cubes."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Next Generation Science Standards, MS-LS1-2: From Molecules to Organisms: Structures and Processes"
+      },
+      {
+        "name": "OpenStax, Biology 2e, 4.2 Prokaryotic Cells (cell size and surface-to-volume ratio)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

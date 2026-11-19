@@ -1,0 +1,100 @@
+{
+  "id": "stat.randomization-tests",
+  "slug": "randomization-tests",
+  "ladder": "math",
+  "course": "stat",
+  "unit": "inference",
+  "title": "Comparing Two Treatments by Randomization",
+  "short": "Reshuffle groups to see whether a difference could be chance.",
+  "trouble": "",
+  "prereqs": [
+    "stat.significance-tests",
+    "stat.experimental-design"
+  ],
+  "xp": 3,
+  "viz": [
+    "sampling",
+    "dice"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In a randomized <a href=\"/math/probability-and-statistics/experimental-design/\">experiment</a>, the groups differ by chance alone except for the treatment. So we can ask: how large a difference would chance alone, the random assignment itself, produce? Reshuffling answers that directly, with no normal curve needed. It is the <a href=\"/math/probability-and-statistics/significance-tests/\">logic of significance tests</a> in its purest form."
+      },
+      {
+        "t": "key",
+        "html": "A <b>randomization test</b> compares two treatments: (1) compute the observed difference (for example, in means); (2) under $H_0$, the treatment has no effect, so reshuffle all the results into two new groups of the same sizes, many times, recording the difference each time; (3) the p-value is the fraction of shuffles with a difference at least as extreme as the observed one."
+      },
+      {
+        "t": "why",
+        "html": "If the treatment truly does nothing, each subject would have produced the same result in either group; the group labels are just the luck of the random assignment. Reshuffling the labels reproduces exactly that luck, over and over, and shows the full range of differences that chance creates. If the real difference is rarely matched by the shuffles, chance is a poor explanation, and because the treatment was randomly assigned, the treatment is the best one."
+      },
+      {
+        "t": "viz",
+        "name": "stat-shuffle",
+        "opts": {
+          "a": [
+            24,
+            27,
+            29,
+            31,
+            33,
+            35
+          ],
+          "b": [
+            20,
+            22,
+            23,
+            26,
+            27,
+            28
+          ],
+          "names": [
+            "Fertilizer",
+            "None"
+          ],
+          "tail": "right"
+        },
+        "cap": "Plant growth (cm) for 12 plants randomly assigned to two groups. Shuffle many times: the red bars are shuffles at least as extreme as the real result."
+      },
+      {
+        "t": "ex",
+        "title": "Plant growth",
+        "q": "12 plants were randomly assigned: 6 got a fertilizer (growth 24, 27, 29, 31, 33, 35 cm) and 6 did not (20, 22, 23, 26, 27, 28 cm). Find the observed difference and interpret a randomization test.",
+        "steps": [
+          "Means: $179/6 \\approx 29.83$ and $146/6 \\approx 24.33$. Observed difference: $5.5$ cm.",
+          "There are $\\binom{12}{6} = 924$ ways to split the 12 results into two groups of 6. Exactly 15 give a difference of 5.5 or more.",
+          "p-value $= \\dfrac{15}{924} \\approx 0.016$ (a simulation with a few thousand shuffles gives about the same).",
+          "A difference this large rarely arises from the random assignment alone, so there is convincing evidence that the fertilizer increases growth for plants like these."
+        ],
+        "a": "p ≈ 0.016: convincing evidence the fertilizer helps."
+      },
+      {
+        "t": "ex",
+        "title": "When chance explains it",
+        "q": "A different experiment has an observed difference of 2 points, and 310 of 1,000 shuffles give a difference of 2 or more. Conclusion?",
+        "steps": [
+          "p-value $\\approx 310/1000 = 0.31$.",
+          "Differences this large happen about a third of the time by chance alone.",
+          "Fail to reject $H_0$: no convincing evidence of a treatment effect."
+        ],
+        "a": "No convincing evidence."
+      },
+      {
+        "t": "mistake",
+        "html": "Generalizing beyond the subjects. Random assignment supports \"the treatment caused the difference for these subjects.\" If the subjects were volunteers rather than a random sample, a claim about everyone needs more evidence. Check which kind of randomness the study had."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Common Core State Standards for Mathematics, S-IC.B.5 (Use data from a randomized experiment to compare two treatments; use simulations to decide if differences between parameters are significant)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

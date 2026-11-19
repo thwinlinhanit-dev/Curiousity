@@ -1,0 +1,106 @@
+[
+  {
+    "key": "title",
+    "source": "Planet Temperatures and the Habitable Zone"
+  },
+  {
+    "key": "short",
+    "source": "Balancing absorbed starlight against emitted heat gives T = T_*(1 − A)^(1/4)√(R_*/(2d))."
+  },
+  {
+    "key": "trouble",
+    "source": "Students think a planet's distance from its star alone sets its temperature, ignoring reflectivity and the star itself."
+  },
+  {
+    "key": "block.0.html",
+    "source": "How warm is a planet? To first order, it settles at the temperature where the starlight it absorbs balances the heat it radiates away. This uses the <a href=\"/physics/astrophysics/effective-temperature/\">Stefan–Boltzmann law</a> twice, once for the star and once for the planet, and the planet sizes from <a href=\"/physics/astrophysics/exoplanet-transits/\">transits</a> drop out."
+  },
+  {
+    "key": "block.1.html",
+    "source": "At distance $d$ the star's flux is $L/(4\\pi d^2)$. The planet intercepts it over its cross-section $\\pi R_p^2$ and reflects a fraction $A$ (the <b>albedo</b>), so it absorbs $(1 - A)\\dfrac{L}{4\\pi d^2}\\pi R_p^2$. If it spins fast enough to keep one temperature all over, it radiates from its whole surface, $4\\pi R_p^2\\sigma T^4$. Set them equal; $R_p$ cancels: $$T^4 = \\frac{(1 - A)L}{16\\pi\\sigma d^2}.$$ Writing $L = 4\\pi R_\\star^2\\sigma T_\\star^4$ gives $$T = T_\\star(1 - A)^{1/4}\\sqrt{\\frac{R_\\star}{2d}}.$$ For the Sun, the first form becomes $T = 278\\text{ K} \\times [(1 - A)L/L_\\odot]^{1/4}(d/1\\text{ AU})^{-1/2}$."
+  },
+  {
+    "key": "block.2.html",
+    "source": "A planet's <b>equilibrium temperature</b> depends on the star (its $T_\\star$ and $R_\\star$, or its $L$), the distance (as $d^{-1/2}$) and the albedo (as $(1 - A)^{1/4}$), not on the planet's size. An atmosphere can then raise the surface temperature above it (the greenhouse effect)."
+  },
+  {
+    "key": "block.3.cap",
+    "source": "The Sun (5,772 K) and Earth's equilibrium temperature (255 K) on log axes. Sunlight comes in at visible wavelengths; Earth sends its heat back out in the infrared, near 11 μm."
+  },
+  {
+    "key": "block.4.text",
+    "source": "Worked examples"
+  },
+  {
+    "key": "block.5.q",
+    "source": "Find Earth's equilibrium temperature: $T_\\odot = 5772$ K, $R_\\odot = 6.96 \\times 10^{8}$ m, $d = 1.496 \\times 10^{11}$ m, $A = 0.30$."
+  },
+  {
+    "key": "block.5.title",
+    "source": "Earth"
+  },
+  {
+    "key": "block.5.a",
+    "source": "About 255 K ($-18$ °C). Earth's average surface is about 288 K; the difference of roughly 33 K is the greenhouse effect of its atmosphere."
+  },
+  {
+    "key": "block.5.step.0",
+    "source": "$(1 - A)^{1/4} = 0.70^{1/4} = 0.915$."
+  },
+  {
+    "key": "block.5.step.1",
+    "source": "$\\sqrt{R_\\odot/(2d)} = \\sqrt{6.96 \\times 10^{8}/2.99 \\times 10^{11}} = 0.0482$."
+  },
+  {
+    "key": "block.5.step.2",
+    "source": "$T = 5772 \\times 0.915 \\times 0.0482 = 255$ K."
+  },
+  {
+    "key": "block.6.q",
+    "source": "Mars orbits at 1.52 AU with albedo about 0.25. Estimate its equilibrium temperature."
+  },
+  {
+    "key": "block.6.title",
+    "source": "Mars"
+  },
+  {
+    "key": "block.6.a",
+    "source": "About 210 K, close to the average temperature measured on Mars, whose thin atmosphere adds little warming."
+  },
+  {
+    "key": "block.6.step.0",
+    "source": "$T = 278\\text{ K} \\times (0.75)^{1/4}/\\sqrt{1.52}$."
+  },
+  {
+    "key": "block.6.step.1",
+    "source": "$= 278 \\times 0.931/1.233$."
+  },
+  {
+    "key": "block.7.q",
+    "source": "A red dwarf has $L = 0.040\\,L_\\odot$. At what distance would a planet receive the same flux Earth gets from the Sun?"
+  },
+  {
+    "key": "block.7.title",
+    "source": "Earth's twin around a dim star"
+  },
+  {
+    "key": "block.7.a",
+    "source": "0.20 AU, closer than Mercury is to the Sun. Habitable zones of dim stars are small and close in, scaling as $\\sqrt{L}$."
+  },
+  {
+    "key": "block.7.step.0",
+    "source": "Equal flux means $L/d^2 = L_\\odot/(1\\text{ AU})^2$, so $d = \\sqrt{L/L_\\odot}$ AU."
+  },
+  {
+    "key": "block.7.step.1",
+    "source": "$d = \\sqrt{0.040} = 0.20$ AU."
+  },
+  {
+    "key": "block.8.html",
+    "source": "Thinking distance alone sets a planet's temperature. The star's luminosity matters (as $L^{1/4}$), and so does the albedo: a bright, cloudy planet reflects most of the light it gets. Venus, cloaked in white clouds with $A \\approx 0.76$, has an equilibrium temperature of only about 230 K, lower than Earth's, yet its thick carbon dioxide atmosphere holds its surface near 737 K, hotter than Mercury's. Check every claim with all three inputs: the star, the distance and the albedo, and then ask about the atmosphere."
+  },
+  {
+    "key": "block.9.html",
+    "source": "The <b>habitable zone</b> is the range of distances where a planet with a suitable atmosphere could keep liquid water on its surface. Its edges depend on models of atmospheres, so estimates differ, but for the Sun they run from a little inside Earth's orbit to roughly Mars's."
+  }
+]

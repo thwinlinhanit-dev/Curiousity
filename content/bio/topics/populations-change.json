@@ -1,0 +1,117 @@
+{
+  "id": "lifesci.populations-change",
+  "slug": "populations-change",
+  "ladder": "bio",
+  "course": "lifesci",
+  "unit": "evolution",
+  "title": "Changes in Populations Over Time",
+  "short": "Data show natural selection at work: the dark form of the peppered moth rose and then fell as soot came and went, and bacteria exposed to antibiotics become resistant.",
+  "trouble": "Students think antibiotics cause bacteria to become resistant. The antibiotic kills the bacteria that lack resistance, and the few already resistant survive and multiply.",
+  "prereqs": [
+    "lifesci.natural-selection",
+    "lifesci.bacteria-growth"
+  ],
+  "xp": 3,
+  "viz": [
+    "bi-selection",
+    "bi-chart"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Natural selection is not only a story about the past. Scientists have measured it happening, by counting how common a trait is generation after generation. This builds on <a href=\"/biology/life-science/natural-selection/\">Natural Selection</a> and <a href=\"/biology/life-science/bacteria-growth/\">How Bacteria Multiply</a>."
+      },
+      {
+        "t": "key",
+        "html": "When the environment changes, the traits that help survival can change too, and data show the population shifting. Two well-studied cases: the <b>peppered moth</b> in England and <b>antibiotic-resistant bacteria</b>."
+      },
+      {
+        "t": "p",
+        "html": "<b>Peppered moths.</b> Most peppered moths were pale and speckled, hidden on pale, lichen-covered tree bark. The first dark one on record was caught near Manchester in 1848. As coal smoke blackened trees, dark moths were harder for birds to spot, and by 1895 about 98% of the moths caught near Manchester were dark. After clean-air laws such as the Clean Air Act of 1956 cut the soot, the pale form became common again."
+      },
+      {
+        "t": "viz",
+        "name": "bi-chart",
+        "opts": {
+          "kind": "line",
+          "x": [
+            1960,
+            1970,
+            1980,
+            1990,
+            2000
+          ],
+          "series": [
+            {
+              "name": "Dark moths (%)",
+              "values": [
+                92,
+                88,
+                75,
+                40,
+                12
+              ]
+            }
+          ],
+          "xlabel": "Year",
+          "ylabel": "Dark moths (%)",
+          "ymin": 0,
+          "ymax": 100,
+          "title": "Dark moths after the air got cleaner (made-up numbers for practice)"
+        },
+        "cap": "A falling line: as soot decreased, dark moths became less common."
+      },
+      {
+        "t": "why",
+        "html": "Every step is natural selection. Moths already varied in color (variation), and color is inherited. Birds ate the moths they could see (selection). In each generation, the better-hidden color left more offspring, so it became more common. When the trees changed, the \"better\" color changed with them."
+      },
+      {
+        "t": "ex",
+        "title": "Resistance",
+        "q": "A patient's infection has a few bacteria that happen to resist an antibiotic. What happens when the antibiotic is used?",
+        "steps": [
+          "The antibiotic kills the bacteria that lack resistance.",
+          "The resistant few survive and multiply, doubling quickly.",
+          "Soon most of the population is resistant."
+        ],
+        "a": "The population becomes mostly resistant. The antibiotic did not create the resistance; it selected for it."
+      },
+      {
+        "t": "ex",
+        "title": "Read the graph",
+        "q": "Using the graph, how much did the share of dark moths fall from 1970 to 1990?",
+        "steps": [
+          "1970: 88%. 1990: 40%.",
+          "88 − 40 = 48."
+        ],
+        "a": "48 percentage points."
+      },
+      {
+        "t": "mistake",
+        "html": "Students think antibiotics cause bacteria to become resistant, the way exercise causes muscles to grow. Resistance comes from mutations that some bacteria already have. The antibiotic kills the others, and the resistant ones survive and multiply."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Next Generation Science Standards, MS-LS4-6 (Biological Evolution: Unity and Diversity)"
+      },
+      {
+        "name": "OpenStax, Concepts of Biology, 11.2 Mechanisms of Evolution"
+      },
+      {
+        "name": "Grokipedia, \"Peppered moth evolution\" (first dark specimen 1848; about 98% dark by 1895; decline after the Clean Air Act 1956)",
+        "url": "https://grokipedia.com/page/Peppered_moth_evolution"
+      },
+      {
+        "name": "Centers for Disease Control and Prevention, About Antimicrobial Resistance",
+        "url": "https://www.cdc.gov/antimicrobial-resistance/about/index.html"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

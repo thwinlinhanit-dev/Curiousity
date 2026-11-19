@@ -1,0 +1,97 @@
+{
+  "id": "imicro.utility-functions",
+  "slug": "utility-functions",
+  "ladder": "economics",
+  "course": "imicro",
+  "unit": "preferences",
+  "title": "Utility Functions",
+  "short": "A utility function gives preferred bundles bigger numbers; any increasing transformation of it describes the same preferences.",
+  "trouble": "Students treat utility as measured happiness (\"twice as happy\"), when only the ranking of bundles matters.",
+  "prereqs": [
+    "imicro.indifference-curves",
+    "alg2.function-composition"
+  ],
+  "xp": 2,
+  "viz": [
+    "surface"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "An indifference map can be summarized by a single function. A <b>utility function</b> $U(x, y)$ gives each bundle a number so that preferred bundles get bigger numbers: $U(A) > U(B)$ exactly when $A \\succ B$, and $U(A) = U(B)$ exactly when $A \\sim B$. Its level curves are the <a href=\"/economics/intermediate-microeconomics/indifference-curves/\">Indifference Curves</a>."
+      },
+      {
+        "t": "key",
+        "html": "Utility is <b>ordinal</b>: only the ranking it gives matters, not the size of the numbers. If $f$ is any strictly increasing function, $V = f(U)$ describes exactly the same preferences, as with <a href=\"/math/algebra-2/function-composition/\">Composition of Functions</a>: feed $U$'s output into $f$."
+      },
+      {
+        "t": "why",
+        "html": "For an increasing $f$, $U(A) > U(B)$ if and only if $f(U(A)) > f(U(B))$, and equal inputs give equal outputs. So $V = f(U)$ ranks every pair of bundles the same way as $U$. Its level curves are the same curves with new labels: the curve $U = 6$ is the curve $V = f(6)$. A decreasing $f$ (such as $f(u) = -u$ or $1/u$) flips every ranking, so it describes opposite preferences."
+      },
+      {
+        "t": "viz",
+        "name": "surface",
+        "opts": {
+          "f": "x*y",
+          "xmin": 0,
+          "xmax": 6,
+          "ymin": 0,
+          "ymax": 6,
+          "contours": 8,
+          "floor": true,
+          "slice": "none",
+          "view": "3d"
+        },
+        "cap": "$U = xy$ as a surface. The contour lines on the floor are the indifference curves. $\\ln U = \\ln x + \\ln y$ or $(xy)^2$ would make a surface of a different height and shape, but with the same contour lines in the same order."
+      },
+      {
+        "t": "ex",
+        "title": "Which functions describe the same preferences?",
+        "q": "$U(x, y) = xy$ for $x, y > 0$. Do these describe the same preferences? $V_1 = \\ln x + \\ln y$, $V_2 = 3xy + 5$, $V_3 = -xy$, $V_4 = x + y$.",
+        "steps": [
+          "$V_1 = \\ln(xy) = \\ln U$, and $\\ln$ is increasing: same preferences.",
+          "$V_2 = 3U + 5$ is increasing in $U$: same preferences.",
+          "$V_3 = -U$ is decreasing in $U$: it reverses every ranking.",
+          "$V_4$ is not a function of $U$ at all. For example $(1, 9)$ and $(3, 3)$ have $V_4 = 10$ and $6$, but $U = 9$ for both: $V_4$ ranks a pair that $U$ calls a tie."
+        ],
+        "a": "$V_1$ and $V_2$ do; $V_3$ and $V_4$ don't."
+      },
+      {
+        "t": "ex",
+        "title": "Same curve, new label",
+        "q": "Kara's preferences are described by $U = xy$ and by $V = 2(xy)^2 + 1$. Which level of V is the indifference curve $U = 5$?",
+        "steps": [
+          "Write V in terms of U: $V = 2U^2 + 1$.",
+          "On the curve $U = 5$: $V = 2(25) + 1 = 51$.",
+          "Same bundles, same curve; only the label changed."
+        ],
+        "a": "$V = 51$."
+      },
+      {
+        "t": "mistake",
+        "html": "Treating utility as measured happiness. If $U(A) = 20$ and $U(B) = 10$, it is tempting to say A is \"twice as good.\" But $V = \\ln U$ describes the same person with values about 3.0 and 2.3, and $V = U^3$ gives 8,000 and 1,000. The ratio means nothing; only the order does. Check: a statement about preferences is meaningful only if every increasing transformation of $U$ leaves it true."
+      },
+      {
+        "t": "note",
+        "html": "Ordinal utility is all we need for choices without risk. When we compare risky prospects in <a href=\"/economics/intermediate-microeconomics/expected-utility/\">Expected Utility</a>, the scale matters more: there a utility function is pinned down up to a positive linear change $aU + b$ with $a > 0$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, appendix B Indifference Curves"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.04 Intermediate Microeconomic Theory (course scope and lecture topics)"
+      },
+      {
+        "name": "OpenStax Precalculus 2e, 1.4 Composition of Functions"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

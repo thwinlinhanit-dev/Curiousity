@@ -1,0 +1,141 @@
+{
+  "id": "weather.pressure-height",
+  "slug": "pressure-height",
+  "ladder": "earth",
+  "course": "weather",
+  "unit": "air-basics",
+  "title": "How Pressure Falls with Height",
+  "short": "Pressure drops by about half for every 5.5 km you climb, because less air is left above you.",
+  "trouble": "Students expect pressure to fall by the same amount for each kilometer, like a straight line; it falls by the same fraction, so each kilometer's drop is smaller than the one below.",
+  "prereqs": [
+    "weather.pressure-units",
+    "alg1.exponential-growth-decay"
+  ],
+  "xp": 2,
+  "viz": [
+    "es-atmosphere"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Drive up a mountain or take off in a plane and your ears pop: the pressure outside has dropped. Pressure is the weight of the air above you (<a href=\"/earth-and-space/weather-and-climate/pressure-units/\">measuring air pressure</a>), so every meter you climb leaves some air below. The question is how fast it falls, and the answer is not a straight line."
+      },
+      {
+        "t": "why",
+        "html": "Air can be squeezed. The air near the ground carries the weight of all the air above it, so it is packed the most tightly. Climb the first kilometer and you pass through thick, dense air and lose about 12% of the pressure. A kilometer higher, the air is thinner, so you pass less mass and lose fewer hectopascals, but still about 12% of what is left. Losing the <b>same fraction</b> for each step is <a href=\"/math/algebra-1/exponential-growth-decay/\">exponential decay</a>, just like a 12% discount taken again and again."
+      },
+      {
+        "t": "key",
+        "html": "Pressure falls by about <b>half for every 5.5 km</b> you climb: $$P \\approx P_0 \\left(\\tfrac{1}{2}\\right)^{z/5.5\\ \\text{km}}$$ About half of the air is below 5.5 km, three quarters below 11 km, and seven eighths below 16.5 km."
+      },
+      {
+        "t": "viz",
+        "name": "es-atmosphere",
+        "opts": {
+          "probe": 5.5,
+          "pie": false
+        },
+        "cap": "Temperature (left) and pressure (right) up to 120 km. Drag the probe: at 5.5 km the pressure is about half of the ground's, at 11 km about a quarter. The pressure curve bends; it is not a straight line."
+      },
+      {
+        "t": "ex",
+        "title": "Two halvings",
+        "q": "The pressure at the ground is 1012 hPa. About what is the pressure at 11 km, where airliners cruise?",
+        "steps": [
+          "11 km is two steps of 5.5 km, so the pressure halves twice.",
+          "$1012 \\div 2 = 506$ hPa at 5.5 km.",
+          "$506 \\div 2 = 253$ hPa at 11 km."
+        ],
+        "a": "About 253 hPa"
+      },
+      {
+        "t": "ex",
+        "title": "Working backward",
+        "q": "A weather balloon reads 125 hPa when the ground reads 1000 hPa. About how high is it?",
+        "steps": [
+          "$1000 \\div 125 = 8$, and $8 = 2^3$: the pressure has halved three times.",
+          "Each halving is 5.5 km, so the height is $3 \\times 5.5 = 16.5$ km."
+        ],
+        "a": "About 16.5 km"
+      },
+      {
+        "t": "ex",
+        "title": "The first kilometer versus a higher one",
+        "q": "Starting from 1000 hPa, each kilometer keeps about 0.882 of the pressure below it. Compare the drop across the first kilometer with the drop from 5 km to 6 km.",
+        "steps": [
+          "First kilometer: $1000 \\times 0.882 = 882$ hPa, a drop of about 118 hPa.",
+          "At 5 km: $1000 \\times 0.882^5 \\approx 533$ hPa; at 6 km: $533 \\times 0.882 \\approx 470$ hPa.",
+          "That drop is only about 63 hPa: the same fraction of a smaller amount."
+        ],
+        "a": "About 118 hPa, then about 63 hPa"
+      },
+      {
+        "t": "mistake",
+        "html": "Treating the fall as a straight line: \"1013 hPa drops about 500 hPa in the first 5.5 km, so by 11 km the pressure is zero.\" Each 5.5 km takes away half of <b>what is left</b>, so 11 km still has about a quarter. Check: pressure never reaches zero on this rule; it keeps halving."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Height",
+          "Rule of thumb",
+          "Standard atmosphere"
+        ],
+        "rows": [
+          [
+            "0 km",
+            "1013 hPa",
+            "1013 hPa"
+          ],
+          [
+            "1.5 km",
+            "839 hPa",
+            "846 hPa"
+          ],
+          [
+            "3 km",
+            "694 hPa",
+            "701 hPa"
+          ],
+          [
+            "5.5 km",
+            "507 hPa",
+            "505 hPa"
+          ],
+          [
+            "8.85 km (top of Everest)",
+            "332 hPa",
+            "315 hPa"
+          ],
+          [
+            "11 km",
+            "253 hPa",
+            "227 hPa"
+          ]
+        ],
+        "cap": "The halving rule against the U.S. Standard Atmosphere (1976), an average atmosphere. The rule works well in the lowest several kilometers; higher up, the colder air is packed more tightly and the pressure falls a little faster."
+      },
+      {
+        "t": "note",
+        "html": "Weather maps for the upper air use pressure levels instead of heights: the 850 hPa map is about 1.5 km up, the 700 hPa map about 3 km, the 500 hPa map about 5.5 km and the 300 hPa map about 9 km."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "NOAA National Weather Service, JetStream online school for weather: Air Pressure and Layers of the Atmosphere"
+      },
+      {
+        "name": "U.S. Standard Atmosphere, 1976 (NOAA, NASA and the U.S. Air Force)"
+      },
+      {
+        "name": "OpenStax, College Physics 2e, 11.4 Variation of Pressure with Depth in a Fluid"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

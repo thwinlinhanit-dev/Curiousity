@@ -1,0 +1,119 @@
+{
+  "id": "chem.solubility-curves",
+  "slug": "solubility-curves",
+  "ladder": "chemistry",
+  "course": "chem",
+  "unit": "solutions",
+  "title": "Solubility and Solubility Curves",
+  "short": "A solubility curve shows the most solute that dissolves at each temperature.",
+  "trouble": "Students think every solute, gases included, dissolves better in hotter water, or call any solution with a lot of solute saturated.",
+  "prereqs": [
+    "chem.dissolving"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-solubilitycurve"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "There is a limit to <a href=\"/chemistry/chemistry/dissolving/\">Why Things Dissolve</a>: keep adding sugar to tea and some eventually stays at the bottom. That limit depends on the solute, the solvent and the temperature."
+      },
+      {
+        "t": "key",
+        "html": "The <b>solubility</b> of a substance is the most that dissolves in a given amount of solvent at a given temperature, often stated in grams per 100 g of water. On a solubility curve, a point on the curve is <b>saturated</b>, below it <b>unsaturated</b> (more can dissolve), and above it <b>supersaturated</b> (an unstable state that crystallizes easily)."
+      },
+      {
+        "t": "why",
+        "html": "In a saturated solution, particles keep leaving the solid and returning to it at equal rates, so the amount dissolved stays at the limit. For most solids, warmer water dissolves more, because faster-moving water molecules pull particles off the crystal more readily, but the size of the effect varies a lot. Gases are the other way around: dissolved gas particles that gain energy escape from the liquid, so warm water holds less gas."
+      },
+      {
+        "t": "viz",
+        "name": "ch-solubilitycurve",
+        "opts": {
+          "subs": [
+            "KNO3",
+            "NaCl",
+            "KCl",
+            "O2",
+            "CO2"
+          ],
+          "point": {
+            "T": 40,
+            "g": 50
+          }
+        },
+        "cap": "Solubility curves (g per 100 g of water). Drag the point to see whether a solution is unsaturated, saturated or supersaturated. The gases have their own panel: their curves fall as the water warms."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Salt",
+          "20 °C",
+          "40 °C",
+          "60 °C"
+        ],
+        "rows": [
+          [
+            "$\\mathrm{KNO}_{3}$",
+            "31.6",
+            "63.9",
+            "110"
+          ],
+          [
+            "$\\mathrm{NaCl}$",
+            "36.0",
+            "36.6",
+            "37.3"
+          ],
+          [
+            "$\\mathrm{KCl}$",
+            "34.0",
+            "40.0",
+            "45.5"
+          ]
+        ],
+        "cap": "Solubility in grams per 100 g of water (CRC Handbook)."
+      },
+      {
+        "t": "ex",
+        "title": "Saturated or not?",
+        "q": "A clear solution holds $50\\ \\text{g}$ of $\\mathrm{KNO}_{3}$ in $100\\ \\text{g}$ of water at $40^\\circ\\text{C}$. Is it saturated?",
+        "steps": [
+          "At $40^\\circ\\text{C}$ the limit is $63.9\\ \\text{g}$.",
+          "$50 < 63.9$, so it is unsaturated: another $13.9\\ \\text{g}$ could dissolve."
+        ],
+        "a": "Unsaturated."
+      },
+      {
+        "t": "ex",
+        "title": "Crystals on cooling",
+        "q": "A saturated solution of $\\mathrm{KNO}_{3}$ in $100\\ \\text{g}$ of water at $60^\\circ\\text{C}$ is cooled to $20^\\circ\\text{C}$. What mass of crystals forms?",
+        "steps": [
+          "At $60^\\circ\\text{C}$ the water holds $110\\ \\text{g}$; at $20^\\circ\\text{C}$ only $31.6\\ \\text{g}$.",
+          "The extra comes out of solution: $110 - 31.6 = 78.4\\ \\text{g}$ of crystals."
+        ],
+        "a": "$78.4\\ \\text{g}$."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking every solute, gases included, dissolves better in hotter water, or calling any solution with a lot of solute \"saturated\". Saturated means at the limit for that temperature, whatever the amount: a solution with only $7.3\\ \\text{g}$ of $\\mathrm{KClO}_{3}$ per 100 g of water at $20^\\circ\\text{C}$ is already saturated. Check the curve for that substance at that temperature."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 11.3 Solubility"
+      },
+      {
+        "name": "CRC Handbook of Chemistry and Physics, aqueous solubility of inorganic compounds (as tabulated in the visual kit)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,96 @@
+{
+  "id": "earthsci.seismic-waves",
+  "slug": "seismic-waves",
+  "ladder": "earth",
+  "course": "earthsci",
+  "unit": "quakes-volcanoes",
+  "title": "Earthquakes and Seismic Waves",
+  "short": "Rock snaps along a fault and sends out P waves first, then S waves, then slower surface waves.",
+  "trouble": "Students think the epicenter is where the rock breaks; the break starts at the focus underground, and the epicenter is the point on the surface right above it.",
+  "prereqs": [
+    "earthsci.plate-boundaries"
+  ],
+  "xp": 2,
+  "viz": [
+    "es-seismic"
+  ],
+  "figureArchetype": "WaveFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Along a fault, often near a <a href=\"/earth-and-space/earth-science/plate-boundaries/\">plate boundary</a>, rocks on the two sides are pushed in different directions but stuck together. They bend slowly, storing energy like a drawn bow, until they snap and slip. The sudden slip sends out vibrations called <b>seismic waves</b>: an earthquake."
+      },
+      {
+        "t": "list",
+        "items": [
+          "The <b>focus</b> is the place underground where the rock first breaks. The <b>epicenter</b> is the point on the surface straight above it.",
+          "<b>P waves</b> (primary) arrive first. They push and pull the rock in the direction they travel, and they can pass through solids, liquids and gases. In the crust they go about 6 km each second.",
+          "<b>S waves</b> (secondary) arrive next. They shake the rock side to side and travel only through solids, at about 3.5 km/s in the crust.",
+          "<b>Surface waves</b> arrive last and travel along the ground. They are slowest but often shake hardest and do the most damage."
+        ]
+      },
+      {
+        "t": "key",
+        "html": "An earthquake is rock suddenly slipping along a fault. It sends out P waves first, then S waves, then slower surface waves. The break starts at the focus, underground; the epicenter is on the surface above it."
+      },
+      {
+        "t": "why",
+        "html": "Because P waves outrun S waves, the gap between their arrivals grows the farther you are from the quake, like the gap between two runners at different speeds. Over 84 km, a P wave at 6 km/s takes 14 s and an S wave at 3.5 km/s takes 24 s, a 10 s gap. Measure the gap, and you know the distance. Three stations together pin down the epicenter."
+      },
+      {
+        "t": "viz",
+        "name": "es-seismic",
+        "opts": {
+          "mode": "waves",
+          "modes": [
+            "waves",
+            "seismograms"
+          ]
+        },
+        "cap": "Watch the waves spread from the focus. The Seismograms tab shows the P–S gap growing at stations farther away."
+      },
+      {
+        "t": "ex",
+        "title": "Which arrives first?",
+        "q": "A seismometer 300 km away records an earthquake. Using 6 km/s for P waves and 3 km/s for S waves, when does each arrive?",
+        "steps": [
+          "P wave: $300 \\div 6 = 50$ s after the quake.",
+          "S wave: $300 \\div 3 = 100$ s after the quake.",
+          "The S wave arrives 50 s after the P wave."
+        ],
+        "a": "P after 50 s, S after 100 s"
+      },
+      {
+        "t": "ex",
+        "title": "Through the core",
+        "q": "Why don't S waves from a large earthquake reach stations on the far side of Earth?",
+        "steps": [
+          "S waves travel only through solids.",
+          "The <a href=\"/earth-and-space/earth-science/earth-layers/\">outer core</a> is liquid, so it blocks them, leaving a large \"shadow zone\" on the far side."
+        ],
+        "a": "The liquid outer core stops them"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking the epicenter is where the rock breaks. The break starts at the focus, which can be a few kilometers or hundreds of kilometers underground. The epicenter is just the point on the map directly above the focus. Check: news reports give an epicenter and a depth; the depth is how far down the focus is."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "U.S. Geological Survey, Earthquake Hazards Program: Seismic waves and the Earthquake Glossary"
+      },
+      {
+        "name": "IRIS Consortium education resources on seismic waves"
+      },
+      {
+        "name": "Next Generation Science Standards, MS-ESS2-2"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

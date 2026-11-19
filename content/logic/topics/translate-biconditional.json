@@ -1,0 +1,143 @@
+{
+  "id": "sym.translate-biconditional",
+  "slug": "translate-biconditional",
+  "ladder": "logic",
+  "course": "sym",
+  "unit": "symbols",
+  "title": "Biconditionals and Longer Sentences",
+  "short": "\"p if and only if q\" and \"p just in case q\" are p ↔ q; longer sentences are translated from the main connective inward.",
+  "trouble": "Learners translate word by word from left to right. Find the main connective in the English first; commas and \"either\" often mark the grouping.",
+  "prereqs": [
+    "sym.translate-conditionals"
+  ],
+  "xp": 3,
+  "viz": [
+    "lg-sort"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A biconditional joins two conditionals: $p \\leftrightarrow q$ says $p \\to q$ and $q \\to p$ together. With it you have all five connectives, so you can now translate long sentences. The method builds on <a href=\"/logic/symbolic-logic/translate-conditionals/\">Translating Conditionals</a>."
+      },
+      {
+        "t": "key",
+        "html": "\"$p$ if and only if $q$\" and \"$p$ just in case $q$\" are $p \\leftrightarrow q$. For a long sentence, find the main connective of the English first, then translate each part the same way, from the outside in."
+      },
+      {
+        "t": "why",
+        "html": "\"You may enter if you have a ticket\" gives $t \\to e$; \"you may enter only if you have a ticket\" gives $e \\to t$. Saying both at once, \"you may enter if and only if you have a ticket\", claims both conditionals, which is $e \\leftrightarrow t$. Long sentences work like long formulas: the commas, \"either\" and \"both\" show which pieces belong together, just as parentheses do."
+      },
+      {
+        "t": "list",
+        "items": [
+          "Mark the simple statements and give each a letter.",
+          "Find the connective that joins the two biggest pieces; commas and words like \"either\", \"both\" and \"then\" show the grouping.",
+          "Write that main connective with parentheses around each side.",
+          "Translate each side the same way."
+        ]
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "If and only if",
+        "q": "Let $p$: the store is open; $q$: the light is on. Translate \"The light is on if and only if the store is open.\"",
+        "steps": [
+          "\"If and only if\" is $\\leftrightarrow$.",
+          "Left side: the light is on, $q$. Right side: $p$."
+        ],
+        "a": "$q \\leftrightarrow p$"
+      },
+      {
+        "t": "ex",
+        "title": "Three parts",
+        "q": "Let $p$: it rains; $q$: the game is canceled; $r$: we visit the museum. Translate \"If it rains and the game is canceled, then we visit the museum.\"",
+        "steps": [
+          "The main connective is \"if … then\".",
+          "The antecedent is \"it rains and the game is canceled\": $p \\land q$.",
+          "The consequent is $r$."
+        ],
+        "a": "$(p \\land q) \\to r$"
+      },
+      {
+        "t": "ex",
+        "title": "Grouping by \"either\"",
+        "q": "Translate \"Either it rains or the game is canceled, and we do not visit the museum.\"",
+        "steps": [
+          "The comma before \"and\" makes $\\land$ the main connective.",
+          "\"Either … or\" groups the first part: $p \\lor q$.",
+          "The second part is $\\neg r$."
+        ],
+        "a": "$(p \\lor q) \\land \\neg r$"
+      },
+      {
+        "t": "ex",
+        "title": "Only if, with a compound",
+        "q": "Translate \"We visit the museum only if it rains and the game is canceled.\"",
+        "steps": [
+          "\"Only if\" introduces the consequent.",
+          "The consequent is the conjunction $p \\land q$; the antecedent is $r$."
+        ],
+        "a": "$r \\to (p \\land q)$"
+      },
+      {
+        "t": "mistake",
+        "html": "Translating word by word from left to right. \"If it rains, then either the game is canceled or we visit the museum\" is $p \\to (q \\lor r)$, but reading left to right you might write $(p \\to q) \\lor r$, which is a different claim (it is true whenever $r$ is true, even if it rains and the game is not canceled). Find the main connective of the English first."
+      },
+      {
+        "t": "viz",
+        "name": "lg-sort",
+        "opts": {
+          "bins": [
+            "(p ∧ q) → r",
+            "p → (q ∨ r)",
+            "(p ∨ q) ∧ ¬r"
+          ],
+          "cards": [
+            {
+              "text": "If it rains and the game is canceled, we visit the museum.",
+              "bin": 0
+            },
+            {
+              "text": "If it rains, then either the game is canceled or we visit the museum.",
+              "bin": 1
+            },
+            {
+              "text": "Either it rains or the game is canceled, and we do not visit the museum.",
+              "bin": 2
+            },
+            {
+              "text": "We visit the museum if both it rains and the game is canceled.",
+              "bin": 0,
+              "why": "\"If\" introduces the antecedent, here the conjunction."
+            },
+            {
+              "text": "Provided that it rains, the game is canceled or we visit the museum.",
+              "bin": 1,
+              "why": "\"Provided that\" introduces the antecedent $p$."
+            }
+          ],
+          "shuffle": true,
+          "reveal": true
+        },
+        "cap": "Sort by translation ($p$: it rains; $q$: the game is canceled; $r$: we visit the museum)."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Patrick J. Hurley and Lori Watson, A Concise Introduction to Logic, 13th ed., section 6.1"
+      },
+      {
+        "name": "forall x: Calgary, an open introduction to formal logic (P. D. Magnus, Tim Button and others; Open Logic Project), chapter on translating complex sentences"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

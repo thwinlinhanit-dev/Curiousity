@@ -1,0 +1,120 @@
+{
+  "id": "phys2.field-superposition",
+  "slug": "field-superposition",
+  "ladder": "physics",
+  "course": "phys2",
+  "unit": "electrostatics",
+  "title": "Fields of Several Charges and Field Lines",
+  "short": "Add the field vectors from each charge; field lines show the direction, and their spacing shows the strength.",
+  "trouble": "Students think field lines are the paths charges must follow, or that two lines can cross.",
+  "prereqs": [
+    "phys2.electric-field",
+    "phys2.coulomb-superposition"
+  ],
+  "xp": 3,
+  "viz": [
+    "ph-efield"
+  ],
+  "figureArchetype": "FieldFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "With several charges, each one makes its own <a href=\"/physics/physics-2/electric-field/\">field</a>, and the field at a point is their vector sum, for the same reason that <a href=\"/physics/physics-2/coulomb-superposition/\">forces add</a>. Field lines then let you see the whole pattern at a glance."
+      },
+      {
+        "t": "why",
+        "html": "The force on a test charge is the vector sum of the forces from each charge. Divide every force by the test charge and the same sum holds for fields: $\\vec E = \\vec E_1 + \\vec E_2 + \\cdots$. Field lines are drawn so that at every point they run along $\\vec E$, and so that they crowd together where $E$ is strong. Since the field has only one direction at each point, two lines can never cross."
+      },
+      {
+        "t": "key",
+        "html": "Add the field vectors from each charge. Field lines start on positive charges and end on negative ones, point along $\\vec E$, are closer where the field is stronger, and never cross. They show the direction of the force, not the path a charge must follow."
+      },
+      {
+        "t": "viz",
+        "name": "ph-efield",
+        "opts": {
+          "mode": "points",
+          "charges": [
+            {
+              "q": 2,
+              "x": -0.1,
+              "y": 0
+            },
+            {
+              "q": 2,
+              "x": 0.1,
+              "y": 0
+            }
+          ],
+          "show": [
+            "lines"
+          ],
+          "task": "Two equal positive charges. Drag the test charge to the midpoint, where the fields cancel."
+        },
+        "cap": "Two equal positive charges: the lines bend apart, and the field is zero at the midpoint."
+      },
+      {
+        "t": "viz",
+        "name": "ph-efield",
+        "opts": {
+          "mode": "points",
+          "show": [
+            "vectors"
+          ],
+          "hide": [
+            "lines",
+            "test"
+          ]
+        },
+        "cap": "The same idea as arrows: the field of a positive and a negative charge, drawn on a grid."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "The middle of a dipole",
+        "q": "A $+2.0\\,\\text{nC}$ and a $-2.0\\,\\text{nC}$ charge are $0.20\\,\\text{m}$ apart. Find the field at the midpoint.",
+        "steps": [
+          "Each charge is $0.10\\,\\text{m}$ away: $E_1 = E_2 = (8.99 \\times 10^{9})\\dfrac{2.0 \\times 10^{-9}}{(0.10)^2} = 1798\\,\\text{N/C}$.",
+          "The positive charge's field points away from it, toward the negative charge; the negative charge's field points toward itself. Same direction.",
+          "$E = 1798 + 1798 = 3.60 \\times 10^{3}\\,\\text{N/C}$, toward the negative charge."
+        ],
+        "a": "$3.60 \\times 10^{3}\\,\\text{N/C}$"
+      },
+      {
+        "t": "ex",
+        "title": "Fields at a right angle",
+        "q": "A $+2.0\\,\\text{nC}$ charge is at the origin and a $+4.0\\,\\text{nC}$ charge at $(0.30\\,\\text{m}, 0.40\\,\\text{m})$. Find the field at P $= (0.30\\,\\text{m}, 0)$.",
+        "steps": [
+          "From the origin, $0.30\\,\\text{m}$ away: $E_1 = (8.99 \\times 10^{9})\\dfrac{2.0 \\times 10^{-9}}{(0.30)^2} = 200\\,\\text{N/C}$, in the $+x$ direction.",
+          "From the charge $0.40\\,\\text{m}$ above P: $E_2 = (8.99 \\times 10^{9})\\dfrac{4.0 \\times 10^{-9}}{(0.40)^2} = 225\\,\\text{N/C}$, in the $-y$ direction.",
+          "$E = \\sqrt{200^2 + 225^2} = 301\\,\\text{N/C}$."
+        ],
+        "a": "$301\\,\\text{N/C}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking field lines are the paths charges must follow, or that two lines can cross. A field line shows the direction of the force, which sets the direction of the acceleration, not of the velocity; a moving charge can cut across lines, just as a thrown ball does not follow the downward pull of gravity. And lines never cross, because at a crossing the field would have two directions at once."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e, section 18.5 Electric Field Lines: Multiple Charges"
+      },
+      {
+        "name": "OpenStax, University Physics Volume 2, section 5.6 Electric Field Lines"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-PS3-5"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

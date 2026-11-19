@@ -1,0 +1,84 @@
+{
+  "id": "de.matrix-exponential",
+  "slug": "matrix-exponential",
+  "ladder": "math",
+  "course": "de",
+  "unit": "systems",
+  "title": "The Matrix Exponential",
+  "short": "x(t) = e^(At)x(0).",
+  "trouble": "Students compute e^(At) by exponentiating each entry.",
+  "prereqs": [
+    "de.eigen-solutions",
+    "calc2.known-series"
+  ],
+  "xp": 3,
+  "viz": [],
+  "figureArchetype": "LessonFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "For $y' = ay$ the solution is $y = e^{at}y(0)$. The same formula works for systems, $\\mathbf{x}(t) = e^{At}\\mathbf{x}(0)$, once we say what the exponential of a matrix means. The definition copies the <a href=\"/math/calculus-2/known-series/\">series for $e^{x}$</a>."
+      },
+      {
+        "t": "key",
+        "html": "$$e^{At} = I + At + \\frac{(At)^{2}}{2!} + \\frac{(At)^{3}}{3!} + \\dots$$ It satisfies $\\frac{d}{dt}e^{At} = Ae^{At}$ and $e^{A\\cdot 0} = I$, so $\\mathbf{x}(t) = e^{At}\\mathbf{x}(0)$. If $A = PDP^{-1}$ with $D$ diagonal, $e^{At} = Pe^{Dt}P^{-1}$, and $e^{Dt}$ is diagonal with entries $e^{\\lambda_it}$."
+      },
+      {
+        "t": "why",
+        "html": "Differentiate the series term by term: $\\frac{d}{dt}\\frac{(At)^{k}}{k!} = A\\frac{(At)^{k-1}}{(k - 1)!}$, so the derivative of the series is $A$ times the series. For a diagonalizable matrix, $(PDP^{-1})^{k} = PD^{k}P^{-1}$, so the whole series becomes $P\\left(\\sum \\frac{(Dt)^{k}}{k!}\\right)P^{-1} = Pe^{Dt}P^{-1}$. For $A = \\lambda I + N$ with $N^{2} = 0$, the identity part and $N$ commute, so $e^{At} = e^{\\lambda t}(I + Nt)$: the series for $N$ stops after two terms."
+      },
+      {
+        "t": "ex",
+        "title": "A diagonal matrix",
+        "q": "Find $e^{At}$ for $A = \\begin{bmatrix} 2 & 0 \\\\ 0 & -3 \\end{bmatrix}$.",
+        "steps": [
+          "Powers of a diagonal matrix are diagonal: $A^{k}$ has entries $2^{k}$ and $(-3)^{k}$.",
+          "The series sums each diagonal entry separately."
+        ],
+        "a": "$e^{At} = \\begin{bmatrix} e^{2t} & 0 \\\\ 0 & e^{-3t} \\end{bmatrix}$"
+      },
+      {
+        "t": "ex",
+        "title": "A nilpotent part",
+        "q": "Find $e^{At}$ for $A = \\begin{bmatrix} 3 & 2 \\\\ 0 & 3 \\end{bmatrix}$.",
+        "steps": [
+          "$A = 3I + N$ with $N = \\begin{bmatrix} 0 & 2 \\\\ 0 & 0 \\end{bmatrix}$ and $N^{2} = 0$.",
+          "$e^{At} = e^{3t}(I + Nt)$."
+        ],
+        "a": "$\\begin{bmatrix} e^{3t} & 2te^{3t} \\\\ 0 & e^{3t} \\end{bmatrix}$"
+      },
+      {
+        "t": "ex",
+        "title": "By diagonalizing",
+        "q": "Find $e^{At}$ for $A = \\begin{bmatrix} 1 & 2 \\\\ 2 & 1 \\end{bmatrix}$.",
+        "steps": [
+          "Eigenvalues 3 and $-1$ with eigenvectors $(1, 1)$ and $(1, -1)$: $P = \\begin{bmatrix} 1 & 1 \\\\ 1 & -1 \\end{bmatrix}$, $P^{-1} = \\frac{1}{2}\\begin{bmatrix} 1 & 1 \\\\ 1 & -1 \\end{bmatrix}$.",
+          "$Pe^{Dt}P^{-1}$ $= \\frac{1}{2}\\begin{bmatrix} e^{3t} + e^{-t} & e^{3t} - e^{-t} \\\\ e^{3t} - e^{-t} & e^{3t} + e^{-t} \\end{bmatrix}$."
+        ],
+        "a": "$e^{At} = \\frac{1}{2}\\begin{bmatrix} e^{3t} + e^{-t} & e^{3t} - e^{-t} \\\\ e^{3t} - e^{-t} & e^{3t} + e^{-t} \\end{bmatrix}$; its columns are the solutions starting at $(1, 0)$ and $(0, 1)$"
+      },
+      {
+        "t": "mistake",
+        "html": "Exponentiating each entry: for $A = \\begin{bmatrix} 3 & 2 \\\\ 0 & 3 \\end{bmatrix}$ that would give $\\begin{bmatrix} e^{3t} & e^{2t} \\\\ 1 & e^{3t} \\end{bmatrix}$, which is not even $I$ at $t = 0$. The matrix exponential comes from the series (or from diagonalizing). Quick checks: $e^{A\\cdot 0} = I$, and each column must solve $\\mathbf{x}' = A\\mathbf{x}$."
+      },
+      {
+        "t": "note",
+        "html": "A rotation appears naturally: for $A = \\begin{bmatrix} 0 & -b \\\\ b & 0 \\end{bmatrix}$, $A^{2} = -b^{2}I$, the even and odd powers form the cosine and sine series, and $e^{At} = \\begin{bmatrix} \\cos bt & -\\sin bt \\\\ \\sin bt & \\cos bt \\end{bmatrix}$, a rotation by angle $bt$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Paul's Online Math Notes, Differential Equations: Solutions to Systems"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.03SC Differential Equations (Fall 2011), Unit IV: First-order Systems"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

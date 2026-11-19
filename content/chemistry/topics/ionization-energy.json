@@ -1,0 +1,89 @@
+{
+  "id": "chem.ionization-energy",
+  "slug": "ionization-energy",
+  "ladder": "chemistry",
+  "course": "chem",
+  "unit": "periodic",
+  "title": "Ionization Energy",
+  "short": "It takes more energy to remove an electron that is closer to more protons.",
+  "trouble": "Students explain the trend by saying atoms \"want\" a full shell, instead of reasoning from the nuclear charge and the distance.",
+  "prereqs": [
+    "chem.atomic-radius"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-periodic",
+    "ch-coulomb"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "To make a positive ion, something must pull an electron off an atom, and that costs energy. How much depends on how tightly the electron is held, which follows the same charge-and-distance reasoning as <a href=\"/chemistry/chemistry/atomic-radius/\">Atomic Radius</a>."
+      },
+      {
+        "t": "key",
+        "html": "The <b>first ionization energy</b> is the energy needed to remove the outermost electron from a gaseous atom. It <b>rises across a period</b> (more protons pull on the same shell) and <b>falls down a group</b> (the outer electron is farther away and better shielded). Noble gases have the highest values in their periods; alkali metals the lowest."
+      },
+      {
+        "t": "why",
+        "html": "The attraction between the nucleus and an outer electron grows with the charge the electron feels and shrinks with distance, like <a href=\"/physics/physical-science/static-forces/\">Attraction and Repulsion</a>. Fluorine's outer electrons feel 9 protons from a short distance, behind only two shielding 1s electrons: removing one costs 1681 kJ/mol. Lithium's single outer electron is in the same shell but feels only 3 protons: 520 kJ/mol. Cesium's outer electron sits in shell 6, behind 54 inner electrons: only 376 kJ/mol. No \"wanting\" is needed to explain any of this."
+      },
+      {
+        "t": "viz",
+        "name": "ch-periodic",
+        "opts": {
+          "mode": "chart",
+          "prop": "ie1",
+          "el": "Ne"
+        },
+        "cap": "First ionization energy against atomic number. Peaks at the noble gases, drops at each alkali metal; the small dips at B, O, Al and S are real and are explained in General Chemistry."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Across a period",
+        "q": "Which has the higher first ionization energy, sodium or chlorine?",
+        "steps": [
+          "Both have their outer electrons in shell 3.",
+          "Chlorine has 17 protons pulling on that shell, sodium 11.",
+          "Chlorine holds its outer electrons more tightly: 1251 kJ/mol against 496 kJ/mol."
+        ],
+        "a": "Chlorine"
+      },
+      {
+        "t": "ex",
+        "title": "Down a group",
+        "q": "Why is the first ionization energy of potassium (419 kJ/mol) lower than that of sodium (496 kJ/mol)?",
+        "steps": [
+          "Potassium's outer electron is in shell 4; sodium's is in shell 3.",
+          "It is farther from the nucleus and shielded by 18 inner electrons instead of 10, so it is held less tightly."
+        ],
+        "a": "It is farther out and more shielded."
+      },
+      {
+        "t": "mistake",
+        "html": "Explaining the trend by saying atoms \"want\" a full shell. An atom has no wants; an electron is held by the pull of the nucleus, and that pull depends on the charge the electron feels and on its distance. Every explanation in this topic should mention charge, distance or shielding."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 6.5 Periodic Variations in Element Properties"
+      },
+      {
+        "name": "NIST Atomic Spectra Database (ionization energies)"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-PS1-1"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

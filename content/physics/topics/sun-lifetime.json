@@ -1,0 +1,89 @@
+{
+  "id": "astro.sun-lifetime",
+  "slug": "sun-lifetime",
+  "ladder": "physics",
+  "course": "astro",
+  "unit": "sun",
+  "title": "The Sun's Lifetime",
+  "short": "Fuel divided by the rate of use gives the Sun about 10 billion years on the main sequence.",
+  "trouble": "Students think the Sun will burn out within a few thousand years, or that it will explode as a supernova.",
+  "prereqs": [
+    "astro.sun-fusion",
+    "g8.scientific-operations"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-hr"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A car's range is the fuel in its tank divided by how fast it burns fuel. The Sun is the same. With <a href=\"/physics/astronomy/sun-fusion/\">fusion</a> as the fuel and its luminosity as the burn rate, <a href=\"/math/pre-algebra/scientific-operations/\">scientific notation</a> turns a big question into a short calculation: how long can the Sun shine?"
+      },
+      {
+        "t": "why",
+        "html": "Lifetime $=$ energy available $\\div$ power. Only the core gets hot enough to fuse, and by the time the core has turned about a tenth of the Sun's hydrogen into helium, the Sun begins to change. So the energy available is about $0.1 \\times 0.007 \\times M_\\odot c^2$. Divide by $L_\\odot$, and the answer is about 10 billion years. Alternatives fail this test badly: a Sun that burned chemically would last a few thousand years, and one that shone only by slowly shrinking (gravity heating it) would last about 30 million years. Rocks and meteorites show the solar system is 4.6 billion years old, so only fusion fits."
+      },
+      {
+        "t": "key",
+        "html": "Main-sequence lifetime $\\approx \\dfrac{\\text{fuel}}{\\text{rate}} = \\dfrac{0.1 \\times 0.007\\,M_\\odot c^2}{L_\\odot} \\approx 10$ billion years for the Sun. It is about 4.6 billion years old, so about halfway through."
+      },
+      {
+        "t": "viz",
+        "name": "ph-hr",
+        "opts": {
+          "mode": "tracks",
+          "task": "Follow the gold track: the Sun stays near one spot on the main sequence for about 10 billion years, then swells into a red giant and ends as a white dwarf."
+        },
+        "cap": "Evolutionary tracks on the H–R diagram. The gold line is a star like the Sun."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Fuel divided by rate",
+        "q": "Estimate the Sun's main-sequence lifetime. Use $M_\\odot = 1.99 \\times 10^{30}$ kg, $L_\\odot = 3.83 \\times 10^{26}$ W, $10\\%$ of the mass fused, $0.7\\%$ of that converted.",
+        "steps": [
+          "Mass converted: $0.1 \\times 0.007 \\times 1.99 \\times 10^{30} = 1.39 \\times 10^{27}$ kg.",
+          "Energy: $1.39 \\times 10^{27} \\times 9.00 \\times 10^{16} = 1.25 \\times 10^{44}$ J.",
+          "Time: $\\frac{1.25 \\times 10^{44}}{3.83 \\times 10^{26}} = 3.27 \\times 10^{17}$ s; divide by $3.156 \\times 10^{7}$ s per year: $1.0 \\times 10^{10}$ years."
+        ],
+        "a": "About 10 billion years."
+      },
+      {
+        "t": "ex",
+        "title": "A coal Sun",
+        "q": "If the Sun were coal, releasing $3 \\times 10^{7}$ J per kilogram, how long could it shine?",
+        "steps": [
+          "Energy: $1.99 \\times 10^{30} \\times 3 \\times 10^{7} = 6.0 \\times 10^{37}$ J.",
+          "Time: $\\frac{6.0 \\times 10^{37}}{3.83 \\times 10^{26}} = 1.6 \\times 10^{11}$ s, about $5000$ years.",
+          "Recorded history alone is longer than that, so the Sun cannot be burning."
+        ],
+        "a": "About $5000$ years."
+      },
+      {
+        "t": "mistake",
+        "html": "Two opposite myths: that the Sun will burn out within a few thousand years, and that it will end in a supernova. It has about 5 billion years of hydrogen left in its core. And it is far too light to explode: only stars of more than about 8 solar masses end as supernovae. The Sun will swell into a red giant, puff off its outer layers, and leave a white dwarf. Check: a supernova needs a heavy iron core collapsing, and the Sun will never make iron."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Astronomy 2e, section 16.1, Sources of Sunshine: Thermal and Gravitational Energy"
+      },
+      {
+        "name": "OpenStax, Astronomy 2e, section 22.1, Evolution from the Main Sequence to Red Giants"
+      },
+      {
+        "name": "NGSS HS-ESS1-1"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

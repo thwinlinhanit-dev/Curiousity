@@ -1,0 +1,135 @@
+{
+  "id": "aa.dihedral-groups",
+  "slug": "dihedral-groups",
+  "ladder": "math",
+  "course": "aa",
+  "unit": "permutations",
+  "title": "Dihedral Groups",
+  "short": "Dₙ is the group of the 2n symmetries of a regular n-gon: rotations rᵏ and reflections rᵏs, with rⁿ = s² = e and sr = r⁻¹s.",
+  "trouble": "Students assume rs = sr, or that Dₙ has n elements; here Dₙ has 2n elements (some books call it D₂ₙ).",
+  "prereqs": [
+    "aa.permutations",
+    "aa.element-order",
+    "geo.polygon-symmetry"
+  ],
+  "xp": 3,
+  "viz": [
+    "aa-dihedral"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A regular polygon can be moved onto itself in exactly $2n$ ways, and these motions form a group. It is the main example of a nonabelian group you can hold in your hands, and it connects the <a href=\"/math/geometry/polygon-symmetry/\">symmetry</a> you met in geometry with <a href=\"/math/abstract-algebra/permutations/\">permutations</a>."
+      },
+      {
+        "t": "p",
+        "html": "<b>Definition.</b> $D_{n}$ ($n \\ge 3$) is the group of symmetries of a regular $n$-gon, under composition. Number the vertices $1, \\dots, n$ counterclockwise. Let $r$ be the rotation by $360^\\circ/n$ counterclockwise, and let $s$ be the reflection in the line through vertex $1$ and the center. (Some books call this group $D_{2n}$, after its order.)"
+      },
+      {
+        "t": "p",
+        "html": "<b>The elements.</b> A symmetry is fixed by where it sends vertex 1 (one of $n$ places) and whether it keeps or reverses the order of the labels around the polygon (2 choices), so $|D_{n}| = 2n$. They are the $n$ rotations $e, r, r^{2}, \\dots, r^{n-1}$ and the $n$ reflections $s, rs, r^{2}s, \\dots, r^{n-1}s$."
+      },
+      {
+        "t": "why",
+        "html": "<b>The rule $sr = r^{-1}s$.</b> Reflecting reverses the direction of turning. Check where vertex 1 goes: $r$ sends it to position 2, then $s$ sends position 2 to position $n$. And $r^{-1}s$: $s$ fixes vertex 1, then $r^{-1}$ sends it to position $n$. Both are reflections that agree on vertex 1, so they are equal. Repeating gives $sr^{k} = r^{-k}s$. Together with $r^{n} = e$ and $s^{2} = e$, this rule lets you push every $s$ to the right and write any product as $r^{k}$ or $r^{k}s$ with $0 \\le k \\lt n$."
+      },
+      {
+        "t": "viz",
+        "name": "aa-dihedral",
+        "opts": {
+          "n": 5,
+          "task": "Press $r$ then $s$, and note the position. Start over and press $s$ then $r$. The results differ: $sr \\ne rs$."
+        },
+        "cap": "Moves act on the polygon where it is, so pressing $r$ and then $s$ makes the product $sr$ (the newest move on the left). The gold dot on edge 1 to 2 shows which way round the labels run."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Product",
+          "Rule",
+          "Result"
+        ],
+        "rows": [
+          [
+            "$r^{a}r^{b}$",
+            "rotations add",
+            "$r^{a+b}$"
+          ],
+          [
+            "$r^{a}\\,r^{b}s$",
+            "rotations add",
+            "$r^{a+b}s$"
+          ],
+          [
+            "$r^{a}s\\,r^{b}$",
+            "$sr^{b} = r^{-b}s$",
+            "$r^{a-b}s$"
+          ],
+          [
+            "$r^{a}s\\,r^{b}s$",
+            "$sr^{b} = r^{-b}s$, $s^{2} = e$",
+            "$r^{a-b}$"
+          ]
+        ],
+        "cap": "Multiplying in $D_{n}$; exponents are taken mod $n$."
+      },
+      {
+        "t": "ex",
+        "title": "Products in $D_{4}$",
+        "q": "In $D_{4}$, simplify $(rs)(r^{2}s)$ and $(r^{3})(rs)$.",
+        "steps": [
+          "$(rs)(r^{2}s) = r\\,(sr^{2})\\,s = r\\,r^{-2}s\\,s = r^{-1} = r^{3}$.",
+          "$(r^{3})(rs) = r^{4}s = s$, since $r^{4} = e$."
+        ],
+        "a": "$r^{3}$ and $s$."
+      },
+      {
+        "t": "ex",
+        "title": "Orders",
+        "q": "Find the orders of $r^{2}$, $r^{3}$ and $r^{2}s$ in $D_{6}$.",
+        "steps": [
+          "Rotations: $|r^{k}| = 6/\\gcd(6, k)$, so $|r^{2}| = 3$ and $|r^{3}| = 2$.",
+          "Every reflection has order $2$: $(r^{k}s)^{2} = r^{k}(sr^{k})s = r^{k}r^{-k}s^{2} = e$."
+        ],
+        "a": "$3$, $2$ and $2$."
+      },
+      {
+        "t": "ex",
+        "title": "A symmetry as a permutation",
+        "q": "In $D_{4}$, write $r$, $s$ and $rs$ as permutations of the vertex positions.",
+        "steps": [
+          "$r$: $1 \\to 2 \\to 3 \\to 4 \\to 1$, the cycle $(1\\;2\\;3\\;4)$.",
+          "$s$ fixes $1$ and the opposite vertex $3$, and swaps $2$ and $4$: $(2\\;4)$.",
+          "$rs$: apply $s$ first. $1 \\to 1 \\to 2$, $2 \\to 4 \\to 1$, $3 \\to 3 \\to 4$, $4 \\to 2 \\to 3$: $(1\\;2)(3\\;4)$, the mirror through the midpoints of two edges."
+        ],
+        "a": "$(1\\;2\\;3\\;4)$, $(2\\;4)$ and $(1\\;2)(3\\;4)$."
+      },
+      {
+        "t": "mistake",
+        "html": "Assuming $rs = sr$. In $D_{n}$, $sr = r^{-1}s$, which equals $rs$ only when $r^{2} = e$, impossible for $n \\ge 3$. Another slip: thinking $D_{n}$ has $n$ elements. It has $n$ rotations <i>and</i> $n$ reflections, $2n$ in all; books that write $D_{8}$ for the square's group are naming its order."
+      },
+      {
+        "t": "key",
+        "html": "$D_{n}$ has $2n$ elements $r^{k}$ and $r^{k}s$, with $r^{n} = s^{2} = e$ and $sr = r^{-1}s$. Push each $s$ to the right, flipping the sign of the rotation it passes."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Thomas W. Judson, Abstract Algebra: Theory and Applications (open textbook), chapter 5, Permutation Groups (section 5.2, Dihedral Groups)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.701 Algebra I (Fall 2010), lecture notes on symmetry groups (Artin, Algebra, chapter 6)"
+      },
+      {
+        "name": "John A. Beachy and William D. Blair, Abstract Algebra, online study guide (Northern Illinois University), section 3.3, Constructing Examples (dihedral groups)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

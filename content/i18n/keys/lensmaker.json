@@ -1,0 +1,106 @@
+[
+  {
+    "key": "title",
+    "source": "The Lensmaker's Equation"
+  },
+  {
+    "key": "short",
+    "source": "A lens's focal length comes from its shape and material: 1/f = (n − 1)(1/R₁ − 1/R₂)."
+  },
+  {
+    "key": "trouble",
+    "source": "Students give the back surface's radius the wrong sign."
+  },
+  {
+    "key": "block.0.html",
+    "source": "The <a href=\"/physics/physics-2/thin-lens-equation/\">thin lens equation</a> $\\frac{1}{d_o} + \\frac{1}{d_i} = \\frac{1}{f}$ takes the focal length as given. But a lens maker starts with a piece of glass and two curved surfaces to grind. How do the shape and the material set $f$? Each curved surface refracts the light a little, and the two effects add."
+  },
+  {
+    "key": "block.1.html",
+    "source": "A thin lens of index $n$ in air, with surface radii $R_1$ (the surface the light meets first) and $R_2$, has $$\\frac{1}{f} = (n - 1)\\left(\\frac{1}{R_1} - \\frac{1}{R_2}\\right).$$ Sign rule: $R > 0$ when the surface's center of curvature is on the <b>outgoing</b> side (where the light goes), $R < 0$ when it is on the incoming side, and $R = \\infty$ for a flat surface. In a medium of index $n_m$, replace $n$ by $n/n_m$."
+  },
+  {
+    "key": "block.2.html",
+    "source": "For one spherical surface between indices $n_1$ and $n_2$, paraxial rays obey $\\frac{n_1}{s} + \\frac{n_2}{s'} = \\frac{n_2 - n_1}{R}$ (this comes from Snell's law with small angles). Apply it twice. At the first surface, from air into glass: $$\\frac{1}{d_o} + \\frac{n}{s_1'} = \\frac{n - 1}{R_1}.$$ The image it makes is the object for the second surface. The lens is thin, so that object sits at distance $-s_1'$ (on the outgoing side, a virtual object). From glass into air: $$\\frac{n}{-s_1'} + \\frac{1}{d_i} = \\frac{1 - n}{R_2}.$$ Add the two equations: the $\\frac{n}{s_1'}$ terms cancel, leaving $\\frac{1}{d_o} + \\frac{1}{d_i} = (n - 1)\\left(\\frac{1}{R_1} - \\frac{1}{R_2}\\right)$. That is the thin lens equation, with the right side as $\\frac{1}{f}$."
+  },
+  {
+    "key": "block.3.cap",
+    "source": "A double-convex lens with $R_1 = +20$ cm and $R_2 = -30$ cm. Change the index or the radii and watch the focal point move: more bulge or a higher index gives a shorter focal length."
+  },
+  {
+    "key": "block.4.text",
+    "source": "Worked examples"
+  },
+  {
+    "key": "block.5.q",
+    "source": "A glass lens ($n = 1.50$) bulges outward on both sides, with radii 20 cm (front) and 30 cm (back). Find its focal length."
+  },
+  {
+    "key": "block.5.title",
+    "source": "A double-convex lens"
+  },
+  {
+    "key": "block.5.a",
+    "source": "$f = +24.0$ cm (converging)"
+  },
+  {
+    "key": "block.5.step.0",
+    "source": "Front surface: its center is beyond the lens, on the outgoing side, so $R_1 = +20$ cm."
+  },
+  {
+    "key": "block.5.step.1",
+    "source": "Back surface: it bulges toward the outgoing side, so its center is on the incoming side: $R_2 = -30$ cm."
+  },
+  {
+    "key": "block.5.step.2",
+    "source": "$\\frac{1}{f} = 0.50\\left(\\frac{1}{20} - \\frac{1}{-30}\\right) = 0.50\\left(\\frac{1}{20} + \\frac{1}{30}\\right) = 0.50 \\times 0.0833 = 0.0417\\ \\text{cm}^{-1}$."
+  },
+  {
+    "key": "block.6.q",
+    "source": "A plano-convex lens ($n = 1.50$) has one flat face and one face of radius 15 cm. Find $f$ with the flat face toward the light, and again with the curved face toward the light."
+  },
+  {
+    "key": "block.6.title",
+    "source": "Flat on one side"
+  },
+  {
+    "key": "block.6.a",
+    "source": "$f = 30$ cm either way (a thin lens has the same focal length in both directions)"
+  },
+  {
+    "key": "block.6.step.0",
+    "source": "Flat face first: $R_1 = \\infty$, $R_2 = -15$ cm. $\\frac{1}{f} = 0.50\\left(0 + \\frac{1}{15}\\right)$, so $f = 30$ cm."
+  },
+  {
+    "key": "block.6.step.1",
+    "source": "Curved face first: $R_1 = +15$ cm, $R_2 = \\infty$. $\\frac{1}{f} = 0.50\\left(\\frac{1}{15} - 0\\right)$, so again $f = 30$ cm."
+  },
+  {
+    "key": "block.7.q",
+    "source": "The double-convex lens from the first example ($f = 24.0$ cm in air) is put in water ($n_m = 1.33$). What is its focal length now?"
+  },
+  {
+    "key": "block.7.title",
+    "source": "The same lens under water"
+  },
+  {
+    "key": "block.7.a",
+    "source": "$f \\approx 94$ cm: the lens is much weaker in water, which is why your eyes blur when you open them underwater"
+  },
+  {
+    "key": "block.7.step.0",
+    "source": "Replace $n - 1 = 0.50$ by $\\frac{n}{n_m} - 1 = \\frac{1.50}{1.33} - 1 = 0.128$."
+  },
+  {
+    "key": "block.7.step.1",
+    "source": "The radii are unchanged, so $f$ grows by the factor $\\frac{0.50}{0.128} = 3.91$."
+  },
+  {
+    "key": "block.7.step.2",
+    "source": "$f = 24.0 \\times 3.91 = 93.9$ cm."
+  },
+  {
+    "key": "block.8.html",
+    "source": "Giving the back surface the wrong sign. For a lens that bulges on both sides, the two centers of curvature are on <b>opposite</b> sides, so $R_1$ and $R_2$ have opposite signs, and the two terms <i>add</i> in $\\frac{1}{R_1} - \\frac{1}{R_2}$. If you give both radii the same sign you get the difference instead, and a converging lens can come out far too weak or even diverging. Check: a lens thicker in the middle than at the edges must have $f > 0$ in air."
+  }
+]

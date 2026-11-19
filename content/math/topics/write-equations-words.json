@@ -1,0 +1,134 @@
+{
+  "id": "alg1.write-equations-words",
+  "slug": "write-equations-words",
+  "ladder": "math",
+  "course": "alg1",
+  "unit": "equations",
+  "title": "Writing Equations from Words",
+  "short": "Translate a situation into an equation, then solve it.",
+  "trouble": "Students translate \"5 less than x\" as 5 − x instead of x − 5.",
+  "prereqs": [
+    "alg1.justify-solution-steps",
+    "g6.write-expressions"
+  ],
+  "xp": 2,
+  "viz": [
+    "tapediagram"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A word problem is an equation written in sentences. Your job is to translate it, the same way you <a href=\"/math/grade-6/write-expressions/\">wrote expressions from words</a>, and then solve it with the <a href=\"/math/algebra-1/justify-solution-steps/\">balance moves</a> you know. A steady plan helps:"
+      },
+      {
+        "t": "list",
+        "items": [
+          "<b>Name</b> the unknown with a letter, and say what it stands for (with units).",
+          "<b>Translate</b> each phrase into symbols. “Is” becomes $=$.",
+          "<b>Solve</b> the equation.",
+          "<b>Check</b> the answer in the story, not only in your equation, and answer in a sentence."
+        ]
+      },
+      {
+        "t": "table",
+        "head": [
+          "Words",
+          "Symbols"
+        ],
+        "rows": [
+          [
+            "$5$ more than a number",
+            "$n + 5$"
+          ],
+          [
+            "$5$ less than a number",
+            "$n - 5$"
+          ],
+          [
+            "the difference of a number and $5$",
+            "$n - 5$"
+          ],
+          [
+            "twice the sum of a number and $5$",
+            "$2(n + 5)$"
+          ],
+          [
+            "three consecutive integers",
+            "$n,\\ n + 1,\\ n + 2$"
+          ],
+          [
+            "three consecutive even integers",
+            "$n,\\ n + 2,\\ n + 4$"
+          ]
+        ],
+        "cap": "Common phrases and how they translate."
+      },
+      {
+        "t": "why",
+        "html": "Why is “$5$ less than $n$” written $n - 5$? Try it with a number: $5$ less than $12$ is $7$, and $12 - 5 = 7$, while $5 - 12 = -7$. You start at the number and come down $5$, so the number comes first. Testing a phrase with a small number is a quick way to settle any doubt."
+      },
+      {
+        "t": "viz",
+        "name": "tapediagram",
+        "opts": {
+          "model": "equation",
+          "units": 4,
+          "extra": 3,
+          "total": 23,
+          "x": "n"
+        },
+        "cap": "“Three more than four times a number is $23$” as a tape: four equal parts and $3$ more make $23$, so $4n + 3 = 23$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Consecutive integers",
+        "q": "The sum of three consecutive integers is $87$. Find them.",
+        "steps": [
+          "Let $n$ be the smallest. The others are $n + 1$ and $n + 2$.",
+          "Translate: $n + (n + 1) + (n + 2) = 87$.",
+          "Combine: $3n + 3 = 87$. Subtract $3$: $3n = 84$. Divide: $n = 28$.",
+          "Check: $28 + 29 + 30 = 87$."
+        ],
+        "a": "$28$, $29$ and $30$."
+      },
+      {
+        "t": "ex",
+        "title": "A rectangle",
+        "q": "A garden's length is $4$ m more than twice its width, and its perimeter is $50$ m. Find the width.",
+        "steps": [
+          "Let $w$ be the width in meters. The length is $2w + 4$.",
+          "Perimeter is twice the width plus twice the length: $2w + 2(2w + 4) = 50$.",
+          "Distribute and combine: $6w + 8 = 50$. Subtract $8$: $6w = 42$. Divide: $w = 7$.",
+          "Check: the length is $18$ m, and $2(7) + 2(18) = 50$."
+        ],
+        "a": "The width is $7$ meters."
+      },
+      {
+        "t": "mistake",
+        "html": "Translating “$5$ less than $x$” as $5 - x$. The order matters for subtraction: “less than” flips the order of the words, so it is $x - 5$. Check with a number, as in the box above."
+      },
+      {
+        "t": "key",
+        "html": "Name the unknown, translate phrase by phrase, solve, and check the answer against the story itself."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Elementary Algebra 2e, section 3.1 Use a Problem-Solving Strategy"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, A-CED.A.1: create equations in one variable and use them to solve problems"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

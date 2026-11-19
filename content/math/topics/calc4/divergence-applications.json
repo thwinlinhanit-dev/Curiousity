@@ -1,0 +1,110 @@
+{
+  "id": "calc4.divergence-applications",
+  "slug": "divergence-applications",
+  "ladder": "math",
+  "course": "calc4",
+  "unit": "theorems",
+  "title": "Using the Divergence Theorem",
+  "short": "Close an open surface or swap a hard flux for an easy volume integral.",
+  "trouble": "",
+  "prereqs": [
+    "calc4.divergence-theorem"
+  ],
+  "xp": 3,
+  "viz": [
+    "flux"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The <a href=\"/math/calculus-4/divergence-theorem/\">divergence theorem</a> is more than a way to trade one integral for another. It handles open surfaces (close them up, then subtract), fields with a singular point (cut it out with a small sphere), and it computes volumes from boundaries. Each idea below is a pattern you will use again in physics."
+      },
+      {
+        "t": "key",
+        "html": "Three patterns:"
+      },
+      {
+        "t": "list",
+        "items": [
+          "<b>Open surface:</b> add pieces to make a closed surface. Flux through the original surface $=$ $\\iiint \\nabla \\cdot \\mathbf{F}\\,dV$ $-$ flux through the added pieces (with their outward normals).",
+          "<b>Singular point:</b> if $\\nabla \\cdot \\mathbf{F} = 0$ except at a point inside $S$, the flux through $S$ equals the flux through any small sphere around that point.",
+          "<b>Volume:</b> with $\\mathbf{F} = \\frac{1}{3}\\langle x, y, z \\rangle$, $\\nabla \\cdot \\mathbf{F} = 1$, so $\\text{Volume}(E) = \\frac{1}{3}\\iint_S \\langle x, y, z \\rangle \\cdot d\\mathbf{S}$."
+        ]
+      },
+      {
+        "t": "why",
+        "html": "<b>The singular point:</b> let $S_\\varepsilon$ be a tiny sphere around the point, inside $S$. On the solid between $S_\\varepsilon$ and $S$ the field is smooth with zero divergence. That solid's boundary is $S$ (normal outward) together with $S_\\varepsilon$ (normal pointing toward the point, which is outward for the solid between). The theorem gives flux through $S$ minus flux out of $S_\\varepsilon$ $= 0$.<br>\n  For the inverse-square field $\\mathbf{F} = \\frac{\\mathbf{r}}{|\\mathbf{r}|^3}$, on $S_\\varepsilon$ we have $\\mathbf{F} \\cdot \\mathbf{n} = \\frac{1}{\\varepsilon^2}$, so the flux is $\\frac{1}{\\varepsilon^2} \\cdot 4\\pi\\varepsilon^2 = 4\\pi$, whatever the size and shape of $S$, as long as it surrounds the origin."
+      },
+      {
+        "t": "viz",
+        "name": "flux",
+        "opts": {
+          "F": [
+            "0",
+            "0",
+            "z+1"
+          ],
+          "presets": true,
+          "surface": "hemisphere",
+          "surfaces": [
+            "hemisphere",
+            "disk",
+            "sphere"
+          ],
+          "R": 1,
+          "normals": false
+        },
+        "cap": "$\\mathbf{F} = \\langle 0, 0, z + 1 \\rangle$ has divergence ${}1$. Compare the hemisphere with the disk: the half ball has volume $\\frac{2\\pi}{3}$, and the disk's upward flux is $\\pi$, so the hemisphere's flux is $\\frac{2\\pi}{3} + \\pi$ (the second example below)."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A hemisphere without its base",
+        "q": "Find the upward flux of $\\mathbf{F} = \\langle 0, 0, z + 1 \\rangle$ through the upper hemisphere $x^2 + y^2 + z^2 = a^2$, $z \\ge 0$.",
+        "steps": [
+          "Close it with the disk $D$ at $z = 0$, outward normal $-\\mathbf{k}$. On $D$: $\\mathbf{F} \\cdot (-\\mathbf{k}) = -(0 + 1) = -1$, so the disk's flux is $-\\pi a^2$.",
+          "$\\nabla \\cdot \\mathbf{F} = 1$: the half ball gives $\\frac{2}{3}\\pi a^3$.",
+          "Hemisphere $= \\frac{2}{3}\\pi a^3 - (-\\pi a^2) = \\frac{2}{3}\\pi a^3 + \\pi a^2$."
+        ],
+        "a": "$\\frac{2}{3}\\pi a^3 + \\pi a^2$"
+      },
+      {
+        "t": "ex",
+        "title": "Any surface around the origin",
+        "q": "Find the outward flux of $\\mathbf{F} = \\frac{\\langle x, y, z \\rangle}{(x^2 + y^2 + z^2)^{3/2}}$ through the cube $[-1, 1]^3$, and through the sphere of radius ${}1$ centered at $(5, 0, 0)$.",
+        "steps": [
+          "Away from the origin, $\\nabla \\cdot \\mathbf{F} = 0$ (a direct computation).",
+          "The cube surrounds the origin, so its flux equals that of a small sphere: ${}4\\pi$.",
+          "The second sphere does not contain the origin; $\\mathbf{F}$ is smooth inside, so its flux is $\\iiint 0\\,dV = 0$."
+        ],
+        "a": "${}4\\pi$ and ${}0$"
+      },
+      {
+        "t": "ex",
+        "title": "Five faces of a cube",
+        "q": "Find the outward flux of $\\mathbf{F} = \\langle x^2, y, z \\rangle$ through the faces of $[0, 1]^3$ other than the top $z = 1$.",
+        "steps": [
+          "All six faces: $\\nabla \\cdot \\mathbf{F} = 2x + 2$, and $\\iiint (2x + 2)\\,dV = 1 + 2 = 3$.",
+          "Top face, normal $\\mathbf{k}$: $\\mathbf{F} \\cdot \\mathbf{k} = z = 1$, so its flux is ${}1$.",
+          "Five faces: ${}3 - 1 = 2$."
+        ],
+        "a": "${}2$"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 3, 6.8 The Divergence Theorem"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

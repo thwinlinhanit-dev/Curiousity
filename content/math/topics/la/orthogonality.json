@@ -1,0 +1,120 @@
+{
+  "id": "la.orthogonality",
+  "slug": "orthogonality",
+  "ladder": "math",
+  "course": "la",
+  "unit": "orthogonality",
+  "title": "Length and Orthogonality in Rⁿ",
+  "short": "Vectors are orthogonal when their dot product is 0.",
+  "trouble": "",
+  "prereqs": [
+    "la.linear-combinations",
+    "pre.dot-product"
+  ],
+  "xp": 1,
+  "viz": [
+    "vectors3d"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The <a href=\"/math/precalculus/dot-product/\">dot product</a> measured angles between arrows in the plane. The same formula works in $\\mathbb{R}^n$ and brings geometry (length, distance, right angles) into every dimension. This unit builds on it all the way to data fitting."
+      },
+      {
+        "t": "p",
+        "html": "For $\\mathbf{u}, \\mathbf{v}$ in $\\mathbb{R}^n$, the <b>inner product</b> (dot product) is $\\mathbf{u}\\cdot\\mathbf{v}$ $= \\mathbf{u}^{T}\\mathbf{v}$ $= u_1v_1 + \\cdots + u_nv_n$. The <b>length</b> (norm) is $\\lVert\\mathbf{v}\\rVert = \\sqrt{\\mathbf{v}\\cdot\\mathbf{v}}$, the <b>distance</b> between $\\mathbf{u}$ and $\\mathbf{v}$ is $\\lVert\\mathbf{u} - \\mathbf{v}\\rVert$, and a <b>unit vector</b> has length $1$: dividing any nonzero $\\mathbf{v}$ by its length gives the unit vector in its direction."
+      },
+      {
+        "t": "key",
+        "html": "$\\mathbf{u}$ and $\\mathbf{v}$ are <b>orthogonal</b> (perpendicular) when $\\mathbf{u}\\cdot\\mathbf{v} = 0$."
+      },
+      {
+        "t": "why",
+        "html": "Why does a zero dot product mean a right angle, even in $\\mathbb{R}^{10}$? Expand $\\lVert\\mathbf{u} + \\mathbf{v}\\rVert^{2}$ $= (\\mathbf{u} + \\mathbf{v})\\cdot(\\mathbf{u} + \\mathbf{v})$ $= \\lVert\\mathbf{u}\\rVert^{2} + \\lVert\\mathbf{v}\\rVert^{2} + 2\\,\\mathbf{u}\\cdot\\mathbf{v}$. The Pythagorean theorem $\\lVert\\mathbf{u} + \\mathbf{v}\\rVert^{2}$ $= \\lVert\\mathbf{u}\\rVert^{2} + \\lVert\\mathbf{v}\\rVert^{2}$, which is what \"right angle\" means for the triangle with legs $\\mathbf{u}$ and $\\mathbf{v}$, holds exactly when $\\mathbf{u}\\cdot\\mathbf{v} = 0$. More generally $\\mathbf{u}\\cdot\\mathbf{v} = \\lVert\\mathbf{u}\\rVert\\lVert\\mathbf{v}\\rVert\\cos\\theta$."
+      },
+      {
+        "t": "ex",
+        "title": "Length and unit vector",
+        "q": "Find $\\lVert\\mathbf{v}\\rVert$ and the unit vector in the direction of $\\mathbf{v} = \\begin{bmatrix} 1 \\\\ 2 \\\\ 2 \\end{bmatrix}$.",
+        "steps": [
+          "$\\mathbf{v}\\cdot\\mathbf{v} = 1 + 4 + 4 = 9$, so $\\lVert\\mathbf{v}\\rVert = 3$.",
+          "Unit vector: $\\frac{1}{3}\\mathbf{v} = \\begin{bmatrix} \\frac{1}{3} \\\\ \\frac{2}{3} \\\\ \\frac{2}{3} \\end{bmatrix}$. Check: $\\frac{1}{9} + \\frac{4}{9} + \\frac{4}{9} = 1$."
+        ],
+        "a": "$3$; $\\left(\\frac{1}{3}, \\frac{2}{3}, \\frac{2}{3}\\right)$"
+      },
+      {
+        "t": "ex",
+        "title": "Orthogonal or not?",
+        "q": "Is $(1, 2, 2)$ orthogonal to $(2, 1, -2)$? For which $k$ is $(1, 2, 2)$ orthogonal to $(4, k, 1)$?",
+        "steps": [
+          "$(1)(2) + (2)(1) + (2)(-2)$ $= 0$: yes, orthogonal.",
+          "$(1)(4) + (2)(k) + (2)(1)$ $= 6 + 2k$ $= 0$ gives $k = -3$."
+        ],
+        "a": "Yes; $k = -3$."
+      },
+      {
+        "t": "viz",
+        "name": "vectors3d",
+        "opts": {
+          "u": [
+            1,
+            2,
+            2
+          ],
+          "v": [
+            2,
+            1,
+            -2
+          ],
+          "op": "dot",
+          "ops": [
+            "dot",
+            "cross"
+          ]
+        },
+        "cap": "Turn the picture: $(1, 2, 2)$ and $(2, 1, -2)$ meet at a right angle, and their dot product is $0$."
+      },
+      {
+        "t": "ex",
+        "title": "Distance",
+        "q": "Find the distance between $(1, 0, 3, -1)$ and $(2, 2, 1, -1)$ in $\\mathbb{R}^4$.",
+        "steps": [
+          "Difference: $(-1, -2, 2, 0)$.",
+          "Length: $\\sqrt{1 + 4 + 4 + 0} = 3$."
+        ],
+        "a": "$3$"
+      },
+      {
+        "t": "p",
+        "html": "A set of vectors is <b>orthogonal</b> if every pair in it is orthogonal. Nonzero orthogonal vectors are automatically independent: if $c_1\\mathbf{u}_1 + \\cdots + c_p\\mathbf{u}_p = \\mathbf{0}$, dot both sides with $\\mathbf{u}_1$; every term but the first vanishes, leaving $c_1\\lVert\\mathbf{u}_1\\rVert^{2} = 0$, so $c_1 = 0$, and likewise for every $c_i$. That is why orthogonal bases are so convenient: each weight can be found by one dot product."
+      },
+      {
+        "t": "p",
+        "html": "In higher dimensions the dot product is just as concrete. Two survey answers, two documents' word counts, or two days of stock returns are vectors in $\\mathbb{R}^{n}$, and the angle between them (through $\\cos\\theta = \\frac{\\mathbf{u}\\cdot\\mathbf{v}}{\\lVert\\mathbf{u}\\rVert\\lVert\\mathbf{v}\\rVert}$) is a standard measure of how similar they are. Orthogonal means \"no overlap at all\"."
+      },
+      {
+        "t": "mistake",
+        "html": "Forgetting the square root in the length, or taking the square root of each entry separately. $\\lVert(3, 4)\\rVert = \\sqrt{9 + 16} = 5$, not $3 + 4 = 7$ and not $9 + 16 = 25$. Check: the length is never less than the size of any single entry."
+      },
+      {
+        "t": "note",
+        "html": "The rules $\\mathbf{u}\\cdot\\mathbf{v} = \\mathbf{v}\\cdot\\mathbf{u}$, $(\\mathbf{u} + \\mathbf{v})\\cdot\\mathbf{w} = \\mathbf{u}\\cdot\\mathbf{w} + \\mathbf{v}\\cdot\\mathbf{w}$, $(c\\mathbf{u})\\cdot\\mathbf{v} = c(\\mathbf{u}\\cdot\\mathbf{v})$ and $\\mathbf{u}\\cdot\\mathbf{u} > 0$ for $\\mathbf{u} \\neq \\mathbf{0}$ are all that the arguments in this unit use."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Margalit and Rabinoff, Interactive Linear Algebra (Georgia Tech), §6.1 Dot Products and Orthogonality"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.06 Linear Algebra (Gilbert Strang, Spring 2010), Lecture 14: Orthogonal Vectors and Subspaces"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,95 @@
+{
+  "id": "em.mutual-inductance",
+  "slug": "mutual-inductance",
+  "ladder": "physics",
+  "course": "em",
+  "unit": "induction",
+  "title": "Mutual Inductance and Transformers",
+  "short": "A changing current in one coil induces an emf in another, so a transformer gives V_s/V_p = N_s/N_p.",
+  "trouble": "Students think a transformer that raises the voltage also raises the power.",
+  "prereqs": [
+    "em.inductance"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-induction"
+  ],
+  "figureArchetype": "FieldFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Two coils near each other share flux. A changing current in one changes the flux through the other, and <a href=\"/physics/electricity-and-magnetism/faraday-calculus/\">Faraday's law</a> induces an emf there, with no wire between them. This is <a href=\"/physics/electricity-and-magnetism/inductance/\">inductance</a> between two coils instead of within one, and it is how transformers, wireless chargers and many sensors work."
+      },
+      {
+        "t": "key",
+        "html": "$$M = \\frac{N_2\\Phi_{21}}{I_1}, \\qquad \\varepsilon_2 = -M\\frac{dI_1}{dt}.$$\n        In an ideal transformer every turn of both coils shares the same changing flux, so\n        $$\\frac{V_s}{V_p} = \\frac{N_s}{N_p}, \\qquad I_sV_s = I_pV_p.$$"
+      },
+      {
+        "t": "why",
+        "html": "The flux coil 1 sends through coil 2 is proportional to $I_1$; the constant of proportionality, per turn of coil 2, is $M$. In a transformer an iron core guides nearly all the flux of the primary through the secondary, so each turn of either coil has the same emf, $-d\\Phi/dt$. More turns add more emf: voltage per turn is the same on both sides. An ideal transformer stores and wastes no energy, so the power in equals the power out, and raising the voltage must lower the current."
+      },
+      {
+        "t": "viz",
+        "name": "ph-induction",
+        "opts": {
+          "mode": "transformer"
+        },
+        "cap": "A transformer: the same changing flux threads both coils. Change the turns: the voltage goes up or down with the turns ratio, and the current does the opposite."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Coaxial coils",
+        "q": "A short coil of 100 turns is wound around the middle of a solenoid with 1000 turns over $50\\ \\text{cm}$ and radius $2.0\\ \\text{cm}$. Find $M$.",
+        "steps": [
+          "Inside the solenoid, $B = \\mu_0\\dfrac{N_1}{\\ell}I_1$, and each turn of the outer coil holds flux $BA$ (outside the solenoid the field is negligible).",
+          "$M = \\dfrac{N_2BA}{I_1} = \\dfrac{\\mu_0N_1N_2A}{\\ell} = \\dfrac{(4\\pi \\times 10^{-7})(1000)(100)\\pi(0.020)^2}{0.50} = 0.316\\ \\text{mH}$."
+        ],
+        "a": "$M \\approx 0.316\\ \\text{mH}$"
+      },
+      {
+        "t": "ex",
+        "title": "A step-down transformer",
+        "q": "A transformer turns $120\\ \\text{V}$ into $12\\ \\text{V}$ for a $60\\ \\text{W}$ lamp. If the primary has 500 turns, how many does the secondary have, and what currents flow?",
+        "steps": [
+          "$N_s = N_p\\dfrac{V_s}{V_p} = 500\\cdot\\dfrac{12}{120} = 50$ turns.",
+          "Secondary: $I_s = P/V_s = 60/12 = 5.0\\ \\text{A}$. Primary: $I_p = P/V_p = 60/120 = 0.50\\ \\text{A}$."
+        ],
+        "a": "50 turns; $5.0\\ \\text{A}$ and $0.50\\ \\text{A}$"
+      },
+      {
+        "t": "ex",
+        "title": "Why power lines use high voltage",
+        "q": "A power line delivers the same power at 10 times the voltage. What happens to the energy lost as heat in the line's resistance?",
+        "steps": [
+          "Same power at 10 times the voltage means one tenth of the current.",
+          "Heat in the line is $I^2R$: one hundredth as much. Transformers make it practical to step the voltage up for the journey and back down for use."
+        ],
+        "a": "It drops to one hundredth"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>\"A transformer that raises the voltage also raises the power.\"</b> A transformer is not an energy source. Stepping the voltage up 20 times steps the current down 20 times, so $IV$ stays the same (a real transformer loses a little to heat). Check: compute $I_pV_p$ and $I_sV_s$; for an ideal transformer they must match. Also note that a transformer needs a <i>changing</i> current: steady DC makes no changing flux and no output."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 2, 14.1 Mutual Inductance"
+      },
+      {
+        "name": "OpenStax University Physics Volume 2, 15.6 Transformers"
+      },
+      {
+        "name": "MIT OpenCourseWare, 8.02 Physics II: Electricity and Magnetism"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

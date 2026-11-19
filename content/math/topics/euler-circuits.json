@@ -1,0 +1,160 @@
+{
+  "id": "disc.euler-circuits",
+  "slug": "euler-circuits",
+  "ladder": "math",
+  "course": "disc",
+  "unit": "graphs",
+  "title": "Euler Paths and Circuits",
+  "short": "A connected graph has an Euler circuit when every degree is even, and an Euler path when exactly two degrees are odd.",
+  "trouble": "Students confuse Euler paths (every edge once) with Hamilton paths (every vertex once), or start an Euler path at a vertex of even degree.",
+  "prereqs": [
+    "disc.connectivity"
+  ],
+  "xp": 2,
+  "viz": [
+    "disc-graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In 1736 the people of Königsberg asked whether they could walk across each of their seven bridges exactly once. Euler answered with an argument about degrees, and graph theory began. The question is about <a href=\"/math/discrete-math/connectivity/\">trails</a>: routes that never reuse an edge."
+      },
+      {
+        "t": "key",
+        "html": "An <b>Euler circuit</b> is a closed trail that uses every edge exactly once; an <b>Euler path</b> uses every edge exactly once but may end somewhere else. A connected graph has an Euler circuit exactly when every vertex has even degree, and an Euler path (but no circuit) exactly when exactly two vertices have odd degree; the path must start at one of them and end at the other."
+      },
+      {
+        "t": "why",
+        "html": "Each time a trail passes through a vertex, it arrives on one edge and leaves on another, using up two edges there. So at every vertex other than the start and end, the edges come in pairs: the degree is even. In a closed trail the start is also passed through, so every degree is even. For a path, the start and end each have one unpaired edge, so they, and only they, have odd degree. The converse (even degrees really do guarantee a circuit in a connected graph) is proved by building the circuit: start anywhere, walk until you return, and splice in detours through any unused edges."
+      },
+      {
+        "t": "viz",
+        "name": "disc-graph",
+        "opts": {
+          "graph": "konigsberg",
+          "mode": "euler"
+        },
+        "cap": "The Königsberg bridges as a graph (with parallel edges). All four land areas have odd degree, so no walk crosses every bridge exactly once. Try it: click a start, then click neighbors."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Königsberg",
+        "q": "The four land areas have degrees $5, 3, 3, 3$. Is there an Euler path or circuit?",
+        "steps": [
+          "Four vertices have odd degree.",
+          "A circuit needs zero odd vertices; a path needs exactly two. Four is neither."
+        ],
+        "a": "Neither"
+      },
+      {
+        "t": "ex",
+        "title": "A house shape",
+        "q": "A square $ABCD$ (edges $AB, BC, CD, DA$) has a roof: a vertex $E$ joined to $A$ and $B$. Does it have an Euler path? Where must it start?",
+        "steps": [
+          "Degrees: $A$ and $B$ have $3$; $C$, $D$, $E$ have $2$. Exactly two odd vertices.",
+          "So an Euler path exists, from $A$ to $B$ (or the reverse), but no circuit.",
+          "One path: $A \\to E \\to B \\to A \\to D \\to C \\to B$."
+        ],
+        "a": "Yes, starting at $A$ or $B$"
+      },
+      {
+        "t": "viz",
+        "name": "disc-graph",
+        "opts": {
+          "graph": {
+            "v": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "e": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "B",
+                "C"
+              ],
+              [
+                "C",
+                "D"
+              ],
+              [
+                "D",
+                "A"
+              ],
+              [
+                "E",
+                "A"
+              ],
+              [
+                "E",
+                "B"
+              ]
+            ],
+            "pos": {
+              "A": [
+                20,
+                45
+              ],
+              "B": [
+                80,
+                45
+              ],
+              "C": [
+                80,
+                95
+              ],
+              "D": [
+                20,
+                95
+              ],
+              "E": [
+                50,
+                5
+              ]
+            }
+          },
+          "mode": "euler",
+          "layout": "given"
+        },
+        "cap": "The house: start at one of the two odd vertices (ringed) and trace every edge once."
+      },
+      {
+        "t": "ex",
+        "title": "Complete graphs",
+        "q": "For which $n$ does $K_{n}$ have an Euler circuit?",
+        "steps": [
+          "Every vertex of $K_{n}$ has degree $n - 1$, and $K_{n}$ is connected.",
+          "All degrees are even exactly when $n$ is odd."
+        ],
+        "a": "Odd $n$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Confusing Euler with Hamilton, or starting at an even vertex.</b> Euler routes use every <i>edge</i> once; Hamilton routes, in the next lesson, visit every <i>vertex</i> once. And when exactly two vertices are odd, an Euler path that starts at an even vertex gets stuck. Check: count the odd vertices first; they tell you whether a route exists and where it must start."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Oscar Levin, Discrete Mathematics: An Open Introduction (3rd ed.), section \"Euler Paths and Circuits\""
+      },
+      {
+        "name": "MIT OpenCourseWare 6.042J Mathematics for Computer Science (Lehman, Leighton and Meyer), chapter \"Simple Graphs\" (Euler tours)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,85 @@
+{
+  "id": "gchem1.molar-mass-colligative",
+  "slug": "molar-mass-colligative",
+  "ladder": "chemistry",
+  "course": "gchem1",
+  "unit": "solutions",
+  "title": "Molar Mass from Colligative Properties",
+  "short": "Measure ΔT or Π, find the moles of solute, then divide its mass by those moles.",
+  "trouble": "Students divide by the mass of solvent instead of the moles of solute, or forget to change grams of solvent to kilograms.",
+  "prereqs": [
+    "gchem1.freezing-boiling-points",
+    "gchem1.osmotic-pressure"
+  ],
+  "xp": 3,
+  "viz": [],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Colligative properties count particles, so measuring one counts the moles of an unknown solute. Divide its mass by those moles and you have its molar mass. This is how chemists first weighed molecules too big to vaporize, using <a href=\"/chemistry/general-chemistry-1/freezing-boiling-points/\">Freezing Point Depression and Boiling Point Elevation</a> and <a href=\"/chemistry/general-chemistry-1/osmotic-pressure/\">Osmotic Pressure</a>."
+      },
+      {
+        "t": "key",
+        "html": "From a freezing point: $m = \\dfrac{\\Delta T_f}{iK_f}$, then mol solute $= m \\times (\\text{kg solvent})$. From osmotic pressure: $M = \\dfrac{\\Pi}{iRT}$, then mol solute $= M \\times (\\text{L solution})$. Finally, $$\\text{molar mass} = \\frac{\\text{grams of solute}}{\\text{moles of solute}}.$$"
+      },
+      {
+        "t": "why",
+        "html": "The measured property tells you how many particles are dissolved per kilogram (or per liter). Multiply by the amount of solvent (or solution) you used and you have the total moles of solute in your sample. You weighed the sample, so grams over moles is its molar mass. Osmotic pressure is the method of choice for very large molecules such as proteins: a few milligrams give a pressure you can measure easily, while the freezing point would barely change."
+      },
+      {
+        "t": "viz",
+        "name": "ch-phasediagram",
+        "opts": {
+          "mode": "solution",
+          "m": 0.244,
+          "i": 1
+        },
+        "cap": "A small freezing-point shift, measured carefully, counts the dissolved particles."
+      },
+      {
+        "t": "ex",
+        "title": "From a freezing point",
+        "q": "$1.50\\ \\text{g}$ of an unknown nonelectrolyte dissolves in $25.0\\ \\text{g}$ of benzene ($K_f = 5.12\\ ^\\circ\\text{C·kg/mol}$, freezing point $5.50^\\circ\\text{C}$). The solution freezes at $4.25^\\circ\\text{C}$. Find the molar mass.",
+        "steps": [
+          "$\\Delta T_f = 5.50 - 4.25 = 1.25^\\circ\\text{C}$.",
+          "$m = \\dfrac{1.25}{(1)(5.12)} = 0.2441\\ \\text{mol/kg}$.",
+          "Moles: $0.2441 \\times 0.0250\\ \\text{kg} = 6.104 \\times 10^{-3}\\ \\text{mol}$.",
+          "Molar mass $= \\dfrac{1.50\\ \\text{g}}{6.104 \\times 10^{-3}\\ \\text{mol}} = 246\\ \\text{g/mol}$."
+        ],
+        "a": "About $246\\ \\text{g/mol}$."
+      },
+      {
+        "t": "ex",
+        "title": "From osmotic pressure",
+        "q": "$0.500\\ \\text{g}$ of a protein is dissolved in water to make $100.0\\ \\text{mL}$ of solution. Its osmotic pressure at $25^\\circ\\text{C}$ is $5.20\\ \\text{mmHg}$. Find the molar mass.",
+        "steps": [
+          "$\\Pi = 5.20/760 = 6.842 \\times 10^{-3}\\ \\text{atm}$.",
+          "$$M = \\dfrac{\\Pi}{RT} = \\dfrac{6.842 \\times 10^{-3}}{(0.08206)(298.15)} = 2.797 \\times 10^{-4}\\ \\text{mol/L}$$",
+          "Moles: $2.797 \\times 10^{-4} \\times 0.1000\\ \\text{L} = 2.797 \\times 10^{-5}\\ \\text{mol}$.",
+          "Molar mass $= \\dfrac{0.500}{2.797 \\times 10^{-5}} = 1.79 \\times 10^{4}\\ \\text{g/mol}$."
+        ],
+        "a": "About $17{,}900\\ \\text{g/mol}$."
+      },
+      {
+        "t": "note",
+        "html": "If the solute is an electrolyte, the measurement counts its ions, so divide by $i$ to get the moles of formula units. Comparing a measured $i$ with the formula's ideal value is also how chemists detect ion pairing or partial ionization."
+      },
+      {
+        "t": "mistake",
+        "html": "Dividing the solute's mass by the mass of solvent, or by the molality itself, instead of by the moles of solute; or using 25.0 instead of 0.0250 kg. Each gives a \"molar mass\" off by a large factor. Check: write the chain of units, $\\text{g} \\div (\\text{mol/kg} \\times \\text{kg}) = \\text{g/mol}$, and ask whether the answer is a sensible molar mass for the kind of substance."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 11.4 Colligative Properties"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,109 @@
+{
+  "id": "alg1.standard-form",
+  "slug": "standard-form",
+  "ladder": "math",
+  "course": "alg1",
+  "unit": "linear-functions",
+  "title": "Standard Form and Intercepts",
+  "short": "Graph Ax + By = C quickly using its two intercepts.",
+  "trouble": "Students find an intercept by setting the same variable to 0 that they are solving for.",
+  "prereqs": [
+    "alg1.line-through-two-points"
+  ],
+  "xp": 2,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Lines can also be written as $Ax + By = C$, called <b>standard form</b>. You get it from <a href=\"/math/algebra-1/line-through-two-points/\">slope-intercept form</a> by moving the $x$ term and clearing fractions. It is handy when the numbers are whole, and especially for graphing quickly by intercepts."
+      },
+      {
+        "t": "why",
+        "html": "The $x$-intercept is where the line meets the $x$-axis, and every point on that axis has $y = 0$. Put $y = 0$ into $Ax + By = C$ and the $y$ term disappears, leaving $Ax = C$. Likewise every point on the $y$-axis has $x = 0$, leaving $By = C$. Two points determine a line, so the two intercepts are enough to draw it."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "f": "6 - 1.5x",
+          "points": [
+            {
+              "x": 4,
+              "y": 0,
+              "label": "x-intercept"
+            },
+            {
+              "x": 0,
+              "y": 6,
+              "label": "y-intercept"
+            }
+          ],
+          "xmin": -3,
+          "xmax": 8,
+          "ymin": -3,
+          "ymax": 8,
+          "equal": true
+        },
+        "cap": "$3x + 2y = 12$ crosses the axes at $(4, 0)$ and $(0, 6)$. Plot those two points and the line is done."
+      },
+      {
+        "t": "key",
+        "html": "For $Ax + By = C$: set $y = 0$ to find the $x$-intercept, and set $x = 0$ to find the $y$-intercept. To convert from $y = mx + b$, clear fractions and move the $x$ term to the left, with $A \\ge 0$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Graph by intercepts",
+        "q": "Find the intercepts of $3x + 2y = 12$.",
+        "steps": [
+          "$x$-intercept: $y = 0$ gives $3x = 12$, so $x = 4$: the point $(4, 0)$.",
+          "$y$-intercept: $x = 0$ gives $2y = 12$, so $y = 6$: the point $(0, 6)$."
+        ],
+        "a": "$(4, 0)$ and $(0, 6)$."
+      },
+      {
+        "t": "ex",
+        "title": "Convert to standard form",
+        "q": "Write $y = \\frac{2}{3}x - 5$ in standard form.",
+        "steps": [
+          "Multiply every term by $3$: $3y = 2x - 15$.",
+          "Subtract $2x$ from both sides: $-2x + 3y = -15$.",
+          "Multiply by $-1$ so that $A$ is positive: $2x - 3y = 15$."
+        ],
+        "a": "$2x - 3y = 15$"
+      },
+      {
+        "t": "ex",
+        "title": "And back",
+        "q": "Find the slope of $4x + 5y = 20$.",
+        "steps": [
+          "Solve for $y$: $5y = -4x + 20$, so $y = -\\frac{4}{5}x + 4$."
+        ],
+        "a": "The slope is $-\\frac{4}{5}$ (in general, $-\\frac{A}{B}$)."
+      },
+      {
+        "t": "mistake",
+        "html": "Setting the wrong variable to $0$: to find the $x$-intercept you set $y = 0$, not $x = 0$. Check: an $x$-intercept is written $(a, 0)$, so its $y$-coordinate is the one that is $0$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Elementary Algebra 2e, section 4.3 Graph with Intercepts"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, A-CED.A.2"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

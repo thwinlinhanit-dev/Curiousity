@@ -1,0 +1,144 @@
+{
+  "id": "nt.perfect-numbers",
+  "slug": "perfect-numbers",
+  "ladder": "math",
+  "course": "nt",
+  "unit": "primes",
+  "title": "Perfect Numbers and Mersenne Primes",
+  "short": "n is perfect when σ(n) = 2n; whenever 2ᵖ − 1 is prime, 2ᵖ⁻¹(2ᵖ − 1) is perfect.",
+  "trouble": "Students think 2ᵖ − 1 is prime whenever p is prime, but 2¹¹ − 1 = 2047 = 23 · 89.",
+  "prereqs": [
+    "nt.divisor-functions"
+  ],
+  "xp": 2,
+  "viz": [],
+  "figureArchetype": "LessonFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The ancient Greeks called $6$ perfect because its smaller divisors add up to it: $1 + 2 + 3 = 6$. So does $28 = 1 + 2 + 4 + 7 + 14$. With <a href=\"/math/number-theory/divisor-functions/\">the divisor sum</a> $\\sigma$, this becomes a clean equation, and Euclid's recipe for perfect numbers becomes a short proof."
+      },
+      {
+        "t": "p",
+        "html": "<b>Definitions.</b> A positive integer $n$ is <b>perfect</b> when $\\sigma(n) = 2n$, that is, when its proper divisors (all but $n$ itself) add up to $n$. It is <b>deficient</b> when $\\sigma(n) < 2n$ and <b>abundant</b> when $\\sigma(n) > 2n$."
+      },
+      {
+        "t": "ex",
+        "title": "Three kinds",
+        "q": "Classify $12$, $14$ and $28$.",
+        "steps": [
+          "$\\sigma(12) = (1 + 2 + 4)(1 + 3) = 28 > 24$: abundant.",
+          "$\\sigma(14) = (1 + 2)(1 + 7) = 24 < 28$: deficient.",
+          "$\\sigma(28) = (1 + 2 + 4)(1 + 7) = 56 = 2 \\cdot 28$: perfect."
+        ],
+        "a": "Abundant, deficient, perfect."
+      },
+      {
+        "t": "p",
+        "html": "<b>Euclid's theorem.</b> If $2^{p} - 1$ is prime, then $N = 2^{p-1}(2^{p} - 1)$ is perfect. Primes of the form $2^{p} - 1$ are called <b>Mersenne primes</b>."
+      },
+      {
+        "t": "why",
+        "html": "Let $q = 2^{p} - 1$, a prime. The factors $2^{p-1}$ and $q$ are coprime, and $\\sigma$ is multiplicative, so $$\\sigma(N) = \\sigma(2^{p-1})\\,\\sigma(q) = (1 + 2 + \\cdots + 2^{p-1})(1 + q) = (2^{p} - 1) \\cdot 2^{p} = 2N.$$ About 2,000 years later Euler proved the converse for even numbers: <b>every even perfect number</b> has this form. Whether an odd perfect number exists is still unknown."
+      },
+      {
+        "t": "ex",
+        "title": "Building a perfect number",
+        "q": "$2^{7} - 1 = 127$ is prime. Which perfect number does it give?",
+        "steps": [
+          "$N = 2^{6} \\cdot 127 = 64 \\cdot 127 = 8128$.",
+          "Check: $\\sigma(8128) = (2^{7} - 1)(127 + 1) = 127 \\cdot 128 = 16{,}256 = 2 \\cdot 8128$."
+        ],
+        "a": "$8128$."
+      },
+      {
+        "t": "p",
+        "html": "<b>Which exponents can work?</b> If the exponent is composite, $n = ab$ with $a, b > 1$, then $2^{a} - 1$ divides $2^{n} - 1$, because $x - 1$ divides $x^{b} - 1$ (take $x = 2^{a}$). For example $2^{6} - 1 = 63 = 7 \\cdot 9$ and $2^{3} - 1 = 7$ divides it. So a Mersenne prime needs a <b>prime</b> exponent. But a prime exponent is not enough:"
+      },
+      {
+        "t": "ex",
+        "title": "A prime exponent that fails",
+        "q": "Is $2^{11} - 1$ prime?",
+        "steps": [
+          "$2^{11} - 1 = 2047$. Test primes up to $\\sqrt{2047} \\approx 45.2$.",
+          "$3, 5, 7, 11, 13, 17, 19$ all leave remainders. Then $2047 = 23 \\cdot 89$."
+        ],
+        "a": "No: $2047 = 23 \\cdot 89$."
+      },
+      {
+        "t": "table",
+        "head": [
+          "$p$",
+          "$2^{p} - 1$",
+          "prime?",
+          "perfect number"
+        ],
+        "rows": [
+          [
+            "2",
+            "3",
+            "yes",
+            "6"
+          ],
+          [
+            "3",
+            "7",
+            "yes",
+            "28"
+          ],
+          [
+            "5",
+            "31",
+            "yes",
+            "496"
+          ],
+          [
+            "7",
+            "127",
+            "yes",
+            "8,128"
+          ],
+          [
+            "11",
+            "2,047 = 23 · 89",
+            "no",
+            "—"
+          ],
+          [
+            "13",
+            "8,191",
+            "yes",
+            "33,550,336"
+          ]
+        ],
+        "cap": "The first Mersenne numbers with prime exponent."
+      },
+      {
+        "t": "note",
+        "html": "The largest primes known today are Mersenne primes, with tens of millions of digits, because there is a special fast test for numbers of the form $2^{p} - 1$. Only about fifty Mersenne primes are known. Abundant numbers are far more common: $12$ is the smallest, and the smallest odd one is $945$."
+      },
+      {
+        "t": "mistake",
+        "html": "Believing that $2^{p} - 1$ is prime whenever $p$ is prime. The first counterexample is $p = 11$: $2^{11} - 1 = 2047 = 23 \\cdot 89$. A prime exponent is necessary, not sufficient; each Mersenne number must be tested."
+      },
+      {
+        "t": "key",
+        "html": "$n$ is perfect when $\\sigma(n) = 2n$. Whenever $2^{p} - 1$ is prime, $2^{p-1}(2^{p} - 1)$ is perfect, and every even perfect number arises this way."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "William Stein, Elementary Number Theory: Primes, Congruences, and Secrets (Springer, 2009; free online edition), chapter 1, Prime Numbers"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.781 Theory of Numbers (Spring 2012), lecture notes on perfect numbers and Mersenne primes"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

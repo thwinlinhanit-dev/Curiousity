@@ -1,0 +1,132 @@
+{
+  "id": "geology.igneous-classification",
+  "slug": "igneous-classification",
+  "ladder": "earth",
+  "course": "geology",
+  "unit": "igneous",
+  "title": "Naming Igneous Rocks",
+  "short": "Name an igneous rock from its texture and composition: granite and rhyolite, diorite and andesite, gabbro and basalt.",
+  "trouble": "Students name a rock by its color alone; texture tells where it cooled, so granite and rhyolite share a composition but differ in crystal size.",
+  "prereqs": [
+    "geology.magma-composition"
+  ],
+  "xp": 2,
+  "viz": [
+    "es-rock-key",
+    "es-igneous"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Every igneous rock answers two questions. <b>Which magma was it?</b> That is its composition, from <a href=\"/earth-and-space/geology/magma-composition/\">mafic to felsic</a>. <b>How fast did it cool?</b> That is its texture, the size of its crystals. A simple grid of the two names most igneous rocks."
+      },
+      {
+        "t": "why",
+        "html": "Crystals grow as atoms move through the melt and attach to them. Deep underground, magma is wrapped in hot rock and may take thousands to millions of years to cool, so a few crystals grow large: a <b>coarse-grained</b> (intrusive) rock. At the surface, lava cools in days to years, so countless tiny crystals start at once and none grows large: a <b>fine-grained</b> (extrusive) rock. Quench lava in seconds and atoms have no time to line up at all: <b>glass</b>. Two-stage cooling, slow and then fast, leaves big crystals in a fine background: <b>porphyritic</b>."
+      },
+      {
+        "t": "table",
+        "head": [
+          "",
+          "Felsic",
+          "Intermediate",
+          "Mafic",
+          "Ultramafic"
+        ],
+        "rows": [
+          [
+            "Coarse (cooled slowly, deep)",
+            "granite",
+            "diorite",
+            "gabbro",
+            "peridotite"
+          ],
+          [
+            "Fine (cooled fast, at the surface)",
+            "rhyolite",
+            "andesite",
+            "basalt",
+            "—"
+          ],
+          [
+            "Glassy or full of gas holes",
+            "obsidian, pumice",
+            "",
+            "scoria",
+            ""
+          ]
+        ],
+        "cap": "Name an igneous rock from its texture (rows) and composition (columns)."
+      },
+      {
+        "t": "key",
+        "html": "Texture tells where a rock cooled; composition tells which magma it was. Granite and rhyolite are the same felsic magma, cooled slowly underground or quickly at the surface; diorite–andesite and gabbro–basalt are the other pairs."
+      },
+      {
+        "t": "viz",
+        "name": "es-rock-key",
+        "opts": {
+          "mode": "igneous",
+          "modes": [
+            "igneous"
+          ]
+        },
+        "cap": "The igneous rock key: each cell shows a hand sample. Find granite and rhyolite: same column, different rows."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Name the rock",
+        "q": "A rock has large, interlocking crystals of pink feldspar, glassy quartz and a little black mica. What is it?",
+        "steps": [
+          "Large, visible crystals: coarse-grained, so it cooled slowly underground.",
+          "Quartz and potassium feldspar: felsic.",
+          "Coarse + felsic = granite."
+        ],
+        "a": "Granite."
+      },
+      {
+        "t": "ex",
+        "title": "Same rock, different cooling",
+        "q": "Basalt and gabbro are both made of pyroxene and calcium-rich plagioclase. Why do they look so different?",
+        "steps": [
+          "Same minerals means the same (mafic) magma.",
+          "Gabbro cooled slowly deep in the crust, growing crystals several millimeters across. Basalt cooled quickly as lava, so its crystals are too small to see."
+        ],
+        "a": "They differ only in cooling rate."
+      },
+      {
+        "t": "viz",
+        "name": "es-igneous",
+        "opts": {
+          "mode": "cool",
+          "setting": "pluton",
+          "modes": true
+        },
+        "cap": "Cool the same magma in a deep pluton, a shallow dike, on land or in water, and compare the crystal sizes."
+      },
+      {
+        "t": "mistake",
+        "html": "Naming a rock by color alone is a common trap. Dark rocks are often mafic, but obsidian is black glass with a felsic composition, and a dark, fine-grained rock could be basalt or andesite. Check both features: look for crystal size first (where it cooled), then for which minerals or how much silica (which magma)."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "MIT OpenCourseWare, 12.001 Introduction to Geology"
+      },
+      {
+        "name": "OpenStax, Astronomy 2e, section 8.2, Earth's Crust"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

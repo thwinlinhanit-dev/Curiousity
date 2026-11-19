@@ -1,0 +1,162 @@
+{
+  "id": "astrophys.white-dwarf-mass-radius",
+  "slug": "white-dwarf-mass-radius",
+  "course": "astrophys",
+  "courseTitle": "Astrophysics",
+  "unit": "stellar-death",
+  "unitTitle": "Stellar Evolution and Compact Objects",
+  "title": "The White Dwarf Mass–Radius Relation",
+  "short": "Degeneracy gives R ∝ M^(−1/3), so heavier white dwarfs are smaller.",
+  "trouble": "Students think more massive white dwarfs must be bigger.",
+  "prereqs": [
+    "astrophys.degeneracy-pressure",
+    "astro.red-giants"
+  ],
+  "xp": 3,
+  "viz": [
+    "astrophys-plot"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "White dwarfs behave in a way that surprises everyone the first time: <b>the more massive a white dwarf, the smaller it is</b>. It follows from combining <a href=\"/physics/astrophysics/degeneracy-pressure/\">degeneracy pressure</a> with what <a href=\"/physics/astrophysics/central-conditions/\">hydrostatic equilibrium</a> demands. A typical white dwarf holds about 0.6 solar masses in a ball about the size of Earth (that is how <a href=\"/physics/astronomy/red-giants/\">a Sun-like star</a> ends)."
+      },
+      {
+        "t": "why",
+        "html": "Gravity needs a central pressure $P_c \\sim GM^2/R^4$. Degeneracy supplies $P \\propto n_e^{5/3} \\propto \\rho^{5/3} \\propto (M/R^3)^{5/3} = M^{5/3}/R^5$. Setting them proportional: $$\\frac{M^{5/3}}{R^5} \\propto \\frac{M^2}{R^4} \\quad\\Rightarrow\\quad R \\propto M^{-1/3}.$$ Adding mass makes gravity's demand grow faster than the supply at the old size, so the star must shrink until the denser electrons push back hard enough. Another way to say it: $MR^3$ is the same for all such white dwarfs, so volume goes as $1/M$."
+      },
+      {
+        "t": "key",
+        "html": "For white dwarfs, $R \\propto M^{-1/3}$: heavier ones are smaller and much denser ($\\bar\\rho \\propto M/R^3 \\propto M^2$). A $0.6\\,M_\\odot$ white dwarf has $R \\approx 8{,}700$ km and a mean density near $4 \\times 10^{8}$ kg/m³."
+      },
+      {
+        "t": "viz",
+        "name": "astrophys-plot",
+        "opts": {
+          "xmin": 0,
+          "xmax": 1.6,
+          "ymin": 0,
+          "ymax": 3,
+          "xlabel": "mass (solar masses)",
+          "ylabel": "radius (Earth radii)",
+          "curves": [
+            {
+              "f": "1.37*(x/0.6)^(-1/3)",
+              "label": "R ∝ M^(−1/3)",
+              "color": "blue",
+              "from": 0.15,
+              "at": 0.32
+            },
+            {
+              "f": "1.223*sqrt((x/1.44)^(-2/3) - (x/1.44)^(2/3))",
+              "label": "with relativity",
+              "color": "red",
+              "dash": true,
+              "from": 0.15,
+              "to": 1.44,
+              "at": 1.2
+            }
+          ],
+          "points": [
+            {
+              "x": 0.57,
+              "y": 1.49,
+              "label": "40 Eri B"
+            },
+            {
+              "x": 1.02,
+              "y": 0.92,
+              "label": "Sirius B"
+            }
+          ],
+          "vlines": [
+            {
+              "x": 1.44,
+              "label": "limit"
+            }
+          ],
+          "cursor": {
+            "label": "White dwarf mass (M☉)",
+            "min": 0.2,
+            "max": 1.42,
+            "value": 0.6,
+            "step": 0.01,
+            "readout": [
+              {
+                "label": "R, simple law",
+                "f": "1.37*(x/0.6)^(-1/3)*6371",
+                "d": 0,
+                "unit": "km"
+              },
+              {
+                "label": "R, with relativity",
+                "f": "1.223*sqrt((x/1.44)^(-2/3) - (x/1.44)^(2/3))*6371",
+                "d": 0,
+                "unit": "km"
+              },
+              {
+                "label": "mean density",
+                "f": "x*1.99*10^30/(4/3*pi*(1.223*sqrt((x/1.44)^(-2/3) - (x/1.44)^(2/3))*6.371*10^6)^3)",
+                "sig": 2,
+                "unit": "kg/m³"
+              }
+            ]
+          }
+        },
+        "cap": "Radius against mass for white dwarfs. Solid: the simple $R \\propto M^{-1/3}$ law. Dashed: a fit that includes relativistic electrons (Nauenberg 1972), which drops to zero at about $1.44\\,M_\\odot$. Dots: two measured white dwarfs. Drag the mass to read off sizes and densities."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A heavier white dwarf",
+        "q": "A $0.6\\,M_\\odot$ white dwarf has $R = 8700$ km. Estimate the radius of a $1.0\\,M_\\odot$ white dwarf with $R \\propto M^{-1/3}$.",
+        "steps": [
+          "$R_2 = R_1(M_2/M_1)^{-1/3} = 8700 \\times (1.67)^{-1/3}$.",
+          "$(1.67)^{-1/3} = 0.843$."
+        ],
+        "a": "About 7,300 km. Real ones are smaller still (Sirius B: about 5,800 km), because near this mass relativity softens the electrons' pressure."
+      },
+      {
+        "t": "ex",
+        "title": "A teaspoon of white dwarf",
+        "q": "Find the mean density of a $0.6\\,M_\\odot$, 8,700 km white dwarf and the mass of 5 cm³ of it.",
+        "steps": [
+          "$V = \\tfrac43\\pi(8.7 \\times 10^{6}\\text{ m})^3 = 2.76 \\times 10^{21}$ m³.",
+          "$\\bar\\rho = 1.19 \\times 10^{30}/2.76 \\times 10^{21} = 4.3 \\times 10^{8}$ kg/m³."
+        ],
+        "a": "A teaspoon would hold about 2,200 kg, the mass of a large car."
+      },
+      {
+        "t": "ex",
+        "title": "The exponent for a general law",
+        "q": "If $P \\propto \\rho^{\\gamma}$, what power $x$ appears in $R \\propto M^{x}$?",
+        "steps": [
+          "$M^{\\gamma}R^{-3\\gamma} \\propto M^2R^{-4}$, so $R^{4 - 3\\gamma} \\propto M^{2 - \\gamma}$.",
+          "$x = (2 - \\gamma)/(4 - 3\\gamma)$. For $\\gamma = 5/3$: $x = (1/3)/(-1) = -1/3$."
+        ],
+        "a": "$x = -1/3$ for nonrelativistic electrons. At $\\gamma = 4/3$ the denominator is zero, a warning sign that the next topic explains."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking more massive white dwarfs must be bigger, as for planets made of ordinary rock. Ordinary matter resists compression almost regardless of the load, so adding mass adds volume. Degenerate matter is soft by comparison: extra mass squeezes all of it. Check: Sirius B ($1.0\\,M_\\odot$) is smaller than Earth, while 40 Eridani B ($0.57\\,M_\\odot$) is larger."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Astronomy 2e, section 23.1 (The Death of Low-Mass Stars)"
+      },
+      {
+        "name": "MIT OpenCourseWare 8.282J Introduction to Astronomy (Spring 2006)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

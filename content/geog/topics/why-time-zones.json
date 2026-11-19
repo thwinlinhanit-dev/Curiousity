@@ -1,0 +1,114 @@
+{
+  "id": "worldgeo.why-time-zones",
+  "slug": "why-time-zones",
+  "ladder": "geog",
+  "course": "worldgeo",
+  "unit": "time",
+  "title": "Why We Have Time Zones",
+  "short": "Earth turns 360° in 24 hours, 15° each hour, so noon moves west around the world; time zones are about 15° wide.",
+  "trouble": "Students think time zones follow straight lines. They roughly follow 15° bands but bend around countries and states; China uses one time zone across about 60° of longitude.",
+  "prereqs": [
+    "worldgeo.longitude",
+    "usgeo.time-zones"
+  ],
+  "xp": 2,
+  "viz": [
+    "gg-timezones",
+    "gg-globe"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/geography/us-geography/time-zones/\">U.S. Time Zones</a> you saw that the United States has six time zones and that it gets earlier as you go west. Now we can see why, using <a href=\"/geography/world-geography/longitude/\">longitude</a>."
+      },
+      {
+        "t": "key",
+        "html": "Earth turns all the way around, <b>360°</b>, in <b>24 hours</b>. So it turns <b>15° every hour</b> (360 ÷ 24 = 15). Noon, when the Sun is highest, sweeps west around the world, and each time zone is <i>about</i> 15° wide."
+      },
+      {
+        "t": "viz",
+        "name": "gg-globe",
+        "opts": {
+          "center": [
+            0,
+            15
+          ],
+          "lines": [
+            "prime",
+            "equator"
+          ],
+          "spin": true
+        },
+        "cap": "Earth turns toward the east. Places to the east see the Sun rise, reach noon and set before places to the west."
+      },
+      {
+        "t": "why",
+        "html": "Before time zones, every town set its clocks by its own Sun: noon was when the Sun was highest. A town 15° east of you had noon one hour earlier than you did. That worked until trains made people travel fast; railroad timetables needed shared times. In the 1880s, railroads and then countries adopted zones, each about 15° wide, using the same clock time across the whole zone. The zones are counted from Greenwich, as hours ahead of (+) or behind (−) UTC, the time at the prime meridian."
+      },
+      {
+        "t": "ex",
+        "title": "Degrees to hours",
+        "q": "Earth turns 15° each hour. How many hours does it take to turn 75°?",
+        "steps": [
+          "Divide by 15: 75 ÷ 15 = 5."
+        ],
+        "a": "5 hours."
+      },
+      {
+        "t": "ex",
+        "title": "Sun time",
+        "q": "Town A is 45° of longitude east of Town B. When it is noon by the Sun in Town B, what is the Sun time in Town A?",
+        "steps": [
+          "45° ÷ 15° per hour = 3 hours.",
+          "Places to the east are ahead: they have already had their noon.",
+          "So Town A is 3 hours later: 3 p.m."
+        ],
+        "a": "3 p.m."
+      },
+      {
+        "t": "viz",
+        "name": "gg-timezones",
+        "opts": {
+          "cities": [
+            "London",
+            "Cairo",
+            "New Delhi",
+            "Beijing",
+            "Tokyo",
+            "New York",
+            "Los Angeles"
+          ],
+          "utc": 720
+        },
+        "cap": "World time zones (standard time). Move the slider to change the time in London and watch every clock."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking time zones follow straight lines every 15°. They roughly do over the oceans, but on land they bend around countries and states, because a country wants its towns on the same clock. China uses one time zone, UTC+8, even though it spans about 60° of longitude, from about 73° E to 135° E; at the same clock time, the Sun is much higher in the east than in the far west. India uses UTC+5:30, halfway between two whole-hour zones."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Time zone (Grokipedia)",
+        "url": "https://grokipedia.com/page/Time_zone"
+      },
+      {
+        "name": "Time in China (Grokipedia)",
+        "url": "https://grokipedia.com/page/Time_in_China"
+      },
+      {
+        "name": "Coordinated Universal Time (Grokipedia)",
+        "url": "https://grokipedia.com/page/Coordinated_Universal_Time"
+      },
+      {
+        "name": "C3 Framework for Social Studies State Standards (NCSS, 2013), Geography, Dimension 2, grades 6-8"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,95 @@
+{
+  "id": "calc2.sequences",
+  "slug": "sequences",
+  "ladder": "math",
+  "course": "calc2",
+  "unit": "sequences-series",
+  "title": "Sequences and Their Limits",
+  "short": "A sequence converges when its terms approach one number.",
+  "trouble": "Students confuse the limit of the terms with the sum of the terms.",
+  "prereqs": [
+    "calc1.limits-at-infinity",
+    "alg2.recursive-sequences"
+  ],
+  "xp": 1,
+  "viz": [
+    "sequence"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A sequence is an endless list $a_1, a_2, a_3, \\ldots$, a function whose inputs are the whole numbers. You met them as <a href=\"/math/algebra-2/recursive-sequences/\">recursive formulas</a>. Here the question is where the terms are heading, which is a <a href=\"/math/calculus-1/limits-at-infinity/\">limit at infinity</a> with $n$ in place of $x$."
+      },
+      {
+        "t": "why",
+        "html": "\"$a_n \\to L$\" means: for any tolerance $\\varepsilon > 0$, no matter how small, there is a point in the list after which every term stays within $\\varepsilon$ of $L$. If the terms come from a function, $a_n = f(n)$, and $f(x) \\to L$ as $x \\to \\infty$, then $a_n \\to L$ too: the sequence just samples the function at whole numbers. That lets you use limit laws and L'Hôpital's rule on sequences."
+      },
+      {
+        "t": "key",
+        "html": "$\\lim_{n\\to\\infty} a_n = L$ means the terms get and stay as close to $L$ as you like. If no such $L$ exists, the sequence diverges. Useful facts: $r^{n} \\to 0$ when $|r| < 1$; $\\left(1 + \\frac{x}{n}\\right)^{n} \\to e^{x}$; the squeeze theorem works for sequences; if $a_n \\to L$ and $g$ is continuous, $g(a_n) \\to g(L)$."
+      },
+      {
+        "t": "ex",
+        "title": "A rational sequence",
+        "q": "Find $\\lim_{n\\to\\infty}\\frac{3n^{2} + 1}{2n^{2} - n}$.",
+        "steps": [
+          "Divide top and bottom by $n^{2}$: $\\frac{3 + 1/n^{2}}{2 - 1/n}$.",
+          "As $n \\to \\infty$, $\\frac{1}{n} \\to 0$ and $\\frac{1}{n^{2}} \\to 0$, so the limit is $\\frac{3}{2}$."
+        ],
+        "a": "$\\frac{3}{2}$"
+      },
+      {
+        "t": "viz",
+        "name": "sequence",
+        "opts": {
+          "type": "custom",
+          "f": "(3n^2+1)/(2n^2-n)",
+          "N": 15,
+          "maxN": 30,
+          "limit": 1.5,
+          "sliders": false
+        },
+        "cap": "The terms $\\frac{3n^{2} + 1}{2n^{2} - n}$ as dots: they start at 4 and settle onto the dashed line at $\\frac{3}{2}$."
+      },
+      {
+        "t": "ex",
+        "title": "The number e",
+        "q": "Find $\\lim_{n\\to\\infty}\\left(1 + \\frac{2}{n}\\right)^{n}$.",
+        "steps": [
+          "Take logs: $n\\ln\\left(1 + \\frac{2}{n}\\right) = \\frac{\\ln(1 + 2/n)}{1/n}$, a $\\frac{0}{0}$ form.",
+          "L'Hôpital (in $t = \\frac{1}{n}$): $\\frac{\\ln(1 + 2t)}{t} \\to 2$ as $t \\to 0$.",
+          "So the sequence tends to $e^{2}$."
+        ],
+        "a": "$e^{2}$"
+      },
+      {
+        "t": "ex",
+        "title": "Bouncing terms",
+        "q": "Does $a_n = (-1)^{n}\\frac{n}{n + 1}$ converge?",
+        "steps": [
+          "The size $\\frac{n}{n + 1} \\to 1$, but the sign flips every step.",
+          "So the terms crowd near $1$ for even $n$ and near $-1$ for odd $n$: there is no single number they approach."
+        ],
+        "a": "It diverges."
+      },
+      {
+        "t": "mistake",
+        "html": "Confusing the limit of the terms with the sum of the terms. For $a_n = \\frac{1}{2^{n}}$, the terms $\\frac{1}{2}, \\frac{1}{4}, \\frac{1}{8}, \\ldots$ approach $0$; the total $\\frac{1}{2} + \\frac{1}{4} + \\cdots$ approaches 1. Those are two different questions: this topic asks where the terms go; <a href=\"/math/calculus-2/series-partial-sums/\">series</a> ask what they add up to."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 2, Section 5.1: Sequences"
+      },
+      {
+        "name": "Paul’s Online Math Notes (Lamar University), Calculus II: Sequences"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

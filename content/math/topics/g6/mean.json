@@ -1,0 +1,108 @@
+{
+  "id": "g6.mean",
+  "slug": "mean",
+  "ladder": "math",
+  "course": "g6",
+  "unit": "statistics",
+  "title": "The Mean as a Fair Share",
+  "short": "The mean evens out all values into equal amounts.",
+  "trouble": "",
+  "prereqs": [
+    "g6.dot-plots-histograms",
+    "g5.divide-two-digit-divisors"
+  ],
+  "xp": 1,
+  "viz": [
+    "dotplot"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Looking at a <a href=\"/math/grade-6/dot-plots-histograms/\">dot plot</a>, we often want one number that says what is typical. The mean is one such number, and you already know how to compute it with <a href=\"/math/grade-5/divide-two-digit-divisors/\">division</a>."
+      },
+      {
+        "t": "key",
+        "html": "The <b>mean</b> is the sum of the values divided by how many values there are. It is the <b>fair share</b>: the amount each would get if the total were shared out evenly."
+      },
+      {
+        "t": "why",
+        "html": "Picture four stacks of cubes, 3, 7, 5 and 9 tall. Move cubes from the tall stacks to the short ones until every stack is the same height. No cubes are added or lost, so the total is still $3 + 7 + 5 + 9 = 24$, now in 4 equal stacks: $24 \\div 4 = 6$ each. That leveled height is the mean. The mean is also the balance point of a dot plot: the values above it and below it pull equally."
+      },
+      {
+        "t": "viz",
+        "name": "dotplot",
+        "opts": {
+          "data": [
+            2,
+            3,
+            5,
+            6,
+            9
+          ],
+          "show": [
+            "mean"
+          ],
+          "label": "value",
+          "task": {
+            "stat": "mean",
+            "target": 6
+          }
+        },
+        "cap": "The red triangle marks the mean, the balance point. Drag dots to make the mean 6."
+      },
+      {
+        "t": "ex",
+        "title": "Find the mean",
+        "q": "Find the mean of 3, 7, 5 and 9.",
+        "steps": [
+          "Add: $3 + 7 + 5 + 9 = 24$.",
+          "Divide by the count, 4: $24 \\div 4 = 6$."
+        ],
+        "a": "6"
+      },
+      {
+        "t": "ex",
+        "title": "Test scores",
+        "q": "Find the mean of the scores 85, 90, 78, 92 and 80.",
+        "steps": [
+          "Sum: $85 + 90 + 78 + 92 + 80 = 425$.",
+          "$425 \\div 5 = 85$."
+        ],
+        "a": "85"
+      },
+      {
+        "t": "ex",
+        "title": "A missing value",
+        "q": "The mean of four numbers is 7. Three of them are 5, 9 and 6. What is the fourth?",
+        "steps": [
+          "Mean 7 for 4 numbers means the total is $4 \\times 7 = 28$.",
+          "The three known numbers add to 20.",
+          "The fourth is $28 - 20 = 8$."
+        ],
+        "a": "8"
+      },
+      {
+        "t": "mistake",
+        "html": "Dividing by the wrong count, especially when some values are 0. The data 0, 4, 5 has three values, so the mean is $9 \\div 3 = 3$, not $9 \\div 2$. Quick check: the mean must lie between the smallest and the largest value."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Prealgebra 2e, section 5.5 Averages and Probability"
+      },
+      {
+        "name": "OpenStax, Introductory Statistics 2e, section 2.5 Measures of the Center of the Data"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 6.SP.A.3: a measure of center summarizes data with one number"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,131 @@
+{
+  "id": "trad.distribution",
+  "slug": "distribution",
+  "ladder": "logic",
+  "course": "trad",
+  "unit": "propositions",
+  "title": "Distribution of Terms",
+  "short": "A term is distributed when the proposition says something about every member of its class: A distributes S, E both, I neither, O the predicate.",
+  "trouble": "Learners memorize the chart without the reason. \"Some S are not P\" excludes the S from all of P, so it speaks about every P.",
+  "prereqs": [
+    "trad.aeio"
+  ],
+  "xp": 2,
+  "viz": [
+    "lg-syllogism",
+    "lg-venn3"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Look again at the <a href=\"/logic/traditional-logic/aeio/\">four forms</a>. Some of them say something about every member of a class; others speak about only part of it. A term is <b>distributed</b> in a proposition when the proposition says something about every member of the class it names."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Form",
+          "Subject",
+          "Predicate"
+        ],
+        "rows": [
+          [
+            "A: All S are P",
+            "distributed",
+            "not"
+          ],
+          [
+            "E: No S are P",
+            "distributed",
+            "distributed"
+          ],
+          [
+            "I: Some S are P",
+            "not",
+            "not"
+          ],
+          [
+            "O: Some S are not P",
+            "not",
+            "distributed"
+          ]
+        ],
+        "cap": "Universals distribute the subject; negatives distribute the predicate."
+      },
+      {
+        "t": "key",
+        "html": "Universal statements (A, E) distribute their subject. Negative statements (E, O) distribute their predicate. So A distributes S, E both, I neither, O only P."
+      },
+      {
+        "t": "why",
+        "html": "Take each form in turn. \"All S are P\" speaks of every S, but only of the P that happen to be S. \"No S are P\" shuts every S out of the whole of P, which says of every P that it is not an S: both terms. \"Some S are P\" speaks of at least one S and at least one P: neither class as a whole. \"Some S are not P\" speaks of only some S, but says that whole class P leaves those S out, so it tells us something about every P: the predicate."
+      },
+      {
+        "t": "viz",
+        "name": "lg-syllogism",
+        "opts": {
+          "premises": [
+            "Some reptiles are not lizards"
+          ],
+          "show": [
+            "parts",
+            "dist"
+          ]
+        },
+        "cap": "In an O proposition only the predicate term is distributed (underlined)."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "An A proposition",
+        "q": "Which terms are distributed in \"All dancers are musicians\"?",
+        "steps": [
+          "It is universal, so the subject <i>dancers</i> is distributed: it speaks of every dancer.",
+          "It is affirmative, so the predicate <i>musicians</i> is not: it does not speak of every musician."
+        ],
+        "a": "dancers only"
+      },
+      {
+        "t": "ex",
+        "title": "An O proposition",
+        "q": "Which terms are distributed in \"Some readers are not bakers\"?",
+        "steps": [
+          "It is particular, so <i>readers</i> is not distributed.",
+          "It is negative, so <i>bakers</i> is distributed: every baker is outside the group of readers it mentions."
+        ],
+        "a": "bakers only"
+      },
+      {
+        "t": "viz",
+        "name": "lg-syllogism",
+        "opts": {
+          "premises": [
+            "Some reptiles are not lizards",
+            "All snakes are reptiles"
+          ],
+          "conclusion": "Some snakes are not lizards",
+          "mode": "dist"
+        },
+        "cap": "Your turn: tap every distributed term, then Check."
+      },
+      {
+        "t": "mistake",
+        "html": "Memorizing the chart without the reason, then forgetting the O form. \"Some S are not P\" excludes some S from <i>all</i> of P, so it speaks about every P. Check by asking, for each term, \"Does this statement say something about every one of these?\""
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Patrick J. Hurley, A Concise Introduction to Logic, 4.2 Quality, Quantity, and Distribution"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

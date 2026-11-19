@@ -1,0 +1,98 @@
+{
+  "id": "astro.color-temperature",
+  "slug": "color-temperature",
+  "course": "astro",
+  "courseTitle": "Astronomy",
+  "unit": "light",
+  "unitTitle": "Light and Telescopes",
+  "title": "Color and Temperature: Wien's Law",
+  "short": "Hotter objects glow bluer: the peak wavelength is λ_peak = 2.9 × 10⁶ nm·K ÷ T.",
+  "trouble": "Students think red stars are the hottest because red looks \"hot\".",
+  "prereqs": [
+    "physsci.em-spectrum",
+    "chem.temperature-scales"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-blackbody"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Look closely at the night sky and the stars are not all white: Betelgeuse is orange-red, Rigel blue-white, the Sun yellow-white. Those colors are thermometers. A hot, dense object (a star, a stove coil, you) gives off a smooth rainbow of light called <b>thermal</b> or <b>blackbody</b> radiation, spread across the <a href=\"/physics/physical-science/em-spectrum/\">electromagnetic spectrum</a>, and its shape depends only on temperature."
+      },
+      {
+        "t": "why",
+        "html": "In a hot object, atoms and electrons jostle with energies set by the temperature, and the light they give off carries those energies. Hotter means more energetic jostling, so more energetic photons, which have shorter wavelengths. The curve of brightness against wavelength has one peak, and the peak moves to shorter wavelengths in exact proportion as the object heats up. This is <b>Wien's law</b>: $$\\lambda_{\\text{peak}} = \\frac{2.90 \\times 10^{6}\\ \\text{nm·K}}{T}.$$ The temperature must be in kelvins, counted from absolute zero (see <a href=\"/chemistry/chemistry/temperature-scales/\">temperature scales</a>)."
+      },
+      {
+        "t": "key",
+        "html": "Wien's law: $\\lambda_{\\text{peak}} = \\dfrac{2.90 \\times 10^{6}\\ \\text{nm·K}}{T}$. Hotter objects peak at shorter wavelengths, so blue-white stars are the hottest and red stars the coolest."
+      },
+      {
+        "t": "viz",
+        "name": "ph-blackbody",
+        "opts": {
+          "presets": [
+            "Rigel",
+            "Sun",
+            "Betelgeuse"
+          ]
+        },
+        "cap": "Blackbody curves for Rigel ($12{,}100$ K), the Sun ($5772$ K) and Betelgeuse ($3600$ K). The hotter the star, the higher the curve at every wavelength and the farther left its peak."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "The Sun",
+        "q": "The Sun's surface is about $5800$ K. Where does its spectrum peak?",
+        "steps": [
+          "$\\lambda_{\\text{peak}} = \\frac{2.90 \\times 10^{6}}{5800} = 500$ nm.",
+          "That is blue-green, in the middle of the visible range. The Sun gives off plenty of every visible color, so the mix looks white from space."
+        ],
+        "a": "$500$ nm."
+      },
+      {
+        "t": "ex",
+        "title": "A red star",
+        "q": "Betelgeuse's spectrum peaks near $806$ nm. How hot is its surface?",
+        "steps": [
+          "$T = \\frac{2.90 \\times 10^{6}}{806} = 3600$ K.",
+          "$806$ nm is just past red, in the infrared: Betelgeuse gives off more red than blue light, so it looks orange-red."
+        ],
+        "a": "About $3600$ K."
+      },
+      {
+        "t": "ex",
+        "title": "You glow too",
+        "q": "Your skin is about $37^\\circ$C. Where does your thermal glow peak?",
+        "steps": [
+          "Convert: $T = 37 + 273 = 310$ K.",
+          "$\\lambda_{\\text{peak}} = \\frac{2.90 \\times 10^{6}}{310} = 9.4 \\times 10^{3}$ nm, about $9.4\\ \\mu$m: infrared, which is what thermal cameras see."
+        ],
+        "a": "About $9.4\\ \\mu$m, in the infrared."
+      },
+      {
+        "t": "mistake",
+        "html": "Everyday language calls red \"hot\" and blue \"cold\", but for glowing objects it is the other way around. A stove coil glows dull red at about $1000$ K; a welding arc glows blue-white at several thousand kelvins. Check with Wien's law: a shorter peak wavelength (blue) needs a larger $T$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Astronomy 2e, section 5.2, The Electromagnetic Spectrum (radiation and temperature)"
+      },
+      {
+        "name": "OpenStax, Astronomy 2e, section 17.2, Colors of Stars"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

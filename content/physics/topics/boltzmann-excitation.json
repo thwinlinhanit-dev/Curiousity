@@ -1,0 +1,118 @@
+{
+  "id": "astrophys.boltzmann-excitation",
+  "slug": "boltzmann-excitation",
+  "ladder": "physics",
+  "course": "astrophys",
+  "unit": "starlight",
+  "title": "Excitation and the Strength of Spectral Lines",
+  "short": "The fraction of atoms in an excited level follows (g_b/g_a)e^(−ΔE/kT), which is why hydrogen lines peak in A stars.",
+  "trouble": "Students think the hottest stars must show the strongest hydrogen lines.",
+  "prereqs": [
+    "astrophys.color-index",
+    "modern.hydrogen-series"
+  ],
+  "xp": 3,
+  "viz": [
+    "ph-spectrum"
+  ],
+  "figureArchetype": "WaveFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A hydrogen atom can absorb a Balmer photon only if its electron already sits in level $n = 2$ (see <a href=\"/physics/waves-optics-modern-physics/hydrogen-series/\">Hydrogen's Spectral Series</a>). So the strength of the Balmer lines in a star's spectrum depends on how many hydrogen atoms in its atmosphere are in $n = 2$. Temperature sets that number, and the rule that sets it is one of the most useful in all of physics."
+      },
+      {
+        "t": "why",
+        "html": "In a gas at temperature $T$, atoms constantly trade energy in collisions. Statistical physics shows that in equilibrium the chance of finding an atom in a particular state of energy $E$ is proportional to the <b>Boltzmann factor</b> $e^{-E/kT}$: each extra $kT$ of energy makes a state $e \\approx 2.7$ times less likely. A level can also contain several states with the same energy; its <b>statistical weight</b> $g$ counts them. For hydrogen, level $n$ has $n^2$ orbital states, each with two spin states, so $g_n = 2n^2$."
+      },
+      {
+        "t": "key",
+        "html": "The <b>Boltzmann equation</b>: $$\\frac{N_b}{N_a} = \\frac{g_b}{g_a}\\,e^{-(E_b - E_a)/kT}.$$ For hydrogen, $N_2/N_1 = 4\\,e^{-10.2\\text{ eV}/kT}$, with $k = 8.617 \\times 10^{-5}$ eV/K."
+      },
+      {
+        "t": "viz",
+        "name": "ph-spectrum",
+        "opts": {
+          "mode": "levels",
+          "transitions": [
+            [
+              3,
+              2
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              5,
+              2
+            ]
+          ]
+        },
+        "cap": "The Balmer lines all start from level $n = 2$, 10.2 eV above the ground state."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "The Sun's atmosphere",
+        "q": "Find $N_2/N_1$ for hydrogen at the Sun's $T = 5772$ K.",
+        "steps": [
+          "$kT = 8.617 \\times 10^{-5} \\times 5772 = 0.497$ eV.",
+          "$\\Delta E/kT = 10.2/0.497 = 20.5$.",
+          "$N_2/N_1 = 4e^{-20.5} \\approx 5.0 \\times 10^{-9}$."
+        ],
+        "a": "About 5 atoms in a billion are ready to absorb Balmer lines, which is why they are weak in the Sun."
+      },
+      {
+        "t": "ex",
+        "title": "An A star",
+        "q": "Repeat for $T = 10{,}000$ K.",
+        "steps": [
+          "$kT = 0.862$ eV, so $\\Delta E/kT = 11.84$.",
+          "$N_2/N_1 = 4e^{-11.84} \\approx 2.9 \\times 10^{-5}$."
+        ],
+        "a": "About $2.9 \\times 10^{-5}$: almost 6,000 times more than in the Sun, though still a small fraction."
+      },
+      {
+        "t": "ex",
+        "title": "When would the levels be equally full?",
+        "q": "At what temperature would $N_2 = N_1$?",
+        "steps": [
+          "$1 = 4e^{-10.2/kT}$, so $10.2/kT = \\ln 4 = 1.386$.",
+          "$T = 10.2/(8.617 \\times 10^{-5} \\times 1.386) \\approx 85{,}000$ K."
+        ],
+        "a": "About 85,000 K. Long before that, the hydrogen is ionized, as the next topic shows."
+      },
+      {
+        "t": "viz",
+        "name": "ph-spectrum",
+        "opts": {
+          "mode": "populations",
+          "T": 9500,
+          "task": "Move the temperature from 5,000 K to 20,000 K and watch the fraction of hydrogen in level 2 rise and then fall."
+        },
+        "cap": "The fraction of all hydrogen atoms in level $n = 2$. Excitation (Boltzmann) pushes it up; ionization (the Saha equation) pulls it down. It peaks near 9,000 to 10,000 K."
+      },
+      {
+        "t": "mistake",
+        "html": "Expecting the hottest stars to show the strongest hydrogen lines, because the Boltzmann factor keeps growing with temperature. It does, but above about 10,000 K most hydrogen atoms lose their electron entirely, and an ionized atom cannot absorb a Balmer photon. The two effects together make the $n = 2$ population, and the Balmer lines, peak in A stars near 9,500 K. Check: Vega (an A star) shows far stronger Balmer lines than the much hotter O stars."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Astronomy 2e, section 17.3 (The Spectra of Stars (and Brown Dwarfs))"
+      },
+      {
+        "name": "MIT OpenCourseWare 8.282J Introduction to Astronomy (Spring 2006)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

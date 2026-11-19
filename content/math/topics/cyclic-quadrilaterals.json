@@ -1,0 +1,97 @@
+{
+  "id": "geo.cyclic-quadrilaterals",
+  "slug": "cyclic-quadrilaterals",
+  "ladder": "math",
+  "course": "geo",
+  "unit": "circles",
+  "title": "Inscribed Quadrilaterals",
+  "short": "Opposite angles of an inscribed quadrilateral add to 180°.",
+  "trouble": "",
+  "prereqs": [
+    "geo.inscribed-angles"
+  ],
+  "xp": 2,
+  "viz": [
+    "geoboard"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A quadrilateral is <b>inscribed</b> in a circle (or <b>cyclic</b>) when all four vertices lie on the circle. Each of its angles is an inscribed angle, so <a href=\"/math/geometry/inscribed-angles/\">Inscribed Angles</a> tells us about all four."
+      },
+      {
+        "t": "why",
+        "html": "In inscribed quadrilateral $ABCD$, $\\angle A$ intercepts the arc $\\widehat{BCD}$ and the opposite angle $\\angle C$ intercepts the arc $\\widehat{DAB}$. Those two arcs together make the whole circle, $360^\\circ$. Each angle is half its arc, so $m\\angle A + m\\angle C = \\frac{1}{2} \\cdot 360^\\circ = 180^\\circ$. The same holds for $\\angle B$ and $\\angle D$."
+      },
+      {
+        "t": "viz",
+        "name": "geo-circle",
+        "cap": "Drag the corners around the circle. Opposite angles always add to $180^\\circ$.",
+        "opts": {
+          "mode": "cyclic",
+          "pts": [
+            35,
+            150,
+            205,
+            300
+          ]
+        }
+      },
+      {
+        "t": "key",
+        "html": "The opposite angles of a quadrilateral inscribed in a circle are supplementary. (The converse is true too: if opposite angles are supplementary, the quadrilateral can be inscribed in a circle.)"
+      },
+      {
+        "t": "ex",
+        "title": "One angle",
+        "q": "$ABCD$ is inscribed in a circle and $m\\angle B = 78^\\circ$. Find $m\\angle D$.",
+        "steps": [
+          "$\\angle B$ and $\\angle D$ are opposite: $m\\angle D = 180 - 78 = 102^\\circ$."
+        ],
+        "a": "$102^\\circ$"
+      },
+      {
+        "t": "ex",
+        "title": "With algebra",
+        "q": "$PQRS$ is inscribed in a circle, $m\\angle P = (2x + 16)^\\circ$ and $m\\angle R = (3x - 1)^\\circ$. Find $m\\angle P$.",
+        "steps": [
+          "$(2x + 16) + (3x - 1) = 180$, so $5x + 15 = 180$ and $x = 33$.",
+          "$m\\angle P = 2(33) + 16 = 82^\\circ$."
+        ],
+        "a": "$82^\\circ$"
+      },
+      {
+        "t": "ex",
+        "title": "Which shapes fit?",
+        "q": "Can a rhombus that is not a square be inscribed in a circle? Can an isosceles trapezoid?",
+        "steps": [
+          "In a non-square rhombus, opposite angles are equal but not $90^\\circ$, so they cannot add to $180^\\circ$: no.",
+          "In an isosceles trapezoid, base angles are equal and consecutive angles between the bases are supplementary, so each pair of opposite angles adds to $180^\\circ$: yes."
+        ],
+        "a": "The rhombus cannot; the isosceles trapezoid can."
+      },
+      {
+        "t": "p",
+        "html": "Not every quadrilateral is cyclic. Every rectangle is (its opposite angles add to $90^\\circ + 90^\\circ$), and so is every isosceles trapezoid. A parallelogram that is not a rectangle is not: its opposite angles are equal, so they add to $180^\\circ$ only when both are right angles. A kite is cyclic exactly when its two equal angles are right angles."
+      },
+      {
+        "t": "mistake",
+        "html": "Adding consecutive angles (like $\\angle A$ and $\\angle B$) to $180^\\circ$. In an inscribed quadrilateral it is the <i>opposite</i> angles that are supplementary. Consecutive angles are supplementary in a parallelogram, which is a different fact."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Euclid, <i>Elements</i>, Book III, Proposition 22"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, High School Geometry, G-C.A.3"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

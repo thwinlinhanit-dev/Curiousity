@@ -1,0 +1,89 @@
+{
+  "id": "geology.elastic-rebound",
+  "slug": "elastic-rebound",
+  "ladder": "earth",
+  "course": "geology",
+  "unit": "earthquakes",
+  "title": "Elastic Rebound",
+  "short": "Rock on both sides of a locked fault bends slowly, then snaps back in an earthquake; slip rate and slip per quake give the average time between quakes.",
+  "trouble": "Students think many small earthquakes release the strain and prevent a big one; it takes about 1,000 magnitude 5 quakes to release the energy of one magnitude 7.",
+  "prereqs": [
+    "geology.faults",
+    "earthsci.seismic-waves"
+  ],
+  "xp": 2,
+  "viz": [
+    "es-structures"
+  ],
+  "figureArchetype": "WaveFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "After the 1906 San Francisco earthquake, surveyors found that fences and roads crossing the San Andreas Fault had been offset by up to about 6 m. Harry Fielding Reid used the survey data to explain why: the rock had been bending for decades and then snapped back. His elastic rebound theory connects <a href=\"/earth-and-space/geology/faults/\">faults</a> to <a href=\"/earth-and-space/earth-science/seismic-waves/\">earthquakes</a>."
+      },
+      {
+        "t": "why",
+        "html": "Plates move steadily, millimeters a year, but friction locks the fault. So the rock on both sides bends, storing strain like a bent stick or a stretched spring. When the stress exceeds the friction, the fault slips in seconds, the bent rock springs back, and the stored energy leaves as seismic waves. Then the locking starts again. Over many cycles, the fault's average slip must keep up with the plates: if each big earthquake slips $D$ meters and the plates move $v$ per year, the average time between quakes is $T = \\dfrac{D}{v}$."
+      },
+      {
+        "t": "key",
+        "html": "A locked fault bends and stores strain, then snaps back in an earthquake. Average time between large quakes = slip per quake ÷ slip rate. It is an average, not a schedule."
+      },
+      {
+        "t": "viz",
+        "name": "es-structures",
+        "opts": {
+          "mode": "rebound",
+          "rate": 35,
+          "slipPerQuake": 4
+        },
+        "cap": "A fence across a locked fault. Run the years forward: the fence bends, then the fault slips and it snaps back, offset."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Time between quakes",
+        "q": "A fault slips 35 mm/yr on average, and each large earthquake slips about 4 m. How often, on average, do large quakes happen?",
+        "steps": [
+          "$4\\,\\text{m} = 4,000\\,\\text{mm}$.",
+          "$4,000 \\div 35 \\approx 114$ years, on average."
+        ],
+        "a": "About every 114 years, on average."
+      },
+      {
+        "t": "ex",
+        "title": "Small quakes can't keep up",
+        "q": "About how many magnitude 5 earthquakes release the energy of one magnitude 7?",
+        "steps": [
+          "Each step of 1 in magnitude means about $10^{1.5} \\approx 32$ times more energy.",
+          "Two steps: $10^{3} = 1,000$.",
+          "A fault storing strain for a magnitude 7 would need a thousand magnitude 5 quakes to release it."
+        ],
+        "a": "About 1,000."
+      },
+      {
+        "t": "mistake",
+        "html": "It is comforting to think that many small earthquakes let off the pressure and prevent a big one. They release far too little energy: it takes about 1,000 magnitude 5 quakes to match one magnitude 7. Check with the numbers before trusting the comfort."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "USGS Earthquake Hazards Program, Earthquake Magnitude, Energy Release, and Shaking Intensity"
+      },
+      {
+        "name": "USGS, This Dynamic Earth: The Story of Plate Tectonics (Kious and Tilling)"
+      },
+      {
+        "name": "MIT OpenCourseWare, 12.001 Introduction to Geology"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

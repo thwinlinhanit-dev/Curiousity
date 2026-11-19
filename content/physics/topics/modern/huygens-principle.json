@@ -1,0 +1,116 @@
+{
+  "id": "modern.huygens-principle",
+  "slug": "huygens-principle",
+  "ladder": "physics",
+  "course": "modern",
+  "unit": "wave-optics",
+  "title": "Huygens' Principle",
+  "short": "Every point on a wavefront acts as a source of wavelets, which explains refraction and diffraction.",
+  "trouble": "Students think diffraction and refraction need two separate explanations.",
+  "prereqs": [
+    "phys2.snells-law",
+    "phys2.single-slit"
+  ],
+  "xp": 1,
+  "viz": [
+    "ph-refraction",
+    "ph-interference"
+  ],
+  "figureArchetype": "WaveFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Light bends when it enters glass (<a href=\"/physics/physics-2/snells-law/\">Snell's law</a>), and it spreads out after passing through a narrow slit (<a href=\"/physics/physics-2/single-slit/\">diffraction</a>). These look like two different effects. In 1678 Christiaan Huygens found one idea that explains both, along with reflection and the fact that light goes in straight lines in open space."
+      },
+      {
+        "t": "key",
+        "html": "<b>Huygens' principle:</b> every point on a wavefront acts as a source of small spherical <b>wavelets</b> that spread at the local wave speed. A short time later, the new wavefront is the surface that touches all the wavelets (their envelope). Where the speed changes, the wavefront turns: refraction. Where part of a wavefront is blocked, the wavelets at the edges spread into the shadow: diffraction."
+      },
+      {
+        "t": "why",
+        "html": "Let a straight wavefront meet a flat boundary at angle $\\theta_1$. One end, A, touches the boundary first. In the time $t$ that the other end needs to reach the boundary at C (a distance $v_1t$), the wavelet from A grows into medium 2 with radius only $v_2t$. The new wavefront runs from C, tangent to that smaller wavelet. Two right triangles share the hypotenuse AC: $$\\sin\\theta_1 = \\frac{v_1t}{AC},\\qquad \\sin\\theta_2 = \\frac{v_2t}{AC}.$$ Divide: $\\frac{\\sin\\theta_1}{\\sin\\theta_2} = \\frac{v_1}{v_2}$. With $v = c/n$ this is $n_1\\sin\\theta_1 = n_2\\sin\\theta_2$: Snell's law, derived. The same wavelets, cut off by the edge of a slit, have nothing beside them to cancel their sideways spread. That is diffraction, and it is strongest when the opening is not much wider than $\\lambda$."
+      },
+      {
+        "t": "viz",
+        "name": "ph-refraction",
+        "opts": {
+          "mode": "wavefront",
+          "n1": 1,
+          "n2": 1.5,
+          "angle": 40
+        },
+        "cap": "Plane wavefronts entering glass. Each wavefront slows as it crosses, so it pivots: the wavefronts bunch up ($\\lambda_2 = \\lambda_1 n_1/n_2$) and turn toward the normal."
+      },
+      {
+        "t": "p",
+        "html": "Notice what stays the same across the boundary: the <b>frequency</b>. Each wavefront that arrives must leave at the same rate, or wavefronts would pile up at the surface. Since $v = f\\lambda$ and the speed drops, the wavelength drops in proportion: $\\lambda_2 = \\lambda_1 \\frac{v_2}{v_1} = \\lambda_1\\frac{n_1}{n_2}$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Snell's law from wavelets",
+        "q": "Light in air meets glass ($n = 1.50$) at $40^\\circ$ from the normal. In the time the light in air travels the last 1.00 μm to the surface, how far does the wavelet in the glass grow, and what is the angle of refraction?",
+        "steps": [
+          "In glass the speed is $c/1.50$, so the wavelet grows $1.00/1.50 = 0.667$ μm.",
+          "The stretch of boundary between the two ends: $AC = \\frac{1.00\\ \\mu\\text{m}}{\\sin 40^\\circ} = 1.556$ μm.",
+          "$\\sin\\theta_2 = \\frac{0.667}{1.556} = 0.429$, so $\\theta_2 = 25.4^\\circ$.",
+          "Check with Snell's law: $\\sin\\theta_2 = \\frac{\\sin 40^\\circ}{1.50} = 0.429$."
+        ],
+        "a": "$0.667$ μm; $\\theta_2 = 25.4^\\circ$"
+      },
+      {
+        "t": "ex",
+        "title": "What changes in water",
+        "q": "Red light of wavelength 650 nm in air enters water ($n = 1.33$). Find its frequency, its speed and its wavelength in the water.",
+        "steps": [
+          "Frequency, set by the source: $f = \\frac{c}{\\lambda} = \\frac{3.00 \\times 10^8}{650 \\times 10^{-9}} = 4.62 \\times 10^{14}$ Hz, in air and in water.",
+          "Speed: $v = c/n = 2.26 \\times 10^8$ m/s.",
+          "Wavelength: $\\lambda = v/f = 650/1.33 = 489$ nm."
+        ],
+        "a": "$f = 4.62 \\times 10^{14}$ Hz (unchanged), $v = 2.26 \\times 10^8$ m/s, $\\lambda = 489$ nm"
+      },
+      {
+        "t": "p",
+        "html": "The light is still red in the water: your eye responds to the frequency, which never changed."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking refraction and diffraction need two separate explanations, such as “light bends at surfaces” and “light bends around edges”. Both are wavelets at work. In refraction the wavelets on one side are slower, so the envelope turns; in diffraction some wavelets are blocked, so the envelope wraps into the shadow. A check: the same principle predicts the right angle in Snell's law and the right spreading angle for a slit."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking light's frequency changes in glass. The speed and the wavelength change; the frequency is set by the source and stays the same."
+      },
+      {
+        "t": "viz",
+        "name": "ph-interference",
+        "opts": {
+          "mode": "single",
+          "lambda": 550,
+          "a": 20
+        },
+        "cap": "Diffraction from one slit: the wavelets from across the opening spread and interfere. Narrow the slit and the pattern widens."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 3, 1.6 Huygens's Principle"
+      },
+      {
+        "name": "OpenStax University Physics Volume 3, 1.3 Refraction"
+      },
+      {
+        "name": "OpenStax University Physics Volume 3, 4.1 Single-Slit Diffraction"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

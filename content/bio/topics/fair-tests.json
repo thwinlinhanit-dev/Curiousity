@@ -1,0 +1,121 @@
+{
+  "id": "lifesci.fair-tests",
+  "slug": "fair-tests",
+  "ladder": "bio",
+  "course": "lifesci",
+  "unit": "studying-life",
+  "title": "Fair Tests: Variables and Controls",
+  "short": "In a fair test you change one thing (the independent variable), measure one thing (the dependent variable), and keep everything else the same, with a control group to compare against.",
+  "trouble": "Students change two things at once (more light and more water) and then cannot tell which one made the plants grow taller, or they leave out the control group.",
+  "prereqs": [
+    "lifesci.characteristics-of-life",
+    "g6.dependent-independent"
+  ],
+  "xp": 2,
+  "viz": [
+    "bi-chart"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Life scientists answer questions with experiments. In math you met <a href=\"/math/grade-6/dependent-independent/\">dependent and independent variables</a>; an experiment uses the same idea. A test is <b>fair</b> when only one thing can explain the result."
+      },
+      {
+        "t": "key",
+        "html": "Change <b>one</b> thing on purpose (the <b>independent variable</b>). Measure <b>one</b> thing (the <b>dependent variable</b>). Keep everything else the same (the <b>controlled variables</b>), and compare with a <b>control group</b> that gets the usual treatment or none. Repeat each group several times."
+      },
+      {
+        "t": "why",
+        "html": "If two things change at once, either one could have caused the difference, and you cannot tell which. Holding the rest steady leaves only one possible cause. Repeating trials matters because living things vary: one plant may simply be a strong seedling."
+      },
+      {
+        "t": "viz",
+        "name": "bi-chart",
+        "opts": {
+          "kind": "bar",
+          "x": [
+            "0 g (control)",
+            "5 g",
+            "10 g"
+          ],
+          "series": [
+            {
+              "name": "Mean tomatoes per plant",
+              "values": [
+                8,
+                13,
+                17
+              ],
+              "err": [
+                1.5,
+                2,
+                2
+              ]
+            }
+          ],
+          "ylabel": "Tomatoes per plant",
+          "xlabel": "Fertilizer each week",
+          "title": "Tomato plants, 5 per group"
+        },
+        "cap": "A fair test: only the fertilizer changed. The bars are means of five plants; the lines show how much the plants varied."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Name the variables",
+        "q": "Leo asks, \"Does fertilizer change how many tomatoes a plant makes?\" He gives three groups 0 g, 5 g or 10 g each week.",
+        "steps": [
+          "He changes the fertilizer: that is the independent variable.",
+          "He counts tomatoes: that is the dependent variable.",
+          "Water, sunlight, pot size and the kind of tomato stay the same: controlled variables.",
+          "The 0 g group is the control group."
+        ],
+        "a": "Independent: fertilizer. Dependent: number of tomatoes."
+      },
+      {
+        "t": "ex",
+        "title": "Find the problem",
+        "q": "Maya puts plant A in a dark closet and plant B in a sunny window. She also waters B twice as often. B grows taller. What can she conclude?",
+        "steps": [
+          "Two things differ: light and water.",
+          "Either one could explain the taller plant."
+        ],
+        "a": "Nothing certain. She must change only the light and water both plants the same."
+      },
+      {
+        "t": "ex",
+        "title": "Use the mean",
+        "q": "Three tomato plants with 5 g of fertilizer make 12, 15 and 12 tomatoes. What is the mean?",
+        "steps": [
+          "Add: $12 + 15 + 12 = 39$.",
+          "Divide by the number of plants: $39 \\div 3 = 13$."
+        ],
+        "a": "13 tomatoes."
+      },
+      {
+        "t": "mistake",
+        "html": "Changing two things at once (more light <i>and</i> more water), or leaving out the control group. Check: list everything that differs between groups. The list should hold exactly one item."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Next Generation Science Standards, MS-LS1-5: From Molecules to Organisms: Structures and Processes"
+      },
+      {
+        "name": "OpenStax, Concepts of Biology, 1.2 The Process of Science"
+      },
+      {
+        "name": "OpenStax, Biology 2e, 1.1 The Science of Biology"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

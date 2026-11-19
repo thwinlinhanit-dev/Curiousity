@@ -1,0 +1,90 @@
+{
+  "id": "phys1.pulley-systems",
+  "slug": "pulley-systems",
+  "ladder": "physics",
+  "course": "phys1",
+  "unit": "forces",
+  "title": "Pulleys and the Atwood Machine",
+  "short": "A light rope over a light pulley has one tension, and the whole system speeds up together.",
+  "trouble": "Students set the tension equal to the hanging mass's weight even while it accelerates.",
+  "prereqs": [
+    "phys1.connected-objects"
+  ],
+  "xp": 3,
+  "viz": [
+    "ph-dynamics"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A string over a pulley turns one object's downward pull into another's upward or sideways motion. The classic example, the Atwood machine, is two masses hanging on either side of a pulley. It is a <a href=\"/physics/physics-1/connected-objects/\">connected-objects</a> problem with a bend in the string."
+      },
+      {
+        "t": "key",
+        "html": "A light string over a light, frictionless pulley has the same tension everywhere. Measure each object's acceleration along the string: the objects share one acceleration $a$. For an Atwood machine, $a = \\dfrac{(m_2 - m_1)g}{m_1 + m_2}$ and the tension lies between the two weights."
+      },
+      {
+        "t": "why",
+        "html": "Treat the whole string as a bent axis. Along it, the heavier block's weight drives the system forward and the lighter block's weight holds it back, while the tension pulls equally on both ends and cancels as an internal force. So the net driving force is $(m_2 - m_1)g$, shared by the total mass. Then either block alone gives the tension."
+      },
+      {
+        "t": "viz",
+        "name": "ph-dynamics",
+        "opts": {
+          "scene": "atwood",
+          "m1": 3,
+          "m2": 5,
+          "task": "Make the masses equal. What happens to the acceleration and the tension?"
+        },
+        "cap": "Atwood machine with 3 kg and 5 kg: a = 2.45 m/s², T = 36.8 N, between 29.4 N and 49 N."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Atwood machine",
+        "q": "Masses of $3\\ \\text{kg}$ and $5\\ \\text{kg}$ hang over a light pulley. Find $a$ and $T$.",
+        "steps": [
+          "$a = \\dfrac{(5 - 3)(9.8)}{8} = 2.45\\ \\text{m/s}^2$.",
+          "Light block (accelerating up): $T - 29.4 = 3(2.45)$, so $T = 36.75\\ \\text{N}$.",
+          "Check with the heavy block: $49 - 36.75 = 12.25 = 5(2.45)$. ✓"
+        ],
+        "a": "$a = 2.45\\ \\text{m/s}^2$, $T \\approx 36.8\\ \\text{N}$"
+      },
+      {
+        "t": "ex",
+        "title": "Table with friction",
+        "q": "A $5\\ \\text{kg}$ block on a table ($\\mu_k = 0.2$) is tied over a pulley to a hanging $3\\ \\text{kg}$ block. Find $a$.",
+        "steps": [
+          "Driving force: $3 \\times 9.8 = 29.4\\ \\text{N}$. Friction on the table block: $0.2 \\times 49 = 9.8\\ \\text{N}$.",
+          "$a = \\dfrac{29.4 - 9.8}{8} = 2.45\\ \\text{m/s}^2$."
+        ],
+        "a": "$2.45\\ \\text{m/s}^2$"
+      },
+      {
+        "t": "mistake",
+        "html": "Setting the tension equal to the hanging mass's weight while the system accelerates. If the hanging block speeds up downward, the net force on it points down, so $T < m_2g$. Check: in an Atwood machine, $m_1g < T < m_2g$; it equals a weight only when nothing accelerates."
+      },
+      {
+        "t": "note",
+        "html": "Try it in the Science Lab: <a href=\"/science-lab/newtons-laws/forces/\">Forces at Work</a>."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Physics 2e, Section 4.7 Further Applications of Newton's Laws of Motion"
+      },
+      {
+        "name": "OpenStax University Physics Volume 1, Section 6.1 Solving Problems with Newton's Laws"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

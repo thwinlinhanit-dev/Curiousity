@@ -1,0 +1,95 @@
+{
+  "id": "hsbio.transcription",
+  "slug": "transcription",
+  "ladder": "bio",
+  "course": "hsbio",
+  "unit": "dna",
+  "title": "Transcription",
+  "short": "In the nucleus, RNA polymerase reads a gene's template strand and builds a matching mRNA: A in DNA pairs with U in RNA, T with A, G with C, C with G.",
+  "trouble": "Students put T in the RNA, or copy the template strand letter for letter. RNA uses U instead of T, and the mRNA is complementary to the template strand.",
+  "prereqs": [
+    "hsbio.dna-structure"
+  ],
+  "xp": 2,
+  "viz": [
+    "bi-central",
+    "bi-dna"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "DNA stays in the nucleus, but proteins are built at ribosomes in the cytoplasm. The cell sends a working copy of one gene out as <b>messenger RNA</b> (mRNA). Making that copy is <b>transcription</b>. It uses the same <a href=\"/biology/high-school-biology/dna-structure/\">base pairing</a> as DNA, with one change."
+      },
+      {
+        "t": "key",
+        "html": "<b>RNA polymerase</b> opens a gene and reads its <b>template strand</b>, building a complementary mRNA. RNA has <b>U (uracil) instead of T</b>, so the rules are: DNA A → RNA U, T → A, G → C, C → G."
+      },
+      {
+        "t": "why",
+        "html": "RNA is a nucleic acid too, but its sugar is ribose and it uses U in place of T. U pairs with A just as T does. Only one strand of the gene, the template, is read. The other strand, the <b>coding strand</b>, has the same sequence as the mRNA, except with T where the mRNA has U."
+      },
+      {
+        "t": "viz",
+        "name": "bi-central",
+        "opts": {
+          "mode": "transcribe",
+          "template": "TACGGCATTACT"
+        },
+        "cap": "Step through the gene: RNA polymerase reads the template 3′→5′ and builds mRNA 5′→3′."
+      },
+      {
+        "t": "ex",
+        "title": "From the template strand",
+        "q": "A template strand reads 3′-TACGGATTC-5′. What mRNA is made?",
+        "steps": [
+          "T→A, A→U, C→G, G→C, G→C, A→U, T→A, T→A, C→G."
+        ],
+        "a": "5′-AUGCCUAAG-3′"
+      },
+      {
+        "t": "ex",
+        "title": "From the coding strand",
+        "q": "A gene's coding strand reads 5′-ATGTTCGGA-3′. What is the mRNA?",
+        "steps": [
+          "The mRNA has the same sequence as the coding strand.",
+          "Just swap each T for U."
+        ],
+        "a": "5′-AUGUUCGGA-3′"
+      },
+      {
+        "t": "ex",
+        "title": "Working backward",
+        "q": "An mRNA reads 5′-AUGGCA-3′. What was the template strand?",
+        "steps": [
+          "Each mRNA base paired with a template base: A with T, U with A, G with C, C with G."
+        ],
+        "a": "3′-TACCGT-5′"
+      },
+      {
+        "t": "p",
+        "html": "In eukaryotes, the new RNA is also processed before it leaves the nucleus: a cap and a tail are added, and stretches called introns are cut out. The finished mRNA then travels through a nuclear pore to the ribosomes, where <a href=\"/biology/high-school-biology/translation/\">translation</a> begins."
+      },
+      {
+        "t": "mistake",
+        "html": "Two slips are common. One is writing T in the RNA: RNA never has T, so every A on the template becomes U. The other is copying the template letter for letter. The mRNA is <b>complementary</b> to the template; it matches the <i>coding</i> strand. Check: no T anywhere, and each mRNA base pairs with the template base above it."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Concepts of Biology, 9.3 Transcription"
+      },
+      {
+        "name": "OpenStax, Biology 2e, 15.2 Prokaryotic Transcription; 15.3 Eukaryotic Transcription"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-LS1-1: From Molecules to Organisms: Structures and Processes"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

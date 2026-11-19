@@ -1,0 +1,139 @@
+{
+  "id": "em.dielectrics",
+  "slug": "dielectrics",
+  "ladder": "physics",
+  "course": "em",
+  "unit": "conductors-capacitors",
+  "title": "Dielectrics",
+  "short": "A dielectric weakens the field by κ and raises C to κC; with the battery connected Q grows, but disconnected V drops.",
+  "trouble": "Students don't track what stays fixed: Q when the capacitor is isolated, V when the battery stays connected.",
+  "prereqs": [
+    "em.capacitance-geometry"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-efield"
+  ],
+  "figureArchetype": "FieldFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Fill the gap of a <a href=\"/physics/electricity-and-magnetism/capacitance-geometry/\">capacitor</a> with an insulator such as glass, plastic or oil, and its capacitance goes up by a factor $\\kappa$, the material's <b>dielectric constant</b>. What else changes depends on one question: is the battery still connected?"
+      },
+      {
+        "t": "key",
+        "html": "A dielectric that fills the gap gives $C = \\kappa C_0$.\n        <br><b>Battery connected</b> (fixed $V$): $Q \\to \\kappa Q_0$ and $U = \\tfrac{1}{2}CV^2 \\to \\kappa U_0$.\n        <br><b>Isolated</b> (fixed $Q$): $V \\to V_0/\\kappa$, $E \\to E_0/\\kappa$ and $U = Q^2/(2C) \\to U_0/\\kappa$."
+      },
+      {
+        "t": "why",
+        "html": "An insulator has no free electrons, but its molecules can stretch or turn. In the field between the plates they line up a little, positive ends toward the negative plate. Inside the material these tiny dipoles cancel each other, but at the two faces a thin layer of <b>bound charge</b> is left over, opposite in sign to the nearby plate. That bound charge cancels part of the plates' field. With a weaker field for the same free charge, the voltage is smaller, and $C = Q/V$ is larger."
+      },
+      {
+        "t": "viz",
+        "name": "ph-efield",
+        "opts": {
+          "mode": "capacitor",
+          "A": 0.01,
+          "d": 0.001,
+          "kappa": 3,
+          "V": 12,
+          "task": "Slide the dielectric in with the battery connected, then disconnect the battery and slide it out. Watch which of Q and V stays fixed."
+        },
+        "cap": "A capacitor with a removable dielectric ($\\kappa = 3$). Connected, $V$ stays at $12\\ \\text{V}$ and $Q$ triples; disconnected, $Q$ is trapped and $V$ drops."
+      },
+      {
+        "t": "table",
+        "head": [
+          "",
+          "Battery connected",
+          "Isolated"
+        ],
+        "rows": [
+          [
+            "$C$",
+            "$\\kappa C_0$",
+            "$\\kappa C_0$"
+          ],
+          [
+            "$V$",
+            "same",
+            "$V_0/\\kappa$"
+          ],
+          [
+            "$Q$",
+            "$\\kappa Q_0$",
+            "same"
+          ],
+          [
+            "$E$ between plates",
+            "same ($V/d$)",
+            "$E_0/\\kappa$"
+          ],
+          [
+            "$U$",
+            "$\\kappa U_0$",
+            "$U_0/\\kappa$"
+          ]
+        ],
+        "cap": "What a dielectric that fills the gap does in each case."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Isolated",
+        "q": "A $50\\ \\text{pF}$ air capacitor is charged to $12\\ \\text{V}$, disconnected, and filled with a dielectric of $\\kappa = 3.0$. Find the new voltage and energy.",
+        "steps": [
+          "$Q = C_0V_0 = 600\\ \\text{pC}$ is trapped.",
+          "$C = 3.0 \\times 50 = 150\\ \\text{pF}$, so $V = Q/C = 600/150 = 4.0\\ \\text{V}$.",
+          "$U = Q^2/(2C)$ drops from $3.6\\ \\text{nJ}$ to $1.2\\ \\text{nJ}$. The difference went into pulling the slab in: a capacitor draws a dielectric toward it."
+        ],
+        "a": "$4.0\\ \\text{V}$, $1.2\\ \\text{nJ}$"
+      },
+      {
+        "t": "ex",
+        "title": "Connected",
+        "q": "Same capacitor, but it stays on the $12\\ \\text{V}$ battery while the dielectric goes in.",
+        "steps": [
+          "$V$ stays $12\\ \\text{V}$; $C$ becomes $150\\ \\text{pF}$.",
+          "$Q = CV = 1800\\ \\text{pC}$: the battery pushed $1200\\ \\text{pC}$ more onto the plates.",
+          "$U = \\tfrac{1}{2}CV^2 = 10.8\\ \\text{nJ}$, three times as much. The battery supplied the extra energy (and more, some of which pulled the slab in)."
+        ],
+        "a": "$1800\\ \\text{pC}$, $10.8\\ \\text{nJ}$"
+      },
+      {
+        "t": "ex",
+        "title": "Half filled",
+        "q": "A dielectric of $\\kappa = 3.0$ fills only half of a $50\\ \\text{pF}$ air capacitor. Find $C$ if it fills (a) the left half of the area, full gap, (b) half the thickness, full area.",
+        "steps": [
+          "(a) Side by side, both halves feel the same voltage: two capacitors in parallel, $\\dfrac{C_0}{2} + \\dfrac{\\kappa C_0}{2} = 25 + 75 = 100\\ \\text{pF}$.",
+          "(b) Stacked, the same charge passes through both layers: two capacitors in series, each with half the gap ($2C_0$ and $2\\kappa C_0$): $\\dfrac{1}{C} = \\dfrac{1}{100} + \\dfrac{1}{300}$, so $C = 75\\ \\text{pF}$."
+        ],
+        "a": "(a) $100\\ \\text{pF}$, (b) $75\\ \\text{pF}$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Not tracking what stays fixed.</b> \"The dielectric raises $C$, so $Q = CV$ goes up\" is right only with the battery connected. Unplugged, the charge has nowhere to come from, so $Q$ stays put and $V$ falls instead. Before any dielectric problem, write down which is fixed: $V$ (connected) or $Q$ (isolated). Then use the energy formula built on that fixed quantity: $\\tfrac{1}{2}CV^2$ for fixed $V$, $Q^2/(2C)$ for fixed $Q$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 2, 8.4 Capacitor with a Dielectric"
+      },
+      {
+        "name": "OpenStax University Physics Volume 2, 8.5 Molecular Model of a Dielectric"
+      },
+      {
+        "name": "MIT OpenCourseWare, 8.02 Physics II: Electricity and Magnetism"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

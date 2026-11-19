@@ -1,0 +1,101 @@
+{
+  "id": "disc.linear-recurrences",
+  "slug": "linear-recurrences",
+  "ladder": "math",
+  "course": "disc",
+  "unit": "induction-recursion",
+  "title": "Linear Recurrences with Distinct Roots",
+  "short": "For aₙ = c₁aₙ₋₁ + c₂aₙ₋₂, solve r² = c₁r + c₂ and fit aₙ = A·r₁ⁿ + B·r₂ⁿ to the first two terms.",
+  "trouble": "Students write the characteristic equation with the wrong signs, as r² + c₁r + c₂ = 0, or fit A and B to only one starting value.",
+  "prereqs": [
+    "disc.unrolling-recurrences",
+    "alg1.quadratic-formula"
+  ],
+  "xp": 3,
+  "viz": [
+    "disc-tiling"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Unrolling works when each term depends on one earlier term. Recurrences like $a_{n} = a_{n-1} + a_{n-2}$ reach back two steps, and unrolling gets messy. Instead we guess the <i>shape</i> of the answer, and the guess reduces to a quadratic equation, solved with the <a href=\"/math/algebra-1/quadratic-formula/\">quadratic formula</a> or by factoring. It is the systematic follow-up to <a href=\"/math/discrete-math/unrolling-recurrences/\">unrolling</a>."
+      },
+      {
+        "t": "key",
+        "html": "For $a_{n} = c_{1}a_{n-1} + c_{2}a_{n-2}$, solve the <b>characteristic equation</b> $r^{2} = c_{1}r + c_{2}$. If its roots $r_{1} \\ne r_{2}$, every solution is $a_{n} = A\\,r_{1}^{n} + B\\,r_{2}^{n}$; find $A$ and $B$ from the two starting values."
+      },
+      {
+        "t": "why",
+        "html": "Try $a_{n} = r^{n}$. Substituting gives $r^{n} = c_{1}r^{n-1} + c_{2}r^{n-2}$; dividing by $r^{n-2}$ leaves $r^{2} = c_{1}r + c_{2}$. So $r^{n}$ is a solution exactly when $r$ is a root. The recurrence is linear, so any combination $Ar_{1}^{n} + Br_{2}^{n}$ of two solutions is again a solution. Two free constants can match any two starting values (the equations $A + B = a_{0}$, $Ar_{1} + Br_{2} = a_{1}$ have a solution when $r_{1} \\ne r_{2}$), and two starting values determine the whole sequence."
+      },
+      {
+        "t": "viz",
+        "name": "disc-tiling",
+        "opts": {
+          "mode": "domino",
+          "n": 6,
+          "ratio": true,
+          "list": false
+        },
+        "cap": "Domino tilings grow like the Fibonacci numbers. The ratio column approaches the larger characteristic root of $r^{2} = r + 1$, the golden ratio $\\frac{1 + \\sqrt{5}}{2}$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Two whole-number roots",
+        "q": "Solve $a_{n} = 5a_{n-1} - 6a_{n-2}$ with $a_{0} = 1$, $a_{1} = 4$.",
+        "steps": [
+          "Characteristic equation: $r^{2} = 5r - 6$, so $r^{2} - 5r + 6 = 0 = (r - 2)(r - 3)$: roots $2$ and $3$.",
+          "$a_{n} = A \\cdot 2^{n} + B \\cdot 3^{n}$. From $n = 0$: $A + B = 1$. From $n = 1$: $2A + 3B = 4$.",
+          "Subtract twice the first equation from the second: $B = 2$, so $A = -1$.",
+          "$a_{n} = 2 \\cdot 3^{n} - 2^{n}$. Check $a_{2}$: the formula gives $18 - 4 = 14$; the recurrence gives $5 \\cdot 4 - 6 \\cdot 1 = 14$."
+        ],
+        "a": "$a_{n} = 2 \\cdot 3^{n} - 2^{n}$"
+      },
+      {
+        "t": "ex",
+        "title": "A negative root",
+        "q": "Solve $a_{n} = a_{n-1} + 2a_{n-2}$ with $a_{0} = 2$, $a_{1} = 1$.",
+        "steps": [
+          "$r^{2} = r + 2$, so $r^{2} - r - 2 = (r - 2)(r + 1) = 0$: roots $2$ and $-1$.",
+          "$A + B = 2$ and $2A - B = 1$. Adding: $3A = 3$, so $A = 1$ and $B = 1$.",
+          "$a_{n} = 2^{n} + (-1)^{n}$: $2, 1, 5, 7, 17, \\ldots$, which matches the recurrence."
+        ],
+        "a": "$a_{n} = 2^{n} + (-1)^{n}$"
+      },
+      {
+        "t": "ex",
+        "title": "The Fibonacci numbers",
+        "q": "What does this method give for $F_{n} = F_{n-1} + F_{n-2}$, $F_{0} = 0$, $F_{1} = 1$?",
+        "steps": [
+          "$r^{2} = r + 1$ has roots $\\varphi = \\frac{1 + \\sqrt{5}}{2}$ and $\\psi = \\frac{1 - \\sqrt{5}}{2}$.",
+          "Fitting $A + B = 0$ and $A\\varphi + B\\psi = 1$ gives $A = \\frac{1}{\\sqrt{5}}$, $B = -\\frac{1}{\\sqrt{5}}$.",
+          "So $F_{n} = \\dfrac{\\varphi^{n} - \\psi^{n}}{\\sqrt{5}}$ (Binet's formula). Since $|\\psi| < 1$, $F_{n}$ is the whole number nearest $\\varphi^{n}/\\sqrt{5}$."
+        ],
+        "a": "$F_{n} = \\dfrac{\\varphi^{n} - \\psi^{n}}{\\sqrt{5}}$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Wrong signs in the characteristic equation, or fitting only one starting value.</b> For $a_{n} = 5a_{n-1} - 6a_{n-2}$ the equation is $r^{2} - 5r + 6 = 0$, not $r^{2} + 5r - 6 = 0$: move the terms across the equals sign and their signs change. And $A$ and $B$ need both $a_{0}$ and $a_{1}$; a formula fitted to $a_{0}$ alone is just a guess. Check: compute $a_{2}$ from your formula and from the recurrence."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Oscar Levin, Discrete Mathematics: An Open Introduction (3rd ed.), section \"Solving Recurrence Relations\" (the characteristic root technique)"
+      },
+      {
+        "name": "MIT OpenCourseWare 6.042J Mathematics for Computer Science (Lehman, Leighton and Meyer), chapter \"Recurrences\" (linear recurrences)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

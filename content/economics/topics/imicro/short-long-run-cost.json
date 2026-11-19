@@ -1,0 +1,85 @@
+{
+  "id": "imicro.short-long-run-cost",
+  "slug": "short-long-run-cost",
+  "ladder": "economics",
+  "course": "imicro",
+  "unit": "production",
+  "title": "Short-Run and Long-Run Cost",
+  "short": "With capital fixed, short-run cost is never below long-run cost; the long-run curve is the lower envelope of the short-run curves.",
+  "trouble": "Students think the long-run average cost curve passes through the lowest point of every short-run curve. It touches each one only at the output where that plant size is best.",
+  "prereqs": [
+    "imicro.cost-functions"
+  ],
+  "xp": 3,
+  "viz": [
+    "ec-costcurves"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In the short run some inputs, usually the plant and its machines, are fixed. In the long run everything can change. Comparing the two <a href=\"/economics/intermediate-microeconomics/cost-functions/\">cost functions</a> explains the shape of the long-run average cost curve."
+      },
+      {
+        "t": "key",
+        "html": "For any output, short-run cost with capital fixed at $\\bar K$ is never below long-run cost: $$C_{SR}(q; \\bar K) \\ge C_{LR}(q),$$ with equality at the output for which $\\bar K$ is the best plant. The long-run average cost curve is the <b>lower envelope</b> of the short-run average cost curves: it touches each one at a single point."
+      },
+      {
+        "t": "why",
+        "html": "The long run chooses the cheapest of all input mixes, including the one with capital $\\bar K$. A minimum over a bigger set can't be higher than the minimum over a smaller set, so $C_{LR} \\le C_{SR}$. They are equal when $\\bar K$ is exactly the capital the long run would pick. Away from that output, the fixed plant is the wrong size: too small (workers crowd the machines) or too big (machines sit idle)."
+      },
+      {
+        "t": "viz",
+        "name": "ec-costcurves",
+        "opts": {
+          "mode": "longrun"
+        },
+        "cap": "Short-run average cost curves for several plant sizes and the long-run curve hugging them from below. Each short-run curve touches the long-run curve at one output, which is usually not that short-run curve's own minimum."
+      },
+      {
+        "t": "ex",
+        "title": "Short run versus long run",
+        "q": "$Q = \\sqrt{KL}$, $w = r = 1$, capital fixed at $\\bar K = 10$. Compare costs at $q = 10$ and $q = 20$.",
+        "steps": [
+          "Long run: $K/L = w/r = 1$, so $K = L = q$ and $C_{LR} = 2q$.",
+          "Short run: $L = q^2/10$, so $C_{SR} = 10 + q^2/10$.",
+          "$q = 10$: both cost 20. $q = 20$: short run $10 + 40 = 50$, long run 40."
+        ],
+        "a": "Equal (20) at $q = 10$; at $q = 20$ the short run costs \\$10 more."
+      },
+      {
+        "t": "ex",
+        "title": "Where they touch",
+        "q": "$Q = \\sqrt{KL}$, $w = 4$, $r = 1$, $\\bar K = 40$. At what output is this plant the best one?",
+        "steps": [
+          "Long run: $K = q\\sqrt{w/r} = 2q$.",
+          "$\\bar K = 40$ is best when $2q = 40$: $q = 20$.",
+          "Check: $C_{SR}(20) = 40 + 4\\cdot\\dfrac{400}{40} = 80$ and $C_{LR}(20) = 2(20)\\sqrt{4} = 80$."
+        ],
+        "a": "$q = 20$."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking the long-run average cost curve passes through the lowest point of every short-run curve. It touches each short-run curve where that plant is the best choice for the output. When long-run average cost is falling, the touching point is to the left of the short-run minimum (it pays to run a slightly bigger plant below its best output); when it is rising, to the right. Only at the bottom of the long-run curve do the two minimums coincide. Check: compare slopes at the touching point. Both curves have the same slope there, so if the long-run curve is falling, so is the short-run one."
+      },
+      {
+        "t": "note",
+        "html": "With constant returns to scale and fixed input prices, as in these examples, long-run average cost is flat ($C_{LR}/q = 2\\sqrt{wr}$), and each short-run curve touches it exactly at its own minimum. The envelope shape with economies and diseconomies of scale comes from returns to scale that change with size."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, ch. 7.5 Costs in the Long Run"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.04 Intermediate Microeconomic Theory (course scope and lecture topics)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

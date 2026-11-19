@@ -1,0 +1,150 @@
+{
+  "id": "de.motion-circuits",
+  "slug": "motion-circuits",
+  "ladder": "math",
+  "course": "de",
+  "unit": "first-order-models",
+  "title": "Falling Objects with Drag and RC Circuits",
+  "short": "Model velocity with air resistance and charging circuits.",
+  "trouble": "",
+  "prereqs": [
+    "de.linear-first-order"
+  ],
+  "xp": 3,
+  "viz": [],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Newton's second law for a falling object and Kirchhoff's voltage law for a simple circuit both produce the same kind of <a href=\"/math/differential-equations/linear-first-order/\">linear first-order equation</a>, $y' + ay = b$. Learning to read that equation once pays off in both places."
+      },
+      {
+        "t": "key",
+        "html": "$y' + ay = b$ with $a > 0$ has the equilibrium $y = \\frac{b}{a}$, and every solution approaches it like $e^{-at}$: $$y = \\frac{b}{a} + \\left(y_0 - \\frac{b}{a}\\right)e^{-at}.$$ The <b>time constant</b> $\\frac{1}{a}$ is the time to close about 63% of the remaining gap."
+      },
+      {
+        "t": "table",
+        "head": [
+          "System",
+          "Equation",
+          "Long-run value",
+          "Time constant"
+        ],
+        "rows": [
+          [
+            "Falling with drag $kv$",
+            "$mv' = mg - kv$",
+            "$v_T = \\frac{mg}{k}$",
+            "$\\frac{m}{k}$"
+          ],
+          [
+            "RC circuit",
+            "$Rq' + \\frac{q}{C} = E$",
+            "$q = CE$",
+            "$RC$"
+          ],
+          [
+            "RL circuit",
+            "$Li' + Ri = E$",
+            "$i = \\frac{E}{R}$",
+            "$\\frac{L}{R}$"
+          ]
+        ],
+        "cap": "Three models with one shape."
+      },
+      {
+        "t": "why",
+        "html": "For the falling object, take down as positive. Gravity pulls down with force $mg$; air resistance $kv$ pushes against the motion. So $mv' = mg - kv$. As $v$ grows, the drag grows until it balances gravity at $v_T = \\frac{mg}{k}$, the terminal velocity. In a circuit, the battery voltage $E$ equals the sum of the voltage drops: $Ri$ across a resistor, $\\frac{q}{C}$ across a capacitor, $Li'$ across an inductor, with $i = q'$."
+      },
+      {
+        "t": "ex",
+        "title": "Terminal velocity",
+        "q": "A 2 kg object falls from rest with drag $4v$ newtons ($g = 9.8$ m/s²). Find $v(t)$ and the time to reach half the terminal velocity.",
+        "steps": [
+          "$2v' = 19.6 - 4v$, so $v' + 2v = 9.8$.",
+          "Equilibrium $v_T = 4.9$ m/s; from rest, $v = 4.9(1 - e^{-2t})$.",
+          "Half of $v_T$: $e^{-2t} = \\frac{1}{2}$, so $t = \\frac{\\ln 2}{2}$."
+        ],
+        "a": "$v = 4.9(1 - e^{-2t})$ m/s; half speed after $\\frac{\\ln 2}{2} \\approx 0.35$ s"
+      },
+      {
+        "t": "ex",
+        "title": "Charging a capacitor",
+        "q": "An RC circuit has $R = 100$ Ω, $C = 0.001$ F and a 9 V battery; the capacitor starts uncharged. Find $q(t)$ and the current.",
+        "steps": [
+          "$100q' + 1000q = 9$, so $q' + 10q = 0.09$.",
+          "Equilibrium $q = CE = 0.009$ C; time constant $RC = 0.1$ s.",
+          "$q = 0.009(1 - e^{-10t})$, and $i = q' = 0.09e^{-10t}$ A."
+        ],
+        "a": "$q = 0.009(1 - e^{-10t})$ C; the current starts at $\\frac{E}{R} = 0.09$ A and dies away"
+      },
+      {
+        "t": "ex",
+        "title": "Switching on an inductor",
+        "q": "An RL circuit has $L = 0.5$ H, $R = 10$ Ω and $E = 12$ V, with $i(0) = 0$. Find $i(t)$.",
+        "steps": [
+          "$0.5i' + 10i = 12$, so $i' + 20i = 24$.",
+          "Steady current $\\frac{E}{R} = 1.2$ A, time constant $\\frac{L}{R} = 0.05$ s."
+        ],
+        "a": "$i = 1.2(1 - e^{-20t})$ A"
+      },
+      {
+        "t": "mistake",
+        "html": "Sign errors in the force balance. Drag always opposes motion; with down positive it is $-kv$. If your terminal velocity comes out negative, or if the speed grows without limit, a sign is wrong. A second slip is forgetting to divide by $m$ (or $R$, or $L$) before reading off the rate $a$."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "f": "9.8*m/k*(1 - e^(-k*x/m))",
+          "fns": [
+            {
+              "f": "9.8*m/k",
+              "dash": true,
+              "color": "gold",
+              "label": "v_T"
+            }
+          ],
+          "params": {
+            "m": [
+              0.5,
+              5,
+              2,
+              0.5
+            ],
+            "k": [
+              0.5,
+              8,
+              4,
+              0.5
+            ]
+          },
+          "xmin": 0,
+          "xmax": 5,
+          "ymin": 0,
+          "ymax": 30,
+          "xlabel": "t",
+          "ylabel": "v"
+        },
+        "cap": "Velocity of a falling object from rest, $v = \\frac{mg}{k}(1 - e^{-kt/m})$, with its terminal velocity dashed. A heavier object or a smaller drag constant raises $v_T$ and also lengthens the time constant $\\frac{m}{k}$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Paul's Online Math Notes, Differential Equations: Modeling with First Order Differential Equations"
+      },
+      {
+        "name": "OpenStax Calculus Volume 2, 4.5 First-order Linear Equations"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.03SC Differential Equations (Fall 2011), Unit I: First Order Differential Equations"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

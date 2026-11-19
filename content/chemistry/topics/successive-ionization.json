@@ -1,0 +1,118 @@
+{
+  "id": "gchem1.successive-ionization",
+  "slug": "successive-ionization",
+  "ladder": "chemistry",
+  "course": "gchem1",
+  "unit": "trends",
+  "title": "Successive Ionization Energies",
+  "short": "Each electron removed costs more, and a huge jump appears once the valence electrons are gone.",
+  "trouble": "Students expect the second ionization energy to be smaller than the first, or miss what the big jump says about the group.",
+  "prereqs": [
+    "gchem1.effective-nuclear-charge"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-periodic"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "An atom can lose more than one electron, one at a time. Each removal has its own ionization energy: $IE_1$ for the first electron, $IE_2$ for the second, and so on. With <a href=\"/chemistry/general-chemistry-1/effective-nuclear-charge/\">Shielding and Effective Nuclear Charge</a> you can predict their pattern, and the pattern tells you an element's group."
+      },
+      {
+        "t": "key",
+        "html": "Successive ionization energies always increase: $IE_1 < IE_2 < IE_3 < \\cdots$. They rise gently while valence electrons are removed, then <b>jump enormously</b> when the next electron has to come from the core. The number of electrons removed before the jump is the number of valence electrons."
+      },
+      {
+        "t": "why",
+        "html": "After each removal, the same number of protons pulls on fewer electrons, so the remaining electrons are held more tightly and the ion shrinks: each step costs more. The big jump comes from Coulomb's law in two ways at once. A core electron sits in a lower shell, much closer to the nucleus, and it has no inner electrons left to shield it. For magnesium, the third electron would come from the $2p$ subshell, where $Z_\\text{eff}$ is about 10 instead of about 2."
+      },
+      {
+        "t": "viz",
+        "name": "ch-periodic",
+        "opts": {
+          "mode": "successive",
+          "el": "Mg",
+          "scale": "log",
+          "modes": [
+            "successive"
+          ]
+        },
+        "cap": "Magnesium's ionization energies on a log scale. The first two are small; the third is over five times the second, because it would break into the neon core."
+      },
+      {
+        "t": "table",
+        "head": [
+          "",
+          "$IE_1$",
+          "$IE_2$",
+          "$IE_3$",
+          "$IE_4$"
+        ],
+        "rows": [
+          [
+            "Na",
+            "496",
+            "4562",
+            "6910",
+            "9543"
+          ],
+          [
+            "Mg",
+            "738",
+            "1451",
+            "7733",
+            "10543"
+          ],
+          [
+            "Al",
+            "578",
+            "1817",
+            "2745",
+            "11577"
+          ]
+        ],
+        "cap": "Successive ionization energies in kJ/mol (NIST Atomic Spectra Database). The big jump comes after 1, 2 and 3 electrons."
+      },
+      {
+        "t": "ex",
+        "title": "Find the group",
+        "q": "An element in period 3 has $IE_1 = 578$, $IE_2 = 1817$, $IE_3 = 2745$ and $IE_4 = 11{,}577\\ \\text{kJ/mol}$. Which element is it?",
+        "steps": [
+          "Look at the gaps between neighbors: $1817 - 578 = 1239$, $2745 - 1817 = 928$, then $11{,}577 - 2745 = 8832\\ \\text{kJ/mol}$. The huge gap is between the 3rd and 4th electrons.",
+          "So 3 valence electrons: group 13.",
+          "In period 3, group 13 is aluminum."
+        ],
+        "a": "Aluminum."
+      },
+      {
+        "t": "ex",
+        "title": "Predict the ion",
+        "q": "Calcium's first three ionization energies are 590, 1145 and 4912 kJ/mol. What ion does calcium usually form, and why not $\\mathrm{Ca^{3+}}$?",
+        "steps": [
+          "The jump comes after two electrons, so calcium has two valence electrons and forms $\\mathrm{Ca^{2+}}$.",
+          "Taking a third electron would mean digging into the argon core, at more than four times the cost of the second. The energy given back when ions form (lattice or hydration energy) cannot pay for that."
+        ],
+        "a": "$\\mathrm{Ca^{2+}}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Expecting $IE_2$ to be smaller than $IE_1$, perhaps because \"after losing one electron the atom is closer to an octet.\" Every later electron is pulled by the same protons with fewer electrons left to repel it, so it always costs more. The other slip is ignoring what the big jump says: it marks the end of the valence electrons, and so the group. Check: look for the step where the ratio of neighbors is far larger than the others."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 6.5 Periodic Variations in Element Properties"
+      },
+      {
+        "name": "NIST, Atomic Spectra Database, ionization energies"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

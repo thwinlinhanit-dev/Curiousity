@@ -1,0 +1,117 @@
+{
+  "id": "alg2.binomial-theorem",
+  "slug": "binomial-theorem",
+  "ladder": "math",
+  "course": "alg2",
+  "unit": "polynomials",
+  "title": "The Binomial Theorem",
+  "short": "Expand (a + b)ⁿ with coefficients from Pascal's triangle.",
+  "trouble": "Students raise only the variables to powers and forget to apply them to the coefficients.",
+  "prereqs": [
+    "alg2.polynomial-identities"
+  ],
+  "xp": 3,
+  "viz": [],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Expanding $(a + b)^5$ by multiplying five factors is slow. The <a href=\"/math/algebra-2/polynomial-identities/\">identity</a> $(a + b)^2 = a^2 + 2ab + b^2$ has a pattern that continues for every power, and the coefficients come from Pascal's triangle."
+      },
+      {
+        "t": "key",
+        "html": "$$(a + b)^n = \\sum_{k=0}^{n} \\binom{n}{k} a^{n-k} b^k, \\qquad \\binom{n}{k} = \\frac{n!}{k!\\,(n - k)!}.$$ The powers of $a$ go down while the powers of $b$ go up, and the coefficients are row $n$ of Pascal's triangle."
+      },
+      {
+        "t": "why",
+        "html": "Multiplying out $(a + b)(a + b)\\cdots(a + b)$, each term is made by choosing $a$ or $b$ from each of the $n$ factors. A term $a^{n-k}b^k$ comes from choosing $b$ in exactly $k$ of the factors, and there are $\\binom{n}{k}$ ways to choose which ones. Pascal's rule (each entry is the sum of the two above it) matches this: a choice of $k$ factors from $n$ either includes the last factor or doesn't."
+      },
+      {
+        "t": "table",
+        "head": [
+          "row",
+          "coefficients"
+        ],
+        "rows": [
+          [
+            "0",
+            "1"
+          ],
+          [
+            "1",
+            "1, 1"
+          ],
+          [
+            "2",
+            "1, 2, 1"
+          ],
+          [
+            "3",
+            "1, 3, 3, 1"
+          ],
+          [
+            "4",
+            "1, 4, 6, 4, 1"
+          ],
+          [
+            "5",
+            "1, 5, 10, 10, 5, 1"
+          ]
+        ],
+        "cap": "Pascal's triangle, rows 0 to 5"
+      },
+      {
+        "t": "viz",
+        "name": "areamodel",
+        "opts": {
+          "a": "x+2",
+          "b": "x+2",
+          "x": 4
+        },
+        "cap": "$(x + 2)^2$ split into parts: the coefficients $1, 2, 1$ of row 2 appear as one square, two rectangles and one small square."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A full expansion",
+        "q": "Expand $(x + 2)^4$.",
+        "steps": [
+          "Row 4: $1, 4, 6, 4, 1$.",
+          "$x^4 + 4x^3(2) + 6x^2(2^2) + 4x(2^3) + 2^4$."
+        ],
+        "a": "$x^4 + 8x^3 + 24x^2 + 32x + 16$"
+      },
+      {
+        "t": "ex",
+        "title": "One coefficient",
+        "q": "Find the coefficient of $x^3$ in $(2x - 1)^5$.",
+        "steps": [
+          "The $x^3$ term uses $(2x)^3$ and $(-1)^2$, with $\\binom{5}{3} = 10$.",
+          "$10 \\cdot (2x)^3 \\cdot (-1)^2 = 10 \\cdot 8x^3 \\cdot 1$ $= 80x^3$."
+        ],
+        "a": "$80$"
+      },
+      {
+        "t": "mistake",
+        "html": "Raising only the variable to the power. In $(2x - 1)^5$ the term is $\\binom{5}{3}(2x)^3(-1)^2$, and $(2x)^3 = 8x^3$, not $2x^3$. Keep each term of the binomial in parentheses, signs included, and the negative signs take care of themselves."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Algebra 2e, Section 9.6 Binomial Theorem"
+      },
+      {
+        "name": "Common Core State Standards, A-APR.C.5"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

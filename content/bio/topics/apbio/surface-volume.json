@@ -1,0 +1,113 @@
+{
+  "id": "apbio.surface-volume",
+  "slug": "surface-volume",
+  "ladder": "bio",
+  "course": "apbio",
+  "unit": "cells",
+  "title": "Surface Area to Volume",
+  "short": "For a cube of side s, surface area is 6s² and volume s³, so SA:V = 6/s. Cells stay small, flatten, or fold their membranes to keep SA:V high enough for exchange.",
+  "trouble": "Students compare surface areas alone, or think a larger cell has a larger SA:V. The ratio falls as size grows, which limits how big a cell can be.",
+  "prereqs": [
+    "hsbio.prokaryotes-eukaryotes",
+    "lifesci.cell-size"
+  ],
+  "xp": 2,
+  "viz": [
+    "bi-cell",
+    "bi-chart"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/biology/life-science/cell-size/\">why cells are small</a> you saw that a cell trades materials through its surface but needs them through its whole volume. Now we put numbers on it. <a href=\"/biology/high-school-biology/prokaryotes-eukaryotes/\">Prokaryotic and eukaryotic cells</a> both face this limit; they just meet it in different ways."
+      },
+      {
+        "t": "key",
+        "html": "For a cube of side $s$: surface area $SA = 6s^2$, volume $V = s^3$, so $$\\frac{SA}{V} = \\frac{6s^2}{s^3} = \\frac{6}{s}.$$ As a cell grows, its SA : V ratio falls. Cells stay small, flatten, stretch out, or fold their membranes to keep enough surface for their volume."
+      },
+      {
+        "t": "why",
+        "html": "Area grows with the square of size and volume with the cube. Double the side: the surface grows $2^2 = 4$ times, but the volume, which needs food and oxygen and makes waste, grows $2^3 = 8$ times. Each square micrometer of membrane must now serve twice as much cytoplasm. Diffusion also slows over distance, so the middle of a big cell would starve. That is why large organisms are made of many small cells rather than a few giant ones."
+      },
+      {
+        "t": "viz",
+        "name": "apbio-cube",
+        "opts": {
+          "s": 3,
+          "max": 10,
+          "unit": "µm"
+        },
+        "cap": "Slide the side length and watch the ratio fall as the cube grows."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Two cubes",
+        "q": "Compare SA : V for cube-shaped cells with sides 2 µm and 4 µm.",
+        "steps": [
+          "2 µm: $SA = 6(2)^2 = 24$ µm², $V = 2^3 = 8$ µm³, ratio $24/8 = 3$ per µm.",
+          "4 µm: $SA = 6(4)^2 = 96$ µm², $V = 4^3 = 64$ µm³, ratio $96/64 = 1.5$ per µm.",
+          "Check with $6/s$: $6/2 = 3$ and $6/4 = 1.5$."
+        ],
+        "a": "The smaller cell has twice the SA : V (3 versus 1.5 per µm), even though its surface is only a quarter as large."
+      },
+      {
+        "t": "ex",
+        "title": "Same volume, different shape",
+        "q": "A cube 2 µm on a side and a flat box 1 µm × 1 µm × 8 µm both have a volume of 8 µm³. Which has more surface?",
+        "steps": [
+          "Cube: $SA = 6 \\times 4 = 24$ µm².",
+          "Box: $SA = 2(1 \\times 1) + 4(1 \\times 8) = 2 + 32 = 34$ µm².",
+          "Ratios: $24/8 = 3$ and $34/8 = 4.25$ per µm."
+        ],
+        "a": "The long, thin box: same volume, 42% more surface. Flattening or stretching raises SA : V."
+      },
+      {
+        "t": "viz",
+        "name": "apbio-cube",
+        "opts": {
+          "compare": [
+            1,
+            2,
+            4
+          ],
+          "unit": "µm"
+        },
+        "cap": "Doubling the side: surface ×4, volume ×8, ratio ÷2."
+      },
+      {
+        "t": "p",
+        "html": "Life uses every trick. Red blood cells are flat disks. Nerve cells are long and thin. Cells lining the small intestine carry microvilli, and plant roots grow root hairs. Inside cells, the folded inner membrane of a mitochondrion packs more surface for the enzymes of respiration."
+      },
+      {
+        "t": "mistake",
+        "html": "Comparing surface areas alone. The bigger cell always has more surface; the question is how much surface each bit of volume gets. Always divide. A quick check: for cubes the ratio is $6/s$, so a larger $s$ must give a smaller ratio."
+      },
+      {
+        "t": "note",
+        "html": "The AP formula sheet also gives a sphere ($SA = 4\\pi r^2$, $V = \\tfrac{4}{3}\\pi r^3$, ratio $3/r$), a rectangular solid and a cylinder. The pattern is the same: bigger means a smaller ratio."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Biology 2e, 4.1 Studying Cells (cell size)"
+      },
+      {
+        "name": "OpenStax, Biology 2e, 4.2 Prokaryotic Cells (cell size and surface area to volume)"
+      },
+      {
+        "name": "College Board, AP Biology Course and Exam Description (science practices and the AP Biology Equations and Formulas sheet)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

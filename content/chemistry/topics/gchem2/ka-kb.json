@@ -1,0 +1,121 @@
+{
+  "id": "gchem2.ka-kb",
+  "slug": "ka-kb",
+  "ladder": "chemistry",
+  "course": "gchem2",
+  "unit": "acids-bases",
+  "title": "Acid and Base Constants",
+  "short": "Ka and Kb measure strength, pKa = −log Ka, and Ka × Kb = Kw for a conjugate pair.",
+  "trouble": "Students think a larger pKa means a stronger acid.",
+  "prereqs": [
+    "gchem2.strong-acid-ph",
+    "gchem2.equilibrium-expressions",
+    "chem.bronsted-lowry"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-phscale"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A weak acid ionizes only partly, so it reaches an equilibrium with water. Its <a href=\"/chemistry/general-chemistry-2/equilibrium-expressions/\">equilibrium constant</a> measures its strength. This builds on <a href=\"/chemistry/chemistry/bronsted-lowry/\">Brønsted–Lowry</a> pairs and on <a href=\"/chemistry/general-chemistry-2/strong-acid-ph/\">pH</a>."
+      },
+      {
+        "t": "key",
+        "html": "For $\\mathrm{HA + H_2O \\rightleftharpoons H_3O^+ + A^-}$, $K_a = \\dfrac{[\\mathrm{H_3O^+}][\\mathrm{A^-}]}{[\\mathrm{HA}]}$, and $\\text{p}K_a = -\\log K_a$. A larger $K_a$ (smaller $\\text{p}K_a$) means a stronger acid. For a base, $K_b = \\dfrac{[\\mathrm{HB^+}][\\mathrm{OH^-}]}{[\\mathrm{B}]}$. For any conjugate pair, $K_a \\times K_b = K_w$, so $\\text{p}K_a + \\text{p}K_b = 14.00$ at $25\\ ^\\circ\\text{C}$."
+      },
+      {
+        "t": "why",
+        "html": "Add the acid's ionization to its conjugate base's reaction with water:<br>$\\mathrm{HA + H_2O \\rightleftharpoons H_3O^+ + A^-}$ ($K_a$)<br>$\\mathrm{A^- + H_2O \\rightleftharpoons HA + OH^-}$ ($K_b$)<br>The sum is $\\mathrm{2H_2O \\rightleftharpoons H_3O^+ + OH^-}$, whose constant is $K_w$. <a href=\"/chemistry/general-chemistry-2/manipulating-k/\">Adding reactions multiplies their constants</a>, so $K_aK_b = K_w$. The stronger the acid, the weaker its conjugate base, and the product is always fixed."
+      },
+      {
+        "t": "viz",
+        "name": "ch-phscale",
+        "opts": {
+          "mode": "pka",
+          "acids": [
+            {
+              "name": "hydrofluoric acid",
+              "Ka": 0.00068
+            },
+            {
+              "name": "acetic acid",
+              "Ka": 0.000018
+            },
+            {
+              "name": "hypochlorous acid",
+              "Ka": 2.9e-8
+            },
+            {
+              "name": "hydrocyanic acid",
+              "Ka": 4.9e-10
+            }
+          ]
+        },
+        "cap": "Four weak acids placed by pKa. Lower on the scale means a larger Ka and a stronger acid."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "From Ka to pKa",
+        "q": "Acetic acid has $K_a = 1.8 \\times 10^{-5}$. Find its $\\text{p}K_a$.",
+        "steps": [
+          "$\\text{p}K_a = -\\log(1.8 \\times 10^{-5}) = 4.74$.",
+          "Check the size: $10^{-5}$ alone would give 5; the factor 1.8 makes $K_a$ bigger, so $\\text{p}K_a$ is a bit less than 5."
+        ],
+        "a": "$\\text{p}K_a = 4.74$."
+      },
+      {
+        "t": "ex",
+        "title": "Kb of a conjugate base",
+        "q": "Find $K_b$ for acetate ion, $\\mathrm{CH_3COO^-}$, at $25\\ ^\\circ\\text{C}$.",
+        "steps": [
+          "$K_b = \\dfrac{K_w}{K_a} = \\dfrac{1.0 \\times 10^{-14}}{1.8 \\times 10^{-5}}$.",
+          "$K_b = 5.6 \\times 10^{-10}$: acetate is a very weak base."
+        ],
+        "a": "$5.6 \\times 10^{-10}$."
+      },
+      {
+        "t": "ex",
+        "title": "Ranking by pKa",
+        "q": "HF has $\\text{p}K_a = 3.17$ and HCN has $\\text{p}K_a = 9.31$. Which is the stronger acid, and by what factor in $K_a$?",
+        "steps": [
+          "Smaller $\\text{p}K_a$ means larger $K_a$: HF is stronger.",
+          "The difference is $9.31 - 3.17 = 6.14$ units, so HF's $K_a$ is $10^{6.14} \\approx 1.4 \\times 10^{6}$ times larger."
+        ],
+        "a": "HF, by a factor of about a million."
+      },
+      {
+        "t": "p",
+        "html": "Strong acids have $K_a$ values far above 1, so large that they are hard to measure; in water they all look equally strong, because each one gives its proton to water completely. Weak acids have $K_a$ below 1, and their $\\text{p}K_a$ values usually lie between about 2 and 12, a span of ten powers of ten in strength."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking a larger $\\text{p}K_a$ means a stronger acid. The \"p\" means minus the log, so large $\\text{p}K_a$ means small $K_a$: a weak acid. Check: strong-ish weak acids such as HF have $\\text{p}K_a$ near 3; very weak ones such as HCN are near 9."
+      },
+      {
+        "t": "note",
+        "html": "Values of $K_a$ and $K_b$ in these lessons are at $25\\ ^\\circ\\text{C}$ from the tables in the back of OpenStax Chemistry 2e."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 14.3 Relative Strengths of Acids and Bases"
+      },
+      {
+        "name": "OpenStax Chemistry 2e, Appendix H: Ionization Constants of Weak Acids"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

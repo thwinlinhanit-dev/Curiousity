@@ -1,0 +1,111 @@
+{
+  "id": "trad.venn-particular",
+  "slug": "venn-particular",
+  "ladder": "logic",
+  "course": "trad",
+  "unit": "syllogisms",
+  "title": "Venn Tests with Particular Premises",
+  "short": "Diagram universal premises first; place an X in a region only if the other region it could go in is shaded, otherwise put it on the line.",
+  "trouble": "Learners drop the X into one region when the premise allows two, which can make an invalid syllogism look valid.",
+  "prereqs": [
+    "trad.venn-syllogism"
+  ],
+  "xp": 3,
+  "viz": [
+    "lg-venn3"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "With an I or O premise, the <a href=\"/logic/traditional-logic/venn-syllogism/\">Venn test</a> needs an X, and the X needs care: a premise like \"Some S are M\" says something is in the S–M overlap, but that overlap is cut in two by the P circle."
+      },
+      {
+        "t": "key",
+        "html": "Diagram universal premises first. Then place the X for a particular premise: in a region if only one of its two regions is still open, or <b>on the line</b> between them if both are open. An X on a line does not show that something is on either side."
+      },
+      {
+        "t": "why",
+        "html": "Shading first can settle where the X must go: if one half of the overlap is already empty, the something must be in the other half. Doing the X first would force a guess. And when both halves are open, the premise leaves it unknown which half holds the thing, so the X sits on the line. Putting it on one side would add information the premises never gave."
+      },
+      {
+        "t": "viz",
+        "name": "lg-venn3",
+        "opts": {
+          "terms": [
+            "students",
+            "readers",
+            "athletes"
+          ],
+          "premises": [
+            "All athletes are readers",
+            "Some students are athletes"
+          ],
+          "conclusion": "Some students are readers",
+          "steps": true,
+          "numbers": true
+        },
+        "cap": "Darii, AII-1: shade first, and the X has only one place to go (region 5)."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Shade first",
+        "q": "Test: \"All athletes are readers. Some students are athletes. So some students are readers.\" (S = students, P = readers, M = athletes)",
+        "steps": [
+          "Universal premise first: no athletes outside the readers. Shade regions 4 and 7.",
+          "Particular premise: something is a student and an athlete, regions 4 or 5. Region 4 is shaded, so the X goes in region 5.",
+          "The conclusion needs an X in the student–reader overlap (regions 2 or 5). There is one in region 5."
+        ],
+        "a": "valid"
+      },
+      {
+        "t": "ex",
+        "title": "An X on the line",
+        "q": "Test: \"All painters are bakers. Some golfers are bakers. So some golfers are painters.\" (S = golfers, P = painters, M = bakers)",
+        "steps": [
+          "Shade the part of the painters circle outside the bakers: regions 2 and 3.",
+          "Some golfers are bakers: regions 4 or 5, both open, so the X goes on the line between them.",
+          "The conclusion needs an X in region 2 or 5. The X might be in region 4 instead."
+        ],
+        "a": "invalid"
+      },
+      {
+        "t": "viz",
+        "name": "lg-venn3",
+        "opts": {
+          "terms": [
+            "golfers",
+            "painters",
+            "bakers"
+          ],
+          "premises": [
+            "All painters are bakers",
+            "Some golfers are bakers"
+          ],
+          "conclusion": "Some golfers are painters",
+          "numbers": true
+        },
+        "cap": "The X sits on the line between regions 4 and 5, so the conclusion is not shown."
+      },
+      {
+        "t": "mistake",
+        "html": "Dropping the X into one region when the premise allows two. That adds information and can make an invalid syllogism look valid. Check: for each X, ask \"Did a premise force this side?\" If not, it belongs on the line."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Patrick J. Hurley, A Concise Introduction to Logic, 5.2 Venn Diagrams"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

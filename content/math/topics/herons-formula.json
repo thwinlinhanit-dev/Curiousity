@@ -1,0 +1,121 @@
+{
+  "id": "pre.herons-formula",
+  "slug": "herons-formula",
+  "ladder": "math",
+  "course": "pre",
+  "unit": "triangles-vectors",
+  "title": "Heron's Formula",
+  "short": "Find a triangle's area from its three sides.",
+  "trouble": "Students use the full perimeter where the formula needs half of it.",
+  "prereqs": [
+    "pre.triangle-applications"
+  ],
+  "xp": 2,
+  "viz": [
+    "geoboard"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You know the area of a triangle is $\\frac{1}{2}ab\\sin C$ (<a href=\"/math/geometry/area-with-sine/\">area with sine</a>). But what if you know only the three sides? The <a href=\"/math/precalculus/triangle-applications/\">law of cosines</a> could find an angle first, but a formula found nearly two thousand years ago does it in one step."
+      },
+      {
+        "t": "key",
+        "html": "For a triangle with sides $a$, $b$, $c$, let $s = \\dfrac{a + b + c}{2}$ (the semiperimeter). Then $$\\text{Area} = \\sqrt{s(s - a)(s - b)(s - c)}.$$"
+      },
+      {
+        "t": "why",
+        "html": "Start with $$\\text{Area}^2 = \\frac{1}{4}a^2b^2\\sin^2 C = \\frac{1}{4}a^2b^2(1 - \\cos^2 C),$$ and the law of cosines gives $\\cos C = \\frac{a^2 + b^2 - c^2}{2ab}$. After substituting, $$16\\,\\text{Area}^2 = 4a^2b^2 - (a^2 + b^2 - c^2)^2.$$ That is a difference of squares, and factoring twice more gives $$(a + b + c)(-a + b + c)(a - b + c)(a + b - c).$$ Each factor is $2s$, $2(s - a)$, $2(s - b)$, $2(s - c)$, and their product is $16\\,s(s - a)(s - b)(s - c)$."
+      },
+      {
+        "t": "viz",
+        "name": "geoboard",
+        "opts": {
+          "points": {
+            "A": [
+              1,
+              1
+            ],
+            "B": [
+              8,
+              1
+            ],
+            "C": [
+              3,
+              6
+            ]
+          },
+          "objects": [
+            [
+              "poly",
+              "A",
+              "B",
+              "C"
+            ]
+          ],
+          "show": {
+            "len": true,
+            "area": true,
+            "ang": false,
+            "per": true
+          },
+          "xmin": 0,
+          "xmax": 10,
+          "ymin": 0,
+          "ymax": 8
+        },
+        "cap": "Drag the corners. Compute $s$ and Heron's formula from the side lengths and compare with the area shown."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A whole-number area",
+        "q": "Find the area of a triangle with sides $13$, $14$ and $15$.",
+        "steps": [
+          "$s = \\dfrac{13 + 14 + 15}{2} = 21$.",
+          "$s - a = 8$, $s - b = 7$, $s - c = 6$.",
+          "Area $= \\sqrt{21 \\cdot 8 \\cdot 7 \\cdot 6} = \\sqrt{7056} = 84$."
+        ],
+        "a": "$84$ square units"
+      },
+      {
+        "t": "ex",
+        "title": "A radical area",
+        "q": "Find the exact area of a triangle with sides $4$, $5$ and $6$.",
+        "steps": [
+          "$s = 7.5 = \\frac{15}{2}$; the other factors are $\\frac{7}{2}$, $\\frac{5}{2}$, $\\frac{3}{2}$.",
+          "Area $$= \\sqrt{\\dfrac{15 \\cdot 7 \\cdot 5 \\cdot 3}{16}} = \\dfrac{\\sqrt{1575}}{4} = \\dfrac{15\\sqrt{7}}{4}.$$"
+        ],
+        "a": "$\\frac{15\\sqrt{7}}{4} \\approx 9.92$"
+      },
+      {
+        "t": "ex",
+        "title": "Finding a height",
+        "q": "A triangle has sides $5$, $5$ and $6$. How tall is it, measured to the side of length $6$?",
+        "steps": [
+          "$s = 8$, so the area is $\\sqrt{8 \\cdot 3 \\cdot 3 \\cdot 2} = \\sqrt{144} = 12$.",
+          "Area is also $\\frac{1}{2} \\cdot 6 \\cdot h$, so $3h = 12$."
+        ],
+        "a": "$h = 4$"
+      },
+      {
+        "t": "mistake",
+        "html": "Using the whole perimeter where the formula needs half of it. With $P = 12$ for the $3$-$4$-$5$ right triangle you would get $\\sqrt{12 \\cdot 9 \\cdot 8 \\cdot 7}$, about $78$, but its area is $\\frac{1}{2} \\cdot 3 \\cdot 4 = 6$. With $s = 6$: $\\sqrt{6 \\cdot 3 \\cdot 2 \\cdot 1} = 6$. ✓ Each factor $s - a$ must be positive; if one is zero or negative, the sides cannot form a triangle."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Precalculus 2e, Section 8.2 Non-right Triangles: Law of Cosines"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

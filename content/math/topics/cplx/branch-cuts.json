@@ -1,0 +1,126 @@
+{
+  "id": "cplx.branch-cuts",
+  "slug": "branch-cuts",
+  "ladder": "math",
+  "course": "cplx",
+  "unit": "elementary",
+  "title": "Branches and Branch Cuts",
+  "short": "A branch chooses one value continuously on a cut plane: Log jumps by 2πi across its cut, the negative real axis, and a different cut gives a different branch.",
+  "trouble": "Students treat Log z as analytic everywhere except 0, though it is not even continuous on the negative real axis; or they think the cut belongs to log itself, when it is a choice.",
+  "prereqs": [
+    "cplx.complex-logarithm",
+    "cplx.regions"
+  ],
+  "xp": 3,
+  "viz": [
+    "cplx-branch",
+    "cplx-domaincolor"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "To do calculus with the <a href=\"/math/complex-analysis/complex-logarithm/\">logarithm</a> we need a function, not a set of values, and we need it to be continuous. A <b>branch</b> picks one value of $\\log z$ at each point in a way that varies continuously. Every branch must leave out a curve from $0$ to $\\infty$ (a <b>branch cut</b>), because going once around $0$ changes any continuous choice of argument by $2\\pi$. The cut is a <a href=\"/math/complex-analysis/regions/\">region</a> boundary that we choose."
+      },
+      {
+        "t": "key",
+        "html": "$\\operatorname{Log} z$ is continuous, and analytic with $(\\operatorname{Log} z)' = \\frac{1}{z}$, on the plane with the ray $(-\\infty, 0]$ removed. Across that cut it jumps by $2\\pi i$: at $-a$ ($a > 0$) the values from above tend to $\\ln a + \\pi i$ and from below to $\\ln a - \\pi i$.\n      Choosing arguments in $(\\alpha, \\alpha + 2\\pi]$ instead gives another branch, with its cut along the ray at angle $\\alpha$. Likewise, $\\operatorname{Log}(g(z))$ is analytic except where $g(z)$ is a real number $\\le 0$."
+      },
+      {
+        "t": "why",
+        "html": "$\\operatorname{Arg} z$ is continuous everywhere except on the negative real axis, where it jumps from near $\\pi$ to near $-\\pi$; $\\ln|z|$ is continuous for $z \\ne 0$. So $\\operatorname{Log}$ is continuous off the cut. There it is the inverse of $e^w$ on the strip $-\\pi < \\operatorname{Im} w < \\pi$, and the inverse function rule gives $\\frac{d}{dz}\\operatorname{Log} z = \\frac{1}{e^w} = \\frac{1}{z}$. No continuous branch can live on a whole circle around $0$: following it once around would change the argument by $2\\pi$, so the value could not match up when you return."
+      },
+      {
+        "t": "viz",
+        "name": "cplx-domaincolor",
+        "opts": {
+          "f": "log(z)",
+          "window": {
+            "x": [
+              -2,
+              2
+            ],
+            "y": [
+              -2,
+              2
+            ]
+          },
+          "cut": true,
+          "probe": [
+            -1,
+            0.25
+          ]
+        },
+        "cap": "Domain coloring of $\\operatorname{Log} z$: the colors change smoothly everywhere except across the negative real axis (dashed), where they jump. Move the probe just above and just below the cut and compare the imaginary parts."
+      },
+      {
+        "t": "viz",
+        "name": "cplx-branch",
+        "opts": {
+          "z": [
+            0.5,
+            -1
+          ],
+          "mode": "log",
+          "cut": 4.71239
+        },
+        "cap": "A different branch: arguments in $\\left(-\\frac{\\pi}{2}, \\frac{3\\pi}{2}\\right]$, with the cut on the negative imaginary axis. Now the negative real axis is no problem, and the jump happens below $0$ instead."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Approaching the cut",
+        "q": "Find the limits of $\\operatorname{Log} z$ as $z \\to -4$ from above and from below.",
+        "steps": [
+          "$\\ln|z| \\to \\ln 4$ either way.",
+          "From above, $\\operatorname{Arg} z \\to \\pi$; from below, $\\operatorname{Arg} z \\to -\\pi$.",
+          "The limits are $\\ln 4 + \\pi i$ and $\\ln 4 - \\pi i$: a jump of $2\\pi i$."
+        ],
+        "a": "$\\ln 4 \\pm \\pi i$"
+      },
+      {
+        "t": "ex",
+        "title": "Another branch",
+        "q": "The branch $F$ of $\\log z$ with arguments in $(0, 2\\pi]$ has its cut on the positive real axis. Find $F(-1)$ and $F(-i)$.",
+        "steps": [
+          "$\\arg(-1)$ in $(0, 2\\pi]$ is $\\pi$: $F(-1) = \\pi i$ (the same as $\\operatorname{Log}$).",
+          "$\\operatorname{Arg}(-i) = -\\frac{\\pi}{2}$, which is not in $(0, 2\\pi]$; adding $2\\pi$ gives $\\frac{3\\pi}{2}$.",
+          "$F(-i) = \\ln 1 + \\frac{3\\pi}{2}i = \\frac{3\\pi}{2}i$, while $\\operatorname{Log}(-i) = -\\frac{\\pi}{2}i$."
+        ],
+        "a": "$\\pi i$ and $\\frac{3\\pi}{2}i$"
+      },
+      {
+        "t": "ex",
+        "title": "Where is a composition analytic?",
+        "q": "Where is $\\operatorname{Log}(2z + 6)$ analytic?",
+        "steps": [
+          "$\\operatorname{Log} w$ fails exactly when $w$ is real and $w \\le 0$.",
+          "$2z + 6$ is real and $\\le 0$ exactly when $z$ is real and $z \\le -3$.",
+          "So the function is analytic on the plane minus the ray $(-\\infty, -3]$, with derivative $\\frac{2}{2z + 6} = \\frac{1}{z + 3}$."
+        ],
+        "a": "everywhere except $(-\\infty, -3]$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Two opposite errors.</b> (1) Treating $\\operatorname{Log} z$ as analytic everywhere except $0$: it is not even continuous on the negative real axis, so, for example, it cannot serve as an antiderivative of $\\frac{1}{z}$ along a loop around $0$. (2) Thinking the cut belongs to the logarithm itself: the many-valued $\\log z$ has no cut; a cut is a choice we make to get a single-valued branch, and a different choice gives a different branch. Check by asking: on which set is the formula I wrote continuous?"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Beck, Marchesi, Pixton and Sabalka, A First Course in Complex Analysis, chapter 3 (Examples of Functions)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.04, Complex Variables with Applications (Spring 2018), course notes: analytic functions"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

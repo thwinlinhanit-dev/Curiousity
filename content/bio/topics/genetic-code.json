@@ -1,0 +1,103 @@
+{
+  "id": "hsbio.genetic-code",
+  "slug": "genetic-code",
+  "ladder": "bio",
+  "course": "hsbio",
+  "unit": "dna",
+  "title": "Reading the Genetic Code",
+  "short": "Use a codon table to translate mRNA: start at AUG (methionine), read three bases at a time, and stop at UAA, UAG or UGA. 64 codons code for 20 amino acids.",
+  "trouble": "Students read the table with DNA letters or start at the first base rather than at the start codon. Look up mRNA codons, first base, then second, then third.",
+  "prereqs": [
+    "hsbio.translation"
+  ],
+  "xp": 2,
+  "viz": [
+    "bi-central"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You know from <a href=\"/biology/high-school-biology/translation/\">Translation</a> that each codon names one amino acid. The full dictionary is the <b>genetic code</b>, usually printed as a codon table. Reading it is a skill worth practicing."
+      },
+      {
+        "t": "viz",
+        "name": "bi-central",
+        "opts": {
+          "mode": "table",
+          "highlight": [
+            "AUG",
+            "UAA",
+            "UAG",
+            "UGA"
+          ]
+        },
+        "cap": "The codon table. Start (AUG) and the three stop codons are marked."
+      },
+      {
+        "t": "key",
+        "html": "To read a codon, find its <b>first base</b> on the left, its <b>second base</b> across the top, and its <b>third base</b> on the right. Translation starts at <b>AUG</b> (methionine, Met) and ends at <b>UAA, UAG or UGA</b>. There are 64 codons for 20 amino acids."
+      },
+      {
+        "t": "why",
+        "html": "Because 64 codons share 20 amino acids, most amino acids have more than one codon: leucine has six, glycine four, methionine only one. Codons for the same amino acid usually differ only in the third base. That redundancy protects the protein: many changes in a third base change nothing."
+      },
+      {
+        "t": "ex",
+        "title": "One codon",
+        "q": "Which amino acid does the codon GCU code for?",
+        "steps": [
+          "First base G: the bottom row.",
+          "Second base C: the second column.",
+          "Third base U: the first line in that box."
+        ],
+        "a": "Alanine (Ala)."
+      },
+      {
+        "t": "ex",
+        "title": "A whole message",
+        "q": "Translate 5′-GGAUGUUUAAAUGA-3′.",
+        "steps": [
+          "Find the first AUG: it starts at the third base. Ignore GG before it.",
+          "Read in threes from AUG: AUG UUU AAA UGA.",
+          "AUG = Met, UUU = Phe, AAA = Lys, UGA = stop."
+        ],
+        "a": "Met-Phe-Lys"
+      },
+      {
+        "t": "ex",
+        "title": "From DNA letters",
+        "q": "A gene's coding strand has the codon TGG. What amino acid does it code for?",
+        "steps": [
+          "The table uses mRNA letters, so change T to U: UGG.",
+          "UGG is tryptophan."
+        ],
+        "a": "Tryptophan (Trp)."
+      },
+      {
+        "t": "p",
+        "html": "The code is nearly <b>universal</b>: bacteria, plants and people read the same codons as the same amino acids, with only a few small exceptions. That shared code is strong evidence that all life is related, and it is why a bacterium can make a human protein in <a href=\"/biology/high-school-biology/recombinant-dna/\">Recombinant DNA</a>."
+      },
+      {
+        "t": "mistake",
+        "html": "Two errors are common: looking up DNA letters (T is not in the table; change T to U first) and starting at the first base of the message instead of at AUG. Find AUG, then read in threes, and stop at the first stop codon."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Concepts of Biology, 9.4 Translation (the genetic code)"
+      },
+      {
+        "name": "OpenStax, Biology 2e, 15.1 The Genetic Code"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-LS1-1: From Molecules to Organisms: Structures and Processes"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

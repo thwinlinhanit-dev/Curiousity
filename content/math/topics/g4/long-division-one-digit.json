@@ -1,0 +1,85 @@
+{
+  "id": "g4.long-division-one-digit",
+  "slug": "long-division-one-digit",
+  "ladder": "math",
+  "course": "g4",
+  "unit": "division",
+  "title": "Long Division by a One-Digit Number",
+  "short": "Divide, multiply, subtract and bring down, place by place.",
+  "trouble": "Children skip a 0 in the quotient, so 618 ÷ 6 comes out as 13 instead of 103.",
+  "prereqs": [
+    "g4.partial-quotients"
+  ],
+  "xp": 3,
+  "viz": [
+    "base10",
+    "placevalue"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Long division is a tidy way to write <a href=\"/math/grade-4/partial-quotients/\">partial quotients</a>. Instead of chunks you choose, it divides one place at a time: hundreds, then tens, then ones."
+      },
+      {
+        "t": "key",
+        "html": "Repeat four moves for each place: <b>divide</b>, <b>multiply</b>, <b>subtract</b>, <b>bring down</b>. Write each quotient digit above the place you just divided. If a place is too small to share, write <b>0</b> there and bring down the next digit."
+      },
+      {
+        "t": "why",
+        "html": "In $618 \\div 6$, the 6 hundreds share into 6 groups as 1 hundred each. The 1 ten cannot be shared into 6 groups, so each group gets 0 tens. That 0 holds the tens place, just like the 0 in 103. The 1 ten joins the 8 ones to make 18 ones, and $18 \\div 6 = 3$."
+      },
+      {
+        "t": "viz",
+        "name": "g4-longdiv",
+        "opts": {
+          "n": 618,
+          "d": 6
+        },
+        "cap": "Press <b>Next step</b> to divide $618 \\div 6$ place by place. Watch for the step that writes a 0."
+      },
+      {
+        "t": "ex",
+        "title": "A zero in the quotient",
+        "q": "Find $618 \\div 6$.",
+        "steps": [
+          "Hundreds: $6 \\div 6 = 1$. Write 1. $1 \\times 6 = 6$, $6 - 6 = 0$. Bring down 1.",
+          "Tens: $1 \\div 6$ is 0. Write 0. $0 \\times 6 = 0$, $1 - 0 = 1$. Bring down 8 to make 18.",
+          "Ones: $18 \\div 6 = 3$. Write 3. $3 \\times 6 = 18$, $18 - 18 = 0$.",
+          "Check: $103 \\times 6 = 618$."
+        ],
+        "a": "$103$"
+      },
+      {
+        "t": "ex",
+        "title": "Starting with two digits",
+        "q": "Find $1{,}575 \\div 4$.",
+        "steps": [
+          "1 thousand is too small for 4 groups, so start with 15 hundreds: $15 \\div 4 = 3$. $3 \\times 4 = 12$, $15 - 12 = 3$. Bring down 7.",
+          "Tens: $37 \\div 4 = 9$. $9 \\times 4 = 36$, $37 - 36 = 1$. Bring down 5.",
+          "Ones: $15 \\div 4 = 3$. $3 \\times 4 = 12$, $15 - 12 = 3$. Nothing left to bring down.",
+          "Check: $393 \\times 4 + 3 = 1{,}575$."
+        ],
+        "a": "$393$ R $3$"
+      },
+      {
+        "t": "mistake",
+        "html": "Skipping the 0: writing $618 \\div 6 = 13$. Every place after the first one you divide needs a digit in the quotient. Multiply to check: $13 \\times 6 = 78$, nowhere near 618."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 4, 4.NBT.B.6 (find quotients and remainders with up to four-digit dividends and one-digit divisors)"
+      },
+      {
+        "name": "OpenStax Prealgebra 2e, section 1.5 Divide Whole Numbers"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

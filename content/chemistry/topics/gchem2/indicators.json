@@ -1,0 +1,148 @@
+{
+  "id": "gchem2.indicators",
+  "slug": "indicators",
+  "ladder": "chemistry",
+  "course": "gchem2",
+  "unit": "acids-bases",
+  "title": "Choosing an Indicator",
+  "short": "Choose an indicator whose color change falls on the steep part of the titration curve.",
+  "trouble": "Students pick an indicator that changes color at pH 7 for every titration.",
+  "prereqs": [
+    "gchem2.weak-titration-curves"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-titration",
+    "ch-phscale"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "An indicator signals the end of a titration by changing color. Picking one means matching its color change to the steep part of the <a href=\"/chemistry/general-chemistry-2/weak-titration-curves/\">titration curve</a>."
+      },
+      {
+        "t": "key",
+        "html": "An indicator is a weak acid, HIn, whose acid and base forms have different colors. It changes color over roughly $\\text{p}K_\\text{In} \\pm 1$. Choose one whose range falls on the vertical jump of the curve, which contains the equivalence point."
+      },
+      {
+        "t": "why",
+        "html": "$\\dfrac{[\\mathrm{In^-}]}{[\\mathrm{HIn}]} = 10^{\\text{pH} - \\text{p}K_\\text{In}}$. Your eye sees a mixed color only while neither form outnumbers the other by more than about 10 to 1, so the change spans about 2 pH units around $\\text{p}K_\\text{In}$. On the steep part of a titration curve a single drop moves the pH by several units, so an indicator anywhere on that jump changes color within a drop of the equivalence point."
+      },
+      {
+        "t": "viz",
+        "name": "ch-titration",
+        "opts": {
+          "acid": {
+            "type": "weak",
+            "Ka": 0.000018,
+            "C": 0.1,
+            "V": 25
+          },
+          "base": {
+            "C": 0.1
+          },
+          "vol": 24,
+          "ind": "phenolphthalein"
+        },
+        "cap": "Acetic acid titrated with NaOH, with phenolphthalein's range shown. It turns pink right on the jump near pH 8.7."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Indicator",
+          "Color change (pH)",
+          "Good for"
+        ],
+        "rows": [
+          [
+            "methyl orange",
+            "3.1–4.4",
+            "strong acid with weak base (sometimes)"
+          ],
+          [
+            "methyl red",
+            "4.4–6.2",
+            "weak base with strong acid (equivalence near 5)"
+          ],
+          [
+            "bromothymol blue",
+            "6.0–7.6",
+            "strong acid with strong base"
+          ],
+          [
+            "phenolphthalein",
+            "8.2–10.0",
+            "weak acid with strong base (equivalence near 9); also strong–strong"
+          ]
+        ],
+        "cap": "Common indicators and their ranges."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Weak acid, strong base",
+        "q": "Acetic acid is titrated with NaOH; the equivalence point is at pH 8.72. Choose among methyl red, bromothymol blue and phenolphthalein.",
+        "steps": [
+          "The jump runs from about pH 7 to 11.",
+          "Phenolphthalein (8.2–10.0) sits on the jump. Methyl red would change color long before equivalence, while the flask is still a buffer."
+        ],
+        "a": "Phenolphthalein."
+      },
+      {
+        "t": "ex",
+        "title": "Weak base, strong acid",
+        "q": "$0.100\\ \\text{M}$ $\\mathrm{NH_3}$ is titrated with $0.100\\ \\text{M}$ HCl. At equivalence the flask holds $0.0500\\ \\text{M}$ $\\mathrm{NH_4^+}$ ($K_a = 5.6 \\times 10^{-10}$). Pick an indicator.",
+        "steps": [
+          "$$[\\mathrm{H_3O^+}] = \\sqrt{(5.6 \\times 10^{-10})(0.0500)} = 5.3 \\times 10^{-6}$$ so the equivalence pH is 5.28.",
+          "Methyl red (4.4–6.2) brackets 5.28. Phenolphthalein would change color far too early, while the solution is still basic."
+        ],
+        "a": "Methyl red."
+      },
+      {
+        "t": "ex",
+        "title": "Reading an indicator constant",
+        "q": "An indicator has $K_a = 1.0 \\times 10^{-9}$. Around what pH does it change color?",
+        "steps": [
+          "It changes where $[\\mathrm{HIn}] = [\\mathrm{In^-}]$, at $\\text{pH} = \\text{p}K_a = 9.0$.",
+          "Its useful range is about 8 to 10, so it would suit a weak acid titrated with a strong base."
+        ],
+        "a": "Around pH 9."
+      },
+      {
+        "t": "mistake",
+        "html": "Choosing an indicator that changes at pH 7 for every titration. Only strong acid with strong base has its equivalence point at 7. Check: find the pH at equivalence first, then pick the indicator."
+      },
+      {
+        "t": "p",
+        "html": "Test liquids with four indicators in the <a href=\"/science-lab/chem-lab/\">Mixing Lab</a>."
+      },
+      {
+        "t": "viz",
+        "name": "ch-phscale",
+        "opts": {
+          "pH": 8.7,
+          "ind": "phenolphthalein",
+          "show": [
+            "indicators"
+          ]
+        },
+        "cap": "Phenolphthalein is colorless below about 8.2 and pink above 10."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 14.7 Acid-Base Titrations"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

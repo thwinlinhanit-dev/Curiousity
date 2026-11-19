@@ -1,0 +1,120 @@
+{
+  "id": "pre.limits-graphs-tables",
+  "slug": "limits-graphs-tables",
+  "ladder": "math",
+  "course": "pre",
+  "unit": "analysis",
+  "title": "Estimating Limits from Graphs and Tables",
+  "short": "Read limits from the left and the right.",
+  "trouble": "",
+  "prereqs": [
+    "pre.limits-intro"
+  ],
+  "xp": 2,
+  "viz": [
+    "limit"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You can often <i>estimate</i> a <a href=\"/math/precalculus/limits-intro/\">limit</a> before you can compute it, from a table of values or from a graph. The key is to approach from both sides separately."
+      },
+      {
+        "t": "key",
+        "html": "The left-hand limit $\\displaystyle\\lim_{x \\to a^-} f(x)$ uses $x < a$; the right-hand limit $\\displaystyle\\lim_{x \\to a^+} f(x)$ uses $x > a$. The two-sided limit exists exactly when both one-sided limits exist and are equal, and then it is that common value. In a table, read the values as $x$ closes in on $a$ from each side; on a graph, follow the curve toward $x = a$ from each side and note the height it heads for."
+      },
+      {
+        "t": "why",
+        "html": "$x$ can approach $a$ from two directions. If the values head to $2$ from the left but to $3$ from the right, there is no single number they all get close to, so the two-sided limit does not exist. The dot at $x = a$ itself, if there is one, plays no part."
+      },
+      {
+        "t": "viz",
+        "name": "limit",
+        "opts": {
+          "left": "x+1",
+          "right": "x+2",
+          "a": 1,
+          "fa": 3,
+          "h": 1,
+          "follow": true,
+          "table": true
+        },
+        "cap": "A jump at $x = 1$: from the left the values approach $2$, from the right they approach $3$. The two-sided limit does not exist."
+      },
+      {
+        "t": "table",
+        "head": [
+          "$x$",
+          "$-0.1$",
+          "$-0.01$",
+          "$-0.001$",
+          "$0.001$",
+          "$0.01$",
+          "$0.1$"
+        ],
+        "rows": [
+          [
+            "$\\frac{\\sin x}{x}$",
+            "$0.99833$",
+            "$0.99998$",
+            "$1.00000$",
+            "$1.00000$",
+            "$0.99998$",
+            "$0.99833$"
+          ]
+        ],
+        "cap": "Values of $\\frac{\\sin x}{x}$ (with $x$ in radians) near $0$, where the function itself is undefined."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "From a table",
+        "q": "Use the table above to estimate $\\displaystyle\\lim_{x \\to 0} \\frac{\\sin x}{x}$.",
+        "steps": [
+          "From the left ($-0.1$, $-0.01$, $-0.001$) the values climb toward $1$.",
+          "From the right the values match, also approaching $1$."
+        ],
+        "a": "$1$ (an important limit you will meet again in calculus)"
+      },
+      {
+        "t": "ex",
+        "title": "A jump",
+        "q": "$f(x) = x + 1$ for $x < 1$ and $f(x) = x + 2$ for $x \\ge 1$. Find both one-sided limits at $1$ and the two-sided limit.",
+        "steps": [
+          "Left: $x + 1 \\to 2$. Right: $x + 2 \\to 3$.",
+          "$2 \\ne 3$."
+        ],
+        "a": "$2$, $3$; the two-sided limit does not exist"
+      },
+      {
+        "t": "ex",
+        "title": "A hole with a stray dot",
+        "q": "A graph follows the line $y = 4 - x$ on both sides of $x = 1$, with an open circle at $(1, 3)$ and a filled dot at $(1, 0)$. Find $\\displaystyle\\lim_{x \\to 1} f(x)$ and $f(1)$.",
+        "steps": [
+          "From both sides the curve heads to the open circle at height $3$.",
+          "The filled dot says $f(1) = 0$, but that does not affect the limit."
+        ],
+        "a": "The limit is $3$; $f(1) = 0$"
+      },
+      {
+        "t": "mistake",
+        "html": "Reading the filled dot instead of where the curve is heading, or checking only one side. Cover the point $x = a$ with your finger and trace toward it from the left, then from the right. If the two traces end at different heights, the limit does not exist."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Precalculus 2e, Section 12.1 Finding Limits: Numerical and Graphical Approaches"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

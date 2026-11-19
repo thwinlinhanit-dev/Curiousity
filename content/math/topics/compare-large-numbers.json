@@ -1,0 +1,132 @@
+{
+  "id": "g4.compare-large-numbers",
+  "slug": "compare-large-numbers",
+  "ladder": "math",
+  "course": "g4",
+  "unit": "place-value",
+  "title": "Comparing Large Numbers",
+  "short": "Compare from the greatest place down.",
+  "trouble": "",
+  "prereqs": [
+    "g4.large-numbers"
+  ],
+  "xp": 1,
+  "viz": [
+    "placevalue"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "To compare two big numbers, use what you know about <a href=\"/math/grade-4/large-numbers/\">reading large numbers</a> and place value. The greatest place matters most."
+      },
+      {
+        "t": "key",
+        "html": "First count the digits: a whole number with more digits is greater. If they have the same number of digits, compare from the <b>left</b>, place by place. The first place where the digits differ decides which number is greater."
+      },
+      {
+        "t": "why",
+        "html": "One ten thousand is more than any amount you can make with only thousands, hundreds, tens and ones (the most is $9{,}999$). So a bigger digit in a higher place outweighs everything to its right. That is why you stop at the first difference."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Place",
+          "45,312",
+          "45,231",
+          "Same?"
+        ],
+        "rows": [
+          [
+            "ten thousands",
+            "4",
+            "4",
+            "yes"
+          ],
+          [
+            "thousands",
+            "5",
+            "5",
+            "yes"
+          ],
+          [
+            "hundreds",
+            "<b>3</b>",
+            "<b>2</b>",
+            "no: 3 > 2"
+          ]
+        ],
+        "cap": "Comparing $45{,}312$ and $45{,}231$ from the left. The hundreds decide."
+      },
+      {
+        "t": "viz",
+        "name": "numberline",
+        "opts": {
+          "min": 45000,
+          "max": 45500,
+          "step": 100,
+          "sub": 10,
+          "labels": "whole",
+          "points": [
+            {
+              "v": 45231,
+              "label": "A",
+              "color": "blue",
+              "drag": false
+            },
+            {
+              "v": 45312,
+              "label": "B",
+              "color": "red",
+              "drag": false
+            }
+          ],
+          "value": true
+        },
+        "cap": "On a number line, greater numbers sit farther right. B $= 45{,}312$ is to the right of A $= 45{,}231$."
+      },
+      {
+        "t": "ex",
+        "title": "Same number of digits",
+        "q": "Compare $45{,}312$ and $45{,}231$.",
+        "steps": [
+          "Both have 5 digits, so start at the left.",
+          "Ten thousands: 4 and 4. Thousands: 5 and 5. Still the same.",
+          "Hundreds: 3 and 2. Since $3 > 2$, the first number is greater. The tens and ones do not matter now."
+        ],
+        "a": "$45{,}312 > 45{,}231$"
+      },
+      {
+        "t": "ex",
+        "title": "Different number of digits",
+        "q": "Compare $9{,}876$ and $10{,}234$.",
+        "steps": [
+          "$9{,}876$ has 4 digits; $10{,}234$ has 5.",
+          "The 5-digit number has a ten thousand, which is more than all of $9{,}876$."
+        ],
+        "a": "$9{,}876 < 10{,}234$"
+      },
+      {
+        "t": "mistake",
+        "html": "Comparing the last digits, or deciding by the first digit alone when the numbers have different lengths ($9{,}876$ starts with 9 but is less than $10{,}234$). Count digits first, then compare from the left."
+      },
+      {
+        "t": "note",
+        "html": "The symbol opens toward the greater number: $45{,}312 > 45{,}231$ reads \"is greater than\"; $9{,}876 < 10{,}234$ reads \"is less than.\""
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 4, 4.NBT.A.2 (compare two multi-digit numbers using >, = and <)"
+      },
+      {
+        "name": "OpenStax Prealgebra 2e, section 1.1 Introduction to Whole Numbers"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

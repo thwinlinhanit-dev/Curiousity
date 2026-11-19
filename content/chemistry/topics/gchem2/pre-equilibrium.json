@@ -1,0 +1,99 @@
+{
+  "id": "gchem2.pre-equilibrium",
+  "slug": "pre-equilibrium",
+  "ladder": "chemistry",
+  "course": "gchem2",
+  "unit": "kinetics",
+  "title": "A Fast Equilibrium Before a Slow Step",
+  "short": "Set the forward and reverse rates of the fast step equal to replace an intermediate's concentration.",
+  "trouble": "Students leave the intermediate's concentration in the final rate law.",
+  "prereqs": [
+    "gchem2.rate-determining-step",
+    "chem.dynamic-equilibrium"
+  ],
+  "xp": 3,
+  "viz": [
+    "ch-energydiagram"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "When the <a href=\"/chemistry/general-chemistry-2/rate-determining-step/\">slow step</a> comes second, its rate law usually contains an intermediate. Intermediates are hard to measure and do not appear in a measured rate law, so we need a way to replace them. The trick uses <a href=\"/chemistry/chemistry/dynamic-equilibrium/\">dynamic equilibrium</a>."
+      },
+      {
+        "t": "key",
+        "html": "If a fast, reversible first step comes before the slow step, its forward and reverse rates are equal: $k_1[\\text{reactants}] = k_{-1}[\\text{intermediate}]$. Solve for the intermediate and substitute into the slow step's rate law. The final rate law contains only reactants (and sometimes products)."
+      },
+      {
+        "t": "why",
+        "html": "The first step goes back and forth many times while the slow step barely runs. So it has time to settle into equilibrium, and only a trickle of intermediate leaks away through the slow step. Setting the two rates equal is the same as writing the equilibrium constant of the first step, $K_1 = k_1/k_{-1}$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Nitrogen monoxide and oxygen",
+        "q": "Mechanism for $\\mathrm{2NO + O_2 \\to 2NO_2}$:<br>Step 1 (fast, reversible): $\\mathrm{2NO \\rightleftharpoons N_2O_2}$<br>Step 2 (slow): $\\mathrm{N_2O_2 + O_2 \\to 2NO_2}$<br>Derive the rate law.",
+        "steps": [
+          "Slow step: $\\text{rate} = k_2[\\mathrm{N_2O_2}][\\mathrm{O_2}]$. $\\mathrm{N_2O_2}$ is an intermediate, so it must go.",
+          "Fast equilibrium: $k_1[\\mathrm{NO}]^2 = k_{-1}[\\mathrm{N_2O_2}]$, so $[\\mathrm{N_2O_2}] = \\dfrac{k_1}{k_{-1}}[\\mathrm{NO}]^2$.",
+          "Substitute: $\\text{rate} = \\dfrac{k_2k_1}{k_{-1}}[\\mathrm{NO}]^2[\\mathrm{O_2}] = k[\\mathrm{NO}]^2[\\mathrm{O_2}]$."
+        ],
+        "a": "$\\text{rate} = k[\\mathrm{NO}]^2[\\mathrm{O_2}]$, with $k = k_2k_1/k_{-1}$."
+      },
+      {
+        "t": "ex",
+        "title": "Hydrogen and iodine",
+        "q": "A mechanism for $\\mathrm{H_2 + I_2 \\to 2HI}$:<br>Step 1 (fast, reversible): $\\mathrm{I_2 \\rightleftharpoons 2I}$<br>Step 2 (slow): $\\mathrm{H_2 + 2I \\to 2HI}$<br>Derive the rate law.",
+        "steps": [
+          "Slow step: $\\text{rate} = k_2[\\mathrm{H_2}][\\mathrm{I}]^2$.",
+          "Fast equilibrium: $k_1[\\mathrm{I_2}] = k_{-1}[\\mathrm{I}]^2$, so $[\\mathrm{I}]^2 = \\dfrac{k_1}{k_{-1}}[\\mathrm{I_2}]$.",
+          "$\\text{rate} = \\dfrac{k_2k_1}{k_{-1}}[\\mathrm{H_2}][\\mathrm{I_2}]$. Notice: this rate law looks just like one elementary collision of $\\mathrm{H_2}$ with $\\mathrm{I_2}$, yet the mechanism is different. A rate law alone cannot prove a mechanism."
+        ],
+        "a": "$\\text{rate} = k[\\mathrm{H_2}][\\mathrm{I_2}]$."
+      },
+      {
+        "t": "viz",
+        "name": "ch-energydiagram",
+        "opts": {
+          "mode": "steps",
+          "steps": [
+            {
+              "dE": 15,
+              "Ea": 30,
+              "label": "step 1 (fast)"
+            },
+            {
+              "dE": -120,
+              "Ea": 90,
+              "label": "step 2 (slow)"
+            }
+          ]
+        },
+        "cap": "A low first barrier lets step 1 run back and forth quickly and settle into equilibrium; the high second barrier is the slow step."
+      },
+      {
+        "t": "mistake",
+        "html": "Leaving the intermediate's concentration in the final rate law. A measured rate law contains only species you can add to the flask. Check: after substituting, scan the rate law for anything that is made in one step and used in another; if you find it, substitute again."
+      },
+      {
+        "t": "note",
+        "html": "An overall order of 3 (as in the NO example) is one hint of a pre-equilibrium: three-body collisions are rare, but a fast equilibrium followed by a two-body collision gives the same rate law."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 12.6 Reaction Mechanisms"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

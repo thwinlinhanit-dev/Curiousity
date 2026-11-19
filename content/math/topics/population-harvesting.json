@@ -1,0 +1,107 @@
+{
+  "id": "de.population-harvesting",
+  "slug": "population-harvesting",
+  "ladder": "math",
+  "course": "de",
+  "unit": "first-order-models",
+  "title": "Population Models with Harvesting",
+  "short": "Add harvesting to logistic growth and find the new equilibria.",
+  "trouble": "",
+  "prereqs": [
+    "de.autonomous-phase-line"
+  ],
+  "xp": 3,
+  "viz": [
+    "slopefield"
+  ],
+  "figureArchetype": "FieldFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A fishery, a forest or a deer herd grows roughly logistically, $P' = rP\\left(1 - \\frac{P}{K}\\right)$. Harvesting removes some of the population. The <a href=\"/math/differential-equations/autonomous-phase-line/\">phase line</a> shows at once whether a harvest is sustainable, and what happens when it is not."
+      },
+      {
+        "t": "key",
+        "html": "With a constant harvest $H$: $$P' = rP\\left(1 - \\frac{P}{K}\\right) - H.$$ If $0 < H < \\frac{rK}{4}$ there are two equilibria: the lower one is an <b>unstable</b> threshold and the upper one is <b>stable</b>. At $H = \\frac{rK}{4}$ (the maximum sustainable yield) they merge; for larger $H$ there is no equilibrium and the population collapses."
+      },
+      {
+        "t": "why",
+        "html": "The natural growth $g(P) = rP\\left(1 - \\frac{P}{K}\\right)$ is a downward parabola with roots 0 and $K$ and its peak at $P = \\frac{K}{2}$, where $g = \\frac{rK}{4}$. The population grows exactly where the parabola lies above the horizontal line at height $H$. The crossings are the equilibria. As $H$ rises, the line climbs, the crossings move together, touch at the peak, and then disappear. A sudden change like this, as a parameter passes a critical value, is called a <b>bifurcation</b>."
+      },
+      {
+        "t": "ex",
+        "title": "Two equilibria",
+        "q": "A fish population (in thousands) follows $P' = 0.5P\\left(1 - \\frac{P}{100}\\right) - 8$. Find and classify the equilibria.",
+        "steps": [
+          "Set $0.5P - 0.005P^{2} - 8 = 0$ and multiply by $-200$: $P^{2} - 100P + 1600 = 0$.",
+          "$(P - 20)(P - 80) = 0$, so $P = 20$ or $P = 80$.",
+          "$P'$ $= -0.005(P - 20)(P - 80)$: negative below 20, positive between, negative above 80."
+        ],
+        "a": "$P = 20$ is unstable (a collapse threshold); $P = 80$ is stable."
+      },
+      {
+        "t": "ex",
+        "title": "The largest sustainable harvest",
+        "q": "For the same fishery, what is the largest constant harvest with an equilibrium?",
+        "steps": [
+          "The peak of $g(P) = 0.5P\\left(1 - \\frac{P}{100}\\right)$ is at $P = 50$.",
+          "$g(50) = 0.5 \\cdot 50 \\cdot \\frac{1}{2} = 12.5$."
+        ],
+        "a": "$H = 12.5$ thousand fish per year, with the population held at 50."
+      },
+      {
+        "t": "ex",
+        "title": "Constant effort instead",
+        "q": "Suppose fishing removes a fixed fraction, $P' = 0.5P\\left(1 - \\frac{P}{100}\\right) - 0.2P$. Find the positive equilibrium and the yield there.",
+        "steps": [
+          "Factor out $P$: $P\\left[0.5\\left(1 - \\frac{P}{100}\\right) - 0.2\\right] = 0$.",
+          "$1 - \\frac{P}{100} = 0.4$, so $P = 60$.",
+          "Yield $= 0.2 \\cdot 60 = 12$ per year."
+        ],
+        "a": "$P = 60$ (stable), yield 12. Constant effort never removes the equilibrium entirely, which is one reason it is safer."
+      },
+      {
+        "t": "viz",
+        "name": "de-phaseline",
+        "opts": {
+          "f": "0.5*y*(1 - y/100) - H",
+          "params": {
+            "H": [
+              0,
+              16,
+              8,
+              0.5
+            ]
+          },
+          "ymin": -10,
+          "ymax": 110,
+          "tmax": 25,
+          "y0": 30,
+          "curves": 8,
+          "task": "Raise the harvest $H$ past 12.5 and watch the two equilibria merge and vanish."
+        },
+        "cap": "Left: $f(P) = 0.5P(1 - P/100) - H$ on its side, with the phase line. Right: population curves. Below the unstable threshold every curve falls; once $H > 12.5$ every curve falls."
+      },
+      {
+        "t": "mistake",
+        "html": "Treating the maximum sustainable yield as a safe target. At $H = \\frac{rK}{4}$ the single equilibrium is semi-stable: any dip below $\\frac{K}{2}$, from a bad year or a counting error, starts a slide to collapse. Another slip is calling the lower equilibrium stable because it is “the smaller population”; check the arrows on both sides."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Paul's Online Math Notes, Differential Equations: Equilibrium Solutions"
+      },
+      {
+        "name": "OpenStax Calculus Volume 2, 4.4 The Logistic Equation"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.03SC Differential Equations (Fall 2011), Unit I: First Order Differential Equations"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

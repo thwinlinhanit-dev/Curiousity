@@ -1,0 +1,94 @@
+{
+  "id": "pre.eliminate-parameter",
+  "slug": "eliminate-parameter",
+  "ladder": "math",
+  "course": "pre",
+  "unit": "parametric",
+  "title": "Eliminating the Parameter",
+  "short": "Solve for t or use an identity to get one equation in x and y.",
+  "trouble": "",
+  "prereqs": [
+    "pre.parametric-equations",
+    "pre.pythagorean-identity"
+  ],
+  "xp": 3,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/math/precalculus/parametric-equations/\">Parametric equations</a> are great for motion, but to recognize the shape of the path it helps to have one equation in $x$ and $y$. Removing $t$ is called <b>eliminating the parameter</b>."
+      },
+      {
+        "t": "key",
+        "html": "Either solve one equation for $t$ and substitute into the other, or find an identity that links the two, such as $\\cos^2 t + \\sin^2 t = 1$ or $\\sec^2 t - \\tan^2 t = 1$. Then check which $x$- and $y$-values the original equations can actually reach."
+      },
+      {
+        "t": "why",
+        "html": "Every point on the path satisfies both equations for the same $t$. If $t$ can be written in terms of $x$, putting that into the $y$-equation gives a relation that every point of the path satisfies. With trig functions, the <a href=\"/math/precalculus/pythagorean-identity/\">Pythagorean identity</a> plays the same role without solving for $t$."
+      },
+      {
+        "t": "viz",
+        "name": "pre-param",
+        "opts": {
+          "x": "3cos(t)",
+          "y": "2sin(t)",
+          "t0": 0,
+          "t1": "2pi",
+          "t": 1
+        },
+        "cap": "This path is the ellipse $\\frac{x^2}{9} + \\frac{y^2}{4} = 1$. The single equation shows the shape; the parametric form also shows the motion."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Solve for $t$",
+        "q": "Eliminate the parameter: $x = 2t - 1$, $y = 3t + 2$.",
+        "steps": [
+          "From $x$: $t = \\dfrac{x + 1}{2}$.",
+          "Substitute: $y = 3 \\cdot \\dfrac{x + 1}{2} + 2 = \\dfrac{3}{2}x + \\dfrac{3}{2} + 2$."
+        ],
+        "a": "$y = \\frac{3}{2}x + \\frac{7}{2}$, a line"
+      },
+      {
+        "t": "ex",
+        "title": "Use an identity",
+        "q": "Eliminate the parameter: $x = 3\\cos t$, $y = 2\\sin t$.",
+        "steps": [
+          "Isolate the trig functions: $\\cos t = \\frac{x}{3}$ and $\\sin t = \\frac{y}{2}$.",
+          "Use $\\cos^2 t + \\sin^2 t = 1$: $\\left(\\frac{x}{3}\\right)^2 + \\left(\\frac{y}{2}\\right)^2 = 1$."
+        ],
+        "a": "$\\frac{x^2}{9} + \\frac{y^2}{4} = 1$, an ellipse"
+      },
+      {
+        "t": "ex",
+        "title": "Watch the restrictions",
+        "q": "Eliminate the parameter: $x = \\sqrt{t}$, $y = t + 2$.",
+        "steps": [
+          "From $x$: $t = x^2$, so $y = x^2 + 2$.",
+          "But $x = \\sqrt{t}$ is never negative, so only the right half of that parabola is traced."
+        ],
+        "a": "$y = x^2 + 2$ with $x \\ge 0$"
+      },
+      {
+        "t": "mistake",
+        "html": "Forgetting the restrictions. For $x = t^2$, $y = t^4$ you get $y = x^2$, but $x = t^2$ can never be negative, so the path is only the right half of the parabola. Check the range of $x(t)$ and $y(t)$ before you sketch."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Precalculus 2e, Section 8.6 Parametric Equations"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

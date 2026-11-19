@@ -1,0 +1,95 @@
+{
+  "id": "astro.weighing-with-orbits",
+  "slug": "weighing-with-orbits",
+  "course": "astro",
+  "courseTitle": "Astronomy",
+  "unit": "orbits",
+  "unitTitle": "Gravity and Orbits",
+  "title": "Weighing Stars and Planets with Orbits",
+  "short": "Newton's form of Kepler's third law, M = a³/P² in solar masses, AU and years, gives the mass at the center.",
+  "trouble": "Students think the orbiting body's own mass decides its period, when for a small satellite it hardly matters.",
+  "prereqs": [
+    "astro.kepler-third-law",
+    "physsci.gravity-mass-distance"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-orbit"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Kepler's <a href=\"/physics/astronomy/kepler-third-law/\">third law</a> was a pattern; Newton explained it, and in doing so turned every orbit into a scale for weighing the body at the center. You know from <a href=\"/physics/physical-science/gravity-mass-distance/\">Gravity: Mass and Distance</a> that more mass means more pull. More pull means a faster orbit."
+      },
+      {
+        "t": "why",
+        "html": "Take a small body on a circular orbit of radius $a$ around a mass $M$. Gravity supplies the centripetal force: $\\frac{GMm}{a^2} = \\frac{mv^2}{a}$, so $v^2 = \\frac{GM}{a}$. The small mass $m$ cancels. One orbit takes $P = \\frac{2\\pi a}{v}$, so $v = \\frac{2\\pi a}{P}$. Substituting: $\\frac{4\\pi^2 a^2}{P^2} = \\frac{GM}{a}$, which gives $$M = \\frac{4\\pi^2 a^3}{G P^2}.$$ The same result holds for ellipses with $a$ the semi-major axis. In the Sun's units (AU, years, solar masses), Earth's orbit makes every constant equal to 1, leaving $M = \\frac{a^3}{P^2}$. (Strictly, $M$ is the sum of both masses; a planet adds almost nothing.)"
+      },
+      {
+        "t": "key",
+        "html": "Newton's form of Kepler's third law: $M = \\dfrac{a^3}{P^2}$ with $M$ in solar masses, $a$ in AU and $P$ in years; in SI units, $M = \\dfrac{4\\pi^2 a^3}{G P^2}$. The orbit measures the mass at the center."
+      },
+      {
+        "t": "viz",
+        "name": "ph-orbit",
+        "opts": {
+          "mode": "kepler",
+          "a": 1,
+          "e": 0.2,
+          "M": 2
+        },
+        "cap": "A planet at $1$ AU from a star of $2$ solar masses: its year is $\\sqrt{1/2} = 0.71$ years. The heavier star pulls harder, so the orbit is faster."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A star's mass",
+        "q": "A planet orbits a distant star at $a = 2$ AU with a period of $2$ years. What is the star's mass?",
+        "steps": [
+          "$M = \\frac{a^3}{P^2} = \\frac{2^3}{2^2} = \\frac{8}{4}$.",
+          "$M = 2$ solar masses."
+        ],
+        "a": "$2$ solar masses."
+      },
+      {
+        "t": "ex",
+        "title": "Weighing Jupiter",
+        "q": "Jupiter's moon Io orbits at $4.22 \\times 10^{8}$ m every $1.769$ days. Find Jupiter's mass.",
+        "steps": [
+          "Period in seconds: $1.769 \\times 86{,}400 = 1.528 \\times 10^{5}$ s.",
+          "$a^3 = (4.22 \\times 10^{8})^3 = 7.52 \\times 10^{25}\\,\\text{m}^3$.",
+          "$M = \\frac{4\\pi^2 \\times 7.52 \\times 10^{25}}{6.674 \\times 10^{-11} \\times (1.528 \\times 10^{5})^2} = 1.90 \\times 10^{27}$ kg, about 318 Earth masses."
+        ],
+        "a": "$1.90 \\times 10^{27}$ kg."
+      },
+      {
+        "t": "mistake",
+        "html": "It seems natural that a heavier satellite would orbit faster or slower, but the orbiting body's own mass cancels out of $\\frac{GMm}{a^2} = \\frac{mv^2}{a}$. A space station and a dropped bolt beside it orbit together. That is why an orbit weighs the <em>central</em> body. Check: the Moon (about $1\\%$ of Earth's mass) and a tiny satellite at the Moon's distance would have almost exactly the same 27-day period."
+      },
+      {
+        "t": "note",
+        "html": "This is how astronomers know the masses of the Sun, the planets with moons, distant stars with planets, and the black hole at the center of our galaxy."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Astronomy 2e, section 3.3, Newton's Universal Law of Gravitation"
+      },
+      {
+        "name": "OpenStax, Astronomy 2e, section 18.2, Measuring Stellar Masses"
+      },
+      {
+        "name": "NGSS HS-ESS1-4"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

@@ -1,0 +1,84 @@
+{
+  "id": "rbmech.gears",
+  "slug": "gears",
+  "ladder": "robotics",
+  "course": "rbmech",
+  "unit": "drive",
+  "title": "Gear Ratios",
+  "short": "A small gear driving a big one trades speed for torque by the ratio of their teeth.",
+  "trouble": "Students divide the wrong way and make the slow gear faster.",
+  "prereqs": [
+    "physsci.simple-machines"
+  ],
+  "xp": 2,
+  "viz": [
+    "rb-gears"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Small hobby motors spin fast, thousands of turns a minute, but with little twisting force. Wheels and arms need the opposite: slow and strong. Gears make the trade."
+      },
+      {
+        "t": "key",
+        "html": "When a gear with $N_1$ teeth drives a gear with $N_2$ teeth, the <b>gear ratio</b> is $N_2 : N_1$. The output turns $N_1/N_2$ as fast, and (ignoring friction) with $N_2/N_1$ times the torque."
+      },
+      {
+        "t": "viz",
+        "name": "rb-gears",
+        "opts": {
+          "t1": 12,
+          "t2": 36
+        },
+        "cap": "Change the teeth on each gear. Watch the speeds and the torque change in opposite directions."
+      },
+      {
+        "t": "why",
+        "html": "Each tooth that passes the meeting point is one tooth on both gears. So the big gear must turn less to pass the same number of teeth. Power, speed times torque, stays about the same, so slower means stronger."
+      },
+      {
+        "t": "ex",
+        "title": "Slow it down",
+        "q": "A 10-tooth gear on a motor at 3,000 rpm drives a 50-tooth gear. How fast does the big gear turn?",
+        "steps": [
+          "Ratio $50:10 = 5:1$.",
+          "$3000 / 5 = 600\\ \\text{rpm}$, with about 5 times the torque."
+        ],
+        "a": "600 rpm."
+      },
+      {
+        "t": "ex",
+        "title": "Two stages",
+        "q": "Two 5:1 stages in a row. What is the total ratio?",
+        "steps": [
+          "Ratios multiply: $5 \\times 5 = 25$."
+        ],
+        "a": "25:1."
+      },
+      {
+        "t": "mistake",
+        "html": "Dividing the wrong way and making the slow gear faster. The gear with more teeth always turns slower."
+      },
+      {
+        "t": "note",
+        "html": "<div class=\"rb-safe\"><b>Safety.</b> Gears are pinch points. Keep fingers, hair and loose sleeves away while they turn, and switch off before you reach in.</div>"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Kevin M. Lynch and Frank C. Park, Modern Robotics: Mechanics, Planning, and Control (Cambridge University Press, 2017), free preprint and videos",
+        "url": "https://hades.mech.northwestern.edu/index.php/Modern_Robotics"
+      },
+      {
+        "name": "MIT OpenCourseWare, 2.12 Introduction to Robotics (Fall 2005)",
+        "url": "https://ocw.mit.edu/courses/2-12-introduction-to-robotics-fall-2005/"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

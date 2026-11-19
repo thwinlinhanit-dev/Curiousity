@@ -1,0 +1,97 @@
+{
+  "id": "hsbio.phylogenetic-trees",
+  "slug": "phylogenetic-trees",
+  "ladder": "bio",
+  "course": "hsbio",
+  "unit": "evolution",
+  "title": "Reading Phylogenetic Trees",
+  "short": "A phylogenetic tree shows common ancestry: each branch point is a common ancestor. Relatedness is read from the most recent shared branch point, not from how close the tips are on the page.",
+  "trouble": "Students read relatedness across the tips, or think species at the right end are \"more evolved\". All living tips have evolved for the same length of time; only branch points show kinship.",
+  "prereqs": [
+    "hsbio.molecular-evidence"
+  ],
+  "xp": 3,
+  "viz": [
+    "bi-tree"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A <b>phylogenetic tree</b> is a diagram of ancestry. It turns the evidence from <a href=\"/biology/high-school-biology/molecular-evidence/\">DNA and proteins</a> and from fossils into a picture you can read. Reading it correctly takes one rule."
+      },
+      {
+        "t": "key",
+        "html": "Each <b>branch point</b> (node) stands for a common ancestor. Two species are more closely related when their <b>most recent common ancestor</b> is more recent, that is, when you reach a shared node sooner by tracing back from the tips. Distance across the tips on the page means nothing."
+      },
+      {
+        "t": "viz",
+        "name": "bi-tree",
+        "opts": {
+          "tree": "vertebrates",
+          "mode": "mrca"
+        },
+        "cap": "Tap two tips to find their most recent common ancestor. A frog's closest relative here is the lizard-and-mouse group, not the perch."
+      },
+      {
+        "t": "why",
+        "html": "A tree records splits. Tracing back from two tips, the first node where their lines meet is the last population they both came from. Everything after that node happened separately. The more recent that node, the less separate history the two species have."
+      },
+      {
+        "t": "viz",
+        "name": "bi-tree",
+        "opts": {
+          "tree": "animals",
+          "mode": "rotate"
+        },
+        "cap": "Tap a node to rotate its branches. The order of the tips changes, but no relationship changes: like a mobile, the branches can spin."
+      },
+      {
+        "t": "ex",
+        "title": "Who is closer?",
+        "q": "On the vertebrate tree, is a perch more closely related to a shark or to a mouse?",
+        "steps": [
+          "Trace the perch and the mouse back: they meet at the node of all bony vertebrates.",
+          "Trace the perch and the shark back: they meet farther back, at the node of all jawed vertebrates.",
+          "The perch-mouse ancestor is more recent."
+        ],
+        "a": "To the mouse. (A perch and a mouse share a more recent ancestor than a perch and a shark.)"
+      },
+      {
+        "t": "ex",
+        "title": "Reading a clade",
+        "q": "On the same tree, which organisms descend from the ancestor where four limbs first appeared?",
+        "steps": [
+          "Find the trait mark for four limbs.",
+          "Every tip to the right of that mark descends from it."
+        ],
+        "a": "Frog, lizard and mouse."
+      },
+      {
+        "t": "p",
+        "html": "A <b>clade</b> is an ancestor and all of its descendants: cut one branch of the tree and everything on it is a clade. Fish, as the word is used every day, is not a clade, because the ancestor of all fish is also the ancestor of frogs, lizards and mice."
+      },
+      {
+        "t": "mistake",
+        "html": "Two misreadings are common. One is judging kinship by which tips sit next to each other on the page; rotating a node moves the tips without changing the tree. The other is calling the species at the right end \"more evolved\". Every living tip has been evolving for exactly the same length of time since the root; only the branch points show kinship."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Concepts of Biology, 12.1 Organizing Life on Earth (phylogenetic trees)"
+      },
+      {
+        "name": "OpenStax, Biology 2e, 20.1 Organizing Life on Earth"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-LS4-1: Biological Evolution: Unity and Diversity"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

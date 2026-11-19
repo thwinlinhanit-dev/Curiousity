@@ -1,0 +1,148 @@
+{
+  "id": "draw.stippling",
+  "slug": "stippling",
+  "ladder": "art",
+  "course": "draw",
+  "unit": "value",
+  "title": "Stippling",
+  "short": "Dots make tone: more dots, closer together, read darker.",
+  "trouble": "People drag the pen and make dashes instead of dots, which changes the texture.",
+  "prereqs": [
+    "draw.value-scale"
+  ],
+  "xp": 1,
+  "viz": [
+    "ar-marks",
+    "ar-canvas"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<b>Stippling</b> makes value with dots. Many dots close together read dark; a few dots far apart read light. It is slow, but it gives soft, even tones and a texture of its own."
+      },
+      {
+        "t": "viz",
+        "name": "draw-pics",
+        "opts": {
+          "kind": "marks",
+          "items": [
+            {
+              "k": "stipple",
+              "d": 0.1
+            },
+            {
+              "k": "stipple",
+              "d": 0.45
+            },
+            {
+              "k": "stipple",
+              "d": 0.95
+            }
+          ],
+          "caps": [
+            "few dots: light",
+            "more dots",
+            "many dots: dark"
+          ]
+        },
+        "cap": "Three patches of stippling."
+      },
+      {
+        "t": "key",
+        "html": "<b>More dots, closer together</b>, read darker. Keep each mark a dot, not a dash."
+      },
+      {
+        "t": "why",
+        "html": "Like hatching, stippling works by how much of the paper you cover. Dots have no direction, so a stippled area looks soft and smooth, which suits rounded forms, smooth fruit and soft shadows."
+      },
+      {
+        "t": "ex",
+        "title": "Darker without bigger dots",
+        "q": "You want one area of a stippled drawing darker. What do you change?",
+        "steps": [
+          "Value comes from how much paper is covered.",
+          "Add more dots there, closer together."
+        ],
+        "a": "Add more dots, packed closer together."
+      },
+      {
+        "t": "mistake",
+        "html": "People drag the pen and make little dashes instead of dots, which changes the texture and looks like hair or grass. Hold the pen upright and tap straight down, lifting it all the way between dots."
+      },
+      {
+        "t": "viz",
+        "name": "draw-pics",
+        "opts": {
+          "kind": "marks",
+          "items": [
+            {
+              "k": "stipple",
+              "d": 0.55
+            },
+            {
+              "k": "dash",
+              "d": 0.55
+            }
+          ],
+          "caps": [
+            "Dots: stippling",
+            "Dashes: dragged pen"
+          ]
+        },
+        "cap": "Dots (left) and dashes (right)."
+      },
+      {
+        "t": "viz",
+        "name": "ar-marks",
+        "opts": {
+          "kinds": [
+            "stippling"
+          ],
+          "slider": true
+        },
+        "cap": "Move the slider to add dots."
+      },
+      {
+        "t": "list",
+        "items": [
+          "A fine pen works best; a sharp pencil works too.",
+          "Spread a light, even layer of dots over every area that is not pure white.",
+          "Go back and add more dots only where the value should be darker.",
+          "Leave the highlights as clean paper.",
+          "Be patient: even a small drawing takes many dots, so start with something the size of your palm."
+        ]
+      },
+      {
+        "t": "viz",
+        "name": "ar-canvas",
+        "opts": {
+          "guide": "value",
+          "steps": 5,
+          "height": 240,
+          "print": true,
+          "printTitle": "Stippling scale",
+          "colors": [
+            "#26221e"
+          ],
+          "size": 3
+        },
+        "cap": "Make a stippled value scale. Tap, do not drag."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Grokipedia, \"Stippling\"",
+        "url": "https://grokipedia.com/page/Stippling"
+      },
+      {
+        "name": "National Core Arts Standards, Visual Arts, Grades 6 to 8 (Creating: organize and develop artistic ideas and work)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

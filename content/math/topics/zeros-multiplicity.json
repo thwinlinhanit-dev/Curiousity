@@ -1,0 +1,104 @@
+{
+  "id": "alg2.zeros-multiplicity",
+  "slug": "zeros-multiplicity",
+  "ladder": "math",
+  "course": "alg2",
+  "unit": "polynomials",
+  "title": "Zeros and Multiplicity",
+  "short": "A zero of even multiplicity touches the axis; odd multiplicity crosses it.",
+  "trouble": "Students think every zero is a crossing point.",
+  "prereqs": [
+    "alg2.end-behavior",
+    "alg1.factored-form-zeros"
+  ],
+  "xp": 2,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/math/algebra-1/factored-form-zeros/\">Zeros and Factored Form</a> each factor gave a zero where the graph crossed the axis. When a factor is repeated, something new happens. You also know from <a href=\"/math/algebra-2/end-behavior/\">End Behavior of Polynomials</a> what happens far away; now look closely at each zero."
+      },
+      {
+        "t": "key",
+        "html": "If $(x - r)^m$ is a factor (and no higher power is), $r$ is a zero of <b>multiplicity</b> $m$. Odd multiplicity: the graph crosses the $x$-axis at $r$. Even multiplicity: it touches the axis and turns back. A multiplicity above 1 also flattens the graph near the zero."
+      },
+      {
+        "t": "why",
+        "html": "Near $x = r$, the factor $(x - r)^m$ changes much faster than the other factors, which stay close to a fixed nonzero number. So near $r$ the graph looks like $c(x - r)^m$. If $m$ is even, $(x - r)^m$ is never negative, so the graph stays on one side: it touches. If $m$ is odd, $(x - r)^m$ changes sign, so the graph crosses. A higher power is very small near 0 (like $0.1^3 = 0.001$), which is why the graph flattens."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "f": "(x + 2)^a*(x - 1)^b",
+          "params": {
+            "a": [
+              1,
+              3,
+              1,
+              1
+            ],
+            "b": [
+              1,
+              4,
+              2,
+              1
+            ]
+          },
+          "xmin": -4,
+          "xmax": 3,
+          "ymin": -8,
+          "ymax": 8,
+          "roots": true,
+          "task": "Find powers that make the graph touch at −2 and cross at 1."
+        },
+        "cap": "$f(x) = (x + 2)^a(x - 1)^b$. Change the powers and watch what happens at $-2$ and at $1$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Reading multiplicities",
+        "q": "Describe the zeros of $f(x) = (x - 3)^2(x + 1)^3 x$.",
+        "steps": [
+          "$x = 3$ has multiplicity 2 (even): the graph touches and turns back.",
+          "$x = -1$ has multiplicity 3 (odd, above 1): it crosses but flattens, like $x^3$ at 0.",
+          "$x = 0$ has multiplicity 1: it crosses like a line."
+        ],
+        "a": "Touch at 3; flat crossing at $-1$; plain crossing at 0."
+      },
+      {
+        "t": "ex",
+        "title": "Counting",
+        "q": "What is the degree of $f$ above, and how many distinct zeros does it have?",
+        "steps": [
+          "Add the multiplicities: $2 + 3 + 1 = 6$.",
+          "Distinct zeros: $3$, $-1$ and $0$, so three."
+        ],
+        "a": "Degree 6, three distinct zeros."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking every zero is a crossing point. The graph of $(x - 3)^2$ only touches the axis at 3. Check with numbers on each side: $(2.9 - 3)^2$ and $(3.1 - 3)^2$ are both positive, so the graph doesn't change sides at 3."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Algebra 2e, Section 5.3 Graphs of Polynomial Functions"
+      },
+      {
+        "name": "Common Core State Standards, A-APR.B.3"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

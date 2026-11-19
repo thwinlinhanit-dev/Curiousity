@@ -1,0 +1,115 @@
+{
+  "id": "sym.validity-truth-table",
+  "slug": "validity-truth-table",
+  "ladder": "logic",
+  "course": "sym",
+  "unit": "truth-tables",
+  "title": "Validity by Truth Table",
+  "short": "An argument is valid when no row makes every premise true and the conclusion false.",
+  "trouble": "Learners look for a row where everything is true and call the argument valid, or call it invalid because some row has a false premise.",
+  "prereqs": [
+    "sym.tautology-contradiction",
+    "informal.validity"
+  ],
+  "xp": 2,
+  "viz": [
+    "lg-truthtable"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/logic/informal-logic/validity/\">Validity</a> you learned that an argument is valid when it is impossible for the premises to be true and the conclusion false. Truth tables turn \"impossible\" into something you can check: every possible situation is a row."
+      },
+      {
+        "t": "key",
+        "html": "An argument is <b>valid</b> when no row of its truth table makes every premise true and the conclusion false. A row that does is a <b>counterexample</b>, and one counterexample makes the argument invalid."
+      },
+      {
+        "t": "why",
+        "html": "Each row is one way the world could be, as far as the letters go. \"Impossible to have true premises and a false conclusion\" means \"no row has true premises and a false conclusion\". So we write a column for each premise and for the conclusion, and look only at the rows where every premise is true. If the conclusion is true in all of those, the argument is valid."
+      },
+      {
+        "t": "viz",
+        "name": "lg-truthtable",
+        "opts": {
+          "premises": [
+            "p → q",
+            "q"
+          ],
+          "conclusion": "p"
+        },
+        "cap": "Affirming the consequent: the red row has both premises true and the conclusion false."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A valid form",
+        "q": "Premises $p \\lor q$, $\\neg p$. Conclusion $q$. Valid?",
+        "steps": [
+          "Rows with both premises T: $\\neg p$ needs $p$ F; then $p \\lor q$ needs $q$ T.",
+          "That is the row $p$ F, $q$ T, where the conclusion $q$ is T.",
+          "No counterexample."
+        ],
+        "a": "Valid"
+      },
+      {
+        "t": "ex",
+        "title": "An invalid form",
+        "q": "Premises $p \\to q$, $q$. Conclusion $p$. Valid?",
+        "steps": [
+          "Rows with both premises T: $p$ T, $q$ T; and $p$ F, $q$ T.",
+          "In the second, the conclusion $p$ is F."
+        ],
+        "a": "Invalid; the counterexample is $p$ F, $q$ T."
+      },
+      {
+        "t": "ex",
+        "title": "Three letters",
+        "q": "Premises $p \\to q$, $q \\to r$. Conclusion $p \\to r$. Valid?",
+        "steps": [
+          "A counterexample needs $p \\to r$ F: $p$ T, $r$ F.",
+          "Then $p \\to q$ needs $q$ T, but $q \\to r$ needs $q$ F.",
+          "No row works."
+        ],
+        "a": "Valid"
+      },
+      {
+        "t": "mistake",
+        "html": "Looking for a row where everything is true and calling the argument valid, or calling it invalid because some row has a false premise. Rows with a false premise say nothing either way. Only rows where all the premises are true matter, and in those the conclusion must be true."
+      },
+      {
+        "t": "p",
+        "html": "Remember from <a href=\"/logic/informal-logic/validity-truth-combos/\">Validity and Truth Together</a> that validity is not truth. A valid argument can have a false conclusion when a premise is false, and an invalid argument can have all true statements. The truth table looks at every row, the actual one and all the others, which is exactly why it tests form and not facts."
+      },
+      {
+        "t": "p",
+        "html": "The table also tells you more than yes or no. When an argument is invalid, the counterexample row describes a concrete situation that breaks it, which is often the most convincing way to show someone the reasoning fails."
+      },
+      {
+        "t": "list",
+        "items": [
+          "Make a column for each premise and the conclusion.",
+          "Mark the rows where every premise is T.",
+          "If the conclusion is T in all of them: valid. If not: invalid, and that row is a counterexample."
+        ]
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Patrick J. Hurley and Lori Watson, A Concise Introduction to Logic, 13th ed., section 6.4, Truth Tables for Arguments"
+      },
+      {
+        "name": "forall x: Calgary, an open introduction to formal logic (P. D. Magnus, Tim Button and others; Open Logic Project), chapter on truth tables and validity"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

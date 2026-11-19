@@ -1,0 +1,139 @@
+{
+  "id": "g5.two-patterns",
+  "slug": "two-patterns",
+  "ladder": "math",
+  "course": "g5",
+  "unit": "coordinate-plane",
+  "title": "Comparing Two Patterns",
+  "short": "Build two patterns from rules, pair the terms and graph them.",
+  "trouble": "",
+  "prereqs": [
+    "g5.graph-real-world-points",
+    "g4.number-patterns"
+  ],
+  "xp": 2,
+  "viz": [
+    "ratiotable"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In Grade 4 you made <a href=\"/math/grade-4/number-patterns/\">patterns from a rule</a>, and you can <a href=\"/math/grade-5/graph-real-world-points/\">graph pairs of numbers</a>. Now make two patterns side by side and compare them."
+      },
+      {
+        "t": "key",
+        "html": "Generate both patterns from their rules. Pair up the terms that are in the same position to make ordered pairs. Then look for a relationship: often each term of one pattern is a fixed number of times the matching term of the other."
+      },
+      {
+        "t": "why",
+        "html": "Pattern A adds 3 each time and pattern B adds 6. After any number of steps, B has added twice as much as A, so each term of B is twice the matching term of A. Graphing the pairs $(3, 6), (6, 12), (9, 18)$ shows the relationship as points on a straight line."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Step",
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "rows": [
+          [
+            "Pattern A (add 3)",
+            "0",
+            "3",
+            "6",
+            "9",
+            "12"
+          ],
+          [
+            "Pattern B (add 6)",
+            "0",
+            "6",
+            "12",
+            "18",
+            "24"
+          ]
+        ],
+        "cap": "Two patterns that start at 0. Each term of B is 2 times the term of A."
+      },
+      {
+        "t": "viz",
+        "name": "g5-grid",
+        "opts": {
+          "xmax": 15,
+          "ymax": 30,
+          "xstep": 3,
+          "ystep": 6,
+          "xlabel": "Pattern A",
+          "ylabel": "Pattern B",
+          "points": [
+            [
+              0,
+              0
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              6,
+              12
+            ],
+            [
+              9,
+              18
+            ],
+            [
+              12,
+              24
+            ]
+          ],
+          "line": true
+        },
+        "cap": "The pairs (term of A, term of B) lie on a straight line through $(0, 0)$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Make the pairs",
+        "q": "Pattern A: start at 0, add 3. Pattern B: start at 0, add 6. Write the first four ordered pairs.",
+        "steps": [
+          "A: 0, 3, 6, 9. B: 0, 6, 12, 18.",
+          "Pair by position: $(0, 0), (3, 6), (6, 12), (9, 18)$."
+        ],
+        "a": "$(0, 0), (3, 6), (6, 12), (9, 18)$"
+      },
+      {
+        "t": "ex",
+        "title": "Use the relationship",
+        "q": "When pattern A reaches 30, what is the matching term of pattern B?",
+        "steps": [
+          "Each term of B is 2 times the term of A.",
+          "$2 \\times 30 = 60$."
+        ],
+        "a": "60"
+      },
+      {
+        "t": "mistake",
+        "html": "Pairing terms from different positions, such as the 3rd term of A with the 4th term of B, or putting B first in the pair. Check: count both patterns from the same start, and keep the order (term of A, term of B)."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Common Core State Standards for Mathematics, 5.OA.B.3: generate two numerical patterns using two given rules and graph the ordered pairs"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

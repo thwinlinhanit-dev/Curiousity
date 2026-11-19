@@ -1,0 +1,98 @@
+{
+  "id": "gchem2.equilibrium-concentrations",
+  "slug": "equilibrium-concentrations",
+  "ladder": "chemistry",
+  "course": "gchem2",
+  "unit": "equilibrium",
+  "title": "Finding Equilibrium Concentrations",
+  "short": "Set up an ICE table and solve for x, using the quadratic formula when needed.",
+  "trouble": "Students keep the root of the quadratic that makes a concentration negative.",
+  "prereqs": [
+    "gchem2.calculating-k",
+    "gchem2.reaction-quotient",
+    "alg1.quadratic-formula"
+  ],
+  "xp": 3,
+  "viz": [
+    "ch-equilibrium"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Now run the <a href=\"/chemistry/general-chemistry-2/calculating-k/\">ICE table</a> the other way: you know $K$ and the starting amounts, and you want the equilibrium amounts. First use <a href=\"/chemistry/general-chemistry-2/reaction-quotient/\">Q</a> to see which way the reaction goes, call the unknown change $x$, and solve. Often that means the <a href=\"/math/algebra-1/quadratic-formula/\">quadratic formula</a>."
+      },
+      {
+        "t": "key",
+        "html": "Write the E row in terms of $x$, substitute into the expression for $K$, and solve for $x$. Keep only the root that makes every concentration positive (and no larger than what you started with). Then check by putting the answers back into $K$."
+      },
+      {
+        "t": "why",
+        "html": "A quadratic has two roots, but only one describes a real mixture. The other one would use up more reactant than the flask holds, or give a negative concentration. The algebra cannot know that; you can."
+      },
+      {
+        "t": "viz",
+        "name": "ch-equilibrium",
+        "opts": {
+          "rxn": "2NO2<=>N2O4",
+          "c0": {
+            "N2O4": 0.1
+          },
+          "show": [
+            "ice"
+          ]
+        },
+        "cap": "Starting with $\\mathrm{N_2O_4}$ only, some of it splits into $\\mathrm{NO_2}$ until Q reaches K. The equilibrium row of the table comes from solving the equation for $x$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A perfect square",
+        "q": "$\\mathrm{H_2(g) + I_2(g) \\rightleftharpoons 2HI(g)}$, $K_c = 54.3$. Starting with $0.200\\ \\text{M}$ each of $\\mathrm{H_2}$ and $\\mathrm{I_2}$ and no HI, find the equilibrium concentrations.",
+        "steps": [
+          "$Q = 0 < K$, so the reaction goes forward. E row: $[\\mathrm{H_2}] = [\\mathrm{I_2}] = 0.200 - x$, $[\\mathrm{HI}] = 2x$.",
+          "$54.3 = \\dfrac{(2x)^2}{(0.200 - x)^2}$. Both sides are squares, so take the square root: $7.37 = \\dfrac{2x}{0.200 - x}$.",
+          "$7.37(0.200) - 7.37x = 2x$, so $x = \\dfrac{1.474}{9.37} = 0.157$.",
+          "$[\\mathrm{HI}] = 0.315\\ \\text{M}$; $[\\mathrm{H_2}] = [\\mathrm{I_2}] = 0.043\\ \\text{M}$. Check: $(0.315)^2/(0.043)^2 \\approx 54$."
+        ],
+        "a": "$[\\mathrm{HI}] = 0.315\\ \\text{M}$, $[\\mathrm{H_2}] = [\\mathrm{I_2}] = 0.043\\ \\text{M}$."
+      },
+      {
+        "t": "ex",
+        "title": "Using the quadratic formula",
+        "q": "$\\mathrm{N_2O_4(g) \\rightleftharpoons 2NO_2(g)}$, $K_c = 4.6 \\times 10^{-3}$. A flask starts with $0.100\\ \\text{M}$ $\\mathrm{N_2O_4}$. Find the equilibrium concentrations.",
+        "steps": [
+          "E row: $[\\mathrm{N_2O_4}] = 0.100 - x$, $[\\mathrm{NO_2}] = 2x$. So $\\dfrac{4x^2}{0.100 - x} = 4.6 \\times 10^{-3}$.",
+          "Rearrange: $4x^2 + (4.6 \\times 10^{-3})x - 4.6 \\times 10^{-4} = 0$.",
+          "Quadratic formula with $a = 4$, $b = 4.6 \\times 10^{-3}$, $c = -4.6 \\times 10^{-4}$: $b^2 - 4ac = 7.38 \\times 10^{-3}$, whose square root is $0.0859$.",
+          "$x = \\dfrac{-0.0046 \\pm 0.0859}{8}$.",
+          "The roots are $0.0102$ and $-0.0113$. The negative root would make $[\\mathrm{NO_2}]$ negative, so $x = 0.0102$.",
+          "$[\\mathrm{NO_2}] = 0.0203\\ \\text{M}$, $[\\mathrm{N_2O_4}] = 0.0898\\ \\text{M}$. Check: $(0.0203)^2/0.0898 = 4.6 \\times 10^{-3}$."
+        ],
+        "a": "$[\\mathrm{NO_2}] = 0.0203\\ \\text{M}$, $[\\mathrm{N_2O_4}] = 0.0898\\ \\text{M}$."
+      },
+      {
+        "t": "mistake",
+        "html": "Keeping the root that makes a concentration negative, or larger than the amount you started with. Check every concentration in the E row after you pick $x$, and confirm that they reproduce $K$."
+      },
+      {
+        "t": "note",
+        "html": "If the reaction goes in reverse ($Q > K$), write the change with the opposite signs: reactants $+x$, products $-$(coefficient)$x$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 13.4 Equilibrium Calculations"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

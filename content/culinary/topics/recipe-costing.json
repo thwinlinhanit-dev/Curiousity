@@ -1,0 +1,83 @@
+{
+  "id": "cupro.recipe-costing",
+  "slug": "recipe-costing",
+  "ladder": "culinary",
+  "course": "cupro",
+  "unit": "ops",
+  "title": "Recipe Costing, Yield Tests and Food Cost",
+  "short": "Usable cost = purchase cost ÷ yield; add up a recipe, divide by portions, and food cost percent = cost ÷ menu price.",
+  "trouble": "Cooks cost a recipe from the purchase price and forget the trim they throw away.",
+  "prereqs": [
+    "cupro.ordering-inventory",
+    "g6.percent-of-a-number"
+  ],
+  "xp": 3,
+  "viz": [
+    "cu-cost"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "To price a dish fairly you must know exactly what it costs, down to the pinch of salt and the trim you throw away."
+      },
+      {
+        "t": "key",
+        "html": "<b>Yield percent</b> = usable weight ÷ purchased weight. <b>Usable (edible-portion) cost</b> per pound = purchase price per pound ÷ yield. <b>Recipe cost</b> = the sum of each ingredient's usable cost × amount. <b>Portion cost</b> = recipe cost ÷ portions. <b>Food-cost percent</b> = portion cost ÷ menu price."
+      },
+      {
+        "t": "viz",
+        "name": "cu-cost",
+        "opts": {
+          "mode": "recipe"
+        },
+        "cap": "Change prices, yields and amounts: the recipe cost, the portion cost and the food-cost percent update."
+      },
+      {
+        "t": "why",
+        "html": "A <b>yield test</b> is how kitchens find yields: weigh the item as bought, trim and prep it, and weigh what's usable. Whole salmon may give under half its weight as skinless fillet; carrots perhaps four-fifths after peeling and trimming. Costing from the purchase price alone makes a dish look cheaper than it is."
+      },
+      {
+        "t": "ex",
+        "title": "Usable cost",
+        "q": "Whole beef tenderloin costs \\$18.00 per pound; trimmed, it yields 70%. What is the usable cost per pound?",
+        "steps": [
+          "$18.00 \\div 0.70 \\approx 25.71$."
+        ],
+        "a": "About \\$25.71 per pound."
+      },
+      {
+        "t": "ex",
+        "title": "Food-cost percent",
+        "q": "A dish's portion cost is \\$5.60 and it sells for \\$18.00. What is its food-cost percent?",
+        "steps": [
+          "$5.60 \\div 18.00 \\approx 0.311$."
+        ],
+        "a": "About 31%."
+      },
+      {
+        "t": "mistake",
+        "html": "Forgetting small things: oil, butter, salt, garnish, bread. Many kitchens add a few percent for them (a \"Q-factor\")."
+      },
+      {
+        "t": "note",
+        "html": "<div class=\"cu-box cu-drill\"><p class=\"cu-box-lab\"><span aria-hidden=\"true\">🏠</span> Practice at home</p><ul><li>Cost a dinner you make at home from your grocery receipt, including oil and spices. Work out the cost per portion.</li><li>Do a yield test on a bunch of carrots or a pineapple: weigh, peel and trim, weigh again.</li></ul></div>"
+      },
+      {
+        "t": "note",
+        "html": "<div class=\"cu-box cu-sci\"><p class=\"cu-box-lab\"><span aria-hidden=\"true\">🔬</span> The science behind it</p><ul><li><a href=\"/math/grade-6/percent-of-a-number/\">Finding a percent of a number</a>: the math behind food cost</li><li><a href=\"/math/grade-7/percent-change/\">Percent increase and decrease</a>: price changes</li></ul></div>"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "The Culinary Institute of America, Culinary Arts (AOS) curriculum (course list)",
+        "url": "https://catalog.ciachef.edu/node/1273"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

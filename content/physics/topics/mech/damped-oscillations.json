@@ -1,0 +1,120 @@
+{
+  "id": "mech.damped-oscillations",
+  "slug": "damped-oscillations",
+  "ladder": "physics",
+  "course": "mech",
+  "unit": "oscillations",
+  "title": "Damped Oscillations",
+  "short": "Drag makes the amplitude shrink as e^(−bt/2m), and too much damping stops the swinging altogether.",
+  "trouble": "Students think a critically damped system swings once before it stops.",
+  "prereqs": [
+    "mech.shm-equation",
+    "mech.linear-drag",
+    "pre.damped-oscillation"
+  ],
+  "xp": 3,
+  "viz": [
+    "springmass"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Real oscillations die out. Add a drag force like the one in <a href=\"/physics/mechanics/linear-drag/\">Linear Drag and Terminal Velocity</a> to the spring of <a href=\"/physics/mechanics/shm-equation/\">The Equation of Simple Harmonic Motion</a>, and the cosine gets wrapped in a shrinking exponential, the shape you graphed in <a href=\"/math/precalculus/damped-oscillation/\">Damped Oscillation</a>."
+      },
+      {
+        "t": "why",
+        "html": "With drag $-b\\dot{x}$: $m\\ddot{x} + b\\dot{x} + kx = 0$. Try $x = e^{rt}$: $mr^2 + br + k = 0$, so $$r = -\\dfrac{b}{2m} \\pm \\sqrt{\\left(\\dfrac{b}{2m}\\right)^2 - \\dfrac{k}{m}}.$$ If $b^2 < 4mk$ the square root is imaginary, $\\pm i\\omega_d$, and the real solutions are $e^{-bt/2m}\\cos(\\omega_dt + \\phi)$: oscillation inside a decaying envelope. If $b^2 = 4mk$ there is one repeated root (critical damping); if $b^2 > 4mk$, two negative real roots (overdamped): no oscillation at all."
+      },
+      {
+        "t": "key",
+        "html": "Underdamped ($b < 2\\sqrt{km}$): $$x = A_0e^{-bt/2m}\\cos(\\omega_dt + \\phi), \\qquad \\omega_d = \\sqrt{\\dfrac{k}{m} - \\left(\\dfrac{b}{2m}\\right)^2}.$$ The amplitude falls by half every $\\dfrac{2m\\ln 2}{b}$, and the energy as $e^{-bt/m}$. Critical damping, $b_c = 2\\sqrt{km}$, returns to equilibrium fastest without overshooting; more damping (overdamped) returns more slowly."
+      },
+      {
+        "t": "viz",
+        "name": "springmass",
+        "opts": {
+          "m": 1,
+          "k": 4,
+          "c": 0.4,
+          "x0": 1,
+          "v0": 0,
+          "tmax": 20,
+          "task": "Raise the damping $c$ toward 4 ($= 2\\sqrt{km}$). The swings fade faster, then stop crossing zero."
+        },
+        "cap": "Damped oscillation: the envelope shrinks as $e^{-ct/2m}$; at $c = 2\\sqrt{km} = 4$ the oscillation disappears."
+      },
+      {
+        "t": "ex",
+        "title": "How fast it fades",
+        "q": "A $1\\ \\text{kg}$ mass on a spring ($k = 100\\ \\text{N/m}$) has $b = 2\\ \\text{N·s/m}$. How long until the amplitude halves, and what is $\\omega_d$?",
+        "steps": [
+          "Envelope $e^{-bt/2m} = e^{-t}$; half at $t = \\ln 2 = 0.693\\ \\text{s}$.",
+          "$\\omega_d = \\sqrt{100 - 1^2} = 9.95\\ \\text{rad/s}$, barely below $\\omega_0 = 10\\ \\text{rad/s}$."
+        ],
+        "a": "$0.693\\ \\text{s}$; $\\omega_d = 9.95\\ \\text{rad/s}$."
+      },
+      {
+        "t": "ex",
+        "title": "Designing a door closer",
+        "q": "What damping makes the same system critically damped?",
+        "steps": [
+          "Critical: $b^2 = 4mk$, so $b_c = 2\\sqrt{(1)(100)} = 20\\ \\text{N·s/m}$.",
+          "With this damping, a pushed door swings shut quickly without banging past the frame."
+        ],
+        "a": "$b_c = 20\\ \\text{N·s/m}$."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking a critically damped system swings once before it stops. Released from rest, it never crosses equilibrium: critical damping is the boundary between oscillating and not. Any overshoot means the system is (slightly) underdamped. Check the roots of $mr^2 + br + k = 0$: when they are real, there is no cosine in the solution, so nothing to swing."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Damping",
+          "Roots of $mr^2 + br + k = 0$",
+          "Motion after release from rest"
+        ],
+        "rows": [
+          [
+            "$b < 2\\sqrt{km}$ (under)",
+            "complex: $-\\tfrac{b}{2m} \\pm i\\omega_d$",
+            "oscillates inside a decaying envelope"
+          ],
+          [
+            "$b = 2\\sqrt{km}$ (critical)",
+            "one repeated real root",
+            "fastest return, no overshoot"
+          ],
+          [
+            "$b > 2\\sqrt{km}$ (over)",
+            "two negative real roots",
+            "slow return, no overshoot"
+          ]
+        ],
+        "cap": "The sign of $b^2 - 4mk$ decides the kind of motion."
+      },
+      {
+        "t": "note",
+        "html": "Car shock absorbers are tuned near critical damping, so a bump is absorbed without bouncing. A guitar string is very lightly damped, which is why it rings for seconds."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 1, 15.5 Damped Oscillations"
+      },
+      {
+        "name": "OpenStax Calculus Volume 3, 7.3 Applications"
+      },
+      {
+        "name": "MIT OpenCourseWare 8.01 Classical Mechanics (scope and sequence)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

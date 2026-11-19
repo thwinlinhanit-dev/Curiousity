@@ -1,0 +1,103 @@
+{
+  "id": "mech.angular-momentum-particle",
+  "slug": "angular-momentum-particle",
+  "course": "mech",
+  "courseTitle": "Mechanics with Calculus",
+  "unit": "rotation",
+  "unitTitle": "Rotation of Rigid Bodies",
+  "title": "Angular Momentum of a Particle",
+  "short": "L = r × p, so even a particle moving in a straight line has angular momentum about a point.",
+  "trouble": "Students think a particle needs to move in a circle to have angular momentum.",
+  "prereqs": [
+    "mech.torque-cross-product",
+    "phys1.angular-momentum"
+  ],
+  "xp": 2,
+  "viz": [
+    "vectors3d"
+  ],
+  "figureArchetype": "BodyFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/physics/physics-1/angular-momentum/\">Angular Momentum and Angular Impulse</a> used $L = I\\omega$ for spinning objects and $L = mvr_\\perp$ for a point mass going by. With <a href=\"/physics/mechanics/torque-cross-product/\">Torque as a Cross Product</a>, both come from one vector definition."
+      },
+      {
+        "t": "key",
+        "html": "The angular momentum of a particle about a point O is $$\\role{angmom}{\\vec{L}} = \\role[position from O]{position}{\\vec{r}}\\times\\role{momentum}{\\vec{p}} = \\role{mass}{m}\\,\\role[position from O]{position}{\\vec{r}}\\times\\role{velocity}{\\vec{v}},$$ with $\\vec{r}$ measured from O. Its size is $mvr\\sin\\phi = mvd$, where $d$ is the perpendicular distance from O to the line of motion. Newton's second law gives $\\dfrac{d\\vec{L}}{dt} = \\vec{\\tau}$."
+      },
+      {
+        "t": "why",
+        "html": "Differentiate with the product rule: $\\dfrac{d\\vec{L}}{dt} = \\dfrac{d\\vec{r}}{dt}\\times\\vec{p} + \\vec{r}\\times\\dfrac{d\\vec{p}}{dt} = \\vec{v}\\times m\\vec{v} + \\vec{r}\\times\\vec{F}$. The first term is zero (a vector crossed with itself), and the second is the torque. So with no torque, $\\vec{L}$ is constant. A free particle moving in a straight line has no force, so no torque about any point, and its angular momentum about any point never changes, even though it doesn't go around anything."
+      },
+      {
+        "t": "viz",
+        "name": "vectors3d",
+        "opts": {
+          "u": [
+            1,
+            2,
+            0
+          ],
+          "v": [
+            6,
+            0,
+            2
+          ],
+          "op": "cross",
+          "ops": [
+            "cross"
+          ],
+          "range": 7,
+          "task": "Turn the view: $\\vec{L} = \\vec{r}\\times\\vec{p}$ is perpendicular to both $\\vec{r}$ and $\\vec{p}$."
+        },
+        "cap": "$\\vec{r} = \\langle 1, 2, 0 \\rangle\\ \\text{m}$ and $\\vec{p} = \\langle 6, 0, 2 \\rangle\\ \\text{kg·m/s}$ give $\\vec{L} = \\langle 4, -2, -12 \\rangle\\ \\text{kg·m}^2\\text{/s}$."
+      },
+      {
+        "t": "ex",
+        "title": "A puck passing a post",
+        "q": "A $2\\ \\text{kg}$ puck slides at $3\\ \\text{m/s}$ along a line that passes $1.5\\ \\text{m}$ from a post. Find its angular momentum about the post.",
+        "steps": [
+          "$|\\vec{L}| = mvr\\sin\\phi$, and $r\\sin\\phi = d = 1.5\\ \\text{m}$ wherever the puck is on its line.",
+          "$L = 2(3)(1.5) = 9\\ \\text{kg·m}^2\\text{/s}$, the same before, at and after the closest approach."
+        ],
+        "a": "$9\\ \\text{kg·m}^2\\text{/s}$."
+      },
+      {
+        "t": "ex",
+        "title": "The full vector",
+        "q": "A $2\\ \\text{kg}$ particle at $\\langle 1, 2, 0 \\rangle\\ \\text{m}$ moves with $\\vec{v} = \\langle 3, 0, 1 \\rangle\\ \\text{m/s}$. Find $\\vec{L}$ about the origin.",
+        "steps": [
+          "$\\vec{p} = m\\vec{v} = \\langle 6, 0, 2 \\rangle\\ \\text{kg·m/s}$.",
+          "$$\\vec{L} = \\vec{r}\\times\\vec{p} = \\langle 2(2) - 0(0),\\ 0(6) - 1(2),\\ 1(0) - 2(6) \\rangle = \\langle 4, -2, -12 \\rangle\\ \\text{kg·m}^2\\text{/s}$$"
+        ],
+        "a": "$\\langle 4, -2, -12 \\rangle\\ \\text{kg·m}^2\\text{/s}$."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking a particle needs to move in a circle to have angular momentum. Any motion that doesn't head straight at (or away from) the point has some. A meteor flying past the Earth, a ball thrown past a door's hinge, a puck sliding past a post: each carries $mvd$ about that point. Check: compute $\\vec{r}\\times\\vec{p}$. It is zero only if $\\vec{v}$ points along $\\vec{r}$, toward or away from the point."
+      },
+      {
+        "t": "note",
+        "html": "For a rigid body spinning about a fixed axis, add up $\\vec{r}\\times m\\vec{v}$ over all its pieces: each piece has $v = r\\omega$ around the axis, and the axial part of the total is $\\sum mr^2\\omega = I\\omega$. So the $L = I\\omega$ from Physics 1 is this same definition, summed."
+      },
+      {
+        "t": "note",
+        "html": "This is why a ball thrown at a door far from its hinges swings it more than one thrown near the hinge, and why <a href=\"/physics/mechanics/rotational-collisions/\">Collisions with Rotation</a> conserve angular momentum about a pivot."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 1, 11.2 Angular Momentum"
+      },
+      {
+        "name": "MIT OpenCourseWare 8.01 Classical Mechanics (scope and sequence)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

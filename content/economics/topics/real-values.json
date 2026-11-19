@@ -1,0 +1,96 @@
+{
+  "id": "macro.real-values",
+  "slug": "real-values",
+  "ladder": "economics",
+  "course": "macro",
+  "unit": "unemployment-inflation",
+  "title": "Converting Nominal to Real",
+  "short": "Divide a dollar amount by the price index over 100 to compare dollars from different years.",
+  "trouble": "Students compare wages or prices from different decades in nominal dollars, or multiply by the index when they should divide.",
+  "prereqs": [
+    "macro.inflation-rate"
+  ],
+  "xp": 2,
+  "viz": [
+    "ec-basket"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Is a \\$15 hourly wage today better than \\$10 an hour twenty years ago? It depends on how much prices rose in between. The <a href=\"/economics/macroeconomics/inflation-rate/\">Inflation, Deflation and Disinflation</a> and the price index let you compare dollars from different years."
+      },
+      {
+        "t": "key",
+        "html": "To express an amount in base-year dollars, divide by the index over 100: $$\\text{real value} = \\dfrac{\\text{nominal value}}{\\text{index}/100}$$ To move an amount from year A's dollars into year B's dollars: $$\\text{amount}_B = \\text{amount}_A \\times \\dfrac{\\text{index}_B}{\\text{index}_A}$$"
+      },
+      {
+        "t": "why",
+        "html": "An index of 150 means prices are 1.5 times base-year prices. So a \\$30 wage at that time buys what \\$20 bought in the base year: $30 \\div 1.5 = 20$. Dividing takes the price rise out. Multiplying instead would put a second dose of inflation in, making the old wage look even bigger, which is backwards. The ratio form works the same way: it scales by how much prices changed between the two years."
+      },
+      {
+        "t": "viz",
+        "name": "ec-basket",
+        "opts": {
+          "mode": "real"
+        },
+        "cap": "Hourly wages from three years, as paid (gold) and in the dollars of the year you choose (green). Switch the year: the comparison among the green bars never changes."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Base-year dollars",
+        "q": "A worker earns \\$48,000. The price index is 120. What is the salary in base-year dollars?",
+        "steps": [
+          "$\\dfrac{48{,}000}{120/100} = \\dfrac{48{,}000}{1.2} = 40{,}000$.",
+          "The salary buys what \\$40,000 bought in the base year."
+        ],
+        "a": "\\$40,000"
+      },
+      {
+        "t": "ex",
+        "title": "Then and now",
+        "q": "A movie ticket cost \\$4 in 1990, when the index was 130. The index is 260 today. What is the 1990 price in today's dollars?",
+        "steps": [
+          "Prices doubled: $\\dfrac{260}{130} = 2$.",
+          "$4 \\times \\dfrac{260}{130} = 8$ dollars.",
+          "If tickets now cost more than \\$8, they rose faster than prices in general."
+        ],
+        "a": "\\$8"
+      },
+      {
+        "t": "ex",
+        "title": "Did the raise keep up?",
+        "q": "A wage went from \\$15 (index 100) to \\$18 (index 125). Did the real wage rise?",
+        "steps": [
+          "In base-year dollars: $\\dfrac{18}{1.25} = 14.40$.",
+          "$14.40 < 15$: the real wage fell, even though the paycheck number grew 20%."
+        ],
+        "a": "The real wage fell"
+      },
+      {
+        "t": "mistake",
+        "html": "Comparing amounts from different decades in nominal dollars, or multiplying by the index when you should divide. Check the direction: if prices rose since year A, an old amount should become a <i>bigger</i> number in today's dollars, and a recent amount a <i>smaller</i> number in old dollars."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Macroeconomics 3e, 8.2 How to Measure Changes in the Cost of Living"
+      },
+      {
+        "name": "OpenStax Principles of Macroeconomics 3e, 5.2 Adjusting Nominal Values to Real Values"
+      },
+      {
+        "name": "College Board, AP Macroeconomics Course and Exam Description (topic list)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

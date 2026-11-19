@@ -1,0 +1,101 @@
+{
+  "id": "gchem1.enthalpy-stoichiometry",
+  "slug": "enthalpy-stoichiometry",
+  "ladder": "chemistry",
+  "course": "gchem1",
+  "unit": "thermochemistry",
+  "title": "Heat from Amounts of Reactant",
+  "short": "Multiply moles by ΔH per mole of reaction, using the mole ratio to the substance you were given.",
+  "trouble": "Students multiply ΔH by grams instead of moles, or by the moles of a substance that has a different coefficient.",
+  "prereqs": [
+    "gchem1.enthalpy-equations",
+    "chem.mass-stoichiometry"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-convert"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A thermochemical equation from <a href=\"/chemistry/general-chemistry-1/enthalpy-equations/\">Enthalpy and Thermochemical Equations</a> is also a conversion factor. \"$\\Delta H = -890.3\\ \\text{kJ}$ per mole of reaction\" lets you ask how much heat a real amount of fuel gives, using the same moves as <a href=\"/chemistry/chemistry/mass-stoichiometry/\">Mass-to-Mass Stoichiometry</a>."
+      },
+      {
+        "t": "key",
+        "html": "$$q = (\\text{moles of reaction}) \\times \\Delta H, \\qquad \\text{moles of reaction} = \\frac{\\text{moles of a substance}}{\\text{its coefficient}}.$$ So: grams → moles of the substance → divide by its coefficient → multiply by $\\Delta H$. A negative result is heat released."
+      },
+      {
+        "t": "why",
+        "html": "\"Per mole of reaction\" means per one run of the equation exactly as written. If the equation is $2\\,\\mathrm{H_2} + \\mathrm{O_2} \\to 2\\,\\mathrm{H_2O}$ with $\\Delta H = -571.6\\ \\text{kJ}$, one run uses 2 mol of $\\mathrm{H_2}$. Burning 1 mol of $\\mathrm{H_2}$ is half a run, so it releases half of 571.6 kJ. The coefficient is the bridge between the substance you have and the reaction's $\\Delta H$, just as it was the bridge between two substances in stoichiometry."
+      },
+      {
+        "t": "viz",
+        "name": "ch-convert",
+        "opts": {
+          "mode": "map",
+          "eq": "CH4 + 2O2 -> CO2 + 2H2O",
+          "a": "CH4",
+          "b": "CO2",
+          "from": "g",
+          "to": "mol",
+          "start": 10
+        },
+        "cap": "The mole map again: grams of methane to moles, then moles of reaction (here 1 mol $\\mathrm{CH_4}$ per mole of reaction), then times $\\Delta H$."
+      },
+      {
+        "t": "ex",
+        "title": "Heat from burning methane",
+        "q": "$\\mathrm{CH_4} + 2\\,\\mathrm{O_2} \\to \\mathrm{CO_2} + 2\\,\\mathrm{H_2O(l)}$, $\\Delta H = -890.3\\ \\text{kJ}$. How much heat is released by burning $10.0\\ \\text{g}$ of $\\mathrm{CH_4}$ ($16.05\\ \\text{g/mol}$)?",
+        "steps": [
+          "Moles: $10.0/16.05 = 0.6231\\ \\text{mol}\\ \\mathrm{CH_4}$, which is $0.6231$ mol of reaction (coefficient 1).",
+          "$q = 0.6231 \\times (-890.3) = -555\\ \\text{kJ}$."
+        ],
+        "a": "$555\\ \\text{kJ}$ released."
+      },
+      {
+        "t": "ex",
+        "title": "A coefficient of 2",
+        "q": "$2\\,\\mathrm{H_2} + \\mathrm{O_2} \\to 2\\,\\mathrm{H_2O(l)}$, $\\Delta H = -571.6\\ \\text{kJ}$. How much heat does burning $1.00\\ \\text{g}$ of $\\mathrm{H_2}$ ($2.02\\ \\text{g/mol}$) release?",
+        "steps": [
+          "Moles of $\\mathrm{H_2}$: $1.00/2.02 = 0.4950\\ \\text{mol}$.",
+          "Moles of reaction: $0.4950/2 = 0.2475$.",
+          "$q = 0.2475 \\times (-571.6) = -141\\ \\text{kJ}$."
+        ],
+        "a": "$141\\ \\text{kJ}$ released, the highest of any fuel per gram."
+      },
+      {
+        "t": "ex",
+        "title": "Grams needed",
+        "q": "$\\mathrm{C_3H_8} + 5\\,\\mathrm{O_2} \\to 3\\,\\mathrm{CO_2} + 4\\,\\mathrm{H_2O(l)}$, $\\Delta H = -2219.9\\ \\text{kJ}$. What mass of propane ($44.11\\ \\text{g/mol}$) must burn to release $1000\\ \\text{kJ}$?",
+        "steps": [
+          "Moles of reaction: $1000/2219.9 = 0.4505$; propane's coefficient is 1, so $0.4505\\ \\text{mol}$.",
+          "Mass: $0.4505 \\times 44.11 = 19.9\\ \\text{g}$."
+        ],
+        "a": "$19.9\\ \\text{g}$"
+      },
+      {
+        "t": "note",
+        "html": "Dividing by molar mass turns these into fuel values per gram: methane $890.3/16.05 = 55.5\\ \\text{kJ/g}$, propane $50.3\\ \\text{kJ/g}$, hydrogen $141.5\\ \\text{kJ/g}$. Per gram, hydrogen is the richest fuel, though a gram of it takes up a great deal of space as a gas."
+      },
+      {
+        "t": "mistake",
+        "html": "Multiplying $\\Delta H$ by grams instead of moles, or by the moles of a substance whose coefficient isn't 1. In the hydrogen example, $1.00 \\times 571.6$ or $0.4950 \\times 571.6$ would both be wrong. Check: always convert to moles of <i>reaction</i>, dividing by the coefficient, before you multiply by $\\Delta H$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 5.3 Enthalpy"
+      },
+      {
+        "name": "College Board, AP Chemistry Course and Exam Description (effective fall 2024), Unit 6: Thermochemistry"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

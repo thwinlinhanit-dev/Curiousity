@@ -1,0 +1,100 @@
+{
+  "id": "mech.elastic-collisions-1d",
+  "slug": "elastic-collisions-1d",
+  "course": "mech",
+  "courseTitle": "Mechanics with Calculus",
+  "unit": "momentum",
+  "unitTitle": "Momentum and Systems of Particles",
+  "title": "Solving Elastic Collisions",
+  "short": "Combine conservation of momentum and of kinetic energy: the relative speed reverses in a one-dimensional elastic collision.",
+  "trouble": "Students write only the momentum equation and are left with one equation for two unknowns.",
+  "prereqs": [
+    "phys1.elastic-collisions",
+    "alg2.nonlinear-systems"
+  ],
+  "xp": 3,
+  "viz": [
+    "ph-collision"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/physics/physics-1/elastic-collisions/\">Elastic and Inelastic Collisions</a> defined an elastic collision as one that keeps the total kinetic energy. Solving one means handling two equations at once, one of them quadratic, which is a job for <a href=\"/math/algebra-2/nonlinear-systems/\">Nonlinear Systems</a>. A clever division turns it into two linear equations."
+      },
+      {
+        "t": "why",
+        "html": "For masses $m_1, m_2$ with velocities $v_1, v_2$ before and $v_1', v_2'$ after, move each object's terms to its own side: $$m_1(v_1 - v_1') = m_2(v_2' - v_2) \\quad\\text{(momentum)},$$ $$m_1(v_1^2 - v_1'^2) = m_2(v_2'^2 - v_2^2) \\quad\\text{(kinetic energy, times 2)}.$$ Factor the squares, $a^2 - b^2 = (a - b)(a + b)$, and divide the second equation by the first (the collision happened, so $v_1 \\ne v_1'$): $$v_1 + v_1' = v_2 + v_2' \\;\\Rightarrow\\; v_2' - v_1' = -(v_2 - v_1).$$"
+      },
+      {
+        "t": "key",
+        "html": "In a one-dimensional elastic collision, the <b>relative velocity reverses</b>: the objects separate as fast as they approached. Together with momentum conservation, that gives $$v_1' = \\dfrac{m_1 - m_2}{m_1 + m_2}v_1 + \\dfrac{2m_2}{m_1 + m_2}v_2, \\qquad v_2' = \\dfrac{2m_1}{m_1 + m_2}v_1 + \\dfrac{m_2 - m_1}{m_1 + m_2}v_2.$$"
+      },
+      {
+        "t": "viz",
+        "name": "ph-collision",
+        "opts": {
+          "mode": "1d",
+          "m1": 2,
+          "m2": 4,
+          "v1": 6,
+          "v2": 0,
+          "e": 1,
+          "task": "Try equal masses, then a heavy glider hitting a light one."
+        },
+        "cap": "A $2\\ \\text{kg}$ glider at $6\\ \\text{m/s}$ hits a $4\\ \\text{kg}$ glider at rest: it bounces back at $2\\ \\text{m/s}$ while the other moves off at $4\\ \\text{m/s}$."
+      },
+      {
+        "t": "ex",
+        "title": "A light glider hits a heavy one",
+        "q": "A $2\\ \\text{kg}$ glider at $6\\ \\text{m/s}$ collides elastically with a $4\\ \\text{kg}$ glider at rest. Find both velocities afterward.",
+        "steps": [
+          "Momentum: $2v_1' + 4v_2' = 12$.",
+          "Relative velocity reverses: $v_2' - v_1' = 6$.",
+          "Substitute $v_2' = v_1' + 6$: $2v_1' + 4v_1' + 24 = 12$, so $v_1' = -2\\ \\text{m/s}$ and $v_2' = 4\\ \\text{m/s}$.",
+          "Check the energy: $\\tfrac{1}{2}(2)(36) = 36\\ \\text{J}$ before; $\\tfrac{1}{2}(2)(4) + \\tfrac{1}{2}(4)(16) = 4 + 32 = 36\\ \\text{J}$ after."
+        ],
+        "a": "$v_1' = -2\\ \\text{m/s}$ (it bounces back), $v_2' = 4\\ \\text{m/s}$."
+      },
+      {
+        "t": "ex",
+        "title": "Head-on, both moving",
+        "q": "A $3\\ \\text{kg}$ cart at $4\\ \\text{m/s}$ meets a $1\\ \\text{kg}$ cart moving toward it at $2\\ \\text{m/s}$. The collision is elastic. Find the velocities afterward.",
+        "steps": [
+          "Take the 3 kg cart's direction as positive: $v_1 = 4$, $v_2 = -2$. Momentum: $3v_1' + v_2' = 12 - 2 = 10$.",
+          "Relative velocity: $v_2' - v_1' = 4 - (-2) = 6$.",
+          "Then $3v_1' + v_1' + 6 = 10$, so $v_1' = 1\\ \\text{m/s}$ and $v_2' = 7\\ \\text{m/s}$."
+        ],
+        "a": "$v_1' = 1\\ \\text{m/s}$, $v_2' = 7\\ \\text{m/s}$, both in the positive direction."
+      },
+      {
+        "t": "mistake",
+        "html": "Writing only the momentum equation. With two unknown final velocities, one equation can't decide them; any pair on a line works, including ones that create energy. Check: count unknowns and equations. For an elastic collision use momentum plus the reversal of relative velocity (which is energy conservation in disguise); for a perfectly inelastic one, use momentum plus \"same final velocity.\""
+      },
+      {
+        "t": "list",
+        "items": [
+          "Equal masses, one at rest: they swap velocities (the moving one stops).",
+          "A very heavy object hitting a light one at rest: the light one leaves at nearly $2v_1$.",
+          "A light object hitting a very heavy one at rest: it bounces back at nearly its original speed."
+        ]
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 1, 9.4 Types of Collisions"
+      },
+      {
+        "name": "OpenStax University Physics Volume 1, 9.3 Conservation of Linear Momentum"
+      },
+      {
+        "name": "MIT OpenCourseWare 8.01 Classical Mechanics (scope and sequence)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

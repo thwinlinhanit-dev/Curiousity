@@ -1,0 +1,97 @@
+{
+  "id": "gchem1.molecular-orbitals",
+  "slug": "molecular-orbitals",
+  "ladder": "chemistry",
+  "course": "gchem1",
+  "unit": "bonding",
+  "title": "Molecular Orbital Diagrams",
+  "short": "Atomic orbitals combine into bonding and antibonding orbitals that give the bond order and the magnetism.",
+  "trouble": "Students predict from its Lewis structure that O₂ has no unpaired electrons, missing the two in its π* orbitals that make it magnetic.",
+  "prereqs": [
+    "gchem1.hybridization",
+    "gchem1.orbital-diagrams"
+  ],
+  "xp": 3,
+  "viz": [
+    "ch-modiagram"
+  ],
+  "figureArchetype": "WaveFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Liquid oxygen, poured between the poles of a strong magnet, sticks there: $\\mathrm{O_2}$ is paramagnetic, so by <a href=\"/chemistry/general-chemistry-1/orbital-diagrams/\">Orbital Diagrams and Magnetism</a> it must have unpaired electrons. Yet its Lewis structure, $\\mathrm{O{=}O}$ with every electron paired, says it has none. <a href=\"/chemistry/general-chemistry-1/hybridization/\">Valence bond theory</a> can't fix this; molecular orbital theory can."
+      },
+      {
+        "t": "key",
+        "html": "Atomic orbitals on two atoms combine into the same number of <b>molecular orbitals</b> spread over the whole molecule: <b>bonding</b> orbitals (lower energy, electron density between the nuclei) and <b>antibonding</b> orbitals (marked *, higher energy, a node between the nuclei). Fill them like atomic orbitals (lowest first, Pauli, Hund). Then $$\\text{bond order} = \\tfrac{1}{2}\\left(\\text{bonding electrons} - \\text{antibonding electrons}\\right).$$"
+      },
+      {
+        "t": "why",
+        "html": "Electrons are waves. Two waves that overlap in step add up between the nuclei, piling electron density where it attracts both nuclei: that lowers the energy, a bonding orbital. Out of step, they cancel between the nuclei, leaving a node; the electrons are pushed outward and the energy rises, an antibonding orbital. Each electron in a bonding orbital helps hold the atoms together and each one in an antibonding orbital undoes about as much, which is where the bond-order formula comes from. A bond order of zero means no bond: $\\mathrm{He_2}$ doesn't exist."
+      },
+      {
+        "t": "viz",
+        "name": "ch-modiagram",
+        "opts": {
+          "mol": "O2",
+          "task": "Step the electrons in one at a time. Where do the last two go?"
+        },
+        "cap": "Oxygen's MO diagram for the valence electrons. The last two go into the two π* orbitals, one each with parallel spins (Hund's rule): two unpaired electrons, and bond order $(8 - 4)/2 = 2$."
+      },
+      {
+        "t": "p",
+        "html": "For the second-row diatomics the valence orbitals fill in this order: $\\sigma_{2s}, \\sigma^*_{2s}$, then for $\\mathrm{B_2}$, $\\mathrm{C_2}$ and $\\mathrm{N_2}$: $\\pi_{2p}, \\sigma_{2p}$ (2s and 2p mixing pushes $\\sigma_{2p}$ up), and for $\\mathrm{O_2}$ and $\\mathrm{F_2}$: $\\sigma_{2p}, \\pi_{2p}$; then $\\pi^*_{2p}, \\sigma^*_{2p}$."
+      },
+      {
+        "t": "ex",
+        "title": "Oxygen",
+        "q": "Find the bond order and the number of unpaired electrons in $\\mathrm{O_2}$.",
+        "steps": [
+          "12 valence electrons: $\\sigma_{2s}^2\\,\\sigma_{2s}^{*2}\\,\\sigma_{2p}^2\\,\\pi_{2p}^4\\,\\pi_{2p}^{*2}$.",
+          "The two $\\pi^*$ orbitals have equal energy: one electron in each (Hund), spins parallel.",
+          "Bonding: $2 + 2 + 4 = 8$. Antibonding: $2 + 2 = 4$. Bond order $= (8 - 4)/2 = 2$."
+        ],
+        "a": "Bond order 2; 2 unpaired electrons, so $\\mathrm{O_2}$ is paramagnetic."
+      },
+      {
+        "t": "ex",
+        "title": "Adding and removing electrons",
+        "q": "Rank $\\mathrm{O_2^+}$, $\\mathrm{O_2}$ and $\\mathrm{O_2^-}$ by bond strength.",
+        "steps": [
+          "$\\mathrm{O_2^+}$ has 11 valence electrons: one fewer in $\\pi^*$. Bond order $(8 - 3)/2 = 2.5$.",
+          "$\\mathrm{O_2^-}$ has 13: one more in $\\pi^*$. Bond order $(8 - 5)/2 = 1.5$.",
+          "Higher bond order, stronger and shorter bond."
+        ],
+        "a": "$\\mathrm{O_2^-} < \\mathrm{O_2} < \\mathrm{O_2^+}$."
+      },
+      {
+        "t": "ex",
+        "title": "Does it exist?",
+        "q": "Predict whether $\\mathrm{He_2^+}$ can exist.",
+        "steps": [
+          "3 electrons: $\\sigma_{1s}^2\\,\\sigma_{1s}^{*1}$.",
+          "Bond order $= (2 - 1)/2 = \\tfrac{1}{2}$, greater than zero."
+        ],
+        "a": "Yes, with a weak half bond (it has been observed in gas discharges)."
+      },
+      {
+        "t": "mistake",
+        "html": "Predicting from the Lewis structure that $\\mathrm{O_2}$ has no unpaired electrons. Lewis structures pair every electron by design, so they miss the two electrons that occupy separate $\\pi^*$ orbitals. Use the MO diagram whenever magnetism or bond order of a diatomic is the question. Check: count electrons into the $\\pi^*$ pair; 1, 2 or 3 of them leave unpaired electrons."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 8.4 Molecular Orbital Theory"
+      },
+      {
+        "name": "College Board, AP Chemistry Course and Exam Description (effective fall 2024), Unit 2: Compound Structure and Properties"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

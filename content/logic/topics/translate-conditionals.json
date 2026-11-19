@@ -1,0 +1,161 @@
+{
+  "id": "sym.translate-conditionals",
+  "slug": "translate-conditionals",
+  "ladder": "logic",
+  "course": "sym",
+  "unit": "symbols",
+  "title": "Translating Conditionals",
+  "short": "\"If p, q\", \"q if p\", \"p only if q\", \"q provided that p\", \"p is sufficient for q\" and \"q is necessary for p\" are all p → q; \"p unless q\" is ¬q → p, or p ∨ q.",
+  "trouble": "\"Only if\" reversed, and \"necessary\" mixed up with \"sufficient\": \"You pass only if you study\" is pass → study, not study → pass.",
+  "prereqs": [
+    "sym.translate-not-and-or"
+  ],
+  "xp": 3,
+  "viz": [
+    "lg-sort"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Conditionals are the trickiest part of translation, because English has many ways to say \"if … then\" and some of them put the parts in reverse order. You met the basic idea in <a href=\"/logic/traditional-logic/hypothetical-propositions/\">Hypothetical Propositions</a>; here we make it exact. Throughout, $p$ stands for one simple statement and $q$ for another."
+      },
+      {
+        "t": "table",
+        "head": [
+          "English",
+          "Symbols"
+        ],
+        "rows": [
+          [
+            "if $p$, then $q$; $q$ if $p$; $q$ provided that $p$; whenever $p$, $q$",
+            "$p \\to q$"
+          ],
+          [
+            "$p$ only if $q$",
+            "$p \\to q$"
+          ],
+          [
+            "$p$ is sufficient for $q$",
+            "$p \\to q$"
+          ],
+          [
+            "$q$ is necessary for $p$; $p$ requires $q$",
+            "$p \\to q$"
+          ],
+          [
+            "$p$ unless $q$",
+            "$\\neg q \\to p$, which is equivalent to $p \\lor q$"
+          ]
+        ],
+        "cap": "All of these have $p$ as the antecedent."
+      },
+      {
+        "t": "key",
+        "html": "\"If\" introduces the antecedent; \"only if\" introduces the consequent. A <b>sufficient</b> condition is the antecedent; a <b>necessary</b> condition is the consequent. \"$p$ unless $q$\" means \"if not $q$, then $p$\"."
+      },
+      {
+        "t": "why",
+        "html": "Think about what each sentence rules out. \"You may vote only if you are registered\" rules out one situation: voting while not registered. $p \\to q$, with $p$: you vote and $q$: you are registered, is false in exactly that situation, $p$ true and $q$ false. The sentence does not promise that registering lets you vote, so it is not $q \\to p$. The same test explains \"necessary\": being registered is necessary for voting because every voter is registered."
+      },
+      {
+        "t": "viz",
+        "name": "lg-sort",
+        "opts": {
+          "bins": [
+            "p → q",
+            "q → p"
+          ],
+          "cards": [
+            {
+              "text": "If you study, you pass.",
+              "bin": 0
+            },
+            {
+              "text": "You pass only if you study.",
+              "bin": 1,
+              "why": "\"Only if\" introduces the consequent: pass → study."
+            },
+            {
+              "text": "Studying is sufficient for passing.",
+              "bin": 0
+            },
+            {
+              "text": "Studying is necessary for passing.",
+              "bin": 1,
+              "why": "Whenever you pass, you studied: pass → study."
+            },
+            {
+              "text": "You pass if you study.",
+              "bin": 0,
+              "why": "\"If\" introduces the antecedent, wherever it stands."
+            },
+            {
+              "text": "You do not pass unless you study.",
+              "bin": 1,
+              "why": "If you do not study, you do not pass; that is equivalent to pass → study."
+            }
+          ],
+          "shuffle": true,
+          "reveal": true
+        },
+        "cap": "$p$: you study; $q$: you pass. Sort each sentence by its translation."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Only if",
+        "q": "Let $p$: you get into the show; $q$: you have a ticket. Translate \"You get into the show only if you have a ticket.\"",
+        "steps": [
+          "\"Only if\" introduces the consequent: having a ticket.",
+          "So the antecedent is getting in."
+        ],
+        "a": "$p \\to q$"
+      },
+      {
+        "t": "ex",
+        "title": "Necessary",
+        "q": "Translate \"Having a ticket is necessary for getting into the show.\"",
+        "steps": [
+          "A necessary condition is the consequent.",
+          "Getting in needs a ticket: if you get in, you have one."
+        ],
+        "a": "$p \\to q$ (the same claim as the last example)"
+      },
+      {
+        "t": "ex",
+        "title": "Unless",
+        "q": "Let $r$: the game goes ahead; $s$: it rains. Translate \"The game goes ahead unless it rains.\"",
+        "steps": [
+          "\"$X$ unless $Y$\" means \"if not $Y$, then $X$\".",
+          "If it does not rain, the game goes ahead."
+        ],
+        "a": "$\\neg s \\to r$, equivalent to $r \\lor s$"
+      },
+      {
+        "t": "p",
+        "html": "Why does \"unless\" act like \"or\"? \"The game goes ahead unless it rains\" is broken only when it does not rain and the game still does not go ahead. $r \\lor s$ is false in exactly that case too. So you may translate \"unless\" as $\\lor$; both forms are correct."
+      },
+      {
+        "t": "mistake",
+        "html": "Reversing \"only if\". \"You pass only if you study\" is pass → study, not study → pass. Reversing it is the same slip as affirming the consequent. A check: does the sentence promise that studying is enough? No, so study → pass is not what it says."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Patrick J. Hurley and Lori Watson, A Concise Introduction to Logic, 13th ed., section 6.1, on \"only if\", \"unless\", necessary and sufficient conditions"
+      },
+      {
+        "name": "Irving M. Copi, Carl Cohen and Victor Rodych, Introduction to Logic, 15th ed., chapter on symbolic logic, conditional statements"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

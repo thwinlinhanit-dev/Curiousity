@@ -1,0 +1,96 @@
+{
+  "id": "chem.activity-series",
+  "slug": "activity-series",
+  "ladder": "chemistry",
+  "course": "chem",
+  "unit": "reactions",
+  "title": "Predicting Single Replacements",
+  "short": "A more active metal replaces a less active one in a compound; the activity series tells which is which.",
+  "trouble": "Students think any metal can replace any other metal in a compound.",
+  "prereqs": [
+    "chem.reaction-types"
+  ],
+  "xp": 2,
+  "viz": [
+    "chem-activity"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/chemistry/chemistry/reaction-types/\">Types of Reactions</a> you met the single replacement pattern, A + BC → AC + B. It does not always happen: drop a copper wire into a zinc sulfate solution and nothing changes. Whether a metal can push another one out of a compound depends on which one gives up electrons more easily."
+      },
+      {
+        "t": "key",
+        "html": "A metal replaces any metal below it in the <b>activity series</b>, and no metal above it. Metals above hydrogen also replace hydrogen in acids such as $\\mathrm{HCl}$, giving hydrogen gas; copper, silver and gold do not."
+      },
+      {
+        "t": "p",
+        "html": "Activity series, most active first: $$\\mathrm{K} > \\mathrm{Na} > \\mathrm{Ca} > \\mathrm{Mg} > \\mathrm{Al} > \\mathrm{Zn} > \\mathrm{Fe} > \\mathrm{Ni} > \\mathrm{Sn} > \\mathrm{Pb} > \\mathrm{H} > \\mathrm{Cu} > \\mathrm{Ag} > \\mathrm{Au}$$"
+      },
+      {
+        "t": "why",
+        "html": "Metal atoms react by losing electrons. When zinc sits in a solution of copper(II) ions, zinc atoms hand two electrons each to $\\mathrm{Cu}^{2+}$ ions: zinc dissolves as $\\mathrm{Zn}^{2+}$, and copper metal coats the zinc. The reverse cannot happen on its own, because copper holds its electrons more tightly than zinc does. The activity series is simply the list of metals in order of how readily they give up electrons."
+      },
+      {
+        "t": "viz",
+        "name": "chem-activity",
+        "opts": {
+          "metal": "Zn",
+          "sol": "CuSO4"
+        },
+        "cap": "Pick a metal and a solution. A metal above the dissolved metal (or above hydrogen, for the acid) reacts; one below it does not."
+      },
+      {
+        "t": "ex",
+        "title": "Iron in copper sulfate",
+        "q": "Does iron react with copper(II) sulfate solution? If so, what forms?",
+        "steps": [
+          "Iron is above copper in the series, so it can replace copper.",
+          "Iron forms $\\mathrm{Fe}^{2+}$ here, so with sulfate it makes $\\mathrm{FeSO}_{4}$.",
+          "$$\\mathrm{Fe} + \\mathrm{CuSO}_{4} \\to \\mathrm{FeSO}_{4} + \\mathrm{Cu}$$"
+        ],
+        "a": "Yes: iron(II) sulfate and copper metal form."
+      },
+      {
+        "t": "ex",
+        "title": "Copper in zinc sulfate",
+        "q": "Does copper react with zinc sulfate solution?",
+        "steps": [
+          "Copper is below zinc in the series.",
+          "A less active metal cannot push a more active one out of its compound."
+        ],
+        "a": "No reaction."
+      },
+      {
+        "t": "ex",
+        "title": "A metal in acid",
+        "q": "What happens when magnesium is added to hydrochloric acid?",
+        "steps": [
+          "Magnesium is above hydrogen, so it replaces the hydrogen in $\\mathrm{HCl}$.",
+          "$\\mathrm{Mg}^{2+}$ pairs with two $\\mathrm{Cl}^{-}$ ions: $\\mathrm{MgCl}_{2}$.",
+          "$$\\mathrm{Mg} + 2\\mathrm{HCl} \\to \\mathrm{MgCl}_{2} + \\mathrm{H}_{2}$$"
+        ],
+        "a": "Hydrogen gas bubbles off and magnesium chloride stays in solution."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking any metal can replace any other metal in a compound. Only a metal higher in the series can do it, and the switch never runs backward: since zinc replaces copper, copper cannot replace zinc. Check by finding both metals in the list before you write products."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 4.2 Classifying Chemical Reactions"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-PS1-2"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

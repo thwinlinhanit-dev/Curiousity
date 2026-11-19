@@ -1,0 +1,113 @@
+{
+  "id": "lifesci.punnett-probability",
+  "slug": "punnett-probability",
+  "ladder": "bio",
+  "course": "lifesci",
+  "unit": "heredity",
+  "title": "Chances from a Punnett Square",
+  "short": "Each box of a Punnett square is an equally likely outcome, so a box count gives a probability: 1 of 4 boxes is a 25% chance for each offspring.",
+  "trouble": "Students think a 3:1 ratio means exactly 3 of every 4 offspring will show the trait. Each offspring is a new chance; real families and litters vary from the ratio, especially when they are small.",
+  "prereqs": [
+    "lifesci.punnett-squares",
+    "g7.theoretical-probability"
+  ],
+  "xp": 2,
+  "viz": [
+    "bi-punnett",
+    "bi-chart"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Each box of a <a href=\"/biology/life-science/punnett-squares/\">Punnett square</a> is one equally likely outcome. That turns genetics into the <a href=\"/math/grade-7/theoretical-probability/\">theoretical probability</a> you know from math class."
+      },
+      {
+        "t": "key",
+        "html": "Chance of a genotype or phenotype = (number of boxes with it) ÷ 4. One box out of four is 1/4, or <b>25%</b>; three boxes is 3/4, or <b>75%</b>. The chance applies to <b>each offspring separately</b>."
+      },
+      {
+        "t": "why",
+        "html": "Each offspring is a new, independent draw, like a new roll of a die. A 1/4 chance of a white-flowered plant does not mean one plant in every four will be white. In a small family or litter the count can easily differ from the ratio. With hundreds of offspring, the share gets close to 25%. Mendel counted thousands of pea plants for this reason."
+      },
+      {
+        "t": "viz",
+        "name": "bi-chart",
+        "opts": {
+          "kind": "bar",
+          "x": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "series": [
+            {
+              "name": "Chance (%)",
+              "values": [
+                0.4,
+                4.7,
+                21.1,
+                42.2,
+                31.6
+              ]
+            }
+          ],
+          "xlabel": "Purple-flowered plants out of 4 (each has a 3/4 chance)",
+          "ylabel": "Chance (%)",
+          "title": "Pp × Pp: groups of 4 offspring",
+          "values": true
+        },
+        "cap": "Only about 42% of groups of four show exactly 3 purple and 1 white."
+      },
+      {
+        "t": "ex",
+        "title": "Read the chance",
+        "q": "Two Pp plants are crossed. What is the chance that one offspring has white flowers (pp)?",
+        "steps": [
+          "The square has PP, Pp, Pp, pp.",
+          "Boxes with pp: 1 of 4."
+        ],
+        "a": "1/4, or 25%."
+      },
+      {
+        "t": "ex",
+        "title": "Expected count",
+        "q": "From the same cross, a gardener grows 200 seeds. About how many plants will have purple flowers?",
+        "steps": [
+          "Purple boxes: PP, Pp, Pp = 3 of 4.",
+          "3/4 × 200 = 150."
+        ],
+        "a": "About 150 (the real count will be near 150, not exactly)."
+      },
+      {
+        "t": "ex",
+        "title": "Each one is new",
+        "q": "Two Bb guinea pigs have had three black pups. What is the chance the fourth is white?",
+        "steps": [
+          "Each pup is a new draw from the same square.",
+          "White (bb) is 1 box of 4. Past pups do not change it."
+        ],
+        "a": "1/4, or 25%."
+      },
+      {
+        "t": "mistake",
+        "html": "Students think a 3:1 ratio means exactly 3 of every 4 offspring will show the trait, or that after three black pups a white one is \"due.\" Each offspring is a new chance. Ratios describe what to expect on average over many offspring."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Concepts of Biology, 8.2 Laws of Inheritance (probability)"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 7.SP.C.7 (theoretical probability)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

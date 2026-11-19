@@ -1,0 +1,127 @@
+{
+  "id": "hsbio.enzyme-conditions",
+  "slug": "enzyme-conditions",
+  "ladder": "bio",
+  "course": "hsbio",
+  "unit": "chemistry",
+  "title": "Temperature, pH and Enzymes",
+  "short": "Each enzyme works best at an optimal temperature and pH. Too far away, the enzyme's shape changes (it denatures) and it stops working.",
+  "trouble": "Students think enzymes are \"killed\" by heat. Enzymes are molecules, not living things; heat changes their shape, and the reaction rate rises with temperature until the enzyme begins to denature.",
+  "prereqs": [
+    "hsbio.enzymes",
+    "hsbio.ph"
+  ],
+  "xp": 2,
+  "viz": [
+    "bi-enzyme",
+    "bi-chart"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "An <a href=\"/biology/high-school-biology/enzymes/\">enzyme</a> works only while it keeps its shape. Temperature and <a href=\"/biology/high-school-biology/ph/\">pH</a> both push on the weak bonds that hold that shape."
+      },
+      {
+        "t": "key",
+        "html": "Each enzyme works best at an <b>optimal temperature</b> and an <b>optimal pH</b>. Far from them, its shape changes (it <b>denatures</b>), the substrate no longer fits the active site, and the enzyme stops working."
+      },
+      {
+        "t": "viz",
+        "name": "bi-enzyme",
+        "opts": {
+          "mode": "temp",
+          "opt": 37
+        },
+        "cap": "Activity against temperature for a human enzyme: a slow rise, a peak near 37 °C, then a steep fall as the enzyme denatures."
+      },
+      {
+        "t": "why",
+        "html": "As temperature rises, molecules move faster and collide more often, so the rate climbs. Past the optimum, the vibrations break the hydrogen bonds and other weak interactions that hold the folded shape, and the active site falls apart. That damage usually stays when the enzyme cools. Cold is different: at low temperature molecules move slowly and the rate drops, but the enzyme keeps its shape and works again when warmed. pH works through charges: extra H⁺ or OH⁻ changes the charges on R groups, which changes the fold."
+      },
+      {
+        "t": "viz",
+        "name": "bi-enzyme",
+        "opts": {
+          "mode": "ph",
+          "enzymes": [
+            "pepsin",
+            "amylase",
+            "trypsin"
+          ]
+        },
+        "cap": "Each enzyme has its own optimal pH."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Enzyme",
+          "Where it works",
+          "Optimal pH (about)"
+        ],
+        "rows": [
+          [
+            "Pepsin",
+            "Stomach",
+            "2"
+          ],
+          [
+            "Salivary amylase",
+            "Mouth",
+            "7"
+          ],
+          [
+            "Trypsin",
+            "Small intestine",
+            "8"
+          ]
+        ],
+        "cap": "Human digestive enzymes match the place they work."
+      },
+      {
+        "t": "ex",
+        "title": "Read the curve",
+        "q": "An enzyme's rate is 10 units at 20 °C, 25 at 30 °C, 40 at 37 °C, 15 at 45 °C and 0 at 55 °C. What is the optimal temperature, and why is the rate 0 at 55 °C?",
+        "steps": [
+          "The highest rate (40) is at 37 °C: that is the optimum.",
+          "Above it, the rate falls steeply.",
+          "At 55 °C the enzyme has denatured: its active site has lost its shape."
+        ],
+        "a": "37 °C; the enzyme is denatured"
+      },
+      {
+        "t": "ex",
+        "title": "Hot and cold",
+        "q": "One tube of amylase is kept at 0 °C and one at 80 °C for ten minutes; then both are brought to 37 °C and given starch. Which works?",
+        "steps": [
+          "At 0 °C, the enzyme was slow but kept its shape.",
+          "At 80 °C it denatured, and the change does not undo itself on cooling.",
+          "So the tube that was cold works at 37 °C; the one that was heated does not."
+        ],
+        "a": "Only the tube that was cold"
+      },
+      {
+        "t": "mistake",
+        "html": "Saying enzymes are \"killed\" by heat. Enzymes are molecules, not living things, so they cannot die. Heat changes their shape. And heat is not always bad: the rate rises with temperature until the enzyme begins to denature. Check your words: \"the enzyme denatured,\" not \"the enzyme died.\""
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Concepts of Biology, 4.1 Energy and Metabolism (enzymes)"
+      },
+      {
+        "name": "OpenStax, Biology 2e, 6.5 Enzymes"
+      },
+      {
+        "name": "Grokipedia, Denaturation (biochemistry)",
+        "url": "https://grokipedia.com/page/Denaturation_(biochemistry)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

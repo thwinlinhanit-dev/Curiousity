@@ -1,0 +1,63 @@
+{
+  "id": "exam.two-speakers",
+  "slug": "two-speakers",
+  "ladder": "physics",
+  "course": "exam",
+  "unit": "waves",
+  "title": "Two Speakers in Step",
+  "short": "Path difference decides loud or quiet; then find the frequencies that make a spot quiet.",
+  "trouble": "Students compare the distances themselves instead of their difference.",
+  "prereqs": [
+    "phys2.superposition",
+    "phys2.wave-speed-medium"
+  ],
+  "xp": 3,
+  "viz": [
+    "exam-two-speakers"
+  ],
+  "figureArchetype": "WaveFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Two speakers playing the same note in step make a pattern of loud and quiet spots, as in <a href=\"/physics/physics-2/superposition/\">Superposition</a>. What matters at a spot is how much farther one speaker is than the other. Each problem here is one short scene and a chain of questions. Answer them in order: each later question uses what you found before, so a slip early on carries through. Keep full precision between steps and round only at the end."
+      },
+      {
+        "t": "key",
+        "html": "Path difference $\\Delta = |L_2 - L_1|$ and $\\lambda = v/f$. $$\\text{loud: } \\Delta = m\\lambda, \\qquad \\text{quiet: } \\Delta = (m + \\tfrac{1}{2})\\lambda.$$ The lowest frequency that makes a spot quiet has $\\Delta = \\lambda/2$, so $f = v/(2\\Delta)$."
+      },
+      {
+        "t": "viz",
+        "name": "exam-two-speakers",
+        "opts": {
+          "s": 3,
+          "x": 4
+        },
+        "cap": "Blue and purple rings are the waves from each speaker. Where crest meets crest the sound is loud."
+      },
+      {
+        "t": "ex",
+        "title": "Loud or quiet?",
+        "q": "Speakers $3\\ \\text{m}$ apart; a listener $4\\ \\text{m}$ straight out from one of them. Sound travels at $340\\ \\text{m/s}$. Find (1) the path difference and (2) the lowest frequency that is quiet there.",
+        "steps": [
+          "(1) The far speaker is $\\sqrt{3^2 + 4^2} = 5\\ \\text{m}$ away, so $\\Delta = 1\\ \\text{m}$.",
+          "(2) $\\lambda = 2\\Delta = 2\\ \\text{m}$, so $f = 340/2 = 170\\ \\text{Hz}$."
+        ],
+        "a": "$1\\ \\text{m}$, $170\\ \\text{Hz}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Comparing a single distance with the wavelength. A spot $5\\ \\text{m}$ from one speaker tells you nothing alone; only the difference between the two paths decides how the waves meet."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e (Rice University), chapters 16 and 17 on waves and sound"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,115 @@
+{
+  "id": "phys1.second-law-systems",
+  "slug": "second-law-systems",
+  "ladder": "physics",
+  "course": "phys1",
+  "unit": "forces",
+  "title": "Newton's Second Law Along an Axis",
+  "short": "Add the forces along an axis with signs, then a = ΣF/m.",
+  "trouble": "Students use only the applied force instead of the net force.",
+  "prereqs": [
+    "phys1.equilibrium-first-law",
+    "physsci.second-law-intro"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-fbd",
+    "ph-dynamics"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/physics/physical-science/second-law-intro/\">Newton's Second Law: F = ma</a> gave $F = ma$. When several forces act, which $F$? The answer is the <b>net</b> force, the sum of all the forces on your <a href=\"/physics/physics-1/free-body-diagrams/\">free-body diagram</a>, with signs. When <a href=\"/physics/physics-1/equilibrium-first-law/\">that sum is zero</a>, there is no acceleration."
+      },
+      {
+        "t": "key",
+        "html": "$\\Sigma F_x = ma_x$: choose a positive direction, add every force along that axis with its sign, then divide by the mass."
+      },
+      {
+        "t": "why",
+        "html": "Each force on an object contributes to its acceleration, and forces along a line simply add, with opposite directions subtracting. The object responds to the total, so only the net force sets the acceleration. A large push opposed by large friction can give a small acceleration."
+      },
+      {
+        "t": "viz",
+        "name": "ph-dynamics",
+        "opts": {
+          "scene": "cart",
+          "m1": 2,
+          "F": 8,
+          "muk": 0.2,
+          "task": "Change the push and the friction. The acceleration follows the net force (push minus friction), not the push alone."
+        },
+        "cap": "A 2 kg cart pushed with 8 N against 3.9 N of friction accelerates at (8 − 3.9)/2 ≈ 2.0 m/s²."
+      },
+      {
+        "t": "list",
+        "items": [
+          "Draw the free-body diagram and choose a positive direction (usually the direction of the acceleration).",
+          "Write $\\Sigma F_x$: every force along the axis, with its sign.",
+          "Set it equal to $ma_x$ and solve for the unknown.",
+          "If forces act along $y$ too, do the same there, separately."
+        ]
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Two opposite forces",
+        "q": "A $5\\ \\text{kg}$ cart is pulled right with $30\\ \\text{N}$ and left with $12\\ \\text{N}$. Find its acceleration (right is $+$).",
+        "steps": [
+          "$\\Sigma F_x = 30 - 12 = 18\\ \\text{N}$.",
+          "$a = \\dfrac{18}{5} = 3.6\\ \\text{m/s}^2$ to the right."
+        ],
+        "a": "$3.6\\ \\text{m/s}^2$"
+      },
+      {
+        "t": "ex",
+        "title": "Vertical forces",
+        "q": "A $50\\ \\text{kg}$ model rocket has $800\\ \\text{N}$ of thrust. Find its acceleration.",
+        "steps": [
+          "Up is $+$: $$\\Sigma F = 800 - (50)(9.8) = 800 - 490 = 310\\ \\text{N}.$$",
+          "$a = \\dfrac{310}{50} = 6.2\\ \\text{m/s}^2$ upward."
+        ],
+        "a": "$6.2\\ \\text{m/s}^2$ up"
+      },
+      {
+        "t": "ex",
+        "title": "Finding a force",
+        "q": "What horizontal pull gives a $10\\ \\text{kg}$ box an acceleration of $1.5\\ \\text{m/s}^2$ against $20\\ \\text{N}$ of friction?",
+        "steps": [
+          "$F - 20 = (10)(1.5) = 15$.",
+          "$F = 35\\ \\text{N}$: $20\\ \\text{N}$ to cancel friction and $15\\ \\text{N}$ to accelerate."
+        ],
+        "a": "$35\\ \\text{N}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Using only the applied force in $F = ma$ and forgetting friction, weight or other forces. Check: list every arrow on the free-body diagram along the axis of motion, and make sure each one is in your sum with its sign."
+      },
+      {
+        "t": "note",
+        "html": "Try it in the Science Lab: <a href=\"/science-lab/newtons-laws/second-law/\">The Second Law: F = ma</a>."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Physics 2e, Section 4.3 Newton's Second Law of Motion: Concept of a System"
+      },
+      {
+        "name": "OpenStax University Physics Volume 1, Section 5.3 Newton's Second Law"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-PS2-1"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

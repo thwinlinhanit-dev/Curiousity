@@ -1,0 +1,104 @@
+{
+  "id": "macro.fiscal-policy-size",
+  "slug": "fiscal-policy-size",
+  "ladder": "economics",
+  "course": "macro",
+  "unit": "fiscal",
+  "title": "How Big a Fiscal Change?",
+  "short": "Divide the output gap by the right multiplier to find the change in spending or taxes needed.",
+  "trouble": "Students set the spending change equal to the whole output gap, ignoring the multiplier, or use the spending multiplier for a tax change.",
+  "prereqs": [
+    "macro.fiscal-policy"
+  ],
+  "xp": 3,
+  "viz": [
+    "ec-multiplier"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/economics/macroeconomics/fiscal-policy/\">Expansionary and Contractionary Fiscal Policy</a> tells you which way to move. The multipliers tell you how far. Because each dollar of new spending is multiplied, the change needed is much smaller than the gap."
+      },
+      {
+        "t": "key",
+        "html": "To close a gap with government purchases: $\\Delta G = \\dfrac{\\text{gap}}{\\text{spending multiplier}}$. With taxes: $\\Delta T = \\dfrac{\\text{gap}}{MPC/MPS}$ (a cut for a recessionary gap, a rise for an inflationary gap). This simple rule assumes the price level stays about the same."
+      },
+      {
+        "t": "why",
+        "html": "If the multiplier is 5, every \\$1 of new government purchases raises GDP by \\$5. To raise GDP by \\$100 billion, the government needs only \\$20 billion: $20 \\times 5 = 100$. Setting the change equal to the whole gap would overshoot. For taxes, the multiplier is smaller ($MPC/MPS$, one less), because households save part of a tax cut before spending, so a larger tax change is needed for the same effect."
+      },
+      {
+        "t": "viz",
+        "name": "ec-multiplier",
+        "opts": {
+          "mode": "spending",
+          "first": 20,
+          "mpc": 0.8,
+          "rounds": 12
+        },
+        "cap": "A \\$20 billion rise in purchases with MPC 0.8: the rounds add up toward \\$100 billion."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Using government purchases",
+        "q": "A recessionary gap is \\$200 billion and the MPC is 0.75. How much should government purchases rise?",
+        "steps": [
+          "Spending multiplier $= \\dfrac{1}{0.25} = 4$.",
+          "$\\Delta G = \\dfrac{200}{4} = 50$ billion dollars.",
+          "Check: $50 \\times 4 = 200$. ✓"
+        ],
+        "a": "\\$50 billion"
+      },
+      {
+        "t": "ex",
+        "title": "Using taxes",
+        "q": "The same \\$200 billion gap, MPC 0.75. How much should taxes be cut?",
+        "steps": [
+          "Tax multiplier (size) $= \\dfrac{0.75}{0.25} = 3$.",
+          "Tax cut $= \\dfrac{200}{3} \\approx 66.7$ billion dollars, more than the \\$50 billion of purchases."
+        ],
+        "a": "About \\$66.7 billion"
+      },
+      {
+        "t": "ex",
+        "title": "An inflationary gap",
+        "q": "An inflationary gap is \\$90 billion and the MPC is 0.9. By how much should purchases fall? Or taxes rise?",
+        "steps": [
+          "Spending multiplier $= 10$: cut purchases by $\\dfrac{90}{10} = 9$ billion dollars.",
+          "Tax multiplier $= 9$: raise taxes by $\\dfrac{90}{9} = 10$ billion dollars."
+        ],
+        "a": "Cut G by \\$9 billion, or raise taxes by \\$10 billion"
+      },
+      {
+        "t": "p",
+        "html": "Why \"about\"? With an upward-sloping SRAS, part of an AD shift goes into a higher price level rather than more output, so in practice a somewhat larger change would be needed. Real-world multipliers are also uncertain, which is one reason economists debate how much fiscal policy to use."
+      },
+      {
+        "t": "mistake",
+        "html": "Setting the spending change equal to the whole output gap, ignoring the multiplier, or using the spending multiplier for a tax change. Check: multiply your answer by the right multiplier; you should get back the gap."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Macroeconomics 3e, 16.4 Using Fiscal Policy to Fight Recession, Unemployment, and Inflation"
+      },
+      {
+        "name": "OpenStax Principles of Macroeconomics 3e, 11.2 The Building Blocks of Keynesian Analysis"
+      },
+      {
+        "name": "College Board, AP Macroeconomics Course and Exam Description (topic list)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

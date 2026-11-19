@@ -1,0 +1,121 @@
+{
+  "id": "nt.supplementary-laws",
+  "slug": "supplementary-laws",
+  "ladder": "math",
+  "course": "nt",
+  "unit": "quadratic-residues",
+  "title": "Is −1 or 2 a Square mod p?",
+  "short": "−1 is a square mod an odd prime p exactly when p ≡ 1 (mod 4), and 2 is a square exactly when p ≡ ±1 (mod 8).",
+  "trouble": "Students use the rule for −1 on 2, or look at p mod 4 when the rule for 2 needs p mod 8.",
+  "prereqs": [
+    "nt.euler-criterion"
+  ],
+  "xp": 3,
+  "viz": [],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/math/number-theory/euler-criterion/\">Euler's criterion</a> decides any single case. For two special numbers, $-1$ and $2$, it gives a rule that depends only on the remainder of $p$ mod 4 or mod 8. These two rules, the <b>supplementary laws</b>, are the base cases of quadratic reciprocity."
+      },
+      {
+        "t": "p",
+        "html": "<b>Theorem.</b> For an odd prime $p$: $$\\left(\\frac{-1}{p}\\right) = 1 \\iff p \\equiv 1 \\pmod{4}, \\qquad \\left(\\frac{2}{p}\\right) = 1 \\iff p \\equiv \\pm 1 \\pmod{8}.$$"
+      },
+      {
+        "t": "why",
+        "html": "<b>For $-1$:</b> Euler gives $\\left(\\frac{-1}{p}\\right) \\equiv (-1)^{(p-1)/2}$, which is $1$ exactly when $\\frac{p-1}{2}$ is even, that is, $p \\equiv 1 \\pmod{4}$.<br><b>For $2$:</b> multiply the even numbers $2 \\cdot 4 \\cdot 6 \\cdots (p - 1)$. Factoring out a 2 from each gives $2^{(p-1)/2} \\cdot \\left(\\frac{p-1}{2}\\right)!$. Now replace each even number bigger than $\\frac{p}{2}$ by $-(p - \\text{that number})$, a negative odd number below $\\frac{p}{2}$. The list becomes $\\pm 1, \\pm 2, \\dots, \\pm \\frac{p-1}{2}$ with one minus sign for each even number above $\\frac{p}{2}$. So $2^{(p-1)/2} \\equiv (-1)^{m}$, where $m$ counts the even numbers between $\\frac{p}{2}$ and $p$, and checking the four cases of $p \\bmod 8$ shows $m$ is even exactly when $p \\equiv \\pm 1 \\pmod{8}$. For $p = 11$: the evens above 5.5 are 6, 8, 10, so $m = 3$ and $\\left(\\frac{2}{11}\\right) = -1$."
+      },
+      {
+        "t": "table",
+        "head": [
+          "$p \\bmod 8$",
+          "1",
+          "3",
+          "5",
+          "7"
+        ],
+        "rows": [
+          [
+            "$\\left(\\frac{-1}{p}\\right)$",
+            "$1$",
+            "$-1$",
+            "$1$",
+            "$-1$"
+          ],
+          [
+            "$\\left(\\frac{2}{p}\\right)$",
+            "$1$",
+            "$-1$",
+            "$-1$",
+            "$1$"
+          ],
+          [
+            "$\\left(\\frac{-2}{p}\\right)$",
+            "$1$",
+            "$1$",
+            "$-1$",
+            "$-1$"
+          ]
+        ],
+        "cap": "The rule for $-1$ depends on $p$ mod 4; the rule for 2 needs $p$ mod 8. The last row is the product of the two above it."
+      },
+      {
+        "t": "ex",
+        "title": "Is −1 a square?",
+        "q": "Find $\\left(\\frac{-1}{13}\\right)$ and a square root of $-1$ mod 13.",
+        "steps": [
+          "$13 \\equiv 1 \\pmod{4}$, so $\\left(\\frac{-1}{13}\\right) = 1$.",
+          "Indeed $5^{2} = 25 = 26 - 1 \\equiv -1 \\pmod{13}$."
+        ],
+        "a": "$1$; for example $x = 5$."
+      },
+      {
+        "t": "ex",
+        "title": "Is 2 a square?",
+        "q": "Find $\\left(\\frac{2}{17}\\right)$ and $\\left(\\frac{2}{11}\\right)$.",
+        "steps": [
+          "$17 \\equiv 1 \\pmod{8}$, so $\\left(\\frac{2}{17}\\right) = 1$. Check: $6^{2} = 36 = 34 + 2$.",
+          "$11 \\equiv 3 \\pmod{8}$, so $\\left(\\frac{2}{11}\\right) = -1$, matching the list of squares mod 11 (2 is not on it)."
+        ],
+        "a": "$1$ and $-1$."
+      },
+      {
+        "t": "ex",
+        "title": "Combining the laws",
+        "q": "Find $\\left(\\frac{-2}{11}\\right)$.",
+        "steps": [
+          "$\\left(\\frac{-2}{11}\\right) = \\left(\\frac{-1}{11}\\right)\\left(\\frac{2}{11}\\right)$.",
+          "$11 \\equiv 3 \\pmod{4}$ gives $-1$; $11 \\equiv 3 \\pmod{8}$ gives $-1$. The product is $1$.",
+          "Check: $3^{2} = 9 \\equiv -2 \\pmod{11}$."
+        ],
+        "a": "$1$."
+      },
+      {
+        "t": "mistake",
+        "html": "Using the rule for $-1$ on $2$, or looking at $p$ mod 4 when the rule for 2 needs $p$ mod 8. For $p = 7$: $7 \\equiv 3 \\pmod{4}$, so $-1$ is not a square, but $7 \\equiv 7 \\equiv -1 \\pmod{8}$, so 2 <b>is</b> a square: $3^{2} = 9 \\equiv 2$. Keep the two rules separate."
+      },
+      {
+        "t": "note",
+        "html": "The first law has a famous consequence. If $p \\equiv 1 \\pmod{4}$, there is an $x$ with $p \\mid x^{2} + 1$, and that is the starting point for writing $p$ as a <a href=\"/math/number-theory/sums-of-two-squares/\">sum of two squares</a>."
+      },
+      {
+        "t": "key",
+        "html": "$-1$ is a square mod $p$ exactly when $p \\equiv 1 \\pmod{4}$; $2$ is a square exactly when $p \\equiv \\pm 1 \\pmod{8}$. Products follow by multiplicativity."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "William Stein, Elementary Number Theory: Primes, Congruences, and Secrets (Springer, 2009; free online edition), chapter 4, Quadratic Reciprocity"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.781 Theory of Numbers (Spring 2012), lecture notes on the supplementary laws"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

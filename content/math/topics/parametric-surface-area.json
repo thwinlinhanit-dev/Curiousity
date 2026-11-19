@@ -1,0 +1,100 @@
+{
+  "id": "calc4.parametric-surface-area",
+  "slug": "parametric-surface-area",
+  "ladder": "math",
+  "course": "calc4",
+  "unit": "surface-integrals",
+  "title": "Surface Area of a Parametric Surface",
+  "short": "dS = |r_u × r_v| du dv.",
+  "trouble": "",
+  "prereqs": [
+    "calc4.parametric-surfaces",
+    "calc3.cross-product",
+    "calc3.surface-area-double"
+  ],
+  "xp": 3,
+  "viz": [
+    "surface"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "To find the area of a curved surface, cut the parameter region into small rectangles and look at what each one becomes on the surface: a small, nearly flat parallelogram. Its area comes from the <a href=\"/math/calculus-3/cross-product/\">cross product</a>, and adding them up gives a double integral. For graphs this is the formula from <a href=\"/math/calculus-3/surface-area-double/\">surface area by double integrals</a>; the parametric version covers every surface."
+      },
+      {
+        "t": "key",
+        "html": "For a smooth parametric surface $\\mathbf{r}(u, v)$, $(u, v)$ in $D$, covered once:\n  $$\\text{Area} = \\iint_D |\\mathbf{r}_u \\times \\mathbf{r}_v|\\,dA.$$\n  Useful values: sphere of radius $a$, $|\\mathbf{r}_\\varphi \\times \\mathbf{r}_\\theta| = a^2\\sin\\varphi$; cylinder of radius $a$, $|\\mathbf{r}_\\theta \\times \\mathbf{r}_z| = a$; graph $z = f(x, y)$, $\\sqrt{1 + f_x^2 + f_y^2}$."
+      },
+      {
+        "t": "why",
+        "html": "The parameter rectangle $[u, u + \\Delta u] \\times [v, v + \\Delta v]$ maps to a small patch with corners near $\\mathbf{r}(u, v)$, $\\mathbf{r}(u, v) + \\mathbf{r}_u\\Delta u$ and $\\mathbf{r}(u, v) + \\mathbf{r}_v\\Delta v$. That patch is almost the parallelogram with sides $\\mathbf{r}_u\\Delta u$ and $\\mathbf{r}_v\\Delta v$, whose area is $|\\mathbf{r}_u \\times \\mathbf{r}_v|\\,\\Delta u\\,\\Delta v$. Adding over all cells and letting them shrink gives the integral. (The same idea, in the plane, gave the <a href=\"/math/calculus-3/change-of-variables/\">Jacobian</a>.)"
+      },
+      {
+        "t": "viz",
+        "name": "param3d",
+        "opts": {
+          "surface": true,
+          "x": "v*cos(u)",
+          "y": "v*sin(u)",
+          "z": "v",
+          "u0": 0,
+          "u1": "2pi",
+          "v0": 0,
+          "v1": 2,
+          "u": 0.8,
+          "v": 1.2
+        },
+        "cap": "The cone $\\langle v\\cos u, v\\sin u, v \\rangle$, ${}0 \\le v \\le 2$. The grid cells get wider as $v$ grows: their area factor $|\\mathbf{r}_u \\times \\mathbf{r}_v| = \\sqrt{2}\\,v$ grows with the distance from the tip."
+      },
+      {
+        "t": "p",
+        "html": "For a graph $z = f(x, y)$, use $\\mathbf{r}(x, y) = \\langle x, y, f(x, y) \\rangle$: then $\\mathbf{r}_x \\times \\mathbf{r}_y = \\langle -f_x, -f_y, 1 \\rangle$ and the formula becomes $\\iint_D \\sqrt{1 + f_x^2 + f_y^2}\\,dA$, the one from Calculus 3. The parametric version is needed when the surface is not a graph over a region of the $xy$-plane: a whole sphere, a cylinder standing on the $xy$-plane, a surface that folds over itself. One caution: the formula counts area each time the parametrization covers it, so choose parameter ranges that cover the surface exactly once. On a sphere, ${}0 \\le \\varphi \\le \\pi$ and ${}0 \\le \\theta \\le 2\\pi$ do; letting $\\varphi$ run to ${}2\\pi$ would count the sphere twice."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A sphere",
+        "q": "Find the area of the sphere of radius $a$.",
+        "steps": [
+          "$$\\mathbf{r}(\\varphi, \\theta) = \\langle a\\sin\\varphi\\cos\\theta, a\\sin\\varphi\\sin\\theta, a\\cos\\varphi \\rangle,$$ and $|\\mathbf{r}_\\varphi \\times \\mathbf{r}_\\theta| = a^2\\sin\\varphi$.",
+          "$$\\int_0^{2\\pi} \\int_0^\\pi a^2\\sin\\varphi\\,d\\varphi\\,d\\theta = 2\\pi a^2 \\cdot 2 = 4\\pi a^2.$$"
+        ],
+        "a": "${}4\\pi a^2$"
+      },
+      {
+        "t": "ex",
+        "title": "A cone",
+        "q": "Find the area of the cone $z = \\sqrt{x^2 + y^2}$ for ${}0 \\le z \\le 2$.",
+        "steps": [
+          "From the previous lesson, $$|\\mathbf{r}_u \\times \\mathbf{r}_v| = |\\langle v\\cos u, v\\sin u, -v \\rangle| = \\sqrt{2}\\,v.$$",
+          "$$\\int_0^{2\\pi} \\int_0^2 \\sqrt{2}\\,v\\,dv\\,du = 2\\pi \\cdot \\sqrt{2} \\cdot 2 = 4\\sqrt{2}\\,\\pi.$$"
+        ],
+        "a": "${}4\\sqrt{2}\\,\\pi$"
+      },
+      {
+        "t": "ex",
+        "title": "A helicoid",
+        "q": "Find the area of the spiral ramp $\\mathbf{r}(u, v) = \\langle u\\cos v, u\\sin v, v \\rangle$, ${}0 \\le u \\le 1$, ${}0 \\le v \\le 2\\pi$.",
+        "steps": [
+          "$\\mathbf{r}_u = \\langle \\cos v, \\sin v, 0 \\rangle$, $\\mathbf{r}_v = \\langle -u\\sin v, u\\cos v, 1 \\rangle$, so $\\mathbf{r}_u \\times \\mathbf{r}_v = \\langle \\sin v, -\\cos v, u \\rangle$ with length $\\sqrt{1 + u^2}$.",
+          "Area $$= 2\\pi\\int_0^1 \\sqrt{1 + u^2}\\,du = 2\\pi \\cdot \\frac{1}{2}\\left[\\sqrt{2} + \\ln(1 + \\sqrt{2})\\right] = \\pi\\left[\\sqrt{2} + \\ln(1 + \\sqrt{2})\\right] \\approx 7.21.$$"
+        ],
+        "a": "$\\pi\\left[\\sqrt{2} + \\ln(1 + \\sqrt{2})\\right]$"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 3, 6.6 Surface Integrals"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

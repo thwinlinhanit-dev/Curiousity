@@ -1,0 +1,111 @@
+{
+  "id": "modern.wave-power",
+  "slug": "wave-power",
+  "ladder": "physics",
+  "course": "modern",
+  "unit": "waves",
+  "title": "Energy and Power of a Wave",
+  "short": "A wave on a string carries power P = ½μω²A²v, so doubling the amplitude carries four times the power.",
+  "trouble": "Students think a wave's power grows in proportion to its amplitude.",
+  "prereqs": [
+    "modern.wave-function"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-wave"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A wave carries energy without carrying matter. Shake one end of a long rope and, a moment later, a bit of rope far away starts moving: energy has traveled down the rope. How much power does a wave deliver, and how does it depend on how hard you shake? You know the <a href=\"/physics/waves-optics-modern-physics/wave-function/\">wave function</a> $y = A\\sin(kx - \\omega t)$; the answer follows from it."
+      },
+      {
+        "t": "key",
+        "html": "A sinusoidal wave on a string with linear mass density $\\mu$ carries the average power $$P_{\\text{avg}} = \\tfrac{1}{2}\\,\\mu\\,\\omega^2 A^2\\,v.$$ Power grows with the <b>square</b> of the amplitude and the square of the frequency: double $A$ and the power is 4 times as large."
+      },
+      {
+        "t": "why",
+        "html": "Each bit of string of mass $\\Delta m = \\mu\\,\\Delta x$ moves up and down in simple harmonic motion with amplitude $A$ and angular frequency $\\omega$. A simple harmonic oscillator's total energy equals its maximum kinetic energy, $\\tfrac{1}{2}\\Delta m\\,(A\\omega)^2$. So one wavelength of string holds energy $E_\\lambda = \\tfrac{1}{2}\\mu\\lambda\\,\\omega^2A^2$. One wavelength passes any point every period $T$, so the power is $$P = \\frac{E_\\lambda}{T} = \\tfrac{1}{2}\\mu\\omega^2A^2\\,\\frac{\\lambda}{T} = \\tfrac{1}{2}\\mu\\omega^2A^2\\,v.$$ The square comes from kinetic energy: speed squared, and the bit's top speed $A\\omega$ is proportional to $A$."
+      },
+      {
+        "t": "p",
+        "html": "Energy per meter of string is $\\tfrac{1}{2}\\mu\\omega^2A^2$, and that energy moves at speed $v$: power is energy per length times speed, the same idea as a flow rate. For sound and light the same reasoning gives intensity proportional to the amplitude squared."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Power on a rope",
+        "q": "A rope with $\\mu = 0.25$ kg/m carries waves at 12 m/s. You shake it at 2.0 Hz with amplitude 4.0 cm. What average power do you supply?",
+        "steps": [
+          "$\\omega = 2\\pi f = 2\\pi(2.0) = 12.57$ rad/s.",
+          "$$P = \\tfrac{1}{2}(0.25\\ \\text{kg/m})(12.57\\ \\text{rad/s})^2$$ $$\\times\\,(0.040\\ \\text{m})^2(12\\ \\text{m/s})$$",
+          "$= 0.5 \\times 0.25 \\times 157.9 \\times 0.0016 \\times 12 = 0.379$ W.",
+          "Units: (kg/m)(1/s²)(m²)(m/s) = kg·m²/s³ = W."
+        ],
+        "a": "$P \\approx 0.38$ W"
+      },
+      {
+        "t": "ex",
+        "title": "Scaling",
+        "q": "You now shake the same rope with three times the amplitude and half the frequency. By what factor does the power change?",
+        "steps": [
+          "$P \\propto \\omega^2 A^2$ when $\\mu$ and $v$ stay the same (same rope, same tension).",
+          "Amplitude: $3^2 = 9$. Frequency: $(\\tfrac{1}{2})^2 = \\tfrac{1}{4}$.",
+          "Together: $9 \\times \\tfrac{1}{4} = 2.25$."
+        ],
+        "a": "$2.25$ times the power"
+      },
+      {
+        "t": "ex",
+        "title": "Amplitude for a target power",
+        "q": "A string has $\\mu = 5.0 \\times 10^{-3}$ kg/m and tension 80 N. What amplitude at 60 Hz carries an average power of 2.0 W?",
+        "steps": [
+          "Wave speed: $v = \\sqrt{F_T/\\mu} = \\sqrt{80/0.0050} = 126.5$ m/s.",
+          "$\\omega = 2\\pi(60) = 377$ rad/s.",
+          "Solve for $A$: $$A = \\sqrt{\\frac{2P}{\\mu\\omega^2 v}} = \\sqrt{\\frac{2(2.0)}{(0.0050)(377)^2(126.5)}}.$$",
+          "$= \\sqrt{4.45 \\times 10^{-5}\\ \\text{m}^2} = 6.7 \\times 10^{-3}$ m."
+        ],
+        "a": "$A \\approx 6.7$ mm"
+      },
+      {
+        "t": "mistake",
+        "html": "Assuming the power grows in proportion to the amplitude. It grows with the <b>square</b>: twice the amplitude means twice the top speed of each bit, so four times the kinetic energy. A quick check: if $A$ goes up by 10%, $P$ goes up by about 21%, since $1.1^2 = 1.21$."
+      },
+      {
+        "t": "mistake",
+        "html": "Changing the wave speed when the frequency changes. On a given string under a given tension, $v = \\sqrt{F_T/\\mu}$ does not depend on $f$. A higher frequency gives a shorter wavelength, not a faster wave."
+      },
+      {
+        "t": "viz",
+        "name": "ph-wave",
+        "opts": {
+          "mode": "travel",
+          "f": 0.5,
+          "v": 1,
+          "A": 0.4,
+          "graphs": [
+            "history"
+          ]
+        },
+        "cap": "Raise the amplitude and watch the red particle: it covers more distance in the same period, so its top speed and its kinetic energy rise. Doubling $A$ doubles the speed and quadruples the energy."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 1, 16.4 Energy and Power of a Wave"
+      },
+      {
+        "name": "MIT OpenCourseWare 8.03SC Physics III: Vibrations and Waves (Fall 2016)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

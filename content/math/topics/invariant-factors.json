@@ -1,0 +1,129 @@
+{
+  "id": "aa.invariant-factors",
+  "slug": "invariant-factors",
+  "ladder": "math",
+  "course": "aa",
+  "unit": "products",
+  "title": "Invariant Factors and Telling Abelian Groups Apart",
+  "short": "Regroup a product of cyclic groups so each order divides the next (ℤ₂ × ℤ₄ × ℤ₃ ≅ ℤ₂ × ℤ₁₂), and count elements of each order to tell abelian groups apart.",
+  "trouble": "Students merge factors whose orders share a prime, writing ℤ₂ × ℤ₄ as ℤ₈.",
+  "prereqs": [
+    "aa.finite-abelian"
+  ],
+  "xp": 3,
+  "viz": [],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "There is a second standard way to write a <a href=\"/math/abstract-algebra/finite-abelian/\">finite abelian group</a>: with as few cyclic factors as possible, each order dividing the next. It answers questions like \"what is the largest order of an element?\" at a glance."
+      },
+      {
+        "t": "p",
+        "html": "<b>Invariant factor form.</b> Every finite abelian group is isomorphic to exactly one $$\\mathbb{Z}_{d_{1}} \\times \\mathbb{Z}_{d_{2}} \\times \\cdots \\times \\mathbb{Z}_{d_{k}} \\quad \\text{with } d_{1} \\mid d_{2} \\mid \\cdots \\mid d_{k},\\ d_{1} \\gt 1.$$ The $d_{i}$ are the <b>invariant factors</b>; $d_{k}$ is the largest order of an element (the <b>exponent</b>)."
+      },
+      {
+        "t": "why",
+        "html": "<b>From elementary divisors to invariant factors.</b> Write the prime powers for each prime in a row, largest first. Then $d_{k}$ is the product of the first entries of all rows, $d_{k-1}$ the product of the second entries, and so on. Each product uses coprime prime powers, so it is one cyclic group ($\\mathbb{Z}_{m} \\times \\mathbb{Z}_{n} \\cong \\mathbb{Z}_{mn}$ for coprime $m, n$), and each $d_{i}$ divides the next because every row is in decreasing order. Going back is just factoring each $d_{i}$."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Prime",
+          "largest",
+          "next",
+          "next"
+        ],
+        "rows": [
+          [
+            "2",
+            "4",
+            "2",
+            ""
+          ],
+          [
+            "3",
+            "9",
+            "3",
+            ""
+          ],
+          [
+            "5",
+            "5",
+            "",
+            ""
+          ]
+        ],
+        "cap": "Elementary divisors 4, 2, 9, 3, 5 arranged in rows. Columns multiply to $d_{2} = 4 \\cdot 9 \\cdot 5 = 180$ and $d_{1} = 2 \\cdot 3 = 6$."
+      },
+      {
+        "t": "ex",
+        "title": "Converting",
+        "q": "Write $\\mathbb{Z}_{2} \\times \\mathbb{Z}_{4} \\times \\mathbb{Z}_{3} \\times \\mathbb{Z}_{9} \\times \\mathbb{Z}_{5}$ in invariant factor form.",
+        "steps": [
+          "Rows: $2$: $4, 2$; $3$: $9, 3$; $5$: $5$.",
+          "First column: $4 \\cdot 9 \\cdot 5 = 180$. Second column: $2 \\cdot 3 = 6$.",
+          "$\\mathbb{Z}_{6} \\times \\mathbb{Z}_{180}$, and $6 \\mid 180$."
+        ],
+        "a": "$\\mathbb{Z}_{6} \\times \\mathbb{Z}_{180}$."
+      },
+      {
+        "t": "ex",
+        "title": "Deciding isomorphism",
+        "q": "Is $\\mathbb{Z}_{6} \\times \\mathbb{Z}_{20} \\cong \\mathbb{Z}_{4} \\times \\mathbb{Z}_{30}$?",
+        "steps": [
+          "Left: $\\mathbb{Z}_{2} \\times \\mathbb{Z}_{3} \\times \\mathbb{Z}_{4} \\times \\mathbb{Z}_{5}$, so invariant factors $2, 60$.",
+          "Right: $\\mathbb{Z}_{4} \\times \\mathbb{Z}_{2} \\times \\mathbb{Z}_{3} \\times \\mathbb{Z}_{5}$, also $2, 60$."
+        ],
+        "a": "Yes, both are $\\mathbb{Z}_{2} \\times \\mathbb{Z}_{60}$."
+      },
+      {
+        "t": "h",
+        "text": "Counting elements of a given order"
+      },
+      {
+        "t": "p",
+        "html": "In $\\mathbb{Z}_{n}$ the equation $dx = 0$ has exactly $\\gcd(d, n)$ solutions. In a product the solutions multiply, so the number of elements with order dividing $d$ in $\\mathbb{Z}_{n_{1}} \\times \\cdots \\times \\mathbb{Z}_{n_{k}}$ is $\\gcd(d, n_{1})\\cdots\\gcd(d, n_{k})$. Subtract the counts for proper divisors of $d$ to get the elements of order exactly $d$."
+      },
+      {
+        "t": "ex",
+        "title": "Elements of order 4",
+        "q": "How many elements of order $4$ does $\\mathbb{Z}_{4} \\times \\mathbb{Z}_{4}$ have?",
+        "steps": [
+          "Order dividing $4$: $\\gcd(4, 4)^{2} = 16$, all of them.",
+          "Order dividing $2$: $\\gcd(2, 4)^{2} = 4$.",
+          "Order exactly $4$: $16 - 4 = 12$."
+        ],
+        "a": "$12$."
+      },
+      {
+        "t": "mistake",
+        "html": "Merging factors whose orders share a prime: $\\mathbb{Z}_{2} \\times \\mathbb{Z}_{4}$ is <b>not</b> $\\mathbb{Z}_{8}$ (it has no element of order 8). Only coprime orders combine. In the row method this is automatic: a column never contains two powers of the same prime."
+      },
+      {
+        "t": "note",
+        "html": "<b>Telling groups apart.</b> $\\mathbb{Z}_{6} \\times \\mathbb{Z}_{12}$ and $\\mathbb{Z}_{2} \\times \\mathbb{Z}_{36}$ both have order $72$, and both are already in invariant factor form. The lists $(6, 12)$ and $(2, 36)$ differ, so the groups are not isomorphic. A direct witness: $\\mathbb{Z}_{2} \\times \\mathbb{Z}_{36}$ has an element of order $36$, while every element of $\\mathbb{Z}_{6} \\times \\mathbb{Z}_{12}$ has order dividing $12$."
+      },
+      {
+        "t": "key",
+        "html": "Invariant factor form: $\\mathbb{Z}_{d_{1}} \\times \\cdots \\times \\mathbb{Z}_{d_{k}}$ with $d_{1} \\mid d_{2} \\mid \\cdots \\mid d_{k}$,\n built from the elementary divisors column by column. Two finite abelian groups are isomorphic exactly when their invariant factors match."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Thomas W. Judson, Abstract Algebra: Theory and Applications (open textbook), chapter 13, The Structure of Groups (section 13.1, Finite Abelian Groups)"
+      },
+      {
+        "name": "John A. Beachy and William D. Blair, Abstract Algebra, online study guide (Northern Illinois University), section 7.5, Finite Abelian Groups (invariant factors)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.702 Algebra II (Spring 2011), lecture notes on finite abelian groups"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

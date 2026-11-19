@@ -1,0 +1,110 @@
+{
+  "id": "g8.variables-both-sides",
+  "slug": "variables-both-sides",
+  "ladder": "math",
+  "course": "g8",
+  "unit": "linear-equations",
+  "title": "Variables on Both Sides",
+  "short": "Collect the variable terms on one side first.",
+  "trouble": "Students subtract a variable term from one side and add it to the other.",
+  "prereqs": [
+    "g8.multi-step-equations"
+  ],
+  "xp": 2,
+  "viz": [
+    "balance"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Sometimes the variable shows up on both sides, as in $5x + 3 = 2x + 18$. You already know how to <a href=\"/math/pre-algebra/multi-step-equations/\">solve multi-step equations</a>; the new move is to gather the variable terms together first."
+      },
+      {
+        "t": "why",
+        "html": "Picture a balance with 5 bags and 3 blocks on the left, 2 bags and 18 blocks on the right. Every bag weighs the same unknown amount. Take 2 bags off <b>each</b> side and the scale stays level: 3 bags and 3 blocks balance 18 blocks. That is $3x + 3 = 18$, a two-step equation."
+      },
+      {
+        "t": "key",
+        "html": "Add or subtract the same variable term on both sides so the variable is on only one side. Moving the smaller variable term usually keeps the numbers positive. Then finish as usual."
+      },
+      {
+        "t": "viz",
+        "name": "balance",
+        "opts": {
+          "eq": "3x + 2 = x + 8",
+          "task": true
+        },
+        "cap": "Take one bag off each side first. What is left tells you the weight of a bag."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Gather the x terms",
+        "q": "Solve $5x + 3 = 2x + 18$.",
+        "steps": [
+          "Subtract $2x$ from both sides: $3x + 3 = 18$.",
+          "Subtract 3: $3x = 15$.",
+          "Divide by 3: $x = 5$. Check: $25 + 3 = 28$ and $10 + 18 = 28$."
+        ],
+        "a": "$x = 5$"
+      },
+      {
+        "t": "ex",
+        "title": "Negative coefficients",
+        "q": "Solve $4 - 3x = 2x - 11$.",
+        "steps": [
+          "Add $3x$ to both sides: $4 = 5x - 11$.",
+          "Add 11: $15 = 5x$.",
+          "Divide by 5: $x = 3$. Check: $4 - 9 = -5$ and $6 - 11 = -5$."
+        ],
+        "a": "$x = 3$"
+      },
+      {
+        "t": "ex",
+        "title": "Parentheses on both sides",
+        "q": "Solve $2(3x - 1) = 4(x + 2)$.",
+        "steps": [
+          "Distribute: $6x - 2 = 4x + 8$.",
+          "Subtract $4x$: $2x - 2 = 8$.",
+          "Add 2, then divide by 2: $x = 5$. Check: $2(14) = 28$ and $4(7) = 28$."
+        ],
+        "a": "$x = 5$"
+      },
+      {
+        "t": "ex",
+        "title": "Clear the fractions",
+        "q": "Solve $\\dfrac{x}{2} + 3 = \\dfrac{x}{3} + 5$.",
+        "steps": [
+          "Multiply every term by 6, a common denominator: $3x + 18 = 2x + 30$.",
+          "Subtract $2x$: $x + 18 = 30$.",
+          "Subtract 18: $x = 12$. Check: $6 + 3 = 9$ and $4 + 5 = 9$."
+        ],
+        "a": "$x = 12$"
+      },
+      {
+        "t": "mistake",
+        "html": "Subtracting a variable term on one side and adding it on the other. From $5x + 3 = 2x + 18$, writing $7x + 3 = 18$ adds $2x$ on the left but takes it away on the right, which tips the balance. Whatever you do, do it to both sides: subtracting $2x$ from both gives $3x + 3 = 18$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Prealgebra 2e, Section 8.3: Solve Equations with Variables and Constants on Both Sides"
+      },
+      {
+        "name": "OpenStax Prealgebra 2e, Section 8.4: Solve Equations with Fraction or Decimal Coefficients"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 8, 8.EE.C.7b"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,94 @@
+{
+  "id": "earthsci.wind",
+  "slug": "wind",
+  "ladder": "earth",
+  "course": "earthsci",
+  "unit": "air-weather",
+  "title": "Wind and Local Breezes",
+  "short": "Uneven heating makes differences in pressure, and air flows from high to low pressure, as in sea breezes by day and land breezes at night.",
+  "trouble": "Students name a wind by where it is going; a north wind blows from the north.",
+  "prereqs": [
+    "earthsci.air-pressure",
+    "earthsci.convection"
+  ],
+  "xp": 2,
+  "viz": [
+    "es-density",
+    "es-wind"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Wind is air moving from where the <a href=\"/earth-and-space/earth-science/air-pressure/\">pressure</a> is higher to where it is lower. Those pressure differences come from uneven heating: warm air expands and rises, making lower pressure near the ground, while cool, dense air sinks, making higher pressure. It is <a href=\"/earth-and-space/earth-science/convection/\">convection</a> in the air."
+      },
+      {
+        "t": "key",
+        "html": "Uneven heating makes pressure differences, and air flows from high pressure toward low pressure. The bigger the difference over a distance, the stronger the wind. A wind is named for the direction it comes <b>from</b>."
+      },
+      {
+        "t": "why",
+        "html": "At the coast on a sunny day, land heats up faster than water. Air over the land warms, expands and rises, leaving lower pressure near the ground. Cooler, denser air over the sea flows in to replace it: a <b>sea breeze</b>, blowing from sea to land. At night the land cools faster than the water, the pattern flips, and a <b>land breeze</b> blows from land to sea."
+      },
+      {
+        "t": "viz",
+        "name": "es-density",
+        "opts": {
+          "mode": "convection",
+          "scenario": "seabreeze",
+          "time": "day"
+        },
+        "cap": "A sea breeze by day. Switch to night to see the land breeze."
+      },
+      {
+        "t": "viz",
+        "name": "es-wind",
+        "opts": {
+          "mode": "isobars",
+          "hemisphere": "N"
+        },
+        "cap": "Lines of equal pressure (isobars). Where they are close together, the pressure changes fast and the wind is strong."
+      },
+      {
+        "t": "ex",
+        "title": "Naming a wind",
+        "q": "A wind blows from the north toward the south. What is it called, and what is its direction in degrees?",
+        "steps": [
+          "Winds are named for where they come from: a north wind.",
+          "Wind direction is the compass bearing it comes from: north is 0° (or 360°)."
+        ],
+        "a": "A north wind, from 0°"
+      },
+      {
+        "t": "ex",
+        "title": "Day or night?",
+        "q": "At a beach, a breeze blows from the land out to sea. Is it more likely day or night?",
+        "steps": [
+          "Air flows from high to low pressure.",
+          "Flow from land to sea means lower pressure over the sea: the sea is warmer than the land, which happens at night."
+        ],
+        "a": "Night: a land breeze"
+      },
+      {
+        "t": "mistake",
+        "html": "Naming a wind by where it is going. A north wind blows <b>from</b> the north, toward the south. Check: weather reports give the direction the wind comes from, and wind vanes point into the wind, toward its source."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "National Weather Service, JetStream online weather school: The Sea Breeze"
+      },
+      {
+        "name": "National Weather Service, JetStream online weather school: Wind"
+      },
+      {
+        "name": "Next Generation Science Standards, MS-ESS2-6"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

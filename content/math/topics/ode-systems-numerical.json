@@ -1,0 +1,114 @@
+{
+  "id": "num.ode-systems-numerical",
+  "slug": "ode-systems-numerical",
+  "ladder": "math",
+  "course": "num",
+  "unit": "odes",
+  "title": "Systems and Higher-Order Equations",
+  "short": "Rewrite y″ = f(t, y, y′) as a first-order system, then take Euler or Runge–Kutta steps with vectors.",
+  "trouble": "Students forget that each component needs its own starting value: a second-order equation needs both y(0) and y′(0).",
+  "prereqs": [
+    "num.ode-error",
+    "de.systems-matrix-form"
+  ],
+  "xp": 2,
+  "viz": [
+    "phaseplane"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Every one-step method works on vectors as well as numbers. Any higher-order equation becomes a first-order system, as in <a href=\"/math/differential-equations/systems-matrix-form/\">Systems in Matrix Form</a>, and then Euler, Heun or RK4 run with each $y$ replaced by a vector $\\mathbf{u}$ and each $f$ by a vector function $\\mathbf{F}$. The <a href=\"/math/numerical-analysis/ode-error/\">error orders</a> stay the same."
+      },
+      {
+        "t": "key",
+        "html": "To solve $y'' = f(t, y, y')$, set $u_1 = y$, $u_2 = y'$: $$u_1' = u_2,\\qquad u_2' = f(t, u_1, u_2).$$ Each component needs its own starting value, so the problem must give both $y(0)$ and $y'(0)$. Then step all components together, always using values from the same stage."
+      },
+      {
+        "t": "why",
+        "html": "The derivation of each method (Taylor expansion, or averaging slopes) never used that $y$ was a single number; it works component by component. What must not happen is mixing stages: in Euler's method both components of $\\mathbf{u}_{n+1}$ are computed from the old $\\mathbf{u}_n$. Updating $u_1$ first and then using the new $u_1$ in $u_2$ is a different method, with different behavior."
+      },
+      {
+        "t": "ex",
+        "title": "Rewriting a second-order equation",
+        "q": "Write $y'' + 0.5y' + 4y = 0$ as $\\mathbf{u}' = A\\mathbf{u}$.",
+        "steps": [
+          "$u_1 = y$, $u_2 = y'$, so $u_1' = u_2$.",
+          "$y'' = -4y - 0.5y'$, so $u_2' = -4u_1 - 0.5u_2$.",
+          "$A = \\begin{bmatrix} 0 & 1 \\\\ -4 & -0.5 \\end{bmatrix}$."
+        ],
+        "a": "$\\begin{bmatrix} 0 & 1 \\\\ -4 & -0.5 \\end{bmatrix}$"
+      },
+      {
+        "t": "ex",
+        "title": "Euler on an oscillator",
+        "q": "For $y'' = -y$, $y(0) = 1$, $y'(0) = 0$, take two Euler steps with $h = 0.1$.",
+        "steps": [
+          "System: $y' = v$, $v' = -y$, starting at $(1, 0)$.",
+          "Step 1: $y_1 = 1 + 0.1(0) = 1$, $v_1 = 0 + 0.1(-1) = -0.1$.",
+          "Step 2: $y_2 = 1 + 0.1(-0.1) = 0.99$, $v_2 = -0.1 + 0.1(-1) = -0.2$.",
+          "The exact solution keeps $y^{2} + v^{2} = 1$; Euler gives $1$, then $1.01$, then $1.0201$: it multiplies by $1 + h^{2}$ every step, spiraling slowly outward."
+        ],
+        "a": "$(0.99, -0.2)$"
+      },
+      {
+        "t": "ex",
+        "title": "Heun does better",
+        "q": "Take one Heun step for the same system from $(1, 0)$ with $h = 0.1$.",
+        "steps": [
+          "$\\mathbf{k}_1 = \\mathbf{F}(1, 0) = (0, -1)$. Predictor: $(1, 0) + 0.1(0, -1) = (1, -0.1)$.",
+          "$\\mathbf{k}_2 = \\mathbf{F}(1, -0.1) = (-0.1, -1)$.",
+          "$\\mathbf{u}_1 = (1, 0) + 0.05\\big((0, -1) + (-0.1, -1)\\big) = (0.995, -0.1)$.",
+          "Exact: $(\\cos 0.1, -\\sin 0.1) \\approx (0.995004, -0.099833)$."
+        ],
+        "a": "$(0.995, -0.1)$"
+      },
+      {
+        "t": "viz",
+        "name": "phaseplane",
+        "opts": {
+          "m": [
+            [
+              0,
+              1
+            ],
+            [
+              -4,
+              -0.5
+            ]
+          ],
+          "point": [
+            2,
+            0
+          ],
+          "presets": false,
+          "timeplot": true,
+          "range": 3
+        },
+        "cap": "The system from the first example: trajectories spiral into the origin as the oscillation dies out. A good numerical method must follow these spirals; Euler with a large step spirals outward instead."
+      },
+      {
+        "t": "p",
+        "html": "In code, $\\mathbf{u}$ is simply an array, and $\\mathbf{F}$ returns an array of the same length; the stepping loop does not change at all. Systems also show why stability matters: the components can decay or oscillate at very different rates, set by the eigenvalues of $A$, and a step size must suit all of them. That is the subject of <a href=\"/math/numerical-analysis/absolute-stability/\">Stability of Euler's Method</a>."
+      },
+      {
+        "t": "mistake",
+        "html": "Forgetting that each component needs its own starting value. A second-order equation needs both $y(0)$ and $y'(0)$; an $n$th-order equation needs $n$ values. Without $y'(0)$ the first step of $u_1' = u_2$ cannot even begin. Also keep the stages straight: Euler uses the old values for every component."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Tobin A. Driscoll and Richard J. Braun, Fundamentals of Numerical Computation (University of Delaware, free online edition): chapter \"Initial-value problems for ODEs\", section \"IVP systems\""
+      },
+      {
+        "name": "Autar Kaw, Holistic Numerical Methods (University of South Florida): Ordinary Differential Equations, \"Runge–Kutta 2nd Order Method\" (higher-order equations as systems)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

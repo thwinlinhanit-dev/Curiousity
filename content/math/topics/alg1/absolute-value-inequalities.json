@@ -1,0 +1,120 @@
+{
+  "id": "alg1.absolute-value-inequalities",
+  "slug": "absolute-value-inequalities",
+  "ladder": "math",
+  "course": "alg1",
+  "unit": "inequalities",
+  "title": "Absolute Value Inequalities",
+  "short": "Turn |x − a| < b into an \"and\" and |x − a| > b into an \"or.\"",
+  "trouble": "Students write |x| > 3 as −3 > x > 3, a statement no number can satisfy.",
+  "prereqs": [
+    "alg1.compound-inequalities",
+    "alg1.absolute-value-equations"
+  ],
+  "xp": 3,
+  "viz": [
+    "numberline"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You know that $|x - a|$ is the distance between $x$ and $a$, from <a href=\"/math/algebra-1/absolute-value-equations/\">absolute value equations</a>, and how “and” and “or” work from <a href=\"/math/algebra-1/compound-inequalities/\">compound inequalities</a>. Put the two together and absolute value inequalities read like sentences about distance."
+      },
+      {
+        "t": "why",
+        "html": "$|x - 3| < 5$ says “$x$ is less than $5$ units from $3$.” Those numbers are all within $5$ of $3$: between $-2$ and $8$. So it becomes the “and” statement $-5 < x - 3 < 5$. But $|x - 3| > 5$ says “$x$ is more than $5$ units from $3$,” which happens on either side: $x - 3 < -5$ <em>or</em> $x - 3 > 5$. Less than means one segment; greater than means two rays."
+      },
+      {
+        "t": "viz",
+        "name": "alg1-ineqline",
+        "opts": {
+          "abs": {
+            "c": 3,
+            "r": 5,
+            "rel": "<"
+          },
+          "check": "abs(x-3) < 5",
+          "probe": 6,
+          "min": -6,
+          "max": 12
+        },
+        "cap": "$|x - 3| < 5$: every number within $5$ units of $3$. Drag the test point past an end and the distance becomes too big."
+      },
+      {
+        "t": "viz",
+        "name": "alg1-ineqline",
+        "opts": {
+          "abs": {
+            "c": 3,
+            "r": 5,
+            "rel": ">="
+          },
+          "check": "abs(x-3) >= 5",
+          "probe": 9,
+          "min": -6,
+          "max": 12
+        },
+        "cap": "$|x - 3| \\ge 5$: every number at least $5$ units from $3$, on either side."
+      },
+      {
+        "t": "key",
+        "html": "Isolate the absolute value first. Then, for $k > 0$: $|u| < k$ means $-k < u < k$ (one segment), and $|u| > k$ means $u < -k$ or $u > k$ (two rays). The same holds with $\\le$ and $\\ge$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Less than: one segment",
+        "q": "Solve $|2x - 1| \\le 7$.",
+        "steps": [
+          "Distance at most $7$ from $0$: $-7 \\le 2x - 1 \\le 7$.",
+          "Add $1$ to all three parts: $-6 \\le 2x \\le 8$.",
+          "Divide by $2$: $-3 \\le x \\le 4$."
+        ],
+        "a": "$-3 \\le x \\le 4$"
+      },
+      {
+        "t": "ex",
+        "title": "Greater than: two rays",
+        "q": "Solve $|x + 4| - 3 > 2$.",
+        "steps": [
+          "Isolate first: add $3$ to get $|x + 4| > 5$.",
+          "More than $5$ from $0$: $x + 4 < -5$ or $x + 4 > 5$.",
+          "Solve each: $x < -9$ or $x > 1$."
+        ],
+        "a": "$x < -9$ or $x > 1$."
+      },
+      {
+        "t": "ex",
+        "title": "When the number is negative",
+        "q": "Solve $|x - 2| < -1$, then $|x - 2| \\ge -1$.",
+        "steps": [
+          "An absolute value is never negative, so it can never be less than $-1$: no solution.",
+          "For the same reason it is always at least $-1$: every real number works."
+        ],
+        "a": "No solution; all real numbers."
+      },
+      {
+        "t": "mistake",
+        "html": "Writing $|x| > 3$ as $-3 > x > 3$. That chain says $-3 > 3$, which is false, so it describes no numbers at all. The two pieces point away from each other, so they must be joined with “or”: $x < -3$ or $x > 3$. Check with a number like $5$: $|5| > 3$ is true, so $5$ must be in your answer."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Intermediate Algebra 2e, section 2.7 Solve Absolute Value Inequalities"
+      },
+      {
+        "name": "Paul's Online Math Notes (Lamar University), Algebra: Absolute Value Inequalities"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

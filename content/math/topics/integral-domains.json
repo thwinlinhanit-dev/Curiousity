@@ -1,0 +1,100 @@
+{
+  "id": "aa.integral-domains",
+  "slug": "integral-domains",
+  "ladder": "math",
+  "course": "aa",
+  "unit": "rings",
+  "title": "Integral Domains and Fields",
+  "short": "A zero divisor is an a ≠ 0 with ab = 0 for some b ≠ 0; an integral domain has none, every field is one, and ℤₙ is a field exactly when n is prime.",
+  "trouble": "Students cancel in ℤₙ for composite n, but 2 · 3 = 2 · 0 in ℤ₆ while 3 ≠ 0. Cancellation needs an integral domain.",
+  "prereqs": [
+    "aa.rings",
+    "nt.modular-inverses"
+  ],
+  "xp": 2,
+  "viz": [
+    "aa-cayley"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In $\\mathbb{Z}$, if $ab = 0$ then $a = 0$ or $b = 0$; that is how you solve $(x - 2)(x - 3) = 0$. In <a href=\"/math/abstract-algebra/rings/\">other rings</a> this can fail: $2 \\cdot 3 = 0$ in $\\mathbb{Z}_{6}$. The rings where it holds are the ones where algebra behaves the way you expect."
+      },
+      {
+        "t": "p",
+        "html": "<b>Definitions.</b> In a commutative ring, $a \\ne 0$ is a <b>zero divisor</b> if $ab = 0$ for some $b \\ne 0$. An <b>integral domain</b> is a commutative ring with identity $1 \\ne 0$ and no zero divisors. A <b>field</b> is a commutative ring with $1 \\ne 0$ in which every nonzero element is a unit. Examples of fields: $\\mathbb{Q}$, $\\mathbb{R}$, $\\mathbb{C}$, $\\mathbb{Z}_{p}$. Integral domains that are not fields: $\\mathbb{Z}$, $\\mathbb{Z}[x]$."
+      },
+      {
+        "t": "why",
+        "html": "<b>(1) Fields are integral domains.</b> If $ab = 0$ and $a \\ne 0$, multiply by $a^{-1}$: $b = a^{-1}ab = 0$.<br><b>(2) Cancellation.</b> In an integral domain, $ab = ac$ with $a \\ne 0$ gives $a(b - c) = 0$, so $b = c$.<br><b>(3) $\\mathbb{Z}_{n}$ is a field exactly when $n$ is prime.</b> If $n = rs$ with $1 \\lt r, s \\lt n$, then $rs = 0$ in $\\mathbb{Z}_{n}$: zero divisors. If $n = p$ is prime, every $a \\ne 0$ has $\\gcd(a, p) = 1$, so it is a <a href=\"/math/number-theory/modular-inverses/\">unit</a>.<br><b>(4) A finite integral domain is a field.</b> For $a \\ne 0$, the map $x \\mapsto ax$ is one-to-one by cancellation, hence onto (the ring is finite), so $ax = 1$ for some $x$. $\\square$"
+      },
+      {
+        "t": "viz",
+        "name": "aa-cayley",
+        "opts": {
+          "group": "Zmul",
+          "n": 12,
+          "sel": [
+            "4",
+            "3"
+          ]
+        },
+        "cap": "Multiplication in $\\mathbb{Z}_{12}$. Every zero inside the table (away from the row and column of $0$) is a pair of zero divisors; the rows of $1, 5, 7, 11$ contain a $1$ instead."
+      },
+      {
+        "t": "ex",
+        "title": "Zero divisors of $\\mathbb{Z}_{12}$",
+        "q": "List the zero divisors of $\\mathbb{Z}_{12}$.",
+        "steps": [
+          "$a \\ne 0$ is a zero divisor exactly when $\\gcd(a, 12) \\gt 1$: then $a \\cdot \\frac{12}{\\gcd(a, 12)} \\equiv 0$.",
+          "$2, 3, 4, 6, 8, 9, 10$; for example $8 \\cdot 3 = 24 \\equiv 0$."
+        ],
+        "a": "$\\{2, 3, 4, 6, 8, 9, 10\\}$; the other nonzero elements are units."
+      },
+      {
+        "t": "ex",
+        "title": "Solving when you cannot cancel",
+        "q": "Solve $4x = 8$ in $\\mathbb{Z}_{12}$, and $3x = 5$ in $\\mathbb{Z}_{7}$.",
+        "steps": [
+          "In $\\mathbb{Z}_{12}$, $4$ is a zero divisor, so we cannot cancel. Testing: $x = 2, 5, 8, 11$ all give $4x \\equiv 8$.",
+          "In the field $\\mathbb{Z}_{7}$, $3^{-1} = 5$, so $x = 5 \\cdot 5 = 25 \\equiv 4$. Check: $3 \\cdot 4 = 12 \\equiv 5$."
+        ],
+        "a": "$x \\in \\{2, 5, 8, 11\\}$; and $x = 4$."
+      },
+      {
+        "t": "ex",
+        "title": "Products of rings",
+        "q": "Is $\\mathbb{Z}_{3} \\times \\mathbb{Z}_{5}$ an integral domain?",
+        "steps": [
+          "$(1, 0) \\cdot (0, 1) = (0, 0)$ with both factors nonzero."
+        ],
+        "a": "No, though each factor is a field."
+      },
+      {
+        "t": "mistake",
+        "html": "Cancelling in $\\mathbb{Z}_{n}$ for composite $n$: from $2 \\cdot 3 = 2 \\cdot 0$ in $\\mathbb{Z}_{6}$ you cannot conclude $3 = 0$. Cancellation needs an integral domain. A related slip: \"$x^{2} = x$ means $x = 0$ or $1$\" fails in $\\mathbb{Z}_{6}$, where $3^{2} = 3$ and $4^{2} = 4$."
+      },
+      {
+        "t": "key",
+        "html": "Zero divisors are nonzero $a, b$ with $ab = 0$. Integral domains have none, so cancellation works; fields have inverses for every nonzero element. $\\mathbb{Z}_{n}$ is a field exactly when $n$ is prime, and every finite integral domain is a field."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Thomas W. Judson, Abstract Algebra: Theory and Applications (open textbook), chapter 16, Rings (section 16.2, Integral Domains and Fields)"
+      },
+      {
+        "name": "John A. Beachy and William D. Blair, Abstract Algebra, online study guide (Northern Illinois University), section 5.1, Commutative Rings (integral domains)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.702 Algebra II (Spring 2011), lecture notes on rings and fields"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

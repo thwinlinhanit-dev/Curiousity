@@ -1,0 +1,104 @@
+{
+  "id": "g5.estimate-decimal-products",
+  "slug": "estimate-decimal-products",
+  "ladder": "math",
+  "course": "g5",
+  "unit": "decimal-operations",
+  "title": "Estimating with Decimals",
+  "short": "Round first to check where the decimal point belongs.",
+  "trouble": "Students accept 2.4 × 3.1 = 74.4 because they never compare it with 2 × 3.",
+  "prereqs": [
+    "g5.multiply-decimals",
+    "g5.round-decimals"
+  ],
+  "xp": 1,
+  "viz": [
+    "numberline"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You can <a href=\"/math/grade-5/multiply-decimals/\">multiply decimals</a> and <a href=\"/math/grade-5/round-decimals/\">round them</a>. Put the two together and you have a fast check that catches a decimal point in the wrong place."
+      },
+      {
+        "t": "key",
+        "html": "Round each factor to a whole number (or another easy number) and multiply. The exact answer should be close to the estimate. Use the estimate to place the decimal point."
+      },
+      {
+        "t": "why",
+        "html": "The digits of $2.4 \\times 3.1$ are the digits of $24 \\times 31 = 744$. Where does the point go: $0.744$, $7.44$, $74.4$? Since $2.4$ is about 2 and $3.1$ is about 3, the product is about $2 \\times 3 = 6$. Only $7.44$ is close to 6."
+      },
+      {
+        "t": "viz",
+        "name": "numberline",
+        "opts": {
+          "min": 0,
+          "max": 10,
+          "step": 1,
+          "labels": "whole",
+          "points": [
+            {
+              "v": "0.744",
+              "label": "0.744",
+              "color": "red"
+            },
+            {
+              "v": 6,
+              "label": "≈ 6",
+              "color": "gold"
+            },
+            {
+              "v": "7.44",
+              "label": "7.44",
+              "color": "green"
+            }
+          ]
+        },
+        "cap": "The estimate, about 6, sits right next to $7.44$. $0.744$ is far below it, and $74.4$ would be far off the right end of this line."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Place the point",
+        "q": "$3.8 \\times 5.2$ has the digits 1976. Where does the point go?",
+        "steps": [
+          "Estimate: $4 \\times 5 = 20$.",
+          "The choices are $0.1976$, $1.976$, $19.76$, $197.6$. Only $19.76$ is near 20."
+        ],
+        "a": "$19.76$"
+      },
+      {
+        "t": "ex",
+        "title": "Is it reasonable?",
+        "q": "Is $0.48 \\times 9.6 = 46.08$ reasonable?",
+        "steps": [
+          "$0.48$ is about $0.5$, a half, and $9.6$ is about 10.",
+          "Half of 10 is 5. $46.08$ is far from 5."
+        ],
+        "a": "No. The product is $4.608$."
+      },
+      {
+        "t": "mistake",
+        "html": "Accepting an answer like $2.4 \\times 3.1 = 74.4$ without comparing it to $2 \\times 3$. Check every decimal product with a whole-number estimate; a misplaced point is off by 10 times or more, which an estimate shows right away."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Prealgebra 2e, 5.2 Decimal Operations (estimate)"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 5.NBT.B.7: relate decimal strategies to written methods and check them"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

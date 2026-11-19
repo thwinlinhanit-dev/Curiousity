@@ -1,0 +1,92 @@
+{
+  "id": "ra.limsup-liminf",
+  "slug": "limsup-liminf",
+  "ladder": "math",
+  "course": "ra",
+  "unit": "sequences",
+  "title": "Limit Superior and Limit Inferior",
+  "short": "lim sup aₙ is the limit of the tail suprema sup{aₖ : k ≥ n}; it is the largest subsequential limit, and aₙ converges exactly when lim sup aₙ = lim inf aₙ.",
+  "trouble": "Students give the largest term of the sequence (its supremum) instead of the limit of the tail suprema; the two differ whenever a big early term is never matched again.",
+  "prereqs": [
+    "ra.bolzano-weierstrass"
+  ],
+  "xp": 3,
+  "viz": [
+    "ra-epsband"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A divergent bounded sequence still has a largest and a smallest place where its terms pile up. These two numbers, the limit superior and limit inferior, always exist for bounded sequences (by <a href=\"/math/real-analysis/bolzano-weierstrass/\">Bolzano–Weierstrass</a> and completeness), and they will power the root test and the radius of convergence later."
+      },
+      {
+        "t": "key",
+        "html": "For bounded $(a_n)$, let $s_n = \\sup\\{a_k : k \\ge n\\}$ (the tail supremum) and $i_n = \\inf\\{a_k : k \\ge n\\}$. Then $\\limsup a_n = \\lim s_n$ and $\\liminf a_n = \\lim i_n$. They are the largest and the smallest subsequential limits, and $a_n$ converges exactly when $\\limsup a_n = \\liminf a_n$ (then both equal the limit)."
+      },
+      {
+        "t": "why",
+        "html": "As $n$ grows the tail $\\{a_k : k \\ge n\\}$ loses elements, so its supremum can only go down: $(s_n)$ is decreasing, and it is bounded below. By monotone convergence it has a limit. The same works for $(i_n)$, which increases. Dropping finitely many terms never changes these limits, which is why they describe the long-run behavior and ignore early outliers. If $\\limsup = \\liminf = L$, then $i_n \\le a_n \\le s_n$ and both bounds tend to $L$, so $a_n \\to L$ by the squeeze theorem."
+      },
+      {
+        "t": "viz",
+        "name": "ra-epsband",
+        "opts": {
+          "f": "(-1)^n*(1+2/n)",
+          "nmax": 40,
+          "mode": "tails",
+          "ymin": -3.2,
+          "ymax": 2.4
+        },
+        "cap": "$a_n = (-1)^{n}\\left(1 + \\frac{2}{n}\\right)$: the red staircase is the tail suprema, falling to $\\limsup a_n = 1$; the blue one is the tail infima, rising to $\\liminf a_n = -1$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Tails of an alternating sequence",
+        "q": "For $a_n = (-1)^{n}\\left(1 + \\frac{2}{n}\\right)$, find $\\limsup a_n$, $\\liminf a_n$, $\\sup a_n$ and $s_5$.",
+        "steps": [
+          "Even $n$: $1 + \\frac{2}{n} \\to 1$ from above. Odd $n$: $-1 - \\frac{2}{n} \\to -1$ from below.",
+          "So $\\limsup a_n = 1$ and $\\liminf a_n = -1$.",
+          "The largest term overall is $a_2 = 2$, so $\\sup a_n = 2$. From $k = 5$ on, the largest term is at the first even index, $k = 6$: $s_5 = 1 + \\frac{2}{6} = \\frac{4}{3}$."
+        ],
+        "a": "$\\limsup = 1$, $\\liminf = -1$, $\\sup = 2$, $s_5 = \\frac{4}{3}$."
+      },
+      {
+        "t": "ex",
+        "title": "A sequence that cycles",
+        "q": "Find $\\limsup$ and $\\liminf$ of $a_n = (n \\bmod 3) + \\frac{1}{n}$.",
+        "steps": [
+          "The remainders cycle $1, 2, 0, 1, 2, 0, \\ldots$, and $\\frac{1}{n} \\to 0$.",
+          "The subsequential limits are $0$, $1$ and $2$."
+        ],
+        "a": "$\\limsup = 2$, $\\liminf = 0$."
+      },
+      {
+        "t": "note",
+        "html": "For an unbounded sequence one writes $\\limsup a_n = \\infty$ when the terms are not bounded above. The examples in this course are bounded, so both numbers are finite."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Confusing $\\sup$ with $\\limsup$.</b> The supremum of all the terms can be an early term that is never approached again, like $a_2 = 2$ above. The lim sup forgets any finite number of terms: it is where the tail suprema end up. Check by asking: do infinitely many terms come close to this value?"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Jiří Lebl, Basic Analysis I: Introduction to Real Analysis, section 2.3 (limit superior and limit inferior)"
+      },
+      {
+        "name": "William F. Trench, Introduction to Real Analysis (Trinity University), section 4.1 (limits superior and inferior)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

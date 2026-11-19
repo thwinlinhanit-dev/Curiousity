@@ -1,0 +1,131 @@
+{
+  "id": "num.newton-systems",
+  "slug": "newton-systems",
+  "ladder": "math",
+  "course": "num",
+  "unit": "roots",
+  "title": "Newton's Method for Systems",
+  "short": "Solve J(x) Δ = −F(x) with the Jacobian matrix J, then update x to x + Δ.",
+  "trouble": "Students put the partial derivatives in the wrong places (row i holds the partials of Fᵢ), or forget the minus sign on F(x).",
+  "prereqs": [
+    "num.newton-convergence",
+    "calc3.partial-derivatives",
+    "la.matrix-inverse"
+  ],
+  "xp": 3,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "To solve several equations in several unknowns, $\\mathbf{F}(\\mathbf{x}) = \\mathbf{0}$, Newton's idea carries over: replace $\\mathbf{F}$ by its linear approximation and solve that. The derivative becomes a matrix of <a href=\"/math/calculus-3/partial-derivatives/\">Partial Derivatives</a>, and dividing by it becomes solving a linear system, which you know from <a href=\"/math/linear-algebra/matrix-inverse/\">Inverses by Gauss–Jordan</a>. Its convergence matches <a href=\"/math/numerical-analysis/newton-convergence/\">Newton's method in one variable</a>."
+      },
+      {
+        "t": "p",
+        "html": "For $\\mathbf{F} = (F_1, \\ldots, F_n)$, the <b>Jacobian</b> $J(\\mathbf{x})$ is the $n \\times n$ matrix with $$J_{ij} = \\frac{\\partial F_i}{\\partial x_j}:$$ row $i$ holds the partial derivatives of $F_i$."
+      },
+      {
+        "t": "key",
+        "html": "Newton's method for systems: solve $$J(\\mathbf{x}_k)\\,\\boldsymbol{\\Delta} = -\\mathbf{F}(\\mathbf{x}_k),$$ then set $\\mathbf{x}_{k+1} = \\mathbf{x}_k + \\boldsymbol{\\Delta}$. Near a root where $J$ is invertible it converges quadratically."
+      },
+      {
+        "t": "why",
+        "html": "Linearize: $\\mathbf{F}(\\mathbf{x}_k + \\boldsymbol{\\Delta}) \\approx \\mathbf{F}(\\mathbf{x}_k) + J(\\mathbf{x}_k)\\boldsymbol{\\Delta}$. Setting the right side to $\\mathbf{0}$ gives the linear system for the step. Writing $\\boldsymbol{\\Delta} = -J^{-1}\\mathbf{F}$ shows the analogy with $-\\frac{f}{f'}$, but in practice one solves the system by elimination; forming $J^{-1}$ costs more and is less accurate."
+      },
+      {
+        "t": "ex",
+        "title": "One step",
+        "q": "Solve $x^{2} + y^{2} = 4$, $xy = 1$, starting from $(2, 1)$.",
+        "steps": [
+          "$\\mathbf{F} = (x^{2} + y^{2} - 4,\\ xy - 1)$ and $J = \\begin{bmatrix} 2x & 2y \\\\ y & x \\end{bmatrix}$.",
+          "At $(2, 1)$: $\\mathbf{F} = (1, 1)$ and $J = \\begin{bmatrix} 4 & 2 \\\\ 1 & 2 \\end{bmatrix}$.",
+          "Solve $\\begin{bmatrix} 4 & 2 \\\\ 1 & 2 \\end{bmatrix}\\boldsymbol{\\Delta} = \\begin{bmatrix} -1 \\\\ -1 \\end{bmatrix}$: subtracting the equations gives $3\\Delta_1 = 0$, so $\\Delta_1 = 0$ and $\\Delta_2 = -\\frac{1}{2}$.",
+          "$\\mathbf{x}_1 = (2, 0.5)$."
+        ],
+        "a": "$(2, 0.5)$"
+      },
+      {
+        "t": "ex",
+        "title": "Watching it converge",
+        "q": "Continue the same iteration.",
+        "steps": [
+          "At $(2, 0.5)$: $\\mathbf{F} = (0.25, 0)$ and $J = \\begin{bmatrix} 4 & 1 \\\\ 0.5 & 2 \\end{bmatrix}$, giving $\\boldsymbol{\\Delta} \\approx (-0.0667, 0.0167)$ and $\\mathbf{x}_2 \\approx (1.93333, 0.51667)$.",
+          "One more step: $\\mathbf{x}_3 \\approx (1.931853, 0.517637)$.",
+          "The root is $x = \\sqrt{2 + \\sqrt{3}} \\approx 1.931852$, $y = \\frac{1}{x} \\approx 0.517638$. Errors: about $7 \\times 10^{-2}$, $1.5 \\times 10^{-3}$, $1 \\times 10^{-6}$: digits roughly doubling."
+        ],
+        "a": "$\\approx (1.931852, 0.517638)$"
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "fns": [
+            {
+              "f": "sqrt(4-x^2)",
+              "color": "blue",
+              "label": "circle"
+            },
+            {
+              "f": "-sqrt(4-x^2)",
+              "color": "blue",
+              "label": "circle"
+            },
+            {
+              "f": "1/x",
+              "color": "red",
+              "label": "xy = 1"
+            }
+          ],
+          "points": [
+            {
+              "x": 2,
+              "y": 1,
+              "label": "x₀"
+            },
+            {
+              "x": 2,
+              "y": 0.5,
+              "label": "x₁",
+              "color": "orange"
+            }
+          ],
+          "xmin": -3,
+          "xmax": 3,
+          "ymin": -2.5,
+          "ymax": 2.5,
+          "equal": true,
+          "zoom": false
+        },
+        "cap": "The circle x² + y² = 4 and the hyperbola xy = 1 meet in four points. Newton's method from (2, 1) heads for the one near (1.93, 0.52)."
+      },
+      {
+        "t": "p",
+        "html": "Each step costs more than in one variable. Building $J$ takes $n^{2}$ partial derivatives, and solving the linear system by elimination takes about $\\frac{2}{3}n^{3}$ operations (see <a href=\"/math/numerical-analysis/operation-counts/\">The Cost of Elimination</a>). For large systems, methods that update an approximate Jacobian instead of recomputing it (quasi-Newton methods) are common."
+      },
+      {
+        "t": "note",
+        "html": "Plotting the curves first, as above, is a good way to choose a starting point. A system can have several roots; which one Newton's method finds depends on the start. Here the curves meet in four points, $(\\pm 1.93, \\pm 0.52)$ and $(\\pm 0.52, \\pm 1.93)$ with matching signs, and the start $(2, 1)$ leads to the nearest one. A sketch of the curves is the best way to choose starting guesses."
+      },
+      {
+        "t": "mistake",
+        "html": "Putting the partial derivatives in the wrong places, or forgetting the minus sign. Row $i$ of $J$ holds $\\frac{\\partial F_i}{\\partial x}, \\frac{\\partial F_i}{\\partial y}, \\ldots$; the system is $J\\boldsymbol{\\Delta} = -\\mathbf{F}$. Check: if $\\mathbf{F}$ were linear, $\\mathbf{F}(\\mathbf{x}) = A\\mathbf{x} - \\mathbf{b}$, one Newton step from anywhere must land exactly on the solution."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Tobin A. Driscoll and Richard J. Braun, Fundamentals of Numerical Computation (University of Delaware, free online edition): chapter \"Roots of nonlinear equations\", section \"Newton for nonlinear systems\""
+      },
+      {
+        "name": "MIT OpenCourseWare 18.330, Introduction to Numerical Analysis: lecture notes on Newton's method for systems"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

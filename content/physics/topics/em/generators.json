@@ -1,0 +1,96 @@
+{
+  "id": "em.generators",
+  "slug": "generators",
+  "ladder": "physics",
+  "course": "em",
+  "unit": "induction",
+  "title": "Generators",
+  "short": "A coil of N turns spinning at ω in a field B makes ε = NBAω sin ωt.",
+  "trouble": "Students think the emf is largest when the most field passes through the coil.",
+  "prereqs": [
+    "em.faraday-calculus"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-induction"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Spin a coil in a steady magnetic field and its <a href=\"/physics/electricity-and-magnetism/changing-flux/\">flux</a> rises and falls over and over. <a href=\"/physics/electricity-and-magnetism/faraday-calculus/\">Faraday's law</a> turns that into an emf that swings back and forth: alternating current. Almost all of the world's electricity comes from machines built on this idea."
+      },
+      {
+        "t": "key",
+        "html": "A coil of $N$ turns, each of area $A$, turning at angular speed $\\omega$ in a field $B$:\n        $$\\Phi = NBA\\cos\\omega t, \\qquad \\varepsilon = NBA\\omega\\sin\\omega t,$$\n        with peak emf $\\varepsilon_0 = NBA\\omega$ and $\\omega = 2\\pi f$."
+      },
+      {
+        "t": "why",
+        "html": "The angle between the coil's normal and the field grows steadily, $\\theta = \\omega t$, so the flux through each turn is $BA\\cos\\omega t$. Differentiating, $\\varepsilon = -\\dfrac{d}{dt}(NBA\\cos\\omega t) = NBA\\omega\\sin\\omega t$. The emf is largest when $\\sin\\omega t = \\pm 1$, which is when $\\cos\\omega t = 0$: the coil is edge-on to the field and the flux is zero, but changing fastest. Spinning faster raises both the frequency and the peak emf."
+      },
+      {
+        "t": "viz",
+        "name": "ph-induction",
+        "opts": {
+          "mode": "generator"
+        },
+        "cap": "A generator: the flux (top graph) and the emf (bottom graph) are a quarter cycle apart. The emf peaks when the flux passes through zero."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Peak emf",
+        "q": "A 100-turn coil of area $0.020\\ \\text{m}^2$ spins at $60\\ \\text{Hz}$ in a $0.25\\ \\text{T}$ field. Find the peak emf.",
+        "steps": [
+          "$\\omega = 2\\pi(60) = 377\\ \\text{rad/s}$.",
+          "$\\varepsilon_0 = NBA\\omega = (100)(0.25)(0.020)(377) = 188\\ \\text{V}$."
+        ],
+        "a": "$\\varepsilon_0 \\approx 188\\ \\text{V}$"
+      },
+      {
+        "t": "ex",
+        "title": "At a given angle",
+        "q": "What is that generator's emf when the coil's normal is $30^\\circ$ from the field?",
+        "steps": [
+          "$\\varepsilon = \\varepsilon_0\\sin 30^\\circ = (188)(0.50) = 94.2\\ \\text{V}$.",
+          "At $0^\\circ$ (field straight through) it would be zero; at $90^\\circ$ (edge-on), the full $188\\ \\text{V}$."
+        ],
+        "a": "$\\varepsilon \\approx 94.2\\ \\text{V}$"
+      },
+      {
+        "t": "ex",
+        "title": "From rpm",
+        "q": "A coil turning at 1800 revolutions per minute: what is $\\omega$?",
+        "steps": [
+          "$1800\\ \\tfrac{\\text{rev}}{\\text{min}} \\times \\dfrac{2\\pi\\ \\text{rad}}{1\\ \\text{rev}} \\times \\dfrac{1\\ \\text{min}}{60\\ \\text{s}} = 188\\ \\text{rad/s}$, that is $30\\ \\text{Hz}$."
+        ],
+        "a": "$\\omega \\approx 188\\ \\text{rad/s}$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>\"The emf is largest when the most field passes through the coil.\"</b> At that moment the flux is at its peak, so for an instant it is not changing, and the emf is zero. Faraday's law follows the slope of $\\Phi(t)$, not its height. Check with the graphs: the emf curve crosses zero exactly where the flux curve is at a peak."
+      },
+      {
+        "t": "note",
+        "html": "A motor is a generator run backward, and it is a generator at the same time: its spinning coil makes an emf that opposes the supply, called the back emf. That is why a motor draws its largest current when it is just starting, before it spins up."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 2, 13.6 Electric Generators and Back Emf"
+      },
+      {
+        "name": "MIT OpenCourseWare, 8.02 Physics II: Electricity and Magnetism"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

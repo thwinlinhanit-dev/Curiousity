@@ -1,0 +1,116 @@
+{
+  "id": "chem.kinetic-molecular-theory",
+  "slug": "kinetic-molecular-theory",
+  "ladder": "chemistry",
+  "course": "chem",
+  "unit": "gases",
+  "title": "Kinetic Molecular Theory",
+  "short": "The particles of a gas move fast and randomly, and the kelvin temperature measures their average kinetic energy.",
+  "trouble": "Students think every particle in a gas moves at the same speed, or that the particles stop moving at 0 °C.",
+  "prereqs": [
+    "chem.gas-pressure",
+    "chem.temperature-scales"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-gasbox"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/chemistry/chemistry/gas-pressure/\">Gas Pressure</a> pictured pressure as particle collisions. The <b>kinetic molecular theory</b> turns that picture into a short list of ideas that explains every gas law to come. It also gives the kelvin scale of <a href=\"/chemistry/chemistry/temperature-scales/\">Temperature Scales and Absolute Zero</a> its meaning."
+      },
+      {
+        "t": "list",
+        "items": [
+          "A gas is made of particles that are tiny compared with the distances between them, so a gas is mostly empty space.",
+          "The particles move fast, in straight lines, in random directions, until they collide.",
+          "Collisions with each other and with the walls lose no energy overall.",
+          "In an ideal gas the particles do not attract or repel each other.",
+          "The <b>average</b> kinetic energy of the particles is proportional to the kelvin temperature."
+        ]
+      },
+      {
+        "t": "key",
+        "html": "Temperature measures the average kinetic energy of the particles: double the kelvin temperature and the average kinetic energy doubles. At any temperature the particles have a wide spread of speeds."
+      },
+      {
+        "t": "why",
+        "html": "Collisions trade energy back and forth, so at any moment some particles are slow and some are very fast; only the average is fixed by the temperature. The ideas explain gas behavior: empty space makes gases easy to squeeze, random motion makes them spread out and mix, and collisions make pressure. Because kinetic energy is $\\tfrac{1}{2}mv^2$, lighter particles at the same temperature must move faster to have the same average energy."
+      },
+      {
+        "t": "viz",
+        "name": "ch-maxwell",
+        "opts": {
+          "curves": [
+            {
+              "f": "N2",
+              "T": 300
+            },
+            {
+              "f": "N2",
+              "T": 600
+            }
+          ],
+          "marks": true
+        },
+        "cap": "Speeds of nitrogen molecules at $300\\ \\text{K}$ and $600\\ \\text{K}$. Each curve is wide: there is no single speed. Hotter gas has a flatter curve shifted to higher speeds."
+      },
+      {
+        "t": "viz",
+        "name": "ch-gasbox",
+        "opts": {
+          "n": 1,
+          "T": 300,
+          "lock": "V",
+          "hist": true
+        },
+        "cap": "The same idea in a box: fast and slow particles side by side. On a wide screen, a live histogram of their speeds keeps its spread while they collide."
+      },
+      {
+        "t": "ex",
+        "title": "Warming a gas",
+        "q": "A gas is heated from $27^\\circ\\text{C}$ to $327^\\circ\\text{C}$. By what factor does the average kinetic energy of its particles change?",
+        "steps": [
+          "Kinetic energy follows kelvins: $27 + 273.15 = 300.15\\ \\text{K}$ and $327 + 273.15 = 600.15\\ \\text{K}$.",
+          "Factor $= 600.15 \\div 300.15 = 2.00$.",
+          "Dividing the Celsius numbers, $327 \\div 27 \\approx 12$, would be far off."
+        ],
+        "a": "It doubles."
+      },
+      {
+        "t": "ex",
+        "title": "Light and heavy particles",
+        "q": "Helium and nitrogen are both at $300\\ \\text{K}$. Compare their average kinetic energies and their average speeds.",
+        "steps": [
+          "Same temperature, so the same average kinetic energy.",
+          "A helium atom ($4\\ \\text{g/mol}$) is much lighter than a nitrogen molecule ($28\\ \\text{g/mol}$), so it must move faster to carry the same $\\tfrac{1}{2}mv^2$."
+        ],
+        "a": "Equal average kinetic energies; helium atoms move faster on average."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking every particle in a gas moves at the same speed, or that particles stop moving at $0^\\circ\\text{C}$. Temperature fixes only the average, and the curve above shows the wide spread. And $0^\\circ\\text{C}$ is $273\\ \\text{K}$, far above absolute zero: water freezes there, but gas particles keep moving."
+      },
+      {
+        "t": "note",
+        "html": "Explore it in <a href=\"/science-lab/gas/\">Gas in a Box</a>: turn on the speed histogram, then change the temperature."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 9.5 The Kinetic-Molecular Theory"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-PS3-2"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

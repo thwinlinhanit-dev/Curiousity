@@ -1,0 +1,136 @@
+{
+  "id": "trad.valid-forms",
+  "slug": "valid-forms",
+  "ladder": "logic",
+  "course": "trad",
+  "unit": "syllogisms",
+  "title": "The Valid Forms and Their Names",
+  "short": "Fifteen mood-and-figure combinations are valid on the modern reading, such as AAA-1 (Barbara), EAE-1 (Celarent) and AII-3 (Datisi).",
+  "trouble": "Learners learn the names without the forms. The vowels of each name give its mood: Barbara is AAA, Celarent is EAE, Ferio is EIO.",
+  "prereqs": [
+    "trad.syllogism-fallacies",
+    "trad.venn-particular"
+  ],
+  "xp": 2,
+  "viz": [
+    "lg-syllogism",
+    "lg-venn3"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Of the 256 forms you met in <a href=\"/logic/traditional-logic/figure/\">Figure</a>, only fifteen pass every rule and the <a href=\"/logic/traditional-logic/venn-particular/\">Venn test</a> on the modern reading. Medieval students memorized them with names whose vowels spell the mood."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Figure 1",
+          "Figure 2",
+          "Figure 3",
+          "Figure 4"
+        ],
+        "rows": [
+          [
+            "Barbara (AAA)",
+            "Cesare (EAE)",
+            "Disamis (IAI)",
+            "Camenes (AEE)"
+          ],
+          [
+            "Celarent (EAE)",
+            "Camestres (AEE)",
+            "Datisi (AII)",
+            "Dimaris (IAI)"
+          ],
+          [
+            "Darii (AII)",
+            "Festino (EIO)",
+            "Bokardo (OAO)",
+            "Fresison (EIO)"
+          ],
+          [
+            "Ferio (EIO)",
+            "Baroko (AOO)",
+            "Ferison (EIO)",
+            ""
+          ]
+        ],
+        "cap": "The fifteen forms valid on the modern reading."
+      },
+      {
+        "t": "key",
+        "html": "A form is valid on the modern reading exactly when it is one of these fifteen. The first three vowels of each name give the mood: <b>B<u>a</u>rb<u>a</u>r<u>a</u></b> is AAA, <b>C<u>e</u>l<u>a</u>r<u>e</u>nt</b> is EAE, <b>F<u>e</u>r<u>i</u><u>o</u></b> is EIO."
+      },
+      {
+        "t": "why",
+        "html": "Validity belongs to the form, so a short list of forms covers every valid syllogism ever written. Each name was checked once, and every argument with the same mood and figure inherits the result. You can confirm any entry with a Venn diagram or the rules; the names only save you the work."
+      },
+      {
+        "t": "viz",
+        "name": "lg-syllogism",
+        "opts": {
+          "premises": [
+            "No reptiles are mammals",
+            "Some pets are reptiles"
+          ],
+          "conclusion": "Some pets are not mammals",
+          "show": [
+            "terms",
+            "mood",
+            "figure",
+            "name",
+            "verdict"
+          ]
+        },
+        "cap": "EIO-1: Ferio."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Name the form",
+        "q": "What is the name of: \"All runners are early risers. Some runners are readers. So some readers are early risers.\"?",
+        "steps": [
+          "Major premise \"All runners are early risers\": A. Minor \"Some runners are readers\": I. Conclusion: I. Mood AII.",
+          "The middle term <i>runners</i> is the subject of both premises: figure 3.",
+          "AII-3 is Datisi."
+        ],
+        "a": "Datisi"
+      },
+      {
+        "t": "ex",
+        "title": "From the name",
+        "q": "Write Camestres with S, P and M.",
+        "steps": [
+          "The vowels a, e, e give AEE. Camestres is in figure 2 (P–M, S–M).",
+          "Major: All P are M. Minor: No S are M. Conclusion: No S are P."
+        ],
+        "a": "All P are M / No S are M / ∴ No S are P"
+      },
+      {
+        "t": "mistake",
+        "html": "Learning the names without the forms. A name is useful only if you can read its mood from the vowels and know its figure. Check: from \"Ferio\", can you write the three lines with S, P and M? (No M are P / Some S are M / ∴ Some S are not P.)"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Patrick J. Hurley, A Concise Introduction to Logic, 5.3 Rules and Fallacies"
+      },
+      {
+        "name": "William of Sherwood, Introduction to Logic (the mnemonic names, 13th century)"
+      },
+      {
+        "name": "Stanford Encyclopedia of Philosophy, \"Aristotle's Logic\""
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

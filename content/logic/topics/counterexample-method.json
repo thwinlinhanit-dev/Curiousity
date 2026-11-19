@@ -1,0 +1,105 @@
+{
+  "id": "informal.counterexample-method",
+  "slug": "counterexample-method",
+  "ladder": "logic",
+  "course": "informal",
+  "unit": "deduction-induction",
+  "title": "Testing Validity with a Counterexample",
+  "short": "To show a form is invalid, give an argument with the same form whose premises are plainly true and whose conclusion is plainly false.",
+  "trouble": "Learners change the form while building the counterexample, or pick premises that are not clearly true, so the counterexample proves nothing.",
+  "prereqs": [
+    "informal.validity"
+  ],
+  "xp": 3,
+  "viz": [
+    "lg-argmap"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A <a href=\"/logic/informal-logic/validity/\">valid</a> form can never take true premises to a false conclusion. That gives us a test: to prove a form <i>invalid</i>, find one argument of that form that does exactly that."
+      },
+      {
+        "t": "key",
+        "html": "<b>The counterexample method</b>: build an argument with the <i>same form</i>, whose premises are <i>plainly true</i> and whose conclusion is <i>plainly false</i>. One such argument proves the form invalid."
+      },
+      {
+        "t": "why",
+        "html": "A valid form guarantees \"true premises, true conclusion\" for every argument of that form. So a single argument of the form with true premises and a false conclusion shows the guarantee fails, and the form is invalid. Every argument that shares the form shares the flaw."
+      },
+      {
+        "t": "ex",
+        "title": "Breaking a form",
+        "q": "Show that this form is invalid: \"All C are B. All A are B. So all A are C.\"",
+        "steps": [
+          "Choose words for A, B and C that make both premises plainly true: C = dogs, B = mammals, A = cats.",
+          "Premises: \"All dogs are mammals\" (true). \"All cats are mammals\" (true).",
+          "Conclusion: \"All cats are dogs\" (plainly false).",
+          "Same form, true premises, false conclusion."
+        ],
+        "a": "The form is invalid."
+      },
+      {
+        "t": "ex",
+        "title": "A failed attempt",
+        "q": "Does \"All dogs are animals. All mammals are animals. So all dogs are mammals.\" show the same form is invalid?",
+        "steps": [
+          "It has the same form (C = mammals, B = animals, A = dogs).",
+          "But its conclusion, \"All dogs are mammals\", is true.",
+          "True premises with a true conclusion prove nothing about the form."
+        ],
+        "a": "No. The conclusion must be false."
+      },
+      {
+        "t": "viz",
+        "name": "lg-argmap",
+        "opts": {
+          "nodes": [
+            {
+              "id": 1,
+              "text": "All dogs are mammals. (true)"
+            },
+            {
+              "id": 2,
+              "text": "All cats are mammals. (true)"
+            },
+            {
+              "id": 3,
+              "text": "All cats are dogs. (false)",
+              "kind": "conclusion"
+            }
+          ],
+          "links": [
+            {
+              "from": [
+                1,
+                2
+              ],
+              "to": 3
+            }
+          ],
+          "explain": false
+        },
+        "cap": "A counterexample: two true premises leading, by the same form, to a false conclusion."
+      },
+      {
+        "t": "mistake",
+        "html": "Changing the form while building the counterexample (for example, turning \"All A are B\" into \"Some A are B\"), or using premises that are not clearly true. Then the counterexample proves nothing. Check three things, in order: same form? premises plainly true? conclusion plainly false?"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Patrick Hurley, A Concise Introduction to Logic, chapter 1 (argument forms: proving invalidity)"
+      },
+      {
+        "name": "Internet Encyclopedia of Philosophy, \"Validity and Soundness\""
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

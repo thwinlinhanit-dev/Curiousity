@@ -1,0 +1,95 @@
+{
+  "id": "geo.inscribed-constructions",
+  "slug": "inscribed-constructions",
+  "ladder": "math",
+  "course": "geo",
+  "unit": "tools",
+  "title": "Constructing Polygons in a Circle",
+  "short": "Inscribe an equilateral triangle, a square and a regular hexagon.",
+  "trouble": "",
+  "prereqs": [
+    "geo.perpendicular-parallel-constructions"
+  ],
+  "xp": 2,
+  "viz": [
+    "geoboard"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A polygon is <b>inscribed</b> in a circle when all its vertices lie on the circle. Using the constructions from <a href=\"/math/geometry/perpendicular-parallel-constructions/\">Constructing Perpendicular and Parallel Lines</a>, you can inscribe three regular polygons exactly: a hexagon, an equilateral triangle and a square."
+      },
+      {
+        "t": "why",
+        "html": "Keep the compass at the radius $r$ and mark a point $B$ on the circle, one compass width from $A$. Triangle $OAB$ has $OA = OB = r$ (radii) and $AB = r$ (the compass), so it is equilateral and its angle at $O$ is $60^\\circ$. Six such steps use $6 \\cdot 60^\\circ = 360^\\circ$, exactly once around, so you land back on $A$ with six equal sides."
+      },
+      {
+        "t": "viz",
+        "name": "geo-construct",
+        "cap": "Stepping around the circle with the radius makes a regular hexagon.",
+        "opts": {
+          "kind": "hexagon"
+        }
+      },
+      {
+        "t": "list",
+        "items": [
+          "<b>Hexagon:</b> step around the circle with the radius as the compass width; connect the six points. Each side equals $r$.",
+          "<b>Equilateral triangle:</b> make the hexagon's points, then connect every other one. Each side skips one $60^\\circ$ step, so each central angle is $120^\\circ$.",
+          "<b>Square:</b> draw a diameter, construct the diameter perpendicular to it, and connect the four endpoints. The central angles are $90^\\circ$ each."
+        ]
+      },
+      {
+        "t": "viz",
+        "name": "geo-construct",
+        "cap": "Two perpendicular diameters give an inscribed square.",
+        "opts": {
+          "kind": "square"
+        }
+      },
+      {
+        "t": "key",
+        "html": "A regular polygon with $n$ sides, inscribed in a circle, has $n$ equal central angles of $\\frac{360^\\circ}{n}$. Constructions produce those angles: $60^\\circ$ by stepping with the radius, $120^\\circ$ by skipping a point, $90^\\circ$ with perpendicular diameters."
+      },
+      {
+        "t": "ex",
+        "title": "The side of the inscribed square",
+        "q": "A square is inscribed in a circle of radius $6$. How long is each side?<div class=\"ml-viz\" data-viz=\"geo-fig\" data-opts='{\"pts\":{\"O\":[0,0],\"A\":[3,0],\"B\":[0,3],\"C\":[-3,0],\"D\":[0,-3]},\"circles\":[[\"O\",3]],\"polys\":[[\"A\",\"B\",\"C\",\"D\",{\"fill\":\"green\"}]],\"segs\":[[\"O\",\"A\",{\"lab\":\"6\"}],[\"O\",\"B\",{\"lab\":\"6\"}]],\"angs\":[[\"A\",\"O\",\"B\",{\"right\":1}]],\"height\":220,\"label\":\"A square inscribed in a circle, with two radii to neighboring corners\"}' aria-label=\"A square inscribed in a circle, with two radii to neighboring corners\"></div>",
+        "steps": [
+          "Two radii to neighboring corners meet at a right angle, since the diagonals are perpendicular diameters.",
+          "The side is the hypotenuse of a right triangle with legs $6$ and $6$: $\\sqrt{6^2 + 6^2} = \\sqrt{72} = 6\\sqrt{2}$."
+        ],
+        "a": "$6\\sqrt{2} \\approx 8.49$"
+      },
+      {
+        "t": "ex",
+        "title": "The inscribed equilateral triangle",
+        "q": "An equilateral triangle is inscribed in a circle of radius $4$. Find its perimeter.",
+        "steps": [
+          "Draw radii to two vertices and the perpendicular from the center to the side between them. The central angle $120^\\circ$ is split into two $60^\\circ$ angles.",
+          "In the $30$-$60$-$90$ triangle with hypotenuse $4$, half of the side is opposite $60^\\circ$: $2\\sqrt{3}$. So each side is $4\\sqrt{3}$.",
+          "Perimeter: $3 \\cdot 4\\sqrt{3} = 12\\sqrt{3}$."
+        ],
+        "a": "$12\\sqrt{3} \\approx 20.8$"
+      },
+      {
+        "t": "note",
+        "html": "You will meet the $30$-$60$-$90$ ratios properly in <a href=\"/math/geometry/special-right-triangles/\">45-45-90 and 30-60-90 Triangles</a>; here it is enough to see that the side comes from a right triangle."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Euclid, <i>Elements</i>, Book IV, Propositions 6 and 15"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, High School Geometry, G-CO.D.13"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,157 @@
+{
+  "id": "g3.perimeter",
+  "slug": "perimeter",
+  "ladder": "math",
+  "course": "g3",
+  "unit": "area-perimeter",
+  "title": "Perimeter",
+  "short": "Add the side lengths to find the distance around.",
+  "trouble": "Students confuse area and perimeter, or count corner squares twice when finding the distance around.",
+  "prereqs": [
+    "g3.area-by-multiplying"
+  ],
+  "xp": 1,
+  "viz": [
+    "geoboard"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Area measures the space inside a shape. <b>Perimeter</b> measures the distance all the way around it, like a fence around a garden. You already <a href=\"/math/grade-2/measure-length/\">measure lengths</a>; perimeter adds them up."
+      },
+      {
+        "t": "viz",
+        "name": "geoboard",
+        "opts": {
+          "points": {
+            "A": [
+              1,
+              1
+            ],
+            "B": [
+              6,
+              1
+            ],
+            "C": [
+              6,
+              4
+            ],
+            "D": [
+              1,
+              4
+            ]
+          },
+          "objects": [
+            [
+              "poly",
+              "A",
+              "B",
+              "C",
+              "D"
+            ]
+          ],
+          "show": {
+            "len": true,
+            "per": true,
+            "area": true,
+            "ang": false
+          },
+          "xmax": 8,
+          "ymax": 6
+        },
+        "cap": "A 5-by-3 rectangle: the sides add to $5 + 3 + 5 + 3 = 16$ units of perimeter, while 15 unit squares fill the inside. Drag a corner and watch both change."
+      },
+      {
+        "t": "why",
+        "html": "Walk around the edge of a shape and add up the length of each side you walk along. That total is the perimeter. It is a length, so it is measured in units like centimeters, not square units. Area and perimeter measure different things, so the same rectangle can have an area of 15 square units and a perimeter of 16 units."
+      },
+      {
+        "t": "key",
+        "html": "Perimeter = the sum of all the side lengths. In a rectangle, opposite sides are equal, so add length + width + length + width."
+      },
+      {
+        "t": "ex",
+        "title": "A rectangle",
+        "q": "A rectangle is 5 cm long and 3 cm wide. What is its perimeter?",
+        "steps": [
+          "Sides: 5, 3, 5 and 3 cm.",
+          "$5 + 3 + 5 + 3 = 16$."
+        ],
+        "a": "16 cm"
+      },
+      {
+        "t": "ex",
+        "title": "A triangle",
+        "q": "A triangle has sides of 4 in, 6 in and 7 in. What is its perimeter?",
+        "steps": [
+          "$4 + 6 + 7 = 17$."
+        ],
+        "a": "17 inches"
+      },
+      {
+        "t": "ex",
+        "title": "On a grid",
+        "q": "A shape on a grid of 1-centimeter squares has sides of 4, 2, 2, 1, 2 and 3 cm, going around. What is its perimeter?",
+        "steps": [
+          "Add every side once: $4 + 2 + 2 + 1 + 2 + 3 = 14$."
+        ],
+        "a": "14 cm"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Mixing up area and perimeter.</b> Area counts squares inside; perimeter adds lengths around. Ask: am I covering it or going around it?<br><b>Counting corner squares twice.</b> On a grid, count the unit <b>edges</b> along the outside, not the squares next to the edge. A corner square touches the edge on two sides, so counting squares gives the wrong total."
+      },
+      {
+        "t": "viz",
+        "name": "g3-shape",
+        "opts": {
+          "poly": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "grid": "squares",
+          "sides": "auto",
+          "unit": "cm"
+        },
+        "cap": "Count the edges: $4 + 2 + 2 + 1 + 2 + 3 = 14$ cm. There are 10 squares inside, but that is the area, not the perimeter."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 3, 3.MD.D.8 (solve problems involving perimeters of polygons)"
+      },
+      {
+        "name": "OpenStax, Prealgebra 2e, section 9.4, Use Properties of Rectangles, Triangles, and Trapezoids"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

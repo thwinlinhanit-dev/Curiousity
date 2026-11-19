@@ -1,0 +1,94 @@
+{
+  "id": "g7.sample-predictions",
+  "slug": "sample-predictions",
+  "ladder": "math",
+  "course": "g7",
+  "unit": "sampling",
+  "title": "Making Predictions from Samples",
+  "short": "Use a sample's proportion to estimate the population.",
+  "trouble": "Students expect every sample to give exactly the same result.",
+  "prereqs": [
+    "g7.random-samples",
+    "g7.solve-proportions"
+  ],
+  "xp": 2,
+  "viz": [
+    "dotplot"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A <a href=\"/math/grade-7/random-samples/\">random sample</a> is like a small copy of the population. So the fraction of the sample with some feature is a good estimate for the population. Turning that into a number is <a href=\"/math/grade-7/solve-proportions/\">solving a proportion</a>."
+      },
+      {
+        "t": "key",
+        "html": "Use the sample's proportion (or its mean) for the whole population: $$\\frac{\\text{part of sample}}{\\text{sample size}} = \\frac{\\text{part of population}}{\\text{population size}}$$ Different random samples give somewhat different results. Larger samples vary less."
+      },
+      {
+        "t": "why",
+        "html": "A random sample gives every member the same chance, so on average it has the same mix as the population. Any single sample can be a bit off, the way 10 coin flips rarely give exactly 5 heads. Taking several samples shows how much the estimates wobble."
+      },
+      {
+        "t": "viz",
+        "name": "sampling",
+        "opts": {
+          "pop": "coin",
+          "n": 20
+        },
+        "cap": "Each sample is 20 coin flips, and the dot is its proportion of heads. Samples vary, but they gather around $0.5$. Try larger samples: the spread shrinks."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Estimating a count",
+        "q": "In a random sample of 50 students, 18 prefer an afternoon recess. The school has 600 students. About how many prefer it?",
+        "steps": [
+          "Sample proportion: $\\frac{18}{50}$.",
+          "$\\frac{18}{50} \\times 600 = 18 \\times 12 = 216$."
+        ],
+        "a": "About 216 students"
+      },
+      {
+        "t": "ex",
+        "title": "Combining samples",
+        "q": "Three random samples of 40 students had 12, 15 and 9 students who play an instrument. Estimate the percent of all students who do.",
+        "steps": [
+          "The samples differ, which is normal. Combine them: $12 + 15 + 9 = 36$ out of $120$.",
+          "$\\frac{36}{120} = 0.3 = 30\\%$."
+        ],
+        "a": "About 30%"
+      },
+      {
+        "t": "ex",
+        "title": "Using a mean",
+        "q": "A random sample of families in a town has a mean of 1.6 pets per family. There are 450 families. Estimate the total number of pets.",
+        "steps": [
+          "About 1.6 pets for each family.",
+          "$1.6 \\times 450 = 720$ pets."
+        ],
+        "a": "About 720 pets"
+      },
+      {
+        "t": "mistake",
+        "html": "Expecting every sample to give the same answer, and deciding a sample is \"wrong\" when it differs from another. Random samples vary. Their results cluster around the true value, and with more or bigger samples the estimate gets steadier."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Introductory Statistics, Section 1.2 Data, Sampling, and Variation in Data and Sampling"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 7.SP.A.2"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

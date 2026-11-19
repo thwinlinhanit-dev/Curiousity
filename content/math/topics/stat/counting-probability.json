@@ -1,0 +1,86 @@
+{
+  "id": "stat.counting-probability",
+  "slug": "counting-probability",
+  "ladder": "math",
+  "course": "stat",
+  "unit": "probability-rules",
+  "title": "Probability with Counting",
+  "short": "Use permutations and combinations to find probabilities.",
+  "trouble": "",
+  "prereqs": [
+    "stat.combinations",
+    "stat.multiplication-rule"
+  ],
+  "xp": 3,
+  "viz": [],
+  "figureArchetype": "LessonFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Now put counting to work. When every group or arrangement is equally likely, a probability is a ratio of two counts, and the <a href=\"/math/probability-and-statistics/combinations/\">combination</a> and <a href=\"/math/probability-and-statistics/permutations/\">permutation</a> rules supply both counts. It is the same idea as the <a href=\"/math/probability-and-statistics/multiplication-rule/\">multiplication rule</a>, seen from a different angle."
+      },
+      {
+        "t": "key",
+        "html": "$$P(\\text{event}) = \\dfrac{\\text{number of equally likely outcomes in the event}}{\\text{total number of equally likely outcomes}}.$$ Count the top and bottom <b>the same way</b>: both unordered (combinations) or both ordered (permutations)."
+      },
+      {
+        "t": "why",
+        "html": "A random choice of a group makes every group equally likely, so probability is just the share of groups that satisfy the event. If you count ordered selections on the bottom you must count ordered ones on the top too; each unordered group corresponds to the same number of orders, so the ratio comes out the same either way."
+      },
+      {
+        "t": "ex",
+        "title": "All from one group",
+        "q": "A committee of 3 is chosen at random from 5 women and 4 men. Find $P(\\text{all women})$.",
+        "steps": [
+          "All committees: $\\binom{9}{3} = 84$.",
+          "All-women committees: $\\binom{5}{3} = 10$.",
+          "$P = \\dfrac{10}{84} = \\dfrac{5}{42} \\approx 0.119$."
+        ],
+        "a": "$\\frac{5}{42}$"
+      },
+      {
+        "t": "ex",
+        "title": "Exactly some from each group",
+        "q": "Find $P(\\text{exactly 2 women})$ for the same committee.",
+        "steps": [
+          "Choose 2 of the 5 women and 1 of the 4 men: $\\binom{5}{2}\\binom{4}{1} = 10 \\cdot 4 = 40$.",
+          "$P = \\dfrac{40}{84} = \\dfrac{10}{21} \\approx 0.476$."
+        ],
+        "a": "$\\frac{10}{21}$"
+      },
+      {
+        "t": "ex",
+        "title": "Cards, two ways",
+        "q": "Two cards are dealt from a standard deck. Find the probability that both are hearts.",
+        "steps": [
+          "Counting: $\\dfrac{\\binom{13}{2}}{\\binom{52}{2}} = \\dfrac{78}{1326} = \\dfrac{1}{17}$.",
+          "Multiplication rule: $\\dfrac{13}{52} \\cdot \\dfrac{12}{51} = \\dfrac{156}{2652} = \\dfrac{1}{17}$.",
+          "Both methods agree, as they must."
+        ],
+        "a": "$\\frac{1}{17}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Mixing counting methods: an ordered count on top and an unordered count on the bottom (or the reverse). For two hearts, $\\frac{_{13}P_2}{\\binom{52}{2}} = \\frac{156}{1326}$ is twice too big. Check that the numerator and denominator count the same kind of outcome."
+      },
+      {
+        "t": "note",
+        "html": "A famous surprise: in a room of 23 people, the chance that at least two share a birthday is about 51%. The complement, \"all different,\" is $\\frac{365 \\cdot 364 \\cdots 343}{365^{23}} \\approx 0.49$. There are so many pairs of people (253) that a match is likely."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Algebra 2e, section 9.7 Probability"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, S-CP.B.9"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

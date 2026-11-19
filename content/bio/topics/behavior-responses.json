@@ -1,0 +1,162 @@
+{
+  "id": "apbio.behavior-responses",
+  "slug": "behavior-responses",
+  "ladder": "bio",
+  "course": "apbio",
+  "unit": "ecology",
+  "title": "Responses to the Environment",
+  "short": "Organisms respond to cues: plants by tropisms and photoperiod, animals by kinesis (changing speed) and taxis (moving toward or away), and by signals such as alarm calls and the honeybee's waggle dance.",
+  "trouble": "Students confuse taxis and kinesis. Taxis has a direction (toward light); kinesis is a change in how much the animal moves, with no set direction.",
+  "prereqs": [
+    "hsbio.group-behavior"
+  ],
+  "xp": 2,
+  "viz": [
+    "bi-classify",
+    "bi-picture"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/biology/high-school-biology/group-behavior/\">Group Behavior</a> animals worked together. Here we look at how single organisms respond to cues in their surroundings, and at the signals they send each other. The responses are adaptations: they help an organism find food, avoid danger and survive."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Response",
+          "What it is",
+          "Example"
+        ],
+        "rows": [
+          [
+            "Tropism (plants)",
+            "Growth toward or away from a stimulus",
+            "Shoots bend toward light (phototropism)"
+          ],
+          [
+            "Photoperiodism (plants)",
+            "A response to the length of night",
+            "Some plants flower only when nights are long, others only when nights are short"
+          ],
+          [
+            "Kinesis (animals)",
+            "A change in how fast or how often an animal moves or turns, with no set direction",
+            "Pill bugs move more in dry places and slow down in damp ones, so they end up gathering where it is damp"
+          ],
+          [
+            "Taxis (animals)",
+            "Movement directly toward or away from a stimulus",
+            "Many moths fly toward light; trout swim to face the current"
+          ],
+          [
+            "Communication",
+            "Signals that change another's behavior",
+            "The honeybee waggle dance; alarm calls; ant scent trails"
+          ]
+        ],
+        "cap": "Kinds of responses to the environment."
+      },
+      {
+        "t": "key",
+        "html": "Organisms respond to environmental cues. A <b>taxis</b> has a direction (toward or away from the stimulus). A <b>kinesis</b> is a change in the rate of movement or turning, with no set direction. Communication passes information between individuals: the <b>waggle dance</b> tells other honeybees the direction and distance of food."
+      },
+      {
+        "t": "viz",
+        "name": "bi-classify",
+        "opts": {
+          "bins": [
+            "Taxis",
+            "Kinesis",
+            "Tropism"
+          ],
+          "cards": [
+            {
+              "text": "Moths fly straight toward a porch light",
+              "bin": 0
+            },
+            {
+              "text": "Pill bugs wander fast in dry soil and slow down in damp soil",
+              "bin": 1,
+              "why": "No direction is chosen; only the speed changes, and they collect where they slow down."
+            },
+            {
+              "text": "A seedling bends toward a window",
+              "bin": 2,
+              "why": "Plants respond by growing, not by moving from place to place."
+            },
+            {
+              "text": "Fish swim upstream, facing the current",
+              "bin": 0
+            },
+            {
+              "text": "Flatworms turn more often in bright light, so they end up in shade",
+              "bin": 1
+            },
+            {
+              "text": "Roots grow downward with gravity",
+              "bin": 2
+            }
+          ],
+          "reveal": true,
+          "columns": 3
+        },
+        "cap": "Sort the responses."
+      },
+      {
+        "t": "why",
+        "html": "How can a kinesis bring animals to a good spot without any steering? An animal that moves fast in bad places and slowly in good ones spends more time in the good ones, the way cars bunch up where the road slows. A taxis is more direct but needs senses that detect where a stimulus comes from. Communication pays off when sharing information helps relatives or the group: a bee that reports a rich patch of flowers helps its whole colony, which is made of its sisters."
+      },
+      {
+        "t": "p",
+        "html": "In the waggle dance, studied by Karl von Frisch, a forager returning to the dark hive dances a figure eight on the comb. The angle of the straight \"waggle run\" from vertical shows the direction of the food relative to the sun, and the length of the waggle run shows the distance."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Taxis or kinesis?",
+        "q": "In a dish that is wet on one side, pill bugs placed at random move quickly and turn often on the dry side, and slow down on the wet side. After 10 minutes most are on the wet side. Taxis or kinesis?",
+        "steps": [
+          "The pill bugs do not head straight for the water.",
+          "They change how fast and how much they move depending on humidity.",
+          "They gather where they move least."
+        ],
+        "a": "Kinesis."
+      },
+      {
+        "t": "ex",
+        "title": "Testing the result",
+        "q": "Of 40 pill bugs, 30 end on the wet side and 10 on the dry side. Is that more than chance? (Expected with no preference: 20 and 20.)",
+        "steps": [
+          "$\\chi^2 = \\frac{(30-20)^2}{20} + \\frac{(10-20)^2}{20} = 5 + 5 = 10$.",
+          "One degree of freedom: the critical value is 3.84.",
+          "10 > 3.84."
+        ],
+        "a": "Reject the null hypothesis of no preference: the pill bugs prefer the wet side. (A <a href=\"/biology/advanced-biology/chi-square/\">chi-square test</a> again.)"
+      },
+      {
+        "t": "mistake",
+        "html": "Confusing taxis and kinesis. Taxis has a direction (toward light, against the current); kinesis is a change in how much the animal moves, with no set direction. Ask: did the animal aim for the stimulus, or did it just speed up and slow down?"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Biology 2e, 45.7 Behavioral Biology: Proximate and Ultimate Causes of Behavior"
+      },
+      {
+        "name": "OpenStax, Biology 2e, 30.6 Plant Sensory Systems and Responses"
+      },
+      {
+        "name": "OpenStax, Biology for AP Courses, 45.7 Behavioral Biology: Proximate and Ultimate Causes of Behavior"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

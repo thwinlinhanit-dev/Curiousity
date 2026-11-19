@@ -1,0 +1,176 @@
+{
+  "id": "geo.elevation-depression",
+  "slug": "elevation-depression",
+  "ladder": "math",
+  "course": "geo",
+  "unit": "trigonometry",
+  "title": "Angles of Elevation and Depression",
+  "short": "Model heights and distances with right triangles.",
+  "trouble": "Students measure the angle of depression from the vertical instead of the horizontal.",
+  "prereqs": [
+    "geo.inverse-trig-angles"
+  ],
+  "xp": 2,
+  "viz": [
+    "angle"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Surveyors, pilots and builders measure angles from the <b>horizontal</b>. Looking up at something, the angle between the horizontal and your line of sight is the <b>angle of elevation</b>. Looking down, it is the <b>angle of depression</b>. Each makes a right triangle you can solve with <a href=\"/math/geometry/inverse-trig-angles/\">Finding Angles with Inverse Trig</a> and <a href=\"/math/geometry/solve-right-triangles/\">Solving Right Triangles</a>."
+      },
+      {
+        "t": "why",
+        "html": "Picture a person on a cliff looking down at a boat. The horizontal line at the cliff top and the ground (or water) are parallel, and the line of sight is a transversal. The angle of depression at the top and the angle of elevation at the boat are alternate interior angles, so they are equal. That lets you move the angle into the right triangle."
+      },
+      {
+        "t": "viz",
+        "name": "geo-fig",
+        "cap": "The angle of depression (from the horizontal at the top) equals the angle of elevation (at the bottom).",
+        "opts": {
+          "pts": {
+            "T": [
+              0,
+              4
+            ],
+            "B": [
+              0,
+              0
+            ],
+            "S": [
+              7,
+              0
+            ],
+            "H": [
+              7,
+              4
+            ]
+          },
+          "segs": [
+            [
+              "T",
+              "B",
+              {
+                "lab": "height"
+              }
+            ],
+            [
+              "B",
+              "S",
+              {
+                "lab": "horizontal distance"
+              }
+            ],
+            [
+              "T",
+              "S",
+              {
+                "color": "blue",
+                "lab": "line of sight"
+              }
+            ],
+            [
+              "T",
+              "H",
+              {
+                "dash": 1,
+                "color": "muted"
+              }
+            ]
+          ],
+          "angs": [
+            [
+              "H",
+              "T",
+              "S",
+              {
+                "lab": "depression",
+                "color": "red",
+                "r": 40
+              }
+            ],
+            [
+              "T",
+              "S",
+              "B",
+              {
+                "lab": "elevation",
+                "color": "gold",
+                "r": 40
+              }
+            ],
+            [
+              "S",
+              "B",
+              "T",
+              {
+                "right": 1
+              }
+            ]
+          ],
+          "nolab": [
+            "T",
+            "B",
+            "S",
+            "H"
+          ],
+          "height": 210,
+          "label": "Angle of depression from the top equals the angle of elevation from the bottom"
+        }
+      },
+      {
+        "t": "key",
+        "html": "Angles of elevation and depression are measured from a horizontal line, never from a vertical one. The angle of depression from $A$ to $B$ equals the angle of elevation from $B$ to $A$."
+      },
+      {
+        "t": "ex",
+        "title": "A height",
+        "q": "From $40$ m away on level ground, the angle of elevation to the top of a tower is $55^\\circ$. How tall is the tower?",
+        "steps": [
+          "The height is opposite the angle; the $40$ m distance is adjacent: $\\tan 55^\\circ = \\frac{h}{40}$.",
+          "$h = 40 \\tan 55^\\circ \\approx 40(1.428) \\approx 57.1$ m."
+        ],
+        "a": "About $57.1$ m"
+      },
+      {
+        "t": "ex",
+        "title": "A distance from a depression angle",
+        "q": "From the top of a $90$ ft lighthouse, the angle of depression to a boat is $12^\\circ$. How far is the boat from the base?",
+        "steps": [
+          "Move the angle to the boat: the angle of elevation there is $12^\\circ$.",
+          "$\\tan 12^\\circ = \\frac{90}{x}$, so $x = \\frac{90}{\\tan 12^\\circ} \\approx \\frac{90}{0.2126} \\approx 423$ ft."
+        ],
+        "a": "About $423$ ft"
+      },
+      {
+        "t": "ex",
+        "title": "Finding the angle",
+        "q": "A $15$ ft ladder reaches $13$ ft up a wall. What angle does it make with the ground?",
+        "steps": [
+          "The ladder is the hypotenuse and the height is opposite the angle at the ground: $\\sin \\theta = \\frac{13}{15}$.",
+          "$\\theta = \\sin^{-1}\\left(\\frac{13}{15}\\right) \\approx 60.1^\\circ$."
+        ],
+        "a": "About $60^\\circ$"
+      },
+      {
+        "t": "mistake",
+        "html": "Measuring the angle of depression from the vertical (the side of the lighthouse) instead of the horizontal. That angle is the complement, $90^\\circ$ minus the right one, and it gives very wrong distances. Check: draw the horizontal line at the observer's eye first, then mark the angle down from it."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Contemporary Mathematics, 10.8 Right Triangle Trigonometry"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, High School Geometry, G-SRT.C.8"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

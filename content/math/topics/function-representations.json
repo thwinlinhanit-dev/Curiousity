@@ -1,0 +1,139 @@
+{
+  "id": "g8.function-representations",
+  "slug": "function-representations",
+  "ladder": "math",
+  "course": "g8",
+  "unit": "functions",
+  "title": "Functions as Tables, Graphs and Rules",
+  "short": "Move between a table, a graph, a rule and words.",
+  "trouble": "",
+  "prereqs": [
+    "g8.function-definition"
+  ],
+  "xp": 1,
+  "viz": [
+    "graph",
+    "ratiotable"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A <a href=\"/math/pre-algebra/function-definition/\">function</a> can be shown in four ways: words, a rule (an equation), a table and a graph. They all describe the same input-output pairs, so you can move from any one to the others."
+      },
+      {
+        "t": "why",
+        "html": "A rule like $y = 3x + 2$ is a recipe for making pairs: choose an input, get its output. A table lists some of those pairs. A graph draws every pair as a point $(x, y)$. Words tell the story the pairs come from. Moving between forms is just making pairs or reading them."
+      },
+      {
+        "t": "key",
+        "html": "To go from a rule to a table or graph, choose inputs and compute outputs. To go from a table or graph to a rule, look for how the output changes as the input grows, and what the output is when the input is 0."
+      },
+      {
+        "t": "p",
+        "html": "Example: a bike rental costs \\$2 plus \\$3 per hour. In words: the cost starts at 2 and goes up 3 each hour. As a rule: $y = 3x + 2$, where $x$ is hours and $y$ is dollars."
+      },
+      {
+        "t": "table",
+        "head": [
+          "hours $x$",
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "rows": [
+          [
+            "cost $y$ (\\$)",
+            "2",
+            "5",
+            "8",
+            "11",
+            "14"
+          ]
+        ],
+        "cap": "The same function as a table."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "f": "3x+2",
+          "table": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "points": [
+            {
+              "x": 2,
+              "y": 8,
+              "label": "2 hours"
+            }
+          ],
+          "xmin": -1,
+          "xmax": 6,
+          "ymin": -2,
+          "ymax": 20,
+          "zoom": false
+        },
+        "cap": "And as a graph. Each row of the table is a point on the line."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Rule to outputs",
+        "q": "For $y = -2x + 7$, find the outputs for $x = 3$ and $x = -1$.",
+        "steps": [
+          "$x = 3$: $y = -2 \\cdot 3 + 7 = -6 + 7 = 1$.",
+          "$x = -1$: $y = -2 \\cdot (-1) + 7 = 2 + 7 = 9$."
+        ],
+        "a": "$1$ and $9$"
+      },
+      {
+        "t": "ex",
+        "title": "Table to rule",
+        "q": "Write a rule for this table. $$\\begin{array}{c|cccc} x & 0 & 1 & 2 & 3 \\\\ \\hline y & 5 & 9 & 13 & 17 \\end{array}$$",
+        "steps": [
+          "Each time $x$ goes up 1, $y$ goes up 4, so the rule has $4x$.",
+          "At $x = 0$, $y = 5$, so 5 is added.",
+          "Check $x = 3$: $4 \\cdot 3 + 5 = 17$."
+        ],
+        "a": "$y = 4x + 5$"
+      },
+      {
+        "t": "ex",
+        "title": "Output to input",
+        "q": "For the bike rental, how many hours cost \\$20?",
+        "steps": [
+          "Set the rule equal to 20: $3x + 2 = 20$.",
+          "Subtract 2: $3x = 18$, so $x = 6$."
+        ],
+        "a": "6 hours"
+      },
+      {
+        "t": "mistake",
+        "html": "Mixing up the input and the output, for example reading a table’s bottom row as the inputs. In a table the input row (or column) is usually labeled $x$; on a graph the input is read on the horizontal axis."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Intermediate Algebra 2e, Section 3.6: Graphs of Functions"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 8, 8.F.A.1"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

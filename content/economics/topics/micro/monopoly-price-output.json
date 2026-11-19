@@ -1,0 +1,95 @@
+{
+  "id": "micro.monopoly-price-output",
+  "slug": "monopoly-price-output",
+  "ladder": "economics",
+  "course": "micro",
+  "unit": "imperfect-competition",
+  "title": "The Monopolist's Price and Output",
+  "short": "Find the quantity where MR = MC, then go up to the demand curve to read the price.",
+  "trouble": "Students read the price off the MC or MR curve at the MR = MC quantity instead of off the demand curve.",
+  "prereqs": [
+    "micro.monopoly-marginal-revenue",
+    "micro.profit-and-loss"
+  ],
+  "xp": 2,
+  "viz": [
+    "ec-monopoly"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A monopoly maximizes profit with the same marginal rule as any firm, using its own marginal revenue (<a href=\"/economics/microeconomics/monopoly-marginal-revenue/\">Why Marginal Revenue Is Below Price</a>) and measuring profit as in <a href=\"/economics/microeconomics/profit-and-loss/\">Profit and Loss on the Graph</a>."
+      },
+      {
+        "t": "key",
+        "html": "(1) Find the quantity where $MR = MC$. (2) Go <b>up to the demand curve</b> at that quantity to read the price. (3) Profit $= (P - ATC) \\times Q$."
+      },
+      {
+        "t": "why",
+        "html": "Each unit adds $MR - MC$ to profit, so the monopoly keeps going while MR is at least MC, just like a competitive firm. The difference is the price: MR and MC tell the monopoly how many to sell, but the price it can charge for that many is whatever buyers will pay, and that is the height of the demand curve. Because MR is below demand, the price ends up above MC."
+      },
+      {
+        "t": "viz",
+        "name": "ec-monopoly",
+        "opts": {
+          "demand": {
+            "p0": 20,
+            "s": 1
+          },
+          "mc": {
+            "m0": 4,
+            "m1": 0
+          },
+          "show": [
+            "profit"
+          ]
+        },
+        "cap": "MR meets MC at 8 units; the dotted line goes up to demand for the price, \\$12. The gold rectangle is profit."
+      },
+      {
+        "t": "ex",
+        "title": "Constant marginal cost",
+        "q": "A monopoly faces demand $P = 20 - Q$ and has a constant marginal cost of \\$4, with no fixed cost. Find its quantity, price and profit.",
+        "steps": [
+          "$MR = 20 - 2Q$. Set $MR = MC$: $20 - 2Q = 4$, so $Q = 8$.",
+          "Price from demand: $P = 20 - 8 = \\$12$.",
+          "With constant MC and no fixed cost, $ATC = \\$4$. Profit $= (\\$12 - \\$4) \\times 8 = \\$64$."
+        ],
+        "a": "$Q = 8$, $P = \\$12$, profit \\$64."
+      },
+      {
+        "t": "ex",
+        "title": "With a fixed cost",
+        "q": "Same monopoly, but it also has a fixed cost of \\$40. Do its quantity and price change? What is its profit?",
+        "steps": [
+          "A fixed cost doesn't change MC or MR, so $Q = 8$ and $P = \\$12$ stay the same.",
+          "Profit: $\\$64 - \\$40 = \\$24$."
+        ],
+        "a": "Same quantity and price; profit \\$24."
+      },
+      {
+        "t": "note",
+        "html": "Because a monopoly sets its price from the demand curve, it has no supply curve of the usual kind: the quantity it offers at a given price depends on the whole shape of demand, not on the price alone."
+      },
+      {
+        "t": "mistake",
+        "html": "Reading the price off the MC or MR curve at the MR = MC quantity. At 8 units, MR and MC are both \\$4, but buyers will pay \\$12 for 8 units, and the monopoly charges what buyers will pay. Check: the price must be a point on the demand curve."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, 9.2 How a Profit-Maximizing Monopoly Chooses Output and Price"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.01 Principles of Microeconomics (scope and sequence)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

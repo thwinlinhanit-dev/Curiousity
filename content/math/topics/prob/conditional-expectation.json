@@ -1,0 +1,150 @@
+{
+  "id": "prob.conditional-expectation",
+  "slug": "conditional-expectation",
+  "ladder": "math",
+  "course": "prob",
+  "unit": "joint",
+  "title": "Conditional Expectation",
+  "short": "E[X ∣ Y = y] averages X within one slice, and E[X] = E[E[X ∣ Y]] averages the slices.",
+  "trouble": "Students average the conditional means without weighting them by the probabilities of the slices.",
+  "prereqs": [
+    "prob.conditional-distributions",
+    "prob.total-probability"
+  ],
+  "xp": 3,
+  "viz": [
+    "prob-table"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The <a href=\"/math/probability/total-probability/\">law of total probability</a> finds a probability by splitting into cases. The same idea works for averages: find the average within each case, then average those, weighting each case by its probability. Within a case the average comes from the <a href=\"/math/probability/conditional-distributions/\">conditional distribution</a>."
+      },
+      {
+        "t": "key",
+        "html": "$$E[X \\mid Y = y] = \\sum_x x\\,P(X = x \\mid Y = y)$$ is the mean of $X$ within the slice $Y = y$. The <b>tower rule</b>: $$E[X] = \\sum_y E[X \\mid Y = y]\\,P(Y = y),$$ written compactly as $E[X] = E\\left[E[X \\mid Y]\\right]$."
+      },
+      {
+        "t": "why",
+        "html": "Start from $E[X] = \\sum_{x, y} x\\,p(x, y)$ and write each cell as $$p(x, y) = P(X = x \\mid Y = y)P(Y = y)$$ Grouping by $y$: $$E[X] = \\sum_y P(Y = y)\\sum_x x\\,P(X = x \\mid Y = y) = \\sum_y P(Y = y)\\,E[X \\mid Y = y].$$ So $E[X]$ is a weighted average of the slice means, with the slice probabilities as weights."
+      },
+      {
+        "t": "table",
+        "head": [
+          "",
+          "$X = 0$",
+          "$X = 1$",
+          "$X = 2$",
+          "$P(Y = y)$"
+        ],
+        "rows": [
+          [
+            "$Y = 0$",
+            "$\\frac{1}{6}$",
+            "$\\frac{1}{6}$",
+            "$0$",
+            "$\\frac{1}{3}$"
+          ],
+          [
+            "$Y = 1$",
+            "$\\frac{1}{12}$",
+            "$\\frac{1}{4}$",
+            "$\\frac{1}{3}$",
+            "$\\frac{2}{3}$"
+          ],
+          [
+            "$P(X = x)$",
+            "$\\frac{1}{4}$",
+            "$\\frac{5}{12}$",
+            "$\\frac{1}{3}$",
+            "$1$"
+          ]
+        ],
+        "cap": "A joint pmf with its marginals in the margins."
+      },
+      {
+        "t": "viz",
+        "name": "prob-table",
+        "opts": {
+          "x": [
+            0,
+            1,
+            2
+          ],
+          "y": [
+            0,
+            1
+          ],
+          "p": [
+            [
+              "1/6",
+              "1/6",
+              "0"
+            ],
+            [
+              "1/12",
+              "1/4",
+              "1/3"
+            ]
+          ],
+          "mode": "cexp"
+        },
+        "cap": "Each row with its own mean of X in the last column. Weighting those row means by the row totals gives the overall mean of X."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Slice means from a table",
+        "q": "From the table, find $E[X \\mid Y = 0]$, $E[X \\mid Y = 1]$ and $E[X]$.",
+        "steps": [
+          "Given $Y = 0$: probabilities $\\frac{1}{2}, \\frac{1}{2}, 0$, so $E[X \\mid Y = 0] = \\frac{1}{2}$.",
+          "Given $Y = 1$: probabilities $\\frac{1}{8}, \\frac{3}{8}, \\frac{1}{2}$, so $E[X \\mid Y = 1] = \\frac{3}{8} + 1 = \\frac{11}{8}$.",
+          "$$E[X] = \\frac{1}{3} \\cdot \\frac{1}{2} + \\frac{2}{3} \\cdot \\frac{11}{8} = \\frac{1}{6} + \\frac{11}{12} = \\frac{13}{12}$$ matching the marginal calculation."
+        ],
+        "a": "$\\frac{1}{2}$, $\\frac{11}{8}$ and $\\frac{13}{12}$"
+      },
+      {
+        "t": "ex",
+        "title": "A two-stage experiment",
+        "q": "Roll a fair die to get $N$, then flip a fair coin $N$ times. Find the expected number of heads.",
+        "steps": [
+          "Given $N = n$, the heads are binomial with mean $\\frac{n}{2}$: $E[X \\mid N] = \\frac{N}{2}$.",
+          "$E[X] = E\\left[\\frac{N}{2}\\right] = \\frac{1}{2} \\cdot \\frac{7}{2} = \\frac{7}{4}$."
+        ],
+        "a": "$\\frac{7}{4}$"
+      },
+      {
+        "t": "ex",
+        "title": "Group averages",
+        "q": "A school's students: 50% in group 1 with mean commute 30 minutes, 30% in group 2 with mean 40, 20% in group 3 with mean 60. Find the mean commute overall.",
+        "steps": [
+          "$$E[X] = 0.5(30) + 0.3(40) + 0.2(60) = 15 + 12 + 12 = 39$$ minutes.",
+          "The plain average of the three means, about 43.3, is wrong: group 3 is small."
+        ],
+        "a": "39 minutes"
+      },
+      {
+        "t": "mistake",
+        "html": "Averaging the conditional means without weighting them by the probabilities of their slices. Check: the overall mean must lie between the smallest and largest slice means, closer to the big slices; and it must agree with $E[X]$ computed from the marginal distribution."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "MIT OpenCourseWare 18.440, Probability and Random Variables (Spring 2014), lecture notes on conditional expectation"
+      },
+      {
+        "name": "Grinstead and Snell, Introduction to Probability (2nd revised edition, American Mathematical Society; free from Dartmouth College), chapter 6 (Expected Value and Variance), section 6.1, conditional expectation"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

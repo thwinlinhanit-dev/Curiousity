@@ -1,0 +1,94 @@
+{
+  "id": "phys2.force-on-wire",
+  "slug": "force-on-wire",
+  "ladder": "physics",
+  "course": "phys2",
+  "unit": "magnetism",
+  "title": "Magnetic Force on a Current",
+  "short": "A wire carrying current I across a field B feels F = ILB sin θ.",
+  "trouble": "Students use the direction of electron flow in the right-hand rule instead of conventional current.",
+  "prereqs": [
+    "phys2.force-on-moving-charge",
+    "phys2.current"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-magnetism"
+  ],
+  "figureArchetype": "FieldFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A current is a stream of moving charges (<a href=\"/physics/physics-2/current/\">Electric Current</a>), and each moving charge feels a magnetic force (<a href=\"/physics/physics-2/force-on-moving-charge/\">Magnetic Force on a Moving Charge</a>). Add up all those small pushes in a wire and you get a force on the wire itself. Every electric motor and loudspeaker runs on it."
+      },
+      {
+        "t": "why",
+        "html": "Take a straight piece of wire of length $L$ carrying current $I$ across a field $B$. If the charges drift at speed $v_d$, it takes them a time $t = L/v_d$ to cross the piece, so the moving charge inside it is $Q = It = IL/v_d$. Each bit feels $qv_dB$, so the total is $$F = Qv_dB = \\frac{IL}{v_d}\\,v_dB = ILB.$$ The drift speed cancels. At an angle, only the part across the field counts, which brings back $\\sin\\theta$."
+      },
+      {
+        "t": "key",
+        "html": "A straight wire of length $L$ carrying current $I$ at angle $\\theta$ to a uniform field feels $$F = ILB\\sin\\theta,$$ at right angles to both the wire and the field. Point your fingers along the <b>conventional current</b> and curl them toward $\\vec{B}$; your thumb gives $\\vec{F}$."
+      },
+      {
+        "t": "viz",
+        "name": "phys2-rhr",
+        "opts": {
+          "mode": "wire",
+          "v": "+y",
+          "B": "+x",
+          "task": "Reverse the current, then reverse the field. What happens to the force each time?"
+        },
+        "cap": "A wire in a uniform field. Reversing either the current or the field reverses the force; reversing both leaves it alone."
+      },
+      {
+        "t": "mistake",
+        "html": "Using the direction the electrons move. In a metal wire the electrons drift opposite to the current, and their charge is negative. Those two flips cancel, so the force is the same either way, but only if you treat it consistently. The rule of this course: use the conventional current $I$ with the right-hand rule and no extra flip. Check: a reversed current must give a reversed force."
+      },
+      {
+        "t": "ex",
+        "title": "Force on a power line",
+        "q": "A $2.0\\ \\text{m}$ piece of wire carries $5.0\\ \\text{A}$ straight across a $0.30\\ \\text{T}$ field. How big is the force?",
+        "steps": [
+          "Across the field means $\\theta = 90^\\circ$, so $\\sin\\theta = 1$.",
+          "$$F = ILB = (5.0\\ \\text{A})(2.0\\ \\text{m})(0.30\\ \\text{T}) = 3.0\\ \\text{N}.$$",
+          "Units: $\\text{A·m·T} = \\text{A·m}\\cdot\\frac{\\text{N}}{\\text{A·m}} = \\text{N}$."
+        ],
+        "a": "$3.0\\ \\text{N}$"
+      },
+      {
+        "t": "ex",
+        "title": "Holding a wire up",
+        "q": "A horizontal wire has a mass of $0.050\\ \\text{kg}$ per meter. It runs east–west, at right angles to a horizontal $0.40\\ \\text{T}$ field. What current makes the magnetic force hold it up?",
+        "steps": [
+          "For a length $L$, the weight is $mg = (0.050L)(9.8) = 0.49L$ newtons.",
+          "The magnetic force must match it: $ILB = 0.49L$, so the $L$ cancels.",
+          "$I = \\dfrac{0.49}{0.40} = 1.2\\ \\text{A}$, flowing in whichever direction makes $\\vec{F}$ point up."
+        ],
+        "a": "$I \\approx 1.2\\ \\text{A}$"
+      },
+      {
+        "t": "viz",
+        "name": "ph-magnetism",
+        "opts": {
+          "mode": "wire-force",
+          "angle": 60
+        },
+        "cap": "Turn the wire. The force is largest when the wire crosses the field at $90^\\circ$ and zero when the wire lies along the field."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Physics 2e, Section 22.7: Magnetic Force on a Current-Carrying Conductor"
+      },
+      {
+        "name": "OpenStax College Physics 2e, Section 22.8: Torque on a Current Loop: Motors and Meters"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

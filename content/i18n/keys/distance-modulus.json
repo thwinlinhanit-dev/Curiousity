@@ -1,0 +1,110 @@
+[
+  {
+    "key": "title",
+    "source": "Absolute Magnitude and the Distance Modulus"
+  },
+  {
+    "key": "short",
+    "source": "A star's absolute magnitude is its magnitude seen from 10 pc, and m − M = 5 log(d/10 pc)."
+  },
+  {
+    "key": "trouble",
+    "source": "Students put the distance in light-years, or forget the 10 pc reference."
+  },
+  {
+    "key": "block.0.html",
+    "source": "A star's apparent magnitude $m$ depends on two things: how much light it gives out and how far away it is. To compare stars fairly, astronomers define the <b>absolute magnitude</b> $M$: the apparent magnitude the star would have if it sat at a standard distance of 10 parsecs. Combining <a href=\"/physics/astrophysics/magnitude-equations/\">magnitude arithmetic</a> with the inverse-square law gives a short, powerful formula for distance."
+  },
+  {
+    "key": "block.1.html",
+    "source": "Light spreads over a sphere, so a star of luminosity $L$ at distance $d$ delivers flux $F = L/(4\\pi d^2)$. Compare the same star at its real distance $d$ and at 10 pc: $$m - M = -2.5\\log_{10}\\frac{F(d)}{F(10\\text{ pc})} = -2.5\\log_{10}\\left(\\frac{10\\text{ pc}}{d}\\right)^{2}.$$ The power of 2 comes out of the log as a factor, and $-2.5 \\times (-2) = 5$, so $m - M = 5\\log_{10}(d/10\\text{ pc})$. The luminosity cancels, which is the whole point."
+  },
+  {
+    "key": "block.2.html",
+    "source": "The <b>distance modulus</b> is $$m - M = 5\\log_{10}\\frac{d}{10\\text{ pc}}, \\qquad d = 10^{(m - M + 5)/5}\\text{ pc}.$$ It depends only on distance (when there is no dust in the way)."
+  },
+  {
+    "key": "block.3.cap",
+    "source": "Each factor of 10 in distance adds 5 to the distance modulus."
+  },
+  {
+    "key": "block.4.cap",
+    "source": "Light from a source spreads over an area that grows as $d^2$. Twice as far means a quarter of the flux, which is $5\\log_{10}2 \\approx 1.5$ magnitudes fainter."
+  },
+  {
+    "key": "block.5.text",
+    "source": "Worked examples"
+  },
+  {
+    "key": "block.6.q",
+    "source": "The Sun has $m = -26.74$ at a distance of $1\\text{ AU} = 4.848 \\times 10^{-6}$ pc. Find its absolute magnitude."
+  },
+  {
+    "key": "block.6.title",
+    "source": "The Sun's absolute magnitude"
+  },
+  {
+    "key": "block.6.a",
+    "source": "$M_\\odot \\approx 4.83$. From 10 pc the Sun would be a faint naked-eye star."
+  },
+  {
+    "key": "block.6.step.0",
+    "source": "$M = m - 5\\log_{10}(d/10\\text{ pc})$."
+  },
+  {
+    "key": "block.6.step.1",
+    "source": "$d/10\\text{ pc} = 4.848 \\times 10^{-7}$, and $\\log_{10}(4.848 \\times 10^{-7}) = -6.314$."
+  },
+  {
+    "key": "block.6.step.2",
+    "source": "$M = -26.74 - 5 \\times (-6.314) = -26.74 + 31.57 = 4.83$."
+  },
+  {
+    "key": "block.7.q",
+    "source": "A Cepheid variable with $M = -4.0$ appears at $m = 16.0$. How far away is it?"
+  },
+  {
+    "key": "block.7.title",
+    "source": "A Cepheid in a nearby galaxy"
+  },
+  {
+    "key": "block.7.a",
+    "source": "$d = 1.0 \\times 10^{5}$ pc $= 100$ kpc, well outside the disk of the Milky Way."
+  },
+  {
+    "key": "block.7.step.0",
+    "source": "$m - M = 16.0 - (-4.0) = 20.0$."
+  },
+  {
+    "key": "block.7.step.1",
+    "source": "$d = 10^{(20.0 + 5)/5}\\text{ pc} = 10^{5}$ pc."
+  },
+  {
+    "key": "block.8.q",
+    "source": "A star with $M = 1.5$ lies 250 pc away. What is its apparent magnitude?"
+  },
+  {
+    "key": "block.8.title",
+    "source": "Predicting how bright a star looks"
+  },
+  {
+    "key": "block.8.a",
+    "source": "$m \\approx 8.5$, too faint for the naked eye but easy in binoculars."
+  },
+  {
+    "key": "block.8.step.0",
+    "source": "$m = M + 5\\log_{10}(250/10) = 1.5 + 5\\log_{10}25$."
+  },
+  {
+    "key": "block.8.step.1",
+    "source": "$\\log_{10}25 = 1.398$, so $5\\log_{10}25 = 6.99$."
+  },
+  {
+    "key": "block.8.step.2",
+    "source": "$m = 1.5 + 6.99 = 8.49$."
+  },
+  {
+    "key": "block.9.html",
+    "source": "Putting the distance in light-years. The 10 in the formula is 10 <i>parsecs</i>, so $d$ must be in parsecs too. A star 100 pc away is 326 ly away; plugging in 326 gives $m - M = 7.6$ instead of the correct $5.0$, an error of 2.6 magnitudes. Convert first ($1\\text{ pc} = 3.26$ ly). A second slip is writing $5\\log_{10}d$ and forgetting the 10 pc, which shifts every answer by 5. Check: a star at exactly 10 pc must come out with $m = M$."
+  }
+]

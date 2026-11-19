@@ -1,0 +1,122 @@
+{
+  "id": "hsbio.ph",
+  "slug": "ph",
+  "ladder": "bio",
+  "course": "hsbio",
+  "unit": "chemistry",
+  "title": "Acids, Bases and pH",
+  "short": "pH measures how acidic a solution is: 7 is neutral, lower is acidic, higher is basic. Each step of 1 is a tenfold change, and buffers keep the pH of living things steady.",
+  "trouble": "Students think pH 4 is twice as acidic as pH 8, or that a lower pH means fewer hydrogen ions. Each whole step is ten times, so pH 4 has 10,000 times more hydrogen ions than pH 8.",
+  "prereqs": [
+    "hsbio.water-properties",
+    "g6.whole-number-exponents"
+  ],
+  "xp": 2,
+  "viz": [
+    "bi-chart"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A few water molecules split into H⁺ and OH⁻ ions at any moment. Add an acid and the H⁺ goes up; add a base and it goes down. Because the numbers involved are tiny and vary hugely, chemists count them with powers of ten, which you know from <a href=\"/math/grade-6/whole-number-exponents/\">Whole-Number Exponents</a>."
+      },
+      {
+        "t": "key",
+        "html": "<b>pH</b> measures how acidic a solution is: <b>7 is neutral</b>, lower is <b>acidic</b> (more H⁺), higher is <b>basic</b> (fewer H⁺). Each step of 1 is a <b>tenfold</b> change in H⁺. <b>Buffers</b> soak up or release H⁺ to keep the pH of living things steady."
+      },
+      {
+        "t": "why",
+        "html": "The pH is the power of ten in the hydrogen ion concentration, with the sign dropped: a solution at pH 3 has $[\\text{H}^+] = 10^{-3}$ mol/L, and at pH 5 it has $10^{-5}$ mol/L. So the lower pH has more H⁺, and two steps apart means $10^{2} = 100$ times as much."
+      },
+      {
+        "t": "viz",
+        "name": "bi-chart",
+        "opts": {
+          "kind": "bar",
+          "x": [
+            "Stomach acid",
+            "Lemon juice",
+            "Black coffee",
+            "Pure water",
+            "Blood",
+            "Baking soda in water",
+            "Household ammonia"
+          ],
+          "series": [
+            {
+              "name": "Approximate pH",
+              "values": [
+                2,
+                2,
+                5,
+                7,
+                7.4,
+                8.5,
+                11.5
+              ],
+              "color": 1
+            }
+          ],
+          "ylabel": "pH",
+          "ymin": 0,
+          "ymax": 14,
+          "ystep": 2,
+          "values": true,
+          "title": "Typical pH values"
+        },
+        "cap": "Rounded, typical values. Below 7 is acidic, above 7 basic."
+      },
+      {
+        "t": "ex",
+        "title": "How many times more?",
+        "q": "How many times more H⁺ does a solution at pH 4 have than one at pH 8?",
+        "steps": [
+          "The difference in pH is $8 - 4 = 4$ steps.",
+          "Each step is a factor of 10: $10^{4} = 10{,}000$.",
+          "The lower pH (4) is the one with more H⁺."
+        ],
+        "a": "$10{,}000$ times more"
+      },
+      {
+        "t": "ex",
+        "title": "From pH to concentration",
+        "q": "What is the hydrogen ion concentration at pH 6?",
+        "steps": [
+          "$[\\text{H}^+] = 10^{-\\text{pH}}$.",
+          "So $[\\text{H}^+] = 10^{-6}$ mol/L $= 0.000001$ mol/L."
+        ],
+        "a": "$10^{-6}$ mol/L"
+      },
+      {
+        "t": "p",
+        "html": "Human blood stays between about pH 7.35 and 7.45. The main buffer is a pair, carbonic acid and bicarbonate: when acid is added, bicarbonate takes up the extra H⁺; when base is added, carbonic acid gives H⁺ back. Enzymes depend on this, as you will see in <a href=\"/biology/high-school-biology/enzyme-conditions/\">Temperature, pH and Enzymes</a>."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking pH 4 is \"twice as acidic\" as pH 8, or that a lower pH means fewer hydrogen ions. The scale is logarithmic: each whole step is ten times, so pH 4 has $10^{4} = 10{,}000$ times more H⁺ than pH 8. And lower pH means <i>more</i> H⁺. Check: lemon juice (pH 2) is sour because it is full of H⁺."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Concepts of Biology, 2.2 Water (acids, bases and pH)"
+      },
+      {
+        "name": "OpenStax, Biology 2e, 2.2 Water"
+      },
+      {
+        "name": "Grokipedia, pH",
+        "url": "https://grokipedia.com/page/PH"
+      },
+      {
+        "name": "Grokipedia, Buffer solution",
+        "url": "https://grokipedia.com/page/Buffer_solution"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

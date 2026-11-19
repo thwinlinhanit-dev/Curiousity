@@ -1,0 +1,84 @@
+{
+  "id": "geology.transform-faults",
+  "slug": "transform-faults",
+  "ladder": "earth",
+  "course": "geology",
+  "unit": "plate-tectonics",
+  "title": "Transform Faults",
+  "short": "Transform faults offset mid-ocean ridges and let plates slide past each other, and only the part between the ridge segments is active.",
+  "trouble": "Students read the offset of a ridge as the direction of slip; between ridge segments the plates often slide the opposite way to what the offset suggests.",
+  "prereqs": [
+    "earthsci.boundary-features",
+    "geology.faults"
+  ],
+  "xp": 2,
+  "viz": [
+    "es-boundary"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Mid-ocean ridges are not continuous lines; they are broken into segments, offset by <b>transform faults</b>, a kind of <a href=\"/earth-and-space/geology/faults/\">strike-slip fault</a> that is also a <a href=\"/earth-and-space/earth-science/boundary-features/\">plate boundary</a>. Along them, plates slide past each other, neither making nor destroying crust."
+      },
+      {
+        "t": "why",
+        "html": "Picture two ridge segments offset by 100 km, joined by a transform fault. Each segment spreads, carrying seafloor away from it on both sides. On the stretch of fault <b>between</b> the segments, the two sides belong to different plates moving in opposite directions: that part is active and full of earthquakes. Beyond the segments, the fault's scar (a <b>fracture zone</b>) continues, but both sides belong to the same plate and move together: no slip. And here is the surprise: the sense of slip on the active part comes from spreading, not from the offset. The ridge segments never move apart; the offset can stay the same for millions of years."
+      },
+      {
+        "t": "key",
+        "html": "Transform faults offset ridge segments and let plates slide past each other. Only the part between the segments is active; the slip there runs opposite to what the offset suggests, at the full spreading rate."
+      },
+      {
+        "t": "viz",
+        "name": "es-boundary",
+        "opts": {
+          "type": "transform"
+        },
+        "cap": "Two ridge segments joined by a transform fault. Watch which stretch has motion on both sides in opposite directions."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Which way does it slip?",
+        "q": "A north–south ridge spreads east–west. Its northern segment is offset 80 km west of its southern segment. Standing on the south side of the active transform and looking north, which way does the far side move?",
+        "steps": [
+          "Between the segments, the north side lies east of the northern segment, on the east-moving plate.",
+          "The south side lies west of the southern segment, on the west-moving plate.",
+          "Looking north, the far side moves east, to your right: right-lateral. The offset (north segment shifted west) would wrongly suggest left-lateral."
+        ],
+        "a": "Right-lateral."
+      },
+      {
+        "t": "ex",
+        "title": "How fast?",
+        "q": "A ridge spreads at a half rate of 20 mm/yr. How fast do the sides of its active transform slide past each other?",
+        "steps": [
+          "Each side moves 20 mm/yr away from its own segment, in opposite directions.",
+          "$2 \\times 20 = 40\\,\\text{mm/yr}$, the full rate."
+        ],
+        "a": "$40\\,\\text{mm/yr}$."
+      },
+      {
+        "t": "mistake",
+        "html": "A natural reading of an offset ridge is that a fault dragged the ridge apart, so the slip must match the offset. It doesn't: on the active transform the plates move in the opposite sense to the offset. Check by asking which plate each side belongs to and which way that plate spreads."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "USGS, This Dynamic Earth: The Story of Plate Tectonics (Kious and Tilling)"
+      },
+      {
+        "name": "MIT OpenCourseWare, 12.001 Introduction to Geology"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,110 @@
+{
+  "id": "de.wave-equation",
+  "slug": "wave-equation",
+  "ladder": "math",
+  "course": "de",
+  "unit": "fourier-pde",
+  "title": "The Wave Equation",
+  "short": "Model a vibrating string.",
+  "trouble": "",
+  "prereqs": [
+    "de.heat-equation"
+  ],
+  "xp": 3,
+  "viz": [
+    "surface"
+  ],
+  "figureArchetype": "WaveFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A guitar string, a skipping rope, a drumhead: small vibrations of a stretched string obey the wave equation. It differs from the <a href=\"/math/differential-equations/heat-equation/\">heat equation</a> by one derivative in time, and that changes decay into oscillation."
+      },
+      {
+        "t": "key",
+        "html": "$u_{tt} = c^{2}u_{xx}$ on $0 < x < L$, fixed ends $u(0, t) = u(L, t) = 0$, initial shape $u(x, 0) = f(x)$ and velocity $u_t(x, 0) = g(x)$: $$u = \\sum_{n=1}^{\\infty}\\left(A_n\\cos\\frac{n\\pi ct}{L} + B_n\\sin\\frac{n\\pi ct}{L}\\right)\\sin\\frac{n\\pi x}{L},$$ where $A_n$ are the sine coefficients of $f$ and $B_n\\cdot\\frac{n\\pi c}{L}$ are the sine coefficients of $g$. Mode $n$ has angular frequency $\\frac{n\\pi c}{L}$ and period $\\frac{2L}{nc}$."
+      },
+      {
+        "t": "why",
+        "html": "A short piece of string with density $\\rho$ and tension $\\tau$ feels a net vertical force from the tension that is proportional to the string's curvature, $\\tau u_{xx}\\,\\Delta x$; mass times acceleration is $\\rho\\,\\Delta x\\,u_{tt}$. So $u_{tt} = c^{2}u_{xx}$ with $c = \\sqrt{\\tau/\\rho}$, the wave speed. Separating, $X'' + \\lambda X = 0$ with fixed ends gives $\\sin\\frac{n\\pi x}{L}$ as before, but now $T'' + c^{2}\\lambda T = 0$ is a <a href=\"/math/differential-equations/free-vibrations/\">simple harmonic oscillator</a>, so each mode vibrates forever with no damping. Two initial conditions are needed, since the time equation is second order: $f$ fixes the $A_n$, and differentiating at $t = 0$ shows $g$ fixes $\\frac{n\\pi c}{L}B_n$."
+      },
+      {
+        "t": "ex",
+        "title": "Shape and velocity",
+        "q": "Solve $u_{tt} = u_{xx}$ on $(0, \\pi)$ with fixed ends, $u(x, 0) = -4\\sin 3x$, $u_t(x, 0) = -4\\sin 4x$.",
+        "steps": [
+          "$c = 1$, $L = \\pi$: modes $\\sin nx\\cos nt$ and $\\sin nx\\sin nt$.",
+          "Shape: $A_3 = -4$. Velocity: $4B_4 = -4$, so $B_4 = -1$."
+        ],
+        "a": "$u$ $= -4\\sin 3x\\cos 3t$ $- \\sin 4x\\sin 4t$"
+      },
+      {
+        "t": "ex",
+        "title": "Struck from rest position",
+        "q": "Solve $u_{tt} = 4u_{xx}$ on $(0, \\pi)$, fixed ends, $u(x, 0) = 0$, $u_t(x, 0) = -6\\sin x$.",
+        "steps": [
+          "$c = 2$: the mode $n = 1$ has frequency $nc = 2$.",
+          "$A_n = 0$; $2B_1 = -6$, so $B_1 = -3$."
+        ],
+        "a": "$u = -3\\sin x\\sin 2t$"
+      },
+      {
+        "t": "ex",
+        "title": "A guitar string",
+        "q": "A string 0.65 m long has wave speed $c = 286$ m/s. What is its lowest frequency in hertz?",
+        "steps": [
+          "The fundamental has period $\\frac{2L}{c} = \\frac{1.3}{286}$ s.",
+          "Frequency $= \\frac{c}{2L} = \\frac{286}{1.3}$."
+        ],
+        "a": "220 Hz (the note A); the overtones are 440, 660, 880, … Hz"
+      },
+      {
+        "t": "note",
+        "html": "With $g = 0$ the solution can also be written as $u$ $= \\frac{1}{2}\\left(F(x - ct) + F(x + ct)\\right)$, where $F$ is the odd periodic extension of $f$ (d'Alembert's formula). It follows from $\\sin a\\cos b$ $= \\frac{1}{2}\\left(\\sin(a - b) + \\sin(a + b)\\right)$ and shows the initial shape splitting into two halves that travel in opposite directions at speed $c$."
+      },
+      {
+        "t": "viz",
+        "name": "de-pde",
+        "opts": {
+          "type": "wave",
+          "c": 1,
+          "shape": "pluck",
+          "terms": 30,
+          "tmax": 6.3,
+          "showModes": false
+        },
+        "cap": "A plucked string. Play it: the corner splits into two corners that run apart, reflect upside down at the ends, and meet again; after time $\\frac{2L}{c} = 2\\pi$ the shape repeats exactly."
+      },
+      {
+        "t": "viz",
+        "name": "surface",
+        "opts": {
+          "f": "sin(x)*cos(y) + 0.4*sin(3*x)*cos(3*y)",
+          "xmin": 0,
+          "xmax": 3.1416,
+          "ymin": 0,
+          "ymax": 6.2832,
+          "n": 40,
+          "contours": 8,
+          "slice": "y",
+          "at": 0.5
+        },
+        "cap": "Two modes of a string with $c = 1$ as a surface over position $x$ and time (the $y$ axis). Unlike the heat surface, nothing decays: the pattern repeats every $2\\pi$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Paul's Online Math Notes, Differential Equations: The Wave Equation"
+      },
+      {
+        "name": "Paul's Online Math Notes, Differential Equations: Vibrating String"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

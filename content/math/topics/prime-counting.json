@@ -1,0 +1,132 @@
+{
+  "id": "nt.prime-counting",
+  "slug": "prime-counting",
+  "ladder": "math",
+  "course": "nt",
+  "unit": "primes",
+  "title": "How Common Are Primes?",
+  "short": "The prime number theorem: there are about x/ln x primes up to x. Primes thin out, and n! + 2, …, n! + n is a run of n − 1 composite numbers.",
+  "trouble": "Students read x/ln x as the exact count. It is an estimate (78,498 primes are below one million; the estimate gives about 72,382), and its relative error shrinks as x grows.",
+  "prereqs": [
+    "nt.infinitely-many-primes",
+    "alg2.logarithms"
+  ],
+  "xp": 2,
+  "viz": [
+    "nt-sieve"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "There are <a href=\"/math/number-theory/infinitely-many-primes/\">infinitely many primes</a>, but how many up to a given point? Write $\\pi(x)$ for the number of primes $p \\le x$ (this $\\pi$ has nothing to do with $3.14159\\dots$). So $\\pi(10) = 4$ and $\\pi(100) = 25$."
+      },
+      {
+        "t": "p",
+        "html": "<b>The prime number theorem</b> (proved in 1896 by Hadamard and de la Vallée Poussin): $$\\pi(x) \\sim \\frac{x}{\\ln x}, \\quad\\text{meaning}\\quad \\lim_{x \\to \\infty} \\frac{\\pi(x)}{x / \\ln x} = 1.$$ Here $\\ln$ is the natural <a href=\"/math/algebra-2/logarithms/\">logarithm</a>. An equivalent way to say it: near a large number $x$, roughly <b>one number in $\\ln x$</b> is prime."
+      },
+      {
+        "t": "viz",
+        "name": "nt-sieve",
+        "opts": {
+          "mode": "count",
+          "N": 10000
+        },
+        "cap": "The exact count $\\pi(x)$ (a staircase) and the estimate $x/\\ln x$. The gap between them grows, but the ratio creeps toward 1."
+      },
+      {
+        "t": "table",
+        "head": [
+          "$x$",
+          "$\\pi(x)$",
+          "$x / \\ln x$",
+          "ratio"
+        ],
+        "rows": [
+          [
+            "$10^{3}$",
+            "168",
+            "145",
+            "1.16"
+          ],
+          [
+            "$10^{4}$",
+            "1,229",
+            "1,086",
+            "1.13"
+          ],
+          [
+            "$10^{6}$",
+            "78,498",
+            "72,382",
+            "1.08"
+          ],
+          [
+            "$10^{9}$",
+            "50,847,534",
+            "48,254,942",
+            "1.05"
+          ]
+        ],
+        "cap": "Exact counts against the estimate."
+      },
+      {
+        "t": "why",
+        "html": "Why a logarithm? Each extra digit makes primes a little rarer, by about the same amount. Among the 900 three-digit numbers there are $168 - 25 = 143$ primes, about 1 in 6.3, and $\\ln 500 \\approx 6.2$. Among the 900,000 six-digit numbers there are $78{,}498 - 9{,}592 = 68{,}906$ primes, about 1 in 13, and $\\ln 550{,}000 \\approx 13.2$. The density $1/\\ln x$ captures this slow thinning. (The proof uses complex analysis and is far beyond this course.)"
+      },
+      {
+        "t": "ex",
+        "title": "Using the estimate",
+        "q": "Estimate $\\pi(10^{6})$ with $x/\\ln x$, and compare with the true value $78{,}498$.",
+        "steps": [
+          "$\\ln 10^{6} = 6 \\ln 10 \\approx 6 \\cdot 2.302585 = 13.8155$.",
+          "$10^{6} / 13.8155 \\approx 72{,}382$.",
+          "The estimate is about $6{,}100$ too low, roughly $8\\%$ of the true count. At $10^{9}$ it is $5\\%$ low."
+        ],
+        "a": "About $72{,}382$, an underestimate."
+      },
+      {
+        "t": "ex",
+        "title": "Long gaps between primes",
+        "q": "Find five consecutive composite numbers.",
+        "steps": [
+          "Take $6! = 720$ and look at $722, 723, 724, 725, 726$, that is, $6! + j$ for $j = 2, \\dots, 6$.",
+          "$j$ divides $6!$ and divides $j$, so $j \\mid 6! + j$: $722 = 2 \\cdot 361$, $723 = 3 \\cdot 241$, $724 = 4 \\cdot 181$, $725 = 5 \\cdot 145$, $726 = 6 \\cdot 121$.",
+          "The same trick with $n! + 2, \\dots, n! + n$ gives $n - 1$ composites in a row, so gaps between primes can be as long as you like."
+        ],
+        "a": "$722$ through $726$."
+      },
+      {
+        "t": "ex",
+        "title": "Why cryptographers care",
+        "q": "About what fraction of 100-digit numbers are prime?",
+        "steps": [
+          "Near $x = 10^{100}$, about one number in $\\ln 10^{100} = 100 \\ln 10 \\approx 230$ is prime.",
+          "So a random 100-digit odd number is prime with probability about $2/230 = 1/115$: a computer finds one after about a hundred tries. RSA keys are made this way."
+        ],
+        "a": "About $1$ in $230$."
+      },
+      {
+        "t": "mistake",
+        "html": "Treating $x/\\ln x$ as the exact count. It is an estimate: $\\pi(10^{6}) = 78{,}498$, while $10^{6}/\\ln 10^{6} \\approx 72{,}382$. The theorem promises only that the <b>ratio</b> tends to 1, so the relative error shrinks. The difference itself keeps growing."
+      },
+      {
+        "t": "key",
+        "html": "$\\pi(x) \\sim x/\\ln x$: the ratio tends to 1. Near $x$, about one number in $\\ln x$ is prime; primes thin out, slowly."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "William Stein, Elementary Number Theory: Primes, Congruences, and Secrets (Springer, 2009; free online edition), chapter 1, Prime Numbers (how many primes are there?)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.781 Theory of Numbers (Spring 2012), lecture notes on the distribution of primes"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

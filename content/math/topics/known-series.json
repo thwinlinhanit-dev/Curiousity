@@ -1,0 +1,137 @@
+{
+  "id": "calc2.known-series",
+  "slug": "known-series",
+  "ladder": "math",
+  "course": "calc2",
+  "unit": "power-series",
+  "title": "Working with Known Series",
+  "short": "Build new series from those for eˣ, sin x, cos x and ln(1 + x).",
+  "trouble": "",
+  "prereqs": [
+    "calc2.taylor-series"
+  ],
+  "xp": 2,
+  "viz": [
+    "taylor"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Finding Taylor coefficients from derivatives is slow. Once you know a handful of <a href=\"/math/calculus-2/taylor-series/\">Maclaurin series</a>, you can build new ones by substituting, multiplying by powers of $x$, adding, and differentiating or integrating. That is how series are used in practice."
+      },
+      {
+        "t": "why",
+        "html": "A power series that converges to $f$ on an interval is unique: if two power series agree on an interval around the center, they have the same coefficients (they must, since $c_n = \\frac{f^{(n)}(a)}{n!}$ either way). So any honest way of producing a power series for a function, such as substituting $x^{2}$ into the series for $e^{x}$, gives <i>the</i> Taylor series."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Function",
+          "Maclaurin series",
+          "Converges for"
+        ],
+        "rows": [
+          [
+            "$\\frac{1}{1 - x}$",
+            "$1 + x + x^{2} + x^{3} + \\cdots$",
+            "$|x| < 1$"
+          ],
+          [
+            "$e^{x}$",
+            "$1 + x + \\frac{x^{2}}{2!} + \\frac{x^{3}}{3!} + \\cdots$",
+            "all $x$"
+          ],
+          [
+            "$\\sin x$",
+            "$x - \\frac{x^{3}}{3!} + \\frac{x^{5}}{5!} - \\cdots$",
+            "all $x$"
+          ],
+          [
+            "$\\cos x$",
+            "$1 - \\frac{x^{2}}{2!} + \\frac{x^{4}}{4!} - \\cdots$",
+            "all $x$"
+          ],
+          [
+            "$\\ln(1 + x)$",
+            "$x - \\frac{x^{2}}{2} + \\frac{x^{3}}{3} - \\cdots$",
+            "$-1 < x \\le 1$"
+          ],
+          [
+            "$\\arctan x$",
+            "$x - \\frac{x^{3}}{3} + \\frac{x^{5}}{5} - \\cdots$",
+            "$-1 \\le x \\le 1$"
+          ]
+        ],
+        "cap": "The series to know by heart."
+      },
+      {
+        "t": "key",
+        "html": "Build new series from known ones: substitute ($e^{-x^{2}}$ from $e^{u}$ with $u = -x^{2}$), multiply by a power of $x$, add or subtract, differentiate or integrate. The interval of convergence follows from the substitution."
+      },
+      {
+        "t": "ex",
+        "title": "Substitute",
+        "q": "Find the first three nonzero terms of the Maclaurin series of $e^{-x^{2}}$.",
+        "steps": [
+          "$e^{u} = 1 + u + \\frac{u^{2}}{2!} + \\cdots$ with $u = -x^{2}$.",
+          "$e^{-x^{2}} = 1 - x^{2} + \\frac{x^{4}}{2} - \\cdots$, valid for all $x$."
+        ],
+        "a": "$1 - x^{2} + \\frac{x^{4}}{2}$"
+      },
+      {
+        "t": "ex",
+        "title": "Multiply",
+        "q": "Find the Maclaurin series of $x\\cos(2x)$.",
+        "steps": [
+          "$$\\begin{aligned} \\cos(2x) &= 1 - \\frac{(2x)^{2}}{2!} + \\frac{(2x)^{4}}{4!} - \\cdots \\\\ &= 1 - 2x^{2} + \\frac{2}{3}x^{4} - \\cdots. \\end{aligned}$$",
+          "Multiply by $x$: $x - 2x^{3} + \\frac{2}{3}x^{5} - \\cdots$."
+        ],
+        "a": "$x - 2x^{3} + \\frac{2}{3}x^{5} - \\cdots$"
+      },
+      {
+        "t": "viz",
+        "name": "taylor",
+        "opts": {
+          "f": "cos(x)",
+          "a": 0,
+          "n": 2,
+          "maxN": 16,
+          "x": 3,
+          "xmin": -7,
+          "xmax": 7,
+          "ymin": -3,
+          "ymax": 3
+        },
+        "cap": "Taylor polynomials of $\\cos x$: only even powers appear, because cosine is an even function."
+      },
+      {
+        "t": "ex",
+        "title": "Recognize a sum",
+        "q": "Find $\\sum_{n=0}^{\\infty}\\frac{(-1)^{n}\\pi^{2n}}{(2n)!}$.",
+        "steps": [
+          "This is $\\cos x = \\sum\\frac{(-1)^{n}x^{2n}}{(2n)!}$ with $x = \\pi$.",
+          "So the sum is $\\cos\\pi = -1$."
+        ],
+        "a": "$-1$"
+      },
+      {
+        "t": "mistake",
+        "html": "Substituting only into the first term, or forgetting to raise the coefficient. In $e^{2x}$, the term $\\frac{u^{3}}{3!}$ becomes $\\frac{(2x)^{3}}{6} = \\frac{8x^{3}}{6}$, not $\\frac{2x^{3}}{6}$. Write the substitution in parentheses, $(2x)^{n}$, and expand each term. A quick check: the coefficient of $x$ must be $f'(0)$, which for $e^{2x}$ is 2."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 2, Section 6.4: Working with Taylor Series"
+      },
+      {
+        "name": "Paul’s Online Math Notes (Lamar University), Calculus II: Taylor Series (known series)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

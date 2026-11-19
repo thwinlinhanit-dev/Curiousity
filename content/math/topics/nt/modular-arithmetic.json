@@ -1,0 +1,178 @@
+{
+  "id": "nt.modular-arithmetic",
+  "slug": "modular-arithmetic",
+  "ladder": "math",
+  "course": "nt",
+  "unit": "congruences",
+  "title": "Arithmetic mod n",
+  "short": "Reduce first, then add, subtract and multiply: the result is the same as reducing at the end.",
+  "trouble": "Students cancel a common factor from both sides of a congruence: 2 · 3 ≡ 2 · 1 (mod 4), yet 3 ≢ 1 (mod 4).",
+  "prereqs": [
+    "nt.congruence"
+  ],
+  "xp": 1,
+  "viz": [
+    "nt-clock"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The point of <a href=\"/math/number-theory/congruence/\">congruences</a> is that you can calculate with them almost like equations. Adding, subtracting and multiplying all respect congruence, so you may replace any number by anything congruent to it, usually something small, <b>before</b> you compute."
+      },
+      {
+        "t": "p",
+        "html": "<b>Theorem.</b> If $a \\equiv a'$ and $b \\equiv b' \\pmod{n}$, then $$a + b \\equiv a' + b', \\qquad a - b \\equiv a' - b', \\qquad ab \\equiv a'b' \\pmod{n}.$$ Applying the last rule again and again, $a^{k} \\equiv (a')^{k}$ for every $k \\ge 1$."
+      },
+      {
+        "t": "why",
+        "html": "Sums and differences: $(a + b) - (a' + b') = (a - a') + (b - b')$ is a sum of two multiples of $n$. Products take one trick, adding and subtracting $ab'$: $$ab - a'b' = a(b - b') + b'(a - a').$$ Both terms are multiples of $n$, so the difference is too."
+      },
+      {
+        "t": "ex",
+        "title": "Reduce first",
+        "q": "Find $1234 \\cdot 5678 \\bmod 9$.",
+        "steps": [
+          "$1234 = 9 \\cdot 137 + 1$, so $1234 \\equiv 1$. $5678 = 9 \\cdot 630 + 8$, so $5678 \\equiv 8$.",
+          "$1234 \\cdot 5678 \\equiv 1 \\cdot 8 = 8 \\pmod{9}$.",
+          "Check: $1234 \\cdot 5678 = 7{,}006{,}652 = 9 \\cdot 778{,}516 + 8$."
+        ],
+        "a": "$8$."
+      },
+      {
+        "t": "ex",
+        "title": "Negative residues are handy",
+        "q": "Find $2^{10} \\bmod 11$.",
+        "steps": [
+          "$2^{5} = 32 = 33 - 1 \\equiv -1 \\pmod{11}$.",
+          "$2^{10} = (2^{5})^{2} \\equiv (-1)^{2} = 1 \\pmod{11}$."
+        ],
+        "a": "$1$."
+      },
+      {
+        "t": "ex",
+        "title": "Mixed signs",
+        "q": "Find $(-4) \\cdot 17 + 23 \\bmod 9$.",
+        "steps": [
+          "Reduce each number: $-4 \\equiv 5$, $17 \\equiv 8$, $23 \\equiv 5 \\pmod{9}$.",
+          "$5 \\cdot 8 + 5 = 45 \\equiv 0 \\pmod{9}$.",
+          "Check: $-68 + 23 = -45 = 9 \\cdot (-5)$."
+        ],
+        "a": "$0$."
+      },
+      {
+        "t": "h",
+        "text": "What you may not do: cancel freely"
+      },
+      {
+        "t": "p",
+        "html": "Division is different. $2 \\cdot 3 \\equiv 2 \\cdot 1 \\pmod{4}$ (both sides are $\\equiv 2$), yet $3 \\not\\equiv 1 \\pmod{4}$. Cancelling the $2$ fails because $2$ shares a factor with the modulus $4$. The picture shows why: multiplying by $2$ mod $4$ sends both $1$ and $3$ to the same place, so you cannot tell afterward where you started."
+      },
+      {
+        "t": "viz",
+        "name": "nt-clock",
+        "opts": {
+          "n": 4,
+          "mode": "mult",
+          "a": 2
+        },
+        "cap": "Arrows from each $x$ to $2x \\bmod 4$: $1$ and $3$ both land on $2$, and $0$ and $2$ both land on $0$. Multiplying by 2 loses information, so it cannot be undone. Try $a = 3$: then every point is hit exactly once."
+      },
+      {
+        "t": "p",
+        "html": "The rule that does hold: if $ca \\equiv cb \\pmod{n}$ and $\\gcd(c, n) = 1$, then $a \\equiv b \\pmod{n}$. (Here $n \\mid c(a - b)$ with no common factor in $c$, so $n \\mid (a - b)$.) In general you may only conclude $a \\equiv b \\pmod{n/\\gcd(c, n)}$. <a href=\"/math/number-theory/modular-inverses/\">Modular inverses</a> make this precise."
+      },
+      {
+        "t": "table",
+        "head": [
+          "$\\times$",
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "rows": [
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "1",
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          [
+            "2",
+            "0",
+            "2",
+            "4",
+            "0",
+            "2",
+            "4"
+          ],
+          [
+            "3",
+            "0",
+            "3",
+            "0",
+            "3",
+            "0",
+            "3"
+          ],
+          [
+            "4",
+            "0",
+            "4",
+            "2",
+            "0",
+            "4",
+            "2"
+          ],
+          [
+            "5",
+            "0",
+            "5",
+            "4",
+            "3",
+            "2",
+            "1"
+          ]
+        ],
+        "cap": "Multiplication mod 6. The rows of 2, 3 and 4 repeat values and never reach 1, and $2 \\cdot 3 \\equiv 0$ although neither factor is 0. The rows of 1 and 5 contain every residue once."
+      },
+      {
+        "t": "mistake",
+        "html": "Cancelling a common factor from both sides of a congruence. From $2 \\cdot 3 \\equiv 2 \\cdot 1 \\pmod{4}$ you cannot conclude $3 \\equiv 1 \\pmod{4}$. Check $\\gcd(c, n)$ before cancelling $c$: cancel only when it is $1$, and otherwise divide the modulus by the gcd too."
+      },
+      {
+        "t": "key",
+        "html": "Add, subtract and multiply mod $n$ freely, reducing whenever you like: the answer is the same as reducing at the end. Cancel a factor only when it is coprime to $n$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "William Stein, Elementary Number Theory: Primes, Congruences, and Secrets (Springer, 2009; free online edition), chapter 2, The Ring of Integers Modulo n"
+      },
+      {
+        "name": "Lehman, Leighton and Meyer, Mathematics for Computer Science (MIT OpenCourseWare 6.042J), chapter on number theory: arithmetic with a prime modulus and with an arbitrary modulus"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,108 @@
+{
+  "id": "gchem2.mechanisms",
+  "slug": "mechanisms",
+  "ladder": "chemistry",
+  "course": "gchem2",
+  "unit": "kinetics",
+  "title": "Reaction Mechanisms",
+  "short": "The steps add up to the overall equation; intermediates are made and then used, and catalysts are used and then remade.",
+  "trouble": "Students mix up intermediates and catalysts.",
+  "prereqs": [
+    "gchem2.elementary-steps"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-energydiagram"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Most reactions are a sequence of <a href=\"/chemistry/general-chemistry-2/elementary-steps/\">elementary steps</a>. The list of steps is the <b>mechanism</b>. A mechanism is a proposal: it must add up to the overall equation and agree with the measured rate law."
+      },
+      {
+        "t": "key",
+        "html": "Add the steps and cancel what appears on both sides to get the overall equation. An <b>intermediate</b> is made in one step and used up in a later one. A <b>catalyst</b> is used up in one step and made again in a later one. Neither appears in the overall equation."
+      },
+      {
+        "t": "why",
+        "html": "Think of an intermediate as a part that is built and then installed: it is a product first, a reactant later. A catalyst is a tool: it goes in at the start and comes back out at the end, ready to be used again. That order of appearance (product first or reactant first) is how you tell them apart in a list of steps."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Finding an intermediate",
+        "q": "A proposed mechanism for $\\mathrm{NO_2 + CO \\to NO + CO_2}$:<br>Step 1: $\\mathrm{NO_2 + NO_2 \\to NO_3 + NO}$<br>Step 2: $\\mathrm{NO_3 + CO \\to NO_2 + CO_2}$<br>Check that it adds up, and name any intermediate.",
+        "steps": [
+          "Add: $$\\mathrm{2NO_2} + \\mathrm{NO_3} + \\mathrm{CO} \\to \\mathrm{NO_3} + \\mathrm{NO} + \\mathrm{NO_2} + \\mathrm{CO_2}$$",
+          "Cancel $\\mathrm{NO_3}$ (both sides) and one $\\mathrm{NO_2}$: $\\mathrm{NO_2 + CO \\to NO + CO_2}$. It matches.",
+          "$\\mathrm{NO_3}$ is made in step 1 and used in step 2: an intermediate."
+        ],
+        "a": "It adds up; $\\mathrm{NO_3}$ is the intermediate."
+      },
+      {
+        "t": "ex",
+        "title": "Telling a catalyst from an intermediate",
+        "q": "Chlorine atoms from CFCs destroy ozone in the stratosphere:<br>Step 1: $\\mathrm{Cl + O_3 \\to ClO + O_2}$<br>Step 2: $\\mathrm{ClO + O \\to Cl + O_2}$<br>Find the overall reaction, the catalyst and the intermediate.",
+        "steps": [
+          "Add and cancel $\\mathrm{Cl}$ and $\\mathrm{ClO}$: $\\mathrm{O_3 + O \\to 2O_2}$.",
+          "$\\mathrm{Cl}$ is used in step 1 and made again in step 2: a catalyst. One chlorine atom can go around this cycle many thousands of times.",
+          "$\\mathrm{ClO}$ is made in step 1 and used in step 2: an intermediate."
+        ],
+        "a": "$\\mathrm{O_3 + O \\to 2O_2}$; Cl is the catalyst and ClO the intermediate."
+      },
+      {
+        "t": "viz",
+        "name": "ch-energydiagram",
+        "opts": {
+          "mode": "steps",
+          "steps": [
+            {
+              "dE": 20,
+              "Ea": 90,
+              "label": "step 1"
+            },
+            {
+              "dE": -250,
+              "Ea": 30,
+              "label": "step 2"
+            }
+          ]
+        },
+        "cap": "An energy profile for a two-step mechanism. The intermediate sits in the valley between the two humps."
+      },
+      {
+        "t": "mistake",
+        "html": "Mixing up intermediates and catalysts. Both cancel from the overall equation, but in opposite order. Check the first step in which the species appears: on the product side, it is an intermediate; on the reactant side (and it comes back later), it is a catalyst."
+      },
+      {
+        "t": "p",
+        "html": "A mechanism can be ruled out by experiment, but never proven. Chemists test proposals by checking the rate law they predict, by detecting intermediates with spectroscopy, and by labeling atoms with isotopes to see where they end up. The next lessons show how a mechanism predicts a rate law."
+      },
+      {
+        "t": "list",
+        "items": [
+          "The steps must add up to the overall equation.",
+          "Each step must be a plausible collision (one, two or rarely three particles).",
+          "The rate law it predicts must match the measured one."
+        ]
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 12.6 Reaction Mechanisms"
+      },
+      {
+        "name": "OpenStax Chemistry 2e, Section 12.7 Catalysis"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

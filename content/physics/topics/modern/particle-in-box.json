@@ -1,0 +1,103 @@
+{
+  "id": "modern.particle-in-box",
+  "slug": "particle-in-box",
+  "ladder": "physics",
+  "course": "modern",
+  "unit": "quantum",
+  "title": "A Particle in a Box",
+  "short": "Confining a particle to a length L allows only E_n = n²h²/(8mL²).",
+  "trouble": "Students think the lowest energy of a particle in a box is zero.",
+  "prereqs": [
+    "modern.schrodinger-equation"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-quantum"
+  ],
+  "figureArchetype": "WaveFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The simplest quantum system: a particle trapped between two hard walls a distance $L$ apart. Inside, $U = 0$; the walls are impossible to cross, so $\\psi = 0$ at both. The <a href=\"/physics/waves-optics-modern-physics/schrodinger-equation/\">Schrödinger equation</a> plus those two conditions allow only certain energies. It is a fair model for an electron in a long molecule, a nanocrystal (a “quantum dot”) or, roughly, a proton in a nucleus."
+      },
+      {
+        "t": "key",
+        "html": "A particle of mass $m$ in a box of width $L$ can have only $$E_n = \\frac{n^2h^2}{8mL^2},\\qquad \\psi_n = \\sqrt{\\frac{2}{L}}\\,\\sin\\frac{n\\pi x}{L},\\qquad n = 1, 2, 3, \\ldots$$ For an electron, $E_n = n^2\\,\\frac{0.376\\ \\text{eV·nm}^2}{L^2}$. The lowest energy, $E_1$, is <b>not zero</b>."
+      },
+      {
+        "t": "why",
+        "html": "Inside, the solutions are $\\psi = A\\sin kx + B\\cos kx$. $\\psi(0) = 0$ forces $B = 0$. $\\psi(L) = 0$ then needs $\\sin kL = 0$, so $kL = n\\pi$: a whole number of half-wavelengths fit in the box, $\\lambda_n = \\frac{2L}{n}$, like a guitar string's standing waves. The momentum is $p = \\frac{h}{\\lambda} = \\frac{nh}{2L}$, and $E = \\frac{p^2}{2m} = \\frac{n^2h^2}{8mL^2}$. Why not $n = 0$? Then $\\psi = 0$ everywhere: no particle at all. So the particle always has some kinetic energy, the <b>zero-point energy</b>, as the <a href=\"/physics/waves-optics-modern-physics/uncertainty-principle/\">uncertainty principle</a> demands of anything confined to a width $L$."
+      },
+      {
+        "t": "viz",
+        "name": "ph-quantum",
+        "opts": {
+          "mode": "box",
+          "L": 1,
+          "n": 1
+        },
+        "cap": "The first few states of an electron in a 1 nm box. Energies grow like $n^2$; each state has one more half-wavelength than the one below. Shrink the box and every level rises like $1/L^2$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "An electron in a small box",
+        "q": "An electron is confined to a box 0.50 nm wide. Find $E_1$ and $E_2$.",
+        "steps": [
+          "$E_1 = \\frac{0.376\\ \\text{eV·nm}^2}{(0.50\\ \\text{nm})^2} = 1.50$ eV.",
+          "$E_2 = 4E_1 = 6.02$ eV."
+        ],
+        "a": "$E_1 = 1.50$ eV, $E_2 = 6.02$ eV"
+      },
+      {
+        "t": "ex",
+        "title": "The light it gives off",
+        "q": "What wavelength of light does that electron emit when it drops from $n = 2$ to $n = 1$?",
+        "steps": [
+          "$\\Delta E = 6.02 - 1.50 = 4.51$ eV.",
+          "$\\lambda = \\frac{1240\\ \\text{eV·nm}}{4.51\\ \\text{eV}} = 275$ nm."
+        ],
+        "a": "$275$ nm (ultraviolet). Quantum dots tune their color this way: smaller dots, bluer light"
+      },
+      {
+        "t": "ex",
+        "title": "A proton in a nucleus",
+        "q": "Model a proton ($mc^2 = 938.3$ MeV) as trapped in a box 10 fm wide. Estimate $E_1$. ($hc = 1240$ MeV·fm.)",
+        "steps": [
+          "$E_1 = \\frac{h^2}{8mL^2} = \\frac{(hc)^2}{8(mc^2)L^2} = \\frac{(1240)^2}{8(938.3)(10)^2}$ MeV.",
+          "$= \\frac{1.538 \\times 10^6}{7.506 \\times 10^5} = 2.05$ MeV."
+        ],
+        "a": "About 2 MeV, which is why nuclear energies are millions of times atomic ones"
+      },
+      {
+        "t": "p",
+        "html": "Quantum dots put this to work. They are semiconductor crystals only a few nanometers across, and the electrons inside behave much like particles in a box. Shrinking the dot spreads the levels apart, so smaller dots emit bluer light and larger dots redder light, all from the same material. Some television screens use them to make pure, bright colors."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking the lowest energy of a particle in a box is zero, as for a ball resting on the floor of a box. $n = 0$ would make $\\psi$ zero everywhere. The lowest allowed state, $n = 1$, has a half-wavelength across the box and kinetic energy $\\frac{h^2}{8mL^2}$. Check with the uncertainty principle: confined to $\\Delta x \\approx L$, the particle must have $\\Delta p \\gtrsim \\frac{\\hbar}{2L}$, so it cannot be at rest."
+      },
+      {
+        "t": "mistake",
+        "html": "Forgetting that the energies grow as $n^2$, not $n$: the levels spread apart going up ($E_2 - E_1 = 3E_1$, $E_3 - E_2 = 5E_1$)."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 3, 7.4 The Quantum Particle in a Box"
+      },
+      {
+        "name": "MIT OpenCourseWare 8.04 Quantum Physics I (Spring 2016)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

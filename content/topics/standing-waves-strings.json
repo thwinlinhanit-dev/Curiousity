@@ -1,0 +1,87 @@
+{
+  "id": "phys2.standing-waves-strings",
+  "slug": "standing-waves-strings",
+  "course": "phys2",
+  "courseTitle": "Physics 2: Fluids, Heat, Electricity, Light and Atoms",
+  "unit": "waves",
+  "unitTitle": "Waves, Sound and Physical Optics",
+  "title": "Standing Waves on Strings",
+  "short": "A string fixed at both ends resonates at fₙ = nv/(2L).",
+  "trouble": "Students think a node is where the string moves the most.",
+  "prereqs": [
+    "phys2.superposition",
+    "phys2.wave-boundaries"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-wave"
+  ],
+  "figureArchetype": "WaveFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Waves on a guitar string reflect from both fixed ends (<a href=\"/physics/physics-2/wave-boundaries/\">Reflection at Boundaries</a>), so waves run both ways at once. By <a href=\"/physics/physics-2/superposition/\">Superposition and Interference</a> they add, and for certain frequencies the result stands still in place: a standing wave."
+      },
+      {
+        "t": "key",
+        "html": "A string of length $L$ fixed at both ends resonates when a whole number of half-wavelengths fit: $$\\lambda_n = \\frac{2L}{n}, \\qquad f_n = \\frac{nv}{2L} = nf_1, \\quad n = 1, 2, 3, \\dots$$ <b>Nodes</b> never move; <b>antinodes</b> swing the most. Neighboring nodes are $\\lambda/2$ apart."
+      },
+      {
+        "t": "viz",
+        "name": "ph-wave",
+        "opts": {
+          "mode": "standing-string",
+          "n": 3,
+          "task": "Find the nodes. Then change n and count the loops."
+        },
+        "cap": "The third harmonic: three loops, four nodes (counting the ends) and three antinodes."
+      },
+      {
+        "t": "why",
+        "html": "Both ends are fixed, so both must be nodes. Nodes come every half wavelength, so the string must hold a whole number of half wavelengths, $L = n\\frac{\\lambda}{2}$. The wave speed is set by the string, $v = \\sqrt{F_T/\\mu}$, so $f = v/\\lambda = nv/(2L)$. Tighten the string and every note goes up; press a fret to shorten it and the pitch rises too. The lowest mode, $n = 1$, is the fundamental; the higher ones are harmonics, and the mix of harmonics a string plays at once gives each instrument its own sound."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking a node is where the string moves the most. A node is a point that does not move at all; an antinode is where the string swings widest. Check: the fixed ends are nodes, and they never move."
+      },
+      {
+        "t": "ex",
+        "title": "A guitar string",
+        "q": "A string $0.65\\ \\text{m}$ long carries waves at $286\\ \\text{m/s}$. Find its fundamental and the next two harmonics.",
+        "steps": [
+          "$f_1 = \\dfrac{v}{2L} = \\dfrac{286}{2(0.65)} = 220\\ \\text{Hz}$.",
+          "$f_2 = 2f_1 = 440\\ \\text{Hz}$ and $f_3 = 3f_1 = 660\\ \\text{Hz}$."
+        ],
+        "a": "$220$, $440$ and $660\\ \\text{Hz}$"
+      },
+      {
+        "t": "ex",
+        "title": "Counting loops",
+        "q": "A string $1.2\\ \\text{m}$ long vibrates in 4 loops at $160\\ \\text{Hz}$. Find the wavelength and the wave speed.",
+        "steps": [
+          "Four loops is $n = 4$: $\\lambda = \\dfrac{2L}{n} = \\dfrac{2(1.2)}{4} = 0.60\\ \\text{m}$.",
+          "$v = f\\lambda = (160)(0.60) = 96\\ \\text{m/s}$.",
+          "The nodes are $\\lambda/2 = 0.30\\ \\text{m}$ apart."
+        ],
+        "a": "$\\lambda = 0.60\\ \\text{m}$, $v = 96\\ \\text{m/s}$"
+      },
+      {
+        "t": "note",
+        "html": "Standing waves are resonances: the string responds strongly only at its own frequencies, the way a swing builds up only when pushed in time. See resonance build in the Pendulums and Resonance lab."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 1, Section 16.6: Standing Waves and Resonance"
+      },
+      {
+        "name": "OpenStax College Physics 2e, Section 16.10: Superposition and Interference"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

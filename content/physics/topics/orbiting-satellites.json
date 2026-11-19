@@ -1,0 +1,123 @@
+{
+  "id": "phys1.orbiting-satellites",
+  "slug": "orbiting-satellites",
+  "ladder": "physics",
+  "course": "phys1",
+  "unit": "rotational-energy",
+  "title": "Satellites in Orbit",
+  "short": "Gravity supplies the centripetal force, so v = √(GM/r) and lower orbits are faster.",
+  "trouble": "Students think astronauts float because there is no gravity in orbit, when they and their ship are falling together.",
+  "prereqs": [
+    "phys1.gravitational-field",
+    "phys1.centripetal-force",
+    "phys1.angular-momentum-conservation"
+  ],
+  "xp": 3,
+  "viz": [
+    "ph-orbit",
+    "ph-circular"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A satellite circles Earth because <a href=\"/physics/physics-1/gravitational-field/\">gravity</a> pulls it toward the center while it moves sideways. Gravity is the <a href=\"/physics/physics-1/centripetal-force/\">centripetal force</a>. That one idea gives the orbital speed, the period, and why the people inside float."
+      },
+      {
+        "t": "why",
+        "html": "Imagine Newton's cannon on a very tall mountain. Fire a ball sideways and it curves down to the ground. Fire it faster and it lands farther away. At about $7.9\\ \\text{km/s}$ near Earth's surface, the ground curves away as fast as the ball falls: it keeps falling and never lands. That is an orbit. For a circle of radius $r$ (measured from the planet's center), gravity must supply exactly the centripetal force: $$\\frac{GMm}{r^2} = \\frac{mv^2}{r} \\quad\\Rightarrow\\quad v = \\sqrt{\\frac{GM}{r}}.$$ The satellite's own mass cancels."
+      },
+      {
+        "t": "key",
+        "html": "For a circular orbit of radius $r = R + h$ around a planet of mass $M$: $v = \\sqrt{\\dfrac{GM}{r}}$ and period $T = \\dfrac{2\\pi r}{v}$. Lower orbits are <b>faster</b>, and take less time. Everything in an orbiting craft falls together, so it feels weightless even though gravity is strong."
+      },
+      {
+        "t": "viz",
+        "name": "ph-orbit",
+        "opts": {
+          "mode": "cannon",
+          "v0": 7,
+          "r0": 6471000,
+          "lab": "/science-lab/orbits/",
+          "task": "The cannon sits 100 km up. Raise the launch speed until the ball stops landing (near 7.8 km/s). Above about 11 km/s it escapes."
+        },
+        "cap": "Newton's cannon: slow balls land, faster ones land farther away, and a fast enough ball falls all the way around."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A space station",
+        "q": "A space station orbits $400\\ \\text{km}$ above Earth. Find its speed and period. Use $G = 6.67 \\times 10^{-11}\\ \\text{N·m}^2\\text{/kg}^2$, $M = 5.97 \\times 10^{24}\\ \\text{kg}$, $R = 6.37 \\times 10^{6}\\ \\text{m}$.",
+        "steps": [
+          "$$r = 6.37 \\times 10^{6} + 4.00 \\times 10^{5} = 6.77 \\times 10^{6}\\ \\text{m}.$$",
+          "$$v = \\sqrt{\\frac{(6.67 \\times 10^{-11})(5.97 \\times 10^{24})}{6.77 \\times 10^{6}}} = 7.67 \\times 10^{3}\\ \\text{m/s}.$$",
+          "$T = \\dfrac{2\\pi(6.77 \\times 10^{6})}{7670} = 5550\\ \\text{s} \\approx 92$ minutes."
+        ],
+        "a": "$7.67\\ \\text{km/s}$; about $92\\ \\text{min}$"
+      },
+      {
+        "t": "ex",
+        "title": "How strong is gravity up there?",
+        "q": "What is $g$ at that station's height?",
+        "steps": [
+          "$$g = \\dfrac{GM}{r^2} = \\dfrac{(6.67 \\times 10^{-11})(5.97 \\times 10^{24})}{(6.77 \\times 10^{6})^2} = 8.7\\ \\text{m/s}^2.$$",
+          "That is close to 90% of its value at the surface. The crew float because they and the station fall around Earth together, not because gravity is missing."
+        ],
+        "a": "$8.7\\ \\text{m/s}^2$"
+      },
+      {
+        "t": "ex",
+        "title": "An elliptical orbit",
+        "q": "A satellite on an ellipse is $7.0 \\times 10^{6}\\ \\text{m}$ from Earth's center at its closest, moving at $9.0\\ \\text{km/s}$. Its farthest point is $2.1 \\times 10^{7}\\ \\text{m}$ away. How fast does it move there?",
+        "steps": [
+          "Gravity points at Earth's center, so it makes no torque about it, and <a href=\"/physics/physics-1/angular-momentum-conservation/\">angular momentum is conserved</a>.",
+          "At both ends the velocity is perpendicular to the radius: $v_p r_p = v_a r_a$.",
+          "$v_a = (9.0\\ \\text{km/s})\\dfrac{7.0 \\times 10^{6}}{2.1 \\times 10^{7}} = 3.0\\ \\text{km/s}$: slowest when farthest, which is Kepler's second law."
+        ],
+        "a": "$3.0\\ \\text{km/s}$"
+      },
+      {
+        "t": "viz",
+        "name": "ph-orbit",
+        "opts": {
+          "mode": "areas",
+          "e": 0.6
+        },
+        "cap": "Equal areas in equal times: the line from the Sun sweeps out the same area each month, so the planet moves fastest when it is closest. This is angular momentum conservation."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Thinking astronauts float because there is no gravity in orbit.</b> At $400\\ \\text{km}$ up, gravity is still about 90% as strong as on the ground, and it is the very force that keeps the station on its curved path. Without it the station would fly off in a straight line. The astronauts float because they are in free fall along with their ship: nothing has to hold them up, just as you feel light at the top of a drop ride."
+      },
+      {
+        "t": "note",
+        "html": "Higher orbits are slower and take longer: a satellite about $35{,}800\\ \\text{km}$ up takes one day to go around, so it stays above one spot on the equator. Fly your own orbits in the Orbit Lab of the Science Lab."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Physics 2e, Section 6.5 (Newton's Universal Law of Gravitation) and 6.6 (Satellites and Kepler's Laws)"
+      },
+      {
+        "name": "OpenStax University Physics Volume 1, Section 13.4 (Satellite Orbits and Energy)"
+      },
+      {
+        "name": "College Board, AP Physics 1 Course and Exam Description, Unit 6: Energy and Momentum of Rotating Systems"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-PS2-4 (Newton's law of gravitation)"
+      },
+      {
+        "name": "NASA Earth Fact Sheet (mass and mean radius of Earth)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

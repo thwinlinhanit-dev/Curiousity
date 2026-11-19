@@ -1,0 +1,87 @@
+{
+  "id": "phys2.photons",
+  "slug": "photons",
+  "ladder": "physics",
+  "course": "phys2",
+  "unit": "quantum",
+  "title": "Photons",
+  "short": "Light comes in photons of energy E = hf = hc/λ, and 1 eV = 1.602 × 10⁻¹⁹ J.",
+  "trouble": "Students think brighter light has more energetic photons, rather than more of them.",
+  "prereqs": [
+    "phys2.em-waves",
+    "phys2.electric-potential",
+    "physsci.radiation-energy"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-spectrum",
+    "ph-photon"
+  ],
+  "figureArchetype": "WaveFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/physics/physical-science/radiation-energy/\">Higher Frequency, More Energy</a> you met the idea that light comes in packets. Here we put numbers on it. Light is an <a href=\"/physics/physics-2/em-waves/\">electromagnetic wave</a>, but it delivers its energy in lumps called <b>photons</b>, and the size of each lump depends only on the frequency."
+      },
+      {
+        "t": "key",
+        "html": "$$E = hf = \\frac{hc}{\\lambda}, \\qquad h = 6.626 \\times 10^{-34}\\ \\text{J·s}.$$ In atomic units: $1\\ \\text{eV} = 1.602 \\times 10^{-19}\\ \\text{J}$ (the energy one electron gains crossing $1\\ \\text{V}$, as in <a href=\"/physics/physics-2/electric-potential/\">Electric Potential and Voltage</a>), and $hc = 1240\\ \\text{eV·nm}$, so $E\\,(\\text{eV}) = \\dfrac{1240}{\\lambda\\,(\\text{nm})}$."
+      },
+      {
+        "t": "viz",
+        "name": "ph-spectrum",
+        "opts": {
+          "mode": "ruler",
+          "lambda": 500
+        },
+        "cap": "The spectrum with a photon-energy ruler: radio photons carry a millionth of an eV or less; X-ray photons carry thousands of eV."
+      },
+      {
+        "t": "why",
+        "html": "Why is $hc = 1240\\ \\text{eV·nm}$ so handy? Work it once: $$\\begin{aligned} hc &= (6.626 \\times 10^{-34})(3.00 \\times 10^{8}) \\\\ &= 1.988 \\times 10^{-25}\\ \\text{J·m}. \\end{aligned}$$ Divide by $1.602 \\times 10^{-19}\\ \\text{J/eV}$ and multiply by $10^{9}\\ \\text{nm/m}$: $1240\\ \\text{eV·nm}$. Visible light, $400$ to $700\\ \\text{nm}$, comes out to $3.1$ to $1.8\\ \\text{eV}$ per photon, the same size as the energies of electrons in atoms and molecules. That is why light can drive chemistry and vision."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking brighter light has more energetic photons. Brightness is how <b>many</b> photons arrive each second; the energy of each one is set by the color (frequency). A dim blue light has more energetic photons than a bright red one. Check: brightness appears nowhere in $E = hf$. That is why old photo darkrooms could use red lamps: a red photon carries too little energy to change the light-sensitive chemicals in photo paper, however many of them arrive."
+      },
+      {
+        "t": "ex",
+        "title": "A green photon",
+        "q": "Find the energy of a $500\\ \\text{nm}$ photon in eV and in joules.",
+        "steps": [
+          "$E = \\dfrac{1240\\ \\text{eV·nm}}{500\\ \\text{nm}} = 2.48\\ \\text{eV}$.",
+          "$$E = (2.48)(1.602 \\times 10^{-19}) = 3.97 \\times 10^{-19}\\ \\text{J}.$$"
+        ],
+        "a": "$2.48\\ \\text{eV} = 3.97 \\times 10^{-19}\\ \\text{J}$"
+      },
+      {
+        "t": "ex",
+        "title": "Photons from a laser pointer",
+        "q": "A red laser pointer puts out $1.0\\ \\text{mW}$ at $650\\ \\text{nm}$. How many photons leave it each second?",
+        "steps": [
+          "One photon: $E = \\dfrac{1240}{650} = 1.91\\ \\text{eV} = 3.06 \\times 10^{-19}\\ \\text{J}$.",
+          "Photons per second: $\\dfrac{1.0 \\times 10^{-3}\\ \\text{J/s}}{3.06 \\times 10^{-19}\\ \\text{J}} = 3.3 \\times 10^{15}$.",
+          "So many that light looks smooth and continuous."
+        ],
+        "a": "About $3.3 \\times 10^{15}$ per second"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Physics 2e, Section 29.1: Quantization of Energy"
+      },
+      {
+        "name": "OpenStax College Physics 2e, Section 29.3: Photon Energies and the Electromagnetic Spectrum"
+      },
+      {
+        "name": "NIST, CODATA recommended values of the fundamental physical constants (h and e, exact in the SI)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

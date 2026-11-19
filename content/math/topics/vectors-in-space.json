@@ -1,0 +1,110 @@
+{
+  "id": "calc3.vectors-in-space",
+  "slug": "vectors-in-space",
+  "ladder": "math",
+  "course": "calc3",
+  "unit": "space",
+  "title": "Vectors in Three Dimensions",
+  "short": "Add, scale and find the length of 3D vectors.",
+  "trouble": "",
+  "prereqs": [
+    "calc3.space-coordinates",
+    "pre.vector-operations"
+  ],
+  "xp": 1,
+  "viz": [
+    "vectors3d"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You already know how to <a href=\"/math/precalculus/vector-operations/\">add and scale vectors in the plane</a>: work component by component. In space nothing changes except that a vector has three components, $\\mathbf{v} = \\langle v_1, v_2, v_3 \\rangle$. Think of it as a displacement: $v_1$ units in the $x$-direction, $v_2$ in the $y$-direction, $v_3$ in the $z$-direction. Where you start does not matter; only the size and direction of the move do."
+      },
+      {
+        "t": "key",
+        "html": "From $P$ to $Q$: $\\overrightarrow{PQ} = Q - P$ (\"end minus start\"). Vectors add and scale component by component, and\n  $$|\\mathbf{v}| = \\sqrt{v_1^2 + v_2^2 + v_3^2}, \\qquad \\text{unit vector in the direction of } \\mathbf{v}: \\ \\frac{\\mathbf{v}}{|\\mathbf{v}|}.$$\n  With $\\mathbf{i} = \\langle 1, 0, 0 \\rangle$, $\\mathbf{j} = \\langle 0, 1, 0 \\rangle$, $\\mathbf{k} = \\langle 0, 0, 1 \\rangle$, every vector is $v_1\\mathbf{i} + v_2\\mathbf{j} + v_3\\mathbf{k}$."
+      },
+      {
+        "t": "why",
+        "html": "Adding two displacements means doing one move and then the other. The $x$-parts of the two moves simply add, and so do the $y$-parts and the $z$-parts, because the three directions are independent. The length formula is the <a href=\"/math/calculus-3/space-coordinates/\">3-D distance formula</a> applied to the move from the tail $(0, 0, 0)$ to the tip $(v_1, v_2, v_3)$. Multiplying by $c$ multiplies every component, so it multiplies the length by $|c|$; dividing by $|\\mathbf{v}|$ therefore makes the length exactly ${}1$ without changing the direction."
+      },
+      {
+        "t": "viz",
+        "name": "vectors3d",
+        "opts": {
+          "u": [
+            2,
+            1,
+            0
+          ],
+          "v": [
+            0,
+            2,
+            1
+          ],
+          "op": "sum",
+          "ops": [
+            "sum"
+          ],
+          "range": 3
+        },
+        "cap": "Tip to tail: $\\mathbf{u} + \\mathbf{v}$ goes from the tail of $\\mathbf{u}$ to the tip of $\\mathbf{v}$. Change the components in the boxes and turn the picture to see it in 3-D."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "From two points",
+        "q": "Find $\\overrightarrow{PQ}$, its length, and the unit vector in its direction for $P(2, -1, 4)$ and $Q(5, 3, 4)$.",
+        "steps": [
+          "$$\\overrightarrow{PQ} = \\langle 5 - 2, 3 - (-1), 4 - 4 \\rangle = \\langle 3, 4, 0 \\rangle.$$",
+          "$|\\overrightarrow{PQ}| = \\sqrt{9 + 16 + 0} = 5$.",
+          "Unit vector: $\\frac{1}{5}\\langle 3, 4, 0 \\rangle = \\left\\langle \\frac{3}{5}, \\frac{4}{5}, 0 \\right\\rangle$. Its length is $\\sqrt{\\frac{9}{25} + \\frac{16}{25}} = 1$."
+        ],
+        "a": "$\\langle 3, 4, 0 \\rangle$, length ${}5$, unit vector $\\left\\langle \\frac{3}{5}, \\frac{4}{5}, 0 \\right\\rangle$"
+      },
+      {
+        "t": "ex",
+        "title": "A combination",
+        "q": "For $\\mathbf{u} = \\langle 1, -2, 2 \\rangle$ and $\\mathbf{v} = \\langle 3, 0, -1 \\rangle$, find ${}2\\mathbf{u} - 3\\mathbf{v}$ and its length.",
+        "steps": [
+          "${}2\\mathbf{u} = \\langle 2, -4, 4 \\rangle$ and ${}3\\mathbf{v} = \\langle 9, 0, -3 \\rangle$.",
+          "Subtract matching components: $$\\langle 2 - 9, -4 - 0, 4 - (-3) \\rangle = \\langle -7, -4, 7 \\rangle.$$",
+          "Length: $\\sqrt{49 + 16 + 49} = \\sqrt{114}$."
+        ],
+        "a": "$\\langle -7, -4, 7 \\rangle$, length $\\sqrt{114}$"
+      },
+      {
+        "t": "ex",
+        "title": "A prescribed length",
+        "q": "Find the vector of length ${}10$ pointing the same way as $\\mathbf{w} = \\langle 2, -1, 2 \\rangle$.",
+        "steps": [
+          "$|\\mathbf{w}| = \\sqrt{4 + 1 + 4} = 3$, so the unit vector is $\\frac{1}{3}\\langle 2, -1, 2 \\rangle$.",
+          "Stretch it to length 10: $\\frac{10}{3}\\langle 2, -1, 2 \\rangle = \\left\\langle \\frac{20}{3}, -\\frac{10}{3}, \\frac{20}{3} \\right\\rangle$."
+        ],
+        "a": "$\\left\\langle \\frac{20}{3}, -\\frac{10}{3}, \\frac{20}{3} \\right\\rangle$"
+      },
+      {
+        "t": "p",
+        "html": "Two vectors are <b>parallel</b> when one is a scalar multiple of the other: $\\langle 2, -4, 6 \\rangle = 2\\langle 1, -2, 3 \\rangle$. A negative multiple points the opposite way but is still parallel."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Start minus end.</b> $P - Q$ is the vector from $Q$ to $P$, the opposite direction. Say \"end minus start\" out loud. <b>A half-made unit vector.</b> Dividing only some components by the length, or dividing by the sum of the components, gives a vector that is not length 1. Check by computing the length of your answer."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 3, 2.2 Vectors in Three Dimensions"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

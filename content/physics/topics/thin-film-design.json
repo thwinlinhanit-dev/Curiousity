@@ -1,0 +1,91 @@
+{
+  "id": "modern.thin-film-design",
+  "slug": "thin-film-design",
+  "ladder": "physics",
+  "course": "modern",
+  "unit": "wave-optics",
+  "title": "Antireflection Coatings and Air Wedges",
+  "short": "A quarter-wave coating cancels a reflection, and counting fringes in an air wedge measures tiny thicknesses.",
+  "trouble": "Students use the wavelength in air instead of in the coating to find its thickness.",
+  "prereqs": [
+    "phys2.thin-films"
+  ],
+  "xp": 3,
+  "viz": [
+    "ph-interference"
+  ],
+  "figureArchetype": "WaveFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Camera lenses and eyeglasses look faintly purple because they wear a coating a fraction of a wavelength thick. In <a href=\"/physics/physics-2/thin-films/\">Physics 2</a> you saw why soap films show colors: light reflected from the top and from the bottom of a film interferes. Engineers turn that around and <i>design</i> films to cancel reflections, or to measure thicknesses far too small for a ruler."
+      },
+      {
+        "t": "key",
+        "html": "An <b>antireflection coating</b> with index between air and glass ($1 < n_c < n_g$) cancels reflected light of wavelength $\\lambda$ when $$t = \\frac{\\lambda}{4n_c}\\quad(\\text{or } \\tfrac{3\\lambda}{4n_c}, \\tfrac{5\\lambda}{4n_c}, \\ldots).$$ It works best when $n_c \\approx \\sqrt{n_g}$, so both reflections are equally strong. In an <b>air wedge</b> between two glass plates, dark fringes appear where the gap is $t = m\\frac{\\lambda}{2}$, so counting fringes measures the gap."
+      },
+      {
+        "t": "why",
+        "html": "Two things set the phase difference between the two reflected rays. First, a reflection off a higher index flips the wave by half a cycle. In the coating, <b>both</b> reflections (air to coating, coating to glass) go toward a higher index, so the flips cancel out. Second, the lower ray travels an extra $2t$ inside the coating, where the wavelength is $\\lambda_c = \\lambda/n_c$. Cancellation needs half a wavelength of extra path: $2t = \\frac{\\lambda_c}{2}$, so $t = \\frac{\\lambda}{4n_c}$. In the air wedge, only the reflection at the bottom plate (air to glass) flips, so the two rays cancel when the extra path $2t$ is a whole number of wavelengths, starting with the dark line where the plates touch."
+      },
+      {
+        "t": "viz",
+        "name": "ph-interference",
+        "opts": {
+          "mode": "thin-film",
+          "t": 100,
+          "nFilm": 1.38,
+          "nBelow": 1.52
+        },
+        "cap": "A 100 nm coating of index 1.38 on glass. Its reflection graph has a deep dip near 550 nm, the middle of the visible spectrum; red and violet are reflected a little, which gives coated lenses their purple tint. Change the thickness and watch the dip move."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A lens coating",
+        "q": "Magnesium fluoride ($n = 1.38$) is used on glass ($n = 1.52$) to cancel reflection of 550 nm light. Find the thinnest coating that works.",
+        "steps": [
+          "Both reflections flip (1.00 to 1.38 and 1.38 to 1.52), so the flips cancel.",
+          "Wavelength in the coating: $\\lambda_c = 550/1.38 = 398.6$ nm.",
+          "Need $2t = \\lambda_c/2$: $t = \\frac{\\lambda}{4n_c} = \\frac{550}{4(1.38)} = 99.6$ nm."
+        ],
+        "a": "$t \\approx 99.6$ nm (about 0.1 μm)"
+      },
+      {
+        "t": "ex",
+        "title": "Measure a hair with light",
+        "q": "Two flat glass plates 10.0 cm long touch at one end and are held apart by a hair at the other. In 550 nm light, the 120th dark fringe counted from the contact line falls right at the hair. How thick is the hair, and how far apart are the fringes?",
+        "steps": [
+          "Dark fringes are where $2t = m\\lambda$ (only one reflection flips); the contact line is $m = 0$.",
+          "At the hair, $m = 120$: $t = \\frac{120 \\times 550\\ \\text{nm}}{2} = 33{,}000$ nm $= 33.0$ μm.",
+          "Fringes are evenly spaced along the wedge: $\\frac{10.0\\ \\text{cm}}{120} = 0.833$ mm."
+        ],
+        "a": "$33.0$ μm thick; fringes 0.833 mm apart"
+      },
+      {
+        "t": "mistake",
+        "html": "Using the wavelength in air to size the coating, as in $t = \\lambda/4 = 137.5$ nm. Inside the coating the light's wavelength is $\\lambda/n_c$, and the half-wavelength path difference must be counted in the coating. Check your answer with the phase: $2t \\times n_c$ should equal $\\lambda/2$."
+      },
+      {
+        "t": "mistake",
+        "html": "Forgetting to count the flips. A coating with an index <i>higher</i> than the glass (like a mirror coating) has only one flip, and the same quarter-wave thickness then makes the reflections add, not cancel."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 3, 3.4 Interference in Thin Films"
+      },
+      {
+        "name": "OpenStax College Physics 2e, 27.7 Thin Film Interference"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

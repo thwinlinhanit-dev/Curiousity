@@ -1,0 +1,116 @@
+{
+  "id": "rbprog.trace-code",
+  "slug": "trace-code",
+  "ladder": "robotics",
+  "course": "rbprog",
+  "unit": "python",
+  "title": "Tracing Code by Hand",
+  "short": "Follow a program one line at a time, writing down every variable, to know what it will do.",
+  "trouble": "Students guess what the loop does instead of writing down each pass, and miss the last pass or the first.",
+  "prereqs": [
+    "rbkids.block-coding",
+    "g6.variables-meaning"
+  ],
+  "xp": 2,
+  "viz": [],
+  "figureArchetype": "LessonFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Before you trust a robot's program, run it in your head. Professionals do this all the time; it is the fastest way to find a bug."
+      },
+      {
+        "t": "key",
+        "html": "To <b>trace</b> code, go one line at a time and keep a table of every variable. Each time a line changes a variable, write the new value. For a loop, write one row per pass."
+      },
+      {
+        "t": "ex",
+        "title": "Trace a loop",
+        "q": "<code>speed = 0<br>for i in range(4):<br>&nbsp;&nbsp;&nbsp;&nbsp;speed = speed + 25</code><br>What is <code>speed</code> at the end?",
+        "steps": [
+          "range(4) gives i = 0, 1, 2, 3: four passes.",
+          "speed: 0 → 25 → 50 → 75 → 100."
+        ],
+        "a": "100."
+      },
+      {
+        "t": "ex",
+        "title": "Trace a while loop",
+        "q": "<code>d = 50<br>steps = 0<br>while d &gt; 10:<br>&nbsp;&nbsp;&nbsp;&nbsp;d = d - 15<br>&nbsp;&nbsp;&nbsp;&nbsp;steps = steps + 1</code>",
+        "steps": [
+          "Pass 1: d = 35, steps = 1.",
+          "Pass 2: d = 20, steps = 2.",
+          "Pass 3: d = 5, steps = 3.",
+          "Now d &gt; 10 is false, so the loop stops."
+        ],
+        "a": "d = 5, steps = 3."
+      },
+      {
+        "t": "table",
+        "head": [
+          "pass",
+          "d before",
+          "d after",
+          "steps"
+        ],
+        "rows": [
+          [
+            "1",
+            "50",
+            "35",
+            "1"
+          ],
+          [
+            "2",
+            "35",
+            "20",
+            "2"
+          ],
+          [
+            "3",
+            "20",
+            "5",
+            "3"
+          ]
+        ],
+        "cap": "A trace table for the while loop."
+      },
+      {
+        "t": "why",
+        "html": "A robot's bugs often hide in the first or last pass of a loop. Writing every pass down catches them before the robot drives off the table."
+      },
+      {
+        "t": "mistake",
+        "html": "Guessing what a loop does from its shape. Write the table; it takes a minute and it is never wrong."
+      },
+      {
+        "t": "h",
+        "text": "Hands-on: your first Raspberry Pi program"
+      },
+      {
+        "t": "note",
+        "html": "<div class=\"rb-parts\"><b>Getting started</b><ul><li><b>\\$0:</b> Python on any computer, or a free online Python editor.</li><li><b>About \\$5 to \\$10:</b> a Raspberry Pi Pico with MicroPython, plus an LED and resistor from the starter kit.</li><li><b>About \\$60 to \\$100:</b> a Raspberry Pi single-board computer with a power supply and memory card, for camera and vision projects later.</li></ul></div>"
+      },
+      {
+        "t": "p",
+        "html": "Blink the Pico's built-in LED. Then change the program to blink faster each time through the loop, and trace it on paper before you run it."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "The Python Tutorial, Python Software Foundation",
+        "url": "https://docs.python.org/3/tutorial/"
+      },
+      {
+        "name": "Raspberry Pi Foundation, Raspberry Pi Projects",
+        "url": "https://projects.raspberrypi.org/"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,86 @@
+{
+  "id": "alg1.polynomial-basics",
+  "slug": "polynomial-basics",
+  "ladder": "math",
+  "course": "alg1",
+  "unit": "polynomials",
+  "title": "Polynomials: Degree and Standard Form",
+  "short": "Name terms, degree and leading coefficient, and order terms by degree.",
+  "trouble": "Students give the degree as the number of terms, or the exponent of the first term written.",
+  "prereqs": [
+    "alg1.expression-structure",
+    "g8.exponent-properties"
+  ],
+  "xp": 1,
+  "viz": [],
+  "figureArchetype": "LessonFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A <b>polynomial</b> is a sum of terms of the form (number) $\\times$ (variable to a whole-number power), like $4x^3 - x + 7$. You already know the words <a href=\"/math/algebra-1/expression-structure/\">term and coefficient</a> and the <a href=\"/math/pre-algebra/exponent-properties/\">exponent rules</a>. Polynomials get a few more names, and they will be the main objects of the next two units."
+      },
+      {
+        "t": "list",
+        "items": [
+          "The <b>degree of a term</b> is its exponent: $4x^3$ has degree $3$, $-x$ has degree $1$, and the constant $7$ has degree $0$ (since $7 = 7x^0$).",
+          "The <b>degree of the polynomial</b> is the largest degree of its terms.",
+          "<b>Standard form</b> lists the terms from highest degree to lowest: $4x^3 - x + 7$.",
+          "The <b>leading term</b> is the term of highest degree, and its coefficient is the <b>leading coefficient</b>.",
+          "Names by degree: linear ($1$), quadratic ($2$), cubic ($3$), quartic ($4$). By number of terms: monomial ($1$), binomial ($2$), trinomial ($3$)."
+        ]
+      },
+      {
+        "t": "why",
+        "html": "Why care about the highest power? For large inputs the highest-degree term outweighs all the others. In $f(x) = x^3 - 100x$, at $x = 1000$ the cube is a billion while $100x$ is only a hundred thousand. So the degree and the leading coefficient tell you how a polynomial behaves overall, and writing it in standard form puts that information first."
+      },
+      {
+        "t": "key",
+        "html": "The degree is the highest exponent of any term, not the number of terms and not the exponent of the term written first. Standard form orders the terms by degree, each keeping its own sign."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Read a polynomial",
+        "q": "For $5 - 2x^4 + 3x$, give the standard form, degree, leading coefficient and name.",
+        "steps": [
+          "Order by degree, keeping signs: $-2x^4 + 3x + 5$.",
+          "Highest exponent: $4$, so the degree is $4$.",
+          "Leading term $-2x^4$, so the leading coefficient is $-2$.",
+          "Degree $4$ with $3$ terms: a quartic trinomial."
+        ],
+        "a": "$-2x^4 + 3x + 5$; degree $4$; leading coefficient $-2$; quartic trinomial."
+      },
+      {
+        "t": "ex",
+        "title": "Is it a polynomial?",
+        "q": "Which are polynomials: $3x^2 - \\frac{1}{2}x$, $\\;\\frac{4}{x} + 1$, $\\;\\sqrt{2}\\,x^3$, $\\;x^{1/2} + 2$?",
+        "steps": [
+          "Coefficients may be any real numbers, so $3x^2 - \\frac{1}{2}x$ and $\\sqrt{2}\\,x^3$ are polynomials.",
+          "$\\frac{4}{x} = 4x^{-1}$ has a negative exponent, and $x^{1/2}$ a fractional one: not polynomials."
+        ],
+        "a": "The first and third."
+      },
+      {
+        "t": "mistake",
+        "html": "Giving the degree as the number of terms, or as the exponent of the first term written. $7x - x^5 + 2$ has three terms and starts with an $x^1$ term, but its degree is $5$. Rewrite in standard form first; the degree is then the first exponent."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Elementary Algebra 2e, section 6.1 Add and Subtract Polynomials"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, A-SSE.A.1a"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

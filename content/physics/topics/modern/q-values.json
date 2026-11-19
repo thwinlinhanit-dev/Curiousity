@@ -1,0 +1,101 @@
+{
+  "id": "modern.q-values",
+  "slug": "q-values",
+  "ladder": "physics",
+  "course": "modern",
+  "unit": "nuclei-particles",
+  "title": "Energy in Nuclear Reactions",
+  "short": "Q = (mass before − mass after)c², at 931.5 MeV for each atomic mass unit.",
+  "trouble": "Students mix nuclear masses with atomic masses and lose track of the electrons.",
+  "prereqs": [
+    "modern.nuclear-binding"
+  ],
+  "xp": 3,
+  "viz": [
+    "ph-nucleus"
+  ],
+  "figureArchetype": "WaveFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Every nuclear reaction and decay either releases energy or needs it. The <a href=\"/physics/waves-optics-modern-physics/nuclear-binding/\">binding energies</a> tell you roughly which way it goes, but the exact bookkeeping is simpler: compare the total mass before with the total mass after."
+      },
+      {
+        "t": "key",
+        "html": "The <b>Q-value</b> of a reaction or decay is $$Q = \\left(\\sum m_{\\text{before}} - \\sum m_{\\text{after}}\\right)c^2,\\qquad 1\\ \\text{u}\\cdot c^2 = 931.5\\ \\text{MeV}.$$ $Q > 0$: energy is released (as kinetic energy of the products and gamma rays). $Q < 0$: energy must be supplied. Using <b>atomic</b> masses, the electrons cancel in alpha decay, beta-minus decay and most reactions; for <b>beta-plus</b> decay, subtract $2m_ec^2 = 1.022$ MeV."
+      },
+      {
+        "t": "why",
+        "html": "Total energy, including rest energy, is conserved. If the products have less rest mass, the difference has become kinetic energy. Tables list masses of neutral atoms, which include electrons. In alpha decay, $^{238}$U (92 electrons) becomes $^{234}$Th (90 electrons) plus $^4$He (2 electrons): the electrons balance. In beta-minus decay the nucleus gains a proton and emits an electron, and the daughter atom needs one more electron: again they balance. In beta-plus decay the nucleus loses a proton and emits a positron; the daughter atom has one electron too many, and a positron leaves as well, so the atomic masses miss two electron masses: $Q = [M_{\\text{parent}} - M_{\\text{daughter}} - 2m_e]c^2$."
+      },
+      {
+        "t": "viz",
+        "name": "ph-nucleus",
+        "opts": {
+          "mode": "reaction",
+          "reaction": "H-2 + H-3 -> He-4 + n"
+        },
+        "cap": "Deuterium–tritium fusion: the masses before and after, and the energy released. Try other reactions, such as the fission of uranium-235."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Alpha decay of uranium-238",
+        "q": "Find the energy released when $^{238}$U decays to $^{234}$Th and an alpha particle. Atomic masses: 238.050788 u, 234.043601 u and 4.002603 u.",
+        "steps": [
+          "Before: 238.050788 u. After: $234.043601 + 4.002603 = 238.046204$ u.",
+          "$\\Delta m = 0.004584$ u, so $Q = 0.004584 \\times 931.5 = 4.27$ MeV."
+        ],
+        "a": "$Q = 4.27$ MeV"
+      },
+      {
+        "t": "ex",
+        "title": "Fusion fuel",
+        "q": "Find $Q$ for $^2$H + $^3$H → $^4$He + n. Masses: 2.014102, 3.016049, 4.002603 and 1.008665 u.",
+        "steps": [
+          "Before: $5.030151$ u. After: $5.011268$ u.",
+          "$\\Delta m = 0.018883$ u, so $Q = 17.6$ MeV."
+        ],
+        "a": "$17.6$ MeV per reaction, the fuel of fusion research"
+      },
+      {
+        "t": "ex",
+        "title": "A positron emitter",
+        "q": "Fluorine-18 decays by beta-plus emission to oxygen-18. Atomic masses: $^{18}$F 18.000938 u, $^{18}$O 17.999160 u. Find $Q$.",
+        "steps": [
+          "Atomic mass difference: $0.001778$ u, which is $1.656$ MeV.",
+          "Beta-plus: subtract $2m_ec^2 = 1.022$ MeV."
+        ],
+        "a": "$Q = 0.634$ MeV (the largest energy the positron can carry)"
+      },
+      {
+        "t": "p",
+        "html": "Who gets the energy? In alpha decay the products fly apart with equal and opposite momenta, so the light alpha particle carries most of it: $K_\\alpha \\approx Q\\,\\frac{A - 4}{A}$, about 4.20 MeV of uranium-238's 4.27 MeV."
+      },
+      {
+        "t": "mistake",
+        "html": "Mixing nuclear masses with atomic masses and losing track of the electrons. If you subtract a bare-nucleus mass from an atomic mass, you are off by several electron masses (0.511 MeV each), which can be as large as the whole Q-value of a beta decay. Use atomic masses for every particle, and remember the $2m_ec^2$ for beta-plus decay. Check: hydrogen should appear as $^1$H (1.007825 u), not as a bare proton (1.007276 u), when the other masses are atomic."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 3, 10.4 Nuclear Reactions"
+      },
+      {
+        "name": "OpenStax University Physics Volume 3, 10.3 Radioactive Decay"
+      },
+      {
+        "name": "NIST, Atomic Weights and Isotopic Compositions (relative atomic masses of the nuclides, from the 2020 Atomic Mass Evaluation)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

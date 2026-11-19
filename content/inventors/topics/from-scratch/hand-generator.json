@@ -1,0 +1,157 @@
+{
+  "id": "from-scratch.hand-generator",
+  "slug": "hand-generator",
+  "ladder": "inventors",
+  "course": "from-scratch",
+  "unit": "power",
+  "title": "A Hand Generator, Faraday's 1831 Discovery",
+  "short": "A changing magnetic field through a coil makes a voltage; faster changes and more turns make more.",
+  "trouble": "Learners expect a magnet sitting still inside a coil to make current, or expect a few turns to light an LED.",
+  "prereqs": [
+    "from-scratch.simple-motor"
+  ],
+  "xp": 2,
+  "viz": [
+    "fs-induct"
+  ],
+  "figureArchetype": "FieldFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "If electricity can make magnetism, can magnetism make electricity? Faraday kept a note to try. For years nothing worked. A magnet sitting beside a coil made no current at all."
+      },
+      {
+        "t": "p",
+        "html": "On 29 August 1831 Faraday wound two separate coils of insulated wire on an iron ring about 6 inches across. One coil went to a battery, the other to a galvanometer, a needle that swings when current flows. When he connected the battery, the needle kicked, then went back to zero. When he disconnected it, the needle kicked the other way. A steady current did nothing. Only a <b>change</b> made a current. That autumn he also pushed a bar magnet into a coil and saw the needle swing, and then turned a copper disc between the poles of a strong magnet and drew a steady current from it, an early generator."
+      },
+      {
+        "t": "note",
+        "html": "<b>Meet the inventor.</b> See how this fits Faraday's whole career in <a href=\"/inventors/age-of-electricity/faraday/\">Michael Faraday: The Motor and the Generator</a>."
+      },
+      {
+        "t": "key",
+        "html": "A <b>changing</b> magnetic field through a coil makes a voltage in it. This is <b>Faraday's law</b>: $\\mathcal{E} = N \\dfrac{\\Delta \\Phi}{\\Delta t}$, where $N$ is the number of turns and $\\Delta\\Phi$ is how much the magnetic flux through each turn changes in the time $\\Delta t$. More turns, a stronger magnet or <b>faster</b> motion give more voltage. A magnet that is not moving gives none."
+      },
+      {
+        "t": "p",
+        "html": "<b>Flux</b>, $\\Phi$, measures how much magnetic field passes through a loop: field strength times area, $\\Phi = BA$, in webers. When a magnet slides into a coil, the flux through it rises; when it slides out, the flux falls, and the voltage flips sign. Shake a magnet back and forth and you make <b>alternating current</b>, the kind power stations make with huge spinning magnets and coils."
+      },
+      {
+        "t": "viz",
+        "name": "fs-induct",
+        "opts": {
+          "turns": 500
+        },
+        "cap": "Drag the magnet through the coil, or press Shake. The red and green LEDs each light for one direction, once the voltage passes about 1.8 V."
+      },
+      {
+        "t": "why",
+        "html": "This is how almost all electricity is made, from a bicycle light dynamo to a power station. A turbine turns a magnet inside coils, or coils inside magnets, and the changing flux makes the voltage. A shake flashlight is the same idea in your hand: a magnet slides back and forth through a coil."
+      },
+      {
+        "t": "h",
+        "text": "Let's think it through"
+      },
+      {
+        "t": "ex",
+        "title": "Faster and more turns",
+        "q": "Pushing a magnet into a 200-turn coil makes 0.3 V. What do you get pushing twice as fast into a 400-turn coil?",
+        "steps": [
+          "Twice as fast: twice the rate of change, so twice the voltage.",
+          "Twice the turns: twice again."
+        ],
+        "a": "$0.3 \\times 2 \\times 2 = 1.2$ V."
+      },
+      {
+        "t": "ex",
+        "title": "Enough for an LED?",
+        "q": "Each turn of your coil makes about 2 mV when you shake hard. A red LED needs about 1.8 V.",
+        "steps": [
+          "$1.8 \\text{ V} = 1800$ mV.",
+          "$1800 \\div 2 = 900$ turns."
+        ],
+        "a": "At least about 900 turns, with a strong magnet and a fast shake."
+      },
+      {
+        "t": "mistake",
+        "html": "Expecting a still magnet inside a coil to make current. Only change makes a voltage. Move it."
+      },
+      {
+        "t": "h",
+        "text": "Build it: a shake generator and a compass meter"
+      },
+      {
+        "t": "note",
+        "html": "<div class=\"fs-parts\"><b>Parts (about \\$15 to \\$25)</b><ul><li>Thin magnet wire, about 30 gauge, 50 to 100 meters (a spool is about \\$8 to \\$12). More turns are better.</li><li>A clear plastic tube or an empty pill bottle that a stack of magnets slides through easily, about 1.5 to 2 cm wide inside</li><li>3 to 5 neodymium disc magnets that fit the tube (about \\$5 to \\$8)</li><li>Two caps or tape to close the tube ends</li><li>For the meter: a small compass and 1 meter of any insulated wire; or an inexpensive multimeter set to its lowest DC or AC voltage range</li><li>Optional challenge: two red LEDs</li><li>Sandpaper and tape</li></ul></div>"
+      },
+      {
+        "t": "note",
+        "html": "<div class=\"fs-steps\"><b>Step by step</b><ol><li>Put the magnets inside the tube and close both ends so they cannot fall out.</li><li>Wind the magnet wire around the middle of the tube, all in one direction, in a band about 2 to 3 cm wide. Aim for at least 500 turns. Count in hundreds, or have a helper count. Tape the coil.</li><li>Sand the two wire ends until the copper is bright.</li><li>Make a compass meter: wind 10 to 20 turns of insulated wire around the compass, so the coil runs north and south over the needle. Set it on the table at least an arm's length from the magnets, so they don't pull the needle themselves.</li><li>Connect the two coils together. Shake the tube hard, or slide the magnets in with one quick push. Watch the needle.</li><li>Challenge: connect two LEDs side by side across the coil, facing opposite ways (long leg of one to short leg of the other). Shake hard in a dim room.</li></ol></div>"
+      },
+      {
+        "t": "h",
+        "text": "What to look for"
+      },
+      {
+        "t": "list",
+        "items": [
+          "The compass needle kicks one way when the magnets rush toward the coil's center, and the other way as they leave.",
+          "When the magnets stop, the needle goes back to rest. No change, no current.",
+          "With enough turns and a hard shake, the LEDs flicker, taking turns: proof that the current alternates."
+        ]
+      },
+      {
+        "t": "h",
+        "text": "Troubleshooting"
+      },
+      {
+        "t": "list",
+        "items": [
+          "<b>Needle doesn't move?</b> Check that the enamel is sanded off and the connections are tight. Move the compass farther from the magnets.",
+          "<b>Very small kick?</b> Shake faster, add turns, or use more magnets.",
+          "<b>No LED glow?</b> Most homemade coils need many hundreds of turns. A multimeter shows how close you are."
+        ]
+      },
+      {
+        "t": "h",
+        "text": "Iterate like Faraday"
+      },
+      {
+        "t": "list",
+        "items": [
+          "Measure how the kick changes with speed: drop the magnets through the coil from different heights and compare.",
+          "Count turns: make a second coil with half as many and compare the kick.",
+          "Faraday kept a careful notebook and numbered every paragraph. Number yours: setup, change, result, for each try."
+        ]
+      },
+      {
+        "t": "note",
+        "html": "<div class=\"fs-safe\"><b>Safety</b><ul><li>Strong (neodymium) magnets snap together hard and can pinch skin. Slide them apart instead of pulling. Keep them, and any small batteries, away from small children: swallowed magnets and button or coin batteries can cause serious injury.</li><li>Keep the magnets well away from the compass you are using as a meter, or it will point at them instead.</li><li>A grown-up does the cutting and stripping of wire, and any work with a craft knife.</li><li>This project uses no battery: the coil makes all the electricity. Keep it that way.</li></ul></div>"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "American Physical Society, APS News: This Month in Physics History, Faraday and electromagnetism",
+        "url": "https://www.aps.org/apsnews/2001/08/faraday-electromagnetism"
+      },
+      {
+        "name": "Copper Development Association, Faraday's Famous Ten Days",
+        "url": "https://copper.org/education/history/60centuries/electrical/faradays.php"
+      },
+      {
+        "name": "Grokipedia, Electric generator",
+        "url": "https://grokipedia.com/page/Electric_generator"
+      },
+      {
+        "name": "Grokipedia, Mechanically powered flashlight",
+        "url": "https://grokipedia.com/page/Mechanically_powered_flashlight"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

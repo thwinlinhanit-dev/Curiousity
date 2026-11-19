@@ -1,0 +1,205 @@
+{
+  "id": "gram.diagram-compounds",
+  "slug": "diagram-compounds",
+  "ladder": "writing",
+  "course": "gram",
+  "unit": "diagramming",
+  "title": "Diagrams: Compound Parts and Sentences",
+  "short": "Compound subjects, verbs and objects split into parallel lines joined by a dashed line with the conjunction. A compound sentence stacks two baselines.",
+  "trouble": "Learners put the conjunction on the baseline, or draw one baseline for a compound sentence.",
+  "prereqs": [
+    "gram.diagram-objects",
+    "gram.diagram-prep-phrases",
+    "gram.simple-compound"
+  ],
+  "xp": 3,
+  "viz": [
+    "wr-diagram"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Compound parts (<a href=\"/writing/grammar/compound-subjects-verbs/\">Compound Subjects and Verbs</a>) split the line into a <b>fork</b>: parallel lines, one for each part, joined by a <b>dashed line</b> with the conjunction beside it. This builds on <a href=\"/writing/grammar/diagram-objects/\">objects</a> and <a href=\"/writing/grammar/diagram-prep-phrases/\">phrases</a>."
+      },
+      {
+        "t": "viz",
+        "name": "wr-diagram",
+        "opts": {
+          "text": "Ana and Leo sang and danced.",
+          "spec": {
+            "s": {
+              "and": "and",
+              "items": [
+                {
+                  "w": "Ana"
+                },
+                {
+                  "w": "Leo"
+                }
+              ]
+            },
+            "v": {
+              "and": "and",
+              "items": [
+                {
+                  "w": "sang"
+                },
+                {
+                  "w": "danced"
+                }
+              ]
+            }
+          },
+          "roles": true
+        },
+        "cap": "A compound subject and a compound verb on one baseline."
+      },
+      {
+        "t": "viz",
+        "name": "wr-diagram",
+        "opts": {
+          "text": "Dad washed and dried the dishes.",
+          "spec": {
+            "s": {
+              "w": "Dad"
+            },
+            "v": {
+              "and": "and",
+              "items": [
+                {
+                  "w": "washed"
+                },
+                {
+                  "w": "dried"
+                }
+              ]
+            },
+            "do": {
+              "w": "dishes",
+              "m": [
+                {
+                  "w": "the"
+                }
+              ]
+            }
+          }
+        },
+        "cap": "Both verbs share one direct object, so the fork closes again before it."
+      },
+      {
+        "t": "p",
+        "html": "A <a href=\"/writing/grammar/simple-compound/\">compound sentence</a> has two independent clauses, so it gets <b>two baselines</b>, one above the other. A dashed line, shaped like a step, joins the two verbs, with the conjunction on it."
+      },
+      {
+        "t": "viz",
+        "name": "wr-diagram",
+        "opts": {
+          "text": "The rain stopped, and the sun came out.",
+          "spec": {
+            "compound": [
+              {
+                "s": {
+                  "w": "rain",
+                  "m": [
+                    {
+                      "w": "The"
+                    }
+                  ]
+                },
+                "v": {
+                  "w": "stopped"
+                }
+              },
+              {
+                "s": {
+                  "w": "sun",
+                  "m": [
+                    {
+                      "w": "the"
+                    }
+                  ]
+                },
+                "v": {
+                  "w": "came",
+                  "m": [
+                    {
+                      "w": "out"
+                    }
+                  ]
+                }
+              }
+            ],
+            "conj": "and"
+          }
+        },
+        "cap": "Two clauses, two baselines."
+      },
+      {
+        "t": "key",
+        "html": "Compound parts of one clause: a fork on one baseline. Two independent clauses: two baselines. The conjunction never sits on the baseline; it goes beside the dashed line."
+      },
+      {
+        "t": "why",
+        "html": "The fork shows that the parts share a job (two subjects for one verb, two verbs for one subject). Two baselines show two complete clauses. The difference is the difference between a simple sentence with compound parts and a compound sentence."
+      },
+      {
+        "t": "ex",
+        "title": "Fork or two baselines?",
+        "q": "“Leo sang and danced” and “Leo sang, and Mia danced.”",
+        "steps": [
+          "First: one subject, two verbs: a fork for the verbs on one baseline.",
+          "Second: two subjects, each with its own verb: two baselines joined by <i>and</i>."
+        ],
+        "a": "fork, then two baselines"
+      },
+      {
+        "t": "viz",
+        "name": "wr-diagram",
+        "opts": {
+          "text": "Mia bought apples and pears.",
+          "spec": {
+            "s": {
+              "w": "Mia"
+            },
+            "v": {
+              "w": "bought"
+            },
+            "do": {
+              "and": "and",
+              "items": [
+                {
+                  "w": "apples"
+                },
+                {
+                  "w": "pears"
+                }
+              ]
+            }
+          },
+          "mode": "build"
+        },
+        "cap": "Build the compound direct object, then Check."
+      },
+      {
+        "t": "mistake",
+        "html": "Putting the conjunction on the baseline, or drawing one baseline for a compound sentence. A compound sentence has two subjects with two verbs; give each clause its own baseline."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Alonzo Reed and Brainerd Kellogg, Higher Lessons in English (1877; revised edition 1896), Project Gutenberg eBook #7188 (public domain): the diagrams of Lessons 4–33",
+        "url": "https://www.gutenberg.org/cache/epub/7188/pg7188.html"
+      },
+      {
+        "name": "Grokipedia, “Sentence diagram”",
+        "url": "https://grokipedia.com/page/Sentence_diagram"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

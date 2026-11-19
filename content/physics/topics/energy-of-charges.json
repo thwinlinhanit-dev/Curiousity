@@ -1,0 +1,122 @@
+{
+  "id": "em.energy-of-charges",
+  "slug": "energy-of-charges",
+  "ladder": "physics",
+  "course": "em",
+  "unit": "potential",
+  "title": "Energy of a System of Charges",
+  "short": "Add kqᵢqⱼ/rᵢⱼ over every pair to find the energy needed to assemble the charges.",
+  "trouble": "Students count each pair twice, or leave some pairs out.",
+  "prereqs": [
+    "phys2.electric-potential-energy"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-efield"
+  ],
+  "figureArchetype": "FieldFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Two charges store <a href=\"/physics/physics-2/electric-potential-energy/\">potential energy</a> $U = kq_1q_2/r$: positive if they repel, negative if they attract. What about three charges, or a dozen? The energy of the whole group is the work it takes to assemble it, bringing the charges in from far away one at a time."
+      },
+      {
+        "t": "key",
+        "html": "$$U = \\sum_{\\text{pairs } i < j}\\frac{kq_iq_j}{r_{ij}}$$\n        One term for each pair, counted once. $N$ charges make $N(N-1)/2$ pairs."
+      },
+      {
+        "t": "why",
+        "html": "Assemble the charges one at a time. The first costs nothing: no other charges are there yet. The second costs $kq_1q_2/r_{12}$. The third moves through the potential of the first two, costing $q_3(V_1 + V_2) = kq_1q_3/r_{13} + kq_2q_3/r_{23}$. Each new charge adds one term for each charge already present, so in the end every pair appears exactly once. The order of assembly does not matter; the total is the same."
+      },
+      {
+        "t": "viz",
+        "name": "ph-efield",
+        "opts": {
+          "mode": "points",
+          "charges": [
+            {
+              "q": 3,
+              "x": -0.1,
+              "y": -0.04
+            },
+            {
+              "q": -2,
+              "x": 0.1,
+              "y": -0.04
+            },
+            {
+              "q": 2,
+              "x": 0,
+              "y": 0.12
+            }
+          ],
+          "show": [
+            "lines"
+          ],
+          "hide": [
+            "test"
+          ]
+        },
+        "cap": "Three charges, three pairs. Drag them: pulling the attracting pair apart takes work, pushing the repelling pairs together takes work too."
+      },
+      {
+        "t": "p",
+        "html": "This energy belongs to the arrangement as a whole, not to any one charge. Its sign tells a story. Positive $U$ means repulsion won while you built the group: let go, and the charges fly apart, turning $U$ into kinetic energy. Negative $U$ means attraction won: the group is bound, and you must supply $|U|$ to take it apart. The same bookkeeping explains why atoms and ionic crystals hold together."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Three in a line",
+        "q": "Charges of $+3.0$, $-2.0$ and $+1.0\\ \\mu\\text{C}$ sit in a line, $0.10\\ \\text{m}$ apart in that order. Find $U$.",
+        "steps": [
+          "Three pairs: $(1,2)$ at $0.10\\ \\text{m}$, $(2,3)$ at $0.10\\ \\text{m}$, $(1,3)$ at $0.20\\ \\text{m}$.",
+          "$$U = k(10^{-12})\\left(\\frac{(3)(-2)}{0.10} + \\frac{(-2)(1)}{0.10} + \\frac{(3)(1)}{0.20}\\right) = (8.99 \\times 10^{-3})(-60 - 20 + 15)$$",
+          "$U = -0.584\\ \\text{J}$. Negative: assembling them released energy, and pulling them apart would take that much work."
+        ],
+        "a": "$U \\approx -0.584\\ \\text{J}$"
+      },
+      {
+        "t": "ex",
+        "title": "Four at the corners of a square",
+        "q": "Four $2.0\\ \\mu\\text{C}$ charges sit at the corners of a square with $0.10\\ \\text{m}$ sides. Find $U$.",
+        "steps": [
+          "$4 \\cdot 3/2 = 6$ pairs: four along the sides ($r = a$) and two across the diagonals ($r = a\\sqrt{2}$).",
+          "$$U = \\frac{kq^2}{a}\\left(4 + \\frac{2}{\\sqrt{2}}\\right) = \\frac{(8.99 \\times 10^{9})(2.0 \\times 10^{-6})^2}{0.10}(4 + \\sqrt{2})$$",
+          "$U = 1.95\\ \\text{J}$."
+        ],
+        "a": "$U \\approx 1.95\\ \\text{J}$"
+      },
+      {
+        "t": "ex",
+        "title": "Adding one more",
+        "q": "How much work does it take to bring a fifth charge, $+1.0\\ \\mu\\text{C}$, from far away to the center of that square?",
+        "steps": [
+          "The work for the newcomer is its charge times the potential the others make there: $W = qV$. The energy among the first four does not change.",
+          "Each corner is $a/\\sqrt{2} = 0.0707\\ \\text{m}$ from the center: $V = 4\\cdot\\dfrac{kq}{a/\\sqrt{2}} = 1.02 \\times 10^{6}\\ \\text{V}$.",
+          "$W = (1.0 \\times 10^{-6})(1.02 \\times 10^{6}) = 1.02\\ \\text{J}$."
+        ],
+        "a": "$W \\approx 1.02\\ \\text{J}$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Counting each pair twice, or skipping some.</b> Summing $kq_iq_j/r_{ij}$ over every $i$ and every $j \\ne i$ counts each pair twice and doubles $U$. Forgetting the diagonals of a square leaves pairs out. Check the number of terms: it must be $N(N-1)/2$, so 3 for three charges and 6 for four."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 2, 7.1 Electric Potential Energy"
+      },
+      {
+        "name": "MIT OpenCourseWare, 8.02 Physics II: Electricity and Magnetism"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

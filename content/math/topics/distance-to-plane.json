@@ -1,0 +1,118 @@
+{
+  "id": "calc3.distance-to-plane",
+  "slug": "distance-to-plane",
+  "ladder": "math",
+  "course": "calc3",
+  "unit": "space",
+  "title": "Distances to Lines and Planes",
+  "short": "Project onto a normal to find the shortest distance.",
+  "trouble": "",
+  "prereqs": [
+    "calc3.planes"
+  ],
+  "xp": 3,
+  "viz": [
+    "vectors3d"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "How far is a point from a plane? \"Distance\" always means the <b>shortest</b> distance, and the shortest path to a plane runs straight along its normal. So the question becomes a <a href=\"/math/calculus-3/dot-product-projections/\">projection</a> problem: how long is the part of a connecting vector that points along $\\mathbf{n}$? The same idea, with a cross product, handles distances to lines."
+      },
+      {
+        "t": "key",
+        "html": "Point $(x_0, y_0, z_0)$ to the plane $ax + by + cz = d$:\n  $$D = \\frac{|ax_0 + by_0 + cz_0 - d|}{\\sqrt{a^2 + b^2 + c^2}}.$$\n  Point $X$ to the line through $P_0$ with direction $\\mathbf{v}$: $D = \\dfrac{|\\overrightarrow{P_0X} \\times \\mathbf{v}|}{|\\mathbf{v}|}$."
+      },
+      {
+        "t": "why",
+        "html": "Choose any point $Q$ on the plane and let $\\mathbf{w} = \\overrightarrow{QX}$. The distance is the length of the shadow of $\\mathbf{w}$ on the normal line: $D = \\frac{|\\mathbf{w} \\cdot \\mathbf{n}|}{|\\mathbf{n}|}$. Now $$\\mathbf{w} \\cdot \\mathbf{n} = (ax_0 + by_0 + cz_0) - (a q_1 + b q_2 + c q_3) = ax_0 + by_0 + cz_0 - d,$$ because $Q$ is on the plane. Any choice of $Q$ gives the same answer, which is why the formula needs only $d$.<br>For a line, the parallelogram on $\\overrightarrow{P_0X}$ and $\\mathbf{v}$ has area $|\\overrightarrow{P_0X} \\times \\mathbf{v}|$ and base $|\\mathbf{v}|$; its height is the distance from $X$ to the line."
+      },
+      {
+        "t": "viz",
+        "name": "calc3-scene",
+        "opts": {
+          "points": [
+            {
+              "p": [
+                2,
+                1,
+                3
+              ],
+              "label": "P"
+            }
+          ],
+          "planes": [
+            {
+              "n": [
+                1,
+                2,
+                2
+              ],
+              "d": 2
+            }
+          ],
+          "show": "foot",
+          "move": true,
+          "range": 4
+        },
+        "cap": "The red dashed segment drops from $P$ to the plane along the normal. Move $P$ with the sliders: points on the same side give $ax + by + cz - d$ of the same sign, and the distance is its size divided by $|\\mathbf{n}|$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Point to plane",
+        "q": "Find the distance from $(1, 2, 3)$ to the plane ${}2x - y + 2z = 1$.",
+        "steps": [
+          "Numerator: $|2(1) - 2 + 2(3) - 1| = |5| = 5$.",
+          "Denominator: $\\sqrt{4 + 1 + 4} = 3$.",
+          "$D = \\frac{5}{3}$."
+        ],
+        "a": "$\\frac{5}{3}$"
+      },
+      {
+        "t": "ex",
+        "title": "Parallel planes",
+        "q": "Find the distance between $x + 2y - 2z = 3$ and ${}2x + 4y - 4z = 18$.",
+        "steps": [
+          "Divide the second by 2 so the normals match: $x + 2y - 2z = 9$.",
+          "The planes $\\mathbf{n} \\cdot X = 3$ and $\\mathbf{n} \\cdot X = 9$ are $\\frac{|9 - 3|}{|\\mathbf{n}|}$ apart.",
+          "$|\\mathbf{n}| = \\sqrt{1 + 4 + 4} = 3$, so $D = 2$."
+        ],
+        "a": "${}2$"
+      },
+      {
+        "t": "ex",
+        "title": "Point to line",
+        "q": "Find the distance from $X(1, 1, 1)$ to the line $\\mathbf{r}(t) = t\\langle 1, 2, 2 \\rangle$.",
+        "steps": [
+          "$P_0 = (0, 0, 0)$ is on the line, so $\\overrightarrow{P_0X} = \\langle 1, 1, 1 \\rangle$.",
+          "$\\langle 1, 1, 1 \\rangle \\times \\langle 1, 2, 2 \\rangle = \\langle 0, -1, 1 \\rangle$, length $\\sqrt{2}$.",
+          "$|\\mathbf{v}| = 3$, so $D = \\frac{\\sqrt{2}}{3}$."
+        ],
+        "a": "$\\frac{\\sqrt{2}}{3}$"
+      },
+      {
+        "t": "p",
+        "html": "For two skew lines, the shortest connection is perpendicular to both, so it runs along $\\mathbf{n} = \\mathbf{v}_1 \\times \\mathbf{v}_2$. Project the vector between any two base points onto $\\mathbf{n}$: $D = \\frac{|\\overrightarrow{P_1P_2} \\cdot \\mathbf{n}|}{|\\mathbf{n}|}$."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Sign and form of the constant.</b> The formula above is for planes written $ax + by + cz = d$, so you subtract $d$. If a plane is written $ax + by + cz + D = 0$, you add $D$ instead. Mixing the two forms changes the answer. <b>Forgetting to divide by $|\\mathbf{n}|$.</b> The plane ${}2x + 4y + 4z = 4$ is the same plane as $x + 2y + 2z = 2$; your answer must not change when the equation is doubled, and only dividing by $|\\mathbf{n}|$ makes that true."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 3, 2.5 Equations of Lines and Planes in Space"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

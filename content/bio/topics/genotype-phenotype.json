@@ -1,0 +1,106 @@
+{
+  "id": "lifesci.genotype-phenotype",
+  "slug": "genotype-phenotype",
+  "ladder": "bio",
+  "course": "lifesci",
+  "unit": "heredity",
+  "title": "Genotype and Phenotype",
+  "short": "Your genotype is your pair of alleles (TT, Tt or tt); your phenotype is the trait that shows (tall or short). Two alleles alike is homozygous; two different is heterozygous.",
+  "trouble": "Students think TT and Tt must look different, or write a phenotype as letters. With a dominant allele, TT and Tt show the same phenotype.",
+  "prereqs": [
+    "lifesci.alleles"
+  ],
+  "xp": 2,
+  "viz": [
+    "bi-punnett"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "With <a href=\"/biology/life-science/alleles/\">Alleles: Dominant and Recessive</a> come two words that save a lot of explaining: one for the letters and one for the look."
+      },
+      {
+        "t": "key",
+        "html": "The <b>genotype</b> is the pair of alleles (TT, Tt or tt). The <b>phenotype</b> is the trait that shows (tall or short). Two alleles alike (TT or tt) is <b>homozygous</b>; two different (Tt) is <b>heterozygous</b>."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Genotype",
+          "Name",
+          "Phenotype (T = tall dominant)"
+        ],
+        "rows": [
+          [
+            "TT",
+            "homozygous dominant",
+            "tall"
+          ],
+          [
+            "Tt",
+            "heterozygous",
+            "tall"
+          ],
+          [
+            "tt",
+            "homozygous recessive",
+            "short"
+          ]
+        ],
+        "cap": "Three genotypes, two phenotypes."
+      },
+      {
+        "t": "why",
+        "html": "Because one dominant allele is enough to show the trait, TT and Tt look the same. The phenotype alone does not tell you which genotype a tall plant has. A short plant is different: it must be tt, since any T would make it tall. So the recessive phenotype always tells you the genotype."
+      },
+      {
+        "t": "viz",
+        "name": "bi-punnett",
+        "opts": {
+          "p1": "Tt",
+          "p2": "tt",
+          "traits": {
+            "T": "tall",
+            "t": "short"
+          }
+        },
+        "cap": "A test cross: a tall plant crossed with a short one. If any offspring are short, the tall parent was Tt."
+      },
+      {
+        "t": "ex",
+        "title": "Name them",
+        "q": "In pea plants, yellow seeds (Y) are dominant over green (y). Give the genotype name and phenotype of Yy and yy.",
+        "steps": [
+          "Yy: two different alleles, heterozygous; one Y, so yellow.",
+          "yy: two alike, homozygous recessive; green."
+        ],
+        "a": "Yy: heterozygous, yellow. yy: homozygous recessive, green."
+      },
+      {
+        "t": "ex",
+        "title": "Tall: which one?",
+        "q": "A tall pea plant is crossed with a short one. Half the offspring are short. What was the tall plant's genotype?",
+        "steps": [
+          "Short offspring are tt, so they got a t from each parent.",
+          "The tall parent must have had a t to give: Tt."
+        ],
+        "a": "Tt."
+      },
+      {
+        "t": "mistake",
+        "html": "Students think TT and Tt must look different, or write a phenotype as letters (\"the plant is Tt\"). Letters are the genotype. Describe the phenotype in words (tall, purple, round). With complete dominance, TT and Tt have the same phenotype."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Concepts of Biology, 8.2 Laws of Inheritance (genotype and phenotype; the test cross)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

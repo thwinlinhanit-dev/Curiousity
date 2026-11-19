@@ -1,0 +1,101 @@
+{
+  "id": "calc4.shell-mass",
+  "slug": "shell-mass",
+  "ladder": "math",
+  "course": "calc4",
+  "unit": "applications",
+  "title": "Mass and Centers of Mass of Thin Shells",
+  "short": "Integrate density over a surface.",
+  "trouble": "",
+  "prereqs": [
+    "calc4.scalar-surface-integrals"
+  ],
+  "xp": 3,
+  "viz": [
+    "surface"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A thin metal dome, a soap film, a satellite dish: these are shells, surfaces with mass but almost no thickness. Their mass, balance point and resistance to spinning are <a href=\"/math/calculus-4/scalar-surface-integrals/\">surface integrals</a>, just as the same quantities for a flat plate were <a href=\"/math/calculus-3/double-integral-applications/\">double integrals</a> and for a solid were <a href=\"/math/calculus-3/triple-applications/\">triple integrals</a>."
+      },
+      {
+        "t": "key",
+        "html": "For a shell $S$ with density $\\delta(x, y, z)$ (mass per unit area):\n  $$M = \\iint_S \\delta\\,dS, \\qquad \\bar{x} = \\frac{1}{M}\\iint_S x\\,\\delta\\,dS, \\quad \\bar{y} = \\frac{1}{M}\\iint_S y\\,\\delta\\,dS, \\quad \\bar{z} = \\frac{1}{M}\\iint_S z\\,\\delta\\,dS,$$\n  and the moment of inertia about the $z$-axis is $I_z = \\iint_S (x^2 + y^2)\\,\\delta\\,dS$."
+      },
+      {
+        "t": "why",
+        "html": "A small patch of area $\\Delta S$ has mass about $\\delta\\,\\Delta S$. The mass is the sum of the patches; the center of mass is the average position, each patch weighted by its mass; and $I_z$ adds mass times squared distance from the axis. Each sum becomes a surface integral as the patches shrink. Symmetry helps: for a shape and density symmetric about the $z$-axis, $\\bar{x} = \\bar{y} = 0$."
+      },
+      {
+        "t": "viz",
+        "name": "param3d",
+        "opts": {
+          "surface": true,
+          "x": "2*sin(u)*cos(v)",
+          "y": "2*sin(u)*sin(v)",
+          "z": "2*cos(u)",
+          "u0": 0,
+          "u1": "pi/2",
+          "v0": 0,
+          "v1": "2pi",
+          "u": 0.7,
+          "v": 1
+        },
+        "cap": "A hemispherical shell of radius ${}2$. Equal steps in $\\varphi$ near the top give smaller bands than near the rim: the area factor $a^2\\sin\\varphi$ puts more of the shell's mass low down, which is why its balance point is at half the radius."
+      },
+      {
+        "t": "p",
+        "html": "Compare shells with solids of the same shape. A uniform hemispherical shell balances at height $\\frac{a}{2}$, while a solid half-ball balances lower, at $\\frac{3a}{8}$, because the solid has more of its mass near the flat base. A thin spherical shell has $I_z = \\frac{2}{3}Ma^2$, while a solid ball of the same mass and radius has $\\frac{2}{5}Ma^2$: the shell's mass is all far from the axis, so it is harder to start spinning. That is why a hollow ball and a solid ball rolled down the same ramp arrive at different times, the solid one first."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A uniform dome",
+        "q": "Find the center of mass of a uniform hemispherical shell $x^2 + y^2 + z^2 = a^2$, $z \\ge 0$.",
+        "steps": [
+          "By symmetry $\\bar{x} = \\bar{y} = 0$. With constant $\\delta$, $M = \\delta \\cdot 2\\pi a^2$.",
+          "$$\\iint_S z\\,\\delta\\,dS = \\delta\\int_0^{2\\pi} \\int_0^{\\pi/2} (a\\cos\\varphi)(a^2\\sin\\varphi)\\,d\\varphi\\,d\\theta = \\delta \\cdot 2\\pi a^3 \\cdot \\frac{1}{2} = \\delta\\pi a^3.$$",
+          "$\\bar{z} = \\frac{\\delta\\pi a^3}{2\\pi a^2\\delta} = \\frac{a}{2}$. (A solid hemisphere balances lower, at $\\frac{3a}{8}$.)"
+        ],
+        "a": "$\\left(0, 0, \\frac{a}{2}\\right)$"
+      },
+      {
+        "t": "ex",
+        "title": "A can with varying density",
+        "q": "The side of the cylinder $x^2 + y^2 = 1$, ${}0 \\le z \\le 2$, has density $\\delta = z$. Find its mass and $\\bar{z}$.",
+        "steps": [
+          "$dS = d\\theta\\,dz$. $M = \\int_0^{2\\pi} \\int_0^2 z\\,dz\\,d\\theta = 2\\pi \\cdot 2 = 4\\pi$.",
+          "$\\iint z \\cdot z\\,dS = 2\\pi \\cdot \\frac{8}{3} = \\frac{16\\pi}{3}$, so $\\bar{z} = \\frac{16\\pi/3}{4\\pi} = \\frac{4}{3}$, above the middle because the top is heavier."
+        ],
+        "a": "$M = 4\\pi$, $\\bar{z} = \\frac{4}{3}$"
+      },
+      {
+        "t": "ex",
+        "title": "Spinning a spherical shell",
+        "q": "Find $I_z$ for a uniform spherical shell of radius $a$ and mass $M$.",
+        "steps": [
+          "$\\delta = \\frac{M}{4\\pi a^2}$, and on the sphere $x^2 + y^2 = a^2\\sin^2\\varphi$.",
+          "$$I_z = \\delta\\int_0^{2\\pi} \\int_0^\\pi a^2\\sin^2\\varphi \\cdot a^2\\sin\\varphi\\,d\\varphi\\,d\\theta = \\delta \\cdot a^4 \\cdot 2\\pi \\cdot \\frac{4}{3}.$$",
+          "Substituting $\\delta$: $I_z = \\frac{2}{3}Ma^2$."
+        ],
+        "a": "$\\frac{2}{3}Ma^2$"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 3, 6.6 Surface Integrals"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

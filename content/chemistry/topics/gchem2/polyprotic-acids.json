@@ -1,0 +1,97 @@
+{
+  "id": "gchem2.polyprotic-acids",
+  "slug": "polyprotic-acids",
+  "ladder": "chemistry",
+  "course": "gchem2",
+  "unit": "acids-bases",
+  "title": "Polyprotic Acids",
+  "short": "Each proton comes off with a much smaller Ka, so the first step sets the pH.",
+  "trouble": "Students add up the H₃O⁺ from every step as if each step ionized as much as the first.",
+  "prereqs": [
+    "gchem2.weak-acid-ph"
+  ],
+  "xp": 3,
+  "viz": [
+    "ch-titration"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Some acids can give up more than one proton: carbonic acid ($\\mathrm{H_2CO_3}$), sulfurous acid, phosphoric acid ($\\mathrm{H_3PO_4}$), and vitamin C. Each proton comes off in its own step, each a <a href=\"/chemistry/general-chemistry-2/weak-acid-ph/\">weak-acid equilibrium</a> with its own $K_a$."
+      },
+      {
+        "t": "key",
+        "html": "The constants fall steeply: $K_{a1} \\gg K_{a2} \\gg K_{a3}$, usually by a factor of $10^4$ or more. So the pH comes almost entirely from the first step, treated as a single weak acid. In a solution of the acid alone, the concentration of the ion made in the second step, $[\\mathrm{A^{2-}}]$, is about equal to $K_{a2}$."
+      },
+      {
+        "t": "why",
+        "html": "Taking a proton from a neutral molecule is easier than taking one from an anion that already has a negative charge, and harder still from a 2− ion: the leftover charge holds the next proton back. Also, the $\\mathrm{H_3O^+}$ from step 1 pushes step 2 backward (a common-ion effect). In $K_{a2} = \\dfrac{[\\mathrm{H_3O^+}][\\mathrm{A^{2-}}]}{[\\mathrm{HA^-}]}$, step 1 makes $[\\mathrm{H_3O^+}] \\approx [\\mathrm{HA^-}]$, so they cancel and $[\\mathrm{A^{2-}}] \\approx K_{a2}$."
+      },
+      {
+        "t": "viz",
+        "name": "ch-titration",
+        "opts": {
+          "acid": {
+            "type": "diprotic",
+            "pKa": [
+              1.85,
+              7.2
+            ],
+            "C": 0.1,
+            "V": 25
+          },
+          "base": {
+            "C": 0.1
+          }
+        },
+        "cap": "A diprotic acid titrated with NaOH shows two steps, one for each proton, because the two pKa values are far apart."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Vitamin C",
+        "q": "Ascorbic acid, $\\mathrm{H_2C_6H_6O_6}$, has $K_{a1} = 8.0 \\times 10^{-5}$ and $K_{a2} = 1.6 \\times 10^{-12}$. For a $0.10\\ \\text{M}$ solution, find the pH and the concentration of $\\mathrm{C_6H_6O_6^{2-}}$.",
+        "steps": [
+          "Step 1 only: $x = \\sqrt{(8.0 \\times 10^{-5})(0.10)} = 2.8 \\times 10^{-3}\\ \\text{M}$ (2.8%, fine). $\\text{pH} = 2.55$.",
+          "Step 2 adds about $10^{-12}\\ \\text{M}$ of $\\mathrm{H_3O^+}$, nothing on this scale.",
+          "$[\\mathrm{C_6H_6O_6^{2-}}] \\approx K_{a2} = 1.6 \\times 10^{-12}\\ \\text{M}$."
+        ],
+        "a": "$\\text{pH} = 2.55$; $[\\mathrm{C_6H_6O_6^{2-}}] \\approx 1.6 \\times 10^{-12}\\ \\text{M}$."
+      },
+      {
+        "t": "ex",
+        "title": "Phosphoric acid",
+        "q": "$\\mathrm{H_3PO_4}$: $K_{a1} = 7.5 \\times 10^{-3}$, $K_{a2} = 6.2 \\times 10^{-8}$, $K_{a3} = 4.2 \\times 10^{-13}$. Find the pH of $0.10\\ \\text{M}$ $\\mathrm{H_3PO_4}$ and $[\\mathrm{HPO_4^{2-}}]$.",
+        "steps": [
+          "$K_{a1}$ is large, so solve exactly: $x^2 + (7.5 \\times 10^{-3})x - 7.5 \\times 10^{-4} = 0$ gives $x = 0.0239\\ \\text{M}$.",
+          "$\\text{pH} = -\\log(0.0239) = 1.62$.",
+          "$[\\mathrm{HPO_4^{2-}}] \\approx K_{a2} = 6.2 \\times 10^{-8}\\ \\text{M}$; $\\mathrm{PO_4^{3-}}$ is far smaller still."
+        ],
+        "a": "$\\text{pH} = 1.62$; $[\\mathrm{HPO_4^{2-}}] \\approx 6.2 \\times 10^{-8}\\ \\text{M}$."
+      },
+      {
+        "t": "mistake",
+        "html": "Adding up the $\\mathrm{H_3O^+}$ from every step as if each step ionized as much as the first, or as if a diprotic acid gave $2C$ of $\\mathrm{H_3O^+}$. Later steps start from a far smaller amount and have far smaller constants. Check: compare $K_{a2}$ with your $[\\mathrm{H_3O^+}]$ from step 1; it will be many powers of ten smaller."
+      },
+      {
+        "t": "note",
+        "html": "Sulfuric acid is the exception you meet most: its first proton is strong. Its second, $K_{a2} = 1.2 \\times 10^{-2}$, is weak but large enough that it must be solved as its own equilibrium in dilute solutions."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 14.5 Polyprotic Acids"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,88 @@
+{
+  "id": "stat.confidence-interval-mean",
+  "slug": "confidence-interval-mean",
+  "ladder": "math",
+  "course": "stat",
+  "unit": "inference",
+  "title": "Confidence Intervals for a Mean",
+  "short": "Use t when the population standard deviation is unknown.",
+  "trouble": "",
+  "prereqs": [
+    "stat.sampling-distribution-mean",
+    "stat.confidence-interval-proportion"
+  ],
+  "xp": 3,
+  "viz": [
+    "normal"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "To estimate a population mean, start from the <a href=\"/math/probability-and-statistics/sampling-distribution-mean/\">sampling distribution of $\\bar{x}$</a>: centered at $\\mu$ with standard deviation $\\sigma/\\sqrt{n}$. The interval looks like the <a href=\"/math/probability-and-statistics/confidence-interval-proportion/\">one for a proportion</a>, with one twist: we almost never know $\\sigma$."
+      },
+      {
+        "t": "key",
+        "html": "A confidence interval for a mean is\n$$\\bar{x} \\pm t^*\\dfrac{s}{\\sqrt{n}},$$\nwhere $t^*$ comes from the <b>t distribution</b> with $n - 1$ degrees of freedom. Use it with a random sample from a population that is roughly normal, or with a large sample (no strong skew or outliers when n is small)."
+      },
+      {
+        "t": "why",
+        "html": "If $\\sigma$ were known, $\\bar{x} \\pm z^*\\sigma/\\sqrt{n}$ would work exactly as for proportions. Replacing $\\sigma$ with the sample SD $s$ adds a second source of randomness: $s$ itself varies from sample to sample, and in small samples it is often too small. The statistic $(\\bar{x} - \\mu)/(s/\\sqrt{n})$ therefore varies more than a z-score; its distribution, the t distribution (worked out by William Gosset, writing as \"Student\"), has heavier tails. So $t^* > z^*$, and the interval is wider. With more data, $s$ settles down and t approaches the normal curve."
+      },
+      {
+        "t": "viz",
+        "name": "stat-curve",
+        "opts": {
+          "dist": "t",
+          "df": 3,
+          "x": 2.2,
+          "tail": "two",
+          "compare": true
+        },
+        "cap": "The t curve (blue) against the normal (dashed). Slide the degrees of freedom up: the tails thin out and t approaches the normal."
+      },
+      {
+        "t": "ex",
+        "title": "A 95% interval",
+        "q": "A random sample of 16 bags of trail mix has mean weight $\\bar{x} = 31.4$ grams and $s = 4$ grams. Find a 95% confidence interval for the mean weight of all bags. ($t^* = 2.131$ for 15 df.)",
+        "steps": [
+          "df $= 16 - 1 = 15$; standard error $= \\dfrac{4}{\\sqrt{16}} = 1$ gram.",
+          "Margin: $2.131 \\times 1 = 2.131$.",
+          "Interval: $31.4 \\pm 2.131$, from $29.269$ to $33.531$ grams.",
+          "We are 95% confident the mean weight of all bags is between about 29.3 and 33.5 grams."
+        ],
+        "a": "$(29.27, 33.53)$ grams"
+      },
+      {
+        "t": "ex",
+        "title": "A 90% interval",
+        "q": "A random sample of 25 commuters has $\\bar{x} = 72$ minutes and $s = 10$. Find a 90% interval. ($t^* = 1.711$ for 24 df.)",
+        "steps": [
+          "SE $= \\dfrac{10}{\\sqrt{25}} = 2$.",
+          "Margin: $1.711 \\times 2 = 3.422$.",
+          "Interval: $72 \\pm 3.422$, from $68.578$ to $75.422$ minutes."
+        ],
+        "a": "$(68.58, 75.42)$ minutes"
+      },
+      {
+        "t": "mistake",
+        "html": "Using $z^*$ with $s$, or the wrong degrees of freedom. With 16 observations, $z^* = 1.960$ would give an interval that captures $\\mu$ less often than 95% of the time. Check: if you used $s$, use $t^*$ with $n - 1$ degrees of freedom."
+      },
+      {
+        "t": "note",
+        "html": "Software reports these intervals for regression slopes and means alike; in the <a href=\"/business/econometrics/estimation-and-inference/\">econometrics course</a> every coefficient comes with one."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Introductory Statistics 2e, section 8.2 A Single Population Mean using the Student t Distribution"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

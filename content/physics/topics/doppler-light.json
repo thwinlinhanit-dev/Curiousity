@@ -1,0 +1,96 @@
+{
+  "id": "astro.doppler-light",
+  "slug": "doppler-light",
+  "ladder": "physics",
+  "course": "astro",
+  "unit": "light",
+  "title": "The Doppler Shift of Light",
+  "short": "A spectral line's shift gives the speed toward or away from us: Δλ/λ = v/c.",
+  "trouble": "Students think a redshifted object looks red to the eye.",
+  "prereqs": [
+    "astro.spectral-lines"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-spectrum",
+    "ph-doppler"
+  ],
+  "figureArchetype": "WaveFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A siren sounds higher as it comes toward you and lower as it goes away: the Doppler effect. Light does the same. With <a href=\"/physics/astronomy/spectral-lines/\">spectral lines</a> as precise markers, astronomers can measure how fast any star or galaxy is moving toward or away from us, from its light alone."
+      },
+      {
+        "t": "why",
+        "html": "A source moving away from us emits each wave crest from a little farther away than the last, so the crests arrive stretched apart: longer wavelengths, a <b>redshift</b>. A source moving toward us squeezes the crests together: a <b>blueshift</b>. In one wave period $T$ the source moves $vT$, so the wavelength changes by $\\Delta\\lambda = vT$ while the wavelength itself is $\\lambda = cT$. Dividing, $$\\frac{\\Delta\\lambda}{\\lambda} = \\frac{v}{c}.$$ This holds for speeds much less than $c$, and it measures only the <b>radial velocity</b>, the motion along our line of sight; sideways motion does not shift the lines."
+      },
+      {
+        "t": "key",
+        "html": "$\\dfrac{\\Delta\\lambda}{\\lambda_0} = \\dfrac{v}{c}$. Lines shifted to longer wavelengths (redshift) mean the source is moving away; shorter (blueshift) means toward us."
+      },
+      {
+        "t": "viz",
+        "name": "ph-spectrum",
+        "opts": {
+          "mode": "shift",
+          "v": 9000,
+          "task": "Drag the speed. Positive is away from us. Watch every hydrogen line slide by the same fraction."
+        },
+        "cap": "Hydrogen lines at rest (top) and from a source moving away at $9000$ km/s (bottom)."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A receding star",
+        "q": "Hydrogen's red line, at $656.3$ nm in the lab, appears at $656.5$ nm in a star's spectrum. Find the star's radial velocity.",
+        "steps": [
+          "$\\Delta\\lambda = 656.5 - 656.3 = 0.2$ nm (longer, so a redshift).",
+          "$v = c\\,\\frac{\\Delta\\lambda}{\\lambda_0} = 3.00 \\times 10^{5} \\times \\frac{0.2}{656.3} = 91$ km/s.",
+          "The star is moving away from us at about $91$ km/s."
+        ],
+        "a": "About $91$ km/s, away from us."
+      },
+      {
+        "t": "ex",
+        "title": "An approaching galaxy",
+        "q": "The Andromeda Galaxy moves toward us at about $300$ km/s. Where does its hydrogen-alpha line appear?",
+        "steps": [
+          "$\\Delta\\lambda = \\lambda_0\\,\\frac{v}{c} = 656.3 \\times \\frac{300}{3.00 \\times 10^{5}} = 0.66$ nm.",
+          "Toward us, so shorter: $656.3 - 0.66 = 655.6$ nm."
+        ],
+        "a": "About $655.6$ nm, a blueshift."
+      },
+      {
+        "t": "mistake",
+        "html": "A redshifted star does not look red. A star moving away at $30$ km/s shifts its lines by $\\frac{30}{300{,}000} = 0.01\\%$; a $500$ nm line moves to $500.05$ nm, far too little for any eye. The color of a star comes from its temperature; redshift is measured by comparing the positions of its dark lines with lab wavelengths. Check: if redshift changed colors noticeably, half the stars in the sky would look red and half blue."
+      },
+      {
+        "t": "viz",
+        "name": "ph-doppler",
+        "opts": {
+          "mode": "light",
+          "v": 3000,
+          "lineNm": 656.3
+        },
+        "cap": "A light source moving away: its wave crests stretch out behind it, and the spectral line moves to the red."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Astronomy 2e, section 5.6, The Doppler Effect"
+      },
+      {
+        "name": "NGSS HS-ESS1-2"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

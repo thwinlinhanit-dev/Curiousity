@@ -1,0 +1,105 @@
+{
+  "id": "apbio.signal-transduction",
+  "slug": "signal-transduction",
+  "ladder": "bio",
+  "course": "apbio",
+  "unit": "signaling",
+  "title": "Reception, Transduction and Response",
+  "short": "A ligand binds a receptor (on the surface, or inside for steroid hormones); a relay of proteins, often kinases adding phosphates and second messengers like cAMP, passes and amplifies the signal; the cell responds.",
+  "trouble": "Students think the signal molecule enters the cell and travels all the way to the nucleus. For most surface receptors the ligand stays outside; the message is passed by a cascade inside.",
+  "prereqs": [
+    "apbio.signaling-types",
+    "apbio.enzyme-inhibition"
+  ],
+  "xp": 3,
+  "viz": [
+    "bi-feedback"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A signal reaches a cell (<a href=\"/biology/advanced-biology/signaling-types/\">How Cells Signal</a>). What happens next comes in three stages: <b>reception</b>, <b>transduction</b> and <b>response</b>. The proteins that pass the message along are often enzymes, so <a href=\"/biology/advanced-biology/enzyme-inhibition/\">switching enzymes on and off</a> is the heart of it."
+      },
+      {
+        "t": "list",
+        "items": [
+          "<b>Reception</b>: the signal molecule (ligand) binds a receptor protein. Most ligands are large or polar and cannot cross the membrane, so their receptors sit <b>in the plasma membrane</b>: G protein-coupled receptors, receptor tyrosine kinases, and ligand-gated ion channels. Small nonpolar signals, such as steroid hormones like cortisol, cross the membrane and bind receptors <b>inside</b> the cell.",
+          "<b>Transduction</b>: the receptor changes shape and passes the message to relay molecules. Often a <b>phosphorylation cascade</b>: a protein kinase adds a phosphate to the next kinase, switching it on, and so on. <b>Second messengers</b> such as cAMP or Ca²⁺ ions spread the message through the cytoplasm. Phosphatases remove phosphates to switch the relay off.",
+          "<b>Response</b>: the last relay changes the cell's activity: it opens a channel, activates an enzyme, or turns genes on or off."
+        ]
+      },
+      {
+        "t": "key",
+        "html": "For a surface receptor, the ligand stays <b>outside</b> the cell. The message is carried inside by a <b>chain of shape changes</b>: receptor → relay proteins (kinases, second messengers) → response."
+      },
+      {
+        "t": "viz",
+        "name": "bi-feedback",
+        "opts": {
+          "steps": [
+            "Epinephrine binds a G protein-coupled receptor on a liver cell",
+            "The receptor activates a G protein (GTP replaces GDP)",
+            "The G protein switches on adenylyl cyclase, which makes cAMP from ATP",
+            "cAMP activates protein kinase A",
+            "A cascade of kinases activates glycogen phosphorylase",
+            "Glycogen is broken down; the cell releases glucose"
+          ],
+          "title": "The epinephrine pathway in a liver cell"
+        },
+        "cap": "A classic pathway: the hormone never enters the cell."
+      },
+      {
+        "t": "why",
+        "html": "Why use a relay instead of sending the ligand in? Three gains. The membrane stays sealed, since the message crosses as a change of shape, not as a molecule. Each step is a chance to <b>amplify</b> the signal, because one active enzyme can switch on many of the next. And each step is a point of <b>control</b>, where other signals or drugs can join in, or where a phosphatase or an enzyme that breaks down cAMP can switch the pathway off."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Inside or outside?",
+        "q": "Cortisol is a steroid hormone. Insulin is a protein. Where is each one's receptor?",
+        "steps": [
+          "Steroids are small and nonpolar (lipids), so they diffuse through the bilayer.",
+          "Cortisol binds a receptor in the cytoplasm; the pair moves to the nucleus and acts as a transcription factor.",
+          "Insulin is large and polar, so it cannot cross: its receptor is on the cell surface."
+        ],
+        "a": "Cortisol: inside the cell. Insulin: in the plasma membrane."
+      },
+      {
+        "t": "ex",
+        "title": "Blocking a step",
+        "q": "In the epinephrine pathway, a drug blocks the enzyme that breaks cAMP down. What happens when epinephrine binds?",
+        "steps": [
+          "cAMP is made as usual by adenylyl cyclase.",
+          "It is not broken down, so it stays high longer.",
+          "Protein kinase A stays active, and the cascade keeps running."
+        ],
+        "a": "The response is stronger and lasts longer: more glucose is released."
+      },
+      {
+        "t": "mistake",
+        "html": "Picturing the signal molecule entering the cell and traveling to the nucleus. For surface receptors, the ligand stays outside; only the message moves in, as a series of shape changes and second messengers. Only small nonpolar signals, such as steroids, actually enter. A check: is the ligand large or polar? Then its receptor is on the surface."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Biology 2e, 9.1 Signaling Molecules and Cellular Receptors"
+      },
+      {
+        "name": "OpenStax, Biology 2e, 9.2 Propagation of the Signal"
+      },
+      {
+        "name": "OpenStax, Biology 2e, 9.3 Response to the Signal"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

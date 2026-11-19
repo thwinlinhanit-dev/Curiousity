@@ -1,0 +1,106 @@
+{
+  "id": "modern.quantum-oscillator",
+  "slug": "quantum-oscillator",
+  "ladder": "physics",
+  "course": "modern",
+  "unit": "quantum",
+  "title": "The Quantum Harmonic Oscillator",
+  "short": "The energies are evenly spaced, E_n = (n + ½)ħω, starting from a nonzero zero-point energy.",
+  "trouble": "Students think a quantum oscillator can sit perfectly still at its lowest energy.",
+  "prereqs": [
+    "modern.particle-in-box",
+    "mech.shm-equation"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-quantum"
+  ],
+  "figureArchetype": "WaveFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A mass on a spring, the <a href=\"/physics/mechanics/shm-equation/\">simple harmonic oscillator</a>, is the most important model in physics, because almost anything near a stable equilibrium behaves like one: atoms in a molecule, atoms in a crystal, even the modes of light in a box. The quantum version has a strikingly simple ladder of energies."
+      },
+      {
+        "t": "key",
+        "html": "A quantum harmonic oscillator with angular frequency $\\omega = \\sqrt{k/m}$ can have only $$E_n = \\left(n + \\tfrac{1}{2}\\right)\\hbar\\omega,\\qquad n = 0, 1, 2, \\ldots$$ The levels are <b>evenly spaced</b> by $\\hbar\\omega = hf$, and the lowest, $E_0 = \\frac{1}{2}\\hbar\\omega$, is not zero (the zero-point energy)."
+      },
+      {
+        "t": "why",
+        "html": "Put $U = \\frac{1}{2}m\\omega^2x^2$ into the Schrödinger equation and try $\\psi_0 = e^{-x^2/2b^2}$. Then $\\psi_0'' = \\left(\\frac{x^2}{b^4} - \\frac{1}{b^2}\\right)\\psi_0$, and $$-\\frac{\\hbar^2}{2m}\\psi_0'' + \\tfrac{1}{2}m\\omega^2x^2\\psi_0 = \\left[\\frac{\\hbar^2}{2mb^2} + x^2\\left(\\tfrac{1}{2}m\\omega^2 - \\frac{\\hbar^2}{2mb^4}\\right)\\right]\\psi_0.$$ For this to be a constant times $\\psi_0$, the $x^2$ term must vanish: $b^2 = \\frac{\\hbar}{m\\omega}$. Then $E_0 = \\frac{\\hbar^2}{2mb^2} = \\frac{1}{2}\\hbar\\omega$. The higher states are this Gaussian times polynomials, each adding exactly $\\hbar\\omega$. A state with $E = 0$ would need the particle sitting exactly at $x = 0$ with $p = 0$, which the uncertainty principle forbids."
+      },
+      {
+        "t": "viz",
+        "name": "ph-quantum",
+        "opts": {
+          "mode": "oscillator",
+          "levels": 4
+        },
+        "cap": "The parabolic potential and the first four levels: evenly spaced, with the lowest at half a step above the bottom. The wave functions leak a little past the classical turning points."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A vibrating molecule",
+        "q": "The HCl molecule vibrates at $f = 8.66 \\times 10^{13}$ Hz. Find the spacing of its levels and its zero-point energy, in eV. ($h = 4.136 \\times 10^{-15}$ eV·s.)",
+        "steps": [
+          "Spacing: $hf = (4.136 \\times 10^{-15})(8.66 \\times 10^{13}) = 0.358$ eV.",
+          "$E_0 = \\frac{1}{2}hf = 0.179$ eV."
+        ],
+        "a": "Spacing 0.358 eV; zero-point energy 0.179 eV"
+      },
+      {
+        "t": "ex",
+        "title": "The light it absorbs",
+        "q": "What wavelength of light lifts the HCl molecule from $n = 0$ to $n = 1$?",
+        "steps": [
+          "$\\Delta E = \\hbar\\omega = 0.358$ eV.",
+          "$\\lambda = \\frac{1240\\ \\text{eV·nm}}{0.358\\ \\text{eV}} = 3460$ nm $= 3.46$ μm."
+        ],
+        "a": "$3.46$ μm, in the infrared: this is how molecules like CO₂ and H₂O absorb infrared light"
+      },
+      {
+        "t": "ex",
+        "title": "A classical oscillator",
+        "q": "A 0.10 kg mass on a spring with $k = 10$ N/m. How big is one quantum step $\\hbar\\omega$?",
+        "steps": [
+          "$\\omega = \\sqrt{10/0.10} = 10$ rad/s.",
+          "$\\hbar\\omega = (1.055 \\times 10^{-34})(10) = 1.1 \\times 10^{-33}$ J."
+        ],
+        "a": "About $10^{-33}$ J: far too fine for the steps to show in everyday springs"
+      },
+      {
+        "t": "p",
+        "html": "A molecule absorbs infrared light only if its vibration shakes an electric dipole. Nitrogen and oxygen molecules are symmetric, so stretching them makes no dipole and they hardly absorb infrared at all. Carbon dioxide and water vapor have vibrations that do, which is why those gases absorb the infrared light that Earth radiates."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking a quantum oscillator can sit perfectly still at its lowest energy. Its ground state has $E_0 = \\frac{1}{2}\\hbar\\omega$ and a spread in both position and momentum. Even at absolute zero, atoms in a crystal keep this zero-point motion. Check: if the particle sat still at the bottom, both $\\Delta x$ and $\\Delta p$ would be zero, breaking $\\Delta x\\,\\Delta p \\ge \\hbar/2$."
+      },
+      {
+        "t": "mistake",
+        "html": "Using the box's $n^2$ pattern here. Oscillator levels are evenly spaced; box levels spread apart."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 3, 7.5 The Quantum Harmonic Oscillator"
+      },
+      {
+        "name": "OpenStax University Physics Volume 3, 9.2 Molecular Spectra"
+      },
+      {
+        "name": "MIT OpenCourseWare 8.04 Quantum Physics I (Spring 2016)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

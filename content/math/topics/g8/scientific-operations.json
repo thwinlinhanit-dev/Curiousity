@@ -1,0 +1,96 @@
+{
+  "id": "g8.scientific-operations",
+  "slug": "scientific-operations",
+  "ladder": "math",
+  "course": "g8",
+  "unit": "exponents",
+  "title": "Operations in Scientific Notation",
+  "short": "Multiply, divide, add and subtract in scientific notation.",
+  "trouble": "Students add the exponents when adding two numbers in scientific notation.",
+  "prereqs": [
+    "g8.compare-scientific",
+    "g8.exponent-properties"
+  ],
+  "xp": 2,
+  "viz": [],
+  "figureArchetype": "LessonFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "To calculate with numbers in <a href=\"/math/pre-algebra/scientific-notation/\">scientific notation</a>, use the <a href=\"/math/pre-algebra/exponent-properties/\">exponent rules</a> on the powers of 10 and ordinary arithmetic on the first factors."
+      },
+      {
+        "t": "why",
+        "html": "Multiplying: since multiplication can be regrouped, $(3 \\times 10^{4})(2 \\times 10^{5}) = (3 \\cdot 2) \\times (10^{4} \\cdot 10^{5}) = 6 \\times 10^{9}$.<br>Adding is different. $3 \\times 10^{4} + 2 \\times 10^{5}$ is 3 ten-thousands plus 2 hundred-thousands. You can only add amounts of the same unit, just as you line up place values, so first rewrite one of them: $2 \\times 10^{5} = 20 \\times 10^{4}$."
+      },
+      {
+        "t": "key",
+        "html": "<b>Multiply or divide:</b> work on the first factors, and add or subtract the exponents. <b>Add or subtract:</b> first make the powers of 10 match, then add or subtract the first factors and keep the power. Finally, adjust so the first factor is between 1 and 10."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Multiply, then adjust",
+        "q": "Find $(5 \\times 10^{3})(4 \\times 10^{2})$.",
+        "steps": [
+          "First factors: $5 \\cdot 4 = 20$. Powers: $10^{3} \\cdot 10^{2} = 10^{5}$.",
+          "$20 \\times 10^{5}$ is not in scientific notation, since $20 \\ge 10$.",
+          "$20 = 2 \\times 10^{1}$, so the product is $2 \\times 10^{1} \\times 10^{5} = 2 \\times 10^{6}$."
+        ],
+        "a": "$2 \\times 10^{6}$"
+      },
+      {
+        "t": "ex",
+        "title": "Divide",
+        "q": "Find $\\dfrac{8.4 \\times 10^{7}}{2 \\times 10^{3}}$.",
+        "steps": [
+          "First factors: $8.4 \\div 2 = 4.2$.",
+          "Powers: $10^{7-3} = 10^{4}$."
+        ],
+        "a": "$4.2 \\times 10^{4}$"
+      },
+      {
+        "t": "ex",
+        "title": "Add",
+        "q": "Find $3.2 \\times 10^{5} + 4 \\times 10^{4}$.",
+        "steps": [
+          "Make the powers match: $4 \\times 10^{4} = 0.4 \\times 10^{5}$.",
+          "Add the first factors and keep $10^{5}$: $(3.2 + 0.4) \\times 10^{5}$."
+        ],
+        "a": "$3.6 \\times 10^{5}$"
+      },
+      {
+        "t": "ex",
+        "title": "Divide, then adjust",
+        "q": "Find $\\dfrac{1.5 \\times 10^{-2}}{3 \\times 10^{4}}$.",
+        "steps": [
+          "First factors: $1.5 \\div 3 = 0.5$. Powers: $10^{-2-4} = 10^{-6}$.",
+          "$0.5$ is less than 1, so write $0.5 = 5 \\times 10^{-1}$.",
+          "$5 \\times 10^{-1} \\times 10^{-6} = 5 \\times 10^{-7}$."
+        ],
+        "a": "$5 \\times 10^{-7}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Adding the exponents when adding: $(2 \\times 10^{3}) + (3 \\times 10^{3}) = 5 \\times 10^{6}$. Check in standard form: $2{,}000 + 3{,}000 = 5{,}000 = 5 \\times 10^{3}$. Adding exponents is the rule for multiplying."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Prealgebra 2e, Section 10.5: Integer Exponents and Scientific Notation"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 8, 8.EE.A.4 (operations with numbers in scientific notation)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

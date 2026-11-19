@@ -1,0 +1,114 @@
+[
+  {
+    "key": "title",
+    "source": "Relativistic Momentum and Energy"
+  },
+  {
+    "key": "short",
+    "source": "p = γmu and E = γmc², linked by E² = (pc)² + (mc²)²."
+  },
+  {
+    "key": "trouble",
+    "source": "Students write the kinetic energy as ½mv² at speeds near c, or as γmc² without subtracting mc²."
+  },
+  {
+    "key": "block.0.html",
+    "source": "In <a href=\"/physics/physics-2/mass-energy/\">Physics 2</a> you met $E = mc^2$ as the energy locked in mass. Here is where it comes from, and how energy and momentum change near the speed of light. The everyday formulas $p = mu$ and $K = \\frac{1}{2}mu^2$ cannot be the whole story: they would let a steady push accelerate anything past $c$."
+  },
+  {
+    "key": "block.1.html",
+    "source": "For a particle of mass $m$ moving at speed $u$, with $\\gamma = 1/\\sqrt{1 - u^2/c^2}$: $$p = \\gamma mu,\\qquad E = \\gamma mc^2,\\qquad K = E - mc^2 = (\\gamma - 1)mc^2,$$ and $$E^2 = (pc)^2 + (mc^2)^2.$$ The <b>rest energy</b> $mc^2$ is the energy at $u = 0$: 0.511 MeV for an electron, 938.3 MeV for a proton."
+  },
+  {
+    "key": "block.2.html",
+    "source": "Momentum must be conserved in every inertial frame; checking collisions with the Lorentz transformation shows that only $p = \\gamma mu$ works. Then kinetic energy is the work done by a net force starting from rest. Since $F = \\frac{dp}{dt}$ and $u = \\frac{dx}{dt}$, the work is $\\int F\\,dx = \\int u\\,dp$. Integrate by parts with $p = \\gamma mu$: $$K = \\int_0^u u'\\,dp = pu - \\int_0^u p\\,du' = \\gamma mu^2 - \\int_0^u \\frac{mu'\\,du'}{\\sqrt{1 - u'^2/c^2}}.$$ The last integral is $mc^2\\left(1 - \\frac{1}{\\gamma}\\right)$, and the algebra gives $K = \\gamma mc^2 - mc^2$. At low speed, $\\gamma \\approx 1 + \\frac{u^2}{2c^2}$ and $K \\approx \\frac{1}{2}mu^2$, as it should. As $u \\to c$, $\\gamma \\to \\infty$: reaching $c$ would take infinite energy."
+  },
+  {
+    "key": "block.3.cap",
+    "source": "Kinetic energy in units of the rest energy. The two curves agree at low speed; near $c$ the relativistic energy climbs without limit."
+  },
+  {
+    "key": "block.4.text",
+    "source": "Worked examples"
+  },
+  {
+    "key": "block.5.q",
+    "source": "Find $E$, $K$ and $p$ for an electron ($mc^2 = 0.511$ MeV) moving at $0.80c$."
+  },
+  {
+    "key": "block.5.title",
+    "source": "An electron at 0.80c"
+  },
+  {
+    "key": "block.5.a",
+    "source": "$E = 0.852$ MeV, $K = 0.341$ MeV, $p = 0.681$ MeV/$c$"
+  },
+  {
+    "key": "block.5.step.0",
+    "source": "$\\gamma = \\frac{1}{\\sqrt{1 - 0.64}} = 1.667$."
+  },
+  {
+    "key": "block.5.step.1",
+    "source": "$E = \\gamma mc^2 = 1.667 \\times 0.511 = 0.852$ MeV, so $K = 0.852 - 0.511 = 0.341$ MeV."
+  },
+  {
+    "key": "block.5.step.2",
+    "source": "$pc = \\gamma mc^2\\beta = 0.852 \\times 0.80 = 0.681$ MeV, so $p = 0.681$ MeV/$c$."
+  },
+  {
+    "key": "block.5.step.3",
+    "source": "Check: $\\sqrt{0.681^2 + 0.511^2} = 0.852$ MeV."
+  },
+  {
+    "key": "block.6.q",
+    "source": "A proton ($mc^2 = 938.3$ MeV) has kinetic energy 1.00 GeV. How fast is it?"
+  },
+  {
+    "key": "block.6.title",
+    "source": "From kinetic energy to speed"
+  },
+  {
+    "key": "block.6.a",
+    "source": "$u = 0.875c$"
+  },
+  {
+    "key": "block.6.step.0",
+    "source": "$\\gamma = 1 + \\frac{K}{mc^2} = 1 + \\frac{1000}{938.3} = 2.066$."
+  },
+  {
+    "key": "block.6.step.1",
+    "source": "$\\beta = \\sqrt{1 - \\frac{1}{\\gamma^2}} = \\sqrt{1 - 0.2343} = 0.875$."
+  },
+  {
+    "key": "block.7.q",
+    "source": "Compare $\\frac{1}{2}mu^2$ with the true kinetic energy for the electron at $0.80c$."
+  },
+  {
+    "key": "block.7.title",
+    "source": "What the classical formula gets wrong"
+  },
+  {
+    "key": "block.7.a",
+    "source": "The classical formula is low by a factor of about 2"
+  },
+  {
+    "key": "block.7.step.0",
+    "source": "$\\frac{1}{2}mu^2 = \\frac{1}{2}(mc^2)\\beta^2 = 0.5 \\times 0.511 \\times 0.64 = 0.164$ MeV."
+  },
+  {
+    "key": "block.7.step.1",
+    "source": "The true value is 0.341 MeV, more than twice as much."
+  },
+  {
+    "key": "block.8.html",
+    "source": "Particle accelerators live in this regime. Protons in the Large Hadron Collider at CERN reach 6.8 TeV of energy, so $\\gamma = \\frac{6800\\ \\text{GeV}}{0.938\\ \\text{GeV}} \\approx 7250$ and their speed is about $0.99999999c$. Pushing harder adds a great deal of energy and momentum but almost no speed."
+  },
+  {
+    "key": "block.9.html",
+    "source": "Using $\\frac{1}{2}mv^2$ near the speed of light, or taking $\\gamma mc^2$ itself as the kinetic energy. $\\gamma mc^2$ is the <b>total</b> energy; subtract the rest energy to get $K = (\\gamma - 1)mc^2$. Check: at $u = 0$ the kinetic energy must be zero, and $(\\gamma - 1)mc^2 = 0$ there, while $\\gamma mc^2 = mc^2$ is not."
+  },
+  {
+    "key": "block.10.html",
+    "source": "Mixing units. In particle physics, energies are in MeV, momenta in MeV/$c$ and masses in MeV/$c^2$; then $pc$ is in MeV and the $c$'s take care of themselves."
+  }
+]

@@ -1,0 +1,95 @@
+{
+  "id": "alg1.absolute-value-functions",
+  "slug": "absolute-value-functions",
+  "ladder": "math",
+  "course": "alg1",
+  "unit": "functions",
+  "title": "Graphs of Absolute Value Functions",
+  "short": "Graph V-shapes and see them as two linear pieces.",
+  "trouble": "",
+  "prereqs": [
+    "alg1.piecewise-functions",
+    "alg1.absolute-value-equations"
+  ],
+  "xp": 2,
+  "viz": [
+    "graph",
+    "transformfn"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The function $f(x) = |x|$ is a <a href=\"/math/algebra-1/piecewise-functions/\">piecewise function</a> in disguise: $$|x| = \\begin{cases} -x & \\text{if } x < 0 \\\\ x & \\text{if } x \\ge 0 \\end{cases}$$ Its graph is a V: the line $y = -x$ on the left, the line $y = x$ on the right, meeting at the vertex $(0, 0)$."
+      },
+      {
+        "t": "why",
+        "html": "Why a V? Absolute value is distance from $0$, as in <a href=\"/math/algebra-1/absolute-value-equations/\">absolute value equations</a>, so it is never negative, and it grows at the same rate in both directions. In $f(x) = a|x - h| + k$: the inside is $0$ when $x = h$, so the turn happens there; then the output is $k$, so the vertex is $(h, k)$. The number $a$ is the slope of the right side ($-a$ on the left): a positive $a$ opens up, a negative $a$ opens down, and a larger $|a|$ makes a narrower V."
+      },
+      {
+        "t": "viz",
+        "name": "transformfn",
+        "opts": {
+          "parent": "abs(x)",
+          "a": 1,
+          "h": 2,
+          "k": -3,
+          "use": [
+            "a",
+            "h",
+            "k"
+          ],
+          "points": true
+        },
+        "cap": "Move $a$, $h$ and $k$. The vertex sits at $(h, k)$, and $a$ sets the steepness and the direction of the V."
+      },
+      {
+        "t": "key",
+        "html": "$f(x) = a|x - h| + k$ is a V with vertex $(h, k)$. It opens up if $a > 0$ and down if $a < 0$; its two sides are lines with slopes $a$ and $-a$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Read the features",
+        "q": "Describe the graph of $f(x) = -2|x + 1| + 4$.",
+        "steps": [
+          "Write it as $-2|x - (-1)| + 4$: $h = -1$ and $k = 4$, so the vertex is $(-1, 4)$.",
+          "$a = -2 < 0$: it opens down, so $4$ is the maximum value.",
+          "Each side has slope $\\pm 2$: from the vertex, go $1$ right and $2$ down."
+        ],
+        "a": "Vertex $(-1, 4)$, opens down, maximum $4$."
+      },
+      {
+        "t": "ex",
+        "title": "Write it as two lines",
+        "q": "Write $g(x) = |x - 3| + 1$ without bars for $x \\ge 3$ and for $x < 3$.",
+        "steps": [
+          "For $x \\ge 3$, $x - 3 \\ge 0$, so $|x - 3| = x - 3$ and $g(x) = x - 2$.",
+          "For $x < 3$, $x - 3 < 0$, so $|x - 3| = 3 - x$ and $g(x) = 4 - x$."
+        ],
+        "a": "$g(x) = x - 2$ for $x \\ge 3$; $g(x) = 4 - x$ for $x < 3$."
+      },
+      {
+        "t": "note",
+        "html": "The sign inside the bars is opposite to the shift: $|x - 3|$ moves the vertex right to $x = 3$, and $|x + 1|$ moves it left to $x = -1$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Algebra 2e, section 3.6 Absolute Value Functions"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, F-IF.C.7b"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

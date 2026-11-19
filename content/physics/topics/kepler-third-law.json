@@ -1,0 +1,152 @@
+{
+  "id": "astro.kepler-third-law",
+  "slug": "kepler-third-law",
+  "ladder": "physics",
+  "course": "astro",
+  "unit": "orbits",
+  "title": "Kepler's Third Law",
+  "short": "P² = a³ when the period is in years and the size of the orbit is in astronomical units.",
+  "trouble": "Students think a planet twice as far out takes twice as long, missing that it also moves more slowly.",
+  "prereqs": [
+    "astro.kepler-second-law",
+    "alg1.rational-exponents"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-orbit"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Kepler's <a href=\"/physics/astronomy/kepler-second-law/\">second law</a> covers one planet. In 1619 he found a rule that links them all: the farther a planet is from the Sun, the longer its year, in a precise way. It uses the <a href=\"/math/algebra-1/rational-exponents/\">fractional exponents</a> you know: $P = a^{3/2}$."
+      },
+      {
+        "t": "why",
+        "html": "Measure the period $P$ in years and the semi-major axis $a$ in AU, and for every planet $P^2 = a^3$. Two things stretch an outer planet's year. Its path is longer, in proportion to $a$. And gravity is weaker out there, so it moves more slowly: for circular orbits, speed goes as $1/\\sqrt{a}$. Time is path divided by speed: $P \\propto a \\div \\frac{1}{\\sqrt{a}} = a^{3/2}$, so $P^2 \\propto a^3$. Earth sets the units: $1$ AU and $1$ year make the constant $1$."
+      },
+      {
+        "t": "key",
+        "html": "Kepler's third law: $P^2 = a^3$ ($P$ in years, $a$ in AU, for bodies orbiting the Sun). So $P = a^{3/2}$ and $a = P^{2/3}$. Twice as far means $2^{3/2} \\approx 2.8$ times as long."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Planet",
+          "$a$ (AU)",
+          "$P$ (yr)",
+          "$a^3$",
+          "$P^2$"
+        ],
+        "rows": [
+          [
+            "Mercury",
+            "0.387",
+            "0.241",
+            "0.058",
+            "0.058"
+          ],
+          [
+            "Earth",
+            "1.000",
+            "1.000",
+            "1.00",
+            "1.00"
+          ],
+          [
+            "Mars",
+            "1.524",
+            "1.881",
+            "3.54",
+            "3.54"
+          ],
+          [
+            "Jupiter",
+            "5.203",
+            "11.86",
+            "140.8",
+            "140.7"
+          ],
+          [
+            "Saturn",
+            "9.537",
+            "29.46",
+            "867",
+            "868"
+          ]
+        ],
+        "cap": "The two columns on the right agree: $P^2 = a^3$ (orbital data from NASA)."
+      },
+      {
+        "t": "viz",
+        "name": "ph-orbit",
+        "opts": {
+          "mode": "kepler",
+          "a": 2,
+          "e": 0.1,
+          "task": "Change the semi-major axis and watch the period in the numbers below. The graph on the right shows the planets on a straight line of slope 3/2 (log scales).",
+          "lab": "/science-lab/orbits/"
+        },
+        "cap": "An orbit with $a = 2$ AU takes $2^{3/2} = 2.83$ years. On log scales, $\\log P = \\frac{3}{2}\\log a$ is a straight line through all eight planets."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Jupiter's year",
+        "q": "Jupiter's orbit has $a = 5.20$ AU. Find its period.",
+        "steps": [
+          "$P^2 = a^3 = 5.20^3 = 140.6$.",
+          "$P = \\sqrt{140.6} = 11.9$ years."
+        ],
+        "a": "About $11.9$ years."
+      },
+      {
+        "t": "ex",
+        "title": "From period to distance",
+        "q": "An asteroid orbits the Sun every $8$ years. How far out is it?",
+        "steps": [
+          "$a^3 = P^2 = 64$.",
+          "$a = \\sqrt[3]{64} = 4$ AU: beyond the main asteroid belt, a little more than three-quarters of the way out to Jupiter."
+        ],
+        "a": "$4$ AU."
+      },
+      {
+        "t": "ex",
+        "title": "Days to years",
+        "q": "Venus orbits in $224.7$ days. Find $a$.",
+        "steps": [
+          "Convert to years: $224.7 \\div 365.25 = 0.6152$ yr.",
+          "$a^3 = 0.6152^2 = 0.3785$, so $a = \\sqrt[3]{0.3785} = 0.723$ AU."
+        ],
+        "a": "$0.723$ AU."
+      },
+      {
+        "t": "mistake",
+        "html": "A tempting guess is that a planet twice as far out takes twice as long. That forgets the second effect: it also moves more slowly. Check with $P^2 = a^3$: $a = 2$ gives $P = \\sqrt{8} \\approx 2.83$ years, not 2. Mars ($1.52$ AU) takes $1.88$ years, not $1.52$."
+      },
+      {
+        "t": "note",
+        "html": "This form works only for objects orbiting the Sun, in years and AU. <a href=\"/physics/astronomy/weighing-with-orbits/\">Newton's version</a> works around any star or planet. Launch your own orbits in the <a href=\"/science-lab/orbits/\">Orbit Lab</a>."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Astronomy 2e, section 3.1, The Laws of Planetary Motion"
+      },
+      {
+        "name": "NASA Planetary Fact Sheets"
+      },
+      {
+        "name": "NGSS HS-ESS1-4"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

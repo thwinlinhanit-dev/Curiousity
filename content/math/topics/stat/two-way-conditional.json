@@ -1,0 +1,116 @@
+{
+  "id": "stat.two-way-conditional",
+  "slug": "two-way-conditional",
+  "ladder": "math",
+  "course": "stat",
+  "unit": "probability-rules",
+  "title": "Conditional Probability from Two-Way Tables",
+  "short": "Divide by the row or column total that matches the condition.",
+  "trouble": "Students divide by the grand total instead of the total for the given condition.",
+  "prereqs": [
+    "stat.conditional-probability",
+    "alg1.two-way-relative-frequency"
+  ],
+  "xp": 2,
+  "viz": [],
+  "figureArchetype": "LessonFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In Algebra 1 you read <a href=\"/math/algebra-1/two-way-relative-frequency/\">two-way tables</a> with row and column percents. Those percents are <a href=\"/math/probability-and-statistics/conditional-probability/\">conditional probabilities</a>: the row or column you restrict to is the condition."
+      },
+      {
+        "t": "key",
+        "html": "In a two-way table, divide the cell by the total of the condition:\n$$P(\\text{row} \\mid \\text{column}) = \\dfrac{\\text{cell}}{\\text{column total}}, \\qquad P(\\text{column} \\mid \\text{row}) = \\dfrac{\\text{cell}}{\\text{row total}}.$$\nWith no condition, divide by the grand total."
+      },
+      {
+        "t": "why",
+        "html": "A condition picks out one row or one column of the table: those are the only individuals we are now choosing from. The cell where the row and column meet holds the ones that satisfy both. So the denominator is always the total of whatever you were \"given.\""
+      },
+      {
+        "t": "table",
+        "head": [
+          "",
+          "Took review class",
+          "Did not",
+          "Total"
+        ],
+        "rows": [
+          [
+            "Passed",
+            "45",
+            "90",
+            "135"
+          ],
+          [
+            "Did not pass",
+            "5",
+            "60",
+            "65"
+          ],
+          [
+            "Total",
+            "50",
+            "150",
+            "200"
+          ]
+        ],
+        "cap": "200 students who took a certification exam."
+      },
+      {
+        "t": "ex",
+        "title": "Given the column",
+        "q": "Find the probability that a student passed, given that the student took the review class.",
+        "steps": [
+          "The condition is \"took the review class\": use that column, 50 students.",
+          "Of those, 45 passed.",
+          "$P(\\text{passed} \\mid \\text{review}) = \\dfrac{45}{50} = 0.9$."
+        ],
+        "a": "$0.9$"
+      },
+      {
+        "t": "ex",
+        "title": "Given the row",
+        "q": "Find the probability that a student took the review class, given that the student passed.",
+        "steps": [
+          "The condition is \"passed\": use that row, 135 students.",
+          "Of those, 45 took the class.",
+          "$P(\\text{review} \\mid \\text{passed}) = \\dfrac{45}{135} = \\dfrac{1}{3}$."
+        ],
+        "a": "$\\frac{1}{3}$"
+      },
+      {
+        "t": "ex",
+        "title": "No condition",
+        "q": "Find the probability that a randomly chosen student took the review class and passed.",
+        "steps": [
+          "No \"given,\" so all 200 students are in play.",
+          "$P = \\dfrac{45}{200} = 0.225$."
+        ],
+        "a": "$0.225$"
+      },
+      {
+        "t": "mistake",
+        "html": "Dividing by the grand total when the question gives a condition. \"Of the students who took the review class, what fraction passed?\" has 50 in the denominator, not 200. Check: find the word \"given\" (or \"of those who,\" \"among\") and divide by that group's total."
+      },
+      {
+        "t": "note",
+        "html": "Comparing $P(\\text{passed} \\mid \\text{review}) = 0.9$ with $$P(\\text{passed} \\mid \\text{no review}) = 90/150 = 0.6$$ shows an association between the class and passing. (This is observational data, so it does not prove the class causes passing.)"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Introductory Statistics 2e, section 3.4 Contingency Tables"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, S-CP.A.4 (Construct and interpret two-way frequency tables)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

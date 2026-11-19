@@ -1,0 +1,131 @@
+{
+  "id": "pre.fundamental-identities",
+  "slug": "fundamental-identities",
+  "ladder": "math",
+  "course": "pre",
+  "unit": "identities-equations",
+  "title": "Reciprocal, Quotient and Pythagorean Identities",
+  "short": "Rewrite trig expressions in terms of sine and cosine.",
+  "trouble": "",
+  "prereqs": [
+    "pre.pythagorean-identity"
+  ],
+  "xp": 2,
+  "viz": [
+    "unitcircle"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "An <b>identity</b> is an equation that is true for every value where both sides are defined, like $\\sin^2 x + \\cos^2 x = 1$ from <a href=\"/math/precalculus/pythagorean-identity/\">the Pythagorean identity</a>. A short list of identities lets you rewrite complicated expressions as simple ones. You do not need to memorize them as separate facts: they all come from the definitions and that one circle equation."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Kind",
+          "Identities"
+        ],
+        "rows": [
+          [
+            "Reciprocal",
+            "$\\csc x = \\dfrac{1}{\\sin x}$, $\\sec x = \\dfrac{1}{\\cos x}$, $\\cot x = \\dfrac{1}{\\tan x}$"
+          ],
+          [
+            "Quotient",
+            "$\\tan x = \\dfrac{\\sin x}{\\cos x}$, $\\cot x = \\dfrac{\\cos x}{\\sin x}$"
+          ],
+          [
+            "Pythagorean",
+            "$\\sin^2 x + \\cos^2 x = 1$, $\\ 1 + \\tan^2 x = \\sec^2 x$, $\\ 1 + \\cot^2 x = \\csc^2 x$"
+          ],
+          [
+            "Even and odd",
+            "$\\sin(-x) = -\\sin x$, $\\cos(-x) = \\cos x$, $\\tan(-x) = -\\tan x$"
+          ]
+        ],
+        "cap": "The fundamental identities."
+      },
+      {
+        "t": "why",
+        "html": "The reciprocal and quotient identities are the definitions of the four other functions. Divide $\\sin^2 x + \\cos^2 x = 1$ by $\\cos^2 x$: $\\frac{\\sin^2 x}{\\cos^2 x} + 1 = \\frac{1}{\\cos^2 x}$, which is $\\tan^2 x + 1 = \\sec^2 x$. Divide by $\\sin^2 x$ instead to get $1 + \\cot^2 x = \\csc^2 x$."
+      },
+      {
+        "t": "key",
+        "html": "To simplify, rewrite everything in terms of $\\sin x$ and $\\cos x$, combine fractions, and watch for $\\sin^2 x + \\cos^2 x$ (or $1 - \\cos^2 x$, $1 - \\sin^2 x$) to replace."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "fns": [
+            "sin(x)^2",
+            "cos(x)^2",
+            {
+              "f": "sin(x)^2+cos(x)^2",
+              "color": "green",
+              "label": "sum"
+            }
+          ],
+          "xmin": -6.3,
+          "xmax": 6.3,
+          "ymin": -0.5,
+          "ymax": 1.5
+        },
+        "cap": "The two squares trade places as $x$ changes, but their sum (green) never moves off $1$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Quotient identity",
+        "q": "Simplify $\\sin x\\cot x$.",
+        "steps": [
+          "$\\cot x = \\dfrac{\\cos x}{\\sin x}$.",
+          "$\\sin x \\cdot \\dfrac{\\cos x}{\\sin x} = \\cos x$, since the factor $\\sin x$ cancels."
+        ],
+        "a": "$\\cos x$"
+      },
+      {
+        "t": "ex",
+        "title": "Pythagorean identity",
+        "q": "Simplify $\\dfrac{1 - \\cos^2 x}{\\sin x}$.",
+        "steps": [
+          "$1 - \\cos^2 x = \\sin^2 x$.",
+          "$\\dfrac{\\sin^2 x}{\\sin x} = \\sin x$."
+        ],
+        "a": "$\\sin x$"
+      },
+      {
+        "t": "ex",
+        "title": "Common denominator",
+        "q": "Simplify $\\sec x - \\sin x\\tan x$.",
+        "steps": [
+          "In sines and cosines: $\\dfrac{1}{\\cos x} - \\dfrac{\\sin^2 x}{\\cos x}$.",
+          "Same denominator: $\\dfrac{1 - \\sin^2 x}{\\cos x} = \\dfrac{\\cos^2 x}{\\cos x}$.",
+          "$= \\cos x$."
+        ],
+        "a": "$\\cos x$"
+      },
+      {
+        "t": "mistake",
+        "html": "Cancelling a term instead of a factor: $\\dfrac{1 - \\sin x}{\\sin x}$ is not $1 - 1$. You can only cancel something that multiplies the whole top and the whole bottom. Here the correct split is $\\dfrac{1}{\\sin x} - 1 = \\csc x - 1$. Check any simplification by plugging in an angle such as $\\frac{\\pi}{6}$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Precalculus 2e, Section 7.1 Solving Trigonometric Equations with Identities"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, F-TF.C.8"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

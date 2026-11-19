@@ -1,0 +1,146 @@
+{
+  "id": "phys2.pv-work",
+  "slug": "pv-work",
+  "ladder": "physics",
+  "course": "phys2",
+  "unit": "thermodynamics",
+  "title": "Work Done on a Gas",
+  "short": "W = −PΔV is the work done on the gas, and its size is the area under the path on a P–V diagram.",
+  "trouble": "Students get the sign of the work wrong, mixing up the work done on the gas with the work done by it.",
+  "prereqs": [
+    "phys2.ideal-gas-law",
+    "phys1.work-from-graphs"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-pv"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A gas can push a piston, so it can do work. In <a href=\"/physics/physics-1/work-from-graphs/\">Work as Area Under a Force Graph</a> work was the area under a force–distance graph. For a gas, the same idea becomes the area under a pressure–volume graph, using the <a href=\"/physics/physics-2/ideal-gas-law/\">gas law</a> to connect the states."
+      },
+      {
+        "t": "why",
+        "html": "A gas at pressure $P$ pushes on a piston of area $A$ with force $PA$. If the piston moves out a small distance $\\Delta x$, the gas does work $PA\\,\\Delta x = P\\,\\Delta V$ on it. That energy leaves the gas, so the work done <b>on</b> the gas is $W = -P\\,\\Delta V$. If the pressure changes as the volume changes, add up thin strips: the size of the work is the area under the path on the P–V diagram."
+      },
+      {
+        "t": "key",
+        "html": "Work done on a gas: $W = -P\\Delta V$ at constant pressure; in general $|W|$ is the area under the path on a P–V diagram. Expansion: $W < 0$ (the gas does work). Compression: $W > 0$. Constant volume: $W = 0$. Handy: $1\\,\\text{kPa} \\cdot \\text{L} = 1\\,\\text{J}$."
+      },
+      {
+        "t": "viz",
+        "name": "ph-pv",
+        "opts": {
+          "mode": "process",
+          "states": [
+            [
+              200,
+              2
+            ],
+            [
+              200,
+              6
+            ]
+          ],
+          "path": [
+            "isobaric"
+          ],
+          "task": "Drag the end state left and right. Watch the shaded area and the sign of W."
+        },
+        "cap": "The shaded area under the path is the size of the work; its sign depends on the direction."
+      },
+      {
+        "t": "table",
+        "head": [
+          "",
+          "This course (and AP Physics 2)",
+          "Science Lab and OpenStax College Physics"
+        ],
+        "rows": [
+          [
+            "First law",
+            "$\\Delta U = Q + W$",
+            "$\\Delta U = Q - W_{\\text{by}}$"
+          ],
+          [
+            "The work in it",
+            "$W$ = work done <b>on</b> the gas $= -P\\Delta V$",
+            "$W_{\\text{by}}$ = work done <b>by</b> the gas $= +P\\Delta V$"
+          ],
+          [
+            "Gas expands",
+            "$W < 0$",
+            "$W_{\\text{by}} > 0$"
+          ],
+          [
+            "Heat $Q$",
+            "positive into the gas",
+            "positive into the gas"
+          ]
+        ],
+        "cap": "Two ways of writing the same law. Since $W = -W_{\\text{by}}$, they always give the same $\\Delta U$."
+      },
+      {
+        "t": "p",
+        "html": "The <a href=\"/science-lab/thermodynamics/first-law/\">Energy and the First Law</a> chapter of the Science Lab uses the work done <em>by</em> the gas, as in the right-hand column. Both are correct; just never mix them in one problem."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Expanding at constant pressure",
+        "q": "A gas at a constant $200\\,\\text{kPa}$ expands from $2.0\\,\\text{L}$ to $6.0\\,\\text{L}$. Find the work done on it.",
+        "steps": [
+          "$\\Delta V = 4.0\\,\\text{L} = 4.0 \\times 10^{-3}\\,\\text{m}^3$.",
+          "$W = -P\\Delta V = -(2.00 \\times 10^{5}\\,\\text{Pa})(4.0 \\times 10^{-3}\\,\\text{m}^3) = -800\\,\\text{J}$.",
+          "Negative: the gas did $800\\,\\text{J}$ of work on the piston. (Shortcut: $200\\,\\text{kPa} \\times 4.0\\,\\text{L} = 800\\,\\text{J}$.)"
+        ],
+        "a": "$W = -800\\,\\text{J}$"
+      },
+      {
+        "t": "ex",
+        "title": "Compressing",
+        "q": "A gas is compressed at a constant $150\\,\\text{kPa}$ from $5.0\\,\\text{L}$ to $2.0\\,\\text{L}$. Find the work done on it.",
+        "steps": [
+          "$\\Delta V = 2.0 - 5.0 = -3.0\\,\\text{L}$.",
+          "$W = -P\\Delta V = -(150\\,\\text{kPa})(-3.0\\,\\text{L}) = +450\\,\\text{J}$. The piston gave the gas energy."
+        ],
+        "a": "$W = +450\\,\\text{J}$"
+      },
+      {
+        "t": "ex",
+        "title": "A sloped path",
+        "q": "A gas expands along a straight line on the P–V diagram from $(100\\,\\text{kPa}, 1.0\\,\\text{L})$ to $(300\\,\\text{kPa}, 3.0\\,\\text{L})$. Find the work done on it.",
+        "steps": [
+          "The area under a straight line is a trapezoid: $\\tfrac{1}{2}(100 + 300)\\,\\text{kPa} \\times 2.0\\,\\text{L} = 400\\,\\text{J}$.",
+          "The gas expanded, so $W = -400\\,\\text{J}$."
+        ],
+        "a": "$W = -400\\,\\text{J}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Getting the sign of the work wrong by mixing up the work done <em>on</em> the gas with the work done <em>by</em> it. Decide first: is the gas expanding (it does work, so $W$ on it is negative) or being compressed ($W$ on it is positive)? Then check that your formula agrees."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e, section 15.1 The First Law of Thermodynamics"
+      },
+      {
+        "name": "OpenStax, University Physics Volume 2, section 3.2 Work, Heat, and Internal Energy"
+      },
+      {
+        "name": "College Board, AP Physics 2 Course and Exam Description, Unit 9: Thermodynamics"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

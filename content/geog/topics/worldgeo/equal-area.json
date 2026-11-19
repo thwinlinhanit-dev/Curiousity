@@ -1,0 +1,122 @@
+{
+  "id": "worldgeo.equal-area",
+  "slug": "equal-area",
+  "ladder": "geog",
+  "course": "worldgeo",
+  "unit": "maps-projections",
+  "title": "Equal-Area Maps",
+  "short": "Equal-area projections, such as Gall-Peters, Mollweide and Equal Earth, show every country at its true size compared with others, but bend shapes.",
+  "trouble": "Students think an equal-area map has no distortion. It keeps areas, but shapes, especially near the edges, are squeezed or stretched.",
+  "prereqs": [
+    "worldgeo.mercator"
+  ],
+  "xp": 2,
+  "viz": [
+    "gg-projection"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "If <a href=\"/geography/world-geography/mercator/\">Mercator</a> makes northern lands too big, can a map show every place at its true size? Yes, but it pays a price."
+      },
+      {
+        "t": "key",
+        "html": "An <b>equal-area</b> map shows every country at its <b>true size compared with every other</b>. To do it, it bends <b>shapes</b>, especially near the edges and the poles. Examples: <b>Gall-Peters</b>, <b>Mollweide</b> and <b>Equal Earth</b>."
+      },
+      {
+        "t": "viz",
+        "name": "gg-projection",
+        "opts": {
+          "compare": [
+            "gallpeters",
+            "mollweide"
+          ],
+          "highlight": [
+            "GRL",
+            "AF"
+          ]
+        },
+        "cap": "Two equal-area maps. Greenland and Africa are in their true proportion on both, but their shapes differ."
+      },
+      {
+        "t": "why",
+        "html": "Area is width times height. Near the poles, an equal-area map must squeeze lands north-south as much as it stretches them east-west, so each patch keeps its true area. Squeezing in one direction and stretching in the other changes shapes. Gall-Peters makes lands near the equator look tall and thin, and lands near the poles short and wide. Mollweide and Equal Earth curve the meridians in, which keeps shapes more natural in the middle but bends them near the edges."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Projection",
+          "Made",
+          "Looks like"
+        ],
+        "rows": [
+          [
+            "Gall-Peters",
+            "James Gall, 1855; promoted by Arno Peters, 1973",
+            "A rectangle; continents near the equator stretched tall"
+          ],
+          [
+            "Mollweide",
+            "Karl Mollweide, 1805",
+            "An oval"
+          ],
+          [
+            "Equal Earth",
+            "Šavrič, Patterson and Jenny, 2018",
+            "An oval with flat top and bottom"
+          ]
+        ],
+        "cap": "Three equal-area projections."
+      },
+      {
+        "t": "ex",
+        "title": "Comparing sizes",
+        "q": "You want a map showing how much of the world is covered by forest in each country. Which kind of projection should you use?",
+        "steps": [
+          "You will compare amounts of land, so sizes must be fair.",
+          "An equal-area map keeps every area in true proportion.",
+          "Mercator would make northern forests look far bigger than tropical ones."
+        ],
+        "a": "An equal-area map, such as Equal Earth."
+      },
+      {
+        "t": "ex",
+        "title": "Reading sizes",
+        "q": "On an equal-area map, Brazil covers about 3 times as much map as Argentina. What does that tell you?",
+        "steps": [
+          "On an equal-area map, map area is in proportion to real area.",
+          "So Brazil is about 3 times as big as Argentina in real life."
+        ],
+        "a": "Brazil really is about 3 times the size of Argentina (about 8.5 million km² against 2.8 million km²)."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking an equal-area map has no distortion. It keeps one thing, area, and gives up shape. Look at Africa on Gall-Peters: it is the right size, but it looks too tall and thin. No flat map is free of distortion."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Gall-Peters projection (Grokipedia)",
+        "url": "https://grokipedia.com/page/Gall–Peters_projection"
+      },
+      {
+        "name": "Mollweide projection (Grokipedia)",
+        "url": "https://grokipedia.com/page/Mollweide_projection"
+      },
+      {
+        "name": "Equal Earth projection (Grokipedia)",
+        "url": "https://grokipedia.com/page/Equal_Earth_projection"
+      },
+      {
+        "name": "CIA World Factbook, Geography sections of the country pages (cia.gov)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

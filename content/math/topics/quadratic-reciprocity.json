@@ -1,0 +1,96 @@
+{
+  "id": "nt.quadratic-reciprocity",
+  "slug": "quadratic-reciprocity",
+  "ladder": "math",
+  "course": "nt",
+  "unit": "quadratic-residues",
+  "title": "Quadratic Reciprocity",
+  "short": "For odd primes p ≠ q, (p/q) = (q/p), except when p ≡ q ≡ 3 (mod 4), when (p/q) = −(q/p).",
+  "trouble": "Students flip a symbol whose top number is not an odd prime (factor it first), or forget the minus sign when both primes are 3 mod 4.",
+  "prereqs": [
+    "nt.supplementary-laws"
+  ],
+  "xp": 3,
+  "viz": [],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Here are two questions that seem unrelated: is $13$ a square mod $47$? Is $47$ a square mod $13$? Gauss proved, as a teenager, that the answers are linked by a simple sign rule. He called it the <i>golden theorem</i> and gave several different proofs of it. With it and the <a href=\"/math/number-theory/supplementary-laws/\">supplementary laws</a>, any Legendre symbol shrinks quickly, much like the Euclidean algorithm."
+      },
+      {
+        "t": "p",
+        "html": "<b>The law of quadratic reciprocity.</b> For distinct odd primes $p$ and $q$, $$\\left(\\frac{p}{q}\\right)\\left(\\frac{q}{p}\\right) = (-1)^{\\frac{p-1}{2} \\cdot \\frac{q-1}{2}}.$$ In words: $\\left(\\frac{p}{q}\\right) = \\left(\\frac{q}{p}\\right)$, <b>unless</b> $p \\equiv q \\equiv 3 \\pmod{4}$, in which case $\\left(\\frac{p}{q}\\right) = -\\left(\\frac{q}{p}\\right)$."
+      },
+      {
+        "t": "why",
+        "html": "The exponent $\\frac{p-1}{2} \\cdot \\frac{q-1}{2}$ is odd only when both factors are odd, that is, when $p \\equiv q \\equiv 3 \\pmod{4}$; that is where the minus sign comes from. The proof is beyond this lesson (one classical proof counts the lattice points under the diagonal of a $\\frac{p}{2} \\times \\frac{q}{2}$ rectangle in two ways), but its power is easy to see: after flipping, the top number can be reduced mod the new bottom, so the numbers keep getting smaller until the supplementary laws or $\\left(\\frac{1}{q}\\right) = 1$ finish the job."
+      },
+      {
+        "t": "list",
+        "items": [
+          "Reduce the top mod the bottom.",
+          "Factor the top. Drop squared factors; handle $-1$ and $2$ with the supplementary laws.",
+          "For each odd prime on top, flip with reciprocity (minus sign if both are $3 \\bmod 4$), and repeat."
+        ]
+      },
+      {
+        "t": "ex",
+        "title": "One flip",
+        "q": "Find $\\left(\\frac{13}{47}\\right)$.",
+        "steps": [
+          "$13 \\equiv 1 \\pmod{4}$, so no sign: $\\left(\\frac{13}{47}\\right) = \\left(\\frac{47}{13}\\right)$.",
+          "$47 \\equiv 8 \\pmod{13}$: $\\left(\\frac{8}{13}\\right) = \\left(\\frac{2}{13}\\right)^{3} = \\left(\\frac{2}{13}\\right)$.",
+          "$13 \\equiv 5 \\pmod{8}$, so $\\left(\\frac{2}{13}\\right) = -1$."
+        ],
+        "a": "$\\left(\\frac{13}{47}\\right) = -1$: 13 is not a square mod 47."
+      },
+      {
+        "t": "ex",
+        "title": "Watch the sign",
+        "q": "Find $\\left(\\frac{19}{43}\\right)$.",
+        "steps": [
+          "$19 \\equiv 43 \\equiv 3 \\pmod{4}$, so $\\left(\\frac{19}{43}\\right) = -\\left(\\frac{43}{19}\\right) = -\\left(\\frac{5}{19}\\right)$.",
+          "$5 \\equiv 1 \\pmod{4}$: $\\left(\\frac{5}{19}\\right) = \\left(\\frac{19}{5}\\right) = \\left(\\frac{4}{5}\\right) = 1$, since 4 is a square.",
+          "So $\\left(\\frac{19}{43}\\right) = -1$."
+        ],
+        "a": "$-1$."
+      },
+      {
+        "t": "ex",
+        "title": "A composite top",
+        "q": "Find $\\left(\\frac{12}{31}\\right)$.",
+        "steps": [
+          "Factor first: $\\left(\\frac{12}{31}\\right) = \\left(\\frac{2}{31}\\right)^{2}\\left(\\frac{3}{31}\\right) = \\left(\\frac{3}{31}\\right)$.",
+          "$3 \\equiv 31 \\equiv 3 \\pmod{4}$: $\\left(\\frac{3}{31}\\right) = -\\left(\\frac{31}{3}\\right) = -\\left(\\frac{1}{3}\\right) = -1$."
+        ],
+        "a": "$-1$."
+      },
+      {
+        "t": "mistake",
+        "html": "Flipping a symbol whose top is not an odd prime. \"$\\left(\\frac{15}{17}\\right) = \\left(\\frac{17}{15}\\right) = \\left(\\frac{2}{15}\\right)$, and 2 is not a square mod 15, so the answer is $-1$\" is wrong: 15 is not prime, so the law does not apply to it, and the true value is $\\left(\\frac{3}{17}\\right)\\left(\\frac{5}{17}\\right) = (-1)(-1) = 1$. Factor the top into primes first. And when both primes are $3 \\bmod 4$, do not forget the minus sign."
+      },
+      {
+        "t": "note",
+        "html": "Reciprocity also answers \"for which primes $p$ is 3 a square?\" in one stroke: $\\left(\\frac{3}{p}\\right) = 1$ exactly when $p \\equiv \\pm 1 \\pmod{12}$. (Try $p = 11$: $5^{2} = 25 \\equiv 3$.) A version for composite bottoms, the Jacobi symbol, is left for a later course."
+      },
+      {
+        "t": "key",
+        "html": "For distinct odd primes, $\\left(\\frac{p}{q}\\right) = \\left(\\frac{q}{p}\\right)$ unless both are $3 \\bmod 4$, when there is a minus sign. Reduce, factor, flip, repeat."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "William Stein, Elementary Number Theory: Primes, Congruences, and Secrets (Springer, 2009; free online edition), chapter 4, Quadratic Reciprocity (statement of the quadratic reciprocity law)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.781 Theory of Numbers (Spring 2012), lecture notes on quadratic reciprocity"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

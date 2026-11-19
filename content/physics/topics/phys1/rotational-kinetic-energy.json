@@ -1,0 +1,98 @@
+{
+  "id": "phys1.rotational-kinetic-energy",
+  "slug": "rotational-kinetic-energy",
+  "ladder": "physics",
+  "course": "phys1",
+  "unit": "rotational-energy",
+  "title": "Rotational Kinetic Energy and Work by Torque",
+  "short": "A spinning object stores ½Iω², and a torque turning it through Δθ does work τΔθ.",
+  "trouble": "Students use ½mv² with the rim speed for an object that only spins.",
+  "prereqs": [
+    "phys1.rotational-inertia",
+    "phys1.work-energy-theorem"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-rotation",
+    "ph-energy"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A flywheel spinning in place goes nowhere, yet it can light a bulb or lift a weight: it stores kinetic energy. This topic finds how much, using <a href=\"/physics/physics-1/rotational-inertia/\">rotational inertia</a>, and extends the <a href=\"/physics/physics-1/work-energy-theorem/\">work-energy theorem</a> to turning."
+      },
+      {
+        "t": "why",
+        "html": "Split a spinning object into small pieces. A piece of mass $m$ at radius $r$ moves at $v = r\\omega$, so its kinetic energy is $\\tfrac{1}{2}m(r\\omega)^2$. Every piece shares the same $\\omega$, so adding them gives $$K = \\tfrac{1}{2}\\left(\\Sigma mr^2\\right)\\omega^2 = \\tfrac{1}{2}I\\omega^2.$$ For work: a force $F$ at radius $r$ pushing a piece along an arc $s = r\\Delta\\theta$ does work $Fs = (rF)\\Delta\\theta = \\tau\\Delta\\theta$."
+      },
+      {
+        "t": "key",
+        "html": "A spinning object stores $\\role[rotational kinetic energy]{energy}{K_{\\text{rot}}} = \\tfrac{1}{2}\\role[rotational inertia]{mass}{I}\\role{angvel}{\\omega}^2$ ($\\omega$ in rad/s). A torque turning it through $\\Delta\\theta$ (in radians) does work $W = \\tau\\Delta\\theta$, and the net work equals the change in rotational kinetic energy: $\\Sigma\\tau\\,\\Delta\\theta = \\tfrac{1}{2}I\\omega_f^2 - \\tfrac{1}{2}I\\omega_i^2$."
+      },
+      {
+        "t": "viz",
+        "name": "ph-rotation",
+        "opts": {
+          "mode": "wheel",
+          "omega0": 2,
+          "task": "Compare the dots: the rim dot moves four times as fast as the inner one, so each kilogram there carries sixteen times the kinetic energy.",
+          "roleLinks": {
+            "Angular speed": "angvel"
+          }
+        },
+        "cap": "Speeds grow with radius ($v = r\\omega$), so kinetic energy is concentrated near the rim. That is why flywheels put their mass in a heavy outer ring."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A spinning flywheel",
+        "q": "A solid-disk flywheel ($50\\ \\text{kg}$, radius $0.30\\ \\text{m}$) spins at $600$ rpm. How much kinetic energy does it store?",
+        "steps": [
+          "$I = \\tfrac{1}{2}(50)(0.30)^2 = 2.25\\ \\text{kg·m}^2$.",
+          "$\\omega = 600 \\times \\dfrac{2\\pi}{60} = 62.8\\ \\text{rad/s}$.",
+          "$K = \\tfrac{1}{2}(2.25)(62.8)^2 = 4440\\ \\text{J}$, about the energy needed to lift a $45\\ \\text{kg}$ person $10\\ \\text{m}$."
+        ],
+        "a": "about $4.4 \\times 10^{3}\\ \\text{J}$"
+      },
+      {
+        "t": "ex",
+        "title": "Spinning up with a torque",
+        "q": "A motor applies a net torque of $4.0\\ \\text{N·m}$ to a wheel ($I = 0.50\\ \\text{kg·m}^2$) at rest while it turns $5$ revolutions. Find its final $\\omega$.",
+        "steps": [
+          "$\\Delta\\theta = 5 \\times 2\\pi = 31.4\\ \\text{rad}$, so $W = (4.0)(31.4) = 126\\ \\text{J}$.",
+          "$W = \\tfrac{1}{2}I\\omega^2$: $\\omega = \\sqrt{\\dfrac{2(126)}{0.50}} = 22.4\\ \\text{rad/s}$."
+        ],
+        "a": "$22\\ \\text{rad/s}$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Using $\\tfrac{1}{2}mv^2$ with the rim speed for an object that only spins.</b> Only the rim moves at that speed; everything inside moves more slowly. For a solid disk, $\\tfrac{1}{2}I\\omega^2 = \\tfrac{1}{2}\\left(\\tfrac{1}{2}MR^2\\right)\\left(\\tfrac{v}{R}\\right)^2 = \\tfrac{1}{4}Mv^2$, half of $\\tfrac{1}{2}Mv^2$. Another trap is $\\omega$ in rpm: $\\tfrac{1}{2}I\\omega^2$ needs rad/s. Check: a spinning object's $K$ can never be more than $\\tfrac{1}{2}Mv_{\\text{rim}}^2$, which only a thin hoop reaches."
+      },
+      {
+        "t": "note",
+        "html": "Rotational kinetic energy is the second kind of kinetic energy. An object can have both: a rolling ball moves and spins at once, which is the next topic."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Physics 2e, Section 10.4 (Rotational Kinetic Energy: Work and Energy Revisited)"
+      },
+      {
+        "name": "OpenStax University Physics Volume 1, Section 10.4 (Moment of Inertia and Rotational Kinetic Energy) and 10.8 (Work and Power for Rotational Motion)"
+      },
+      {
+        "name": "College Board, AP Physics 1 Course and Exam Description, Unit 6: Energy and Momentum of Rotating Systems"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

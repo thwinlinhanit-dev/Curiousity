@@ -1,0 +1,112 @@
+{
+  "id": "pre.solve-trig-advanced",
+  "slug": "solve-trig-advanced",
+  "ladder": "math",
+  "course": "pre",
+  "unit": "identities-equations",
+  "title": "Trig Equations with Factoring and Multiple Angles",
+  "short": "Factor, use identities, and handle 2θ and 3θ.",
+  "trouble": "Students divide both sides by sin x and lose the solutions where sin x = 0.",
+  "prereqs": [
+    "pre.solve-trig-basic",
+    "pre.double-angle"
+  ],
+  "xp": 3,
+  "viz": [
+    "unitcircle",
+    "trigwave"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Harder trig equations come down to the <a href=\"/math/precalculus/solve-trig-basic/\">basic ones</a>, using three tools you already have: factoring, identities such as the <a href=\"/math/precalculus/double-angle/\">double-angle formulas</a>, and a careful count of how many turns a multiple angle makes."
+      },
+      {
+        "t": "key",
+        "html": "(1) If it is quadratic in $\\sin x$ or $\\cos x$, factor it like $au^2 + bu + c$. (2) If a trig function is a common factor, move everything to one side and factor it out; never divide it away. (3) Use identities to get one function of one angle. (4) For $\\sin(kx) = c$ on $[0, 2\\pi)$, solve for $kx$ on $[0, 2k\\pi)$, then divide by $k$."
+      },
+      {
+        "t": "why",
+        "html": "Factoring works because of the zero product property: $AB = 0$ exactly when $A = 0$ or $B = 0$. Dividing both sides by $\\sin x$ silently assumes $\\sin x \\ne 0$, so every solution with $\\sin x = 0$ disappears. For multiple angles, as $x$ runs once around, $kx$ runs around $k$ times, picking up $k$ times as many solutions."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "fns": [
+            "2*sin(x)*cos(x)",
+            "sin(x)"
+          ],
+          "intersections": true,
+          "xmin": -0.3,
+          "xmax": 6.6,
+          "ymin": -1.5,
+          "ymax": 1.5
+        },
+        "cap": "$2\\sin x\\cos x = \\sin x$: the curves meet at four places in $[0, 2\\pi)$, including the two where $\\sin x = 0$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Quadratic in sine",
+        "q": "Solve $2\\sin^2 x - \\sin x - 1 = 0$ on $[0, 2\\pi)$.",
+        "steps": [
+          "Let $u = \\sin x$: $2u^2 - u - 1 = (2u + 1)(u - 1) = 0$.",
+          "$\\sin x = -\\frac{1}{2}$: $x = \\frac{7\\pi}{6}, \\frac{11\\pi}{6}$. $\\sin x = 1$: $x = \\frac{\\pi}{2}$."
+        ],
+        "a": "$\\frac{\\pi}{2}, \\frac{7\\pi}{6}, \\frac{11\\pi}{6}$"
+      },
+      {
+        "t": "ex",
+        "title": "A common factor",
+        "q": "Solve $2\\sin x\\cos x = \\sin x$ on $[0, 2\\pi)$.",
+        "steps": [
+          "Move everything to one side: $2\\sin x\\cos x - \\sin x = 0$.",
+          "Factor: $\\sin x\\,(2\\cos x - 1) = 0$.",
+          "$\\sin x = 0$: $x = 0, \\pi$. $\\cos x = \\frac{1}{2}$: $x = \\frac{\\pi}{3}, \\frac{5\\pi}{3}$."
+        ],
+        "a": "$0, \\frac{\\pi}{3}, \\pi, \\frac{5\\pi}{3}$"
+      },
+      {
+        "t": "ex",
+        "title": "A double angle",
+        "q": "Solve $\\sin 2x = \\frac{\\sqrt{3}}{2}$ on $[0, 2\\pi)$.",
+        "steps": [
+          "Let $u = 2x$. As $x$ runs over $[0, 2\\pi)$, $u$ runs over $[0, 4\\pi)$: two turns.",
+          "$\\sin u = \\frac{\\sqrt{3}}{2}$ at $u = \\frac{\\pi}{3}, \\frac{2\\pi}{3}$ in the first turn, and $\\frac{7\\pi}{3}, \\frac{8\\pi}{3}$ in the second.",
+          "Divide by $2$."
+        ],
+        "a": "$\\frac{\\pi}{6}, \\frac{\\pi}{3}, \\frac{7\\pi}{6}, \\frac{4\\pi}{3}$"
+      },
+      {
+        "t": "ex",
+        "title": "Use an identity",
+        "q": "Solve $\\cos 2x = \\cos x$ on $[0, 2\\pi)$.",
+        "steps": [
+          "Use $\\cos 2x = 2\\cos^2 x - 1$ so only $\\cos x$ remains: $2\\cos^2 x - \\cos x - 1 = 0$.",
+          "Factor: $(2\\cos x + 1)(\\cos x - 1) = 0$.",
+          "$\\cos x = -\\frac{1}{2}$: $\\frac{2\\pi}{3}, \\frac{4\\pi}{3}$. $\\cos x = 1$: $0$."
+        ],
+        "a": "$0, \\frac{2\\pi}{3}, \\frac{4\\pi}{3}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Dividing both sides of $2\\sin x\\cos x = \\sin x$ by $\\sin x$. You get $\\cos x = \\frac{1}{2}$ and lose $x = 0$ and $x = \\pi$. Factor instead. Check your list against a graph: count the crossings."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Precalculus 2e, Section 7.5 Solving Trigonometric Equations"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

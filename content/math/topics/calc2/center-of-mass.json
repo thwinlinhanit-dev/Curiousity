@@ -1,0 +1,112 @@
+{
+  "id": "calc2.center-of-mass",
+  "slug": "center-of-mass",
+  "ladder": "math",
+  "course": "calc2",
+  "unit": "applications",
+  "title": "Moments and Centers of Mass",
+  "short": "Balance points of thin plates.",
+  "trouble": "",
+  "prereqs": [
+    "calc2.area-between-curves"
+  ],
+  "xp": 3,
+  "viz": [],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A seesaw balances when $m_1 d_1 = m_2 d_2$: mass times distance from the pivot must match on both sides. Mass times signed distance is called a moment. For a flat plate cut in a curved shape, the balance point (its centroid) comes from integrals, built with the same strips you used for <a href=\"/math/calculus-2/area-between-curves/\">area between curves</a>."
+      },
+      {
+        "t": "why",
+        "html": "For point masses $m_i$ at positions $x_i$, the balance point $\\bar{x}$ is where the total moment about it is zero: $\\sum m_i (x_i - \\bar{x}) = 0$, so\n$$\\bar{x} = \\frac{\\sum m_i x_i}{\\sum m_i} = \\frac{\\text{moment}}{\\text{mass}}.$$\nFor a plate of constant density $\\rho$ between $y = g(x)$ and $y = f(x)$, cut it into vertical strips. A strip at $x$ has mass $\\rho\\,(f - g)\\,\\Delta x$ and balances at its middle, $\\left(x, \\frac{f + g}{2}\\right)$. So the moments are\n$$M_y = \\rho\\int_a^b x\\,(f - g)\\,dx,$$ $$\\begin{aligned} M_x &= \\rho\\int_a^b \\frac{f + g}{2}(f - g)\\,dx \\\\ &= \\rho\\int_a^b \\frac{f^{2} - g^{2}}{2}\\,dx. \\end{aligned}$$\nDividing by the mass $\\rho A$ cancels $\\rho$, so the centroid depends only on the shape."
+      },
+      {
+        "t": "key",
+        "html": "For a plate between $y = g(x)$ and $y = f(x)$ with area $A$:\n$$\\bar{x} = \\frac{1}{A}\\int_a^b x\\left[f(x) - g(x)\\right]dx,$$ $$\\bar{y} = \\frac{1}{A}\\int_a^b \\frac{1}{2}\\left[f(x)^{2} - g(x)^{2}\\right]dx.$$"
+      },
+      {
+        "t": "ex",
+        "title": "Masses on a rod",
+        "q": "Masses of 2 kg, 3 kg and 5 kg sit at $x = -1$, $x = 2$ and $x = 4$. Find the center of mass.",
+        "steps": [
+          "Moment: $2(-1) + 3(2) + 5(4) = 24$.",
+          "Mass: $2 + 3 + 5 = 10$.",
+          "$\\bar{x} = \\frac{24}{10} = 2.4$."
+        ],
+        "a": "$\\bar{x} = 2.4$"
+      },
+      {
+        "t": "ex",
+        "title": "Under a parabola",
+        "q": "Find the centroid of the region under $y = x^{2}$ from $x = 0$ to $x = 2$.",
+        "steps": [
+          "Area: $A = \\int_0^2 x^{2}\\,dx = \\frac{8}{3}$.",
+          "$M_y = \\int_0^2 x\\cdot x^{2}\\,dx = 4$, so $\\bar{x} = 4 \\div \\frac{8}{3} = \\frac{3}{2}$.",
+          "$M_x = \\int_0^2 \\frac{1}{2}(x^{2})^{2}\\,dx = \\frac{1}{2}\\cdot\\frac{32}{5} = \\frac{16}{5}$, so $\\bar{y} = \\frac{16}{5}\\div\\frac{8}{3} = \\frac{6}{5}$."
+        ],
+        "a": "$\\left(\\frac{3}{2}, \\frac{6}{5}\\right)$"
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "f": "x^2",
+          "shade": {
+            "fn": 0,
+            "a": 0,
+            "b": 2
+          },
+          "points": [
+            {
+              "x": 1.5,
+              "y": 1.2,
+              "label": "centroid",
+              "color": "red"
+            }
+          ],
+          "xmin": -0.5,
+          "xmax": 2.5,
+          "ymin": -0.5,
+          "ymax": 4.5,
+          "zoom": false
+        },
+        "cap": "The centroid $\\left(\\frac{3}{2}, \\frac{6}{5}\\right)$ sits to the right of the middle, where the region is taller, and low down, because most of the area is near the bottom."
+      },
+      {
+        "t": "ex",
+        "title": "Using symmetry",
+        "q": "Find the centroid of the region between $y = 4 - x^{2}$ and the $x$-axis.",
+        "steps": [
+          "The region is symmetric about the $y$-axis, so $\\bar{x} = 0$ (the moments of the two halves cancel).",
+          "$A = \\int_{-2}^{2} (4 - x^{2})\\,dx = \\frac{32}{3}$.",
+          "$$\\begin{aligned} M_x &= \\int_{-2}^{2} \\frac{1}{2}(4 - x^{2})^{2}\\,dx \\\\ &= \\frac{1}{2}\\cdot\\frac{512}{15} \\\\ &= \\frac{256}{15}, \\end{aligned}$$ so $\\bar{y} = \\frac{256}{15}\\div\\frac{32}{3} = \\frac{8}{5}$."
+        ],
+        "a": "$\\left(0, \\frac{8}{5}\\right)$"
+      },
+      {
+        "t": "mistake",
+        "html": "Using $\\int f(x)^{2}\\,dx$ for $M_x$ without the $\\frac{1}{2}$. A strip's mass sits at its middle height $\\frac{f}{2}$, not at its top. Check every answer: the centroid must lie inside the smallest box around the region, on any line of symmetry, and closer to where the region is thicker."
+      },
+      {
+        "t": "note",
+        "html": "The theorem of Pappus ties this to volumes: revolving a region of area $A$ about an axis it does not cross gives volume $V = 2\\pi\\bar{r}A$, where $\\bar{r}$ is the centroid's distance to the axis. For the region under $y = x^{2}$ on $[0, 2]$ about the $x$-axis: $2\\pi\\cdot\\frac{6}{5}\\cdot\\frac{8}{3} = \\frac{32\\pi}{5}$, matching the disk method."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 2, Section 2.6: Moments and Centers of Mass"
+      },
+      {
+        "name": "Paul’s Online Math Notes (Lamar University), Calculus II: Center of Mass"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

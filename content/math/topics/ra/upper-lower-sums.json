@@ -1,0 +1,89 @@
+{
+  "id": "ra.upper-lower-sums",
+  "slug": "upper-lower-sums",
+  "ladder": "math",
+  "course": "ra",
+  "unit": "integral",
+  "title": "Upper and Lower Sums",
+  "short": "For a partition P, U(f, P) uses the supremum of f on each piece and L(f, P) the infimum; every lower sum is at most every upper sum, and refining P brings them together.",
+  "trouble": "Students use left and right endpoints for a function that is not monotone; the sup or inf on a piece can sit inside it, at a turning point.",
+  "prereqs": [
+    "ra.sup-inf",
+    "calc1.riemann-sums"
+  ],
+  "xp": 2,
+  "viz": [
+    "ra-sums"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/math/calculus-1/riemann-sums/\">Calculus 1</a> you approximated areas with rectangles whose heights came from left ends, right ends or midpoints. To prove anything, we want rectangles that are guaranteed to be too big and too small. Their heights come from the <a href=\"/math/real-analysis/sup-inf/\">supremum and infimum</a> of $f$ on each piece. This approach is due to Darboux, and it is how Lebl's book defines the integral."
+      },
+      {
+        "t": "key",
+        "html": "A <b>partition</b> of $[a, b]$ is $P = \\{x_0 < x_1 < \\cdots < x_n\\}$ with $x_0 = a$, $x_n = b$. On each piece let $M_i = \\sup\\{f(x) : x \\in [x_{i-1}, x_i]\\}$ and $m_i = \\inf\\{f(x) : x \\in [x_{i-1}, x_i]\\}$. The <b>upper sum</b> is $U(f, P) = \\sum M_i \\Delta x_i$ and the <b>lower sum</b> is $L(f, P) = \\sum m_i \\Delta x_i$. Always $L(f, P) \\le U(f, P)$; adding points to $P$ can only lower $U$ and raise $L$."
+      },
+      {
+        "t": "why",
+        "html": "On each piece $m_i \\le M_i$, so $L \\le U$ for the same partition. If you add one point inside a piece, that piece splits into two; the supremum on each half is at most the supremum on the whole piece, so the new upper contribution is at most the old one, and similarly the lower contribution can only grow. So for any two partitions $P$ and $Q$, comparing both with their common refinement $P \\cup Q$ gives $$L(f, P) \\le L(f, P \\cup Q) \\le U(f, P \\cup Q) \\le U(f, Q).$$ Every lower sum is at most every upper sum, which lets us define the lower integral (the sup of all lower sums) and the upper integral (the inf of all upper sums)."
+      },
+      {
+        "t": "viz",
+        "name": "ra-sums",
+        "opts": {
+          "f": "x^2",
+          "a": 0,
+          "b": 2,
+          "n": 4,
+          "show": "both"
+        },
+        "cap": "Upper (blue) and lower (green) rectangles for $x^{2}$ on $[0, 2]$; the gold strips are the gap $U - L$. Refine the partition and watch the gap shrink."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "An increasing function",
+        "q": "For $f(x) = x^{2}$ on $[0, 2]$ with $P = \\{0, \\frac{1}{2}, 1, 2\\}$, find $U(f, P)$ and $L(f, P)$.",
+        "steps": [
+          "$f$ increases on $[0, 2]$, so on each piece the sup is at the right end and the inf at the left end.",
+          "$U = \\frac{1}{4}\\cdot\\frac{1}{2} + 1\\cdot\\frac{1}{2} + 4\\cdot 1 = \\frac{37}{8}$.",
+          "$L = 0\\cdot\\frac{1}{2} + \\frac{1}{4}\\cdot\\frac{1}{2} + 1\\cdot 1 = \\frac{9}{8}$."
+        ],
+        "a": "$U = \\frac{37}{8}$, $L = \\frac{9}{8}$ (and $\\int_0^2 x^{2}\\,dx = \\frac{8}{3}$ lies between)."
+      },
+      {
+        "t": "ex",
+        "title": "A turning point inside a piece",
+        "q": "For $f(x) = x^{2} - 3x + 2$ on $[0, 2]$ with $P = \\{0, 1, 2\\}$, find $U$ and $L$.",
+        "steps": [
+          "On $[0, 1]$, $f$ decreases from $2$ to $0$: $M_1 = 2$, $m_1 = 0$.",
+          "On $[1, 2]$ the vertex is at $x = \\frac{3}{2}$: $f(1) = f(2) = 0$ and $f\\left(\\frac{3}{2}\\right) = -\\frac{1}{4}$, so $M_2 = 0$, $m_2 = -\\frac{1}{4}$."
+        ],
+        "a": "$U = 2 + 0 = 2$, $L = 0 - \\frac{1}{4} = -\\frac{1}{4}$."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Using the ends when $f$ is not monotone.</b> On a piece that contains a turning point, the supremum or infimum is at the turning point, not at an end. In the second example, using the ends of $[1, 2]$ would give $m_2 = 0$ and miss the dip to $-\\frac{1}{4}$. Check each piece: is $f$ monotone there? If not, compare the ends with the critical points inside."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Jiří Lebl, Basic Analysis I: Introduction to Real Analysis, section 5.1 (partitions and lower and upper integrals)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.100A Real Analysis, lecture notes on the Riemann integral"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

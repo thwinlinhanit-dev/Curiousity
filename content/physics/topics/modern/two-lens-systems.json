@@ -1,0 +1,95 @@
+{
+  "id": "modern.two-lens-systems",
+  "slug": "two-lens-systems",
+  "ladder": "physics",
+  "course": "modern",
+  "unit": "instruments",
+  "title": "Two-Lens Systems",
+  "short": "The image made by the first lens is the object for the second, and the magnifications multiply.",
+  "trouble": "Students measure the second object distance from the first lens instead of the second.",
+  "prereqs": [
+    "phys2.thin-lens-equation"
+  ],
+  "xp": 3,
+  "viz": [
+    "ph-rays"
+  ],
+  "figureArchetype": "OpticsFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Microscopes, telescopes, camera zooms and your glasses in front of your eye are all systems of two or more lenses. You already have the tool: the <a href=\"/physics/physics-2/thin-lens-equation/\">thin lens equation</a>, used once per lens. The only new idea is how to hand the light from one lens to the next. Try it in the Science Lab's <a href='/science-lab/optics/'>Optics Bench</a>: put two lenses on the table and move them."
+      },
+      {
+        "t": "key",
+        "html": "Work lens by lens. The image formed by lens 1 is the object for lens 2: $$d_{o2} = s - d_{i1},$$ where $s$ is the distance between the lenses. If the first image lies beyond lens 2, $d_{o2}$ is negative (a <b>virtual object</b>). The overall magnification is the product $M = m_1m_2$. Signs follow “real is positive”: $f > 0$ for converging lenses, $d_i > 0$ for a real image on the far side of the lens, $d_o > 0$ for a real object in front of it, and $m = -d_i/d_o$."
+      },
+      {
+        "t": "why",
+        "html": "Lens 2 does not know where the light came from. All it receives is a set of rays that diverge from the first image (or, if lens 2 intercepts them first, converge toward it). As far as lens 2 is concerned, those rays come from an object at the first image's position, so we measure that position from lens 2. Each lens scales the image size by its own magnification, so the sizes multiply: an image twice as tall, magnified 3 times again, is 6 times as tall."
+      },
+      {
+        "t": "viz",
+        "name": "ph-rays",
+        "opts": {
+          "element": "two-lens",
+          "f": 10,
+          "f2": 15,
+          "sep": 40,
+          "dObj": 15
+        },
+        "cap": "Two converging lenses 40 cm apart. The first makes a real, inverted image, which the second lens treats as its object. Drag the object and watch both images move."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Two converging lenses",
+        "q": "Lens 1 ($f_1 = 10$ cm) and lens 2 ($f_2 = 15$ cm) are 40 cm apart. An object stands 15 cm in front of lens 1. Find the final image and the overall magnification.",
+        "steps": [
+          "Lens 1: $\\frac{1}{d_{i1}} = \\frac{1}{10} - \\frac{1}{15} = \\frac{1}{30}$, so $d_{i1} = 30$ cm and $m_1 = -\\frac{30}{15} = -2$.",
+          "That image is $40 - 30 = 10$ cm in front of lens 2: $d_{o2} = 10$ cm.",
+          "Lens 2: $\\frac{1}{d_{i2}} = \\frac{1}{15} - \\frac{1}{10} = -\\frac{1}{30}$, so $d_{i2} = -30$ cm (virtual, on the object side of lens 2) and $m_2 = -\\frac{-30}{10} = 3$.",
+          "$M = m_1m_2 = (-2)(3) = -6$."
+        ],
+        "a": "A virtual image 30 cm in front of lens 2, inverted and 6 times as tall as the object"
+      },
+      {
+        "t": "ex",
+        "title": "A virtual object",
+        "q": "Lens 1 ($f_1 = 20$ cm) and a diverging lens 2 ($f_2 = -10$ cm) are 15 cm apart. An object is 30 cm in front of lens 1. Find the final image and $M$.",
+        "steps": [
+          "Lens 1: $\\frac{1}{d_{i1}} = \\frac{1}{20} - \\frac{1}{30} = \\frac{1}{60}$, so $d_{i1} = 60$ cm and $m_1 = -2$.",
+          "Lens 2 is only 15 cm away, so the light reaches it while still converging: $d_{o2} = 15 - 60 = -45$ cm.",
+          "Lens 2: $\\frac{1}{d_{i2}} = \\frac{1}{-10} - \\frac{1}{-45} = -0.1 + 0.0222 = -0.0778$, so $d_{i2} = -12.9$ cm.",
+          "$m_2 = -\\frac{d_{i2}}{d_{o2}} = -\\frac{-12.9}{-45} = -0.286$, so $M = (-2)(-0.286) = 0.571$."
+        ],
+        "a": "A virtual, upright image 12.9 cm in front of lens 2, 0.57 times the object's height"
+      },
+      {
+        "t": "mistake",
+        "html": "Measuring the second object distance from the first lens. The thin lens equation for lens 2 needs distances from lens 2: $d_{o2} = s - d_{i1}$, not $d_{i1}$. A quick check: if the first image lands exactly on lens 2 ($d_{i1} = s$), the second object distance must be 0, and lens 2 cannot change where that image is."
+      },
+      {
+        "t": "mistake",
+        "html": "Adding the magnifications. A lens multiplies the size it is given; two of them multiply twice. $m_1 = -2$ and $m_2 = 3$ make $M = -6$, not $+1$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 3, 2.4 Thin Lenses"
+      },
+      {
+        "name": "OpenStax University Physics Volume 3, 2.8 Microscopes and Telescopes"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

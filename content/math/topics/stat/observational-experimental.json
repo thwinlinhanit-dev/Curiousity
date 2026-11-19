@@ -1,0 +1,85 @@
+{
+  "id": "stat.observational-experimental",
+  "slug": "observational-experimental",
+  "ladder": "math",
+  "course": "stat",
+  "unit": "collecting-data",
+  "title": "Observational Studies and Experiments",
+  "short": "Only a randomized experiment can show cause and effect.",
+  "trouble": "Students draw causal conclusions from an observational study.",
+  "prereqs": [
+    "stat.sampling-bias",
+    "stat.correlation-causation-stat"
+  ],
+  "xp": 2,
+  "viz": [],
+  "figureArchetype": "LessonFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Surveys describe a population; many questions are about causes. Does a new medicine work? Does sleep improve test scores? You know that <a href=\"/math/probability-and-statistics/correlation-causation-stat/\">association does not prove cause</a> and that <a href=\"/math/probability-and-statistics/sampling-bias/\">how data are collected</a> decides what they can tell you. Two kinds of study answer cause questions very differently."
+      },
+      {
+        "t": "key",
+        "html": "In an <b>observational study</b>, researchers observe and measure but do not influence the subjects. In an <b>experiment</b>, researchers deliberately impose a <b>treatment</b> on the subjects (ideally by random assignment) and measure the <b>response</b>. Only a well-designed randomized experiment can show cause and effect."
+      },
+      {
+        "t": "why",
+        "html": "In an observational study, people choose their own \"treatment,\" and people who choose differently tend to differ in other ways too. Coffee drinkers may also sleep less, smoke more or work longer hours. Those <b>confounding variables</b> are mixed up with the treatment, so any difference could come from them. Random assignment makes the groups alike, on average, in every other way, measured or not, so a clear difference in response can be pinned on the treatment."
+      },
+      {
+        "t": "ex",
+        "title": "Which kind of study?",
+        "q": "Researchers compare the heart health of 5,000 adults who drink coffee daily with adults who do not, using medical records. Observational study or experiment?",
+        "steps": [
+          "The adults chose whether to drink coffee; the researchers only looked at records.",
+          "Nothing was imposed: it is an observational study."
+        ],
+        "a": "Observational study."
+      },
+      {
+        "t": "ex",
+        "title": "An experiment",
+        "q": "Volunteers are randomly assigned to chew gum or not during a memory test, and the gum group scores higher. Can we say the gum caused the higher scores?",
+        "steps": [
+          "The researchers imposed the treatment (gum), and chance decided who got it: a randomized experiment.",
+          "Random assignment balances other influences (sleep, ability, mood) between the groups.",
+          "If the difference is too large to be chance, gum is the best explanation."
+        ],
+        "a": "Yes, for subjects like these volunteers, if the difference is statistically significant."
+      },
+      {
+        "t": "ex",
+        "title": "Spotting confounding",
+        "q": "Students who eat breakfast have higher grades than students who skip it (an observational study). Name a possible confounding variable.",
+        "steps": [
+          "Families who make breakfast every day may also keep regular bedtimes and check homework.",
+          "Those habits could raise grades on their own, and they travel along with breakfast."
+        ],
+        "a": "Family routines (for example, sleep habits) are confounded with breakfast."
+      },
+      {
+        "t": "mistake",
+        "html": "Drawing a cause-and-effect conclusion from an observational study: \"coffee protects your heart.\" Check the design: if the explanatory variable was not assigned at random, say \"is associated with,\" not \"causes.\""
+      },
+      {
+        "t": "note",
+        "html": "Experiments are not always possible or ethical (you cannot assign people to smoke). Then researchers use careful observational designs and statistical controls, the subject of <a href=\"/business/econometrics/modern-causal-inference/\">causal inference in econometrics</a>."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Introductory Statistics 2e, section 1.4 Experimental Design and Ethics"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, S-IC.B.3"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

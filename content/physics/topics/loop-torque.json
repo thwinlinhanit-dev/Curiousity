@@ -1,0 +1,93 @@
+{
+  "id": "em.loop-torque",
+  "slug": "loop-torque",
+  "ladder": "physics",
+  "course": "em",
+  "unit": "magnetism",
+  "title": "Torque on a Current Loop",
+  "short": "A loop has magnetic moment μ = NIA, and τ = μ × B turns motors and meters.",
+  "trouble": "Students think the torque is greatest when the field passes straight through the loop, where it is really zero.",
+  "prereqs": [
+    "em.force-on-wire-integral",
+    "mech.torque-cross-product"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-magnetism"
+  ],
+  "figureArchetype": "FieldFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A current loop in a uniform field feels <a href=\"/physics/electricity-and-magnetism/force-on-wire-integral/\">no net force</a>, but the forces on opposite sides need not act along the same line. Two equal, opposite, offset forces make a twist: a <a href=\"/physics/mechanics/torque-cross-product/\">torque</a>. That twist drives every electric motor and the needle of every old-style meter."
+      },
+      {
+        "t": "key",
+        "html": "A flat loop of $N$ turns, current $I$ and area $A$ has a <b>magnetic moment</b> $\\vec{\\mu} = NIA\\,\\hat{n}$, along its normal by the right-hand rule (fingers along the current, thumb along $\\hat{n}$). In a field:\n        $$\\vec{\\tau} = \\vec{\\mu}\\times\\vec{B}, \\qquad \\tau = \\mu B\\sin\\theta, \\qquad U = -\\vec{\\mu}\\cdot\\vec{B},$$\n        with $\\theta$ the angle between $\\vec{\\mu}$ (the normal) and $\\vec{B}$."
+      },
+      {
+        "t": "why",
+        "html": "Take a rectangular loop with sides $a$ and $b$. The two sides of length $a$ cut across the field and feel forces $IaB$ in opposite directions. Each acts a distance $\\tfrac{b}{2}$ from the axis, with lever arm $\\tfrac{b}{2}\\sin\\theta$. Together: $\\tau = 2(IaB)\\left(\\tfrac{b}{2}\\sin\\theta\\right) = I(ab)B\\sin\\theta = IAB\\sin\\theta$. The forces on the other two sides point along the axis and only stretch the loop. Since only the area appears, the result holds for any flat loop."
+      },
+      {
+        "t": "viz",
+        "name": "ph-magnetism",
+        "opts": {
+          "mode": "motor"
+        },
+        "cap": "A loop in a motor. The torque is largest when the field lies in the plane of the loop and zero when the field passes straight through it; a commutator reverses the current each half turn so the loop keeps turning."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Moment and greatest torque",
+        "q": "A 50-turn square coil $4.0\\ \\text{cm}$ on a side carries $2.0\\ \\text{A}$ in a $0.30\\ \\text{T}$ field. Find $\\mu$ and the largest torque.",
+        "steps": [
+          "$\\mu = NIA = (50)(2.0)(0.040)^2 = 0.160\\ \\text{A·m²}$.",
+          "Largest at $\\theta = 90^\\circ$: $\\tau_{\\max} = \\mu B = 0.0480\\ \\text{N·m}$."
+        ],
+        "a": "$\\tau_{\\max} = 0.0480\\ \\text{N·m}$"
+      },
+      {
+        "t": "ex",
+        "title": "An angle given to the plane",
+        "q": "The same coil is turned so its <i>plane</i> makes $30^\\circ$ with the field. Find the torque.",
+        "steps": [
+          "The normal is $90^\\circ$ from the plane, so $\\theta = 90^\\circ - 30^\\circ = 60^\\circ$.",
+          "$\\tau = \\mu B\\sin 60^\\circ = 0.0416\\ \\text{N·m}$."
+        ],
+        "a": "$\\tau \\approx 0.0416\\ \\text{N·m}$"
+      },
+      {
+        "t": "ex",
+        "title": "Turning it over",
+        "q": "How much work does it take to turn the coil from $\\theta = 0$ (moment along the field) to $\\theta = 180^\\circ$?",
+        "steps": [
+          "$U = -\\mu B\\cos\\theta$ goes from $-\\mu B$ to $+\\mu B$.",
+          "$W = \\Delta U = 2\\mu B = 0.0960\\ \\text{J}$."
+        ],
+        "a": "$W = 0.0960\\ \\text{J}$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>\"The torque is greatest when the field passes straight through the loop.\"</b> That is where the <i>flux</i> is greatest, but the torque is zero there: the forces on opposite sides then pull straight outward along one line, with no lever arm. Check with $\\tau = \\mu B\\sin\\theta$: field straight through means $\\theta = 0$ and $\\sin\\theta = 0$. Always measure $\\theta$ from the normal, not from the plane."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 2, 11.5 Force and Torque on a Current Loop"
+      },
+      {
+        "name": "MIT OpenCourseWare, 8.02 Physics II: Electricity and Magnetism"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,103 @@
+{
+  "id": "alg1.graphs-as-solutions",
+  "slug": "graphs-as-solutions",
+  "ladder": "math",
+  "course": "alg1",
+  "unit": "linear-functions",
+  "title": "A Graph Shows Every Solution",
+  "short": "Every point on the graph of an equation makes it true, and no other point does.",
+  "trouble": "Students check a point by looking at the picture instead of substituting it into the equation.",
+  "prereqs": [
+    "g8.slope-intercept-form",
+    "alg1.function-notation"
+  ],
+  "xp": 1,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You have graphed lines like $y = 2x - 1$ in <a href=\"/math/pre-algebra/slope-intercept-form/\">slope-intercept form</a>. It is worth saying exactly what such a graph is, because the idea carries through the rest of algebra: the graph of an equation is a picture of all its solutions."
+      },
+      {
+        "t": "why",
+        "html": "A solution of $y = 2x - 1$ is a pair of numbers $(x, y)$ that makes it true, like $(3, 5)$, since $2(3) - 1 = 5$. The graph is drawn by plotting <em>every</em> such pair. So two things are true at once: every point on the line makes the equation true, and every pair that makes the equation true is a point on the line. A point off the line, like $(3, 4)$, fails the equation. This is also what <a href=\"/math/algebra-1/function-notation/\">function notation</a> says: $f(3) = 5$ means $(3, 5)$ is on the graph of $f$."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "f": "2x - 1",
+          "points": [
+            {
+              "x": 2,
+              "y": 4,
+              "drag": true,
+              "label": "P"
+            }
+          ],
+          "table": [
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3
+          ],
+          "xmin": -5,
+          "xmax": 5,
+          "ymin": -7,
+          "ymax": 7
+        },
+        "cap": "Every column of the table is a solution of $y = 2x - 1$ and a point on the line. Drag $P$: it lands on the line only when its $y$ equals $2x - 1$."
+      },
+      {
+        "t": "key",
+        "html": "A point $(a, b)$ is on the graph of an equation exactly when substituting $x = a$ and $y = b$ makes the equation true. To check a point, substitute; do not trust your eyes."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Check a point",
+        "q": "Is $(4, -1)$ on the graph of $3x + 5y = 7$?",
+        "steps": [
+          "Substitute $x = 4$ and $y = -1$: $3(4) + 5(-1) = 12 - 5 = 7$.",
+          "$7 = 7$ is true."
+        ],
+        "a": "Yes, $(4, -1)$ is on the graph."
+      },
+      {
+        "t": "ex",
+        "title": "Find a missing coordinate",
+        "q": "The point $(-2, k)$ is on the graph of $2x - 3y = 8$. Find $k$.",
+        "steps": [
+          "The point makes the equation true: $2(-2) - 3k = 8$.",
+          "$-4 - 3k = 8$, so $-3k = 12$ and $k = -4$."
+        ],
+        "a": "$k = -4$"
+      },
+      {
+        "t": "mistake",
+        "html": "Checking a point by looking at a picture. On a graph, $(3, 4.9)$ and $(3, 5)$ look the same, but only one is on the line $y = 2x - 1$. Substitute the coordinates; the equation gives a yes or no answer that the eye cannot."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Elementary Algebra 2e, section 4.2 Graph Linear Equations in Two Variables"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, A-REI.D.10: the graph of an equation is the set of all its solutions"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

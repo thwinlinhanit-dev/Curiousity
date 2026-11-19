@@ -1,0 +1,108 @@
+{
+  "id": "prob.independence-several",
+  "slug": "independence-several",
+  "ladder": "math",
+  "course": "prob",
+  "unit": "conditioning",
+  "title": "Independence of Several Events",
+  "short": "A, B and C are independent when every pair and the triple multiply; disjoint events with positive probabilities are never independent.",
+  "trouble": "Students treat mutually exclusive events as independent, though knowing one happened rules out the other. Others check only pairs: for two coin flips, \"first is heads,\" \"second is heads\" and \"the flips match\" are independent in pairs but not all three together.",
+  "prereqs": [
+    "prob.conditional-vs-joint",
+    "stat.independence"
+  ],
+  "xp": 3,
+  "viz": [
+    "prob-square"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Two events are independent when knowing one happened does not change the chance of the other: $P(A \\cap B) = P(A)P(B)$, as in <a href=\"/math/probability-and-statistics/independence/\">independent events</a>. For three or more events, and for events that cannot happen together, the details matter."
+      },
+      {
+        "t": "key",
+        "html": "$A$, $B$, $C$ are (mutually) <b>independent</b> when all four equations hold: $P(A \\cap B) = P(A)P(B)$, $P(A \\cap C) = P(A)P(C)$, $P(B \\cap C) = P(B)P(C)$ and $P(A \\cap B \\cap C) = P(A)P(B)P(C)$. Disjoint events with positive probabilities are never independent."
+      },
+      {
+        "t": "why",
+        "html": "Independence means information about some of the events tells you nothing about the others. If A and B are disjoint and $P(A) > 0$, then learning A happened tells you B did <i>not</i> happen: $P(B \\mid A) = 0 \\ne P(B)$. Using the <a href=\"/math/probability/conditional-vs-joint/\">definition of conditioning</a>, $P(A \\cap B) = 0 < P(A)P(B)$. Pairs are not enough for three events: the triple equation says that knowing <i>both</i> A and B tells you nothing about C, and that is a separate fact."
+      },
+      {
+        "t": "viz",
+        "name": "prob-square",
+        "opts": {
+          "layout": "disjoint",
+          "pA": "3/10",
+          "pB": "2/5",
+          "labels": {
+            "A": "A",
+            "B": "B"
+          }
+        },
+        "cap": "Disjoint events: no overlap, so the joint probability is 0 while the product of the probabilities is not."
+      },
+      {
+        "t": "viz",
+        "name": "prob-square",
+        "opts": {
+          "layout": "coins"
+        },
+        "cap": "Two coin flips: A is first flip heads, B is second flip heads, C is the flips match. Every pair multiplies, but knowing A and B makes C certain."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Disjoint is dependent",
+        "q": "A die is rolled. A = \"roll a 1\", B = \"roll a 6\". Are A and B independent?",
+        "steps": [
+          "$P(A \\cap B) = 0$, since one roll cannot be both.",
+          "$P(A)P(B) = \\frac{1}{6} \\cdot \\frac{1}{6} = \\frac{1}{36} \\ne 0$."
+        ],
+        "a": "No. They are mutually exclusive, which makes them dependent."
+      },
+      {
+        "t": "ex",
+        "title": "At least one of three",
+        "q": "Three independent alarms sound in a fire with probabilities $0.9$, $0.8$ and $0.7$. Find the probability that at least one sounds.",
+        "steps": [
+          "Complement: all three fail. By independence, $$P(\\text{none}) = 0.1 \\times 0.2 \\times 0.3 = 0.006$$",
+          "$$P(\\text{at least one}) = 1 - 0.006 = 0.994$$",
+          "For \"exactly one\", add three disjoint cases: $$0.9(0.2)(0.3) + 0.1(0.8)(0.3) + 0.1(0.2)(0.7) = 0.054 + 0.024 + 0.014 = 0.092$$"
+        ],
+        "a": "$0.994$ (and $0.092$ for exactly one)"
+      },
+      {
+        "t": "ex",
+        "title": "Independent in pairs only",
+        "q": "Flip two fair coins. A = first is heads, B = second is heads, C = the flips match. Check pairwise and mutual independence.",
+        "steps": [
+          "Each event has probability $\\frac{1}{2}$. $A \\cap B = \\{HH\\}$, $A \\cap C = \\{HH\\}$, $B \\cap C = \\{HH\\}$: each has probability $\\frac{1}{4} = \\frac{1}{2} \\cdot \\frac{1}{2}$. So every pair is independent.",
+          "$A \\cap B \\cap C = \\{HH\\}$ has probability $\\frac{1}{4}$, but $P(A)P(B)P(C) = \\frac{1}{8}$."
+        ],
+        "a": "Independent in pairs, but not mutually independent: knowing A and B forces C."
+      },
+      {
+        "t": "mistake",
+        "html": "Treating mutually exclusive events as independent (\"they have nothing to do with each other\"). Exclusive events are strongly linked: one rules out the other. The second slip is checking only pairs of events. Check: for three events write down all four products, including the triple one."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Grinstead and Snell, Introduction to Probability (2nd revised edition, American Mathematical Society; free from Dartmouth College), chapter 4 (Conditional Probability), section 4.1, independent events"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.05, Introduction to Probability and Statistics (Spring 2014), readings on independence"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,92 @@
+{
+  "id": "phys2.faradays-law",
+  "slug": "faradays-law",
+  "ladder": "physics",
+  "course": "phys2",
+  "unit": "magnetism",
+  "title": "Faraday's Law",
+  "short": "A changing magnetic flux makes an emf: ε = −N ΔΦ/Δt.",
+  "trouble": "Students think a strong but steady field makes an emf, when only a changing flux does.",
+  "prereqs": [
+    "phys2.magnetic-flux",
+    "physsci.generators"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-induction"
+  ],
+  "figureArchetype": "FieldFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/physics/physical-science/generators/\">Generators and Induction</a> you saw that moving a magnet near a coil makes a current. Faraday found the rule behind it in 1831, and it runs every generator and transformer. It is stated in terms of <a href=\"/physics/physics-2/magnetic-flux/\">Magnetic Flux</a>."
+      },
+      {
+        "t": "key",
+        "html": "A <b>changing</b> magnetic flux through a coil of $N$ turns makes an emf $$\\role[emf]{voltage}{\\varepsilon} = -\\role[number of turns]{constant}{N}\\frac{\\role[change in magnetic flux]{field}{\\Delta\\Phi}}{\\role[time interval]{time}{\\Delta t}}.$$ The size is $N|\\Delta\\Phi|/\\Delta t$. The minus sign is Lenz's law, which sets the direction (the next topic). A steady flux, however large, makes no emf."
+      },
+      {
+        "t": "list",
+        "items": [
+          "Change the field: push a magnet in, or turn up an electromagnet.",
+          "Change the area: squash the loop or slide a rod along rails.",
+          "Change the angle: turn the loop, as a generator does."
+        ]
+      },
+      {
+        "t": "viz",
+        "name": "ph-induction",
+        "opts": {
+          "mode": "magnet-coil",
+          "task": "Watch the meter while the magnet moves, and while it sits still inside the coil."
+        },
+        "cap": "The meter swings only while the flux changes. With the magnet resting inside the coil, the flux is large but steady, and the emf is zero."
+      },
+      {
+        "t": "why",
+        "html": "Why the rate of change? An emf is energy per charge. Pushing a magnet in faster does the same change in less time, so the same work is done more quickly on the charges: a bigger emf for a shorter time. The emf times the time, $\\varepsilon\\,\\Delta t = -N\\Delta\\Phi$, depends only on how much the flux changed."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking a strong but steady field makes an emf. A magnet sitting still inside a coil makes no current at all. Only a change in flux counts. Check: if nothing in $\\Phi = BA\\cos\\theta$ is changing, the answer is $0\\ \\text{V}$."
+      },
+      {
+        "t": "ex",
+        "title": "A field that grows",
+        "q": "A coil of $200$ turns with area $0.010\\ \\text{m}^2$ faces a field that grows from $0.10\\ \\text{T}$ to $0.50\\ \\text{T}$ in $0.20\\ \\text{s}$. Find the emf.",
+        "steps": [
+          "Change in flux per turn: $$\\Delta\\Phi = \\Delta B \\cdot A = (0.40)(0.010) = 4.0 \\times 10^{-3}\\ \\text{Wb}.$$",
+          "$$\\begin{aligned} |\\varepsilon| &= N\\frac{|\\Delta\\Phi|}{\\Delta t} = 200 \\cdot \\frac{4.0 \\times 10^{-3}}{0.20} \\\\ &= 4.0\\ \\text{V}. \\end{aligned}$$"
+        ],
+        "a": "$4.0\\ \\text{V}$"
+      },
+      {
+        "t": "ex",
+        "title": "Turning a loop",
+        "q": "A single loop of area $0.20\\ \\text{m}^2$ faces a $0.30\\ \\text{T}$ field. It is turned edge-on in $0.15\\ \\text{s}$. The loop has a resistance of $2.0\\ \\Omega$. Find the average emf and current.",
+        "steps": [
+          "Start: $\\Phi_i = BA = (0.30)(0.20) = 0.060\\ \\text{Wb}$. End: edge-on, so $\\Phi_f = 0$.",
+          "$|\\varepsilon| = \\dfrac{0.060}{0.15} = 0.40\\ \\text{V}$.",
+          "$I = \\dfrac{\\varepsilon}{R} = \\dfrac{0.40}{2.0} = 0.20\\ \\text{A}$."
+        ],
+        "a": "$0.40\\ \\text{V}$ and $0.20\\ \\text{A}$"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Physics 2e, Section 23.2: Faraday's Law of Induction: Lenz's Law"
+      },
+      {
+        "name": "OpenStax College Physics 2e, Section 23.5: Electric Generators"
+      },
+      {
+        "name": "OpenStax University Physics Volume 2, Section 13.1: Faraday's Law"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

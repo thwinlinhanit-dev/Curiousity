@@ -1,0 +1,124 @@
+{
+  "id": "chem.dimensional-analysis",
+  "slug": "dimensional-analysis",
+  "ladder": "chemistry",
+  "course": "chem",
+  "unit": "matter",
+  "title": "Dimensional Analysis",
+  "short": "Multiply by conversion factors equal to 1, arranged so the units you do not want cancel.",
+  "trouble": "Students set a conversion factor upside down so nothing cancels, or convert cm³ to m³ by dividing by 100 instead of by 100³.",
+  "prereqs": [
+    "chem.si-prefixes",
+    "alg1.units-quantities"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-convert"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/math/algebra-1/units-quantities/\">Units and Conversion Factors</a> you multiplied by conversion factors. Chemists use that one idea for almost every calculation in this course, from grams to moles to liters of gas, so it is worth making automatic. It works with <a href=\"/chemistry/chemistry/si-prefixes/\">SI Units and Metric Prefixes</a> and with any other units."
+      },
+      {
+        "t": "key",
+        "html": "A <b>conversion factor</b> is a fraction equal to 1, such as $\\dfrac{1000\\ \\text{m}}{1\\ \\text{km}}$. Multiply by factors arranged so the units you don't want cancel (one on top, one on the bottom), leaving the units you want."
+      },
+      {
+        "t": "why",
+        "html": "Since $1000\\ \\text{m}$ and $1\\ \\text{km}$ are the same length, their ratio is exactly 1, and multiplying by 1 never changes an amount. Units then behave like algebra: $\\text{km} \\times \\dfrac{\\text{m}}{\\text{km}} = \\text{m}$. If the units cancel to what you want, the setup is right; if they don't, you've flipped a factor. For squared or cubed units, the factor is squared or cubed too: $1\\ \\text{m} = 100\\ \\text{cm}$, so $1\\ \\text{m}^3 = 100^3\\ \\text{cm}^3 = 1{,}000{,}000\\ \\text{cm}^3$."
+      },
+      {
+        "t": "viz",
+        "name": "ch-convert",
+        "opts": {
+          "start": {
+            "v": 2500,
+            "unit": "cm3"
+          },
+          "factors": [
+            {
+              "n": [
+                1,
+                "m"
+              ],
+              "d": [
+                100,
+                "cm"
+              ],
+              "pow": 3
+            }
+          ],
+          "target": "m3",
+          "task": "Convert 2500 cm³ to m³: make the units cancel."
+        },
+        "cap": "A conversion factor raised to the third power, because the unit is cubed. Flip the factor and watch which units cancel."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Two steps",
+        "q": "Convert $72\\ \\text{km/h}$ to m/s.",
+        "steps": [
+          "$72\\ \\dfrac{\\text{km}}{\\text{h}} \\times \\dfrac{1000\\ \\text{m}}{1\\ \\text{km}} \\times \\dfrac{1\\ \\text{h}}{3600\\ \\text{s}}$",
+          "km cancels top and bottom; h cancels too, leaving m/s.",
+          "$\\dfrac{72 \\times 1000}{3600} = 20\\ \\text{m/s}$"
+        ],
+        "a": "$20\\ \\text{m/s}$"
+      },
+      {
+        "t": "ex",
+        "title": "Cubed units",
+        "q": "Convert $2500\\ \\text{cm}^3$ to $\\text{m}^3$.",
+        "steps": [
+          "$1\\ \\text{m} = 100\\ \\text{cm}$, so $1\\ \\text{m}^3 = (100\\ \\text{cm})^3 = 10^6\\ \\text{cm}^3$.",
+          "$2500\\ \\text{cm}^3 \\times \\dfrac{1\\ \\text{m}^3}{10^6\\ \\text{cm}^3} = 0.0025\\ \\text{m}^3$"
+        ],
+        "a": "$0.0025\\ \\text{m}^3$"
+      },
+      {
+        "t": "ex",
+        "title": "Three factors in a row",
+        "q": "How many seconds are in $2.5$ days?",
+        "steps": [
+          "$2.5\\ \\text{days} \\times \\dfrac{24\\ \\text{h}}{1\\ \\text{day}} \\times \\dfrac{60\\ \\text{min}}{1\\ \\text{h}} \\times \\dfrac{60\\ \\text{s}}{1\\ \\text{min}}$",
+          "Days, hours and minutes each cancel, leaving seconds.",
+          "$2.5 \\times 24 \\times 60 \\times 60 = 216{,}000\\ \\text{s}$"
+        ],
+        "a": "$216{,}000\\ \\text{s}$ (or $2.16 \\times 10^{5}\\ \\text{s}$)"
+      },
+      {
+        "t": "list",
+        "items": [
+          "Write down what you have, with its unit.",
+          "Write the unit you want.",
+          "Chain factors equal to 1, each one cancelling the unit left over from the step before.",
+          "Cancel units, then multiply the numbers on top and divide by the numbers on the bottom.",
+          "Ask whether the size makes sense: more of a smaller unit, fewer of a bigger one."
+        ]
+      },
+      {
+        "t": "mistake",
+        "html": "Setting a factor upside down, so nothing cancels ($\\text{km} \\times \\frac{\\text{km}}{\\text{m}}$ gives $\\text{km}^2/\\text{m}$), or converting $\\text{cm}^3$ to $\\text{m}^3$ by dividing by 100 instead of $100^3$. Write every unit in every step; if the leftover units are not the ones you want, stop and flip."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 1.6 Mathematical Treatment of Measurement Results"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, N-Q.A.1 (use units to understand problems and guide solutions)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

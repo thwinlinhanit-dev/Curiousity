@@ -1,0 +1,94 @@
+{
+  "id": "geo.tangent-lines",
+  "slug": "tangent-lines",
+  "ladder": "math",
+  "course": "geo",
+  "unit": "circles",
+  "title": "Tangent Lines",
+  "short": "A tangent is perpendicular to the radius at the point of contact.",
+  "trouble": "",
+  "prereqs": [
+    "geo.inscribed-angles"
+  ],
+  "xp": 2,
+  "viz": [
+    "geoboard"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A tangent line touches a circle at exactly one point. It has a special relationship with the radius drawn to that point, and the inscribed angles of <a href=\"/math/geometry/inscribed-angles/\">Inscribed Angles</a> give a neat way to construct it."
+      },
+      {
+        "t": "why",
+        "html": "<b>A tangent is perpendicular to the radius at the point of tangency.</b> Suppose line $\\ell$ is tangent to $\\odot O$ at $T$. Every point of $\\ell$ other than $T$ is outside the circle, so it is farther from $O$ than $T$ is. So $T$ is the point of $\\ell$ closest to $O$, and the shortest segment from a point to a line is the perpendicular one (any other segment is the hypotenuse of a right triangle, which is longer than a leg). So $\\overline{OT} \\perp \\ell$. The converse is also true: a line perpendicular to a radius at its endpoint on the circle is tangent."
+      },
+      {
+        "t": "viz",
+        "name": "geo-circle",
+        "cap": "Drag $P$. The two tangent segments from $P$ are always equal, and each meets its radius at a right angle.",
+        "opts": {
+          "mode": "tangent",
+          "d": 2.2,
+          "r": 6
+        }
+      },
+      {
+        "t": "key",
+        "html": "A tangent is perpendicular to the radius at the point of tangency. Two tangent segments drawn to a circle from the same outside point are congruent."
+      },
+      {
+        "t": "ex",
+        "title": "Using the right angle",
+        "q": "$\\overline{PT}$ is tangent to $\\odot O$ at $T$. The radius is $8$ and $PT = 15$. Find $OP$.<div class=\"ml-viz\" data-viz=\"geo-fig\" data-opts='{\"pts\":{\"O\":[0,0],\"T\":[1.42,2.67],\"P\":[6.4,0]},\"circles\":[[\"O\",3]],\"segs\":[[\"O\",\"T\",{\"lab\":\"8\"}],[\"T\",\"P\",{\"lab\":\"15\",\"color\":\"blue\"}],[\"O\",\"P\",{\"lab\":\"?\",\"dash\":1}]],\"angs\":[[\"O\",\"T\",\"P\",{\"right\":1}]],\"height\":200,\"label\":\"Circle O with tangent segment PT and radius OT\"}' aria-label=\"Circle O with tangent segment PT and radius OT\"></div>",
+        "steps": [
+          "$\\overline{OT} \\perp \\overline{PT}$, so $\\triangle OTP$ is a right triangle with hypotenuse $\\overline{OP}$.",
+          "$OP = \\sqrt{8^2 + 15^2} = \\sqrt{289} = 17$."
+        ],
+        "a": "$OP = 17$"
+      },
+      {
+        "t": "ex",
+        "title": "Two tangents from one point",
+        "q": "$\\overline{PA}$ and $\\overline{PB}$ are tangent to $\\odot O$. $PA = 3x + 2$ and $PB = 5x - 8$. Find $PA$.",
+        "steps": [
+          "The right triangles $OAP$ and $OBP$ share hypotenuse $\\overline{OP}$ and have $OA = OB$, so they are congruent by HL, and $PA = PB$.",
+          "$3x + 2 = 5x - 8$, so $x = 5$ and $PA = 17$."
+        ],
+        "a": "$PA = 17$"
+      },
+      {
+        "t": "ex",
+        "title": "Is it tangent?",
+        "q": "$\\odot O$ has radius $5$. Point $P$ is $13$ units from $O$, and $\\overline{PA}$ reaches the circle at $A$ with $PA = 12$. Is $\\overline{PA}$ tangent?",
+        "steps": [
+          "Tangent exactly when $\\angle OAP$ is a right angle. Converse of the Pythagorean theorem: $5^2 + 12^2 = 169 = 13^2$."
+        ],
+        "a": "Yes, $\\overline{PA}$ is tangent at $A$."
+      },
+      {
+        "t": "p",
+        "html": "<b>Constructing tangents from an outside point $P$:</b> find the midpoint $M$ of $\\overline{OP}$ and draw the circle with center $M$ through $O$. It crosses $\\odot O$ at two points $A$ and $B$. Since $\\overline{OP}$ is a diameter of the new circle, $\\angle OAP$ and $\\angle OBP$ are inscribed in a semicircle: right angles. So $\\overline{PA}$ and $\\overline{PB}$ are tangent."
+      },
+      {
+        "t": "mistake",
+        "html": "Using the Pythagorean theorem with the wrong hypotenuse. The right angle is at the point of tangency, so the hypotenuse is the segment from the center to the outside point, $\\overline{OP}$, not the tangent segment."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Euclid, <i>Elements</i>, Book III, Propositions 16, 17 and 18"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, High School Geometry, G-C.A.4"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

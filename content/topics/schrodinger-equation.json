@@ -1,0 +1,100 @@
+{
+  "id": "modern.schrodinger-equation",
+  "slug": "schrodinger-equation",
+  "course": "modern",
+  "courseTitle": "Waves, Optics and Modern Physics",
+  "unit": "quantum",
+  "unitTitle": "The Quantum World",
+  "title": "The Schrödinger Equation",
+  "short": "−(ħ²/2m)ψ″ + Uψ = Eψ: check whether a function solves it and read off its energy.",
+  "trouble": "Students think any smooth function is an allowed wave function, forgetting the boundary conditions.",
+  "prereqs": [
+    "modern.wavefunction-probability",
+    "calc1.higher-derivatives"
+  ],
+  "xp": 3,
+  "viz": [
+    "ph-quantum"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Waves on strings obey the <a href=\"/physics/waves-optics-modern-physics/wave-equation/\">wave equation</a>. What equation do matter waves obey? Erwin Schrödinger found it in 1926. In its time-independent form it says which wave functions $\\psi(x)$ a particle of energy $E$ can have in a potential energy $U(x)$. Here you will check solutions and read off their energies, using <a href=\"/math/calculus-1/higher-derivatives/\">second derivatives</a>."
+      },
+      {
+        "t": "key",
+        "html": "The time-independent Schrödinger equation: $$-\\frac{\\hbar^2}{2m}\\,\\frac{d^2\\psi}{dx^2} + U(x)\\,\\psi = E\\,\\psi.$$ An allowed wave function must also be continuous, finite and normalizable, and it must meet the <b>boundary conditions</b> (for example $\\psi = 0$ at a hard wall). Those conditions are what allow only certain energies. For an electron, $\\frac{\\hbar^2}{2m_e} = 0.0381$ eV·nm²."
+      },
+      {
+        "t": "why",
+        "html": "Start from what we know about matter waves: $p = \\hbar k$ (de Broglie) and $E = \\frac{p^2}{2m} + U$ (energy). For a wave $\\psi = \\sin kx$, the second derivative is $\\psi'' = -k^2\\psi$, so $-\\frac{\\hbar^2}{2m}\\psi'' = \\frac{\\hbar^2k^2}{2m}\\psi = \\frac{p^2}{2m}\\psi$: the second-derivative term measures kinetic energy. Adding $U\\psi$ and setting the total to $E\\psi$ is the energy statement, written so that it works even where $k$ changes from place to place. Where $U > E$, the same equation gives $\\psi'' = +\\kappa^2\\psi$ with $\\kappa = \\frac{\\sqrt{2m(U - E)}}{\\hbar}$, whose finite solution is a decaying exponential, $e^{-\\kappa x}$: the wave leaks a little way into regions that classical physics forbids."
+      },
+      {
+        "t": "viz",
+        "name": "ph-quantum",
+        "opts": {
+          "mode": "finite",
+          "L": 1,
+          "U0": 2,
+          "show": [
+            "prob"
+          ]
+        },
+        "cap": "Solutions of the Schrödinger equation in a finite well: wiggly (sine-like) inside, where $E > U$, and decaying exponentials in the walls, where $E < U$. Only the energies that let the two pieces join smoothly are allowed."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A free electron",
+        "q": "In a region with $U = 0$, an electron has $\\psi = A\\sin(kx)$ with $k = 10\\ \\text{nm}^{-1}$. What is its energy?",
+        "steps": [
+          "$\\psi'' = -k^2\\psi$, so $-\\frac{\\hbar^2}{2m}\\psi'' = \\frac{\\hbar^2k^2}{2m}\\psi$. The equation holds with $E = \\frac{\\hbar^2k^2}{2m}$.",
+          "$E = (0.0381\\ \\text{eV·nm}^2)(10\\ \\text{nm}^{-1})^2 = 3.81$ eV."
+        ],
+        "a": "$E = 3.81$ eV"
+      },
+      {
+        "t": "ex",
+        "title": "Inside a barrier",
+        "q": "An electron with $E = 3.0$ eV meets a region where $U = 5.0$ eV. Its wave function there is $\\psi = Ae^{-\\kappa x}$. Find $\\kappa$.",
+        "steps": [
+          "$\\psi'' = \\kappa^2\\psi$, so the equation reads $-\\frac{\\hbar^2\\kappa^2}{2m} + U = E$.",
+          "$\\kappa^2 = \\frac{U - E}{\\hbar^2/2m} = \\frac{2.0\\ \\text{eV}}{0.0381\\ \\text{eV·nm}^2} = 52.5\\ \\text{nm}^{-2}$."
+        ],
+        "a": "$\\kappa = 7.25\\ \\text{nm}^{-1}$: the wave falls by a factor of $e$ every 0.14 nm"
+      },
+      {
+        "t": "ex",
+        "title": "Check a candidate",
+        "q": "An electron in a box with walls at $x = 0$ and $x = L$ ($U = 0$ inside). Which of $\\psi_1 = \\sin(\\pi x/L)$, $\\psi_2 = \\cos(\\pi x/L)$ and $\\psi_3 = x(L - x)$ are allowed energy states?",
+        "steps": [
+          "$\\psi_1$: $\\psi_1'' = -\\frac{\\pi^2}{L^2}\\psi_1$, so it solves the equation with $E = \\frac{\\hbar^2\\pi^2}{2mL^2}$, and it is 0 at both walls. Allowed.",
+          "$\\psi_2$ solves the equation but is 1 at $x = 0$, not 0. Not allowed.",
+          "$\\psi_3$ is 0 at both walls, but $\\psi_3'' = -2$ is not a constant times $\\psi_3$, so it does not solve the equation for any single $E$."
+        ],
+        "a": "Only $\\psi_1$"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking any smooth function is an allowed wave function. It must solve the equation (with one constant $E$ everywhere) <b>and</b> meet the boundary conditions. $x(L - x)$ looks like a fine ground state, zero at both walls and smooth, but it fails the equation; $\\cos(\\pi x/L)$ solves the equation but fails at the walls. A check for any candidate: compute $-\\frac{\\hbar^2}{2m}\\frac{\\psi''}{\\psi} + U$. It must come out the same number, $E$, at every $x$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 3, 7.3 The Schrödinger Equation"
+      },
+      {
+        "name": "MIT OpenCourseWare 8.04 Quantum Physics I (Spring 2016)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

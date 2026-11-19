@@ -1,0 +1,105 @@
+{
+  "id": "calc4.greens-circulation",
+  "slug": "greens-circulation",
+  "ladder": "math",
+  "course": "calc4",
+  "unit": "greens",
+  "title": "Green's Theorem: Circulation Form",
+  "short": "∮ P dx + Q dy = ∬ (Qx − Py) dA.",
+  "trouble": "Students go around the boundary clockwise, which flips the sign.",
+  "prereqs": [
+    "calc4.path-independence",
+    "calc3.general-regions"
+  ],
+  "xp": 3,
+  "viz": [
+    "vectorfield",
+    "lineintegral"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/math/calculus-4/curl-divergence-meaning/\">Curl</a> is circulation per unit area. Add up the tiny circulations of all the small cells that make up a region, and the inside edges cancel, because each one is traced twice in opposite directions. What is left is the circulation around the outer boundary. That is Green's theorem: a <a href=\"/math/calculus-4/differential-form/\">line integral</a> around a closed curve equals a <a href=\"/math/calculus-3/general-regions/\">double integral</a> over the region inside."
+      },
+      {
+        "t": "key",
+        "html": "<b>Green's theorem (circulation form).</b> Let $D$ be a bounded region whose boundary $C$ is a piecewise smooth simple closed curve, traced <b>counterclockwise</b> (positive orientation: the region stays on your left). If $P$ and $Q$ have continuous partial derivatives on an open region containing $D$, then\n  $$\\oint_C P\\,dx + Q\\,dy = \\iint_D \\left(\\frac{\\partial Q}{\\partial x} - \\frac{\\partial P}{\\partial y}\\right) dA.$$"
+      },
+      {
+        "t": "why",
+        "html": "<b>Proof for a rectangle</b> $D = [a, b] \\times [c, d]$. Take the $P$ part. On the bottom ($y = c$, left to right) and the top ($y = d$, right to left), and with $dx = 0$ on the sides:\n  $$\\oint_C P\\,dx = \\int_a^b P(x, c)\\,dx - \\int_a^b P(x, d)\\,dx = -\\int_a^b \\left[P(x, d) - P(x, c)\\right] dx = -\\int_a^b \\int_c^d P_y\\,dy\\,dx,$$\n  by the fundamental theorem of calculus in $y$. The same steps with the two vertical sides give $\\oint_C Q\\,dy = \\iint_D Q_x\\,dA$. Adding gives the theorem. A general region can be cut into many small rectangles (and thin slivers along a curved edge); the cell circulations add up, the shared edges cancel, and the theorem holds for the whole region."
+      },
+      {
+        "t": "viz",
+        "name": "calc4-green",
+        "opts": {
+          "P": "-y",
+          "Q": "x*y",
+          "box": [
+            0,
+            2,
+            0,
+            1.5
+          ],
+          "n": 3,
+          "task": "Raise $n$ to $8$: the cell circulations always add up to the boundary circulation.",
+          "target": {
+            "n": 8
+          }
+        },
+        "cap": "The field $\\langle -y, xy \\rangle$ over the rectangle $[0, 2] \\times [0, 1.5]$, cut into $n \\times n$ cells. Each cell's circulation is about $(Q_x - P_y)$ times its area, so their sum is a Riemann sum for the double integral; the inside edges cancel, so the same sum is the boundary circulation."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A rectangle, both ways",
+        "q": "Find $\\oint_C xy\\,dx + x^2\\,dy$, where $C$ is the boundary of $[0, 1] \\times [0, 2]$, counterclockwise.",
+        "steps": [
+          "Green: $Q_x - P_y = 2x - x = x$, and $\\int_0^1 \\int_0^2 x\\,dy\\,dx = 2 \\cdot \\frac{1}{2} = 1$.",
+          "Directly: bottom ($y = 0$): ${}0$. Right ($x = 1$, $y$ from ${}0$ to ${}2$): $\\int_0^2 1\\,dy = 2$. Top ($y = 2$, $x$ from ${}1$ to ${}0$): $\\int_1^0 2x\\,dx = -1$. Left ($x = 0$): ${}0$.",
+          "Total ${}2 - 1 = 1$, as Green's theorem said."
+        ],
+        "a": "${}1$"
+      },
+      {
+        "t": "ex",
+        "title": "A disk, in polar coordinates",
+        "q": "Find $\\oint_C -y^3\\,dx + x^3\\,dy$ around $x^2 + y^2 = 9$, counterclockwise.",
+        "steps": [
+          "$Q_x - P_y = 3x^2 + 3y^2 = 3r^2$.",
+          "$$\\int_0^{2\\pi} \\int_0^3 3r^2 \\cdot r\\,dr\\,d\\theta = 2\\pi \\cdot \\frac{3 \\cdot 81}{4} = \\frac{243\\pi}{2}.$$"
+        ],
+        "a": "$\\frac{243\\pi}{2}$"
+      },
+      {
+        "t": "ex",
+        "title": "Clockwise",
+        "q": "Find $\\oint_C y^2\\,dx + 3xy\\,dy$ around the triangle with vertices $(0, 0)$, $(1, 0)$, $(0, 1)$, traced <b>clockwise</b>.",
+        "steps": [
+          "$Q_x - P_y = 3y - 2y = y$.",
+          "$$\\iint_D y\\,dA = \\int_0^1 \\int_0^{1 - x} y\\,dy\\,dx = \\int_0^1 \\frac{(1 - x)^2}{2}\\,dx = \\frac{1}{6}.$$",
+          "Clockwise is the negative orientation, so the answer is $-\\frac{1}{6}$."
+        ],
+        "a": "$-\\frac{1}{6}$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Ignoring the direction.</b> Green's theorem as stated assumes counterclockwise travel. If the curve is traced clockwise, the line integral is the negative of the double integral. Before applying the theorem, check that the region is on your left as you walk along $C$; if not, put a minus sign in front."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 3, 6.4 Green's Theorem"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,86 @@
+{
+  "id": "g4.compare-fractions",
+  "slug": "compare-fractions",
+  "ladder": "math",
+  "course": "g4",
+  "unit": "fractions",
+  "title": "Comparing Any Two Fractions",
+  "short": "Rename with a common denominator or numerator, then compare.",
+  "trouble": "Children compare only the numerators or only the denominators of unlike fractions.",
+  "prereqs": [
+    "g4.equivalent-fractions-multiply",
+    "g4.compare-benchmarks"
+  ],
+  "xp": 2,
+  "viz": [
+    "fractionbar",
+    "fractionline"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "When <a href=\"/math/grade-4/compare-benchmarks/\">benchmarks</a> do not settle it, make the fractions easy to compare. You know how to make <a href=\"/math/grade-4/equivalent-fractions-multiply/\">equivalent fractions</a>, so rename them with the same denominator (or the same numerator)."
+      },
+      {
+        "t": "key",
+        "html": "To compare $\\dfrac{2}{3}$ and $\\dfrac{3}{5}$, rename both with a common denominator, such as 15: $\\dfrac{10}{15}$ and $\\dfrac{9}{15}$. Now the pieces are the same size, so the one with more pieces is greater: $\\dfrac{2}{3} > \\dfrac{3}{5}$. Both fractions must refer to the same whole."
+      },
+      {
+        "t": "why",
+        "html": "Comparing thirds with fifths is like comparing 2 large slices with 3 small slices. Cutting both into fifteenths makes all the slices the same size; then you only count."
+      },
+      {
+        "t": "viz",
+        "name": "fractionbar",
+        "opts": {
+          "bars": [
+            "2/3",
+            "3/5"
+          ],
+          "guide": true
+        },
+        "cap": "Drag the guide to line up the ends. $\\dfrac{2}{3}$ reaches a little farther than $\\dfrac{3}{5}$."
+      },
+      {
+        "t": "ex",
+        "title": "One denominator is a multiple of the other",
+        "q": "Compare $\\dfrac{3}{4}$ and $\\dfrac{5}{8}$.",
+        "steps": [
+          "Rename fourths as eighths: $\\dfrac{3}{4} = \\dfrac{6}{8}$.",
+          "6 eighths is more than 5 eighths."
+        ],
+        "a": "$\\dfrac{3}{4} > \\dfrac{5}{8}$"
+      },
+      {
+        "t": "ex",
+        "title": "Neither is a multiple",
+        "q": "Compare $\\dfrac{2}{3}$ and $\\dfrac{3}{5}$.",
+        "steps": [
+          "$3 \\times 5 = 15$ works as a common denominator.",
+          "$\\dfrac{2}{3} = \\dfrac{10}{15}$ and $\\dfrac{3}{5} = \\dfrac{9}{15}$.",
+          "10 fifteenths is more than 9 fifteenths."
+        ],
+        "a": "$\\dfrac{2}{3} > \\dfrac{3}{5}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Comparing only the numerators (\"3 is more than 2, so $\\dfrac{3}{5}$ is bigger\") or only the denominators. Unlike pieces cannot be counted against each other. Rename first, then compare."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 4, 4.NF.A.2 (compare two fractions with different numerators and different denominators)"
+      },
+      {
+        "name": "OpenStax Prealgebra 2e, section 4.1 Visualize Fractions (fractions on the number line)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

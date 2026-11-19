@@ -1,0 +1,125 @@
+{
+  "id": "astro.observing-the-spectrum",
+  "slug": "observing-the-spectrum",
+  "ladder": "physics",
+  "course": "astro",
+  "unit": "light",
+  "title": "Observing Across the Spectrum",
+  "short": "Radio, infrared, X-ray and gamma-ray telescopes see what eyes can't, and some must fly above the air.",
+  "trouble": "Students think every telescope collects visible light, or that radio telescopes need to be in space.",
+  "prereqs": [
+    "astro.telescopes",
+    "physsci.em-spectrum"
+  ],
+  "xp": 1,
+  "viz": [
+    "ph-spectrum"
+  ],
+  "figureArchetype": "WaveFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Visible light is a thin slice of the <a href=\"/physics/physical-science/em-spectrum/\">electromagnetic spectrum</a>. Cold gas clouds glow in radio waves, dust-wrapped newborn stars in infrared, and the hottest gas around black holes in X-rays. To see the whole universe, astronomers build <a href=\"/physics/astronomy/telescopes/\">telescopes</a> for every band, and where they put them depends on what our air lets through."
+      },
+      {
+        "t": "why",
+        "html": "Earth's atmosphere absorbs most wavelengths. The thin upper air soaks up gamma rays and X-rays, and the ozone layer stops most ultraviolet (which is good for living things). Water vapor and carbon dioxide absorb much of the infrared. Only two broad \"windows\" stay open: visible light (with a little near infrared and ultraviolet around it) and radio waves from about a centimeter to around ten meters. So optical and radio telescopes can sit on the ground, while X-ray, gamma-ray, most ultraviolet and far-infrared telescopes must fly above the atmosphere. Infrared telescopes also need to be cold, or their own warmth glows in the very light they are trying to see."
+      },
+      {
+        "t": "key",
+        "html": "The atmosphere is open to visible light and radio waves, so those telescopes work from the ground. Gamma-ray, X-ray, most ultraviolet and far-infrared telescopes must go to space (some infrared work is possible from high, dry mountains)."
+      },
+      {
+        "t": "viz",
+        "name": "ph-spectrum",
+        "opts": {
+          "mode": "ruler",
+          "lambda": 3000000000,
+          "task": "Drag the marker across the spectrum and read each band's wavelength, frequency and photon energy."
+        },
+        "cap": "The electromagnetic spectrum on a log scale. The marker is at $3$ m, a radio wave. Charts often label the short-wavelength end of the radio band, from about 1 mm to 30 cm, as microwaves."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Band",
+          "Reaches the ground?",
+          "Example telescope",
+          "What it sees"
+        ],
+        "rows": [
+          [
+            "Radio",
+            "yes",
+            "Very Large Array (New Mexico)",
+            "cold hydrogen gas, pulsars, jets from black holes"
+          ],
+          [
+            "Infrared",
+            "partly",
+            "James Webb Space Telescope (in space)",
+            "dusty star nurseries, the first galaxies"
+          ],
+          [
+            "Visible",
+            "yes",
+            "Keck telescopes (Hawaii)",
+            "stars, galaxies, planets"
+          ],
+          [
+            "Ultraviolet",
+            "no",
+            "Hubble (in space)",
+            "hot young stars"
+          ],
+          [
+            "X-ray",
+            "no",
+            "Chandra X-ray Observatory (in space)",
+            "million-degree gas, matter near black holes"
+          ],
+          [
+            "Gamma ray",
+            "no",
+            "Fermi Gamma-ray Space Telescope (in space)",
+            "exploding stars, gamma-ray bursts"
+          ]
+        ],
+        "cap": "Telescopes across the spectrum."
+      },
+      {
+        "t": "h",
+        "text": "Worked example"
+      },
+      {
+        "t": "ex",
+        "title": "Tuning in to hydrogen",
+        "q": "Cold hydrogen gas gives off radio waves with wavelength $21$ cm. What is their frequency?",
+        "steps": [
+          "$f = \\frac{c}{\\lambda} = \\frac{3.00 \\times 10^{8}\\ \\text{m/s}}{0.21\\ \\text{m}}$.",
+          "$f = 1.4 \\times 10^{9}$ Hz $= 1400$ MHz (more precisely, $1420$ MHz).",
+          "Radio telescopes tuned near this frequency map hydrogen gas across our galaxy, right through the dust that blocks visible light. (Waves this short are at the microwave end of the radio band.)"
+        ],
+        "a": "About $1.4 \\times 10^{9}$ Hz."
+      },
+      {
+        "t": "mistake",
+        "html": "Two opposite slips: thinking every telescope collects visible light, and thinking radio telescopes need to be in space. Radio waves pass through the air (and through clouds) easily, so radio dishes work on the ground, day and night. It is the short-wavelength telescopes, X-ray and gamma ray, that must fly. Check: your car radio works indoors and in the rain, but you need no protection from the Sun's X-rays, because the air stops them."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Astronomy 2e, section 6.4, Radio Telescopes"
+      },
+      {
+        "name": "OpenStax, Astronomy 2e, section 6.5, Observations outside Earth's Atmosphere"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

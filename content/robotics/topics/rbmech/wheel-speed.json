@@ -1,0 +1,72 @@
+{
+  "id": "rbmech.wheel-speed",
+  "slug": "wheel-speed",
+  "ladder": "robotics",
+  "course": "rbmech",
+  "unit": "drive",
+  "title": "Wheels and Speed",
+  "short": "Rolling speed is angular speed times radius: v = ωr, and rpm must be turned into radians per second first.",
+  "trouble": "Students multiply rpm by the radius without converting to radians per second.",
+  "prereqs": [
+    "phys1.linear-angular",
+    "rbmech.gears"
+  ],
+  "xp": 2,
+  "viz": [
+    "rb-encoder"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "How fast will a robot drive? It depends on how fast its wheels turn and how big they are."
+      },
+      {
+        "t": "key",
+        "html": "A wheel that rolls without slipping moves at $v = \\omega r$, where $\\omega$ is its angular speed in <b>radians per second</b> and $r$ its radius. To change rpm to rad/s, multiply by $2\\pi/60$."
+      },
+      {
+        "t": "viz",
+        "name": "rb-encoder",
+        "opts": {
+          "cpr": 20,
+          "r": 3
+        },
+        "cap": "Turn the wheel and watch the distance it rolls: one turn is one circumference."
+      },
+      {
+        "t": "why",
+        "html": "In one turn the wheel's rim lays down its whole circumference, $2\\pi r$, on the floor. So turns per second times $2\\pi r$ is the speed, which is the same as $\\omega r$."
+      },
+      {
+        "t": "ex",
+        "title": "Robot speed",
+        "q": "A 6.5 cm wheel (radius 3.25 cm) turns at 120 rpm.",
+        "steps": [
+          "$\\omega = 120 \\times 2\\pi / 60 \\approx 12.57\\ \\text{rad/s}$.",
+          "$v = 12.57 \\times 0.0325 \\approx 0.41\\ \\text{m/s}$."
+        ],
+        "a": "About 0.41 m/s."
+      },
+      {
+        "t": "mistake",
+        "html": "Multiplying rpm by the radius without changing to radians per second. The answer comes out about 10 times too big."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Kevin M. Lynch and Frank C. Park, Modern Robotics: Mechanics, Planning, and Control (Cambridge University Press, 2017), free preprint and videos",
+        "url": "https://hades.mech.northwestern.edu/index.php/Modern_Robotics"
+      },
+      {
+        "name": "Roland Siegwart, Illah R. Nourbakhsh and Davide Scaramuzza, Introduction to Autonomous Mobile Robots, 2nd ed. (MIT Press, 2011)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

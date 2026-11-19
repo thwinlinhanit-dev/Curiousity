@@ -1,0 +1,133 @@
+{
+  "id": "draw.shading-sphere",
+  "slug": "shading-sphere",
+  "ladder": "art",
+  "course": "draw",
+  "unit": "light",
+  "title": "Shading a Sphere",
+  "short": "Put the values in order around the ball: highlight, light, halftone, core shadow, reflected light, then the cast shadow.",
+  "trouble": "People shade a dark ring all around the edge, which makes a flat disc with a dark outline. The core shadow is a band on the side away from the light.",
+  "prereqs": [
+    "draw.light-on-form",
+    "draw.cast-shadows",
+    "draw.smooth-tone"
+  ],
+  "xp": 2,
+  "viz": [
+    "ar-shade",
+    "ar-canvas"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Shading a ball puts everything from this unit together: one <a href=\"/art/drawing-basics/light-direction/\">light direction</a>, the <a href=\"/art/drawing-basics/light-on-form/\">parts of light</a>, a <a href=\"/art/drawing-basics/cast-shadows/\">cast shadow</a>, and <a href=\"/art/drawing-basics/smooth-tone/\">smooth tone</a>."
+      },
+      {
+        "t": "list",
+        "items": [
+          "Choose the light direction and draw a small arrow.",
+          "Draw a circle lightly, and the line of the table.",
+          "Find the core shadow: a curved band on the side away from the light, following the ball's shape.",
+          "Draw the cast shadow on the table, away from the light, touching the ball.",
+          "Fill the whole shadow side with one middle-dark tone.",
+          "Darken the core shadow band, and the contact point most of all.",
+          "Shade the halftones on the light side, getting lighter toward the light.",
+          "Leave the highlight white (or lift it with a kneaded eraser).",
+          "Lift a little reflected light inside the shadow, keeping it darker than the halftones."
+        ]
+      },
+      {
+        "t": "viz",
+        "name": "draw-pics",
+        "opts": {
+          "kind": "lit",
+          "items": [
+            {
+              "form": "sphere",
+              "light": 135
+            },
+            {
+              "form": "sphere",
+              "light": 135,
+              "ring": true
+            }
+          ],
+          "caps": [
+            "A ball: the core shadow is a band away from the light",
+            "A flat disc: a dark ring all around"
+          ]
+        },
+        "cap": "Two attempts at the same ball."
+      },
+      {
+        "t": "key",
+        "html": "Shade the values <b>in order around the ball</b>: highlight, light, halftone, core shadow, reflected light, with the cast shadow on the ground."
+      },
+      {
+        "t": "why",
+        "html": "A sphere turns away from the light gradually in every direction, so its values must change gradually too. The core shadow sits where the surface turns away from the light, which is a curved band on one side, not the outline. An outline-shaped ring tells the eye \"flat edge,\" which is why the ringed ball looks like a coin."
+      },
+      {
+        "t": "mistake",
+        "html": "People shade a dark ring all around the edge, which makes a flat disc with a dark outline. The core shadow is a band on the side away from the light. The edge facing the light stays light, and the outline can almost disappear there."
+      },
+      {
+        "t": "ex",
+        "title": "Check the order",
+        "q": "Starting at the highlight and moving toward the shadow, which value comes right after the halftone?",
+        "steps": [
+          "The order is highlight, light, halftone, core shadow, reflected light."
+        ],
+        "a": "The core shadow."
+      },
+      {
+        "t": "viz",
+        "name": "ar-shade",
+        "opts": {
+          "form": "sphere",
+          "light": 150,
+          "parts": [
+            "highlight",
+            "halftone",
+            "core",
+            "reflected"
+          ]
+        },
+        "cap": "Compare your ball with this one. Drag to move the light."
+      },
+      {
+        "t": "viz",
+        "name": "ar-canvas",
+        "opts": {
+          "guide": "trace",
+          "trace": {
+            "shape": "circle"
+          },
+          "height": 300,
+          "print": true,
+          "printTitle": "Shade a sphere",
+          "colors": [
+            "#26221e",
+            "#7a7068"
+          ]
+        },
+        "cap": "Shade the circle into a ball, light from the upper left. Print the sheet to shade one with a pencil."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Grokipedia, \"Shading\"",
+        "url": "https://grokipedia.com/page/Shading"
+      },
+      {
+        "name": "National Core Arts Standards, Visual Arts, Grades 6 to 8 (Creating: organize and develop artistic ideas and work)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

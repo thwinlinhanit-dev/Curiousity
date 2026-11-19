@@ -1,0 +1,142 @@
+{
+  "id": "usgeo.population-density-us",
+  "slug": "population-density-us",
+  "ladder": "geog",
+  "course": "usgeo",
+  "unit": "people-places",
+  "title": "Crowded and Uncrowded",
+  "short": "Population density is people per square mile: New Jersey is the most crowded state and Alaska the least.",
+  "trouble": "Students compare total population when the question is about crowding. Density divides people by land area, so a small state can be more crowded than a big one.",
+  "prereqs": [
+    "usgeo.state-populations",
+    "g6.unit-rate"
+  ],
+  "xp": 2,
+  "viz": [
+    "gg-map"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "How crowded is a state? Total population does not tell you, because states have very different amounts of land. <a href=\"/geography/us-geography/state-populations/\">California</a> has the most people, but it also has a lot of room."
+      },
+      {
+        "t": "key",
+        "html": "<b>Population density</b> = people ÷ land area. It tells how many people there are for each square mile. In 2020, <b>New Jersey</b> was the most crowded state (about 1,263 people per square mile) and <b>Alaska</b> the least (about 1.3)."
+      },
+      {
+        "t": "viz",
+        "name": "gg-map",
+        "opts": {
+          "map": "us",
+          "data": {
+            "AL": 99.2,
+            "AK": 1.3,
+            "AZ": 62.9,
+            "AR": 57.9,
+            "CA": 253.7,
+            "CO": 55.7,
+            "CT": 744.7,
+            "DE": 508,
+            "FL": 401.4,
+            "GA": 185.6,
+            "HI": 226.6,
+            "ID": 22.3,
+            "IL": 230.8,
+            "IN": 189.4,
+            "IA": 57.1,
+            "KS": 35.9,
+            "KY": 114.1,
+            "LA": 107.8,
+            "ME": 44.2,
+            "MD": 636.1,
+            "MA": 901.2,
+            "MI": 178,
+            "MN": 71.7,
+            "MS": 63.1,
+            "MO": 89.5,
+            "MT": 7.4,
+            "NE": 25.5,
+            "NV": 28.3,
+            "NH": 153.8,
+            "NJ": 1263,
+            "NM": 17.5,
+            "NY": 428.7,
+            "NC": 214.7,
+            "ND": 11.3,
+            "OH": 288.8,
+            "OK": 57.7,
+            "OR": 44.1,
+            "PA": 290.6,
+            "RI": 1061.4,
+            "SC": 170.2,
+            "SD": 11.7,
+            "TN": 167.6,
+            "TX": 111.6,
+            "UT": 39.7,
+            "VT": 69.8,
+            "VA": 218.6,
+            "WA": 115.9,
+            "WV": 74.6,
+            "WI": 108.8,
+            "WY": 5.9
+          },
+          "breaks": [
+            25,
+            100,
+            250,
+            500
+          ],
+          "legend": "People per square mile (2020)"
+        },
+        "cap": "Population density by state, from the Census Bureau."
+      },
+      {
+        "t": "why",
+        "html": "Density is a <a href=\"/math/grade-6/unit-rate/\">unit rate</a>: the number of people for one square mile. Dividing by area makes states of different sizes fair to compare, the same way price per ounce lets you compare a small box and a big box of cereal."
+      },
+      {
+        "t": "ex",
+        "title": "Find a density",
+        "q": "Rhode Island had about 1,100,000 people on about 1,000 square miles of land. What was its density?",
+        "steps": [
+          "Density = people ÷ land area.",
+          "1,100,000 ÷ 1,000 = 1,100.",
+          "About 1,100 people per square mile."
+        ],
+        "a": "About 1,100 people per square mile (the Census Bureau's exact figure is about 1,061)."
+      },
+      {
+        "t": "ex",
+        "title": "More people, less crowded",
+        "q": "Texas had about 29,000,000 people on about 261,000 square miles. Is it more crowded than Rhode Island?",
+        "steps": [
+          "29,000,000 ÷ 261,000 ≈ 111 people per square mile.",
+          "Rhode Island has about 1,061.",
+          "Texas has far more people, but far more land, so it is less crowded."
+        ],
+        "a": "No. Texas is about one tenth as crowded."
+      },
+      {
+        "t": "mistake",
+        "html": "People compare total population when the question is about crowding. Density divides people by land area, so a small state with fewer people, like Rhode Island, can be much more crowded than a big state with many people, like Texas."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "U.S. Census Bureau, 2020 Census apportionment results: resident population and population density by state (table as republished by the New Jersey Department of Labor)",
+        "url": "https://www.nj.gov/labor/labormarketinformation/assets/PDFs/census/2020/2020%20Apportionment/population-density-data-table.pdf"
+      },
+      {
+        "name": "U.S. Census Bureau, State Area Measurements (total and land area of each state)",
+        "url": "https://www.census.gov/geographies/reference-files/2010/geo/state-area.html.html"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

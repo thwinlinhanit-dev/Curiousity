@@ -1,0 +1,108 @@
+{
+  "id": "gchem2.gibbs-energy",
+  "slug": "gibbs-energy",
+  "ladder": "chemistry",
+  "course": "gchem2",
+  "unit": "thermodynamics",
+  "title": "Gibbs Free Energy",
+  "short": "ΔG = ΔH − TΔS, and a negative ΔG means the process is thermodynamically favored.",
+  "trouble": "Students combine ΔH in kJ with ΔS in J/K without converting.",
+  "prereqs": [
+    "gchem2.second-law"
+  ],
+  "xp": 2,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The <a href=\"/chemistry/general-chemistry-2/second-law/\">second law</a> asks you to track both the system and the surroundings. Gibbs free energy packs both into one quantity that belongs to the system alone, so you can decide from $\\Delta H$, $\\Delta S$ and $T$ directly."
+      },
+      {
+        "t": "key",
+        "html": "$\\Delta G = \\Delta H - T\\Delta S$ (at constant temperature and pressure). $\\Delta G < 0$: thermodynamically favored. $\\Delta G > 0$: not favored (the reverse is). $\\Delta G = 0$: at equilibrium. Standard values add like enthalpies: $$\\Delta G^\\circ = \\sum n\\Delta G^\\circ_f(\\text{products}) - \\sum n\\Delta G^\\circ_f(\\text{reactants})$$"
+      },
+      {
+        "t": "why",
+        "html": "Start from $\\Delta S_\\text{univ} = \\Delta S - \\dfrac{\\Delta H}{T}$. Multiply by $-T$: $-T\\Delta S_\\text{univ} = \\Delta H - T\\Delta S$. Call this $\\Delta G$. Since $T$ is positive, $\\Delta S_\\text{univ} > 0$ exactly when $\\Delta G < 0$. $\\Delta G$ also means something physical: it is the most useful (non-expansion) work the process can deliver, as electrical work in a battery or chemical work in a cell."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "f": "-91.8+0.1981*x",
+          "xmin": 0,
+          "xmax": 800,
+          "ymin": -100,
+          "ymax": 80,
+          "xlabel": "T (K)",
+          "ylabel": "ΔG° (kJ)",
+          "trace": true,
+          "roots": true,
+          "zoom": false
+        },
+        "cap": "$\\Delta G^\\circ$ for making ammonia against temperature (treating $\\Delta H^\\circ$ and $\\Delta S^\\circ$ as constant). It is negative at room temperature and crosses zero near 463 K."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "From ΔH and ΔS",
+        "q": "For $\\mathrm{N_2 + 3H_2 \\to 2NH_3}$, $\\Delta H^\\circ = -91.8\\ \\text{kJ}$ and $\\Delta S^\\circ = -198.1\\ \\text{J/K}$. Find $\\Delta G^\\circ$ at $298\\ \\text{K}$.",
+        "steps": [
+          "Change $\\Delta S^\\circ$ to kJ/K: $-0.1981\\ \\text{kJ/K}$.",
+          "$$\\Delta G^\\circ = -91.8 - (298)(-0.1981) = -91.8 + 59.0 = -32.8\\ \\text{kJ}$$",
+          "Negative: favored at 298 K. The favorable $\\Delta H$ outweighs the unfavorable $\\Delta S$."
+        ],
+        "a": "$-32.8\\ \\text{kJ}$."
+      },
+      {
+        "t": "ex",
+        "title": "From free energies of formation",
+        "q": "Find $\\Delta G^\\circ$ for $$\\mathrm{CH_4(g)} + \\mathrm{2O_2(g)} \\to \\mathrm{CO_2(g)} + \\mathrm{2H_2O(l)}$$ given $\\Delta G^\\circ_f$: $\\mathrm{CH_4}$ $-50.5$, $\\mathrm{CO_2}$ $-394.4$, $\\mathrm{H_2O(l)}$ $-237.1\\ \\text{kJ/mol}$.",
+        "steps": [
+          "Products: $-394.4 + 2(-237.1) = -868.6\\ \\text{kJ}$.",
+          "Reactants: $-50.5 + 0 = -50.5\\ \\text{kJ}$ ($\\mathrm{O_2}$ is an element in its standard state).",
+          "$\\Delta G^\\circ = -868.6 - (-50.5) = -818.1\\ \\text{kJ}$."
+        ],
+        "a": "$-818.1\\ \\text{kJ}$."
+      },
+      {
+        "t": "ex",
+        "title": "A different temperature",
+        "q": "Using the same $\\Delta H^\\circ$ and $\\Delta S^\\circ$, is ammonia synthesis favored at $1000\\ \\text{K}$?",
+        "steps": [
+          "$$\\Delta G^\\circ \\approx -91.8 - (1000)(-0.1981) = -91.8 + 198.1 = +106.3\\ \\text{kJ}$$",
+          "Positive: at 1000 K the entropy term wins and ammonia tends to decompose. (This assumes $\\Delta H^\\circ$ and $\\Delta S^\\circ$ stay about the same when heated, which is a fair first estimate.)"
+        ],
+        "a": "No: $\\Delta G^\\circ \\approx +106\\ \\text{kJ}$."
+      },
+      {
+        "t": "mistake",
+        "html": "Combining $\\Delta H$ in kJ with $\\Delta S$ in J/K without converting. $\\Delta S$ values are about a thousand times smaller in kJ, so skipping the conversion makes $T\\Delta S$ a thousand times too large. Check: write the units on every term; $T\\Delta S$ must come out in kJ."
+      },
+      {
+        "t": "p",
+        "html": "The superscript ° means standard conditions: 1 bar for gases and 1 M for solutes. In a real mixture the free energy change is $\\Delta G$, which can differ from $\\Delta G^\\circ$; the lesson on <a href=\"/chemistry/general-chemistry-2/free-energy-k/\">free energy and equilibrium</a> shows how."
+      },
+      {
+        "t": "note",
+        "html": "Unlike $S^\\circ$, $\\Delta G^\\circ_f$ of an element in its standard state is zero, just as for $\\Delta H^\\circ_f$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 16.4 Free Energy"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

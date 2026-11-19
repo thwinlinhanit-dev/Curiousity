@@ -1,0 +1,131 @@
+{
+  "id": "prob.continuity-correction",
+  "slug": "continuity-correction",
+  "ladder": "math",
+  "course": "prob",
+  "unit": "limit-theorems",
+  "title": "The Normal Approximation to the Binomial",
+  "short": "Approximate Binomial(n, p) with a normal curve, widening each whole number to an interval of width 1: P(X ≤ 12) ≈ P(Y < 12.5).",
+  "trouble": "Students skip the continuity correction, or move the boundary the wrong way: P(X < 12) = P(X ≤ 11) ≈ P(Y < 11.5).",
+  "prereqs": [
+    "prob.clt-sums",
+    "stat.binomial-distribution"
+  ],
+  "xp": 2,
+  "viz": [
+    "normal"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A <a href=\"/math/probability-and-statistics/binomial-distribution/\">binomial</a> count is a sum of independent 0–1 trials, so by the <a href=\"/math/probability/clt-sums/\">central limit theorem</a> it is close to normal when $n$ is large. But the binomial lives on whole numbers and the normal curve on all real numbers. The continuity correction bridges the two."
+      },
+      {
+        "t": "key",
+        "html": "For $X$ binomial with $np(1 - p)$ reasonably large (say at least 10), use $Y$ normal with mean $np$ and standard deviation $\\sqrt{np(1 - p)}$, and widen each whole number $k$ to $[k - 0.5,\\ k + 0.5]$: $$P(X \\le k) \\approx P(Y < k + 0.5), \\qquad P(X \\ge k) \\approx P(Y > k - 0.5), \\qquad P(X = k) \\approx P(k - 0.5 < Y < k + 0.5).$$"
+      },
+      {
+        "t": "why",
+        "html": "Draw the binomial pmf as bars of width 1, centered on the whole numbers. The bar for $k$ covers $[k - 0.5, k + 0.5]$ and its area is $P(X = k)$. The normal curve approximates the tops of the bars, so the area under the curve over the same stretch approximates the same probability. For $X \\le k$ the bars run through the one at $k$, which ends at $k + 0.5$. Without the correction, a single value would get probability 0, and each \"$\\le$\" question would lose half a bar."
+      },
+      {
+        "t": "viz",
+        "name": "normal",
+        "opts": {
+          "mu": 50,
+          "sigma": 5,
+          "a": 44.5,
+          "b": 45.5,
+          "shade": "left",
+          "zscale": true,
+          "sliders": false,
+          "xlabel": "heads in 100 flips"
+        },
+        "cap": "The normal curve for 100 fair coin flips: the area to the left of 45.5 approximates the chance of at most 45 heads."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Event",
+          "Corrected normal event"
+        ],
+        "rows": [
+          [
+            "$X \\le 45$",
+            "$Y < 45.5$"
+          ],
+          [
+            "$X < 45$, which is $X \\le 44$",
+            "$Y < 44.5$"
+          ],
+          [
+            "$X \\ge 45$",
+            "$Y > 44.5$"
+          ],
+          [
+            "$X > 45$, which is $X \\ge 46$",
+            "$Y > 45.5$"
+          ],
+          [
+            "$X = 45$",
+            "$44.5 < Y < 45.5$"
+          ]
+        ],
+        "cap": "First decide which whole numbers are in, then go half a unit past the last one."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "At most 45 heads",
+        "q": "Flip a fair coin 100 times. Approximate $P(X \\le 45)$. Use $\\Phi(-0.9) = 0.1841$.",
+        "steps": [
+          "$np = 50$ and $\\sqrt{np(1 - p)} = 5$.",
+          "$P(X \\le 45) \\approx P(Y < 45.5)$; $z = \\frac{45.5 - 50}{5} = -0.9$.",
+          "$\\approx 0.1841$. The exact binomial value is $0.1841$ too."
+        ],
+        "a": "about $0.184$"
+      },
+      {
+        "t": "ex",
+        "title": "Fewer than 45",
+        "q": "Same coin. Approximate $P(X < 45)$. Use $\\Phi(-1.1) = 0.1357$.",
+        "steps": [
+          "$X < 45$ means $X \\le 44$, so use $Y < 44.5$.",
+          "$z = \\frac{44.5 - 50}{5} = -1.1$, and $P \\approx 0.1357$ (exact: $0.1356$)."
+        ],
+        "a": "about $0.136$"
+      },
+      {
+        "t": "ex",
+        "title": "Exactly 50",
+        "q": "Approximate $P(X = 50)$. Use $\\Phi(0.1) = 0.5398$.",
+        "steps": [
+          "$P(X = 50) \\approx P(49.5 < Y < 50.5)$, with $z = \\pm 0.1$.",
+          "$\\approx 0.5398 - 0.4602 = 0.0796$ (exact: $0.0796$)."
+        ],
+        "a": "about $0.080$"
+      },
+      {
+        "t": "mistake",
+        "html": "Skipping the correction, or moving the boundary the wrong way. $P(X < 12)$ is $P(X \\le 11)$, so the boundary is $11.5$, not $12.5$. Check: list which whole numbers the event includes, and make the normal interval run half a unit beyond the extreme ones."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Grinstead and Snell, Introduction to Probability (2nd revised edition, American Mathematical Society; free from Dartmouth College), chapter 9 (Central Limit Theorem), section 9.1, Bernoulli trials"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.05, Introduction to Probability and Statistics (Spring 2014), readings on the normal approximation to the binomial"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

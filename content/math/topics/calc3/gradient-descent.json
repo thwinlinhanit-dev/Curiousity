@@ -1,0 +1,131 @@
+{
+  "id": "calc3.gradient-descent",
+  "slug": "gradient-descent",
+  "ladder": "math",
+  "course": "calc3",
+  "unit": "optimization",
+  "title": "Gradient Descent",
+  "short": "Step against the gradient, x ← x − η∇f, to walk downhill toward a low point.",
+  "trouble": "Students step along +∇f (uphill), or think a bigger step always gets there sooner, when a step that is too big overshoots and can blow up.",
+  "prereqs": [
+    "calc3.gradient",
+    "calc3.critical-points"
+  ],
+  "xp": 2,
+  "viz": [
+    "calc3-descent"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The <a href=\"/math/calculus-3/gradient/\">gradient</a> points uphill as steeply as possible. To find a low point, you have been setting $\\nabla f = \\mathbf{0}$ and solving, as with <a href=\"/math/calculus-3/critical-points/\">critical points</a>. That works for small textbook functions. For a function of a thousand variables, or a million, nobody can solve that system. There is a humbler plan: stand somewhere, feel which way is down, take a step, and repeat."
+      },
+      {
+        "t": "key",
+        "html": "<b>Gradient descent:</b> choose a starting point $\\mathbf{x}_{0}$ and a step size $\\eta > 0$ (also called the learning rate). Then repeat $$\\mathbf{x}_{k+1} = \\mathbf{x}_{k} - \\eta\\,\\nabla f(\\mathbf{x}_{k}).$$ Each step goes against the gradient, the direction of steepest descent, by an amount proportional to how steep the ground is."
+      },
+      {
+        "t": "why",
+        "html": "By the <a href=\"/math/calculus-3/tangent-planes/\">linear approximation</a>, $$f(\\mathbf{x} - \\eta\\nabla f) \\approx f(\\mathbf{x}) - \\eta\\,\\nabla f \\cdot \\nabla f = f(\\mathbf{x}) - \\eta\\,|\\nabla f|^{2}.$$ When $\\nabla f \\ne \\mathbf{0}$ and $\\eta$ is small, that is less than $f(\\mathbf{x})$: a small enough step always goes down. And the points stop moving only where $\\nabla f = \\mathbf{0}$, at a critical point."
+      },
+      {
+        "t": "h",
+        "text": "One variable first"
+      },
+      {
+        "t": "ex",
+        "title": "The step size decides everything",
+        "q": "Run gradient descent on $f(x) = x^{2}$ from $x_{0} = 2$ with $\\eta = 0.1$, $0.5$, $0.9$ and $1.1$.",
+        "steps": [
+          "$f'(x) = 2x$, so $x_{k+1} = x_{k} - 2\\eta x_{k} = (1 - 2\\eta)x_{k}$. Every step multiplies by $r = 1 - 2\\eta$.",
+          "$\\eta = 0.1$: $r = 0.8$. The points $2, 1.6, 1.28, \\ldots$ slide down toward $0$.",
+          "$\\eta = 0.5$: $r = 0$. One step lands exactly on the minimum.",
+          "$\\eta = 0.9$: $r = -0.8$. The points $2, -1.6, 1.28, \\ldots$ jump across the minimum each time, but still close in.",
+          "$\\eta = 1.1$: $r = -1.2$. The points $2, -2.4, 2.88, \\ldots$ land farther out every time: the run blows up."
+        ],
+        "a": "It converges for $0 < \\eta < 1$, fastest at $\\eta = 0.5$, and blows up for $\\eta > 1$."
+      },
+      {
+        "t": "viz",
+        "name": "calc3-descent",
+        "opts": {
+          "preset": "parabola",
+          "eta": 0.9
+        },
+        "cap": "$f(x) = x^{2}$ with $\\eta = 0.9$: each step jumps across the bottom. Try $\\eta = 0.1$, $0.5$ and $1.1$, then Reset. The red arrow is the next step."
+      },
+      {
+        "t": "h",
+        "text": "Two variables"
+      },
+      {
+        "t": "ex",
+        "title": "Steps on a bowl",
+        "q": "Take two steps on $f(x, y) = x^{2} + 3y^{2}$ from $(2, 1)$ with $\\eta = 0.1$.",
+        "steps": [
+          "$\\nabla f = \\langle 2x, 6y \\rangle$, which is $\\langle 4, 6 \\rangle$ at $(2, 1)$.",
+          "$(2, 1) - 0.1\\langle 4, 6 \\rangle = (1.6, 0.4)$, and $f$ drops from $7$ to $2.56 + 0.48 = 3.04$.",
+          "At $(1.6, 0.4)$: $\\nabla f = \\langle 3.2, 2.4 \\rangle$, so the next point is $(1.28, 0.16)$, where $f = 1.6384 + 0.0768 = 1.7152$.",
+          "Each step multiplies $x$ by $1 - 2\\eta = 0.8$ and $y$ by $1 - 6\\eta = 0.4$: the steep direction shrinks faster."
+        ],
+        "a": "$(1.6, 0.4)$, then $(1.28, 0.16)$"
+      },
+      {
+        "t": "p",
+        "html": "Those factors also set a speed limit. In the $y$-direction the factor $1 - 6\\eta$ has size less than $1$ only when $\\eta < \\frac{1}{3}$; in the $x$-direction the limit is $\\eta < 1$. The steepest direction sets the limit for the whole run. In a long, narrow valley that limit is small, so progress along the gentle floor of the valley is slow, and the path zigzags across it."
+      },
+      {
+        "t": "viz",
+        "name": "calc3-descent",
+        "opts": {
+          "preset": "valley",
+          "presets": true,
+          "etaMax": 0.5
+        },
+        "cap": "Drag the ball (or tap the map) to start somewhere new, then press Run. In the long valley, $f = \\frac{x^{2}}{2} + 5y^{2}$, a step size near $0.2$ zigzags and anything above $0.2$ blows up. Then switch to Two valleys."
+      },
+      {
+        "t": "ex",
+        "title": "Not always the lowest point",
+        "q": "Run gradient descent with a small step size on $f(x) = x^{4} - 4x^{2} + x$, once from $x_{0} = 1$ and once from $x_{0} = -1$.",
+        "steps": [
+          "$f'(x) = 4x^{3} - 8x + 1$, whose zeros are near $x \\approx -1.47$, $0.13$ and $1.35$: two valleys with a hill between them.",
+          "From $x_{0} = 1$: $f'(1) = -3 < 0$, so the steps go right and settle near $x \\approx 1.35$, where $f \\approx -2.62$.",
+          "From $x_{0} = -1$: $f'(-1) = 5 > 0$, so the steps go left and settle near $x \\approx -1.47$, where $f \\approx -5.44$.",
+          "Both are local minima. Gradient descent stops at the bottom of whichever valley it starts in, and only the second one is the lowest point."
+        ],
+        "a": "It finds the valley it starts in, which may not hold the lowest point."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Stepping uphill.</b> $\\mathbf{x}_{k} + \\eta\\nabla f(\\mathbf{x}_{k})$ climbs, because the gradient points uphill. Check: work out $f$ before and after a small step. It should go down."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Thinking a bigger step is always faster.</b> Past the limit set by the steepest direction, each step overshoots by more than it gains and the run blows up. Check: if $f$ goes up after a step, halve $\\eta$."
+      },
+      {
+        "t": "note",
+        "html": "In machine learning, $f$ is a <b>loss</b>: a number that measures how badly a model fits its examples, as a function of the model's weights. Gradient descent, run on millions of weights at once, is how neural networks are trained. Next you will fit a line this way (<a href=\"/math/calculus-3/minimizing-loss/\">minimizing loss</a>) and find a network's gradient (<a href=\"/math/calculus-3/backpropagation/\">backpropagation</a>)."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Calculus Volume 3, section 4.6 Directional Derivatives and the Gradient"
+      },
+      {
+        "name": "Boyd and Vandenberghe, Convex Optimization (Cambridge University Press, 2004), section 9.3 Gradient descent method"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.065 Matrix Methods in Data Analysis, Signal Processing, and Machine Learning (Gilbert Strang, Spring 2018), Lecture 22: Gradient Descent: Downhill to a Minimum"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

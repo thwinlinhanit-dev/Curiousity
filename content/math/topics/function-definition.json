@@ -1,0 +1,126 @@
+{
+  "id": "g8.function-definition",
+  "slug": "function-definition",
+  "ladder": "math",
+  "course": "g8",
+  "unit": "functions",
+  "title": "What Is a Function?",
+  "short": "Each input has exactly one output.",
+  "trouble": "Students think a function cannot have two inputs with the same output.",
+  "prereqs": [
+    "g6.dependent-independent"
+  ],
+  "xp": 1,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/math/grade-6/dependent-independent/\">dependent and independent variables</a> one quantity depended on another. A function makes that idea precise: it is a rule you can count on."
+      },
+      {
+        "t": "why",
+        "html": "A rule is only useful if it is predictable. If you put 3 into a machine and sometimes got 5 and sometimes 7, you could never say what 3 gives. So the one requirement is that each input has a single output. Two different inputs may give the same output, just as two students can share a birthday; that does not make anything unpredictable."
+      },
+      {
+        "t": "key",
+        "html": "A <b>function</b> assigns to each input exactly one output. To test a list, table or diagram, look for an input that appears with two different outputs. If there is none, it is a function."
+      },
+      {
+        "t": "viz",
+        "name": "g8-mapping",
+        "opts": {
+          "pairs": [
+            [
+              1,
+              4
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              4
+            ]
+          ]
+        },
+        "cap": "A function: two inputs share the output 4, and that is allowed."
+      },
+      {
+        "t": "viz",
+        "name": "g8-mapping",
+        "opts": {
+          "pairs": [
+            [
+              1,
+              4
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              3,
+              6
+            ]
+          ]
+        },
+        "cap": "Not a function: the input 2 has two outputs, 5 and 7."
+      },
+      {
+        "t": "ex",
+        "title": "A list of pairs",
+        "q": "Is $\\{(-2, 3), (0, 1), (4, 3), (5, 0)\\}$ a function?",
+        "steps": [
+          "The inputs are $-2$, 0, 4 and 5: each appears once.",
+          "Two inputs share the output 3, which is fine."
+        ],
+        "a": "Yes, it is a function."
+      },
+      {
+        "t": "ex",
+        "title": "A table",
+        "q": "Is this a function? $$\\begin{array}{c|cccc} x & 1 & 2 & 2 & 3 \\\\ \\hline y & 6 & 8 & 9 & 10 \\end{array}$$",
+        "steps": [
+          "The input 2 appears twice, with outputs 8 and 9.",
+          "One input with two different outputs breaks the rule."
+        ],
+        "a": "No, it is not a function."
+      },
+      {
+        "t": "ex",
+        "title": "Points on a graph",
+        "q": "The points $(1, 2)$, $(1, 5)$ and $(3, 4)$ are plotted. Do they show a function?",
+        "steps": [
+          "$(1, 2)$ and $(1, 5)$ have the same input, 1, but different outputs.",
+          "On a graph, that shows up as two points on the same vertical line."
+        ],
+        "a": "No."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking a function can’t have two inputs with the same output. Repeated <b>outputs</b> are fine. Only a repeated <b>input</b> with different outputs breaks the rule."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Intermediate Algebra 2e, Section 3.5: Relations and Functions"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 8, 8.F.A.1 (a function assigns to each input exactly one output)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

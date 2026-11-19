@@ -1,0 +1,97 @@
+{
+  "id": "calc2.monotone-bounded",
+  "slug": "monotone-bounded",
+  "ladder": "math",
+  "course": "calc2",
+  "unit": "sequences-series",
+  "title": "Monotone and Bounded Sequences",
+  "short": "An increasing sequence with an upper bound converges.",
+  "trouble": "",
+  "prereqs": [
+    "calc2.sequences"
+  ],
+  "xp": 2,
+  "viz": [
+    "sequence"
+  ],
+  "figureArchetype": "FieldFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "For a <a href=\"/math/calculus-2/sequences/\">sequence</a> given by a recursive rule, such as $a_{n+1} = \\sqrt{2 + a_n}$, there may be no formula for $a_n$ at all. You can still prove that it converges, and then find the limit, using one of the most important facts about the real numbers."
+      },
+      {
+        "t": "why",
+        "html": "Suppose the terms only go up ($a_1 \\le a_2 \\le \\cdots$) and never pass some ceiling $M$. The set of terms has a least upper bound $L$ (this is the completeness of the real numbers: the number line has no gaps). For any $\\varepsilon > 0$, the number $L - \\varepsilon$ is not an upper bound, so some term $a_N$ is above it. Every later term is at least $a_N$ (the terms only rise) and at most $L$. So from $N$ on, all terms are within $\\varepsilon$ of $L$: the sequence converges to $L$."
+      },
+      {
+        "t": "key",
+        "html": "<b>Monotone convergence theorem:</b> a sequence that is increasing and bounded above converges; so does one that is decreasing and bounded below. For a recursive rule $a_{n+1} = g(a_n)$ with $g$ continuous, once you know the sequence converges, its limit satisfies $L = g(L)$."
+      },
+      {
+        "t": "ex",
+        "title": "A recursive sequence",
+        "q": "Let $a_1 = 0$ and $a_{n+1} = \\frac{a_n}{2} + 3$. Show it converges and find the limit.",
+        "steps": [
+          "The first terms are $0, 3, 4.5, 5.25, \\ldots$: they seem to rise toward 6.",
+          "Bounded: if $a_n < 6$ then $a_{n+1} < \\frac{6}{2} + 3 = 6$. So by induction every term is below 6.",
+          "Increasing: $a_{n+1} - a_n = 3 - \\frac{a_n}{2} > 0$ because $a_n < 6$.",
+          "So it converges, and the limit satisfies $L = \\frac{L}{2} + 3$, giving $L = 6$."
+        ],
+        "a": "It converges to $6$."
+      },
+      {
+        "t": "viz",
+        "name": "sequence",
+        "opts": {
+          "type": "custom",
+          "f": "6-6/2^(n-1)",
+          "N": 10,
+          "maxN": 30,
+          "limit": 6,
+          "sliders": false
+        },
+        "cap": "The terms of $a_{n+1} = \\frac{a_n}{2} + 3$ (here written as $6 - \\frac{6}{2^{n-1}}$): they rise every step and never cross the ceiling at 6, so they have to settle somewhere, and that somewhere is 6."
+      },
+      {
+        "t": "ex",
+        "title": "Nested roots",
+        "q": "Let $a_1 = 0$ and $a_{n+1} = \\sqrt{2 + a_n}$. Find the limit.",
+        "steps": [
+          "The terms $0, \\sqrt{2}, \\sqrt{2 + \\sqrt{2}}, \\ldots$ increase and stay below 2 (if $a_n < 2$, then $a_{n+1} < \\sqrt{4} = 2$).",
+          "So the limit exists and $L = \\sqrt{2 + L}$, that is $L^{2} - L - 2 = 0$, so $L = 2$ or $L = -1$.",
+          "The terms are not negative, so $L = 2$."
+        ],
+        "a": "$2$"
+      },
+      {
+        "t": "mistake",
+        "html": "Solving $L = g(L)$ before knowing the limit exists. For $a_1 = 1$, $a_{n+1} = 2a_n$, the equation $L = 2L$ gives $L = 0$, but the sequence is $1, 2, 4, 8, \\ldots$, which diverges. The equation only finds the limit if there is one. Also, bounded alone is not enough ($(-1)^{n}$ is bounded and diverges); you need monotone and bounded."
+      },
+      {
+        "t": "ex",
+        "title": "An explicit sequence",
+        "q": "Does $a_n = \\frac{n}{n + 1}$ converge?",
+        "steps": [
+          "$a_n = 1 - \\frac{1}{n + 1}$, and the subtracted part shrinks, so the terms increase.",
+          "Every term is less than 1, so the sequence is bounded above.",
+          "By the theorem it converges (here we can also see the limit directly: 1)."
+        ],
+        "a": "Yes, to 1."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 2, Section 5.1: Sequences (bounded and monotone sequences)"
+      },
+      {
+        "name": "Paul’s Online Math Notes (Lamar University), Calculus II: More on Sequences"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

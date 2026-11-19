@@ -1,0 +1,143 @@
+{
+  "id": "sym.substitution-instances",
+  "slug": "substitution-instances",
+  "ladder": "logic",
+  "course": "sym",
+  "unit": "inference",
+  "title": "Matching a Rule to Whole Lines",
+  "short": "A rule of inference applies only to whole lines whose main connectives match the rule's pattern, with any formulas in place of p, q, r and s.",
+  "trouble": "Learners apply MP inside a line: from (p → q) ∨ r and p they infer q. Rules of inference never work on a part of a line.",
+  "prereqs": [
+    "sym.cd"
+  ],
+  "xp": 3,
+  "viz": [
+    "lg-proof"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Each rule of inference is a pattern written with $p$, $q$, $r$ and $s$. In a real proof, those letters stand for whatever formulas fill their places. This lesson makes the matching exact, using the rules from <a href=\"/logic/symbolic-logic/cd/\">Constructive Dilemma (CD)</a>."
+      },
+      {
+        "t": "key",
+        "html": "A rule of inference applies to whole lines whose <b>main connectives</b> fit the rule's pattern, with any formulas in place of $p$, $q$, $r$ and $s$ (the same formula wherever the same letter appears). It never applies to a part of a line."
+      },
+      {
+        "t": "why",
+        "html": "Validity depends only on form, so if MP is valid for letters, it is valid for any formulas put in place of those letters: the truth table for the bigger argument has the same pattern of T and F in the columns that matter. But a part of a line is not asserted on its own. In $(p \\to q) \\lor r$, the conditional $p \\to q$ might be false (when $r$ is true), so using it as if it were a premise could take you from truths to a falsehood."
+      },
+      {
+        "t": "viz",
+        "name": "lg-proof",
+        "opts": {
+          "premises": [
+            "(p ∨ q) → (r ∧ ¬s)",
+            "¬(r ∧ ¬s)"
+          ],
+          "conclusion": "¬(p ∨ q)",
+          "lines": [
+            {
+              "f": "¬(p ∨ q)",
+              "j": "MT 1, 2",
+              "note": "Here MT's p is p ∨ q and its q is r ∧ ¬s."
+            }
+          ],
+          "steps": true,
+          "goalLine": true
+        },
+        "cap": "Modus tollens with compound formulas in place of the letters."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Match the main connectives",
+        "q": "Which rule takes $(p \\land q) \\to \\neg r$ and $p \\land q$ to $\\neg r$?",
+        "steps": [
+          "Line 1's main connective is $\\to$; line 2 is exactly its antecedent.",
+          "MP's $p$ is $p \\land q$ and its $q$ is $\\neg r$."
+        ],
+        "a": "MP"
+      },
+      {
+        "t": "ex",
+        "title": "A part of a line",
+        "q": "Can MP take $(p \\to q) \\lor r$ and $p$ to $q$?",
+        "steps": [
+          "Line 1's main connective is $\\lor$, not $\\to$.",
+          "The conditional is only a part."
+        ],
+        "a": "No. No rule of inference applies to line 1 as it stands."
+      },
+      {
+        "t": "ex",
+        "title": "Same letter, same formula",
+        "q": "Does HS take $p \\to q$ and $r \\to s$ to $p \\to s$?",
+        "steps": [
+          "HS needs the consequent of the first to be the antecedent of the second.",
+          "Here $q$ and $r$ differ."
+        ],
+        "a": "No."
+      },
+      {
+        "t": "mistake",
+        "html": "Applying MP inside a line: from $(p \\to q) \\lor r$ and $p$, inferring $q$. Check the main connective of each cited line before you name a rule. If the line is a disjunction, MP, MT and HS cannot use it; if it is a conditional, Simp cannot."
+      },
+      {
+        "t": "p",
+        "html": "A useful habit is to draw an imaginary box around each big part. In $(p \\lor q) \\to (r \\land \\neg s)$ the antecedent $p \\lor q$ is one box and the consequent $r \\land \\neg s$ another; the line is then just box $\\to$ box, and MP or MT can see it plainly. The rules never look inside a box; they only check how the boxes are joined."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Rule",
+          "Main connective of the cited lines"
+        ],
+        "rows": [
+          [
+            "MP, MT",
+            "one conditional (and its antecedent, or the negation of its consequent)"
+          ],
+          [
+            "HS",
+            "two conditionals"
+          ],
+          [
+            "DS",
+            "one disjunction and one negation"
+          ],
+          [
+            "CD",
+            "one conjunction of conditionals and one disjunction"
+          ],
+          [
+            "Simp",
+            "one conjunction"
+          ],
+          [
+            "Conj, Add",
+            "any lines"
+          ]
+        ],
+        "cap": "A quick guide."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Patrick J. Hurley and Lori Watson, A Concise Introduction to Logic, 13th ed., section 7.1, on substitution instances"
+      },
+      {
+        "name": "forall x: Calgary, an open introduction to formal logic (P. D. Magnus, Tim Button and others; Open Logic Project), chapter on basic rules for TFL"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

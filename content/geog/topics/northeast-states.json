@@ -1,0 +1,126 @@
+{
+  "id": "usgeo.northeast-states",
+  "slug": "northeast-states",
+  "ladder": "geog",
+  "course": "usgeo",
+  "unit": "states-capitals",
+  "title": "States of the Northeast",
+  "short": "Find the nine states of the Northeast: the six New England states and New York, New Jersey and Pennsylvania.",
+  "trouble": "Students mix up the small New England states, especially Vermont and New Hampshire (Vermont is the western one, New Hampshire touches the ocean).",
+  "prereqs": [
+    "usgeo.regions"
+  ],
+  "xp": 2,
+  "viz": [
+    "gg-map",
+    "gg-outline"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Start in the <a href=\"/geography/us-geography/regions/\">Northeast</a>, the corner of the country where the first English colonies grew. It has small states packed close together, so take them slowly."
+      },
+      {
+        "t": "key",
+        "html": "The Northeast has nine states: the six <b>New England</b> states (Maine, New Hampshire, Vermont, Massachusetts, Rhode Island and Connecticut) and the three <b>Middle Atlantic</b> states (New York, New Jersey and Pennsylvania)."
+      },
+      {
+        "t": "viz",
+        "name": "gg-map",
+        "opts": {
+          "map": "us",
+          "region": [
+            "ME",
+            "NH",
+            "VT",
+            "MA",
+            "RI",
+            "CT",
+            "NY",
+            "NJ",
+            "PA"
+          ],
+          "labels": true
+        },
+        "cap": "The states of this region, with their names."
+      },
+      {
+        "t": "why",
+        "html": "Why are these states so small? They began as colonies whose borders were drawn in the 1600s and 1700s, when people traveled on foot, by horse or by boat. A state you could cross in a day or two made sense then. Western states were drawn much later, with long straight lines over huge, open land."
+      },
+      {
+        "t": "list",
+        "items": [
+          "Maine is the big state in the far northeast corner.",
+          "Vermont and New Hampshire are a pair of thin states: Vermont is wider at the top, New Hampshire wider at the bottom.",
+          "Massachusetts runs across the middle, with Cape Cod curling out like an arm.",
+          "Rhode Island (the smallest state) and Connecticut sit below Massachusetts.",
+          "New York, New Jersey and Pennsylvania form the Middle Atlantic, west and south of New England."
+        ]
+      },
+      {
+        "t": "ex",
+        "title": "Find Connecticut",
+        "q": "Which state is directly south of Massachusetts and west of Rhode Island?",
+        "steps": [
+          "South of Massachusetts are two small states: Connecticut and Rhode Island.",
+          "Rhode Island is the eastern one, the smallest state.",
+          "So the western one, next to New York, is Connecticut."
+        ],
+        "a": "Connecticut."
+      },
+      {
+        "t": "mistake",
+        "html": "Vermont and New Hampshire look like the same shape flipped. Here is the check: <b>New Hampshire touches the ocean</b> (a short coast) and borders Maine. Vermont touches New York and has no ocean coast. Say it as \"Vermont is next to New York; New Hampshire is next to Maine.\""
+      },
+      {
+        "t": "viz",
+        "name": "gg-outline",
+        "opts": {
+          "map": "us",
+          "ids": [
+            "VT",
+            "NH"
+          ],
+          "context": true
+        },
+        "cap": "The look-alikes side by side, with their neighbors drawn faintly."
+      },
+      {
+        "t": "viz",
+        "name": "gg-map",
+        "opts": {
+          "map": "us",
+          "region": [
+            "ME",
+            "NH",
+            "VT",
+            "MA",
+            "RI",
+            "CT",
+            "NY",
+            "NJ",
+            "PA"
+          ],
+          "mode": "find"
+        },
+        "cap": "Practice: find each state when its name appears."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "U.S. Census Bureau, Census Regions and Divisions of the United States (list of states by region and division)",
+        "url": "https://www2.census.gov/geo/docs/maps-data/maps/reg_div.txt"
+      },
+      {
+        "name": "Natural Earth (public domain map data): admin-1 states, rivers, lakes and physical regions, drawn by the Geography Ladder's map kit"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

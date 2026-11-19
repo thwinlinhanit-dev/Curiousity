@@ -1,0 +1,140 @@
+{
+  "id": "g6.absolute-value",
+  "slug": "absolute-value",
+  "ladder": "math",
+  "course": "g6",
+  "unit": "negatives",
+  "title": "Absolute Value",
+  "short": "|−5| = 5 is the distance from 0.",
+  "trouble": "Students mix up order and size, thinking a debt of −30 is \"less debt\" than −10.",
+  "prereqs": [
+    "g6.order-rational-numbers"
+  ],
+  "xp": 2,
+  "viz": [
+    "numberline"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You can <a href=\"/math/grade-6/order-rational-numbers/\">order</a> numbers by their position on the line. Sometimes we care instead about <i>how far</i> a number is from 0, not which side it is on. You saw this with <a href=\"/math/grade-6/opposites/\">opposites</a>: 3 and $-3$ are the same distance from 0."
+      },
+      {
+        "t": "key",
+        "html": "The <b>absolute value</b> of a number is its distance from 0, written $|a|$. Distance is never negative: $|-5| = 5$ and $|5| = 5$."
+      },
+      {
+        "t": "viz",
+        "name": "g6-line",
+        "opts": {
+          "min": -7,
+          "max": 7,
+          "points": [
+            {
+              "v": -5,
+              "label": "−5",
+              "color": "blue"
+            },
+            {
+              "v": 5,
+              "label": "5",
+              "color": "red"
+            }
+          ],
+          "arcs": [
+            {
+              "from": 0,
+              "to": -5,
+              "label": "|−5| = 5",
+              "color": "blue"
+            },
+            {
+              "from": 0,
+              "to": 5,
+              "label": "|5| = 5",
+              "color": "red"
+            }
+          ]
+        },
+        "cap": "Both numbers are 5 units from 0."
+      },
+      {
+        "t": "why",
+        "html": "Absolute value counts steps from 0, and you cannot walk a negative number of steps. So it keeps the size of a number and forgets its direction. That is why it is useful for things like the size of a debt or how far below sea level a submarine is."
+      },
+      {
+        "t": "ex",
+        "title": "Find the absolute value",
+        "q": "Find $|-7.2|$ and $|0|$.",
+        "steps": [
+          "$-7.2$ is 7.2 units from 0.",
+          "0 is 0 units from itself."
+        ],
+        "a": "$|-7.2| = 7.2$ and $|0| = 0$."
+      },
+      {
+        "t": "ex",
+        "title": "Which numbers?",
+        "q": "Find every number $x$ with $|x| = 6$.",
+        "steps": [
+          "We need every number 6 units from 0.",
+          "One is 6 units right of 0 and one is 6 units left."
+        ],
+        "a": "$x = 6$ or $x = -6$."
+      },
+      {
+        "t": "ex",
+        "title": "Bigger debt, smaller balance",
+        "q": "Jo’s balance is $-30$ dollars and Ana’s is $-10$ dollars. Who owes more?",
+        "steps": [
+          "A negative balance is a debt. The size of the debt is the absolute value: $|-30| = 30$ and $|-10| = 10$.",
+          "Jo owes \\$30 and Ana owes \\$10."
+        ],
+        "a": "Jo owes more, even though $-30 < -10$."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Balance",
+          "Compared as numbers",
+          "Size of the debt"
+        ],
+        "rows": [
+          [
+            "$-30$",
+            "$-30 < -10$",
+            "$|-30| = 30$"
+          ],
+          [
+            "$-10$",
+            "",
+            "$|-10| = 10$"
+          ]
+        ],
+        "cap": "Order and size answer different questions."
+      },
+      {
+        "t": "mistake",
+        "html": "Mixing up order and size. \"$-30$ is less than $-10$, so it is less debt\" sounds right but is backward: $-30$ is less as a <i>number</i> (farther left), yet its size, the debt, is bigger. Quick check: ask whether the question is about position (\"which is less?\") or size (\"how much is owed?\"). Size questions need absolute value."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Prealgebra 2e, section 3.1 Introduction to Integers"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 6.NS.C.7c: absolute value as distance from 0"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 6.NS.C.7d: telling absolute value apart from order"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,127 @@
+{
+  "id": "gchem1.real-gases",
+  "slug": "real-gases",
+  "ladder": "chemistry",
+  "course": "gchem1",
+  "unit": "gases",
+  "title": "Real Gases",
+  "short": "The particles' own volume and their attractions make real gases stray from PV = nRT at high pressure and low temperature.",
+  "trouble": "Students think real gases stray most at high temperature and low pressure, the very conditions where they behave most ideally.",
+  "prereqs": [
+    "chem.ideal-gas-law",
+    "gchem1.comparing-forces"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-gasbox"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The <a href=\"/chemistry/chemistry/ideal-gas-law/\">The Ideal Gas Law</a> assumes molecules take up no room and don't attract each other. Real molecules do both: they have size, and the <a href=\"/chemistry/general-chemistry-1/comparing-forces/\">forces between molecules</a> pull them together. Most of the time these effects are tiny; sometimes they are not."
+      },
+      {
+        "t": "key",
+        "html": "Real gases behave most ideally at <b>high temperature and low pressure</b>. They stray at <b>high pressure</b>, where the molecules' own volume matters (the gas is harder to compress, $PV/nRT > 1$), and at <b>low temperature</b>, where attractions matter (the gas presses less on the walls, $PV/nRT < 1$). The van der Waals equation corrects for both: $$\\left(P + \\frac{an^2}{V^2}\\right)(V - nb) = nRT.$$"
+      },
+      {
+        "t": "why",
+        "html": "At low pressure the molecules are far apart: their own volume is a tiny part of the container, and they are rarely close enough to attract. At high pressure they are crowded, so the empty space they can move in, $V - nb$, is noticeably less than $V$. At low temperature they move slowly, so attractions have time to act: a molecule about to hit the wall is tugged back by its neighbors and hits more softly, lowering the pressure by $an^2/V^2$. The constant $a$ is larger for molecules with stronger intermolecular forces ($\\mathrm{H_2O}$, $\\mathrm{NH_3}$), and $b$ is larger for bigger molecules."
+      },
+      {
+        "t": "viz",
+        "name": "ch-gasbox",
+        "opts": {
+          "species": [
+            {
+              "f": "CO2",
+              "n": 1
+            }
+          ],
+          "T": 300,
+          "V": 2,
+          "real": true,
+          "lock": "T",
+          "task": "Squeeze the gas. Compare the ideal and van der Waals pressures."
+        },
+        "cap": "Carbon dioxide in a small volume: the van der Waals pressure falls below the ideal one, because attractions matter when the molecules are crowded and fairly slow."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Gas",
+          "$a$ (L²·atm/mol²)",
+          "$b$ (L/mol)"
+        ],
+        "rows": [
+          [
+            "He",
+            "0.0341",
+            "0.0237"
+          ],
+          [
+            "$\\mathrm{N_2}$",
+            "1.39",
+            "0.0391"
+          ],
+          [
+            "$\\mathrm{CO_2}$",
+            "3.59",
+            "0.0427"
+          ],
+          [
+            "$\\mathrm{NH_3}$",
+            "4.17",
+            "0.0371"
+          ],
+          [
+            "$\\mathrm{H_2O}$",
+            "5.46",
+            "0.0305"
+          ]
+        ],
+        "cap": "Van der Waals constants (OpenStax Chemistry 2e, Table 9.3). Helium's tiny $a$ reflects its very weak dispersion forces."
+      },
+      {
+        "t": "ex",
+        "title": "Ideal against real",
+        "q": "Find the pressure of $1.00\\ \\text{mol}$ of $\\mathrm{CO_2}$ in $1.00\\ \\text{L}$ at $300\\ \\text{K}$, first as an ideal gas, then with the van der Waals equation.",
+        "steps": [
+          "Ideal: $$P = \\dfrac{nRT}{V} = (1.00)(0.08206)(300)/1.00 = 24.6\\ \\text{atm}$$",
+          "Van der Waals: $$P = \\dfrac{nRT}{V - nb} - \\dfrac{an^2}{V^2} = \\dfrac{24.62}{1.00 - 0.0427} - 3.59 = 25.72 - 3.59$$",
+          "$P = 22.1\\ \\text{atm}$, about 10% lower: here the attractions win over the molecules' volume."
+        ],
+        "a": "$24.6\\ \\text{atm}$ ideal; $22.1\\ \\text{atm}$ real."
+      },
+      {
+        "t": "ex",
+        "title": "Which gas is least ideal?",
+        "q": "At the same temperature and pressure, which deviates most from ideal behavior: He, $\\mathrm{N_2}$ or $\\mathrm{NH_3}$?",
+        "steps": [
+          "Deviations at moderate conditions come mostly from attractions, measured by $a$.",
+          "$\\mathrm{NH_3}$ (polar, hydrogen bonding) has the largest $a$, 4.17; helium the smallest."
+        ],
+        "a": "$\\mathrm{NH_3}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Reversing the conditions: thinking real gases stray most at high temperature and low pressure. Those are exactly the conditions where molecules are far apart and fast, so they act most ideally. Check: think of what makes a gas condense to a liquid, which is low temperature and high pressure. The closer a gas is to condensing, the less ideal it behaves."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 9.6 Non-Ideal Gas Behavior"
+      },
+      {
+        "name": "College Board, AP Chemistry Course and Exam Description (effective fall 2024), Unit 3: Properties of Substances and Mixtures"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

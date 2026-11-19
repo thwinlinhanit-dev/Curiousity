@@ -1,0 +1,137 @@
+{
+  "id": "worldgeo.degree-distance",
+  "slug": "degree-distance",
+  "ladder": "geog",
+  "course": "worldgeo",
+  "unit": "lat-long",
+  "title": "How Far Is a Degree?",
+  "short": "One degree of latitude is about 111 km (69 miles) everywhere; a degree of longitude shrinks from 111 km at the equator to nothing at the poles.",
+  "trouble": "Students think a degree of longitude is the same length everywhere. Meridians meet at the poles, so the space between them shrinks as you go north or south.",
+  "prereqs": [
+    "worldgeo.degrees-minutes",
+    "g4.multiply-two-digit"
+  ],
+  "xp": 3,
+  "viz": [
+    "gg-globe",
+    "gg-latlon"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "How far is one degree on the ground? The answer depends on which way you go. You will use <a href=\"/geography/world-geography/degrees-minutes/\">degrees and minutes</a> and <a href=\"/math/grade-4/multiply-two-digit/\">multiplication</a>."
+      },
+      {
+        "t": "key",
+        "html": "One degree of <b>latitude</b> is about <b>111 km (69 miles)</b> everywhere. One degree of <b>longitude</b> is about 111 km at the equator but shrinks toward the poles: about 85 km at 40°, 56 km at 60°, and 0 at the poles."
+      },
+      {
+        "t": "why",
+        "html": "Earth is about 40,000 km around. A full circle is 360°, so one degree of latitude is about 40,000 ÷ 360 ≈ 111 km. Parallels are all the same distance apart, so this works everywhere. But meridians meet at the poles. The circle of a parallel gets smaller as you go north, and the same 1° of longitude covers a shorter and shorter piece of it. (The size of that circle is the equator's size times the cosine of the latitude: half as big at 60°.)"
+      },
+      {
+        "t": "viz",
+        "name": "gg-globe",
+        "opts": {
+          "center": [
+            10,
+            50
+          ],
+          "lines": [
+            "equator",
+            "arctic"
+          ],
+          "poles": true
+        },
+        "cap": "Look at the gray meridians: wide apart at the equator, crowded near the North Pole."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Latitude",
+          "1° of longitude is about"
+        ],
+        "rows": [
+          [
+            "0° (equator)",
+            "111 km"
+          ],
+          [
+            "20°",
+            "104 km"
+          ],
+          [
+            "40°",
+            "85 km"
+          ],
+          [
+            "60°",
+            "56 km"
+          ],
+          [
+            "80°",
+            "19 km"
+          ],
+          [
+            "90° (pole)",
+            "0 km"
+          ]
+        ],
+        "cap": "One degree of longitude at different latitudes (1° of latitude stays about 111 km)."
+      },
+      {
+        "t": "ex",
+        "title": "North to south",
+        "q": "Two towns are on the same meridian, at 32° N and 37° N. About how far apart are they?",
+        "steps": [
+          "They differ by 37 − 32 = 5 degrees of latitude.",
+          "Each degree of latitude is about 111 km.",
+          "5 × 111 = 555 km."
+        ],
+        "a": "About 555 km."
+      },
+      {
+        "t": "ex",
+        "title": "East to west",
+        "q": "Two towns are both at 60° N, 4° of longitude apart. About how far apart are they?",
+        "steps": [
+          "At 60°, one degree of longitude is about 56 km (half of 111).",
+          "4 × 56 = 224 km.",
+          "At the equator the same 4° would be 444 km."
+        ],
+        "a": "About 224 km."
+      },
+      {
+        "t": "ex",
+        "title": "One minute",
+        "q": "About how far is one minute of latitude?",
+        "steps": [
+          "A degree of latitude is about 111 km and has 60 minutes.",
+          "111 ÷ 60 ≈ 1.85 km.",
+          "That is one nautical mile, the unit sailors and pilots use."
+        ],
+        "a": "About 1.85 km."
+      },
+      {
+        "t": "mistake",
+        "html": "Using 111 km for every degree of longitude. That is true only at the equator. Before you multiply, ask which way you are going. North-south: 111 km per degree. East-west: smaller, unless you are near the equator. (The U.S. Geological Survey gives about 54.6 miles, or 88 km, for a degree of longitude at 38° N.)"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "U.S. Geological Survey FAQ: How much distance does a degree, minute, and second cover on your maps?",
+        "url": "https://www.usgs.gov/faqs/how-much-distance-does-degree-minute-and-second-cover-your-maps"
+      },
+      {
+        "name": "C3 Framework for Social Studies State Standards (NCSS, 2013), Geography, Dimension 2, grades 6-8"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

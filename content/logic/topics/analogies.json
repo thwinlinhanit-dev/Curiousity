@@ -1,0 +1,112 @@
+{
+  "id": "informal.analogies",
+  "slug": "analogies",
+  "ladder": "logic",
+  "course": "informal",
+  "unit": "deduction-induction",
+  "title": "Arguments from Analogy",
+  "short": "An analogy argues that two things alike in some ways are alike in another; it is strong when the likenesses are relevant and the differences are not.",
+  "trouble": "Learners count the number of similarities instead of asking whether they are relevant to the conclusion.",
+  "prereqs": [
+    "informal.inductive-strength"
+  ],
+  "xp": 2,
+  "viz": [
+    "lg-argmap"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Another kind of <a href=\"/logic/informal-logic/inductive-strength/\">inductive argument</a> compares two things: they are alike in some ways, so they are probably alike in another. This is an <b>argument from analogy</b>."
+      },
+      {
+        "t": "key",
+        "html": "An analogy is <b>strong</b> when the two things share features that are <b>relevant</b> to the conclusion, and differ only in ways that are not."
+      },
+      {
+        "t": "why",
+        "html": "An analogy works because the shared features are a reason for the shared conclusion. A new bridge with the same design, steel and builders as an old, sturdy one will likely be sturdy, because design, steel and builders are what make a bridge strong. Its color is irrelevant, so a shared color adds nothing."
+      },
+      {
+        "t": "viz",
+        "name": "lg-argmap",
+        "opts": {
+          "nodes": [
+            {
+              "id": 1,
+              "text": "The new bridge has the same design and steel as the old one."
+            },
+            {
+              "id": 2,
+              "text": "The old bridge has held heavy trucks for forty years."
+            },
+            {
+              "id": 3,
+              "text": "The new bridge will hold heavy trucks.",
+              "kind": "conclusion"
+            },
+            {
+              "id": 4,
+              "text": "The new bridge is twice as long, with no extra supports.",
+              "kind": "objection"
+            }
+          ],
+          "links": [
+            {
+              "from": [
+                1,
+                2
+              ],
+              "to": 3
+            },
+            {
+              "from": 4,
+              "to": 3,
+              "kind": "against"
+            }
+          ]
+        },
+        "cap": "A relevant difference (length with no extra supports) weakens the analogy."
+      },
+      {
+        "t": "ex",
+        "title": "Which fact weakens it most?",
+        "q": "\"Ava's tomato plants and Ben's grow in the same soil and get the same sun. Ava's did well with weekly watering, so Ben's will too.\" (a) Ben's garden has a red gate. (b) Ben's plants are in small pots that dry out fast.",
+        "steps": [
+          "Ask what the conclusion needs: plants that use water the same way.",
+          "(a) is a difference, but a gate has nothing to do with water.",
+          "(b) is a difference that matters for watering."
+        ],
+        "a": "(b) weakens it most."
+      },
+      {
+        "t": "ex",
+        "title": "Count what matters",
+        "q": "A dog and a cat are both furry pets with four legs. Dogs love fetching sticks. Does that make it likely the cat will?",
+        "steps": [
+          "Fur and four legs have nothing to do with liking to fetch.",
+          "Many shared features, none relevant."
+        ],
+        "a": "No: the analogy is weak."
+      },
+      {
+        "t": "mistake",
+        "html": "Counting similarities instead of weighing them. Ten irrelevant likenesses add nothing; one relevant difference can sink the argument. Ask: what does the conclusion depend on, and do the two cases share that?"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy, \"Analogy and Analogical Reasoning\""
+      },
+      {
+        "name": "Patrick Hurley, A Concise Introduction to Logic, the chapter on analogy and legal and moral reasoning"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,122 @@
+{
+  "id": "growing.thanking-cook",
+  "slug": "thanking-cook",
+  "ladder": "etiquette",
+  "course": "growing",
+  "unit": "table",
+  "title": "Thanking the Cook",
+  "short": "Say something kind about the meal and thank whoever cooked it, and offer to help clear the table.",
+  "trouble": "Learners thank the cook only when they liked the food. Thank them for the work: \"Thank you for dinner. The bread was great.\"",
+  "prereqs": [
+    "growing.serving-yourself"
+  ],
+  "xp": 1,
+  "viz": [
+    "et-scene",
+    "et-sort"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "After you <a href=\"/etiquette/growing-up/serving-yourself/\">serve yourself</a> and enjoy the meal, one more habit finishes it well. Someone planned, shopped and cooked so you could eat. A thank-you tells them their work was noticed."
+      },
+      {
+        "t": "key",
+        "html": "<b>Thank whoever cooked</b> and say <b>something kind and specific</b> about the meal: “Thank you for dinner. The bread was great.” Then <b>offer to help clear the table</b>, and ask to be excused if you need to leave before others."
+      },
+      {
+        "t": "why",
+        "html": "Thanks are for the work, not just for food you loved. Even on a night when you didn’t like a dish, the cook spent time and care on everyone. A specific detail shows you noticed, and offering to help turns thanks into action."
+      },
+      {
+        "t": "viz",
+        "name": "et-scene",
+        "opts": {
+          "place": "table",
+          "people": [
+            {
+              "who": "hana",
+              "age": "teen"
+            },
+            {
+              "who": "kofi",
+              "name": "Dad"
+            }
+          ],
+          "prompt": "Dad made a new soup recipe. Hana didn’t love it, but the bread was great. What should she say?",
+          "choices": [
+            {
+              "text": "“Thanks for dinner, Dad. The bread was so good. Can I help clear?”",
+              "ok": true,
+              "mood": {
+                "0": "happy",
+                "1": "happy"
+              },
+              "say": [
+                [
+                  1,
+                  "Thanks, Hana! Sure, grab the bowls."
+                ]
+              ],
+              "outcome": "Hana thanked Dad for his work, praised something she liked, and offered to help."
+            },
+            {
+              "text": "“The soup was weird. Can I go?”",
+              "ok": false,
+              "mood": {
+                "1": "sad"
+              },
+              "outcome": "Dad worked on that soup. Thank him first, and say something kind and true."
+            },
+            {
+              "text": "Nothing. She leaves the table.",
+              "ok": false,
+              "mood": {
+                "1": "neutral"
+              },
+              "outcome": "Leaving without a word skips the thank-you and asking to be excused."
+            }
+          ]
+        },
+        "cap": "Choose what Hana says."
+      },
+      {
+        "t": "ex",
+        "title": "Dinner at a friend’s house",
+        "q": "Sam eats dinner at Ruby’s house. Ruby’s mom made tacos. What should he say at the end?",
+        "steps": [
+          "Thank the cook by name: “Thank you for dinner, Ms. Walsh.”",
+          "Add something specific: “The tacos were delicious.”",
+          "Offer to help: “Can I help clear the plates?”"
+        ],
+        "a": "“Thank you for dinner, Ms. Walsh. The tacos were delicious. Can I help clear?”"
+      },
+      {
+        "t": "ex",
+        "title": "Leaving the table early",
+        "q": "Omar has to get ready for practice before the others finish. What should he do?",
+        "steps": [
+          "Thank the cook first.",
+          "Ask to be excused: “May I please be excused? I need to get ready for practice.”",
+          "Take his plate to the kitchen if that is the family custom."
+        ],
+        "a": "“Thanks for dinner, Mom. May I please be excused?”"
+      },
+      {
+        "t": "mistake",
+        "html": "Thanking the cook only when you liked the food. Thank them for the work, and find something true and kind to say: the bread, the table, the effort, or simply “Thank you for making dinner.”"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Present-day American etiquette as commonly taught to children and families (summarized in our own words)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

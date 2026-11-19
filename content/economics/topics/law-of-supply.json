@@ -1,0 +1,93 @@
+{
+  "id": "micro.law-of-supply",
+  "slug": "law-of-supply",
+  "ladder": "economics",
+  "course": "micro",
+  "unit": "supply-demand",
+  "title": "The Law of Supply",
+  "short": "Other things equal, a higher price brings a larger quantity supplied, because extra units cost more to make.",
+  "trouble": "Students say a higher price \"increases supply\" (a shift) when it increases the quantity supplied (a movement along the curve).",
+  "prereqs": [
+    "micro.demand-equations",
+    "micro.marginal-analysis"
+  ],
+  "xp": 1,
+  "viz": [
+    "ec-market"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Now the other side of the market. Sellers decide how much to offer by comparing price with the extra cost of making more, the same marginal thinking as in <a href=\"/economics/microeconomics/marginal-analysis/\">Marginal Benefit, Marginal Cost and Sunk Costs</a>. Supply equations work like the demand equations in <a href=\"/economics/microeconomics/demand-equations/\">Demand Equations Both Ways</a>."
+      },
+      {
+        "t": "key",
+        "html": "The <b>law of supply</b>: other things equal, a higher price brings a larger <b>quantity supplied</b>. <b>Supply</b> is the whole relationship, a schedule or an upward-sloping curve, often written $Q_s = c + dP$. A change in the good's own price moves sellers <b>along</b> the supply curve; anything else that changes their plans shifts it."
+      },
+      {
+        "t": "why",
+        "html": "Making more usually costs more per extra unit: a bakery has to pay overtime, run older ovens or buy flour on short notice. That rising marginal cost means sellers will make an extra unit only if the price covers it. A higher price covers more of those costlier units, so firms supply more, and new sellers find it worth joining in. So quantity supplied rises with price."
+      },
+      {
+        "t": "viz",
+        "name": "ec-market",
+        "opts": {
+          "demand": {
+            "a": 20,
+            "b": 2
+          },
+          "supply": {
+            "c": -4,
+            "d": 2
+          },
+          "price": 8,
+          "show": [
+            "eq",
+            "gaps"
+          ],
+          "money": true
+        },
+        "cap": "Drag the price line up the supply curve: at each higher price, sellers offer more. The curve is $Q_s = -4 + 2P$: no one sells below \\$2."
+      },
+      {
+        "t": "ex",
+        "title": "A supply schedule",
+        "q": "Supply is $Q_s = -4 + 2P$. Find the quantity supplied at \\$5 and at \\$8, and the lowest price at which anyone sells.",
+        "steps": [
+          "At \\$5: $-4 + 2(5) = 6$ units. At \\$8: $-4 + 16 = 12$ units.",
+          "Set $Q_s = 0$: $0 = -4 + 2P$, so $P = 2$.",
+          "Below \\$2 the formula gives a negative quantity, which means nothing is offered."
+        ],
+        "a": "6 units at \\$5, 12 units at \\$8; sellers start at \\$2."
+      },
+      {
+        "t": "ex",
+        "title": "Market supply",
+        "q": "Three farms would sell 10, 6 and 0 crates of peaches at \\$3, and 16, 12 and 4 crates at \\$5. Find the market quantity supplied at each price.",
+        "steps": [
+          "Add across sellers at the same price.",
+          "At \\$3: $10 + 6 + 0 = 16$. At \\$5: $16 + 12 + 4 = 32$."
+        ],
+        "a": "16 crates at \\$3, 32 at \\$5."
+      },
+      {
+        "t": "mistake",
+        "html": "Saying a higher price \"increases supply.\" A higher price increases the quantity supplied, a movement along the curve; supply, the whole curve, hasn't moved. Check, as with demand: is the change the good's own price? Then it's a movement."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, 3.1 Demand, Supply, and Equilibrium in Markets for Goods and Services"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.01 Principles of Microeconomics (scope and sequence)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,140 @@
+{
+  "id": "pre.special-angles",
+  "slug": "special-angles",
+  "ladder": "math",
+  "course": "pre",
+  "unit": "angles-unit-circle",
+  "title": "Exact Values at Special Angles",
+  "short": "Use 30-60-90 and 45-45-90 triangles to find exact values.",
+  "trouble": "Students swap sin 30° and sin 60°, writing sin 30° = √3/2.",
+  "prereqs": [
+    "pre.unit-circle-sine-cosine",
+    "geo.special-right-triangles"
+  ],
+  "xp": 2,
+  "viz": [
+    "unitcircle"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Most angles have messy sines and cosines. A few have exact values you can find with no calculator, because they come from the two <a href=\"/math/geometry/special-right-triangles/\">special right triangles</a>. Put each triangle inside the unit circle, with its hypotenuse as a radius of length $1$."
+      },
+      {
+        "t": "why",
+        "html": "<b>$45^\\circ$:</b> the two legs are equal, say $x$. The Pythagorean theorem gives $x^2 + x^2 = 1$, so $x = \\frac{1}{\\sqrt{2}} = \\frac{\\sqrt{2}}{2}$.<br><b>$30^\\circ$ and $60^\\circ$:</b> a $30^\\circ$-$60^\\circ$-$90^\\circ$ triangle with hypotenuse $1$ is half of an equilateral triangle with sides $1$, so its short side is $\\frac{1}{2}$. The other leg is $\\sqrt{1 - \\frac{1}{4}} = \\frac{\\sqrt{3}}{2}$. The short side is always across from the small $30^\\circ$ angle."
+      },
+      {
+        "t": "table",
+        "head": [
+          "$\\theta$",
+          "$0$",
+          "$\\frac{\\pi}{6} = 30^\\circ$",
+          "$\\frac{\\pi}{4} = 45^\\circ$",
+          "$\\frac{\\pi}{3} = 60^\\circ$",
+          "$\\frac{\\pi}{2} = 90^\\circ$"
+        ],
+        "rows": [
+          [
+            "$\\sin\\theta$",
+            "$0$",
+            "$\\frac{1}{2}$",
+            "$\\frac{\\sqrt{2}}{2}$",
+            "$\\frac{\\sqrt{3}}{2}$",
+            "$1$"
+          ],
+          [
+            "$\\cos\\theta$",
+            "$1$",
+            "$\\frac{\\sqrt{3}}{2}$",
+            "$\\frac{\\sqrt{2}}{2}$",
+            "$\\frac{1}{2}$",
+            "$0$"
+          ],
+          [
+            "$\\tan\\theta$",
+            "$0$",
+            "$\\frac{\\sqrt{3}}{3}$",
+            "$1$",
+            "$\\sqrt{3}$",
+            "undefined"
+          ]
+        ],
+        "cap": "Exact values in the first quadrant. Tangent is $\\frac{\\sin\\theta}{\\cos\\theta}$."
+      },
+      {
+        "t": "key",
+        "html": "At $30^\\circ$ the point on the unit circle is $\\left(\\frac{\\sqrt{3}}{2}, \\frac{1}{2}\\right)$; at $60^\\circ$ it is $\\left(\\frac{1}{2}, \\frac{\\sqrt{3}}{2}\\right)$; at $45^\\circ$ it is $\\left(\\frac{\\sqrt{2}}{2}, \\frac{\\sqrt{2}}{2}\\right)$."
+      },
+      {
+        "t": "viz",
+        "name": "unitcircle",
+        "opts": {
+          "angle": 30,
+          "units": "deg",
+          "snap": 15,
+          "graph": "none"
+        },
+        "cap": "At the special angles the readout shows exact coordinates. Compare $30^\\circ$ with $60^\\circ$: the coordinates trade places."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A sine",
+        "q": "Find $\\sin 60^\\circ$.",
+        "steps": [
+          "At $60^\\circ$ the radius is steep, so the long leg, $\\frac{\\sqrt{3}}{2}$, is the vertical one.",
+          "Sine is the height: $\\sin 60^\\circ = \\frac{\\sqrt{3}}{2}$."
+        ],
+        "a": "$\\frac{\\sqrt{3}}{2} \\approx 0.866$"
+      },
+      {
+        "t": "ex",
+        "title": "A tangent",
+        "q": "Find $\\tan\\frac{\\pi}{6}$.",
+        "steps": [
+          "$\\frac{\\pi}{6} = 30^\\circ$, where $\\sin = \\frac{1}{2}$ and $\\cos = \\frac{\\sqrt{3}}{2}$.",
+          "$\\tan\\frac{\\pi}{6} = \\dfrac{1/2}{\\sqrt{3}/2} = \\dfrac{1}{\\sqrt{3}}$.",
+          "Rationalize: $\\dfrac{1}{\\sqrt{3}} \\cdot \\dfrac{\\sqrt{3}}{\\sqrt{3}} = \\dfrac{\\sqrt{3}}{3}$."
+        ],
+        "a": "$\\frac{\\sqrt{3}}{3}$"
+      },
+      {
+        "t": "ex",
+        "title": "Putting values together",
+        "q": "Find the exact value of $2\\sin 30^\\circ \\cos 30^\\circ$.",
+        "steps": [
+          "$\\sin 30^\\circ = \\frac{1}{2}$ and $\\cos 30^\\circ = \\frac{\\sqrt{3}}{2}$.",
+          "$2 \\cdot \\frac{1}{2} \\cdot \\frac{\\sqrt{3}}{2} = \\frac{\\sqrt{3}}{2}$."
+        ],
+        "a": "$\\frac{\\sqrt{3}}{2}$ (which is also $\\sin 60^\\circ$, a hint of things to come)"
+      },
+      {
+        "t": "mistake",
+        "html": "Swapping $\\sin 30^\\circ$ and $\\sin 60^\\circ$, writing $\\sin 30^\\circ = \\frac{\\sqrt{3}}{2}$. Check with the picture: as the angle grows from $0^\\circ$ to $90^\\circ$, the point climbs, so sine grows. $\\sin 30^\\circ$ must be the smaller value, $\\frac{1}{2}$, and $\\frac{\\sqrt{3}}{2} \\approx 0.87$ belongs to $60^\\circ$."
+      },
+      {
+        "t": "note",
+        "html": "A memory pattern: $$\\sin 0^\\circ, \\sin 30^\\circ, \\sin 45^\\circ, \\sin 60^\\circ, \\sin 90^\\circ$$ are $\\frac{\\sqrt{0}}{2}, \\frac{\\sqrt{1}}{2}, \\frac{\\sqrt{2}}{2}, \\frac{\\sqrt{3}}{2}, \\frac{\\sqrt{4}}{2}$. Cosine runs the same list backward."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Precalculus 2e, Section 5.2 Unit Circle: Sine and Cosine Functions"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, F-TF.A.3"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

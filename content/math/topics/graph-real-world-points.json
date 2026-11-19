@@ -1,0 +1,119 @@
+{
+  "id": "g5.graph-real-world-points",
+  "slug": "graph-real-world-points",
+  "ladder": "math",
+  "course": "g5",
+  "unit": "coordinate-plane",
+  "title": "Graphing Points in a Problem",
+  "short": "Plot data and read what each point means.",
+  "trouble": "",
+  "prereqs": [
+    "g5.coordinate-plane"
+  ],
+  "xp": 1,
+  "viz": [
+    "geoboard"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You can plot and read points on the <a href=\"/math/grade-5/coordinate-plane/\">coordinate plane</a>. When the axes measure real things, like hours and dollars, each point tells a small story."
+      },
+      {
+        "t": "key",
+        "html": "Each axis has a name and a scale. A point $(x, y)$ pairs one value from the across axis with one value from the up axis. To read the story, say both values with their units."
+      },
+      {
+        "t": "why",
+        "html": "If you earn \\$8 an hour, then 1 hour pairs with \\$8, 2 hours with \\$16, and so on. Each pair becomes a point: $(1, 8), (2, 16), (3, 24)$. The graph shows all the pairs at once, so you can read values, spot the pattern and predict the next point."
+      },
+      {
+        "t": "viz",
+        "name": "g5-grid",
+        "opts": {
+          "xmax": 8,
+          "ymax": 64,
+          "ystep": 8,
+          "xlabel": "Hours worked",
+          "ylabel": "Dollars earned",
+          "points": [
+            [
+              1,
+              8
+            ],
+            [
+              2,
+              16
+            ],
+            [
+              3,
+              24
+            ],
+            [
+              4,
+              32
+            ],
+            [
+              5,
+              40
+            ]
+          ],
+          "line": true
+        },
+        "cap": "Earnings at \\$8 an hour. The up axis counts by 8s."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Read a value",
+        "q": "Use the graph. How much is earned in 4 hours?",
+        "steps": [
+          "Find 4 on the across axis (hours).",
+          "Go up to the point and read left: 32."
+        ],
+        "a": "\\$32"
+      },
+      {
+        "t": "ex",
+        "title": "What a point means",
+        "q": "What does the point $(3, 24)$ mean?",
+        "steps": [
+          "The first number is on the hours axis: 3 hours.",
+          "The second number is on the dollars axis: \\$24."
+        ],
+        "a": "Working 3 hours earns \\$24."
+      },
+      {
+        "t": "ex",
+        "title": "Predict",
+        "q": "If the pattern continues, how much is earned in 7 hours?",
+        "steps": [
+          "Each hour adds \\$8.",
+          "From $(5, 40)$: $40 + 8 + 8 = 56$."
+        ],
+        "a": "\\$56"
+      },
+      {
+        "t": "mistake",
+        "html": "Reading the scale as 1, 2, 3 when it counts by 8s, or swapping which number goes with which axis. Check the axis names and the step between grid lines before you read a value."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Prealgebra 2e, 11.1 Use the Rectangular Coordinate System"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 5.G.A.2: represent real-world problems by graphing points in the first quadrant"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

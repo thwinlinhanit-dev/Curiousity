@@ -1,0 +1,99 @@
+{
+  "id": "prob.linearity-indicators",
+  "slug": "linearity-indicators",
+  "ladder": "math",
+  "course": "prob",
+  "unit": "discrete",
+  "title": "Linearity of Expectation and Indicators",
+  "short": "E[X + Y] = E[X] + E[Y] always, so a count has mean equal to the sum of its indicators' probabilities: a shuffled deck has on average 1 card left in its starting place.",
+  "trouble": "Students think adding expected values needs independence, and give up on counts built from dependent pieces.",
+  "prereqs": [
+    "prob.expectation-of-function",
+    "stat.combining-random-variables"
+  ],
+  "xp": 3,
+  "viz": [],
+  "figureArchetype": "LessonFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/math/probability-and-statistics/combining-random-variables/\">sums of random variables</a> you added means. The rule is stronger than it first looks: it needs no independence at all. Together with indicator variables it computes expected counts that would be hard to find any other way, building on <a href=\"/math/probability/expectation-of-function/\">expected values of functions</a>."
+      },
+      {
+        "t": "key",
+        "html": "$E[X + Y] = E[X] + E[Y]$ for <b>any</b> random variables, dependent or not. An <b>indicator</b> $I_A$ is 1 when $A$ happens and 0 otherwise, and $E[I_A] = P(A)$. So if a count is $X = I_{A_1} + \\cdots + I_{A_n}$, then $$E[X] = P(A_1) + \\cdots + P(A_n).$$"
+      },
+      {
+        "t": "why",
+        "html": "For discrete $X$ and $Y$ with joint probabilities $p(x, y)$: $$E[X + Y] = \\sum_{x,y} (x + y)\\,p(x, y) = \\sum_x x \\sum_y p(x, y) + \\sum_y y \\sum_x p(x, y) = E[X] + E[Y],$$ because summing the joint probabilities over one variable gives the other's distribution. Nothing in this used independence. And $$E[I_A] = 1 \\cdot P(A) + 0 \\cdot P(A^{c}) = P(A)$$"
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Cards in their own place",
+        "q": "A deck of 52 cards, numbered by position, is shuffled. Find the expected number of cards that end up in their original position.",
+        "steps": [
+          "Let $I_k = 1$ when card $k$ stays in position $k$. In a random order, card $k$ is equally likely to be in any of the 52 spots, so $P(I_k = 1) = \\frac{1}{52}$.",
+          "The $I_k$ are dependent (if 51 cards stay, so does the last), but linearity does not care.",
+          "$E[X] = 52 \\cdot \\frac{1}{52} = 1$, for a deck of any size."
+        ],
+        "a": "1"
+      },
+      {
+        "t": "ex",
+        "title": "Shared birthdays",
+        "q": "30 people have independent, uniformly random birthdays (365 days). Find the expected number of pairs of people who share a birthday.",
+        "steps": [
+          "One indicator per pair: there are $\\binom{30}{2} = 435$ pairs.",
+          "Each pair matches with probability $\\frac{1}{365}$.",
+          "$E[X] = \\frac{435}{365} = \\frac{87}{73} \\approx 1.19$. Compare the <a href=\"/math/probability/birthday-problem/\">birthday problem</a>: a match is likely, and on average there is more than one."
+        ],
+        "a": "$\\frac{87}{73}$"
+      },
+      {
+        "t": "ex",
+        "title": "Different faces",
+        "q": "Roll a die 6 times. Find the expected number of different faces that appear.",
+        "steps": [
+          "Let $I_f = 1$ if face $f$ appears at least once. Face $f$ is missed by all 6 rolls with probability $\\left(\\frac{5}{6}\\right)^{6}$.",
+          "$E[I_f] = 1 - \\left(\\frac{5}{6}\\right)^{6}$.",
+          "$$E[X] = 6\\left(1 - \\left(\\frac{5}{6}\\right)^{6}\\right) = \\frac{31031}{7776} \\approx 3.99$$ about 4 faces, not 6."
+        ],
+        "a": "$\\frac{31031}{7776} \\approx 3.99$"
+      },
+      {
+        "t": "p",
+        "html": "The same recipe handles many counts. Name the small events, find the chance of one of them, and multiply by how many there are:"
+      },
+      {
+        "t": "list",
+        "items": [
+          "<b>Patterns in coin flips.</b> In $n$ flips there are $n - 1$ neighboring pairs, each HH with chance $\\frac{1}{4}$, so the expected number of HH is $\\frac{n - 1}{4}$. A new run starts at each switch, and each neighboring pair is a switch with chance $\\frac{1}{2}$: expected runs $= 1 + \\frac{n - 1}{2}$.",
+          "<b>Empty boxes.</b> Toss $b$ balls into $m$ boxes: box $j$ stays empty with chance $\\left(\\frac{m - 1}{m}\\right)^{b}$, so the expected number of empty boxes is $m\\left(\\frac{m - 1}{m}\\right)^{b}$.",
+          "<b>Mixed neighbors.</b> Line up $b$ boys and $g$ girls at random ($n = b + g$). Each of the $n - 1$ neighboring pairs is mixed with chance $\\frac{2bg}{n(n - 1)}$, so the expected number of mixed pairs is $\\frac{2bg}{n}$."
+        ]
+      },
+      {
+        "t": "mistake",
+        "html": "Believing that $E[X + Y] = E[X] + E[Y]$ needs independence, and so giving up on counts made of dependent pieces. Expected values always add. (Variances are different: there the dependence enters through covariance terms, as in <a href=\"/math/probability/variance-of-sums/\">the variance of a sum</a>.) Check small cases by listing outcomes: for a 2-card deck, both cards stay with probability $\\frac{1}{2}$, so the expected number is $2 \\cdot \\frac{1}{2} = 1$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Grinstead and Snell, Introduction to Probability (2nd revised edition, American Mathematical Society; free from Dartmouth College), chapter 6 (Expected Value and Variance), section 6.1, sums of random variables"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.05, Introduction to Probability and Statistics (Spring 2014), readings on expectation and indicator variables"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

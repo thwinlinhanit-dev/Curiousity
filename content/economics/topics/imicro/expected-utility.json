@@ -1,0 +1,105 @@
+{
+  "id": "imicro.expected-utility",
+  "slug": "expected-utility",
+  "ladder": "economics",
+  "course": "imicro",
+  "unit": "time-risk",
+  "title": "Expected Utility",
+  "short": "Compare risky choices by the probability-weighted average of their utilities, not of their dollar amounts.",
+  "trouble": "Students compute the utility of the expected value, U(E[W]), instead of the expected utility, E[U(W)].",
+  "prereqs": [
+    "imicro.utility-functions",
+    "stat.expected-value"
+  ],
+  "xp": 2,
+  "viz": [
+    "ec-risk"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Many choices are gambles: insurance, investments, a new job. <a href=\"/math/probability-and-statistics/expected-value/\">Expected Value</a> averages outcomes in dollars, but people don't treat a sure \\$50 like a coin flip for \\$0 or \\$100. Expected utility averages something else: the <a href=\"/economics/intermediate-microeconomics/utility-functions/\">utility</a> of each outcome."
+      },
+      {
+        "t": "key",
+        "html": "A lottery that gives wealth $w_i$ with probability $p_i$ is valued by its <b>expected utility</b> $$E[u(W)] = \\sum_i p_i\\,u(w_i).$$ Of two lotteries the person prefers the one with the higher expected utility. This is <i>not</i> $u(E[W])$, the utility of the average."
+      },
+      {
+        "t": "why",
+        "html": "Why not just compare expected values? Daniel Bernoulli's 1738 answer to the St. Petersburg puzzle: a game whose expected payout is infinite is worth only a modest sum to anyone, because an extra dollar means less to a rich person than to a poor one. Weighting utilities instead of dollars captures that. John von Neumann and Oskar Morgenstern (1944) showed that if preferences over lotteries satisfy a few consistency axioms, they can always be represented this way. Here, unlike in ordinary consumer choice, the scale of $u$ matters: $u$ can be changed only to $a\\,u + b$ with $a > 0$."
+      },
+      {
+        "t": "viz",
+        "name": "ec-risk",
+        "opts": {
+          "u": "sqrt",
+          "outcomes": [
+            100,
+            400
+          ],
+          "p": 0.75
+        },
+        "cap": "$u(W) = \\sqrt{W}$, with \\$100 three-quarters of the time and \\$400 a quarter of the time. The chord between the two outcome points lies below the curve: the expected utility (12.5) is less than the utility of the expected wealth $\\sqrt{175} \\approx 13.2$."
+      },
+      {
+        "t": "ex",
+        "title": "Expected utility versus expected value",
+        "q": "$u(W) = \\sqrt{W}$. A lottery pays \\$400 with probability 1/4 and \\$100 with probability 3/4.",
+        "steps": [
+          "$E[W] = \\tfrac{1}{4}(400) + \\tfrac{3}{4}(100) = 175$.",
+          "$E[u] = \\tfrac{1}{4}(20) + \\tfrac{3}{4}(10) = 12.5$.",
+          "$u(E[W]) = \\sqrt{175} \\approx 13.23$, which is larger than $E[u]$."
+        ],
+        "a": "$E[u] = 12.5$."
+      },
+      {
+        "t": "ex",
+        "title": "A sure thing or the lottery?",
+        "q": "Same person and lottery. Would she trade it for a sure \\$150? For a sure \\$160?",
+        "steps": [
+          "$\\sqrt{150} \\approx 12.25 < 12.5$: she keeps the lottery.",
+          "$\\sqrt{160} \\approx 12.65 > 12.5$: she takes the sure \\$160.",
+          "Even though the lottery's expected value is \\$175, she would accept less than that for certainty. The break-even sure amount, $12.5^2 = 156.25$, is her certainty equivalent (next lesson)."
+        ],
+        "a": "Keep the lottery over \\$150; take \\$160."
+      },
+      {
+        "t": "ex",
+        "title": "Risk can cost more than dollars",
+        "q": "With $u = \\sqrt{W}$, compare lottery A (equal chances of \\$36 and \\$196) with lottery B (equal chances of \\$81 and \\$121).",
+        "steps": [
+          "Expected values: A gives $\\tfrac{1}{2}(36 + 196) = 116$; B gives $\\tfrac{1}{2}(81 + 121) = 101$.",
+          "Expected utilities: A gives $\\tfrac{1}{2}(6 + 14) = 10$; B gives $\\tfrac{1}{2}(9 + 11) = 10$.",
+          "She is indifferent: A's extra \\$15 of expected value exactly pays for its much wider spread of outcomes."
+        ],
+        "a": "Equal expected utility (10), so she is indifferent, though A's expected value is \\$15 higher."
+      },
+      {
+        "t": "mistake",
+        "html": "Computing the utility of the expected value, $u(E[W])$, instead of the expected utility, $E[u(W)]$. Averaging first throws away the risk: $\\sqrt{175}$ treats the lottery as if it paid \\$175 for sure. Check: take the utility of each outcome first, then average with the probabilities."
+      },
+      {
+        "t": "note",
+        "html": "Expected utility is the standard model, and also a debated one. Experiments such as Maurice Allais's (1953) find choices that break its axioms, and alternatives like Daniel Kahneman and Amos Tversky's prospect theory (1979) weight losses and small probabilities differently. Economists broadly use expected utility as the baseline and study where people depart from it."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, ch. 16 Information, Risk, and Insurance"
+      },
+      {
+        "name": "OpenStax Introductory Statistics 2e, 4.2 Mean or Expected Value and Standard Deviation"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.04 Intermediate Microeconomic Theory (course scope and lecture topics)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

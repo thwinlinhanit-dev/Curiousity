@@ -1,0 +1,106 @@
+{
+  "id": "disc.hamilton-paths",
+  "slug": "hamilton-paths",
+  "ladder": "math",
+  "course": "disc",
+  "unit": "graphs",
+  "title": "Hamilton Paths and Cycles",
+  "short": "Visit every vertex exactly once; there is no quick test, but Dirac's theorem guarantees a cycle when every degree is at least n/2.",
+  "trouble": "Students treat Dirac's condition as necessary, but the cycle C₆ is itself a Hamilton cycle, though every degree is only 2.",
+  "prereqs": [
+    "disc.euler-circuits"
+  ],
+  "xp": 2,
+  "viz": [
+    "disc-graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/math/discrete-math/euler-circuits/\">Euler circuits</a> use every edge once, and a quick degree count decides whether one exists. Ask instead for a route that visits every vertex once, and everything changes: no quick test is known, only good sufficient conditions and good reasons for failure."
+      },
+      {
+        "t": "key",
+        "html": "A <b>Hamilton path</b> visits every vertex exactly once; a <b>Hamilton cycle</b> also returns to its start. <b>Dirac's theorem:</b> if a simple graph has $n \\ge 3$ vertices and every vertex has degree at least $n/2$, it has a Hamilton cycle. The condition is sufficient, not necessary."
+      },
+      {
+        "t": "why",
+        "html": "Why can't we just count degrees as for Euler? A Hamilton cycle is a global object: whether one exists depends on how the whole graph fits together, not on each vertex separately. Some local facts do block it. A vertex of degree $1$ cannot be inside a cycle. If removing one vertex splits the graph, a cycle through everything would need to pass through that vertex twice. In a bipartite graph a cycle alternates sides, so the two sides must have equal size. Dirac's theorem works in the other direction: with that many edges at every vertex, there is always room to reroute and close a cycle."
+      },
+      {
+        "t": "viz",
+        "name": "disc-graph",
+        "opts": {
+          "graph": "cube",
+          "mode": "hamilton",
+          "layout": "given"
+        },
+        "cap": "The cube graph. Click vertices to visit each exactly once, then close the cycle back to the start."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "The cube",
+        "q": "Does the cube graph (vertices of a cube, edges along the cube's edges) have a Hamilton cycle?",
+        "steps": [
+          "Label the top face $A, B, C, D$ in order and the bottom face $E, F, G, H$ below them.",
+          "Try $A \\to B \\to C \\to D \\to H \\to G \\to F \\to E \\to A$.",
+          "Every consecutive pair is an edge, each vertex appears once, and $E$ is joined to $A$. Yes."
+        ],
+        "a": "Yes: $A, B, C, D, H, G, F, E$, back to $A$"
+      },
+      {
+        "t": "ex",
+        "title": "A graph that cannot",
+        "q": "Does $K_{2,3}$ have a Hamilton cycle?",
+        "steps": [
+          "A cycle in a bipartite graph alternates sides, so it uses equally many vertices from each side.",
+          "The sides have $2$ and $3$ vertices, so no cycle can use all $5$."
+        ],
+        "a": "No"
+      },
+      {
+        "t": "ex",
+        "title": "Using Dirac's theorem",
+        "q": "A graph has $6$ vertices, and every vertex has degree at least $3$. Must it have a Hamilton cycle? What if the minimum degree is only $2$?",
+        "steps": [
+          "$n/2 = 3$, and every degree is at least $3$: Dirac guarantees a Hamilton cycle.",
+          "With minimum degree $2$, the theorem says nothing. The cycle $C_{6}$ has every degree $2$ and is itself a Hamilton cycle; two separate triangles also have every degree $2$ and have none."
+        ],
+        "a": "Yes; with degree $2$ it may or may not"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Treating Dirac's condition as necessary.</b> \"Not every degree is at least $n/2$, so there is no Hamilton cycle\" is wrong: $C_{6}$ has all degrees $2 < 3$ and is a Hamilton cycle. Check: when Dirac's condition fails, try to build a cycle or look for a real obstacle (a degree-$1$ vertex, a cut vertex, unequal bipartite sides)."
+      },
+      {
+        "t": "viz",
+        "name": "disc-graph",
+        "opts": {
+          "graph": "petersen",
+          "mode": "hamilton",
+          "layout": "given"
+        },
+        "cap": "The Petersen graph has $10$ vertices of degree $3$ and no Hamilton cycle, a fact found by checking every route. Try to visit all ten."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Oscar Levin, Discrete Mathematics: An Open Introduction (3rd ed.), section \"Euler Paths and Circuits\" (Hamilton paths)"
+      },
+      {
+        "name": "MIT OpenCourseWare 6.042J Mathematics for Computer Science (Lehman, Leighton and Meyer), chapter \"Simple Graphs\""
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,138 @@
+{
+  "id": "nt.modular-inverses",
+  "slug": "modular-inverses",
+  "ladder": "math",
+  "course": "nt",
+  "unit": "congruences",
+  "title": "Modular Inverses",
+  "short": "a has an inverse mod n exactly when gcd(a, n) = 1; find it with the extended Euclidean algorithm.",
+  "trouble": "Students expect every nonzero number to have an inverse, but 2 has no inverse mod 6 because gcd(2, 6) = 2: the multiples of 2 mod 6 are only 0, 2 and 4.",
+  "prereqs": [
+    "nt.modular-arithmetic",
+    "nt.bezout"
+  ],
+  "xp": 2,
+  "viz": [
+    "nt-clock"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In ordinary arithmetic, dividing by $a$ means multiplying by $1/a$. Mod $n$ there are no fractions, but sometimes there is a number that does the same job. Finding it uses <a href=\"/math/number-theory/bezout/\">Bézout's identity</a>, and knowing when it exists fixes the trouble with cancelling we met in <a href=\"/math/number-theory/modular-arithmetic/\">modular arithmetic</a>."
+      },
+      {
+        "t": "p",
+        "html": "<b>Definition.</b> An <b>inverse of $a$ mod $n$</b> is an integer $x$ with $ax \\equiv 1 \\pmod{n}$. We write $x \\equiv a^{-1} \\pmod{n}$."
+      },
+      {
+        "t": "p",
+        "html": "<b>Theorem.</b> $a$ has an inverse mod $n$ exactly when $\\gcd(a, n) = 1$, and then the inverse is unique mod $n$."
+      },
+      {
+        "t": "why",
+        "html": "$ax \\equiv 1 \\pmod{n}$ means $ax - 1 = ny$ for some integer $y$, that is, $ax - ny = 1$. If $\\gcd(a, n) = 1$, Bézout gives such $x$ and $y$, so an inverse exists. If $d = \\gcd(a, n) > 1$, then $d$ divides $ax - ny$, which would mean $d \\mid 1$: impossible. Uniqueness: if $ax \\equiv 1$ and $ax' \\equiv 1$, then $x \\equiv x(ax') = (ax)x' \\equiv x' \\pmod{n}$."
+      },
+      {
+        "t": "viz",
+        "name": "nt-clock",
+        "opts": {
+          "n": 6,
+          "mode": "mult",
+          "a": 2,
+          "task": "Mod 6, nothing lands on 1 when $a = 2$. Change $a$ to $5$. Now which point is sent to 1?"
+        },
+        "cap": "Arrows from $x$ to $2x \\bmod 6$ reach only 0, 2 and 4, so no $x$ has $2x \\equiv 1$: 2 has no inverse mod 6. With $a = 5$ every point is hit once, and $5 \\cdot 5 = 25 \\equiv 1$."
+      },
+      {
+        "t": "ex",
+        "title": "Small modulus: try multiples",
+        "q": "Find $3^{-1} \\bmod 7$.",
+        "steps": [
+          "List $3x \\bmod 7$: $3, 6, 2, 5, 1$ for $x = 1, 2, 3, 4, 5$.",
+          "$3 \\cdot 5 = 15 = 2 \\cdot 7 + 1 \\equiv 1$."
+        ],
+        "a": "$3^{-1} \\equiv 5 \\pmod{7}$."
+      },
+      {
+        "t": "ex",
+        "title": "Larger modulus: extended Euclid",
+        "q": "Find $17^{-1} \\bmod 101$.",
+        "steps": [
+          "$101 = 17 \\cdot 5 + 16$ and $17 = 16 \\cdot 1 + 1$. The gcd is 1, so an inverse exists.",
+          "$1 = 17 - 16 = 17 - (101 - 5 \\cdot 17) = 6 \\cdot 17 - 101$.",
+          "Mod 101 the multiple of 101 vanishes: $6 \\cdot 17 \\equiv 1$. Check: $102 = 101 + 1$."
+        ],
+        "a": "$17^{-1} \\equiv 6 \\pmod{101}$."
+      },
+      {
+        "t": "ex",
+        "title": "Dividing with an inverse",
+        "q": "Solve $17x \\equiv 5 \\pmod{101}$.",
+        "steps": [
+          "Multiply both sides by $17^{-1} \\equiv 6$: $x \\equiv 6 \\cdot 5 = 30 \\pmod{101}$.",
+          "Check: $17 \\cdot 30 = 510 = 5 \\cdot 101 + 5$."
+        ],
+        "a": "$x \\equiv 30 \\pmod{101}$."
+      },
+      {
+        "t": "table",
+        "head": [
+          "$a$",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10"
+        ],
+        "rows": [
+          [
+            "$a^{-1} \\bmod 11$",
+            "1",
+            "6",
+            "4",
+            "3",
+            "9",
+            "2",
+            "8",
+            "7",
+            "5",
+            "10"
+          ]
+        ],
+        "cap": "Every nonzero residue mod the prime 11 has an inverse. They come in pairs (2 and 6, 3 and 4, 5 and 9, 7 and 8), and only 1 and 10 are their own inverses, a fact that returns in Wilson's theorem."
+      },
+      {
+        "t": "mistake",
+        "html": "Expecting every nonzero number to have an inverse. Mod 6 the multiples of 2 are only $0, 2, 4$, so $2x \\equiv 1$ has no solution: $\\gcd(2, 6) = 2$. Before hunting for an inverse, check $\\gcd(a, n) = 1$. Mod a <b>prime</b> $p$ the problem disappears: every $a$ with $p \\nmid a$ has an inverse."
+      },
+      {
+        "t": "note",
+        "html": "The numbers from 1 to $n$ that are coprime to $n$, and so have inverses, are called the <b>units</b> mod $n$. Counting them gives <a href=\"/math/number-theory/euler-phi/\">Euler's phi function</a>."
+      },
+      {
+        "t": "key",
+        "html": "$a^{-1} \\bmod n$ exists exactly when $\\gcd(a, n) = 1$. Find it with the extended Euclidean algorithm: from $ax + ny = 1$, the inverse is $x \\bmod n$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "William Stein, Elementary Number Theory: Primes, Congruences, and Secrets (Springer, 2009; free online edition), chapter 2, The Ring of Integers Modulo n (quickly computing inverses)"
+      },
+      {
+        "name": "Lehman, Leighton and Meyer, Mathematics for Computer Science (MIT OpenCourseWare 6.042J), chapter on number theory: multiplicative inverses and cancelling"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

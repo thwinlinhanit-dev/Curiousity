@@ -1,0 +1,138 @@
+{
+  "id": "g5.order-of-operations",
+  "slug": "order-of-operations",
+  "ladder": "math",
+  "course": "g5",
+  "unit": "expressions",
+  "title": "Order of Operations",
+  "short": "Multiply and divide before adding and subtracting, unless grouping says otherwise.",
+  "trouble": "Children work strictly left to right, so 2 + 3 × 4 comes out as 20.",
+  "prereqs": [
+    "g4.multistep-word-problems"
+  ],
+  "xp": 1,
+  "viz": [],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/math/grade-4/multistep-word-problems/\">multistep word problems</a> the story told you what to do first. A bare expression like $2 + 3 \\times 4$ has no story, so everyone agrees on one order. That way the same expression always has the same value."
+      },
+      {
+        "t": "key",
+        "html": "Multiply and divide first, working from left to right. Then add and subtract, from left to right. Anything in parentheses comes before all of that."
+      },
+      {
+        "t": "why",
+        "html": "Multiplying is a shortcut for adding equal groups: $3 \\times 4$ means $4 + 4 + 4$. In $2 + 3 \\times 4$, the $3 \\times 4$ is one chunk, three groups of 4. Write the chunk out and you get $2 + 4 + 4 + 4 = 14$. Doing the multiplication first keeps the chunk together."
+      },
+      {
+        "t": "viz",
+        "name": "tapediagram",
+        "opts": {
+          "tapes": [
+            {
+              "parts": [
+                2,
+                4,
+                4,
+                4
+              ],
+              "labels": [
+                "2",
+                "4",
+                "4",
+                "4"
+              ],
+              "colors": [
+                "green",
+                "blue",
+                "blue",
+                "blue"
+              ]
+            }
+          ],
+          "braces": [
+            {
+              "tape": 0,
+              "from": 1,
+              "to": 4,
+              "label": "3 × 4 = 12"
+            },
+            {
+              "tape": 0,
+              "from": 0,
+              "to": 4,
+              "label": "2 + 12 = 14",
+              "up": false
+            }
+          ]
+        },
+        "cap": "$2 + 3 \\times 4$ is one piece of 2 and three pieces of 4. Altogether 14."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Multiply before adding",
+        "q": "Find $2 + 3 \\times 4$.",
+        "steps": [
+          "Look for $\\times$ or $\\div$. There is one: $3 \\times 4 = 12$.",
+          "Now the expression is $2 + 12$.",
+          "Add: $2 + 12 = 14$."
+        ],
+        "a": "$14$"
+      },
+      {
+        "t": "ex",
+        "title": "Three operations",
+        "q": "Find $20 - 12 \\div 4 \\times 2$.",
+        "steps": [
+          "Multiplying and dividing come first. Of those two, the division is further left.",
+          "$12 \\div 4 = 3$, so the expression is $20 - 3 \\times 2$.",
+          "$3 \\times 2 = 6$, so the expression is $20 - 6$.",
+          "Subtract: $20 - 6 = 14$."
+        ],
+        "a": "$14$"
+      },
+      {
+        "t": "ex",
+        "title": "Left to right",
+        "q": "Find $18 \\div 3 \\times 2$.",
+        "steps": [
+          "Multiplying and dividing are partners. Neither one always comes first: go from left to right.",
+          "$18 \\div 3 = 6$.",
+          "$6 \\times 2 = 12$."
+        ],
+        "a": "$12$ (multiplying first would give $3$, which is not right)"
+      },
+      {
+        "t": "mistake",
+        "html": "Working straight from left to right: $2 + 3 = 5$, then $5 \\times 4 = 20$. That adds the 2 into every group of 4, which the expression never asked for. Quick check: before you start, circle each $\\times$ and $\\div$ with the numbers on both sides. The circles are worked first."
+      },
+      {
+        "t": "list",
+        "items": [
+          "Parentheses first.",
+          "Then multiply and divide, from left to right.",
+          "Then add and subtract, from left to right."
+        ]
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Prealgebra 2e, 2.1 Use the Language of Algebra (order of operations)"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 5.OA.A.1: evaluate numerical expressions with grouping symbols"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

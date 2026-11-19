@@ -1,0 +1,116 @@
+{
+  "id": "alg1.equations-fractions-decimals",
+  "slug": "equations-fractions-decimals",
+  "ladder": "math",
+  "course": "alg1",
+  "unit": "equations",
+  "title": "Clearing Fractions and Decimals",
+  "short": "Multiply every term by the common denominator to get whole numbers.",
+  "trouble": "Students multiply only the fraction terms by the common denominator and leave the whole-number terms unchanged.",
+  "prereqs": [
+    "alg1.justify-solution-steps",
+    "g6.gcf-lcm"
+  ],
+  "xp": 2,
+  "viz": [
+    "balance"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Fractions in an equation are allowed, but whole numbers are easier to work with. Since you may <a href=\"/math/algebra-1/justify-solution-steps/\">multiply both sides by the same nonzero number</a>, you can choose a number that clears every fraction at once: the least common denominator, which you know from <a href=\"/math/grade-6/gcf-lcm/\">least common multiples</a>."
+      },
+      {
+        "t": "why",
+        "html": "Multiplying a side by $6$ means multiplying the <em>whole</em> side, and by the distributive property that means multiplying every term: $6\\left(\\frac{x}{3} + \\frac{1}{2}\\right) = 6 \\cdot \\frac{x}{3} + 6 \\cdot \\frac{1}{2} = 2x + 3$. Because $6$ is a multiple of every denominator, each term comes out as a whole number. Decimals work the same way: a decimal is a fraction with denominator $10$, $100$ or $1000$."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Term",
+          "Times 6",
+          "Result"
+        ],
+        "rows": [
+          [
+            "$\\frac{x}{3}$",
+            "$6 \\cdot \\frac{x}{3}$",
+            "$2x$"
+          ],
+          [
+            "$\\frac{1}{2}$",
+            "$6 \\cdot \\frac{1}{2}$",
+            "$3$"
+          ],
+          [
+            "$\\frac{5}{6}$",
+            "$6 \\cdot \\frac{5}{6}$",
+            "$5$"
+          ]
+        ],
+        "cap": "Clearing the fractions in $\\frac{x}{3} + \\frac{1}{2} = \\frac{5}{6}$: every term is multiplied by $6$."
+      },
+      {
+        "t": "key",
+        "html": "Multiply <b>every term on both sides</b> by the least common denominator (or by $10$, $100$, … for decimals). The equation that remains has the same solution and no fractions."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Single fractions",
+        "q": "Solve $\\frac{x}{3} + \\frac{1}{2} = \\frac{5}{6}$.",
+        "steps": [
+          "The denominators are $3$, $2$ and $6$, so the least common denominator is $6$.",
+          "Multiply every term by $6$: $2x + 3 = 5$.",
+          "Subtract $3$: $2x = 2$. Divide by $2$: $x = 1$.",
+          "Check: $\\frac{1}{3} + \\frac{1}{2} = \\frac{2}{6} + \\frac{3}{6} = \\frac{5}{6}$."
+        ],
+        "a": "$x = 1$"
+      },
+      {
+        "t": "ex",
+        "title": "Numerators with two terms",
+        "q": "Solve $\\frac{x + 1}{4} - \\frac{x - 2}{6} = 1$.",
+        "steps": [
+          "The least common denominator of $4$ and $6$ is $12$. Multiply every term by $12$, keeping each numerator in parentheses.",
+          "$12 \\cdot \\frac{x + 1}{4} = 3(x + 1)$, $12 \\cdot \\frac{x - 2}{6} = 2(x - 2)$, and $12 \\cdot 1 = 12$: so $3(x + 1) - 2(x - 2) = 12$.",
+          "Distribute. The minus sign multiplies both terms of $2(x - 2)$: $3x + 3 - 2x + 4 = 12$.",
+          "Combine: $x + 7 = 12$, so $x = 5$."
+        ],
+        "a": "$x = 5$"
+      },
+      {
+        "t": "ex",
+        "title": "Decimals",
+        "q": "Solve $0.05x + 1.2 = 0.2x - 0.3$.",
+        "steps": [
+          "The most decimal places is two, so multiply every term by $100$: $5x + 120 = 20x - 30$.",
+          "Subtract $5x$: $120 = 15x - 30$. Add $30$: $150 = 15x$.",
+          "Divide by $15$: $x = 10$."
+        ],
+        "a": "$x = 10$"
+      },
+      {
+        "t": "mistake",
+        "html": "Multiplying only the fraction terms. In $\\frac{x}{3} + 2 = \\frac{5}{6}$, multiplying by $6$ gives $2x + 12 = 5$, not $2x + 2 = 5$: the whole number $2$ must be multiplied too. Check by putting your answer back into the original equation, fractions and all."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Elementary Algebra 2e, section 2.5 Solve Equations with Fractions or Decimals"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, A-REI.B.3"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

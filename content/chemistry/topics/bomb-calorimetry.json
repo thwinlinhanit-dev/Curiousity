@@ -1,0 +1,86 @@
+{
+  "id": "gchem1.bomb-calorimetry",
+  "slug": "bomb-calorimetry",
+  "ladder": "chemistry",
+  "course": "gchem1",
+  "unit": "thermochemistry",
+  "title": "Bomb Calorimetry",
+  "short": "At constant volume, the heat the calorimeter takes up, C(cal) × ΔT, measures the energy released by burning a sample.",
+  "trouble": "Students use water's specific heat and a mass when the calorimeter's heat capacity is given in kJ/°C.",
+  "prereqs": [
+    "gchem1.reaction-calorimetry"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-calorimeter"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Combustion releases gases and can't be done in an open cup. Instead the sample burns in pure oxygen inside a sealed steel \"bomb\" submerged in water. The method is <a href=\"/chemistry/general-chemistry-1/reaction-calorimetry/\">Calorimetry for Reactions</a> with one change: the whole apparatus is calibrated as a unit."
+      },
+      {
+        "t": "key",
+        "html": "The bomb, its water bath and fittings together have a <b>heat capacity</b> $C_\\text{cal}$ (in kJ/°C), found by burning a standard. Then $$q_\\text{cal} = C_\\text{cal}\\,\\Delta T, \\qquad q_\\text{rxn} = -C_\\text{cal}\\,\\Delta T.$$ Because the volume is fixed, no PV work is done, so this heat is $\\Delta U$; for most combustions it is close to $\\Delta H$."
+      },
+      {
+        "t": "why",
+        "html": "Water, steel, thermometer and stirrer all warm together, and adding up each one's $mc$ separately would be tedious and error-prone. Instead, burn a known amount of a standard with a known energy release (benzoic acid gives 26.38 kJ per gram) and see how much the temperature rises: that gives the calorimeter's heat capacity once and for all. In a sealed bomb $w = 0$, so the first law gives $\\Delta U = q_V$. The difference from $\\Delta H$ is $\\Delta n_\\text{gas}RT$, only a few kJ per mole."
+      },
+      {
+        "t": "viz",
+        "name": "ch-calorimeter",
+        "opts": {
+          "mode": "bomb",
+          "q": -26.4,
+          "Ccal": 10,
+          "T1": 25
+        },
+        "cap": "A bomb calorimeter. Burning the sample releases 26.4 kJ; with $C_\\text{cal} = 10.0\\ \\text{kJ/°C}$ the temperature rises 2.64 °C."
+      },
+      {
+        "t": "ex",
+        "title": "Calibrating",
+        "q": "Burning $1.000\\ \\text{g}$ of benzoic acid ($26.38\\ \\text{kJ/g}$ released) raises a calorimeter's temperature by $2.637^\\circ\\text{C}$. Find $C_\\text{cal}$.",
+        "steps": [
+          "Heat released: $26.38\\ \\text{kJ}$, all absorbed by the calorimeter.",
+          "$C_\\text{cal} = \\dfrac{26.38\\ \\text{kJ}}{2.637^\\circ\\text{C}} = 10.00\\ \\text{kJ/°C}$."
+        ],
+        "a": "$10.00\\ \\text{kJ/°C}$"
+      },
+      {
+        "t": "ex",
+        "title": "Energy in sugar",
+        "q": "In the same calorimeter, $0.500\\ \\text{g}$ of sucrose ($342.30\\ \\text{g/mol}$) raises the temperature by $0.826^\\circ\\text{C}$. Find the energy released per gram and per mole, and in food Calories per gram.",
+        "steps": [
+          "$q_\\text{cal} = (10.00)(0.826) = 8.26\\ \\text{kJ}$; $q_\\text{rxn} = -8.26\\ \\text{kJ}$.",
+          "Per gram: $8.26/0.500 = 16.5\\ \\text{kJ/g}$. Per mole: $16.52 \\times 342.30 = 5650\\ \\text{kJ/mol}$.",
+          "A food Calorie is a kilocalorie, $4.184\\ \\text{kJ}$: $16.5/4.184 = 3.95$, about 4 Calories per gram, as on food labels for sugars."
+        ],
+        "a": "$16.5\\ \\text{kJ/g}$; $5.65 \\times 10^{3}\\ \\text{kJ/mol}$; about 4 Cal/g."
+      },
+      {
+        "t": "note",
+        "html": "How different are $\\Delta U$ and $\\Delta H$? $\\Delta H = \\Delta U + \\Delta n_\\text{gas}RT$. For sucrose, $$\\mathrm{C_{12}H_{22}O_{11}} + 12\\,\\mathrm{O_2} \\to 12\\,\\mathrm{CO_2} + 11\\,\\mathrm{H_2O(l)}$$ the moles of gas don't change ($\\Delta n_\\text{gas} = 0$), so the two are equal. Even when they differ, $RT$ is only 2.5 kJ per mole of gas at room temperature."
+      },
+      {
+        "t": "mistake",
+        "html": "Using water's specific heat and a mass when the calorimeter's heat capacity is given in kJ/°C. $C_\\text{cal}$ already includes the water and the steel; just multiply it by $\\Delta T$. Check the units: kJ/°C times °C is kJ, with no grams anywhere."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 5.2 Calorimetry"
+      },
+      {
+        "name": "College Board, AP Chemistry Course and Exam Description (effective fall 2024), Unit 6: Thermochemistry"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

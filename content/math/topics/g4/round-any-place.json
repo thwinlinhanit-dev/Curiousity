@@ -1,0 +1,96 @@
+{
+  "id": "g4.round-any-place",
+  "slug": "round-any-place",
+  "ladder": "math",
+  "course": "g4",
+  "unit": "place-value",
+  "title": "Rounding to Any Place",
+  "short": "Round to the nearest ten, hundred, thousand and beyond.",
+  "trouble": "Children round every digit to the right separately, or change digits to the left of the rounding place.",
+  "prereqs": [
+    "g4.large-numbers",
+    "g3.round-10-100"
+  ],
+  "xp": 1,
+  "viz": [
+    "numberline",
+    "placevalue"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In Grade 3 you learned <a href=\"/math/grade-3/round-10-100/\">rounding to the nearest 10 or 100</a>. The same idea works for any place: find the two \"round\" numbers on either side, and pick the closer one."
+      },
+      {
+        "t": "key",
+        "html": "To round to a place, look at the digit <b>just to its right</b>. If it is 5 or more, round up; if it is less than 5, round down. The rounding digit stays or goes up by 1, digits to its left stay the same, and every digit to its right becomes 0."
+      },
+      {
+        "t": "why",
+        "html": "Rounding to the nearest thousand asks: which thousand is closer? $46{,}372$ sits between $46{,}000$ and $47{,}000$. The halfway point is $46{,}500$. The hundreds digit tells you which side of halfway you are on: 3 hundreds is less than 5 hundreds, so it is closer to $46{,}000$."
+      },
+      {
+        "t": "viz",
+        "name": "numberline",
+        "opts": {
+          "min": 46000,
+          "max": 47000,
+          "step": 500,
+          "sub": 10,
+          "labels": "whole",
+          "points": [
+            {
+              "v": 46372,
+              "label": "",
+              "color": "red",
+              "drag": true
+            }
+          ],
+          "value": true
+        },
+        "cap": "Drag the point. Left of $46{,}500$ it rounds to $46{,}000$; at $46{,}500$ or to the right it rounds to $47{,}000$."
+      },
+      {
+        "t": "ex",
+        "title": "Round down",
+        "q": "Round $46{,}372$ to the nearest thousand.",
+        "steps": [
+          "The thousands digit is 6, so the number is between $46{,}000$ and $47{,}000$.",
+          "The digit to its right (hundreds) is 3. That is less than 5, so round down.",
+          "Keep 46 thousands; the digits after become zeros."
+        ],
+        "a": "$46{,}000$"
+      },
+      {
+        "t": "ex",
+        "title": "Round up through a 9",
+        "q": "Round $39{,}682$ to the nearest thousand.",
+        "steps": [
+          "It is between $39{,}000$ and $40{,}000$.",
+          "The hundreds digit is 6, which is 5 or more, so round up.",
+          "39 thousands plus 1 thousand is 40 thousands: the 9 becomes 0 and the 3 becomes 4."
+        ],
+        "a": "$40{,}000$"
+      },
+      {
+        "t": "mistake",
+        "html": "Rounding one digit at a time from the right: $1{,}448$ to the nearest hundred becomes $1{,}450$ and then $1{,}500$. But $1{,}448$ is closer to $1{,}400$. Only the digit just to the right of the rounding place decides, and digits to the left only change when rounding up carries (as in $39{,}682 \\to 40{,}000$). Check: your answer must be the closer of the two round numbers on either side."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 4, 4.NBT.A.3 (use place value understanding to round multi-digit whole numbers to any place)"
+      },
+      {
+        "name": "OpenStax Prealgebra 2e, section 1.1 Introduction to Whole Numbers"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

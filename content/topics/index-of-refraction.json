@@ -1,0 +1,111 @@
+{
+  "id": "phys2.index-of-refraction",
+  "slug": "index-of-refraction",
+  "course": "phys2",
+  "courseTitle": "Physics 2: Fluids, Heat, Electricity, Light and Atoms",
+  "unit": "geometric-optics",
+  "unitTitle": "Geometric Optics",
+  "title": "Index of Refraction",
+  "short": "n = c/v: light slows in glass and water, and its wavelength shrinks while its frequency stays the same.",
+  "trouble": "Students think the frequency of light changes when it enters glass.",
+  "prereqs": [
+    "physsci.refraction-intro",
+    "physsci.wave-speed"
+  ],
+  "xp": 1,
+  "viz": [
+    "ph-refraction"
+  ],
+  "figureArchetype": "OpticsFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Light travels at $c = 3.00 \\times 10^{8}\\ \\text{m/s}$ in empty space, and slower in glass, water or plastic. In <a href=\"/physics/physical-science/refraction-intro/\">Refraction and Lenses</a> you saw that this change of speed is why light bends. The ratio that measures the slowdown is the index of refraction. It ties to <a href=\"/physics/physical-science/wave-speed/\">v = fλ</a>, so a change in speed must change something else as well."
+      },
+      {
+        "t": "key",
+        "html": "$$n = \\frac{c}{v}, \\qquad v = \\frac{c}{n}, \\qquad \\lambda_{n} = \\frac{\\lambda}{n}.$$ In a material light is slower and its wavelength is shorter by the factor $n$, but its <b>frequency stays the same</b>."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Material",
+          "$n$ (yellow light)"
+        ],
+        "rows": [
+          [
+            "air",
+            "1.0003 (use 1.00)"
+          ],
+          [
+            "water",
+            "1.33"
+          ],
+          [
+            "crown glass",
+            "1.52"
+          ],
+          [
+            "diamond",
+            "2.42"
+          ]
+        ],
+        "cap": "Light in a material is never faster than $c$, so $n \\ge 1$. Air is so close to 1 that we use $n = 1.00$."
+      },
+      {
+        "t": "why",
+        "html": "Why can't the frequency change? Picture crests reaching the surface of the glass. Each crest that arrives becomes a crest inside. If 500 trillion crests arrive per second but fewer left the surface each second, they would pile up there, and if more left, they would come from nowhere. So crests leave at the same rate they arrive. The frequency is fixed by the source; only the speed and the spacing change."
+      },
+      {
+        "t": "viz",
+        "name": "ph-refraction",
+        "opts": {
+          "mode": "wavefront",
+          "n1": 1,
+          "n2": 1.5,
+          "angle": 35,
+          "lab": "/science-lab/optics/"
+        },
+        "cap": "Wavefronts crowd together in glass: the wavelength shrinks by $n$ while the crests keep arriving at the same rate."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking the frequency, and so the color, changes when light enters glass. A red laser beam is still red inside water. Color is set by frequency, and the frequency never changes at a boundary. Check: in $v = f\\lambda$, if $v$ drops by $n$, it is $\\lambda$ that drops by $n$."
+      },
+      {
+        "t": "ex",
+        "title": "Light in diamond",
+        "q": "How fast does light travel in diamond, $n = 2.42$?",
+        "steps": [
+          "$v = \\dfrac{c}{n} = \\dfrac{3.00 \\times 10^{8}\\ \\text{m/s}}{2.42}$.",
+          "$v = 1.24 \\times 10^{8}\\ \\text{m/s}$, less than half the speed in a vacuum."
+        ],
+        "a": "$1.24 \\times 10^{8}\\ \\text{m/s}$"
+      },
+      {
+        "t": "ex",
+        "title": "Red light in water",
+        "q": "Red light has a wavelength of $600\\ \\text{nm}$ in air. Find its frequency, and its wavelength in water ($n = 1.33$).",
+        "steps": [
+          "Frequency in air: $$f = \\frac{c}{\\lambda} = \\frac{3.00 \\times 10^{8}}{600 \\times 10^{-9}} = 5.00 \\times 10^{14}\\ \\text{Hz}.$$",
+          "In water the frequency is the same: $5.00 \\times 10^{14}\\ \\text{Hz}$.",
+          "Wavelength in water: $\\lambda_n = \\dfrac{600\\ \\text{nm}}{1.33} = 451\\ \\text{nm}$."
+        ],
+        "a": "$5.00 \\times 10^{14}\\ \\text{Hz}$ in both; $451\\ \\text{nm}$ in water"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Physics 2e, Section 25.3: The Law of Refraction"
+      },
+      {
+        "name": "OpenStax University Physics Volume 3, Section 1.1: The Propagation of Light"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

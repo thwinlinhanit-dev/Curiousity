@@ -1,0 +1,85 @@
+{
+  "id": "g4.simplest-form",
+  "slug": "simplest-form",
+  "ladder": "math",
+  "course": "g4",
+  "unit": "fractions",
+  "title": "Simplest Form",
+  "short": "Divide top and bottom by a common factor to use fewer, larger pieces.",
+  "trouble": "Children divide the numerator and denominator by different numbers.",
+  "prereqs": [
+    "g4.equivalent-fractions-multiply",
+    "g4.factor-pairs"
+  ],
+  "xp": 2,
+  "viz": [
+    "fractionbar"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You can make <a href=\"/math/grade-4/equivalent-fractions-multiply/\">equivalent fractions by multiplying</a>. Going the other way, dividing the top and bottom by a common <a href=\"/math/grade-4/factor-pairs/\">factor</a>, uses fewer, larger pieces."
+      },
+      {
+        "t": "key",
+        "html": "A fraction is in <b>simplest form</b> when the only number that divides both the numerator and the denominator is 1. To simplify $\\dfrac{8}{12}$, divide both by a common factor: $\\dfrac{8 \\div 4}{12 \\div 4} = \\dfrac{2}{3}$."
+      },
+      {
+        "t": "why",
+        "html": "Dividing undoes the cutting. In $\\dfrac{8}{12}$, put every 4 small pieces back together into one bigger piece. 12 pieces become 3, and the 8 shaded pieces become 2. Same amount, bigger pieces: $\\dfrac{2}{3}$."
+      },
+      {
+        "t": "viz",
+        "name": "fractionbar",
+        "opts": {
+          "bars": [
+            "6/8",
+            "3/4"
+          ],
+          "guide": true
+        },
+        "cap": "$\\dfrac{6}{8}$ and $\\dfrac{3}{4}$ shade the same length. Joining pieces in pairs turns eighths into fourths."
+      },
+      {
+        "t": "ex",
+        "title": "One step",
+        "q": "Write $\\dfrac{6}{8}$ in simplest form.",
+        "steps": [
+          "2 divides both 6 and 8.",
+          "$\\dfrac{6 \\div 2}{8 \\div 2} = \\dfrac{3}{4}$.",
+          "Only 1 divides both 3 and 4, so stop."
+        ],
+        "a": "$\\dfrac{3}{4}$"
+      },
+      {
+        "t": "ex",
+        "title": "More than one step",
+        "q": "Write $\\dfrac{12}{18}$ in simplest form.",
+        "steps": [
+          "Divide by 2: $\\dfrac{12}{18} = \\dfrac{6}{9}$.",
+          "3 still divides both: $\\dfrac{6}{9} = \\dfrac{2}{3}$.",
+          "Using the greatest common factor, 6, gets there in one step: $\\dfrac{12 \\div 6}{18 \\div 6} = \\dfrac{2}{3}$."
+        ],
+        "a": "$\\dfrac{2}{3}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Dividing the top and bottom by different numbers, like $\\dfrac{6}{8} \\to \\dfrac{3}{2}$ (top ÷ 2, bottom ÷ 4). That changes the amount: $\\dfrac{3}{2}$ is more than a whole. Use one number for both, and check that the new fraction is about the same size."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 4, 4.NF.A.1 (recognize and generate equivalent fractions)"
+      },
+      {
+        "name": "OpenStax Prealgebra 2e, section 4.2 Multiply and Divide Fractions (simplify fractions)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

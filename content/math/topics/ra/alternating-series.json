@@ -1,0 +1,99 @@
+{
+  "id": "ra.alternating-series",
+  "slug": "alternating-series",
+  "ladder": "math",
+  "course": "ra",
+  "unit": "series",
+  "title": "Alternating Series and Error Bounds",
+  "short": "If bₖ decreases to 0, ∑(−1)ᵏ⁺¹bₖ converges, and the error after n terms is less than bₙ₊₁: the partial sums zigzag and trap the sum.",
+  "trouble": "Students use bₙ instead of bₙ₊₁ for the error, or skip checking that bₖ decreases.",
+  "prereqs": [
+    "ra.series-cauchy",
+    "calc2.alternating-series"
+  ],
+  "xp": 2,
+  "viz": [
+    "seriespartial"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Alternating series converge for a very visual reason: the partial sums zigzag, and the zigzags shrink. You used the test in <a href=\"/math/calculus-2/alternating-series/\">Calculus 2</a>; here we prove it with nested intervals and the <a href=\"/math/real-analysis/series-cauchy/\">Cauchy criterion</a>, and get a sharp error bound for free."
+      },
+      {
+        "t": "key",
+        "html": "<b>Alternating series test.</b> If $b_k$ decreases and $b_k \\to 0$, then $S = \\sum_{k=1}^{\\infty} (-1)^{k+1} b_k$ converges, $S$ lies between any two consecutive partial sums, and $|S - s_n| < b_{n+1}$ (when $b_k$ strictly decreases)."
+      },
+      {
+        "t": "why",
+        "html": "The even partial sums increase: $s_{2m+2} = s_{2m} + (b_{2m+1} - b_{2m+2}) \\ge s_{2m}$. The odd partial sums decrease: $s_{2m+1} = s_{2m-1} - (b_{2m} - b_{2m+1}) \\le s_{2m-1}$. And every even sum is below every odd sum. So the even sums increase and are bounded above, hence converge, and the odd sums decrease to a limit too; their difference $s_{2m+1} - s_{2m} = b_{2m+1} \\to 0$, so the limits agree. Call it $S$. Since $S$ sits between $s_n$ and $s_{n+1}$, its distance from $s_n$ is less than $|s_{n+1} - s_n| = b_{n+1}$. $\\blacksquare$"
+      },
+      {
+        "t": "viz",
+        "name": "seriespartial",
+        "opts": {
+          "a": "(-1)^(n+1)/n",
+          "N": 8,
+          "limit": "ln(2)",
+          "view": "walk"
+        },
+        "cap": "The alternating harmonic series on a number line: each step goes the other way and is shorter, so the sum is trapped between consecutive partial sums."
+      },
+      {
+        "t": "p",
+        "html": "The error bound is one of the few in analysis that you get completely free: no derivatives to estimate, just the next term. It also tells you the sign of the error. If the last term you added was positive, you have overshot, and $s_n > S$; if it was negative, $s_n < S$. Averaging two consecutive partial sums is often much closer to $S$ than either one, because the true sum sits between them."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "How many terms are enough?",
+        "q": "How many terms of $\\sum (-1)^{k+1}\\frac{1}{k^{2}}$ guarantee an error below $0.001$?",
+        "steps": [
+          "The error after $n$ terms is less than $b_{n+1} = \\frac{1}{(n + 1)^{2}}$.",
+          "$\\frac{1}{(n + 1)^{2}} < 0.001$ means $(n + 1)^{2} > 1000$, so $n + 1 \\ge 32$."
+        ],
+        "a": "$n = 31$ terms (or more)."
+      },
+      {
+        "t": "ex",
+        "title": "Above or below?",
+        "q": "For $\\sum (-1)^{k+1}\\frac{1}{k}$, is $s_5$ above or below the sum?",
+        "steps": [
+          "The fifth term is $+\\frac{1}{5}$: adding it overshoots."
+        ],
+        "a": "Above. Odd partial sums lie above $S$, even ones below."
+      },
+      {
+        "t": "ex",
+        "title": "Trapping the sum",
+        "q": "Compute $s_3$ and $s_4$ for $\\sum (-1)^{k+1}\\frac{1}{k^{2}}$ and give the interval that must contain $S$.",
+        "steps": [
+          "$s_3 = 1 - \\frac{1}{4} + \\frac{1}{9} = \\frac{31}{36}$ and $s_4 = \\frac{31}{36} - \\frac{1}{16} = \\frac{115}{144}$."
+        ],
+        "a": "$S \\in \\left(\\frac{115}{144}, \\frac{31}{36}\\right) \\approx (0.799, 0.861)$. (In fact $S = \\frac{\\pi^{2}}{12} \\approx 0.822$.)"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>The error bound uses the next term.</b> After $n$ terms, the bound is $b_{n+1}$, the first term left out, not $b_n$. Also check the hypotheses: if $b_k$ is not decreasing (say $\\frac{1}{k}$ for odd $k$ and $\\frac{1}{k^{2}}$ for even $k$), the series can diverge even though $b_k \\to 0$ and the signs alternate."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Jiří Lebl, Basic Analysis I: Introduction to Real Analysis, section 2.6 (alternating series)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.100A Real Analysis, lecture notes on alternating series"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

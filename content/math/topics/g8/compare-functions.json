@@ -1,0 +1,101 @@
+{
+  "id": "g8.compare-functions",
+  "slug": "compare-functions",
+  "ladder": "math",
+  "course": "g8",
+  "unit": "slope",
+  "title": "Comparing Functions in Different Forms",
+  "short": "Compare rates and starting values across tables, graphs and equations.",
+  "trouble": "",
+  "prereqs": [
+    "g8.linear-nonlinear"
+  ],
+  "xp": 2,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Two <a href=\"/math/pre-algebra/linear-nonlinear/\">linear functions</a> might be described in different ways: one by an equation, one by a table, one by a graph or in words. You can still compare them."
+      },
+      {
+        "t": "why",
+        "html": "Every linear function has the same two features, however it is shown: a rate of change (the slope) and an initial value (the $y$-intercept). Find those two numbers for each function, and comparing them is just comparing numbers."
+      },
+      {
+        "t": "key",
+        "html": "To compare linear functions in different forms, find each one’s rate of change and initial value: from an equation, read $m$ and $b$; from a table or two points, compute $\\frac{\\text{change in } y}{\\text{change in } x}$ and work back to $x = 0$; from a graph, read the $y$-intercept and count rise over run."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "fns": [
+            {
+              "f": "12x+30",
+              "label": "A"
+            },
+            {
+              "f": "15x+10",
+              "label": "B",
+              "color": "red"
+            }
+          ],
+          "intersections": true,
+          "xmin": 0,
+          "xmax": 10,
+          "ymin": 0,
+          "ymax": 180,
+          "zoom": false
+        },
+        "cap": "Plan A starts higher, but Plan B grows faster, so B catches up."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Equation and table",
+        "q": "Plan A costs $y = 12x + 30$ dollars for $x$ months. Plan B is shown in a table: $$\\begin{array}{c|ccc} x & 0 & 2 & 4 \\\\ \\hline y & 10 & 40 & 70 \\end{array}$$ Compare the rates and the starting values.",
+        "steps": [
+          "Plan A: rate 12 dollars per month, starting value 30.",
+          "Plan B: rate $\\frac{40 - 10}{2 - 0} = 15$ dollars per month, starting value 10.",
+          "A starts higher; B’s cost grows faster."
+        ],
+        "a": "A has the greater initial value; B has the greater rate"
+      },
+      {
+        "t": "ex",
+        "title": "Words and a graph",
+        "q": "Tank C starts with 50 liters and loses 4 liters each minute. Tank D’s graph passes through $(0, 60)$ and $(5, 35)$. Which tank drains faster?",
+        "steps": [
+          "C: rate $-4$ liters per minute.",
+          "D: rate $\\frac{35 - 60}{5 - 0} = -5$ liters per minute.",
+          "D loses 5 per minute and C loses 4, so D drains faster."
+        ],
+        "a": "Tank D"
+      },
+      {
+        "t": "mistake",
+        "html": "Comparing one output instead of the rates. Plan A costs more at the start, but that does not make it grow faster. Compare slopes for “faster” and $y$-intercepts for “starts higher.”"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 8, 8.F.A.2 (compare properties of two functions represented in different ways)"
+      },
+      {
+        "name": "OpenStax Elementary Algebra 2e, Section 4.5: Use the Slope-Intercept Form of an Equation of a Line"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

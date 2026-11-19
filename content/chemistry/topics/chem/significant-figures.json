@@ -1,0 +1,122 @@
+{
+  "id": "chem.significant-figures",
+  "slug": "significant-figures",
+  "ladder": "chemistry",
+  "course": "chem",
+  "unit": "matter",
+  "title": "Measurements and Significant Figures",
+  "short": "Read an instrument to one estimated digit, then count the digits that carry meaning.",
+  "trouble": "Students count leading zeros as significant, drop a meaningful trailing zero such as the one in 2.50 g, or report only the digits that have tick marks.",
+  "prereqs": [
+    "g5.round-decimals"
+  ],
+  "xp": 1,
+  "viz": [
+    "ch-measure"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Every measurement has some uncertainty. A ruler marked every millimeter cannot tell you a length to the nearest thousandth of a millimeter. Scientists show how exact a measurement is by how many digits they write. You already know <a href=\"/math/grade-5/round-decimals/\">Rounding Decimals</a>; significant figures tell you where to round."
+      },
+      {
+        "t": "key",
+        "html": "Record all the digits you are sure of plus <b>one estimated digit</b>. Those are the <b>significant figures</b>. Nonzero digits always count; zeros between them count; leading zeros never count; trailing zeros count when there is a decimal point."
+      },
+      {
+        "t": "why",
+        "html": "Digits carry information about the measurement. In $0.0045\\ \\text{m}$, the zeros only place the decimal point: the same length is $4.5\\ \\text{mm}$, with no zeros at all, so they cannot be significant. In $2.50\\ \\text{g}$, the final 0 says the balance read the hundredths place and found 0 there, which is real information: writing $2.5\\ \\text{g}$ would claim less."
+      },
+      {
+        "t": "viz",
+        "name": "ch-measure",
+        "opts": {
+          "mode": "cylinder",
+          "value": 36.5,
+          "zoom": 2
+        },
+        "cap": "A graduated cylinder marked every 1 mL. Read the bottom of the curved surface: 36 mL for certain, and the half-way position gives the estimated digit, 36.5 mL (three significant figures)."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Number",
+          "Significant figures",
+          "Why"
+        ],
+        "rows": [
+          [
+            "$407$",
+            "3",
+            "zero between nonzero digits"
+          ],
+          [
+            "$0.0062$",
+            "2",
+            "leading zeros only place the point"
+          ],
+          [
+            "$2.50$",
+            "3",
+            "trailing zero after a decimal point"
+          ],
+          [
+            "$3.010 \\times 10^{4}$",
+            "4",
+            "count the digits in front of the power of ten"
+          ],
+          [
+            "$1200$",
+            "2, 3 or 4",
+            "unclear: write $1.20 \\times 10^{3}$ for three"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Counting",
+        "q": "How many significant figures are in $0.004050\\ \\text{L}$?",
+        "steps": [
+          "Start at the first nonzero digit, the 4. The three zeros before it don't count.",
+          "4, 0 (between nonzero digits) and 5 count.",
+          "The final 0 comes after a decimal point, so it counts too."
+        ],
+        "a": "4 significant figures"
+      },
+      {
+        "t": "ex",
+        "title": "Rounding to three",
+        "q": "Round $0.0034567$ to three significant figures.",
+        "steps": [
+          "The first three significant digits are 3, 4 and 5.",
+          "The next digit is 6, which is 5 or more, so round the 5 up to 6.",
+          "Keep the leading zeros to hold the place value."
+        ],
+        "a": "$0.00346$"
+      },
+      {
+        "t": "mistake",
+        "html": "Counting leading zeros ($0.0062$ has 2 significant figures, not 5), dropping a meaningful trailing zero (writing 2.5 g when the balance read 2.50 g), or recording only the digits that have tick marks. Check by rewriting the number in scientific notation: $0.0062 = 6.2 \\times 10^{-3}$ shows 2 digits."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 1.5 Measurement Uncertainty, Accuracy, and Precision"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, N-Q.A.3 (choose a level of accuracy appropriate to limitations on measurement)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,134 @@
+{
+  "id": "cplx.real-integrals-residues",
+  "slug": "real-integrals-residues",
+  "ladder": "math",
+  "course": "cplx",
+  "unit": "residues",
+  "title": "Improper Integrals with Residues",
+  "short": "Close the real line with a large half-circle in the upper half-plane; when deg Q ≥ deg P + 2, the arc adds nothing as the radius grows, so ∫ P/Q dx is 2πi times the upper residues.",
+  "trouble": "Students include the poles in the lower half-plane when closing the contour in the upper half.",
+  "prereqs": [
+    "cplx.residue-theorem",
+    "cplx.ml-inequality",
+    "calc2.improper-integrals"
+  ],
+  "xp": 3,
+  "viz": [
+    "cplx-contour"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/math/calculus-2/improper-integrals/\">Improper integrals</a> over the whole real line, such as $\\int_{-\\infty}^\\infty\\frac{dx}{x^2 + 1}$, can be done with residues even when no antiderivative is in sight. The idea: close the real line into a loop with a large half circle, and use the <a href=\"/math/complex-analysis/ml-inequality/\">ML inequality</a> to show the half circle contributes nothing."
+      },
+      {
+        "t": "key",
+        "html": "Let $f = \\frac{P}{Q}$ with polynomials $P, Q$, $\\deg Q \\ge \\deg P + 2$, and $Q$ never $0$ on the real line. Then\n      $$\\int_{-\\infty}^{\\infty}\\frac{P(x)}{Q(x)}\\,dx = 2\\pi i\\sum_{\\operatorname{Im} a > 0}\\operatorname{Res}\\left(\\frac{P}{Q}, a\\right),$$\n      the sum over the poles in the <b>upper</b> half-plane only."
+      },
+      {
+        "t": "why",
+        "html": "Let $C_R$ be the segment $[-R, R]$ followed by the upper half circle $\\Gamma_R$ of radius $R$. For $R$ large, $C_R$ encloses every upper pole, so $\\int_{-R}^{R} f\\,dx + \\int_{\\Gamma_R} f\\,dz = 2\\pi i\\sum\\operatorname{Res}$. On $\\Gamma_R$, $|f(z)| \\le \\frac{K}{R^2}$ for some constant $K$ (two degrees of decay), and the length is $\\pi R$, so $\\left|\\int_{\\Gamma_R}f\\,dz\\right| \\le \\frac{\\pi K}{R} \\to 0$. Letting $R \\to \\infty$ leaves the real integral equal to $2\\pi i\\sum\\operatorname{Res}$."
+      },
+      {
+        "t": "viz",
+        "name": "cplx-contour",
+        "opts": {
+          "f": "1/(z^2+1)",
+          "contour": {
+            "type": "halfdisk",
+            "R": 3
+          },
+          "parts": true,
+          "window": {
+            "x": [
+              -4,
+              4
+            ],
+            "y": [
+              -2,
+              4
+            ]
+          }
+        },
+        "cap": "For $\\frac{1}{z^2 + 1}$ the half-disk encloses only $i$. Drag the handle outward: the arc's integral shrinks toward $0$ and the straight part approaches the whole real integral, $\\pi$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "The basic case",
+        "q": "Evaluate $\\displaystyle\\int_{-\\infty}^{\\infty}\\frac{dx}{x^2 + 4}$.",
+        "steps": [
+          "Poles at $\\pm 2i$; only $2i$ is in the upper half-plane.",
+          "$\\operatorname{Res}\\left(\\frac{1}{z^2 + 4}, 2i\\right) = \\frac{1}{2 \\cdot 2i} = \\frac{1}{4i}$.",
+          "$2\\pi i\\cdot\\frac{1}{4i} = \\frac{\\pi}{2}$. (Check: $\\frac{1}{2}\\arctan\\frac{x}{2}$ gives the same.)"
+        ],
+        "a": "$\\frac{\\pi}{2}$"
+      },
+      {
+        "t": "ex",
+        "title": "Two upper poles",
+        "q": "Evaluate $\\displaystyle\\int_{-\\infty}^{\\infty}\\frac{dx}{(x^2 + 1)(x^2 + 4)}$.",
+        "steps": [
+          "Upper poles: $i$ and $2i$.",
+          "$\\operatorname{Res}(f, i) = \\frac{1}{2i(-1 + 4)} = \\frac{1}{6i}$ and $\\operatorname{Res}(f, 2i) = \\frac{1}{4i(-4 + 1)} = -\\frac{1}{12i}$.",
+          "$2\\pi i\\left(\\frac{1}{6i} - \\frac{1}{12i}\\right) = 2\\pi\\cdot\\frac{1}{12} = \\frac{\\pi}{6}$."
+        ],
+        "a": "$\\frac{\\pi}{6}$"
+      },
+      {
+        "t": "ex",
+        "title": "A double pole",
+        "q": "Evaluate $\\displaystyle\\int_{-\\infty}^{\\infty}\\frac{dx}{(x^2 + 1)^2}$.",
+        "steps": [
+          "Double pole at $i$: $\\operatorname{Res} = \\frac{d}{dz}(z + i)^{-2}\\Big|_{i} = \\frac{-2}{(2i)^3} = \\frac{1}{4i}$.",
+          "$2\\pi i\\cdot\\frac{1}{4i} = \\frac{\\pi}{2}$."
+        ],
+        "a": "$\\frac{\\pi}{2}$"
+      },
+      {
+        "t": "list",
+        "items": [
+          "Check the conditions: no real zeros of $Q$, and $\\deg Q \\ge \\deg P + 2$.",
+          "Find the zeros of $Q$ with positive imaginary part.",
+          "Add the residues of $\\frac{P}{Q}$ there and multiply by $2\\pi i$."
+        ]
+      },
+      {
+        "t": "note",
+        "html": "Why two degrees? With only one degree of decay, as in $\\frac{x}{x^2 + 1}$, the arc's ML bound $\\frac{\\pi R \\cdot R}{R^2 - 1}$ does not shrink, and in fact $\\int_{-\\infty}^{\\infty}\\frac{x}{x^2 + 1}dx$ does not converge. The degree condition is what makes both the real integral and the arc argument work."
+      },
+      {
+        "t": "ex",
+        "title": "A shifted denominator",
+        "q": "Evaluate $\\displaystyle\\int_{-\\infty}^{\\infty}\\frac{dx}{x^2 + 2x + 5}$.",
+        "steps": [
+          "The zeros of $x^2 + 2x + 5$ are $-1 \\pm 2i$; only $-1 + 2i$ is in the upper half-plane.",
+          "Residue there: $\\frac{1}{2z + 2}\\Big|_{z = -1 + 2i} = \\frac{1}{4i}$.",
+          "$2\\pi i\\cdot\\frac{1}{4i} = \\frac{\\pi}{2}$. (Completing the square, $\\int\\frac{dx}{(x + 1)^2 + 4} = \\frac{1}{2}\\arctan\\frac{x + 1}{2}$, agrees.)"
+        ],
+        "a": "$\\frac{\\pi}{2}$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Including the poles in the lower half-plane.</b> The closed contour (segment plus upper half circle) does not surround the lower poles, so their residues do not belong in the sum. For $\\frac{1}{x^2 + 4}$, adding the residue at $-2i$ would give $0$, an impossible value for the integral of a positive function. Quick check: a positive integrand must give a positive real answer."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Beck, Marchesi, Pixton and Sabalka, A First Course in Complex Analysis, chapter 9 (Isolated Singularities and the Residue Theorem)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.04, Complex Variables with Applications (Spring 2018), course notes: definite integrals using the residue theorem"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

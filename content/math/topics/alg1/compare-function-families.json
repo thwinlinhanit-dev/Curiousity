@@ -1,0 +1,135 @@
+{
+  "id": "alg1.compare-function-families",
+  "slug": "compare-function-families",
+  "ladder": "math",
+  "course": "alg1",
+  "unit": "quadratics",
+  "title": "Comparing Linear, Quadratic and Exponential Models",
+  "short": "Choose a model by looking at differences and ratios in data.",
+  "trouble": "Students fit any curved data with a quadratic, without checking for constant ratios.",
+  "prereqs": [
+    "alg1.quadratic-models",
+    "alg1.exponential-models",
+    "alg1.linear-models-context"
+  ],
+  "xp": 3,
+  "viz": [
+    "graph",
+    "exponential"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You now know three families of models: <a href=\"/math/algebra-1/linear-models-context/\">linear</a>, <a href=\"/math/algebra-1/quadratic-models/\">quadratic</a> and <a href=\"/math/algebra-1/exponential-models/\">exponential</a>. Real data rarely comes labeled, so you need a way to tell which family fits."
+      },
+      {
+        "t": "why",
+        "html": "Over equal steps in $x$: a linear function changes by a constant amount, so its <b>first differences</b> are constant. A quadratic's first differences change, but by a constant amount each time, so its <b>second differences</b> are constant (for $y = x^2$: outputs $0, 1, 4, 9, 16$; first differences $1, 3, 5, 7$; second differences $2, 2, 2$). An exponential function changes by a constant factor, so its <b>ratios</b> are constant. In the long run, exponential growth beats quadratic growth, which beats linear growth."
+      },
+      {
+        "t": "table",
+        "head": [
+          "$x$",
+          "$0$",
+          "$1$",
+          "$2$",
+          "$3$",
+          "$4$",
+          "Pattern"
+        ],
+        "rows": [
+          [
+            "linear $2x + 1$",
+            "$1$",
+            "$3$",
+            "$5$",
+            "$7$",
+            "$9$",
+            "first differences $2$"
+          ],
+          [
+            "quadratic $x^2 + 1$",
+            "$1$",
+            "$2$",
+            "$5$",
+            "$10$",
+            "$17$",
+            "second differences $2$"
+          ],
+          [
+            "exponential $2^x$",
+            "$1$",
+            "$2$",
+            "$4$",
+            "$8$",
+            "$16$",
+            "ratios $2$"
+          ]
+        ],
+        "cap": "Three families, three fingerprints."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "fns": [
+            "2x + 1",
+            "x^2 + 1",
+            "2^x"
+          ],
+          "xmin": -1,
+          "xmax": 6,
+          "ymin": -2,
+          "ymax": 40
+        },
+        "cap": "The three functions in the table. For small $x$ they are close; by $x = 6$ the exponential is far ahead."
+      },
+      {
+        "t": "key",
+        "html": "Constant first differences: linear. Constant second differences: quadratic. Constant ratios: exponential. Then think about the situation: adding a fixed amount, multiplying by a fixed factor, or rising and falling like a thrown object."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Identify the family",
+        "q": "Data: $(0, 3)$, $(1, 5)$, $(2, 11)$, $(3, 21)$, $(4, 35)$.",
+        "steps": [
+          "First differences: $2, 6, 10, 14$. Not constant.",
+          "Second differences: $4, 4, 4$. Constant."
+        ],
+        "a": "Quadratic (it is $2x^2 + 3$)."
+      },
+      {
+        "t": "ex",
+        "title": "The long run",
+        "q": "Which grows larger eventually: $50x$ or $1.5^x$?",
+        "steps": [
+          "At $x = 10$: $500$ vs about $58$. At $x = 20$: $1000$ vs about $3325$."
+        ],
+        "a": "$1.5^x$, the exponential."
+      },
+      {
+        "t": "mistake",
+        "html": "Fitting any curved data with a quadratic without checking ratios. The data $3, 6, 12, 24, 48$ curves upward, but its ratios are all $2$: it is exponential, and a quadratic would predict far too little later on. Check differences <em>and</em> ratios before choosing."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Algebra 2e, section 6.1 Exponential Functions"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, F-LE.A.3: observe that an exponentially increasing quantity eventually exceeds a quantity increasing linearly or quadratically"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

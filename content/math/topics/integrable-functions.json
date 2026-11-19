@@ -1,0 +1,106 @@
+{
+  "id": "ra.integrable-functions",
+  "slug": "integrable-functions",
+  "ladder": "math",
+  "course": "ra",
+  "unit": "integral",
+  "title": "Which Functions Are Integrable",
+  "short": "Continuous functions, monotone functions and bounded functions with finitely many jumps are integrable; Dirichlet's function is not, since every U = b − a and every L = 0.",
+  "trouble": "Students think every bounded function is integrable, or that a function with a jump cannot be.",
+  "prereqs": [
+    "ra.integrability-criterion",
+    "ra.uniform-continuity"
+  ],
+  "xp": 3,
+  "viz": [
+    "ra-sums"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "With the <a href=\"/math/real-analysis/integrability-criterion/\">criterion</a> we can sort functions into integrable and not. The big theorem uses <a href=\"/math/real-analysis/uniform-continuity/\">uniform continuity</a>: every continuous function on $[a, b]$ is integrable. Jumps are fine in moderation. A function that jumps everywhere is not."
+      },
+      {
+        "t": "key",
+        "html": "Integrable on $[a, b]$: every continuous function, every monotone function, and every bounded function with finitely many discontinuities. Changing a function at finitely many points does not change its integral. <b>Not integrable:</b> Dirichlet's function ($1$ on rationals, $0$ on irrationals), since every $U = b - a$ and every $L = 0$; and unbounded functions."
+      },
+      {
+        "t": "why",
+        "html": "<b>Continuous functions.</b> Let $\\varepsilon > 0$. By uniform continuity there is a $\\delta$ with $|f(x) - f(y)| < \\frac{\\varepsilon}{b - a}$ when $|x - y| < \\delta$. Take a partition with all pieces shorter than $\\delta$. On each piece the sup and inf are values of $f$ (EVT) at points less than $\\delta$ apart, so $M_i - m_i < \\frac{\\varepsilon}{b - a}$, and $U - L < \\frac{\\varepsilon}{b - a}\\sum \\Delta x_i = \\varepsilon$. $\\blacksquare$ <b>A jump.</b> Put the jump inside one piece of width $w$; every other piece sees a continuous (or constant) function. That one piece contributes at most (size of the jump) $\\times\\, w$ to $U - L$, which you can make small by shrinking $w$. <b>Dirichlet.</b> Every piece of every partition contains rationals and irrationals (density), so $M_i = 1$ and $m_i = 0$ always: the gap is always $b - a$."
+      },
+      {
+        "t": "viz",
+        "name": "ra-sums",
+        "opts": {
+          "jump": {
+            "at": 2,
+            "left": 1,
+            "right": 3
+          },
+          "a": 0,
+          "b": 4,
+          "P": [
+            0,
+            1,
+            1.5,
+            2.5,
+            3,
+            4
+          ],
+          "show": "gap"
+        },
+        "cap": "A step function with a jump at $x = 2$: only the piece containing the jump has a gap. Make that piece thinner and the gap disappears."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "The gap at a jump",
+        "q": "Let $f = 3$ on $[0, 2)$ and $f = 5$ on $[2, 4]$. For $P = \\{0, 1.9, 2.1, 4\\}$, find $U - L$.",
+        "steps": [
+          "The pieces $[0, 1.9]$ and $[2.1, 4]$ have $M_i = m_i$.",
+          "The middle piece $[1.9, 2.1]$ has $M - m = 5 - 3 = 2$ and width $0.2$."
+        ],
+        "a": "$U - L = 0.4$. A middle piece of width $w$ gives $2w$, as small as you like."
+      },
+      {
+        "t": "ex",
+        "title": "Dirichlet's function",
+        "q": "Let $f = 2$ on the rationals and $f = -1$ on the irrationals in $[0, 3]$. Find $U(f, P)$ and $L(f, P)$ for any partition.",
+        "steps": [
+          "Every piece contains both kinds of numbers: $M_i = 2$ and $m_i = -1$."
+        ],
+        "a": "$U = 2 \\cdot 3 = 6$ and $L = -3$ for every $P$: not integrable."
+      },
+      {
+        "t": "ex",
+        "title": "Changing finitely many values",
+        "q": "$g(x) = x^{2}$ on $[0, 3]$ except $g(1) = 100$. Find $\\int_0^3 g$.",
+        "steps": [
+          "Put $x = 1$ inside a tiny piece; it changes $U - L$ by at most about $100 \\times$ (its width)."
+        ],
+        "a": "$\\int_0^3 g = \\int_0^3 x^{2}\\,dx = 9$."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Two opposite errors.</b> \"Bounded implies integrable\" is false (Dirichlet's function). \"A function with a jump cannot be integrated\" is false too: finitely many jumps cost nothing. The real question is how big the set of discontinuities is. (Lebesgue's criterion: a bounded function is Riemann integrable exactly when its discontinuities form a set of measure zero. Thomae's function, discontinuous at every rational, is integrable with integral $0$.)"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Jiří Lebl, Basic Analysis I: Introduction to Real Analysis, section 5.2 (continuous functions are integrable)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.100A Real Analysis, lecture notes on integrable functions"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

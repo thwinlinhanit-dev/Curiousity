@@ -1,0 +1,112 @@
+{
+  "id": "alg2.sketch-polynomials",
+  "slug": "sketch-polynomials",
+  "ladder": "math",
+  "course": "alg2",
+  "unit": "polynomials",
+  "title": "Sketching Polynomial Graphs",
+  "short": "Combine end behavior, zeros and multiplicity to sketch a graph.",
+  "trouble": "",
+  "prereqs": [
+    "alg2.zeros-multiplicity",
+    "alg2.solve-polynomial-equations"
+  ],
+  "xp": 2,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You can sketch a polynomial's graph without plotting dozens of points. Combine three facts: the <a href=\"/math/algebra-2/end-behavior/\">End Behavior of Polynomials</a>, the <a href=\"/math/algebra-2/zeros-multiplicity/\">zeros and their multiplicities</a>, and the $y$-intercept."
+      },
+      {
+        "t": "key",
+        "html": "To sketch $f$: (1) find the zeros and their multiplicities from the factored form; (2) find the end behavior from the leading term; (3) find $f(0)$; (4) draw from left to right, crossing or touching at each zero. A degree-$n$ graph has at most $n - 1$ turning points."
+      },
+      {
+        "t": "why",
+        "html": "A polynomial graph is one smooth, unbroken curve. It can only change sign at a zero, and it changes sign there only when the multiplicity is odd. Once you know where it is positive and negative and how it behaves at the ends, the rough shape is forced. Between zeros the graph turns around somewhere, but finding exactly where needs calculus."
+      },
+      {
+        "t": "viz",
+        "name": "alg2-plot",
+        "opts": {
+          "fns": [
+            "(x + 2)*(x - 1)^2*(x - 3)"
+          ],
+          "points": [
+            {
+              "x": -2,
+              "y": 0
+            },
+            {
+              "x": 1,
+              "y": 0
+            },
+            {
+              "x": 3,
+              "y": 0
+            },
+            {
+              "x": 0,
+              "y": -6,
+              "label": "(0, −6)"
+            }
+          ],
+          "xmin": -3.5,
+          "xmax": 4,
+          "ymin": -16,
+          "ymax": 12,
+          "label": "Graph of f(x) = (x + 2)(x − 1)²(x − 3)"
+        },
+        "cap": "$f(x) = (x + 2)(x - 1)^2(x - 3)$: up at both ends (degree 4, positive), crossing at $-2$ and $3$, touching at $1$, $y$-intercept $-6$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A full sketch plan",
+        "q": "Sketch $f(x) = (x + 2)(x - 1)^2(x - 3)$.",
+        "steps": [
+          "Zeros: $-2$ (multiplicity 1, crosses), $1$ (multiplicity 2, touches), $3$ (multiplicity 1, crosses).",
+          "Leading term: $x \\cdot x^2 \\cdot x = x^4$. Even degree, positive, so both ends rise.",
+          "$y$-intercept: $f(0) = (2)(-1)^2(-3) = -6$.",
+          "Signs: left of $-2$ the graph is above the axis (the left end rises). It crosses at $-2$ and stays below until $1$, where it touches the axis and turns back down. It stays below until it crosses at $3$, then rises.",
+          "Check one interval with a number: $f(2) = (4)(1)(-1) = -4 < 0$, so the graph is below the axis between 1 and 3, as planned."
+        ],
+        "a": "From the upper left, cross at $-2$, dip below (through $(0, -6)$), touch at $1$, dip again, cross at $3$, then up to the right."
+      },
+      {
+        "t": "ex",
+        "title": "Counting turning points",
+        "q": "At most how many turning points can $g(x) = -x^5 + 4x^3$ have?",
+        "steps": [
+          "The degree is 5, so at most $5 - 1 = 4$.",
+          "Factor to see the zeros: $-x^3(x^2 - 4) = -x^3(x - 2)(x + 2)$, zeros $-2, 0, 2$."
+        ],
+        "a": "At most 4 (this one has exactly 2)."
+      },
+      {
+        "t": "mistake",
+        "html": "Making every zero a crossing point, or ignoring the end behavior. Check the sign in each interval with one test number; the picture must agree with all of them."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Algebra 2e, Section 5.3 Graphs of Polynomial Functions"
+      },
+      {
+        "name": "Common Core State Standards, F-IF.C.7c"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,748 @@
+{
+  "key": "ra",
+  "ladder": "math",
+  "title": "Real Analysis",
+  "short": "Real Analysis",
+  "after": [
+    "calc2",
+    "disc"
+  ],
+  "units": [
+    {
+      "key": "real-numbers",
+      "title": "The Real Numbers",
+      "blurb": "Absolute value and the triangle inequality, suprema and infima, completeness, the density of the rationals, and the sizes of infinite sets."
+    },
+    {
+      "key": "sequences",
+      "title": "Sequences and Their Limits",
+      "blurb": "The ε–N definition and proofs that use it, bounded and monotone sequences, subsequences, lim sup and lim inf, and Cauchy sequences."
+    },
+    {
+      "key": "series",
+      "title": "Series",
+      "blurb": "Convergence as a statement about partial sums: the Cauchy criterion, comparison, condensation, the root test with lim sup, alternating series and rearrangements."
+    },
+    {
+      "key": "continuity",
+      "title": "Limits of Functions and Continuity",
+      "blurb": "Limits and continuity with ε and δ, the sequential criterion, the intermediate and extreme value theorems, and uniform continuity."
+    },
+    {
+      "key": "derivatives",
+      "title": "Derivatives",
+      "blurb": "Derivatives from the definition, differentiability, the mean value theorem and the bounds it gives, and Taylor's theorem with remainder."
+    },
+    {
+      "key": "integral",
+      "title": "The Riemann Integral",
+      "blurb": "Upper and lower sums, the integrability criterion, which functions are integrable, bounds for integrals, and a proof of the fundamental theorem."
+    },
+    {
+      "key": "function-sequences",
+      "title": "Sequences and Series of Functions",
+      "blurb": "Pointwise and uniform convergence, the sup norm, what uniform limits keep, the Weierstrass M-test and power series."
+    },
+    {
+      "key": "metric-spaces",
+      "title": "Metric Spaces",
+      "blurb": "Distance in general: metrics, open and closed sets, compact sets and the contraction mapping theorem."
+    }
+  ],
+  "topics": [
+    {
+      "id": "ra.absolute-value",
+      "slug": "absolute-value",
+      "course": "ra",
+      "unit": "real-numbers",
+      "title": "Absolute Value and the Triangle Inequality",
+      "short": "|x − a| < ε means x is within ε of a; |a + b| ≤ |a| + |b| and |a| − |b| ≤ |a − b| turn distances into bounds.",
+      "prereqs": [
+        "alg1.absolute-value-inequalities",
+        "disc.direct-proof"
+      ],
+      "viz": []
+    },
+    {
+      "id": "ra.sup-inf",
+      "slug": "sup-inf",
+      "course": "ra",
+      "unit": "real-numbers",
+      "title": "Supremum and Infimum",
+      "short": "The supremum of a set is its least upper bound and the infimum its greatest lower bound; neither has to belong to the set.",
+      "prereqs": [
+        "ra.absolute-value",
+        "disc.set-operations"
+      ],
+      "viz": [
+        "ra-supinf"
+      ]
+    },
+    {
+      "id": "ra.approximation-property",
+      "slug": "approximation-property",
+      "course": "ra",
+      "unit": "real-numbers",
+      "title": "The ε-Test for a Supremum",
+      "short": "An upper bound s is the supremum exactly when, for every ε > 0, some element of the set is bigger than s − ε.",
+      "prereqs": [
+        "ra.sup-inf"
+      ],
+      "viz": [
+        "ra-supinf"
+      ]
+    },
+    {
+      "id": "ra.completeness",
+      "slug": "completeness",
+      "course": "ra",
+      "unit": "real-numbers",
+      "title": "Completeness and the Archimedean Property",
+      "short": "Every nonempty set of reals that is bounded above has a supremum; from it, for every ε > 0 some whole number n has 1/n < ε.",
+      "prereqs": [
+        "ra.approximation-property",
+        "alg1.real-number-system"
+      ],
+      "viz": [
+        "ra-supinf"
+      ]
+    },
+    {
+      "id": "ra.density",
+      "slug": "density",
+      "course": "ra",
+      "unit": "real-numbers",
+      "title": "Density of the Rationals",
+      "short": "Between any two real numbers a < b lies a rational: pick n with 1/n < b − a, and some multiple m/n lands strictly between them.",
+      "prereqs": [
+        "ra.completeness"
+      ],
+      "viz": []
+    },
+    {
+      "id": "ra.countable-sets",
+      "slug": "countable-sets",
+      "course": "ra",
+      "unit": "real-numbers",
+      "title": "Countable and Uncountable Sets",
+      "short": "A set is countable when its elements can be listed a₁, a₂, a₃, …; the rationals are countable, but Cantor's diagonal argument shows the reals are not.",
+      "prereqs": [
+        "disc.bijections-inverses",
+        "ra.completeness"
+      ],
+      "viz": [
+        "ra-diagonal"
+      ]
+    },
+    {
+      "id": "ra.sequence-limit",
+      "slug": "sequence-limit",
+      "course": "ra",
+      "unit": "sequences",
+      "title": "The Definition of a Limit (ε–N)",
+      "short": "aₙ → L when for every ε > 0 there is an N with |aₙ − L| < ε for all n ≥ N; for a given ε you can find such an N and check it.",
+      "prereqs": [
+        "ra.completeness",
+        "calc2.sequences",
+        "disc.nested-quantifiers"
+      ],
+      "viz": [
+        "ra-epsband"
+      ]
+    },
+    {
+      "id": "ra.epsilon-n-proofs",
+      "slug": "epsilon-n-proofs",
+      "course": "ra",
+      "unit": "sequences",
+      "title": "Writing ε–N Proofs",
+      "short": "Work backward on scratch paper to find N in terms of ε; then write the proof forward: let ε > 0, choose N, take n ≥ N and show |aₙ − L| < ε.",
+      "prereqs": [
+        "ra.sequence-limit"
+      ],
+      "viz": [
+        "ra-epsband"
+      ]
+    },
+    {
+      "id": "ra.divergence",
+      "slug": "divergence",
+      "course": "ra",
+      "unit": "sequences",
+      "title": "Bounded Sequences and Divergence",
+      "short": "Every convergent sequence is bounded; to show aₙ does not converge to L, find one ε > 0 for which no N works.",
+      "prereqs": [
+        "ra.epsilon-n-proofs"
+      ],
+      "viz": [
+        "ra-epsband"
+      ]
+    },
+    {
+      "id": "ra.limit-laws",
+      "slug": "limit-laws",
+      "course": "ra",
+      "unit": "sequences",
+      "title": "Proving the Limit Laws",
+      "short": "If aₙ → a and bₙ → b, then aₙ + bₙ → a + b and aₙbₙ → ab; the proofs split ε between the two pieces and use that convergent sequences are bounded.",
+      "prereqs": [
+        "ra.divergence"
+      ],
+      "viz": []
+    },
+    {
+      "id": "ra.squeeze-order",
+      "slug": "squeeze-order",
+      "course": "ra",
+      "unit": "sequences",
+      "title": "Order Limits and the Squeeze Theorem",
+      "short": "Limits keep ≤: if aₙ ≤ bₙ then lim aₙ ≤ lim bₙ; and a sequence trapped between two sequences with the same limit has that limit too.",
+      "prereqs": [
+        "ra.limit-laws"
+      ],
+      "viz": []
+    },
+    {
+      "id": "ra.monotone-convergence",
+      "slug": "monotone-convergence",
+      "course": "ra",
+      "unit": "sequences",
+      "title": "The Monotone Convergence Theorem",
+      "short": "A bounded monotone sequence converges, to the supremum of its terms if it increases; for aₙ₊₁ = g(aₙ), show monotone and bounded, then solve L = g(L).",
+      "prereqs": [
+        "ra.squeeze-order",
+        "calc2.monotone-bounded"
+      ],
+      "viz": [
+        "ra-cobweb"
+      ]
+    },
+    {
+      "id": "ra.subsequences",
+      "slug": "subsequences",
+      "course": "ra",
+      "unit": "sequences",
+      "title": "Subsequences and Subsequential Limits",
+      "short": "Every subsequence of a convergent sequence has the same limit, so two subsequences with different limits prove that a sequence diverges.",
+      "prereqs": [
+        "ra.squeeze-order"
+      ],
+      "viz": [
+        "ra-epsband"
+      ]
+    },
+    {
+      "id": "ra.bolzano-weierstrass",
+      "slug": "bolzano-weierstrass",
+      "course": "ra",
+      "unit": "sequences",
+      "title": "The Bolzano–Weierstrass Theorem",
+      "short": "Every bounded sequence has a convergent subsequence: halve the interval again and again, each time keeping a half that holds infinitely many terms.",
+      "prereqs": [
+        "ra.subsequences",
+        "ra.monotone-convergence"
+      ],
+      "viz": [
+        "ra-epsband"
+      ]
+    },
+    {
+      "id": "ra.limsup-liminf",
+      "slug": "limsup-liminf",
+      "course": "ra",
+      "unit": "sequences",
+      "title": "Limit Superior and Limit Inferior",
+      "short": "lim sup aₙ is the limit of the tail suprema sup{aₖ : k ≥ n}; it is the largest subsequential limit, and aₙ converges exactly when lim sup aₙ = lim inf aₙ.",
+      "prereqs": [
+        "ra.bolzano-weierstrass"
+      ],
+      "viz": [
+        "ra-epsband"
+      ]
+    },
+    {
+      "id": "ra.cauchy-sequences",
+      "slug": "cauchy-sequences",
+      "course": "ra",
+      "unit": "sequences",
+      "title": "Cauchy Sequences",
+      "short": "aₙ is Cauchy when for every ε > 0 some N makes |aₘ − aₙ| < ε for all m, n ≥ N; in ℝ a sequence is Cauchy exactly when it converges.",
+      "prereqs": [
+        "ra.bolzano-weierstrass"
+      ],
+      "viz": [
+        "ra-epsband"
+      ]
+    },
+    {
+      "id": "ra.series-cauchy",
+      "slug": "series-cauchy",
+      "course": "ra",
+      "unit": "series",
+      "title": "Series and the Cauchy Criterion",
+      "short": "∑aₖ converges when its partial sums do; by the Cauchy criterion, blocks aₘ₊₁ + ⋯ + aₙ far out must be small, and in particular aₖ → 0.",
+      "prereqs": [
+        "ra.cauchy-sequences",
+        "calc2.series-partial-sums"
+      ],
+      "viz": [
+        "seriespartial"
+      ]
+    },
+    {
+      "id": "ra.absolute-convergence",
+      "slug": "absolute-convergence",
+      "course": "ra",
+      "unit": "series",
+      "title": "Comparison and Absolute Convergence",
+      "short": "If |aₖ| ≤ bₖ and ∑bₖ converges, the Cauchy criterion makes ∑aₖ converge; in particular, absolute convergence implies convergence.",
+      "prereqs": [
+        "ra.series-cauchy",
+        "calc2.absolute-conditional"
+      ],
+      "viz": []
+    },
+    {
+      "id": "ra.condensation",
+      "slug": "condensation",
+      "course": "ra",
+      "unit": "series",
+      "title": "The Cauchy Condensation Test",
+      "short": "For a decreasing sequence of positive terms, ∑aₙ and ∑2ᵏa₂ₖ converge or diverge together; it settles the p-series and ∑1/(n(ln n)ᵖ).",
+      "prereqs": [
+        "ra.absolute-convergence"
+      ],
+      "viz": []
+    },
+    {
+      "id": "ra.root-ratio-limsup",
+      "slug": "root-ratio-limsup",
+      "course": "ra",
+      "unit": "series",
+      "title": "Root and Ratio Tests with lim sup",
+      "short": "If lim sup |aₖ|^(1/k) < 1 the series converges absolutely, and if it is > 1 the series diverges; the root test works even when the ratios jump around.",
+      "prereqs": [
+        "ra.limsup-liminf",
+        "ra.absolute-convergence",
+        "calc2.ratio-root-tests"
+      ],
+      "viz": []
+    },
+    {
+      "id": "ra.alternating-series",
+      "slug": "alternating-series",
+      "course": "ra",
+      "unit": "series",
+      "title": "Alternating Series and Error Bounds",
+      "short": "If bₖ decreases to 0, ∑(−1)ᵏ⁺¹bₖ converges, and the error after n terms is less than bₙ₊₁: the partial sums zigzag and trap the sum.",
+      "prereqs": [
+        "ra.series-cauchy",
+        "calc2.alternating-series"
+      ],
+      "viz": [
+        "seriespartial"
+      ]
+    },
+    {
+      "id": "ra.rearrangements",
+      "slug": "rearrangements",
+      "course": "ra",
+      "unit": "series",
+      "title": "Rearranging Series",
+      "short": "Rearranging an absolutely convergent series keeps its sum; a conditionally convergent series can be rearranged to add up to any number you like (Riemann).",
+      "prereqs": [
+        "ra.alternating-series",
+        "ra.absolute-convergence"
+      ],
+      "viz": [
+        "seriespartial"
+      ]
+    },
+    {
+      "id": "ra.function-limits",
+      "slug": "function-limits",
+      "course": "ra",
+      "unit": "continuity",
+      "title": "Limits of Functions (ε–δ)",
+      "short": "lim f(x) = L as x → a when for every ε > 0 some δ > 0 gives |f(x) − L| < ε whenever 0 < |x − a| < δ; any smaller positive δ works too.",
+      "prereqs": [
+        "ra.sequence-limit",
+        "calc1.epsilon-delta"
+      ],
+      "viz": [
+        "ra-epsdelta"
+      ]
+    },
+    {
+      "id": "ra.continuity",
+      "slug": "continuity",
+      "course": "ra",
+      "unit": "continuity",
+      "title": "Continuity with ε and δ",
+      "short": "f is continuous at a when for every ε > 0 some δ > 0 gives |f(x) − f(a)| < ε whenever |x − a| < δ; for x² the classic choice is δ = min(1, ε/(2|a| + 1)).",
+      "prereqs": [
+        "ra.function-limits"
+      ],
+      "viz": [
+        "ra-epsdelta"
+      ]
+    },
+    {
+      "id": "ra.sequential-criterion",
+      "slug": "sequential-criterion",
+      "course": "ra",
+      "unit": "continuity",
+      "title": "The Sequential Criterion and Discontinuity",
+      "short": "f is continuous at a exactly when f(xₙ) → f(a) for every sequence xₙ → a; two sequences giving different limits prove a discontinuity.",
+      "prereqs": [
+        "ra.continuity",
+        "ra.subsequences"
+      ],
+      "viz": []
+    },
+    {
+      "id": "ra.ivt",
+      "slug": "ivt",
+      "course": "ra",
+      "unit": "continuity",
+      "title": "The Intermediate Value Theorem",
+      "short": "A continuous function on [a, b] takes every value between f(a) and f(b); the proof uses c = sup{x : f(x) < 0}, and bisection traps c to any accuracy.",
+      "prereqs": [
+        "ra.continuity",
+        "calc1.intermediate-value-theorem"
+      ],
+      "viz": [
+        "graph"
+      ]
+    },
+    {
+      "id": "ra.evt",
+      "slug": "evt",
+      "course": "ra",
+      "unit": "continuity",
+      "title": "The Extreme Value Theorem",
+      "short": "A continuous function on a closed, bounded interval attains a maximum and a minimum; drop any hypothesis and the supremum may not be attained.",
+      "prereqs": [
+        "ra.ivt",
+        "ra.bolzano-weierstrass"
+      ],
+      "viz": [
+        "graph"
+      ]
+    },
+    {
+      "id": "ra.uniform-continuity",
+      "slug": "uniform-continuity",
+      "course": "ra",
+      "unit": "continuity",
+      "title": "Uniform Continuity",
+      "short": "f is uniformly continuous on S when one δ works for every point of S at once; continuous functions on [a, b] are, but 1/x on (0, 1) is not.",
+      "prereqs": [
+        "ra.evt"
+      ],
+      "viz": [
+        "ra-epsdelta"
+      ]
+    },
+    {
+      "id": "ra.derivative-definition",
+      "slug": "derivative-definition",
+      "course": "ra",
+      "unit": "derivatives",
+      "title": "Derivatives from the Definition",
+      "short": "f′(a) = lim (f(a + h) − f(a))/h as h → 0; the definition handles what the rules can't, like x² sin(1/x) at 0.",
+      "prereqs": [
+        "ra.function-limits",
+        "calc1.derivative-at-a-point"
+      ],
+      "viz": [
+        "secant"
+      ]
+    },
+    {
+      "id": "ra.differentiability",
+      "slug": "differentiability",
+      "course": "ra",
+      "unit": "derivatives",
+      "title": "Differentiability and Continuity",
+      "short": "Differentiable at a implies continuous at a, but not conversely; at a break point the one-sided derivatives must exist and agree.",
+      "prereqs": [
+        "ra.derivative-definition",
+        "ra.continuity",
+        "calc1.differentiability"
+      ],
+      "viz": [
+        "graph"
+      ]
+    },
+    {
+      "id": "ra.mean-value-theorem",
+      "slug": "mean-value-theorem",
+      "course": "ra",
+      "unit": "derivatives",
+      "title": "Rolle's Theorem and the Mean Value Theorem",
+      "short": "If f is continuous on [a, b] and differentiable on (a, b), some c in (a, b) has f′(c) = (f(b) − f(a))/(b − a); Rolle's theorem is the case f(a) = f(b).",
+      "prereqs": [
+        "ra.evt",
+        "ra.differentiability",
+        "calc1.mean-value-theorem"
+      ],
+      "viz": [
+        "graph"
+      ]
+    },
+    {
+      "id": "ra.mvt-inequalities",
+      "slug": "mvt-inequalities",
+      "course": "ra",
+      "unit": "derivatives",
+      "title": "Inequalities from the Mean Value Theorem",
+      "short": "If |f′| ≤ K on an interval, then |f(x) − f(y)| ≤ K|x − y| there; this proves bounds like |sin x − sin y| ≤ |x − y| and gives δ = ε/K.",
+      "prereqs": [
+        "ra.mean-value-theorem",
+        "ra.uniform-continuity"
+      ],
+      "viz": [
+        "graph"
+      ]
+    },
+    {
+      "id": "ra.taylor-remainder",
+      "slug": "taylor-remainder",
+      "course": "ra",
+      "unit": "derivatives",
+      "title": "Taylor's Theorem with Remainder",
+      "short": "f(x) = Pₙ(x) + f⁽ⁿ⁺¹⁾(c)(x − a)ⁿ⁺¹/(n + 1)! for some c between a and x; a bound on f⁽ⁿ⁺¹⁾ bounds the error.",
+      "prereqs": [
+        "ra.mean-value-theorem",
+        "calc2.taylor-error"
+      ],
+      "viz": [
+        "taylor"
+      ]
+    },
+    {
+      "id": "ra.upper-lower-sums",
+      "slug": "upper-lower-sums",
+      "course": "ra",
+      "unit": "integral",
+      "title": "Upper and Lower Sums",
+      "short": "For a partition P, U(f, P) uses the supremum of f on each piece and L(f, P) the infimum; every lower sum is at most every upper sum, and refining P brings them together.",
+      "prereqs": [
+        "ra.sup-inf",
+        "calc1.riemann-sums"
+      ],
+      "viz": [
+        "ra-sums"
+      ]
+    },
+    {
+      "id": "ra.integrability-criterion",
+      "slug": "integrability-criterion",
+      "course": "ra",
+      "unit": "integral",
+      "title": "The Integrability Criterion",
+      "short": "f is integrable exactly when for every ε > 0 some partition has U(f, P) − L(f, P) < ε; for monotone f on n equal pieces the gap is |f(b) − f(a)|(b − a)/n.",
+      "prereqs": [
+        "ra.upper-lower-sums",
+        "ra.sequence-limit"
+      ],
+      "viz": [
+        "ra-sums"
+      ]
+    },
+    {
+      "id": "ra.integrable-functions",
+      "slug": "integrable-functions",
+      "course": "ra",
+      "unit": "integral",
+      "title": "Which Functions Are Integrable",
+      "short": "Continuous functions, monotone functions and bounded functions with finitely many jumps are integrable; Dirichlet's function is not, since every U = b − a and every L = 0.",
+      "prereqs": [
+        "ra.integrability-criterion",
+        "ra.uniform-continuity"
+      ],
+      "viz": [
+        "ra-sums"
+      ]
+    },
+    {
+      "id": "ra.integral-properties",
+      "slug": "integral-properties",
+      "course": "ra",
+      "unit": "integral",
+      "title": "Bounds and the Mean Value Theorem for Integrals",
+      "short": "If m ≤ f ≤ M on [a, b], then m(b − a) ≤ ∫f ≤ M(b − a); a continuous f equals its average value at some c in [a, b].",
+      "prereqs": [
+        "ra.integrable-functions",
+        "ra.evt"
+      ],
+      "viz": [
+        "graph"
+      ]
+    },
+    {
+      "id": "ra.ftc",
+      "slug": "ftc",
+      "course": "ra",
+      "unit": "integral",
+      "title": "Proving the Fundamental Theorem of Calculus",
+      "short": "F(x) = ∫ₐˣ f is continuous, and F′(c) = f(c) wherever f is continuous; at a jump of f, F has a corner.",
+      "prereqs": [
+        "ra.integral-properties",
+        "ra.differentiability",
+        "calc1.ftc-accumulation"
+      ],
+      "viz": [
+        "ftc"
+      ]
+    },
+    {
+      "id": "ra.riemann-sum-limits",
+      "slug": "riemann-sum-limits",
+      "course": "ra",
+      "unit": "integral",
+      "title": "Limits of Sums as Integrals",
+      "short": "Because continuous functions are integrable, every Riemann sum tends to the integral; so a limit like (1/n)∑f(k/n) is ∫₀¹ f(x) dx.",
+      "prereqs": [
+        "ra.ftc",
+        "calc1.ftc-evaluate"
+      ],
+      "viz": [
+        "riemann"
+      ]
+    },
+    {
+      "id": "ra.pointwise-convergence",
+      "slug": "pointwise-convergence",
+      "course": "ra",
+      "unit": "function-sequences",
+      "title": "Pointwise Convergence",
+      "short": "fₙ → f pointwise when fₙ(x) → f(x) at each x separately; a pointwise limit of continuous functions can jump, as xⁿ on [0, 1] does.",
+      "prereqs": [
+        "ra.continuity",
+        "ra.limit-laws"
+      ],
+      "viz": [
+        "ra-unifband"
+      ]
+    },
+    {
+      "id": "ra.uniform-convergence",
+      "slug": "uniform-convergence",
+      "course": "ra",
+      "unit": "function-sequences",
+      "title": "Uniform Convergence and the Sup Norm",
+      "short": "fₙ → f uniformly when ‖fₙ − f‖ = sup |fₙ(x) − f(x)| → 0: one N works for every x at once.",
+      "prereqs": [
+        "ra.pointwise-convergence",
+        "ra.evt"
+      ],
+      "viz": [
+        "ra-unifband"
+      ]
+    },
+    {
+      "id": "ra.uniform-limits",
+      "slug": "uniform-limits",
+      "course": "ra",
+      "unit": "function-sequences",
+      "title": "What Uniform Convergence Keeps",
+      "short": "A uniform limit of continuous functions is continuous, and ∫fₙ → ∫f; without uniform convergence, the limit of the integrals can differ from the integral of the limit.",
+      "prereqs": [
+        "ra.uniform-convergence",
+        "ra.ftc"
+      ],
+      "viz": [
+        "ra-unifband"
+      ]
+    },
+    {
+      "id": "ra.weierstrass-m-test",
+      "slug": "weierstrass-m-test",
+      "course": "ra",
+      "unit": "function-sequences",
+      "title": "The Weierstrass M-Test",
+      "short": "If |fₖ(x)| ≤ Mₖ for every x and ∑Mₖ converges, then ∑fₖ converges uniformly (and absolutely).",
+      "prereqs": [
+        "ra.uniform-convergence",
+        "ra.absolute-convergence"
+      ],
+      "viz": []
+    },
+    {
+      "id": "ra.power-series-radius",
+      "slug": "power-series-radius",
+      "course": "ra",
+      "unit": "function-sequences",
+      "title": "Power Series: Radius and Uniform Convergence",
+      "short": "∑cₙxⁿ has radius R = 1/lim sup |cₙ|^(1/n); it converges uniformly on every [−r, r] with r < R, so its sum is continuous inside the interval.",
+      "prereqs": [
+        "ra.weierstrass-m-test",
+        "ra.root-ratio-limsup",
+        "calc2.power-series"
+      ],
+      "viz": []
+    },
+    {
+      "id": "ra.metric-spaces",
+      "slug": "metric-spaces",
+      "course": "ra",
+      "unit": "metric-spaces",
+      "title": "Metric Spaces",
+      "short": "A metric d measures distance: d(x, y) > 0 unless x = y, d(x, y) = d(y, x), and d(x, z) ≤ d(x, y) + d(y, z); the taxicab, Euclidean and max metrics on ℝ² are three examples.",
+      "prereqs": [
+        "ra.cauchy-sequences",
+        "g8.distance-between-points"
+      ],
+      "viz": [
+        "ra-balls"
+      ]
+    },
+    {
+      "id": "ra.open-closed-sets",
+      "slug": "open-closed-sets",
+      "course": "ra",
+      "unit": "metric-spaces",
+      "title": "Open and Closed Sets",
+      "short": "A set is open when every point has a ball around it inside the set, and closed when it contains all its limit points; the closure adds the limit points.",
+      "prereqs": [
+        "ra.metric-spaces"
+      ],
+      "viz": [
+        "ra-balls",
+        "ra-supinf"
+      ]
+    },
+    {
+      "id": "ra.compactness",
+      "slug": "compactness",
+      "course": "ra",
+      "unit": "metric-spaces",
+      "title": "Compact Sets",
+      "short": "K is compact when every open cover has a finite subcover; in ℝⁿ that happens exactly when K is closed and bounded (Heine–Borel).",
+      "prereqs": [
+        "ra.open-closed-sets",
+        "ra.evt"
+      ],
+      "viz": [
+        "ra-cover"
+      ]
+    },
+    {
+      "id": "ra.contraction-mapping",
+      "slug": "contraction-mapping",
+      "course": "ra",
+      "unit": "metric-spaces",
+      "title": "The Contraction Mapping Theorem",
+      "short": "If d(g(x), g(y)) ≤ k·d(x, y) with k < 1 on a complete space, g has exactly one fixed point, and the nth iterate is within kⁿd(x₁, x₀)/(1 − k) of it.",
+      "prereqs": [
+        "ra.mvt-inequalities",
+        "ra.metric-spaces"
+      ],
+      "viz": [
+        "ra-cobweb"
+      ]
+    }
+  ]
+}

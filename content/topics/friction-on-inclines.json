@@ -1,0 +1,103 @@
+{
+  "id": "phys1.friction-on-inclines",
+  "slug": "friction-on-inclines",
+  "course": "phys1",
+  "courseTitle": "Physics 1: Motion, Forces and Energy",
+  "unit": "forces",
+  "unitTitle": "Forces and Newton's Laws",
+  "title": "Friction on Ramps",
+  "short": "Find the angle where a block starts to slip, tan θ = μ_s, and its acceleration once it slides.",
+  "trouble": "Students point friction down the slope for a block that is sliding down.",
+  "prereqs": [
+    "phys1.inclined-planes",
+    "phys1.static-friction"
+  ],
+  "xp": 3,
+  "viz": [
+    "ph-dynamics"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Put together <a href=\"/physics/physics-1/inclined-planes/\">Inclined Planes</a> and <a href=\"/physics/physics-1/static-friction/\">Static Friction</a>, and a ramp becomes a friction meter. Tilt a board slowly with a block on it: at first static friction holds it, then at one particular angle it lets go."
+      },
+      {
+        "t": "key",
+        "html": "A block starts to slip when $\\tan\\theta = \\mu_s$. Once sliding down, kinetic friction points <b>up</b> the slope: $a = g(\\sin\\theta - \\mu_k\\cos\\theta)$. Sliding up, both gravity's part and friction point down the slope: the deceleration is $g(\\sin\\theta + \\mu_k\\cos\\theta)$."
+      },
+      {
+        "t": "why",
+        "html": "Along the slope, gravity pulls with $mg\\sin\\theta$; static friction can resist with at most $\\mu_s F_N = \\mu_s mg\\cos\\theta$. The block holds while $mg\\sin\\theta \\le \\mu_s mg\\cos\\theta$, that is, while $\\tan\\theta \\le \\mu_s$. The mass cancels, so a heavy block and a light one of the same material slip at the same angle. Friction always opposes sliding (or the sliding that would happen), so its direction flips when the motion does."
+      },
+      {
+        "t": "viz",
+        "name": "ph-dynamics",
+        "opts": {
+          "scene": "incline",
+          "angle": 20,
+          "mus": 0.5,
+          "muk": 0.35,
+          "m1": 2,
+          "task": "Tilt the ramp slowly. Note the angle where the block slips, and check it against tan θ = μ_s."
+        },
+        "cap": "With μ_s = 0.5 the block holds until tan θ = 0.5, at θ ≈ 26.6°; then it slides with kinetic friction."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "The slipping angle",
+        "q": "A block sits on a board with $\\mu_s = 0.6$. At what angle does it slip?",
+        "steps": [
+          "At the limit: $mg\\sin\\theta = \\mu_s mg\\cos\\theta$, so $\\tan\\theta = 0.6$.",
+          "$\\theta = \\tan^{-1}(0.6) \\approx 31.0^\\circ$."
+        ],
+        "a": "about $31.0^\\circ$"
+      },
+      {
+        "t": "ex",
+        "title": "Sliding down",
+        "q": "A block slides down a $35^\\circ$ ramp with $\\mu_k = 0.2$. Find its acceleration.",
+        "steps": [
+          "Friction points up the slope, against the sliding.",
+          "$$a = 9.8(\\sin 35^\\circ - 0.2\\cos 35^\\circ) = 9.8(0.574 - 0.164) \\approx 4.02\\ \\text{m/s}^2$$ down the slope."
+        ],
+        "a": "about $4.02\\ \\text{m/s}^2$"
+      },
+      {
+        "t": "ex",
+        "title": "Shoved up the slope",
+        "q": "The same block is shoved up the same ramp. While it slides up, what is its deceleration?",
+        "steps": [
+          "Now gravity's part and friction both point down the slope.",
+          "$$a = 9.8(0.574 + 0.164) \\approx 7.23\\ \\text{m/s}^2,$$ so it stops quickly, then slides back down at $4.02\\ \\text{m/s}^2$."
+        ],
+        "a": "about $7.23\\ \\text{m/s}^2$"
+      },
+      {
+        "t": "mistake",
+        "html": "Pointing friction down the slope for a block that is sliding down. Friction resists the sliding, so it points up the slope. Check: for a block sliding down, its acceleration must be smaller than the frictionless $g\\sin\\theta$; if your answer is bigger, friction has the wrong sign."
+      },
+      {
+        "t": "note",
+        "html": "Try it in the Science Lab: <a href=\"/science-lab/newtons-laws/forces/\">Forces at Work</a>."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Physics 2e, Section 5.1 Friction"
+      },
+      {
+        "name": "OpenStax University Physics Volume 1, Section 6.2 Friction"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

@@ -1,0 +1,99 @@
+{
+  "id": "imicro.compensating-equivalent-variation",
+  "slug": "compensating-equivalent-variation",
+  "ladder": "economics",
+  "course": "imicro",
+  "unit": "demand",
+  "title": "Compensating and Equivalent Variation",
+  "short": "Money measures of a price change: how much to hand back afterward (CV) or take away beforehand (EV) to leave utility the same.",
+  "trouble": "Students assume CV, EV and the change in consumer surplus are always equal. They match only when there is no income effect, as with quasilinear utility.",
+  "prereqs": [
+    "imicro.consumer-surplus-integral",
+    "imicro.income-substitution-effects"
+  ],
+  "xp": 3,
+  "viz": [
+    "ec-slutsky"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "How much is a price change worth to someone, in dollars? <a href=\"/economics/intermediate-microeconomics/consumer-surplus-integral/\">Consumer Surplus as an Integral</a> gives one answer. Two others come straight from utility, using the expenditure function and the income effects from <a href=\"/economics/intermediate-microeconomics/income-substitution-effects/\">Substitution and Income Effects</a>."
+      },
+      {
+        "t": "key",
+        "html": "<b>Compensating variation (CV)</b>: the income change, <i>after</i> the price change, that brings the person back to her old utility. For a price fall it is the most she would pay to have the change. <b>Equivalent variation (EV)</b>: the income change, <i>at the old prices</i>, that would make her as well off as the price change would. With expenditure function $E(p, u)$, for a price fall from $p_0$ to $p_1$: $$CV = m - E(p_1, u_0), \\qquad EV = E(p_0, u_1) - m.$$"
+      },
+      {
+        "t": "why",
+        "html": "Both measures ask \"how much money is this change like?\" but use different reference points. CV holds utility at the old level and prices at the new ones; EV holds utility at the new level and prices at the old ones. When income effects exist, a dollar is worth a different amount of utility at the two reference points, so the answers differ. For a price fall of a normal good, $CV < \\Delta CS < EV$. With quasilinear utility there is no income effect on the good, so all three are equal, and Robert Willig (1976) showed that $\\Delta CS$ is a close approximation whenever income effects are small."
+      },
+      {
+        "t": "viz",
+        "name": "ec-slutsky",
+        "opts": {
+          "cv": true,
+          "method": "hicks",
+          "utility": {
+            "type": "cobbdouglas",
+            "a": 0.5,
+            "b": 0.5
+          },
+          "income": 100,
+          "prices": [
+            4,
+            1
+          ],
+          "newP1": 1
+        },
+        "cap": "With $p_2 = 1$ the vertical axis is money. The price of $x$ falls from \\$4 to \\$1. CV is the gap between the new budget line and the parallel line tangent to the old curve; EV is the gap between the old line and the parallel line tangent to the new curve."
+      },
+      {
+        "t": "ex",
+        "title": "Cobb-Douglas: three different numbers",
+        "q": "$U = xy$, $p_y = 1$, $m = 100$, and $p_x$ falls from 4 to 1. Find CV, EV and $\\Delta CS$.",
+        "steps": [
+          "With $U = xy$: $V = \\dfrac{m^2}{4p}$ and $E = 2\\sqrt{pu}$. So $u_0 = \\dfrac{10{,}000}{16} = 625$ and $u_1 = 2{,}500$.",
+          "$CV = 100 - 2\\sqrt{1\\cdot 625} = 100 - 50 = 50$.",
+          "$EV = 2\\sqrt{4\\cdot 2{,}500} - 100 = 200 - 100 = 100$.",
+          "$\\Delta CS = \\int_1^4 \\dfrac{50}{p}\\,dp = 50\\ln 4 \\approx 69.31$. So $CV < \\Delta CS < EV$."
+        ],
+        "a": "CV = \\$50, EV = \\$100, $\\Delta CS \\approx$ \\$69.31."
+      },
+      {
+        "t": "ex",
+        "title": "Quasilinear: one number",
+        "q": "$U = 8\\sqrt{x} + y$ (income large enough to buy some $y$), and $p_x$ falls from 2 to 1.",
+        "steps": [
+          "Demand: $\\dfrac{4}{\\sqrt{x}} = p$, so $x = \\dfrac{16}{p^2}$, with no income in it.",
+          "$\\Delta CS = \\int_1^2 \\dfrac{16}{p^2}\\,dp = 16\\left(1 - \\tfrac{1}{2}\\right) = 8$.",
+          "With no income effect, extra money all goes to $y$ at a constant marginal utility, so $CV = EV = \\Delta CS = 8$."
+        ],
+        "a": "All three equal \\$8."
+      },
+      {
+        "t": "mistake",
+        "html": "Assuming CV, EV and the change in consumer surplus are always the same number. They match only without income effects, as with quasilinear utility. In the first example they were \\$50, \\$69 and \\$100. Check: if the good is a big part of the budget and clearly normal (or inferior), expect them to differ, and say which measure a question asks for."
+      },
+      {
+        "t": "note",
+        "html": "Which measure is \"right\" depends on the question. CV answers \"what would she pay for this change?\" (or \"what must she be paid to accept it?\"). EV answers \"what change in income is it equivalent to?\" and compares several policies on one scale, because it values everything at the same old prices."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, appendix B Indifference Curves"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.04 Intermediate Microeconomic Theory (course scope and lecture topics)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

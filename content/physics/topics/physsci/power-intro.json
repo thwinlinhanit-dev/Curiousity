@@ -1,0 +1,98 @@
+{
+  "id": "physsci.power-intro",
+  "slug": "power-intro",
+  "ladder": "physics",
+  "course": "physsci",
+  "unit": "energy",
+  "title": "Power",
+  "short": "Power is how fast energy is transferred: P = W/t, in watts.",
+  "trouble": "Students use watts and joules as if they meant the same thing.",
+  "prereqs": [
+    "physsci.work-intro"
+  ],
+  "xp": 1,
+  "viz": [
+    "ph-energy"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Two students carry identical boxes up the same stairs. One jogs, one strolls. They do the same <a href=\"/physics/physical-science/work-intro/\">work</a>, but one does it faster. <b>Power</b> measures how fast energy is transferred."
+      },
+      {
+        "t": "key",
+        "html": "Power = energy transferred ÷ time: $$P = \\dfrac{W}{t}$$ in <b>watts</b> (W), where $1\\,\\mathrm{W} = 1\\,\\mathrm{J/s}$. A 60 W bulb uses 60 joules every second."
+      },
+      {
+        "t": "why",
+        "html": "Joules measure <b>how much</b> energy; watts measure <b>how fast</b>. It is like liters and liters per second for water: a bathtub holds liters, while a faucet delivers liters per second. A more powerful motor does the same job in less time."
+      },
+      {
+        "t": "viz",
+        "name": "ph-graph",
+        "opts": {
+          "pts": [
+            [
+              0,
+              0
+            ],
+            [
+              10,
+              1500
+            ]
+          ],
+          "xlab": "t",
+          "xunit": "s",
+          "ylab": "energy",
+          "yunit": "J",
+          "tool": "slope",
+          "at": 5,
+          "domain": [
+            0,
+            10
+          ]
+        },
+        "cap": "Energy delivered against time by a 150 W motor. The slope of this graph, joules per second, is the power."
+      },
+      {
+        "t": "ex",
+        "title": "Climbing stairs",
+        "q": "A 600 N student climbs stairs 3 m high in 4 s. What is her power?",
+        "steps": [
+          "Work against gravity: $W = F\\,d = 600 \\times 3 = 1{,}800$ J.",
+          "$P = \\dfrac{1{,}800\\,\\mathrm{J}}{4\\,\\mathrm{s}} = 450\\,\\mathrm{W}$."
+        ],
+        "a": "450 W"
+      },
+      {
+        "t": "ex",
+        "title": "Energy from power",
+        "q": "A 1,000 W microwave runs for 90 s. How much energy does it use?",
+        "steps": [
+          "Rearrange: $W = P\\,t = 1{,}000\\,\\mathrm{W} \\times 90\\,\\mathrm{s} = 90{,}000\\,\\mathrm{J}$."
+        ],
+        "a": "90,000 J"
+      },
+      {
+        "t": "mistake",
+        "html": "Using watts and joules as if they meant the same thing. A watt is a joule <b>per second</b>. \"This heater is 1,500 W\" tells you its rate; how much energy it uses depends on how long it runs. Check the units: J ÷ s = W, and W × s = J."
+      },
+      {
+        "t": "note",
+        "html": "Engines are often rated in horsepower: 1 horsepower is about 746 W."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e, 7.7 Power"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

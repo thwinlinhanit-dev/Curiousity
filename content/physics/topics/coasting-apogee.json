@@ -1,0 +1,72 @@
+{
+  "id": "rocket.coasting-apogee",
+  "slug": "coasting-apogee",
+  "ladder": "physics",
+  "course": "rocket",
+  "unit": "flight",
+  "title": "Free Fall and Coasting to Apogee",
+  "short": "After burnout the rocket is still going up, slowing by 9.8 m/s every second until it stops at apogee.",
+  "trouble": "Students think the rocket starts falling the moment the motor stops.",
+  "prereqs": [
+    "rocket.powered-flight",
+    "phys1.free-fall",
+    "phys1.vertical-launch"
+  ],
+  "xp": 2,
+  "viz": [
+    "rocket-coast"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "note",
+        "html": "<b>From the story.</b> At Cape Coalwood the motor's roar lasted only moments, yet the rockets kept climbing long after it stopped. That climb with no push is the coast. (More in <a href=\"/october-sky/\">October Sky</a>.)"
+      },
+      {
+        "t": "p",
+        "html": "Once the motor burns out, the only force (ignoring air) is gravity. The rocket keeps rising because of the speed it already has, losing $9.8\\ \\text{m/s}$ each second, until it stops for an instant at <b>apogee</b>, then falls."
+      },
+      {
+        "t": "key",
+        "html": "From burnout speed $v_b$ at height $h_b$: $$\\role[coasting time]{time}{t_\\text{coast}} = \\frac{\\role[burnout speed]{velocity}{v_b}}{\\role[acceleration of gravity]{acceleration}{g}}, \\qquad \\role[apogee height]{position}{h_\\text{apogee}} = \\role[burnout height]{position}{h_b} + \\frac{\\role[burnout speed]{velocity}{v_b}^2}{2\\role[acceleration of gravity]{acceleration}{g}}.$$ Falling from rest at apogee $H$: $t = \\sqrt{2H/g}$. A model motor's delay (burnout to parachute) is chosen to be close to the coast time."
+      },
+      {
+        "t": "viz",
+        "name": "rocket-coast",
+        "cap": "One picture per second. The gaps shrink because the rocket slows by 9.8 m/s every second.",
+        "opts": {
+          "vb": 44,
+          "hb": 60
+        }
+      },
+      {
+        "t": "ex",
+        "title": "Apogee",
+        "q": "Burnout at $40\\ \\text{m}$ moving up at $50\\ \\text{m/s}$. How high, and when?",
+        "steps": [
+          "Coast time $50/9.8 \\approx 5.1\\ \\text{s}$.",
+          "Rise $50^2/19.6 \\approx 128\\ \\text{m}$, so apogee $\\approx 168\\ \\text{m}$."
+        ],
+        "a": "$\\approx 168\\ \\text{m}$, $5.1\\ \\text{s}$ after burnout"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking the rocket starts to fall the moment the motor stops. It is still going up, just slowing."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, University Physics Volume 1 (Rice University): kinematics, Newton's laws, momentum, gravitation"
+      },
+      {
+        "name": "National Association of Rocketry, Model Rocket Safety Code",
+        "url": "https://nar.org/ModelRocketSafetyCode"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

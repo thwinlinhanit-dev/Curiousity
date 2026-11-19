@@ -1,0 +1,100 @@
+{
+  "id": "g7.scale-drawings",
+  "slug": "scale-drawings",
+  "ladder": "math",
+  "course": "g7",
+  "unit": "percent",
+  "title": "Scale Drawings",
+  "short": "Use a scale to find actual lengths and areas.",
+  "trouble": "Students scale an area by the same factor as the lengths, when it scales by the factor squared.",
+  "prereqs": [
+    "g7.solve-proportions"
+  ],
+  "xp": 2,
+  "viz": [
+    "ratiotable"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Maps, floor plans and models show real things at a different size. A <b>scale</b> such as \"1 cm represents 5 m\" tells how lengths on the drawing match real lengths. Every scale problem is a <a href=\"/math/grade-7/solve-proportions/\">proportion</a>."
+      },
+      {
+        "t": "key",
+        "html": "Real length $=$ drawing length $\\times$ the scale, and drawing length $=$ real length $\\div$ the scale. Areas do not scale the same way: if lengths are multiplied by $k$, areas are multiplied by $k^2$."
+      },
+      {
+        "t": "why",
+        "html": "A rectangle has two lengths, and both of them grow. If each side becomes $k$ times as long, the area becomes $k \\times k = k^2$ times as big. On a grid you can see it: a copy at scale 2 holds $2 \\times 2 = 4$ copies of the original, and at scale 3 it holds 9."
+      },
+      {
+        "t": "viz",
+        "name": "g7-scalegrid",
+        "opts": {
+          "w": 3,
+          "h": 2,
+          "k": 2
+        },
+        "cap": "Change the scale factor. The sides grow by the factor, but the area grows by the factor squared."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Drawing to real life",
+        "q": "A park map uses the scale 1 cm represents 5 m. A path on the map is 4.5 cm long. How long is the real path?",
+        "steps": [
+          "Each centimeter on the map is 5 m.",
+          "$4.5 \\times 5 = 22.5$."
+        ],
+        "a": "22.5 m"
+      },
+      {
+        "t": "ex",
+        "title": "Real life to drawing",
+        "q": "An architect uses 1 cm represents 4 m. How long should an 18 m wall be on the plan?",
+        "steps": [
+          "Count the groups of 4 m: $18 \\div 4 = 4.5$.",
+          "The wall is 4.5 cm long on the plan."
+        ],
+        "a": "4.5 cm"
+      },
+      {
+        "t": "ex",
+        "title": "Area",
+        "q": "On a floor plan with scale 1 cm represents 2 m, a room is 3 cm by 4 cm. What is its real area?",
+        "steps": [
+          "Real lengths: $3 \\times 2 = 6$ m and $4 \\times 2 = 8$ m.",
+          "Real area: $6 \\times 8 = 48$ square meters.",
+          "Compare: the plan's area is $12$ square cm, and $12 \\times 2^2 = 48$ ✓."
+        ],
+        "a": "48 square meters"
+      },
+      {
+        "t": "mistake",
+        "html": "Multiplying an area by the scale instead of the scale squared. In the last example, $12 \\times 2 = 24$ is wrong. Safest habit: change each length to real size first, then find the area."
+      },
+      {
+        "t": "note",
+        "html": "A scale with no units, like $1 : 50$, means real lengths are 50 times the drawing lengths, in the same units: 1 cm on the drawing is 50 cm in real life."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Prealgebra 2e, Section 6.5 Solve Proportions and their Applications"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 7.G.A.1"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

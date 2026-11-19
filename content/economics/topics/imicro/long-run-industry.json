@@ -1,0 +1,91 @@
+{
+  "id": "imicro.long-run-industry",
+  "slug": "long-run-industry",
+  "ladder": "economics",
+  "course": "imicro",
+  "unit": "competitive-markets",
+  "title": "Long-Run Industry Equilibrium",
+  "short": "With free entry, price falls to minimum average cost, and the number of firms is market quantity over each firm's output.",
+  "trouble": "Students let the price stay above minimum average cost in the long run, or count firms using the short-run output per firm.",
+  "prereqs": [
+    "imicro.competitive-supply",
+    "micro.long-run-competition"
+  ],
+  "xp": 3,
+  "viz": [
+    "ec-firmmarket"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In the short run the number of firms is fixed. In the long run firms can enter when there is profit to be made and leave when there are losses, as in <a href=\"/economics/microeconomics/long-run-competition/\">Entry, Exit and the Long Run</a>. With identical firms and the <a href=\"/economics/intermediate-microeconomics/competitive-supply/\">supply rule</a>, we can solve for everything."
+      },
+      {
+        "t": "key",
+        "html": "With free entry and exit and identical firms, the long-run price equals the minimum of long-run average cost: $$p^* = \\min_q AC(q).$$ Each firm produces $q^*$, the output at that minimum, and the number of firms is $n = Q_D(p^*)/q^*$."
+      },
+      {
+        "t": "why",
+        "html": "If the price were above minimum average cost, a new firm could produce $q^*$ and earn a positive economic profit, so firms enter. Entry shifts market supply right and pushes the price down. If the price were below minimum average cost, every firm would lose money and some would leave, pushing the price up. Only at $p^* = AC_{\\min}$ is there no reason to enter or exit. At that price each firm sets $p^* = MC$, and $MC = AC$ at the bottom of AC, so each firm produces $q^*$ and earns zero economic profit: a normal return on everything it owns."
+      },
+      {
+        "t": "viz",
+        "name": "ec-firmmarket",
+        "opts": {
+          "story": "demandUp",
+          "step": 3
+        },
+        "cap": "A demand increase raises the price; firms earn profit; entry shifts market supply right until the price is back at minimum ATC. The market panel and the firm panel move together."
+      },
+      {
+        "t": "ex",
+        "title": "Price, output per firm and the number of firms",
+        "q": "Each firm has long-run cost $C(q) = 100 + q^2$ (all avoidable by leaving). Market demand is $Q = 2{,}000 - 50P$.",
+        "steps": [
+          "$AC = 100/q + q$ is lowest where $MC = AC$: $2q = 100/q + q$, so $q^* = 10$.",
+          "$p^* = AC(10) = 20$.",
+          "Market quantity: $2{,}000 - 50(20) = 1{,}000$.",
+          "Firms: $1{,}000/10 = 100$."
+        ],
+        "a": "$p^* = 20$, $q^* = 10$, 100 firms."
+      },
+      {
+        "t": "ex",
+        "title": "After demand grows",
+        "q": "Demand rises to $Q = 2{,}500 - 50P$. What happens in the long run?",
+        "steps": [
+          "Costs didn't change, so the long-run price is still \\$20 and each firm still makes 10.",
+          "Market quantity: $2{,}500 - 1{,}000 = 1{,}500$, so there are 150 firms.",
+          "All of the adjustment is in the number of firms: the long-run supply curve is flat at \\$20 (a constant-cost industry)."
+        ],
+        "a": "Still \\$20; 150 firms."
+      },
+      {
+        "t": "mistake",
+        "html": "Letting the price stay above minimum average cost in the long run, or counting firms with the short-run output per firm. A price above $AC_{\\min}$ means profits that attract entry; the count of firms must use $q^*$ at the bottom of AC, not the larger quantity each firm produces when the price is temporarily high. Check: in long-run equilibrium every firm's profit is zero and $p = MC = AC$."
+      },
+      {
+        "t": "note",
+        "html": "If the industry's growth bids up the price of an input it uses heavily (land, specialized labor), each firm's costs rise as the industry expands, and the long-run supply curve slopes up (an increasing-cost industry). The zero-profit logic still holds at each point."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, ch. 8.3 Entry and Exit Decisions in the Long Run"
+      },
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, ch. 8.4 Efficiency in Perfectly Competitive Markets"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.04 Intermediate Microeconomic Theory (course scope and lecture topics)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

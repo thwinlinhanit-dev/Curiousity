@@ -1,0 +1,96 @@
+{
+  "id": "calc4.flux-integrals",
+  "slug": "flux-integrals",
+  "ladder": "math",
+  "course": "calc4",
+  "unit": "surface-integrals",
+  "title": "Flux Integrals",
+  "short": "∬_S F · dS measures flow through a surface.",
+  "trouble": "Students forget to dot with the normal, or use a unit normal and the scaling factor twice.",
+  "prereqs": [
+    "calc4.oriented-surfaces",
+    "calc4.scalar-surface-integrals"
+  ],
+  "xp": 3,
+  "viz": [
+    "flux"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "How much fluid passes through a net per second? Only the part of the velocity that crosses the net counts. The <b>flux integral</b> adds up the normal component $\\mathbf{F} \\cdot \\mathbf{n}$ over an <a href=\"/math/calculus-4/oriented-surfaces/\">oriented surface</a>. It is the surface version of <a href=\"/math/calculus-4/circulation-flux-curves/\">flux across a curve</a>, and it is the integral that Stokes' theorem and the divergence theorem are about."
+      },
+      {
+        "t": "key",
+        "html": "For a continuous field $\\mathbf{F}$ and an oriented surface $S$ with unit normal $\\mathbf{n}$:\n  $$\\iint_S \\mathbf{F} \\cdot d\\mathbf{S} = \\iint_S \\mathbf{F} \\cdot \\mathbf{n}\\,dS = \\iint_D \\mathbf{F}(\\mathbf{r}(u, v)) \\cdot (\\mathbf{r}_u \\times \\mathbf{r}_v)\\,dA,$$\n  where $\\mathbf{r}_u \\times \\mathbf{r}_v$ points along the chosen orientation; $d\\mathbf{S} = \\mathbf{n}\\,dS = (\\mathbf{r}_u \\times \\mathbf{r}_v)\\,dA$. For a graph $z = g(x, y)$ oriented upward:\n  $$\\iint_S \\mathbf{F} \\cdot d\\mathbf{S} = \\iint_D \\left(-P g_x - Q g_y + R\\right) dA.$$"
+      },
+      {
+        "t": "why",
+        "html": "In time $\\Delta t$, fluid with velocity $\\mathbf{F}$ crossing a small patch of area $\\Delta S$ fills a slanted box with base $\\Delta S$ and height $(\\mathbf{F} \\cdot \\mathbf{n})\\,\\Delta t$: only the normal component moves fluid across. So the rate is $\\mathbf{F} \\cdot \\mathbf{n}\\,\\Delta S$.<br>\n  Then $$\\mathbf{n}\\,dS = \\frac{\\mathbf{r}_u \\times \\mathbf{r}_v}{|\\mathbf{r}_u \\times \\mathbf{r}_v|} \\cdot |\\mathbf{r}_u \\times \\mathbf{r}_v|\\,dA = (\\mathbf{r}_u \\times \\mathbf{r}_v)\\,dA\\text{:}$$ the lengths cancel. For a graph, $\\mathbf{r}_x \\times \\mathbf{r}_y = \\langle -g_x, -g_y, 1 \\rangle$, which gives the second formula."
+      },
+      {
+        "t": "viz",
+        "name": "flux",
+        "opts": {
+          "field": "up",
+          "surface": "disk",
+          "tilt": 30,
+          "R": 1,
+          "normals": true
+        },
+        "cap": "A constant upward flow through a tilted disk. Tilt it with the slider: the flux is the area $\\pi$ times $\\cos(\\text{tilt})$, because only the normal component of the flow crosses the disk. Edge-on, nothing gets through."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Through a paraboloid",
+        "q": "Find the upward flux of $\\mathbf{F} = \\langle 0, 0, z \\rangle$ through $z = 4 - x^2 - y^2$, $z \\ge 0$.",
+        "steps": [
+          "With $g = 4 - x^2 - y^2$: $-P g_x - Q g_y + R = z = 4 - x^2 - y^2$.",
+          "Over the disk $x^2 + y^2 \\le 4$, in polar coordinates: $$\\int_0^{2\\pi} \\int_0^2 (4 - r^2)\\,r\\,dr\\,d\\theta = 2\\pi(8 - 4) = 8\\pi.$$"
+        ],
+        "a": "${}8\\pi$"
+      },
+      {
+        "t": "ex",
+        "title": "Out of a sphere",
+        "q": "Find the outward flux of $\\mathbf{F} = \\langle x, y, z \\rangle$ through the sphere of radius $a$.",
+        "steps": [
+          "Outward unit normal: $\\mathbf{n} = \\frac{1}{a}\\langle x, y, z \\rangle$, so $\\mathbf{F} \\cdot \\mathbf{n} = \\frac{x^2 + y^2 + z^2}{a} = a$.",
+          "$\\iint_S a\\,dS = a \\cdot 4\\pi a^2 = 4\\pi a^3$."
+        ],
+        "a": "${}4\\pi a^3$"
+      },
+      {
+        "t": "ex",
+        "title": "Through a cylinder wall",
+        "q": "Find the outward flux of $\\mathbf{F} = \\langle x, 0, 0 \\rangle$ through the side of $x^2 + y^2 = 1$, ${}0 \\le z \\le 2$.",
+        "steps": [
+          "$\\mathbf{r}_\\theta \\times \\mathbf{r}_z = \\langle \\cos\\theta, \\sin\\theta, 0 \\rangle$ points outward.",
+          "$\\mathbf{F} \\cdot (\\mathbf{r}_\\theta \\times \\mathbf{r}_z) = \\cos\\theta \\cdot \\cos\\theta = \\cos^2\\theta$.",
+          "$\\int_0^2 \\int_0^{2\\pi} \\cos^2\\theta\\,d\\theta\\,dz = 2\\pi$."
+        ],
+        "a": "${}2\\pi$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Two slips with the normal.</b> Flux needs a dot product with the normal: integrating $|\\mathbf{F}|$, or one component of $\\mathbf{F}$ chosen by habit, gives a different number. And the scaling must be counted once: either $\\mathbf{F} \\cdot \\mathbf{n}\\,dS$ (unit normal, with $dS = |\\mathbf{r}_u \\times \\mathbf{r}_v|\\,dA$) or $\\mathbf{F} \\cdot (\\mathbf{r}_u \\times \\mathbf{r}_v)\\,dA$ (no unit normal, no extra factor), never a unit normal and the factor $|\\mathbf{r}_u \\times \\mathbf{r}_v|$ together with the unnormalized cross product."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 3, 6.6 Surface Integrals"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

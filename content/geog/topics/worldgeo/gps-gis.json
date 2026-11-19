@@ -1,0 +1,166 @@
+{
+  "id": "worldgeo.gps-gis",
+  "slug": "gps-gis",
+  "ladder": "geog",
+  "course": "worldgeo",
+  "unit": "maps-projections",
+  "title": "GPS, GIS and Satellite Images",
+  "short": "GPS finds your position from satellite signals, satellites photograph Earth, and a GIS stacks map layers to answer questions.",
+  "trouble": "Students think GPS is the map on the phone. GPS only gives the position; the map app and its layers are a separate system.",
+  "prereqs": [
+    "worldgeo.kinds-of-maps",
+    "worldgeo.read-coordinates"
+  ],
+  "xp": 2,
+  "viz": [
+    "gg-map",
+    "gg-sort"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Paper maps and <a href=\"/geography/world-geography/read-coordinates/\">coordinates</a> are still the base of geography, but today three tools do much of the work: GPS, satellite images and GIS. They often work together, so people mix them up."
+      },
+      {
+        "t": "key",
+        "html": "<b>GPS</b> finds <b>where you are</b> from satellite signals. <b>Satellite images</b> are pictures of Earth taken from space. A <b>GIS</b> (geographic information system) is computer software that stacks map <b>layers</b> to answer questions."
+      },
+      {
+        "t": "why",
+        "html": "A GPS satellite sends out its position and the exact time. Your receiver measures how long each signal took to arrive, which gives its distance from that satellite. Distances from at least four satellites fix your latitude, longitude and height, and the time. The U.S. Space Force operates GPS and keeps at least 24 working satellites about 20,200 km up, each circling Earth twice a day. Europe (Galileo), Russia (GLONASS) and China (BeiDou) run systems like it."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Tool",
+          "What it gives",
+          "Example"
+        ],
+        "rows": [
+          [
+            "GPS",
+            "A position: coordinates",
+            "Your phone shows a blue dot at 40.7° N, 74.0° W"
+          ],
+          [
+            "Satellite image",
+            "A picture from space",
+            "Landsat images, taken since 1972, show forests and cities change"
+          ],
+          [
+            "GIS",
+            "Layers of data combined",
+            "Roads + rivers + schools: which schools are near a flood zone?"
+          ]
+        ],
+        "cap": "Three tools."
+      },
+      {
+        "t": "viz",
+        "name": "gg-sort",
+        "opts": {
+          "bins": [
+            "GPS",
+            "Satellite image",
+            "GIS"
+          ],
+          "cards": [
+            {
+              "text": "Tells a hiker her coordinates",
+              "bin": 0
+            },
+            {
+              "text": "Shows a forest fire's smoke from space",
+              "bin": 1
+            },
+            {
+              "text": "Overlays bus routes and homes to plan a new stop",
+              "bin": 2
+            },
+            {
+              "text": "Needs signals from at least four satellites",
+              "bin": 0
+            },
+            {
+              "text": "Shows how a city grew over 40 years of pictures",
+              "bin": 1
+            },
+            {
+              "text": "Finds farms inside a flood zone by stacking layers",
+              "bin": 2
+            }
+          ],
+          "reveal": true
+        },
+        "cap": "Sort each job to the tool that does it."
+      },
+      {
+        "t": "ex",
+        "title": "Which tool?",
+        "q": "A city wants to know which neighborhoods are more than 1 km from a park. Which tool fits best?",
+        "steps": [
+          "The city already knows where parks and homes are.",
+          "It needs to combine a parks layer and a homes layer and measure distances.",
+          "Combining layers is the job of a GIS."
+        ],
+        "a": "A GIS."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking GPS is the map on your phone. GPS only gives the position, a pair of coordinates. The map, the street names and the route come from a separate map app, often built with GIS data and satellite images. GPS works with no map at all, and a map works with no GPS."
+      },
+      {
+        "t": "viz",
+        "name": "gg-map",
+        "opts": {
+          "region": [
+            "USA",
+            "CAN",
+            "MEX"
+          ],
+          "color": "plain",
+          "features": [
+            "rivers"
+          ],
+          "featureFocus": "NA",
+          "points": [
+            {
+              "lon": -74,
+              "lat": 40.7,
+              "label": "GPS position 40.7° N, 74.0° W"
+            }
+          ]
+        },
+        "cap": "Layers in action: a base map, a rivers layer and one GPS position."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "GPS.gov: What is GPS? (U.S. government)",
+        "url": "https://www.gps.gov/gps"
+      },
+      {
+        "name": "GPS.gov: Space Segment",
+        "url": "https://gps.gov/systems/gps/space"
+      },
+      {
+        "name": "Geographic information system (Grokipedia)",
+        "url": "https://grokipedia.com/page/Geographic_information_system"
+      },
+      {
+        "name": "Landsat program (Grokipedia)",
+        "url": "https://grokipedia.com/page/Landsat_program"
+      },
+      {
+        "name": "C3 Framework for Social Studies State Standards (NCSS, 2013), Geography, Dimension 2, grades 6-8"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

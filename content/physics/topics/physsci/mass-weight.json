@@ -1,0 +1,123 @@
+{
+  "id": "physsci.mass-weight",
+  "slug": "mass-weight",
+  "ladder": "physics",
+  "course": "physsci",
+  "unit": "forces",
+  "title": "Mass and Weight",
+  "short": "Mass is the amount of matter; weight is the pull of gravity on it: W = mg, with g = 9.8 N/kg on Earth.",
+  "trouble": "Students think an astronaut's mass changes on the Moon, or give weight in kilograms.",
+  "prereqs": [
+    "physsci.second-law-intro"
+  ],
+  "xp": 1,
+  "viz": [
+    "ph-fbd"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In everyday talk, \"mass\" and \"weight\" mean the same thing. In physics they don't. Your <b>mass</b> is the amount of matter in you, in kilograms. Your <b>weight</b> is a <a href=\"/physics/physical-science/forces-intro/\">force</a>: the pull of gravity on that mass, in newtons. It follows from the <a href=\"/physics/physical-science/second-law-intro/\">second law</a>."
+      },
+      {
+        "t": "key",
+        "html": "Weight $W = m\\,g$. Near Earth's surface $g = 9.8\\,\\mathrm{N/kg}$, so each kilogram weighs 9.8 N. Mass is the same everywhere; weight depends on where you are."
+      },
+      {
+        "t": "why",
+        "html": "Drop anything and it falls with acceleration $g = 9.8\\,\\mathrm{m/s^2}$. By $F = ma$, the force that causes this is $m \\times 9.8$, and that force is the weight. On the Moon, gravity is weaker ($g \\approx 1.6\\,\\mathrm{N/kg}$), so the same mass weighs about one sixth as much. The astronaut is not smaller; the Moon just pulls less."
+      },
+      {
+        "t": "viz",
+        "name": "ph-fbd",
+        "opts": {
+          "scene": "hanging",
+          "forces": [
+            {
+              "type": "gravity",
+              "mag": 49
+            },
+            {
+              "type": "tension",
+              "mag": 49
+            }
+          ]
+        },
+        "cap": "A 5 kg mass hanging from a spring scale. Its weight is 5 × 9.8 = 49 N, and the scale pulls up with the same 49 N."
+      },
+      {
+        "t": "ex",
+        "title": "Weight on Earth",
+        "q": "Find the weight of a 50 kg student on Earth.",
+        "steps": [
+          "$W = m\\,g = 50\\,\\mathrm{kg} \\times 9.8\\,\\mathrm{N/kg}$.",
+          "$W = 490\\,\\mathrm{N}$."
+        ],
+        "a": "$490\\,\\mathrm{N}$"
+      },
+      {
+        "t": "ex",
+        "title": "The same student on the Moon",
+        "q": "On the Moon, $g = 1.6\\,\\mathrm{N/kg}$. Find the student's mass and weight there.",
+        "steps": [
+          "Mass does not change: still $50\\,\\mathrm{kg}$.",
+          "Weight: $W = 50 \\times 1.6 = 80\\,\\mathrm{N}$."
+        ],
+        "a": "Mass 50 kg; weight 80 N"
+      },
+      {
+        "t": "mistake",
+        "html": "Saying an astronaut's mass changes on the Moon, or giving weight in kilograms. Mass stays the same; only the weight changes. And a weight is a force, so it is in newtons. (A bathroom scale shows kilograms only because it assumes you are on Earth.) Check the unit: kg means mass, N means weight."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Place",
+          "g (N/kg)",
+          "Weight of 10 kg"
+        ],
+        "rows": [
+          [
+            "Earth",
+            "9.8",
+            "98 N"
+          ],
+          [
+            "Moon",
+            "1.6",
+            "16 N"
+          ],
+          [
+            "Mars",
+            "3.7",
+            "37 N"
+          ],
+          [
+            "Jupiter (cloud tops)",
+            "24.8",
+            "248 N"
+          ]
+        ],
+        "cap": "Surface gravity, rounded, from the NASA planetary fact sheets."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e, 4.3 Newton's Second Law of Motion: Concept of a System"
+      },
+      {
+        "name": "NASA, Planetary Fact Sheet (NSSDCA): surface gravity values"
+      },
+      {
+        "name": "Next Generation Science Standards, MS-PS2-4"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

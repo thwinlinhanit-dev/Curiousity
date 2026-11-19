@@ -1,0 +1,130 @@
+{
+  "id": "aegean.measures",
+  "slug": "measures",
+  "ladder": "scripts",
+  "course": "aegean",
+  "unit": "records",
+  "title": "Weights and Measures",
+  "short": "Dry goods: a unit, then T (a tenth), V (a sixth of T) and Z (a quarter of V); liquids: a unit, S (a third), V and Z; weights from the talent (L) down.",
+  "trouble": "Students convert measures as if they were decimal. Each step has its own ratio: 1 unit = 10 T, 1 T = 6 V, 1 V = 4 Z for dry goods.",
+  "prereqs": [
+    "aegean.numerals",
+    "aegean.logograms"
+  ],
+  "xp": 3,
+  "viz": [
+    "sc-numbers"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Counting jars or sheep needs only the numbers of <a href=\"/ancient-scripts/linear-a-and-b/numerals/\">Aegean Numbers</a>. But grain, oil, wine and bronze are not counted; they are measured. Linear B has a system of measures, each with its own sign. Here the arithmetic gets more interesting."
+      },
+      {
+        "t": "key",
+        "html": "Dry goods: a unit (written with the commodity's own sign), then T (a tenth), V (a sixth of T) and Z (a quarter of V). Liquids: a unit, S (a third), V and Z. Weights: the talent L, then M (a thirtieth), and smaller units below. Each step has its own ratio."
+      },
+      {
+        "t": "table",
+        "head": [
+          "System",
+          "Steps",
+          "So one unit is"
+        ],
+        "rows": [
+          [
+            "Dry (wheat, barley, figs)",
+            "1 unit = 10 T; 1 T = 6 V; 1 V = 4 Z",
+            "10 T = 60 V = 240 Z"
+          ],
+          [
+            "Liquid (oil, wine)",
+            "1 unit = 3 S; 1 S = 6 V; 1 V = 4 Z",
+            "3 S = 18 V = 72 Z"
+          ],
+          [
+            "Weight (bronze, wool, gold)",
+            "1 L = 30 M (and smaller N, P, Q)",
+            "30 M"
+          ]
+        ],
+        "cap": "Mycenaean measures. The sizes in liters or kilograms are modern estimates; the ratios are what the tablets show."
+      },
+      {
+        "t": "viz",
+        "name": "sc-numbers",
+        "opts": {
+          "mode": "measures",
+          "system": "dry"
+        },
+        "cap": "The dry measures. Switch to liquid and weight with the buttons."
+      },
+      {
+        "t": "h",
+        "text": "Converting"
+      },
+      {
+        "t": "p",
+        "html": "To turn a bigger unit into a smaller one, multiply by each step in turn. 2 T of wheat is 2 × 6 = 12 V. 1 V is 4 Z, so 2 T is 12 × 4 = 48 Z. To go the other way, divide: 30 V of oil is 30 ÷ 6 = 5 S. A quantity is written largest unit first: GRA 3 T 2 V 1 means 3 units, 2 T and 1 V of wheat."
+      },
+      {
+        "t": "why",
+        "html": "Why such odd ratios, 10 then 6 then 4? Measures grow out of real containers and habits, not out of a plan. Many ancient systems mix factors like 6, 4, 3 and 30 because they divide evenly into halves, thirds and quarters, which helps when sharing out rations. Our own cups, pints and gallons, or feet and inches, are just as mixed."
+      },
+      {
+        "t": "mistake",
+        "html": "Converting measures as if they were decimal. Each step has its own ratio: 1 unit = 10 T, 1 T = 6 V, 1 V = 4 Z for dry goods. Check: after converting, convert back; if 3 T came out as 30 V, multiply back by the step (30 ÷ 6 = 5, not 3) and you will see the error."
+      },
+      {
+        "t": "ex",
+        "title": "Dry measure",
+        "q": "How many V are in 3 T?",
+        "steps": [
+          "1 T = 6 V.",
+          "3 × 6 = 18."
+        ],
+        "a": "18 V"
+      },
+      {
+        "t": "ex",
+        "title": "Liquid measure",
+        "q": "An oil ration is 2 S. How many Z is that?",
+        "steps": [
+          "1 S = 6 V, so 2 S = 12 V.",
+          "1 V = 4 Z, so 12 V = 48 Z."
+        ],
+        "a": "48 Z"
+      },
+      {
+        "t": "ex",
+        "title": "Weight",
+        "q": "How many M are in 2 L of bronze?",
+        "steps": [
+          "1 L (talent) = 30 M.",
+          "2 × 30 = 60."
+        ],
+        "a": "60 M"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Grokipedia, \"Linear B\", Units of measurement",
+        "url": "https://grokipedia.com/page/Linear_B"
+      },
+      {
+        "name": "Grokipedia, \"Aegean numerals\"",
+        "url": "https://grokipedia.com/page/Aegean_numerals"
+      },
+      {
+        "name": "John Chadwick, The Decipherment of Linear B (Cambridge, 1958), as cited in Grokipedia, \"Linear B\""
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

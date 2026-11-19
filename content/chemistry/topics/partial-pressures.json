@@ -1,0 +1,95 @@
+{
+  "id": "gchem1.partial-pressures",
+  "slug": "partial-pressures",
+  "ladder": "chemistry",
+  "course": "gchem1",
+  "unit": "gases",
+  "title": "Partial Pressures and Mole Fractions",
+  "short": "Each gas in a mixture pushes as if it were alone: Pᵢ = χᵢ × P(total).",
+  "trouble": "Students think the gas with heavier molecules supplies more of the pressure, or forget to subtract water's vapor pressure for a gas collected over water.",
+  "prereqs": [
+    "chem.ideal-gas-law",
+    "gchem1.concentration-units"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-gasbox"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Air is a mixture: mostly nitrogen and oxygen, with argon and a little carbon dioxide. How does each gas contribute to the pressure? The <a href=\"/chemistry/chemistry/ideal-gas-law/\">The Ideal Gas Law</a> answers that, using the <a href=\"/chemistry/general-chemistry-1/concentration-units/\">mole fractions</a> you already know."
+      },
+      {
+        "t": "key",
+        "html": "<b>Dalton's law:</b> in a mixture of gases, each gas exerts the pressure it would have alone in the same container (its <b>partial pressure</b>), and the total is the sum: $$P_\\text{total} = P_A + P_B + \\cdots, \\qquad P_A = \\chi_A\\,P_\\text{total}.$$ A gas collected over water is mixed with water vapor: $P_\\text{gas} = P_\\text{total} - P_{\\mathrm{H_2O}}$."
+      },
+      {
+        "t": "why",
+        "html": "In an ideal gas the molecules don't interact; each one hits the walls as if the others weren't there. Pressure comes from those hits, and $PV = nRT$ says the pressure is proportional to the number of molecules, $n$, at a given $V$ and $T$, whatever kind they are. So each gas's share of the pressure is its share of the molecules: its mole fraction. A heavy molecule hits harder but moves slower, and at the same temperature the two effects cancel exactly; that is why only the count matters."
+      },
+      {
+        "t": "viz",
+        "name": "ch-gasbox",
+        "opts": {
+          "species": [
+            {
+              "f": "He",
+              "n": 1
+            },
+            {
+              "f": "Ar",
+              "n": 0.5
+            }
+          ],
+          "T": 300,
+          "V": 24.6,
+          "task": "Add or remove one gas and watch the partial pressures and mole fractions."
+        },
+        "cap": "Helium and argon in one box. The partial pressures add to the total, in proportion to the moles of each, not their masses."
+      },
+      {
+        "t": "p",
+        "html": "Try it in Gas in a Box: <a href=\"/science-lab/gas/\">mix two gases</a> and read each one's partial pressure."
+      },
+      {
+        "t": "ex",
+        "title": "A mixture of two gases",
+        "q": "A tank holds $2.00\\ \\text{mol}$ of He and $1.00\\ \\text{mol}$ of Ar at a total pressure of $6.00\\ \\text{atm}$. Find the partial pressure of each.",
+        "steps": [
+          "$\\chi_\\text{He} = \\dfrac{2.00}{3.00} = 0.667$; $\\chi_\\text{Ar} = 0.333$.",
+          "$P_\\text{He} = 0.667 \\times 6.00 = 4.00\\ \\text{atm}$; $P_\\text{Ar} = 2.00\\ \\text{atm}$."
+        ],
+        "a": "He $4.00\\ \\text{atm}$; Ar $2.00\\ \\text{atm}$."
+      },
+      {
+        "t": "ex",
+        "title": "Collected over water",
+        "q": "Hydrogen gas is collected over water at $25^\\circ\\text{C}$ in a $0.250\\ \\text{L}$ tube. The total pressure is $755\\ \\text{mmHg}$, and water's vapor pressure at $25^\\circ\\text{C}$ is $23.8\\ \\text{mmHg}$. How many moles of $\\mathrm{H_2}$ were collected?",
+        "steps": [
+          "$$P_{\\mathrm{H_2}} = 755 - 23.8 = 731\\ \\text{mmHg} = 731/760 = 0.962\\ \\text{atm}$$",
+          "$$n = \\dfrac{PV}{RT} = \\dfrac{(0.962)(0.250)}{(0.08206)(298.15)} = 9.83 \\times 10^{-3}\\ \\text{mol}$$"
+        ],
+        "a": "$9.83 \\times 10^{-3}\\ \\text{mol}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking the gas with heavier molecules supplies more of the pressure, or forgetting the water vapor in a gas collected over water. Pressure depends on the number of molecules, not their mass: in a 1 : 1 mixture of He and Ar, each supplies half. And a tube over water always holds water vapor; subtract its vapor pressure before using $PV = nRT$. Check: the partial pressures must add up to the total."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 9.3 Stoichiometry of Gaseous Substances, Mixtures, and Reactions"
+      },
+      {
+        "name": "College Board, AP Chemistry Course and Exam Description (effective fall 2024), Unit 3: Properties of Substances and Mixtures"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

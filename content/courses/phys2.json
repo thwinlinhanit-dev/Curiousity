@@ -1,0 +1,1060 @@
+{
+  "key": "phys2",
+  "title": "Physics 2: Fluids, Heat, Electricity, Light and Atoms",
+  "slug": "physics-2",
+  "after": [
+    "phys1",
+    "alg2"
+  ],
+  "units": [
+    {
+      "key": "fluids",
+      "title": "Fluids",
+      "blurb": "Pressure in still fluids, buoyancy, and the flow of moving fluids."
+    },
+    {
+      "key": "thermodynamics",
+      "title": "Thermodynamics",
+      "blurb": "Gases, heat flow, the first and second laws, and engines."
+    },
+    {
+      "key": "electrostatics",
+      "title": "Electric Force, Field and Potential",
+      "blurb": "Charges, Coulomb's law, fields, potential and capacitors."
+    },
+    {
+      "key": "circuits",
+      "title": "Electric Circuits",
+      "blurb": "Current, resistance, power, series and parallel networks, Kirchhoff's rules and RC circuits."
+    },
+    {
+      "key": "magnetism",
+      "title": "Magnetism and Electromagnetism",
+      "blurb": "Magnetic forces on moving charges and currents, fields of currents, and induction."
+    },
+    {
+      "key": "geometric-optics",
+      "title": "Geometric Optics",
+      "blurb": "Mirrors and lenses: reflection, refraction and the images they form."
+    },
+    {
+      "key": "waves",
+      "title": "Waves, Sound and Physical Optics",
+      "blurb": "How waves move, reflect and add, standing waves and sound, and the wave behavior of light."
+    },
+    {
+      "key": "quantum",
+      "title": "Quantum Physics and the Nucleus",
+      "blurb": "Photons, energy levels and spectra, matter waves, and the energy stored in nuclei."
+    }
+  ],
+  "topics": [
+    {
+      "id": "phys2.pressure-depth",
+      "slug": "pressure-depth",
+      "unit": "fluids",
+      "title": "Pressure and Depth",
+      "prereqs": [
+        "physsci.pressure",
+        "earthsci.density",
+        "phys1.equilibrium-first-law"
+      ],
+      "viz": [
+        "ph-fluids"
+      ]
+    },
+    {
+      "id": "phys2.pascals-principle",
+      "slug": "pascals-principle",
+      "unit": "fluids",
+      "title": "Pascal's Principle and Hydraulics",
+      "prereqs": [
+        "phys2.pressure-depth",
+        "phys1.work"
+      ],
+      "viz": [
+        "ph-fluids"
+      ]
+    },
+    {
+      "id": "phys2.buoyancy",
+      "slug": "buoyancy",
+      "unit": "fluids",
+      "title": "Buoyant Force and Archimedes' Principle",
+      "prereqs": [
+        "phys2.pressure-depth"
+      ],
+      "viz": [
+        "ph-fluids"
+      ]
+    },
+    {
+      "id": "phys2.continuity",
+      "slug": "continuity",
+      "unit": "fluids",
+      "title": "Flow Rate and Continuity",
+      "prereqs": [
+        "physsci.pressure",
+        "g7.solve-proportions"
+      ],
+      "viz": [
+        "ph-fluids"
+      ]
+    },
+    {
+      "id": "phys2.bernoulli",
+      "slug": "bernoulli",
+      "unit": "fluids",
+      "title": "Bernoulli's Equation",
+      "prereqs": [
+        "phys2.continuity",
+        "phys2.pressure-depth",
+        "phys1.energy-conservation"
+      ],
+      "viz": [
+        "ph-fluids"
+      ]
+    },
+    {
+      "id": "phys2.ideal-gas-law",
+      "slug": "ideal-gas-law",
+      "unit": "thermodynamics",
+      "title": "The Ideal Gas Law",
+      "prereqs": [
+        "chem.kinetic-molecular-theory",
+        "alg1.literal-equations"
+      ],
+      "viz": [
+        "ph-gas"
+      ]
+    },
+    {
+      "id": "phys2.kinetic-theory",
+      "slug": "kinetic-theory",
+      "unit": "thermodynamics",
+      "title": "Temperature and Molecular Energy",
+      "prereqs": [
+        "phys2.ideal-gas-law",
+        "physsci.kinetic-energy"
+      ],
+      "viz": [
+        "ph-gas"
+      ]
+    },
+    {
+      "id": "phys2.latent-heat",
+      "slug": "latent-heat",
+      "unit": "thermodynamics",
+      "title": "Latent Heat",
+      "prereqs": [
+        "physsci.phase-changes",
+        "chem.calorimetry"
+      ],
+      "viz": [
+        "ph-thermal"
+      ]
+    },
+    {
+      "id": "phys2.conduction-rate",
+      "slug": "conduction-rate",
+      "unit": "thermodynamics",
+      "title": "Rate of Heat Conduction",
+      "prereqs": [
+        "physsci.heat-transfer",
+        "alg1.literal-equations"
+      ],
+      "viz": [
+        "ph-thermal"
+      ]
+    },
+    {
+      "id": "phys2.thermal-radiation",
+      "slug": "thermal-radiation",
+      "unit": "thermodynamics",
+      "title": "Thermal Radiation and Blackbodies",
+      "prereqs": [
+        "physsci.heat-transfer",
+        "physsci.em-spectrum"
+      ],
+      "viz": [
+        "ph-blackbody",
+        "ph-thermal"
+      ]
+    },
+    {
+      "id": "phys2.pv-work",
+      "slug": "pv-work",
+      "unit": "thermodynamics",
+      "title": "Work Done on a Gas",
+      "prereqs": [
+        "phys2.ideal-gas-law",
+        "phys1.work-from-graphs"
+      ],
+      "viz": [
+        "ph-pv"
+      ]
+    },
+    {
+      "id": "phys2.first-law",
+      "slug": "first-law",
+      "unit": "thermodynamics",
+      "title": "The First Law of Thermodynamics",
+      "prereqs": [
+        "phys2.pv-work",
+        "phys2.kinetic-theory"
+      ],
+      "viz": [
+        "ph-pv"
+      ]
+    },
+    {
+      "id": "phys2.thermo-processes",
+      "slug": "thermo-processes",
+      "unit": "thermodynamics",
+      "title": "Isobaric, Isochoric, Isothermal and Adiabatic Processes",
+      "prereqs": [
+        "phys2.first-law"
+      ],
+      "viz": [
+        "ph-pv"
+      ]
+    },
+    {
+      "id": "phys2.thermo-cycles",
+      "slug": "thermo-cycles",
+      "unit": "thermodynamics",
+      "title": "Cycles on a P–V Diagram",
+      "prereqs": [
+        "phys2.thermo-processes"
+      ],
+      "viz": [
+        "ph-pv"
+      ]
+    },
+    {
+      "id": "phys2.heat-engines",
+      "slug": "heat-engines",
+      "unit": "thermodynamics",
+      "title": "Heat Engines and Efficiency",
+      "prereqs": [
+        "phys2.thermo-cycles",
+        "physsci.efficiency"
+      ],
+      "viz": [
+        "ph-pv"
+      ]
+    },
+    {
+      "id": "phys2.carnot-limit",
+      "slug": "carnot-limit",
+      "unit": "thermodynamics",
+      "title": "The Carnot Limit",
+      "prereqs": [
+        "phys2.heat-engines"
+      ],
+      "viz": [
+        "ph-pv"
+      ]
+    },
+    {
+      "id": "phys2.refrigerators",
+      "slug": "refrigerators",
+      "unit": "thermodynamics",
+      "title": "Refrigerators and Heat Pumps",
+      "prereqs": [
+        "phys2.heat-engines"
+      ],
+      "viz": [
+        "ph-pv"
+      ]
+    },
+    {
+      "id": "phys2.entropy",
+      "slug": "entropy",
+      "unit": "thermodynamics",
+      "title": "Entropy and the Second Law",
+      "prereqs": [
+        "phys2.carnot-limit"
+      ],
+      "viz": [
+        "ph-thermal"
+      ]
+    },
+    {
+      "id": "phys2.charge-conservation",
+      "slug": "charge-conservation",
+      "unit": "electrostatics",
+      "title": "Charge, Conductors and Charging",
+      "prereqs": [
+        "physsci.static-forces"
+      ],
+      "viz": [
+        "ph-efield"
+      ]
+    },
+    {
+      "id": "phys2.coulombs-law",
+      "slug": "coulombs-law",
+      "unit": "electrostatics",
+      "title": "Coulomb's Law",
+      "prereqs": [
+        "phys2.charge-conservation",
+        "phys1.gravitational-force"
+      ],
+      "viz": [
+        "ph-efield"
+      ]
+    },
+    {
+      "id": "phys2.coulomb-superposition",
+      "slug": "coulomb-superposition",
+      "unit": "electrostatics",
+      "title": "Adding Electric Forces",
+      "prereqs": [
+        "phys2.coulombs-law",
+        "phys1.vector-addition"
+      ],
+      "viz": [
+        "ph-efield",
+        "ph-vectors"
+      ]
+    },
+    {
+      "id": "phys2.electric-field",
+      "slug": "electric-field",
+      "unit": "electrostatics",
+      "title": "The Electric Field",
+      "prereqs": [
+        "phys2.coulombs-law",
+        "physsci.fields-intro"
+      ],
+      "viz": [
+        "ph-efield"
+      ]
+    },
+    {
+      "id": "phys2.field-superposition",
+      "slug": "field-superposition",
+      "unit": "electrostatics",
+      "title": "Fields of Several Charges and Field Lines",
+      "prereqs": [
+        "phys2.electric-field",
+        "phys2.coulomb-superposition"
+      ],
+      "viz": [
+        "ph-efield"
+      ]
+    },
+    {
+      "id": "phys2.uniform-field",
+      "slug": "uniform-field",
+      "unit": "electrostatics",
+      "title": "Charges in a Uniform Field",
+      "prereqs": [
+        "phys2.electric-field",
+        "phys1.projectile-horizontal"
+      ],
+      "viz": [
+        "ph-efield"
+      ]
+    },
+    {
+      "id": "phys2.electric-potential-energy",
+      "slug": "electric-potential-energy",
+      "unit": "electrostatics",
+      "title": "Electric Potential Energy",
+      "prereqs": [
+        "phys2.coulombs-law",
+        "phys1.gravitational-pe-universal"
+      ],
+      "viz": [
+        "ph-efield"
+      ]
+    },
+    {
+      "id": "phys2.electric-potential",
+      "slug": "electric-potential",
+      "unit": "electrostatics",
+      "title": "Electric Potential and Voltage",
+      "prereqs": [
+        "phys2.electric-potential-energy",
+        "phys2.electric-field"
+      ],
+      "viz": [
+        "ph-efield"
+      ]
+    },
+    {
+      "id": "phys2.equipotentials",
+      "slug": "equipotentials",
+      "unit": "electrostatics",
+      "title": "Equipotentials and Field Strength",
+      "prereqs": [
+        "phys2.electric-potential",
+        "phys2.field-superposition"
+      ],
+      "viz": [
+        "ph-efield"
+      ]
+    },
+    {
+      "id": "phys2.capacitors",
+      "slug": "capacitors",
+      "unit": "electrostatics",
+      "title": "Capacitors",
+      "prereqs": [
+        "phys2.equipotentials"
+      ],
+      "viz": [
+        "ph-efield"
+      ]
+    },
+    {
+      "id": "phys2.capacitor-energy",
+      "slug": "capacitor-energy",
+      "unit": "electrostatics",
+      "title": "Energy Stored in a Capacitor",
+      "prereqs": [
+        "phys2.capacitors",
+        "phys1.work-from-graphs"
+      ],
+      "viz": [
+        "ph-efield",
+        "ph-graph"
+      ]
+    },
+    {
+      "id": "phys2.current",
+      "slug": "current",
+      "unit": "circuits",
+      "title": "Electric Current",
+      "prereqs": [
+        "phys2.charge-conservation",
+        "physsci.current-voltage"
+      ],
+      "viz": [
+        "ph-circuit"
+      ]
+    },
+    {
+      "id": "phys2.resistivity",
+      "slug": "resistivity",
+      "unit": "circuits",
+      "title": "Resistance and Resistivity",
+      "prereqs": [
+        "phys2.current",
+        "physsci.ohms-law"
+      ],
+      "viz": [
+        "ph-circuit"
+      ]
+    },
+    {
+      "id": "phys2.resistor-power",
+      "slug": "resistor-power",
+      "unit": "circuits",
+      "title": "Power in Resistors",
+      "prereqs": [
+        "phys2.resistivity",
+        "physsci.electric-power"
+      ],
+      "viz": [
+        "ph-circuit"
+      ]
+    },
+    {
+      "id": "phys2.series-resistors",
+      "slug": "series-resistors",
+      "unit": "circuits",
+      "title": "Resistors in Series",
+      "prereqs": [
+        "phys2.resistivity",
+        "physsci.series-parallel-intro"
+      ],
+      "viz": [
+        "ph-circuit"
+      ]
+    },
+    {
+      "id": "phys2.parallel-resistors",
+      "slug": "parallel-resistors",
+      "unit": "circuits",
+      "title": "Resistors in Parallel",
+      "prereqs": [
+        "phys2.series-resistors"
+      ],
+      "viz": [
+        "ph-circuit"
+      ]
+    },
+    {
+      "id": "phys2.combination-circuits",
+      "slug": "combination-circuits",
+      "unit": "circuits",
+      "title": "Series-Parallel Combinations",
+      "prereqs": [
+        "phys2.parallel-resistors"
+      ],
+      "viz": [
+        "ph-circuit"
+      ]
+    },
+    {
+      "id": "phys2.kirchhoff-junction",
+      "slug": "kirchhoff-junction",
+      "unit": "circuits",
+      "title": "Kirchhoff's Junction Rule",
+      "prereqs": [
+        "phys2.parallel-resistors"
+      ],
+      "viz": [
+        "ph-circuit"
+      ]
+    },
+    {
+      "id": "phys2.kirchhoff-loop",
+      "slug": "kirchhoff-loop",
+      "unit": "circuits",
+      "title": "Kirchhoff's Loop Rule",
+      "prereqs": [
+        "phys2.kirchhoff-junction",
+        "phys2.combination-circuits",
+        "alg1.systems-elimination"
+      ],
+      "viz": [
+        "ph-circuit"
+      ]
+    },
+    {
+      "id": "phys2.internal-resistance",
+      "slug": "internal-resistance",
+      "unit": "circuits",
+      "title": "EMF and Internal Resistance",
+      "prereqs": [
+        "phys2.kirchhoff-loop"
+      ],
+      "viz": [
+        "ph-circuit"
+      ]
+    },
+    {
+      "id": "phys2.capacitor-combinations",
+      "slug": "capacitor-combinations",
+      "unit": "circuits",
+      "title": "Capacitors in Series and Parallel",
+      "prereqs": [
+        "phys2.capacitors",
+        "phys2.parallel-resistors"
+      ],
+      "viz": [
+        "ph-circuit"
+      ]
+    },
+    {
+      "id": "phys2.rc-circuits",
+      "slug": "rc-circuits",
+      "unit": "circuits",
+      "title": "RC Circuits",
+      "prereqs": [
+        "phys2.capacitor-combinations",
+        "phys2.kirchhoff-loop",
+        "alg1.exponential-growth-decay"
+      ],
+      "viz": [
+        "ph-circuit"
+      ]
+    },
+    {
+      "id": "phys2.magnetic-fields",
+      "slug": "magnetic-fields",
+      "unit": "magnetism",
+      "title": "Magnetic Fields and Their Sources",
+      "prereqs": [
+        "physsci.electromagnets"
+      ],
+      "viz": [
+        "ph-magnetism"
+      ]
+    },
+    {
+      "id": "phys2.force-on-moving-charge",
+      "slug": "force-on-moving-charge",
+      "unit": "magnetism",
+      "title": "Magnetic Force on a Moving Charge",
+      "prereqs": [
+        "phys2.magnetic-fields",
+        "phys1.vector-components"
+      ],
+      "viz": [
+        "ph-magnetism"
+      ]
+    },
+    {
+      "id": "phys2.charged-particle-circles",
+      "slug": "charged-particle-circles",
+      "unit": "magnetism",
+      "title": "Charges Circling in a Magnetic Field",
+      "prereqs": [
+        "phys2.force-on-moving-charge",
+        "phys1.centripetal-force"
+      ],
+      "viz": [
+        "ph-magnetism"
+      ]
+    },
+    {
+      "id": "phys2.force-on-wire",
+      "slug": "force-on-wire",
+      "unit": "magnetism",
+      "title": "Magnetic Force on a Current",
+      "prereqs": [
+        "phys2.force-on-moving-charge",
+        "phys2.current"
+      ],
+      "viz": [
+        "ph-magnetism"
+      ]
+    },
+    {
+      "id": "phys2.field-of-wire",
+      "slug": "field-of-wire",
+      "unit": "magnetism",
+      "title": "Fields of Wires and Solenoids",
+      "prereqs": [
+        "phys2.force-on-wire"
+      ],
+      "viz": [
+        "ph-magnetism"
+      ]
+    },
+    {
+      "id": "phys2.magnetic-flux",
+      "slug": "magnetic-flux",
+      "unit": "magnetism",
+      "title": "Magnetic Flux",
+      "prereqs": [
+        "phys2.magnetic-fields",
+        "geo.trig-ratios"
+      ],
+      "viz": [
+        "ph-induction"
+      ]
+    },
+    {
+      "id": "phys2.faradays-law",
+      "slug": "faradays-law",
+      "unit": "magnetism",
+      "title": "Faraday's Law",
+      "prereqs": [
+        "phys2.magnetic-flux",
+        "physsci.generators"
+      ],
+      "viz": [
+        "ph-induction"
+      ]
+    },
+    {
+      "id": "phys2.lenzs-law",
+      "slug": "lenzs-law",
+      "unit": "magnetism",
+      "title": "Lenz's Law",
+      "prereqs": [
+        "phys2.faradays-law",
+        "phys2.field-of-wire"
+      ],
+      "viz": [
+        "ph-induction"
+      ]
+    },
+    {
+      "id": "phys2.motional-emf",
+      "slug": "motional-emf",
+      "unit": "magnetism",
+      "title": "Motional EMF",
+      "prereqs": [
+        "phys2.faradays-law",
+        "phys2.force-on-wire"
+      ],
+      "viz": [
+        "ph-induction"
+      ]
+    },
+    {
+      "id": "phys2.reflection",
+      "slug": "reflection",
+      "unit": "geometric-optics",
+      "title": "Reflection and Plane Mirrors",
+      "prereqs": [
+        "physsci.wave-behavior"
+      ],
+      "viz": [
+        "ph-rays"
+      ]
+    },
+    {
+      "id": "phys2.index-of-refraction",
+      "slug": "index-of-refraction",
+      "unit": "geometric-optics",
+      "title": "Index of Refraction",
+      "prereqs": [
+        "physsci.refraction-intro",
+        "physsci.wave-speed"
+      ],
+      "viz": [
+        "ph-refraction"
+      ]
+    },
+    {
+      "id": "phys2.snells-law",
+      "slug": "snells-law",
+      "unit": "geometric-optics",
+      "title": "Snell's Law",
+      "prereqs": [
+        "phys2.index-of-refraction",
+        "geo.inverse-trig-angles"
+      ],
+      "viz": [
+        "ph-refraction"
+      ]
+    },
+    {
+      "id": "phys2.total-internal-reflection",
+      "slug": "total-internal-reflection",
+      "unit": "geometric-optics",
+      "title": "Total Internal Reflection",
+      "prereqs": [
+        "phys2.snells-law"
+      ],
+      "viz": [
+        "ph-refraction"
+      ]
+    },
+    {
+      "id": "phys2.mirror-ray-diagrams",
+      "slug": "mirror-ray-diagrams",
+      "unit": "geometric-optics",
+      "title": "Curved Mirrors and Ray Diagrams",
+      "prereqs": [
+        "phys2.reflection"
+      ],
+      "viz": [
+        "ph-rays"
+      ]
+    },
+    {
+      "id": "phys2.mirror-equation",
+      "slug": "mirror-equation",
+      "unit": "geometric-optics",
+      "title": "The Mirror Equation",
+      "prereqs": [
+        "phys2.mirror-ray-diagrams",
+        "alg2.rational-equations"
+      ],
+      "viz": [
+        "ph-rays"
+      ]
+    },
+    {
+      "id": "phys2.lens-ray-diagrams",
+      "slug": "lens-ray-diagrams",
+      "unit": "geometric-optics",
+      "title": "Lenses and Ray Diagrams",
+      "prereqs": [
+        "phys2.snells-law",
+        "phys2.mirror-ray-diagrams"
+      ],
+      "viz": [
+        "ph-rays"
+      ]
+    },
+    {
+      "id": "phys2.thin-lens-equation",
+      "slug": "thin-lens-equation",
+      "unit": "geometric-optics",
+      "title": "The Thin Lens Equation",
+      "prereqs": [
+        "phys2.lens-ray-diagrams",
+        "phys2.mirror-equation"
+      ],
+      "viz": [
+        "ph-rays"
+      ]
+    },
+    {
+      "id": "phys2.wave-speed-medium",
+      "slug": "wave-speed-medium",
+      "unit": "waves",
+      "title": "What Sets a Wave's Speed",
+      "prereqs": [
+        "physsci.wave-speed",
+        "phys1.connected-objects",
+        "g8.square-roots"
+      ],
+      "viz": [
+        "ph-wave"
+      ]
+    },
+    {
+      "id": "phys2.wave-graphs",
+      "slug": "wave-graphs",
+      "unit": "waves",
+      "title": "Snapshot and History Graphs",
+      "prereqs": [
+        "phys2.wave-speed-medium"
+      ],
+      "viz": [
+        "ph-wave"
+      ]
+    },
+    {
+      "id": "phys2.wave-boundaries",
+      "slug": "wave-boundaries",
+      "unit": "waves",
+      "title": "Reflection at Boundaries",
+      "prereqs": [
+        "phys2.wave-speed-medium"
+      ],
+      "viz": [
+        "ph-wave"
+      ]
+    },
+    {
+      "id": "phys2.em-waves",
+      "slug": "em-waves",
+      "unit": "waves",
+      "title": "Electromagnetic Waves",
+      "prereqs": [
+        "physsci.em-spectrum",
+        "phys2.faradays-law",
+        "phys2.electric-field"
+      ],
+      "viz": [
+        "ph-spectrum",
+        "ph-wave"
+      ]
+    },
+    {
+      "id": "phys2.polarization",
+      "slug": "polarization",
+      "unit": "waves",
+      "title": "Polarization",
+      "prereqs": [
+        "phys2.em-waves",
+        "phys2.wave-boundaries"
+      ],
+      "viz": [
+        "ph-wave"
+      ]
+    },
+    {
+      "id": "phys2.superposition",
+      "slug": "superposition",
+      "unit": "waves",
+      "title": "Superposition and Interference",
+      "prereqs": [
+        "phys2.wave-graphs"
+      ],
+      "viz": [
+        "ph-wave"
+      ]
+    },
+    {
+      "id": "phys2.standing-waves-strings",
+      "slug": "standing-waves-strings",
+      "unit": "waves",
+      "title": "Standing Waves on Strings",
+      "prereqs": [
+        "phys2.superposition",
+        "phys2.wave-boundaries"
+      ],
+      "viz": [
+        "ph-wave"
+      ]
+    },
+    {
+      "id": "phys2.standing-waves-pipes",
+      "slug": "standing-waves-pipes",
+      "unit": "waves",
+      "title": "Standing Sound Waves in Pipes",
+      "prereqs": [
+        "phys2.standing-waves-strings",
+        "physsci.sound"
+      ],
+      "viz": [
+        "ph-wave"
+      ]
+    },
+    {
+      "id": "phys2.sound-intensity",
+      "slug": "sound-intensity",
+      "unit": "waves",
+      "title": "Sound Intensity and Decibels",
+      "prereqs": [
+        "physsci.sound",
+        "alg2.logarithms"
+      ],
+      "viz": [
+        "ph-wave"
+      ]
+    },
+    {
+      "id": "phys2.doppler",
+      "slug": "doppler",
+      "unit": "waves",
+      "title": "The Doppler Effect",
+      "prereqs": [
+        "phys2.wave-speed-medium",
+        "physsci.sound"
+      ],
+      "viz": [
+        "ph-doppler"
+      ]
+    },
+    {
+      "id": "phys2.single-slit",
+      "slug": "single-slit",
+      "unit": "waves",
+      "title": "Diffraction",
+      "prereqs": [
+        "phys2.superposition",
+        "geo.trig-ratios"
+      ],
+      "viz": [
+        "ph-interference"
+      ]
+    },
+    {
+      "id": "phys2.double-slit",
+      "slug": "double-slit",
+      "unit": "waves",
+      "title": "Double-Slit Interference",
+      "prereqs": [
+        "phys2.superposition",
+        "geo.trig-ratios"
+      ],
+      "viz": [
+        "ph-interference"
+      ]
+    },
+    {
+      "id": "phys2.diffraction-grating",
+      "slug": "diffraction-grating",
+      "unit": "waves",
+      "title": "Diffraction Gratings",
+      "prereqs": [
+        "phys2.double-slit"
+      ],
+      "viz": [
+        "ph-interference",
+        "ph-spectrum"
+      ]
+    },
+    {
+      "id": "phys2.thin-films",
+      "slug": "thin-films",
+      "unit": "waves",
+      "title": "Thin-Film Interference",
+      "prereqs": [
+        "phys2.double-slit",
+        "phys2.index-of-refraction",
+        "phys2.wave-boundaries"
+      ],
+      "viz": [
+        "ph-interference"
+      ]
+    },
+    {
+      "id": "phys2.photons",
+      "slug": "photons",
+      "unit": "quantum",
+      "title": "Photons",
+      "prereqs": [
+        "phys2.em-waves",
+        "phys2.electric-potential",
+        "physsci.radiation-energy"
+      ],
+      "viz": [
+        "ph-spectrum",
+        "ph-photon"
+      ]
+    },
+    {
+      "id": "phys2.photoelectric-effect",
+      "slug": "photoelectric-effect",
+      "unit": "quantum",
+      "title": "The Photoelectric Effect",
+      "prereqs": [
+        "phys2.photons"
+      ],
+      "viz": [
+        "ph-photon"
+      ]
+    },
+    {
+      "id": "phys2.bohr-model",
+      "slug": "bohr-model",
+      "unit": "quantum",
+      "title": "The Bohr Model and Energy Levels",
+      "prereqs": [
+        "phys2.photons",
+        "chem.emission-spectra"
+      ],
+      "viz": [
+        "ph-spectrum"
+      ]
+    },
+    {
+      "id": "phys2.spectra",
+      "slug": "spectra",
+      "unit": "quantum",
+      "title": "Emission and Absorption Spectra",
+      "prereqs": [
+        "phys2.bohr-model"
+      ],
+      "viz": [
+        "ph-spectrum"
+      ]
+    },
+    {
+      "id": "phys2.matter-waves",
+      "slug": "matter-waves",
+      "unit": "quantum",
+      "title": "Matter Waves",
+      "prereqs": [
+        "phys2.photons",
+        "phys1.momentum",
+        "phys2.double-slit"
+      ],
+      "viz": [
+        "ph-interference"
+      ]
+    },
+    {
+      "id": "phys2.compton-scattering",
+      "slug": "compton-scattering",
+      "unit": "quantum",
+      "title": "Compton Scattering",
+      "prereqs": [
+        "phys2.matter-waves",
+        "phys1.elastic-collisions"
+      ],
+      "viz": [
+        "ph-photon"
+      ]
+    },
+    {
+      "id": "phys2.mass-energy",
+      "slug": "mass-energy",
+      "unit": "quantum",
+      "title": "Mass-Energy and Binding Energy",
+      "prereqs": [
+        "chem.fission-fusion",
+        "phys2.electric-potential",
+        "phys1.energy-conservation"
+      ],
+      "viz": [
+        "ph-nucleus"
+      ]
+    }
+  ]
+}

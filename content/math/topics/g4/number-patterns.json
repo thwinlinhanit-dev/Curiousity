@@ -1,0 +1,97 @@
+{
+  "id": "g4.number-patterns",
+  "slug": "number-patterns",
+  "ladder": "math",
+  "course": "g4",
+  "unit": "factors",
+  "title": "Patterns from a Rule",
+  "short": "Make a pattern from a rule and notice features the rule does not say.",
+  "trouble": "",
+  "prereqs": [
+    "g4.multiples"
+  ],
+  "xp": 1,
+  "viz": [
+    "hundredchart"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Skip-counting and <a href=\"/math/grade-4/multiples/\">multiples</a> are patterns made by a rule. A rule like \"start at 3, add 4\" makes a whole list of numbers, and the list often has features the rule never mentions."
+      },
+      {
+        "t": "key",
+        "html": "To follow a rule, apply it again and again: start at 3 and add 4 to get 3, 7, 11, 15, 19, … To find the 10th number, count the jumps: there are 9 jumps of 4 after the first number, so it is $3 + 9 \\times 4 = 39$."
+      },
+      {
+        "t": "why",
+        "html": "Every number in \"start at 3, add 4\" is odd. The rule does not say so, but you can explain it: 3 is odd, and adding an even number (4) never changes odd to even. If the rule added an odd number, the list would switch odd, even, odd, even."
+      },
+      {
+        "t": "viz",
+        "name": "numberline",
+        "opts": {
+          "min": 0,
+          "max": 30,
+          "step": 5,
+          "sub": 5,
+          "labels": "whole",
+          "hops": [
+            {
+              "from": 3,
+              "by": 4,
+              "n": 6
+            }
+          ],
+          "points": [
+            {
+              "v": 27,
+              "label": "",
+              "color": "green",
+              "drag": false
+            }
+          ],
+          "value": false
+        },
+        "cap": "Start at 3 and add 4 each time: 3, 7, 11, 15, 19, 23, 27. Every jump is the same size."
+      },
+      {
+        "t": "ex",
+        "title": "The next numbers",
+        "q": "Start at 5 and add 10. Write the first five numbers.",
+        "steps": [
+          "Add 10 each time: 5, 15, 25, 35, 45.",
+          "Notice: every number ends in 5, because adding 10 never changes the ones digit."
+        ],
+        "a": "5, 15, 25, 35, 45"
+      },
+      {
+        "t": "ex",
+        "title": "A number far along",
+        "q": "Start at 4 and add 3. What is the 8th number?",
+        "steps": [
+          "From the 1st number to the 8th there are 7 jumps of 3.",
+          "$4 + 7 \\times 3 = 4 + 21 = 25$.",
+          "Check by listing: 4, 7, 10, 13, 16, 19, 22, 25."
+        ],
+        "a": "25"
+      },
+      {
+        "t": "mistake",
+        "html": "Counting 8 jumps for the 8th number. The first number is where you start, so the 8th number is only 7 jumps away. List the first few to check."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 4, 4.OA.C.5 (generate a number or shape pattern that follows a given rule and identify features not explicit in the rule)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,94 @@
+{
+  "id": "chem.ionic-formulas",
+  "slug": "ionic-formulas",
+  "ladder": "chemistry",
+  "course": "chem",
+  "unit": "bonding",
+  "title": "Formulas of Ionic Compounds",
+  "short": "Choose the ratio of ions that makes the total charge zero.",
+  "trouble": "Students cross the charges the wrong way and write Mg₂Cl for magnesium chloride, or leave Ca₂O₂ unreduced instead of writing CaO.",
+  "prereqs": [
+    "chem.ionic-bonding",
+    "g6.gcf-lcm"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-crystal"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "An ionic compound has no overall charge. Once you know the charges of its ions from <a href=\"/chemistry/chemistry/ion-charges/\">Predicting Ion Charges</a>, the formula follows from making the charges add up to zero. Finding the smallest numbers that do this uses the least common multiple from <a href=\"/math/grade-6/gcf-lcm/\">Greatest Common Factor and Least Common Multiple</a>."
+      },
+      {
+        "t": "key",
+        "html": "Choose the smallest whole numbers of each ion that make the total charge zero, and write them as subscripts (a 1 is not written). The cation comes first. Aluminum oxide: $\\mathrm{Al^{3+}}$ and $\\mathrm{O^{2-}}$ balance at a total of 6, so $2 \\times (+3) + 3 \\times (-2) = 0$ gives $\\mathrm{Al_2O_3}$."
+      },
+      {
+        "t": "why",
+        "html": "Any real crystal has to be neutral, or it would be pulled apart by its own charge. So the ratio of ions is fixed by the charges, not by any bonding pattern. A shortcut is to \"cross\" the charge numbers to become the other ion's subscripts, then reduce: $\\mathrm{Ca^{2+}}$ and $\\mathrm{O^{2-}}$ cross to $\\mathrm{Ca_2O_2}$, which reduces to CaO."
+      },
+      {
+        "t": "viz",
+        "name": "ch-crystal",
+        "opts": {
+          "mode": "ionic"
+        },
+        "cap": "A lattice holds the ions in the ratio that cancels their charges: 1 : 1 when the charges are equal in size."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Magnesium chloride",
+        "q": "Write the formula of the compound of $\\mathrm{Mg^{2+}}$ and $\\mathrm{Cl^-}$.",
+        "steps": [
+          "One $\\mathrm{Mg^{2+}}$ carries +2, so it needs two $\\mathrm{Cl^-}$ (−2 in total).",
+          "$1 \\times (+2) + 2 \\times (-1) = 0$"
+        ],
+        "a": "$\\mathrm{MgCl_2}$"
+      },
+      {
+        "t": "ex",
+        "title": "Calcium nitride",
+        "q": "Write the formula of the compound of calcium and nitrogen.",
+        "steps": [
+          "Charges: $\\mathrm{Ca^{2+}}$ (group 2) and $\\mathrm{N^{3-}}$ (group 15).",
+          "The smallest total both can reach is 6: three $\\mathrm{Ca^{2+}}$ (+6) and two $\\mathrm{N^{3-}}$ (−6)."
+        ],
+        "a": "$\\mathrm{Ca_3N_2}$"
+      },
+      {
+        "t": "ex",
+        "title": "Working backward",
+        "q": "What is the charge on iron in $\\mathrm{Fe_2O_3}$?",
+        "steps": [
+          "Three $\\mathrm{O^{2-}}$ ions carry −6.",
+          "Two iron ions must carry +6, so each is +3."
+        ],
+        "a": "$\\mathrm{Fe^{3+}}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Crossing the charges the wrong way, as in $\\mathrm{Mg_2Cl}$ for magnesium chloride, or leaving $\\mathrm{Ca_2O_2}$ unreduced instead of writing CaO. Check every formula by multiplying back: (number of cations × cation charge) + (number of anions × anion charge) must equal zero, using the smallest possible numbers."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 2.6 Ionic and Molecular Compounds"
+      },
+      {
+        "name": "OpenStax Chemistry 2e, Section 2.7 Chemical Nomenclature"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

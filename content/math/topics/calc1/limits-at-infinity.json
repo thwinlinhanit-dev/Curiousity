@@ -1,0 +1,135 @@
+{
+  "id": "calc1.limits-at-infinity",
+  "slug": "limits-at-infinity",
+  "ladder": "math",
+  "course": "calc1",
+  "unit": "limits",
+  "title": "Limits at Infinity and Horizontal Asymptotes",
+  "short": "Compare the growth of the highest powers.",
+  "trouble": "Students treat ∞/∞ as 1 or ∞ − ∞ as 0.",
+  "prereqs": [
+    "calc1.limit-laws",
+    "alg2.asymptotes-holes"
+  ],
+  "xp": 2,
+  "viz": [
+    "limit",
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "So far $x$ approached a number. Now let $x$ grow without bound. This describes the long-run behavior of a function and its <em>horizontal asymptotes</em>, which you first met in <a href=\"/math/algebra-2/asymptotes-holes/\">Asymptotes and Holes</a>. The <a href=\"/math/calculus-1/limit-laws/\">Limit Laws</a> still apply."
+      },
+      {
+        "t": "key",
+        "html": "$\\lim_{x \\to \\infty} f(x) = L$ means $f(x)$ gets as close to $L$ as we like for all large enough $x$; then $y = L$ is a horizontal asymptote. For a rational function, divide top and bottom by the highest power of $x$ in the denominator. Equal degrees give the ratio of leading coefficients; a lower top gives 0; a higher top gives $\\pm\\infty$."
+      },
+      {
+        "t": "why",
+        "html": "For large $x$ the highest power dominates. In $\\frac{3x^2 - x}{5x^2 + 2}$, dividing every term by $x^2$ gives $\\frac{3 - 1/x}{5 + 2/x^2}$. Each term like $\\frac{1}{x}$ or $\\frac{2}{x^2}$ tends to 0 because a fixed number divided by a huge one is tiny. What survives is $\\frac{3}{5}$. The lower-order terms matter near the origin, not in the long run."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "fns": [
+            "(2x^2+3x)/(x^2+1)",
+            {
+              "f": "2",
+              "color": "red",
+              "dash": true,
+              "label": "h"
+            }
+          ],
+          "xmin": -20,
+          "xmax": 20,
+          "ymin": -2,
+          "ymax": 4
+        },
+        "cap": "$\\frac{2x^2+3x}{x^2+1}$ approaches the line $y = 2$ far to the left and far to the right."
+      },
+      {
+        "t": "ex",
+        "title": "Equal degrees",
+        "q": "Find $\\displaystyle\\lim_{x \\to \\infty} \\frac{3x^2 - x}{5x^2 + 2}$.",
+        "steps": [
+          "Divide by $x^2$: $\\frac{3 - \\frac{1}{x}}{5 + \\frac{2}{x^2}}$.",
+          "The small terms vanish, leaving $\\frac{3}{5}$."
+        ],
+        "a": "$\\frac{3}{5}$, so $y = \\frac{3}{5}$ is a horizontal asymptote."
+      },
+      {
+        "t": "ex",
+        "title": "A root and a negative direction",
+        "q": "Find $\\displaystyle\\lim_{x \\to -\\infty} \\frac{\\sqrt{4x^2 + 1}}{x - 3}$.",
+        "steps": [
+          "Here $\\sqrt{x^2} = \\lvert x \\rvert$, and for negative $x$, $\\lvert x \\rvert = -x$.",
+          "Divide top and bottom by $\\lvert x \\rvert = -x$: top $\\sqrt{4 + \\frac{1}{x^2}} \\to 2$; bottom $\\frac{x - 3}{-x} = -1 + \\frac{3}{x} \\to -1$.",
+          "The limit is $\\frac{2}{-1}$."
+        ],
+        "a": "$-2$ (and $+2$ as $x \\to \\infty$)"
+      },
+      {
+        "t": "ex",
+        "title": "Infinity minus infinity",
+        "q": "Find $\\displaystyle\\lim_{x \\to \\infty} \\left(\\sqrt{x^2 + x} - x\\right)$.",
+        "steps": [
+          "Both terms grow without bound, so the form is \"$\\infty - \\infty$\", which is not automatically 0.",
+          "Multiply by the conjugate: $\\frac{(x^2 + x) - x^2}{\\sqrt{x^2 + x} + x} = \\frac{x}{\\sqrt{x^2 + x} + x}$.",
+          "Divide by $x$: $\\frac{1}{\\sqrt{1 + 1/x} + 1} \\to \\frac{1}{2}$."
+        ],
+        "a": "$\\frac{1}{2}$"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Degrees of top and bottom",
+          "$\\lim_{x \\to \\pm\\infty}$ of the rational function",
+          "Horizontal asymptote"
+        ],
+        "rows": [
+          [
+            "top lower than bottom",
+            "0",
+            "$y = 0$"
+          ],
+          [
+            "equal",
+            "ratio of leading coefficients",
+            "$y = \\frac{a}{b}$"
+          ],
+          [
+            "top higher",
+            "$\\infty$ or $-\\infty$ (check the signs)",
+            "none"
+          ]
+        ],
+        "cap": "Long-run behavior of a rational function, by degree."
+      },
+      {
+        "t": "p",
+        "html": "A function can have different limits at $\\infty$ and $-\\infty$, as the second example shows. That happens with roots of $x^2$ and with exponentials, so always check the direction."
+      },
+      {
+        "t": "mistake",
+        "html": "Treating $\\frac{\\infty}{\\infty}$ as 1 or $\\infty - \\infty$ as 0. Counterexamples: $\\frac{2x}{x} \\to 2$, and the last example gives $\\frac{1}{2}$, not 0. These forms only say \"more work needed.\" Check by plugging in a large number such as $x = 10^6$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 1, 4.6 Limits at Infinity and Asymptotes"
+      },
+      {
+        "name": "OpenStax Calculus Volume 1, 2.3 The Limit Laws"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

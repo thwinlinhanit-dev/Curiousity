@@ -1,0 +1,84 @@
+{
+  "id": "rbmech.inverse-kinematics",
+  "slug": "inverse-kinematics",
+  "ladder": "robotics",
+  "course": "rbmech",
+  "unit": "frames",
+  "title": "Inverse Kinematics of a Two-Link Arm",
+  "short": "Given where the hand should go, the law of cosines gives the elbow angle; there are usually two answers, and sometimes none.",
+  "trouble": "Students forget to check that the target is in reach, or miss the second, elbow-up solution.",
+  "prereqs": [
+    "rbmech.forward-kinematics",
+    "geo.law-of-cosines",
+    "pre.inverse-trig"
+  ],
+  "xp": 3,
+  "viz": [
+    "rb-arm"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Usually we want the opposite: put the hand <i>there</i>. Which joint angles do that? This is <b>inverse kinematics</b>."
+      },
+      {
+        "t": "key",
+        "html": "For a two-link arm and target $(x, y)$, let $r^2 = x^2 + y^2$. The law of cosines gives the elbow: $\\cos\\theta_2 = \\dfrac{r^2 - L_1^2 - L_2^2}{2 L_1 L_2}$. If that is outside $[-1, 1]$, the target is <b>out of reach</b>. Otherwise there are usually <b>two</b> answers, elbow up and elbow down. Then $\\theta_1 = \\operatorname{atan2}(y, x) - \\operatorname{atan2}(L_2\\sin\\theta_2,\\ L_1 + L_2\\cos\\theta_2)$."
+      },
+      {
+        "t": "viz",
+        "name": "rb-arm",
+        "opts": {
+          "mode": "ik",
+          "l1": 10,
+          "l2": 7
+        },
+        "cap": "Drag the target. The arm finds its angles; switch between elbow up and elbow down. Drag it out of reach and see what happens."
+      },
+      {
+        "t": "why",
+        "html": "The two links and the line from the shoulder to the target make a triangle with sides $L_1$, $L_2$ and $r$. The law of cosines finds the angle between the links. A triangle can be flipped over its long side, which is why there are two answers."
+      },
+      {
+        "t": "ex",
+        "title": "Find the elbow",
+        "q": "$L_1 = 10$, $L_2 = 7$, target $(12, 5)$.",
+        "steps": [
+          "$r^2 = 144 + 25 = 169$, so $r = 13$.",
+          "$\\cos\\theta_2 = \\dfrac{169 - 100 - 49}{140} = \\dfrac{20}{140} \\approx 0.143$.",
+          "$\\theta_2 \\approx \\pm 81.8^\\circ$."
+        ],
+        "a": "About 81.8° (elbow down) or −81.8° (elbow up)."
+      },
+      {
+        "t": "ex",
+        "title": "Out of reach",
+        "q": "Same arm, target $(15, 9)$.",
+        "steps": [
+          "$r = \\sqrt{225 + 81} \\approx 17.5$, more than $L_1 + L_2 = 17$."
+        ],
+        "a": "No solution: the target is out of reach."
+      },
+      {
+        "t": "mistake",
+        "html": "Forgetting to check that the target is in reach, or missing the second solution."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Kevin M. Lynch and Frank C. Park, Modern Robotics: Mechanics, Planning, and Control (Cambridge University Press, 2017), free preprint and videos",
+        "url": "https://hades.mech.northwestern.edu/index.php/Modern_Robotics"
+      },
+      {
+        "name": "MIT OpenCourseWare, 2.12 Introduction to Robotics (Fall 2005)",
+        "url": "https://ocw.mit.edu/courses/2-12-introduction-to-robotics-fall-2005/"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

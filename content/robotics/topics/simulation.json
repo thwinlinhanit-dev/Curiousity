@@ -1,0 +1,81 @@
+{
+  "id": "rbros.simulation",
+  "slug": "simulation",
+  "ladder": "robotics",
+  "course": "rbros",
+  "unit": "frames",
+  "title": "How a Simulator Steps Time",
+  "short": "A simulator advances in fixed steps Δt; the real-time factor is simulated time over wall-clock time.",
+  "trouble": "Students think a slow simulation gives wrong answers, or that a large time step is always fine.",
+  "prereqs": [
+    "rbros.nodes-topics",
+    "calc2.slope-fields-euler"
+  ],
+  "xp": 2,
+  "viz": [
+    "rb-pid"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Simulators let you test a robot that you have not built, or test a risky move without breaking anything. Gazebo is the simulator most often used with ROS 2."
+      },
+      {
+        "t": "key",
+        "html": "A simulator advances the world in fixed <b>time steps</b> $\\Delta t$: compute forces, update speeds, update positions, repeat. The <b>real-time factor</b> is simulated time divided by clock time: below 1 it runs slower than life, above 1 faster."
+      },
+      {
+        "t": "viz",
+        "name": "rb-pid",
+        "opts": {
+          "mode": "pid",
+          "kp": 2,
+          "ki": 0.2,
+          "kd": 0.4
+        },
+        "cap": "This picture is a tiny simulation itself: it steps a cart's motion forward in small time steps."
+      },
+      {
+        "t": "why",
+        "html": "Smaller steps follow the true motion more closely but take more work; too large a step can make a simulation blow up. A slow real-time factor does not make the physics wrong, it only takes longer to watch. The catch with all simulation: real motors, friction and sensors differ from the model, so a design must still be tested on hardware."
+      },
+      {
+        "t": "ex",
+        "title": "Steps",
+        "q": "1 ms steps, 10 s simulated.",
+        "steps": [
+          "$10 / 0.001 = 10{,}000$ steps."
+        ],
+        "a": "10,000 steps."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking a slow simulation gives wrong answers, or that a large time step is always fine."
+      },
+      {
+        "t": "h",
+        "text": "Try it"
+      },
+      {
+        "t": "p",
+        "html": "Spawn a simple wheeled robot in Gazebo following the ROS 2 and Gazebo tutorials, drive it from the keyboard, and record its odometry topic. Then run your encoder-square test from the Navigation course in simulation and compare the drift with your real robot's."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "ROS 2 Documentation (Jazzy), beginner tutorials and concepts",
+        "url": "https://docs.ros.org/en/jazzy/"
+      },
+      {
+        "name": "Kevin M. Lynch and Frank C. Park, Modern Robotics: Mechanics, Planning, and Control (Cambridge University Press, 2017), free preprint and videos",
+        "url": "https://hades.mech.northwestern.edu/index.php/Modern_Robotics"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

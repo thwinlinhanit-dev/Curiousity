@@ -1,0 +1,108 @@
+{
+  "id": "usgeo.postal-codes",
+  "slug": "postal-codes",
+  "ladder": "geog",
+  "course": "usgeo",
+  "unit": "the-us",
+  "title": "State Postal Codes",
+  "short": "Each state has a two-letter postal code, such as CA for California, TX for Texas and NY for New York.",
+  "trouble": "Students guess from the first two letters: AK is Alaska and AR is Arkansas; MI is Michigan, MN Minnesota, MS Mississippi, MO Missouri, MA Massachusetts, ME Maine and MD Maryland.",
+  "prereqs": [
+    "usgeo.fifty-states"
+  ],
+  "xp": 2,
+  "viz": [
+    "gg-map",
+    "gg-sort"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": {
+    "kind": "worked-example",
+    "q": "Eight states start with M. What are their codes?",
+    "a": "ME, MD, MA, MI, MN, MS, MO, MT.",
+    "steps": [
+      "Maine ME, Maryland MD, Massachusetts MA.",
+      "Michigan MI, Minnesota MN.",
+      "Mississippi MS, Missouri MO, Montana MT.",
+      "Notice that only MA, MI and MO follow a simple rule; the rest use a later letter."
+    ],
+    "title": "The M states"
+  },
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Look at any envelope with an American address. After the city comes a two-letter code, like <b>TX</b> or <b>NY</b>, then the ZIP Code. Those are <b>postal codes</b>."
+      },
+      {
+        "t": "key",
+        "html": "Every state has a two-letter <b>postal code</b>, written in capital letters with no period: CA for California, TX for Texas, NY for New York. D.C. is DC."
+      },
+      {
+        "t": "viz",
+        "name": "gg-map",
+        "opts": {
+          "map": "us",
+          "labels": "postal"
+        },
+        "cap": "Every state with its postal code."
+      },
+      {
+        "t": "why",
+        "html": "Why two letters? In 1963 the Post Office brought in five-digit ZIP Codes. The machines that printed addresses could fit only about 23 characters on the last line, so long state names had to shrink. The Post Office gave every state a two-letter code that no other state shares. (Nebraska was NB at first; it became NE in 1969 so it would not be confused with New Brunswick in Canada.)"
+      },
+      {
+        "t": "ex",
+        "title": "The M states",
+        "q": "Eight states start with M. What are their codes?",
+        "steps": [
+          "Maine ME, Maryland MD, Massachusetts MA.",
+          "Michigan MI, Minnesota MN.",
+          "Mississippi MS, Missouri MO, Montana MT.",
+          "Notice that only MA, MI and MO follow a simple rule; the rest use a later letter."
+        ],
+        "a": "ME, MD, MA, MI, MN, MS, MO, MT."
+      },
+      {
+        "t": "mistake",
+        "html": "Guessing from the first two letters goes wrong for states that share a start. <b>AK</b> is Alaska and <b>AR</b> is Arkansas (AL is Alabama, AZ is Arizona). <b>IA</b> is Iowa, <b>ID</b> Idaho, <b>IL</b> Illinois, <b>IN</b> Indiana. <b>MI</b> is Michigan, not Mississippi (MS) or Missouri (MO). Learn the look-alikes as a group."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Starts with",
+          "Codes"
+        ],
+        "rows": [
+          [
+            "A",
+            "AL Alabama, AK Alaska, AZ Arizona, AR Arkansas"
+          ],
+          [
+            "I",
+            "ID Idaho, IL Illinois, IN Indiana, IA Iowa"
+          ],
+          [
+            "N",
+            "NE Nebraska, NV Nevada, NH New Hampshire, NJ New Jersey, NM New Mexico, NY New York, NC North Carolina, ND North Dakota"
+          ],
+          [
+            "W",
+            "WA Washington, WV West Virginia, WI Wisconsin, WY Wyoming"
+          ]
+        ],
+        "cap": "Look-alike groups."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "U.S. Postal Service, State Abbreviations (history and list)",
+        "url": "https://about.usps.com/who/profile/history/state-abbreviations.htm"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

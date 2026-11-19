@@ -1,0 +1,103 @@
+{
+  "id": "nt.bezout",
+  "slug": "bezout",
+  "ladder": "math",
+  "course": "nt",
+  "unit": "divisibility",
+  "title": "Bézout's Identity and the Extended Euclidean Algorithm",
+  "short": "Work the Euclidean algorithm backward to write gcd(a, b) = ax + by.",
+  "trouble": "Students lose track of signs while substituting back. Check that ax + by really equals the gcd.",
+  "prereqs": [
+    "nt.euclidean-algorithm"
+  ],
+  "xp": 3,
+  "viz": [
+    "nt-euclid"
+  ],
+  "figureArchetype": "FieldFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The <a href=\"/math/number-theory/euclidean-algorithm/\">Euclidean algorithm</a> finds $\\gcd(a, b)$. Kept track of carefully, it gives more: a way to <b>build</b> the gcd out of $a$ and $b$. This is the tool behind modular inverses, linear congruences and RSA, so it is worth getting fluent."
+      },
+      {
+        "t": "p",
+        "html": "<b>Bézout's identity.</b> If $a$ and $b$ are integers, not both $0$, then there are integers $x$ and $y$ with $$ax + by = \\gcd(a, b).$$ Moreover, $\\gcd(a, b)$ is the <b>smallest positive</b> number of the form $ax + by$. Finding $x$ and $y$ is called the <b>extended Euclidean algorithm</b>."
+      },
+      {
+        "t": "why",
+        "html": "Each remainder in the Euclidean algorithm is a combination of $a$ and $b$. The first is $r_1 = a - q_1 b$. The next is $r_2 = b - q_2 r_1$, and since $r_1$ is a combination, so is $r_2$. Every later remainder is \"older remainder minus a multiple of the one after it,\" so by induction every remainder, including the last nonzero one, the gcd, is a combination $ax + by$. And no smaller positive combination exists: the gcd divides $a$ and $b$, so it divides every $ax + by$."
+      },
+      {
+        "t": "ex",
+        "title": "Back-substitution",
+        "q": "Find integers $x$ and $y$ with $252x + 198y = 18$.",
+        "steps": [
+          "Run the algorithm and solve each line for its remainder: $54 = 252 - 1 \\cdot 198$, $\\ 36 = 198 - 3 \\cdot 54$, $\\ 18 = 54 - 1 \\cdot 36$.",
+          "Start from the line with the gcd: $18 = 54 - 36$.",
+          "Replace $36$: $18 = 54 - (198 - 3 \\cdot 54) = 4 \\cdot 54 - 198$.",
+          "Replace $54$: $18 = 4(252 - 198) - 198 = 4 \\cdot 252 - 5 \\cdot 198$.",
+          "Check: $4 \\cdot 252 - 5 \\cdot 198 = 1008 - 990 = 18$."
+        ],
+        "a": "$x = 4$, $y = -5$."
+      },
+      {
+        "t": "viz",
+        "name": "nt-euclid",
+        "opts": {
+          "a": 252,
+          "b": 198,
+          "mode": "bezout",
+          "steps": false
+        },
+        "cap": "The same computation as a table: each remainder is written as $252s + 198t$, using the two rows above it. Every row checks itself, and the row of the gcd gives $x$ and $y$."
+      },
+      {
+        "t": "ex",
+        "title": "Bigger numbers",
+        "q": "Write $\\gcd(2431, 1001)$ as a combination of $2431$ and $1001$.",
+        "steps": [
+          "$2431 = 1001 \\cdot 2 + 429$ and $1001 = 429 \\cdot 2 + 143$, then $429 = 143 \\cdot 3$. So the gcd is $143$.",
+          "$143 = 1001 - 2 \\cdot 429$.",
+          "$429 = 2431 - 2 \\cdot 1001$, so $143 = 1001 - 2(2431 - 2 \\cdot 1001) = 5 \\cdot 1001 - 2 \\cdot 2431$.",
+          "Check: $5 \\cdot 1001 - 2 \\cdot 2431 = 5005 - 4862 = 143$."
+        ],
+        "a": "$143 = 2431 \\cdot (-2) + 1001 \\cdot 5$."
+      },
+      {
+        "t": "ex",
+        "title": "Choosing a solution in a range",
+        "q": "Find $x$ and $y$ with $47x + 15y = 1$ and $0 \\le x < 15$.",
+        "steps": [
+          "$47 = 15 \\cdot 3 + 2$ and $15 = 2 \\cdot 7 + 1$.",
+          "$1 = 15 - 7 \\cdot 2 = 15 - 7(47 - 3 \\cdot 15) = 22 \\cdot 15 - 7 \\cdot 47$. So $x = -7$, $y = 22$ works.",
+          "Adding $15$ to $x$ and subtracting $47$ from $y$ keeps $47x + 15y$ the same (it adds $47 \\cdot 15 - 15 \\cdot 47 = 0$). So $x = 8$, $y = -25$.",
+          "Check: $47 \\cdot 8 - 15 \\cdot 25 = 376 - 375 = 1$."
+        ],
+        "a": "$x = 8$, $y = -25$."
+      },
+      {
+        "t": "mistake",
+        "html": "Losing a sign during substitution. Expanding $4(252 - 198) - 198$ as $4 \\cdot 252 - 4 \\cdot 198 + 198$ gives the wrong $y$. Always finish by multiplying out $ax + by$: if it does not equal the gcd, something slipped. Also remember the answer is not unique: $x = 4 + 11t$, $y = -5 - 14t$ works for every integer $t$ (try $t = 1$: $252 \\cdot 15 - 198 \\cdot 19 = 18$)."
+      },
+      {
+        "t": "key",
+        "html": "Work the Euclidean algorithm backward (or keep a running table) to write $\\gcd(a, b) = ax + by$. Then check by multiplying out."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "William Stein, Elementary Number Theory: Primes, Congruences, and Secrets (Springer, 2009; free online edition), chapter 1, Prime Numbers, and chapter 2, The Ring of Integers Modulo n (the extended Euclidean algorithm)"
+      },
+      {
+        "name": "Lehman, Leighton and Meyer, Mathematics for Computer Science (MIT OpenCourseWare 6.042J), chapter on number theory: the pulverizer"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

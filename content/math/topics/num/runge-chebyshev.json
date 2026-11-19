@@ -1,0 +1,123 @@
+{
+  "id": "num.runge-chebyshev",
+  "slug": "runge-chebyshev",
+  "ladder": "math",
+  "course": "num",
+  "unit": "interpolation",
+  "title": "Runge's Phenomenon and Chebyshev Nodes",
+  "short": "High-degree interpolation at equally spaced points can swing wildly near the ends; Chebyshev nodes, bunched toward the ends, fix it.",
+  "trouble": "Students expect more equally spaced points always to give a better fit. For 1/(1 + 25x²) on [−1, 1], the error grows as the degree goes up.",
+  "prereqs": [
+    "num.interpolation-error",
+    "pre.unit-circle-sine-cosine"
+  ],
+  "xp": 3,
+  "viz": [
+    "num-interp"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "It seems obvious that more data points give a better fit. For polynomial interpolation at equally spaced points it is false, and the classic example is Runge's function $f(x) = \\frac{1}{1 + 25x^{2}}$ on $[-1, 1]$. The <a href=\"/math/numerical-analysis/interpolation-error/\">error formula</a> explains why, and a choice of nodes based on the <a href=\"/math/precalculus/unit-circle-sine-cosine/\">unit circle</a> fixes it."
+      },
+      {
+        "t": "viz",
+        "name": "num-interp",
+        "opts": {
+          "f": "1/(1+25x^2)",
+          "n": 11,
+          "nodes": "equal",
+          "show": [
+            "p",
+            "error"
+          ],
+          "task": "Raise the number of nodes. Then switch to Chebyshev nodes and raise it again."
+        },
+        "cap": "Runge's function (gray) and its interpolant (blue) through equally spaced nodes. Near the ends the polynomial swings far away from the function."
+      },
+      {
+        "t": "table",
+        "head": [
+          "nodes",
+          "max error, equally spaced",
+          "max error, Chebyshev"
+        ],
+        "rows": [
+          [
+            "$5$",
+            "$0.44$",
+            "$0.40$"
+          ],
+          [
+            "$11$",
+            "$1.9$",
+            "$0.11$"
+          ],
+          [
+            "$21$",
+            "$60$",
+            "$0.015$"
+          ]
+        ],
+        "cap": "Maximum interpolation error for Runge's function on [−1, 1]."
+      },
+      {
+        "t": "p",
+        "html": "Two things go wrong at the same time. The derivatives $f^{(n+1)}$ of Runge's function grow very fast with $n$ (it has poles at $x = \\pm\\frac{i}{5}$ in the complex plane, close to the interval). And for equally spaced nodes the node product $\\omega(x)$ is far larger in the outer gaps than in the middle. Together they win over the $(n + 1)!$ in the denominator."
+      },
+      {
+        "t": "p",
+        "html": "The cure is to choose nodes that keep $|\\omega(x)|$ small everywhere. The <b>Chebyshev nodes</b> on $[-1, 1]$ are $$x_k = \\cos\\frac{(2k + 1)\\pi}{2(n + 1)},\\quad k = 0, 1, \\ldots, n:$$ the $x$-coordinates of points equally spaced in angle around the upper half of the unit circle. They crowd toward the ends of the interval."
+      },
+      {
+        "t": "key",
+        "html": "With Chebyshev nodes, $\\omega(x) = \\frac{T_{n+1}(x)}{2^{n}}$, so $\\max|\\omega| = 2^{-n}$: the smallest possible for $n + 1$ nodes, with all its ripples the same height. For smooth functions like Runge's, the Chebyshev interpolants converge as $n$ grows."
+      },
+      {
+        "t": "why",
+        "html": "The Chebyshev polynomial $T_m$ is defined by $T_m(\\cos\\theta) = \\cos(m\\theta)$; it is a polynomial in $x = \\cos\\theta$ of degree $m$ with leading coefficient $2^{m-1}$. Its zeros are where $m\\theta$ is an odd multiple of $\\frac{\\pi}{2}$, which are exactly the Chebyshev nodes for $m = n + 1$. So $\\omega$, the monic polynomial with those zeros, equals $T_{n+1}/2^{n}$, and since $|\\cos| \\le 1$, $|\\omega(x)| \\le 2^{-n}$, with equality at $n + 2$ points. One can show no other monic polynomial of degree $n + 1$ stays smaller on all of $[-1, 1]$."
+      },
+      {
+        "t": "ex",
+        "title": "Three Chebyshev nodes",
+        "q": "Find the Chebyshev nodes for 3 points on $[-1, 1]$ and compare $\\max|\\omega|$ with the equally spaced nodes $-1, 0, 1$.",
+        "steps": [
+          "Angles $\\frac{\\pi}{6}, \\frac{\\pi}{2}, \\frac{5\\pi}{6}$, so the nodes are $\\frac{\\sqrt{3}}{2}$, $0$, $-\\frac{\\sqrt{3}}{2}$.",
+          "Chebyshev: $\\max|\\omega| = 2^{-2} = \\frac{1}{4}$.",
+          "Equally spaced: $\\omega = x^{3} - x$, largest at $x = \\pm\\frac{1}{\\sqrt{3}}$, where $|\\omega| = \\frac{2\\sqrt{3}}{9} \\approx 0.385$.",
+          "With 11 nodes the gap is wider: about $0.0085$ for equal spacing against $2^{-10} \\approx 0.00098$ for Chebyshev."
+        ],
+        "a": "$\\pm\\frac{\\sqrt{3}}{2}$ and $0$; $0.25$ versus $0.385$"
+      },
+      {
+        "t": "ex",
+        "title": "Another interval",
+        "q": "Move the 3 Chebyshev nodes to $[0, 4]$.",
+        "steps": [
+          "Use $x = \\frac{a + b}{2} + \\frac{b - a}{2}t = 2 + 2t$ for each node $t$.",
+          "$t = \\pm\\frac{\\sqrt{3}}{2}, 0$ give $x = 2 \\pm \\sqrt{3}$ and $x = 2$, about $0.27$, $2$ and $3.73$."
+        ],
+        "a": "$2 - \\sqrt{3}$, $2$, $2 + \\sqrt{3}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Expecting more equally spaced points always to give a better fit. For Runge's function the error <i>grows</i> with the degree, mostly near the ends. Fixes: Chebyshev nodes when you can choose where to sample, or piecewise polynomials such as <a href=\"/math/numerical-analysis/cubic-splines/\">Cubic Splines</a> when the data come equally spaced."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Tobin A. Driscoll and Richard J. Braun, Fundamentals of Numerical Computation (University of Delaware, free online edition): chapter \"Global function approximation\", sections \"Stability of polynomial interpolation\" and \"Orthogonal polynomials\" (Chebyshev points)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.330, Introduction to Numerical Analysis: lecture notes on polynomial interpolation (Runge's phenomenon and Chebyshev nodes)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

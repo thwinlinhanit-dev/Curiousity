@@ -1,0 +1,161 @@
+{
+  "id": "sym.truth-tables",
+  "slug": "truth-tables",
+  "ladder": "logic",
+  "course": "sym",
+  "unit": "truth-tables",
+  "title": "Building a Truth Table",
+  "short": "A formula with n letters has 2ⁿ rows; list them in a fixed order and fill a column for each part, ending with the main connective.",
+  "trouble": "Learners miss rows or repeat them. Halve the pattern for each letter: T T F F, then T F T F.",
+  "prereqs": [
+    "sym.compute-truth-value"
+  ],
+  "xp": 2,
+  "viz": [
+    "lg-truthtable"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/logic/symbolic-logic/compute-truth-value/\">Computing a Truth Value</a> you found a formula's value in one row. A <b>truth table</b> does that for every possible row at once, so you can see everything a formula can do."
+      },
+      {
+        "t": "key",
+        "html": "A formula with $n$ different letters needs $2^n$ rows. List them in the standard order: the first letter is T for the first half of the rows and F for the second half; each later letter halves the block size; the last letter alternates T, F. Then fill a column for each part, ending with the main connective."
+      },
+      {
+        "t": "why",
+        "html": "Each letter can be T or F independently. With one letter that gives 2 cases; adding a letter doubles the count, because each old case splits into one with the new letter T and one with it F. So 2 letters give 4 rows, 3 give 8, and 4 give 16. The standard order is simply a way to write all of them with no repeats and no gaps."
+      },
+      {
+        "t": "table",
+        "head": [
+          "$p$",
+          "$q$",
+          "$r$"
+        ],
+        "rows": [
+          [
+            "T",
+            "T",
+            "T"
+          ],
+          [
+            "T",
+            "T",
+            "F"
+          ],
+          [
+            "T",
+            "F",
+            "T"
+          ],
+          [
+            "T",
+            "F",
+            "F"
+          ],
+          [
+            "F",
+            "T",
+            "T"
+          ],
+          [
+            "F",
+            "T",
+            "F"
+          ],
+          [
+            "F",
+            "F",
+            "T"
+          ],
+          [
+            "F",
+            "F",
+            "F"
+          ]
+        ],
+        "cap": "The standard order for three letters: blocks of 4, then 2, then 1."
+      },
+      {
+        "t": "viz",
+        "name": "lg-truthtable",
+        "opts": {
+          "formulas": [
+            "(p → q) ∧ ¬q"
+          ],
+          "sub": true,
+          "mode": "fill"
+        },
+        "cap": "Fill every column, then Check. The part columns lead to the main column."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "How many rows?",
+        "q": "How many rows does the table for $(p \\land q) \\to (r \\lor \\neg p)$ need?",
+        "steps": [
+          "Count the different letters: $p$, $q$, $r$. Repeats of $p$ do not count again.",
+          "$2^3 = 8$."
+        ],
+        "a": "8 rows"
+      },
+      {
+        "t": "ex",
+        "title": "Build a small table",
+        "q": "Make the table for $p \\to \\neg q$.",
+        "steps": [
+          "Rows: TT, TF, FT, FF.",
+          "Column $\\neg q$: F, T, F, T.",
+          "Column $p \\to \\neg q$: T→F is F; T→T is T; F→F is T; F→T is T."
+        ],
+        "a": "F, T, T, T"
+      },
+      {
+        "t": "ex",
+        "title": "Read a value",
+        "q": "In the standard order for $p$, $q$, $r$, what is $q$ in row 6?",
+        "steps": [
+          "$q$ runs in blocks of 2: T T F F T T F F.",
+          "Rows 5 and 6 make up the third block of two, and that block is T T."
+        ],
+        "a": "T"
+      },
+      {
+        "t": "mistake",
+        "html": "Missing rows or repeating them, which happens when the rows are written in no fixed order. Use the halving pattern every time: for three letters, write $p$ as TTTTFFFF, $q$ as TTFFTTFF and $r$ as TFTFTFTF. Then count: the table must have exactly $2^n$ rows."
+      },
+      {
+        "t": "list",
+        "items": [
+          "Count the letters and write $2^n$ rows in the standard order.",
+          "Add a column for each part, from the smallest outward.",
+          "Fill each column from the columns it depends on.",
+          "The last column, under the main connective, is the answer."
+        ]
+      },
+      {
+        "t": "p",
+        "html": "Truth tables can grow large, but they never fail: a table always answers the question it is asked. That is why the next topics use them to decide whether a formula is always true, whether two formulas agree, and whether an argument is valid."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Patrick J. Hurley and Lori Watson, A Concise Introduction to Logic, 13th ed., section 6.3, Truth Tables for Propositions"
+      },
+      {
+        "name": "forall x: Calgary, an open introduction to formal logic (P. D. Magnus, Tim Button and others; Open Logic Project), chapter on complete truth tables"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

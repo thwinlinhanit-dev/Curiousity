@@ -1,0 +1,87 @@
+{
+  "id": "alg1.factor-gcf",
+  "slug": "factor-gcf",
+  "ladder": "math",
+  "course": "alg1",
+  "unit": "factoring",
+  "title": "Factoring Out the GCF",
+  "short": "Write 6x² + 9x as 3x(2x + 3).",
+  "trouble": "Students leave nothing behind when a whole term is factored out, writing 3x + 3 = 3(x) instead of 3(x + 1).",
+  "prereqs": [
+    "alg1.multiply-monomial-polynomial",
+    "g6.gcf-lcm"
+  ],
+  "xp": 1,
+  "viz": [
+    "areamodel"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Factoring undoes multiplication. You know how to <a href=\"/math/algebra-1/multiply-monomial-polynomial/\">multiply a monomial by a polynomial</a>; factoring out the greatest common factor (GCF) runs that backward, the way <a href=\"/math/grade-6/gcf-lcm/\">the GCF of numbers</a> lets you write $12 + 18 = 6(2 + 3)$."
+      },
+      {
+        "t": "why",
+        "html": "The distributive property reads both ways: $3x(2x + 3) = 6x^2 + 9x$, so $6x^2 + 9x = 3x(2x + 3)$. Picture a rectangle whose area is $6x^2 + 9x$: if one side is $3x$, the other side must be whatever times $3x$ gives each piece, which is $2x$ and $3$. Factoring is finding the sides of a rectangle from its area. The <em>greatest</em> common factor leaves nothing common inside the parentheses, so the job is finished in one step."
+      },
+      {
+        "t": "viz",
+        "name": "areamodel",
+        "opts": {
+          "a": "3x",
+          "b": "2x+3",
+          "x": 3
+        },
+        "cap": "$6x^2 + 9x$ as a rectangle with one side $3x$. The other side, $2x + 3$, is what is left after taking out the common factor."
+      },
+      {
+        "t": "key",
+        "html": "Find the GCF of the coefficients and the smallest power of each variable that appears in every term. Divide every term by it, and write GCF$\\,\\times\\,$(what is left). Check by distributing."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Three terms",
+        "q": "Factor $12x^4 - 18x^3 + 6x^2$.",
+        "steps": [
+          "Coefficients $12$, $18$, $6$: the GCF is $6$. Every term has at least $x^2$. GCF: $6x^2$.",
+          "Divide each term: $\\frac{12x^4}{6x^2} = 2x^2$, $\\frac{-18x^3}{6x^2} = -3x$, $\\frac{6x^2}{6x^2} = 1$.",
+          "Check: $6x^2(2x^2 - 3x + 1) = 12x^4 - 18x^3 + 6x^2$."
+        ],
+        "a": "$6x^2(2x^2 - 3x + 1)$"
+      },
+      {
+        "t": "ex",
+        "title": "Two variables",
+        "q": "Factor $10a^2b - 15ab^2$.",
+        "steps": [
+          "Coefficients: GCF $5$. Variables: one $a$ and one $b$ are in both terms. GCF: $5ab$.",
+          "$\\frac{10a^2b}{5ab} = 2a$ and $\\frac{-15ab^2}{5ab} = -3b$."
+        ],
+        "a": "$5ab(2a - 3b)$"
+      },
+      {
+        "t": "mistake",
+        "html": "Leaving nothing behind when a whole term is factored out: writing $3x^2 + 3x = 3x(x)$. The second term, $3x$, divided by $3x$ is $1$, not nothing, so the answer is $3x(x + 1)$. Check by distributing: $3x(x) = 3x^2$ has lost a term, while $3x(x + 1)$ gives back both."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Elementary Algebra 2e, section 7.1 Greatest Common Factor and Factor by Grouping"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, A-SSE.A.2: use the structure of an expression to identify ways to rewrite it"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

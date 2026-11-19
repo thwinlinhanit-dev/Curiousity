@@ -1,0 +1,118 @@
+{
+  "id": "hsbio.meiosis",
+  "slug": "meiosis",
+  "ladder": "bio",
+  "course": "hsbio",
+  "unit": "division",
+  "title": "Meiosis",
+  "short": "Meiosis is two divisions that turn one diploid cell into four haploid cells. Meiosis I separates homologous pairs; meiosis II separates sister chromatids.",
+  "trouble": "Students think meiosis II halves the chromosome number again, or that meiosis I separates sister chromatids. The number halves in meiosis I, when homologs part; meiosis II is like mitosis.",
+  "prereqs": [
+    "hsbio.mitosis"
+  ],
+  "xp": 3,
+  "viz": [
+    "bi-meiosis"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": " <a href=\"/biology/high-school-biology/mitosis/\">Mitosis</a> keeps the chromosome number the same. But gametes must carry <b>half</b> the number: when two gametes combine, the new cell has two sets again. Meiosis is the cell division that makes those haploid cells."
+      },
+      {
+        "t": "key",
+        "html": "Meiosis is <b>two divisions</b> that turn one <b>diploid</b> cell into <b>four haploid</b> cells. <b>Meiosis I</b> separates <b>homologous pairs</b>, halving the chromosome number. <b>Meiosis II</b> separates <b>sister chromatids</b>, like mitosis."
+      },
+      {
+        "t": "viz",
+        "name": "bi-meiosis",
+        "opts": {
+          "pairs": 2
+        },
+        "cap": "Step through meiosis with $2n = 4$. Watch the homologs pair up and part in meiosis I, then the chromatids part in meiosis II."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Stage",
+          "What happens",
+          "Chromosomes per cell ($2n = 4$)"
+        ],
+        "rows": [
+          [
+            "Interphase",
+            "DNA is copied",
+            "4 (8 chromatids)"
+          ],
+          [
+            "Prophase I",
+            "Homologs pair up and may cross over",
+            "4"
+          ],
+          [
+            "Metaphase I",
+            "Homologous <b>pairs</b> line up in the middle",
+            "4"
+          ],
+          [
+            "Anaphase I",
+            "Homologs separate; sister chromatids stay together",
+            "4 (moving to two poles)"
+          ],
+          [
+            "Telophase I and cytokinesis",
+            "Two haploid cells",
+            "2 in each (still 2 chromatids each)"
+          ],
+          [
+            "Meiosis II (prophase II to telophase II)",
+            "In each cell, chromosomes line up singly and sister chromatids separate",
+            "2 in each of four cells, single chromatids"
+          ]
+        ],
+        "cap": "Where the number halves: anaphase I."
+      },
+      {
+        "t": "why",
+        "html": "The difference from mitosis is in metaphase I. In mitosis, chromosomes line up one by one; in meiosis I, they line up in <b>pairs</b>, each homolog facing a different pole. When the pairs split, each new cell gets one chromosome of each pair: a full single set, $n$. Each of those chromosomes is still two chromatids, so meiosis II splits them, exactly like mitosis, without copying the DNA again in between."
+      },
+      {
+        "t": "ex",
+        "title": "Count through meiosis",
+        "q": "A cell with $2n = 8$ goes through meiosis. How many chromosomes are in each cell after meiosis I, and after meiosis II?",
+        "steps": [
+          "Meiosis I separates the 4 homologous pairs: each of two cells gets 4 chromosomes (each still two chromatids).",
+          "Meiosis II separates sister chromatids: each of four cells gets 4 chromosomes of one chromatid.",
+          "The number halved once, from 8 to 4, in meiosis I."
+        ],
+        "a": "4 after meiosis I; 4 after meiosis II (in four cells)"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking meiosis II halves the number again, or that meiosis I separates sister chromatids. The number halves only once, in <b>meiosis I</b>, when homologs part. Meiosis II separates sister chromatids, like mitosis, so the number of chromosomes per cell stays at $n$. Check with humans: 46 in, 23 per cell after meiosis I, still 23 after meiosis II."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Concepts of Biology, 7.2 Meiosis"
+      },
+      {
+        "name": "OpenStax, Biology 2e, 11.1 The Process of Meiosis"
+      },
+      {
+        "name": "Grokipedia, Meiosis",
+        "url": "https://grokipedia.com/page/Meiosis"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-LS3-2: Make and defend a claim that inheritable genetic variations may result from new genetic combinations through meiosis"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

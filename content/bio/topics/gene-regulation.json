@@ -1,0 +1,106 @@
+{
+  "id": "hsbio.gene-regulation",
+  "slug": "gene-regulation",
+  "ladder": "bio",
+  "course": "hsbio",
+  "unit": "dna",
+  "title": "Turning Genes On and Off",
+  "short": "Every cell has the same DNA, but each cell type uses different genes. Proteins that bind DNA switch genes on and off, as when bacteria make lactose-digesting enzymes only when lactose is present.",
+  "trouble": "Students think a nerve cell and a skin cell have different DNA. They have the same genes; they differ in which genes are expressed.",
+  "prereqs": [
+    "hsbio.translation"
+  ],
+  "xp": 2,
+  "viz": [
+    "bi-central",
+    "bi-cell"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A nerve cell and a skin cell in your body came from the same first cell by <a href=\"/biology/high-school-biology/mitosis/\">mitosis</a>, so they carry the same DNA. Yet they look and work nothing alike. The difference is which genes each cell uses, which builds on <a href=\"/biology/high-school-biology/translation/\">translation</a>."
+      },
+      {
+        "t": "key",
+        "html": "<b>Gene expression</b> is using a gene to make its product. Cells switch genes on and off, mostly at transcription: proteins that bind DNA near a gene can block RNA polymerase or help it start. Different cell types express different genes from the <b>same</b> genome."
+      },
+      {
+        "t": "why",
+        "html": "Making proteins costs energy and materials. A cell that made every protein all the time would waste both, and some proteins would get in each other's way. Regulation lets a cell make what it needs, when it needs it: a bacterium makes enzymes for a sugar only when that sugar is around, and a red blood cell precursor makes hemoglobin while a nerve cell does not."
+      },
+      {
+        "t": "h",
+        "text": "The lac operon"
+      },
+      {
+        "t": "p",
+        "html": "In the 1960s François Jacob and Jacques Monod worked out how the bacterium <i>E. coli</i> controls its genes for digesting lactose, a milk sugar. The genes sit together under one switch, called an <b>operon</b>."
+      },
+      {
+        "t": "viz",
+        "name": "bi-feedback",
+        "opts": {
+          "mode": "chain",
+          "steps": [
+            "No lactose: a repressor protein sits on the operator, so RNA polymerase is blocked",
+            "Lactose arrives: a form of it binds the repressor and changes its shape",
+            "The repressor lets go of the DNA",
+            "RNA polymerase transcribes the lactose genes",
+            "The enzymes digest the lactose; when it is gone, the repressor binds again"
+          ],
+          "title": "The lac operon"
+        },
+        "cap": "The lac genes turn on only when lactose is present."
+      },
+      {
+        "t": "ex",
+        "title": "Predicting the switch",
+        "q": "A mutant <i>E. coli</i> makes a repressor that cannot bind the operator. Are the lactose genes on or off when there is no lactose?",
+        "steps": [
+          "Normally the repressor blocks transcription when lactose is absent.",
+          "This repressor cannot sit on the DNA, so nothing blocks RNA polymerase."
+        ],
+        "a": "On, all the time, even without lactose."
+      },
+      {
+        "t": "ex",
+        "title": "Another mutant",
+        "q": "A different mutant repressor binds the operator but cannot bind lactose. What happens when lactose is present?",
+        "steps": [
+          "Lactose normally pulls the repressor off the DNA.",
+          "This repressor ignores lactose and stays on."
+        ],
+        "a": "The genes stay off, even with lactose."
+      },
+      {
+        "t": "p",
+        "html": "Eukaryotes use many such DNA-binding proteins, called transcription factors, often in combinations. They also regulate at other steps: how DNA is packed, how RNA is processed, and how long a protein lasts. (The lac genes are also turned up most strongly when glucose, the bacterium's first choice, is scarce.)"
+      },
+      {
+        "t": "mistake",
+        "html": "People often think a nerve cell and a skin cell have different DNA. They have the same genes. They differ in <b>which genes are expressed</b>. Check with an example: a skin cell has the gene for the insulin protein too, but it keeps that gene switched off."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Concepts of Biology, 9.5 How Genes Are Regulated"
+      },
+      {
+        "name": "OpenStax, Biology 2e, 16.2 Prokaryotic Gene Regulation; 16.3 Eukaryotic Epigenetic Gene Regulation"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-LS1-4: From Molecules to Organisms: Structures and Processes"
+      },
+      {
+        "name": "Grokipedia, lac operon",
+        "url": "https://grokipedia.com/page/Lac_operon"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,108 @@
+{
+  "id": "calc3.vector-functions",
+  "slug": "vector-functions",
+  "ladder": "math",
+  "course": "calc3",
+  "unit": "vector-functions",
+  "title": "Vector-Valued Functions and Space Curves",
+  "short": "r(t) traces a curve as t changes.",
+  "trouble": "",
+  "prereqs": [
+    "calc3.lines-in-space",
+    "pre.parametric-equations"
+  ],
+  "xp": 1,
+  "viz": [
+    "param3d"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You have already described <a href=\"/math/calculus-3/lines-in-space/\">lines in space</a> as $\\mathbf{r}(t) = P_0 + t\\mathbf{v}$, and curves in the plane with <a href=\"/math/precalculus/parametric-equations/\">parametric equations</a>. Put the two ideas together and let each coordinate be any function of $t$:\n  $$\\mathbf{r}(t) = \\langle f(t), g(t), h(t) \\rangle.$$\n  This is a <b>vector-valued function</b>. Think of $t$ as time and $\\mathbf{r}(t)$ as the position of a moving particle; the path it traces is a <b>space curve</b>."
+      },
+      {
+        "t": "key",
+        "html": "A vector function is three ordinary functions working together. Its domain is the set of $t$ where <b>all</b> components are defined, and limits and continuity work component by component:\n  $$\\lim_{t \\to a} \\mathbf{r}(t) = \\left\\langle \\lim_{t \\to a} f(t),\\ \\lim_{t \\to a} g(t),\\ \\lim_{t \\to a} h(t) \\right\\rangle.$$"
+      },
+      {
+        "t": "why",
+        "html": "Why can we take limits one component at a time? \"$\\mathbf{r}(t)$ approaches $\\mathbf{L}$\" means the distance $|\\mathbf{r}(t) - \\mathbf{L}|$ shrinks to ${}0$. Each component difference is at most that distance (a leg of a right triangle is never longer than the diagonal), and the distance is at most the sum of the three component differences. So the distance goes to ${}0$ exactly when all three component differences do."
+      },
+      {
+        "t": "viz",
+        "name": "param3d",
+        "opts": {
+          "x": "2cos(t)",
+          "y": "2sin(t)",
+          "z": "t/3",
+          "t0": 0,
+          "t1": "4pi",
+          "t": 2,
+          "tangent": false,
+          "shadow": true
+        },
+        "cap": "The helix $\\mathbf{r}(t) = \\langle 2\\cos t, 2\\sin t, \\frac{t}{3} \\rangle$. Move the slider or press play: the shadow on the floor goes around a circle while the height grows steadily."
+      },
+      {
+        "t": "p",
+        "html": "A curve and its parametrization are not the same thing. $\\langle \\cos t, \\sin t, 0 \\rangle$ and $\\langle \\cos 2t, \\sin 2t, 0 \\rangle$ trace the same unit circle, the second twice as fast, and $\\langle \\cos t, -\\sin t, 0 \\rangle$ traces it the other way around. Vector functions also describe curves where two surfaces meet. The cylinder $x^2 + y^2 = 1$ and the plane $z = 1 + x$ meet in a curve: use $x = \\cos t$, $y = \\sin t$ to stay on the cylinder, and the plane then forces $z = 1 + \\cos t$. So $\\mathbf{r}(t) = \\langle \\cos t, \\sin t, 1 + \\cos t \\rangle$, ${}0 \\le t \\le 2\\pi$: an ellipse tilted in space."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Domain",
+        "q": "Find the domain of $\\mathbf{r}(t) = \\left\\langle \\sqrt{t - 1}, \\ln(4 - t), \\frac{1}{t - 2} \\right\\rangle$.",
+        "steps": [
+          "$\\sqrt{t - 1}$ needs $t \\ge 1$. $\\ln(4 - t)$ needs $t < 4$. $\\frac{1}{t - 2}$ needs $t \\ne 2$.",
+          "All three at once: ${}1 \\le t < 4$ with $t \\ne 2$."
+        ],
+        "a": "$[1, 2) \\cup (2, 4)$"
+      },
+      {
+        "t": "ex",
+        "title": "Recognize the curve",
+        "q": "Describe the curve $\\mathbf{r}(t) = \\langle 3\\cos t, 3\\sin t, 2t \\rangle$.",
+        "steps": [
+          "$x^2 + y^2 = 9\\cos^2 t + 9\\sin^2 t = 9$ for every $t$: the curve lies on the cylinder of radius 3 around the $z$-axis.",
+          "Meanwhile $z = 2t$ climbs at a steady rate.",
+          "So it is a helix; one full turn ($t$ increasing by ${}2\\pi$) raises it by ${}4\\pi$."
+        ],
+        "a": "a helix on the cylinder $x^2 + y^2 = 9$"
+      },
+      {
+        "t": "ex",
+        "title": "A limit",
+        "q": "Find $\\displaystyle\\lim_{t \\to 0} \\left\\langle \\frac{\\sin 2t}{t},\\ e^{t},\\ \\frac{t^2 + t}{t} \\right\\rangle$.",
+        "steps": [
+          "First component: $\\frac{\\sin 2t}{t} = 2 \\cdot \\frac{\\sin 2t}{2t} \\to 2$.",
+          "Second: $e^t$ is continuous, so the limit is $e^0 = 1$.",
+          "Third: $\\frac{t(t + 1)}{t} = t + 1 \\to 1$."
+        ],
+        "a": "$\\langle 2, 1, 1 \\rangle$"
+      },
+      {
+        "t": "p",
+        "html": "To see which surface a curve lives on, look for a relation among the components that does not involve $t$, as in the helix example. To find where a curve meets a surface, substitute the components into the surface's equation and solve for $t$."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Reading $t$ as a coordinate.</b> The parameter is time, not a direction in space; the picture shows only the values $(x, y, z)$. Two different vector functions can trace the same curve at different speeds. <b>Taking the union of the domains.</b> The particle exists only when every component is defined, so the domain is the intersection."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 3, 3.1 Vector-Valued Functions and Space Curves"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

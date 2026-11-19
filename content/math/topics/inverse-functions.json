@@ -1,0 +1,125 @@
+{
+  "id": "alg2.inverse-functions",
+  "slug": "inverse-functions",
+  "ladder": "math",
+  "course": "alg2",
+  "unit": "functions",
+  "title": "Inverse Functions",
+  "short": "An inverse undoes a function; its graph is the reflection over y = x.",
+  "trouble": "Students write f⁻¹(x) as 1/f(x).",
+  "prereqs": [
+    "alg2.function-composition",
+    "alg1.inverse-linear-functions"
+  ],
+  "xp": 2,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In Algebra 1 you undid a linear function (<a href=\"/math/algebra-1/inverse-linear-functions/\">Inverse of a Linear Function</a>). Now you will invert many kinds of functions, using <a href=\"/math/algebra-2/function-composition/\">composition</a> to see what \"undo\" means."
+      },
+      {
+        "t": "key",
+        "html": "If $f(a) = b$, then $f^{-1}(b) = a$: the inverse sends each output back to its input. To find a formula, write $y = f(x)$, swap $x$ and $y$, and solve for $y$. The graph of $f^{-1}$ is the mirror image of the graph of $f$ across the line $y = x$."
+      },
+      {
+        "t": "why",
+        "html": "An inverse reverses every input-output pair, so each point $(a, b)$ on $f$ becomes $(b, a)$ on $f^{-1}$. Swapping the coordinates of every point is exactly a reflection across $y = x$. Solving for $y$ undoes the steps of $f$ in reverse order: $f(x) = 2x^3 - 5$ cubes, doubles, then subtracts 5, so $f^{-1}$ adds 5, halves, then takes the cube root."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "fns": [
+            "x^3/4 + 1",
+            {
+              "f": "(4(x - 1))^(1/3)",
+              "label": "f⁻¹"
+            },
+            {
+              "f": "x",
+              "dash": true,
+              "label": "m",
+              "color": "gold"
+            }
+          ],
+          "points": [
+            {
+              "x": 2,
+              "y": 3,
+              "label": "A"
+            },
+            {
+              "x": 3,
+              "y": 2,
+              "label": "A′"
+            }
+          ],
+          "xmin": -6,
+          "xmax": 6,
+          "ymin": -6,
+          "ymax": 6,
+          "equal": true
+        },
+        "cap": "$f(x) = \\frac{x^3}{4} + 1$, its inverse and the mirror line $m$: $y = x$. The point $(2, 3)$ on $f$ matches $(3, 2)$ on $f^{-1}$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Undoing in reverse order",
+        "q": "Find the inverse of $f(x) = 2x^3 - 5$.",
+        "steps": [
+          "Write $y = 2x^3 - 5$ and swap: $x = 2y^3 - 5$.",
+          "Add 5: $x + 5 = 2y^3$. Divide by 2: $y^3 = \\frac{x + 5}{2}$.",
+          "Take the cube root: $y = \\sqrt[3]{\\frac{x + 5}{2}}$.",
+          "Check: $f(2) = 11$ and $f^{-1}(11) = \\sqrt[3]{8} = 2$."
+        ],
+        "a": "$f^{-1}(x) = \\sqrt[3]{\\frac{x + 5}{2}}$"
+      },
+      {
+        "t": "ex",
+        "title": "A value without a formula",
+        "q": "$f(x) = 3x - 7$. Find $f^{-1}(8)$.",
+        "steps": [
+          "$f^{-1}(8)$ is the input that $f$ sends to 8. Solve $3x - 7 = 8$.",
+          "$3x = 15$, so $x = 5$. Check: $f(5) = 8$."
+        ],
+        "a": "$f^{-1}(8) = 5$"
+      },
+      {
+        "t": "ex",
+        "title": "A fraction",
+        "q": "Find the inverse of $f(x) = \\frac{x + 1}{x - 2}$.",
+        "steps": [
+          "Swap: $x = \\frac{y + 1}{y - 2}$. Multiply by $y - 2$: $xy - 2x = y + 1$.",
+          "Collect the $y$ terms: $xy - y = 2x + 1$.",
+          "Factor out $y$: $y(x - 1) = 2x + 1$, so $y = \\frac{2x + 1}{x - 1}$."
+        ],
+        "a": "$f^{-1}(x) = \\frac{2x + 1}{x - 1}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Reading $f^{-1}(x)$ as $\\frac{1}{f(x)}$. Here the $-1$ means \"undo,\" not \"one over.\" For $f(x) = 2x$, the inverse is $\\frac{x}{2}$, while $\\frac{1}{f(x)} = \\frac{1}{2x}$. Check with a pair: $f(2) = 4$, so $f^{-1}(4)$ must be 2. $\\frac{4}{2} = 2$ works; $\\frac{1}{8}$ does not."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Algebra 2e, Section 3.7 Inverse Functions"
+      },
+      {
+        "name": "Common Core State Standards, F-BF.B.4a"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

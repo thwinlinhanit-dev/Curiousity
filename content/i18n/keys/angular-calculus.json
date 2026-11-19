@@ -1,0 +1,86 @@
+[
+  {
+    "key": "title",
+    "source": "Angular Velocity and Acceleration with Calculus"
+  },
+  {
+    "key": "short",
+    "source": "ω = dθ/dt and α = dω/dt; integrate α(t) to find ω and θ."
+  },
+  {
+    "key": "trouble",
+    "source": "Students differentiate an angle given in degrees and treat the result as radians per second."
+  },
+  {
+    "key": "block.0.html",
+    "source": "<a href=\"/physics/physics-1/rotational-kinematics/\">Rotational Kinematics</a> handled spinning with constant angular acceleration. Everything you did in <a href=\"/physics/mechanics/motion-from-acceleration/\">Velocity and Position from Acceleration</a> carries over to rotation with one change of letters: $x \\to \\theta$, $v \\to \\omega$, $a \\to \\alpha$."
+  },
+  {
+    "key": "block.1.html",
+    "source": "$$\\omega = \\dfrac{d\\theta}{dt}, \\qquad \\alpha = \\dfrac{d\\omega}{dt} = \\dfrac{d^2\\theta}{dt^2}, \\qquad \\omega(t) = \\omega_0 + \\int_0^t \\alpha\\,dt'.$$ Angles in radians, $\\omega$ in rad/s, $\\alpha$ in rad/s². Every point of a rigid body shares the same $\\theta$, $\\omega$ and $\\alpha$."
+  },
+  {
+    "key": "block.2.html",
+    "source": "A radian is defined as arc length divided by radius, $\\theta = s/r$, so it is a pure number and $s = r\\theta$ holds exactly. Differentiating gives $v = r\\omega$ and $a_t = r\\alpha$ for a point at distance $r$ from the axis. Those simple links, and the formulas for rotational energy and work built on them, only hold with angles measured in radians."
+  },
+  {
+    "key": "block.3.cap",
+    "source": "Points at different radii share one $\\theta$ and one $\\omega$, but their speeds $v = r\\omega$ differ."
+  },
+  {
+    "key": "block.4.q",
+    "source": "A turntable's angle is $\\theta(t) = 2t^3 - 3t^2$ (rad, s). Find $\\omega$ and $\\alpha$ at $t = 2\\ \\text{s}$."
+  },
+  {
+    "key": "block.4.title",
+    "source": "Differentiate the angle"
+  },
+  {
+    "key": "block.4.a",
+    "source": "$\\omega = 12\\ \\text{rad/s}$, $\\alpha = 18\\ \\text{rad/s}^2$."
+  },
+  {
+    "key": "block.4.step.0",
+    "source": "$\\omega = \\dfrac{d\\theta}{dt} = 6t^2 - 6t$, so $\\omega(2) = 24 - 12 = 12\\ \\text{rad/s}$."
+  },
+  {
+    "key": "block.4.step.1",
+    "source": "$\\alpha = \\dfrac{d\\omega}{dt} = 12t - 6$, so $\\alpha(2) = 18\\ \\text{rad/s}^2$."
+  },
+  {
+    "key": "block.5.q",
+    "source": "A wheel spinning at $3\\ \\text{rad/s}$ has $\\alpha(t) = 4 - 2t$ (rad/s², s). Find $\\omega$ and the angle turned at $t = 3\\ \\text{s}$."
+  },
+  {
+    "key": "block.5.title",
+    "source": "Integrate the angular acceleration"
+  },
+  {
+    "key": "block.5.a",
+    "source": "$\\omega = 6\\ \\text{rad/s}$; $\\theta = 18\\ \\text{rad}$."
+  },
+  {
+    "key": "block.5.step.0",
+    "source": "$\\omega(t) = 3 + \\int_0^t (4 - 2t')\\,dt' = 3 + 4t - t^2$, so $\\omega(3) = 6\\ \\text{rad/s}$."
+  },
+  {
+    "key": "block.5.step.1",
+    "source": "$\\theta(t) = \\int_0^t \\omega\\,dt' = 3t + 2t^2 - \\tfrac{1}{3}t^3$, so $\\theta(3) = 9 + 18 - 9 = 18\\ \\text{rad}$, almost 3 turns."
+  },
+  {
+    "key": "block.6.html",
+    "source": "Differentiating an angle given in degrees and calling the result rad/s. If $\\theta = 30t^2$ degrees, then at $t = 2\\ \\text{s}$, $d\\theta/dt = 120$ degrees per second, which is $120 \\times \\pi/180 = 2.09\\ \\text{rad/s}$, not 120 rad/s. Check: before using $v = r\\omega$, $K = \\tfrac{1}{2}I\\omega^2$ or $P = \\tau\\omega$, make sure the angle was in radians; multiply degrees by $\\pi/180$ and revolutions by $2\\pi$."
+  },
+  {
+    "key": "block.7.cap",
+    "source": "Every kinematics method has a rotational twin."
+  },
+  {
+    "key": "block.8.html",
+    "source": "Angular velocity is really a vector, $\\vec{\\omega}$, pointing along the axis: curl the fingers of your right hand the way the object turns, and your thumb points along $\\vec{\\omega}$. In fixed-axis problems we keep just its sign, but the vector form is what makes <a href=\"/physics/mechanics/torque-cross-product/\">Torque as a Cross Product</a> and <a href=\"/physics/mechanics/precession/\">Gyroscopes and Precession</a> work."
+  },
+  {
+    "key": "block.9.html",
+    "source": "Revolutions per minute (rpm) are common on motors: $1\\ \\text{rpm} = \\dfrac{2\\pi}{60}\\ \\text{rad/s} \\approx 0.105\\ \\text{rad/s}$."
+  }
+]

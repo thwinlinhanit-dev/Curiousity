@@ -1,0 +1,147 @@
+{
+  "id": "pre.ambiguous-case",
+  "slug": "ambiguous-case",
+  "ladder": "math",
+  "course": "pre",
+  "unit": "triangles-vectors",
+  "title": "The Ambiguous Case",
+  "short": "With two sides and a non-included angle there may be 0, 1 or 2 triangles.",
+  "trouble": "Students find one triangle from sin⁻¹ and miss the second one with the supplementary angle.",
+  "prereqs": [
+    "geo.law-of-sines",
+    "pre.inverse-trig"
+  ],
+  "xp": 3,
+  "viz": [
+    "geoboard",
+    "angle"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The <a href=\"/math/geometry/law-of-sines/\">law of sines</a>, $\\frac{\\sin A}{a} = \\frac{\\sin B}{b} = \\frac{\\sin C}{c}$, solves a triangle when you know two angles and a side. Something odd happens when you know two sides and an angle that is <i>not</i> between them (side-side-angle, SSA): the measurements might fit no triangle, one, or two."
+      },
+      {
+        "t": "key",
+        "html": "Given angle $A$, the side $a$ across from it, and another side $b$, compute $\\sin B = \\dfrac{b\\sin A}{a}$. If $\\sin B > 1$, no triangle. Otherwise <b>both</b> $B$ and $180^\\circ - B$ are candidates; keep each one with $A + B < 180^\\circ$. For an acute $A$ this means, with the height $h = b\\sin A$: $a < h$ none; $a = h$ one right triangle; $h < a < b$ two; $a \\ge b$ one."
+      },
+      {
+        "t": "why",
+        "html": "Fix angle $A$ and side $b = AC$. Side $a$ hangs from $C$ like the arm of a compass, and $B$ is where it lands on the other ray. If $a$ is shorter than the height $h$, it cannot reach. If it is exactly $h$, it just touches. If it is a little longer, it can swing to land on either side of the foot of the height: two triangles. In the algebra, this shows up because sine is positive in Quadrants I and II, so two angles have the same sine, and $\\sin^{-1}$ only reports the acute one."
+      },
+      {
+        "t": "viz",
+        "name": "geoboard",
+        "opts": {
+          "points": {
+            "A": [
+              1,
+              1
+            ],
+            "C": [
+              4,
+              5
+            ],
+            "B": [
+              6,
+              1
+            ],
+            "D": [
+              9,
+              1
+            ]
+          },
+          "fixed": [
+            "A",
+            "C",
+            "D"
+          ],
+          "objects": [
+            [
+              "ray",
+              "A",
+              "D"
+            ],
+            [
+              "circle",
+              "C",
+              "B"
+            ],
+            [
+              "poly",
+              "A",
+              "B",
+              "C"
+            ]
+          ],
+          "show": {
+            "len": true,
+            "ang": true,
+            "area": false,
+            "per": false
+          },
+          "xmin": 0,
+          "xmax": 10,
+          "ymin": 0,
+          "ymax": 7
+        },
+        "cap": "Angle $A$ and side $AC$ are fixed. The circle shows every place side $BC$ can reach. Drag $B$ to the other point where the circle meets the ray: the same $A$, $AC$ and $BC$ make a second triangle."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Two triangles",
+        "q": "In $\\triangle ABC$, $A = 30^\\circ$, $a = 4$ and $b = 4\\sqrt{2}$. Find every possible $B$.",
+        "steps": [
+          "$\\sin B = \\dfrac{b\\sin A}{a} = \\dfrac{4\\sqrt{2} \\cdot \\frac{1}{2}}{4} = \\dfrac{\\sqrt{2}}{2}$.",
+          "Candidates: $B = 45^\\circ$ or $B = 180^\\circ - 45^\\circ = 135^\\circ$.",
+          "Check: $30^\\circ + 45^\\circ < 180^\\circ$ and $30^\\circ + 135^\\circ = 165^\\circ < 180^\\circ$. Both leave room for $C$."
+        ],
+        "a": "$B = 45^\\circ$ (then $C = 105^\\circ$) or $B = 135^\\circ$ (then $C = 15^\\circ$)"
+      },
+      {
+        "t": "ex",
+        "title": "Counting with the height",
+        "q": "$A = 30^\\circ$, $b = 10$, $a = 6$. How many triangles?",
+        "steps": [
+          "$h = b\\sin A = 10 \\cdot \\frac{1}{2} = 5$.",
+          "$5 < 6 < 10$, so $h < a < b$: side $a$ can land in two places.",
+          "(With a calculator: $\\sin B = \\frac{5}{6}$, so $B \\approx 56.4^\\circ$ or $B \\approx 123.6^\\circ$.)"
+        ],
+        "a": "Two triangles"
+      },
+      {
+        "t": "ex",
+        "title": "An obtuse angle",
+        "q": "$A = 120^\\circ$, $a = 5$, $b = 8$. How many triangles?",
+        "steps": [
+          "An obtuse angle must be the largest angle, so the side across from it, $a$, must be the longest side.",
+          "Here $a = 5 < b = 8$."
+        ],
+        "a": "No triangle"
+      },
+      {
+        "t": "mistake",
+        "html": "Finding one angle with $\\sin^{-1}$ and stopping. The calculator gives only the acute angle; the obtuse angle $180^\\circ - B$ has the same sine and often works too. Always test the second candidate: does $A + (180^\\circ - B)$ stay under $180^\\circ$?"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Precalculus 2e, Section 8.1 Non-right Triangles: Law of Sines"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, G-SRT.D.11"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

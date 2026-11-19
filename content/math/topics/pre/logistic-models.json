@@ -1,0 +1,112 @@
+{
+  "id": "pre.logistic-models",
+  "slug": "logistic-models",
+  "ladder": "math",
+  "course": "pre",
+  "unit": "analysis",
+  "title": "Logistic Growth",
+  "short": "Growth that slows near a carrying capacity.",
+  "trouble": "",
+  "prereqs": [
+    "alg2.exponential-log-models"
+  ],
+  "xp": 3,
+  "viz": [
+    "exponential"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/math/algebra-2/exponential-log-models/\">Exponential growth</a> goes on forever, but real populations run out of food or space. A logistic model starts out growing almost exponentially, then slows and levels off at a ceiling called the <b>carrying capacity</b>. The same S-shaped curve describes the spread of a rumor or the adoption of a new product."
+      },
+      {
+        "t": "key",
+        "html": "$$P(t) = \\frac{K}{1 + Ae^{-rt}}$$ where $K$ is the carrying capacity, $r > 0$ is the growth rate, and $A = \\frac{K - P_0}{P_0}$ comes from the starting value $P_0$. The population grows fastest when it is at $\\frac{K}{2}$, which happens at $t = \\frac{\\ln A}{r}$."
+      },
+      {
+        "t": "why",
+        "html": "Check the formula's behavior. At $t = 0$, $e^0 = 1$, so $P(0) = \\frac{K}{1 + A}$; solving for $A$ gives $A = \\frac{K - P_0}{P_0}$. As $t$ grows, $e^{-rt}$ shrinks to $0$ and $P(t)$ approaches $K$ without passing it. When $Ae^{-rt} = 1$, the denominator is $2$ and $P = \\frac{K}{2}$; solving $e^{-rt} = \\frac{1}{A}$ gives $t = \\frac{\\ln A}{r}$. The model comes from assuming the growth rate is proportional both to the population and to the room left, $1 - \\frac{P}{K}$: small populations grow almost exponentially, and growth stalls near $K$."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "fns": [
+            "K/(1+A*e^(-r*x))",
+            {
+              "f": "(K/(1+A))*e^(r*x)",
+              "dash": true,
+              "label": "g"
+            }
+          ],
+          "params": {
+            "K": [
+              100,
+              1000,
+              500,
+              50
+            ],
+            "A": [
+              1,
+              50,
+              9,
+              1
+            ],
+            "r": [
+              0.1,
+              1.5,
+              0.5,
+              0.05
+            ]
+          },
+          "xmin": 0,
+          "xmax": 20,
+          "ymin": 0,
+          "ymax": 1100,
+          "xlabel": "t"
+        },
+        "cap": "The logistic curve $f$ and the exponential $g$ with the same start and rate. They agree at first; then the logistic curve bends toward $K$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Reading a model",
+        "q": "A fish population follows $P(t) = \\dfrac{1000}{1 + 9e^{-0.5t}}$, with $t$ in years. Find the starting population, the carrying capacity and when the population reaches $500$.",
+        "steps": [
+          "$P(0) = \\frac{1000}{1 + 9} = 100$ fish. Carrying capacity: $1000$.",
+          "$500 = \\frac{K}{2}$, reached when $9e^{-0.5t} = 1$: $e^{-0.5t} = \\frac{1}{9}$.",
+          "$-0.5t = -\\ln 9$, so $t = \\frac{\\ln 9}{0.5} = 2\\ln 9 \\approx 4.4$ years."
+        ],
+        "a": "$100$ fish; $K = 1000$; $500$ fish after about $4.4$ years"
+      },
+      {
+        "t": "ex",
+        "title": "Building a model",
+        "q": "Write a logistic model with carrying capacity $500$, initial population $50$ and $r = 0.3$.",
+        "steps": [
+          "$A = \\frac{K - P_0}{P_0} = \\frac{500 - 50}{50} = 9$."
+        ],
+        "a": "$P(t) = \\frac{500}{1 + 9e^{-0.3t}}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Reading $K$ as the starting value, or $A$ as the starting value. $K$ is the long-run ceiling; the start is $P(0) = \\frac{K}{1 + A}$. Check by putting $t = 0$ into your model: you should get the initial population."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Precalculus 2e, Section 4.7 Exponential and Logarithmic Models"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

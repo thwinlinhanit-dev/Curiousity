@@ -1,0 +1,141 @@
+{
+  "id": "de.wronskian",
+  "slug": "wronskian",
+  "ladder": "math",
+  "course": "de",
+  "unit": "second-order",
+  "title": "Independence and the Wronskian",
+  "short": "Two solutions form a basis when their Wronskian is not zero.",
+  "trouble": "",
+  "prereqs": [
+    "de.second-order-intro",
+    "la.cofactor-expansion"
+  ],
+  "xp": 2,
+  "viz": [],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The general solution $c_1y_1 + c_2y_2$ needs two <i>independent</i> solutions. For vectors you tested independence with a determinant (<a href=\"/math/linear-algebra/cofactor-expansion/\">Determinants by Cofactor Expansion</a>). For solutions of a differential equation, the right determinant is the Wronskian."
+      },
+      {
+        "t": "key",
+        "html": "The <b>Wronskian</b> of $y_1, y_2$ is $$W = \\begin{vmatrix} y_1 & y_2 \\\\ y_1' & y_2' \\end{vmatrix} = y_1y_2' - y_1'y_2.$$ For two solutions of $y'' + p(t)y' + q(t)y = 0$ on an interval, either $W \\equiv 0$ (dependent) or $W$ is never 0 (independent: a <b>fundamental set</b>). <b>Abel's formula:</b> $W(t) = Ce^{-\\int p\\,dt}$."
+      },
+      {
+        "t": "why",
+        "html": "To match initial values $y(t_0) = a$, $y'(t_0) = b$ with $c_1y_1 + c_2y_2$ we must solve $$c_1y_1(t_0) + c_2y_2(t_0) = a,$$ $$c_1y_1'(t_0) + c_2y_2'(t_0) = b.$$ This system has a solution for every $a, b$ exactly when its determinant, $W(t_0)$, is not 0. Abel's formula explains why $W$ cannot vanish at just one point: using $y_i'' = -py_i' - qy_i$, $$W' = y_1y_2'' - y_1''y_2 = -p(y_1y_2' - y_1'y_2) = -pW,$$ so $W = Ce^{-\\int p\\,dt}$, which is either always 0 ($C = 0$) or never 0."
+      },
+      {
+        "t": "ex",
+        "title": "Two exponentials",
+        "q": "Find $W(e^{2t}, e^{-3t})$.",
+        "steps": [
+          "$W$ $= e^{2t}\\cdot(-3e^{-3t}) - 2e^{2t}\\cdot e^{-3t}$.",
+          "$= -3e^{-t} - 2e^{-t} = -5e^{-t}$."
+        ],
+        "a": "$W = -5e^{-t}$, never 0: independent"
+      },
+      {
+        "t": "ex",
+        "title": "Cosine and sine",
+        "q": "Find $W(\\cos 3t, \\sin 3t)$.",
+        "steps": [
+          "$W$ $= \\cos 3t\\cdot 3\\cos 3t$ $- (-3\\sin 3t)\\sin 3t$.",
+          "$= 3(\\cos^{2} 3t + \\sin^{2} 3t) = 3$."
+        ],
+        "a": "$W = 3$"
+      },
+      {
+        "t": "ex",
+        "title": "Abel's formula without solving",
+        "q": "Two solutions of $t^{2}y'' + ty' - 4y = 0$ ($t > 0$) have $W(1) = -4$. Find $W(t)$, and check with $y_1 = t^{2}$, $y_2 = t^{-2}$.",
+        "steps": [
+          "Standard form: $y'' + \\frac{1}{t}y' - \\frac{4}{t^{2}}y = 0$, so $p = \\frac{1}{t}$.",
+          "$W = Ce^{-\\ln t} = \\frac{C}{t}$; $W(1) = -4$ gives $C = -4$.",
+          "Check: $W(t^{2}, t^{-2})$ $= t^{2}(-2t^{-3}) - 2t\\cdot t^{-2}$ $= -\\frac{4}{t}$. ✓"
+        ],
+        "a": "$W(t) = -\\frac{4}{t}$"
+      },
+      {
+        "t": "table",
+        "head": [
+          "$y_1, y_2$",
+          "$W$"
+        ],
+        "rows": [
+          [
+            "$e^{at}, e^{bt}$",
+            "$(b - a)e^{(a+b)t}$"
+          ],
+          [
+            "$e^{rt}, te^{rt}$",
+            "$e^{2rt}$"
+          ],
+          [
+            "$e^{\\alpha t}\\cos\\beta t, e^{\\alpha t}\\sin\\beta t$",
+            "$\\beta e^{2\\alpha t}$"
+          ],
+          [
+            "$t^{m}, t^{n}$",
+            "$(n - m)t^{m+n-1}$"
+          ]
+        ],
+        "cap": "Wronskians you will meet often."
+      },
+      {
+        "t": "mistake",
+        "html": "Concluding “dependent” because $W = 0$ at one point, or “independent” after checking a single point of functions that are not solutions of one equation. For two solutions of the same equation, one value of $W$ decides everything (Abel). Also, a constant multiple is the most common hidden dependence: $e^{3t}$ and $5e^{3t}$ have $W \\equiv 0$."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "fns": [
+            {
+              "f": "e^(2x)",
+              "label": "y_1"
+            },
+            {
+              "f": "e^(-3x)",
+              "label": "y_2"
+            },
+            {
+              "f": "-5*e^(-x)",
+              "label": "W",
+              "dash": true,
+              "color": "purple"
+            }
+          ],
+          "xmin": -1.5,
+          "xmax": 1.5,
+          "ymin": -12,
+          "ymax": 8,
+          "xlabel": "t"
+        },
+        "cap": "$y_1 = e^{2t}$, $y_2 = e^{-3t}$ and their Wronskian $W = -5e^{-t}$ (dashed). $W$ never crosses zero, as Abel's formula promises."
+      },
+      {
+        "t": "note",
+        "html": "Where does the Wronskian come from for two functions? Dependence means one is a constant multiple of the other, so $\\frac{y_2}{y_1}$ is constant. By the quotient rule, $\\left(\\frac{y_2}{y_1}\\right)' = \\frac{y_1y_2' - y_1'y_2}{y_1^{2}} = \\frac{W}{y_1^{2}}$. So on an interval where $y_1 \\ne 0$, $W \\equiv 0$ says exactly that the ratio never changes. For $n$ solutions of an $n$th-order equation, $W$ is the $n\\times n$ determinant of the functions and their derivatives up to order $n - 1$, and Abel's formula still holds."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Paul's Online Math Notes, Differential Equations: Fundamental Sets of Solutions"
+      },
+      {
+        "name": "Paul's Online Math Notes, Differential Equations: More on the Wronskian"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.03SC Differential Equations (Fall 2011), Unit II: Second Order Constant Coefficient Linear Equations"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

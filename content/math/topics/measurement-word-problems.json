@@ -1,0 +1,118 @@
+{
+  "id": "g4.measurement-word-problems",
+  "slug": "measurement-word-problems",
+  "ladder": "math",
+  "course": "g4",
+  "unit": "measurement",
+  "title": "Measurement Word Problems",
+  "short": "Solve problems with distance, time, volume, mass and money.",
+  "trouble": "",
+  "prereqs": [
+    "g4.convert-units",
+    "g4.like-fraction-word-problems"
+  ],
+  "xp": 2,
+  "viz": [
+    "numberline",
+    "tapediagram"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Measurement stories mix everything you have learned: <a href=\"/math/grade-4/convert-units/\">converting units</a>, whole-number operations, and <a href=\"/math/grade-4/like-fraction-word-problems/\">fractions</a> or decimals. The key is to work in one unit."
+      },
+      {
+        "t": "key",
+        "html": "First put every amount in the <b>same unit</b> (often the smaller one). Then decide on the operation and solve. For time, count up in friendly jumps to the next hour. For money, it can help to think in cents."
+      },
+      {
+        "t": "why",
+        "html": "You can only add or subtract amounts that are measured the same way, just as you can only add fractions with like pieces. 2 kilograms minus 650 grams makes sense once both are grams: $2{,}000 - 650 = 1{,}350$ grams."
+      },
+      {
+        "t": "viz",
+        "name": "numberline",
+        "opts": {
+          "min": 0,
+          "max": 90,
+          "step": 15,
+          "sub": 3,
+          "labels": "whole",
+          "hops": [
+            {
+              "from": 0,
+              "by": 15,
+              "n": 1
+            },
+            {
+              "from": 15,
+              "by": 60,
+              "n": 1
+            },
+            {
+              "from": 75,
+              "by": 10,
+              "n": 1
+            }
+          ],
+          "points": [
+            {
+              "v": 85,
+              "label": "",
+              "color": "green",
+              "drag": false
+            }
+          ],
+          "value": false
+        },
+        "cap": "Minutes after 3:45: a jump of 15 to 4:00, a jump of 60 to 5:00, and 10 more to 5:10. In all, 85 minutes."
+      },
+      {
+        "t": "ex",
+        "title": "Elapsed time",
+        "q": "Practice starts at 3:45 p.m. and ends at 5:10 p.m. How long is practice?",
+        "steps": [
+          "From 3:45 to 4:00 is 15 minutes.",
+          "From 4:00 to 5:00 is 60 minutes.",
+          "From 5:00 to 5:10 is 10 minutes.",
+          "Add: $15 + 60 + 10 = 85$."
+        ],
+        "a": "85 minutes"
+      },
+      {
+        "t": "ex",
+        "title": "Money",
+        "q": "Ava pays for a \\$4.35 sandwich and a \\$1.50 juice with a \\$10 bill. How much change does she get?",
+        "steps": [
+          "Think in cents: \\$4.35 is 435 cents and \\$1.50 is 150 cents. Total: $435 + 150 = 585$ cents.",
+          "\\$10 is 1,000 cents. Change: $1{,}000 - 585 = 415$ cents, which is \\$4.15."
+        ],
+        "a": "\\$4.15"
+      },
+      {
+        "t": "ex",
+        "title": "Mass in two units",
+        "q": "A bag holds 2 kg of flour. A baker uses 650 g. How much is left?",
+        "steps": [
+          "Change to grams: 2 kg = 2,000 g.",
+          "$2{,}000 - 650 = 1{,}350$."
+        ],
+        "a": "1,350 grams"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 4, 4.MD.A.2 (solve word problems involving distances, intervals of time, liquid volumes, masses of objects and money)"
+      },
+      {
+        "name": "OpenStax Prealgebra 2e, section 7.5 Systems of Measurement"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

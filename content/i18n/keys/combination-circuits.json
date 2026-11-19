@@ -1,0 +1,90 @@
+[
+  {
+    "key": "title",
+    "source": "Series-Parallel Combinations"
+  },
+  {
+    "key": "short",
+    "source": "Reduce a circuit step by step, then work back out to find each current and voltage."
+  },
+  {
+    "key": "trouble",
+    "source": "Students combine two resistors as if in series or parallel when they are neither."
+  },
+  {
+    "key": "block.0.html",
+    "source": "Real circuits mix <a href=\"/physics/physics-2/series-resistors/\">series</a> and <a href=\"/physics/physics-2/parallel-resistors/\">parallel</a> parts. The plan is to shrink the circuit one step at a time to a single resistor, then work back out to find every current and voltage."
+  },
+  {
+    "key": "block.1.html",
+    "source": "Replacing a group by its equivalent does not change anything outside the group: the rest of the circuit sees the same current for the same voltage. So you may collapse groups one by one. The only care is to collapse a group only if it really is series (same current, no junction in between) or really is parallel (both ends joined to the same two points)."
+  },
+  {
+    "key": "block.2.html",
+    "source": "Reduce: combine true series groups ($R_1 + R_2$) and true parallel groups ($\\tfrac{R_1R_2}{R_1 + R_2}$), innermost first, until one resistor is left; $I = V/R_{\\text{eq}}$. Expand: go back step by step, using $V = IR$ on each piece; series pieces share current, parallel pieces share voltage."
+  },
+  {
+    "key": "block.3.cap",
+    "source": "$R_1$ in series with the parallel pair $R_2 \\parallel R_3$. Build it in the <a href=\"/science-lab/circuits/\">Circuit Builder</a>."
+  },
+  {
+    "key": "block.4.text",
+    "source": "Worked examples"
+  },
+  {
+    "key": "block.5.q",
+    "source": "A $12\\,\\text{V}$ battery feeds $R_1 = 4\\,\\Omega$ in series with $R_2 = 6\\,\\Omega$ and $R_3 = 3\\,\\Omega$ in parallel. Find every current."
+  },
+  {
+    "key": "block.5.title",
+    "source": "Series then parallel"
+  },
+  {
+    "key": "block.5.a",
+    "source": "$2.0\\,\\text{A}$; $0.67\\,\\text{A}$ and $1.33\\,\\text{A}$"
+  },
+  {
+    "key": "block.5.step.0",
+    "source": "Parallel pair: $R_{23} = \\dfrac{6 \\times 3}{6 + 3} = 2\\,\\Omega$. With $R_1$: $R_{\\text{eq}} = 4 + 2 = 6\\,\\Omega$."
+  },
+  {
+    "key": "block.5.step.1",
+    "source": "Battery current: $I = \\dfrac{12}{6} = 2.0\\,\\text{A}$, all through $R_1$, so $V_1 = 8.0\\,\\text{V}$."
+  },
+  {
+    "key": "block.5.step.2",
+    "source": "The pair gets $V_{23} = (2.0)(2) = 4.0\\,\\text{V}$ (and $8.0 + 4.0 = 12$)."
+  },
+  {
+    "key": "block.5.step.3",
+    "source": "$I_2 = \\dfrac{4.0}{6} = 0.67\\,\\text{A}$, $I_3 = \\dfrac{4.0}{3} = 1.33\\,\\text{A}$; together $2.0\\,\\text{A}$."
+  },
+  {
+    "key": "block.6.q",
+    "source": "$R_1 = 2\\,\\Omega$ and $R_2 = 4\\,\\Omega$ are in series, and that pair is in parallel with $R_3 = 3\\,\\Omega$, across $6.0\\,\\text{V}$. Find the battery current and the voltage across $R_2$."
+  },
+  {
+    "key": "block.6.title",
+    "source": "Parallel then series"
+  },
+  {
+    "key": "block.6.a",
+    "source": "$3.0\\,\\text{A}$; $4.0\\,\\text{V}$"
+  },
+  {
+    "key": "block.6.step.0",
+    "source": "Series pair: $2 + 4 = 6\\,\\Omega$. In parallel with $3\\,\\Omega$: $R_{\\text{eq}} = \\dfrac{6 \\times 3}{9} = 2\\,\\Omega$, so $I = 3.0\\,\\text{A}$."
+  },
+  {
+    "key": "block.6.step.1",
+    "source": "Each branch has the full $6.0\\,\\text{V}$: the $R_1$–$R_2$ branch carries $\\dfrac{6.0}{6} = 1.0\\,\\text{A}$, the $R_3$ branch $2.0\\,\\text{A}$."
+  },
+  {
+    "key": "block.6.step.2",
+    "source": "$V_2 = (1.0)(4) = 4.0\\,\\text{V}$."
+  },
+  {
+    "key": "block.7.html",
+    "source": "Combining two resistors as if in series or parallel when they are neither. Two resistors are in series only if no junction lies between them, and in parallel only if both of their ends meet at the same two points. Being drawn side by side, or one after the other on the page, is not enough. Check each pair against those two tests before you combine."
+  }
+]

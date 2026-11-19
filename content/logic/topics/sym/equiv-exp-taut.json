@@ -1,0 +1,150 @@
+{
+  "id": "sym.equiv-exp-taut",
+  "slug": "equiv-exp-taut",
+  "ladder": "logic",
+  "course": "sym",
+  "unit": "replacement",
+  "title": "Equivalence, Exportation and Tautology (Equiv, Exp, Taut)",
+  "short": "Equiv: p ↔ q :: (p → q) ∧ (q → p), or (p ∧ q) ∨ (¬p ∧ ¬q). Exp: (p ∧ q) → r :: p → (q → r). Taut: p :: p ∧ p and p :: p ∨ p.",
+  "trouble": "Learners export into (p → q) → r, which is not equivalent. Exportation moves the first conjunct out in front.",
+  "prereqs": [
+    "sym.trans-impl"
+  ],
+  "xp": 3,
+  "viz": [
+    "lg-proof"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The last three rules of replacement handle the biconditional, conditionals with conjunctions inside, and repeated parts. With them you have all ten, completing the list begun in <a href=\"/logic/symbolic-logic/replacement-intro/\">Rules of Replacement</a> and continued in <a href=\"/logic/symbolic-logic/trans-impl/\">Transposition and Material Implication (Trans, Impl)</a>."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Rule",
+          "Form",
+          "Form"
+        ],
+        "rows": [
+          [
+            "Equiv",
+            "$p \\leftrightarrow q$",
+            "$(p \\to q) \\land (q \\to p)$"
+          ],
+          [
+            "Equiv",
+            "$p \\leftrightarrow q$",
+            "$(p \\land q) \\lor (\\neg p \\land \\neg q)$"
+          ],
+          [
+            "Exp",
+            "$(p \\land q) \\to r$",
+            "$p \\to (q \\to r)$"
+          ],
+          [
+            "Taut",
+            "$p$",
+            "$p \\lor p$"
+          ],
+          [
+            "Taut",
+            "$p$",
+            "$p \\land p$"
+          ]
+        ],
+        "cap": "Material equivalence, exportation and tautology."
+      },
+      {
+        "t": "key",
+        "html": "Equiv unpacks a biconditional into two conditionals, or into \"both or neither\". Exp moves the first conjunct of an antecedent out in front: $(p \\land q) \\to r$ :: $p \\to (q \\to r)$. Taut removes or adds a repeated part joined to itself."
+      },
+      {
+        "t": "why",
+        "html": "A biconditional is true when both sides match, which is exactly when each side implies the other, or when both are true or both are false. Exportation reflects how conditions stack: \"if you have a ticket and it is Saturday, you can enter\" says the same as \"if you have a ticket, then if it is Saturday, you can enter\". Taut is obvious once said aloud: \"$p$ or $p$\" and \"$p$ and $p$\" both just say $p$."
+      },
+      {
+        "t": "viz",
+        "name": "lg-truthtable",
+        "opts": {
+          "formulas": [
+            "(p ∧ q) → r",
+            "p → (q → r)",
+            "(p → q) → r"
+          ]
+        },
+        "cap": "Exportation: the first two columns match; the third does not."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Equiv to get a conditional",
+        "q": "From $p \\leftrightarrow q$ and $p$, prove $q$.",
+        "steps": [
+          "Line 3: $(p \\to q) \\land (q \\to p)$ by Equiv 1.",
+          "Line 4: $p \\to q$ by Simp 3.",
+          "Line 5: $q$ by MP 4, 2."
+        ],
+        "a": "Three lines."
+      },
+      {
+        "t": "ex",
+        "title": "Exportation",
+        "q": "From $(r \\land s) \\to t$ and $r$, prove $s \\to t$.",
+        "steps": [
+          "Line 3: $r \\to (s \\to t)$ by Exp 1.",
+          "Line 4: $s \\to t$ by MP 3, 2."
+        ],
+        "a": "Two lines."
+      },
+      {
+        "t": "ex",
+        "title": "Taut after CD",
+        "q": "From $(p \\to q) \\land (r \\to q)$ and $p \\lor r$, prove $q$.",
+        "steps": [
+          "Line 3: $q \\lor q$ by CD 1, 2.",
+          "Line 4: $q$ by Taut 3."
+        ],
+        "a": "CD, then Taut."
+      },
+      {
+        "t": "mistake",
+        "html": "Exporting into $(p \\to q) \\to r$. That is not equivalent: the third column above shows rows where $(p \\land q) \\to r$ is true and $(p \\to q) \\to r$ is false (for instance $p$ F, $q$ F, $r$ F). Exportation keeps $r$ at the very end and moves only $p$ out in front: $p \\to (q \\to r)$."
+      },
+      {
+        "t": "p",
+        "html": "Each of these rules earns its place in proofs. Equiv is the only way to use a biconditional: no rule of inference cites one directly. Exp lets MP reach a consequent when you have the conjuncts of the antecedent on separate lines (with Exp you need only one at a time). Taut tidies up after CD when both conditionals lead to the same place."
+      },
+      {
+        "t": "list",
+        "items": [
+          "A biconditional you want to use: Equiv first.",
+          "An antecedent that is a conjunction: consider Exp.",
+          "A disjunction or conjunction of a formula with itself: Taut."
+        ]
+      },
+      {
+        "t": "p",
+        "html": "That completes the ten rules of replacement: DM, Com, Assoc, Dist, DN, Trans, Impl, Equiv, Exp and Taut. With the eight rules of inference, that makes eighteen. The next lesson puts them all to work together."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Patrick J. Hurley and Lori Watson, A Concise Introduction to Logic, 13th ed., section 7.4"
+      },
+      {
+        "name": "Irving M. Copi, Carl Cohen and Victor Rodych, Introduction to Logic, 15th ed., chapter on the method of deduction"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

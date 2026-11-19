@@ -1,0 +1,98 @@
+{
+  "id": "em.displacement-current",
+  "slug": "displacement-current",
+  "ladder": "physics",
+  "course": "em",
+  "unit": "ac-maxwell",
+  "title": "Displacement Current",
+  "short": "A changing electric field acts like a current in Ampère's law, which fills the gap of a charging capacitor.",
+  "trouble": "Students think charge flows across the gap between the plates of a charging capacitor.",
+  "prereqs": [
+    "em.amperes-law",
+    "em.rc-charging"
+  ],
+  "xp": 3,
+  "viz": [
+    "ph-magnetism"
+  ],
+  "figureArchetype": "FieldFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/physics/electricity-and-magnetism/amperes-law/\">Ampère's law</a> says $\\oint\\vec{B}\\cdot d\\vec{\\ell} = \\mu_0I_{\\text{enc}}$, where $I_{\\text{enc}}$ is the current through <i>any</i> surface bounded by the path. Try it on a wire feeding a <a href=\"/physics/electricity-and-magnetism/rc-charging/\">charging capacitor</a>, and it breaks. Fixing it was Maxwell's great step, and it led straight to light."
+      },
+      {
+        "t": "why",
+        "html": "Draw a circle around the wire near the capacitor. A flat disk bounded by that circle is pierced by the wire: $I_{\\text{enc}} = I$. Now stretch the surface into a bag that passes between the plates, still bounded by the same circle. No charge crosses the gap, so $I_{\\text{enc}} = 0$. Same path, two different answers: the law as written cannot be right. What does pass through the bag is a growing electric field. Between the plates $E = \\dfrac{q}{\\varepsilon_0A}$, so $\\varepsilon_0\\dfrac{d\\Phi_E}{dt} = \\varepsilon_0A\\dfrac{dE}{dt} = \\dfrac{dq}{dt} = I$: exactly the missing current."
+      },
+      {
+        "t": "key",
+        "html": "The <b>displacement current</b> $I_d = \\varepsilon_0\\dfrac{d\\Phi_E}{dt}$ makes magnetic field just as a real current does:\n        $$\\oint\\vec{B}\\cdot d\\vec{\\ell} = \\mu_0\\left(I_{\\text{enc}} + \\varepsilon_0\\frac{d\\Phi_E}{dt}\\right).$$\n        In a charging capacitor, $I_d$ in the gap equals the current in the wires."
+      },
+      {
+        "t": "viz",
+        "name": "ph-magnetism",
+        "opts": {
+          "mode": "ampere",
+          "displacement": true
+        },
+        "cap": "An Ampère loop around a charging capacitor. With the displacement current counted, the loop gives the same answer whether its surface is pierced by the wire or passes through the gap."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "How fast the field grows",
+        "q": "A capacitor with circular plates of radius $10\\ \\text{cm}$ is charged by a current of $2.0\\ \\text{A}$. How fast does the field between the plates grow?",
+        "steps": [
+          "$\\varepsilon_0A\\dfrac{dE}{dt} = I$, so $\\dfrac{dE}{dt} = \\dfrac{2.0}{(8.85 \\times 10^{-12})\\pi(0.10)^2} = 7.19 \\times 10^{12}\\ \\text{V/(m·s)}$."
+        ],
+        "a": "$\\dfrac{dE}{dt} \\approx 7.19 \\times 10^{12}\\ \\text{V/(m·s)}$"
+      },
+      {
+        "t": "ex",
+        "title": "Magnetic field in the gap",
+        "q": "For the same capacitor, find $B$ between the plates at $5.0\\ \\text{cm}$ from the axis, and at the plates' edge.",
+        "steps": [
+          "The displacement current is spread evenly over the plates, so a circle of radius $r$ encloses $I\\dfrac{r^2}{R^2}$.",
+          "$B(2\\pi r) = \\mu_0I\\dfrac{r^2}{R^2}$, so $B = \\dfrac{\\mu_0Ir}{2\\pi R^2} = \\dfrac{(4\\pi \\times 10^{-7})(2.0)(0.050)}{2\\pi(0.10)^2} = 2.00\\ \\text{μT}$.",
+          "At the edge, $B = \\dfrac{\\mu_0I}{2\\pi R} = 4.00\\ \\text{μT}$, the same as next to the wire at that distance."
+        ],
+        "a": "$2.00\\ \\text{μT}$ and $4.00\\ \\text{μT}$"
+      },
+      {
+        "t": "ex",
+        "title": "In terms of voltage",
+        "q": "Show that the displacement current in a parallel-plate capacitor is $C\\,dV/dt$.",
+        "steps": [
+          "$E = V/d$, so $I_d = \\varepsilon_0A\\dfrac{d}{dt}\\left(\\dfrac{V}{d}\\right) = \\dfrac{\\varepsilon_0A}{d}\\dfrac{dV}{dt} = C\\dfrac{dV}{dt}$.",
+          "That is also $dq/dt$, the current in the wires."
+        ],
+        "a": "$I_d = C\\,dV/dt$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>\"Charge flows across the gap of a charging capacitor.\"</b> No charge crosses an ideal capacitor's gap: charge piles up on one plate and drains from the other. What fills the gap is a changing electric field, and that change acts like a current in producing a magnetic field. Check: if charge crossed, the capacitor would not charge at all."
+      },
+      {
+        "t": "note",
+        "html": "Maxwell added this term in the 1860s, partly on grounds of consistency. It meant that a changing electric field makes a magnetic field and a changing magnetic field makes an electric field, so each can keep the other going through empty space: an electromagnetic wave. Heinrich Hertz made and detected such waves in the late 1880s."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 2, 16.1 Maxwell's Equations and Electromagnetic Waves"
+      },
+      {
+        "name": "MIT OpenCourseWare, 8.02 Physics II: Electricity and Magnetism"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

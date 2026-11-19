@@ -1,0 +1,122 @@
+{
+  "id": "usgeo.south-central-states",
+  "slug": "south-central-states",
+  "ladder": "geog",
+  "course": "usgeo",
+  "unit": "states-capitals",
+  "title": "States of the South Central",
+  "short": "Find the eight South Central states: Kentucky, Tennessee, Alabama and Mississippi, and Arkansas, Louisiana, Oklahoma and Texas.",
+  "trouble": "Students switch Alabama and Mississippi, which sit side by side (Mississippi is the western one, along the Mississippi River).",
+  "prereqs": [
+    "usgeo.regions"
+  ],
+  "xp": 2,
+  "viz": [
+    "gg-map",
+    "gg-outline"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Now the rest of the <a href=\"/geography/us-geography/regions/\">South</a>: the two South Central divisions, from Kentucky to Texas."
+      },
+      {
+        "t": "key",
+        "html": "The South Central states are <b>East South Central</b>: Kentucky, Tennessee, Alabama and Mississippi; and <b>West South Central</b>: Arkansas, Louisiana, Oklahoma and Texas. The Mississippi River splits the two divisions."
+      },
+      {
+        "t": "viz",
+        "name": "gg-map",
+        "opts": {
+          "map": "us",
+          "region": [
+            "KY",
+            "TN",
+            "AL",
+            "MS",
+            "AR",
+            "LA",
+            "OK",
+            "TX"
+          ],
+          "labels": true
+        },
+        "cap": "The states of this region, with their names."
+      },
+      {
+        "t": "why",
+        "html": "Why does the Mississippi River split them? Big rivers were the highways of the 1800s, and they made easy borders to agree on. The Mississippi forms much of the line between Tennessee and Mississippi on the east and Arkansas and Louisiana on the west."
+      },
+      {
+        "t": "list",
+        "items": [
+          "Kentucky is on top, with the Ohio River along its north edge; Tennessee is the long, thin state below it.",
+          "Mississippi and Alabama sit side by side below Tennessee.",
+          "Arkansas is west of the river; Louisiana, shaped like a boot, is below it.",
+          "Oklahoma, shaped like a pan with a handle, sits on top of Texas."
+        ]
+      },
+      {
+        "t": "ex",
+        "title": "The boot",
+        "q": "Which state is shaped like a boot, at the mouth of the Mississippi?",
+        "steps": [
+          "Follow the Mississippi River south to the Gulf.",
+          "The last state it crosses has a boot shape, with the toe pointing east."
+        ],
+        "a": "Louisiana."
+      },
+      {
+        "t": "mistake",
+        "html": "Alabama and Mississippi get switched because they sit side by side with similar shapes. Use the river: <b>Mississippi is the western one</b>, along the Mississippi River. Alabama is the eastern one, next to Georgia."
+      },
+      {
+        "t": "viz",
+        "name": "gg-outline",
+        "opts": {
+          "map": "us",
+          "ids": [
+            "AL",
+            "MS"
+          ],
+          "context": true
+        },
+        "cap": "The look-alikes side by side, with their neighbors drawn faintly."
+      },
+      {
+        "t": "viz",
+        "name": "gg-map",
+        "opts": {
+          "map": "us",
+          "region": [
+            "KY",
+            "TN",
+            "AL",
+            "MS",
+            "AR",
+            "LA",
+            "OK",
+            "TX"
+          ],
+          "mode": "find"
+        },
+        "cap": "Practice: find each state when its name appears."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "U.S. Census Bureau, Census Regions and Divisions of the United States (list of states by region and division)",
+        "url": "https://www2.census.gov/geo/docs/maps-data/maps/reg_div.txt"
+      },
+      {
+        "name": "Natural Earth (public domain map data): admin-1 states, rivers, lakes and physical regions, drawn by the Geography Ladder's map kit"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,66 @@
+{
+  "id": "exam.wall-shot",
+  "slug": "wall-shot",
+  "ladder": "physics",
+  "course": "exam",
+  "unit": "mechanics",
+  "title": "A Kick Over a Wall",
+  "short": "Find when the ball reaches the wall from the sideways motion, then its height and direction at that moment.",
+  "trouble": "Students assume a ball at a wall must still be rising, without checking the sign of the vertical velocity.",
+  "prereqs": [
+    "phys1.projectile-angled"
+  ],
+  "xp": 3,
+  "viz": [
+    "exam-wall-shot"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A ball launched toward a wall, a net or a fence asks two things at once: <em>when</em> does it get there, and <em>where</em> is it then? The sideways motion answers the first, the vertical motion the second. Builds on <a href=\"/physics/physics-1/projectile-angled/\">Launches at an Angle</a>. Each problem here is one short scene and a chain of questions. Answer them in order: each later question uses what you found before, so a slip early on carries through. Keep full precision between steps and round only at the end."
+      },
+      {
+        "t": "key",
+        "html": "$$t = \\frac{d}{v_0\\cos\\theta}, \\qquad y = (v_0\\sin\\theta)t - \\tfrac{1}{2}gt^2, \\qquad v_y = v_0\\sin\\theta - gt.$$ The sign of $v_y$ says whether the ball is still rising ($+$) or already falling ($-$). The top of the flight is at $H_{\\max} = \\dfrac{(v_0\\sin\\theta)^2}{2g}$."
+      },
+      {
+        "t": "viz",
+        "name": "exam-wall-shot",
+        "opts": {
+          "v": 20,
+          "ang": 40,
+          "d": 18,
+          "H": 4
+        },
+        "cap": "The wall's distance fixes the time; the height formula then says where the ball is at that moment."
+      },
+      {
+        "t": "ex",
+        "title": "Over the wall",
+        "q": "A ball is kicked at $20\\ \\text{m/s}$, $40^\\circ$ above level ground, toward a wall $18\\ \\text{m}$ away. Find (1) when it reaches the wall, (2) its height there and (3) whether it is rising or falling.",
+        "steps": [
+          "(1) $v_x = 20\\cos 40^\\circ = 15.3\\ \\text{m/s}$, so $t = 18/15.3 = 1.17\\ \\text{s}$.",
+          "(2) $v_0\\sin\\theta = 12.9\\ \\text{m/s}$; $y = 12.9(1.17) - 4.9(1.17)^2 = 8.34\\ \\text{m}$.",
+          "(3) $v_y = 12.9 - 9.8(1.17) = 1.34\\ \\text{m/s}$: positive, still rising."
+        ],
+        "a": "$1.17\\ \\text{s}$, $8.34\\ \\text{m}$, rising"
+      },
+      {
+        "t": "mistake",
+        "html": "Assuming the ball must still be rising at the wall, or at its peak there. Work out $v_y$ and look at its sign; the peak is at $t = v_0\\sin\\theta/g$, which may come before or after the wall."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e (Rice University), chapters on kinematics, energy and momentum"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

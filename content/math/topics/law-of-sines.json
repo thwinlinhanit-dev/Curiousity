@@ -1,0 +1,124 @@
+{
+  "id": "geo.law-of-sines",
+  "slug": "law-of-sines",
+  "ladder": "math",
+  "course": "geo",
+  "unit": "trigonometry",
+  "title": "The Law of Sines",
+  "short": "Sides are proportional to the sines of their opposite angles.",
+  "trouble": "Students pair a side with an angle that is not opposite it.",
+  "prereqs": [
+    "geo.area-with-sine"
+  ],
+  "xp": 3,
+  "viz": [
+    "angle",
+    "geoboard"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Right-triangle trig needs a right angle. For any triangle, the area formula from <a href=\"/math/geometry/area-with-sine/\">Triangle Area with Sine</a> gives a relationship between sides and angles that works every time. We use the usual labels: side $a$ is opposite $\\angle A$, side $b$ opposite $\\angle B$, side $c$ opposite $\\angle C$."
+      },
+      {
+        "t": "why",
+        "html": "The area of $\\triangle ABC$ can be written three ways, using each angle: $\\frac{1}{2}bc \\sin A = \\frac{1}{2}ac \\sin B = \\frac{1}{2}ab \\sin C$. Divide all three by $\\frac{1}{2}abc$: $\\frac{\\sin A}{a} = \\frac{\\sin B}{b} = \\frac{\\sin C}{c}$. Flip each fraction to get the usual form."
+      },
+      {
+        "t": "key",
+        "html": "<b>Law of Sines:</b> $$\\frac{a}{\\sin A} = \\frac{b}{\\sin B} = \\frac{c}{\\sin C}.$$ Each side is paired with the sine of the angle across from it. Use it when you know two angles and a side (AAS or ASA), or two sides and an angle opposite one of them."
+      },
+      {
+        "t": "viz",
+        "name": "geoboard",
+        "cap": "Drag the corners and read the sides and angles. Divide any side by the sine of the angle across from it: all three quotients agree.",
+        "opts": {
+          "points": {
+            "A": [
+              1,
+              1
+            ],
+            "B": [
+              9,
+              1
+            ],
+            "C": [
+              4,
+              6
+            ]
+          },
+          "objects": [
+            [
+              "poly",
+              "A",
+              "B",
+              "C"
+            ]
+          ],
+          "show": {
+            "len": true,
+            "ang": true,
+            "area": false
+          },
+          "xmin": 0,
+          "xmax": 10,
+          "ymin": 0,
+          "ymax": 7
+        }
+      },
+      {
+        "t": "ex",
+        "title": "Two angles and a side",
+        "q": "In $\\triangle ABC$, $m\\angle A = 40^\\circ$, $m\\angle B = 65^\\circ$ and $a = 12$. Find $b$ and $c$ to the nearest tenth.<div class=\"ml-viz\" data-viz=\"geo-fig\" data-opts='{\"pts\":{\"A\":[0,0],\"B\":[6.49,0],\"C\":[4.67,3.92]},\"polys\":[[\"A\",\"B\",\"C\",{\"fill\":\"blue\"}]],\"segs\":[[\"B\",\"C\",{\"lab\":\"a = 12\"}],[\"C\",\"A\",{\"lab\":\"b\"}],[\"A\",\"B\",{\"lab\":\"c\"}]],\"angs\":[[\"B\",\"A\",\"C\",{\"lab\":\"40°\"}],[\"C\",\"B\",\"A\",{\"lab\":\"65°\"}]],\"height\":190,\"label\":\"Triangle ABC with angles A and B and side a labeled\"}' aria-label=\"Triangle ABC with angles A and B and side a labeled\"></div>",
+        "steps": [
+          "$m\\angle C = 180 - 40 - 65 = 75^\\circ$.",
+          "$\\frac{b}{\\sin 65^\\circ} = \\frac{12}{\\sin 40^\\circ}$, so $b = \\frac{12 \\sin 65^\\circ}{\\sin 40^\\circ} \\approx \\frac{12(0.9063)}{0.6428} \\approx 16.9$.",
+          "$c = \\frac{12 \\sin 75^\\circ}{\\sin 40^\\circ} \\approx \\frac{12(0.9659)}{0.6428} \\approx 18.0$."
+        ],
+        "a": "$b \\approx 16.9$, $c \\approx 18.0$"
+      },
+      {
+        "t": "ex",
+        "title": "An exact answer",
+        "q": "In $\\triangle ABC$, $m\\angle A = 30^\\circ$, $m\\angle B = 45^\\circ$ and $a = 6$. Find $b$ exactly.",
+        "steps": [
+          "$b = \\frac{a \\sin B}{\\sin A} = \\frac{6 \\cdot \\frac{\\sqrt{2}}{2}}{\\frac{1}{2}} = 6\\sqrt{2}$."
+        ],
+        "a": "$b = 6\\sqrt{2}$"
+      },
+      {
+        "t": "ex",
+        "title": "Finding an angle",
+        "q": "In $\\triangle ABC$, $m\\angle A = 70^\\circ$, $a = 20$ and $b = 14$. Find $m\\angle B$.",
+        "steps": [
+          "$\\frac{\\sin B}{14} = \\frac{\\sin 70^\\circ}{20}$, so $\\sin B = \\frac{14 \\sin 70^\\circ}{20} \\approx 0.6578$.",
+          "$m\\angle B = \\sin^{-1}(0.6578) \\approx 41.1^\\circ$.",
+          "Since $b < a$, $\\angle B$ must be smaller than $\\angle A$, so this acute answer is the only one."
+        ],
+        "a": "About $41^\\circ$"
+      },
+      {
+        "t": "note",
+        "html": "When you know two sides and an angle that is not between them (SSA) and the side opposite the known angle is the <i>shorter</i> one, there can be two possible triangles. That is the same SSA trouble you met with congruence. If the side opposite the known angle is the longer one, as in the last example, there is only one."
+      },
+      {
+        "t": "mistake",
+        "html": "Pairing a side with an angle that is not opposite it, such as $\\frac{a}{\\sin B}$. Each fraction must hold a side and the angle across from it. Check with the letters: lowercase $a$ goes with capital $A$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Algebra and Trigonometry 2e, 10.1 Non-right Triangles: Law of Sines"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, High School Geometry, G-SRT.D.10 and G-SRT.D.11"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

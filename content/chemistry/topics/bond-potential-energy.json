@@ -1,0 +1,127 @@
+{
+  "id": "gchem1.bond-potential-energy",
+  "slug": "bond-potential-energy",
+  "ladder": "chemistry",
+  "course": "gchem1",
+  "unit": "bonding",
+  "title": "Potential Energy and Bond Length",
+  "short": "Two bonded atoms settle at the distance where their potential energy is lowest.",
+  "trouble": "Students think atoms are most stable when they are pushed as close together as possible.",
+  "prereqs": [
+    "chem.covalent-bonding",
+    "gchem1.coulombs-law-atoms"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-bondcurve"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/chemistry/chemistry/covalent-bonding/\">Covalent Bonds</a> described a bond as a shared pair of electrons. <a href=\"/chemistry/general-chemistry-1/coulombs-law-atoms/\">Coulomb's Law in Atoms</a> lets us see why sharing holds atoms together, and why they stop at a particular distance instead of merging. The tool is a graph of potential energy against the distance between the two nuclei."
+      },
+      {
+        "t": "key",
+        "html": "As two atoms approach, their potential energy first falls (each nucleus attracts the other atom's electrons) and then rises steeply (the nuclei repel). The bottom of the well is the bond: its distance is the <b>bond length</b>, and its depth is the <b>bond energy</b>, the energy needed to pull the atoms fully apart. For $\\mathrm{H_2}$: 74 pm and 436 kJ/mol."
+      },
+      {
+        "t": "why",
+        "html": "Far apart, two hydrogen atoms don't interact: call that energy zero. Closer in, each electron is attracted by both nuclei, so the energy drops below zero. Too close, the two positive nuclei repel strongly and the electrons are squeezed, so the energy shoots up. The balance point, where the curve is lowest, is where the molecule sits. To separate the atoms you must lift them out of the well, so <b>breaking a bond always takes energy</b>, and forming one always releases the same amount."
+      },
+      {
+        "t": "viz",
+        "name": "ch-bondcurve",
+        "opts": {
+          "pair": "H2",
+          "parts": true,
+          "compare": "Cl2",
+          "task": "Drag the atoms closer and farther. Find the distance with the lowest energy."
+        },
+        "cap": "Hydrogen (deep, short) and chlorine (shallow, long). The dashed parts show the attraction and the repulsion that add up to each curve."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Bond",
+          "Length (pm)",
+          "Bond energy (kJ/mol)"
+        ],
+        "rows": [
+          [
+            "H–H",
+            "74",
+            "436"
+          ],
+          [
+            "H–F",
+            "92",
+            "570"
+          ],
+          [
+            "H–Cl",
+            "128",
+            "432"
+          ],
+          [
+            "Cl–Cl",
+            "199",
+            "242"
+          ],
+          [
+            "O=O",
+            "121",
+            "498"
+          ],
+          [
+            "N≡N",
+            "110",
+            "945"
+          ]
+        ],
+        "cap": "Larger atoms make longer bonds; multiple bonds are shorter and stronger. (Lengths: NIST; energies: standard bond enthalpy tables.)"
+      },
+      {
+        "t": "ex",
+        "title": "Reading the graph",
+        "q": "A potential-energy curve for two atoms has its minimum at $r = 128\\ \\text{pm}$ and $E = -432\\ \\text{kJ/mol}$. What are the bond length and the bond energy, and how much energy breaks $2.00\\ \\text{mol}$ of these bonds?",
+        "steps": [
+          "The bond length is the distance at the minimum: $128\\ \\text{pm}$ (this is H–Cl).",
+          "The bond energy is the depth of the well: $432\\ \\text{kJ/mol}$, a positive amount of energy you must put in.",
+          "For $2.00\\ \\text{mol}$: $2.00 \\times 432 = 864\\ \\text{kJ}$ absorbed."
+        ],
+        "a": "$128\\ \\text{pm}$; $432\\ \\text{kJ/mol}$; $864\\ \\text{kJ}$ absorbed."
+      },
+      {
+        "t": "ex",
+        "title": "Comparing two curves",
+        "q": "Which curve is deeper and has its minimum farther left, $\\mathrm{N_2}$ or $\\mathrm{O_2}$?",
+        "steps": [
+          "$\\mathrm{N_2}$ has a triple bond and $\\mathrm{O_2}$ a double bond.",
+          "More shared electrons pull the nuclei closer and hold them more strongly."
+        ],
+        "a": "$\\mathrm{N_2}$: deeper (945 against 498 kJ/mol) and shorter (110 against 121 pm)."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking atoms are most stable when pushed as close as possible. Inside the bond length the curve climbs steeply, because the nuclei repel. The stable distance is the bottom of the well, not the left edge of the graph. A related error is \"breaking bonds releases energy\": on this curve, separating the atoms always means climbing out of the well. Check: energy goes in to break a bond and comes out when one forms."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 7.2 Covalent Bonding"
+      },
+      {
+        "name": "OpenStax Chemistry 2e, 7.5 Strengths of Ionic and Covalent Bonds"
+      },
+      {
+        "name": "College Board, AP Chemistry Course and Exam Description (effective fall 2024), Unit 2: Compound Structure and Properties"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,87 @@
+{
+  "id": "prob.negative-binomial",
+  "slug": "negative-binomial",
+  "ladder": "math",
+  "course": "prob",
+  "unit": "discrete",
+  "title": "Waiting for the rth Success",
+  "short": "The number of trials needed for r successes has P(X = k) = C(k − 1, r − 1) pʳ (1 − p)^(k − r) and mean r/p.",
+  "trouble": "Students use C(k, r) instead of C(k − 1, r − 1), forgetting that the last trial must be the rth success.",
+  "prereqs": [
+    "prob.linearity-indicators",
+    "stat.geometric-distribution"
+  ],
+  "xp": 3,
+  "viz": [],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The <a href=\"/math/probability-and-statistics/geometric-distribution/\">geometric distribution</a> counts the trials up to the first success. Waiting for the third success, or the fifth, gives the negative binomial distribution. As in that lesson, $X$ counts all the trials, including the last success. (Some books count only the failures, $X - r$; the ideas are the same.)"
+      },
+      {
+        "t": "key",
+        "html": "In independent trials with success probability $p$, the number of trials $X$ needed for the $r$th success has $$P(X = k) = \\binom{k - 1}{r - 1}p^{r}(1 - p)^{k - r}, \\quad k = r, r + 1, \\ldots,$$ with $E[X] = \\frac{r}{p}$ and $\\operatorname{Var}(X) = \\frac{r(1 - p)}{p^{2}}$."
+      },
+      {
+        "t": "why",
+        "html": "$X = k$ means trial $k$ is a success and the first $k - 1$ trials contain exactly $r - 1$ successes, in any of $\\binom{k - 1}{r - 1}$ arrangements. Each arrangement has $r$ successes and $k - r$ failures, probability $p^{r}(1 - p)^{k - r}$. For the mean, split the wait into $r$ stages: trials to the first success, then from there to the second, and so on. Each stage is geometric with mean $\\frac{1}{p}$, so by <a href=\"/math/probability/linearity-indicators/\">linearity</a> $E[X] = \\frac{r}{p}$. The stages are independent, so their variances $\\frac{1 - p}{p^{2}}$ add too."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Coins",
+        "q": "Flip a fair coin until the 3rd head. Find the probability that exactly 5 flips are needed.",
+        "steps": [
+          "The 5th flip is the 3rd head, and the first 4 flips hold exactly 2 heads: $\\binom{4}{2} = 6$ arrangements.",
+          "$P(X = 5) = 6 \\cdot \\left(\\frac{1}{2}\\right)^{5} = \\frac{3}{16}$."
+        ],
+        "a": "$\\frac{3}{16}$"
+      },
+      {
+        "t": "ex",
+        "title": "Sixes",
+        "q": "Roll a die until the 2nd six. Find $P(X = 4)$ and $E[X]$.",
+        "steps": [
+          "$$P(X = 4) = \\binom{3}{1}\\left(\\frac{1}{6}\\right)^{2}\\left(\\frac{5}{6}\\right)^{2} = 3 \\cdot \\frac{25}{1296} = \\frac{25}{432} \\approx 0.058$$",
+          "$E[X] = \\frac{2}{1/6} = 12$ rolls."
+        ],
+        "a": "$\\frac{25}{432}$ and 12"
+      },
+      {
+        "t": "ex",
+        "title": "A best-of-seven series",
+        "q": "Team A wins each game with probability $0.6$, independently. In a best-of-seven series (first to 4 wins), find the probability that A wins in exactly 6 games.",
+        "steps": [
+          "Game 6 must be A's 4th win, and games 1 to 5 hold exactly 3 A-wins: $\\binom{5}{3} = 10$ arrangements.",
+          "$$P = 10(0.6)^{4}(0.4)^{2} = 10(0.1296)(0.16) \\approx 0.207$$"
+        ],
+        "a": "about $0.207$"
+      },
+      {
+        "t": "note",
+        "html": "\"The $r$th success comes on or before trial $m$\" is the same event as \"at least $r$ successes in the first $m$ trials\". So you can add the negative binomial probabilities for $k = r, \\ldots, m$, or add binomial probabilities for $r$ or more successes in $m$ trials. Both give the same number, a useful check."
+      },
+      {
+        "t": "mistake",
+        "html": "Using $\\binom{k}{r}$ instead of $\\binom{k - 1}{r - 1}$. The last trial is not free: it must be the $r$th success, so only the earlier $k - 1$ trials can be arranged. Check with $r = 1$: the formula must give the geometric $p(1 - p)^{k - 1}$, and $\\binom{k - 1}{0} = 1$ does."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Grinstead and Snell, Introduction to Probability (2nd revised edition, American Mathematical Society; free from Dartmouth College), chapter 5 (Distributions and Densities), section 5.1, the negative binomial distribution"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.05, Introduction to Probability and Statistics (Spring 2014), readings on the geometric and negative binomial distributions"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,817 @@
+{
+  "key": "calc1",
+  "ladder": "math",
+  "title": "Calculus 1: Limits and Derivatives",
+  "short": "Calculus 1",
+  "after": [
+    "pre"
+  ],
+  "units": [
+    {
+      "key": "limits",
+      "title": "Limits",
+      "blurb": "Understand limits from graphs, compute them with algebra, and define them precisely."
+    },
+    {
+      "key": "derivative",
+      "title": "The Derivative",
+      "blurb": "Go from average to instantaneous rate of change, and define the derivative as a limit."
+    },
+    {
+      "key": "rules",
+      "title": "Differentiation Rules",
+      "blurb": "Differentiate powers, products, quotients, compositions, and trig, exponential and log functions."
+    },
+    {
+      "key": "applications",
+      "title": "Applications of Derivatives",
+      "blurb": "Use derivatives for motion, related rates, approximation, graph shape and optimization."
+    },
+    {
+      "key": "integrals",
+      "title": "Integrals",
+      "blurb": "Find antiderivatives, build definite integrals from sums, and use the Fundamental Theorem and substitution."
+    }
+  ],
+  "topics": [
+    {
+      "id": "calc1.limit-idea",
+      "slug": "limit-idea",
+      "course": "calc1",
+      "unit": "limits",
+      "title": "Limits from Both Sides",
+      "short": "lim f(x) = L when f(x) gets close to L as x gets close to a, from both sides.",
+      "prereqs": [
+        "pre.limits-graphs-tables"
+      ],
+      "viz": [
+        "limit"
+      ]
+    },
+    {
+      "id": "calc1.one-sided-limits",
+      "slug": "one-sided-limits",
+      "course": "calc1",
+      "unit": "limits",
+      "title": "One-Sided Limits",
+      "short": "The two-sided limit exists only when the left and right limits agree.",
+      "prereqs": [
+        "calc1.limit-idea"
+      ],
+      "viz": [
+        "limit"
+      ]
+    },
+    {
+      "id": "calc1.infinite-limits",
+      "slug": "infinite-limits",
+      "course": "calc1",
+      "unit": "limits",
+      "title": "Infinite Limits and Vertical Asymptotes",
+      "short": "f(x) can grow without bound near a point.",
+      "prereqs": [
+        "calc1.one-sided-limits"
+      ],
+      "viz": [
+        "limit",
+        "graph"
+      ]
+    },
+    {
+      "id": "calc1.limit-laws",
+      "slug": "limit-laws",
+      "course": "calc1",
+      "unit": "limits",
+      "title": "Limit Laws",
+      "short": "Limits of sums, products and quotients follow from the limits of the parts.",
+      "prereqs": [
+        "calc1.limit-idea"
+      ],
+      "viz": [
+        "limit"
+      ]
+    },
+    {
+      "id": "calc1.limits-by-factoring",
+      "slug": "limits-by-factoring",
+      "course": "calc1",
+      "unit": "limits",
+      "title": "Limits by Factoring and Canceling",
+      "short": "Rewrite 0/0 forms to remove the troublesome factor.",
+      "prereqs": [
+        "calc1.limit-laws",
+        "alg2.simplify-rational"
+      ],
+      "viz": [
+        "limit"
+      ]
+    },
+    {
+      "id": "calc1.limits-by-rationalizing",
+      "slug": "limits-by-rationalizing",
+      "course": "calc1",
+      "unit": "limits",
+      "title": "Limits by Rationalizing",
+      "short": "Multiply by a conjugate to resolve 0/0 forms with roots.",
+      "prereqs": [
+        "calc1.limits-by-factoring",
+        "alg2.simplify-radicals"
+      ],
+      "viz": [
+        "limit"
+      ]
+    },
+    {
+      "id": "calc1.squeeze-theorem",
+      "slug": "squeeze-theorem",
+      "course": "calc1",
+      "unit": "limits",
+      "title": "The Squeeze Theorem",
+      "short": "Trap a function between two with the same limit.",
+      "prereqs": [
+        "calc1.limit-laws"
+      ],
+      "viz": [
+        "limit"
+      ]
+    },
+    {
+      "id": "calc1.trig-limits",
+      "slug": "trig-limits",
+      "course": "calc1",
+      "unit": "limits",
+      "title": "Special Trigonometric Limits",
+      "short": "sin(x)/x → 1 and (1 − cos x)/x → 0 as x → 0.",
+      "prereqs": [
+        "calc1.squeeze-theorem",
+        "pre.radian-measure"
+      ],
+      "viz": [
+        "limit",
+        "unitcircle"
+      ]
+    },
+    {
+      "id": "calc1.continuity",
+      "slug": "continuity",
+      "course": "calc1",
+      "unit": "limits",
+      "title": "Continuity",
+      "short": "f is continuous at a when the limit equals f(a).",
+      "prereqs": [
+        "calc1.one-sided-limits",
+        "calc1.limit-laws"
+      ],
+      "viz": [
+        "limit",
+        "graph"
+      ]
+    },
+    {
+      "id": "calc1.intermediate-value-theorem",
+      "slug": "intermediate-value-theorem",
+      "course": "calc1",
+      "unit": "limits",
+      "title": "The Intermediate Value Theorem",
+      "short": "A continuous function that changes sign must hit 0 in between.",
+      "prereqs": [
+        "calc1.continuity"
+      ],
+      "viz": [
+        "graph"
+      ]
+    },
+    {
+      "id": "calc1.limits-at-infinity",
+      "slug": "limits-at-infinity",
+      "course": "calc1",
+      "unit": "limits",
+      "title": "Limits at Infinity and Horizontal Asymptotes",
+      "short": "Compare the growth of the highest powers.",
+      "prereqs": [
+        "calc1.limit-laws",
+        "alg2.asymptotes-holes"
+      ],
+      "viz": [
+        "limit",
+        "graph"
+      ]
+    },
+    {
+      "id": "calc1.epsilon-delta",
+      "slug": "epsilon-delta",
+      "course": "calc1",
+      "unit": "limits",
+      "title": "The Precise Definition of a Limit",
+      "short": "For every ε > 0 there is a δ > 0 that keeps f(x) within ε of L.",
+      "prereqs": [
+        "calc1.continuity",
+        "calc1.limits-at-infinity"
+      ],
+      "viz": [
+        "limit"
+      ]
+    },
+    {
+      "id": "calc1.instantaneous-rate",
+      "slug": "instantaneous-rate",
+      "course": "calc1",
+      "unit": "derivative",
+      "title": "From Average to Instantaneous Rate",
+      "short": "Shrink the interval of an average rate to get a rate at an instant.",
+      "prereqs": [
+        "calc1.limit-idea",
+        "pre.difference-quotient"
+      ],
+      "viz": [
+        "secant"
+      ]
+    },
+    {
+      "id": "calc1.derivative-at-a-point",
+      "slug": "derivative-at-a-point",
+      "course": "calc1",
+      "unit": "derivative",
+      "title": "The Derivative at a Point",
+      "short": "f′(a) is the limit of the difference quotient: the slope of the tangent line.",
+      "prereqs": [
+        "calc1.instantaneous-rate",
+        "calc1.limits-by-factoring"
+      ],
+      "viz": [
+        "secant"
+      ]
+    },
+    {
+      "id": "calc1.tangent-lines",
+      "slug": "tangent-lines",
+      "course": "calc1",
+      "unit": "derivative",
+      "title": "Tangent Lines",
+      "short": "Use f′(a) as the slope of the line y = f(a) + f′(a)(x − a).",
+      "prereqs": [
+        "calc1.derivative-at-a-point",
+        "alg1.point-slope-form"
+      ],
+      "viz": [
+        "secant",
+        "graph"
+      ]
+    },
+    {
+      "id": "calc1.derivative-function",
+      "slug": "derivative-function",
+      "course": "calc1",
+      "unit": "derivative",
+      "title": "The Derivative as a Function",
+      "short": "f′ gives the slope of f at every x.",
+      "prereqs": [
+        "calc1.derivative-at-a-point"
+      ],
+      "viz": [
+        "derivgraph"
+      ]
+    },
+    {
+      "id": "calc1.differentiability",
+      "slug": "differentiability",
+      "course": "calc1",
+      "unit": "derivative",
+      "title": "Where Derivatives Fail to Exist",
+      "short": "Corners, cusps, vertical tangents and breaks.",
+      "prereqs": [
+        "calc1.derivative-function",
+        "calc1.continuity"
+      ],
+      "viz": [
+        "derivgraph"
+      ]
+    },
+    {
+      "id": "calc1.derivative-notation",
+      "slug": "derivative-notation",
+      "course": "calc1",
+      "unit": "derivative",
+      "title": "Leibniz Notation and Units",
+      "short": "dy/dx is a rate with units of y per unit of x.",
+      "prereqs": [
+        "calc1.derivative-function"
+      ],
+      "viz": [
+        "derivgraph"
+      ]
+    },
+    {
+      "id": "calc1.power-rule",
+      "slug": "power-rule",
+      "course": "calc1",
+      "unit": "rules",
+      "title": "Constant, Power and Sum Rules",
+      "short": "d/dx xⁿ = nxⁿ⁻¹, and derivatives split over sums.",
+      "prereqs": [
+        "calc1.derivative-function",
+        "alg1.rational-exponents"
+      ],
+      "viz": [
+        "derivgraph"
+      ]
+    },
+    {
+      "id": "calc1.product-rule",
+      "slug": "product-rule",
+      "course": "calc1",
+      "unit": "rules",
+      "title": "The Product Rule",
+      "short": "(fg)′ = f′g + fg′.",
+      "prereqs": [
+        "calc1.power-rule"
+      ],
+      "viz": []
+    },
+    {
+      "id": "calc1.quotient-rule",
+      "slug": "quotient-rule",
+      "course": "calc1",
+      "unit": "rules",
+      "title": "The Quotient Rule",
+      "short": "(f/g)′ = (f′g − fg′)/g².",
+      "prereqs": [
+        "calc1.product-rule"
+      ],
+      "viz": []
+    },
+    {
+      "id": "calc1.trig-derivatives",
+      "slug": "trig-derivatives",
+      "course": "calc1",
+      "unit": "rules",
+      "title": "Derivatives of Trig Functions",
+      "short": "d/dx sin x = cos x and d/dx cos x = −sin x.",
+      "prereqs": [
+        "calc1.quotient-rule",
+        "calc1.trig-limits"
+      ],
+      "viz": [
+        "derivgraph",
+        "unitcircle"
+      ]
+    },
+    {
+      "id": "calc1.higher-derivatives",
+      "slug": "higher-derivatives",
+      "course": "calc1",
+      "unit": "rules",
+      "title": "Higher Derivatives",
+      "short": "Differentiate again to get f″, f‴ and beyond.",
+      "prereqs": [
+        "calc1.power-rule"
+      ],
+      "viz": [
+        "derivgraph"
+      ]
+    },
+    {
+      "id": "calc1.chain-rule",
+      "slug": "chain-rule",
+      "course": "calc1",
+      "unit": "rules",
+      "title": "The Chain Rule",
+      "short": "(f(g(x)))′ = f′(g(x)) · g′(x).",
+      "prereqs": [
+        "calc1.trig-derivatives",
+        "alg2.function-composition"
+      ],
+      "viz": []
+    },
+    {
+      "id": "calc1.chain-rule-layers",
+      "slug": "chain-rule-layers",
+      "course": "calc1",
+      "unit": "rules",
+      "title": "Chain Rule with Several Layers",
+      "short": "Peel a composition from the outside in.",
+      "prereqs": [
+        "calc1.chain-rule"
+      ],
+      "viz": []
+    },
+    {
+      "id": "calc1.exp-log-derivatives",
+      "slug": "exp-log-derivatives",
+      "course": "calc1",
+      "unit": "rules",
+      "title": "Derivatives of Exponential and Log Functions",
+      "short": "d/dx eˣ = eˣ and d/dx ln x = 1/x.",
+      "prereqs": [
+        "calc1.chain-rule",
+        "alg2.log-properties"
+      ],
+      "viz": [
+        "derivgraph",
+        "exponential"
+      ]
+    },
+    {
+      "id": "calc1.implicit-differentiation",
+      "slug": "implicit-differentiation",
+      "course": "calc1",
+      "unit": "rules",
+      "title": "Implicit Differentiation",
+      "short": "Differentiate both sides, treating y as a function of x.",
+      "prereqs": [
+        "calc1.chain-rule"
+      ],
+      "viz": [
+        "graph"
+      ]
+    },
+    {
+      "id": "calc1.inverse-derivatives",
+      "slug": "inverse-derivatives",
+      "course": "calc1",
+      "unit": "rules",
+      "title": "Derivatives of Inverse Functions and Inverse Trig",
+      "short": "d/dx sin⁻¹ x = 1/√(1 − x²).",
+      "prereqs": [
+        "calc1.implicit-differentiation",
+        "pre.inverse-trig"
+      ],
+      "viz": []
+    },
+    {
+      "id": "calc1.log-differentiation",
+      "slug": "log-differentiation",
+      "course": "calc1",
+      "unit": "rules",
+      "title": "Logarithmic Differentiation",
+      "short": "Take ln of both sides to handle powers like xˣ.",
+      "prereqs": [
+        "calc1.exp-log-derivatives",
+        "calc1.implicit-differentiation"
+      ],
+      "viz": []
+    },
+    {
+      "id": "calc1.motion",
+      "slug": "motion",
+      "course": "calc1",
+      "unit": "applications",
+      "title": "Position, Velocity and Acceleration",
+      "short": "Velocity is the derivative of position; acceleration is the derivative of velocity.",
+      "prereqs": [
+        "calc1.higher-derivatives",
+        "calc1.derivative-notation"
+      ],
+      "viz": [
+        "derivgraph"
+      ]
+    },
+    {
+      "id": "calc1.related-rates",
+      "slug": "related-rates",
+      "course": "calc1",
+      "unit": "applications",
+      "title": "Related Rates",
+      "short": "Differentiate an equation linking quantities to connect their rates.",
+      "prereqs": [
+        "calc1.implicit-differentiation",
+        "calc1.motion"
+      ],
+      "viz": []
+    },
+    {
+      "id": "calc1.linear-approximation",
+      "slug": "linear-approximation",
+      "course": "calc1",
+      "unit": "applications",
+      "title": "Linear Approximation and Differentials",
+      "short": "Near a, f(x) ≈ f(a) + f′(a)(x − a).",
+      "prereqs": [
+        "calc1.tangent-lines",
+        "calc1.chain-rule"
+      ],
+      "viz": [
+        "secant"
+      ]
+    },
+    {
+      "id": "calc1.critical-points-extrema",
+      "slug": "critical-points-extrema",
+      "course": "calc1",
+      "unit": "applications",
+      "title": "Critical Points and Absolute Extrema",
+      "short": "Check critical points and endpoints on a closed interval.",
+      "prereqs": [
+        "calc1.derivative-function",
+        "calc1.chain-rule"
+      ],
+      "viz": [
+        "derivgraph"
+      ]
+    },
+    {
+      "id": "calc1.mean-value-theorem",
+      "slug": "mean-value-theorem",
+      "course": "calc1",
+      "unit": "applications",
+      "title": "The Mean Value Theorem",
+      "short": "Somewhere the instantaneous rate equals the average rate.",
+      "prereqs": [
+        "calc1.critical-points-extrema",
+        "calc1.differentiability"
+      ],
+      "viz": [
+        "secant"
+      ]
+    },
+    {
+      "id": "calc1.first-derivative-test",
+      "slug": "first-derivative-test",
+      "course": "calc1",
+      "unit": "applications",
+      "title": "Increasing, Decreasing and the First Derivative Test",
+      "short": "The sign of f′ tells where f rises or falls.",
+      "prereqs": [
+        "calc1.mean-value-theorem"
+      ],
+      "viz": [
+        "derivgraph"
+      ]
+    },
+    {
+      "id": "calc1.concavity",
+      "slug": "concavity",
+      "course": "calc1",
+      "unit": "applications",
+      "title": "Concavity and the Second Derivative Test",
+      "short": "The sign of f″ tells which way the graph bends.",
+      "prereqs": [
+        "calc1.first-derivative-test",
+        "calc1.higher-derivatives"
+      ],
+      "viz": [
+        "derivgraph"
+      ]
+    },
+    {
+      "id": "calc1.curve-sketching",
+      "slug": "curve-sketching",
+      "course": "calc1",
+      "unit": "applications",
+      "title": "Curve Sketching",
+      "short": "Combine limits, f′ and f″ to sketch a graph.",
+      "prereqs": [
+        "calc1.concavity",
+        "calc1.limits-at-infinity"
+      ],
+      "viz": [
+        "derivgraph",
+        "graph"
+      ]
+    },
+    {
+      "id": "calc1.optimization",
+      "slug": "optimization",
+      "course": "calc1",
+      "unit": "applications",
+      "title": "Optimization",
+      "short": "Model a quantity, then find its largest or smallest value.",
+      "prereqs": [
+        "calc1.curve-sketching"
+      ],
+      "viz": [
+        "derivgraph"
+      ]
+    },
+    {
+      "id": "calc1.lhopital",
+      "slug": "lhopital",
+      "course": "calc1",
+      "unit": "applications",
+      "title": "L'Hôpital's Rule",
+      "short": "For 0/0 or ∞/∞, compare the derivatives of the numerator and denominator.",
+      "prereqs": [
+        "calc1.exp-log-derivatives",
+        "calc1.limits-at-infinity"
+      ],
+      "viz": [
+        "limit"
+      ]
+    },
+    {
+      "id": "calc1.newtons-method",
+      "slug": "newtons-method",
+      "course": "calc1",
+      "unit": "applications",
+      "title": "Newton's Method",
+      "short": "Use tangent lines to approach a root.",
+      "prereqs": [
+        "calc1.linear-approximation"
+      ],
+      "viz": [
+        "secant",
+        "graph"
+      ]
+    },
+    {
+      "id": "calc1.antiderivatives",
+      "slug": "antiderivatives",
+      "course": "calc1",
+      "unit": "integrals",
+      "title": "Antiderivatives",
+      "short": "Run differentiation backward, and add the constant C.",
+      "prereqs": [
+        "calc1.power-rule",
+        "calc1.trig-derivatives",
+        "calc1.exp-log-derivatives"
+      ],
+      "viz": [
+        "derivgraph"
+      ]
+    },
+    {
+      "id": "calc1.initial-value-antiderivatives",
+      "slug": "initial-value-antiderivatives",
+      "course": "calc1",
+      "unit": "integrals",
+      "title": "Antiderivatives with Initial Conditions",
+      "short": "Use a known value to find C.",
+      "prereqs": [
+        "calc1.antiderivatives",
+        "calc1.motion"
+      ],
+      "viz": [
+        "slopefield"
+      ]
+    },
+    {
+      "id": "calc1.area-approximations",
+      "slug": "area-approximations",
+      "course": "calc1",
+      "unit": "integrals",
+      "title": "Approximating Area with Rectangles",
+      "short": "Add up rectangle areas to estimate the area under a curve.",
+      "prereqs": [
+        "alg2.sigma-notation",
+        "calc1.limit-idea"
+      ],
+      "viz": [
+        "riemann"
+      ]
+    },
+    {
+      "id": "calc1.riemann-sums",
+      "slug": "riemann-sums",
+      "course": "calc1",
+      "unit": "integrals",
+      "title": "Riemann Sums",
+      "short": "A sum of f(xᵢ)Δx approximates the area; more rectangles do better.",
+      "prereqs": [
+        "calc1.area-approximations"
+      ],
+      "viz": [
+        "riemann"
+      ]
+    },
+    {
+      "id": "calc1.definite-integral",
+      "slug": "definite-integral",
+      "course": "calc1",
+      "unit": "integrals",
+      "title": "The Definite Integral",
+      "short": "The limit of Riemann sums gives net signed area.",
+      "prereqs": [
+        "calc1.riemann-sums"
+      ],
+      "viz": [
+        "riemann"
+      ]
+    },
+    {
+      "id": "calc1.integral-properties",
+      "slug": "integral-properties",
+      "course": "calc1",
+      "unit": "integrals",
+      "title": "Properties of Definite Integrals",
+      "short": "Split intervals, reverse limits and compare integrals.",
+      "prereqs": [
+        "calc1.definite-integral"
+      ],
+      "viz": [
+        "riemann"
+      ]
+    },
+    {
+      "id": "calc1.ftc-accumulation",
+      "slug": "ftc-accumulation",
+      "course": "calc1",
+      "unit": "integrals",
+      "title": "Accumulation Functions and FTC Part 1",
+      "short": "d/dx ∫ₐˣ f(t) dt = f(x).",
+      "prereqs": [
+        "calc1.integral-properties",
+        "calc1.chain-rule"
+      ],
+      "viz": [
+        "ftc"
+      ]
+    },
+    {
+      "id": "calc1.ftc-evaluate",
+      "slug": "ftc-evaluate",
+      "course": "calc1",
+      "unit": "integrals",
+      "title": "Evaluating Integrals with FTC Part 2",
+      "short": "∫ₐᵇ f(x) dx = F(b) − F(a).",
+      "prereqs": [
+        "calc1.ftc-accumulation",
+        "calc1.antiderivatives"
+      ],
+      "viz": [
+        "ftc"
+      ]
+    },
+    {
+      "id": "calc1.net-change",
+      "slug": "net-change",
+      "course": "calc1",
+      "unit": "integrals",
+      "title": "Net Change and Total Distance",
+      "short": "The integral of a rate gives net change; total distance needs |v|.",
+      "prereqs": [
+        "calc1.ftc-evaluate",
+        "calc1.motion"
+      ],
+      "viz": [
+        "ftc"
+      ]
+    },
+    {
+      "id": "calc1.average-value",
+      "slug": "average-value",
+      "course": "calc1",
+      "unit": "integrals",
+      "title": "Average Value of a Function",
+      "short": "f_avg = (1/(b − a)) ∫ₐᵇ f(x) dx.",
+      "prereqs": [
+        "calc1.ftc-evaluate"
+      ],
+      "viz": [
+        "ftc",
+        "riemann"
+      ]
+    },
+    {
+      "id": "calc1.u-substitution",
+      "slug": "u-substitution",
+      "course": "calc1",
+      "unit": "integrals",
+      "title": "Integration by Substitution",
+      "short": "Reverse the chain rule by choosing u = inside function.",
+      "prereqs": [
+        "calc1.ftc-evaluate",
+        "calc1.chain-rule"
+      ],
+      "viz": []
+    },
+    {
+      "id": "calc1.substitution-definite",
+      "slug": "substitution-definite",
+      "course": "calc1",
+      "unit": "integrals",
+      "title": "Substitution in Definite Integrals",
+      "short": "Change the limits to match u.",
+      "prereqs": [
+        "calc1.u-substitution"
+      ],
+      "viz": [
+        "ftc"
+      ]
+    },
+    {
+      "id": "calc1.exp-log-integrals",
+      "slug": "exp-log-integrals",
+      "course": "calc1",
+      "unit": "integrals",
+      "title": "Integrals Giving Exponentials and Logarithms",
+      "short": "∫ 1/x dx = ln|x| + C and ∫ eˣ dx = eˣ + C.",
+      "prereqs": [
+        "calc1.u-substitution"
+      ],
+      "viz": []
+    },
+    {
+      "id": "calc1.inverse-trig-integrals",
+      "slug": "inverse-trig-integrals",
+      "course": "calc1",
+      "unit": "integrals",
+      "title": "Integrals Giving Inverse Trig Functions",
+      "short": "∫ 1/(1 + x²) dx = tan⁻¹ x + C.",
+      "prereqs": [
+        "calc1.exp-log-integrals",
+        "calc1.inverse-derivatives"
+      ],
+      "viz": []
+    }
+  ]
+}

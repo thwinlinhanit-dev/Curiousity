@@ -1,0 +1,97 @@
+{
+  "id": "ra.squeeze-order",
+  "slug": "squeeze-order",
+  "ladder": "math",
+  "course": "ra",
+  "unit": "sequences",
+  "title": "Order Limits and the Squeeze Theorem",
+  "short": "Limits keep ≤: if aₙ ≤ bₙ then lim aₙ ≤ lim bₙ; and a sequence trapped between two sequences with the same limit has that limit too.",
+  "trouble": "Students conclude lim aₙ < lim bₙ from aₙ < bₙ. Strict inequalities can become equal in the limit: 0 < 1/n, but both sides tend to 0.",
+  "prereqs": [
+    "ra.limit-laws"
+  ],
+  "xp": 2,
+  "viz": [],
+  "figureArchetype": "LessonFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Limits respect order, with one subtle exception. These facts, together with the <a href=\"/math/real-analysis/limit-laws/\">limit laws</a>, compute most limits without returning to $\\varepsilon$ every time."
+      },
+      {
+        "t": "key",
+        "html": "<b>Order:</b> if $a_n \\le b_n$ for all $n$ (or all large $n$), $a_n \\to a$ and $b_n \\to b$, then $a \\le b$. <b>Squeeze:</b> if $a_n \\le c_n \\le b_n$ for all large $n$ and $a_n \\to L$ and $b_n \\to L$, then $c_n \\to L$. Strict inequalities can become equalities in the limit."
+      },
+      {
+        "t": "why",
+        "html": "<b>Order.</b> Suppose instead $a > b$, and let $\\varepsilon = \\frac{a - b}{2}$. Eventually $a_n > a - \\varepsilon$ and $b_n < b + \\varepsilon$, and $a - \\varepsilon = b + \\varepsilon$, so $a_n > b_n$, a contradiction. <b>Squeeze.</b> Let $\\varepsilon > 0$. Eventually both $L - \\varepsilon < a_n$ and $b_n < L + \\varepsilon$, and then $L - \\varepsilon < a_n \\le c_n \\le b_n < L + \\varepsilon$, so $|c_n - L| < \\varepsilon$. $\\blacksquare$"
+      },
+      {
+        "t": "p",
+        "html": "The squeeze theorem is how analysts handle anything bounded times something that goes to $0$: since $-1 \\le \\sin n \\le 1$, $\\left|\\frac{\\sin n}{n}\\right| \\le \\frac{1}{n} \\to 0$. It also handles sums of many small terms, by bounding every term by the smallest and the largest."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A bounded wiggle",
+        "q": "Find $\\lim \\frac{3n + 2\\sin n}{4n + 1}$.",
+        "steps": [
+          "Divide top and bottom by $n$: $\\frac{3 + 2\\frac{\\sin n}{n}}{4 + \\frac{1}{n}}$.",
+          "$-\\frac{1}{n} \\le \\frac{\\sin n}{n} \\le \\frac{1}{n}$, so by the squeeze theorem $\\frac{\\sin n}{n} \\to 0$."
+        ],
+        "a": "$\\frac{3}{4}$ by the limit laws."
+      },
+      {
+        "t": "ex",
+        "title": "A sum with $n$ terms",
+        "q": "Find $\\lim \\sum_{k=1}^{n} \\frac{n}{n^{2} + k}$.",
+        "steps": [
+          "Each of the $n$ terms is between $\\frac{n}{n^{2} + n}$ (the smallest, at $k = n$) and $\\frac{n}{n^{2} + 1}$ (the largest, at $k = 1$).",
+          "So $\\frac{n^{2}}{n^{2} + n} \\le \\sum_{k=1}^{n} \\frac{n}{n^{2} + k} \\le \\frac{n^{2}}{n^{2} + 1}$, and both bounds tend to $1$."
+        ],
+        "a": "$1$"
+      },
+      {
+        "t": "ex",
+        "title": "A root of a sum",
+        "q": "Find $\\lim \\left(2^{n} + 5^{n}\\right)^{1/n}$.",
+        "steps": [
+          "$5^{n} \\le 2^{n} + 5^{n} \\le 2 \\cdot 5^{n}$, so $5 \\le (2^{n} + 5^{n})^{1/n} \\le 2^{1/n} \\cdot 5$.",
+          "$2^{1/n} \\to 1$, so both bounds tend to $5$."
+        ],
+        "a": "$5$: the larger base wins."
+      },
+      {
+        "t": "ex",
+        "title": "Where a limit can land",
+        "q": "Suppose $a_n \\to L$ and $2 \\le a_n \\le 5$ for every $n \\ge 10$. What can you say about $L$?",
+        "steps": [
+          "Apply the order theorem to $2 \\le a_n$ and to $a_n \\le 5$ (the first nine terms do not matter).",
+          "So $2 \\le L \\le 5$. The ends are possible: $5 - \\frac{1}{n} \\to 5$ stays in $[2, 5]$."
+        ],
+        "a": "$L \\in [2, 5]$, a closed interval."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Keeping a strict inequality in the limit.</b> From $a_n < b_n$ you may conclude only $\\lim a_n \\le \\lim b_n$. Example: $0 < \\frac{1}{n}$ for every $n$, but both sides tend to $0$. In particular, a sequence of positive numbers can have limit $0$. Check any \"$<$\" in a limit argument against the example $\\frac{1}{n}$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Jiří Lebl, Basic Analysis I: Introduction to Real Analysis, section 2.2 (squeeze lemma and order)"
+      },
+      {
+        "name": "William F. Trench, Introduction to Real Analysis (Trinity University), section 4.1"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

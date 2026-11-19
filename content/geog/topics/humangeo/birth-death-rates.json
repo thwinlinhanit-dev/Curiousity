@@ -1,0 +1,133 @@
+{
+  "id": "humangeo.birth-death-rates",
+  "slug": "birth-death-rates",
+  "ladder": "geog",
+  "course": "humangeo",
+  "unit": "population",
+  "title": "Birth Rates, Death Rates and Natural Increase",
+  "short": "The crude birth and death rates count births and deaths per 1,000 people a year; the rate of natural increase is their difference, as a percent.",
+  "trouble": "Students subtract and forget to change \"per 1,000\" into a percent. A birth rate of 30 and a death rate of 10 give 20 per 1,000, which is 2.0 percent a year.",
+  "prereqs": [
+    "humangeo.population-distribution",
+    "g6.percent-meaning"
+  ],
+  "xp": 2,
+  "viz": [
+    "gg-dtm"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A population changes in only four ways: births and immigrants add people; deaths and emigrants subtract them. Demographers start with births and deaths. Because countries differ hugely in size, they compare <b>rates</b>, not raw counts, using the idea of a <a href=\"/math/grade-6/percent-meaning/\">percent</a> and its cousin, \"per 1,000.\""
+      },
+      {
+        "t": "key",
+        "html": "The <b>crude birth rate</b> (CBR) is births per 1,000 people in a year. The <b>crude death rate</b> (CDR) is deaths per 1,000 people in a year. The <b>rate of natural increase</b> (RNI) is CBR − CDR, usually written as a percent: divide the difference by 10."
+      },
+      {
+        "t": "why",
+        "html": "\"Per 1,000\" is a fraction with 1,000 on the bottom; a percent has 100 on the bottom. So 20 per 1,000 = 2 per 100 = 2%. That is why you divide by 10. The word <i>natural</i> means the rate leaves out migration: it counts only births and deaths. And <i>crude</i> means the rates use the whole population, of every age, as the base."
+      },
+      {
+        "t": "viz",
+        "name": "gg-dtm",
+        "opts": {
+          "at": 30
+        },
+        "cap": "Birth and death rates over the demographic transition. Move through time and watch the gap between the lines: that gap is natural increase."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "From counts to rates",
+        "q": "A country of 4,000,000 people had 96,000 births and 28,000 deaths last year. Find CBR, CDR and RNI.",
+        "steps": [
+          "CBR = 96,000 ÷ 4,000,000 × 1,000 = 24 per 1,000.",
+          "CDR = 28,000 ÷ 4,000,000 × 1,000 = 7 per 1,000.",
+          "Difference: 24 − 7 = 17 per 1,000.",
+          "As a percent: 17 ÷ 10 = 1.7%."
+        ],
+        "a": "CBR 24, CDR 7, RNI 1.7% a year."
+      },
+      {
+        "t": "ex",
+        "title": "A shrinking population",
+        "q": "CBR 8, CDR 11. What is the RNI?",
+        "steps": [
+          "8 − 11 = −3 per 1,000.",
+          "−3 ÷ 10 = −0.3%.",
+          "Negative natural increase: more deaths than births."
+        ],
+        "a": "−0.3% a year (natural decrease)."
+      },
+      {
+        "t": "mistake",
+        "html": "Students subtract and stop, writing \"RNI = 20%\" for CBR 30 and CDR 10. The difference is 20 <i>per 1,000</i>, which is 2.0 <i>percent</i>. Check the size: a 20% growth rate would double a population in under four years, which no country does. Real natural increase rates are between about −1% and 4%."
+      },
+      {
+        "t": "table",
+        "head": [
+          "CBR",
+          "CDR",
+          "Per 1,000",
+          "RNI"
+        ],
+        "rows": [
+          [
+            "40",
+            "20",
+            "20",
+            "2.0%"
+          ],
+          [
+            "25",
+            "7",
+            "18",
+            "1.8%"
+          ],
+          [
+            "12",
+            "9",
+            "3",
+            "0.3%"
+          ],
+          [
+            "9",
+            "12",
+            "−3",
+            "−0.3%"
+          ]
+        ],
+        "cap": "From rates per 1,000 to a percent."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "College Board, AP Human Geography: course units and topics",
+        "url": "https://apstudents.collegeboard.org/courses/ap-human-geography"
+      },
+      {
+        "name": "Rate of natural increase (Grokipedia)",
+        "url": "https://grokipedia.com/page/Rate_of_natural_increase"
+      },
+      {
+        "name": "Birth rate (Grokipedia)",
+        "url": "https://grokipedia.com/page/Birth_rate"
+      },
+      {
+        "name": "Mortality rate (Grokipedia)",
+        "url": "https://grokipedia.com/page/Mortality_rate"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

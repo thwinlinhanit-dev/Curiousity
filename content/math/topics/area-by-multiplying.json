@@ -1,0 +1,95 @@
+{
+  "id": "g3.area-by-multiplying",
+  "slug": "area-by-multiplying",
+  "ladder": "math",
+  "course": "g3",
+  "unit": "area-perimeter",
+  "title": "Area of a Rectangle by Multiplying",
+  "short": "Rows times squares in each row gives the area.",
+  "trouble": "",
+  "prereqs": [
+    "g3.area-unit-squares",
+    "g3.arrays-multiplication"
+  ],
+  "xp": 1,
+  "viz": [
+    "areamodel",
+    "arraygrid"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Counting <a href=\"/math/grade-3/area-unit-squares/\">unit squares</a> one by one is slow. But the squares in a rectangle form an <a href=\"/math/grade-3/arrays-multiplication/\">array</a>, and you know how to count arrays fast."
+      },
+      {
+        "t": "viz",
+        "name": "areamodel",
+        "opts": {
+          "a": 4,
+          "b": 6,
+          "split": false,
+          "grid": true
+        },
+        "cap": "A 6-by-4 rectangle: 4 rows of 6 unit squares. $4 \\times 6 = 24$ square units."
+      },
+      {
+        "t": "why",
+        "html": "If a rectangle is 6 units long, 6 unit squares fit along it in one row. If it is 4 units wide, 4 such rows fit. That is an array of 4 rows of 6, so the number of squares is $4 \\times 6$. The side lengths tell you the rows and columns without drawing a single square."
+      },
+      {
+        "t": "key",
+        "html": "Area of a rectangle = length $\\times$ width. The answer is in square units."
+      },
+      {
+        "t": "ex",
+        "title": "Use the side lengths",
+        "q": "A rectangle is 6 cm long and 4 cm wide. What is its area?",
+        "steps": [
+          "4 rows of 6 square centimeters.",
+          "$4 \\times 6 = 24$."
+        ],
+        "a": "24 square cm"
+      },
+      {
+        "t": "ex",
+        "title": "A rug",
+        "q": "A rug is 9 feet long and 7 feet wide. What is its area?",
+        "steps": [
+          "$9 \\times 7 = 63$."
+        ],
+        "a": "63 square feet"
+      },
+      {
+        "t": "ex",
+        "title": "Missing side",
+        "q": "A rectangle has an area of 24 square meters. One side is 4 meters. How long is the other side?",
+        "steps": [
+          "$4 \\times \\square = 24$.",
+          "$4 \\times 6 = 24$."
+        ],
+        "a": "6 meters"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Forgetting the \"square.\"</b> The sides are in centimeters, but the area counts squares, so it is in <b>square</b> centimeters. 24 cm would be a length; 24 square cm is an area."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 3, 3.MD.C.7a (find the area of a rectangle by tiling and show it equals multiplying the side lengths)"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 3, 3.MD.C.7b (multiply side lengths to find areas)"
+      },
+      {
+        "name": "OpenStax, Prealgebra 2e, section 9.4, Use Properties of Rectangles, Triangles, and Trapezoids"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

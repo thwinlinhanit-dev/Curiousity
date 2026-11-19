@@ -1,0 +1,179 @@
+{
+  "id": "apbio.cell-cycle-regulation",
+  "slug": "cell-cycle-regulation",
+  "ladder": "bio",
+  "course": "apbio",
+  "unit": "signaling",
+  "title": "Regulating the Cell Cycle",
+  "short": "Cyclins rise and fall through the cycle and switch on cyclin-dependent kinases (CDKs) that push the cell past checkpoints. Proteins like p53 halt the cycle when DNA is damaged and can trigger apoptosis.",
+  "trouble": "Students think CDKs come and go through the cycle. CDK levels stay fairly steady; cyclin levels rise and fall, and CDKs work only when bound to cyclin.",
+  "prereqs": [
+    "apbio.signal-transduction",
+    "hsbio.cell-cycle-control"
+  ],
+  "xp": 3,
+  "viz": [
+    "bi-mitosis",
+    "bi-chart"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/biology/high-school-biology/cell-cycle-control/\">Controlling the Cell Cycle</a> you met checkpoints, the places where a cell decides whether to go on. The decisions are made by proteins whose levels and activity change through the cycle, using the same <a href=\"/biology/advanced-biology/signal-transduction/\">kinase switches</a> as signal pathways."
+      },
+      {
+        "t": "list",
+        "items": [
+          "<b>Cyclin-dependent kinases (CDKs)</b> are enzymes that phosphorylate target proteins to push the cell into the next phase. Their amount stays fairly steady.",
+          "<b>Cyclins</b> are proteins whose levels rise and fall. A CDK works only when bound to its cyclin. When a cyclin is destroyed, its CDK goes quiet.",
+          "One cyclin-CDK pair, called <b>MPF</b> (maturation-promoting factor, also read as M-phase-promoting factor), peaks at the end of G₂ and drives the cell into mitosis; its cyclin is destroyed during mitosis."
+        ]
+      },
+      {
+        "t": "viz",
+        "name": "bi-chart",
+        "opts": {
+          "kind": "line",
+          "x": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "series": [
+            {
+              "name": "Mitotic cyclin",
+              "values": [
+                5,
+                15,
+                30,
+                50,
+                75,
+                100,
+                10,
+                15,
+                30,
+                50,
+                75,
+                100,
+                10
+              ]
+            },
+            {
+              "name": "CDK",
+              "values": [
+                60,
+                60,
+                60,
+                60,
+                60,
+                60,
+                60,
+                60,
+                60,
+                60,
+                60,
+                60,
+                60
+              ]
+            },
+            {
+              "name": "MPF activity",
+              "values": [
+                0,
+                2,
+                5,
+                10,
+                30,
+                95,
+                0,
+                2,
+                5,
+                10,
+                30,
+                95,
+                0
+              ]
+            }
+          ],
+          "xlabel": "Time (two cycles; mitosis at the peaks)",
+          "ylabel": "Relative level"
+        },
+        "cap": "Cyclin rises through interphase and is destroyed in mitosis; the CDK stays level; MPF activity follows cyclin (a sketch of the pattern)."
+      },
+      {
+        "t": "key",
+        "html": "Cyclin levels rise and fall; CDK levels stay steady. A cyclin-CDK complex is active only when enough cyclin is present, and it pushes the cell past a checkpoint. Brakes such as <b>p53</b> stop the cycle at G₁ when DNA is damaged, allowing repair, or trigger <b>apoptosis</b> (programmed cell death) if the damage is too great."
+      },
+      {
+        "t": "why",
+        "html": "Why build a switch from two parts? Making and destroying a small protein (cyclin) is a quick, clean way to switch a big enzyme on and off. Destroying cyclin also makes the cycle run one way: the cell cannot slip back into the phase it just left. Checkpoints add safety: a cell copies DNA only if conditions are right (G₁), divides only after copying is complete and correct (G₂), and separates chromosomes only when all are attached to the spindle (M)."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Reading the graph",
+        "q": "Using the graph, at which point in the cycle is MPF most active, and why does its activity drop suddenly?",
+        "steps": [
+          "MPF activity peaks at the same time as mitotic cyclin, at the end of G₂.",
+          "Its CDK is present all the time, so the CDK is not what changes.",
+          "During mitosis the cyclin is destroyed, so the CDK has no partner."
+        ],
+        "a": "At the G₂-to-mitosis transition. It drops when the cyclin is broken down during mitosis."
+      },
+      {
+        "t": "ex",
+        "title": "Losing a brake",
+        "q": "A cell has a mutation that destroys its p53 protein. Its DNA is then damaged by radiation. What is likely to happen?",
+        "steps": [
+          "Normally, damaged DNA raises p53, which halts the cycle at G₁ for repair, or triggers apoptosis.",
+          "Without p53, the cell does not stop.",
+          "It copies and passes on the damaged DNA."
+        ],
+        "a": "The cell keeps dividing with damaged DNA, so more mutations build up. Loss of p53 is found in many cancers, which are uncontrolled cell division."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking CDKs come and go through the cycle. The CDK is present all the time; it is the cyclin that rises and falls. That is why the enzyme is called cyclin-<i>dependent</i>: its activity, not its amount, follows the cyclin. On a graph, a flat line is the CDK and a sawtooth is the cyclin."
+      },
+      {
+        "t": "viz",
+        "name": "bi-mitosis",
+        "opts": {
+          "pairs": 2
+        },
+        "cap": "The phases that MPF launches."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Biology 2e, 10.3 Control of the Cell Cycle"
+      },
+      {
+        "name": "OpenStax, Biology 2e, 10.4 Cancer and the Cell Cycle"
+      },
+      {
+        "name": "OpenStax, Biology for AP Courses, 10.3 Control of the Cell Cycle"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

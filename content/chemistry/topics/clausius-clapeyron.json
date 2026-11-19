@@ -1,0 +1,123 @@
+{
+  "id": "gchem1.clausius-clapeyron",
+  "slug": "clausius-clapeyron",
+  "ladder": "chemistry",
+  "course": "gchem1",
+  "unit": "liquids-solids",
+  "title": "The Clausius–Clapeyron Equation",
+  "short": "ln(P₂/P₁) = −(ΔH_vap/R)(1/T₂ − 1/T₁) links vapor pressure to temperature.",
+  "trouble": "Students use Celsius temperatures, or combine ΔH in kJ/mol with R in J/(mol·K).",
+  "prereqs": [
+    "gchem1.vapor-pressure",
+    "alg2.number-e",
+    "alg2.log-properties"
+  ],
+  "xp": 3,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The table in <a href=\"/chemistry/general-chemistry-1/vapor-pressure/\">Vapor Pressure and Boiling</a> shows water's vapor pressure climbing faster and faster as it warms. The Clausius–Clapeyron equation turns that curve into a straight line and lets you predict vapor pressures and boiling points from two numbers. It uses <a href=\"/math/algebra-2/number-e/\">The Number e and Continuous Growth</a> and the <a href=\"/math/algebra-2/log-properties/\">properties of logarithms</a>."
+      },
+      {
+        "t": "key",
+        "html": "$$\\ln\\frac{P_2}{P_1} = -\\frac{\\Delta H_\\text{vap}}{R}\\left(\\frac{1}{T_2} - \\frac{1}{T_1}\\right)$$ with temperatures in <b>kelvins</b>, $R = 8.314\\ \\text{J/(mol·K)}$ and $\\Delta H_\\text{vap}$ in <b>J/mol</b>. Equivalently, a graph of $\\ln P$ against $1/T$ is a straight line with slope $-\\Delta H_\\text{vap}/R$."
+      },
+      {
+        "t": "why",
+        "html": "To escape, a molecule needs at least about $\\Delta H_\\text{vap}$ per mole of energy. The share of molecules with that much energy grows like $e^{-\\Delta H_\\text{vap}/RT}$ (the same Boltzmann factor behind the speed distributions you will meet with gases). Vapor pressure is proportional to that share, so $P = Ae^{-\\Delta H_\\text{vap}/RT}$, and taking logarithms gives $\\ln P = \\ln A - \\dfrac{\\Delta H_\\text{vap}}{R}\\cdot\\dfrac{1}{T}$, a line in $1/T$. Writing it for two temperatures and subtracting removes the unknown $A$ and gives the equation above. (It assumes $\\Delta H_\\text{vap}$ stays constant, a good approximation over a modest range.)"
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "f": "6.633-4.895*(x-2.680)",
+          "xmin": 2.5,
+          "xmax": 3.5,
+          "ymin": 2.5,
+          "ymax": 7.5,
+          "xlabel": "1000/T (1/K)",
+          "ylabel": "ln P",
+          "points": [
+            [
+              2.68,
+              6.633
+            ],
+            [
+              2.832,
+              5.871
+            ],
+            [
+              3.001,
+              5.004
+            ],
+            [
+              3.193,
+              4.011
+            ]
+          ],
+          "zoom": false
+        },
+        "cap": "Water: $\\ln P$ (P in mmHg) against $1000/T$. The measured points at 100, 80, 60 and 40 °C lie close to a straight line whose slope gives $\\Delta H_\\text{vap} \\approx 41\\ \\text{kJ/mol}$."
+      },
+      {
+        "t": "ex",
+        "title": "Vapor pressure at another temperature",
+        "q": "Water's vapor pressure is $760\\ \\text{mmHg}$ at $100.0^\\circ\\text{C}$, and $\\Delta H_\\text{vap} = 40.7\\ \\text{kJ/mol}$. Estimate its vapor pressure at $80.0^\\circ\\text{C}$.",
+        "steps": [
+          "Kelvins: $T_1 = 373.15\\ \\text{K}$, $T_2 = 353.15\\ \\text{K}$. Joules: $\\Delta H_\\text{vap} = 40{,}700\\ \\text{J/mol}$.",
+          "$$\\dfrac{1}{T_2} - \\dfrac{1}{T_1} = \\dfrac{1}{353.15} - \\dfrac{1}{373.15} = 1.518 \\times 10^{-4}\\ \\text{K}^{-1}$$",
+          "$$\\ln\\dfrac{P_2}{760} = -\\dfrac{40{,}700}{8.314}(1.518 \\times 10^{-4}) = -0.743$$",
+          "$P_2 = 760\\,e^{-0.743} = 362\\ \\text{mmHg}$. (Measured: 355 mmHg; $\\Delta H_\\text{vap}$ is not quite constant.)"
+        ],
+        "a": "About $362\\ \\text{mmHg}$."
+      },
+      {
+        "t": "ex",
+        "title": "Finding the enthalpy of vaporization",
+        "q": "A liquid has a vapor pressure of $100.0\\ \\text{mmHg}$ at $25.0^\\circ\\text{C}$ and $400.0\\ \\text{mmHg}$ at $60.0^\\circ\\text{C}$. Find $\\Delta H_\\text{vap}$.",
+        "steps": [
+          "$\\ln\\dfrac{400.0}{100.0} = \\ln 4 = 1.386$.",
+          "$\\dfrac{1}{333.15} - \\dfrac{1}{298.15} = -3.524 \\times 10^{-4}\\ \\text{K}^{-1}$.",
+          "$1.386 = -\\dfrac{\\Delta H_\\text{vap}}{8.314}(-3.524 \\times 10^{-4})$, so $$\\Delta H_\\text{vap} = \\dfrac{1.386 \\times 8.314}{3.524 \\times 10^{-4}} = 3.27 \\times 10^{4}\\ \\text{J/mol}$$"
+        ],
+        "a": "$32.7\\ \\text{kJ/mol}$"
+      },
+      {
+        "t": "ex",
+        "title": "A boiling point at lower pressure",
+        "q": "At what temperature does water boil when the pressure is $0.700\\ \\text{atm}$? ($\\Delta H_\\text{vap} = 40.7\\ \\text{kJ/mol}$; normal boiling point $373.15\\ \\text{K}$.)",
+        "steps": [
+          "At the new boiling point, $P_2 = 0.700\\ \\text{atm}$; $P_1 = 1.000\\ \\text{atm}$ at $373.15\\ \\text{K}$.",
+          "$$\\ln 0.700 = -0.3567 = -\\dfrac{40{,}700}{8.314}\\left(\\dfrac{1}{T_2} - \\dfrac{1}{373.15}\\right)$$",
+          "$$\\dfrac{1}{T_2} = \\dfrac{1}{373.15} + \\dfrac{0.3567 \\times 8.314}{40{,}700} = 0.0027528$$ so $T_2 = 363.3\\ \\text{K}$."
+        ],
+        "a": "$363.3\\ \\text{K}$, about $90^\\circ\\text{C}$."
+      },
+      {
+        "t": "mistake",
+        "html": "Using Celsius temperatures, or mixing kJ/mol with $R$ in J/(mol·K). $1/80 - 1/100$ is a completely different number from $1/353.15 - 1/373.15$, and $40.7$ in place of $40{,}700$ makes the exponent 1000 times too small. Check: before you compute, write every $T$ in kelvins and $\\Delta H_\\text{vap}$ in J/mol. A sensible answer has $P_2 > P_1$ when $T_2 > T_1$."
+      },
+      {
+        "t": "note",
+        "html": "With calculus: the equation comes from integrating $\\dfrac{d\\ln P}{dT} = \\dfrac{\\Delta H_\\text{vap}}{RT^2}$, a separable differential equation (<a href=\"/math/calculus-2/separable-equations/\">Separable Equations</a>)."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 10.3 Phase Transitions"
+      },
+      {
+        "name": "NIST, Chemistry WebBook (vapor pressure of water)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

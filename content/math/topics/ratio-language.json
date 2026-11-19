@@ -1,0 +1,178 @@
+{
+  "id": "g6.ratio-language",
+  "slug": "ratio-language",
+  "ladder": "math",
+  "course": "g6",
+  "unit": "ratios",
+  "title": "Ratios",
+  "short": "A ratio compares two quantities, like 3 cups of flour for every 2 cups of milk.",
+  "trouble": "Students reverse the order of a ratio, or mix up part-to-part and part-to-whole ratios.",
+  "prereqs": [
+    "g4.times-as-many",
+    "g4.simplest-form"
+  ],
+  "xp": 1,
+  "viz": [
+    "ratiotable",
+    "tapediagram"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You already compare amounts with words like \"three times as many\" (see <a href=\"/math/grade-4/times-as-many/\">Times as Many</a>). A <b>ratio</b> is another way to compare two amounts. It tells how much of one thing there is <i>for every</i> so much of another thing."
+      },
+      {
+        "t": "key",
+        "html": "The ratio $a : b$, read \"$a$ to $b$\", means: for every $a$ of the first thing, there are $b$ of the second thing. The order follows the words, so the thing named first is written first."
+      },
+      {
+        "t": "viz",
+        "name": "tapediagram",
+        "opts": {
+          "tapes": [
+            {
+              "parts": [
+                1,
+                1,
+                1
+              ],
+              "labels": [
+                "1 cup",
+                "1 cup",
+                "1 cup"
+              ],
+              "colors": [
+                "gold",
+                "gold",
+                "gold"
+              ],
+              "name": "flour"
+            },
+            {
+              "parts": [
+                1,
+                1
+              ],
+              "labels": [
+                "1 cup",
+                "1 cup"
+              ],
+              "colors": [
+                "blue",
+                "blue"
+              ],
+              "name": "milk"
+            }
+          ],
+          "braces": [
+            {
+              "tape": 0,
+              "from": 0,
+              "to": 3,
+              "label": "3 cups"
+            },
+            {
+              "tape": 1,
+              "from": 0,
+              "to": 2,
+              "label": "2 cups",
+              "up": false
+            }
+          ],
+          "steps": [
+            "For every 3 cups of flour there are 2 cups of milk. The ratio of flour to milk is 3 : 2.",
+            "Switch the words and you switch the numbers: the ratio of milk to flour is 2 : 3.",
+            "One batch uses 3 + 2 = 5 cups in all, so the ratio of flour to the whole mix is 3 : 5."
+          ]
+        },
+        "cap": "One batch of pancake batter. Press <b>Next step</b> to read three different ratios from the same picture."
+      },
+      {
+        "t": "why",
+        "html": "Why not just say \"there is 1 more cup of flour than milk\"? Make a double batch: 6 cups of flour and 4 cups of milk. Now the difference is 2 cups, but the batter tastes exactly the same. What stayed the same is the <i>mix</i>: for every 3 cups of flour there are still 2 cups of milk. A ratio describes the mix, so it does not change when the batch grows."
+      },
+      {
+        "t": "h",
+        "text": "Part to part, and part to whole"
+      },
+      {
+        "t": "p",
+        "html": "A bag holds 4 red marbles and 6 blue marbles. Some ratios compare one part with another part; others compare a part with the whole bag of 10."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Comparison",
+          "Ratio",
+          "Kind"
+        ],
+        "rows": [
+          [
+            "red to blue",
+            "$4 : 6$",
+            "part to part"
+          ],
+          [
+            "blue to red",
+            "$6 : 4$",
+            "part to part"
+          ],
+          [
+            "red to all marbles",
+            "$4 : 10$",
+            "part to whole"
+          ],
+          [
+            "blue to all marbles",
+            "$6 : 10$",
+            "part to whole"
+          ]
+        ],
+        "cap": "Four ratios from one bag of marbles."
+      },
+      {
+        "t": "p",
+        "html": "A part-to-whole ratio is the same as a fraction of the whole: $\\frac{4}{10}$ of the marbles are red. You can also write a ratio in <a href=\"/math/grade-4/simplest-form/\">simplest form</a>: $4 : 6$ and $2 : 3$ describe the same mix."
+      },
+      {
+        "t": "ex",
+        "title": "Read the order from the words",
+        "q": "A fruit bowl has 5 apples and 3 bananas. Write the ratio of bananas to apples.",
+        "steps": [
+          "The words say bananas first, then apples.",
+          "There are 3 bananas and 5 apples."
+        ],
+        "a": "$3 : 5$, read \"3 to 5\"."
+      },
+      {
+        "t": "ex",
+        "title": "From a ratio to a fraction",
+        "q": "In a club, the ratio of girls to boys is $4 : 5$. What fraction of the club are girls?",
+        "steps": [
+          "The ratio says: for every 4 girls there are 5 boys.",
+          "So each group of $4 + 5 = 9$ members has 4 girls.",
+          "Girls are 4 out of every 9 members."
+        ],
+        "a": "$\\frac{4}{9}$ of the club are girls."
+      },
+      {
+        "t": "mistake",
+        "html": "Two slips happen a lot. One is writing the numbers in the wrong order: \"cats to dogs\" must start with the cats. The other is mixing up part-to-part and part-to-whole: in the club above, $\\frac{4}{5}$ compares girls with <i>boys</i>, not with the whole club. Quick check: the fractions for all the parts must add to 1. Here $\\frac{4}{9} + \\frac{5}{9} = 1$, but $\\frac{4}{5} + \\frac{5}{4}$ is much more than 1."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Prealgebra 2e, section 5.6 Ratios and Rate"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 6.RP.A.1: understanding ratios and ratio language"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

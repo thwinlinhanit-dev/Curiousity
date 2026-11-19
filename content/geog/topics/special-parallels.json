@@ -1,0 +1,138 @@
+{
+  "id": "worldgeo.special-parallels",
+  "slug": "special-parallels",
+  "ladder": "geog",
+  "course": "worldgeo",
+  "unit": "lat-long",
+  "title": "The Tropics and the Polar Circles",
+  "short": "The Tropic of Cancer (about 23.4° N), the Tropic of Capricorn (23.4° S), the Arctic Circle (66.6° N) and the Antarctic Circle (66.6° S).",
+  "trouble": "Students mix up Cancer and Capricorn, or think the tropics are where it is hottest. The Tropic of Cancer is the northern one and Capricorn the southern; they mark how far from the equator the noon Sun can be straight overhead.",
+  "prereqs": [
+    "worldgeo.latitude"
+  ],
+  "xp": 2,
+  "viz": [
+    "gg-latlon",
+    "gg-globe"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Besides the equator, four parallels have names. They come from the way Earth leans as it goes around the Sun. Each one has a fixed <a href=\"/geography/world-geography/latitude/\">latitude</a>."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Parallel",
+          "Latitude",
+          "What happens there"
+        ],
+        "rows": [
+          [
+            "Tropic of Cancer",
+            "about 23.4° N",
+            "The farthest north the noon Sun can be straight overhead (around June 21)"
+          ],
+          [
+            "Equator",
+            "0°",
+            "Halfway between the poles"
+          ],
+          [
+            "Tropic of Capricorn",
+            "about 23.4° S",
+            "The farthest south the noon Sun can be straight overhead (around December 21)"
+          ],
+          [
+            "Arctic Circle",
+            "about 66.6° N",
+            "North of it, at least one day a year the Sun never sets, and one day it never rises"
+          ],
+          [
+            "Antarctic Circle",
+            "about 66.6° S",
+            "The same, in the far south"
+          ]
+        ],
+        "cap": "The five named parallels."
+      },
+      {
+        "t": "viz",
+        "name": "gg-map",
+        "opts": {
+          "color": "plain",
+          "lines": [
+            "cancer",
+            "equator",
+            "capricorn",
+            "arctic",
+            "antarctic"
+          ],
+          "graticule": 30,
+          "lineLabelLon": -170
+        },
+        "cap": "The five named parallels on a world map."
+      },
+      {
+        "t": "key",
+        "html": "The <b>tropics</b> are the band between the Tropic of Cancer and the Tropic of Capricorn. The <b>polar regions</b> lie beyond the Arctic and Antarctic Circles."
+      },
+      {
+        "t": "why",
+        "html": "Earth's axis is tilted about 23.4° from straight up. As Earth goes around the Sun, the spot where the noon Sun is straight overhead slides north to 23.4° N and back south to 23.4° S. Those two limits are the tropics. The polar circles are 23.4° from the poles (90 − 23.4 = 66.6), because the same tilt keeps the area inside them in all-day light or all-day dark for part of the year."
+      },
+      {
+        "t": "ex",
+        "title": "Which zone?",
+        "q": "Bangkok, Thailand, is at about 14° N. Is it in the tropics?",
+        "steps": [
+          "The tropics run from 23.4° S to 23.4° N.",
+          "14° N is between 0° and 23.4° N.",
+          "So Bangkok is inside the tropics."
+        ],
+        "a": "Yes. At some point every year the noon Sun is straight overhead in Bangkok."
+      },
+      {
+        "t": "mistake",
+        "html": "Mixing up Cancer and Capricorn. A memory trick: Cancer comes first in the alphabet, and on a map you read from the top, so Cancer is the upper, northern one. Another mistake is thinking the tropics are always the hottest places. The hottest temperatures are often in deserts near 25° to 30°, and high mountains in the tropics are cool."
+      },
+      {
+        "t": "viz",
+        "name": "gg-globe",
+        "opts": {
+          "center": [
+            20,
+            30
+          ],
+          "lines": [
+            "cancer",
+            "equator",
+            "capricorn",
+            "arctic"
+          ],
+          "poles": true
+        },
+        "cap": "Turn the globe to see where each circle goes."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Tropic of Cancer (Grokipedia)",
+        "url": "https://grokipedia.com/page/Tropic_of_Cancer"
+      },
+      {
+        "name": "Arctic Circle (Grokipedia)",
+        "url": "https://grokipedia.com/page/Arctic_Circle"
+      },
+      {
+        "name": "C3 Framework for Social Studies State Standards (NCSS, 2013), Geography, Dimension 2, grades 6-8"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

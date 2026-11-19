@@ -1,0 +1,94 @@
+{
+  "id": "chem.dilution",
+  "slug": "dilution",
+  "ladder": "chemistry",
+  "course": "chem",
+  "unit": "solutions",
+  "title": "Dilution",
+  "short": "Adding water spreads the same moles of solute through more volume: M₁V₁ = M₂V₂.",
+  "trouble": "Students think adding water changes the number of moles of solute.",
+  "prereqs": [
+    "chem.molarity"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-beaker"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Labs keep concentrated \"stock\" solutions and dilute them as needed. <a href=\"/chemistry/chemistry/molarity/\">Molarity</a> tells you what happens to the concentration when you add water."
+      },
+      {
+        "t": "key",
+        "html": "Adding water spreads the same moles of solute through more volume. Since moles $= MV$ stays the same, $$M_1V_1 = M_2V_2$$ where 1 is before and 2 is after diluting. Any volume unit works, as long as both volumes use the same one."
+      },
+      {
+        "t": "why",
+        "html": "Water adds volume but no solute. The moles of solute before, $M_1V_1$, must equal the moles after, $M_2V_2$. Double the volume and every liter holds half as much solute, so the molarity halves."
+      },
+      {
+        "t": "viz",
+        "name": "ch-beaker",
+        "opts": {
+          "mode": "dilute",
+          "sub": "CuSO4",
+          "mol": 0.01,
+          "V": 0.05
+        },
+        "cap": "Add water and watch: the number of solute dots stays the same while they spread out, so the color fades and the molarity drops."
+      },
+      {
+        "t": "ex",
+        "title": "A new concentration",
+        "q": "$50.0\\ \\text{mL}$ of $2.00\\ \\text{M}$ NaCl is diluted with water to $250.0\\ \\text{mL}$. What is the new molarity?",
+        "steps": [
+          "$M_2 = \\dfrac{M_1V_1}{V_2} = \\dfrac{2.00 \\times 50.0}{250.0}$.",
+          "$M_2 = 0.400\\ \\text{M}$: five times the volume, one fifth the concentration."
+        ],
+        "a": "$0.400\\ \\text{M}$."
+      },
+      {
+        "t": "ex",
+        "title": "Using a stock solution",
+        "q": "How much $6.00\\ \\text{M}$ stock solution is needed to make $500.\\ \\text{mL}$ of $0.300\\ \\text{M}$ solution?",
+        "steps": [
+          "$$V_1 = \\dfrac{M_2V_2}{M_1} = \\dfrac{0.300 \\times 500.}{6.00} = 25.0\\ \\text{mL}$$",
+          "Measure $25.0\\ \\text{mL}$ of stock and add water until the total volume is $500.\\ \\text{mL}$ (that is, about $475\\ \\text{mL}$ of water)."
+        ],
+        "a": "$25.0\\ \\text{mL}$ of stock."
+      },
+      {
+        "t": "ex",
+        "title": "How much water to add",
+        "q": "How much water must be added to $20.0\\ \\text{mL}$ of $1.50\\ \\text{M}$ solution to make it $0.250\\ \\text{M}$? (Assume the volumes add.)",
+        "steps": [
+          "Final volume: $$V_2 = \\dfrac{M_1V_1}{M_2} = \\dfrac{1.50 \\times 20.0}{0.250} = 120.\\ \\text{mL}$$",
+          "Water to add: $120. - 20.0 = 100.\\ \\text{mL}$.",
+          "The formula gives the <i>total</i> volume; subtract what you started with."
+        ],
+        "a": "$100.\\ \\text{mL}$ of water."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking that adding water changes the number of moles of solute. It changes only the volume, and so the concentration. Check: $M_1V_1$ and $M_2V_2$ should come out equal, and a diluted solution must always have a lower molarity than the one you started with."
+      },
+      {
+        "t": "note",
+        "html": "Diluting is how one concentrated stock bottle can supply many weaker solutions, and how very weak solutions are made accurately: diluting 10 times, and then 10 times again, gives a solution 100 times weaker without measuring a tiny volume."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 3.3 Molarity"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "exam.cliff-throw",
+  "slug": "cliff-throw",
+  "course": "exam",
+  "courseTitle": "Exam Challenge: Multi-Step Physics Problems",
+  "unit": "mechanics",
+  "unitTitle": "Mechanics",
+  "title": "A Ball Thrown From a Cliff",
+  "short": "Split the flight into a steady sideways part and a falling part, then use energy for the landing speed.",
+  "trouble": "Students use the full launch speed in the vertical equation instead of its vertical component.",
+  "prereqs": [
+    "phys1.projectile-horizontal",
+    "phys1.projectile-angled",
+    "phys1.energy-conservation"
+  ],
+  "xp": 3,
+  "viz": [
+    "exam-cliff-throw"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You met sideways throws in <a href=\"/physics/physics-1/projectile-horizontal/\">Horizontal Launches</a> and angled ones in <a href=\"/physics/physics-1/projectile-angled/\">Launches at an Angle</a>. An exam problem strings the pieces together: first the time in the air, then the distance, then the speed or direction at landing. Each problem here is one short scene and a chain of questions. Answer them in order: each later question uses what you found before, so a slip early on carries through. Keep full precision between steps and round only at the end."
+      },
+      {
+        "t": "key",
+        "html": "Split the motion. Sideways, no force: $x = (v_0\\cos\\theta)\\,t$. Up and down, acceleration $g$: $y = (v_0\\sin\\theta)\\,t - \\tfrac{1}{2}gt^2$. The two share only the time $t$. For the landing speed, energy is quickest: $$\\role[landing speed]{velocity}{v} = \\sqrt{\\role[launch speed]{velocity}{v_0}^2 + 2\\role[acceleration of gravity]{acceleration}{g}\\role[height of the cliff]{position}{h}},$$ whatever the launch angle."
+      },
+      {
+        "t": "viz",
+        "name": "exam-cliff-throw",
+        "opts": {
+          "h": 45,
+          "v": 15,
+          "ang": 0
+        },
+        "cap": "The blue arrow (sideways speed) never changes; the red arrow (vertical speed) grows by $9.8\\ \\text{m/s}$ every second."
+      },
+      {
+        "t": "ex",
+        "title": "A stone from a cliff",
+        "q": "A stone is thrown horizontally at $15\\ \\text{m/s}$ from a cliff $45\\ \\text{m}$ above the sea. Find (1) the time in the air, (2) how far out it lands and (3) its speed at the water.",
+        "steps": [
+          "(1) Vertically it starts from rest: $45 = \\tfrac{1}{2}(9.8)t^2$, so $t = \\sqrt{90/9.8} = 3.03\\ \\text{s}$.",
+          "(2) Sideways the speed stays $15\\ \\text{m/s}$: $x = 15(3.03) = 45.5\\ \\text{m}$.",
+          "(3) Energy: $v = \\sqrt{15^2 + 2(9.8)(45)} = \\sqrt{1107} = 33.3\\ \\text{m/s}$."
+        ],
+        "a": "$3.03\\ \\text{s}$, $45.5\\ \\text{m}$, $33.3\\ \\text{m/s}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Using the whole launch speed in the vertical equation for an angled throw. Only $v_0\\sin\\theta$ is vertical. Check: a throw straight sideways ($\\theta = 0$) must take the same time to fall as a dropped stone."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e (Rice University), chapters on kinematics, energy and momentum"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

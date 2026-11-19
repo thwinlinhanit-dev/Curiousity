@@ -1,0 +1,107 @@
+{
+  "id": "hsbio.dna-replication",
+  "slug": "dna-replication",
+  "ladder": "bio",
+  "course": "hsbio",
+  "unit": "dna",
+  "title": "DNA Replication",
+  "short": "Helicase unzips the helix; DNA polymerase adds matching nucleotides to each old strand. Each new DNA molecule has one old strand and one new (semiconservative).",
+  "trouble": "Students think the copy is made of two new strands beside the old double helix. Each copy keeps one parent strand as its template.",
+  "prereqs": [
+    "hsbio.dna-structure"
+  ],
+  "xp": 2,
+  "viz": [
+    "bi-dna"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Before a cell divides (see <a href=\"/biology/high-school-biology/cell-cycle/\">The Cell Cycle</a>), it copies all of its DNA. The <a href=\"/biology/high-school-biology/dna-structure/\">pairing rule</a> makes this possible: each strand carries the information to rebuild the other."
+      },
+      {
+        "t": "key",
+        "html": "In <b>replication</b>, <b>helicase</b> unzips the double helix by breaking the hydrogen bonds between bases. <b>DNA polymerase</b> then adds matching nucleotides to each old strand, A across from T and G across from C. Each new DNA molecule has <b>one old strand and one new strand</b>: replication is <b>semiconservative</b>."
+      },
+      {
+        "t": "viz",
+        "name": "bi-dna",
+        "opts": {
+          "seq": "ATGCGTAC",
+          "mode": "replicate"
+        },
+        "cap": "Step through: Start, Unzip, Build, Done. Each copy keeps one parent strand (dark) and gets one new strand (light)."
+      },
+      {
+        "t": "why",
+        "html": "Each old strand is a <b>template</b>. Because A can only pair with T and G only with C, there is just one strand that fits each template. So the two copies come out identical to each other and to the original. DNA polymerase also checks its work and fixes most of its own mistakes."
+      },
+      {
+        "t": "list",
+        "items": [
+          "<b>Helicase</b> unwinds and unzips the helix.",
+          "<b>Primase</b> lays down a short RNA primer, because DNA polymerase can only add to an existing strand.",
+          "<b>DNA polymerase</b> adds nucleotides to the new strand, always building it in the 5′→3′ direction.",
+          "<b>DNA ligase</b> seals the gaps between pieces of new DNA."
+        ]
+      },
+      {
+        "t": "ex",
+        "title": "Building on a template",
+        "q": "An old strand reads 3′-TACGGA-5′ after the helix unzips. What new strand is built on it?",
+        "steps": [
+          "Pair each base: T→A, A→T, C→G, G→C, G→C, A→T.",
+          "The new strand runs the opposite way."
+        ],
+        "a": "5′-ATGCCT-3′"
+      },
+      {
+        "t": "ex",
+        "title": "The Meselson-Stahl experiment",
+        "q": "In 1958 Matthew Meselson and Franklin Stahl grew bacteria on heavy nitrogen, then moved them to light nitrogen. After one round of copying, all the DNA was of middle weight. Why?",
+        "steps": [
+          "Heavy DNA had two heavy strands.",
+          "In semiconservative copying, each new molecule keeps one heavy strand and adds one light strand.",
+          "One heavy and one light strand weigh in between."
+        ],
+        "a": "Every molecule was a hybrid: half old (heavy), half new (light)."
+      },
+      {
+        "t": "ex",
+        "title": "Counting after several rounds",
+        "q": "One heavy DNA molecule is copied 3 times in light nitrogen. How many of the molecules still contain a heavy strand?",
+        "steps": [
+          "After 3 rounds there are 2 × 2 × 2 = 8 molecules.",
+          "The two original heavy strands are never broken up or lost; each sits in its own molecule."
+        ],
+        "a": "2 of the 8 (the other 6 are all light)."
+      },
+      {
+        "t": "mistake",
+        "html": "A common picture is that the cell builds a brand-new double helix beside the old one, which stays whole (the \"conservative\" idea). Meselson and Stahl ruled that out: after one round there was no fully heavy DNA left. Each copy keeps one parent strand as its template."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Concepts of Biology, 9.2 DNA Replication"
+      },
+      {
+        "name": "OpenStax, Biology 2e, 14.3 Basics of DNA Replication; 14.4 DNA Replication in Prokaryotes"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-LS3-2: Heredity: Inheritance and Variation of Traits"
+      },
+      {
+        "name": "Grokipedia, Meselson–Stahl experiment",
+        "url": "https://grokipedia.com/page/Meselson%E2%80%93Stahl_experiment"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,88 @@
+{
+  "key": "rbkids",
+  "ladder": "robotics",
+  "title": "Robotics for Kids",
+  "short": "For Kids",
+  "after": [],
+  "units": [
+    {
+      "key": "robots",
+      "title": "What Robots Are",
+      "blurb": "Machines that sense, decide and act on their own, and the parts that do each job."
+    },
+    {
+      "key": "build",
+      "title": "Build and Program",
+      "blurb": "A first safe circuit, programs as steps and loops, and a cardboard arm you can make at the kitchen table."
+    }
+  ],
+  "topics": [
+    {
+      "id": "rbkids.what-is-a-robot",
+      "slug": "what-is-a-robot",
+      "course": "rbkids",
+      "unit": "robots",
+      "title": "What Makes a Robot",
+      "short": "A robot senses the world, decides with a program, and acts, over and over.",
+      "prereqs": [],
+      "viz": [
+        "rb-sta"
+      ]
+    },
+    {
+      "id": "rbkids.sensors-and-motors",
+      "slug": "sensors-and-motors",
+      "course": "rbkids",
+      "unit": "robots",
+      "title": "Sensors and Motors",
+      "short": "Sensors are a robot's senses; motors, servos, lights and speakers are its muscles.",
+      "prereqs": [
+        "rbkids.what-is-a-robot"
+      ],
+      "viz": []
+    },
+    {
+      "id": "rbkids.simple-circuits",
+      "slug": "simple-circuits",
+      "course": "rbkids",
+      "unit": "build",
+      "title": "A First Circuit",
+      "short": "Current flows only around a complete loop: battery, switch, resistor and LED.",
+      "prereqs": [
+        "rbkids.sensors-and-motors"
+      ],
+      "viz": [
+        "rb-circuit"
+      ]
+    },
+    {
+      "id": "rbkids.block-coding",
+      "slug": "block-coding",
+      "course": "rbkids",
+      "unit": "build",
+      "title": "Programs, Steps and Loops",
+      "short": "A program is a list of steps the robot follows in order; a loop repeats steps.",
+      "prereqs": [
+        "rbkids.what-is-a-robot"
+      ],
+      "viz": [
+        "rb-grid"
+      ]
+    },
+    {
+      "id": "rbkids.cardboard-arm",
+      "slug": "cardboard-arm",
+      "course": "rbkids",
+      "unit": "build",
+      "title": "A Cardboard Arm and a Bristlebot",
+      "short": "A lever arm moves its end farther than your hand, but with less force.",
+      "prereqs": [
+        "rbkids.simple-circuits",
+        "rbkids.block-coding"
+      ],
+      "viz": [
+        "rb-lever"
+      ]
+    }
+  ]
+}

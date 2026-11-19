@@ -1,0 +1,89 @@
+{
+  "id": "physsci.energy-conservation-intro",
+  "slug": "energy-conservation-intro",
+  "ladder": "physics",
+  "course": "physsci",
+  "unit": "energy",
+  "title": "Energy Changes Form",
+  "short": "As an object falls or swings, energy moves between kinetic and potential, and the total stays the same.",
+  "trouble": "Students think energy is lost when a swing slows down, rather than turned into heat and sound.",
+  "prereqs": [
+    "physsci.kinetic-energy",
+    "physsci.potential-energy"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-energy"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A roller coaster climbs slowly to the top of the first hill, then races down. Where does its speed come from? From the height. <a href=\"/physics/physical-science/potential-energy/\">Potential energy</a> turns into <a href=\"/physics/physical-science/kinetic-energy/\">kinetic energy</a> on the way down, and back again on the way up."
+      },
+      {
+        "t": "key",
+        "html": "Energy is never created or destroyed; it only changes form. Without friction, $\\text{KE} + \\text{PE}$ stays the same. With friction, some energy becomes thermal energy (and sound), but the total, including the thermal part, is still the same."
+      },
+      {
+        "t": "why",
+        "html": "Falling, an object loses height and gains speed, and the two changes match joule for joule: every joule of PE that disappears shows up as a joule of KE. A real swing slows down because the air and the chains turn a little energy into heat and sound on every swing. That energy is not lost; it is spread into the air as warmth."
+      },
+      {
+        "t": "viz",
+        "name": "ph-energy",
+        "opts": {
+          "scene": "pendulum",
+          "L": 2,
+          "theta0": 40,
+          "m": 1
+        },
+        "cap": "A swinging pendulum. The bars trade places: all potential at the ends, all kinetic at the bottom. Their total never changes."
+      },
+      {
+        "t": "ex",
+        "title": "Dropped from a height",
+        "q": "A 2 kg ball is dropped from 5 m. Ignoring air resistance, find its kinetic energy just before it lands.",
+        "steps": [
+          "At the top: $\\text{PE} = 2 \\times 9.8 \\times 5 = 98$ J and $\\text{KE} = 0$.",
+          "At the bottom: $\\text{PE} = 0$, so all 98 J is kinetic."
+        ],
+        "a": "98 J"
+      },
+      {
+        "t": "ex",
+        "title": "Partway down",
+        "q": "The same ball is 2 m above the ground. Find its PE and KE there.",
+        "steps": [
+          "PE: $2 \\times 9.8 \\times 2 = 39.2$ J.",
+          "Total is still 98 J, so $\\text{KE} = 98 - 39.2 = 58.8$ J."
+        ],
+        "a": "PE 39.2 J, KE 58.8 J"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking energy is lost when a swing slows down. It is turned into thermal energy and sound by air resistance and rubbing at the pivot. Check: total energy at the start = KE + PE + thermal energy later."
+      },
+      {
+        "t": "p",
+        "html": "Watch fifteen pendulums trade energy in the Science Lab: <a href=\"/science-lab/pendulums/\">Pendulums and Resonance</a>."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e, 7.6 Conservation of Energy"
+      },
+      {
+        "name": "OpenStax, College Physics 2e, 7.5 Nonconservative Forces"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-PS3-1"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,105 @@
+{
+  "id": "num.interpolation-error",
+  "slug": "interpolation-error",
+  "ladder": "math",
+  "course": "num",
+  "unit": "interpolation",
+  "title": "Interpolation Error",
+  "short": "f(x) − p(x) = f⁽ⁿ⁺¹⁾(ξ)/(n + 1)! · (x − x₀)(x − x₁)⋯(x − xₙ) for some ξ in the interval.",
+  "trouble": "Students use the nth derivative instead of the (n + 1)st, or forget the product of (x − xᵢ), which is largest near the ends of the interval.",
+  "prereqs": [
+    "num.divided-differences",
+    "num.truncation-error"
+  ],
+  "xp": 3,
+  "viz": [
+    "num-interp"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "An interpolating polynomial matches the data at the nodes. How far is it from the function in between? The answer looks just like the <a href=\"/math/numerical-analysis/truncation-error/\">Taylor remainder</a>, with one important new piece, and it uses the polynomial from <a href=\"/math/numerical-analysis/divided-differences/\">Newton's Divided Differences</a> or any other form, since they are all the same polynomial."
+      },
+      {
+        "t": "key",
+        "html": "If $f$ has $n + 1$ continuous derivatives and $p$ (degree at most $n$) interpolates $f$ at $x_0, \\ldots, x_n$, then for each $x$ there is a $\\xi$ in the smallest interval containing $x$ and the nodes with $$f(x) - p(x) = \\frac{f^{(n+1)}(\\xi)}{(n + 1)!}\\,\\omega(x),\\qquad \\omega(x) = (x - x_0)(x - x_1)\\cdots(x - x_n).$$"
+      },
+      {
+        "t": "why",
+        "html": "Fix an $x$ that is not a node and let $g(t) = f(t) - p(t) - \\big(f(x) - p(x)\\big)\\frac{\\omega(t)}{\\omega(x)}$. Then $g$ is $0$ at the $n + 1$ nodes and at $t = x$: $n + 2$ zeros. By Rolle's theorem $g'$ has $n + 1$ zeros, $g''$ has $n$, and so on, until $g^{(n+1)}$ has at least one zero $\\xi$. But $p^{(n+1)} = 0$ and $\\omega^{(n+1)} = (n + 1)!$, so $0 = f^{(n+1)}(\\xi) - \\big(f(x) - p(x)\\big)\\frac{(n + 1)!}{\\omega(x)}$. Solve for $f(x) - p(x)$."
+      },
+      {
+        "t": "p",
+        "html": "Two factors control the error. The derivative factor depends on $f$; you cannot change it. The node product $\\omega(x)$ depends only on where the nodes are: it is small among the nodes and grows quickly outside them, and for equally spaced nodes it is much larger near the ends of the interval than in the middle."
+      },
+      {
+        "t": "ex",
+        "title": "An exact error",
+        "q": "Let $p$ interpolate $f(x) = x^{3}$ at $0, 1, 2$. Find $f(3) - p(3)$ and then $p(3)$, without finding $p$.",
+        "steps": [
+          "Here $f'''(x) = 6$ is constant, so the formula is exact: $f(x) - p(x) = \\frac{6}{3!}x(x - 1)(x - 2) = x(x - 1)(x - 2)$.",
+          "At $x = 3$: $3 \\cdot 2 \\cdot 1 = 6$, so $p(3) = 27 - 6 = 21$.",
+          "Check: $p(x) = 3x^{2} - 2x$ fits $(0, 0), (1, 1), (2, 8)$, and $p(3) = 21$."
+        ],
+        "a": "$6$, and $p(3) = 21$"
+      },
+      {
+        "t": "ex",
+        "title": "A bound",
+        "q": "Bound the error at $x = 0.25$ when $p$ interpolates $\\sin x$ at $0, 0.5, 1$.",
+        "steps": [
+          "Every derivative of $\\sin$ is at most 1 in size, so $|f'''(\\xi)| \\le 1$.",
+          "$|\\omega(0.25)| = |0.25| \\cdot |{-0.25}| \\cdot |{-0.75}| = 0.046875$.",
+          "Bound: $\\frac{1}{3!}(0.046875) = 0.0078125$. The actual error is about $0.0070$, close to the bound."
+        ],
+        "a": "at most $0.0078$"
+      },
+      {
+        "t": "ex",
+        "title": "Linear interpolation in a table",
+        "q": "A table of $e^{x}$ on $[0, 1]$ has spacing $h$. How small must $h$ be for linear interpolation to be good to $10^{-6}$?",
+        "steps": [
+          "Between neighbors $x_0$ and $x_1 = x_0 + h$, $|\\omega(x)| = |(x - x_0)(x - x_1)|$ is largest at the midpoint, where it is $\\frac{h^{2}}{4}$.",
+          "With $|f''| \\le e$: error $\\le \\frac{e}{2} \\cdot \\frac{h^{2}}{4} = \\frac{eh^{2}}{8}$.",
+          "$\\frac{eh^{2}}{8} \\le 10^{-6}$ gives $h \\le \\sqrt{8 \\times 10^{-6}/e} \\approx 0.0017$."
+        ],
+        "a": "$h \\lesssim 0.0017$"
+      },
+      {
+        "t": "viz",
+        "name": "num-interp",
+        "opts": {
+          "f": "exp(x)",
+          "n": 5,
+          "nodes": "equal",
+          "show": [
+            "p",
+            "error",
+            "omega"
+          ],
+          "task": "Compare the red error curve with the dashed node product. Then switch to Chebyshev nodes."
+        },
+        "cap": "Below the graph: the error f − p (red) and the node product ω(x), scaled (dashed). For a function like eˣ, whose derivatives barely change, the error has almost exactly the shape of ω."
+      },
+      {
+        "t": "mistake",
+        "html": "Using the $n$th derivative instead of the $(n + 1)$st, or dropping the product $\\omega(x)$. With $n + 1$ nodes the formula has $(n + 1)!$, $f^{(n+1)}$ and $n + 1$ factors in $\\omega$; the three counts match. And $\\omega$ matters: it is largest near the ends of the interval, which is where interpolation errors concentrate."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Tobin A. Driscoll and Richard J. Braun, Fundamentals of Numerical Computation (University of Delaware, free online edition): chapter \"Global function approximation\", section \"Polynomial interpolation\" (the error formula)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.330, Introduction to Numerical Analysis: lecture notes on polynomial interpolation (error analysis)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,87 @@
+{
+  "id": "mech.pulley-constraints",
+  "slug": "pulley-constraints",
+  "ladder": "physics",
+  "course": "mech",
+  "unit": "dynamics",
+  "title": "Constraints in Pulley Systems",
+  "short": "The fixed length of a rope links the accelerations, so a movable pulley gives a₁ = 2a₂.",
+  "trouble": "Students give both masses the same acceleration when a movable pulley halves one of them.",
+  "prereqs": [
+    "phys1.pulley-systems",
+    "calc1.derivative-notation"
+  ],
+  "xp": 3,
+  "viz": [
+    "ph-dynamics"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/physics/physics-1/pulley-systems/\">Pulleys and the Atwood Machine</a> handled ropes over fixed pulleys, where everything moves together at one speed. Add a pulley that moves, and the parts move at different rates. The key is one geometric fact, the rope's fixed length, turned into a statement about rates with <a href=\"/math/calculus-1/derivative-notation/\">Leibniz Notation and Units</a>."
+      },
+      {
+        "t": "why",
+        "html": "Write the rope's length as a sum of its straight pieces, each in terms of the positions of the objects. The total never changes, so its derivative is zero. For a load hanging from a movable pulley at height $y$, with one end tied to the ceiling (height $H$) and the other end pulled down past a fixed pulley to a hand at depth $s$ below it: $$L = 2(H - y) + s + \\text{constant}.$$ Then $\\dfrac{dL}{dt} = 0$ gives $\\dfrac{ds}{dt} = 2\\dfrac{dy}{dt}$, and once more, $a_{\\text{hand}} = 2a_{\\text{load}}$."
+      },
+      {
+        "t": "key",
+        "html": "To relate accelerations in a pulley system: (1) write the rope length in terms of positions, (2) differentiate twice. A movable pulley held by two strands moves half as far, half as fast and with half the acceleration of the free end of the rope. Then write Newton's second law for each object, using the constraint to cut the unknowns."
+      },
+      {
+        "t": "viz",
+        "name": "ph-dynamics",
+        "opts": {
+          "scene": "movable-pulley",
+          "m1": 4,
+          "m2": 3,
+          "task": "Watch the two blocks: the counterweight moves twice as far as the load in the same time."
+        },
+        "cap": "A 4 kg load on a movable pulley and a 3 kg counterweight. The rope gives $a_{\\text{counterweight}} = 2a_{\\text{load}}$, and two strands of tension hold the load."
+      },
+      {
+        "t": "ex",
+        "title": "A table and a movable pulley",
+        "q": "A $2\\ \\text{kg}$ block on a frictionless table is tied to a rope that runs over a pulley at the edge, down around a movable pulley holding a $4\\ \\text{kg}$ block, and up to a hook under the table. Find both accelerations and the tension.",
+        "steps": [
+          "Constraint: when the hanging block drops $d$, each of its two strands lengthens by $d$, so the table block slides $2d$: $a_1 = 2a_2$.",
+          "Table block: $T = m_1a_1 = 4a_2$. Hanging block: $m_2g - 2T = m_2a_2$, so $39.2 - 8a_2 = 4a_2$.",
+          "$a_2 = 39.2/12 = 3.27\\ \\text{m/s}^2$, $a_1 = 6.53\\ \\text{m/s}^2$, $T = 2(6.53) = 13.1\\ \\text{N}$."
+        ],
+        "a": "$a_2 = 3.27\\ \\text{m/s}^2$, $a_1 = 6.53\\ \\text{m/s}^2$, $T = 13.1\\ \\text{N}$."
+      },
+      {
+        "t": "ex",
+        "title": "Lifting with a counterweight",
+        "q": "A $4\\ \\text{kg}$ load hangs from a movable pulley; the rope runs from the ceiling around it, over a fixed pulley, down to a $3\\ \\text{kg}$ counterweight. Find the load's acceleration.",
+        "steps": [
+          "Load up $a$, counterweight down $2a$. Counterweight: $3g - T = 3(2a)$. Load: $2T - 4g = 4a$.",
+          "From the first, $T = 3g - 6a$; then $6g - 12a - 4g = 4a$, so $a = \\dfrac{2g}{16} = 1.23\\ \\text{m/s}^2$ upward.",
+          "The lighter counterweight wins because the load is held by two strands."
+        ],
+        "a": "$1.23\\ \\text{m/s}^2$ upward."
+      },
+      {
+        "t": "mistake",
+        "html": "Giving every object the same acceleration, as with a single fixed pulley. With a movable pulley, that breaks the rope: if the load and the free end both moved 1 m, two strands would have to shorten by 1 m each while only 1 m of rope came out. Check your constraint by moving one object a small distance and asking how much rope each piece gains or loses."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 1, 5.6 Common Forces"
+      },
+      {
+        "name": "OpenStax University Physics Volume 1, 6.1 Solving Problems with Newton's Laws"
+      },
+      {
+        "name": "MIT OpenCourseWare 8.01 Classical Mechanics (scope and sequence)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

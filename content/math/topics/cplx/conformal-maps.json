@@ -1,0 +1,125 @@
+{
+  "id": "cplx.conformal-maps",
+  "slug": "conformal-maps",
+  "ladder": "math",
+  "course": "cplx",
+  "unit": "conformal",
+  "title": "Conformal Maps",
+  "short": "Where f is analytic and f′ ≠ 0, f keeps angles: tiny shapes are turned by arg f′ and scaled by |f′|.",
+  "trouble": "Students expect angles to be kept where f′ = 0, but z² doubles the angles at 0.",
+  "prereqs": [
+    "cplx.analytic-functions",
+    "cplx.mappings"
+  ],
+  "xp": 2,
+  "viz": [
+    "cplx-mapping"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Near a point where it is <a href=\"/math/complex-analysis/analytic-functions/\">analytic</a>, a function acts like multiplication by the number $f'(z_0)$: a turn and a uniform stretch. <a href=\"/math/complex-analysis/mappings/\">Mappings</a> with that property keep the angles between curves, and that makes them the tool of choice for moving a hard problem (heat flow, fluid flow, electric fields) from an awkward region to a simple one."
+      },
+      {
+        "t": "key",
+        "html": "An analytic $f$ is <b>conformal</b> at $z_0$ when $f'(z_0) \\ne 0$: any two smooth curves through $z_0$ that meet at an angle $\\alpha$ have images that meet at the same angle $\\alpha$, with the same orientation. Small shapes near $z_0$ are turned by $\\arg f'(z_0)$ and scaled by $|f'(z_0)|$ (areas by $|f'(z_0)|^2$).\n      <br>Where $f'(z_0) = 0$, angles are not kept: if the first nonzero derivative there is $f^{(n)}$, angles at $z_0$ are multiplied by $n$."
+      },
+      {
+        "t": "why",
+        "html": "A curve $z(t)$ through $z_0 = z(0)$ has tangent direction $z'(0)$. Its image $f(z(t))$ has tangent $f'(z_0)\\,z'(0)$ by the chain rule. Multiplying by the same nonzero complex number $f'(z_0)$ turns every tangent by the same angle $\\arg f'(z_0)$, so the angle between two tangents is unchanged. When $f'(z_0) = 0$ and $f(z) \\approx f(z_0) + c(z - z_0)^n$ with $c \\ne 0$, the map behaves like $(z - z_0)^n$, which multiplies angles at $z_0$ by $n$."
+      },
+      {
+        "t": "viz",
+        "name": "cplx-mapping",
+        "opts": {
+          "f": "z^2",
+          "z0": [
+            1,
+            0.6
+          ],
+          "angles": true,
+          "rays": [
+            0,
+            0.7854
+          ],
+          "zoom": true,
+          "h": 0.3,
+          "window": {
+            "x": [
+              -2,
+              2
+            ],
+            "y": [
+              -2,
+              2
+            ]
+          },
+          "wwindow": {
+            "x": [
+              -3,
+              3
+            ],
+            "y": [
+              -3,
+              3
+            ]
+          }
+        },
+        "cap": "Two segments through $z_0$ at $45^\\circ$ and their images under $z^2$: still $45^\\circ$ apart (readout). Now drag $z_0$ to $0$, where $f'(0) = 0$: the angle between the images doubles to $90^\\circ$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Turn and stretch",
+        "q": "For $f(z) = z^2$ at $z_0 = 1 + i$, find the angle by which small shapes are turned and the factor by which they are stretched.",
+        "steps": [
+          "$f'(z_0) = 2(1 + i) = 2 + 2i = 2\\sqrt{2}\\,e^{\\pi i/4}$.",
+          "Turned by $\\frac{\\pi}{4}$, stretched by $2\\sqrt{2}$ (areas by $8$)."
+        ],
+        "a": "angle $\\frac{\\pi}{4}$, factor $2\\sqrt{2}$"
+      },
+      {
+        "t": "ex",
+        "title": "Where a map fails to be conformal",
+        "q": "Where is $f(z) = z^3 - 3z$ not conformal?",
+        "steps": [
+          "$f'(z) = 3z^2 - 3 = 3(z - 1)(z + 1)$.",
+          "$f' = 0$ at $z = \\pm 1$. There $f''(\\pm 1) = \\pm 6 \\ne 0$, so angles at those points are doubled. Everywhere else $f$ is conformal."
+        ],
+        "a": "at $z = \\pm 1$"
+      },
+      {
+        "t": "ex",
+        "title": "Angles at a critical point",
+        "q": "Two rays leave $0$ at an angle of $\\frac{\\pi}{6}$. At what angle do their images under $w = z^3$ leave $0$?",
+        "steps": [
+          "A ray $\\arg z = \\theta$ goes to $\\arg w = 3\\theta$.",
+          "So the angle becomes $3 \\cdot \\frac{\\pi}{6} = \\frac{\\pi}{2}$."
+        ],
+        "a": "$\\frac{\\pi}{2}$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Expecting angles to be kept where $f' = 0$.</b> Conformality needs $f'(z_0) \\ne 0$. The map $z^2$ is analytic everywhere, but at $0$ it doubles every angle: the positive real and positive imaginary axes (a right angle) go to the positive and negative real axes (a straight angle). Before claiming a map keeps angles at a point, compute $f'$ there."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Beck, Marchesi, Pixton and Sabalka, A First Course in Complex Analysis, chapter 3 (Examples of Functions)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.04, Complex Variables with Applications (Spring 2018), course notes: conformal transformations"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,102 @@
+{
+  "id": "g5.whole-divided-by-unit-fraction",
+  "slug": "whole-divided-by-unit-fraction",
+  "ladder": "math",
+  "course": "g5",
+  "unit": "fraction-mult-div",
+  "title": "Dividing a Whole Number by a Unit Fraction",
+  "short": "4 ÷ 1/2 asks how many halves fit in 4.",
+  "trouble": "Children believe division always makes a number smaller, so they answer 4 ÷ 1/2 = 2.",
+  "prereqs": [
+    "g5.unit-fraction-divided-by-whole"
+  ],
+  "xp": 2,
+  "viz": [
+    "fractionbar",
+    "numberline"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You have <a href=\"/math/grade-5/unit-fraction-divided-by-whole/\">shared a unit fraction among people</a>. Now turn it around: how many pieces of size $\\frac{1}{2}$ fit in 4 wholes? That is $4 \\div \\frac{1}{2}$."
+      },
+      {
+        "t": "key",
+        "html": "$n \\div \\frac{1}{b} = n \\times b$. Each whole holds $b$ pieces of size $\\frac{1}{b}$, so $n$ wholes hold $n \\times b$ of them. $4 \\div \\frac{1}{2} = 8$."
+      },
+      {
+        "t": "why",
+        "html": "Division can ask &ldquo;how many groups of this size fit?&rdquo;: $12 \\div 3$ asks how many 3s fit in 12. In the same way, $4 \\div \\frac{1}{2}$ asks how many halves fit in 4. There are 2 halves in each whole, so there are 8 in 4. Check: $8 \\times \\frac{1}{2} = 4$."
+      },
+      {
+        "t": "viz",
+        "name": "numberline",
+        "opts": {
+          "min": 0,
+          "max": 4,
+          "step": 1,
+          "sub": 2,
+          "labels": "mixed",
+          "hops": [
+            {
+              "from": 0,
+              "by": "1/2",
+              "n": 8
+            }
+          ],
+          "points": [
+            {
+              "v": 4,
+              "label": "4"
+            }
+          ]
+        },
+        "cap": "Jumps of $\\frac{1}{2}$ from 0 to 4: eight jumps, so $4 \\div \\frac{1}{2} = 8$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Halves in 4",
+        "q": "Find $4 \\div \\frac{1}{2}$.",
+        "steps": [
+          "How many halves fit in 4?",
+          "2 halves in each whole: $4 \\times 2 = 8$.",
+          "Check: $8 \\times \\frac{1}{2} = 4$."
+        ],
+        "a": "$8$"
+      },
+      {
+        "t": "ex",
+        "title": "Servings",
+        "q": "How many $\\frac{1}{3}$-cup servings are in 5 cups of rice?",
+        "steps": [
+          "$5 \\div \\frac{1}{3}$: how many thirds in 5?",
+          "3 thirds in each cup: $5 \\times 3 = 15$."
+        ],
+        "a": "15 servings"
+      },
+      {
+        "t": "mistake",
+        "html": "Believing division always makes a number smaller, so $4 \\div \\frac{1}{2} = 2$. That answer is $4 \\div 2$, splitting 4 into 2 groups. Dividing by a number less than 1 asks how many small pieces fit, and the answer is bigger. Check: $2 \\times \\frac{1}{2} = 1$, not 4."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Prealgebra 2e, 4.2 Multiply and Divide Fractions"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 5.NF.B.7b: divide a whole number by a unit fraction"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

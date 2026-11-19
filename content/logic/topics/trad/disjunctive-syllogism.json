@@ -1,0 +1,99 @@
+{
+  "id": "trad.disjunctive-syllogism",
+  "slug": "disjunctive-syllogism",
+  "ladder": "logic",
+  "course": "trad",
+  "unit": "hypothetical",
+  "title": "Disjunctive Syllogism",
+  "short": "From \"P or Q\" and \"not P\", conclude \"Q\". From \"P or Q\" and \"P\", nothing follows about Q unless the \"or\" is exclusive.",
+  "trouble": "Affirming a disjunct: learners read every \"or\" as \"one or the other but not both\". Logic's \"or\" is inclusive unless the speaker rules out both.",
+  "prereqs": [
+    "trad.hypothetical-propositions"
+  ],
+  "xp": 2,
+  "viz": [
+    "lg-truthtable"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Another kind of compound statement uses \"or\": \"Either the keys are in the car or they are on the hook.\" Each part is a <b>disjunct</b>. Like <a href=\"/logic/traditional-logic/hypothetical-propositions/\">hypothetical propositions</a>, disjunctions support their own syllogism."
+      },
+      {
+        "t": "key",
+        "html": "<b>Disjunctive syllogism</b>: from \"P or Q\" and \"not P\", conclude \"Q\" (or from \"not Q\", conclude \"P\"). But from \"P or Q\" and \"P\", nothing follows about Q, because logic's \"or\" is <b>inclusive</b>: it allows both."
+      },
+      {
+        "t": "why",
+        "html": "\"P or Q\" says at least one is true. Rule one out, and the other must be the true one. But learning that one is true does not rule the other out, since both may be true. \"Either Ana is at practice or she is at the library\" is not proven false if she went to both. Concluding \"not Q\" from \"P\" is the fallacy of <b>affirming a disjunct</b>. It is only safe when the speaker has made clear that the options exclude each other (\"either … or …, but not both\")."
+      },
+      {
+        "t": "viz",
+        "name": "lg-truthtable",
+        "opts": {
+          "premises": [
+            "p ∨ q",
+            "¬p"
+          ],
+          "conclusion": "q"
+        },
+        "cap": "Disjunctive syllogism: the only row with both premises true has q true. (∨ means \"or\".)"
+      },
+      {
+        "t": "viz",
+        "name": "lg-truthtable",
+        "opts": {
+          "premises": [
+            "p ∨ q",
+            "p"
+          ],
+          "conclusion": "¬q"
+        },
+        "cap": "Affirming a disjunct: the first row (both true) is a counterexample."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Ruling one out",
+        "q": "\"Either the noise came from the attic or it came from the garage. It did not come from the attic.\" What follows?",
+        "steps": [
+          "One disjunct is denied.",
+          "The other must be true."
+        ],
+        "a": "The noise came from the garage."
+      },
+      {
+        "t": "ex",
+        "title": "Affirming a disjunct",
+        "q": "\"Either we take the train or we take the bus. We take the train. So we do not take the bus.\" Valid?",
+        "steps": [
+          "The second premise affirms one disjunct.",
+          "With inclusive \"or\", we could take both (the train, then a bus)."
+        ],
+        "a": "invalid: affirming a disjunct"
+      },
+      {
+        "t": "mistake",
+        "html": "Reading every \"or\" as \"one or the other but not both\". Logic's \"or\" is inclusive unless the speaker rules out both. Check: could both disjuncts be true at once? If yes, affirming one tells you nothing about the other."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Patrick J. Hurley, A Concise Introduction to Logic, 6.6 Argument Forms and Fallacies"
+      },
+      {
+        "name": "Stanford Encyclopedia of Philosophy, \"Ancient Logic\" (the Stoic indemonstrables)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

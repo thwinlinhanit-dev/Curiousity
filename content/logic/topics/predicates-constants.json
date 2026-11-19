@@ -1,0 +1,160 @@
+{
+  "id": "sym.predicates-constants",
+  "slug": "predicates-constants",
+  "ladder": "logic",
+  "course": "sym",
+  "unit": "predicate",
+  "title": "Predicates and Names",
+  "short": "A predicate letter stands for a property (F: is friendly) and a lowercase name for an individual (a: Ava); Fa says that Ava is friendly.",
+  "trouble": "Learners write the name first (aF) or use a capital letter for an individual. Predicate first, then name: Fa.",
+  "prereqs": [
+    "sym.simple-compound",
+    "trad.categorical-propositions"
+  ],
+  "xp": 1,
+  "viz": [
+    "lg-quantworld"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Statement logic treats \"Ava is friendly\" as an unbroken block, a single letter $p$. That is fine until an argument depends on what is inside the block. \"All dogs are mammals; Rex is a dog; so Rex is a mammal\" is valid, but in statement logic it looks like $p$, $q$, so $r$, which is not valid at all. To see why it works we need to look inside simple statements, at the things they are about and what they say of them. This takes up the subject and predicate terms of <a href=\"/logic/traditional-logic/categorical-propositions/\">Categorical Propositions</a> and the simple statements of <a href=\"/logic/symbolic-logic/simple-compound/\">Simple and Compound Statements</a>."
+      },
+      {
+        "t": "key",
+        "html": "A <b>predicate letter</b> (a capital: $F$, $D$, $M$) stands for a property: \"is friendly\", \"is a dog\". A <b>name</b> (a lowercase letter $a$, $b$, $c$ …) stands for one individual. Write the predicate first, then the name: $Fa$ says that $a$ is $F$."
+      },
+      {
+        "t": "why",
+        "html": "Splitting a sentence into predicate and name lets two sentences share parts. \"Rex is a dog\" and \"Rex is a mammal\" become $Dr$ and $Mr$: they mention the same individual $r$, and that shared name is what lets the argument connect. Statement letters hid that connection. All the connectives still work exactly as before: $Fa \\land \\neg Ta$, $Fa \\to Fb$ and so on."
+      },
+      {
+        "t": "viz",
+        "name": "lg-quantworld",
+        "opts": {
+          "preds": {
+            "F": "is friendly",
+            "T": "is tall"
+          },
+          "objects": [
+            {
+              "n": "a",
+              "label": "Ava",
+              "has": [
+                "F"
+              ]
+            },
+            {
+              "n": "b",
+              "label": "Ben",
+              "has": [
+                "F",
+                "T"
+              ]
+            },
+            {
+              "n": "c",
+              "label": "Cleo",
+              "has": [
+                "T"
+              ]
+            }
+          ],
+          "sentences": [
+            "Fa",
+            "Tc",
+            "¬Ta",
+            "Fb ∧ Tb",
+            "Fc ∨ Ta"
+          ]
+        },
+        "cap": "Three people with two properties. Each sentence is checked against the picture."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A simple sentence",
+        "q": "Let $F$: is friendly; $a$: Ava. Translate \"Ava is friendly.\"",
+        "steps": [
+          "Predicate first, then the name."
+        ],
+        "a": "$Fa$"
+      },
+      {
+        "t": "ex",
+        "title": "With connectives",
+        "q": "Let $T$: is tall; $b$: Ben; $c$: Cleo. Translate \"Ben is tall but Cleo is not.\"",
+        "steps": [
+          "\"But\" is $\\land$.",
+          "\"Cleo is not tall\" is $\\neg Tc$."
+        ],
+        "a": "$Tb \\land \\neg Tc$"
+      },
+      {
+        "t": "ex",
+        "title": "A conditional",
+        "q": "Translate \"If Ava is friendly, then Ben is tall.\"",
+        "steps": [
+          "Two simple sentences: $Fa$, $Tb$.",
+          "Join them with $\\to$."
+        ],
+        "a": "$Fa \\to Tb$"
+      },
+      {
+        "t": "mistake",
+        "html": "Writing the name first ($aF$) or using a capital letter for an individual. The order is fixed: a capital predicate letter, then lowercase names. $aF$ is not a formula at all, and $A$ on its own would be read as a statement letter, not as a person. A check: every predicate letter in a sentence about individuals must be followed by a name."
+      },
+      {
+        "t": "table",
+        "head": [
+          "English",
+          "Symbols"
+        ],
+        "rows": [
+          [
+            "Ava is friendly.",
+            "$Fa$"
+          ],
+          [
+            "Ava is not friendly.",
+            "$\\neg Fa$"
+          ],
+          [
+            "Both Ava and Ben are tall.",
+            "$Ta \\land Tb$"
+          ],
+          [
+            "Ava is friendly or tall.",
+            "$Fa \\lor Ta$"
+          ]
+        ],
+        "cap": "Names and predicates, with the familiar connectives."
+      },
+      {
+        "t": "p",
+        "html": "Some predicates relate two or more things (\"Ava likes Ben\"); they come later, in <a href=\"/logic/symbolic-logic/relations/\">Relational Predicates</a>. For now every predicate has one place, filled by one name. Choose letters that help you remember: $D$ for \"is a dog\", $r$ for Rex, as long as no letter is used for two different things in the same problem."
+      },
+      {
+        "t": "p",
+        "html": "So far nothing new can be proved: $Fa$ behaves just like a statement letter. The real gain comes in the next lesson, when we can talk about <i>everything</i> or <i>something</i> without naming it, using the quantifiers."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Patrick J. Hurley and Lori Watson, A Concise Introduction to Logic, 13th ed., section 8.1, Symbols and Translation"
+      },
+      {
+        "name": "forall x: Calgary, an open introduction to formal logic (P. D. Magnus, Tim Button and others; Open Logic Project), chapter on building blocks of FOL"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

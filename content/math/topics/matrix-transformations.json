@@ -1,0 +1,116 @@
+{
+  "id": "pre.matrix-transformations",
+  "slug": "matrix-transformations",
+  "ladder": "math",
+  "course": "pre",
+  "unit": "matrices",
+  "title": "Matrices as Transformations",
+  "short": "A 2 × 2 matrix moves the plane, and |det| scales area.",
+  "trouble": "",
+  "prereqs": [
+    "pre.matrix-multiplication",
+    "pre.determinants"
+  ],
+  "xp": 3,
+  "viz": [
+    "matrix2d"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Multiplying a <a href=\"/math/precalculus/matrix-multiplication/\">matrix</a> by a column $\\begin{bmatrix} x \\\\ y \\end{bmatrix}$ gives a new point. Do that to every point of the plane and the matrix becomes a geometric move: a rotation, a reflection, a stretch or a shear. The <a href=\"/math/precalculus/determinants/\">determinant</a> measures what happens to area."
+      },
+      {
+        "t": "key",
+        "html": "$\\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}$ sends $(1, 0)$ to its first column $(a, c)$ and $(0, 1)$ to its second column $(b, d)$, and that decides everything. Rotation by $\\theta$: $\\begin{bmatrix} \\cos\\theta & -\\sin\\theta \\\\ \\sin\\theta & \\cos\\theta \\end{bmatrix}$. Areas are multiplied by $|\\det|$; a negative determinant also flips the plane over. Doing $F$ and then $S$ is the single matrix $SF$."
+      },
+      {
+        "t": "why",
+        "html": "$$\\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}\\begin{bmatrix} x \\\\ y \\end{bmatrix} = x\\begin{bmatrix} a \\\\ c \\end{bmatrix} + y\\begin{bmatrix} b \\\\ d \\end{bmatrix}.$$ So the image of any point is built from the images of the two unit vectors, the columns. Rotating $(1, 0)$ by $\\theta$ gives $(\\cos\\theta, \\sin\\theta)$ and rotating $(0, 1)$ gives $(-\\sin\\theta, \\cos\\theta)$; those are the columns of the rotation matrix. The unit square goes to the parallelogram on the two columns, whose area is $|\\det|$."
+      },
+      {
+        "t": "viz",
+        "name": "matrix2d",
+        "opts": {
+          "m": [
+            [
+              0,
+              -1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "presets": true,
+          "eigen": false,
+          "vector": [
+            1,
+            0.5
+          ]
+        },
+        "cap": "Try the preset buttons, or type your own entries and slide from the identity to the matrix."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "An image",
+        "q": "Where does $\\begin{bmatrix} 1 & 2 \\\\ 0 & 1 \\end{bmatrix}$ send the point $(2, 3)$?",
+        "steps": [
+          "$$\\begin{bmatrix} 1 & 2 \\\\ 0 & 1 \\end{bmatrix}\\begin{bmatrix} 2 \\\\ 3 \\end{bmatrix} = \\begin{bmatrix} 2 + 6 \\\\ 0 + 3 \\end{bmatrix}.$$",
+          "This matrix is a shear: heights stay the same and points slide sideways in proportion to their height."
+        ],
+        "a": "$(8, 3)$"
+      },
+      {
+        "t": "ex",
+        "title": "A rotation",
+        "q": "Find the matrix for a $30^\\circ$ counterclockwise rotation.",
+        "steps": [
+          "$\\cos 30^\\circ = \\frac{\\sqrt{3}}{2}$ and $\\sin 30^\\circ = \\frac{1}{2}$."
+        ],
+        "a": "$\\begin{bmatrix} \\frac{\\sqrt{3}}{2} & -\\frac{1}{2} \\\\ \\frac{1}{2} & \\frac{\\sqrt{3}}{2} \\end{bmatrix}$"
+      },
+      {
+        "t": "ex",
+        "title": "Area",
+        "q": "A triangle of area $4$ is transformed by $\\begin{bmatrix} 3 & 1 \\\\ 1 & 2 \\end{bmatrix}$. What is the new area?",
+        "steps": [
+          "$\\det = 6 - 1 = 5$, so every area is multiplied by $5$."
+        ],
+        "a": "$20$"
+      },
+      {
+        "t": "ex",
+        "title": "Composing",
+        "q": "Reflect across the $x$-axis, then rotate $90^\\circ$ counterclockwise. What single matrix does both?",
+        "steps": [
+          "First $F = \\begin{bmatrix} 1 & 0 \\\\ 0 & -1 \\end{bmatrix}$, then $S = \\begin{bmatrix} 0 & -1 \\\\ 1 & 0 \\end{bmatrix}$.",
+          "The first move goes on the right: $SF = \\begin{bmatrix} 0 & 1 \\\\ 1 & 0 \\end{bmatrix}$, the reflection across $y = x$."
+        ],
+        "a": "$\\begin{bmatrix} 0 & 1 \\\\ 1 & 0 \\end{bmatrix}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Multiplying in the order you read the moves, $FS$ instead of $SF$. A point $\\mathbf{v}$ becomes $F\\mathbf{v}$ first, then $S(F\\mathbf{v}) = (SF)\\mathbf{v}$, so the matrix applied first is on the right. Check with one point, such as $(1, 0)$, by applying the moves one at a time."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Common Core State Standards for Mathematics, N-VM.C.12"
+      },
+      {
+        "name": "Gilbert Strang, Introduction to Linear Algebra, the chapter on linear transformations"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

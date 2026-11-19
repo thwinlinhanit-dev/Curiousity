@@ -1,0 +1,92 @@
+{
+  "id": "aa.finite-abelian",
+  "slug": "finite-abelian",
+  "ladder": "math",
+  "course": "aa",
+  "unit": "products",
+  "title": "Classifying Finite Abelian Groups",
+  "short": "Every finite abelian group is a product of cyclic groups of prime-power order; for order pᵃ the choices match the partitions of a, so you can list them all.",
+  "trouble": "Students list ℤ₂ × ℤ₄ and ℤ₄ × ℤ₂ as two different groups, or think ℤ₆ and ℤ₂ × ℤ₃ differ (they are isomorphic).",
+  "prereqs": [
+    "aa.direct-products",
+    "nt.unique-factorization"
+  ],
+  "xp": 3,
+  "viz": [],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Finite abelian groups can be listed completely: each one is a <a href=\"/math/abstract-algebra/direct-products/\">direct product</a> of cyclic groups, in an essentially unique way. This is one of the great classification results of algebra, and it turns \"how many abelian groups of order 72 are there?\" into a counting exercise."
+      },
+      {
+        "t": "p",
+        "html": "<b>Fundamental theorem of finite abelian groups.</b> Every finite abelian group is isomorphic to a product $$\\mathbb{Z}_{p_{1}^{a_{1}}} \\times \\mathbb{Z}_{p_{2}^{a_{2}}} \\times \\cdots \\times \\mathbb{Z}_{p_{k}^{a_{k}}}$$ of cyclic groups of prime-power order (the primes need not be different). The list of prime powers, the <b>elementary divisors</b>, is unique up to order."
+      },
+      {
+        "t": "why",
+        "html": "<b>Why prime powers, and why partitions?</b> Two facts from the last lesson do most of the work. First, $\\mathbb{Z}_{mn} \\cong \\mathbb{Z}_{m} \\times \\mathbb{Z}_{n}$ for coprime $m, n$, so any cyclic factor splits into prime-power pieces, and pieces for different primes never interact. Second, for one prime $p$, products like $\\mathbb{Z}_{p^{2}} \\times \\mathbb{Z}_{p}$ and $\\mathbb{Z}_{p^{3}}$ are <i>not</i> isomorphic (count the elements of order $p$). So for a group of order $p^{a}$ the possible shapes match the ways to write $a = a_{1} + a_{2} + \\cdots$ with $a_{1} \\ge a_{2} \\ge \\cdots$: the <b>partitions</b> of $a$. The existence part of the theorem (that every abelian group splits this way) takes a longer argument; Judson proves it in chapter 13."
+      },
+      {
+        "t": "p",
+        "html": "<b>Counting.</b> If $n = p_{1}^{e_{1}} \\cdots p_{r}^{e_{r}}$, choose a partition of each exponent independently: the number of abelian groups of order $n$ is $\\mathrm{p}(e_{1}) \\cdots \\mathrm{p}(e_{r})$, where $\\mathrm{p}(e)$ is the number of partitions of $e$ ($\\mathrm{p}(1) = 1$, $\\mathrm{p}(2) = 2$, $\\mathrm{p}(3) = 3$, $\\mathrm{p}(4) = 5$, $\\mathrm{p}(5) = 7$)."
+      },
+      {
+        "t": "ex",
+        "title": "Order 8",
+        "q": "List the abelian groups of order $8 = 2^{3}$.",
+        "steps": [
+          "Partitions of $3$: $3$, $2 + 1$, $1 + 1 + 1$.",
+          "Groups: $\\mathbb{Z}_{8}$, $\\mathbb{Z}_{4} \\times \\mathbb{Z}_{2}$, $\\mathbb{Z}_{2} \\times \\mathbb{Z}_{2} \\times \\mathbb{Z}_{2}$.",
+          "They differ: the numbers of elements of order 2 are $1$, $3$ and $7$."
+        ],
+        "a": "Three groups."
+      },
+      {
+        "t": "ex",
+        "title": "Order 72",
+        "q": "How many abelian groups of order $72$ are there? List them.",
+        "steps": [
+          "$72 = 2^{3} \\cdot 3^{2}$: $\\mathrm{p}(3) \\cdot \\mathrm{p}(2) = 3 \\cdot 2 = 6$.",
+          "2-part: $\\mathbb{Z}_{8}$, $\\mathbb{Z}_{4} \\times \\mathbb{Z}_{2}$ or $\\mathbb{Z}_{2}^{3}$; 3-part: $\\mathbb{Z}_{9}$ or $\\mathbb{Z}_{3} \\times \\mathbb{Z}_{3}$.",
+          "For example $\\mathbb{Z}_{4} \\times \\mathbb{Z}_{2} \\times \\mathbb{Z}_{9}$ is one of the six."
+        ],
+        "a": "Six."
+      },
+      {
+        "t": "ex",
+        "title": "Finding the elementary divisors",
+        "q": "Write $\\mathbb{Z}_{12} \\times \\mathbb{Z}_{18}$ with prime-power factors.",
+        "steps": [
+          "$\\mathbb{Z}_{12} \\cong \\mathbb{Z}_{4} \\times \\mathbb{Z}_{3}$ and $\\mathbb{Z}_{18} \\cong \\mathbb{Z}_{2} \\times \\mathbb{Z}_{9}$.",
+          "Collect: $\\mathbb{Z}_{4} \\times \\mathbb{Z}_{2} \\times \\mathbb{Z}_{9} \\times \\mathbb{Z}_{3}$."
+        ],
+        "a": "Elementary divisors $4, 2, 9, 3$."
+      },
+      {
+        "t": "mistake",
+        "html": "Counting $\\mathbb{Z}_{2} \\times \\mathbb{Z}_{4}$ and $\\mathbb{Z}_{4} \\times \\mathbb{Z}_{2}$ as two groups: swapping factors gives an isomorphic group, so only the multiset of prime powers matters. The reverse slip is treating $\\mathbb{Z}_{6}$ and $\\mathbb{Z}_{2} \\times \\mathbb{Z}_{3}$ as different: they are isomorphic, since $\\gcd(2, 3) = 1$. Always break factors into prime powers before comparing."
+      },
+      {
+        "t": "key",
+        "html": "Every finite abelian group is a product of cyclic groups of prime-power order, uniquely. For order $p^{a}$ the groups match the partitions of $a$; for general $n$, multiply the partition counts of the exponents."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Thomas W. Judson, Abstract Algebra: Theory and Applications (open textbook), chapter 13, The Structure of Groups (section 13.1, Finite Abelian Groups)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.702 Algebra II (Spring 2011), lecture notes on finite abelian groups"
+      },
+      {
+        "name": "John A. Beachy and William D. Blair, Abstract Algebra, online study guide (Northern Illinois University), section 7.5, Finite Abelian Groups"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

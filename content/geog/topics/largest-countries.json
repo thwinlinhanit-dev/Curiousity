@@ -1,0 +1,151 @@
+{
+  "id": "worldgeo.largest-countries",
+  "slug": "largest-countries",
+  "ladder": "geog",
+  "course": "worldgeo",
+  "unit": "population",
+  "title": "The Largest Countries by Area",
+  "short": "Russia is by far the largest country, then Canada; the United States and China come next, and their order depends on how water and disputed land are counted; then Brazil and Australia.",
+  "trouble": "Students judge size from a Mercator map, so Canada and Russia look even bigger and countries near the equator, like Brazil and the Democratic Republic of the Congo, look smaller than they are.",
+  "prereqs": [
+    "worldgeo.continents-compared",
+    "worldgeo.mercator"
+  ],
+  "xp": 2,
+  "viz": [
+    "gg-map",
+    "gg-projection"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Now compare countries by <b>area</b>, the land they cover. Here a map can fool you: in <a href=\"/geography/world-geography/mercator/\">The Mercator Projection</a> you saw that the Mercator projection stretches places far from the equator."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Rank",
+          "Country",
+          "Total area (about)"
+        ],
+        "rows": [
+          [
+            "1",
+            "Russia",
+            "17.1 million km²"
+          ],
+          [
+            "2",
+            "Canada",
+            "10.0 million km²"
+          ],
+          [
+            "3–4",
+            "United States",
+            "9.8 million km²"
+          ],
+          [
+            "3–4",
+            "China",
+            "9.6 million km²"
+          ],
+          [
+            "5",
+            "Brazil",
+            "8.5 million km²"
+          ],
+          [
+            "6",
+            "Australia",
+            "7.7 million km²"
+          ],
+          [
+            "7",
+            "India",
+            "3.3 million km²"
+          ],
+          [
+            "8",
+            "Argentina",
+            "2.8 million km²"
+          ],
+          [
+            "9",
+            "Kazakhstan",
+            "2.7 million km²"
+          ],
+          [
+            "10",
+            "Algeria",
+            "2.4 million km²"
+          ]
+        ],
+        "cap": "The ten largest countries by total area, land plus lakes and rivers (CIA World Factbook)."
+      },
+      {
+        "t": "key",
+        "html": "<b>Russia</b> is by far the largest country. <b>Canada</b> is second by total area. The <b>United States</b> and <b>China</b> come next, and their order depends on how coastal waters, lakes and disputed land are counted. Then come <b>Brazil</b> and <b>Australia</b>."
+      },
+      {
+        "t": "why",
+        "html": "\"Area\" can mean different things. Total area counts lakes and rivers inside a country; Canada has so many lakes that by land alone, the United States and China are larger. Sources also differ on coastal waters and on land claimed by two countries. So the order in the middle of the list depends on the rules. Russia is first by any count, and Brazil and Australia come right after the big four."
+      },
+      {
+        "t": "viz",
+        "name": "gg-projection",
+        "opts": {
+          "compare": [
+            "mercator",
+            "equalearth"
+          ],
+          "highlight": [
+            "RUS",
+            "BRA",
+            "COD"
+          ]
+        },
+        "cap": "Russia, Brazil and the DR Congo on a Mercator map (A) and an equal-area map (B)."
+      },
+      {
+        "t": "ex",
+        "title": "How many times as big?",
+        "q": "Russia covers about 17.1 million km² and Australia about 7.7 million km². How many times as large is Russia?",
+        "steps": [
+          "17.1 ÷ 7.7 ≈ 2.2."
+        ],
+        "a": "A little more than twice as large."
+      },
+      {
+        "t": "ex",
+        "title": "Trust the right map",
+        "q": "On a Mercator map Greenland looks as big as Africa. Which is larger?",
+        "steps": [
+          "Mercator stretches lands near the poles.",
+          "Greenland is about 2.2 million km²; Africa is about 30 million km².",
+          "Africa is about 14 times as large."
+        ],
+        "a": "Africa, by far."
+      },
+      {
+        "t": "mistake",
+        "html": "Judging size from a Mercator map makes Canada and Russia look even bigger, and countries near the equator, such as <b>Brazil</b> and the <b>DR Congo</b>, look smaller than they are. Compare sizes on an equal-area map, or by the numbers."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "CIA World Factbook (2023 archive), total area of each country, as listed in Grokipedia, \"List of countries and dependencies by area\"",
+        "url": "https://grokipedia.com/page/List_of_countries_and_dependencies_by_area"
+      },
+      {
+        "name": "Grokipedia, \"List of countries and dependencies by area\"",
+        "url": "https://grokipedia.com/page/List_of_countries_and_dependencies_by_area"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

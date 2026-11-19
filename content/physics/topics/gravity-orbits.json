@@ -1,0 +1,72 @@
+{
+  "id": "rocket.gravity-orbits",
+  "slug": "gravity-orbits",
+  "ladder": "physics",
+  "course": "rocket",
+  "unit": "orbit",
+  "title": "Why Sputnik Didn't Fall",
+  "short": "An orbiting satellite is falling all the time, but it moves sideways so fast that the ground curves away beneath it.",
+  "trouble": "Students think there is no gravity in orbit.",
+  "prereqs": [
+    "phys1.orbiting-satellites",
+    "phys1.gravitational-force"
+  ],
+  "xp": 2,
+  "viz": [
+    "rocket-cannon"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "note",
+        "html": "<b>From the story.</b> On October 4, 1957, the Soviet Union launched Sputnik 1, an 83.6 kg sphere that circled Earth about once every 98 minutes. Its flight is what set Homer Hickam, then 14, to building rockets. (More in <a href=\"/october-sky/\">October Sky</a>.)"
+      },
+      {
+        "t": "p",
+        "html": "Why didn't Sputnik fall? It did, all the time. Isaac Newton imagined a cannon on a very tall mountain. A slow shot falls nearby; a faster one lands farther around the curved Earth. Fast enough, and the ground curves away as fast as the ball falls toward it, so it never lands. That is an orbit."
+      },
+      {
+        "t": "key",
+        "html": "For a circular orbit, gravity supplies the centripetal force: $$\\frac{GMm}{r^2} = \\frac{mv^2}{r} \\quad\\Longrightarrow\\quad \\role[orbital speed]{velocity}{v} = \\sqrt{\\frac{\\role[gravitational constant]{constant}{G}\\role[Earth's mass]{mass}{M}}{\\role[distance from the center]{position}{r}}}, \\qquad T = \\frac{2\\pi r}{v} = 2\\pi\\sqrt{\\frac{r^3}{GM}}.$$ Here $r$ is measured from the center of the Earth: radius plus altitude. Low Earth orbit takes about $7.8\\ \\text{km/s}$."
+      },
+      {
+        "t": "viz",
+        "name": "rocket-cannon",
+        "cap": "Newton's cannon. Each faster shot lands farther around, until one falls all the way around."
+      },
+      {
+        "t": "ex",
+        "title": "Low orbit",
+        "q": "Find the speed and period of a circular orbit $300\\ \\text{km}$ up. ($GM_E = 3.986 \\times 10^{14}\\ \\text{m}^3/\\text{s}^2$, $R_E = 6{,}371\\ \\text{km}$.)",
+        "steps": [
+          "$r = 6{,}671\\ \\text{km} = 6.671 \\times 10^6\\ \\text{m}$.",
+          "$v = \\sqrt{3.986 \\times 10^{14}/6.671 \\times 10^6} \\approx 7{,}730\\ \\text{m/s}$.",
+          "$T = 2\\pi r/v \\approx 5{,}420\\ \\text{s} \\approx 90\\ \\text{min}$."
+        ],
+        "a": "$\\approx 7.7\\ \\text{km/s}$, $\\approx 90\\ \\text{min}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking there is no gravity in orbit. At $300\\ \\text{km}$ up, gravity is still about $91\\%$ as strong as on the ground; astronauts float because they are falling with their spacecraft."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "NASA History: Sputnik and the Dawn of the Space Age",
+        "url": "https://www.nasa.gov/history/sputnik/index.html"
+      },
+      {
+        "name": "e-WV, The West Virginia Encyclopedia: Homer Hickam",
+        "url": "https://www.wvencyclopedia.org/entries/101"
+      },
+      {
+        "name": "OpenStax, University Physics Volume 1 (Rice University): kinematics, Newton's laws, momentum, gravitation"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

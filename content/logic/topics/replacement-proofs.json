@@ -1,0 +1,135 @@
+{
+  "id": "sym.replacement-proofs",
+  "slug": "replacement-proofs",
+  "ladder": "logic",
+  "course": "sym",
+  "unit": "replacement",
+  "title": "Proofs with All Eighteen Rules",
+  "short": "Combine rules of inference and replacement, often reshaping a line with replacement until an inference rule fits.",
+  "trouble": "Learners reach for a long chain of replacements when a short inference would do. Ask what shape of line the next inference rule needs.",
+  "prereqs": [
+    "sym.equiv-exp-taut"
+  ],
+  "xp": 3,
+  "viz": [
+    "lg-proof"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You now have all eighteen rules: eight of inference (<a href=\"/logic/symbolic-logic/proof-strategy/\">Proof Strategy: Working Backward</a>) and ten of replacement (<a href=\"/logic/symbolic-logic/equiv-exp-taut/\">Equivalence, Exportation and Tautology (Equiv, Exp, Taut)</a>). Real proofs mix them, and the skill is knowing when to reshape a line and when to infer from it."
+      },
+      {
+        "t": "key",
+        "html": "Use rules of replacement to reshape a line until an inference rule fits; then infer. Before each step, ask what shape the next inference rule needs, and replace only toward that shape."
+      },
+      {
+        "t": "why",
+        "html": "Inference rules are picky about form: MT needs an exact negated consequent, DS an exact negated disjunct, MP an exact antecedent. Replacement rules are the adapters that make the shapes line up. Working backward tells you which shape you need, so you are not trying all ten rules at random."
+      },
+      {
+        "t": "viz",
+        "name": "lg-proof",
+        "opts": {
+          "premises": [
+            "¬(p → q)"
+          ],
+          "conclusion": "p",
+          "lines": [
+            {
+              "f": "¬(¬p ∨ q)",
+              "j": "Impl 1",
+              "note": "Turn the conditional inside into a disjunction."
+            },
+            {
+              "f": "¬¬p ∧ ¬q",
+              "j": "DM 2",
+              "note": "Move the negation in."
+            },
+            {
+              "f": "¬¬p",
+              "j": "Simp 3"
+            },
+            {
+              "f": "p",
+              "j": "DN 4"
+            }
+          ],
+          "steps": true,
+          "goalLine": true
+        },
+        "cap": "A negated conditional gives its antecedent: Impl, DM, Simp, DN."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Reshape, then infer",
+        "q": "Premises $\\neg p \\lor q$ and $p$. Prove $q$.",
+        "steps": [
+          "MP needs a conditional. Impl turns $\\neg p \\lor q$ into $p \\to q$ (line 3).",
+          "Line 4: $q$ by MP 3, 2."
+        ],
+        "a": "Alternatively: DN on $p$ gives $\\neg \\neg p$, then DS. Either route works."
+      },
+      {
+        "t": "ex",
+        "title": "A longer one",
+        "q": "Premises $(p \\lor q) \\to r$ and $\\neg r$. Prove $\\neg p$.",
+        "steps": [
+          "Line 3: $\\neg (p \\lor q)$ by MT 1, 2.",
+          "Line 4: $\\neg p \\land \\neg q$ by DM 3.",
+          "Line 5: $\\neg p$ by Simp 4."
+        ],
+        "a": "MT, DM, Simp."
+      },
+      {
+        "t": "ex",
+        "title": "Choose the shape",
+        "q": "Premises $p \\to q$ and $p \\to r$. Prove $p \\to (q \\land r)$. Which rules?",
+        "steps": [
+          "Getting there with only the eighteen rules takes several steps (Impl, Dist, and more).",
+          "Conditional proof, the next lesson, does it in four lines."
+        ],
+        "a": "A sign that a new method is coming."
+      },
+      {
+        "t": "mistake",
+        "html": "Reaching for a long chain of replacements when a short inference would do. Five replacement steps that end where one MT would have taken you are not wrong, but they are easy to get wrong. Plan backward: name the inference rule that will finish the proof, then use the fewest replacements needed to give it the shape it wants."
+      },
+      {
+        "t": "p",
+        "html": "Two habits help most. First, always look at the main connective of each premise and of the conclusion, since that is all the rules ever see. Second, remember the common adapters: DN for exact negations, DM for negations in front of parentheses, Impl to switch between conditionals and disjunctions, and Equiv to unpack a biconditional. With those four, most proofs fall into place."
+      },
+      {
+        "t": "list",
+        "items": [
+          "What is the last rule likely to be?",
+          "What exact shape does it need?",
+          "Which replacement turns a line I have into that shape?",
+          "Check each replacement changes only one part."
+        ]
+      },
+      {
+        "t": "p",
+        "html": "Some conclusions are awkward with these rules alone, especially conditionals like the third example. The next unit adds conditional proof and indirect proof, which make such proofs short and natural."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Patrick J. Hurley and Lori Watson, A Concise Introduction to Logic, 13th ed., section 7.4, strategy with all eighteen rules"
+      },
+      {
+        "name": "forall x: Calgary, an open introduction to formal logic (P. D. Magnus, Tim Button and others; Open Logic Project), chapter on proof strategies"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

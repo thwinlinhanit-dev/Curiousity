@@ -1,0 +1,67 @@
+{
+  "id": "exam.deflecting-plates",
+  "slug": "deflecting-plates",
+  "ladder": "physics",
+  "course": "exam",
+  "unit": "em",
+  "title": "A Beam Between Charged Plates",
+  "short": "A charge crossing a uniform field moves like a projectile: steady across, accelerated sideways.",
+  "trouble": "Students use the voltage itself as the field, forgetting to divide by the plate gap.",
+  "prereqs": [
+    "phys2.uniform-field",
+    "phys1.projectile-horizontal"
+  ],
+  "xp": 3,
+  "viz": [
+    "exam-deflecting-plates"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A charge crossing a <a href=\"/physics/physics-2/uniform-field/\">uniform field</a> moves exactly like a ball thrown sideways under gravity: steady along the plates, accelerated across them. The same splitting as <a href=\"/physics/physics-1/projectile-horizontal/\">Horizontal Launches</a> works. Each problem here is one short scene and a chain of questions. Answer them in order: each later question uses what you found before, so a slip early on carries through. Keep full precision between steps and round only at the end."
+      },
+      {
+        "t": "key",
+        "html": "$$E = \\frac{V}{d}, \\qquad a = \\frac{qE}{m}, \\qquad t = \\frac{\\ell}{v_0}, \\qquad y = \\tfrac{1}{2}at^2.$$ An electron is pulled toward the positive plate; gravity is far too weak to matter."
+      },
+      {
+        "t": "viz",
+        "name": "exam-deflecting-plates",
+        "opts": {
+          "top": true,
+          "len": 4,
+          "d": 2,
+          "V": 100
+        },
+        "cap": "Between the plates the path is a parabola; after them it is a straight line."
+      },
+      {
+        "t": "ex",
+        "title": "An electron beam",
+        "q": "An electron at $2.0 \\times 10^7\\ \\text{m/s}$ enters plates $4.0\\ \\text{cm}$ long, $2.0\\ \\text{cm}$ apart, with $100\\ \\text{V}$ across them. Find (1) the field, (2) the time inside and (3) the deflection.",
+        "steps": [
+          "(1) $E = 100/0.020 = 5000\\ \\text{V/m}$.",
+          "(2) $t = 0.040/(2.0 \\times 10^7) = 2.0 \\times 10^{-9}\\ \\text{s}$.",
+          "(3) $a = (1.6 \\times 10^{-19})(5000)/(9.11 \\times 10^{-31}) = 8.78 \\times 10^{14}\\ \\text{m/s}^2$; $y = \\tfrac{1}{2}a t^2 = 1.76\\ \\text{mm}$."
+        ],
+        "a": "$5000\\ \\text{V/m}$, $2.0\\ \\text{ns}$, $1.76\\ \\text{mm}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Using $V$ where $E$ belongs. The field is volts per meter: divide by the gap in meters. Check units: $qE$ must come out in newtons."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e (Rice University), chapters 18 to 23 on electricity and magnetism"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,111 @@
+{
+  "id": "prob.covariance-correlation",
+  "slug": "covariance-correlation",
+  "ladder": "math",
+  "course": "prob",
+  "unit": "joint",
+  "title": "Covariance and Correlation",
+  "short": "Cov(X, Y) = E[XY] − E[X]E[Y], and the correlation ρ = Cov(X, Y)/(σ_X σ_Y) lies between −1 and 1.",
+  "trouble": "Students think zero covariance means independence. If X is −1, 0 or 1 with equal chances and Y = X², then Cov(X, Y) = 0, yet Y depends on X.",
+  "prereqs": [
+    "prob.conditional-distributions",
+    "prob.variance-rules"
+  ],
+  "xp": 3,
+  "viz": [
+    "prob-table"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": {
+    "kind": "worked-example",
+    "q": "$P(X = 0, Y = 0) = 0.4$, $P(X = 0, Y = 1) = 0.1$, $P(X = 1, Y = 0) = 0.2$, $P(X = 1, Y = 1) = 0.3$. Find $\\operatorname{Cov}(X, Y)$ and $\\rho$.",
+    "a": "$0.1$ and about $0.41$",
+    "steps": [
+      "$E[X] = 0.5$, $E[Y] = 0.4$, and $E[XY] = P(X = 1, Y = 1) = 0.3$.",
+      "$\\operatorname{Cov}(X, Y) = 0.3 - 0.5 \\times 0.4 = 0.1$.",
+      "$\\operatorname{Var}(X) = 0.25$, $\\operatorname{Var}(Y) = 0.24$, so $\\rho = \\frac{0.1}{\\sqrt{0.25 \\times 0.24}} \\approx 0.41$."
+    ],
+    "title": "From a table"
+  },
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Do $X$ and $Y$ tend to be large together, or does one tend to be large when the other is small? Covariance measures that tendency, using the <a href=\"/math/probability/variance-rules/\">variance shortcut</a> idea. It is computed from a <a href=\"/math/probability/conditional-distributions/\">joint distribution</a>, and scaled, it becomes the correlation $\\rho$."
+      },
+      {
+        "t": "key",
+        "html": "$$\\operatorname{Cov}(X, Y) = E[(X - \\mu_X)(Y - \\mu_Y)] = E[XY] - E[X]E[Y], \\qquad \\rho = \\frac{\\operatorname{Cov}(X, Y)}{\\sigma_X\\sigma_Y},$$ with $-1 \\le \\rho \\le 1$. Independent variables have covariance 0, but covariance 0 does <b>not</b> imply independence."
+      },
+      {
+        "t": "why",
+        "html": "$(X - \\mu_X)(Y - \\mu_Y)$ is positive when both are above (or both below) their means, and negative when they are on opposite sides; its average measures the trend. Expanding and using linearity gives the shortcut. For $\\lvert \\rho \\rvert \\le 1$: let $U = \\frac{X}{\\sigma_X}$ and $V = \\frac{Y}{\\sigma_Y}$. Then $0 \\le \\operatorname{Var}(U + V) = 1 + 1 + 2\\rho$ and $0 \\le \\operatorname{Var}(U - V) = 2 - 2\\rho$, so $-1 \\le \\rho \\le 1$. If $X$ and $Y$ are independent, $$E[XY] = \\sum xy\\,p_X(x)p_Y(y) = E[X]E[Y]$$ so the covariance is 0. The converse fails because covariance only sees straight-line trends."
+      },
+      {
+        "t": "viz",
+        "name": "prob-table",
+        "opts": {
+          "preset": "x-xsq",
+          "mode": "covariance",
+          "modes": [
+            "covariance",
+            "independence"
+          ]
+        },
+        "cap": "X is minus 1, 0 or 1 with equal chances and Y is X squared. The signed products cancel, so the covariance is 0, yet Y is completely determined by X."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "From a table",
+        "q": "$P(X = 0, Y = 0) = 0.4$, $P(X = 0, Y = 1) = 0.1$, $P(X = 1, Y = 0) = 0.2$, $P(X = 1, Y = 1) = 0.3$. Find $\\operatorname{Cov}(X, Y)$ and $\\rho$.",
+        "steps": [
+          "$E[X] = 0.5$, $E[Y] = 0.4$, and $E[XY] = P(X = 1, Y = 1) = 0.3$.",
+          "$\\operatorname{Cov}(X, Y) = 0.3 - 0.5 \\times 0.4 = 0.1$.",
+          "$\\operatorname{Var}(X) = 0.25$, $\\operatorname{Var}(Y) = 0.24$, so $\\rho = \\frac{0.1}{\\sqrt{0.25 \\times 0.24}} \\approx 0.41$."
+        ],
+        "a": "$0.1$ and about $0.41$"
+      },
+      {
+        "t": "ex",
+        "title": "Correlation from the pieces",
+        "q": "$\\operatorname{Var}(X) = 4$, $\\operatorname{Var}(Y) = 9$, $\\operatorname{Cov}(X, Y) = -3$. Find $\\rho$, and $\\operatorname{Cov}(2X + 1, 5 - Y)$.",
+        "steps": [
+          "$\\rho = \\frac{-3}{2 \\cdot 3} = -\\frac{1}{2}$.",
+          "Constants drop out and factors multiply: $$\\operatorname{Cov}(2X + 1, 5 - Y) = 2 \\cdot (-1) \\cdot (-3) = 6$$"
+        ],
+        "a": "$-\\frac{1}{2}$ and 6"
+      },
+      {
+        "t": "ex",
+        "title": "Zero covariance, dependent",
+        "q": "$X$ is $-1$, 0 or 1 with probability $\\frac{1}{3}$ each, and $Y = X^{2}$. Find $\\operatorname{Cov}(X, Y)$.",
+        "steps": [
+          "$E[X] = 0$, and $$E[XY] = E[X^{3}] = \\frac{-1 + 0 + 1}{3} = 0$$",
+          "$\\operatorname{Cov}(X, Y) = 0 - 0 \\cdot E[Y] = 0$.",
+          "Yet $$P(X = 0, Y = 1) = 0 \\ne P(X = 0)P(Y = 1) = \\frac{1}{3} \\cdot \\frac{2}{3}$$"
+        ],
+        "a": "0, although $Y$ depends on $X$ completely."
+      },
+      {
+        "t": "mistake",
+        "html": "Concluding independence from zero covariance. Covariance measures only a linear trend; a perfect curved relationship, as above, can have covariance 0. Check: independence needs every cell (or the density everywhere) to factor; covariance 0 is only a consequence of it."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "MIT OpenCourseWare 18.05, Introduction to Probability and Statistics (Spring 2014), readings on covariance and correlation"
+      },
+      {
+        "name": "Grinstead and Snell, Introduction to Probability (2nd revised edition, American Mathematical Society; free from Dartmouth College), chapter 6 (Expected Value and Variance), section 6.2"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

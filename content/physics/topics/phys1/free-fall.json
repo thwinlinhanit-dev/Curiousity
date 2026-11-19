@@ -1,0 +1,132 @@
+{
+  "id": "phys1.free-fall",
+  "slug": "free-fall",
+  "ladder": "physics",
+  "course": "phys1",
+  "unit": "kinematics",
+  "title": "Free Fall",
+  "short": "Without air resistance, every dropped object speeds up by 9.8 m/s each second, whatever its mass.",
+  "trouble": "Students think heavier objects fall faster.",
+  "prereqs": [
+    "phys1.kinematic-equations",
+    "physsci.mass-weight"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-motion",
+    "ph-projectile"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Drop anything and, if air resistance is small, it falls with the same constant acceleration. From <a href=\"/physics/physical-science/mass-weight/\">Mass and Weight</a>, the gravitational force on a mass $m$ is $mg$; Newton's second law gives its acceleration as that force divided by the same mass."
+      },
+      {
+        "t": "key",
+        "html": "In free fall every object accelerates downward at $g = 9.8\\ \\text{m/s}^2$, whatever its mass. With up as positive, $a = -9.8\\ \\text{m/s}^2$, and <a href=\"/physics/physics-1/kinematic-equations/\">the constant-acceleration equations</a> apply."
+      },
+      {
+        "t": "why",
+        "html": "A heavier object is pulled harder, but it also has more inertia to overcome, in exactly the same proportion: $\\role{acceleration}{a} = \\dfrac{\\role{force}{F}}{\\role{mass}{m}} = \\dfrac{\\role{mass}{m}\\role[acceleration of gravity]{acceleration}{g}}{\\role{mass}{m}} = \\role[acceleration of gravity]{acceleration}{g}$. The mass cancels. In 1971, Apollo 15 astronaut David Scott dropped a hammer and a falcon feather on the airless Moon, and they landed together."
+      },
+      {
+        "t": "viz",
+        "name": "ph-motion",
+        "opts": {
+          "vertical": true,
+          "x0": 20,
+          "v0": 0,
+          "tmax": 2,
+          "graphs": [
+            "x",
+            "v",
+            "a"
+          ],
+          "task": "Step through it. The velocity grows by 9.8 m/s every second while the acceleration stays the same."
+        },
+        "cap": "A ball dropped from 20 m: the velocity graph is a straight line sloping down at 9.8 m/s²."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Time (s)",
+          "Speed (m/s)",
+          "Distance fallen (m)"
+        ],
+        "rows": [
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "1",
+            "9.8",
+            "4.9"
+          ],
+          [
+            "2",
+            "19.6",
+            "19.6"
+          ],
+          [
+            "3",
+            "29.4",
+            "44.1"
+          ]
+        ],
+        "cap": "Dropped from rest: speed = gt and distance = ½gt². The distances in successive seconds go 4.9, 14.7, 24.5 m, in the ratio 1 : 3 : 5."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Time to fall",
+        "q": "A stone is dropped from a bridge $30\\ \\text{m}$ above the water. How long does it fall?",
+        "steps": [
+          "From rest, $h = \\tfrac12 g t^2$, so $t = \\sqrt{\\dfrac{2h}{g}} = \\sqrt{\\dfrac{60}{9.8}}$.",
+          "$t \\approx 2.47\\ \\text{s}$."
+        ],
+        "a": "about $2.47\\ \\text{s}$"
+      },
+      {
+        "t": "ex",
+        "title": "Signs with up positive",
+        "q": "Take up as $+y$. A ball is dropped from rest. Find its velocity and displacement after $2\\ \\text{s}$.",
+        "steps": [
+          "$v = 0 + (-9.8)(2) = -19.6\\ \\text{m/s}$ (moving down).",
+          "$$\\Delta y = \\tfrac12(-9.8)(2)^2 = -19.6\\ \\text{m}$$ (below the start)."
+        ],
+        "a": "$v = -19.6\\ \\text{m/s}$, $\\Delta y = -19.6\\ \\text{m}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking heavier objects fall faster. In everyday life a feather drifts because air resistance matters for it, not because it is light. Without air (or when air resistance is small, as for two steel balls), objects of any mass fall together. Check: $g$ never has a mass in it."
+      },
+      {
+        "t": "note",
+        "html": "Try it in the Science Lab: the <a href=\"/science-lab/newtons-laws/second-law/\">Second Law page</a> lets you change the mass and the force and watch the acceleration."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Physics 2e, Section 2.7 Falling Objects"
+      },
+      {
+        "name": "OpenStax University Physics Volume 1, Section 3.5 Free Fall"
+      },
+      {
+        "name": "NASA, Apollo 15 hammer and feather drop (1971)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

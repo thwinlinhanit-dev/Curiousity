@@ -1,0 +1,116 @@
+{
+  "id": "alg2.exponential-graphs",
+  "slug": "exponential-graphs",
+  "ladder": "math",
+  "course": "alg2",
+  "unit": "exponential-log",
+  "title": "Graphs of Exponential Functions",
+  "short": "Transform y = bˣ and find its asymptote.",
+  "trouble": "",
+  "prereqs": [
+    "alg1.exponential-functions",
+    "alg2.combined-transformations"
+  ],
+  "xp": 2,
+  "viz": [
+    "exponential",
+    "transformfn"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In Algebra 1 you met <a href=\"/math/algebra-1/exponential-functions/\">Exponential Functions</a>: $y = ab^x$ multiplies by $b$ each time $x$ goes up by 1. Now you will move and stretch those graphs with the <a href=\"/math/algebra-2/combined-transformations/\">transformations</a> you already know."
+      },
+      {
+        "t": "key",
+        "html": "$y = a\\,b^{x - h} + k$ is $b^x$ stretched by $a$, shifted right $h$ and up $k$. Its horizontal asymptote is $y = k$. The domain is all real numbers; the range is $(k, \\infty)$ if $a > 0$ and $(-\\infty, k)$ if $a < 0$. If $b > 1$ the graph shows growth; if $0 < b < 1$, decay."
+      },
+      {
+        "t": "why",
+        "html": "$b^x$ is always positive, and at one end it shrinks toward 0 without ever reaching it: $2^{-10} \\approx 0.001$, $2^{-20} \\approx 0.000001$. That is the asymptote $y = 0$. Stretching by $a$ keeps values near 0 near 0, and shifting up by $k$ moves the asymptote to $y = k$. A horizontal shift slides the graph sideways but cannot move a horizontal line."
+      },
+      {
+        "t": "viz",
+        "name": "exponential",
+        "opts": {
+          "a": 1,
+          "b": 2,
+          "compare": true,
+          "table": true,
+          "xmin": -3,
+          "xmax": 6,
+          "ymin": -2,
+          "ymax": 30
+        },
+        "cap": "Equal steps in $x$ multiply $y$ by the same factor $b$. Compare with the dashed line, which adds the same amount each step."
+      },
+      {
+        "t": "viz",
+        "name": "transformfn",
+        "opts": {
+          "parent": "2^x",
+          "use": [
+            "a",
+            "h",
+            "k"
+          ],
+          "a": 1,
+          "h": 0,
+          "k": 0,
+          "xmin": -6,
+          "xmax": 6,
+          "ymin": -6,
+          "ymax": 8,
+          "target": {
+            "k": -3,
+            "h": 1
+          },
+          "task": "Make y = 2^(x − 1) − 3. Where is the asymptote now?"
+        },
+        "cap": "Move $y = 2^x$: the asymptote moves with $k$, not with $h$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Reading a transformed exponential",
+        "q": "Describe $y = 3 \\cdot 2^{x + 1} - 4$.",
+        "steps": [
+          "Parent $2^x$; stretch by 3; shift left 1; shift down 4.",
+          "Asymptote: $y = -4$. Since $3 > 0$, the graph is above it: range $(-4, \\infty)$.",
+          "$y$-intercept: $3 \\cdot 2^{1} - 4 = 2$."
+        ],
+        "a": "Growth, asymptote $y = -4$, range $(-4, \\infty)$, $y$-intercept 2"
+      },
+      {
+        "t": "ex",
+        "title": "Decay and a flip",
+        "q": "Find the asymptote and range of $y = -\\left(\\frac{1}{2}\\right)^{x} + 5$.",
+        "steps": [
+          "$\\left(\\frac{1}{2}\\right)^x > 0$, so $-\\left(\\frac{1}{2}\\right)^x < 0$ and $y < 5$."
+        ],
+        "a": "Asymptote $y = 5$; range $(-\\infty, 5)$"
+      },
+      {
+        "t": "mistake",
+        "html": "Moving the asymptote with a horizontal shift. In $y = 2^{x - 3}$ the asymptote is still $y = 0$: only the vertical shift $k$ moves it. Check by plugging in a very negative $x$, like $x = -20$: $2^{-23}$ is about 0.0000001."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Algebra 2e, Section 6.2 Graphs of Exponential Functions"
+      },
+      {
+        "name": "Common Core State Standards, F-IF.C.7e"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

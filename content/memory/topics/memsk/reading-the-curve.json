@@ -1,0 +1,94 @@
+{
+  "id": "memsk.reading-the-curve",
+  "slug": "reading-the-curve",
+  "ladder": "memory",
+  "course": "memsk",
+  "unit": "forgetting-spacing",
+  "title": "Reading a Forgetting-Curve Graph",
+  "short": "On a forgetting-curve graph, time runs left to right and memory runs up; each review is a jump back to the top.",
+  "trouble": "Reading the dashed no-review line as the reviewed line, or thinking a jump means you learned something new.",
+  "prereqs": [
+    "memsk.forgetting-curve"
+  ],
+  "xp": 2,
+  "viz": [
+    "mm-curve"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": {
+    "kind": "worked-example",
+    "q": "On the graph above, about how much is remembered just before the first review, compared with just before the day-21 review?",
+    "a": "Less before day 1; much more before day 21, because each review slowed the fall.",
+    "steps": [
+      "Find the dip just before day 1: the line is low, near the middle.",
+      "Find the dip just before day 21: the line has fallen only a little from the top."
+    ],
+    "title": "Worked example"
+  },
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A forgetting-curve graph has two axes. The bottom axis is <b>time</b>, in days after learning. The side axis is <b>how much you remember</b>, from nothing at the bottom to everything at the top."
+      },
+      {
+        "t": "viz",
+        "name": "mm-curve",
+        "opts": {
+          "reviews": [
+            1,
+            3,
+            7,
+            21
+          ],
+          "days": 28,
+          "grid": true
+        }
+      },
+      {
+        "t": "list",
+        "items": [
+          "The <b>solid line</b> shows memory with reviews. Each <b>jump up</b> is a review: you recall it again and memory returns to the top.",
+          "After each jump the line falls <b>more slowly</b> than the time before.",
+          "The <b>dashed line</b> shows memory with no reviews: it drops and stays low."
+        ]
+      },
+      {
+        "t": "ex",
+        "title": "Worked example",
+        "q": "On the graph above, about how much is remembered just before the first review, compared with just before the day-21 review?",
+        "steps": [
+          "Find the dip just before day 1: the line is low, near the middle.",
+          "Find the dip just before day 21: the line has fallen only a little from the top."
+        ],
+        "a": "Less before day 1; much more before day 21, because each review slowed the fall."
+      },
+      {
+        "t": "key",
+        "html": "A <b>steeper</b> drop means faster forgetting. A <b>flatter</b> line means the memory is getting stronger."
+      },
+      {
+        "t": "mistake",
+        "html": "Reading the exact numbers off an illustrative curve. These pictures show a shape. Use them to compare, not to predict a score."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Ebbinghaus, H. (1885). Memory: A Contribution to Experimental Psychology (English translation, 1913)",
+        "url": "https://psychclassics.yorku.ca/Ebbinghaus/memorypref.htm"
+      },
+      {
+        "name": "Grokipedia: Forgetting curve",
+        "url": "https://grokipedia.com/page/Forgetting_curve"
+      },
+      {
+        "name": "Teddy Rook Book, Remember It on Purpose (infographic)",
+        "url": "/infographics/remember-it-on-purpose/"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

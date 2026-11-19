@@ -1,0 +1,177 @@
+{
+  "id": "sym.translate-harder",
+  "slug": "translate-harder",
+  "ladder": "logic",
+  "course": "sym",
+  "unit": "predicate",
+  "title": "Translating Harder Quantified Sentences",
+  "short": "Handle \"only\", \"none but\", \"all except\", complex subjects (red cars) and complex predicates (fast or loud) inside one quantifier.",
+  "trouble": "Learners translate \"Only S are P\" as ∀x(Sx → Px). It is ∀x(Px → Sx): everything that is P is S.",
+  "prereqs": [
+    "sym.translate-categorical",
+    "trad.only-exceptives"
+  ],
+  "xp": 3,
+  "viz": [
+    "lg-quantworld"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Real sentences add words to the four basic forms of <a href=\"/logic/symbolic-logic/translate-categorical/\">Translating A, E, I and O</a>: adjectives on the subject, two properties in the predicate, \"only\", \"none but\" and \"all except\" from <a href=\"/logic/traditional-logic/only-exceptives/\">Only, None But and All Except</a>. The method stays the same: find the form, then translate the subject phrase and the predicate phrase as whole pieces."
+      },
+      {
+        "t": "table",
+        "head": [
+          "English",
+          "Symbols"
+        ],
+        "rows": [
+          [
+            "Only $S$ are $P$. / None but $S$ are $P$.",
+            "$\\forall x(Px \\to Sx)$"
+          ],
+          [
+            "All young $S$ are $P$.",
+            "$\\forall x((Yx \\land Sx) \\to Px)$"
+          ],
+          [
+            "Some young $S$ are $P$.",
+            "$\\exists x((Yx \\land Sx) \\land Px)$"
+          ],
+          [
+            "Every $S$ is young and a $P$.",
+            "$\\forall x(Sx \\to (Yx \\land Px))$"
+          ],
+          [
+            "$S$ and $Q$ are $P$ (cats and dogs are pets).",
+            "$\\forall x((Sx \\lor Qx) \\to Px)$"
+          ],
+          [
+            "All except $S$ are $P$.",
+            "$\\forall x(\\neg Sx \\to Px) \\land \\forall x(Sx \\to \\neg Px)$"
+          ]
+        ],
+        "cap": "Harder patterns."
+      },
+      {
+        "t": "key",
+        "html": "Translate the subject phrase into one condition (an adjective adds $\\land$) and the predicate phrase into another, then join them with $\\to$ under $\\forall$ or $\\land$ under $\\exists$. \"Only $S$ are $P$\" reverses the order: $\\forall x(Px \\to Sx)$."
+      },
+      {
+        "t": "why",
+        "html": "\"Only members may vote\" does not say every member votes; it says anyone who votes is a member. The word after \"only\" names a necessary condition, and a necessary condition goes after the arrow, just as with \"only if\" in <a href=\"/logic/symbolic-logic/translate-conditionals/\">Translating Conditionals</a>. \"Cats and dogs are pets\" uses \"and\" in English, but no single thing is both a cat and a dog; the sentence means anything that is a cat <i>or</i> a dog is a pet."
+      },
+      {
+        "t": "viz",
+        "name": "lg-quantworld",
+        "opts": {
+          "objects": [
+            {
+              "n": "a",
+              "has": [
+                "C",
+                "R",
+                "L"
+              ]
+            },
+            {
+              "n": "b",
+              "has": [
+                "C",
+                "R"
+              ]
+            },
+            {
+              "n": "c",
+              "has": [
+                "S",
+                "B"
+              ]
+            },
+            {
+              "n": "d",
+              "has": [
+                "T",
+                "R"
+              ]
+            }
+          ],
+          "sentences": [
+            "∀x(Rx → (Cx ∨ Tx))",
+            "∀x(Cx → Rx)",
+            "∀x((Lx ∧ Cx) → Rx)",
+            "∃x((Lx ∧ Cx) ∧ Rx)"
+          ],
+          "preset": "shapes"
+        },
+        "cap": "\"Only circles and triangles are red\" is the first sentence; \"all circles are red\" the second."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Only",
+        "q": "Let $Mx$: $x$ is a member; $Vx$: $x$ votes. Translate \"Only members vote.\"",
+        "steps": [
+          "Anyone who votes is a member."
+        ],
+        "a": "$\\forall x(Vx \\to Mx)$"
+      },
+      {
+        "t": "ex",
+        "title": "An adjective",
+        "q": "Let $Bx$: $x$ is a bird; $Yx$: $x$ is young; $Fx$: $x$ can fly. Translate \"Some young birds can fly.\"",
+        "steps": [
+          "Subject: things that are young and birds.",
+          "Something is a young bird and can fly."
+        ],
+        "a": "$\\exists x((Yx \\land Bx) \\land Fx)$"
+      },
+      {
+        "t": "ex",
+        "title": "A compound subject",
+        "q": "Let $Cx$: cat; $Dx$: dog; $Px$: pet. Translate \"Cats and dogs are pets.\"",
+        "steps": [
+          "Anything that is a cat or a dog is a pet."
+        ],
+        "a": "$\\forall x((Cx \\lor Dx) \\to Px)$"
+      },
+      {
+        "t": "mistake",
+        "html": "Translating \"Only $S$ are $P$\" as $\\forall x(Sx \\to Px)$. That says every $S$ is a $P$, which is a different claim: \"only members vote\" does not mean every member votes. Put the word after \"only\" behind the arrow: $\\forall x(Px \\to Sx)$."
+      },
+      {
+        "t": "ex",
+        "title": "All except",
+        "q": "In a club, let $Mx$: $x$ is a manager; $Px$: $x$ pays dues. Translate \"All except managers pay dues.\"",
+        "steps": [
+          "Two claims: everyone who is not a manager pays dues, and no manager pays dues.",
+          "Join the two universal statements with $\\land$."
+        ],
+        "a": "$\\forall x(\\neg Mx \\to Px) \\land \\forall x(Mx \\to \\neg Px)$, equivalently $\\forall x(\\neg Mx \\leftrightarrow Px)$."
+      },
+      {
+        "t": "p",
+        "html": "When a sentence feels tangled, rewrite it in \"logician's English\" first: \"for any $x$, if $x$ is a young bird, then $x$ can fly.\" Once the English has that shape, the symbols follow almost word for word."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Patrick J. Hurley and Lori Watson, A Concise Introduction to Logic, 13th ed., section 8.1, harder translations"
+      },
+      {
+        "name": "Irving M. Copi, Carl Cohen and Victor Rodych, Introduction to Logic, 15th ed., chapter on quantification theory"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

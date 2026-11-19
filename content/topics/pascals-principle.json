@@ -1,0 +1,108 @@
+{
+  "id": "phys2.pascals-principle",
+  "slug": "pascals-principle",
+  "course": "phys2",
+  "courseTitle": "Physics 2: Fluids, Heat, Electricity, Light and Atoms",
+  "unit": "fluids",
+  "unitTitle": "Fluids",
+  "title": "Pascal's Principle and Hydraulics",
+  "short": "A pressure change spreads through a confined fluid, so a small force on a small piston lifts a heavy load.",
+  "trouble": "Students think a hydraulic lift gives energy for free, forgetting the small piston moves much farther.",
+  "prereqs": [
+    "phys2.pressure-depth",
+    "phys1.work"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-fluids"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/physics/physics-2/pressure-depth/\">Pressure and Depth</a> you found $P = P_0 + \\rho g h$ at every point of a still liquid. Now press on the liquid's surface with a piston, raising $P_0$. What happens to the pressure down below?"
+      },
+      {
+        "t": "why",
+        "html": "Every point's pressure is $P_0$ plus its own $\\rho g h$. Pushing on the piston raises $P_0$ by some amount $\\Delta P$, and a liquid barely compresses, so the depths and the $\\rho g h$ terms stay the same. Then <em>every</em> point's pressure rises by exactly $\\Delta P$. That is Pascal's principle: a pressure change in an enclosed fluid reaches every part of it, undiminished."
+      },
+      {
+        "t": "key",
+        "html": "In a hydraulic system the pressure is the same on both pistons: $\\dfrac{F_1}{A_1} = \\dfrac{F_2}{A_2}$, so $F_2 = F_1 \\dfrac{A_2}{A_1}$. The liquid's volume is fixed, so $A_1 d_1 = A_2 d_2$: the big piston moves a shorter distance. Work in equals work out, $F_1 d_1 = F_2 d_2$."
+      },
+      {
+        "t": "viz",
+        "name": "ph-fluids",
+        "opts": {
+          "mode": "hydraulic",
+          "F": 200,
+          "A1": 0.01,
+          "A2": 0.5,
+          "task": "Change the force and the large piston's area. Compare the work in and the work out."
+        },
+        "cap": "A hydraulic lift multiplies force by $A_2/A_1$ and divides distance by the same ratio."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A car lift",
+        "q": "A car lift's large piston has an area of $0.50\\,\\text{m}^2$ and its small piston $0.010\\,\\text{m}^2$. What force on the small piston holds up a $1500\\,\\text{kg}$ car?",
+        "steps": [
+          "The large piston must push up with the car's weight: $F_2 = mg = (1500\\,\\text{kg})(9.8\\,\\text{m/s}^2) = 14{,}700\\,\\text{N}$.",
+          "Equal pressures: $F_1 = F_2 \\dfrac{A_1}{A_2} = (14{,}700\\,\\text{N}) \\dfrac{0.010\\,\\text{m}^2}{0.50\\,\\text{m}^2}$.",
+          "$F_1 = 294\\,\\text{N}$, about the weight of a $30\\,\\text{kg}$ child."
+        ],
+        "a": "$294\\,\\text{N}$"
+      },
+      {
+        "t": "ex",
+        "title": "Where the work goes",
+        "q": "In the same lift you push the small piston down $25\\,\\text{cm}$. How far does the car rise, and how do the two works compare?",
+        "steps": [
+          "Volume moved: $A_1 d_1 = A_2 d_2$, so $d_2 = d_1 \\dfrac{A_1}{A_2} = (25\\,\\text{cm})\\dfrac{0.010}{0.50} = 0.50\\,\\text{cm}$.",
+          "Work in: $F_1 d_1 = (294\\,\\text{N})(0.25\\,\\text{m}) = 73.5\\,\\text{J}$.",
+          "Work out: $F_2 d_2 = (14{,}700\\,\\text{N})(0.0050\\,\\text{m}) = 73.5\\,\\text{J}$. Equal, as <a href=\"/physics/physics-1/work/\">work</a> and energy conservation demand."
+        ],
+        "a": "$0.50\\,\\text{cm}$; both works are $73.5\\,\\text{J}$"
+      },
+      {
+        "t": "ex",
+        "title": "Round pistons",
+        "q": "A press has round pistons with diameters $2.0\\,\\text{cm}$ and $10\\,\\text{cm}$. By what factor does it multiply force?",
+        "steps": [
+          "The force grows by the area ratio, and a circle's area is $\\pi d^2/4$.",
+          "$\\dfrac{A_2}{A_1} = \\left(\\dfrac{d_2}{d_1}\\right)^2 = \\left(\\dfrac{10}{2.0}\\right)^2 = 25$.",
+          "Five times the diameter gives twenty-five times the force."
+        ],
+        "a": "$25$"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking a hydraulic lift gives you energy for free. It multiplies <em>force</em>, not energy: to lift the car $1\\,\\text{cm}$ with $\\tfrac{1}{50}$ of its weight, you must push $50\\,\\text{cm}$. Check any machine by comparing $F d$ on the way in and on the way out; without friction they are equal, and with friction the output is less."
+      },
+      {
+        "t": "note",
+        "html": "Car brakes, excavator arms and barber chairs all use Pascal's principle: a liquid in a closed line carries a pressure change from where it is made to where it is needed."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e, section 11.5 Pascal’s Principle"
+      },
+      {
+        "name": "OpenStax, University Physics Volume 1, section 14.3 Pascal’s Principle and Hydraulics"
+      },
+      {
+        "name": "College Board, AP Physics 1 Course and Exam Description, Unit 8: Fluids"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

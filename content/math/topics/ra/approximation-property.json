@@ -1,0 +1,103 @@
+{
+  "id": "ra.approximation-property",
+  "slug": "approximation-property",
+  "ladder": "math",
+  "course": "ra",
+  "unit": "real-numbers",
+  "title": "The ε-Test for a Supremum",
+  "short": "An upper bound s is the supremum exactly when, for every ε > 0, some element of the set is bigger than s − ε.",
+  "trouble": "Students show that s is an upper bound and stop. That proves sup A ≤ s; the ε-test is what shows no smaller number is an upper bound.",
+  "prereqs": [
+    "ra.sup-inf"
+  ],
+  "xp": 2,
+  "viz": [
+    "ra-supinf"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The definition of <a href=\"/math/real-analysis/sup-inf/\">supremum</a> has two halves, and proofs have to check both. The first half, \"$s$ is an upper bound,\" is usually easy. The second half, \"nothing smaller is an upper bound,\" has a convenient form called the ε-test, and it is the first place in this course where the letter $\\varepsilon$ does real work."
+      },
+      {
+        "t": "key",
+        "html": "Let $s$ be an upper bound of $A$. Then $s = \\sup A$ exactly when <b>for every $\\varepsilon > 0$ there is an $a \\in A$ with $a > s - \\varepsilon$</b>. In words: every number below $s$, however slightly below, is beaten by an element of $A$."
+      },
+      {
+        "t": "why",
+        "html": "A number smaller than $s$ can always be written as $s - \\varepsilon$ with $\\varepsilon > 0$. \"No number smaller than $s$ is an upper bound\" says each $s - \\varepsilon$ fails to be an upper bound, that is, some element exceeds it. That is word for word the ε-test. Conversely, if the test holds, every $s - \\varepsilon$ is beaten, so no smaller upper bound exists."
+      },
+      {
+        "t": "p",
+        "html": "Here is a full proof in this style. <b>Claim:</b> $\\sup\\left\\{1 - \\frac{1}{n} : n \\ge 1\\right\\} = 1$. <b>Proof.</b> Every element is $1 - \\frac{1}{n} < 1$, so $1$ is an upper bound. Let $\\varepsilon > 0$. By the <a href=\"/math/real-analysis/completeness/\">Archimedean property</a> choose a positive integer $n$ with $\\frac{1}{n} < \\varepsilon$. Then $1 - \\frac{1}{n} > 1 - \\varepsilon$, so $1 - \\varepsilon$ is not an upper bound. Since $\\varepsilon$ was arbitrary, $1$ is the least upper bound. $\\blacksquare$"
+      },
+      {
+        "t": "viz",
+        "name": "ra-supinf",
+        "opts": {
+          "seq": "1-1/n",
+          "nmax": 60,
+          "sup": "1",
+          "eps": 0.15,
+          "xmin": -0.1,
+          "xmax": 1.25
+        },
+        "cap": "The ε-test: the blue strip is $(\\sup - \\varepsilon, \\sup]$. However thin you make it with the slider, some term of the sequence (green) lands inside."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Which element passes the test?",
+        "q": "For $A = \\left\\{1 - \\frac{2}{n} : n \\ge 1\\right\\}$ and $\\varepsilon = 0.01$, find the smallest $n$ whose element is greater than $1 - \\varepsilon$.",
+        "steps": [
+          "We need $1 - \\frac{2}{n} > 0.99$, that is, $\\frac{2}{n} < 0.01$, or $n > 200$.",
+          "The smallest whole number with $n > 200$ is $201$."
+        ],
+        "a": "$n = 201$."
+      },
+      {
+        "t": "ex",
+        "title": "An element of an interval",
+        "q": "For $A = [2, 5)$ and $\\varepsilon = \\frac{1}{4}$, give an element greater than $5 - \\varepsilon$.",
+        "steps": [
+          "We need $x \\in A$ with $4.75 < x < 5$.",
+          "Any such $x$ works, for example $4.9$."
+        ],
+        "a": "$4.9$ (any number in $(4.75, 5)$ is right)."
+      },
+      {
+        "t": "ex",
+        "title": "The same test for an infimum",
+        "q": "Show that $\\inf A = 2$ for $A = \\left\\{2 + \\frac{3}{n} : n \\ge 1\\right\\}$, and find the first element below $2 + 0.01$.",
+        "steps": [
+          "Every element is $2 + \\frac{3}{n} > 2$, so $2$ is a lower bound.",
+          "For the ε-test turned around, we need an element below $2 + \\varepsilon$: $\\frac{3}{n} < \\varepsilon$ holds once $n > \\frac{3}{\\varepsilon}$, which the Archimedean property supplies. So $2$ is the greatest lower bound.",
+          "With $\\varepsilon = 0.01$: $n > 300$, so the first such element is at $n = 301$."
+        ],
+        "a": "$\\inf A = 2$; the first element below $2.01$ is $2 + \\frac{3}{301}$, at $n = 301$."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Proving only half.</b> \"Every $x$ in $(0, 2)$ has $x < 2$, so $\\sup (0, 2) = 2$\" proves only that $2$ is an upper bound, which gives $\\sup (0, 2) \\le 2$. The number $3$ is an upper bound too. To pin down the supremum you must also show every smaller number fails. A second slip is checking the test for one $\\varepsilon$, like $0.01$: the test must hold for <b>every</b> $\\varepsilon > 0$, so the proof starts \"Let $\\varepsilon > 0$\" and then works for that arbitrary $\\varepsilon$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Jiří Lebl, Basic Analysis I: Introduction to Real Analysis, section 1.2 (the set of real numbers)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.100A Real Analysis, lecture notes on the least upper bound property"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

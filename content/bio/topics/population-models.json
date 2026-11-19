@@ -1,0 +1,105 @@
+{
+  "id": "hsbio.population-models",
+  "slug": "population-models",
+  "ladder": "bio",
+  "course": "hsbio",
+  "unit": "ecology",
+  "title": "Exponential and Logistic Growth",
+  "short": "With unlimited resources a population grows exponentially (a J-curve); as resources run short, growth slows toward the carrying capacity K (an S-curve, logistic growth).",
+  "trouble": "Students think growth is fastest when the population is near carrying capacity. In logistic growth it is fastest at about half of K, then slows as it approaches K.",
+  "prereqs": [
+    "lifesci.limiting-factors",
+    "alg1.exponential-growth-decay"
+  ],
+  "xp": 3,
+  "viz": [
+    "bi-population"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/biology/life-science/limiting-factors/\">Limiting Factors and Carrying Capacity</a> you saw that populations cannot grow forever. Two simple models describe how they grow, and they use the <a href=\"/math/algebra-1/exponential-growth-decay/\">exponential growth</a> you know from algebra."
+      },
+      {
+        "t": "key",
+        "html": "With unlimited resources, a population grows <b>exponentially</b>: $\\frac{dN}{dt} = rN$, a J-shaped curve. As resources run short, growth slows and the population levels off at the <b>carrying capacity K</b>: <b>logistic</b> growth, $\\frac{dN}{dt} = rN\\frac{K - N}{K}$, an S-shaped curve."
+      },
+      {
+        "t": "why",
+        "html": "In exponential growth, every individual adds offspring at the same rate r, so more individuals means faster growth: the rate is proportional to N. In logistic growth the extra factor $\\frac{K - N}{K}$ is the share of the habitat still unused. When N is small it is nearly 1, so growth looks exponential; when N reaches K it is 0, so growth stops."
+      },
+      {
+        "t": "viz",
+        "name": "bi-population",
+        "opts": {
+          "model": "compare"
+        },
+        "cap": "The J-curve and the S-curve start alike. Drag the sliders to change r and K."
+      },
+      {
+        "t": "ex",
+        "title": "Exponential growth rate",
+        "q": "A population of 400 rabbits has r = 0.3 per year with plenty of food. How fast is it growing?",
+        "steps": [
+          "$\\frac{dN}{dt} = rN = 0.3 \\times 400$."
+        ],
+        "a": "120 rabbits per year."
+      },
+      {
+        "t": "ex",
+        "title": "Logistic growth rate",
+        "q": "The same population lives where K = 1,000. How fast does it grow at N = 400? At N = 900?",
+        "steps": [
+          "At 400: $0.3 \\times 400 \\times \\frac{1000 - 400}{1000} = 120 \\times 0.6 = 72$ per year.",
+          "At 900: $0.3 \\times 900 \\times \\frac{100}{1000} = 27$ per year."
+        ],
+        "a": "72 per year at N = 400, and only 27 per year at N = 900."
+      },
+      {
+        "t": "viz",
+        "name": "bi-population",
+        "opts": {
+          "model": "logistic",
+          "half": true,
+          "K": 1000,
+          "r": 0.5,
+          "N0": 20
+        },
+        "cap": "Logistic growth is fastest at N = K/2, where the curve is steepest."
+      },
+      {
+        "t": "why",
+        "html": "Why is K/2 the fastest point? Growth is r × N × (share of room left). At N = K/2 there are many individuals and half the room is still free. Below that there are too few individuals; above it there is too little room. The product is largest exactly in the middle."
+      },
+      {
+        "t": "mistake",
+        "html": "It is tempting to think growth is fastest when the population is biggest, near K. In logistic growth it is fastest at about <b>half of K</b>, then slows as the population fills its habitat. Check with numbers: at N = K the growth rate is $rK \\times 0 = 0$."
+      },
+      {
+        "t": "note",
+        "html": "Real populations only roughly follow these models, and many overshoot K and dip back. See how predators and prey push each other up and down in the <a href=\"/science-lab/ecosystem/\">Predators and Prey</a> simulation."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Concepts of Biology, 19.2 Population Growth and Regulation"
+      },
+      {
+        "name": "OpenStax, Biology 2e, 45.3 Environmental Limits to Population Growth"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-LS2-1: Ecosystems: Interactions, Energy, and Dynamics"
+      },
+      {
+        "name": "Teddy Rook Book Science Lab: Predators and Prey",
+        "url": "/science-lab/ecosystem/"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

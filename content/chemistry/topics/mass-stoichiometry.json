@@ -1,0 +1,97 @@
+{
+  "id": "chem.mass-stoichiometry",
+  "slug": "mass-stoichiometry",
+  "ladder": "chemistry",
+  "course": "chem",
+  "unit": "stoichiometry",
+  "title": "Mass-to-Mass Stoichiometry",
+  "short": "Go from grams of one substance to moles, across the mole ratio, then back to grams of another.",
+  "trouble": "Students apply the coefficient ratio straight to grams, skipping the trip through moles.",
+  "prereqs": [
+    "chem.mole-ratios"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-convert"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In the lab you weigh things in grams, but a balanced equation counts in moles. <a href=\"/chemistry/chemistry/mole-ratios/\">Mole Ratios</a> crossed from one substance to another in moles; now add the two trips you learned in <a href=\"/chemistry/chemistry/mass-mole-conversions/\">Grams, Moles and Particles</a>, from grams into moles and back out."
+      },
+      {
+        "t": "key",
+        "html": "Grams of A $\\to$ moles of A (divide by A's molar mass) $\\to$ moles of B (multiply by the mole ratio) $\\to$ grams of B (multiply by B's molar mass)."
+      },
+      {
+        "t": "why",
+        "html": "Different molecules have different masses, so equal masses do not hold equal numbers of molecules. A gram of hydrogen holds about 16 times as many molecules as a gram of oxygen. The coefficients compare numbers of particles, so you must turn grams into moles before you use them, and turn back into grams only at the end."
+      },
+      {
+        "t": "viz",
+        "name": "ch-convert",
+        "opts": {
+          "mode": "map",
+          "eq": "2H2 + O2 -> 2H2O",
+          "a": "H2",
+          "b": "H2O",
+          "from": "g",
+          "to": "g",
+          "start": 4.04
+        },
+        "cap": "The full route from grams of hydrogen to grams of water: grams to moles, across the mole ratio, then moles to grams."
+      },
+      {
+        "t": "ex",
+        "title": "Water from hydrogen",
+        "q": "How many grams of water form when $4.04\\ \\text{g}$ of $\\mathrm{H}_{2}$ burns? $$2\\mathrm{H}_{2} + \\mathrm{O}_{2} \\to 2\\mathrm{H}_{2}\\mathrm{O}$$ Molar masses: $\\mathrm{H}_{2}$ 2.02 g/mol, $\\mathrm{H}_{2}\\mathrm{O}$ 18.02 g/mol.",
+        "steps": [
+          "Grams to moles: $4.04 \\div 2.02 = 2.00\\ \\text{mol}\\ \\mathrm{H}_{2}$.",
+          "Mole ratio 2 : 2: $2.00\\ \\text{mol}\\ \\mathrm{H}_{2}\\mathrm{O}$.",
+          "Moles to grams: $2.00 \\times 18.02 = 36.0\\ \\text{g}$."
+        ],
+        "a": "$36.0\\ \\text{g}$ of water."
+      },
+      {
+        "t": "ex",
+        "title": "Oxygen for propane",
+        "q": "How many grams of $\\mathrm{O}_{2}$ are needed to burn $22.0\\ \\text{g}$ of propane? $$\\mathrm{C}_{3}\\mathrm{H}_{8} + 5\\mathrm{O}_{2} \\to 3\\mathrm{CO}_{2} + 4\\mathrm{H}_{2}\\mathrm{O}$$ Molar masses: $\\mathrm{C}_{3}\\mathrm{H}_{8}$ 44.11 g/mol, $\\mathrm{O}_{2}$ 32.00 g/mol.",
+        "steps": [
+          "$22.0 \\div 44.11 = 0.4988\\ \\text{mol}$ of propane.",
+          "$0.4988 \\times \\dfrac{5}{1} = 2.494\\ \\text{mol}$ of $\\mathrm{O}_{2}$.",
+          "$2.494 \\times 32.00 = 79.8\\ \\text{g}$ of $\\mathrm{O}_{2}$."
+        ],
+        "a": "$79.8\\ \\text{g}$ of oxygen."
+      },
+      {
+        "t": "ex",
+        "title": "Working backward",
+        "q": "How many grams of calcium carbonate must break down to make $10.0\\ \\text{g}$ of lime? $$\\mathrm{CaCO}_{3} \\to \\mathrm{CaO} + \\mathrm{CO}_{2}$$ Molar masses: $\\mathrm{CaCO}_{3}$ 100.09 g/mol, $\\mathrm{CaO}$ 56.08 g/mol.",
+        "steps": [
+          "Start from what you know: $10.0 \\div 56.08 = 0.1783\\ \\text{mol}$ of $\\mathrm{CaO}$.",
+          "Ratio 1 : 1, so $0.1783\\ \\text{mol}$ of $\\mathrm{CaCO}_{3}$.",
+          "$0.1783 \\times 100.09 = 17.8\\ \\text{g}$."
+        ],
+        "a": "$17.8\\ \\text{g}$ of $\\mathrm{CaCO}_{3}$."
+      },
+      {
+        "t": "mistake",
+        "html": "Applying the coefficients straight to grams, such as saying 4 g of hydrogen needs 2 g of oxygen because the equation says 2 : 1. Grams are not particles. Check with conservation of mass: $4.04\\ \\text{g}$ of hydrogen and the oxygen it uses must add up to the $36.0\\ \\text{g}$ of water, so the oxygen must be $32.0\\ \\text{g}$, not 2 g."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 4.3 Reaction Stoichiometry"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-PS1-7"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

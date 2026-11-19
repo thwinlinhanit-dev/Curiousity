@@ -1,0 +1,134 @@
+{
+  "id": "gchem2.k-magnitude",
+  "slug": "k-magnitude",
+  "ladder": "chemistry",
+  "course": "gchem2",
+  "unit": "equilibrium",
+  "title": "What the Size of K Tells You",
+  "short": "A large K means mostly products at equilibrium; a small K means mostly reactants.",
+  "trouble": "Students think a large K means a fast reaction.",
+  "prereqs": [
+    "gchem2.equilibrium-expressions"
+  ],
+  "xp": 1,
+  "viz": [
+    "ch-equilibrium"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "An <a href=\"/chemistry/general-chemistry-2/equilibrium-expressions/\">equilibrium constant</a> is products over reactants. So its size tells you, at a glance, which side wins."
+      },
+      {
+        "t": "key",
+        "html": "When $K$ is large (roughly above $10^3$), the equilibrium mixture is mostly products. When $K$ is small (below about $10^{-3}$), it is mostly reactants. Near 1, both are present in similar amounts. $K$ says nothing about how fast equilibrium is reached."
+      },
+      {
+        "t": "why",
+        "html": "If $K = [\\mathrm{B}]/[\\mathrm{A}] = 1000$ for $\\mathrm{A \\rightleftharpoons B}$, there are a thousand B for every A at equilibrium: the reaction has gone essentially to completion. If $K = 10^{-3}$, the ratio is reversed. Speed is a different question, set by the activation energy: $K$ compares the end states, not the barrier between them."
+      },
+      {
+        "t": "viz",
+        "name": "ch-equilibrium",
+        "opts": {
+          "rxn": {
+            "a": [
+              [
+                "A",
+                1
+              ]
+            ],
+            "b": [
+              [
+                "B",
+                1
+              ]
+            ],
+            "kf": 0.5,
+            "kr": 0.005
+          },
+          "c0": {
+            "A": 1
+          },
+          "show": [
+            "Q"
+          ]
+        },
+        "cap": "A reaction with K = 100 (the forward rate constant 100 times the reverse). At equilibrium, B outnumbers A about 100 to 1."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "How much product?",
+        "q": "For $\\mathrm{A \\rightleftharpoons B}$, $K = 1.0 \\times 10^{-5}$. At equilibrium $[\\mathrm{A}] = 0.50\\ \\text{M}$. What is $[\\mathrm{B}]$?",
+        "steps": [
+          "$K = \\dfrac{[\\mathrm{B}]}{[\\mathrm{A}]}$, so $[\\mathrm{B}] = K[\\mathrm{A}] = (1.0 \\times 10^{-5})(0.50)$.",
+          "$[\\mathrm{B}] = 5.0 \\times 10^{-6}\\ \\text{M}$: almost all of it is still A."
+        ],
+        "a": "$5.0 \\times 10^{-6}\\ \\text{M}$; reactants are favored."
+      },
+      {
+        "t": "ex",
+        "title": "Large K, no reaction",
+        "q": "For $\\mathrm{2H_2(g) + O_2(g) \\rightleftharpoons 2H_2O(g)}$ at $25\\ ^\\circ\\text{C}$, $K$ is about $10^{80}$. Yet a balloon of hydrogen and oxygen can sit for years unchanged. Why?",
+        "steps": [
+          "The huge $K$ means that at equilibrium essentially all of it would be water.",
+          "But the reaction has a high activation energy, so at room temperature it goes immeasurably slowly. A spark supplies the energy, and then it is explosive."
+        ],
+        "a": "$K$ describes where the reaction ends, not how fast it gets there."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Size of K",
+          "At equilibrium",
+          "Example"
+        ],
+        "rows": [
+          [
+            "$K > 10^3$",
+            "mostly products",
+            "$\\mathrm{H_2 + Cl_2 \\rightleftharpoons 2HCl}$"
+          ],
+          [
+            "$10^{-3} < K < 10^3$",
+            "significant amounts of both",
+            "$\\mathrm{H_2 + I_2 \\rightleftharpoons 2HI}$ at 703 K ($K = 54$)"
+          ],
+          [
+            "$K < 10^{-3}$",
+            "mostly reactants",
+            "$\\mathrm{N_2 + O_2 \\rightleftharpoons 2NO}$ at 25 °C ($K \\approx 10^{-30}$)"
+          ]
+        ],
+        "cap": "Rough guide to the size of K."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking a large $K$ means a fast reaction. $K$ compares products with reactants at the end; the rate depends on the activation energy. Check: the speed of a reaction is never computed from $K$."
+      },
+      {
+        "t": "p",
+        "html": "When $K$ is between about $10^{-3}$ and $10^{3}$, you cannot guess the mixture by eye: it takes an <a href=\"/chemistry/general-chemistry-2/equilibrium-concentrations/\">ICE-table calculation</a>. Remember too that $K$ changes with temperature, so \"mostly products\" at one temperature can become \"mostly reactants\" at another."
+      },
+      {
+        "t": "note",
+        "html": "The tiny $K$ for nitrogen and oxygen is lucky for us: air would otherwise turn into nitrogen oxides. In hot car engines and lightning, $K$ is much larger, and some NO forms."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 13.2 Equilibrium Constants"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

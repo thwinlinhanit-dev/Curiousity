@@ -1,0 +1,101 @@
+{
+  "id": "calc4.oriented-surfaces",
+  "slug": "oriented-surfaces",
+  "ladder": "math",
+  "course": "calc4",
+  "unit": "surface-integrals",
+  "title": "Oriented Surfaces",
+  "short": "Choose a consistent unit normal, like outward on a closed surface.",
+  "trouble": "Students let the cross product r_u × r_v decide the direction even when it points inward.",
+  "prereqs": [
+    "calc4.parametric-surfaces"
+  ],
+  "xp": 2,
+  "viz": [
+    "flux"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "To measure flow <b>through</b> a surface, we need to know which way counts as \"through\": which side is the front. Choosing a side means choosing a unit normal at every point, in a way that does not flip suddenly. That choice is an <b>orientation</b>. It plays the same role for surfaces that the direction of travel plays for curves. You need <a href=\"/math/calculus-4/parametric-surfaces/\">parametric surfaces</a> and their normal vectors."
+      },
+      {
+        "t": "key",
+        "html": "An <b>orientation</b> of a surface $S$ is a continuous choice of unit normal $\\mathbf{n}$ at each point. (Some books write $\\hat{\\mathbf{n}}$.) A parametrization gives the orientation\n  $$\\mathbf{n} = \\frac{\\mathbf{r}_u \\times \\mathbf{r}_v}{|\\mathbf{r}_u \\times \\mathbf{r}_v|},$$\n  or its opposite, if you swap $u$ and $v$. For a <b>closed</b> surface (one that encloses a solid), the <b>positive orientation</b> is outward. For a graph $z = f(x, y)$, the <b>upward</b> normal is a positive multiple of $\\langle -f_x, -f_y, 1 \\rangle$."
+      },
+      {
+        "t": "why",
+        "html": "<b>Graphs:</b> with $\\mathbf{r} = \\langle x, y, f(x, y) \\rangle$, $\\mathbf{r}_x = \\langle 1, 0, f_x \\rangle$ and $\\mathbf{r}_y = \\langle 0, 1, f_y \\rangle$, so $\\mathbf{r}_x \\times \\mathbf{r}_y = \\langle -f_x, -f_y, 1 \\rangle$, which has positive $z$-component: it points up.<br>\n  <b>Spheres:</b> for $$\\mathbf{r}(\\varphi, \\theta) = a\\langle \\sin\\varphi\\cos\\theta, \\sin\\varphi\\sin\\theta, \\cos\\varphi \\rangle,$$ a computation gives $\\mathbf{r}_\\varphi \\times \\mathbf{r}_\\theta = a\\sin\\varphi\\,\\mathbf{r}$, a positive multiple of the position vector: outward.<br>\n  <b>Not every surface has two sides.</b> Slide a normal vector once around the center line of a Möbius strip and it comes back pointing the other way. No continuous choice exists, so the Möbius strip is not orientable, and flux through it is not defined."
+      },
+      {
+        "t": "viz",
+        "name": "flux",
+        "opts": {
+          "field": "radial",
+          "surface": "hemisphere",
+          "surfaces": [
+            "hemisphere",
+            "sphere",
+            "paraboloid",
+            "disk"
+          ],
+          "normals": true,
+          "R": 1,
+          "H": 1
+        },
+        "cap": "Unit normals on several surfaces, oriented outward (closed surfaces) or upward (open ones). The colors show how much of the field $\\langle x, y, z \\rangle$ passes through each patch in the direction of the normal."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Upward on a graph",
+        "q": "Find the upward unit normal to $z = x^2 + y^2$ at $(1, 1, 2)$.",
+        "steps": [
+          "$f_x = 2x = 2$ and $f_y = 2y = 2$, so $\\langle -f_x, -f_y, 1 \\rangle = \\langle -2, -2, 1 \\rangle$.",
+          "Its length is ${}3$, so $\\mathbf{n} = \\frac{1}{3}\\langle -2, -2, 1 \\rangle$. (Downward would be the negative.)"
+        ],
+        "a": "$\\frac{1}{3}\\langle -2, -2, 1 \\rangle$"
+      },
+      {
+        "t": "ex",
+        "title": "Parameter order matters",
+        "q": "For $\\mathbf{r}(u, v) = \\langle u, v, 3 - u - 2v \\rangle$ and $\\mathbf{s}(u, v) = \\langle v, u, 3 - v - 2u \\rangle$ (the same plane), which cross product $\\mathbf{r}_u \\times \\mathbf{r}_v$, $\\mathbf{s}_u \\times \\mathbf{s}_v$ points up?",
+        "steps": [
+          "$$\\mathbf{r}_u \\times \\mathbf{r}_v = \\langle 1, 0, -1 \\rangle \\times \\langle 0, 1, -2 \\rangle = \\langle 1, 2, 1 \\rangle\\text{:}$$ up.",
+          "$$\\mathbf{s}_u \\times \\mathbf{s}_v = \\langle 0, 1, -2 \\rangle \\times \\langle 1, 0, -1 \\rangle = \\langle -1, -2, -1 \\rangle\\text{:}$$ down.",
+          "Swapping the roles of the parameters flips the normal."
+        ],
+        "a": "$\\mathbf{r}$ points up, $\\mathbf{s}$ points down"
+      },
+      {
+        "t": "ex",
+        "title": "A cylinder",
+        "q": "Does $\\mathbf{r}_\\theta \\times \\mathbf{r}_z$ point outward on $\\mathbf{r}(\\theta, z) = \\langle a\\cos\\theta, a\\sin\\theta, z \\rangle$?",
+        "steps": [
+          "$\\mathbf{r}_\\theta = \\langle -a\\sin\\theta, a\\cos\\theta, 0 \\rangle$, $\\mathbf{r}_z = \\langle 0, 0, 1 \\rangle$.",
+          "$\\mathbf{r}_\\theta \\times \\mathbf{r}_z = \\langle a\\cos\\theta, a\\sin\\theta, 0 \\rangle$, pointing straight away from the axis: outward."
+        ],
+        "a": "yes"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Letting the parametrization choose.</b> The formula $\\mathbf{r}_u \\times \\mathbf{r}_v$ gives a normal, but it may point the wrong way for the problem: inward on a closed surface, or down when the problem says up. Check one convenient point. If the cross product points the wrong way, use $\\mathbf{r}_v \\times \\mathbf{r}_u$, which flips the sign of every flux integral."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 3, 6.6 Surface Integrals"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

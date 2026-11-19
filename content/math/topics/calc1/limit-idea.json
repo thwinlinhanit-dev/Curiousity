@@ -1,0 +1,136 @@
+{
+  "id": "calc1.limit-idea",
+  "slug": "limit-idea",
+  "ladder": "math",
+  "course": "calc1",
+  "unit": "limits",
+  "title": "Limits from Both Sides",
+  "short": "lim f(x) = L when f(x) gets close to L as x gets close to a, from both sides.",
+  "trouble": "Students think the limit is just f(a), so they say a limit fails to exist wherever f(a) is undefined.",
+  "prereqs": [
+    "pre.limits-graphs-tables"
+  ],
+  "xp": 1,
+  "viz": [
+    "limit"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In Precalculus you read limits off graphs and tables in <a href=\"/math/precalculus/limits-graphs-tables/\">Estimating Limits from Graphs and Tables</a>. Calculus is built on that one idea, so we start by stating it carefully. A limit is about where a function is <em>heading</em> as $x$ approaches a number, not about what happens at the number itself."
+      },
+      {
+        "t": "key",
+        "html": "$\\displaystyle\\lim_{x \\to a} f(x) = L$ means: we can make $f(x)$ as close to $L$ as we like by taking $x$ close enough to $a$, from either side, <b>with $x \\ne a$</b>. The value $f(a)$, if it even exists, plays no part."
+      },
+      {
+        "t": "p",
+        "html": "Here is a function with a hole. $f(x) = \\dfrac{x^2 - 4}{x - 2}$ is undefined at $x = 2$, because the bottom is 0 there. Yet near 2 its values behave very politely:"
+      },
+      {
+        "t": "table",
+        "head": [
+          "$x$",
+          "1.9",
+          "1.99",
+          "1.999",
+          "2",
+          "2.001",
+          "2.01",
+          "2.1"
+        ],
+        "rows": [
+          [
+            "$f(x)$",
+            "3.9",
+            "3.99",
+            "3.999",
+            "undefined",
+            "4.001",
+            "4.01",
+            "4.1"
+          ]
+        ],
+        "cap": "Values of $f(x) = \\frac{x^2-4}{x-2}$ near $x = 2$."
+      },
+      {
+        "t": "p",
+        "html": "From both sides the outputs close in on 4, so $\\lim_{x \\to 2} f(x) = 4$. The algebra agrees: for $x \\ne 2$, $\\frac{x^2-4}{x-2} = \\frac{(x-2)(x+2)}{x-2} = x + 2$, and $x + 2$ is near 4 when $x$ is near 2."
+      },
+      {
+        "t": "viz",
+        "name": "limit",
+        "opts": {
+          "f": "(x^2-4)/(x-2)",
+          "a": 2,
+          "fa": "none",
+          "h": 0.6,
+          "table": true,
+          "task": "Drag the slider (or a point) to make $h$ smaller. Watch both points slide toward the same height."
+        },
+        "cap": "The open circle marks the missing point $(2, 4)$. The points at $2 - h$ and $2 + h$ approach it from the left and the right."
+      },
+      {
+        "t": "why",
+        "html": "Why ignore $x = a$ itself? Because the most important limits in calculus are exactly the ones where plugging in fails. The slope of a curve at a point will be a limit of fractions that become $\\frac{0}{0}$ at the point. If limits looked at the point, they could never tell us anything there. Looking only at nearby values is what makes them useful."
+      },
+      {
+        "t": "h",
+        "text": "Three situations to tell apart"
+      },
+      {
+        "t": "list",
+        "items": [
+          "The value is missing but the limit exists (a hole), like the example above.",
+          "The value exists but differs from the limit (a point moved off the curve).",
+          "The value exists and equals the limit. This is the common, well-behaved case, which we will call <em>continuity</em>."
+        ]
+      },
+      {
+        "t": "ex",
+        "title": "A table that hides the function",
+        "q": "Use the values below to find $\\lim_{x \\to 3} g(x)$. $$\\begin{array}{c|cccccc} x & 2.9 & 2.99 & 2.999 & 3.001 & 3.01 & 3.1 \\\\ \\hline g(x) & 7.8 & 7.98 & 7.998 & 8.002 & 8.02 & 8.2 \\end{array}$$",
+        "steps": [
+          "From the left, the outputs climb: $7.8,\\ 7.98,\\ 7.998$.",
+          "From the right, the outputs fall: $8.2,\\ 8.02,\\ 8.002$.",
+          "Both sides squeeze toward the same number, 8. We never needed $g(3)$."
+        ],
+        "a": "$\\lim_{x \\to 3} g(x) = 8$"
+      },
+      {
+        "t": "ex",
+        "title": "The value is a decoy",
+        "q": "Let $f(x) = x^2 + 1$ for $x \\ne 1$, and $f(1) = 5$. Find $\\lim_{x \\to 1} f(x)$ and $f(1)$.",
+        "steps": [
+          "For every $x$ near 1 (but not equal to 1), the rule $f(x) = x^2 + 1$ applies.",
+          "As $x \\to 1$, $x^2 + 1 \\to 1 + 1 = 2$.",
+          "The separate value $f(1) = 5$ is a single point floating above the curve. It does not change where the curve is heading."
+        ],
+        "a": "$\\lim_{x \\to 1} f(x) = 2$, while $f(1) = 5$."
+      },
+      {
+        "t": "mistake",
+        "html": "Two opposite slips come from thinking the limit <em>is</em> $f(a)$. Some people say \"$f(2)$ is undefined, so the limit does not exist.\" Others answer $5$ in the second example. Both mix up the value and the trend. Quick check: cover up the column for $x = a$ in a table (or the single point on a graph). If the answer you gave would not change, you computed a limit."
+      },
+      {
+        "t": "note",
+        "html": "Writing $x \\to a$ always means $x$ gets close to $a$ while staying different from $a$. In the next lesson we look at each side separately."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 1, 2.2 The Limit of a Function"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.01SC Single Variable Calculus, Unit 1: Limits"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

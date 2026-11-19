@@ -1,0 +1,129 @@
+{
+  "id": "chem.specific-heat",
+  "slug": "specific-heat",
+  "ladder": "chemistry",
+  "course": "chem",
+  "unit": "energy",
+  "title": "Specific Heat",
+  "short": "q = mcΔT: some substances need more energy per gram to warm by one degree.",
+  "trouble": "Students think a substance with a high specific heat warms up faster, when it warms up more slowly.",
+  "prereqs": [
+    "chem.heat-temperature",
+    "alg1.literal-equations"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-calorimeter"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/chemistry/chemistry/heat-temperature/\">Heat and Temperature</a> told you heat flows from hot to cold. How much the temperature changes depends on the material. A metal pan heats up in seconds; the water in it takes minutes. <a href=\"/math/algebra-1/literal-equations/\">Rearranging</a> one formula answers every question about it."
+      },
+      {
+        "t": "key",
+        "html": "$$q = mc\\Delta T$$ where $q$ is the heat (J), $m$ the mass (g), $\\Delta T = T_{\\text{final}} - T_{\\text{initial}}$, and $c$ the <b>specific heat</b>: the energy needed to warm 1 g of the substance by $1^\\circ\\text{C}$, in J/(g·°C)."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Substance",
+          "c, J/(g·°C)"
+        ],
+        "rows": [
+          [
+            "water",
+            "4.184"
+          ],
+          [
+            "aluminum",
+            "0.897"
+          ],
+          [
+            "iron",
+            "0.449"
+          ],
+          [
+            "copper",
+            "0.385"
+          ],
+          [
+            "lead",
+            "0.129"
+          ]
+        ],
+        "cap": "Specific heats (OpenStax Chemistry 2e, Table 5.1)."
+      },
+      {
+        "t": "why",
+        "html": "Heat goes into the motion of particles. A gram of lead holds far fewer atoms than a gram of aluminum, because lead atoms are almost 8 times heavier. Metals need about the same energy per <i>mole</i> of atoms to warm by a degree (multiply each $c$ above by its molar mass and you get about $25\\ \\text{J}$), so per gram, heavy-atom metals have low specific heats. Water's is high because its molecules also store energy by spinning and tugging on their hydrogen bonds."
+      },
+      {
+        "t": "viz",
+        "name": "ch-calorimeter",
+        "opts": {
+          "mode": "contact",
+          "metal": "Cu",
+          "metal2": "Al",
+          "m1": 100,
+          "T1": 90,
+          "m2": 100,
+          "T2": 20
+        },
+        "cap": "Equal masses of copper (hot) and aluminum (cool). The same amount of heat leaves the copper and enters the aluminum, but the copper's temperature changes more, because its specific heat is lower."
+      },
+      {
+        "t": "ex",
+        "title": "Warming water",
+        "q": "How much heat warms $50.0\\ \\text{g}$ of water from $20.0^\\circ\\text{C}$ to $45.0^\\circ\\text{C}$?",
+        "steps": [
+          "$\\Delta T = 45.0 - 20.0 = 25.0^\\circ\\text{C}$.",
+          "$$q = 50.0\\ \\text{g} \\times 4.184\\ \\text{J/(g·°C)} \\times 25.0^\\circ\\text{C} = 5{,}230\\ \\text{J}$$"
+        ],
+        "a": "$5{,}230\\ \\text{J}$, or $5.23\\ \\text{kJ}$."
+      },
+      {
+        "t": "ex",
+        "title": "Finding a temperature change",
+        "q": "$1{,}000\\ \\text{J}$ of heat flows into a $100.\\ \\text{g}$ block of iron. How much does its temperature rise?",
+        "steps": [
+          "$$\\Delta T = \\dfrac{q}{mc} = \\dfrac{1{,}000\\ \\text{J}}{100.\\ \\text{g} \\times 0.449\\ \\text{J/(g·°C)}}$$",
+          "$\\Delta T = 22.3^\\circ\\text{C}$. The same heat would warm $100\\ \\text{g}$ of water by only $2.39^\\circ\\text{C}$."
+        ],
+        "a": "$22.3^\\circ\\text{C}$."
+      },
+      {
+        "t": "ex",
+        "title": "Identifying a metal",
+        "q": "A $25.0\\ \\text{g}$ metal block absorbs $449\\ \\text{J}$ and warms by $40.0^\\circ\\text{C}$. Which metal in the table could it be?",
+        "steps": [
+          "$$c = \\dfrac{q}{m\\Delta T} = \\dfrac{449}{25.0 \\times 40.0} = 0.449\\ \\text{J/(g·°C)}$$",
+          "That matches iron."
+        ],
+        "a": "Iron."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking a substance with a high specific heat warms up faster. It is the opposite: a high $c$ means many joules per gram per degree, so the temperature changes slowly. That is why water heats and cools slowly and helps keep coastal climates mild. Check: with the same $q$ and $m$, a bigger $c$ must give a smaller $\\Delta T$."
+      },
+      {
+        "t": "note",
+        "html": "Try materials with different specific heats in <a href=\"/science-lab/thermodynamics/zeroth-law/\">Temperature and the Zeroth Law</a>."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 5.1 Energy Basics"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-PS3-1"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

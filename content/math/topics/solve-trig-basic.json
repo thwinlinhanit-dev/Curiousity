@@ -1,0 +1,116 @@
+{
+  "id": "pre.solve-trig-basic",
+  "slug": "solve-trig-basic",
+  "ladder": "math",
+  "course": "pre",
+  "unit": "identities-equations",
+  "title": "Solving Basic Trig Equations",
+  "short": "Find every solution in one period, then all solutions.",
+  "trouble": "Students stop at the calculator's one answer and miss the second solution in [0, 2π).",
+  "prereqs": [
+    "pre.inverse-trig",
+    "pre.reference-angles"
+  ],
+  "xp": 2,
+  "viz": [
+    "unitcircle",
+    "trigwave"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "An identity is true for every angle; an <b>equation</b> like $2\\sin x - 1 = 0$ is true only for some. Solving one uses everything from <a href=\"/math/precalculus/reference-angles/\">reference angles</a> and <a href=\"/math/precalculus/inverse-trig/\">inverse trig functions</a>. The new part is finding <i>all</i> the solutions."
+      },
+      {
+        "t": "key",
+        "html": "Isolate the trig function. Find the reference angle from the size of the value. List every angle in one period, $[0, 2\\pi)$, in the quadrants where the sign is right. For all solutions, add whole periods: $+2k\\pi$ for sine and cosine, $+k\\pi$ for tangent."
+      },
+      {
+        "t": "why",
+        "html": "On the unit circle, $\\sin x = \\frac{1}{2}$ means the point is at height $\\frac{1}{2}$. The horizontal line $y = \\frac{1}{2}$ crosses the circle at <b>two</b> points, one in Quadrant I and its mirror image in Quadrant II. A calculator's $\\sin^{-1}$ can only report one of them, the one in its range. Then every full turn repeats both."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "fns": [
+            "sin(x)",
+            "1/2"
+          ],
+          "intersections": true,
+          "xmin": -0.5,
+          "xmax": 13,
+          "ymin": -1.5,
+          "ymax": 1.5
+        },
+        "cap": "The line $y = \\frac{1}{2}$ crosses the sine wave twice in every period of $2\\pi$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Two solutions",
+        "q": "Solve $2\\sin x - 1 = 0$ on $[0, 2\\pi)$, then give all solutions.",
+        "steps": [
+          "Isolate: $\\sin x = \\frac{1}{2}$.",
+          "Reference angle $\\frac{\\pi}{6}$. Sine is positive in Quadrants I and II: $x = \\frac{\\pi}{6}$ and $x = \\pi - \\frac{\\pi}{6} = \\frac{5\\pi}{6}$.",
+          "All solutions: $x = \\frac{\\pi}{6} + 2k\\pi$ or $x = \\frac{5\\pi}{6} + 2k\\pi$, for any integer $k$."
+        ],
+        "a": "$\\frac{\\pi}{6}, \\frac{5\\pi}{6}$ in $[0, 2\\pi)$"
+      },
+      {
+        "t": "ex",
+        "title": "A negative value",
+        "q": "Solve $2\\cos x + \\sqrt{3} = 0$ on $[0, 2\\pi)$.",
+        "steps": [
+          "$\\cos x = -\\frac{\\sqrt{3}}{2}$. Reference angle $\\frac{\\pi}{6}$.",
+          "Cosine is negative in Quadrants II and III: $\\pi - \\frac{\\pi}{6} = \\frac{5\\pi}{6}$ and $\\pi + \\frac{\\pi}{6} = \\frac{7\\pi}{6}$."
+        ],
+        "a": "$\\frac{5\\pi}{6}, \\frac{7\\pi}{6}$"
+      },
+      {
+        "t": "ex",
+        "title": "Tangent",
+        "q": "Solve $\\tan x = -1$ on $[0, 2\\pi)$.",
+        "steps": [
+          "Reference angle $\\frac{\\pi}{4}$; tangent is negative in Quadrants II and IV.",
+          "$x = \\frac{3\\pi}{4}$ and $x = \\frac{7\\pi}{4}$, exactly $\\pi$ apart, as tangent's period predicts."
+        ],
+        "a": "$\\frac{3\\pi}{4}, \\frac{7\\pi}{4}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Stopping at the one answer a calculator gives. $\\sin^{-1}\\frac{1}{2} = \\frac{\\pi}{6}$ is only one solution. Draw the horizontal (for sine) or vertical (for cosine) line on the unit circle and count where it crosses: usually twice per turn. Check each answer by substituting it back."
+      },
+      {
+        "t": "viz",
+        "name": "unitcircle",
+        "opts": {
+          "angle": 30,
+          "units": "deg",
+          "snap": 15,
+          "graph": "sin",
+          "task": "Find the other angle in $[0^\\circ, 360^\\circ)$ whose sine is $\\frac{1}{2}$.",
+          "target": 150
+        },
+        "cap": "Same height, other side of the circle."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Precalculus 2e, Section 7.5 Solving Trigonometric Equations"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, F-TF.B.7"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

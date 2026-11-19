@@ -1,0 +1,100 @@
+{
+  "id": "modern.length-contraction",
+  "slug": "length-contraction",
+  "ladder": "physics",
+  "course": "modern",
+  "unit": "relativity",
+  "title": "Length Contraction",
+  "short": "A moving object is shorter along its motion: L = L₀/γ.",
+  "trouble": "Students shrink lengths at right angles to the motion too.",
+  "prereqs": [
+    "modern.time-dilation"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-relativity"
+  ],
+  "figureArchetype": "WaveFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "If moving clocks run slow, moving lengths must change too, or observers would disagree about things they can check together. Think of the muons in <a href=\"/physics/waves-optics-modern-physics/time-dilation/\">time dilation</a>. In Earth's frame they live longer and so cover 6.6 km. In the muon's own frame its lifetime is only 2.2 μs, yet it still reaches the ground. The atmosphere rushing past must be shorter in the muon's frame."
+      },
+      {
+        "t": "key",
+        "html": "An object's length measured in its own rest frame is its <b>proper length</b> $L_0$. Measured in a frame where it moves at speed $v$ along its length, $$L = \\frac{L_0}{\\gamma} = L_0\\sqrt{1 - \\frac{v^2}{c^2}}.$$ Only lengths <b>along</b> the motion contract; lengths at right angles to it are unchanged."
+      },
+      {
+        "t": "why",
+        "html": "A marker on the ground and a moving rod. In the ground frame, the rod's front passes the marker, then its back passes, a time $\\Delta t$ later, so $L = v\\Delta t$. In the rod's frame the marker moves past at $v$, and the rod's proper length is $L_0 = v\\Delta t'$. The two passings happen at the marker, so the marker's clock reads the proper time: $\\Delta t = \\frac{\\Delta t'}{\\gamma}$. Then $L = v\\frac{\\Delta t'}{\\gamma} = \\frac{L_0}{\\gamma}$. Why not sideways? Picture two identical hoops flying through each other along their common axis. If moving hoops shrank sideways, each observer would see the other's hoop pass inside their own, a contradiction, since both cannot be inside. So sideways sizes stay the same."
+      },
+      {
+        "t": "viz",
+        "name": "ph-relativity",
+        "opts": {
+          "mode": "contraction",
+          "beta": 0.8
+        },
+        "cap": "A ship at rest and the same ship moving at $0.8c$. Measured from the frame it moves in, it is 60% as long, and exactly as tall."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A fast ship",
+        "q": "A ship is 100 m long in its own frame. How long is it, measured by Earth observers, as it passes at $0.80c$?",
+        "steps": [
+          "$\\gamma = \\frac{1}{\\sqrt{1 - 0.64}} = \\frac{1}{0.60}$.",
+          "$L = L_0/\\gamma = 100 \\times 0.60 = 60$ m."
+        ],
+        "a": "$60$ m"
+      },
+      {
+        "t": "ex",
+        "title": "The muon's view",
+        "q": "In Earth's frame, a muon at $0.995c$ crosses 10.0 km of atmosphere. How thick is that atmosphere in the muon's frame, and how long does the crossing take for the muon?",
+        "steps": [
+          "$\\gamma = 10.0$ (from the time-dilation lesson).",
+          "The atmosphere's 10.0 km is its proper length (it is at rest on Earth). In the muon's frame: $L = 10.0/10.0 = 1.00$ km.",
+          "Time for the muon: $\\frac{1000\\ \\text{m}}{(0.995)(3.00 \\times 10^8\\ \\text{m/s})} = 3.35$ μs."
+        ],
+        "a": "1.00 km, crossed in 3.35 μs of the muon's own time"
+      },
+      {
+        "t": "ex",
+        "title": "A tilted rod",
+        "q": "A rod 1.00 m long lies at $30^\\circ$ to the $x$-axis in its own frame. It moves along $x$ at $0.80c$. Find its length and angle in the lab frame.",
+        "steps": [
+          "Split the rod: $L_x = 1.00\\cos 30^\\circ = 0.866$ m and $L_y = 1.00\\sin 30^\\circ = 0.500$ m.",
+          "Only $L_x$ contracts: $0.866 \\times 0.60 = 0.520$ m. $L_y$ stays 0.500 m.",
+          "Length: $\\sqrt{0.520^2 + 0.500^2} = 0.721$ m. Angle: $\\tan^{-1}\\frac{0.500}{0.520} = 43.9^\\circ$."
+        ],
+        "a": "$0.721$ m at $43.9^\\circ$: the rod turns toward the perpendicular"
+      },
+      {
+        "t": "mistake",
+        "html": "Shrinking lengths at right angles to the motion too, as if the whole object scaled down. Only the length along the direction of motion contracts. Check with the hoops argument, or with the light clock: its mirrors' separation, perpendicular to the motion, has to be the same in both frames for the time-dilation derivation to work."
+      },
+      {
+        "t": "mistake",
+        "html": "Using the contracted length as the proper length. $L_0$ is measured in the object's <b>own</b> rest frame, and it is always the longest."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 3, 5.4 Length Contraction"
+      },
+      {
+        "name": "MIT OpenCourseWare 8.20 Introduction to Special Relativity (January IAP 2005)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

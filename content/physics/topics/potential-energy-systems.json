@@ -1,0 +1,104 @@
+{
+  "id": "phys1.potential-energy-systems",
+  "slug": "potential-energy-systems",
+  "ladder": "physics",
+  "course": "phys1",
+  "unit": "energy",
+  "title": "Gravitational Potential Energy of a System",
+  "short": "ΔU = mgΔh belongs to the Earth–object system, and only changes in it matter.",
+  "trouble": "Students think the potential energy depends on the path taken between two heights.",
+  "prereqs": [
+    "phys1.work",
+    "physsci.potential-energy"
+  ],
+  "xp": 1,
+  "viz": [
+    "ph-energy"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/physics/physical-science/potential-energy/\">Gravitational Potential Energy</a> you met $PE = mgh$. Now look closely at where that energy lives. It isn't stored in the lifted book alone; it belongs to the book <i>and</i> Earth together, because it depends on how far apart they are."
+      },
+      {
+        "t": "key",
+        "html": "For an object–Earth system near Earth's surface, $\\role[change in gravitational potential energy]{energy}{\\Delta U_g} = \\role{mass}{m}\\role[acceleration of gravity]{acceleration}{g}\\,\\role[change in height]{position}{\\Delta h}$. Only changes in $U_g$ matter, so you may put $U_g = 0$ at any convenient height. $\\Delta U_g$ depends only on the change in height, not on the path."
+      },
+      {
+        "t": "why",
+        "html": "Lift a book at steady speed and you do work $mg\\,\\Delta h$ against gravity, but the book's kinetic energy doesn't change. The energy went into the separation between the book and Earth. <a href=\"/physics/physics-1/work/\">Gravity's work</a> on any path depends only on how far up or down you end, because only the vertical parts of the path count. So the stored energy is path-independent, and that is what makes it a potential energy."
+      },
+      {
+        "t": "viz",
+        "name": "ph-energy",
+        "opts": {
+          "scene": "track",
+          "m": 2,
+          "h0": 4,
+          "task": "Watch the gravitational energy bar. It depends only on the cart's height, whatever the shape of the track.",
+          "roleLinks": {
+            "Mass m": "mass",
+            "Starting height h": "position"
+          }
+        },
+        "cap": "A cart on a hilly track: Ug rises and falls with height alone."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Up the stairs",
+        "q": "A $55\\ \\text{kg}$ student climbs to a floor $3.5\\ \\text{m}$ higher. Find $\\Delta U_g$ for the student–Earth system.",
+        "steps": [
+          "$\\Delta U_g = mg\\,\\Delta h = (55)(9.8)(3.5)$.",
+          "$\\Delta U_g \\approx 1{,}890\\ \\text{J}$."
+        ],
+        "a": "about $1{,}890\\ \\text{J}$"
+      },
+      {
+        "t": "ex",
+        "title": "Path does not matter",
+        "q": "A $20\\ \\text{kg}$ cart is pushed up a winding ramp $30\\ \\text{m}$ long to a platform $4\\ \\text{m}$ higher. Find $\\Delta U_g$.",
+        "steps": [
+          "Only the change in height counts: $\\Delta U_g = (20)(9.8)(4) = 784\\ \\text{J}$.",
+          "The $30\\ \\text{m}$ ramp length is a distractor."
+        ],
+        "a": "$784\\ \\text{J}$"
+      },
+      {
+        "t": "ex",
+        "title": "Choosing the zero",
+        "q": "A $2\\ \\text{kg}$ box on a shelf $1.8\\ \\text{m}$ above the floor, next to a $0.8\\ \\text{m}$ table. Find $U_g$ with $U_g = 0$ at the floor, then at the tabletop.",
+        "steps": [
+          "Floor as zero: $U_g = (2)(9.8)(1.8) = 35.3\\ \\text{J}$.",
+          "Tabletop as zero: $U_g = (2)(9.8)(1.0) = 19.6\\ \\text{J}$.",
+          "Different values, but moving the box from the shelf to the floor changes $U_g$ by $-35.3\\ \\text{J}$ in both choices."
+        ],
+        "a": "$35.3\\ \\text{J}$ or $19.6\\ \\text{J}$, depending on the zero"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking the potential energy depends on the path taken between two heights: that a long gentle ramp stores more energy than a short steep one. The ramp takes a smaller force over a longer distance, and the work against gravity comes out the same. Check: $\\Delta U_g$ has only $\\Delta h$ in it, never a path length."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Physics 2e, Section 7.3 Gravitational Potential Energy"
+      },
+      {
+        "name": "OpenStax University Physics Volume 1, Section 8.1 Potential Energy of a System"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-PS3-2"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

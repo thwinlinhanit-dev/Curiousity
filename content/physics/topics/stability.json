@@ -1,0 +1,75 @@
+{
+  "id": "rocket.stability",
+  "slug": "stability",
+  "ladder": "physics",
+  "course": "rocket",
+  "unit": "flight",
+  "title": "Stability: Center of Mass and Center of Pressure",
+  "short": "A rocket flies straight when its center of mass is ahead of its center of pressure, so a gust turns it back into the wind like a weather vane.",
+  "trouble": "Students think the fins should be near the middle, or that a heavier tail makes a rocket steadier.",
+  "prereqs": [
+    "phys1.systems-center-of-mass",
+    "phys1.torque"
+  ],
+  "xp": 2,
+  "viz": [
+    "rocket-stability"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "note",
+        "html": "<b>From the story.</b> One of the boys' rockets, Hickam recalls, bounced off a tree and chased them through the woods. A rocket that doesn't fly straight goes wherever the air pushes it. (More in <a href=\"/october-sky/\">October Sky</a>.)"
+      },
+      {
+        "t": "p",
+        "html": "Two points decide whether a rocket flies straight. The <b>center of mass</b> (CM) is its balance point. The <b>center of pressure</b> (CP) is where the air's sideways push effectively acts; fins move it toward the tail."
+      },
+      {
+        "t": "key",
+        "html": "Stable when the CM is ahead of (closer to the nose than) the CP. Then a gust that tips the rocket makes the air push the tail back, turning the nose into the wind like a weather vane. CM position: $x = \\dfrac{\\sum m_i x_i}{\\sum m_i}$. Weight in the nose moves the CM forward; bigger fins move the CP back."
+      },
+      {
+        "t": "viz",
+        "name": "rocket-stability",
+        "cap": "Switch between the two. With the CM ahead, the gust's push turns the rocket back; with the CP ahead, the push turns it further away."
+      },
+      {
+        "t": "ex",
+        "title": "Balance point",
+        "q": "Nose cone $20\\ \\text{g}$ at $5\\ \\text{cm}$, body $30\\ \\text{g}$ at $25\\ \\text{cm}$, motor and fins $40\\ \\text{g}$ at $45\\ \\text{cm}$ from the tip. The CP is at $38\\ \\text{cm}$. Stable?",
+        "steps": [
+          "$x = \\dfrac{20(5) + 30(25) + 40(45)}{90} = \\dfrac{2{,}650}{90} \\approx 29.4\\ \\text{cm}$.",
+          "CM at $29.4$ is ahead of CP at $38$: stable."
+        ],
+        "a": "Yes: CM at $\\approx 29.4\\ \\text{cm}$ is ahead of the CP"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking a heavier tail steadies a rocket. Weight at the back moves the CM toward the CP and makes it less stable."
+      },
+      {
+        "t": "note",
+        "html": "NASA's guide describes a simple check used with model rockets: tie a string at the center of mass and swing the rocket in a circle. A stable rocket points its nose the way it is moving."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "NASA Glenn Research Center, Beginner's Guide to Aeronautics: Conditions for Rocket Stability",
+        "url": "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/conditions-for-rocket-stability/"
+      },
+      {
+        "name": "Smithsonian Air & Space, “The Big Creek Missile Agency” (Homer Hickam's account of the Rocket Boys)",
+        "url": "https://www.smithsonianmag.com/air-space-magazine/the-big-creek-missile-agency-85069719/"
+      },
+      {
+        "name": "OpenStax, University Physics Volume 1 (Rice University): kinematics, Newton's laws, momentum, gravitation"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

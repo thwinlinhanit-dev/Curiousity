@@ -1,0 +1,105 @@
+{
+  "id": "cplx.harmonic-functions",
+  "slug": "harmonic-functions",
+  "ladder": "math",
+  "course": "cplx",
+  "unit": "analytic",
+  "title": "Harmonic Functions and Harmonic Conjugates",
+  "short": "The real and imaginary parts of an analytic function solve u_xx + u_yy = 0; given u, find v from the Cauchy–Riemann equations.",
+  "trouble": "Students integrate v_y = uₓ with respect to y and add a plain constant, when the \"constant\" can be any function of x; the other equation decides it.",
+  "prereqs": [
+    "cplx.analytic-functions",
+    "calc3.higher-partials"
+  ],
+  "xp": 3,
+  "viz": [
+    "surface"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The real and imaginary parts of an analytic function are not arbitrary. Differentiating the <a href=\"/math/complex-analysis/cauchy-riemann/\">Cauchy–Riemann equations</a> once more (using <a href=\"/math/calculus-3/higher-partials/\">mixed partials</a>) shows that each of them solves Laplace's equation, the equation of steady heat flow and electrostatics. This link is one reason complex analysis matters in physics."
+      },
+      {
+        "t": "key",
+        "html": "A real function $u(x, y)$ with continuous second partials is <b>harmonic</b> if $u_{xx} + u_{yy} = 0$. If $f = u + iv$ is analytic, then $u$ and $v$ are harmonic. Conversely, if $u$ is harmonic on a disk, there is a <b>harmonic conjugate</b> $v$ (unique up to adding a constant) with $u + iv$ analytic; find it from $v_y = u_x$ and $v_x = -u_y$."
+      },
+      {
+        "t": "why",
+        "html": "From $u_x = v_y$, differentiate in $x$: $u_{xx} = v_{yx}$. From $u_y = -v_x$, differentiate in $y$: $u_{yy} = -v_{xy}$. Mixed partials are equal (an analytic function has continuous partials of all orders, proved later in the course), so $u_{xx} + u_{yy} = v_{yx} - v_{xy} = 0$. The same argument works for $v$."
+      },
+      {
+        "t": "viz",
+        "name": "surface",
+        "opts": {
+          "f": "x^2 - y^2",
+          "xmin": -2,
+          "xmax": 2,
+          "ymin": -2,
+          "ymax": 2,
+          "slice": "none"
+        },
+        "cap": "$u = x^2 - y^2 = \\operatorname{Re}(z^2)$ is a saddle: curving up in one direction exactly as much as it curves down in the other, so $u_{xx} + u_{yy} = 2 - 2 = 0$. A harmonic function has no peaks or pits inside its domain."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Testing for harmonic",
+        "q": "Is $u = x^3 - 3xy^2 + y$ harmonic? Is $u = x^2 + y^2$?",
+        "steps": [
+          "First: $u_{xx} = 6x$ and $u_{yy} = -6x$, so the sum is $0$: harmonic (it is $\\operatorname{Re}(z^3 - iz)$).",
+          "Second: $u_{xx} + u_{yy} = 2 + 2 = 4 \\ne 0$: not harmonic, so $x^2 + y^2$ is not the real part of any analytic function."
+        ],
+        "a": "yes; no"
+      },
+      {
+        "t": "ex",
+        "title": "Finding a harmonic conjugate",
+        "q": "Find $v$ with $v(0, 0) = 0$ so that $u + iv$ is analytic, for $u = x^2 - y^2 + 3x$.",
+        "steps": [
+          "$v_y = u_x = 2x + 3$. Integrate in $y$: $v = 2xy + 3y + g(x)$, where $g$ is any function of $x$ (it disappears when we differentiate in $y$).",
+          "$v_x = 2y + g'(x)$ must equal $-u_y = 2y$, so $g'(x) = 0$ and $g$ is a constant.",
+          "$v(0, 0) = 0$ makes the constant $0$: $v = 2xy + 3y$. Check: $u + iv = z^2 + 3z$."
+        ],
+        "a": "$v = 2xy + 3y$"
+      },
+      {
+        "t": "ex",
+        "title": "An exponential example",
+        "q": "Find the harmonic conjugate of $u = e^x\\cos y$ with $v(0, 0) = 0$.",
+        "steps": [
+          "$v_y = u_x = e^x\\cos y$, so $v = e^x\\sin y + g(x)$.",
+          "$v_x = e^x\\sin y + g'(x)$ must equal $-u_y = e^x\\sin y$, so $g$ is constant, and $v(0, 0) = 0$ makes it $0$.",
+          "$v = e^x\\sin y$, and $u + iv = e^x(\\cos y + i\\sin y) = e^z$."
+        ],
+        "a": "$v = e^x\\sin y$"
+      },
+      {
+        "t": "note",
+        "html": "A geometric bonus: where $f'(z) \\ne 0$, the level curves $u = c_1$ and $v = c_2$ cross at right angles, because $\\nabla u \\cdot \\nabla v = u_xv_x + u_yv_y = u_xv_x - v_xu_x = 0$ by the Cauchy–Riemann equations. In a steady flow, $u$ can be the potential and $v$ the stream function: the flow lines cross the equipotential lines at right angles."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Adding a plain constant after integrating.</b> When you integrate $v_y = u_x$ with respect to $y$, the \"constant\" of integration can be any function $g(x)$, because $\\frac{\\partial}{\\partial y}g(x) = 0$. Example: $u = x^2 - y^2 + 5y$. Then $v_y = 2x$ gives $v = 2xy + g(x)$, and $v_x = 2y + g'(x)$ must equal $-u_y = 2y - 5$, so $g(x) = -5x$ and $v = 2xy - 5x$. Writing $v = 2xy + C$ would miss the $-5x$. Always finish with the check $v_x = -u_y$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Beck, Marchesi, Pixton and Sabalka, A First Course in Complex Analysis, chapter 6 (Harmonic Functions)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.04, Complex Variables with Applications (Spring 2018), course notes: introduction to harmonic functions"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

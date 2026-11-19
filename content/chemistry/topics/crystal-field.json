@@ -1,0 +1,110 @@
+{
+  "id": "gchem2.crystal-field",
+  "slug": "crystal-field",
+  "ladder": "chemistry",
+  "course": "gchem2",
+  "unit": "coordination",
+  "title": "Crystal Field Theory and Color",
+  "short": "Ligands split the d orbitals; the size of the gap sets the color and the number of unpaired electrons.",
+  "trouble": "Students think a complex shows the color of the light it absorbs, when it shows the complementary color.",
+  "prereqs": [
+    "gchem2.coordination-compounds",
+    "gchem1.orbital-diagrams",
+    "gchem1.light-waves"
+  ],
+  "xp": 3,
+  "viz": [
+    "ch-orbitalbox",
+    "ch-spectrum"
+  ],
+  "figureArchetype": "WaveFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Why is copper sulfate blue and zinc sulfate colorless? Why are some iron complexes attracted to a magnet and others not? Crystal field theory answers both. It builds on <a href=\"/chemistry/general-chemistry-2/coordination-compounds/\">coordination compounds</a>, <a href=\"/chemistry/general-chemistry-1/orbital-diagrams/\">orbital diagrams</a> and <a href=\"/chemistry/general-chemistry-1/light-waves/\">light energy</a>."
+      },
+      {
+        "t": "key",
+        "html": "In an octahedral complex, the ligands raise the energy of the two d orbitals that point at them ($e_g$) above the other three ($t_{2g}$), by the <b>splitting energy</b> $\\Delta_o$. Strong-field ligands give a large $\\Delta_o$ (electrons pair up in $t_{2g}$ first: <b>low spin</b>); weak-field ligands give a small one (electrons spread out first: <b>high spin</b>). Absorbing light of energy $\\Delta_o$ lifts an electron across the gap, and the complex shows the <b>complementary</b> color of the light absorbed."
+      },
+      {
+        "t": "why",
+        "html": "The ligands' lone pairs act like negative charges. The $d_{z^2}$ and $d_{x^2-y^2}$ orbitals point straight at the six ligands on the axes, so electrons in them are repelled more; the $d_{xy}$, $d_{xz}$ and $d_{yz}$ orbitals point between the ligands. Whether a fourth electron pairs in $t_{2g}$ or climbs to $e_g$ depends on which costs less: the pairing energy or $\\Delta_o$. White light minus the absorbed color is what reaches your eye."
+      },
+      {
+        "t": "p",
+        "html": "The order of ligands by $\\Delta_o$, measured from absorption spectra, is the <b>spectrochemical series</b>. From weakest to strongest field: $\\mathrm{I^-}$, $\\mathrm{Br^-}$, $\\mathrm{Cl^-}$, $\\mathrm{F^-}$, $\\mathrm{OH^-}$, $\\mathrm{H_2O}$, $\\mathrm{NH_3}$, en, $\\mathrm{CN^-}$, CO."
+      },
+      {
+        "t": "viz",
+        "name": "ch-orbitalbox",
+        "opts": {
+          "mode": "field",
+          "d": 6,
+          "geometry": "oct",
+          "delta": 170,
+          "pairing": 200,
+          "ion": "Fe2+"
+        },
+        "cap": "A $d^6$ ion such as $\\mathrm{Fe^{2+}}$ in an octahedral field. With $\\Delta_o$ below the pairing energy (200 kJ/mol in this model) it is high spin, with four unpaired electrons. Drag $\\Delta_o$ above the pairing energy and all six electrons pair up in $t_{2g}$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Same ion, different ligands",
+        "q": "How many unpaired electrons are in $\\mathrm{[Fe(H_2O)_6]^{2+}}$ and in $\\mathrm{[Fe(CN)_6]^{4-}}$?",
+        "steps": [
+          "$\\mathrm{Fe^{2+}}$: iron is in group 8 and has lost two electrons, leaving $d^6$.",
+          "Water is weak-field: high spin, one electron in each of the five orbitals, then the sixth pairs in $t_{2g}$: $t_{2g}^4e_g^2$, 4 unpaired.",
+          "Cyanide is strong-field: low spin, all six pair in $t_{2g}$: $t_{2g}^6$, 0 unpaired. $\\mathrm{[Fe(CN)_6]^{4-}}$ is diamagnetic."
+        ],
+        "a": "4 and 0."
+      },
+      {
+        "t": "ex",
+        "title": "Color and the gap",
+        "q": "$\\mathrm{[Ti(H_2O)_6]^{3+}}$ absorbs most strongly near $500\\ \\text{nm}$. Find $\\Delta_o$ in kJ/mol and predict its color.",
+        "steps": [
+          "$$E = \\dfrac{hc}{\\lambda} = \\dfrac{(6.626 \\times 10^{-34})(3.00 \\times 10^8)}{500 \\times 10^{-9}} = 3.98 \\times 10^{-19}\\ \\text{J}$$ per ion.",
+          "Per mole: $$(3.98 \\times 10^{-19})(6.022 \\times 10^{23}) = 2.39 \\times 10^5\\ \\text{J/mol} = 239\\ \\text{kJ/mol}$$",
+          "It absorbs green-yellow light, so it looks the complementary color: violet-purple."
+        ],
+        "a": "$239\\ \\text{kJ/mol}$; violet."
+      },
+      {
+        "t": "viz",
+        "name": "ch-spectrum",
+        "opts": {
+          "mode": "color",
+          "lambda": 500
+        },
+        "cap": "Light absorbed near 500 nm, and the complementary color that remains."
+      },
+      {
+        "t": "list",
+        "items": [
+          "$d^0$ and $d^{10}$ ions ($\\mathrm{Ti^{4+}}$, $\\mathrm{Zn^{2+}}$) have no electron that can jump the gap, so their compounds are usually colorless.",
+          "Tetrahedral complexes have a smaller splitting (about 4/9 of $\\Delta_o$) and are nearly always high spin.",
+          "Paramagnetic (attracted by a magnet) means at least one unpaired electron; diamagnetic means none."
+        ]
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking a complex shows the color of the light it absorbs. It shows the complementary color: red–green, orange–blue and yellow–violet are the opposite pairs. Check: a solution that absorbs red light looks green, not red."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 19.3 Spectroscopic and Magnetic Properties of Coordination Compounds"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

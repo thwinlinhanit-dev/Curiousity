@@ -1,0 +1,103 @@
+{
+  "id": "calc1.chain-rule",
+  "slug": "chain-rule",
+  "ladder": "math",
+  "course": "calc1",
+  "unit": "rules",
+  "title": "The Chain Rule",
+  "short": "(f(g(x)))′ = f′(g(x)) · g′(x).",
+  "trouble": "Students forget to multiply by the derivative of the inside function.",
+  "prereqs": [
+    "calc1.trig-derivatives",
+    "alg2.function-composition"
+  ],
+  "xp": 2,
+  "viz": [],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Most functions in practice are built in layers: $\\sin(3x)$, $(x^2 + 1)^{10}$, $\\sqrt{1 + x^4}$. You know <a href=\"/math/algebra-2/function-composition/\">Composition of Functions</a> and the derivatives of the outer pieces, from <a href=\"/math/calculus-1/trig-derivatives/\">Derivatives of Trig Functions</a> and the power rule. The chain rule tells how the layers' rates combine: <b>they multiply</b>."
+      },
+      {
+        "t": "key",
+        "html": "If $y = f(u)$ and $u = g(x)$, then $$\\role[rate of the whole]{rate}{\\frac{dy}{dx}} = \\role[rate of the outside]{outer}{\\frac{dy}{du}}\\cdot\\role[rate of the inside]{inner}{\\frac{du}{dx}}, \\qquad\\text{that is,}\\qquad \\big(f(g(x))\\big)' = \\role[derivative of the outside]{outer}{f'}\\big(\\role[inside, left alone]{inner}{g(x)}\\big)\\cdot \\role[derivative of the inside]{inner}{g'(x)}.$$ Differentiate the outside, leaving the inside alone, then multiply by the derivative of the inside."
+      },
+      {
+        "t": "p",
+        "html": "Picture three linked gears. If gear $u$ turns 3 times for every turn of gear $x$, and gear $y$ turns 2 times for every turn of gear $u$, then $y$ turns $2 \\times 3 = 6$ times for every turn of $x$. Rates of change behave the same way: a change in $x$ is stretched by $g'(x)$ on its way to $u$, then stretched again by $f'(u)$ on its way to $y$."
+      },
+      {
+        "t": "viz",
+        "name": "calc1-chain",
+        "opts": {
+          "g": "x^2",
+          "f": "sin(u)",
+          "x": 1,
+          "dx": 0.2,
+          "xmin": -2,
+          "xmax": 2,
+          "gname": "g",
+          "fname": "f",
+          "task": "Shrink $\\Delta x$. The two stretch factors approach $g'(x)$ and $f'(u)$, and their product approaches the slope of $\\sin(x^2)$."
+        },
+        "cap": "$x \\to u = x^2 \\to y = \\sin u$. A short interval is stretched by about $2x$, then by about $\\cos u$. The overall stretch is the product $\\cos(x^2)\\cdot 2x$."
+      },
+      {
+        "t": "why",
+        "html": "For a small change $\\Delta x$, write $\\frac{\\Delta y}{\\Delta x} = \\frac{\\Delta y}{\\Delta u}\\cdot\\frac{\\Delta u}{\\Delta x}$, which is true algebra whenever $\\Delta u \\ne 0$. As $\\Delta x \\to 0$, $\\Delta u \\to 0$ too (because $g$ is continuous), so $\\frac{\\Delta u}{\\Delta x} \\to g'(x)$ and $\\frac{\\Delta y}{\\Delta u} \\to f'(u)$. The product of the limits is the limit of the product. (A careful proof also handles the case where $\\Delta u$ can be 0, but the idea is this.)"
+      },
+      {
+        "t": "ex",
+        "title": "A power of a polynomial",
+        "q": "Differentiate $(3x^2 + 1)^5$.",
+        "steps": [
+          "Inside $u = 3x^2 + 1$, outside $u^5$.",
+          "Outer derivative: $5u^4 = 5(3x^2 + 1)^4$, with the inside left alone.",
+          "Inner derivative: $6x$.",
+          "Multiply: $5(3x^2 + 1)^4 \\cdot 6x$."
+        ],
+        "a": "$30x(3x^2 + 1)^4$"
+      },
+      {
+        "t": "ex",
+        "title": "Trig with an inside",
+        "q": "Differentiate $\\sin(4x)$ and $\\sqrt{x^2 + 9}$.",
+        "steps": [
+          "$\\sin(4x)$: outer $\\cos(4x)$, inner rate $4$, so the derivative is $4\\cos(4x)$.",
+          "$\\sqrt{x^2 + 9} = (x^2 + 9)^{1/2}$: outer $\\frac{1}{2}(x^2 + 9)^{-1/2}$, inner rate $2x$.",
+          "Multiply: $\\frac{2x}{2\\sqrt{x^2 + 9}} = \\frac{x}{\\sqrt{x^2 + 9}}$."
+        ],
+        "a": "$4\\cos(4x)$ and $\\frac{x}{\\sqrt{x^2 + 9}}$"
+      },
+      {
+        "t": "ex",
+        "title": "From a table",
+        "q": "$g(1) = 3$, $g'(1) = 2$, $f'(1) = 5$, $f'(3) = -4$. Find $h'(1)$ for $h(x) = f(g(x))$.",
+        "steps": [
+          "$h'(1) = f'\\big(g(1)\\big)\\cdot g'(1) = f'(3)\\cdot 2$.",
+          "$= (-4)(2) = -8$. The outer rate is read at the inside value $g(1) = 3$, not at 1."
+        ],
+        "a": "$-8$"
+      },
+      {
+        "t": "mistake",
+        "html": "Forgetting to multiply by the derivative of the inside: writing $\\frac{d}{dx}(3x^2 + 1)^5 = 5(3x^2 + 1)^4$. Check with a case you can do another way: $(2x)^2 = 4x^2$ has derivative $8x$. The chain rule gives $2(2x)\\cdot 2 = 8x$; forgetting the inner factor gives $4x$, which is wrong."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 1, 3.6 The Chain Rule"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.01SC Single Variable Calculus, Unit 1: The Chain Rule"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

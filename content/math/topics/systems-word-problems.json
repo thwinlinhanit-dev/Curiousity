@@ -1,0 +1,106 @@
+{
+  "id": "g8.systems-word-problems",
+  "slug": "systems-word-problems",
+  "ladder": "math",
+  "course": "g8",
+  "unit": "systems",
+  "title": "Systems Word Problems",
+  "short": "Write and solve a system for a two-unknown story.",
+  "trouble": "",
+  "prereqs": [
+    "g8.systems-substitution",
+    "g8.linear-models"
+  ],
+  "xp": 3,
+  "viz": [
+    "linesystem"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Many stories have two unknown amounts. With <a href=\"/math/pre-algebra/systems-substitution/\">substitution</a> and what you know about <a href=\"/math/pre-algebra/linear-models/\">linear models</a>, you can find both."
+      },
+      {
+        "t": "why",
+        "html": "A story with two unknowns usually gives two facts, such as a total count and a total cost. Each fact becomes an equation. The answer must fit both facts at once, which is exactly what the solution of a system does."
+      },
+      {
+        "t": "key",
+        "html": "(1) Name the two unknowns, with units. (2) Write one equation for each fact. (3) Solve the system. (4) Check the answer in the story. (5) Answer in words."
+      },
+      {
+        "t": "viz",
+        "name": "linesystem",
+        "opts": {
+          "lines": [
+            "15x + 40",
+            "20x + 20"
+          ],
+          "xmin": 0,
+          "xmax": 8,
+          "ymin": 0,
+          "ymax": 200,
+          "equal": false,
+          "probe": null
+        },
+        "cap": "The two gym plans from Example 2 cost the same where the lines cross: after 4 months, at \\$100."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Tickets",
+        "q": "A school play sold 120 tickets for \\$750. Adult tickets cost \\$8 and child tickets cost \\$5. How many of each were sold?",
+        "steps": [
+          "Let $a$ = adult tickets and $c$ = child tickets.",
+          "Count: $a + c = 120$. Money: $8a + 5c = 750$.",
+          "From the first, $c = 120 - a$. Substitute: $8a + 5(120 - a) = 750$, so $3a + 600 = 750$ and $a = 50$.",
+          "Then $c = 70$. Check: $8 \\cdot 50 + 5 \\cdot 70 = 400 + 350 = 750$."
+        ],
+        "a": "50 adult tickets and 70 child tickets"
+      },
+      {
+        "t": "ex",
+        "title": "When do two plans cost the same?",
+        "q": "Gym A charges \\$40 to join plus \\$15 a month. Gym B charges \\$20 to join plus \\$20 a month. When do they cost the same?",
+        "steps": [
+          "Let $x$ = months and $y$ = total cost. A: $y = 15x + 40$. B: $y = 20x + 20$.",
+          "Set them equal: $15x + 40 = 20x + 20$, so $20 = 5x$ and $x = 4$.",
+          "Cost: $15 \\cdot 4 + 40 = 100$. After that, A is cheaper, because it adds less each month."
+        ],
+        "a": "after 4 months, when both cost \\$100"
+      },
+      {
+        "t": "ex",
+        "title": "Sum and difference",
+        "q": "Two numbers add to 31, and one is 7 more than the other. Find them.",
+        "steps": [
+          "Let $x$ be the larger and $y$ the smaller: $x + y = 31$ and $x = y + 7$.",
+          "Substitute: $(y + 7) + y = 31$, so $2y = 24$ and $y = 12$.",
+          "$x = 19$. Check: $19 + 12 = 31$ and $19 - 12 = 7$."
+        ],
+        "a": "19 and 12"
+      },
+      {
+        "t": "mistake",
+        "html": "Stopping after finding one unknown, or skipping the check. The question asks for both amounts. Put them back into the story: do they give the right count <b>and</b> the right total?"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Elementary Algebra 2e, Section 5.4: Solve Applications with Systems of Equations"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 8, 8.EE.C.8c (real-world problems leading to two linear equations)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,102 @@
+{
+  "id": "g6.one-step-multiply-divide",
+  "slug": "one-step-multiply-divide",
+  "ladder": "math",
+  "course": "g6",
+  "unit": "equations",
+  "title": "One-Step Equations with Multiplying and Dividing",
+  "short": "Undo multiplying by dividing both sides by the same number.",
+  "trouble": "Students subtract the coefficient, solving 4x = 12 as x = 8.",
+  "prereqs": [
+    "g6.one-step-add-subtract"
+  ],
+  "xp": 1,
+  "viz": [
+    "balance"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Some equations multiply or divide the variable instead of adding to it. The balance idea from <a href=\"/math/grade-6/one-step-add-subtract/\">One-Step Equations with Adding and Subtracting</a> still works: do the same thing to both sides."
+      },
+      {
+        "t": "key",
+        "html": "To undo multiplying by a number, divide both sides by it. To undo dividing by a number, multiply both sides by it. $4x = 12$ becomes $x = 12 \\div 4 = 3$."
+      },
+      {
+        "t": "viz",
+        "name": "balance",
+        "opts": {
+          "eq": "4x = 12",
+          "task": true
+        },
+        "cap": "Four equal bags balance 12 cubes. Split both sides into 4 equal groups."
+      },
+      {
+        "t": "why",
+        "html": "$4x = 12$ says four equal bags weigh 12. Split each side into 4 equal groups and keep one group from each: one bag on the left, 3 cubes on the right. Still balanced. Dividing by 4 undoes multiplying by 4, because $4x \\div 4 = x$."
+      },
+      {
+        "t": "ex",
+        "title": "Undo multiplying",
+        "q": "Solve $4x = 12$.",
+        "steps": [
+          "Divide both sides by 4: $x = 12 \\div 4$.",
+          "$x = 3$. Check: $4 \\times 3 = 12$."
+        ],
+        "a": "$x = 3$"
+      },
+      {
+        "t": "ex",
+        "title": "Undo dividing",
+        "q": "Solve $\\frac{m}{5} = 7$.",
+        "steps": [
+          "Multiply both sides by 5: $m = 7 \\times 5$.",
+          "$m = 35$. Check: $35 \\div 5 = 7$."
+        ],
+        "a": "$m = 35$"
+      },
+      {
+        "t": "ex",
+        "title": "A fraction coefficient",
+        "q": "Solve $\\frac{2}{3}k = 10$.",
+        "steps": [
+          "Multiply both sides by the reciprocal, $\\frac{3}{2}$ (that is the same as dividing by $\\frac{2}{3}$).",
+          "$k = 10 \\times \\frac{3}{2} = 15$.",
+          "Check: $\\frac{2}{3} \\times 15 = 10$."
+        ],
+        "a": "$k = 15$"
+      },
+      {
+        "t": "ex",
+        "title": "A decimal coefficient",
+        "q": "Solve $0.4w = 3.2$.",
+        "steps": [
+          "Divide both sides by 0.4: $w = 3.2 \\div 0.4$.",
+          "Multiply both numbers by 10: $32 \\div 4 = 8$.",
+          "Check: $0.4 \\times 8 = 3.2$."
+        ],
+        "a": "$w = 8$"
+      },
+      {
+        "t": "mistake",
+        "html": "Subtracting the coefficient: solving $4x = 12$ as $x = 12 - 4 = 8$. The 4 is multiplying $x$, not added to it. Quick check: $4x$ means $4 \\times x$, and $4 \\times 8 = 32$, not 12."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Prealgebra 2e, section 3.5 Solve Equations Using Integers; The Division Property of Equality"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 6.EE.B.7: solving one-step equations"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

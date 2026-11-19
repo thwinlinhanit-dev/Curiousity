@@ -1,0 +1,102 @@
+{
+  "id": "em.rc-discharging",
+  "slug": "rc-discharging",
+  "ladder": "physics",
+  "course": "em",
+  "unit": "circuits",
+  "title": "Discharging and Energy in RC Circuits",
+  "short": "A capacitor discharges as q = Q₀e^(−t/RC), and all of its stored energy ends up as heat in the resistor.",
+  "trouble": "Students think the time to lose half the charge depends on how much charge there was at the start.",
+  "prereqs": [
+    "em.rc-charging"
+  ],
+  "xp": 2,
+  "viz": [
+    "em-decay"
+  ],
+  "figureArchetype": "FieldFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Disconnect the battery from a charged capacitor and connect the capacitor across a resistor instead. Charge flows from one plate, through the resistor, to the other, and the capacitor empties. The equation is even simpler than <a href=\"/physics/electricity-and-magnetism/rc-charging/\">charging</a>, and its solution has a striking property: a fixed \"half-life\"."
+      },
+      {
+        "t": "why",
+        "html": "Around the loop the capacitor's voltage drives the current through the resistor: $\\dfrac{q}{C} = IR$. The current drains the charge, $I = -\\dfrac{dq}{dt}$, so\n        $$\\frac{dq}{dt} = -\\frac{q}{RC}.$$\n        The charge drains at a rate proportional to how much is left. Whenever \"rate is proportional to amount\", the solution is an exponential, $q = Q_0e^{-t/RC}$, the same law as radioactive decay."
+      },
+      {
+        "t": "key",
+        "html": "$$q = Q_0e^{-t/RC}, \\qquad V = V_0e^{-t/RC}, \\qquad I = \\frac{V_0}{R}e^{-t/RC}.$$\n        The charge halves every $t_{1/2} = RC\\ln 2 \\approx 0.693\\,RC$, however much there is. All of the stored energy, $\\tfrac{1}{2}CV_0^2$, ends up as heat in the resistor."
+      },
+      {
+        "t": "viz",
+        "name": "em-decay",
+        "opts": {
+          "mode": "rc-discharge",
+          "R": 10000,
+          "C": 100,
+          "V0": 12,
+          "energy": true,
+          "task": "Two capacitors, one starting at twice the voltage of the other. Move the time slider to t½."
+        },
+        "cap": "Discharging from two different starting voltages: both curves reach half their start at the same moment, $t_{1/2} = RC\\ln 2$. The dotted curve is the stored energy, which halves twice as fast."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Charge left after a while",
+        "q": "A $100\\ \\mu\\text{F}$ capacitor charged to $50\\ \\text{V}$ discharges through $10\\ \\text{k}\\Omega$. How much charge is left after $2.0\\ \\text{s}$, and what is the current then?",
+        "steps": [
+          "$\\tau = RC = (10^4)(10^{-4}) = 1.0\\ \\text{s}$ and $Q_0 = CV_0 = 5000\\ \\mu\\text{C}$.",
+          "$q = 5000\\,e^{-2.0} = 677\\ \\text{μC}$.",
+          "$I = \\dfrac{V_0}{R}e^{-2.0} = (5.0\\ \\text{mA})(0.135) = 0.677\\ \\text{mA}$."
+        ],
+        "a": "$q \\approx 677\\ \\text{μC}$"
+      },
+      {
+        "t": "ex",
+        "title": "The half time",
+        "q": "How long does it take the charge to halve, and then to fall to a quarter?",
+        "steps": [
+          "$e^{-t/RC} = \\tfrac{1}{2}$ gives $t_{1/2} = RC\\ln 2 = 0.693\\ \\text{s}$.",
+          "A quarter is half of half: another $0.693\\ \\text{s}$, so $1.39\\ \\text{s}$ in all."
+        ],
+        "a": "$t_{1/2} \\approx 0.693\\ \\text{s}$"
+      },
+      {
+        "t": "ex",
+        "title": "All the energy becomes heat",
+        "q": "How much energy does the resistor turn into heat over the whole discharge?",
+        "steps": [
+          "$$\\int_0^\\infty I^2R\\,dt = \\frac{V_0^2}{R}\\int_0^\\infty e^{-2t/RC}\\,dt = \\frac{V_0^2}{R}\\cdot\\frac{RC}{2} = \\tfrac{1}{2}CV_0^2$$",
+          "$\\tfrac{1}{2}(100 \\times 10^{-6})(50)^2 = 0.125\\ \\text{J}$: exactly the energy the capacitor started with."
+        ],
+        "a": "$0.125\\ \\text{J}$"
+      },
+      {
+        "t": "p",
+        "html": "This gives a neat way to measure $RC$ in a lab. Take the natural log of the voltage: $\\ln V = \\ln V_0 - t/RC$. Plotted against time, $\\ln V$ falls along a straight line with slope $-1/RC$. Two readings are enough in principle: $RC = \\dfrac{t_2 - t_1}{\\ln(V_1/V_2)}$, and the starting voltage cancels out."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>\"A capacitor with more charge takes longer to lose half of it.\"</b> More charge means a higher voltage, which drives a bigger current, so it drains faster in exact proportion. The half time is $RC\\ln 2$, with no $Q_0$ in it. Check with the visual: two capacitors starting at different voltages reach half their starting values together."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 2, 10.5 RC Circuits"
+      },
+      {
+        "name": "MIT OpenCourseWare, 8.02 Physics II: Electricity and Magnetism"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

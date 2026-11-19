@@ -1,0 +1,107 @@
+{
+  "id": "pre.vectors-intro",
+  "slug": "vectors-intro",
+  "ladder": "math",
+  "course": "pre",
+  "unit": "triangles-vectors",
+  "title": "Vectors",
+  "short": "A vector has a size and a direction.",
+  "trouble": "Students treat a vector's components as a point rather than as a displacement.",
+  "prereqs": [
+    "pre.unit-circle-sine-cosine"
+  ],
+  "xp": 1,
+  "viz": [
+    "vectors2d"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "\"Walk $5$ km\" is not enough to find your way; you need \"walk $5$ km northeast.\" Quantities like displacement, velocity and force have both a size and a direction. Your <a href=\"/math/precalculus/unit-circle-sine-cosine/\">work with angles</a> will help describe the direction."
+      },
+      {
+        "t": "key",
+        "html": "A <b>vector</b> has a magnitude (length) and a direction, and is drawn as an arrow. In component form, $\\mathbf{v} = \\langle a, b \\rangle$ means \"move $a$ across and $b$ up.\" The vector from $P(x_1, y_1)$ to $Q(x_2, y_2)$ is $$\\overrightarrow{PQ} = \\langle x_2 - x_1,\\ y_2 - y_1 \\rangle.$$ Arrows with the same length and direction are the same vector, wherever they start."
+      },
+      {
+        "t": "why",
+        "html": "A vector records a <b>move</b>, not a place. \"Three right and four up\" is the same instruction whether you start at your door or across town; only the starting point differs. That is why a vector can slide anywhere without changing, and why subtraction (end minus start) gives its components."
+      },
+      {
+        "t": "viz",
+        "name": "vectors2d",
+        "opts": {
+          "u": [
+            3,
+            2
+          ],
+          "v": [
+            1,
+            -2
+          ],
+          "op": "comp",
+          "ops": [
+            "comp"
+          ]
+        },
+        "cap": "Drag the tip of the arrow. Its components are the horizontal and vertical parts of the move."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "From two points",
+        "q": "Find the vector from $P(1, 2)$ to $Q(4, -1)$.",
+        "steps": [
+          "End minus start: $\\langle 4 - 1,\\ -1 - 2 \\rangle$.",
+          "$= \\langle 3, -3 \\rangle$: three right and three down."
+        ],
+        "a": "$\\langle 3, -3 \\rangle$"
+      },
+      {
+        "t": "ex",
+        "title": "Where does it end?",
+        "q": "The vector $\\langle -2, 5 \\rangle$ starts at $(3, 1)$. Where does it end?",
+        "steps": [
+          "Make the move from the starting point: $x$: $3 + (-2) = 1$, $y$: $1 + 5 = 6$."
+        ],
+        "a": "$(1, 6)$"
+      },
+      {
+        "t": "ex",
+        "title": "Same vector?",
+        "q": "Do the arrows from $(0, 0)$ to $(2, 3)$ and from $(4, 1)$ to $(6, 4)$ represent the same vector?",
+        "steps": [
+          "First: $\\langle 2, 3 \\rangle$. Second: $\\langle 6 - 4, 4 - 1 \\rangle = \\langle 2, 3 \\rangle$.",
+          "Same move, so the same vector, drawn in two places."
+        ],
+        "a": "Yes"
+      },
+      {
+        "t": "mistake",
+        "html": "Treating the components $\\langle 3, 4 \\rangle$ as the point $(3, 4)$. They match only when the arrow starts at the origin. If the arrow starts at $(1, 1)$, it ends at $(4, 5)$. Think \"move,\" not \"location.\" The angle brackets are a reminder of that difference."
+      },
+      {
+        "t": "note",
+        "html": "Vectors are written in bold ($\\mathbf{v}$) or with an arrow ($\\vec{v}$). Another common form uses the unit vectors $\\mathbf{i} = \\langle 1, 0 \\rangle$ and $\\mathbf{j} = \\langle 0, 1 \\rangle$: $\\langle 3, -4 \\rangle = 3\\mathbf{i} - 4\\mathbf{j}$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Precalculus 2e, Section 8.8 Vectors"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, N-VM.A.1"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,128 @@
+{
+  "id": "g6.fraction-division-problems",
+  "slug": "fraction-division-problems",
+  "ladder": "math",
+  "course": "g6",
+  "unit": "number-system",
+  "title": "Fraction Division Word Problems",
+  "short": "Solve sharing and measuring problems with fractions.",
+  "trouble": "",
+  "prereqs": [
+    "g6.divide-fractions"
+  ],
+  "xp": 3,
+  "viz": [
+    "tapediagram",
+    "fractionbar"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Now that you can <a href=\"/math/grade-6/divide-fractions/\">divide fractions</a>, the harder part of a story problem is noticing that it <i>is</i> division. Look for one of two questions: \"how many of these fit in that?\" or \"how much is one whole group?\" "
+      },
+      {
+        "t": "key",
+        "html": "Divide when you know a total and either the size of one group (to find how many groups) or how many groups there are, even part of a group (to find the size of one group)."
+      },
+      {
+        "t": "why",
+        "html": "Every division undoes a multiplication: $\\text{groups} \\times \\text{size of a group} = \\text{total}$. If you know the total and one of the other two, division finds the missing one. That is true for $3 \\times 4 = 12$, and it is just as true when the numbers are fractions."
+      },
+      {
+        "t": "ex",
+        "title": "How many pieces?",
+        "q": "A ribbon is $2\\frac{1}{4}$ yards long. It is cut into pieces $\\frac{3}{8}$ yard long. How many pieces are there?",
+        "steps": [
+          "How many $\\frac{3}{8}$s fit in $2\\frac{1}{4}$? That is $2\\frac{1}{4} \\div \\frac{3}{8}$.",
+          "$\\frac{9}{4} \\times \\frac{8}{3} = \\frac{72}{12} = 6$.",
+          "Check: $6 \\times \\frac{3}{8} = \\frac{18}{8} = 2\\frac{1}{4}$."
+        ],
+        "a": "6 pieces."
+      },
+      {
+        "t": "ex",
+        "title": "How much is one whole?",
+        "q": "$\\frac{3}{4}$ cup of water fills $\\frac{1}{2}$ of a bottle. How much water fills the whole bottle?",
+        "steps": [
+          "The total for half a bottle is known. One whole bottle is one group, so divide: $\\frac{3}{4} \\div \\frac{1}{2}$.",
+          "$\\frac{3}{4} \\times 2 = \\frac{6}{4} = 1\\frac{1}{2}$.",
+          "Makes sense: two halves of $\\frac{3}{4}$ cup each make $1\\frac{1}{2}$ cups."
+        ],
+        "a": "$1\\frac{1}{2}$ cups."
+      },
+      {
+        "t": "viz",
+        "name": "tapediagram",
+        "opts": {
+          "tapes": [
+            {
+              "parts": [
+                1,
+                1
+              ],
+              "labels": [
+                "3/4 cup",
+                "3/4 cup"
+              ],
+              "colors": [
+                "blue",
+                "empty"
+              ],
+              "name": "bottle"
+            }
+          ],
+          "braces": [
+            {
+              "tape": 0,
+              "from": 0,
+              "to": 1,
+              "label": "half the bottle"
+            },
+            {
+              "tape": 0,
+              "from": 0,
+              "to": 2,
+              "label": "whole bottle: ?",
+              "up": false
+            }
+          ],
+          "steps": [
+            "Half of the bottle holds 3/4 cup.",
+            "The other half holds the same amount.",
+            "The whole bottle holds 3/4 + 3/4 = 3/4 ÷ 1/2 = 1 1/2 cups."
+          ]
+        },
+        "cap": "The bottle in two halves. Each half holds the same amount."
+      },
+      {
+        "t": "ex",
+        "title": "A missing side",
+        "q": "A rectangle has an area of $\\frac{3}{5}$ square meter. Its length is $\\frac{3}{4}$ meter. How wide is it?",
+        "steps": [
+          "Area = length × width, so width = area ÷ length.",
+          "$\\frac{3}{5} \\div \\frac{3}{4} = \\frac{3}{5} \\times \\frac{4}{3} = \\frac{12}{15} = \\frac{4}{5}$.",
+          "Check: $\\frac{3}{4} \\times \\frac{4}{5} = \\frac{12}{20} = \\frac{3}{5}$."
+        ],
+        "a": "$\\frac{4}{5}$ meter."
+      },
+      {
+        "t": "mistake",
+        "html": "Dividing in the wrong order. In the bottle story, $\\frac{1}{2} \\div \\frac{3}{4} = \\frac{2}{3}$ would mean the whole bottle holds less than its half. Quick check: say what each number means, then ask if the answer is sensible. The whole bottle must hold more than the $\\frac{3}{4}$ cup in half of it."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Prealgebra 2e, section 4.3 Multiply and Divide Mixed Numbers and Complex Fractions"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 6.NS.A.1: word problems with division of fractions"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

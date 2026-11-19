@@ -1,0 +1,119 @@
+{
+  "id": "macro.fed-tools",
+  "slug": "fed-tools",
+  "ladder": "economics",
+  "course": "macro",
+  "unit": "money",
+  "title": "The Central Bank's Tools",
+  "short": "Open market operations, the discount rate, reserve requirements and the interest rate paid on reserves.",
+  "trouble": "Students think the central bank buys bonds to fight inflation. Buying bonds adds reserves and money, which is expansionary.",
+  "prereqs": [
+    "macro.money-creation",
+    "macro.money-market"
+  ],
+  "xp": 2,
+  "viz": [
+    "ec-tacct"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The central bank (in the United States, the Federal Reserve) can change bank reserves and interest rates. Its tools work through <a href=\"/economics/macroeconomics/money-creation/\">How Banks Create Money</a> and the <a href=\"/economics/macroeconomics/money-market/\">The Money Market</a>."
+      },
+      {
+        "t": "key",
+        "html": "The classic tools: <b>open market operations</b> (buying or selling government bonds), the <b>discount rate</b> (the rate the Fed charges banks for loans), and <b>reserve requirements</b>. Today the Fed also sets <b>interest on reserve balances (IORB)</b>. Buying bonds, cutting the discount rate, lowering reserve requirements and cutting IORB are <b>expansionary</b>; the opposites are <b>contractionary</b>."
+      },
+      {
+        "t": "why",
+        "html": "When the Fed buys a bond from a bank, it pays by adding reserves to the bank's account at the Fed: new money from nowhere, all of it excess reserves, so banks can lend more and interest rates fall. Selling bonds drains reserves and does the reverse. A lower discount rate makes it cheaper for banks to borrow reserves. A lower reserve requirement turns required reserves into excess ones. A lower IORB makes leaving money at the Fed less attractive than lending it, pulling short-term rates down."
+      },
+      {
+        "t": "viz",
+        "name": "ec-tacct",
+        "opts": {
+          "rr": 0.1,
+          "steps": [
+            "buy",
+            "sell",
+            "lend"
+          ]
+        },
+        "cap": "Press \"Central bank buys bonds\": the bank swaps securities for reserves and can lend more. Then try selling."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Goal",
+          "Open market operations",
+          "Discount rate",
+          "Reserve requirement",
+          "IORB"
+        ],
+        "rows": [
+          [
+            "Expansionary (fight recession)",
+            "buy bonds",
+            "lower",
+            "lower",
+            "lower"
+          ],
+          [
+            "Contractionary (fight inflation)",
+            "sell bonds",
+            "raise",
+            "raise",
+            "raise"
+          ]
+        ],
+        "cap": "Which way each tool moves. Reserve requirements have been zero in the U.S. since March 2020."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Fighting inflation",
+        "q": "Inflation is running well above the Fed's goal. Which open market operation fits, and why?",
+        "steps": [
+          "It wants higher interest rates and less spending: contractionary policy.",
+          "Sell government bonds: buyers pay with reserves, which leave the banking system, so lending and the money supply shrink."
+        ],
+        "a": "Sell bonds"
+      },
+      {
+        "t": "ex",
+        "title": "How big a change?",
+        "q": "With a 10% reserve requirement, the Fed buys \\$3 million of bonds from banks. What is the largest possible change in the money supply?",
+        "steps": [
+          "Excess reserves rise by \\$3 million.",
+          "$3{,}000{,}000 \\times \\dfrac{1}{0.10} = 30{,}000{,}000$ dollars."
+        ],
+        "a": "\\$30 million"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking the central bank buys bonds to fight inflation. Buying bonds adds reserves and money, which is expansionary. Check: the Fed pays for bonds with new reserves, so \"buy\" means more money."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Macroeconomics 3e, 14.3 How a Central Bank Executes Monetary Policy"
+      },
+      {
+        "name": "Board of Governors of the Federal Reserve System, Policy Tools (open market operations, discount window, reserve requirements, interest on reserve balances)"
+      },
+      {
+        "name": "College Board, AP Macroeconomics Course and Exam Description (topic list)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,96 @@
+{
+  "id": "gchem2.buffer-capacity",
+  "slug": "buffer-capacity",
+  "ladder": "chemistry",
+  "course": "gchem2",
+  "unit": "acids-bases",
+  "title": "Buffer Capacity and Choosing a Buffer",
+  "short": "Pick an acid whose pKa is near the pH you want; more of both parts means more capacity.",
+  "trouble": "Students think a buffer's capacity depends only on its pH, not on how much acid and base it holds.",
+  "prereqs": [
+    "gchem2.buffer-additions"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-buffer"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A buffer can absorb only so much. From <a href=\"/chemistry/general-chemistry-2/buffer-additions/\">buffer additions</a> you saw that once one partner is used up, the pH changes fast. Two choices decide how well a buffer works: which acid, and how much of it."
+      },
+      {
+        "t": "key",
+        "html": "Choose a weak acid whose $\\text{p}K_a$ is within about 1 unit of the pH you want (ideally close to it). Its capacity, the amount of acid or base it can absorb before the pH shifts a lot, grows with the amounts of HA and $\\mathrm{A^-}$ present, and is largest when they are equal."
+      },
+      {
+        "t": "why",
+        "html": "A buffer works only while both partners are present in useful amounts. At pH = pKa they are equal, so it can absorb acid and base equally well. At $\\text{p}K_a \\pm 1$, one partner is ten times the other, so the buffer is lopsided. And the pH depends only on the ratio, but how much it can absorb depends on the moles: a 0.01 M buffer and a 1 M buffer can have the same pH, yet the first is used up by 1/100 as much acid."
+      },
+      {
+        "t": "viz",
+        "name": "ch-buffer",
+        "opts": {
+          "mode": "capacity",
+          "pKa": 4.74,
+          "nHA": 0.05,
+          "nA": 0.05,
+          "V": 1
+        },
+        "cap": "Buffer capacity against pH. It peaks at the pKa and falls off on either side; more of both partners lifts the whole curve."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Choosing a pair",
+        "q": "You need a buffer at pH 9.0. Which pair is best: acetic acid/acetate ($\\text{p}K_a$ 4.74), $\\mathrm{H_2PO_4^-/HPO_4^{2-}}$ (7.21) or $\\mathrm{NH_4^+/NH_3}$ (9.25)?",
+        "steps": [
+          "Pick the $\\text{p}K_a$ closest to 9.0: 9.25.",
+          "Ratio needed: $10^{9.0 - 9.25} = 0.56$, comfortably between 0.1 and 10."
+        ],
+        "a": "$\\mathrm{NH_4^+/NH_3}$."
+      },
+      {
+        "t": "ex",
+        "title": "Same pH, different capacity",
+        "q": "Two acetate buffers both have pH 4.74: buffer A is $0.010\\ \\text{M}$ in each partner, buffer B is $0.50\\ \\text{M}$ in each. To a liter of each, add $0.0050\\ \\text{mol}$ HCl.",
+        "steps": [
+          "A: acetate $0.010 - 0.005 = 0.005$, acid $0.015\\ \\text{mol}$; $$\\text{pH} = 4.74 + \\log\\dfrac{0.005}{0.015} = 4.74 - 0.48 = 4.26$$",
+          "B: acetate $0.495$, acid $0.505\\ \\text{mol}$; $\\text{pH} = 4.74 + \\log\\dfrac{0.495}{0.505} = 4.73$."
+        ],
+        "a": "A drops by about half a unit; B barely moves."
+      },
+      {
+        "t": "p",
+        "html": "Capacity is not unlimited even at its best. A buffer with 0.10 mol of each partner can absorb a little less than 0.10 mol of strong acid before its base is gone, and before that point the pH has already moved a full unit (when the ratio reaches 1 : 10)."
+      },
+      {
+        "t": "list",
+        "items": [
+          "Pick $\\text{p}K_a$ near the target pH.",
+          "Use enough acid and base for the amounts you expect to add.",
+          "Keep the ratio between about 0.1 and 10."
+        ]
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking a buffer's capacity depends only on its pH. Two buffers at the same pH can differ a hundredfold in how much acid they absorb. Check: compare the moles of each partner with the moles of acid or base you plan to add."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 14.6 Buffers"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

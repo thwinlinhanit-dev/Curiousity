@@ -1,0 +1,101 @@
+{
+  "id": "ra.taylor-remainder",
+  "slug": "taylor-remainder",
+  "ladder": "math",
+  "course": "ra",
+  "unit": "derivatives",
+  "title": "Taylor's Theorem with Remainder",
+  "short": "f(x) = Pₙ(x) + f⁽ⁿ⁺¹⁾(c)(x − a)ⁿ⁺¹/(n + 1)! for some c between a and x; a bound on f⁽ⁿ⁺¹⁾ bounds the error.",
+  "trouble": "Students use the nth derivative instead of the (n + 1)st, or plug in a guess for c instead of bounding the derivative over the whole interval.",
+  "prereqs": [
+    "ra.mean-value-theorem",
+    "calc2.taylor-error"
+  ],
+  "xp": 3,
+  "viz": [
+    "taylor"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/math/calculus-2/taylor-error/\">Calculus 2</a> you used Taylor's inequality to bound errors. Taylor's theorem says exactly what the error is, up to one unknown point, and it is the <a href=\"/math/real-analysis/mean-value-theorem/\">mean value theorem</a> taken to higher order. (The case $n = 0$ is the MVT itself: $f(x) = f(a) + f'(c)(x - a)$.)"
+      },
+      {
+        "t": "key",
+        "html": "<b>Taylor's theorem.</b> If $f$ has $n + 1$ derivatives on an interval containing $a$ and $x$, then $$f(x) = P_n(x) + \\frac{f^{(n+1)}(c)}{(n + 1)!}(x - a)^{n+1}$$ for some $c$ between $a$ and $x$, where $P_n(x) = \\sum_{k=0}^{n} \\frac{f^{(k)}(a)}{k!}(x - a)^{k}$. If $|f^{(n+1)}| \\le M$ between $a$ and $x$, then $|f(x) - P_n(x)| \\le \\frac{M|x - a|^{n+1}}{(n + 1)!}$."
+      },
+      {
+        "t": "why",
+        "html": "Fix $x \\ne a$ and choose the number $K$ so that $g(t) = f(t) - P_n(t) - K(t - a)^{n+1}$ has $g(x) = 0$. By construction $g(a) = g'(a) = \\cdots = g^{(n)}(a) = 0$. Rolle's theorem on $[a, x]$ gives $c_1$ with $g'(c_1) = 0$; Rolle again on $[a, c_1]$ (since $g'(a) = 0$) gives $c_2$ with $g''(c_2) = 0$; after $n + 1$ steps, $g^{(n+1)}(c) = 0$ for some $c$ between $a$ and $x$. But $g^{(n+1)}(t) = f^{(n+1)}(t) - (n + 1)!\\,K$, because $P_n$ has degree $n$. So $K = \\frac{f^{(n+1)}(c)}{(n + 1)!}$, which is the formula. $\\blacksquare$"
+      },
+      {
+        "t": "viz",
+        "name": "taylor",
+        "opts": {
+          "f": "e^x",
+          "a": 0,
+          "n": 2,
+          "x": 1,
+          "xmin": -3,
+          "xmax": 3,
+          "ymin": -1,
+          "ymax": 8
+        },
+        "cap": "Taylor polynomials of $e^{x}$ at $0$: add terms and watch the error at the probe point shrink like $\\frac{3x^{n+1}}{(n + 1)!}$ predicts."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "How many terms for $e$?",
+        "q": "Approximating $e = e^{1}$ by $P_n(1) = \\sum_{k=0}^{n} \\frac{1}{k!}$, using $e^{c} < 3$ for $0 \\le c \\le 1$, find the smallest $n$ with error bound below $0.001$.",
+        "steps": [
+          "The bound is $\\frac{3}{(n + 1)!}$.",
+          "$n = 5$: $\\frac{3}{720} \\approx 0.0042$, too big. $n = 6$: $\\frac{3}{5040} \\approx 0.0006$."
+        ],
+        "a": "$n = 6$ (or more)."
+      },
+      {
+        "t": "ex",
+        "title": "A sine error",
+        "q": "Bound the error of $\\sin x \\approx x - \\frac{x^{3}}{6}$ at $x = \\frac{1}{2}$.",
+        "steps": [
+          "This is $P_3$ (the $x^{2}$ and $x^{4}$ terms are $0$, so it is also $P_4$). Using $P_4$: $|R_4| \\le \\frac{|x|^{5}}{5!}$ since every derivative of $\\sin$ is at most $1$ in size.",
+          "$\\frac{(1/2)^{5}}{120} = \\frac{1}{3840}$."
+        ],
+        "a": "Error at most $\\frac{1}{3840} \\approx 0.00026$."
+      },
+      {
+        "t": "ex",
+        "title": "Finding the point $c$",
+        "q": "For $f(x) = x^{4}$, $a = 0$ and $n = 2$, find $c$ with $f(x) = P_2(x) + \\frac{f'''(c)}{3!}x^{3}$ at $x = 6$.",
+        "steps": [
+          "$P_2 = 0$ (all derivatives up to order $2$ vanish at $0$), and $f'''(t) = 24t$.",
+          "So $6^{4} = \\frac{24c}{6}\\cdot 6^{3}$, that is, $1296 = 864c$."
+        ],
+        "a": "$c = \\frac{3}{2} = \\frac{6}{4}$, which is between $0$ and $6$."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>The wrong derivative, or a guessed $c$.</b> The remainder after $P_n$ uses the $(n + 1)$st derivative. And since $c$ is unknown, you cannot plug in $c = a$ or $c = x$; bound $|f^{(n+1)}|$ over the whole interval between $a$ and $x$ instead. For $e^{x}$ on $[0, 1]$ that bound is $e < 3$, not $e^{0} = 1$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Jiří Lebl, Basic Analysis I: Introduction to Real Analysis, section 4.3 (Taylor's theorem)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.100A Real Analysis, lecture notes on Taylor's theorem"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

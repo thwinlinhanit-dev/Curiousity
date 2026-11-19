@@ -1,0 +1,99 @@
+{
+  "id": "geo.pythagorean-proof",
+  "slug": "pythagorean-proof",
+  "ladder": "math",
+  "course": "geo",
+  "unit": "similarity",
+  "title": "Proving the Pythagorean Theorem with Similarity",
+  "short": "Use the three similar triangles to prove a² + b² = c².",
+  "trouble": "",
+  "prereqs": [
+    "geo.similar-right-triangles"
+  ],
+  "xp": 3,
+  "viz": [
+    "pythagoras"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You have used $a^2 + b^2 = c^2$ since <a href=\"/math/pre-algebra/pythagorean-theorem/\">The Pythagorean Theorem</a>, and seen why it works by rearranging areas. The similar triangles from <a href=\"/math/geometry/similar-right-triangles/\">Similar Right Triangles and the Geometric Mean</a> give a short proof that uses no areas at all."
+      },
+      {
+        "t": "why",
+        "html": "Let right $\\triangle ABC$ have legs $a = BC$ and $b = AC$ and hypotenuse $c = AB$. The altitude from $C$ cuts the hypotenuse into $p = AD$ and $q = DB$, with $p + q = c$. From $\\triangle ACD \\sim \\triangle ABC$: $\\frac{p}{b} = \\frac{b}{c}$, so $b^2 = cp$. From $\\triangle CBD \\sim \\triangle ABC$: $\\frac{q}{a} = \\frac{a}{c}$, so $a^2 = cq$. Add: $a^2 + b^2 = cq + cp = c(p + q) = c \\cdot c = c^2$."
+      },
+      {
+        "t": "ex",
+        "title": "The proof in two columns",
+        "q": "<b>Given:</b> right $\\triangle ABC$ with right angle at $C$ and altitude $\\overline{CD}$. <b>Prove:</b> $a^2 + b^2 = c^2$.",
+        "steps": [
+          "1. $\\triangle ACD \\sim \\triangle ABC$ and $\\triangle CBD \\sim \\triangle ABC$ — AA (each shares an acute angle with $\\triangle ABC$, and all have a right angle).",
+          "2. $\\frac{p}{b} = \\frac{b}{c}$ and $\\frac{q}{a} = \\frac{a}{c}$ — Corresponding sides of similar triangles are proportional.",
+          "3. $b^2 = cp$ and $a^2 = cq$ — Multiplication Property of Equality.",
+          "4. $a^2 + b^2 = cp + cq = c(p + q)$ — Addition Property; Distributive Property.",
+          "5. $p + q = c$ — Segment Addition Postulate.",
+          "6. $a^2 + b^2 = c^2$ — Substitution."
+        ],
+        "a": "The Pythagorean theorem holds for every right triangle."
+      },
+      {
+        "t": "viz",
+        "name": "pythagoras",
+        "cap": "The area proof you saw before. Two very different arguments, the same theorem.",
+        "opts": {
+          "a": 3,
+          "b": 4,
+          "view": "proof"
+        }
+      },
+      {
+        "t": "key",
+        "html": "In a right triangle, $a^2 = cq$ and $b^2 = cp$ (each leg squared is the hypotenuse times the adjacent piece). Adding them gives $a^2 + b^2 = c(p + q) = c^2$."
+      },
+      {
+        "t": "ex",
+        "title": "The pieces add up",
+        "q": "In a right triangle the altitude splits the hypotenuse $c = 10$ into $p = 6.4$ and $q = 3.6$. Find $a$ and $b$, and check $a^2 + b^2 = c^2$.",
+        "steps": [
+          "$b^2 = cp = 10 \\cdot 6.4 = 64$, so $b = 8$.",
+          "$a^2 = cq = 10 \\cdot 3.6 = 36$, so $a = 6$.",
+          "$36 + 64 = 100 = 10^2$."
+        ],
+        "a": "$a = 6$, $b = 8$"
+      },
+      {
+        "t": "p",
+        "html": "<b>The converse.</b> If $a^2 + b^2 = c^2$ in a triangle, it is a right triangle. Build a right triangle with legs $a$ and $b$; its hypotenuse is $\\sqrt{a^2 + b^2} = c$. The two triangles are congruent by SSS, so the original angle opposite $c$ is a right angle too."
+      },
+      {
+        "t": "ex",
+        "title": "Using the converse",
+        "q": "Is a triangle with sides $7$, $24$ and $25$ a right triangle?",
+        "steps": [
+          "$7^2 + 24^2 = 49 + 576 = 625 = 25^2$."
+        ],
+        "a": "Yes, the angle opposite the side of length $25$ is a right angle."
+      },
+      {
+        "t": "mistake",
+        "html": "Adding the wrong squares. The hypotenuse is always the longest side and sits alone on one side of the equation. For sides $5$, $12$, $13$: $5^2 + 12^2 = 13^2$, not $5^2 + 13^2 = 12^2$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Euclid, <i>Elements</i>, Book I, Proposition 47, and Book VI, Proposition 31"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, High School Geometry, G-SRT.B.4"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

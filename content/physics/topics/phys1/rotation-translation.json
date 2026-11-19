@@ -1,0 +1,96 @@
+{
+  "id": "phys1.rotation-translation",
+  "slug": "rotation-translation",
+  "ladder": "physics",
+  "course": "phys1",
+  "unit": "rotation",
+  "title": "Pulleys with Mass",
+  "short": "Solve a hanging mass on a heavy pulley with τ = Iα and F = ma together.",
+  "trouble": "Students assume the rope's tension is the same on both sides of a pulley that has mass.",
+  "prereqs": [
+    "phys1.rotational-second-law",
+    "phys1.pulley-systems",
+    "phys1.linear-angular"
+  ],
+  "xp": 3,
+  "viz": [
+    "ph-dynamics",
+    "ph-rotation"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/physics/physics-1/pulley-systems/\">pulley problems</a> so far, the pulley was light, so one tension ran all the way around it. A real pulley has mass and has to be spun up, which takes a net torque. This topic joins <a href=\"/physics/physics-1/rotational-second-law/\">$\\Sigma\\tau = I\\alpha$</a> to $\\Sigma F = ma$, using <a href=\"/physics/physics-1/linear-angular/\">$a = R\\alpha$</a>."
+      },
+      {
+        "t": "why",
+        "html": "For the pulley to gain angular velocity, the torques on it can't cancel: $(T_2 - T_1)R = I\\alpha$. So the tension on the side that is pulled harder must be larger. Only if $I = 0$ do the two tensions match. A cord that doesn't slip ties the motions together: the cord, the hanging masses and the pulley's rim all move with the same $a$, and $a = R\\alpha$."
+      },
+      {
+        "t": "key",
+        "html": "Write one equation for each object: $\\Sigma F = ma$ for each hanging mass, $\\Sigma\\tau = I\\alpha$ for the pulley, and link them with $a = R\\alpha$. For a uniform disk pulley ($I = \\tfrac{1}{2}MR^2$), the pulley acts like an extra mass $\\tfrac{1}{2}M$ that must be accelerated, and $R$ cancels."
+      },
+      {
+        "t": "viz",
+        "name": "ph-dynamics",
+        "opts": {
+          "scene": "heavy-pulley",
+          "m1": 2,
+          "m2": 3,
+          "pulleyM": 4,
+          "task": "Raise the pulley's mass: the blocks accelerate more slowly, and the two tensions move further apart."
+        },
+        "cap": "An Atwood machine with a heavy pulley. $T_2 > T_1$: the difference is what spins the pulley up."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A bucket and a winch",
+        "q": "A $2.0\\ \\text{kg}$ bucket hangs from a rope wound on a $4.0\\ \\text{kg}$ solid cylinder (radius $0.10\\ \\text{m}$) that turns freely. Find the bucket's acceleration and the rope's tension.",
+        "steps": [
+          "Bucket (down positive): $mg - T = ma$.",
+          "Cylinder: $TR = \\tfrac{1}{2}MR^2 \\cdot \\dfrac{a}{R}$, so $T = \\tfrac{1}{2}Ma = 2.0a$.",
+          "Add: $mg = (m + \\tfrac{1}{2}M)a$, so $a = \\dfrac{(2.0)(9.8)}{2.0 + 2.0} = 4.9\\ \\text{m/s}^2$.",
+          "$T = 2.0 \\times 4.9 = 9.8\\ \\text{N}$, half the bucket's weight."
+        ],
+        "a": "$a = 4.9\\ \\text{m/s}^2$, $T = 9.8\\ \\text{N}$"
+      },
+      {
+        "t": "ex",
+        "title": "An Atwood machine with a heavy pulley",
+        "q": "Blocks of $2.0\\ \\text{kg}$ and $3.0\\ \\text{kg}$ hang over a $4.0\\ \\text{kg}$ disk pulley. Find $a$ and both tensions.",
+        "steps": [
+          "Heavy block: $m_2g - T_2 = m_2a$. Light block: $T_1 - m_1g = m_1a$. Pulley: $T_2 - T_1 = \\tfrac{1}{2}Ma$.",
+          "Add all three: $(m_2 - m_1)g = (m_1 + m_2 + \\tfrac{1}{2}M)a$, so $a = \\dfrac{(1.0)(9.8)}{7.0} = 1.4\\ \\text{m/s}^2$.",
+          "$T_1 = 2.0(9.8 + 1.4) = 22.4\\ \\text{N}$ and $T_2 = 3.0(9.8 - 1.4) = 25.2\\ \\text{N}$. Check: $T_2 - T_1 = 2.8 = \\tfrac{1}{2}(4.0)(1.4)$."
+        ],
+        "a": "$a = 1.4\\ \\text{m/s}^2$; $T_1 = 22.4\\ \\text{N}$, $T_2 = 25.2\\ \\text{N}$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Assuming the tension is the same on both sides of a pulley that has mass.</b> Equal tensions would give zero net torque, and the pulley could never start turning. Use two different tensions and let the pulley's equation decide their difference. Check: with $M = 0$ your answers should turn into the light-pulley results, and with $M > 0$ the acceleration must come out smaller."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Physics 2e, Section 10.3 (Dynamics of Rotational Motion: Rotational Inertia)"
+      },
+      {
+        "name": "OpenStax University Physics Volume 1, Section 10.7 (Newton's Second Law for Rotation)"
+      },
+      {
+        "name": "College Board, AP Physics 1 Course and Exam Description, Unit 5: Torque and Rotational Dynamics"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

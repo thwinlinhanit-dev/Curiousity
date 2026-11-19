@@ -1,0 +1,124 @@
+{
+  "id": "trad.syllogism-fallacies",
+  "slug": "syllogism-fallacies",
+  "ladder": "logic",
+  "course": "trad",
+  "unit": "syllogisms",
+  "title": "Naming a Syllogism's Fallacy",
+  "short": "Each broken rule has a name: undistributed middle, illicit major, illicit minor, exclusive premises, affirmative from a negative, the existential fallacy, four terms.",
+  "trouble": "Learners stop at the first broken rule they see. Check every rule; one syllogism can break several, and the names point to the exact flaw.",
+  "prereqs": [
+    "trad.rules-quality"
+  ],
+  "xp": 3,
+  "viz": [
+    "lg-syllogism"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Put the <a href=\"/logic/traditional-logic/rules-terms/\">distribution rules</a> and the <a href=\"/logic/traditional-logic/rules-quality/\">quality rules</a> together with one more, and you have the six rules for a standard-form syllogism (on the modern reading). Each broken rule has a name."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Rule",
+          "Fallacy when broken"
+        ],
+        "rows": [
+          [
+            "1. The middle term is distributed at least once.",
+            "Undistributed middle"
+          ],
+          [
+            "2. A term distributed in the conclusion is distributed in its premise.",
+            "Illicit major / illicit minor"
+          ],
+          [
+            "3. Not both premises negative.",
+            "Exclusive premises"
+          ],
+          [
+            "4. A negative premise needs a negative conclusion, and the reverse.",
+            "Affirmative conclusion from a negative premise / negative conclusion from affirmative premises"
+          ],
+          [
+            "5. (Modern reading) Two universal premises cannot give a particular conclusion.",
+            "Existential fallacy"
+          ],
+          [
+            "A syllogism must have exactly three terms.",
+            "Four terms"
+          ]
+        ],
+        "cap": "The rules and their fallacies."
+      },
+      {
+        "t": "key",
+        "html": "A syllogism is valid (modern reading) exactly when it breaks none of the rules. Check every rule: one syllogism can break several, and each name points to a different flaw."
+      },
+      {
+        "t": "why",
+        "html": "The existential fallacy is the rule we have not met yet. On the modern reading, universal premises say only that regions are empty, so they put no X in the diagram. A particular conclusion needs an X. So two universal premises can never prove a particular conclusion, unless we add the traditional assumption that some class has members (the last lesson of this unit)."
+      },
+      {
+        "t": "viz",
+        "name": "lg-syllogism",
+        "opts": {
+          "premises": [
+            "All bakers are skaters",
+            "All early risers are bakers"
+          ],
+          "conclusion": "No early risers are skaters",
+          "show": [
+            "terms",
+            "dist",
+            "rules",
+            "verdict"
+          ]
+        },
+        "cap": "Two rules broken at once: illicit major and negative conclusion from affirmative premises."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Two fallacies",
+        "q": "Name every fallacy: \"All bakers are skaters. All early risers are bakers. So no early risers are skaters.\"",
+        "steps": [
+          "Distribution: the conclusion (E) distributes <i>skaters</i>, but the major premise (A) does not: illicit major.",
+          "Quality: both premises affirmative, conclusion negative: negative conclusion from affirmative premises.",
+          "The middle term is distributed (premise 1) and the minor term is fine."
+        ],
+        "a": "illicit major; negative conclusion from affirmative premises"
+      },
+      {
+        "t": "ex",
+        "title": "Four terms",
+        "q": "What is wrong with: \"All chess players are thinkers. All chess fans are viewers. So all chess players are viewers\"?",
+        "steps": [
+          "Count the terms: chess players, thinkers, chess fans, viewers. That is four.",
+          "With no shared middle term, the premises cannot connect anything."
+        ],
+        "a": "four terms"
+      },
+      {
+        "t": "mistake",
+        "html": "Stopping at the first broken rule. The question \"which fallacies?\" wants all of them. Check all five rules in order (middle, major, minor, the negatives, universals to a particular) every time."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Patrick J. Hurley, A Concise Introduction to Logic, 5.3 Rules and Fallacies"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

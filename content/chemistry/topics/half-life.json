@@ -1,0 +1,134 @@
+{
+  "id": "chem.half-life",
+  "slug": "half-life",
+  "ladder": "chemistry",
+  "course": "chem",
+  "unit": "nuclear",
+  "title": "Half-Life",
+  "short": "In each half-life, half of the remaining nuclei decay; use it to find amounts left and ages.",
+  "trouble": "Students think a sample is all gone after two half-lives, taking away the same amount each time instead of halving what is left.",
+  "prereqs": [
+    "chem.radioactive-decay",
+    "alg1.exponential-functions"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-kineticsplot",
+    "exponential"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/chemistry/chemistry/radioactive-decay/\">Radioactive Decay and Nuclear Equations</a> described what happens to one nucleus. In a sample of billions, the decays follow a steady pattern, the halving kind of change from <a href=\"/math/algebra-1/exponential-functions/\">Exponential Functions</a>."
+      },
+      {
+        "t": "key",
+        "html": "The <b>half-life</b> is the time it takes for half of the radioactive nuclei in a sample to decay. After each half-life, half of what is <i>left</i> remains: after $n$ half-lives, the fraction left is $\\left(\\tfrac{1}{2}\\right)^{n}$."
+      },
+      {
+        "t": "why",
+        "html": "A radioactive nucleus does not age. In any given hour, each one has the same small chance of decaying, whether it formed a minute ago or a million years ago. So in each half-life, half of the nuclei that remain decay, whatever their number. The amount drops by the same <i>fraction</i>, not the same amount, in every equal stretch of time, which is exponential decay."
+      },
+      {
+        "t": "viz",
+        "name": "ch-kineticsplot",
+        "opts": {
+          "mode": "decay",
+          "iso": "I-131",
+          "N0": 400
+        },
+        "cap": "Nuclei of iodine-131 decaying one by one. The count halves about every 8 days, and the curve never quite reaches zero."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Isotope",
+          "Half-life (about)"
+        ],
+        "rows": [
+          [
+            "fluorine-18",
+            "110 minutes"
+          ],
+          [
+            "iodine-131",
+            "8.0 days"
+          ],
+          [
+            "cobalt-60",
+            "5.3 years"
+          ],
+          [
+            "hydrogen-3 (tritium)",
+            "12.3 years"
+          ],
+          [
+            "carbon-14",
+            "5,700 years"
+          ],
+          [
+            "uranium-238",
+            "4.5 billion years"
+          ]
+        ],
+        "cap": "Half-lives from the National Nuclear Data Center (NuDat), rounded."
+      },
+      {
+        "t": "ex",
+        "title": "Amount left",
+        "q": "A hospital receives $80.0\\ \\text{g}$ of iodine-131 (half-life $8.0$ days). How much is left after 24 days?",
+        "steps": [
+          "$24 \\div 8.0 = 3$ half-lives.",
+          "$80.0 \\to 40.0 \\to 20.0 \\to 10.0\\ \\text{g}$."
+        ],
+        "a": "$10.0\\ \\text{g}$."
+      },
+      {
+        "t": "ex",
+        "title": "Carbon dating",
+        "q": "A piece of old wood has $\\tfrac{1}{4}$ as much carbon-14 per gram of carbon as living wood. About how old is it?",
+        "steps": [
+          "A living tree keeps taking in carbon-14; after it dies, its carbon-14 decays without being replaced.",
+          "$\\tfrac{1}{4} = \\left(\\tfrac{1}{2}\\right)^{2}$: two half-lives.",
+          "$2 \\times 5{,}700 = 11{,}400$ years."
+        ],
+        "a": "About $11{,}400$ years."
+      },
+      {
+        "t": "ex",
+        "title": "Finding a half-life",
+        "q": "A detector counts 800 decays per minute from a sample, and 100 per minute 30 hours later. What is the half-life?",
+        "steps": [
+          "$800 \\to 400 \\to 200 \\to 100$: three halvings.",
+          "$30\\ \\text{h} \\div 3 = 10\\ \\text{h}$."
+        ],
+        "a": "$10$ hours."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking a sample is all gone after two half-lives, as if each half-life removed the same amount. Each half-life removes half of what is <i>left</i>: after two, a quarter remains; after three, an eighth. Check by halving step by step."
+      },
+      {
+        "t": "note",
+        "html": "Older books give carbon-14's half-life as 5,730 years; the evaluated value today is about 5,700 years. Watch a sample decay in <a href=\"/science-lab/atom/\">Build an Atom</a>."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 21.3 Radioactive Decay"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-PS1-8"
+      },
+      {
+        "name": "National Nuclear Data Center (Brookhaven National Laboratory), NuDat half-lives"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

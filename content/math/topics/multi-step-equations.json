@@ -1,0 +1,109 @@
+{
+  "id": "g8.multi-step-equations",
+  "slug": "multi-step-equations",
+  "ladder": "math",
+  "course": "g8",
+  "unit": "linear-equations",
+  "title": "Multi-Step Equations",
+  "short": "Distribute, combine like terms, then solve.",
+  "trouble": "Students distribute a negative to the first term only, as in −2(x − 3) = −2x − 6.",
+  "prereqs": [
+    "g7.equations-with-parentheses",
+    "g7.add-subtract-expressions"
+  ],
+  "xp": 2,
+  "viz": [
+    "balance"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You can already solve <a href=\"/math/grade-7/equations-with-parentheses/\">equations like $p(x + q) = r$</a> and <a href=\"/math/grade-7/add-subtract-expressions/\">simplify expressions</a>. Longer equations need nothing new: tidy each side first, then solve the short equation that is left."
+      },
+      {
+        "t": "why",
+        "html": "An equation is a balance: both sides name the same number. Distributing and combining like terms only rewrite a side, without changing its value, so the balance is untouched. After that, doing the same thing to both sides keeps it balanced while you get the variable alone."
+      },
+      {
+        "t": "key",
+        "html": "A plan that always works: (1) distribute to clear parentheses; (2) combine like terms on each side; (3) undo adding or subtracting; (4) undo multiplying or dividing. Then check by putting your answer back into the original equation."
+      },
+      {
+        "t": "viz",
+        "name": "balance",
+        "opts": {
+          "eq": "3x + 7 = 19",
+          "task": true
+        },
+        "cap": "After tidying, Example 1 becomes $3x + 7 = 19$. Take the same things off both sides until one $x$ is alone."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Distribute first",
+        "q": "Solve $3(x + 4) - 5 = 19$.",
+        "steps": [
+          "Distribute: $3x + 12 - 5 = 19$.",
+          "Combine: $3x + 7 = 19$.",
+          "Subtract 7 from both sides: $3x = 12$.",
+          "Divide both sides by 3: $x = 4$. Check: $3(4 + 4) - 5 = 24 - 5 = 19$."
+        ],
+        "a": "$x = 4$"
+      },
+      {
+        "t": "ex",
+        "title": "Combine like terms",
+        "q": "Solve $2x + 5 + 4x = 35$.",
+        "steps": [
+          "Combine the $x$ terms: $6x + 5 = 35$.",
+          "Subtract 5: $6x = 30$.",
+          "Divide by 6: $x = 5$."
+        ],
+        "a": "$x = 5$"
+      },
+      {
+        "t": "ex",
+        "title": "A negative outside",
+        "q": "Solve $-2(x - 3) + 4x = 20$.",
+        "steps": [
+          "Distribute $-2$ to <b>both</b> terms: $-2 \\cdot x = -2x$ and $-2 \\cdot (-3) = +6$. So $-2x + 6 + 4x = 20$.",
+          "Combine: $2x + 6 = 20$.",
+          "Subtract 6, then divide by 2: $x = 7$. Check: $-2(4) + 28 = 20$."
+        ],
+        "a": "$x = 7$"
+      },
+      {
+        "t": "ex",
+        "title": "Subtracting a whole group",
+        "q": "Solve $10 - (x + 2) = 3$.",
+        "steps": [
+          "Subtracting $(x + 2)$ subtracts both parts: $10 - x - 2 = 3$.",
+          "Combine: $8 - x = 3$.",
+          "Subtract 8: $-x = -5$, so $x = 5$. Check: $10 - 7 = 3$."
+        ],
+        "a": "$x = 5$"
+      },
+      {
+        "t": "mistake",
+        "html": "Distributing a negative to the first term only: $-2(x - 3) = -2x - 6$. The $-2$ multiplies the $-3$ too, and a negative times a negative is positive: $-2(x - 3) = -2x + 6$. Quick check with $x = 0$: $-2(0 - 3) = 6$, but $-2(0) - 6 = -6$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Elementary Algebra 2e, Section 2.4: Use a General Strategy to Solve Linear Equations"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 8, 8.EE.C.7b (solve linear equations, including expanding and collecting like terms)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

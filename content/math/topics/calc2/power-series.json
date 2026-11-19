@@ -1,0 +1,104 @@
+{
+  "id": "calc2.power-series",
+  "slug": "power-series",
+  "ladder": "math",
+  "course": "calc2",
+  "unit": "power-series",
+  "title": "Power Series and Intervals of Convergence",
+  "short": "Find where Σcₙ(x − a)ⁿ converges.",
+  "trouble": "Students forget to test the endpoints of the interval separately.",
+  "prereqs": [
+    "calc2.ratio-root-tests"
+  ],
+  "xp": 3,
+  "viz": [
+    "taylor",
+    "seriespartial"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A power series is a series with a variable in it: $$\\begin{aligned} &\\sum_{n=0}^{\\infty} c_n(x - a)^{n} \\\\ &= c_0 + c_1(x - a) + c_2(x - a)^{2} + \\cdots, \\end{aligned}$$ an \"infinitely long polynomial\" centered at $a$. For each $x$ it is an ordinary series of numbers, so the question becomes: for which $x$ does it converge? The <a href=\"/math/calculus-2/ratio-root-tests/\">ratio test</a> answers most of that."
+      },
+      {
+        "t": "why",
+        "html": "Apply the ratio test with $x$ held fixed. For many series, $\\left|\\frac{a_{n+1}}{a_n}\\right| \\to \\frac{|x - a|}{R}$ for some number $R$. The series then converges absolutely when $|x - a| < R$ and diverges when $|x - a| > R$. In general (a theorem worth knowing), every power series converges only at $x = a$, or for all $x$, or exactly inside an interval $|x - a| < R$ and nowhere outside it. At the two endpoints $|x - a| = R$ the ratio test gives $L = 1$: it is silent there."
+      },
+      {
+        "t": "key",
+        "html": "The <b>radius of convergence</b> $R$: the series converges absolutely for $|x - a| < R$ and diverges for $|x - a| > R$ ($R$ can be 0 or $\\infty$). The <b>interval of convergence</b> is $(a - R, a + R)$ plus whichever endpoints converge; test each endpoint separately with a series test."
+      },
+      {
+        "t": "ex",
+        "title": "Radius and endpoints",
+        "q": "Find the interval of convergence of $\\sum_{n=1}^{\\infty}\\frac{x^{n}}{n}$.",
+        "steps": [
+          "Ratio: $\\left|\\frac{x^{n+1}}{n + 1}\\cdot\\frac{n}{x^{n}}\\right| = \\frac{n}{n + 1}|x| \\to |x|$. Converges for $|x| < 1$: $R = 1$.",
+          "$x = 1$: $\\sum\\frac{1}{n}$, the harmonic series, diverges.",
+          "$x = -1$: $\\sum\\frac{(-1)^{n}}{n}$ converges by the alternating series test.",
+          "Interval: $[-1, 1)$."
+        ],
+        "a": "$[-1, 1)$"
+      },
+      {
+        "t": "viz",
+        "name": "seriespartial",
+        "opts": {
+          "a": "x^n/n",
+          "start": 1,
+          "N": 25,
+          "maxN": 60,
+          "params": {
+            "x": [
+              -1.2,
+              1.2,
+              0.6,
+              0.1
+            ]
+          }
+        },
+        "cap": "Partial sums of $\\sum\\frac{x^{n}}{n}$ for the $x$ you choose. Inside $(-1, 1)$ they settle; at $x = 1$ they creep upward forever; at $x = -1$ they zigzag and settle; past $\\pm 1$ they blow up."
+      },
+      {
+        "t": "mistake",
+        "html": "Forgetting to test the endpoints. The ratio test only covers $|x - a| < R$ and $|x - a| > R$; at the endpoints its limit is exactly 1. The two endpoints can behave differently, as in $[-1, 1)$ above. Check: substitute each endpoint into the series and apply a test for number series ($p$-series, alternating series test, divergence test)."
+      },
+      {
+        "t": "ex",
+        "title": "A shifted center",
+        "q": "Find the interval of convergence of $\\sum_{n=1}^{\\infty}\\frac{(x - 3)^{n}}{2^{n}n^{2}}$.",
+        "steps": [
+          "Ratio: $\\frac{|x - 3|}{2}\\cdot\\frac{n^{2}}{(n + 1)^{2}} \\to \\frac{|x - 3|}{2}$. Converges when $|x - 3| < 2$: center 3, radius 2.",
+          "$x = 5$: $\\sum\\frac{1}{n^{2}}$ converges. $x = 1$: $\\sum\\frac{(-1)^{n}}{n^{2}}$ converges absolutely.",
+          "Interval: $[1, 5]$."
+        ],
+        "a": "$[1, 5]$"
+      },
+      {
+        "t": "ex",
+        "title": "The two extremes",
+        "q": "Find the radius of convergence of $\\sum\\frac{x^{n}}{n!}$ and of $\\sum n!\\,x^{n}$.",
+        "steps": [
+          "$\\sum\\frac{x^{n}}{n!}$: the ratio is $\\frac{|x|}{n + 1} \\to 0$ for every $x$, so $R = \\infty$.",
+          "$\\sum n!\\,x^{n}$: the ratio is $(n + 1)|x| \\to \\infty$ unless $x = 0$, so $R = 0$."
+        ],
+        "a": "$R = \\infty$ and $R = 0$"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 2, Section 6.1: Power Series and Functions"
+      },
+      {
+        "name": "Paul’s Online Math Notes (Lamar University), Calculus II: Power Series"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

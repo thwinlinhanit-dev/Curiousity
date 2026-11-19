@@ -1,0 +1,98 @@
+{
+  "id": "prob.poisson-process",
+  "slug": "poisson-process",
+  "ladder": "math",
+  "course": "prob",
+  "unit": "continuous",
+  "title": "The Poisson Process",
+  "short": "For random arrivals at rate λ, the count in a window of length t is Poisson with mean λt, and the gaps between arrivals are exponential with mean 1/λ.",
+  "trouble": "Students give the count in time t the mean λ instead of λt, or give the gaps the mean λ instead of 1/λ.",
+  "prereqs": [
+    "prob.exponential",
+    "prob.poisson"
+  ],
+  "xp": 3,
+  "viz": [
+    "prob-poisson"
+  ],
+  "figureArchetype": "PracticeFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The <a href=\"/math/probability/poisson/\">Poisson distribution</a> counts random events in a window; the <a href=\"/math/probability/exponential/\">exponential distribution</a> measures the wait between them. They are two views of the same model, the Poisson process: arrivals scattered in time at a steady rate, with no memory."
+      },
+      {
+        "t": "key",
+        "html": "In a <b>Poisson process with rate $\\lambda$</b>: the number of arrivals in any window of length $t$ is Poisson with mean $\\lambda t$; counts in non-overlapping windows are independent; and the gaps between arrivals are independent exponential times with mean $\\frac{1}{\\lambda}$. The $k$th arrival comes after an expected $\\frac{k}{\\lambda}$."
+      },
+      {
+        "t": "why",
+        "html": "Start the clock at any moment. The first arrival comes after time $t$ exactly when the window $[0, t]$ holds no arrivals, so $$P(\\text{first wait} > t) = P(N(t) = 0) = e^{-\\lambda t}:$$ the wait is exponential with rate $\\lambda$. Because separate windows are independent, the same argument restarts after every arrival, so every gap is exponential and the gaps are independent. The time to the $k$th arrival is the sum of $k$ gaps, with mean $\\frac{k}{\\lambda}$ by linearity."
+      },
+      {
+        "t": "viz",
+        "name": "prob-poisson",
+        "opts": {
+          "lambda": 2,
+          "T": 60,
+          "mode": "gaps",
+          "seed": 5
+        },
+        "cap": "Arrivals at rate 2 per unit of time. The gaps between them form a histogram that follows the exponential density with mean one half."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Counts in a window",
+        "q": "Customers arrive as a Poisson process at 6 per hour. Find the probability of exactly 2 arrivals in 20 minutes.",
+        "steps": [
+          "20 minutes is $\\frac{1}{3}$ hour, so the mean count is $\\lambda t = 6 \\cdot \\frac{1}{3} = 2$.",
+          "$$P(N = 2) = e^{-2}\\frac{2^{2}}{2!} = 2e^{-2} \\approx 0.271$$"
+        ],
+        "a": "about $0.271$"
+      },
+      {
+        "t": "ex",
+        "title": "Waiting",
+        "q": "With the same process, find the probability that nobody arrives in the next 15 minutes, and the expected wait for the 3rd customer.",
+        "steps": [
+          "No arrivals in $\\frac{1}{4}$ hour: $e^{-6/4} = e^{-1.5} \\approx 0.223$.",
+          "Each gap has mean $\\frac{1}{6}$ hour = 10 minutes, so the 3rd arrival is expected after 30 minutes."
+        ],
+        "a": "about $0.223$; 30 minutes."
+      },
+      {
+        "t": "ex",
+        "title": "Given the total",
+        "q": "Exactly 4 customers arrived during one hour. Find the probability that exactly 1 of them came in the first 15 minutes.",
+        "steps": [
+          "Given the total, the 4 arrival times behave like 4 independent uniform points in the hour.",
+          "Each lands in the first quarter-hour with probability $\\frac{1}{4}$, so the count there is binomial.",
+          "$\\binom{4}{1}\\left(\\frac{1}{4}\\right)\\left(\\frac{3}{4}\\right)^{3} = \\frac{27}{64} \\approx 0.422$. The rate 6 dropped out."
+        ],
+        "a": "$\\frac{27}{64}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Giving the count in a window of length $t$ the mean $\\lambda$ instead of $\\lambda t$, or giving the gaps the mean $\\lambda$ instead of $\\frac{1}{\\lambda}$. Check: a higher rate means more arrivals and shorter gaps, so the count's mean grows with $\\lambda$ and the gap's mean shrinks."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Grinstead and Snell, Introduction to Probability (2nd revised edition, American Mathematical Society; free from Dartmouth College), chapter 5 (Distributions and Densities), section 5.2, the exponential density and the Poisson process"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.440, Probability and Random Variables (Spring 2014), lecture notes on Poisson processes"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

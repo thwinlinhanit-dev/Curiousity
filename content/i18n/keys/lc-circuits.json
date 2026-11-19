@@ -1,0 +1,86 @@
+[
+  {
+    "key": "title",
+    "source": "LC Oscillations"
+  },
+  {
+    "key": "short",
+    "source": "Energy sloshes between the capacitor and the inductor at ω = 1/√(LC), like a mass on a spring."
+  },
+  {
+    "key": "trouble",
+    "source": "Students think the current is greatest when the capacitor holds the most charge."
+  },
+  {
+    "key": "block.0.html",
+    "source": "Connect a charged capacitor to an inductor, with no resistor and no battery. The capacitor starts to <a href=\"/physics/electricity-and-magnetism/rc-discharging/\">discharge</a>, but the inductor will not let the current stop: when the capacitor is empty, the current keeps going and charges it the other way. Energy sloshes back and forth between the capacitor's electric field and the inductor's <a href=\"/physics/electricity-and-magnetism/magnetic-energy/\">magnetic field</a>, exactly the way it moves between a spring and a mass."
+  },
+  {
+    "key": "block.1.html",
+    "source": "Around the loop, the capacitor's voltage equals the inductor's emf: $\\dfrac{q}{C} = -L\\dfrac{dI}{dt}$, with $I = dq/dt$. So\n        $$L\\frac{d^2q}{dt^2} + \\frac{q}{C} = 0,$$\n        the <a href=\"/physics/mechanics/shm-equation/\">equation of simple harmonic motion</a> with $q$ in place of $x$. Its solution is $q = Q_0\\cos\\omega t$ with $\\omega^2 = \\dfrac{1}{LC}$."
+  },
+  {
+    "key": "block.2.html",
+    "source": "$$\\omega = \\frac{1}{\\sqrt{LC}}, \\qquad q = Q_0\\cos\\omega t, \\qquad I = -Q_0\\omega\\sin\\omega t.$$\n        The total energy $\\dfrac{q^2}{2C} + \\tfrac{1}{2}LI^2 = \\dfrac{Q_0^2}{2C}$ stays constant. The current is largest, $Q_0\\omega$, when the capacitor is empty."
+  },
+  {
+    "key": "block.3.cap",
+    "source": "The same mathematics, different physics."
+  },
+  {
+    "key": "block.4.cap",
+    "source": "An LC circuit: the capacitor's voltage and the current are a quarter cycle apart, and the energy bars trade places twice each cycle."
+  },
+  {
+    "key": "block.5.cap",
+    "source": "The mechanical twin: a mass on a spring with no friction. Position plays the role of charge, velocity the role of current."
+  },
+  {
+    "key": "block.6.text",
+    "source": "Worked examples"
+  },
+  {
+    "key": "block.7.q",
+    "source": "A $5.0\\ \\mu\\text{F}$ capacitor charged to $10\\ \\text{V}$ is connected to a $20\\ \\text{mH}$ inductor. Find the frequency and the largest current."
+  },
+  {
+    "key": "block.7.title",
+    "source": "Frequency and peak current"
+  },
+  {
+    "key": "block.7.a",
+    "source": "$f \\approx 503\\ \\text{Hz}$, $I_{\\max} \\approx 0.158\\ \\text{A}$"
+  },
+  {
+    "key": "block.7.step.0",
+    "source": "$\\omega = \\dfrac{1}{\\sqrt{(0.020)(5.0 \\times 10^{-6})}} = 3160\\ \\text{rad/s}$, so $f = \\omega/2\\pi = 503\\ \\text{Hz}$."
+  },
+  {
+    "key": "block.7.step.1",
+    "source": "$Q_0 = CV_0 = 50\\ \\mu\\text{C}$, so $I_{\\max} = Q_0\\omega = 0.158\\ \\text{A}$."
+  },
+  {
+    "key": "block.7.step.2",
+    "source": "Check with energy: $\\tfrac{1}{2}CV_0^2 = 2.5 \\times 10^{-4}\\ \\text{J}$ and $\\tfrac{1}{2}LI_{\\max}^2 = 2.50 \\times 10^{-4}\\ \\text{J}$. They match."
+  },
+  {
+    "key": "block.8.q",
+    "source": "A tuner uses a $200\\ \\text{pF}$ capacitor. What inductance makes it resonate at $1.0\\ \\text{MHz}$, in the AM band?"
+  },
+  {
+    "key": "block.8.title",
+    "source": "Tuning a radio"
+  },
+  {
+    "key": "block.8.a",
+    "source": "$L \\approx 127\\ \\text{μH}$"
+  },
+  {
+    "key": "block.8.step.0",
+    "source": "$f = \\dfrac{1}{2\\pi\\sqrt{LC}}$, so $L = \\dfrac{1}{(2\\pi f)^2C} = \\dfrac{1}{(2\\pi \\times 10^{6})^2(200 \\times 10^{-12})} = 127\\ \\text{μH}$."
+  },
+  {
+    "key": "block.9.html",
+    "source": "<b>\"The current is greatest when the capacitor holds the most charge.\"</b> It is the other way around. When the capacitor is fully charged, all the energy is in its electric field and the current is momentarily zero, like a pendulum at the end of its swing. The current peaks a quarter cycle later, when the capacitor is empty and all the energy is in the inductor. Check: $q = Q_0\\cos\\omega t$ and $I = -Q_0\\omega\\sin\\omega t$ are never largest at the same time."
+  }
+]

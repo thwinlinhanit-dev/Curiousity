@@ -1,0 +1,111 @@
+{
+  "id": "geology.resource-reserves",
+  "slug": "resource-reserves",
+  "ladder": "earth",
+  "course": "geology",
+  "unit": "resources",
+  "title": "Resources, Reserves and How Long They Last",
+  "short": "Reserves are the part of a resource that can be produced at a profit today, so the years they last change with price, technology and discovery.",
+  "trouble": "Students read \"reserves ÷ yearly use = 40 years\" as the date a resource runs out; reserves grow and shrink with prices, technology and new discoveries.",
+  "prereqs": [
+    "geology.ore-deposits",
+    "geology.fossil-fuels"
+  ],
+  "xp": 2,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "How long will a mineral or fuel last? Answering that needs two careful definitions, because <a href=\"/earth-and-space/geology/ore-deposits/\">ore deposits</a> and <a href=\"/earth-and-space/geology/fossil-fuels/\">fossil fuels</a> are counted in different ways depending on what is known and what is profitable."
+      },
+      {
+        "t": "list",
+        "items": [
+          "<b>Resources</b>: all of a material that exists in a form that could someday be extracted, including deposits not yet found or too poor or costly to use today.",
+          "<b>Reserves</b>: the part of the identified resources that can be produced at a profit now, with today's prices and technology."
+        ]
+      },
+      {
+        "t": "why",
+        "html": "Because reserves depend on economics, they change. Higher prices or better technology turn lower-grade resources into reserves; new discoveries add more; lower prices shrink them. A common yardstick is the <b>reserves-to-production ratio</b>, R/P = reserves ÷ yearly production: how many years today's reserves would last at today's rate. It is a snapshot, not a countdown. For many materials, reserves have grown about as fast as they were used for decades. On the other hand, if use grows by a fraction $r$ each year, the reserves run down faster than R/P suggests: adding up the growing yearly use gives $n = \\dfrac{\\ln(1 + r\\cdot R/P)}{\\ln(1 + r)}$ years. Economists and geologists debate how these effects will balance for each resource, and the answers differ from material to material."
+      },
+      {
+        "t": "key",
+        "html": "Reserves are the part of a resource that can be produced at a profit today. R/P shows how long reserves would last at today's rate, but reserves change with price, technology and discovery, and use can grow or shrink."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "f": "ln(1+x*R/100)/ln(1+x/100)",
+          "params": {
+            "R": {
+              "min": 20,
+              "max": 100,
+              "value": 50,
+              "step": 10,
+              "label": "R/P (years)"
+            }
+          },
+          "xmin": 0.5,
+          "xmax": 8,
+          "ymin": 0,
+          "ymax": 100,
+          "xlabel": "%",
+          "ylabel": "years",
+          "trace": true,
+          "zoom": false
+        },
+        "cap": "How many years fixed reserves last (up) as yearly use grows faster (across, in % per year). Set R/P with the slider: with very slow growth the curve starts near R/P, and it falls as growth speeds up."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "R/P",
+        "q": "A country has reserves of 800 million tonnes and produces 20 million tonnes a year. What is R/P?",
+        "steps": [
+          "$800 \\div 20 = 40$ years.",
+          "That does not mean the material runs out in 40 years: reserves will change as prices, technology and discoveries change."
+        ],
+        "a": "40 years."
+      },
+      {
+        "t": "ex",
+        "title": "With growing use",
+        "q": "Reserves equal 50 years of today's production. If use grows 2% a year and no reserves are added, how long do they last?",
+        "steps": [
+          "$n = \\dfrac{\\ln(1 + 0.02 \\times 50)}{\\ln 1.02} = \\dfrac{\\ln 2}{\\ln 1.02} = \\dfrac{0.693}{0.0198} \\approx 35$ years.",
+          "Growth shortens the time; discoveries, recycling and substitutes lengthen it."
+        ],
+        "a": "About 35 years."
+      },
+      {
+        "t": "mistake",
+        "html": "Reading \"reserves ÷ yearly use = 40 years\" as the date a resource runs out is a common misreading. Reserves grow and shrink with prices, technology and new discoveries, and use can rise or fall. Check the definition: reserves are only what is known and profitable today."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "USGS Circular 831, Principles of a Resource/Reserve Classification for Minerals (1980)"
+      },
+      {
+        "name": "USGS, Mineral Commodity Summaries (definitions of resources and reserves)"
+      },
+      {
+        "name": "NGSS HS-ESS3-2 (nextgenscience.org)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

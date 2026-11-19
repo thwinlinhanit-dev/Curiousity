@@ -1,0 +1,149 @@
+{
+  "id": "cplx.mobius",
+  "slug": "mobius",
+  "ladder": "math",
+  "course": "cplx",
+  "unit": "conformal",
+  "title": "Möbius Transformations",
+  "short": "w = (az + b)/(cz + d) with ad − bc ≠ 0 maps circles and lines to circles and lines, and, when c ≠ 0, sends −d/c to ∞ and ∞ to a/c.",
+  "trouble": "Students expect every circle to map to a circle, but a circle through −d/c maps to a line.",
+  "prereqs": [
+    "cplx.conformal-maps"
+  ],
+  "xp": 3,
+  "viz": [
+    "cplx-mapping"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The simplest <a href=\"/math/complex-analysis/conformal-maps/\">conformal maps</a> beyond $az + b$ are quotients of linear functions. They are conformal everywhere they are defined, they can be undone, and they have one striking geometric property: they never bend a circle into anything but a circle or a line."
+      },
+      {
+        "t": "key",
+        "html": "A <b>Möbius transformation</b> is $T(z) = \\dfrac{az + b}{cz + d}$ with $ad - bc \\ne 0$. When $c \\ne 0$, $T$ sends $-\\frac{d}{c}$ to $\\infty$ and $\\infty$ to $\\frac{a}{c}$; its inverse is $T^{-1}(w) = \\dfrac{dw - b}{-cw + a}$. Every Möbius map sends circles and lines to circles and lines: the image of a circle or line is a <b>line</b> exactly when it passes through $-\\frac{d}{c}$."
+      },
+      {
+        "t": "why",
+        "html": "$T'(z) = \\frac{ad - bc}{(cz + d)^2} \\ne 0$, so $T$ is conformal wherever it is defined. Divide out: $T(z) = \\frac{a}{c} + \\frac{bc - ad}{c}\\cdot\\frac{1}{cz + d}$, so $T$ is a chain of a linear map, the inversion $\\frac{1}{z}$, and another linear map. Linear maps send circles to circles and lines to lines. For $\\frac{1}{z}$, a circle or line has an equation $A|z|^2 + B\\operatorname{Re} z + C\\operatorname{Im} z + D = 0$; replacing $z$ by $\\frac{1}{w}$ and multiplying by $|w|^2$ gives $A + B\\operatorname{Re} w - C\\operatorname{Im} w + D|w|^2 = 0$, the same kind of equation. It is a line exactly when $D = 0$, that is, when the original passes through $0$, the point inversion sends to $\\infty$."
+      },
+      {
+        "t": "viz",
+        "name": "cplx-mapping",
+        "opts": {
+          "f": "mobius",
+          "coeffs": {
+            "a": [
+              1,
+              0
+            ],
+            "b": [
+              0,
+              0
+            ],
+            "c": [
+              1,
+              0
+            ],
+            "d": [
+              -1,
+              0
+            ]
+          },
+          "shape": {
+            "type": "circle",
+            "c": [
+              0,
+              0
+            ],
+            "r": 1
+          },
+          "z0": [
+            0,
+            1
+          ],
+          "window": {
+            "x": [
+              -2.5,
+              2.5
+            ],
+            "y": [
+              -2.5,
+              2.5
+            ]
+          },
+          "wwindow": {
+            "x": [
+              -2.5,
+              3.5
+            ],
+            "y": [
+              -3,
+              3
+            ]
+          }
+        },
+        "cap": "$T(z) = \\frac{z}{z - 1}$ sends the unit circle (which passes through $1 = -\\frac{d}{c}$) to the vertical line $\\operatorname{Re} w = \\frac{1}{2}$. Drag $z_0$ around the circle and watch $w_0$ run along the line."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Special points",
+        "q": "For $T(z) = \\dfrac{2z + i}{z - 3}$, find $T(0)$, the point sent to $\\infty$, and $T(\\infty)$.",
+        "steps": [
+          "$T(0) = \\frac{i}{-3} = -\\frac{i}{3}$.",
+          "The bottom is $0$ at $z = 3$: $T(3) = \\infty$.",
+          "For large $|z|$, $T(z) \\approx \\frac{2z}{z} = 2$: $T(\\infty) = 2$."
+        ],
+        "a": "$-\\frac{i}{3}$, $3$, $2$"
+      },
+      {
+        "t": "ex",
+        "title": "The inverse",
+        "q": "For $T(z) = \\dfrac{z + 1}{z - 1}$, find the $z$ with $T(z) = 2i$.",
+        "steps": [
+          "Solve $\\frac{z + 1}{z - 1} = w$: $z + 1 = wz - w$, so $z = \\frac{w + 1}{w - 1}$.",
+          "With $w = 2i$: $z = \\frac{1 + 2i}{-1 + 2i} = \\frac{(1 + 2i)(-1 - 2i)}{5} = \\frac{3 - 4i}{5}$.",
+          "Check: $T\\left(\\frac{3 - 4i}{5}\\right) = \\frac{(8 - 4i)/5}{(-2 - 4i)/5} = \\frac{8 - 4i}{-2 - 4i} = 2i$."
+        ],
+        "a": "$\\frac{3}{5} - \\frac{4}{5}i$"
+      },
+      {
+        "t": "ex",
+        "title": "Fixed points",
+        "q": "Find the fixed points of $T(z) = \\dfrac{3z - 4}{z - 1}$.",
+        "steps": [
+          "$T(z) = z$ means $3z - 4 = z^2 - z$, so $z^2 - 4z + 4 = 0$.",
+          "$(z - 2)^2 = 0$: a single (double) fixed point $z = 2$."
+        ],
+        "a": "$z = 2$"
+      },
+      {
+        "t": "note",
+        "html": "Composing two Möbius maps gives another one, and the coefficients compose like $2 \\times 2$ matrices: $\\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix}$. The inverse map corresponds to the inverse matrix (up to a scalar), which is where the formula $\\frac{dw - b}{-cw + a}$ comes from."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Expecting every circle to map to a circle.</b> Möbius maps send circles to circles <i>or lines</i>. If a circle passes through $-\\frac{d}{c}$, one of its points goes to $\\infty$, and a \"circle through $\\infty$\" is a line. Check: plug $-\\frac{d}{c}$ into the circle's equation. For $T(z) = \\frac{z}{z - 1}$, the unit circle passes through $1$, so its image is a line."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Beck, Marchesi, Pixton and Sabalka, A First Course in Complex Analysis, chapter 3 (Examples of Functions)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.04, Complex Variables with Applications (Spring 2018), course notes: conformal transformations"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

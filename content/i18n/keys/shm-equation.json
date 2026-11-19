@@ -1,0 +1,90 @@
+[
+  {
+    "key": "title",
+    "source": "The Equation of Simple Harmonic Motion"
+  },
+  {
+    "key": "short",
+    "source": "x″ = −ω²x is solved by x = A cos(ωt + φ) with ω = √(k/m)."
+  },
+  {
+    "key": "trouble",
+    "source": "Students mix up the angular frequency ω (rad/s) with the frequency f (Hz)."
+  },
+  {
+    "key": "block.0.html",
+    "source": "<a href=\"/physics/physics-1/shm-graphs/\">Graphs of Simple Harmonic Motion</a> showed that a mass on a spring traces sine and cosine curves. With <a href=\"/math/calculus-1/trig-derivatives/\">Derivatives of Trig Functions</a> and <a href=\"/math/calculus-1/higher-derivatives/\">Higher Derivatives</a> we can see why: Newton's second law for a spring is a differential equation, and cosine is the function that solves it."
+  },
+  {
+    "key": "block.1.html",
+    "source": "For a mass $m$ on a spring of stiffness $k$, with $x$ measured from equilibrium, $F = -kx$, so $$m\\ddot{x} = -kx \\quad\\Longrightarrow\\quad \\ddot{x} = -\\dfrac{k}{m}x.$$ We need a function whose second derivative is a negative multiple of itself. Try $x = A\\cos(\\omega t + \\phi)$: then $\\dot{x} = -A\\omega\\sin(\\omega t + \\phi)$ and $\\ddot{x} = -A\\omega^2\\cos(\\omega t + \\phi) = -\\omega^2x$. It works exactly when $\\omega^2 = k/m$, for any amplitude $A$ and phase $\\phi$."
+  },
+  {
+    "key": "block.2.html",
+    "source": "Simple harmonic motion obeys $\\ddot{x} = -\\omega^2x$, solved by $x = A\\cos(\\omega t + \\phi)$ with $$\\role[angular frequency]{angvel}{\\omega} = \\sqrt{\\dfrac{\\role[spring constant]{constant}{k}}{\\role{mass}{m}}}, \\qquad \\role{frequency}{f} = \\dfrac{\\role[angular frequency]{angvel}{\\omega}}{2\\pi}, \\qquad \\role[period]{time}{T} = \\dfrac{2\\pi}{\\role[angular frequency]{angvel}{\\omega}} = 2\\pi\\sqrt{\\dfrac{\\role{mass}{m}}{\\role[spring constant]{constant}{k}}}.$$ The greatest speed is $A\\omega$ (at equilibrium) and the greatest acceleration $A\\omega^2$ (at the turning points). The period doesn't depend on the amplitude."
+  },
+  {
+    "key": "block.3.cap",
+    "source": "An undamped spring and mass: the graph of $x(t)$ is a cosine with $\\omega = \\sqrt{k/m}$."
+  },
+  {
+    "key": "block.4.q",
+    "source": "A $0.5\\ \\text{kg}$ block on a spring with $k = 50\\ \\text{N/m}$ oscillates on a frictionless surface. Find $\\omega$, $f$ and $T$."
+  },
+  {
+    "key": "block.4.title",
+    "source": "Frequency and period"
+  },
+  {
+    "key": "block.4.a",
+    "source": "$\\omega = 10\\ \\text{rad/s}$, $f = 1.59\\ \\text{Hz}$, $T = 0.628\\ \\text{s}$."
+  },
+  {
+    "key": "block.4.step.0",
+    "source": "$\\omega = \\sqrt{50/0.5} = 10\\ \\text{rad/s}$."
+  },
+  {
+    "key": "block.4.step.1",
+    "source": "$f = \\dfrac{10}{2\\pi} = 1.59\\ \\text{Hz}$ (cycles per second)."
+  },
+  {
+    "key": "block.4.step.2",
+    "source": "$T = \\dfrac{1}{f} = 0.628\\ \\text{s}$."
+  },
+  {
+    "key": "block.5.q",
+    "source": "A quantity obeys $\\ddot{x} = -49x$ (seconds). Find its period, and its greatest speed if the amplitude is $0.2$ units."
+  },
+  {
+    "key": "block.5.title",
+    "source": "Reading an equation"
+  },
+  {
+    "key": "block.5.a",
+    "source": "$T = 0.898\\ \\text{s}$; $v_{\\max} = 1.4$ units/s."
+  },
+  {
+    "key": "block.5.step.0",
+    "source": "Match $\\ddot{x} = -\\omega^2x$: $\\omega^2 = 49$, so $\\omega = 7\\ \\text{rad/s}$."
+  },
+  {
+    "key": "block.5.step.1",
+    "source": "$T = 2\\pi/7 = 0.898\\ \\text{s}$."
+  },
+  {
+    "key": "block.5.step.2",
+    "source": "$v_{\\max} = A\\omega = 0.2(7) = 1.4$ units per second."
+  },
+  {
+    "key": "block.6.html",
+    "source": "Mixing up the angular frequency $\\omega$ (radians per second) with the frequency $f$ (cycles per second, Hz). The block above has $\\omega = 10\\ \\text{rad/s}$ but completes only $1.59$ cycles each second, because each cycle is $2\\pi$ radians of phase. Check: if your \"frequency\" times the period isn't 1, you have $\\omega$; $\\omega T$ should be $2\\pi$."
+  },
+  {
+    "key": "block.7.html",
+    "source": "Energy gives a quick check. With $x = A\\cos(\\omega t + \\phi)$, $\\tfrac{1}{2}kx^2 + \\tfrac{1}{2}mv^2 = \\tfrac{1}{2}kA^2$ at every instant (use $\\sin^2 + \\cos^2 = 1$ and $m\\omega^2 = k$). So the speed at position $x$ is $v = \\omega\\sqrt{A^2 - x^2}$: largest at $x = 0$, zero at $x = \\pm A$."
+  },
+  {
+    "key": "block.8.html",
+    "source": "The same equation, $\\ddot{q} = -\\omega^2q$, describes a pendulum's small swings, an LC circuit's charge and a vibrating molecule. Near any stable equilibrium, as in <a href=\"/physics/mechanics/energy-diagrams/\">Potential Energy Diagrams</a>, small motions are simple harmonic."
+  }
+]

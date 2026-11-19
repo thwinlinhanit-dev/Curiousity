@@ -1,0 +1,98 @@
+{
+  "id": "ra.function-limits",
+  "slug": "function-limits",
+  "ladder": "math",
+  "course": "ra",
+  "unit": "continuity",
+  "title": "Limits of Functions (ε–δ)",
+  "short": "lim f(x) = L as x → a when for every ε > 0 some δ > 0 gives |f(x) − L| < ε whenever 0 < |x − a| < δ; any smaller positive δ works too.",
+  "trouble": "Students think there is one right δ, or let δ depend on x. Any positive δ up to the largest one that works is a correct answer.",
+  "prereqs": [
+    "ra.sequence-limit",
+    "calc1.epsilon-delta"
+  ],
+  "xp": 2,
+  "viz": [
+    "ra-epsdelta"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You met the ε–δ definition of a limit in <a href=\"/math/calculus-1/epsilon-delta/\">Calculus 1</a>. It is the same idea as the <a href=\"/math/real-analysis/sequence-limit/\">ε–N definition</a>, with \"far enough out in the sequence\" replaced by \"close enough to $a$.\" This time we treat it as a working tool: given $\\varepsilon$, find a $\\delta$ and check it."
+      },
+      {
+        "t": "key",
+        "html": "$\\lim_{x \\to a} f(x) = L$ means: <b>for every $\\varepsilon > 0$ there is a $\\delta > 0$ such that $|f(x) - L| < \\varepsilon$ whenever $0 < |x - a| < \\delta$</b> (and $x$ is in the domain). If a $\\delta$ works, so does every smaller positive $\\delta$. The condition $0 < |x - a|$ means the value $f(a)$, if any, plays no role."
+      },
+      {
+        "t": "why",
+        "html": "The $\\varepsilon$ is a horizontal band around $L$; $\\delta$ is a vertical window around $a$. The definition asks that the graph over the window (with the point $x = a$ removed) stays inside the band. Narrowing the window can only remove points, so it never breaks the condition, which is why any smaller $\\delta$ works. The largest $\\delta$ that works is set by the nearest place where the graph leaves the band."
+      },
+      {
+        "t": "viz",
+        "name": "ra-epsdelta",
+        "opts": {
+          "f": "x^2",
+          "a": 2,
+          "eps": 0.5,
+          "delta": 0.3
+        },
+        "cap": "The ε–δ box for $f(x) = x^{2}$ at $a = 2$. The part of the graph over the δ-window is green inside the ε-band and red where it escapes. Press \"Largest δ,\" then shrink ε and watch δ shrink too."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A line",
+        "q": "For $f(x) = 3x - 1$, $\\lim_{x \\to 2} f(x) = 5$. Find the largest $\\delta$ for $\\varepsilon = 0.06$.",
+        "steps": [
+          "$|f(x) - 5| = |3x - 6| = 3|x - 2|$.",
+          "$3|x - 2| < 0.06$ exactly when $|x - 2| < 0.02$."
+        ],
+        "a": "$\\delta = 0.02$; any $\\delta$ with $0 < \\delta \\le 0.02$ works."
+      },
+      {
+        "t": "ex",
+        "title": "A removable hole",
+        "q": "$f(x) = \\frac{x^{2} - 9}{x - 3}$ for $x \\ne 3$. Find a $\\delta$ for $\\varepsilon = 0.01$ at $a = 3$, where the limit is $6$.",
+        "steps": [
+          "For $x \\ne 3$, $f(x) = x + 3$, so $|f(x) - 6| = |x - 3|$.",
+          "This is less than $0.01$ exactly when $|x - 3| < 0.01$."
+        ],
+        "a": "$\\delta = 0.01$. The point $x = 3$ itself is excluded by $0 < |x - 3|$, which is lucky: $f(3)$ is undefined."
+      },
+      {
+        "t": "ex",
+        "title": "The square root, where the sides differ",
+        "q": "For $f(x) = \\sqrt{x}$ at $a = 9$ (limit $3$) and $\\varepsilon = 0.1$, find the largest $\\delta$.",
+        "steps": [
+          "$|\\sqrt{x} - 3| < 0.1$ means $2.9 < \\sqrt{x} < 3.1$, that is, $8.41 < x < 9.61$.",
+          "The distances from $9$ to the ends are $0.59$ (left) and $0.61$ (right).",
+          "A symmetric window must fit inside $(8.41, 9.61)$, so it can reach only $0.59$."
+        ],
+        "a": "$\\delta = 0.59$, set by the steeper side."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>\"The δ.\"</b> There is no single correct $\\delta$: the definition asks for some $\\delta$, and if one works, all smaller positive ones do too. A second slip is a $\\delta$ that depends on $x$, like \"$\\delta = \\frac{\\varepsilon}{|x + 2|}$\": the window must be chosen before you look at individual points. Check a proposed $\\delta$ by testing points near both ends of the window, on both sides of $a$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Jiří Lebl, Basic Analysis I: Introduction to Real Analysis, section 3.1 (limits of functions)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.100A Real Analysis, lecture notes on limits of functions"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,129 @@
+{
+  "id": "g7.simple-interest",
+  "slug": "simple-interest",
+  "ladder": "math",
+  "course": "g7",
+  "unit": "percent",
+  "title": "Simple Interest",
+  "short": "Interest = principal × rate × time.",
+  "trouble": "",
+  "prereqs": [
+    "g6.percent-of-a-number"
+  ],
+  "xp": 2,
+  "viz": [
+    "percentbar"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "When you put money in a savings account, the bank pays you for using it. That payment is <b>interest</b>. With simple interest, each year you earn the same <a href=\"/math/grade-6/percent-of-a-number/\">percent of the amount</a> you put in."
+      },
+      {
+        "t": "key",
+        "html": "$$I = Prt$$ $I$ is the interest, $P$ the principal (the money you start with), $r$ the yearly rate as a decimal, and $t$ the time in years. The balance at the end is $P + I$."
+      },
+      {
+        "t": "why",
+        "html": "One year of interest is $r$ times the principal: $P \\times r$. Simple interest pays that same amount every year, so after $t$ years you have $t$ of them: $(P \\times r) \\times t$. (Many real accounts pay \"compound\" interest, which also earns interest on old interest. You will meet that later.)"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Year",
+          "Interest that year",
+          "Balance at the end of the year"
+        ],
+        "rows": [
+          [
+            "0",
+            "",
+            "\\$500"
+          ],
+          [
+            "1",
+            "\\$20",
+            "\\$520"
+          ],
+          [
+            "2",
+            "\\$20",
+            "\\$540"
+          ],
+          [
+            "3",
+            "\\$20",
+            "\\$560"
+          ]
+        ],
+        "cap": "\\$500 at 4% simple interest: each year adds 4% of \\$500, which is \\$20."
+      },
+      {
+        "t": "viz",
+        "name": "percentbar",
+        "opts": {
+          "whole": 500,
+          "pct": 4,
+          "step": 10,
+          "snap": 1,
+          "pre": "$"
+        },
+        "cap": "4% of \\$500 is \\$20, one year of interest. Move the marker to see other rates."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Interest and balance",
+        "q": "You deposit \\$800 at 3% simple interest per year. How much interest do you earn in 4 years, and what is the balance?",
+        "steps": [
+          "$P = 800$, $r = 3\\% = 0.03$, $t = 4$.",
+          "$I = 800 \\times 0.03 \\times 4 = 96$.",
+          "Balance: $800 + 96 = 896$."
+        ],
+        "a": "\\$96 of interest; balance \\$896"
+      },
+      {
+        "t": "ex",
+        "title": "Time in months",
+        "q": "\\$1,200 earns 2.5% simple interest per year. How much interest after 6 months?",
+        "steps": [
+          "Time must be in years: 6 months is $\\frac{6}{12} = 0.5$ year.",
+          "$I = 1200 \\times 0.025 \\times 0.5 = 15$."
+        ],
+        "a": "\\$15"
+      },
+      {
+        "t": "ex",
+        "title": "Finding the rate",
+        "q": "A \\$2,000 deposit earns \\$150 of simple interest in 3 years. What is the rate?",
+        "steps": [
+          "$150 = 2000 \\times r \\times 3$, so $150 = 6000r$.",
+          "$r = 150 \\div 6000 = 0.025$.",
+          "As a percent, $r = 2.5\\%$."
+        ],
+        "a": "2.5% per year"
+      },
+      {
+        "t": "mistake",
+        "html": "Two slips to watch: using $3$ instead of $0.03$ for 3% (the interest comes out 100 times too big), and using months as if they were years. Check: does the interest look like a small part of the principal?"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Prealgebra 2e, Section 6.4 Solve Simple Interest Applications"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 7.RP.A.3"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

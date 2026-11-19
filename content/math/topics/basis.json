@@ -1,0 +1,118 @@
+{
+  "id": "la.basis",
+  "slug": "basis",
+  "ladder": "math",
+  "course": "la",
+  "unit": "vector-spaces",
+  "title": "Bases",
+  "short": "A basis spans and is independent.",
+  "trouble": "",
+  "prereqs": [
+    "la.null-column-spaces",
+    "la.linear-independence"
+  ],
+  "xp": 2,
+  "viz": [
+    "span"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A spanning set might contain redundant vectors; an independent set might not reach everything. A <b>basis</b> is a set that does both jobs with nothing wasted. It combines <a href=\"/math/linear-algebra/null-column-spaces/\">spanning sets for subspaces</a> with <a href=\"/math/linear-algebra/linear-independence/\">independence</a>."
+      },
+      {
+        "t": "key",
+        "html": "A <b>basis</b> of a subspace $H$ is a set of vectors in $H$ that is linearly independent and spans $H$. Then every vector in $H$ can be written as a combination of the basis vectors in exactly one way."
+      },
+      {
+        "t": "why",
+        "html": "Why exactly one way? Spanning gives at least one. Suppose $\\mathbf{x}$ $= c_1\\mathbf{b}_1 + \\cdots + c_p\\mathbf{b}_p$ $= d_1\\mathbf{b}_1 + \\cdots + d_p\\mathbf{b}_p$. Subtract: $(c_1 - d_1)\\mathbf{b}_1 + \\cdots + (c_p - d_p)\\mathbf{b}_p$ $= \\mathbf{0}$. Independence forces every $c_i - d_i = 0$, so the two ways were the same. Those unique weights are the <b>coordinates</b> of $\\mathbf{x}$ relative to the basis."
+      },
+      {
+        "t": "list",
+        "items": [
+          "The standard basis of $\\mathbb{R}^n$: $\\mathbf{e}_1, \\dots, \\mathbf{e}_n$.",
+          "$\\{1, t, t^{2}\\}$ is a basis of $\\mathbb{P}_2$: every polynomial $a + bt + ct^{2}$ is a unique combination.",
+          "Any $n$ independent vectors in $\\mathbb{R}^n$ form a basis (by the <a href=\"/math/linear-algebra/invertible-matrix-theorem/\">Invertible Matrix Theorem</a>, they also span)."
+        ]
+      },
+      {
+        "t": "viz",
+        "name": "span",
+        "opts": {
+          "u": [
+            2,
+            1
+          ],
+          "v": [
+            -1,
+            1
+          ],
+          "c": [
+            1,
+            1
+          ],
+          "target": [
+            1,
+            5
+          ],
+          "lattice": true,
+          "task": "Reach the star. There is exactly one pair of weights that works."
+        },
+        "cap": "Two independent vectors are a basis of the plane. The dots are combinations with whole-number weights; every point is reached by exactly one pair of weights."
+      },
+      {
+        "t": "ex",
+        "title": "Not a basis",
+        "q": "Is $\\left\\{\\begin{bmatrix} 1 \\\\ 2 \\\\ 1 \\end{bmatrix}, \\begin{bmatrix} 0 \\\\ 1 \\\\ 1 \\end{bmatrix}, \\begin{bmatrix} 2 \\\\ 3 \\\\ 1 \\end{bmatrix}\\right\\}$ a basis of $\\mathbb{R}^3$?",
+        "steps": [
+          "Three vectors in $\\mathbb{R}^3$: they form a basis exactly when the matrix with these columns has 3 pivots (equivalently, nonzero determinant).",
+          "$\\det\\begin{bmatrix} 1 & 0 & 2 \\\\ 2 & 1 & 3 \\\\ 1 & 1 & 1 \\end{bmatrix}$ $= 1(1 - 3) - 0 + 2(2 - 1)$ $= -2 + 2$ $= 0$.",
+          "So they are dependent: indeed $\\begin{bmatrix} 2 \\\\ 3 \\\\ 1 \\end{bmatrix} = 2\\begin{bmatrix} 1 \\\\ 2 \\\\ 1 \\end{bmatrix} - \\begin{bmatrix} 0 \\\\ 1 \\\\ 1 \\end{bmatrix}$."
+        ],
+        "a": "No."
+      },
+      {
+        "t": "ex",
+        "title": "A basis for a plane",
+        "q": "Find a basis for the plane $x + y - z = 0$.",
+        "steps": [
+          "Solve for $x$: $x = -y + z$, with $y = s$ and $z = t$ free.",
+          "$(x, y, z)$ $= s(-1, 1, 0) + t(1, 0, 1)$.",
+          "The two vectors span the plane and are not multiples of each other, so they are a basis."
+        ],
+        "a": "$\\{(-1, 1, 0),\\ (1, 0, 1)\\}$"
+      },
+      {
+        "t": "p",
+        "html": "<b>Trimming a spanning set.</b> If $H = \\operatorname{Span}\\{\\mathbf{v}_1, \\dots, \\mathbf{v}_p\\}$ and some $\\mathbf{v}_k$ is a combination of the others, removing it leaves the span unchanged (anything built with $\\mathbf{v}_k$ can be rebuilt without it). Keep removing until the set is independent: what is left is a basis. With a matrix, this is just \"keep the pivot columns\"."
+      },
+      {
+        "t": "p",
+        "html": "Bases also exist in other vector spaces. In $\\mathbb{P}_2$, the set $\\{1, t, t^{2}\\}$ works, and so does $\\{1,\\ 1 + t,\\ (1 + t)^{2}\\}$; the second is handy for describing polynomials near $t = -1$. Choosing a basis is choosing a coordinate system, which is the subject of <a href=\"/math/linear-algebra/change-of-basis/\">change of basis</a>."
+      },
+      {
+        "t": "note",
+        "html": "A basis is a smallest spanning set and a largest independent set. Add any vector of $H$ to a basis and it becomes dependent; remove any vector and it stops spanning."
+      },
+      {
+        "t": "mistake",
+        "html": "Calling a set a basis after checking only one condition. A spanning set can be dependent (too many vectors), and an independent set can fail to span (too few). For $n$ vectors in $\\mathbb{R}^n$ one check is enough, but in general you need both."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Margalit and Rabinoff, Interactive Linear Algebra (Georgia Tech), §2.7 Basis and Dimension"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.06 Linear Algebra (Gilbert Strang, Spring 2010), Lecture 9: Independence, Basis, and Dimension"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

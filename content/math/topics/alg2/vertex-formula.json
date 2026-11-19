@@ -1,0 +1,108 @@
+{
+  "id": "alg2.vertex-formula",
+  "slug": "vertex-formula",
+  "ladder": "math",
+  "course": "alg2",
+  "unit": "quadratics-complex",
+  "title": "The Vertex Formula",
+  "short": "The vertex of ax² + bx + c is at x = −b/(2a).",
+  "trouble": "Students drop the negative sign, using x = b/(2a).",
+  "prereqs": [
+    "alg1.completing-the-square"
+  ],
+  "xp": 1,
+  "viz": [
+    "parabola"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In Algebra 1 you found the vertex by <a href=\"/math/algebra-1/completing-the-square/\">completing the square</a>. That works every time, but it is slow. Doing it once with letters instead of numbers gives a formula you can use directly."
+      },
+      {
+        "t": "key",
+        "html": "The vertex of $y = ax^2 + bx + c$ is at $x = -\\frac{b}{2a}$. Substitute that $x$ back into the function to get the $y$-coordinate. The axis of symmetry is the line $x = -\\frac{b}{2a}$, and the vertex height is the minimum value when $a > 0$ and the maximum when $a < 0$."
+      },
+      {
+        "t": "why",
+        "html": "Complete the square on $ax^2 + bx + c$ with letters. Factor $a$ out of the first two terms: $a\\left(x^2 + \\frac{b}{a}x\\right) + c$. Half of $\\frac{b}{a}$ is $\\frac{b}{2a}$, so $$x^2 + \\frac{b}{a}x = \\left(x + \\frac{b}{2a}\\right)^2 - \\frac{b^2}{4a^2}.$$ The squared part is smallest (zero) when $x + \\frac{b}{2a} = 0$, that is, at $x = -\\frac{b}{2a}$. There is another way to see it: the zeros of $ax^2 + bx$ are $0$ and $-\\frac{b}{a}$, and the vertex sits halfway between them. Adding $c$ moves the parabola up or down but not sideways."
+      },
+      {
+        "t": "viz",
+        "name": "parabola",
+        "opts": {
+          "form": "standard",
+          "a": 1,
+          "b": -2,
+          "c": -3,
+          "show": [
+            "vertex",
+            "axis",
+            "roots",
+            "yint"
+          ],
+          "target": {
+            "h": 3,
+            "k": -4
+          },
+          "task": "Use the sliders to put the vertex at (3, −4)."
+        },
+        "cap": "Standard-form sliders. Watch the dashed axis: it sits at $x = -\\frac{b}{2a}$. Change $b$ and the vertex slides sideways; change $c$ and it only moves up or down."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A vertex with whole numbers",
+        "q": "Find the vertex of $y = 2x^2 - 12x + 7$.",
+        "steps": [
+          "$a = 2$ and $b = -12$, so $x = -\\frac{-12}{2 \\cdot 2} = \\frac{12}{4} = 3$.",
+          "$y = 2(3)^2 - 12(3) + 7 = 18 - 36 + 7$ $= -11$."
+        ],
+        "a": "$(3, -11)$"
+      },
+      {
+        "t": "ex",
+        "title": "A maximum value",
+        "q": "A ball's height is $h(t) = -16t^2 + 48t + 5$ feet after $t$ seconds. What is its greatest height?",
+        "steps": [
+          "$a = -16 < 0$, so the parabola opens down and the vertex is the highest point.",
+          "$t = -\\frac{48}{2(-16)} = \\frac{48}{32} = 1.5$ seconds.",
+          "$h(1.5) = -16(2.25) + 72 + 5$ $= -36 + 77 = 41$."
+        ],
+        "a": "41 feet, at $t = 1.5$ seconds"
+      },
+      {
+        "t": "ex",
+        "title": "A fraction for the vertex",
+        "q": "Find the vertex of $f(x) = x^2 + 3x + 1$.",
+        "steps": [
+          "$x = -\\frac{3}{2 \\cdot 1} = -\\frac{3}{2}$.",
+          "Substitute: $$f\\left(-\\tfrac{3}{2}\\right) = \\frac{9}{4} - \\frac{9}{2} + 1 = \\frac{9}{4} - \\frac{18}{4} + \\frac{4}{4} = -\\frac{5}{4}.$$"
+        ],
+        "a": "$\\left(-\\frac{3}{2}, -\\frac{5}{4}\\right)$"
+      },
+      {
+        "t": "mistake",
+        "html": "Dropping the negative sign and using $x = \\frac{b}{2a}$. For $y = x^2 - 6x$ that puts the vertex at $x = -3$ instead of $x = 3$. Check: the zeros of $x^2 - 6x$ are 0 and 6, and the vertex must be halfway between them, at $x = 3$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Algebra 2e, Section 5.1 Quadratic Functions"
+      },
+      {
+        "name": "Common Core State Standards, F-IF.C.8a"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,104 @@
+{
+  "id": "phys1.equilibrium-first-law",
+  "slug": "equilibrium-first-law",
+  "course": "phys1",
+  "courseTitle": "Physics 1: Motion, Forces and Energy",
+  "unit": "forces",
+  "unitTitle": "Forces and Newton's Laws",
+  "title": "Equilibrium and the First Law",
+  "short": "Zero net force means constant velocity, and standing still is the special case where that velocity is zero.",
+  "trouble": "Students think an object moving at constant speed needs a net force in its direction of motion.",
+  "prereqs": [
+    "phys1.free-body-diagrams",
+    "physsci.first-law-inertia"
+  ],
+  "xp": 1,
+  "viz": [
+    "ph-fbd",
+    "ph-dynamics"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/physics/physical-science/first-law-inertia/\">Newton's First Law: Inertia</a> said an object keeps its velocity unless a net force acts. With <a href=\"/physics/physics-1/free-body-diagrams/\">Free-Body Diagrams</a>, that becomes a tool: whenever the velocity is constant, the forces on the diagram must add to zero."
+      },
+      {
+        "t": "key",
+        "html": "Equilibrium means $\\Sigma \\vec{F} = 0$, which happens exactly when the velocity is constant: at rest, or moving in a straight line at a steady speed. In components: $\\Sigma F_x = 0$ and $\\Sigma F_y = 0$."
+      },
+      {
+        "t": "why",
+        "html": "A net force changes velocity; that is what the second law says. So if the velocity isn't changing, there is no net force, whatever the speed. A car cruising at $30\\ \\text{m/s}$ on a straight road is in equilibrium just as much as a parked car: the forward force from the road exactly balances drag and rolling friction."
+      },
+      {
+        "t": "viz",
+        "name": "ph-dynamics",
+        "opts": {
+          "scene": "cart",
+          "m1": 2,
+          "F": 6,
+          "muk": 0.3,
+          "task": "Set the push equal to the friction force (μ_k mg = 5.9 N here, so try about 6 N). Once the cart is moving, it keeps a steady speed."
+        },
+        "cap": "A pushed cart with friction. Balanced forces keep its speed steady; they don't stop it."
+      },
+      {
+        "t": "list",
+        "items": [
+          "Draw the free-body diagram.",
+          "If the object is at rest or moves at a steady velocity, write $\\Sigma F_x = 0$ and $\\Sigma F_y = 0$.",
+          "Solve for the unknown force; the speed itself never appears."
+        ]
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Constant velocity",
+        "q": "You push a $40\\ \\text{kg}$ crate across a floor at a constant velocity with a $120\\ \\text{N}$ horizontal push. How big is the friction force?",
+        "steps": [
+          "Constant velocity: $\\Sigma F_x = 0$.",
+          "$120 - f = 0$, so $f = 120\\ \\text{N}$. The mass isn't needed."
+        ],
+        "a": "$120\\ \\text{N}$"
+      },
+      {
+        "t": "ex",
+        "title": "Moving, yet balanced",
+        "q": "An elevator car of mass $800\\ \\text{kg}$ rises at a steady $2\\ \\text{m/s}$. What is the cable's tension?",
+        "steps": [
+          "Steady velocity, so $\\Sigma F_y = 0$: $T - mg = 0$.",
+          "$T = (800)(9.8) = 7{,}840\\ \\text{N}$, the same as if it were parked."
+        ],
+        "a": "$7{,}840\\ \\text{N}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking an object moving at a constant speed needs a net force in its direction of motion. That idea fits everyday life, where friction stops things, but the extra push only cancels friction. Check: is the velocity changing? If not, the net force is zero, and the forward forces equal the backward ones."
+      },
+      {
+        "t": "note",
+        "html": "Try it in the Science Lab: <a href=\"/science-lab/newtons-laws/first-law/\">The First Law: Inertia</a>."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Physics 2e, Section 4.2 Newton's First Law of Motion: Inertia"
+      },
+      {
+        "name": "OpenStax University Physics Volume 1, Section 5.2 Newton's First Law"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-PS2-1"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

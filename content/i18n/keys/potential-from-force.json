@@ -1,0 +1,82 @@
+[
+  {
+    "key": "title",
+    "source": "Potential Energy from Force"
+  },
+  {
+    "key": "short",
+    "source": "U(x) = −∫F dx, which gives ½kx² for a spring and mgy for uniform gravity."
+  },
+  {
+    "key": "trouble",
+    "source": "Students drop the minus sign, so the potential energy falls where it should rise."
+  },
+  {
+    "key": "block.0.html",
+    "source": "Because a conservative force's work depends only on the endpoints (<a href=\"/physics/mechanics/conservative-forces/\">Conservative Forces</a>), we can keep track of it with a function of position alone: the potential energy. This lesson builds $U(x)$ from the force."
+  },
+  {
+    "key": "block.1.html",
+    "source": "For a conservative force $F(x)$, choose a reference point $x_0$ where $U = 0$. Then $$U(x) = -\\int_{x_0}^{x} F(x')\\,dx', \\qquad \\Delta U = -W_{\\text{force}}.$$ Spring ($F = -kx$, $x_0 = 0$): $U = \\tfrac{1}{2}kx^2$. Uniform gravity ($F_y = -mg$, $y_0 = 0$): $U = mgy$. Universal gravity ($F = -GMm/r^2$, $U = 0$ at $r \\to \\infty$): $U = -GMm/r$."
+  },
+  {
+    "key": "block.2.html",
+    "source": "We want $U$ to store the energy the force can give back. When the force does positive work, it hands energy to the object's motion, so the stored energy must go down by the same amount: $\\Delta U = -W$. Writing the work as an integral gives the formula. The minus sign is the whole point: a spring force pulls back toward $x = 0$, so stretching it means the force does negative work, and $U$ goes up. Only differences in $U$ matter physically; the reference point is a free choice, and changing it adds the same constant everywhere."
+  },
+  {
+    "key": "block.3.cap",
+    "source": "The potential energy of a spring with $k = 4\\ \\text{N/m}$: $U = \\tfrac{1}{2}kx^2 = 2x^2$. It rises on both sides because the force always points back toward $x = 0$."
+  },
+  {
+    "key": "block.4.q",
+    "source": "Find $U(x)$ for a spring with $F = -kx$, taking $U(0) = 0$."
+  },
+  {
+    "key": "block.4.title",
+    "source": "A spring"
+  },
+  {
+    "key": "block.4.a",
+    "source": "$U = \\tfrac{1}{2}kx^2$."
+  },
+  {
+    "key": "block.4.step.0",
+    "source": "$U(x) = -\\int_0^x (-kx')\\,dx' = k\\int_0^x x'\\,dx'$."
+  },
+  {
+    "key": "block.4.step.1",
+    "source": "$U(x) = \\tfrac{1}{2}kx^2$. Check: it is zero at natural length and positive for stretching or squeezing."
+  },
+  {
+    "key": "block.5.q",
+    "source": "Gravity pulls a mass $m$ toward Earth's center with $F(r) = -\\dfrac{GMm}{r^2}$. Find $U(r)$ with $U = 0$ as $r \\to \\infty$."
+  },
+  {
+    "key": "block.5.title",
+    "source": "Gravity far from Earth"
+  },
+  {
+    "key": "block.5.a",
+    "source": "$U(r) = -\\dfrac{GMm}{r}$."
+  },
+  {
+    "key": "block.5.step.0",
+    "source": "$U(r) = -\\int_{\\infty}^{r} \\left(-\\dfrac{GMm}{r'^2}\\right)dr' = GMm\\int_{\\infty}^{r} \\dfrac{dr'}{r'^2}$."
+  },
+  {
+    "key": "block.5.step.1",
+    "source": "$= GMm\\left[-\\dfrac{1}{r'}\\right]_{\\infty}^{r} = -\\dfrac{GMm}{r}$."
+  },
+  {
+    "key": "block.5.step.2",
+    "source": "Negative everywhere, rising toward zero far away: it takes work to pull the mass out to where $U = 0$."
+  },
+  {
+    "key": "block.6.html",
+    "source": "Dropping the minus sign. Without it, a spring's \"potential energy\" would be $-\\tfrac{1}{2}kx^2$, falling as you stretch the spring, as if a stretched spring had less stored energy than a relaxed one. Check the direction: when you move against a force, the potential energy must rise. Also check that $-dU/dx$ gives back $F$; you'll use that in <a href=\"/physics/mechanics/force-from-potential/\">Force from Potential Energy</a>."
+  },
+  {
+    "key": "block.7.html",
+    "source": "Friction has no potential energy: its work depends on the path, so there is no function of position alone that could keep track of it. Its work goes into thermal energy instead."
+  }
+]

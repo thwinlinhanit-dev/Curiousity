@@ -1,0 +1,103 @@
+{
+  "id": "imicro.present-value",
+  "slug": "present-value",
+  "ladder": "economics",
+  "course": "imicro",
+  "unit": "time-risk",
+  "title": "Present Value",
+  "short": "A dollar later is worth less than a dollar now: PV = FV/(1 + r)ᵗ, with shortcuts for annuities and perpetuities.",
+  "trouble": "Students multiply by (1 + r)ᵗ when they should divide, or discount over the wrong number of periods.",
+  "prereqs": [
+    "alg2.compound-interest",
+    "alg2.infinite-geometric-series"
+  ],
+  "xp": 2,
+  "viz": [
+    "ec-bond"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A dollar today can be invested and become more than a dollar later, so money at different dates can't be added directly. <a href=\"/math/algebra-2/compound-interest/\">Compound Interest</a> grew money forward. Present value runs the same calculation backward, and <a href=\"/math/algebra-2/infinite-geometric-series/\">Infinite Geometric Series</a> handles payments that go on for many years."
+      },
+      {
+        "t": "key",
+        "html": "At interest rate $r$ per period: $$PV = \\frac{FV}{(1 + r)^t}.$$ An <b>annuity</b> paying $C$ at the end of each of $n$ periods is worth $C\\,\\dfrac{1 - (1 + r)^{-n}}{r}$; a <b>perpetuity</b> (forever) is worth $\\dfrac{C}{r}$; a perpetuity that starts at $C$ and grows at rate $g < r$ is worth $\\dfrac{C}{r - g}$."
+      },
+      {
+        "t": "why",
+        "html": "If you put $PV$ in the bank today, it grows to $PV(1 + r)^t$ in $t$ periods. The present value of $FV$ is the deposit that grows to exactly $FV$, so divide. A stream of payments is worth the sum of each payment's present value. For a perpetuity that is a geometric series with first term $\\dfrac{C}{1 + r}$ and ratio $\\dfrac{1}{1 + r}$: $$\\frac{C/(1 + r)}{1 - 1/(1 + r)} = \\frac{C}{r}.$$ An annuity is a perpetuity minus the same perpetuity started $n$ periods later, which gives the factor $1 - (1 + r)^{-n}$."
+      },
+      {
+        "t": "viz",
+        "name": "ec-bond",
+        "opts": {
+          "mode": "pv",
+          "pv": {
+            "kind": "annuity",
+            "amount": 1000,
+            "t": 5
+          },
+          "rate": 0.08
+        },
+        "cap": "Five payments of \\$1,000, each shrunk by its discount factor $1/(1.08)^t$. The later the payment, the less it is worth today. Move the rate and watch all the bars change."
+      },
+      {
+        "t": "ex",
+        "title": "One payment",
+        "q": "What is \\$1,210 received in 2 years worth today at 10%?",
+        "steps": [
+          "$PV = \\dfrac{1{,}210}{(1.1)^2} = \\dfrac{1{,}210}{1.21} = 1{,}000$.",
+          "Check forward: \\$1,000 grows to \\$1,100 after a year and \\$1,210 after two."
+        ],
+        "a": "\\$1,000."
+      },
+      {
+        "t": "ex",
+        "title": "An annuity and a perpetuity",
+        "q": "At 10%, value (a) \\$1,000 a year for 3 years and (b) \\$500 a year forever, each payment at the end of the year.",
+        "steps": [
+          "(a) $$\\dfrac{1{,}000}{1.1} + \\dfrac{1{,}000}{1.21} + \\dfrac{1{,}000}{1.331} \\approx 909.09 + 826.45 + 751.31 = 2{,}486.85$$",
+          "Formula check: $1{,}000\\cdot\\dfrac{1 - 1.1^{-3}}{0.1} \\approx 2{,}486.85$.",
+          "(b) $\\dfrac{500}{0.1} = 5{,}000$."
+        ],
+        "a": "(a) about \\$2,486.85; (b) \\$5,000."
+      },
+      {
+        "t": "ex",
+        "title": "A growing perpetuity",
+        "q": "A payment of \\$300 arrives next year and then grows 2% a year forever. Interest is 8%.",
+        "steps": [
+          "$PV = \\dfrac{300}{0.08 - 0.02} = \\dfrac{300}{0.06} = 5{,}000$.",
+          "The formula needs $g < r$; otherwise the payments grow faster than they are discounted and the sum has no finite value."
+        ],
+        "a": "\\$5,000."
+      },
+      {
+        "t": "mistake",
+        "html": "Multiplying by $(1 + r)^t$ when you should divide, or discounting over the wrong number of periods. Multiplying gives a <i>future</i> value; a present value must be smaller than the amount (for $r > 0$). And a payment at the end of year 1 is discounted once, at the end of year 3 three times. Check: is your present value less than the payment itself? Then count the periods between today and the payment."
+      },
+      {
+        "t": "p",
+        "html": "Try the compounding and bond calculators on <a href=\"/markets/tools/\">Calculators &amp; Links</a> to see how the rate and the timing change a present value."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, appendix C Present Discounted Value"
+      },
+      {
+        "name": "OpenStax College Algebra 2e, 9.4 Series and Their Notations"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.04 Intermediate Microeconomic Theory (course scope and lecture topics)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

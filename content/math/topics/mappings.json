@@ -1,0 +1,155 @@
+{
+  "id": "cplx.mappings",
+  "slug": "mappings",
+  "ladder": "math",
+  "course": "cplx",
+  "unit": "complex-functions",
+  "title": "Functions as Mappings",
+  "short": "Watch f move points from the z-plane to the w-plane: az + b rotates, scales and shifts, z² squares lengths and doubles angles, and 1/z turns the plane inside out.",
+  "trouble": "Students expect z² to send the first quadrant to itself. Doubling the angles sends it onto the upper half-plane.",
+  "prereqs": [
+    "cplx.complex-functions",
+    "cplx.exponential-form"
+  ],
+  "xp": 2,
+  "viz": [
+    "cplx-mapping"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A real function can be drawn as a graph, but the graph of a complex function would need four dimensions. Instead we draw two planes side by side, the $z$-plane and the $w$-plane, and watch where $f$ sends points, curves and regions. The <a href=\"/math/complex-analysis/exponential-form/\">exponential form</a> $z = re^{i\\theta}$ makes the basic maps easy to read, because it shows what happens to lengths and to angles separately."
+      },
+      {
+        "t": "key",
+        "html": "Three maps to know by sight:\n      <br>• $w = az + b$: multiply by $a$ (turn by $\\operatorname{Arg} a$, stretch by $|a|$), then shift by $b$. Lines go to lines and circles to circles.\n      <br>• $w = z^2$: $re^{i\\theta} \\mapsto r^2e^{2i\\theta}$. Lengths are squared and <b>angles are doubled</b>, so a sector of opening $\\alpha$ at $0$ becomes a sector of opening $2\\alpha$.\n      <br>• $w = \\frac{1}{z}$: $re^{i\\theta} \\mapsto \\frac{1}{r}e^{-i\\theta}$. Points near $0$ go far away and vice versa: the circle $|z| = r$ goes to $|w| = \\frac{1}{r}$."
+      },
+      {
+        "t": "why",
+        "html": "Each statement is the exponential form at work. $(re^{i\\theta})^2 = r^2e^{2i\\theta}$ squares the modulus and doubles the argument. For $\\frac{1}{z}$: $\\frac{1}{re^{i\\theta}} = \\frac{1}{r}e^{-i\\theta}$, so the modulus is inverted and the angle changes sign. For $az + b$: with $a = |a|e^{i\\varphi}$, $az = |a|r\\,e^{i(\\theta + \\varphi)}$, a rotation by $\\varphi$ and a stretch by $|a|$, and adding $b$ slides everything."
+      },
+      {
+        "t": "viz",
+        "name": "cplx-mapping",
+        "opts": {
+          "f": "z^2",
+          "shape": {
+            "type": "sector",
+            "r0": 0,
+            "r1": 1.5,
+            "t0": 0,
+            "t1": 1.5708
+          },
+          "z0": [
+            1,
+            0.6
+          ],
+          "window": {
+            "x": [
+              -2,
+              2
+            ],
+            "y": [
+              -2,
+              2
+            ]
+          },
+          "wwindow": {
+            "x": [
+              -2.5,
+              2.5
+            ],
+            "y": [
+              -2.5,
+              2.5
+            ]
+          }
+        },
+        "cap": "The first quadrant (left) and its image under $z^2$ (right): the rays at angles $0$ to $\\frac{\\pi}{2}$ become rays at $0$ to $\\pi$, so the quarter disk becomes a half disk. Drag $z_0$ and watch $w_0 = z_0^2$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A disk under a linear map",
+        "q": "Find the image of the disk $|z - 1| < 2$ under $w = 2iz + 3$.",
+        "steps": [
+          "A linear map sends the center to the center: $2i(1) + 3 = 3 + 2i$.",
+          "It stretches every distance by $|2i| = 2$: the radius becomes $4$.",
+          "The image is the disk $|w - (3 + 2i)| < 4$, turned a quarter turn (which a disk does not show)."
+        ],
+        "a": "$|w - 3 - 2i| < 4$"
+      },
+      {
+        "t": "ex",
+        "title": "A sector under squaring",
+        "q": "Find the image of the sector $0 < \\arg z < \\frac{\\pi}{3}$ under $w = z^2$, and the image of the point $z = 1 + i$.",
+        "steps": [
+          "Squaring doubles angles: the sector becomes $0 < \\arg w < \\frac{2\\pi}{3}$ (lengths $r > 0$ still give every $r^2 > 0$).",
+          "$z = 1 + i = \\sqrt{2}e^{\\pi i/4}$, so $w = 2e^{\\pi i/2} = 2i$. (Directly: $(1 + i)^2 = 2i$.)"
+        ],
+        "a": "$0 < \\arg w < \\frac{2\\pi}{3}$; $2i$"
+      },
+      {
+        "t": "ex",
+        "title": "A circle under inversion",
+        "q": "Under $w = \\frac{1}{z}$, where does the circle $|z| = 3$ go, and where does $z = 3i$ go?",
+        "steps": [
+          "$|w| = \\frac{1}{|z|} = \\frac{1}{3}$: the circle of radius $\\frac{1}{3}$.",
+          "$\\frac{1}{3i} = \\frac{-i}{3}$: the top of the big circle goes to the bottom of the small one (the angle changes sign)."
+        ],
+        "a": "$|w| = \\frac{1}{3}$; $-\\frac{i}{3}$"
+      },
+      {
+        "t": "viz",
+        "name": "cplx-mapping",
+        "opts": {
+          "f": "1/z",
+          "shape": {
+            "type": "circle",
+            "c": [
+              1,
+              0
+            ],
+            "r": 1
+          },
+          "z0": [
+            1,
+            1
+          ],
+          "window": {
+            "x": [
+              -1,
+              3
+            ],
+            "y": [
+              -2,
+              2
+            ]
+          }
+        },
+        "cap": "Not every circle stays a circle under $\\frac{1}{z}$: this one passes through $0$, and its image is the vertical line $\\operatorname{Re} w = \\frac{1}{2}$. Unit 8 explains why."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Expecting $z^2$ to send the first quadrant to itself.</b> Squaring keeps real numbers real, so it is tempting to think regions keep their shape. But every angle doubles: the ray at $\\frac{\\pi}{4}$ goes to the ray at $\\frac{\\pi}{2}$, and the edge at $\\frac{\\pi}{2}$ goes to the negative real axis. The first quadrant fills the whole upper half-plane. Check with one point: $(1 + i)^2 = 2i$, already outside the first quadrant."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Beck, Marchesi, Pixton and Sabalka, A First Course in Complex Analysis, chapter 3 (Examples of Functions)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.04, Complex Variables with Applications (Spring 2018), course notes: analytic functions"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,82 @@
+{
+  "id": "micro.public-goods",
+  "slug": "public-goods",
+  "ladder": "economics",
+  "course": "micro",
+  "unit": "market-failure",
+  "title": "Public Goods and Free Riders",
+  "short": "Because no one can be kept from using a public good, people can ride free, and markets tend to supply too little.",
+  "trouble": "Students compare the cost with one person's benefit, instead of with the sum of everyone's benefits, when deciding if a public good is worth providing.",
+  "prereqs": [
+    "micro.types-of-goods",
+    "micro.positive-externalities"
+  ],
+  "xp": 2,
+  "viz": [
+    "ec-payoff"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Public goods are nonrival and nonexcludable (<a href=\"/economics/microeconomics/types-of-goods/\">Rival and Excludable Goods</a>), and like other goods with spillovers (<a href=\"/economics/microeconomics/positive-externalities/\">Positive Externalities</a>), markets tend to provide too little of them. The reason is a game, played out in the Game Theory course's <a href=\"/business/game-theory/dominance/\">Dominance and the Prisoner's Dilemma</a> chapter, where a public-goods game unravels."
+      },
+      {
+        "t": "key",
+        "html": "Because no one can be kept from using a public good, each person can <b>free ride</b>: enjoy it without paying. So private sellers can't collect enough to cover the cost, and markets supply too little. A public good is worth providing when the <b>sum of everyone's benefits</b> is at least its cost; for each extra unit, compare the <b>sum of the marginal benefits</b> with the marginal cost."
+      },
+      {
+        "t": "why",
+        "html": "Each person reasons: \"If others pay, I get it free; if they don't, my small payment won't buy it alone.\" Not paying is a dominant strategy, as in a prisoner's dilemma, so the good may not get provided even when everyone would be better off if all paid. And because one person's use doesn't reduce anyone else's, the value of a unit is everyone's benefit added together, not one person's. That's why taxes, which everyone pays, often fund public goods."
+      },
+      {
+        "t": "viz",
+        "name": "ec-payoff",
+        "opts": {
+          "preset": "publicgoods",
+          "underline": true
+        },
+        "cap": "Two neighbors each choose whether to chip in for a shared project. Mark the best responses: not contributing is each one's dominant strategy, even though both gain if both contribute."
+      },
+      {
+        "t": "ex",
+        "title": "A streetlight",
+        "q": "A streetlight costs \\$75. Three neighbors value it at \\$40, \\$30 and \\$20. Should it be built? Will any one neighbor buy it alone?",
+        "steps": [
+          "Total benefit: $\\$40 + \\$30 + \\$20 = \\$90 > \\$75$: it's worth building.",
+          "No single neighbor values it at \\$75 or more, so none buys it alone.",
+          "And each hopes the others pay: a free-rider problem. Splitting the cost by a rule, such as a tax of \\$25 each, gets it built."
+        ],
+        "a": "Yes, it should be built (\\$90 > \\$75), but no one will buy it alone."
+      },
+      {
+        "t": "ex",
+        "title": "How many units?",
+        "q": "A town is deciding how many benches to put in its park. For benches 1 to 4, the marginal benefit to Group A is \\$40, \\$30, \\$20 and \\$10, and to Group B \\$35, \\$25, \\$15 and \\$5. Each bench costs \\$50. How many should it build?",
+        "steps": [
+          "Everyone can use every bench, so a bench's value is the sum of both groups' benefits.",
+          "Add vertically for each bench: \\$75, \\$55, \\$35, \\$15.",
+          "Benches 1 and 2 are worth more than \\$50; bench 3 (\\$35) isn't. Build 2."
+        ],
+        "a": "2 benches."
+      },
+      {
+        "t": "mistake",
+        "html": "Comparing the cost with one person's benefit instead of the sum of everyone's. By that test the streetlight (worth at most \\$40 to any one neighbor) would fail, though it's worth \\$90 to the street. Check: for a public good, add the benefits of everyone who uses it."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, 13.3 Public Goods"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.01 Principles of Microeconomics (scope and sequence)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

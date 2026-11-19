@@ -1,0 +1,163 @@
+{
+  "id": "astro.moon-phases",
+  "slug": "moon-phases",
+  "ladder": "physics",
+  "course": "astro",
+  "unit": "sky",
+  "title": "Moon Phases and Moonrise Times",
+  "short": "Each phase rises at its own time: a full Moon rises at sunset and a first-quarter Moon about noon, because of where the Moon sits relative to the Sun.",
+  "trouble": "Students think the Moon is only up at night, or that every phase rises at sunset.",
+  "prereqs": [
+    "earthsci.moon-phases",
+    "astro.celestial-sphere"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-sky",
+    "astro-moonclock"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/earth-and-space/earth-science/moon-phases/\">Phases of the Moon</a> you saw that half the Moon is always lit by the Sun, and the phase is how much of that lit half faces us. There is a second payoff to that picture: each phase has its own schedule. The Moon is not only a night object, and it does not always rise at sunset."
+      },
+      {
+        "t": "why",
+        "html": "A phase is really an <b>angle</b>: how far the Moon sits east of the Sun as seen from Earth. New moon is next to the Sun ($0^\\circ$); first quarter is $90^\\circ$ east of it; full moon is opposite it ($180^\\circ$); third quarter is $270^\\circ$ east, which is $90^\\circ$ west. The <a href=\"/physics/astronomy/celestial-sphere/\">celestial sphere</a> turns $15^\\circ$ per hour, carrying the Sun and the Moon together. So a Moon $90^\\circ$ east of the Sun rises $90 \\div 15 = 6$ hours after the Sun. If the Sun rises at 6 am, the first-quarter Moon rises at noon, is highest at sunset and sets at midnight."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Phase (angle east of the Sun)",
+          "Rises",
+          "Highest",
+          "Sets"
+        ],
+        "rows": [
+          [
+            "New (0°)",
+            "6 am",
+            "noon",
+            "6 pm"
+          ],
+          [
+            "Waxing crescent (45°)",
+            "9 am",
+            "3 pm",
+            "9 pm"
+          ],
+          [
+            "First quarter (90°)",
+            "noon",
+            "6 pm",
+            "midnight"
+          ],
+          [
+            "Waxing gibbous (135°)",
+            "3 pm",
+            "9 pm",
+            "3 am"
+          ],
+          [
+            "Full (180°)",
+            "6 pm",
+            "midnight",
+            "6 am"
+          ],
+          [
+            "Waning gibbous (225°)",
+            "9 pm",
+            "3 am",
+            "9 am"
+          ],
+          [
+            "Third quarter (270°)",
+            "midnight",
+            "6 am",
+            "noon"
+          ],
+          [
+            "Waning crescent (315°)",
+            "3 am",
+            "9 am",
+            "3 pm"
+          ]
+        ],
+        "cap": "Approximate times, taking sunrise at 6 am and sunset at 6 pm."
+      },
+      {
+        "t": "key",
+        "html": "A phase is the Moon's angle east of the Sun. Every $15^\\circ$ of that angle makes the Moon rise one hour later than the Sun: a first quarter rises about noon, a full moon at sunset and a third quarter about midnight."
+      },
+      {
+        "t": "viz",
+        "name": "astro-moonclock",
+        "opts": {
+          "age": 7.4,
+          "task": "Drag the time of day, or press Play, and watch when the Moon is above the observer's horizon. Then change the Moon's age."
+        },
+        "cap": "Looking down on Earth from above the North Pole, with sunlight from the left. The observer turns with Earth; the Moon is up whenever it is above the observer's horizon line."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "First quarter",
+        "q": "About what time does a first-quarter Moon rise, and where is it at sunset?",
+        "steps": [
+          "First quarter is $90^\\circ$ east of the Sun.",
+          "$90^\\circ \\div 15^\\circ$ per hour $= 6$ h after sunrise: about noon.",
+          "Six hours after rising it is highest, due south: at sunset, about 6 pm."
+        ],
+        "a": "It rises about noon and is high in the south at sunset."
+      },
+      {
+        "t": "ex",
+        "title": "Name the phase",
+        "q": "You see the Moon rising in the east just as the Sun sets in the west. Which phase is it?",
+        "steps": [
+          "Rising as the Sun sets means it is opposite the Sun: $180^\\circ$ away.",
+          "That is a full moon."
+        ],
+        "a": "Full moon."
+      },
+      {
+        "t": "mistake",
+        "html": "Two myths: that the Moon is only up at night, and that every phase rises at sunset. Only the full moon rises at sunset. A first-quarter Moon rises around noon and is easy to see in the afternoon sky; a third-quarter Moon is still up in the morning. Check: the Moon is up for about 12 hours of every day, so for most phases part of that time must be daylight. The Moon also rises about 50 minutes later each day, as it moves about $12^\\circ$ farther east of the Sun."
+      },
+      {
+        "t": "note",
+        "html": "Run the Moon through a month in the <a href=\"/science-lab/night-sky/\">Sky and Solar System</a> lab, or use the phase view below."
+      },
+      {
+        "t": "viz",
+        "name": "ph-sky",
+        "opts": {
+          "mode": "moon",
+          "moonAge": 7
+        },
+        "cap": "Eight positions of the Moon in its orbit and the phase seen from Earth."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Astronomy 2e, section 4.5, Phases and Motions of the Moon"
+      },
+      {
+        "name": "Lindell and Olsen, Lunar Phases Concept Inventory (PERC 2002), for the common misconceptions"
+      },
+      {
+        "name": "NGSS MS-ESS1-1"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

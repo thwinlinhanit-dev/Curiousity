@@ -1,0 +1,118 @@
+{
+  "id": "macro.capital-flows",
+  "slug": "capital-flows",
+  "ladder": "economics",
+  "course": "macro",
+  "unit": "open-economy",
+  "title": "Interest Rates and Capital Flows",
+  "short": "A higher real interest rate draws in foreign financial capital, which raises demand for the currency.",
+  "trouble": "Students expect a higher interest rate to weaken a currency because borrowing costs more. It draws foreign savers, who must buy the currency first.",
+  "prereqs": [
+    "macro.forex-shifts",
+    "macro.loanable-funds"
+  ],
+  "xp": 3,
+  "viz": [
+    "ec-loanable",
+    "ec-forex"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Savers can lend across borders. That links the <a href=\"/economics/macroeconomics/loanable-funds/\">The Loanable Funds Market</a> market with the <a href=\"/economics/macroeconomics/forex-shifts/\">foreign exchange market</a>."
+      },
+      {
+        "t": "key",
+        "html": "A higher real interest rate in a country draws in foreign financial capital. To buy that country's assets, foreign savers must first buy its currency, so demand for the currency rises and it <b>appreciates</b>. The inflow also adds to the supply of loanable funds there. A lower real rate sends capital out and the currency depreciates."
+      },
+      {
+        "t": "why",
+        "html": "Savers look for the best return for the risk. If U.S. bonds pay a higher real rate than similar European bonds, European savers want U.S. bonds, and they need dollars to buy them. That raises demand for dollars. The classic chain for a U.S. budget deficit: the government borrows more → the real interest rate rises → foreign capital flows in → the dollar appreciates → U.S. exports get dearer and imports cheaper → net exports fall. In the loanable funds market, the same inflow adds to supply, which keeps the rate from rising as much as it otherwise would."
+      },
+      {
+        "t": "viz",
+        "name": "ec-loanable",
+        "opts": {
+          "mode": "market",
+          "events": [
+            {
+              "label": "The government runs a deficit",
+              "key": "deficit",
+              "curve": "D",
+              "dir": 1,
+              "why": "The government borrows, so demand for loanable funds increases"
+            },
+            {
+              "label": "Foreign capital flows in",
+              "curve": "S",
+              "dir": 1,
+              "why": "Foreign savers lend here, adding to the supply of loanable funds"
+            },
+            {
+              "label": "Capital flows out",
+              "curve": "S",
+              "dir": -1,
+              "why": "Savers send funds abroad"
+            }
+          ]
+        },
+        "cap": "Loanable funds: a deficit raises the real rate; a foreign inflow adds to supply."
+      },
+      {
+        "t": "viz",
+        "name": "ec-forex",
+        "opts": {
+          "mirror": false,
+          "nx": true
+        },
+        "cap": "The foreign exchange side: \"U.S. real interest rates rise\" raises demand for dollars, and the text follows it to net exports."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "The deficit chain",
+        "q": "The U.S. budget deficit grows. Trace the effects through to net exports.",
+        "steps": [
+          "More government borrowing: demand for loanable funds rises, so the real interest rate rises.",
+          "Higher returns draw foreign capital: demand for dollars rises, and the dollar appreciates.",
+          "A stronger dollar makes exports dearer and imports cheaper: net exports fall."
+        ],
+        "a": "r ↑ → capital inflow → dollar ↑ → NX ↓"
+      },
+      {
+        "t": "ex",
+        "title": "An inflow in numbers",
+        "q": "Supply of loanable funds: $r = 2 + 0.01Q$; demand: $r = 8 - 0.01Q$, so $r = 5\\%$ at $Q = 300$. Foreign savers lend an extra \\$100 billion at every rate. Find the new rate.",
+        "steps": [
+          "New supply: $r = 2 + 0.01(Q - 100) = 1 + 0.01Q$.",
+          "$1 + 0.01Q = 8 - 0.01Q$, so $Q = 350$ and $r = 4.5\\%$. The inflow lowers the real rate."
+        ],
+        "a": "4.5%"
+      },
+      {
+        "t": "mistake",
+        "html": "Expecting a higher interest rate to weaken a currency because borrowing costs more. It draws foreign savers, who must buy the currency first, so the currency appreciates. Check: who wants this country's assets now, and what do they need to buy them?"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Macroeconomics 3e, 15.2 Demand and Supply Shifts in Foreign Exchange Markets"
+      },
+      {
+        "name": "OpenStax Principles of Macroeconomics 3e, 17.1 How Government Borrowing Affects Investment and the Trade Balance"
+      },
+      {
+        "name": "College Board, AP Macroeconomics Course and Exam Description (topic list)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

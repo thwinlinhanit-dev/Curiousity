@@ -1,0 +1,115 @@
+{
+  "id": "stat.errors-power",
+  "slug": "errors-power",
+  "ladder": "math",
+  "course": "stat",
+  "unit": "inference",
+  "title": "Type I and Type II Errors and Power",
+  "short": "Weigh the two kinds of mistakes a test can make.",
+  "trouble": "Students mix up which error is rejecting a true null hypothesis.",
+  "prereqs": [
+    "stat.test-proportion"
+  ],
+  "xp": 3,
+  "viz": [
+    "normal"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Every <a href=\"/math/probability-and-statistics/test-proportion/\">significance test</a> ends in a decision, and a decision made from random data can be wrong in two different ways. Knowing their chances helps you design a study that can actually find what you are looking for."
+      },
+      {
+        "t": "key",
+        "html": "<b>Type I error</b>: rejecting $H_0$ when $H_0$ is true (a false alarm). Its probability is $\\alpha$. <b>Type II error</b>: failing to reject $H_0$ when $H_a$ is true (a miss). Its probability is $\\beta$. <b>Power</b> $= 1 - \\beta$ is the probability of correctly rejecting a false $H_0$. Power grows with a larger sample, a larger $\\alpha$, and a true value farther from $H_0$."
+      },
+      {
+        "t": "why",
+        "html": "We reject when the statistic lands beyond a cutoff. If $H_0$ is true, the chance of landing there is exactly the $\\alpha$ we chose. If instead the truth is some other value, the statistic's distribution is centered there, and power is the area of <b>that</b> distribution beyond the same cutoff. A larger sample narrows both distributions, so they overlap less; a bigger real difference pulls them apart; a larger $\\alpha$ moves the cutoff toward $H_0$. Each increases power, and the last one does it by allowing more Type I errors."
+      },
+      {
+        "t": "viz",
+        "name": "stat-power",
+        "opts": {
+          "mu0": 100,
+          "mua": 104,
+          "sigma": 10,
+          "n": 25,
+          "alpha": 0.05
+        },
+        "cap": "The curve labeled H₀ is the distribution of x̄ if H₀ is true; the blue curve is its distribution if the true mean is 104. Change n, α and the true mean, and watch the error areas trade off."
+      },
+      {
+        "t": "table",
+        "head": [
+          "",
+          "$H_0$ is true",
+          "$H_a$ is true"
+        ],
+        "rows": [
+          [
+            "Reject $H_0$",
+            "Type I error (probability α)",
+            "Correct (probability = power)"
+          ],
+          [
+            "Fail to reject $H_0$",
+            "Correct",
+            "Type II error (probability β)"
+          ]
+        ],
+        "cap": "The four possible outcomes of a test."
+      },
+      {
+        "t": "ex",
+        "title": "Naming the errors",
+        "q": "A smoke detector \"tests\" $H_0$: there is no fire. Describe a Type I and a Type II error, and which is worse.",
+        "steps": [
+          "Type I: rejecting \"no fire\" when there is no fire: the alarm sounds for burnt toast.",
+          "Type II: failing to reject \"no fire\" when there is a fire: the alarm stays silent.",
+          "A Type II error is far worse here, so detectors are designed to be sensitive (high power), accepting more false alarms."
+        ],
+        "a": "False alarm versus a missed fire; the miss is worse."
+      },
+      {
+        "t": "ex",
+        "title": "Computing power",
+        "q": "Test $H_0: \\mu = 100$ against $H_a: \\mu > 100$ with $\\sigma = 10$, $n = 25$ and $\\alpha = 0.05$. Find the power if the true mean is 104. ($P(Z < 0.36) = 0.6406$.)",
+        "steps": [
+          "SD of $\\bar{x}$: $10/\\sqrt{25} = 2$.",
+          "Cutoff from $H_0$: reject when $\\bar{x} > 100 + 1.645(2) = 103.29$.",
+          "If $\\mu = 104$: $$P(\\bar{x} > 103.29) = P\\left(Z > \\dfrac{103.29 - 104}{2}\\right) = P(Z > -0.36)$$",
+          "By symmetry that is $P(Z < 0.36) = 0.6406$.",
+          "So $\\beta \\approx 0.36$: the test misses a real difference of 4 more than a third of the time."
+        ],
+        "a": "Power ≈ 0.64."
+      },
+      {
+        "t": "ex",
+        "title": "Raising power",
+        "q": "Repeat with $n = 100$. ($P(Z < 2.36) = 0.9909$.)",
+        "steps": [
+          "SD of $\\bar{x}$: $10/\\sqrt{100} = 1$; cutoff $100 + 1.645 = 101.645$.",
+          "$z = \\dfrac{101.645 - 104}{1} \\approx -2.36$, so power $= P(Z > -2.36) = 0.9909$."
+        ],
+        "a": "Power ≈ 0.99: four times the sample, far fewer misses."
+      },
+      {
+        "t": "mistake",
+        "html": "Mixing up the two errors. Type I is the one that rejects a <b>true</b> null hypothesis (convicting an innocent defendant); Type II keeps a <b>false</b> one (letting a guilty one go). Check by writing $H_0$ in words and asking: did we reject it, and was it actually true?"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Introductory Statistics 2e, section 9.2 Outcomes and the Type I and Type II Errors"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

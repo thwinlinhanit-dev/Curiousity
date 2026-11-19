@@ -1,0 +1,113 @@
+{
+  "id": "trad.only-exceptives",
+  "slug": "only-exceptives",
+  "ladder": "logic",
+  "course": "trad",
+  "unit": "propositions",
+  "title": "Only, None But and All Except",
+  "short": "\"Only S are P\" and \"None but S are P\" become \"All P are S\"; \"All except S are P\" makes two claims.",
+  "trouble": "Learners keep the order: \"Only members may vote\" does not say all members vote; it says all voters are members.",
+  "prereqs": [
+    "trad.translating-nonstandard"
+  ],
+  "xp": 3,
+  "viz": [
+    "lg-sort"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Some words in <a href=\"/logic/traditional-logic/translating-nonstandard/\">everyday statements</a> change the order of the terms. The most important is <b>only</b>."
+      },
+      {
+        "t": "key",
+        "html": "\"Only S are P\" and \"None but S are P\" become <b>All P are S</b> (swap the terms). \"The only S are P\" becomes <b>All S are P</b> (keep the order). \"All except S are P\" makes two claims: <b>All non-S are P</b>, and <b>No S are P</b>."
+      },
+      {
+        "t": "why",
+        "html": "\"Only members may vote\" sets a requirement on voters: to vote, you must be a member. That is a claim about every voter: all voters are members. It says nothing about every member; some members may stay home. So the class after \"only\" is the one the <i>other</i> class must fit inside, and it becomes the predicate. \"The only\" works the other way: \"The only animals in the canyon are skunks\" says every animal in the canyon is a skunk."
+      },
+      {
+        "t": "viz",
+        "name": "lg-venn3",
+        "opts": {
+          "terms": [
+            "voters",
+            "members"
+          ],
+          "circles": 2,
+          "props": [
+            "All voters are members"
+          ]
+        },
+        "cap": "Only members may vote: the part of the voters circle outside the members is empty. Members outside the voters circle are allowed."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Everyday wording",
+          "Standard form"
+        ],
+        "rows": [
+          [
+            "Only ticket holders are allowed backstage.",
+            "All people allowed backstage are ticket holders."
+          ],
+          [
+            "None but seniors may park on campus.",
+            "All students who may park on campus are seniors."
+          ],
+          [
+            "The only dogs here are puppies.",
+            "All dogs here are puppies."
+          ],
+          [
+            "All except seniors are campers.",
+            "All non-seniors are campers, and no seniors are campers."
+          ]
+        ],
+        "cap": "Watch the order of the terms."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Only",
+        "q": "Put \"Only adults may use the hot tub\" in standard form.",
+        "steps": [
+          "The class after \"only\" is the requirement: adults.",
+          "Every person who may use the hot tub must be an adult."
+        ],
+        "a": "All people who may use the hot tub are adults."
+      },
+      {
+        "t": "ex",
+        "title": "All except",
+        "q": "Put \"All except the drummers are singers\" in standard form.",
+        "steps": [
+          "An exceptive makes two claims: one about everyone else, one about the exceptions.",
+          "Everyone who is not a drummer is a singer: All non-drummers are singers.",
+          "The drummers are the exception: No drummers are singers."
+        ],
+        "a": "All non-drummers are singers, and no drummers are singers."
+      },
+      {
+        "t": "mistake",
+        "html": "Keeping the order of the words. \"Only members may vote\" does not say that all members vote; it says that all voters are members. Check with a case: picture a member who stays home. Is the rule broken? No, so the rule is not about every member."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Patrick J. Hurley, A Concise Introduction to Logic, 4.7 Translating Ordinary Language Statements into Categorical Form (exclusive and exceptive propositions)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

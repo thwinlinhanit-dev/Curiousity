@@ -1,0 +1,98 @@
+{
+  "id": "astrophys.virial-theorem",
+  "slug": "virial-theorem",
+  "course": "astrophys",
+  "courseTitle": "Astrophysics",
+  "unit": "stellar-structure",
+  "unitTitle": "How Stars Work",
+  "title": "The Virial Theorem",
+  "short": "For a gas ball held by its own gravity, 2K + U = 0, so losing energy makes it contract and heat up.",
+  "trouble": "Students think a star that radiates energy must cool down.",
+  "prereqs": [
+    "astrophys.central-conditions",
+    "mech.orbital-energy"
+  ],
+  "xp": 3,
+  "viz": [
+    "ph-star"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Here is one of the strangest facts about stars: when a star loses energy, it gets hotter. The reason is a balance law called the <b>virial theorem</b>, which you have already met in disguise. In <a href=\"/physics/mechanics/orbital-energy/\">orbital energy</a>, a circular orbit has $E = -K$, so a satellite that loses energy to air drag drops lower and speeds up. A star is a swarm of particles held by their own gravity, and the same rule applies."
+      },
+      {
+        "t": "why",
+        "html": "Multiply <a href=\"/physics/astrophysics/hydrostatic-equilibrium/\">hydrostatic equilibrium</a>, $dP = -Gm\\rho\\,dr/r^2$, by $4\\pi r^3$ (three times the volume inside $r$) and add it up over the whole star. On the right, with $dm = 4\\pi r^2\\rho\\,dr$, you get $-\\int Gm\\,dm/r = U$, the star's gravitational energy. On the left, integrating by parts (with $P = 0$ at the surface) gives $-3\\int P\\,dV$. For an ideal monatomic gas, pressure is two-thirds of the kinetic energy per unit volume, so $3\\int P\\,dV = 2K$, where $K$ is the total thermal kinetic energy. Therefore $$2K + U = 0.$$"
+      },
+      {
+        "t": "key",
+        "html": "For a gas ball in equilibrium held by its own gravity: $2K + U = 0$, so $K = -U/2$ and the total energy is $E = K + U = U/2 = -K$. Radiating energy ($E$ falls) makes $K$ <b>rise</b>: the star contracts and heats up. Half of the gravitational energy released is radiated; the other half heats the gas."
+      },
+      {
+        "t": "viz",
+        "name": "ph-star",
+        "opts": {
+          "mode": "virial"
+        },
+        "cap": "A contracting cloud. As gravity releases energy, half goes into heating the gas and half is radiated away, so the cloud gets hotter while it shines."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Energy bookkeeping",
+        "q": "A protostar radiates $1.0 \\times 10^{38}$ J while staying in equilibrium. How do $K$ and $U$ change?",
+        "steps": [
+          "$\\Delta E = -1.0 \\times 10^{38}$ J, and $E = -K = U/2$.",
+          "$\\Delta K = -\\Delta E = +1.0 \\times 10^{38}$ J; $\\Delta U = 2\\Delta E = -2.0 \\times 10^{38}$ J."
+        ],
+        "a": "Gravity releases $2.0 \\times 10^{38}$ J: half heats the star, half leaves as light."
+      },
+      {
+        "t": "ex",
+        "title": "The Sun's thermal energy",
+        "q": "For a uniform sphere, $U = -\\tfrac35GM^2/R$. Find $U$ and $K$ for a uniform Sun.",
+        "steps": [
+          "$$U = -\\frac{0.6(6.67 \\times 10^{-11})(1.99 \\times 10^{30})^2}{6.96 \\times 10^{8}}$$",
+          "$U \\approx -2.3 \\times 10^{41}$ J."
+        ],
+        "a": "$K = -U/2 \\approx 1.1 \\times 10^{41}$ J of thermal energy. (The real Sun is more centrally concentrated, so both are a few times larger.)"
+      },
+      {
+        "t": "ex",
+        "title": "An average temperature",
+        "q": "With $K = \\tfrac32NkT$ and $N = M/(\\mu m_p)$, find the mean temperature of a uniform Sun with $\\mu = 0.6$.",
+        "steps": [
+          "$\\tfrac32\\dfrac{M}{\\mu m_p}k\\bar T = \\tfrac{3}{10}\\dfrac{GM^2}{R}$ gives $\\bar T = \\dfrac{GM\\mu m_p}{5kR}$.",
+          "$\\bar T = 0.6 \\times 2.31 \\times 10^{7}\\text{ K}/5$."
+        ],
+        "a": "About $2.8 \\times 10^{6}$ K: millions of kelvins on average."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking a star that radiates energy must cool down, like a cooling cup of coffee. Coffee is not held together by its own gravity. A star is: losing energy lets it contract, contraction releases gravitational energy, and the virial theorem sends half of that into heat. So stars and protostars heat up as they lose energy, a \"negative heat capacity\". Check against orbits: a satellite slowed by drag ends up moving faster, for exactly the same reason."
+      },
+      {
+        "t": "note",
+        "html": "This is how a protostar's core gets hot enough to start fusion, and how a star's core heats up to burn helium after its hydrogen runs out."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Astronomy 2e, section 16.1 (Sources of Sunshine: Thermal and Gravitational Energy)"
+      },
+      {
+        "name": "MIT OpenCourseWare 8.282J Introduction to Astronomy (Spring 2006)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

@@ -1,0 +1,101 @@
+{
+  "id": "macro.spending-multiplier",
+  "slug": "spending-multiplier",
+  "ladder": "economics",
+  "course": "macro",
+  "unit": "ad-as",
+  "title": "The Spending Multiplier",
+  "short": "New spending becomes someone's income and is partly spent again, so GDP rises by 1/(1 − MPC) times the first change.",
+  "trouble": "Students use the MPC itself as the multiplier, or divide 1 by the MPC instead of by the MPS.",
+  "prereqs": [
+    "macro.mpc-mps",
+    "g6.decimal-fluency"
+  ],
+  "xp": 2,
+  "viz": [
+    "ec-multiplier"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Suppose the government buys \\$100 billion more of goods. That \\$100 billion becomes someone's income, and they spend part of it, set by the <a href=\"/economics/macroeconomics/mpc-mps/\">MPC</a>. That spending becomes someone else's income, and so on. Adding these rounds needs a little <a href=\"/math/grade-6/decimal-fluency/\">decimal arithmetic</a>."
+      },
+      {
+        "t": "key",
+        "html": "$$\\text{spending multiplier} = \\dfrac{1}{1 - MPC} = \\dfrac{1}{MPS}$$ With the price level unchanged, a change in autonomous spending ($G$, $I$, exports, or consumption not caused by income) changes real GDP by the multiplier times that change."
+      },
+      {
+        "t": "why",
+        "html": "With $MPC = 0.8$, a first \\$100 of new spending creates \\$100 of income. Then \\$80 is spent, then \\$64, then \\$51.20, and so on: each round is 0.8 times the last. The total is a geometric series: $$100 + 100(0.8) + 100(0.8)^2 + \\cdots = \\dfrac{100}{1 - 0.8} = 500.$$ The rounds shrink because at each step the MPS share is saved and leaves the chain. A bigger MPC means less leaks out each round, so the multiplier is bigger."
+      },
+      {
+        "t": "viz",
+        "name": "ec-multiplier",
+        "opts": {
+          "mode": "spending",
+          "first": 100,
+          "mpc": 0.8,
+          "rounds": 12
+        },
+        "cap": "Each bar is one round of spending; the green line is the running total, which climbs toward the gold limit. Press Play, or change the MPC."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Finding the change in GDP",
+        "q": "The MPC is 0.75 and investment rises by \\$40 billion. With the price level unchanged, how much does real GDP rise?",
+        "steps": [
+          "Multiplier $= \\dfrac{1}{1 - 0.75} = \\dfrac{1}{0.25} = 4$.",
+          "$\\Delta GDP = 4 \\times 40 = 160$ billion dollars."
+        ],
+        "a": "\\$160 billion"
+      },
+      {
+        "t": "ex",
+        "title": "Working backward",
+        "q": "A \\$50 billion rise in government purchases raises real GDP by \\$250 billion. What is the MPC?",
+        "steps": [
+          "Multiplier $= \\dfrac{250}{50} = 5$.",
+          "$\\dfrac{1}{MPS} = 5$, so $MPS = 0.2$ and $MPC = 0.8$."
+        ],
+        "a": "0.8"
+      },
+      {
+        "t": "ex",
+        "title": "It works in reverse",
+        "q": "The MPS is 0.25. Business investment falls by \\$20 billion. With the price level unchanged, how does real GDP change?",
+        "steps": [
+          "Multiplier $= \\dfrac{1}{0.25} = 4$.",
+          "$\\Delta GDP = 4 \\times (-20) = -80$ billion dollars. Lost spending is lost income, which cuts spending again in every round."
+        ],
+        "a": "Falls by \\$80 billion"
+      },
+      {
+        "t": "p",
+        "html": "This simple multiplier assumes prices stay put and that only saving leaks out. In real economies taxes and imports also leak out of each round, and prices may rise, so measured multipliers are smaller. How large they are in practice is one of the questions economists debate."
+      },
+      {
+        "t": "mistake",
+        "html": "Using the MPC itself as the multiplier, or dividing 1 by the MPC instead of by the MPS. With $MPC = 0.8$ the multiplier is 5, not 0.8 and not 1.25. Check: the multiplier is always at least 1, and it grows as the MPC grows."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Macroeconomics 3e, 11.2 The Building Blocks of Keynesian Analysis"
+      },
+      {
+        "name": "College Board, AP Macroeconomics Course and Exam Description (topic list)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

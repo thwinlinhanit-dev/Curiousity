@@ -1,0 +1,128 @@
+{
+  "id": "apbio.replication-details",
+  "slug": "replication-details",
+  "ladder": "bio",
+  "course": "apbio",
+  "unit": "expression",
+  "title": "Replication in Detail",
+  "short": "Helicase opens the fork, primase lays an RNA primer, DNA polymerase extends 5′ to 3′: the leading strand continuously, the lagging strand in Okazaki fragments that ligase joins.",
+  "trouble": "Students think the lagging strand is built 3′ to 5′. Polymerase can only add to a 3′ end; the lagging strand is built 5′ to 3′ in short pieces, away from the fork.",
+  "prereqs": [
+    "apbio.nucleic-acid-direction",
+    "hsbio.dna-replication"
+  ],
+  "xp": 3,
+  "viz": [
+    "bi-dna"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/biology/high-school-biology/dna-replication/\">DNA Replication</a> the helix unzipped and each strand served as a template. Now add the rule from <a href=\"/biology/advanced-biology/nucleic-acid-direction/\">The Direction of DNA and RNA</a>: DNA polymerase can only add nucleotides to a 3′ end. That one rule forces the whole design of the replication fork."
+      },
+      {
+        "t": "viz",
+        "name": "apbio-fork",
+        "opts": {},
+        "cap": "Step through a replication fork, enzyme by enzyme."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Enzyme or protein",
+          "Job"
+        ],
+        "rows": [
+          [
+            "Helicase",
+            "Unwinds the double helix at the fork, breaking hydrogen bonds between bases"
+          ],
+          [
+            "Single-strand binding proteins",
+            "Hold the separated strands apart"
+          ],
+          [
+            "Topoisomerase",
+            "Relieves the twisting strain ahead of the fork"
+          ],
+          [
+            "Primase",
+            "Makes a short RNA primer with a free 3′ end"
+          ],
+          [
+            "DNA polymerase III (bacteria)",
+            "Adds DNA nucleotides to the primer's 3′ end, building 5′ → 3′, and proofreads"
+          ],
+          [
+            "DNA polymerase I (bacteria)",
+            "Removes RNA primers and replaces them with DNA"
+          ],
+          [
+            "DNA ligase",
+            "Seals the nicks between pieces of new DNA"
+          ]
+        ],
+        "cap": "The crew at a bacterial replication fork. Eukaryotes use different polymerases for the same jobs."
+      },
+      {
+        "t": "key",
+        "html": "The <b>leading strand</b> is built continuously toward the fork. The <b>lagging strand</b> is built in short <b>Okazaki fragments</b>, each starting on its own RNA primer and each made 5′ → 3′ away from the fork; ligase joins them."
+      },
+      {
+        "t": "why",
+        "html": "The two template strands run in opposite directions. On one, building 5′ → 3′ means moving toward the fork, so polymerase simply follows helicase. On the other, 5′ → 3′ points away from the fork. Polymerase cannot build the other way, so it waits until the fork has opened a stretch, then backfills that stretch away from the fork. Each time the fork moves on, a new primer and a new fragment are needed. Every new strand, leading or lagging, is still made 5′ → 3′."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Which strand is lagging?",
+        "q": "A fork is moving to the right. The top template strand runs 3′ → 5′ from left to right; the bottom template runs 5′ → 3′. Which new strand is the lagging strand?",
+        "steps": [
+          "A new strand runs antiparallel to its template.",
+          "On the top template, the new strand runs 5′ → 3′ left to right, toward the fork: leading.",
+          "On the bottom template, the new strand runs 5′ → 3′ right to left, away from the fork: lagging."
+        ],
+        "a": "The strand built on the bottom template is the lagging strand."
+      },
+      {
+        "t": "ex",
+        "title": "Counting primers",
+        "q": "At one fork, the lagging strand is 12,000 nucleotides long, made in Okazaki fragments of about 1,500 nucleotides. About how many primers does the lagging strand need? How many does the leading strand need?",
+        "steps": [
+          "Each Okazaki fragment starts on its own primer.",
+          "$12{,}000 / 1{,}500 = 8$ fragments, so about 8 primers.",
+          "The leading strand is one continuous piece: one primer at the origin."
+        ],
+        "a": "About 8 for the lagging strand; 1 for the leading strand."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking the lagging strand is built 3′ → 5′. No polymerase can do that. The lagging strand is built 5′ → 3′ too, in short pieces that point away from the fork. Check any drawing: the arrowhead of every new strand must be at its 3′ end."
+      },
+      {
+        "t": "note",
+        "html": "Polymerase also proofreads: it can back up one nucleotide and remove a wrong one. With proofreading and later repair, mistakes are rare, but not zero, and those that remain become <a href=\"/biology/advanced-biology/mutation-effects/\">mutations</a>."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Biology 2e, 14.3 Basics of DNA Replication"
+      },
+      {
+        "name": "OpenStax, Biology 2e, 14.4 DNA Replication in Prokaryotes"
+      },
+      {
+        "name": "OpenStax, Biology 2e, 14.5 DNA Replication in Eukaryotes"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

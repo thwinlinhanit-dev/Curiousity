@@ -1,0 +1,117 @@
+{
+  "id": "phys2.kirchhoff-junction",
+  "slug": "kirchhoff-junction",
+  "ladder": "physics",
+  "course": "phys2",
+  "unit": "circuits",
+  "title": "Kirchhoff's Junction Rule",
+  "short": "The current flowing into a junction equals the current flowing out, because charge is conserved.",
+  "trouble": "Students think the current always splits equally at a junction.",
+  "prereqs": [
+    "phys2.parallel-resistors"
+  ],
+  "xp": 1,
+  "viz": [
+    "ph-circuit"
+  ],
+  "figureArchetype": "FieldFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Some circuits cannot be reduced to series and parallel groups. For those, two rules from the conservation laws do all the work. The first is about junctions, the points where three or more wires meet, as in the <a href=\"/physics/physics-2/parallel-resistors/\">parallel circuits</a> you have seen."
+      },
+      {
+        "t": "why",
+        "html": "In a steady circuit, charge does not pile up anywhere, and it is never created or destroyed. So every coulomb per second that arrives at a junction must leave it. That is Kirchhoff's junction rule, and it is <a href=\"/physics/physics-2/charge-conservation/\">charge conservation</a> written for currents."
+      },
+      {
+        "t": "key",
+        "html": "At any junction, $\\sum I_{\\text{in}} = \\sum I_{\\text{out}}$. How the current divides depends on the branches: parallel branches share one voltage, so each gets $I_i = V/R_i$, and the smaller resistance gets the larger share."
+      },
+      {
+        "t": "viz",
+        "name": "phys2-junction",
+        "opts": {
+          "wires": [
+            {
+              "ang": 180,
+              "dir": "in",
+              "label": "3.0 A"
+            },
+            {
+              "ang": 35,
+              "dir": "out",
+              "label": "1.0 A"
+            },
+            {
+              "ang": -35,
+              "dir": "out",
+              "label": "2.0 A"
+            }
+          ]
+        },
+        "cap": "A junction: $3.0\\,\\text{A}$ in, $1.0 + 2.0 = 3.0\\,\\text{A}$ out."
+      },
+      {
+        "t": "viz",
+        "name": "ph-circuit",
+        "opts": {
+          "circuit": "V(12) par(R1:2, R2:6)",
+          "show": [
+            "current"
+          ]
+        },
+        "cap": "Current splits at a junction in inverse proportion to the branch resistances: here $6\\,\\text{A}$ and $2\\,\\text{A}$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A four-wire junction",
+        "q": "Currents of $2.0\\,\\text{A}$ and $1.5\\,\\text{A}$ flow into a junction, and $1.2\\,\\text{A}$ flows out along a third wire. What flows in the fourth wire?",
+        "steps": [
+          "In $=$ out: $2.0 + 1.5 = 1.2 + I$.",
+          "$I = 2.3\\,\\text{A}$, flowing out."
+        ],
+        "a": "$2.3\\,\\text{A}$ out"
+      },
+      {
+        "t": "ex",
+        "title": "Sharing unequally",
+        "q": "$3.0\\,\\text{A}$ arrives at a junction and splits between a $6\\,\\Omega$ and a $3\\,\\Omega$ resistor in parallel. Find each current.",
+        "steps": [
+          "$R_{\\text{eq}} = \\dfrac{6 \\times 3}{9} = 2\\,\\Omega$, so the shared voltage is $V = (3.0)(2) = 6.0\\,\\text{V}$.",
+          "$I_6 = \\dfrac{6.0}{6} = 1.0\\,\\text{A}$, $I_3 = \\dfrac{6.0}{3} = 2.0\\,\\text{A}$. Check: $1.0 + 2.0 = 3.0\\,\\text{A}$."
+        ],
+        "a": "$1.0\\,\\text{A}$ and $2.0\\,\\text{A}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking the current always splits equally at a junction. It splits equally only when the branches are identical. Each branch takes $V/R$, so a branch with half the resistance takes twice the current. Check: the branch currents must add up to the incoming current, and the smaller resistor must carry more."
+      },
+      {
+        "t": "note",
+        "html": "Gustav Kirchhoff stated this rule and the loop rule in 1845, as a student. When you do not know which way a current flows, guess a direction and draw its arrow; if the answer comes out negative, the current flows the other way, and nothing else needs fixing."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e, section 21.3 Kirchhoff’s Rules"
+      },
+      {
+        "name": "OpenStax, University Physics Volume 2, section 10.3 Kirchhoff’s Rules"
+      },
+      {
+        "name": "College Board, AP Physics 2 Course and Exam Description, Unit 11: Electric Circuits"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

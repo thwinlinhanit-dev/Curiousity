@@ -1,0 +1,63 @@
+{
+  "id": "exam.photoelectric",
+  "slug": "photoelectric",
+  "course": "exam",
+  "courseTitle": "Exam Challenge: Multi-Step Physics Problems",
+  "unit": "atoms",
+  "unitTitle": "Atoms and Light",
+  "title": "Light on a Metal Plate",
+  "short": "Photon energy, the fastest electrons and the stopping voltage.",
+  "trouble": "Students think brighter light gives faster electrons.",
+  "prereqs": [
+    "phys2.photoelectric-effect"
+  ],
+  "xp": 3,
+  "viz": [
+    "exam-photoelectric"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The photoelectric effect shows light arriving in packets. Each electron gets the energy of one photon, as in <a href=\"/physics/physics-2/photoelectric-effect/\">The Photoelectric Effect</a>; what is left after the work function becomes its kinetic energy. Each problem here is one short scene and a chain of questions. Answer them in order: each later question uses what you found before, so a slip early on carries through. Keep full precision between steps and round only at the end."
+      },
+      {
+        "t": "key",
+        "html": "$$E = hf = \\frac{hc}{\\lambda}, \\quad hc = 1240\\ \\text{eV·nm}; \\qquad K_{\\max} = E - \\phi; \\qquad eV_s = K_{\\max}.$$ Brighter light means more photons, so more electrons, but not faster ones."
+      },
+      {
+        "t": "viz",
+        "name": "exam-photoelectric",
+        "opts": {
+          "lam": 300
+        },
+        "cap": "Each wavy packet is one photon. The slowing voltage turns the electrons back; only those with enough energy reach the collector."
+      },
+      {
+        "t": "ex",
+        "title": "Ultraviolet on potassium",
+        "q": "Light of $300\\ \\text{nm}$ falls on potassium ($\\phi = 2.3\\ \\text{eV}$). Find (1) the photon energy, (2) $K_{\\max}$ and (3) the stopping voltage.",
+        "steps": [
+          "(1) $E = 1240/300 = 4.13\\ \\text{eV}$.",
+          "(2) $K_{\\max} = 4.13 - 2.3 = 1.83\\ \\text{eV}$.",
+          "(3) $V_s = 1.83\\ \\text{V}$."
+        ],
+        "a": "$4.13\\ \\text{eV}$, $1.83\\ \\text{eV}$, $1.83\\ \\text{V}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Expecting brighter light to give faster electrons. The energy each electron gets depends only on the photon, so on the wavelength. Check: below the threshold frequency, no brightness gets any electron out."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e (Rice University), chapters 29 and 30 on the quantum and the atom"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

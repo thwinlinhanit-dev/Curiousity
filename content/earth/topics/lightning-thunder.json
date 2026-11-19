@@ -1,0 +1,89 @@
+{
+  "id": "weather.lightning-thunder",
+  "slug": "lightning-thunder",
+  "ladder": "earth",
+  "course": "weather",
+  "unit": "storms",
+  "title": "Lightning and Thunder",
+  "short": "Lightning heats the air so fast that it expands with the boom we call thunder; sound takes about 3 seconds to travel a kilometer.",
+  "trouble": "Students believe lightning never strikes the same place twice; tall buildings and towers are struck many times a year.",
+  "prereqs": [
+    "weather.thunderstorms",
+    "g7.unit-rates-fractions"
+  ],
+  "xp": 1,
+  "viz": [
+    "es-storms"
+  ],
+  "figureArchetype": "WaveFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Inside a mature <a href=\"/earth-and-space/weather-and-climate/thunderstorms/\">thunderstorm</a>, collisions between ice particles separate electric charge, until the charge jumps as lightning. The thunder that follows lets you measure how far away the flash was, using <a href=\"/math/grade-7/unit-rates-fractions/\">unit rates</a>."
+      },
+      {
+        "t": "key",
+        "html": "Lightning heats a channel of air to around 30,000 °C in a fraction of a second. The air expands so violently that it makes a shock wave, which we hear as <b>thunder</b>. Light arrives almost instantly, but sound travels about 343 m/s, so each <b>3 seconds</b> between flash and thunder is about <b>1 km</b> (about 5 seconds per mile)."
+      },
+      {
+        "t": "why",
+        "html": "In the cold upper part of the storm, small ice crystals and soft hail pellets (graupel) collide in the strong updraft. Each collision passes a little charge: the light crystals, carried up, end up mostly positive; the heavier graupel, lower down, mostly negative. Charge builds until the air between can no longer hold it apart, and a spark tens of kilometers long jumps between the cloud and the ground or within the cloud. Distance from the delay is a rate problem: light covers a kilometer in about 3 millionths of a second, so all of the delay is the sound's travel time."
+      },
+      {
+        "t": "viz",
+        "name": "es-storms",
+        "opts": {
+          "mode": "thunderstorm",
+          "stage": "mature",
+          "delay": 9
+        },
+        "cap": "Count the seconds from flash to thunder: 9 s × 343 m/s ≈ 3.1 km. Change the delay to see the distance."
+      },
+      {
+        "t": "ex",
+        "title": "How far away?",
+        "q": "You see a flash and count 12 seconds before the thunder. How far away was the lightning?",
+        "steps": [
+          "Distance = speed × time = $343 \\times 12 = 4116$ m.",
+          "About 4.1 km (or with the shortcut, $12 \\div 3 = 4$ km; in miles, $12 \\div 5 \\approx 2.4$ mi)."
+        ],
+        "a": "About 4 km"
+      },
+      {
+        "t": "ex",
+        "title": "Is it coming closer?",
+        "q": "At 3:00 p.m. the delay is 15 s; at 3:10 p.m. it is 6 s. Estimate how fast the storm is approaching, using 3 s per km.",
+        "steps": [
+          "At 3:00: $15 \\div 3 = 5$ km away. At 3:10: $6 \\div 3 = 2$ km away.",
+          "It came 3 km closer in 10 minutes ($\\tfrac{1}{6}$ hour).",
+          "Speed: $3 \\div \\tfrac{1}{6} = 18$ km/h, toward you."
+        ],
+        "a": "About 18 km/h"
+      },
+      {
+        "t": "mistake",
+        "html": "Believing lightning never strikes the same place twice. Lightning strikes tall, pointed and isolated objects again and again; the Empire State Building is struck more than 20 times in a typical year, according to the National Weather Service. Check: a place that was struck once is still tall and still exposed, so nothing protects it from the next strike."
+      },
+      {
+        "t": "note",
+        "html": "Thunder can be heard about 15 km away or a little more, and lightning can strike that far from the storm. The National Weather Service's advice is short: \"When thunder roars, go indoors.\""
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "NOAA National Weather Service: Lightning science and lightning myths (NWS Lightning Safety program)"
+      },
+      {
+        "name": "NOAA National Weather Service, JetStream online school for weather: Lightning"
+      },
+      {
+        "name": "NOAA National Severe Storms Laboratory, Severe Weather 101: Lightning"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

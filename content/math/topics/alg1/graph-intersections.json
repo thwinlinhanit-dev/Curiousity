@@ -1,0 +1,92 @@
+{
+  "id": "alg1.graph-intersections",
+  "slug": "graph-intersections",
+  "ladder": "math",
+  "course": "alg1",
+  "unit": "quadratics",
+  "title": "Solving f(x) = g(x) with Graphs",
+  "short": "The x-coordinates where two graphs meet solve f(x) = g(x).",
+  "trouble": "Students give the y-coordinate of the intersection as the solution of f(x) = g(x).",
+  "prereqs": [
+    "alg1.linear-quadratic-systems",
+    "alg1.exponential-functions"
+  ],
+  "xp": 2,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Any equation in one variable can be pictured as two graphs meeting. To solve $f(x) = g(x)$, graph $y = f(x)$ and $y = g(x)$ and look for where they cross. This generalizes <a href=\"/math/algebra-1/linear-quadratic-systems/\">line and parabola systems</a> to any functions, including <a href=\"/math/algebra-1/exponential-functions/\">exponential ones</a> that you cannot yet solve with algebra."
+      },
+      {
+        "t": "why",
+        "html": "A point $(a, b)$ where the graphs cross is on both of them, so $f(a) = b$ and $g(a) = b$. That means $f(a) = g(a)$: the input $a$ solves the equation. The shared height $b$ is just the common output. So the solutions are the $x$-coordinates of the crossing points, and a table of values can find them too: look for inputs where the two outputs agree."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "fns": [
+            "2^x",
+            "x + 1"
+          ],
+          "intersections": true,
+          "xmin": -3,
+          "xmax": 4,
+          "ymin": -2,
+          "ymax": 8
+        },
+        "cap": "$2^x = x + 1$ has no algebra-only solution in this course, but the graphs show it: they cross at $x = 0$ and $x = 1$."
+      },
+      {
+        "t": "key",
+        "html": "The solutions of $f(x) = g(x)$ are the $x$-coordinates of the points where the graphs of $f$ and $g$ meet. Read them from a graph or a table, then check by substituting."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Read from a graph",
+        "q": "Use the graph above to solve $2^x = x + 1$.",
+        "steps": [
+          "The curves cross at $(0, 1)$ and $(1, 2)$.",
+          "Check: $2^0 = 1 = 0 + 1$ and $2^1 = 2 = 1 + 1$."
+        ],
+        "a": "$x = 0$ or $x = 1$"
+      },
+      {
+        "t": "ex",
+        "title": "Use a table",
+        "q": "$f(x) = x^2$ and $g(x) = 2x + 3$. Make a table for $x = -2, \\ldots, 4$ and solve $f(x) = g(x)$.",
+        "steps": [
+          "$f$: $4, 1, 0, 1, 4, 9, 16$. $g$: $-1, 1, 3, 5, 7, 9, 11$.",
+          "They agree at $x = -1$ (both $1$) and $x = 3$ (both $9$)."
+        ],
+        "a": "$x = -1$ or $x = 3$"
+      },
+      {
+        "t": "mistake",
+        "html": "Giving the $y$-coordinate of the crossing as the solution. In the first example the crossing points are $(0, 1)$ and $(1, 2)$, but the solutions are $x = 0$ and $x = 1$. The equation asks for inputs; the shared $y$ is only the value both sides equal there."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Common Core State Standards for Mathematics, A-REI.D.11: the x-coordinates where the graphs of y = f(x) and y = g(x) intersect are the solutions of f(x) = g(x)"
+      },
+      {
+        "name": "OpenStax, Intermediate Algebra 2e, section 11.5 Solve Systems of Nonlinear Equations"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

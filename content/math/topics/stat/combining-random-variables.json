@@ -1,0 +1,96 @@
+{
+  "id": "stat.combining-random-variables",
+  "slug": "combining-random-variables",
+  "ladder": "math",
+  "course": "stat",
+  "unit": "random-variables",
+  "title": "Sums and Differences of Random Variables",
+  "short": "Means add; for independent variables, variances add.",
+  "trouble": "Students add standard deviations, or subtract variances for a difference.",
+  "prereqs": [
+    "stat.random-variable-spread",
+    "stat.transform-data"
+  ],
+  "xp": 3,
+  "viz": [
+    "dice"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A commute has two legs; a package's weight is box plus contents; a test score is part 1 plus part 2. Each piece is random, and we want the mean and spread of the total. You already know how <a href=\"/math/probability-and-statistics/transform-data/\">shifting and scaling</a> affect the <a href=\"/math/probability-and-statistics/random-variable-spread/\">mean and standard deviation</a> of one variable. Now we combine two."
+      },
+      {
+        "t": "key",
+        "html": "For any random variables: $E(X + Y) = E(X) + E(Y)$ and $E(X - Y) = E(X) - E(Y)$. If $X$ and $Y$ are <b>independent</b>: $$\\text{Var}(X + Y) = \\text{Var}(X - Y) = \\text{Var}(X) + \\text{Var}(Y).$$ Variances add; standard deviations do not. Also $E(a + bX) = a + bE(X)$ and $\\sigma_{a + bX} = |b|\\sigma_X$."
+      },
+      {
+        "t": "why",
+        "html": "Means add because averages of sums are sums of averages. For variance, write the deviation of the sum as $(X - \\mu_X) + (Y - \\mu_Y)$ and square it: $$\\text{Var}(X + Y) = \\text{Var}(X) + \\text{Var}(Y) + 2E[(X - \\mu_X)(Y - \\mu_Y)].$$ For independent variables the last term is 0: a high X is equally likely to come with a high or a low Y, so the cross products cancel on average. For $X - Y$, the cross term flips sign but is still 0, and $\\text{Var}(-Y) = (-1)^2\\text{Var}(Y)$, so the variances add again. Like the legs of a right triangle, independent spreads combine by the Pythagorean rule, not by plain addition."
+      },
+      {
+        "t": "ex",
+        "title": "A two-part commute",
+        "q": "The drive to the station has mean 20 minutes and SD 3. The train ride has mean 35 minutes and SD 4, independent of the drive. Find the mean and SD of the total time.",
+        "steps": [
+          "Mean: $20 + 35 = 55$ minutes.",
+          "Variances: $3^2 + 4^2 = 9 + 16 = 25$.",
+          "SD: $\\sqrt{25} = 5$ minutes (not $3 + 4 = 7$)."
+        ],
+        "a": "Mean 55 minutes, SD 5 minutes."
+      },
+      {
+        "t": "ex",
+        "title": "A difference",
+        "q": "With the same X and Y, find the SD of $Y - X$, how much longer the train ride is than the drive.",
+        "steps": [
+          "Mean: $35 - 20 = 15$ minutes.",
+          "Variances still add: $\\text{Var}(Y - X) = 16 + 9 = 25$.",
+          "SD: $5$ minutes. Subtracting one uncertain amount from another does not cancel the uncertainty."
+        ],
+        "a": "Mean 15 minutes, SD 5 minutes."
+      },
+      {
+        "t": "ex",
+        "title": "Many independent pieces",
+        "q": "Each bag of apples weighs a mean of 10 pounds with SD 2 pounds, independently. Find the mean and SD of the total weight of 4 bags.",
+        "steps": [
+          "Mean: $4 \\times 10 = 40$ pounds.",
+          "Variance: $4 \\times 2^2 = 16$.",
+          "SD: $\\sqrt{16} = 4$ pounds, which is $2\\sqrt{4}$, not $4 \\times 2 = 8$."
+        ],
+        "a": "Mean 40 pounds, SD 4 pounds."
+      },
+      {
+        "t": "viz",
+        "name": "dice",
+        "opts": {
+          "kind": "dice",
+          "n": 2,
+          "sides": 6,
+          "theory": true
+        },
+        "cap": "The sum of two dice: each die has SD about 1.71, and the sum has SD √2 × 1.71 ≈ 2.42, not 3.42. Extreme sums are rare because high and low rolls tend to offset."
+      },
+      {
+        "t": "mistake",
+        "html": "Adding standard deviations ($3 + 4 = 7$), or subtracting variances for a difference ($16 - 9$). Check: for independent pieces, always square the SDs, add, then take the square root, whether you are adding or subtracting the variables."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Introductory Statistics 2e, section 4.2 Mean or Expected Value and Standard Deviation"
+      },
+      {
+        "name": "MIT OpenCourseWare, 18.05 Introduction to Probability and Statistics (Spring 2014): readings on expectation and variance of random variables"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

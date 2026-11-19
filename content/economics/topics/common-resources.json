@@ -1,0 +1,126 @@
+{
+  "id": "imicro.common-resources",
+  "slug": "common-resources",
+  "ladder": "economics",
+  "course": "imicro",
+  "unit": "failure-information",
+  "title": "Common Resources",
+  "short": "Open access draws users until the average return equals the cost, which uses the resource more than is efficient.",
+  "trouble": "Students expect open access to give the efficient level of use because each user is rational. Each one ignores the cost their use imposes on the others.",
+  "prereqs": [
+    "imicro.externality-optimum",
+    "micro.types-of-goods"
+  ],
+  "xp": 3,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A fishery, a groundwater basin or a grazing commons is rival (my catch leaves less for you) but hard to fence off (see <a href=\"/economics/microeconomics/types-of-goods/\">Rival and Excludable Goods</a>). Like the polluter in <a href=\"/economics/intermediate-microeconomics/externality-optimum/\">The Efficient Amount of an Externality</a>, each user imposes a cost on others that no one pays for."
+      },
+      {
+        "t": "key",
+        "html": "If $N$ users of a common resource produce total output $Y(N)$ and each pays cost $c$, <b>open access</b> draws users until the <b>average</b> product covers the cost, $Y(N)/N = c$. The efficient number sets the <b>marginal</b> product equal to the cost, $Y'(N) = c$. Because adding users lowers everyone's average catch, open access overuses the resource and wipes out its value (the rent)."
+      },
+      {
+        "t": "why",
+        "html": "A new boat catches the average catch, $AP = Y/N$, so it joins as long as $AP \\ge c$. But its arrival lowers every other boat's catch a little, so the total rises only by the marginal product $Y'(N)$, which is less than the average when the resource is crowded. The boat's owner ignores the loss to others: an externality. The efficient number maximizes total catch minus total cost, $Y(N) - cN$, which needs $Y'(N) = c$. A license fee equal to $AP - c$ at the efficient number, or a cap on boats or catch, closes the gap."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "fns": [
+            {
+              "f": "100 - x",
+              "label": "AP",
+              "color": "blue"
+            },
+            {
+              "f": "100 - 2*x",
+              "label": "MP",
+              "color": "teal",
+              "dash": true
+            },
+            {
+              "f": "20",
+              "label": "cost per boat",
+              "color": "orange"
+            }
+          ],
+          "points": [
+            {
+              "x": 40,
+              "y": 20,
+              "label": "efficient"
+            },
+            {
+              "x": 80,
+              "y": 20,
+              "label": "open access"
+            }
+          ],
+          "xmin": 0,
+          "xmax": 100,
+          "ymin": 0,
+          "ymax": 100,
+          "xlabel": "N (boats)",
+          "ylabel": "$ thousand per boat",
+          "roots": false,
+          "intersections": false,
+          "zoom": false
+        },
+        "cap": "Catch $Y(N) = 100N - N^2$ (thousand dollars), cost 20 per boat. Open access stops where average catch meets cost, at 80 boats; the efficient number is where marginal catch meets cost, at 40."
+      },
+      {
+        "t": "ex",
+        "title": "Open access versus efficient use",
+        "q": "$Y(N) = 100N - N^2$ (thousand dollars), $c = 20$.",
+        "steps": [
+          "Open access: $AP = 100 - N = 20$, so $N = 80$. Profit: $Y - cN = 1{,}600 - 1{,}600 = 0$.",
+          "Efficient: $MP = 100 - 2N = 20$, so $N^* = 40$.",
+          "Rent at 40: $Y = 4{,}000 - 1{,}600 = 2{,}400$, minus costs 800: 1,600 thousand dollars a season, all lost under open access."
+        ],
+        "a": "80 boats under open access; 40 is efficient."
+      },
+      {
+        "t": "ex",
+        "title": "A license fee",
+        "q": "What fee per boat brings open access down to 40 boats?",
+        "steps": [
+          "With fee $F$, boats enter until $AP = 20 + F$.",
+          "At $N = 40$, $AP = 60$, so $F = 40$.",
+          "Total fees, $40 \\times 40 = 1{,}600$, collect exactly the rent that open access would have wasted."
+        ],
+        "a": "\\$40 thousand per boat."
+      },
+      {
+        "t": "mistake",
+        "html": "Expecting open access to give efficient use because each user is rational. Each user is rational about her own costs and catch, but ignores the catch she takes from others. Check: compare average and marginal product at the open-access number. If $MP$ is below the cost there, the last boats are destroying value."
+      },
+      {
+        "t": "note",
+        "html": "Garrett Hardin's 1968 essay called overuse \"the tragedy of the commons.\" Elinor Ostrom's research, recognized with a Nobel prize in 2009, documented many communities that manage shared resources well with their own rules, monitoring and sanctions. Overuse is a risk of open access, not a law of nature."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, ch. 13 Positive Externalities and Public Goods"
+      },
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, ch. 12 Environmental Protection and Negative Externalities"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.04 Intermediate Microeconomic Theory (course scope and lecture topics)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

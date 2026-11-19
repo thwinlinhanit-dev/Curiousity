@@ -1,0 +1,117 @@
+{
+  "id": "g3.scaled-graphs",
+  "slug": "scaled-graphs",
+  "ladder": "math",
+  "course": "g3",
+  "unit": "data",
+  "title": "Scaled Picture and Bar Graphs",
+  "short": "Read graphs where one symbol or one grid line stands for several.",
+  "trouble": "Students count each picture as 1 even when the key says each picture stands for 5.",
+  "prereqs": [
+    "g2.picture-bar-graphs",
+    "g3.facts-2-5-10"
+  ],
+  "xp": 1,
+  "viz": [],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You have read <a href=\"/math/grade-2/picture-bar-graphs/\">picture graphs and bar graphs</a> where each picture or each square stood for 1. When the numbers get big, one picture can stand for several. Your <a href=\"/math/grade-3/facts-2-5-10/\">facts of 2, 5 and 10</a> make these graphs quick to read."
+      },
+      {
+        "t": "viz",
+        "name": "g3-graph",
+        "opts": {
+          "kind": "picture",
+          "cats": [
+            "Red",
+            "Blue",
+            "Green",
+            "Yellow"
+          ],
+          "vals": [
+            15,
+            25,
+            10,
+            20
+          ],
+          "scale": 5,
+          "symbol": "circle",
+          "key": "votes",
+          "title": "Favorite colors"
+        },
+        "cap": "Read the key first: each circle stands for 5 votes."
+      },
+      {
+        "t": "why",
+        "html": "Drawing 25 pictures for 25 votes takes a lot of room. If each picture stands for 5 votes, 5 pictures are enough. Reading the graph is then an equal-groups problem: 5 circles, each worth 5, is $5 \\times 5 = 25$. Half a picture stands for half as many: with a key of 10, half a picture is 5."
+      },
+      {
+        "t": "key",
+        "html": "Always read the key or the scale first. Multiply the number of symbols by what each one stands for. On a bar graph, check how much each line on the scale is worth."
+      },
+      {
+        "t": "ex",
+        "title": "Read a picture graph",
+        "q": "In the graph above, how many votes did Blue get? How many more than Green?",
+        "steps": [
+          "Blue has 5 circles. $5 \\times 5 = 25$ votes.",
+          "Green has 2 circles: $2 \\times 5 = 10$ votes.",
+          "$25 - 10 = 15$ more."
+        ],
+        "a": "25 votes; 15 more"
+      },
+      {
+        "t": "viz",
+        "name": "g3-graph",
+        "opts": {
+          "kind": "bar",
+          "cats": [
+            "Cats",
+            "Dogs",
+            "Fish",
+            "Birds"
+          ],
+          "vals": [
+            12,
+            7,
+            16,
+            9
+          ],
+          "step": 2,
+          "max": 16,
+          "title": "Class pets",
+          "ylabel": "Number of students"
+        },
+        "cap": "The scale goes up by 2. A bar that stops halfway between two lines shows an odd number."
+      },
+      {
+        "t": "ex",
+        "title": "Read a bar graph",
+        "q": "How many students chose Dogs?",
+        "steps": [
+          "Each line on the scale is 2 more.",
+          "The Dogs bar ends halfway between 6 and 8.",
+          "Halfway between 6 and 8 is 7."
+        ],
+        "a": "7 students"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Counting each picture as 1.</b> If the key says each circle is 5 votes, 3 circles are 15 votes, not 3. Check the key every time, because different graphs use different keys."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 3, 3.MD.B.3 (draw and read scaled picture and bar graphs; solve how-many-more problems)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

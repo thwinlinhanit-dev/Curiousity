@@ -1,0 +1,171 @@
+{
+  "id": "sym.translate-not-and-or",
+  "slug": "translate-not-and-or",
+  "ladder": "logic",
+  "course": "sym",
+  "unit": "symbols",
+  "title": "Translating Not, And and Or",
+  "short": "\"But\", \"although\" and \"yet\" are ∧; \"neither p nor q\" is ¬(p ∨ q) or ¬p ∧ ¬q; \"not both\" is ¬(p ∧ q).",
+  "trouble": "Learners write \"neither p nor q\" as ¬p ∨ ¬q, which means \"not both\". Neither-nor denies each one.",
+  "prereqs": [
+    "sym.main-connective"
+  ],
+  "xp": 2,
+  "viz": [
+    "lg-sort"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "With the connectives from <a href=\"/logic/symbolic-logic/main-connective/\">The Main Connective and Scope</a> you can now translate real sentences. This lesson handles the three easiest connectives, not, and and or, and the English phrases that hide them."
+      },
+      {
+        "t": "table",
+        "head": [
+          "English",
+          "Symbols"
+        ],
+        "rows": [
+          [
+            "$p$ and $q$; both $p$ and $q$; $p$, but $q$; $p$, although $q$; $p$, yet $q$",
+            "$p \\land q$"
+          ],
+          [
+            "$p$ or $q$; either $p$ or $q$",
+            "$p \\lor q$"
+          ],
+          [
+            "not $p$; it is not the case that $p$",
+            "$\\neg p$"
+          ],
+          [
+            "neither $p$ nor $q$",
+            "$\\neg p \\land \\neg q$, or $\\neg (p \\lor q)$"
+          ],
+          [
+            "not both $p$ and $q$",
+            "$\\neg (p \\land q)$, or $\\neg p \\lor \\neg q$"
+          ]
+        ],
+        "cap": "Common phrases and their translations."
+      },
+      {
+        "t": "key",
+        "html": "\"But\", \"although\" and \"yet\" are all $\\land$. \"Neither $p$ nor $q$\" denies each part: $\\neg p \\land \\neg q$. \"Not both\" denies the conjunction: $\\neg (p \\land q)$."
+      },
+      {
+        "t": "why",
+        "html": "Ask when the English sentence would be true. \"Neither Maya nor Leo plays chess\" is true only when Maya does not play and Leo does not play, which is exactly when $\\neg p \\land \\neg q$ is true. \"Maya and Leo do not both play chess\" allows one of them to play; it rules out only the case where both do. That is $\\neg (p \\land q)$. Translation is matching truth conditions, not matching words."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Neither … nor",
+        "q": "Let $p$: Maya plays chess; $q$: Leo plays chess. Translate \"Neither Maya nor Leo plays chess.\"",
+        "steps": [
+          "\"Neither … nor\" denies both parts.",
+          "Not $p$, and not $q$."
+        ],
+        "a": "$\\neg p \\land \\neg q$ (equivalently $\\neg (p \\lor q)$)"
+      },
+      {
+        "t": "ex",
+        "title": "Not both",
+        "q": "Translate \"It is not the case that both Maya and Leo play chess.\"",
+        "steps": [
+          "The denial covers the conjunction \"both $p$ and $q$\".",
+          "Write the conjunction in parentheses and deny it."
+        ],
+        "a": "$\\neg (p \\land q)$"
+      },
+      {
+        "t": "ex",
+        "title": "Three parts",
+        "q": "Let $r$: Ava plays chess. Translate \"Maya plays chess, but neither Leo nor Ava does.\"",
+        "steps": [
+          "The comma before \"but\" marks the main connective, $\\land$.",
+          "The first part is $p$.",
+          "The second part is \"neither $q$ nor $r$\": $\\neg q \\land \\neg r$."
+        ],
+        "a": "$p \\land (\\neg q \\land \\neg r)$"
+      },
+      {
+        "t": "ex",
+        "title": "Both denied, joined by or",
+        "q": "Translate \"Either Maya does not play chess or Leo does not play chess.\"",
+        "steps": [
+          "Each part is a negation: $\\neg p$ and $\\neg q$.",
+          "\"Either … or\" joins them."
+        ],
+        "a": "$\\neg p \\lor \\neg q$, which says the same thing as \"not both\"."
+      },
+      {
+        "t": "p",
+        "html": "Notice what translation leaves out. \"Maya plays chess, but Leo does not\" suggests a contrast, as if we expected Leo to play. Logic keeps only the claim that both parts are true. The hint of surprise is real in conversation, but it does not change when the sentence is true, so $\\land$ is the right symbol."
+      },
+      {
+        "t": "mistake",
+        "html": "Writing \"neither $p$ nor $q$\" as $\\neg p \\lor \\neg q$. That formula means \"not both\", which is true when only one of them plays. Check with the case where Maya plays and Leo does not: \"neither plays\" is false, but $\\neg p \\lor \\neg q$ is true. The two do not match, so the translation is wrong."
+      },
+      {
+        "t": "viz",
+        "name": "lg-sort",
+        "opts": {
+          "bins": [
+            "¬(p ∨ q)",
+            "¬(p ∧ q)",
+            "p ∧ ¬q"
+          ],
+          "cards": [
+            {
+              "text": "Neither Maya nor Leo plays chess.",
+              "bin": 0
+            },
+            {
+              "text": "Maya and Leo do not both play chess.",
+              "bin": 1
+            },
+            {
+              "text": "Maya plays chess, but Leo does not.",
+              "bin": 2
+            },
+            {
+              "text": "It is not the case that either Maya or Leo plays chess.",
+              "bin": 0
+            },
+            {
+              "text": "Not both Maya and Leo play chess.",
+              "bin": 1,
+              "why": "\"Not both\" allows one of them to play."
+            },
+            {
+              "text": "Maya plays chess, although Leo does not.",
+              "bin": 2,
+              "why": "\"Although\" claims both parts, like \"and\"."
+            }
+          ],
+          "shuffle": true,
+          "reveal": true
+        },
+        "cap": "Sort the sentences by their translation ($p$: Maya plays chess; $q$: Leo plays chess)."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Patrick J. Hurley and Lori Watson, A Concise Introduction to Logic, 13th ed., section 6.1"
+      },
+      {
+        "name": "forall x: Calgary, an open introduction to formal logic (P. D. Magnus, Tim Button and others; Open Logic Project), chapter on use and mention of connectives"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

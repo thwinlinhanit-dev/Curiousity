@@ -1,0 +1,724 @@
+{
+  "key": "mech",
+  "title": "Mechanics with Calculus",
+  "slug": "mechanics",
+  "after": [
+    "phys1",
+    "calc1"
+  ],
+  "units": [
+    {
+      "key": "kinematics",
+      "title": "Kinematics with Calculus",
+      "blurb": "Velocity and acceleration as derivatives, motion found by integrating, and motion in two and three dimensions."
+    },
+    {
+      "key": "dynamics",
+      "title": "Forces with Calculus",
+      "blurb": "Time-varying forces, drag, banked curves, pulley constraints and the center of mass by integration."
+    },
+    {
+      "key": "work-energy",
+      "title": "Work and Energy with Calculus",
+      "blurb": "Work as an integral, potential energy from force and force from potential energy, and energy diagrams."
+    },
+    {
+      "key": "momentum",
+      "title": "Momentum and Systems of Particles",
+      "blurb": "Impulse as an integral, collisions in two dimensions, systems of particles and rockets."
+    },
+    {
+      "key": "rotation",
+      "title": "Rotation of Rigid Bodies",
+      "blurb": "Moments of inertia by integration, torque and angular momentum as cross products, rolling, rotational collisions and equilibrium."
+    },
+    {
+      "key": "gravitation",
+      "title": "Gravitation and Orbits",
+      "blurb": "Gravity of spheres, orbital energy, Kepler's laws from Newton's, and elliptical orbits."
+    },
+    {
+      "key": "oscillations",
+      "title": "Oscillations with Calculus",
+      "blurb": "Simple harmonic motion as a differential equation, physical pendulums, damping and resonance."
+    }
+  ],
+  "topics": [
+    {
+      "id": "mech.velocity-derivative",
+      "slug": "velocity-derivative",
+      "unit": "kinematics",
+      "title": "Velocity as a Derivative",
+      "prereqs": [
+        "phys1.instantaneous-velocity",
+        "calc1.motion"
+      ],
+      "viz": [
+        "ph-motion",
+        "derivgraph"
+      ]
+    },
+    {
+      "id": "mech.acceleration-derivative",
+      "slug": "acceleration-derivative",
+      "unit": "kinematics",
+      "title": "Acceleration as a Derivative",
+      "prereqs": [
+        "mech.velocity-derivative",
+        "phys1.acceleration"
+      ],
+      "viz": [
+        "ph-motion",
+        "derivgraph"
+      ]
+    },
+    {
+      "id": "mech.motion-from-acceleration",
+      "slug": "motion-from-acceleration",
+      "unit": "kinematics",
+      "title": "Velocity and Position from Acceleration",
+      "prereqs": [
+        "mech.acceleration-derivative",
+        "calc1.initial-value-antiderivatives"
+      ],
+      "viz": [
+        "ph-graph",
+        "ftc"
+      ]
+    },
+    {
+      "id": "mech.derive-kinematics",
+      "slug": "derive-kinematics",
+      "unit": "kinematics",
+      "title": "Deriving the Constant-Acceleration Equations",
+      "prereqs": [
+        "mech.motion-from-acceleration",
+        "phys1.kinematic-equations"
+      ],
+      "viz": [
+        "ph-graph"
+      ]
+    },
+    {
+      "id": "mech.acceleration-of-position",
+      "slug": "acceleration-of-position",
+      "unit": "kinematics",
+      "title": "Acceleration That Depends on Position",
+      "prereqs": [
+        "mech.motion-from-acceleration"
+      ],
+      "viz": [
+        "ph-graph"
+      ]
+    },
+    {
+      "id": "mech.motion-vectors",
+      "slug": "motion-vectors",
+      "unit": "kinematics",
+      "title": "Position, Velocity and Acceleration Vectors",
+      "prereqs": [
+        "mech.velocity-derivative",
+        "phys1.vector-addition",
+        "pre.parametric-equations"
+      ],
+      "viz": [
+        "ph-vectors",
+        "vectors3d"
+      ]
+    },
+    {
+      "id": "mech.projectile-optimization",
+      "slug": "projectile-optimization",
+      "unit": "kinematics",
+      "title": "Projectiles with Calculus",
+      "prereqs": [
+        "mech.motion-vectors",
+        "phys1.projectile-angled",
+        "calc1.optimization"
+      ],
+      "viz": [
+        "ph-projectile"
+      ]
+    },
+    {
+      "id": "mech.galilean-frames",
+      "slug": "galilean-frames",
+      "unit": "kinematics",
+      "title": "Relative Motion and Galilean Frames",
+      "prereqs": [
+        "mech.motion-vectors",
+        "phys1.relative-velocity"
+      ],
+      "viz": [
+        "ph-vectors"
+      ]
+    },
+    {
+      "id": "mech.tangential-normal-acceleration",
+      "slug": "tangential-normal-acceleration",
+      "unit": "kinematics",
+      "title": "Tangential and Centripetal Acceleration",
+      "prereqs": [
+        "mech.motion-vectors",
+        "phys1.centripetal-acceleration"
+      ],
+      "viz": [
+        "ph-circular"
+      ]
+    },
+    {
+      "id": "mech.time-varying-force",
+      "slug": "time-varying-force",
+      "unit": "dynamics",
+      "title": "Motion Under a Time-Varying Force",
+      "prereqs": [
+        "mech.motion-from-acceleration",
+        "phys1.second-law-systems"
+      ],
+      "viz": [
+        "ph-graph"
+      ]
+    },
+    {
+      "id": "mech.linear-drag",
+      "slug": "linear-drag",
+      "unit": "dynamics",
+      "title": "Linear Drag and Terminal Velocity",
+      "prereqs": [
+        "mech.time-varying-force",
+        "calc2.separable-equations"
+      ],
+      "viz": [
+        "graph",
+        "slopefield"
+      ]
+    },
+    {
+      "id": "mech.quadratic-drag",
+      "slug": "quadratic-drag",
+      "unit": "dynamics",
+      "title": "Quadratic Drag",
+      "prereqs": [
+        "mech.linear-drag"
+      ],
+      "viz": [
+        "graph"
+      ]
+    },
+    {
+      "id": "mech.banked-curves",
+      "slug": "banked-curves",
+      "unit": "dynamics",
+      "title": "Banked Curves With and Without Friction",
+      "prereqs": [
+        "phys1.centripetal-force",
+        "phys1.friction-on-inclines"
+      ],
+      "viz": [
+        "ph-circular"
+      ]
+    },
+    {
+      "id": "mech.pulley-constraints",
+      "slug": "pulley-constraints",
+      "unit": "dynamics",
+      "title": "Constraints in Pulley Systems",
+      "prereqs": [
+        "phys1.pulley-systems",
+        "calc1.derivative-notation"
+      ],
+      "viz": [
+        "ph-dynamics"
+      ]
+    },
+    {
+      "id": "mech.center-of-mass-integral",
+      "slug": "center-of-mass-integral",
+      "unit": "dynamics",
+      "title": "Center of Mass by Integration",
+      "prereqs": [
+        "phys1.systems-center-of-mass",
+        "calc2.center-of-mass"
+      ],
+      "viz": [
+        "ph-rotation"
+      ]
+    },
+    {
+      "id": "mech.work-integral",
+      "slug": "work-integral",
+      "unit": "work-energy",
+      "title": "Work by a Variable Force",
+      "prereqs": [
+        "phys1.work-from-graphs",
+        "calc1.ftc-evaluate"
+      ],
+      "viz": [
+        "ph-graph",
+        "ftc"
+      ]
+    },
+    {
+      "id": "mech.work-along-path",
+      "slug": "work-along-path",
+      "unit": "work-energy",
+      "title": "Work Along a Path",
+      "prereqs": [
+        "mech.work-integral",
+        "pre.dot-product"
+      ],
+      "viz": [
+        "lineintegral"
+      ]
+    },
+    {
+      "id": "mech.work-energy-derivation",
+      "slug": "work-energy-derivation",
+      "unit": "work-energy",
+      "title": "The Work-Energy Theorem from Newton's Second Law",
+      "prereqs": [
+        "mech.work-integral",
+        "mech.acceleration-of-position",
+        "phys1.work-energy-theorem"
+      ],
+      "viz": [
+        "ph-energy"
+      ]
+    },
+    {
+      "id": "mech.conservative-forces",
+      "slug": "conservative-forces",
+      "unit": "work-energy",
+      "title": "Conservative Forces",
+      "prereqs": [
+        "mech.work-along-path"
+      ],
+      "viz": [
+        "lineintegral"
+      ]
+    },
+    {
+      "id": "mech.potential-from-force",
+      "slug": "potential-from-force",
+      "unit": "work-energy",
+      "title": "Potential Energy from Force",
+      "prereqs": [
+        "mech.conservative-forces"
+      ],
+      "viz": [
+        "ph-energy"
+      ]
+    },
+    {
+      "id": "mech.force-from-potential",
+      "slug": "force-from-potential",
+      "unit": "work-energy",
+      "title": "Force from Potential Energy",
+      "prereqs": [
+        "mech.potential-from-force",
+        "calc1.derivative-notation"
+      ],
+      "viz": [
+        "derivgraph",
+        "ph-energy"
+      ]
+    },
+    {
+      "id": "mech.energy-diagrams",
+      "slug": "energy-diagrams",
+      "unit": "work-energy",
+      "title": "Potential Energy Diagrams",
+      "prereqs": [
+        "mech.force-from-potential",
+        "calc1.concavity"
+      ],
+      "viz": [
+        "ph-energy",
+        "derivgraph"
+      ]
+    },
+    {
+      "id": "mech.instantaneous-power",
+      "slug": "instantaneous-power",
+      "unit": "work-energy",
+      "title": "Instantaneous Power",
+      "prereqs": [
+        "mech.work-integral",
+        "phys1.power"
+      ],
+      "viz": [
+        "ph-graph"
+      ]
+    },
+    {
+      "id": "mech.escape-speed",
+      "slug": "escape-speed",
+      "unit": "work-energy",
+      "title": "Gravitational Potential Energy and Escape Speed",
+      "prereqs": [
+        "mech.potential-from-force",
+        "phys1.gravitational-pe-universal"
+      ],
+      "viz": [
+        "ph-orbit"
+      ]
+    },
+    {
+      "id": "mech.impulse-integral",
+      "slug": "impulse-integral",
+      "unit": "momentum",
+      "title": "Impulse as an Integral",
+      "prereqs": [
+        "phys1.impulse",
+        "calc1.ftc-evaluate"
+      ],
+      "viz": [
+        "ph-graph"
+      ]
+    },
+    {
+      "id": "mech.elastic-collisions-1d",
+      "slug": "elastic-collisions-1d",
+      "unit": "momentum",
+      "title": "Solving Elastic Collisions",
+      "prereqs": [
+        "phys1.elastic-collisions",
+        "alg2.nonlinear-systems"
+      ],
+      "viz": [
+        "ph-collision"
+      ]
+    },
+    {
+      "id": "mech.collisions-2d",
+      "slug": "collisions-2d",
+      "unit": "momentum",
+      "title": "Collisions in Two Dimensions",
+      "prereqs": [
+        "phys1.momentum-conservation"
+      ],
+      "viz": [
+        "ph-collision",
+        "vectors2d"
+      ]
+    },
+    {
+      "id": "mech.system-of-particles",
+      "slug": "system-of-particles",
+      "unit": "momentum",
+      "title": "Newton's Second Law for a System",
+      "prereqs": [
+        "mech.center-of-mass-integral",
+        "phys1.center-of-mass-motion"
+      ],
+      "viz": [
+        "ph-collision"
+      ]
+    },
+    {
+      "id": "mech.rocket-equation",
+      "slug": "rocket-equation",
+      "unit": "momentum",
+      "title": "The Rocket Equation",
+      "prereqs": [
+        "mech.system-of-particles",
+        "calc1.exp-log-integrals"
+      ],
+      "viz": [
+        "ph-collision"
+      ]
+    },
+    {
+      "id": "mech.angular-calculus",
+      "slug": "angular-calculus",
+      "unit": "rotation",
+      "title": "Angular Velocity and Acceleration with Calculus",
+      "prereqs": [
+        "phys1.rotational-kinematics",
+        "mech.motion-from-acceleration"
+      ],
+      "viz": [
+        "ph-rotation"
+      ]
+    },
+    {
+      "id": "mech.moment-of-inertia-integral",
+      "slug": "moment-of-inertia-integral",
+      "unit": "rotation",
+      "title": "Moment of Inertia by Integration",
+      "prereqs": [
+        "phys1.rotational-inertia",
+        "mech.center-of-mass-integral"
+      ],
+      "viz": [
+        "ph-rotation"
+      ]
+    },
+    {
+      "id": "mech.parallel-axis",
+      "slug": "parallel-axis",
+      "unit": "rotation",
+      "title": "The Parallel-Axis Theorem",
+      "prereqs": [
+        "mech.moment-of-inertia-integral"
+      ],
+      "viz": [
+        "ph-rotation"
+      ]
+    },
+    {
+      "id": "mech.torque-cross-product",
+      "slug": "torque-cross-product",
+      "unit": "rotation",
+      "title": "Torque as a Cross Product",
+      "prereqs": [
+        "phys1.torque",
+        "calc3.cross-product"
+      ],
+      "viz": [
+        "vectors3d",
+        "ph-torque"
+      ]
+    },
+    {
+      "id": "mech.rolling-dynamics",
+      "slug": "rolling-dynamics",
+      "unit": "rotation",
+      "title": "Rolling Dynamics",
+      "prereqs": [
+        "phys1.rolling",
+        "phys1.rotational-second-law"
+      ],
+      "viz": [
+        "ph-rotation"
+      ]
+    },
+    {
+      "id": "mech.skidding-to-rolling",
+      "slug": "skidding-to-rolling",
+      "unit": "rotation",
+      "title": "From Skidding to Rolling",
+      "prereqs": [
+        "mech.rolling-dynamics"
+      ],
+      "viz": [
+        "ph-rotation"
+      ]
+    },
+    {
+      "id": "mech.angular-momentum-particle",
+      "slug": "angular-momentum-particle",
+      "unit": "rotation",
+      "title": "Angular Momentum of a Particle",
+      "prereqs": [
+        "mech.torque-cross-product",
+        "phys1.angular-momentum"
+      ],
+      "viz": [
+        "vectors3d"
+      ]
+    },
+    {
+      "id": "mech.rotational-collisions",
+      "slug": "rotational-collisions",
+      "unit": "rotation",
+      "title": "Collisions with Rotation",
+      "prereqs": [
+        "mech.angular-momentum-particle",
+        "mech.parallel-axis",
+        "phys1.angular-momentum-conservation"
+      ],
+      "viz": [
+        "mech-pivot-hit",
+        "ph-rotation"
+      ]
+    },
+    {
+      "id": "mech.rotational-work-power",
+      "slug": "rotational-work-power",
+      "unit": "rotation",
+      "title": "Work and Power in Rotation",
+      "prereqs": [
+        "mech.angular-calculus",
+        "mech.work-integral",
+        "phys1.rotational-kinetic-energy"
+      ],
+      "viz": [
+        "ph-rotation"
+      ]
+    },
+    {
+      "id": "mech.precession",
+      "slug": "precession",
+      "unit": "rotation",
+      "title": "Gyroscopes and Precession",
+      "prereqs": [
+        "mech.angular-momentum-particle"
+      ],
+      "viz": [
+        "vectors3d",
+        "ph-rotation"
+      ]
+    },
+    {
+      "id": "mech.statics-problems",
+      "slug": "statics-problems",
+      "unit": "rotation",
+      "title": "Static Equilibrium Problems",
+      "prereqs": [
+        "phys1.rotational-equilibrium",
+        "phys1.static-friction",
+        "mech.torque-cross-product"
+      ],
+      "viz": [
+        "ph-torque"
+      ]
+    },
+    {
+      "id": "mech.shell-theorem",
+      "slug": "shell-theorem",
+      "unit": "gravitation",
+      "title": "Gravity of a Spherical Body",
+      "prereqs": [
+        "phys1.gravitational-field",
+        "calc1.substitution-definite"
+      ],
+      "viz": [
+        "ph-orbit"
+      ]
+    },
+    {
+      "id": "mech.orbital-energy",
+      "slug": "orbital-energy",
+      "unit": "gravitation",
+      "title": "Orbital Energy",
+      "prereqs": [
+        "mech.escape-speed",
+        "phys1.orbiting-satellites"
+      ],
+      "viz": [
+        "ph-orbit"
+      ]
+    },
+    {
+      "id": "mech.kepler-second-from-newton",
+      "slug": "kepler-second-from-newton",
+      "unit": "gravitation",
+      "title": "Kepler's Second Law from Angular Momentum",
+      "prereqs": [
+        "mech.angular-momentum-particle",
+        "phys1.orbiting-satellites"
+      ],
+      "viz": [
+        "ph-orbit"
+      ]
+    },
+    {
+      "id": "mech.kepler-third-from-newton",
+      "slug": "kepler-third-from-newton",
+      "unit": "gravitation",
+      "title": "Kepler's Third Law from Newton",
+      "prereqs": [
+        "phys1.orbiting-satellites"
+      ],
+      "viz": [
+        "ph-orbit"
+      ]
+    },
+    {
+      "id": "mech.vis-viva",
+      "slug": "vis-viva",
+      "unit": "gravitation",
+      "title": "Speed on an Elliptical Orbit",
+      "prereqs": [
+        "mech.orbital-energy",
+        "mech.kepler-second-from-newton",
+        "pre.ellipses"
+      ],
+      "viz": [
+        "ph-orbit"
+      ]
+    },
+    {
+      "id": "mech.shm-equation",
+      "slug": "shm-equation",
+      "unit": "oscillations",
+      "title": "The Equation of Simple Harmonic Motion",
+      "prereqs": [
+        "phys1.shm-graphs",
+        "calc1.trig-derivatives",
+        "calc1.higher-derivatives"
+      ],
+      "viz": [
+        "springmass",
+        "trigwave"
+      ]
+    },
+    {
+      "id": "mech.shm-initial-conditions",
+      "slug": "shm-initial-conditions",
+      "unit": "oscillations",
+      "title": "Amplitude and Phase from Starting Conditions",
+      "prereqs": [
+        "mech.shm-equation",
+        "pre.inverse-trig"
+      ],
+      "viz": [
+        "trigwave"
+      ]
+    },
+    {
+      "id": "mech.vertical-spring",
+      "slug": "vertical-spring",
+      "unit": "oscillations",
+      "title": "Springs Hanging Vertically",
+      "prereqs": [
+        "mech.shm-equation"
+      ],
+      "viz": [
+        "ph-oscillator"
+      ]
+    },
+    {
+      "id": "mech.physical-pendulum",
+      "slug": "physical-pendulum",
+      "unit": "oscillations",
+      "title": "Simple and Physical Pendulums",
+      "prereqs": [
+        "mech.shm-equation",
+        "mech.parallel-axis",
+        "phys1.pendulum-period",
+        "calc1.linear-approximation"
+      ],
+      "viz": [
+        "ph-oscillator"
+      ]
+    },
+    {
+      "id": "mech.damped-oscillations",
+      "slug": "damped-oscillations",
+      "unit": "oscillations",
+      "title": "Damped Oscillations",
+      "prereqs": [
+        "mech.shm-equation",
+        "mech.linear-drag",
+        "pre.damped-oscillation"
+      ],
+      "viz": [
+        "springmass"
+      ]
+    },
+    {
+      "id": "mech.driven-resonance",
+      "slug": "driven-resonance",
+      "unit": "oscillations",
+      "title": "Driven Oscillations and Resonance",
+      "prereqs": [
+        "mech.damped-oscillations"
+      ],
+      "viz": [
+        "ph-oscillator"
+      ]
+    }
+  ]
+}

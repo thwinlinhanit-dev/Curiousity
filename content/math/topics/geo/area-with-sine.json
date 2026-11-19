@@ -1,0 +1,168 @@
+{
+  "id": "geo.area-with-sine",
+  "slug": "area-with-sine",
+  "ladder": "math",
+  "course": "geo",
+  "unit": "trigonometry",
+  "title": "Triangle Area with Sine",
+  "short": "Area = ½ab sin C.",
+  "trouble": "",
+  "prereqs": [
+    "geo.solve-right-triangles",
+    "g6.area-triangle"
+  ],
+  "xp": 2,
+  "viz": [
+    "angle"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You know $\\text{Area} = \\frac{1}{2}bh$ from <a href=\"/math/grade-6/area-triangle/\">Area of a Triangle</a>. If you know two sides and the angle between them, but not the height, the trig from <a href=\"/math/geometry/solve-right-triangles/\">Solving Right Triangles</a> supplies the height."
+      },
+      {
+        "t": "why",
+        "html": "In $\\triangle ABC$, take $a = BC$ as the base. Drop the height $h$ from $A$ to line $BC$. That makes a right triangle with hypotenuse $b = CA$ and the angle $C$, so $\\sin C = \\frac{h}{b}$ and $h = b \\sin C$. Then the area is $\\frac{1}{2} \\cdot a \\cdot b \\sin C$. If $C$ is obtuse, the height falls outside the triangle and the right triangle uses the angle $180^\\circ - C$ instead; since $\\sin(180^\\circ - C) = \\sin C$ (your calculator agrees), the same formula works."
+      },
+      {
+        "t": "viz",
+        "name": "geo-fig",
+        "cap": "The height from $A$ is $b \\sin C$, so the area is $\\frac{1}{2} a \\cdot b \\sin C$.",
+        "opts": {
+          "pts": {
+            "C": [
+              0,
+              0
+            ],
+            "B": [
+              7,
+              0
+            ],
+            "A": [
+              2.5,
+              3.5
+            ],
+            "H": [
+              2.5,
+              0
+            ]
+          },
+          "polys": [
+            [
+              "A",
+              "B",
+              "C",
+              {
+                "fill": "blue"
+              }
+            ]
+          ],
+          "segs": [
+            [
+              "A",
+              "H",
+              {
+                "dash": 1,
+                "color": "red",
+                "lab": "h = b sin C"
+              }
+            ],
+            [
+              "C",
+              "B",
+              {
+                "lab": "a"
+              }
+            ],
+            [
+              "C",
+              "A",
+              {
+                "lab": "b"
+              }
+            ]
+          ],
+          "angs": [
+            [
+              "B",
+              "C",
+              "A",
+              {
+                "lab": "C",
+                "r": 24
+              }
+            ],
+            [
+              "A",
+              "H",
+              "B",
+              {
+                "right": 1
+              }
+            ]
+          ],
+          "nolab": [
+            "H"
+          ],
+          "height": 200,
+          "label": "A triangle with sides a and b, the angle C between them, and the height from A"
+        }
+      },
+      {
+        "t": "key",
+        "html": "The area of a triangle is half the product of two sides and the sine of the angle between them: $\\text{Area} = \\frac{1}{2}ab \\sin C$."
+      },
+      {
+        "t": "ex",
+        "title": "An exact area",
+        "q": "Two sides of a triangle are $8$ and $10$, and the angle between them is $30^\\circ$. Find the area.",
+        "steps": [
+          "$\\text{Area} = \\frac{1}{2} \\cdot 8 \\cdot 10 \\cdot \\sin 30^\\circ = 40 \\cdot \\frac{1}{2} = 20$."
+        ],
+        "a": "$20$ square units"
+      },
+      {
+        "t": "ex",
+        "title": "With a calculator",
+        "q": "A triangular garden has sides $12$ m and $15$ m that meet at $72^\\circ$. Find its area to the nearest tenth.",
+        "steps": [
+          "$\\text{Area} = \\frac{1}{2} \\cdot 12 \\cdot 15 \\cdot \\sin 72^\\circ = 90 \\sin 72^\\circ$, which is about $90(0.9511) \\approx 85.6$."
+        ],
+        "a": "About $85.6$ m$^2$"
+      },
+      {
+        "t": "ex",
+        "title": "An obtuse angle",
+        "q": "Find the exact area of a triangle with sides $6$ and $7$ and an included angle of $120^\\circ$.",
+        "steps": [
+          "$\\sin 120^\\circ = \\sin 60^\\circ = \\frac{\\sqrt{3}}{2}$.",
+          "$\\text{Area} = \\frac{1}{2} \\cdot 6 \\cdot 7 \\cdot \\frac{\\sqrt{3}}{2} = \\frac{21\\sqrt{3}}{2}$."
+        ],
+        "a": "$\\frac{21\\sqrt{3}}{2} \\approx 18.2$"
+      },
+      {
+        "t": "p",
+        "html": "The formula also shows how the angle controls the area. With sides $a$ and $b$ fixed, the area is largest when $C = 90^\\circ$, since $\\sin 90^\\circ = 1$, and it shrinks toward 0 as the angle closes up or opens out flat. A parallelogram with sides $a$ and $b$ and an angle $C$ is two such triangles, so its area is $ab \\sin C$."
+      },
+      {
+        "t": "mistake",
+        "html": "Using an angle that is not between the two sides. The formula needs the <i>included</i> angle, the one formed by the two sides you multiply. With sides $a$ and $b$, use $C$; with $b$ and $c$, use $A$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Algebra and Trigonometry 2e, 10.1 Non-right Triangles: Law of Sines (area of an oblique triangle)"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, High School Geometry, G-SRT.D.9"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

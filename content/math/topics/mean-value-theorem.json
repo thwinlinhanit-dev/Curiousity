@@ -1,0 +1,113 @@
+{
+  "id": "ra.mean-value-theorem",
+  "slug": "mean-value-theorem",
+  "ladder": "math",
+  "course": "ra",
+  "unit": "derivatives",
+  "title": "Rolle's Theorem and the Mean Value Theorem",
+  "short": "If f is continuous on [a, b] and differentiable on (a, b), some c in (a, b) has f′(c) = (f(b) − f(a))/(b − a); Rolle's theorem is the case f(a) = f(b).",
+  "trouble": "Students skip the hypotheses (|x| on [−1, 1] has no such c) or report a c outside (a, b).",
+  "prereqs": [
+    "ra.evt",
+    "ra.differentiability",
+    "calc1.mean-value-theorem"
+  ],
+  "xp": 2,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The mean value theorem connects the derivative at one point to the behavior of a function across an interval. It is the reason a positive derivative means increasing, and it is behind every error estimate in calculus. You met it in <a href=\"/math/calculus-1/mean-value-theorem/\">Calculus 1</a>; here is the proof, which rests on the <a href=\"/math/real-analysis/evt/\">extreme value theorem</a> and <a href=\"/math/real-analysis/differentiability/\">differentiability</a>."
+      },
+      {
+        "t": "key",
+        "html": "<b>Rolle's theorem.</b> If $f$ is continuous on $[a, b]$, differentiable on $(a, b)$, and $f(a) = f(b)$, then $f'(c) = 0$ for some $c \\in (a, b)$. <b>Mean value theorem.</b> If $f$ is continuous on $[a, b]$ and differentiable on $(a, b)$, then $f'(c) = \\frac{f(b) - f(a)}{b - a}$ for some $c \\in (a, b)$."
+      },
+      {
+        "t": "why",
+        "html": "<b>Rolle.</b> By the EVT, $f$ has a maximum and a minimum on $[a, b]$. If both occur at the ends, $f$ is constant (since $f(a) = f(b)$) and any $c$ works. Otherwise one of them is at an interior point $c$. At an interior maximum, the difference quotient is $\\le 0$ for $h > 0$ and $\\ge 0$ for $h < 0$, so the derivative, the common limit, is $0$. <b>MVT.</b> Subtract the secant line: $g(x) = f(x) - \\frac{f(b) - f(a)}{b - a}(x - a)$ has $g(a) = g(b) = f(a)$. Rolle gives $g'(c) = 0$, which is $f'(c) = \\frac{f(b) - f(a)}{b - a}$. $\\blacksquare$"
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "fns": [
+            "x^3-3x",
+            {
+              "f": "2",
+              "color": "red",
+              "dash": true,
+              "label": "secant",
+              "from": -1,
+              "to": 2
+            },
+            {
+              "f": "-2",
+              "color": "green",
+              "label": "tangent at c"
+            }
+          ],
+          "xmin": -2,
+          "xmax": 3,
+          "ymin": -4,
+          "ymax": 4
+        },
+        "cap": "$f(x) = x^{3} - 3x$ on $[-1, 2]$ with its secant line: the tangent at $c = 1$ is parallel to it."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A quadratic always gives the midpoint",
+        "q": "Find $c$ for $f(x) = 3x^{2} - 2x$ on $[0, 4]$.",
+        "steps": [
+          "Secant slope: $\\frac{f(4) - f(0)}{4} = \\frac{40}{4} = 10$.",
+          "$f'(c) = 6c - 2 = 10$ gives $c = 2$."
+        ],
+        "a": "$c = 2$, the midpoint. (For any quadratic, $f'$ is linear and the MVT point is the midpoint.)"
+      },
+      {
+        "t": "ex",
+        "title": "A cubic with one admissible $c$",
+        "q": "Find all $c$ for $f(x) = x^{3} - 3x$ on $[-1, 2]$.",
+        "steps": [
+          "Secant slope: $\\frac{f(2) - f(-1)}{3} = \\frac{2 - 2}{3} = 0$.",
+          "$f'(c) = 3c^{2} - 3 = 0$ gives $c = \\pm 1$."
+        ],
+        "a": "Only $c = 1$ is in the open interval $(-1, 2)$."
+      },
+      {
+        "t": "ex",
+        "title": "Counting roots with Rolle",
+        "q": "Show that $x^{5} + x - 3 = 0$ has exactly one real root.",
+        "steps": [
+          "It has at least one: the polynomial is negative at $0$ and positive at $2$ (IVT).",
+          "If it had two, Rolle would give a zero of the derivative $5x^{4} + 1$ between them, but $5x^{4} + 1 > 0$."
+        ],
+        "a": "Exactly one."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Skipping the hypotheses, or the open interval.</b> $|x|$ on $[-1, 1]$ has secant slope $0$ but no point with derivative $0$: it is not differentiable at $0$. Likewise $x^{2/3}$ on $[-1, 1]$. And the theorem's $c$ lies strictly inside $(a, b)$: in the cubic example, $c = -1$ solves the equation but is an endpoint, so it is not the theorem's point."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Jiří Lebl, Basic Analysis I: Introduction to Real Analysis, section 4.2 (Rolle's theorem and the mean value theorem)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.100A Real Analysis, lecture notes on the mean value theorem"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

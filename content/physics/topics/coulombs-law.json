@@ -1,0 +1,111 @@
+{
+  "id": "phys2.coulombs-law",
+  "slug": "coulombs-law",
+  "ladder": "physics",
+  "course": "phys2",
+  "unit": "electrostatics",
+  "title": "Coulomb's Law",
+  "short": "F = k|q₁q₂|/r²: double the distance and the force drops to a quarter.",
+  "trouble": "Students think the larger charge feels the larger force.",
+  "prereqs": [
+    "phys2.charge-conservation",
+    "phys1.gravitational-force"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-efield"
+  ],
+  "figureArchetype": "FieldFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "How strongly do two charges push or pull? In 1785 Charles-Augustin de Coulomb measured it with a delicate twisting balance. The answer looks just like <a href=\"/physics/physics-1/gravitational-force/\">Newton's law of gravitation</a>, with charges in place of masses. It builds on the <a href=\"/physics/physics-2/charge-conservation/\">charges</a> you just met."
+      },
+      {
+        "t": "why",
+        "html": "The force between two point charges grows in proportion to each charge and falls off as the square of the distance. The inverse square has a picture behind it: the influence of a charge spreads out over spheres whose area grows as $4\\pi r^2$, so at twice the distance it is spread over four times the area. Unlike gravity, charge comes in two signs, so the force can push as well as pull. And it is enormously stronger: between an electron and a proton the electric force is about $10^{39}$ times the gravitational one."
+      },
+      {
+        "t": "key",
+        "html": "$$\\role{force}{F} = \\role[Coulomb constant]{constant}{k}\\frac{|\\role{charge}{q_1} \\role{charge}{q_2}|}{\\role[distance between the charges]{position}{r}^2}, \\quad k = 8.99 \\times 10^{9}\\,\\text{N}\\cdot\\text{m}^2/\\text{C}^2$$ The force acts along the line between the charges: like charges repel, unlike attract. Each charge feels the same size of force (Newton's third law)."
+      },
+      {
+        "t": "viz",
+        "name": "ph-efield",
+        "opts": {
+          "mode": "points",
+          "charges": [
+            {
+              "q": 2,
+              "x": -0.1,
+              "y": 0
+            },
+            {
+              "q": -2,
+              "x": 0.1,
+              "y": 0
+            }
+          ],
+          "task": "Drag the charges closer. Watch the force on the test charge grow."
+        },
+        "cap": "Two charges and their field lines. The force on a test charge depends on both charges and on the distances."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Two charges",
+        "q": "Find the force between $+3.0\\,\\mu\\text{C}$ and $-5.0\\,\\mu\\text{C}$ charges $30\\,\\text{cm}$ apart.",
+        "steps": [
+          "SI units: $3.0 \\times 10^{-6}\\,\\text{C}$, $5.0 \\times 10^{-6}\\,\\text{C}$, $r = 0.30\\,\\text{m}$.",
+          "$$F = (8.99 \\times 10^{9})\\dfrac{(3.0 \\times 10^{-6})(5.0 \\times 10^{-6})}{(0.30)^2} = \\dfrac{0.135}{0.090} = 1.50\\,\\text{N}.$$",
+          "Opposite signs, so the force is attractive: each charge is pulled toward the other with $1.50\\,\\text{N}$."
+        ],
+        "a": "$1.50\\,\\text{N}$, attractive"
+      },
+      {
+        "t": "ex",
+        "title": "Scaling",
+        "q": "Two charges attract with $12\\,\\text{N}$. One charge is doubled and the distance is tripled. What is the new force?",
+        "steps": [
+          "Doubling a charge doubles $F$. Tripling $r$ divides $F$ by $3^2 = 9$.",
+          "$F = 12\\,\\text{N} \\times \\dfrac{2}{9} = 2.67\\,\\text{N}$."
+        ],
+        "a": "$2.67\\,\\text{N}$"
+      },
+      {
+        "t": "ex",
+        "title": "Inside a hydrogen atom",
+        "q": "An electron and a proton are $5.29 \\times 10^{-11}\\,\\text{m}$ apart. Compare the electric force with the gravitational force ($6.67 \\times 10^{-11}\\,\\text{N}\\cdot\\text{m}^2/\\text{kg}^2$).",
+        "steps": [
+          "Electric: $$F_e = \\dfrac{(8.99 \\times 10^{9})(1.60 \\times 10^{-19})^2}{(5.29 \\times 10^{-11})^2} = 8.22 \\times 10^{-8}\\,\\text{N}.$$",
+          "Gravity: $$F_g = \\dfrac{(6.67 \\times 10^{-11})(9.11 \\times 10^{-31})(1.67 \\times 10^{-27})}{(5.29 \\times 10^{-11})^2} = 3.63 \\times 10^{-47}\\,\\text{N}.$$",
+          "$F_e/F_g \\approx 2.3 \\times 10^{39}$. Inside atoms, gravity does not matter at all."
+        ],
+        "a": "The electric force is about $2 \\times 10^{39}$ times stronger"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking the larger charge feels the larger force. The formula has one number for the pair, $k|q_1q_2|/r^2$, and swapping the labels changes nothing. A $+8\\,\\mu\\text{C}$ charge pushes a $+2\\,\\mu\\text{C}$ charge exactly as hard as the $+2\\,\\mu\\text{C}$ charge pushes back, as Newton's third law says. Check: the force on each charge is equal in size and opposite in direction."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e, section 18.3 Coulomb’s Law"
+      },
+      {
+        "name": "OpenStax, University Physics Volume 2, section 5.3 Coulomb’s Law"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-PS2-4"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,100 @@
+{
+  "id": "em.reactance",
+  "slug": "reactance",
+  "ladder": "physics",
+  "course": "em",
+  "unit": "ac-maxwell",
+  "title": "Reactance of Capacitors and Inductors",
+  "short": "X_C = 1/(ωC) and X_L = ωL; current leads the voltage in a capacitor and lags it in an inductor.",
+  "trouble": "Students think a capacitor's reactance grows with frequency, when it shrinks.",
+  "prereqs": [
+    "em.ac-rms",
+    "em.inductance",
+    "phys2.capacitors"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-circuit"
+  ],
+  "figureArchetype": "FieldFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A resistor obeys $V = IR$ at every instant. A <a href=\"/physics/physics-2/capacitors/\">capacitor</a> or an <a href=\"/physics/electricity-and-magnetism/inductance/\">inductor</a> in an AC circuit also limits the current, but in its own way: by an amount that depends on the frequency, and with its current out of step with its voltage. The \"resistance\" of each is called its <b>reactance</b>."
+      },
+      {
+        "t": "key",
+        "html": "$$X_C = \\frac{1}{\\omega C}, \\qquad X_L = \\omega L, \\qquad I_{\\text{rms}} = \\frac{V_{\\text{rms}}}{X}.$$\n        In a capacitor the current <b>leads</b> the voltage by $90^\\circ$; in an inductor it <b>lags</b> by $90^\\circ$. Neither uses any average power."
+      },
+      {
+        "t": "why",
+        "html": "<b>Capacitor:</b> $q = CV$, so $I = C\\dfrac{dV}{dt}$. With $V = V_0\\sin\\omega t$, $I = \\omega CV_0\\cos\\omega t$: the peak current is $\\omega CV_0 = V_0/X_C$. The cosine peaks a quarter cycle before the sine, so the current leads. At high frequency the capacitor is charged and discharged so quickly that it never fills up, so it passes current easily: $X_C$ falls.\n        <br><b>Inductor:</b> $V = L\\dfrac{dI}{dt}$. With $I = I_0\\sin\\omega t$, $V = \\omega LI_0\\cos\\omega t$: peak voltage $\\omega LI_0 = X_LI_0$, and the voltage leads, so the current lags. The faster the current tries to change, the harder the inductor fights: $X_L$ rises with frequency."
+      },
+      {
+        "t": "viz",
+        "name": "ph-circuit",
+        "opts": {
+          "mode": "ac",
+          "circuit": "AC(10, f=50) series(R1:1, C1:100)"
+        },
+        "cap": "A capacitor (with a tiny resistance) on an AC source. Change the frequency: the current grows as the frequency rises, and the phasors show the current a quarter turn ahead of the capacitor's voltage."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A capacitor at two frequencies",
+        "q": "Find the reactance of a $10\\ \\mu\\text{F}$ capacitor at $60\\ \\text{Hz}$ and at $6.0\\ \\text{kHz}$.",
+        "steps": [
+          "$X_C = \\dfrac{1}{2\\pi(60)(10 \\times 10^{-6})} = 265\\ \\text{Ω}$.",
+          "At $100$ times the frequency, $100$ times smaller: $2.65\\ \\text{Ω}$."
+        ],
+        "a": "$265\\ \\text{Ω}$ and $2.65\\ \\text{Ω}$"
+      },
+      {
+        "t": "ex",
+        "title": "An inductor on the mains",
+        "q": "A $50\\ \\text{mH}$ inductor is connected across $120\\ \\text{V}$ rms at $60\\ \\text{Hz}$. Find the rms current.",
+        "steps": [
+          "$X_L = 2\\pi(60)(0.050) = 18.8\\ \\text{Ω}$.",
+          "$I_{\\text{rms}} = 120/18.8 = 6.37\\ \\text{A}$, a quarter cycle behind the voltage."
+        ],
+        "a": "$I_{\\text{rms}} \\approx 6.37\\ \\text{A}$"
+      },
+      {
+        "t": "ex",
+        "title": "Where they match",
+        "q": "At what frequency do that inductor and that capacitor have equal reactances?",
+        "steps": [
+          "$\\omega L = \\dfrac{1}{\\omega C}$ gives $\\omega = \\dfrac{1}{\\sqrt{LC}}$.",
+          "$f = \\dfrac{1}{2\\pi\\sqrt{(0.050)(10 \\times 10^{-6})}} = 225\\ \\text{Hz}$. This is the resonant frequency you will meet soon."
+        ],
+        "a": "$f \\approx 225\\ \\text{Hz}$"
+      },
+      {
+        "t": "p",
+        "html": "Because the two reactances move in opposite directions, capacitors and inductors sort signals by frequency. In a loudspeaker crossover, a capacitor in series with the small tweeter lets the high notes through and holds back the low ones, while an inductor in series with the large woofer does the reverse."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>\"A capacitor's reactance grows with frequency.\"</b> It shrinks: $X_C = 1/(\\omega C)$. At high frequency a capacitor behaves almost like a wire, and at zero frequency (steady DC) it blocks completely, once charged. It is the inductor whose reactance grows. Check with the extremes: DC through a capacitor is blocked ($X_C \\to \\infty$ as $\\omega \\to 0$); DC through an inductor flows freely ($X_L \\to 0$)."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 2, 15.2 Simple AC Circuits"
+      },
+      {
+        "name": "MIT OpenCourseWare, 8.02 Physics II: Electricity and Magnetism"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

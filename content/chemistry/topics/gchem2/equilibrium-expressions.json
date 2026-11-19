@@ -1,0 +1,96 @@
+{
+  "id": "gchem2.equilibrium-expressions",
+  "slug": "equilibrium-expressions",
+  "ladder": "chemistry",
+  "course": "gchem2",
+  "unit": "equilibrium",
+  "title": "The Equilibrium Constant",
+  "short": "K is products over reactants, each raised to its coefficient, with pure solids and liquids left out.",
+  "trouble": "Students put solids and pure liquids into K, or forget to raise the concentrations to their coefficients.",
+  "prereqs": [
+    "chem.dynamic-equilibrium"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-equilibrium"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "At <a href=\"/chemistry/chemistry/dynamic-equilibrium/\">dynamic equilibrium</a>, the forward and reverse reactions run at the same rate and the concentrations stop changing. Experiments show something striking: whatever amounts you start with, one particular combination of the equilibrium concentrations always comes out the same at a given temperature. That number is the equilibrium constant."
+      },
+      {
+        "t": "key",
+        "html": "For $a\\mathrm{A} + b\\mathrm{B} \\rightleftharpoons c\\mathrm{C} + d\\mathrm{D}$,\n$$K_c = \\frac{[\\mathrm{C}]^c[\\mathrm{D}]^d}{[\\mathrm{A}]^a[\\mathrm{B}]^b}$$\nusing equilibrium concentrations: products over reactants, each raised to its coefficient. Pure solids and pure liquids are left out. $K$ depends only on temperature."
+      },
+      {
+        "t": "why",
+        "html": "For one elementary step, $\\mathrm{A + B \\rightleftharpoons C}$, equilibrium means $k_\\text{f}[\\mathrm{A}][\\mathrm{B}] = k_\\text{r}[\\mathrm{C}]$, so $\\dfrac{[\\mathrm{C}]}{[\\mathrm{A}][\\mathrm{B}]} = \\dfrac{k_\\text{f}}{k_\\text{r}}$, a constant. Thermodynamics shows the same form holds for any balanced equation, whatever the mechanism. Solids and pure liquids drop out because $K$ really uses <i>activities</i>: concentration relative to $1\\ \\text{M}$ for solutes, pressure relative to $1\\ \\text{bar}$ for gases, and exactly 1 for a pure solid or liquid, whose \"concentration\" cannot change. That is also why $K$ has no units."
+      },
+      {
+        "t": "viz",
+        "name": "ch-equilibrium",
+        "opts": {
+          "rxn": "N2+3H2<=>2NH3",
+          "c0": {
+            "N2": 1,
+            "H2": 3
+          },
+          "show": [
+            "Q",
+            "ice"
+          ]
+        },
+        "cap": "Nitrogen and hydrogen approaching equilibrium. Q climbs until it equals K, and then the concentrations hold steady."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Writing K",
+        "q": "Write $K_c$ for $\\mathrm{N_2(g) + 3H_2(g) \\rightleftharpoons 2NH_3(g)}$ and for $\\mathrm{CaCO_3(s) \\rightleftharpoons CaO(s) + CO_2(g)}$.",
+        "steps": [
+          "Ammonia: products over reactants, with the coefficients as powers: $K_c = \\dfrac{[\\mathrm{NH_3}]^2}{[\\mathrm{N_2}][\\mathrm{H_2}]^3}$.",
+          "Limestone: both solids are left out, so $K_c = [\\mathrm{CO_2}]$. At a given temperature the $\\mathrm{CO_2}$ concentration over the solids is fixed, however much solid is there."
+        ],
+        "a": "$K_c = \\dfrac{[\\mathrm{NH_3}]^2}{[\\mathrm{N_2}][\\mathrm{H_2}]^3}$ and $K_c = [\\mathrm{CO_2}]$."
+      },
+      {
+        "t": "ex",
+        "title": "A value from data",
+        "q": "At $703\\ \\text{K}$, an equilibrium mixture of $\\mathrm{H_2(g) + I_2(g) \\rightleftharpoons 2HI(g)}$ has $[\\mathrm{H_2}] = [\\mathrm{I_2}] = 0.0100\\ \\text{M}$ and $[\\mathrm{HI}] = 0.0737\\ \\text{M}$. Find $K_c$.",
+        "steps": [
+          "$$K_c = \\dfrac{[\\mathrm{HI}]^2}{[\\mathrm{H_2}][\\mathrm{I_2}]} = \\dfrac{(0.0737)^2}{(0.0100)(0.0100)}$$",
+          "$= \\dfrac{5.43 \\times 10^{-3}}{1.00 \\times 10^{-4}} = 54.3$."
+        ],
+        "a": "$K_c = 54.3$."
+      },
+      {
+        "t": "p",
+        "html": "In water, the solvent is a pure liquid too, so $\\mathrm{H_2O(l)}$ is left out of expressions such as $K_a$. But water vapor, $\\mathrm{H_2O(g)}$, is a gas and stays in."
+      },
+      {
+        "t": "note",
+        "html": "A value of $K$ belongs to one balanced equation at one temperature. Write the equation differently and $K$ changes (see <a href=\"/chemistry/general-chemistry-2/manipulating-k/\">manipulating K</a>); change the temperature and $K$ changes too. For gases, $K$ can also be written with partial pressures, as <a href=\"/chemistry/general-chemistry-2/kp-kc/\">Kp</a>."
+      },
+      {
+        "t": "mistake",
+        "html": "Putting solids or pure liquids into $K$, or forgetting the powers. $\\mathrm{CaCO_3(s)}$ does not belong in its own decomposition constant, and $[\\mathrm{H_2}]$ must be cubed in the ammonia expression. Check: every term in $K$ is an (aq) or (g) species, with its coefficient as the exponent."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 13.2 Equilibrium Constants"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

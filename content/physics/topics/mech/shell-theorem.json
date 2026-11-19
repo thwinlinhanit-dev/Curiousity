@@ -1,0 +1,89 @@
+{
+  "id": "mech.shell-theorem",
+  "slug": "shell-theorem",
+  "ladder": "physics",
+  "course": "mech",
+  "unit": "gravitation",
+  "title": "Gravity of a Spherical Body",
+  "short": "Outside a uniform sphere, gravity acts as if all the mass sat at the center; inside, g grows in proportion to r.",
+  "trouble": "Students think gravity is strongest at the center of the Earth.",
+  "prereqs": [
+    "phys1.gravitational-field",
+    "calc1.substitution-definite"
+  ],
+  "xp": 3,
+  "viz": [
+    "ph-orbit"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/physics/physics-1/gravitational-field/\">Gravitational Field Strength</a> used $g = GM/r^2$ for a planet, as if all its mass sat at one point. Newton proved that this is exactly right outside a sphere, and found what happens inside. The proof is a single integral, made easy by <a href=\"/math/calculus-1/substitution-definite/\">Substitution in Definite Integrals</a>."
+      },
+      {
+        "t": "why",
+        "html": "Take a thin uniform shell of mass $M$ and radius $R$, and a point P a distance $r$ from its center. Slice the shell into rings around the line to P. The ring at angle $\\theta$ has mass $dM = \\tfrac{M}{2}\\sin\\theta\\,d\\theta$, all of it a distance $s$ from P, where $s^2 = r^2 + R^2 - 2rR\\cos\\theta$. By symmetry only the pull along the line to the center survives, so $$g = \\int \\dfrac{G\\,dM}{s^2}\\cdot\\dfrac{r - R\\cos\\theta}{s}.$$ Now substitute $s$ for $\\theta$: $2s\\,ds = 2rR\\sin\\theta\\,d\\theta$, and $r - R\\cos\\theta = \\dfrac{s^2 + r^2 - R^2}{2r}$. The integral becomes $$g = \\dfrac{GM}{4r^2R}\\int\\left(1 + \\dfrac{r^2 - R^2}{s^2}\\right)ds.$$ Outside the shell, $s$ runs from $r - R$ to $r + R$ and the integral is $4R$, so $g = GM/r^2$. Inside, $s$ runs from $R - r$ to $R + r$ and the integral is exactly $0$."
+      },
+      {
+        "t": "key",
+        "html": "<b>Shell theorem.</b> A uniform spherical shell pulls on an outside mass as if all its mass were at its center, and exerts no net pull at all on a mass inside it. So for a uniform solid sphere: $$g = \\dfrac{GM}{r^2} \\;(r \\ge R), \\qquad g = \\dfrac{GM}{R^3}r = g_s\\dfrac{r}{R} \\;(r \\le R).$$ Inside, only the mass closer to the center counts; $g$ grows from zero at the center to its largest value at the surface."
+      },
+      {
+        "t": "viz",
+        "name": "ph-orbit",
+        "opts": {
+          "mode": "shell",
+          "task": "Read $g$ against the distance from the center: a straight line inside, the inverse square outside."
+        },
+        "cap": "Gravity of a uniform planet: zero at the center, growing in proportion to $r$ to a peak at the surface, then falling as $1/r^2$."
+      },
+      {
+        "t": "ex",
+        "title": "Down a mine shaft",
+        "q": "Model Earth as a uniform sphere ($R = 6.37 \\times 10^{6}\\ \\text{m}$, $g_s = 9.8\\ \\text{m/s}^2$). What would $g$ be halfway to the center?",
+        "steps": [
+          "Inside, $g = g_s\\dfrac{r}{R}$.",
+          "At $r = R/2$: $g = 9.8(0.5) = 4.9\\ \\text{m/s}^2$."
+        ],
+        "a": "$4.9\\ \\text{m/s}^2$ in the uniform model."
+      },
+      {
+        "t": "ex",
+        "title": "A tunnel through the Earth",
+        "q": "Drop a ball into a frictionless, airless tunnel straight through a uniform Earth. How long until it reaches the other side?",
+        "steps": [
+          "Along the tunnel, $\\ddot{x} = -\\dfrac{g_s}{R}x$: the pull grows in proportion to the distance from the center, like a spring.",
+          "So the motion is simple harmonic with $$T = 2\\pi\\sqrt{\\dfrac{R}{g_s}} = 2\\pi\\sqrt{\\dfrac{6.37 \\times 10^{6}}{9.8}} = 5070\\ \\text{s} \\approx 84\\ \\text{min}$$",
+          "The other side is half a period away: about 42 minutes."
+        ],
+        "a": "About 42 minutes."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking gravity is strongest at Earth's center, where you're \"closest to all the mass.\" At the center, the mass pulls equally in every direction, and the pulls cancel: $g = 0$. Check with the shell theorem: on the way down, every shell above you stops pulling at all, so less and less mass is left below you."
+      },
+      {
+        "t": "note",
+        "html": "The real Earth is not uniform: its iron core is much denser than its rocky mantle. Because of that, $g$ actually changes little on the way down through the mantle and is largest near the top of the core, before falling to zero at the center. The shell theorem still holds for each spherical layer."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 1, 13.2 Gravitation Near Earth's Surface"
+      },
+      {
+        "name": "OpenStax University Physics Volume 1, 13.1 Newton's Law of Universal Gravitation"
+      },
+      {
+        "name": "MIT OpenCourseWare 8.01 Classical Mechanics (scope and sequence)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

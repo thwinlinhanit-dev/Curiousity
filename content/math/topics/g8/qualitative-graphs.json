@@ -1,0 +1,139 @@
+{
+  "id": "g8.qualitative-graphs",
+  "slug": "qualitative-graphs",
+  "ladder": "math",
+  "course": "g8",
+  "unit": "functions",
+  "title": "Describing Graphs in Words",
+  "short": "Tell the story of a graph and sketch a graph from a story.",
+  "trouble": "Students read a graph as a picture of the path, so a distance graph that goes up looks like climbing a hill.",
+  "prereqs": [
+    "g8.function-representations"
+  ],
+  "xp": 1,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Many graphs tell a story without any equation. You can read the story from the <a href=\"/math/pre-algebra/function-representations/\">graph of a function</a>, or sketch a graph from a story, by looking at its shape."
+      },
+      {
+        "t": "why",
+        "html": "A graph pairs each time with an amount. Its height is the amount, not a place on a map. So a rising part means the amount is growing, a flat part means it is not changing, and a falling part means it is shrinking. A steeper part means the change is happening faster."
+      },
+      {
+        "t": "key",
+        "html": "Read left to right, one piece at a time: rising (increasing), flat (constant) or falling (decreasing), and steep (fast) or gentle (slow)."
+      },
+      {
+        "t": "viz",
+        "name": "g8-plot",
+        "opts": {
+          "xmin": 0,
+          "xmax": 12,
+          "ymin": 0,
+          "ymax": 11,
+          "xstep": 1,
+          "ystep": 1,
+          "every": 2,
+          "equal": false,
+          "height": 300,
+          "xlabel": "time (minutes)",
+          "ylabel": "distance from home (blocks)",
+          "paths": [
+            {
+              "pts": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  4,
+                  4
+                ],
+                [
+                  6,
+                  4
+                ],
+                [
+                  7,
+                  10
+                ],
+                [
+                  11,
+                  0
+                ]
+              ],
+              "labels": [
+                "A",
+                "B",
+                "C",
+                "D"
+              ],
+              "color": "blue"
+            }
+          ]
+        },
+        "cap": "Ana’s walk: distance from home over 11 minutes."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Tell the story",
+        "q": "Describe Ana’s walk in the graph above.",
+        "steps": [
+          "A: the distance rises gently, so she walks away from home slowly.",
+          "B: flat, so she stops for 2 minutes.",
+          "C: a steep rise, so she moves away fast (maybe she runs).",
+          "D: the graph falls to 0, so she heads back and arrives home."
+        ],
+        "a": "walk away, stop, run farther, return home"
+      },
+      {
+        "t": "ex",
+        "title": "Sketch from a story",
+        "q": "A bathtub fills at a steady rate, stays full while someone bathes, then drains quickly. Describe the graph of water in the tub over time.",
+        "steps": [
+          "Filling steadily: a straight part rising at a constant slant.",
+          "Bathing: a flat part.",
+          "Draining quickly: a steep part falling to 0."
+        ],
+        "a": "rise, flat, steep fall"
+      },
+      {
+        "t": "ex",
+        "title": "Compare speeds",
+        "q": "During which part of Ana’s walk was she moving fastest?",
+        "steps": [
+          "Speed shows as steepness. Part C rises 6 blocks in 1 minute; part A rises 4 blocks in 4 minutes; part D falls 10 blocks in 4 minutes.",
+          "C is the steepest."
+        ],
+        "a": "part C"
+      },
+      {
+        "t": "mistake",
+        "html": "Reading a distance graph like a picture of the path, so that a rising part looks like walking uphill. The graph goes up because the distance from home grows; the ground could be flat. A part that falls to 0 means arriving home, not walking downhill."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 8, 8.F.B.5 (describe a function by analyzing a graph)"
+      },
+      {
+        "name": "OpenStax Intermediate Algebra 2e, Section 3.6: Graphs of Functions"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,113 @@
+{
+  "id": "geo.perpendicular-parallel-constructions",
+  "slug": "perpendicular-parallel-constructions",
+  "ladder": "math",
+  "course": "geo",
+  "unit": "tools",
+  "title": "Constructing Perpendicular and Parallel Lines",
+  "short": "Construct a perpendicular bisector and a parallel through a point.",
+  "trouble": "",
+  "prereqs": [
+    "geo.basic-constructions"
+  ],
+  "xp": 2,
+  "viz": [
+    "geoboard"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "With the moves from <a href=\"/math/geometry/basic-constructions/\">Copying and Bisecting with Compass and Straightedge</a> you can also build right angles and parallel lines. Each construction is a short chain: arcs make equal distances, and equal distances force the lines into place."
+      },
+      {
+        "t": "why",
+        "html": "Look at the perpendicular bisector of $\\overline{AB}$. Arcs of the same radius from $A$ and from $B$ cross at $X$ and $Y$, so $X$ is the same distance from $A$ as from $B$, and so is $Y$. The points that are equally far from $A$ and $B$ form exactly one line, the perpendicular bisector (you will prove this in <a href=\"/math/geometry/bisectors-circumcenter/\">Perpendicular Bisectors and the Circumcenter</a>). Two points fix a line, so line $XY$ must be it."
+      },
+      {
+        "t": "viz",
+        "name": "geo-construct",
+        "cap": "The perpendicular bisector of $\\overline{AB}$: equal arcs from both ends.",
+        "opts": {
+          "kind": "perp-bisector"
+        }
+      },
+      {
+        "t": "h",
+        "text": "A perpendicular through a point"
+      },
+      {
+        "t": "p",
+        "html": "If $P$ is not on line $\\ell$, draw an arc centered at $P$ that crosses $\\ell$ at $A$ and $B$. Now $P$ is equally far from $A$ and $B$, so the perpendicular bisector of $\\overline{AB}$ passes through $P$. Construct it as before."
+      },
+      {
+        "t": "viz",
+        "name": "geo-construct",
+        "cap": "Dropping a perpendicular from $P$ to the line.",
+        "opts": {
+          "kind": "perp-from-point"
+        }
+      },
+      {
+        "t": "ex",
+        "title": "A perpendicular at a point on the line",
+        "q": "$P$ lies on line $\\ell$. Construct the line through $P$ perpendicular to $\\ell$.",
+        "steps": [
+          "With the compass on $P$, mark $A$ and $B$ on $\\ell$, one on each side, so $PA = PB$.",
+          "Open the compass wider. Draw arcs from $A$ and from $B$ (same width) that cross at $X$.",
+          "Draw line $PX$. Both $P$ and $X$ are equally far from $A$ and $B$, so $PX$ is the perpendicular bisector of $\\overline{AB}$: it meets $\\ell$ at a right angle at $P$."
+        ],
+        "a": "Line $PX \\perp \\ell$."
+      },
+      {
+        "t": "h",
+        "text": "A parallel through a point"
+      },
+      {
+        "t": "p",
+        "html": "To draw the line through $P$ parallel to $\\ell$, draw any line through $P$ crossing $\\ell$ at $Q$. Then copy the angle at $Q$ to $P$, in the same position. The two angles are corresponding angles, and congruent corresponding angles make the lines parallel (the converse you will prove in <a href=\"/math/geometry/line-angle-theorems/\">Proving Theorems about Lines and Angles</a>)."
+      },
+      {
+        "t": "viz",
+        "name": "geo-construct",
+        "cap": "The parallel construction copies a corresponding angle.",
+        "opts": {
+          "kind": "parallel"
+        }
+      },
+      {
+        "t": "key",
+        "html": "The perpendicular bisector of $\\overline{AB}$ is the set of points equally far from $A$ and $B$, so equal arcs from $A$ and $B$ find it. A parallel line comes from copying a corresponding angle."
+      },
+      {
+        "t": "ex",
+        "title": "Checking with coordinates",
+        "q": "Find the slope of the perpendicular bisector of $A(1, 1)$ and $B(7, 5)$, and the point it must pass through.",
+        "steps": [
+          "It passes through the midpoint: $\\left(\\frac{1 + 7}{2}, \\frac{1 + 5}{2}\\right) = (4, 3)$.",
+          "Slope of $\\overline{AB}$: $\\frac{5 - 1}{7 - 1} = \\frac{2}{3}$. A perpendicular slope is the negative reciprocal: $-\\frac{3}{2}$.",
+          "Equation: $y - 3 = -\\frac{3}{2}(x - 4)$."
+        ],
+        "a": "Slope $-\\frac{3}{2}$, through $(4, 3)$."
+      },
+      {
+        "t": "mistake",
+        "html": "Drawing the first arc from $P$ too small. If it touches line $\\ell$ once or not at all, there is no segment $\\overline{AB}$ to bisect. Open the compass wide enough to cross $\\ell$ twice, and keep one width for each pair of arcs."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Euclid, <i>Elements</i>, Book I, Propositions 10, 11, 12 and 31"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, High School Geometry, G-CO.D.12"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

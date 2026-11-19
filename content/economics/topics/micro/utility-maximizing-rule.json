@@ -1,0 +1,155 @@
+{
+  "id": "micro.utility-maximizing-rule",
+  "slug": "utility-maximizing-rule",
+  "ladder": "economics",
+  "course": "micro",
+  "unit": "margin",
+  "title": "Marginal Utility per Dollar",
+  "short": "Spend so the last dollar on each good adds the same utility: MUx/Px = MUy/Py.",
+  "trouble": "Students compare marginal utilities without dividing by price, so they buy more of whatever is most enjoyable no matter what it costs.",
+  "prereqs": [
+    "micro.marginal-utility",
+    "micro.budget-constraint",
+    "g6.unit-rate"
+  ],
+  "xp": 2,
+  "viz": [
+    "ec-marginal"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You know marginal utility (<a href=\"/economics/microeconomics/marginal-utility/\">Total and Marginal Utility</a>) and the budget line (<a href=\"/economics/microeconomics/budget-constraint/\">Budget Constraints</a>). Put them together and you can answer a shopper's real question: with a fixed budget, how much of each good gives the most total utility? The key is a unit rate, utility per dollar, like the price per ounce in <a href=\"/math/grade-6/unit-rate/\">Unit Rates</a>."
+      },
+      {
+        "t": "key",
+        "html": "Spend each next dollar where it adds the most utility: on the good with the higher <b>marginal utility per dollar</b>, $MU/P$. When the budget is spent, the best bundle satisfies $$\\frac{MU_x}{P_x} = \\frac{MU_y}{P_y}.$$"
+      },
+      {
+        "t": "why",
+        "html": "Suppose the last dollar on pizza gives 6 utils and the last dollar on books gives 4. Move one dollar from books to pizza: you lose about 4 utils and gain about 6, so total utility rises. As you buy more pizza its MU falls, and as you buy fewer books their MU rises, so the two ratios move toward each other. Only when they are equal does no swap help. This also explains the law of demand: if the price of pizza rises, $MU/P$ for pizza falls, and the rule says buy less of it."
+      },
+      {
+        "t": "viz",
+        "name": "ec-marginal",
+        "opts": {
+          "mode": "utility",
+          "goods": [
+            {
+              "name": "Apples",
+              "price": 1,
+              "tu": [
+                10,
+                18,
+                24,
+                28,
+                30,
+                31
+              ]
+            },
+            {
+              "name": "Books",
+              "price": 2,
+              "tu": [
+                24,
+                40,
+                52,
+                60,
+                64,
+                66
+              ]
+            }
+          ],
+          "income": 9
+        },
+        "cap": "Press \"Spend on the next unit\" to buy whichever good has the higher MU per dollar. With \\$9 it ends at 3 apples and 3 books, where both ratios equal 6 utils per dollar."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Units",
+          "Apples MU",
+          "Apples MU/P (\\$1)",
+          "Books MU",
+          "Books MU/P (\\$2)"
+        ],
+        "rows": [
+          [
+            "1",
+            "10",
+            "10",
+            "24",
+            "12"
+          ],
+          [
+            "2",
+            "8",
+            "8",
+            "16",
+            "8"
+          ],
+          [
+            "3",
+            "6",
+            "6",
+            "12",
+            "6"
+          ],
+          [
+            "4",
+            "4",
+            "4",
+            "8",
+            "4"
+          ]
+        ],
+        "cap": "Apples cost \\$1 and books \\$2."
+      },
+      {
+        "t": "ex",
+        "title": "Spending \\$9",
+        "q": "Using the table, how should Kim spend \\$9 on apples (\\$1) and books (\\$2)?",
+        "steps": [
+          "First dollar choice: book 1 (12 utils per dollar) beats apple 1 (10). Buy a book: \\$2 spent.",
+          "Next: apple 1 (10) beats book 2 (8). Buy it: \\$3 spent.",
+          "Next: apple 2 and book 2 tie at 8. Buy both: \\$6 spent.",
+          "Next: apple 3 and book 3 tie at 6. Buy both: \\$9 spent, and the money is gone.",
+          "Check the rule: $\\dfrac{MU_{\\text{apple}}}{P} = \\dfrac{6}{1} = 6$ and $\\dfrac{MU_{\\text{book}}}{P} = \\dfrac{12}{2} = 6$. Equal."
+        ],
+        "a": "3 apples and 3 books."
+      },
+      {
+        "t": "ex",
+        "title": "Should she switch?",
+        "q": "At her current bundle, the last apple (\\$1) gave 4 utils and the last book (\\$2) gave 12 utils. Is she maximizing utility?",
+        "steps": [
+          "Apples: $4/1 = 4$ utils per dollar. Books: $12/2 = 6$ utils per dollar.",
+          "Books give more per dollar, so moving \\$2 from apples to one more book gains about 12 utils and loses about 8."
+        ],
+        "a": "No: she should buy more books and fewer apples."
+      },
+      {
+        "t": "mistake",
+        "html": "Comparing marginal utilities without dividing by price. A book's 12 utils beat an apple's 6, but the book costs twice as much, so per dollar they tie. Buying whatever you enjoy most, whatever it costs, ignores the opportunity cost of the money. Check: always divide each MU by its own price before comparing."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, 6.1 Consumption Choices"
+      },
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, 6.2 How Changes in Income and Prices Affect Consumption Choices"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.01 Principles of Microeconomics (scope and sequence)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

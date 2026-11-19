@@ -1,0 +1,139 @@
+{
+  "id": "calc3.minimizing-loss",
+  "slug": "minimizing-loss",
+  "ladder": "math",
+  "course": "calc3",
+  "unit": "optimization",
+  "title": "Fitting a Model by Minimizing Loss",
+  "short": "Choose a line's slope and intercept to make the mean squared error as small as possible.",
+  "trouble": "Students differentiate with respect to x instead of the parameters m and b, or drop the minus sign the chain rule brings out of (y − (mx + b))².",
+  "prereqs": [
+    "calc3.gradient-descent",
+    "stat.least-squares-line"
+  ],
+  "xp": 3,
+  "viz": [
+    "calc3-fitline"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In Probability and Statistics you met the <a href=\"/math/probability-and-statistics/least-squares-line/\">least-squares line</a>, the line with the smallest sum of squared residuals, and used formulas for its slope and intercept. Here you will see where those formulas come from, and a second way to find the same line: the way that scales up to models with millions of parameters."
+      },
+      {
+        "t": "key",
+        "html": "A model $\\hat{y} = mx + b$ has two <b>parameters</b>, $m$ and $b$. Its <b>loss</b> on the data $(x_{1}, y_{1}), \\ldots, (x_{n}, y_{n})$ is the mean squared error $$L(m, b) = \\frac{1}{n}\\sum_{i=1}^{n} \\left(y_{i} - (mx_{i} + b)\\right)^{2}.$$ Fitting the model means minimizing $L$: either solve $\\nabla L = \\mathbf{0}$ exactly, or run <a href=\"/math/calculus-3/gradient-descent/\">gradient descent</a> on $L$."
+      },
+      {
+        "t": "why",
+        "html": "The data are fixed numbers; the variables are $m$ and $b$. The inside $y_{i} - mx_{i} - b$ has derivative $-x_{i}$ with respect to $m$ and $-1$ with respect to $b$, so by the <a href=\"/math/calculus-1/chain-rule/\">chain rule</a> $$\\frac{\\partial L}{\\partial m} = -\\frac{2}{n}\\sum x_{i}\\left(y_{i} - mx_{i} - b\\right), \\qquad \\frac{\\partial L}{\\partial b} = -\\frac{2}{n}\\sum \\left(y_{i} - mx_{i} - b\\right).$$ Setting both to $0$ gives the <b>normal equations</b> $$m\\sum x_{i}^{2} + b\\sum x_{i} = \\sum x_{i}y_{i}, \\qquad m\\sum x_{i} + nb = \\sum y_{i}.$$ $L$ is a quadratic bowl: its second-derivative test gives $D = \\frac{4}{n^{2}}\\left(n\\sum x_{i}^{2} - \\left(\\sum x_{i}\\right)^{2}\\right) > 0$ whenever the $x_{i}$ are not all equal. So its one critical point is the minimum, the least-squares line."
+      },
+      {
+        "t": "viz",
+        "name": "calc3-fitline",
+        "opts": {
+          "points": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              6
+            ]
+          ],
+          "start": [
+            0,
+            0
+          ],
+          "eta": 0.05
+        },
+        "cap": "Left: the data, the line and its squared residuals. Right: the loss over the $(m, b)$-plane. Each step of gradient descent moves the red dot downhill, and the line on the left follows. Press Show the exact answer to compare."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "The exact answer",
+        "q": "Find the line that minimizes $L$ for the data $(0, 1)$, $(1, 3)$, $(2, 4)$, $(3, 4)$, $(4, 6)$.",
+        "steps": [
+          "Sums: $\\sum x_{i} = 10$, $\\sum y_{i} = 18$, $\\sum x_{i}^{2} = 30$, $\\sum x_{i}y_{i} = 47$, and $n = 5$.",
+          "Normal equations: $30m + 10b = 47$ and $10m + 5b = 18$.",
+          "Double the second, $20m + 10b = 36$, and subtract: $10m = 11$, so $m = 1.1$. Then $5b = 18 - 11$, so $b = 1.4$.",
+          "The residuals are $-0.4$, $0.5$, $0.4$, $-0.7$, $0.2$, so $L = \\frac{0.16 + 0.25 + 0.16 + 0.49 + 0.04}{5} = 0.22$."
+        ],
+        "a": "$\\hat{y} = 1.1x + 1.4$, with $L = 0.22$"
+      },
+      {
+        "t": "ex",
+        "title": "One step of gradient descent",
+        "q": "Same data. Start at $(m, b) = (0, 0)$ and take one gradient descent step with $\\eta = 0.05$.",
+        "steps": [
+          "At $(0, 0)$ every prediction is $0$, so the residuals are the $y_{i}$ themselves.",
+          "$\\frac{\\partial L}{\\partial m} = -\\frac{2}{5}\\sum x_{i}y_{i} = -\\frac{2}{5} \\cdot 47 = -18.8$ and $\\frac{\\partial L}{\\partial b} = -\\frac{2}{5}\\sum y_{i} = -\\frac{2}{5} \\cdot 18 = -7.2$.",
+          "$(0, 0) - 0.05\\langle -18.8, -7.2 \\rangle = (0.94, 0.36)$.",
+          "The loss falls from $L(0, 0) = 15.6$ to $L(0.94, 0.36) \\approx 2.12$. More steps creep toward $(1.1, 1.4)$."
+        ],
+        "a": "$(m, b) = (0.94, 0.36)$"
+      },
+      {
+        "t": "ex",
+        "title": "A line through the origin",
+        "q": "Fit $\\hat{y} = mx$ to $(1, 3)$, $(2, 2)$, $(3, 7)$.",
+        "steps": [
+          "With one parameter the loss is a parabola: $$L(m) = \\frac{1}{3}\\left[(3 - m)^{2} + (2 - 2m)^{2} + (7 - 3m)^{2}\\right] = \\frac{1}{3}\\left(14m^{2} - 56m + 62\\right).$$",
+          "$L'(m) = \\frac{1}{3}(28m - 56) = 0$ gives $m = 2$, the vertex of the parabola.",
+          "In general $m = \\frac{\\sum x_{i}y_{i}}{\\sum x_{i}^{2}}$; here $\\frac{28}{14} = 2$."
+        ],
+        "a": "$\\hat{y} = 2x$"
+      },
+      {
+        "t": "p",
+        "html": "In the picture the loss map is a long, tilted valley, because $\\sum x_{i}^{2} = 30$ is much bigger than $n = 5$. As in <a href=\"/math/calculus-3/gradient-descent/\">gradient descent</a> on a long valley, a step size above about $0.15$ makes the path blow up, and a small one crawls along the valley floor. For a straight line the exact answer is easy, so why bother with steps? Because most models have no formula. A neural network's loss is also a mean of squared errors, but of a bent-line function of its weights, and there gradient descent, with derivatives from <a href=\"/math/calculus-3/backpropagation/\">backpropagation</a>, is the tool that works."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Differentiating with respect to $x$.</b> In $L(m, b)$ the $x_{i}$ and $y_{i}$ are numbers you were given; they never change. The variables are the parameters. Check: your $\\frac{\\partial L}{\\partial m}$ should contain data values, $m$ and $b$, and no plain $x$."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Dropping the minus sign.</b> The inside $y_{i} - mx_{i} - b$ has derivative $-x_{i}$ with respect to $m$, so $\\frac{\\partial L}{\\partial m}$ starts with $-\\frac{2}{n}$. Without that sign a gradient step climbs. Check: with positive data, a step from $(0, 0)$ should raise both $m$ and $b$."
+      },
+      {
+        "t": "note",
+        "html": "This is the same line as ordinary least squares in the <a href=\"/business/econometrics/simple-regression/\">Econometrics course</a>, and the normal equations are the matrix equation of <a href=\"/math/linear-algebra/least-squares/\">least squares</a> in linear algebra."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Introductory Statistics 2e, section 12.3 The Regression Equation"
+      },
+      {
+        "name": "OpenStax, Calculus Volume 3, section 4.7 Maxima/Minima Problems"
+      },
+      {
+        "name": "Andrew Ng, CS229 Lecture Notes (Stanford University), Part I Linear Regression: the LMS algorithm and the normal equations"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

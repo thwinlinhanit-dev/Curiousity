@@ -1,0 +1,108 @@
+{
+  "id": "alg1.rational-exponent-rules",
+  "slug": "rational-exponent-rules",
+  "ladder": "math",
+  "course": "alg1",
+  "unit": "radicals",
+  "title": "Rules with Fractional Exponents",
+  "short": "Use the exponent rules to simplify roots written as powers.",
+  "trouble": "Students add the exponents when raising a power to a power.",
+  "prereqs": [
+    "alg1.rational-exponents"
+  ],
+  "xp": 2,
+  "viz": [],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Because <a href=\"/math/algebra-1/rational-exponents/\">fractional exponents</a> were defined to keep the exponent rules true, you can now use those rules on roots. Rewriting roots as powers often turns a messy radical problem into simple fraction arithmetic."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Rule",
+          "Example with fractions"
+        ],
+        "rows": [
+          [
+            "$x^a \\cdot x^b = x^{a+b}$",
+            "$x^{1/2} \\cdot x^{1/3} = x^{5/6}$"
+          ],
+          [
+            "$\\frac{x^a}{x^b} = x^{a-b}$",
+            "$\\frac{x^{3/4}}{x^{1/4}} = x^{1/2}$"
+          ],
+          [
+            "$(x^a)^b = x^{ab}$",
+            "$\\left(x^{2/3}\\right)^{3/4} = x^{1/2}$"
+          ],
+          [
+            "$(xy)^a = x^a y^a$",
+            "$\\left(8x^6\\right)^{1/3} = 2x^2$"
+          ]
+        ],
+        "cap": "The same rules as for whole-number exponents (for $x > 0$)."
+      },
+      {
+        "t": "why",
+        "html": "Why add exponents when multiplying? $x^3 \\cdot x^2$ is three factors of $x$ times two more, five in all. With fractions, think of $x^{1/6}$ as a basic piece: $x^{1/2} = \\left(x^{1/6}\\right)^3$ and $x^{1/3} = \\left(x^{1/6}\\right)^2$, so their product is $\\left(x^{1/6}\\right)^5 = x^{5/6}$. Adding $\\frac{1}{2} + \\frac{1}{3}$ is counting those pieces. A power of a power repeats a whole block of factors, which is why those exponents multiply."
+      },
+      {
+        "t": "key",
+        "html": "Same base: multiply means add the exponents, divide means subtract them. A power of a power multiplies the exponents. A power of a product applies to every factor."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Roots of different index",
+        "q": "Write $\\sqrt{x} \\cdot \\sqrt[3]{x}$ as one power of $x$.",
+        "steps": [
+          "Rewrite: $x^{1/2} \\cdot x^{1/3}$.",
+          "Add the exponents: $\\frac{1}{2} + \\frac{1}{3} = \\frac{3}{6} + \\frac{2}{6} = \\frac{5}{6}$."
+        ],
+        "a": "$x^{5/6}$, which is $\\sqrt[6]{x^5}$."
+      },
+      {
+        "t": "ex",
+        "title": "Power of a product",
+        "q": "Simplify $\\left(16x^8\\right)^{3/4}$.",
+        "steps": [
+          "Apply the power to each factor: $16^{3/4} \\cdot \\left(x^8\\right)^{3/4}$.",
+          "$16^{3/4} = \\left(\\sqrt[4]{16}\\right)^3 = 2^3 = 8$.",
+          "$\\left(x^8\\right)^{3/4} = x^{8 \\cdot 3/4} = x^6$."
+        ],
+        "a": "$8x^6$"
+      },
+      {
+        "t": "ex",
+        "title": "A quotient",
+        "q": "Simplify $\\dfrac{x^{5/3}}{x^{1/2}}$.",
+        "steps": [
+          "Subtract the exponents: $\\frac{5}{3} - \\frac{1}{2} = \\frac{10}{6} - \\frac{3}{6} = \\frac{7}{6}$."
+        ],
+        "a": "$x^{7/6}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Adding the exponents when raising a power to a power, writing $\\left(x^{2/3}\\right)^{3/4} = x^{2/3 + 3/4}$. Adding is for multiplying two powers; a power of a power multiplies: $\\frac{2}{3} \\cdot \\frac{3}{4} = \\frac{1}{2}$. Check with whole numbers you trust: $(x^2)^3 = x^2 \\cdot x^2 \\cdot x^2 = x^6$, not $x^5$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Intermediate Algebra 2e, section 8.3 Simplify Rational Exponents"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, N-RN.A.2: rewrite expressions involving radicals and rational exponents using the properties of exponents"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

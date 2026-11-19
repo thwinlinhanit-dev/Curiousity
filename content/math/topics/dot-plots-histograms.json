@@ -1,0 +1,139 @@
+{
+  "id": "g6.dot-plots-histograms",
+  "slug": "dot-plots-histograms",
+  "ladder": "math",
+  "course": "g6",
+  "unit": "statistics",
+  "title": "Dot Plots and Histograms",
+  "short": "Show data as dots or as bars over intervals.",
+  "trouble": "Students leave gaps between histogram bars or use intervals of different widths.",
+  "prereqs": [
+    "g6.statistical-questions"
+  ],
+  "xp": 1,
+  "viz": [
+    "dotplot"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Data from a <a href=\"/math/grade-6/statistical-questions/\">statistical question</a> is easier to understand in a picture. Two common pictures are the dot plot and the histogram."
+      },
+      {
+        "t": "key",
+        "html": "A <b>dot plot</b> puts one dot above a number line for each value. A <b>histogram</b> groups the values into equal intervals and draws a bar for each interval; the bar's height is how many values fall in it, and the bars touch."
+      },
+      {
+        "t": "viz",
+        "name": "dotplot",
+        "opts": {
+          "data": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            6
+          ],
+          "label": "number of pets",
+          "show": [],
+          "add": false
+        },
+        "cap": "A dot plot of how many pets 13 students have. Each dot is one student."
+      },
+      {
+        "t": "viz",
+        "name": "g6-histogram",
+        "opts": {
+          "data": [
+            3,
+            5,
+            7,
+            8,
+            10,
+            12,
+            12,
+            14,
+            15,
+            15,
+            17,
+            18,
+            19,
+            21,
+            22,
+            24,
+            25,
+            28,
+            31,
+            35,
+            38,
+            44
+          ],
+          "start": 0,
+          "width": 10,
+          "widths": [
+            5,
+            10,
+            20
+          ],
+          "label": "Minutes to get to school"
+        },
+        "cap": "A histogram of 22 travel times. Change the interval width and watch the shape get finer or coarser."
+      },
+      {
+        "t": "why",
+        "html": "A dot plot keeps every single value, which is perfect for a small set of whole numbers. With many values spread over a wide range, a dot plot gets crowded, so a histogram counts how many values land in each interval instead. The intervals must be the same width so that taller really means \"more values\", and they meet with no gaps so every value has exactly one place to go. That is why the bars touch."
+      },
+      {
+        "t": "ex",
+        "title": "Read a dot plot",
+        "q": "In the dot plot of pets, how many students have more than 2 pets?",
+        "steps": [
+          "Count the dots to the right of 2: above 3, 4 and 6.",
+          "$2 + 1 + 1 = 4$."
+        ],
+        "a": "4 students"
+      },
+      {
+        "t": "ex",
+        "title": "Build a histogram",
+        "q": "Sort these travel times into intervals 0–9, 10–19, 20–29 and 30–39: 5, 12, 25, 8, 31, 14, 19, 22, 3, 15.",
+        "steps": [
+          "0–9: 5, 8, 3, so 3 values.",
+          "10–19: 12, 14, 19, 15, so 4 values.",
+          "20–29: 25, 22, so 2 values. 30–39: 31, so 1 value.",
+          "Check: $3 + 4 + 2 + 1 = 10$ values in all."
+        ],
+        "a": "Bar heights 3, 4, 2 and 1."
+      },
+      {
+        "t": "mistake",
+        "html": "Leaving gaps between histogram bars, or using intervals of different widths. A gap suggests some values are missing; a wide interval collects more values just because it is wide, so its bar looks important when it is not. Quick check: every interval should hold the same span of numbers, and each interval should start where the last one ended."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Introductory Statistics 2e, section 2.1 Stem-and-Leaf Graphs (Stemplots), Line Graphs, and Bar Graphs"
+      },
+      {
+        "name": "OpenStax, Introductory Statistics 2e, section 2.2 Histograms, Frequency Polygons, and Time Series Graphs"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 6.SP.B.4: dot plots and histograms"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

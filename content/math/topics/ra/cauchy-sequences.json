@@ -1,0 +1,91 @@
+{
+  "id": "ra.cauchy-sequences",
+  "slug": "cauchy-sequences",
+  "ladder": "math",
+  "course": "ra",
+  "unit": "sequences",
+  "title": "Cauchy Sequences",
+  "short": "aₙ is Cauchy when for every ε > 0 some N makes |aₘ − aₙ| < ε for all m, n ≥ N; in ℝ a sequence is Cauchy exactly when it converges.",
+  "trouble": "Students check only consecutive terms. |aₙ₊₁ − aₙ| → 0 is not enough: the partial sums of 1/n creep apart forever.",
+  "prereqs": [
+    "ra.bolzano-weierstrass"
+  ],
+  "xp": 3,
+  "viz": [
+    "ra-epsband"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "To use the definition of a limit you must already know the limit $L$. Cauchy's idea removes $L$: a sequence should converge when its terms get close <b>to each other</b>. In $\\mathbb{R}$ that idea is exactly right, thanks to <a href=\"/math/real-analysis/bolzano-weierstrass/\">Bolzano–Weierstrass</a>, and it is how we will handle series, whose sums are usually unknown."
+      },
+      {
+        "t": "key",
+        "html": "$(a_n)$ is <b>Cauchy</b> when for every $\\varepsilon > 0$ there is an $N$ with $|a_m - a_n| < \\varepsilon$ for <b>all</b> $m, n \\ge N$. <b>Theorem.</b> A sequence of real numbers converges if and only if it is Cauchy."
+      },
+      {
+        "t": "why",
+        "html": "<b>Convergent implies Cauchy:</b> if $a_n \\to L$, choose $N$ with $|a_n - L| < \\frac{\\varepsilon}{2}$ for $n \\ge N$; then $|a_m - a_n| \\le |a_m - L| + |L - a_n| < \\varepsilon$. <b>Cauchy implies convergent:</b> a Cauchy sequence is bounded (use $\\varepsilon = 1$ as for convergent sequences). By Bolzano–Weierstrass some subsequence $a_{n_k} \\to L$. Given $\\varepsilon > 0$, take $N$ from the Cauchy condition with $\\frac{\\varepsilon}{2}$, and some $n_k \\ge N$ with $|a_{n_k} - L| < \\frac{\\varepsilon}{2}$. For $n \\ge N$: $|a_n - L| \\le |a_n - a_{n_k}| + |a_{n_k} - L| < \\varepsilon$. $\\blacksquare$ In $\\mathbb{Q}$ the second half fails: the decimal truncations $1, 1.4, 1.41, 1.414, \\ldots$ of $\\sqrt{2}$ are Cauchy, with no rational limit."
+      },
+      {
+        "t": "viz",
+        "name": "ra-epsband",
+        "opts": {
+          "f": "3/n",
+          "mode": "cauchy",
+          "eps": 0.1,
+          "N": 20,
+          "nmax": 60
+        },
+        "cap": "Cauchy mode for $a_n = \\frac{3}{n}$: the shaded strip shows how far apart the terms from $N$ on can be. It must be narrower than $\\varepsilon$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Finding $N$ for a Cauchy sequence",
+        "q": "For $a_n = \\frac{3}{n}$ and $\\varepsilon = 0.1$, find the smallest $N$ with $|a_m - a_n| < \\varepsilon$ for all $m, n \\ge N$.",
+        "steps": [
+          "For $m, n \\ge N$: $|a_m - a_n| = 3\\left|\\frac{1}{m} - \\frac{1}{n}\\right| < \\frac{3}{N}$, and taking $m = N$ and $n$ huge comes as close to $\\frac{3}{N}$ as you like.",
+          "So every pair is within $0.1$ exactly when $\\frac{3}{N} \\le 0.1$, that is, $N \\ge 30$."
+        ],
+        "a": "$N = 30$ (or any larger $N$)."
+      },
+      {
+        "t": "ex",
+        "title": "Neighbors close, but not Cauchy",
+        "q": "Is $H_n = 1 + \\frac{1}{2} + \\cdots + \\frac{1}{n}$ Cauchy?",
+        "steps": [
+          "$H_{2n} - H_n = \\frac{1}{n + 1} + \\cdots + \\frac{1}{2n}$ has $n$ terms, each at least $\\frac{1}{2n}$, so it is at least $\\frac{1}{2}$.",
+          "For $\\varepsilon = \\frac{1}{2}$, no $N$ works (take $m = 2n$ with $n \\ge N$)."
+        ],
+        "a": "No, so $H_n$ diverges, even though $H_{n+1} - H_n = \\frac{1}{n + 1} \\to 0$."
+      },
+      {
+        "t": "note",
+        "html": "For a series $\\sum a_k$, the difference of two partial sums is a block $a_{m+1} + \\cdots + a_n$. So \"the partial sums are Cauchy\" says \"far-out blocks are small,\" with no need to know the sum. That is the Cauchy criterion of the next unit."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Checking only consecutive terms.</b> \"$|a_{n+1} - a_n| \\to 0$, so the sequence is Cauchy\" is false: the harmonic sums above and $\\sqrt{n}$ are counterexamples. The Cauchy condition is about every pair $m, n \\ge N$, however far apart. Check with pairs like $(n, 2n)$ or $(n, 4n)$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Jiří Lebl, Basic Analysis I: Introduction to Real Analysis, section 2.4 (Cauchy sequences)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.100A Real Analysis, lecture notes on Cauchy sequences and completeness"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

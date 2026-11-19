@@ -1,0 +1,106 @@
+{
+  "id": "nt.primality-sieve",
+  "slug": "primality-sieve",
+  "ladder": "math",
+  "course": "nt",
+  "unit": "primes",
+  "title": "Testing Primes and the Sieve of Eratosthenes",
+  "short": "n is prime when no prime up to √n divides it; the sieve crosses out multiples to list every prime up to N.",
+  "trouble": "Students test divisors all the way up to n, or stop before reaching √n. And 1 is not prime.",
+  "prereqs": [
+    "nt.divisibility",
+    "g4.prime-composite"
+  ],
+  "xp": 1,
+  "viz": [
+    "nt-sieve"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You met primes in <a href=\"/math/grade-4/prime-composite/\">grade 4</a>. Now we need a precise definition and two dependable tools: a test for one number and a way to list all primes up to a bound."
+      },
+      {
+        "t": "p",
+        "html": "<b>Definitions.</b> An integer $p > 1$ is <b>prime</b> when its only positive divisors are $1$ and $p$. An integer $n > 1$ that is not prime is <b>composite</b>: it can be written $n = ab$ with $1 < a, b < n$. The number $1$ is neither. (Leaving $1$ out is what keeps prime factorizations unique; otherwise $6 = 2 \\cdot 3 = 1 \\cdot 2 \\cdot 3$.)"
+      },
+      {
+        "t": "why",
+        "html": "<b>You only need to test up to $\\sqrt{n}$.</b> Suppose $n = ab$ with $1 < a \\le b$. Then $a \\cdot a \\le a \\cdot b = n$, so $a \\le \\sqrt{n}$. The smallest prime factor of $a$ is at most $a$ and also <a href=\"/math/number-theory/divisibility/\">divides</a> $n$. So a composite $n$ always has a <b>prime factor at most $\\sqrt{n}$</b>. Turn that around: if no prime up to $\\sqrt{n}$ divides $n$, then $n$ is prime."
+      },
+      {
+        "t": "ex",
+        "title": "A composite in disguise",
+        "q": "Is $221$ prime?",
+        "steps": [
+          "$14^{2} = 196$ and $15^{2} = 225$, so $\\sqrt{221} \\approx 14.9$. Test the primes $2, 3, 5, 7, 11, 13$.",
+          "$221$ is odd, its digit sum is $5$ (not a multiple of 3), and it does not end in $0$ or $5$. $221 = 7 \\cdot 31 + 4$ and $221 = 11 \\cdot 20 + 1$.",
+          "$221 = 13 \\cdot 17$. Composite."
+        ],
+        "a": "No: $221 = 13 \\cdot 17$."
+      },
+      {
+        "t": "ex",
+        "title": "A prime",
+        "q": "Is $211$ prime?",
+        "steps": [
+          "$\\sqrt{211} \\approx 14.5$, so test $2, 3, 5, 7, 11, 13$.",
+          "The remainders are $1, 1, 1, 1, 2, 3$. None is $0$.",
+          "No prime up to $\\sqrt{211}$ divides $211$, so it is prime."
+        ],
+        "a": "Yes."
+      },
+      {
+        "t": "h",
+        "text": "The sieve of Eratosthenes"
+      },
+      {
+        "t": "p",
+        "html": "To list <b>every</b> prime up to $N$: write $2, 3, \\dots, N$. Circle the smallest number not yet crossed out; it is prime. Cross out its multiples, starting at its square. Repeat. Once the next circled number $p$ has $p^{2} > N$, everything still standing is prime."
+      },
+      {
+        "t": "viz",
+        "name": "nt-sieve",
+        "opts": {
+          "N": 100,
+          "cols": 10,
+          "task": "Press <b>Next prime</b> until the sieve stops. Why does it stop at 7?"
+        },
+        "cap": "Crossing out starts at $p^{2}$: a smaller multiple $kp$ with $k < p$ has a prime factor smaller than $p$, so it is already crossed out. After 7, the next prime is 11, and $11^{2} = 121 > 100$."
+      },
+      {
+        "t": "ex",
+        "title": "How far does the sieve go?",
+        "q": "To list the primes up to $200$ with the sieve, which primes do you need to sieve with?",
+        "steps": [
+          "You need the primes $p$ with $p^{2} \\le 200$.",
+          "$13^{2} = 169 \\le 200$ but $17^{2} = 289 > 200$.",
+          "So sieve with $2, 3, 5, 7, 11, 13$. Every number left after that is prime."
+        ],
+        "a": "$2, 3, 5, 7, 11$ and $13$."
+      },
+      {
+        "t": "mistake",
+        "html": "Testing every number up to $n$ (slow, though correct), or stopping too early. Stopping at $11$ for $221$ would call it prime, but $13 \\le \\sqrt{221}$ still had to be tried. Find the whole-number part of $\\sqrt{n}$ first and test every prime up to it. And remember: $1$ is not prime."
+      },
+      {
+        "t": "key",
+        "html": "A composite $n$ has a prime factor $p \\le \\sqrt{n}$. So test the primes up to $\\sqrt{n}$; to list all primes up to $N$, sieve with the primes up to $\\sqrt{N}$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "William Stein, Elementary Number Theory: Primes, Congruences, and Secrets (Springer, 2009; free online edition), chapter 1, Prime Numbers"
+      },
+      {
+        "name": "Lehman, Leighton and Meyer, Mathematics for Computer Science (MIT OpenCourseWare 6.042J), chapter on number theory: prime numbers"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

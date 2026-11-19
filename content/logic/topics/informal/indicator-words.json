@@ -1,0 +1,108 @@
+{
+  "id": "informal.indicator-words",
+  "slug": "indicator-words",
+  "ladder": "logic",
+  "course": "informal",
+  "unit": "arguments",
+  "title": "Indicator Words",
+  "short": "Words like \"therefore\" and \"so\" usually mark a conclusion; \"because\", \"since\" and \"for\" usually mark a premise.",
+  "trouble": "Indicator words have other uses: \"since Tuesday\" is about time, and \"so tired\" means very. And many arguments have no indicator words at all.",
+  "prereqs": [
+    "informal.premise-conclusion"
+  ],
+  "xp": 1,
+  "viz": [
+    "lg-argmap"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Finding <a href=\"/logic/informal-logic/premise-conclusion/\">premises and conclusions</a> is easier when the writer leaves signposts. These signposts are called <b>indicator words</b>."
+      },
+      {
+        "t": "key",
+        "html": "<b>Conclusion indicators</b> come before a conclusion: therefore, so, thus, hence, consequently, it follows that. <b>Premise indicators</b> come before a premise: because, since, for, given that, after all."
+      },
+      {
+        "t": "why",
+        "html": "Indicator words show the direction of support. \"The road is icy, <i>so</i> drive slowly\" and \"Drive slowly, <i>because</i> the road is icy\" say the same thing in two orders; the word tells you which claim supports which."
+      },
+      {
+        "t": "viz",
+        "name": "lg-argmap",
+        "opts": {
+          "passage": "We should leave for the game early, since the road by the stadium is closed. The detour adds twenty minutes, so the earlier the better.",
+          "indicators": true,
+          "nodes": [
+            {
+              "id": 1,
+              "text": "The road by the stadium is closed."
+            },
+            {
+              "id": 2,
+              "text": "The detour adds twenty minutes."
+            },
+            {
+              "id": 3,
+              "text": "We should leave for the game early.",
+              "kind": "conclusion"
+            }
+          ],
+          "links": [
+            {
+              "from": [
+                1,
+                2
+              ],
+              "to": 3
+            }
+          ]
+        },
+        "cap": "Blue marks a conclusion indicator; gold marks a premise indicator."
+      },
+      {
+        "t": "ex",
+        "title": "Follow the signpost",
+        "q": "\"Since the store is closed, we will buy bread tomorrow.\"",
+        "steps": [
+          "\"Since\" is a premise indicator, so \"the store is closed\" is a premise.",
+          "The other claim, \"we will buy bread tomorrow\", is the conclusion."
+        ],
+        "a": "Conclusion: \"We will buy bread tomorrow.\""
+      },
+      {
+        "t": "mistake",
+        "html": "Trusting the word without reading the sentence. Indicator words have other jobs: \"We have been friends <i>since</i> second grade\" is about time, \"I was <i>so</i> tired\" means very, and \"a gift <i>for</i> Mom\" says who it is for. Quick check: swap in \"because\" or \"therefore\". If the sentence stops making sense, the word is not an indicator there."
+      },
+      {
+        "t": "ex",
+        "title": "Not an indicator",
+        "q": "\"I was so hungry after practice.\" Is \"so\" a conclusion indicator here?",
+        "steps": [
+          "Swap in \"therefore\": \"I was therefore hungry after practice.\" The meaning changes.",
+          "Here \"so\" means \"very\". No conclusion is being drawn."
+        ],
+        "a": "No, it is not an indicator here."
+      },
+      {
+        "t": "note",
+        "html": "Many arguments have no indicator words at all. Then go back to the main test: which claim do the others support?"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Patrick Hurley, A Concise Introduction to Logic, chapter 1 (premise and conclusion indicators)"
+      },
+      {
+        "name": "OpenStax Introduction to Philosophy, 5.3 Arguments"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

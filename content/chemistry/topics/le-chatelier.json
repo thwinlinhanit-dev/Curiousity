@@ -1,0 +1,137 @@
+{
+  "id": "chem.le-chatelier",
+  "slug": "le-chatelier",
+  "ladder": "chemistry",
+  "course": "chem",
+  "unit": "rates-equilibrium",
+  "title": "Le Chatelier's Principle",
+  "short": "A system at equilibrium shifts to partly undo a change in concentration, pressure or temperature.",
+  "trouble": "Students think adding a catalyst shifts an equilibrium, or that the shift undoes the change completely.",
+  "prereqs": [
+    "chem.dynamic-equilibrium",
+    "chem.boyles-law"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-equilibrium"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A system at <a href=\"/chemistry/chemistry/dynamic-equilibrium/\">Dynamic Equilibrium</a> holds steady until something disturbs it. Then it shifts to a new balance. Predicting the direction uses the rates you know, plus <a href=\"/chemistry/chemistry/boyles-law/\">Boyle's Law</a> for what squeezing a gas does."
+      },
+      {
+        "t": "key",
+        "html": "<b>Le Chatelier's principle</b>: if a system at equilibrium is disturbed by a change in concentration, pressure (by changing the volume) or temperature, it shifts in the direction that <i>partly</i> undoes the change. A catalyst causes no shift."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Change to N₂ + 3H₂ ⇌ 2NH₃ (ΔH = −92 kJ)",
+          "Shift",
+          "Why"
+        ],
+        "rows": [
+          [
+            "add N₂ or H₂",
+            "toward products",
+            "uses up some of what was added"
+          ],
+          [
+            "remove NH₃",
+            "toward products",
+            "replaces some of what was removed"
+          ],
+          [
+            "squeeze to a smaller volume",
+            "toward products",
+            "4 gas molecules become 2, lowering the pressure"
+          ],
+          [
+            "raise the temperature",
+            "toward reactants",
+            "the reverse (endothermic) direction absorbs heat"
+          ],
+          [
+            "add a catalyst",
+            "no shift",
+            "both rates speed up equally"
+          ]
+        ],
+        "cap": "Predicting shifts for the synthesis of ammonia."
+      },
+      {
+        "t": "why",
+        "html": "Adding a reactant makes forward collisions more frequent, so the forward rate jumps ahead until the extra reactant is partly used and the rates match again. Squeezing a gas mixture raises the pressure; the side with fewer gas molecules makes fewer collisions with the walls, so shifting toward it lowers the pressure. For temperature, treat heat as a product of an exothermic reaction: adding heat pushes the reaction back. (Temperature is the one change that also changes the equilibrium constant, as you will see later.)"
+      },
+      {
+        "t": "viz",
+        "name": "ch-equilibrium",
+        "opts": {
+          "rxn": "N2+3H2<=>2NH3",
+          "events": [
+            {
+              "t": 20,
+              "type": "add",
+              "sp": "N2",
+              "amt": 0.5
+            }
+          ]
+        },
+        "cap": "Extra nitrogen is added at time 20. The forward rate jumps, ammonia rises and hydrogen falls, and a new equilibrium forms. Nitrogen ends lower than right after the addition but higher than before it."
+      },
+      {
+        "t": "ex",
+        "title": "Adding a reactant",
+        "q": "More $\\mathrm{N}_{2}$ is added to $$\\mathrm{N}_{2} + 3\\mathrm{H}_{2} \\rightleftharpoons 2\\mathrm{NH}_{3}$$ at equilibrium. Which way does it shift?",
+        "steps": [
+          "The added $\\mathrm{N}_{2}$ speeds up the forward reaction.",
+          "The system shifts toward the products, using up part of the added nitrogen and making more ammonia."
+        ],
+        "a": "Toward the products."
+      },
+      {
+        "t": "ex",
+        "title": "Raising the pressure",
+        "q": "The volume of $$\\mathrm{N}_{2}\\mathrm{O}_{4} \\rightleftharpoons 2\\mathrm{NO}_{2}$$ at equilibrium is cut in half. Which way does it shift?",
+        "steps": [
+          "Count gas molecules: 1 on the left, 2 on the right.",
+          "Higher pressure favors the side with fewer gas molecules: the left."
+        ],
+        "a": "Toward $\\mathrm{N}_{2}\\mathrm{O}_{4}$, the reactant."
+      },
+      {
+        "t": "ex",
+        "title": "Heating an exothermic reaction",
+        "q": "The ammonia equilibrium above ($\\Delta H = -92\\ \\text{kJ}$) is heated. Which way does it shift?",
+        "steps": [
+          "Forward is exothermic, so heat acts like a product.",
+          "Adding a product shifts the system toward the reactants."
+        ],
+        "a": "Toward the reactants: less ammonia at equilibrium."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking a catalyst shifts an equilibrium, or that the shift undoes a change completely. A catalyst only gets the system to equilibrium sooner. And after nitrogen is added, the new equilibrium still has more nitrogen than before; the shift only takes back part of the change."
+      },
+      {
+        "t": "note",
+        "html": "The ammonia industry balances these effects. High pressure (roughly 150 to 300 atm) favors ammonia; low temperature favors it too but makes the reaction too slow, so plants run at about 400 to 500 °C with an iron catalyst."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 13.3 Shifting Equilibria: Le Châtelier's Principle"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-PS1-6"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

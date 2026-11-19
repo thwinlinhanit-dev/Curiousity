@@ -1,0 +1,135 @@
+{
+  "id": "num.norms",
+  "slug": "norms",
+  "ladder": "math",
+  "course": "num",
+  "unit": "linear-systems",
+  "title": "Vector and Matrix Norms",
+  "short": "Measure size with ‖x‖₁, ‖x‖₂ and ‖x‖∞; the matching matrix norms ‖A‖₁ and ‖A‖∞ are the largest absolute column sum and the largest absolute row sum.",
+  "trouble": "Students mix up the two: ‖A‖∞ uses rows, ‖A‖₁ uses columns, and both add absolute values.",
+  "prereqs": [
+    "la.orthogonality"
+  ],
+  "xp": 2,
+  "viz": [
+    "num-system"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "To talk about the size of an error in a vector answer, we need the size of a vector. The length from <a href=\"/math/linear-algebra/orthogonality/\">the dot product</a>, $\\sqrt{\\mathbf{x}\\cdot\\mathbf{x}}$, is one choice; numerical work also uses two others that are cheaper and often easier to bound."
+      },
+      {
+        "t": "p",
+        "html": "For $\\mathbf{x} = (x_1, \\ldots, x_n)$: $$\\lVert\\mathbf{x}\\rVert_1 = \\sum|x_i|,\\quad \\lVert\\mathbf{x}\\rVert_2 = \\sqrt{\\sum x_i^{2}},\\quad \\lVert\\mathbf{x}\\rVert_\\infty = \\max|x_i|.$$ Each is a <b>norm</b>: positive for $\\mathbf{x} \\ne \\mathbf{0}$, scaled by $|c|$ when $\\mathbf{x}$ is multiplied by $c$, and obeying the triangle inequality $\\lVert\\mathbf{x} + \\mathbf{y}\\rVert \\le \\lVert\\mathbf{x}\\rVert + \\lVert\\mathbf{y}\\rVert$."
+      },
+      {
+        "t": "p",
+        "html": "A matrix norm measures how much $A$ can stretch a vector: $$\\lVert A\\rVert = \\max_{\\mathbf{x} \\ne \\mathbf{0}}\\frac{\\lVert A\\mathbf{x}\\rVert}{\\lVert\\mathbf{x}\\rVert}.$$ So $\\lVert A\\mathbf{x}\\rVert \\le \\lVert A\\rVert\\lVert\\mathbf{x}\\rVert$ always."
+      },
+      {
+        "t": "key",
+        "html": "$\\lVert A\\rVert_\\infty$ is the largest absolute <b>row</b> sum and $\\lVert A\\rVert_1$ is the largest absolute <b>column</b> sum. ($\\lVert A\\rVert_2$ is the largest singular value, harder to compute by hand.)"
+      },
+      {
+        "t": "why",
+        "html": "Entry $i$ of $A\\mathbf{x}$ is $\\sum_j a_{ij}x_j$, so $|(A\\mathbf{x})_i| \\le \\sum_j|a_{ij}|\\,|x_j| \\le \\left(\\sum_j|a_{ij}|\\right)\\lVert\\mathbf{x}\\rVert_\\infty$. The largest row sum therefore bounds the stretch, and choosing $x_j = \\pm 1$ to match the signs in that row achieves it. For $\\lVert\\cdot\\rVert_1$, $A\\mathbf{x}$ is a combination of the columns of $A$, and the best one can do with $\\sum|x_j| = 1$ is to put all the weight on the column with the largest absolute sum."
+      },
+      {
+        "t": "ex",
+        "title": "Three norms of one vector",
+        "q": "Find the three norms of $\\mathbf{x} = (3, -4, 12)$.",
+        "steps": [
+          "$\\lVert\\mathbf{x}\\rVert_1 = 3 + 4 + 12 = 19$.",
+          "$\\lVert\\mathbf{x}\\rVert_2 = \\sqrt{9 + 16 + 144} = \\sqrt{169} = 13$.",
+          "$\\lVert\\mathbf{x}\\rVert_\\infty = 12$. Always $\\lVert\\mathbf{x}\\rVert_\\infty \\le \\lVert\\mathbf{x}\\rVert_2 \\le \\lVert\\mathbf{x}\\rVert_1$."
+        ],
+        "a": "$19$, $13$, $12$"
+      },
+      {
+        "t": "ex",
+        "title": "Matrix norms",
+        "q": "Find $\\lVert A\\rVert_1$ and $\\lVert A\\rVert_\\infty$ for $A = \\begin{bmatrix} 1 & -2 \\\\ 3 & 4 \\end{bmatrix}$.",
+        "steps": [
+          "Absolute column sums: $1 + 3 = 4$ and $2 + 4 = 6$, so $\\lVert A\\rVert_1 = 6$.",
+          "Absolute row sums: $1 + 2 = 3$ and $3 + 4 = 7$, so $\\lVert A\\rVert_\\infty = 7$.",
+          "The vector $\\mathbf{x} = (1, 1)$ matches the signs of row 2: $A\\mathbf{x} = (-1, 7)$, and $\\lVert A\\mathbf{x}\\rVert_\\infty = 7 = 7 \\cdot \\lVert\\mathbf{x}\\rVert_\\infty$. The bound is reached."
+        ],
+        "a": "$\\lVert A\\rVert_1 = 6$, $\\lVert A\\rVert_\\infty = 7$"
+      },
+      {
+        "t": "viz",
+        "name": "num-system",
+        "opts": {
+          "mode": "norms",
+          "A": [
+            [
+              1,
+              -2
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "p": "inf",
+          "x": [
+            0.6,
+            0.4
+          ],
+          "task": "Switch between the 1-norm and the ∞-norm. Which corner of the unit ball is stretched the most, and which row or column does it pick out?"
+        },
+        "cap": "The unit ball of each norm (blue), its image under A (orange), and the smallest ball of the same shape that holds the image: its radius is ‖A‖."
+      },
+      {
+        "t": "p",
+        "html": "Why keep three norms? In $n$ dimensions they never differ by more than a fixed factor: for example $\\lVert\\mathbf{x}\\rVert_\\infty \\le \\lVert\\mathbf{x}\\rVert_2 \\le \\sqrt{n}\\,\\lVert\\mathbf{x}\\rVert_\\infty$. So \"the error goes to zero\" means the same thing in all of them, and we pick whichever is easiest to compute or to bound. The $\\infty$-norm answers \"how wrong is the worst entry?\", which is often what we want to know. Errors in a vector answer are then measured as $\\frac{\\lVert\\tilde{\\mathbf{x}} - \\mathbf{x}\\rVert}{\\lVert\\mathbf{x}\\rVert}$, just like relative error for numbers."
+      },
+      {
+        "t": "table",
+        "head": [
+          "norm",
+          "vector",
+          "matrix (induced)"
+        ],
+        "rows": [
+          [
+            "$1$",
+            "sum of $|x_i|$",
+            "largest absolute column sum"
+          ],
+          [
+            "$2$",
+            "length",
+            "largest singular value"
+          ],
+          [
+            "$\\infty$",
+            "largest $|x_i|$",
+            "largest absolute row sum"
+          ]
+        ],
+        "cap": "The three norms side by side."
+      },
+      {
+        "t": "mistake",
+        "html": "Mixing up the two matrix norms, or adding signed entries. $\\lVert A\\rVert_\\infty$ uses rows and $\\lVert A\\rVert_1$ uses columns, and both add <i>absolute values</i>: the row $(3, -5)$ contributes $8$, not $-2$. Memory aid: the symbol $\\infty$ lies flat like a row, and $1$ stands up like a column."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Tobin A. Driscoll and Richard J. Braun, Fundamentals of Numerical Computation (University of Delaware, free online edition): chapter \"Square linear systems\", section \"Vector and matrix norms\""
+      },
+      {
+        "name": "MIT OpenCourseWare 18.335J, Introduction to Numerical Methods: lecture notes on norms"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

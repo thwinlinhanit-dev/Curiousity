@@ -1,0 +1,153 @@
+{
+  "id": "from-scratch.filament-bulb",
+  "slug": "filament-bulb",
+  "ladder": "inventors",
+  "course": "from-scratch",
+  "unit": "signals",
+  "title": "A Glowing Filament, Edison's and Swan's Problem",
+  "short": "Current heats a thin filament until it glows; in air it burns away, so lamps need a vacuum or a gas without oxygen.",
+  "trouble": "Learners think the bulb's glass makes the light, or that a brighter filament in air would simply last longer.",
+  "prereqs": [
+    "from-scratch.lemon-battery",
+    "invelec.edison"
+  ],
+  "xp": 2,
+  "viz": [
+    "fs-filament"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "People made wires glow with electric current long before anyone made a useful lamp. The trouble was keeping them glowing. A filament hot enough to give good light also burned away in minutes, or melted."
+      },
+      {
+        "t": "p",
+        "html": "In England, Joseph Swan worked for years on lamps with thin carbon filaments in glass bulbs, and showed them by 1879. In America, Thomas Edison's laboratory at Menlo Park, New Jersey, began in 1878 with thin platinum wire, then turned to carbon. They baked thread, cardboard and dozens of other materials until only carbon was left, and sealed them in bulbs with the air pumped out. Thread worked; cardboard was better; carbonized bamboo, the best from near Kyoto, Japan, was best of all. By the end of 1879 Edison had a practical lamp, and his company used bamboo filaments for about ten years. Swan and Edison later joined forces in the Edison and Swan company, formed in 1883."
+      },
+      {
+        "t": "note",
+        "html": "<b>Meet the inventor.</b> How Edison's team ran thousands of trials is in <a href=\"/inventors/age-of-electricity/edison/\">Thomas Edison: Menlo Park and the Light Bulb</a>."
+      },
+      {
+        "t": "key",
+        "html": "Current heats a thin filament, because its resistance turns electrical energy into heat: $P = VI = I^2R$. Hot enough, it glows (<b>incandescence</b>): dull red near 500 °C, orange, then yellow-white above about 2,000 °C. In <b>air</b>, a hot carbon or metal filament combines with oxygen and burns through. In a <b>vacuum</b>, or a gas with no oxygen such as argon, it lasts. Later lamps used <b>tungsten</b>, which melts at a very high temperature and can glow whiter."
+      },
+      {
+        "t": "viz",
+        "name": "fs-filament",
+        "opts": {
+          "gas": "air",
+          "mat": "bamboo"
+        },
+        "cap": "Turn up the voltage in air, then try a vacuum and argon. Run a lamp above its rating and watch its life shrink."
+      },
+      {
+        "t": "why",
+        "html": "Lamp makers learned a hard trade-off. A little more voltage gives a lot more light, but a lot less life. A common rule of thumb says that running a filament lamp 10% above its rated voltage gives about a third more light but cuts its life by more than half. The sim uses rough rules like this, not exact numbers."
+      },
+      {
+        "t": "p",
+        "html": "An incandescent bulb makes most of its energy, around nine-tenths, into heat rather than light. That is why modern LED bulbs, which make light without a hot filament, use so much less electricity for the same brightness."
+      },
+      {
+        "t": "h",
+        "text": "Let's think it through"
+      },
+      {
+        "t": "ex",
+        "title": "Flashlight bulb power",
+        "q": "A flashlight bulb runs on 2.4 V and draws 0.5 A. What power does it use, and what is the hot filament's resistance?",
+        "steps": [
+          "$P = VI = 2.4 \\times 0.5 = 1.2$ W.",
+          "$R = V/I = 2.4 \\div 0.5 = 4.8\\ \\Omega$."
+        ],
+        "a": "1.2 W and about 4.8 Ω when hot. Cold, the filament's resistance is much lower."
+      },
+      {
+        "t": "ex",
+        "title": "Why the vacuum?",
+        "q": "Two identical filaments glow at the same temperature, one in air and one in a vacuum. Which lasts?",
+        "steps": [
+          "In air, oxygen reaches the hot filament and it burns away.",
+          "In a vacuum there is almost no oxygen."
+        ],
+        "a": "The one in the vacuum, by a huge margin."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking the glass makes the light. The glass only keeps the air out. The light comes from the hot filament inside."
+      },
+      {
+        "t": "h",
+        "text": "Build it: see a filament up close, safely"
+      },
+      {
+        "t": "p",
+        "html": "A common classroom demonstration heats a pencil lead in a jar until it glows. It needs large currents, the lead gets hot enough to start a fire, and glass can crack, so we leave it out. Instead, use the simulation above, and look closely at a real small filament running at a safe low voltage."
+      },
+      {
+        "t": "note",
+        "html": "<div class=\"fs-parts\"><b>Parts (about \\$8 to \\$15)</b><ul><li>Two AA alkaline batteries in a holder with leads (3 V)</li><li>A small incandescent flashlight bulb rated about 2.2 to 2.5 V (sold as a replacement bulb, under \\$2 each), and a small screw-in bulb holder with leads (about \\$2)</li><li>An LED and a resistor of about 100 Ω, for comparison</li><li>A magnifying glass</li><li>Optional: a multimeter to measure current</li></ul></div>"
+      },
+      {
+        "t": "note",
+        "html": "<div class=\"fs-steps\"><b>Step by step</b><ol><li>Connect the bulb holder to one AA cell only (1.5 V). The filament glows a dull orange. Look at it through the magnifying glass: a tiny coil of wire.</li><li>Now connect two cells (3 V). The filament glows brighter and whiter. You are running it near its rating.</li><li>After a minute, bring a fingertip near the glass without gripping it. Feel the warmth: most of the energy is heat.</li><li>Disconnect. Now wire the LED with its resistor to the same two cells (long leg toward +). It glows, and stays cool.</li><li>If you have a meter, measure the current for each. Work out the power of each, $P = VI$, and compare.</li></ol></div>"
+      },
+      {
+        "t": "h",
+        "text": "What to look for"
+      },
+      {
+        "t": "list",
+        "items": [
+          "Color shifts from orange to yellow-white as the voltage goes up: hotter filaments glow whiter.",
+          "The filament is a fine coil, sometimes a coil of a coil. Coiling packs a long, thin filament into a small space.",
+          "The bulb gets warm; the LED barely does."
+        ]
+      },
+      {
+        "t": "h",
+        "text": "Troubleshooting"
+      },
+      {
+        "t": "list",
+        "items": [
+          "<b>Bulb doesn't light?</b> Screw it firmly into the holder. Check the filament through the glass: a broken one has a gap.",
+          "<b>LED doesn't light?</b> Turn it around; keep the resistor in the loop."
+        ]
+      },
+      {
+        "t": "h",
+        "text": "Iterate like Edison"
+      },
+      {
+        "t": "list",
+        "items": [
+          "Edison's notebooks list hundreds of trials, with results good and bad. Run the simulation as a test bench: for each filament and gas, record the temperature and life at 90%, 100% and 110% of the rating. Make a table.",
+          "Edison and Swan both needed better vacuum pumps before their lamps worked. Explain in two sentences why the pump mattered as much as the filament.",
+          "Compare costs: a 60 W incandescent bulb and a 9 W LED bulb, each used 4 hours a day for a year. How many kilowatt-hours does each use?"
+        ]
+      },
+      {
+        "t": "note",
+        "html": "<div class=\"fs-safe\"><b>Safety</b><ul><li>Use only ordinary AA or AAA batteries (alkaline). Never use a wall outlet, a plug-in power supply or a lithium rechargeable pack for these projects.</li><li>Small bulbs get hot. Hold them by the holder, and let them cool before unscrewing.</li><li>Use bulbs rated for low voltage only. Never use a household lamp bulb or socket for this project.</li><li>We leave out pencil-lead and bare-wire glow experiments: they need high currents and get hot enough to start fires.</li></ul></div>"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Smithsonian National Museum of American History, Lighting a Revolution: Edison's lamp",
+        "url": "https://americanhistory.si.edu/lighting/scripts/s19b.htm"
+      },
+      {
+        "name": "Grokipedia, History of the battery",
+        "url": "https://grokipedia.com/page/History_of_the_battery"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

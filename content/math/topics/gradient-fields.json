@@ -1,0 +1,107 @@
+{
+  "id": "calc4.gradient-fields",
+  "slug": "gradient-fields",
+  "ladder": "math",
+  "course": "calc4",
+  "unit": "vector-fields",
+  "title": "Gradient Fields and Potentials",
+  "short": "F = ∇f for a potential function f.",
+  "trouble": "",
+  "prereqs": [
+    "calc4.vector-fields",
+    "calc3.gradient"
+  ],
+  "xp": 2,
+  "viz": [
+    "vectorfield",
+    "gradient"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Every differentiable function $f$ comes with a vector field: its <a href=\"/math/calculus-3/gradient/\">gradient</a> $\\nabla f$, computed at every point. These <b>gradient fields</b> are the most important vector fields in the course, because many physical fields are gradients: gravity, the electric field of charges, the flow of heat (which goes against the temperature gradient)."
+      },
+      {
+        "t": "key",
+        "html": "For $f(x, y)$, the <b>gradient field</b> is $\\nabla f = \\langle f_x, f_y \\rangle$; for $f(x, y, z)$ it is $\\langle f_x, f_y, f_z \\rangle$. A field $\\mathbf{F}$ is a gradient field (or <b>conservative</b>) when $\\mathbf{F} = \\nabla f$ for some $f$, called a <b>potential function</b> for $\\mathbf{F}$.<br>\n  At each point, $\\nabla f$ is <a href=\"/math/calculus-3/gradient-normals/\">perpendicular to the level curve</a> of $f$ through it and points in the direction in which $f$ increases fastest."
+      },
+      {
+        "t": "p",
+        "html": "A word about signs. In mathematics we call $f$ a potential when $\\mathbf{F} = \\nabla f$. Physicists usually write $\\mathbf{F} = -\\nabla U$ with a potential energy $U$, so that forces push toward lower energy. The two differ only by a minus sign: $U = -f$."
+      },
+      {
+        "t": "why",
+        "html": "<b>A quick test.</b> If $\\mathbf{F} = \\langle P, Q \\rangle = \\nabla f$ and $f$ has continuous second partial derivatives, then $P = f_x$ and $Q = f_y$, so\n  $$P_y = f_{xy} = f_{yx} = Q_x$$\n  by <a href=\"/math/calculus-3/higher-partials/\">Clairaut's theorem</a>. A field with $P_y \\ne Q_x$ cannot be a gradient field. (On regions without holes the converse is also true; that comes in <a href=\"/math/calculus-4/conservative-test/\">testing for conservative fields</a>.)<br>\n  <b>Why the arrows cross the level curves at right angles:</b> along a level curve $\\mathbf{r}(t)$, $f(\\mathbf{r}(t))$ is constant, so by the chain rule $\\nabla f \\cdot \\mathbf{r}'(t) = 0$."
+      },
+      {
+        "t": "viz",
+        "name": "gradient",
+        "opts": {
+          "f": "x^2*y + y^3/3",
+          "point": [
+            1,
+            0.6
+          ],
+          "dir": 30,
+          "ascent": true,
+          "xmin": -2.5,
+          "xmax": 2.5,
+          "ymin": -2.5,
+          "ymax": 2.5
+        },
+        "cap": "Level curves of $f = x^2y + \\frac{1}{3}y^3$ with $\\nabla f = \\langle 2xy, x^2 + y^2 \\rangle$ at a point you drag. The gradient always crosses the level curve at a right angle, and the path of steepest ascent follows the gradient field."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A gradient field",
+        "q": "Find the gradient field of $f(x, y) = x^2y + y^3$.",
+        "steps": [
+          "$f_x = 2xy$ (treat $y$ as a constant) and $f_y = x^2 + 3y^2$.",
+          "$\\nabla f = \\langle 2xy, x^2 + 3y^2 \\rangle$.",
+          "Check the test: $P_y = 2x$ and $Q_x = 2x$. Equal, as they must be."
+        ],
+        "a": "$\\langle 2xy, x^2 + 3y^2 \\rangle$"
+      },
+      {
+        "t": "ex",
+        "title": "In space, at a point",
+        "q": "For $f(x, y, z) = xyz + e^x$, find $\\nabla f$ and its value at $(0, 1, 2)$.",
+        "steps": [
+          "$f_x = yz + e^x$, $f_y = xz$, $f_z = xy$.",
+          "At $(0, 1, 2)$: $\\langle 2 + 1, 0, 0 \\rangle = \\langle 3, 0, 0 \\rangle$.",
+          "So at that point $f$ increases fastest in the $+x$ direction, at rate ${}3$."
+        ],
+        "a": "$\\langle yz + e^x, xz, xy \\rangle$; $\\langle 3, 0, 0 \\rangle$ at $(0, 1, 2)$"
+      },
+      {
+        "t": "ex",
+        "title": "Not a gradient field",
+        "q": "Is $\\mathbf{F} = \\langle y, -x \\rangle$ a gradient field?",
+        "steps": [
+          "$P = y$ gives $P_y = 1$; $Q = -x$ gives $Q_x = -1$.",
+          "$P_y \\ne Q_x$, so no function $f$ has $\\nabla f = \\mathbf{F}$.",
+          "Picture: this field circles the origin clockwise. A gradient field cannot circle back on itself, since following it always takes you uphill on $f$."
+        ],
+        "a": "no"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 3, 6.1 Vector Fields"
+      },
+      {
+        "name": "OpenStax Calculus Volume 3, 6.3 Conservative Vector Fields"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

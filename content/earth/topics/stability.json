@@ -1,0 +1,100 @@
+{
+  "id": "weather.stability",
+  "slug": "stability",
+  "ladder": "earth",
+  "course": "weather",
+  "unit": "rising-air",
+  "title": "Stable and Unstable Air",
+  "short": "Lift a parcel and compare it with the air around it: if it ends up warmer it keeps rising, and if colder it sinks back.",
+  "trouble": "Students judge stability by the temperature at the ground; what matters is how fast the surrounding air cools with height compared with the parcel.",
+  "prereqs": [
+    "weather.moist-adiabatic"
+  ],
+  "xp": 3,
+  "viz": [
+    "es-parcel"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A lifted parcel cools at the <a href=\"/earth-and-space/weather-and-climate/adiabatic-cooling/\">dry rate</a> or the <a href=\"/earth-and-space/weather-and-climate/moist-adiabatic/\">moist rate</a>. Whether it keeps going up, building towering clouds, or sinks back, depends on the air around it. That is the question of <b>stability</b>."
+      },
+      {
+        "t": "key",
+        "html": "Lift a parcel and compare it with the surrounding air at its new height. If the parcel is <b>warmer</b>, it is less dense and keeps rising: <b>unstable</b>. If it is <b>colder</b>, it sinks back: <b>stable</b>. Compare how fast the surroundings cool with height (the environmental lapse rate) with the parcel's rate: faster than 9.8 °C per km is absolutely unstable; slower than the moist rate (about 6) is absolutely stable; in between is <b>conditionally unstable</b>, stable for dry air but unstable once the parcel is saturated."
+      },
+      {
+        "t": "why",
+        "html": "A parcel's fate is a race between two temperatures. The parcel cools at a fixed rate (dry or moist). The surrounding air has whatever temperature profile the weather has given it. If the surroundings get colder with height faster than the parcel does, the parcel finds itself warmer than its neighbors at every step up, and buoyancy pushes it higher: a runaway. If the surroundings cool more slowly, the parcel becomes the colder, denser one and sinks back. An <b>inversion</b>, where the air gets warmer with height, is the most stable of all."
+      },
+      {
+        "t": "viz",
+        "name": "es-parcel",
+        "opts": {
+          "mode": "lift",
+          "T0": 25,
+          "Td0": 15,
+          "env": [
+            6.5,
+            6.5,
+            6.5,
+            6.5,
+            6.5,
+            6.5
+          ],
+          "lift": 6
+        },
+        "cap": "The black line is the surrounding air; drag its points to change how fast it cools. Red shading means the parcel is warmer than its surroundings (it rises on its own); blue means colder (it sinks back)."
+      },
+      {
+        "t": "ex",
+        "title": "A lift test",
+        "q": "The surrounding air is 20 °C at the ground and cools 8 °C per km. A dry (unsaturated) parcel is lifted from the ground to 1 km. Use 10 °C per km for the parcel. Is the air stable for it?",
+        "steps": [
+          "Parcel at 1 km: $20 - 10 = 10$ °C.",
+          "Surroundings at 1 km: $20 - 8 = 12$ °C.",
+          "The parcel is 2 °C colder, so it is denser and sinks back: stable for dry air."
+        ],
+        "a": "Stable for an unsaturated parcel"
+      },
+      {
+        "t": "ex",
+        "title": "The same air, saturated",
+        "q": "Now the parcel in the example is saturated from the start and cools at 6 °C per km. Is it stable?",
+        "steps": [
+          "Parcel at 1 km: $20 - 6 = 14$ °C; surroundings: 12 °C.",
+          "The parcel is 2 °C warmer and keeps rising: unstable.",
+          "Since 8 °C per km lies between 6 and 10, this air is conditionally unstable: the condition is saturation."
+        ],
+        "a": "Unstable: conditionally unstable air"
+      },
+      {
+        "t": "mistake",
+        "html": "Judging stability by the temperature at the ground. A hot day is not always unstable, and a cold one is not always stable. What matters is how fast the surrounding air cools <b>with height</b> compared with a rising parcel. Check: compute both temperatures at the same height above the ground and compare them."
+      },
+      {
+        "t": "list",
+        "items": [
+          "Environment cools faster than 9.8 °C per km: absolutely unstable (common only right above hot ground).",
+          "Between about 6 and 9.8 °C per km: conditionally unstable (the average, 6.5 °C per km, is here).",
+          "Slower than about 6 °C per km: absolutely stable.",
+          "Warmer with height (an inversion): very stable; it traps haze and smog under it."
+        ]
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "NOAA National Weather Service, JetStream online school for weather: Atmospheric stability"
+      },
+      {
+        "name": "Wallace and Hobbs, Atmospheric Science: An Introductory Survey, 2nd ed., section 3.6 (static stability)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,126 @@
+{
+  "id": "phys2.mirror-ray-diagrams",
+  "slug": "mirror-ray-diagrams",
+  "ladder": "physics",
+  "course": "phys2",
+  "unit": "geometric-optics",
+  "title": "Curved Mirrors and Ray Diagrams",
+  "short": "Three principal rays locate the image formed by a concave or convex mirror.",
+  "trouble": "Students think covering half of a mirror removes half of the image, rather than dimming all of it.",
+  "prereqs": [
+    "phys2.reflection"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-rays"
+  ],
+  "figureArchetype": "OpticsFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A plane mirror (<a href=\"/physics/physics-2/reflection/\">Reflection and Plane Mirrors</a>) keeps rays spreading exactly as they were. A curved mirror bends their paths. A <b>concave</b> mirror, curved in like a cave or a spoon's bowl, gathers rays that arrive parallel to its axis to one point, the <b>focal point</b> $F$. A <b>convex</b> mirror, bulging out, spreads them as if they came from a focal point behind it. For a spherical mirror, $f = R/2$, half the radius of curvature."
+      },
+      {
+        "t": "key",
+        "html": "Three principal rays from the tip of the object find the image: (1) a ray parallel to the axis reflects through $F$; (2) a ray through $F$ reflects parallel to the axis; (3) a ray through the center of curvature $C$ reflects straight back. Where the reflected rays meet is a <b>real</b> image; where they only seem to come from is a <b>virtual</b> image."
+      },
+      {
+        "t": "viz",
+        "name": "ph-rays",
+        "opts": {
+          "element": "concave",
+          "f": 10,
+          "dObj": 25,
+          "hObj": 5,
+          "lab": "/science-lab/optics/",
+          "task": "Drag the object inside F. What happens to the image?"
+        },
+        "cap": "A concave mirror with its three principal rays. Solid image: real (light really meets there). Dashed image: virtual."
+      },
+      {
+        "t": "why",
+        "html": "Each principal ray follows from the law of reflection. A ray through $C$ hits the mirror along a radius, which is the normal there, so it reflects straight back. The parallel ray and the ray through $F$ are each other's paths run backward: light paths work in both directions."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Object (concave mirror)",
+          "Image"
+        ],
+        "rows": [
+          [
+            "beyond $C$",
+            "real, inverted, smaller, between $F$ and $C$"
+          ],
+          [
+            "at $C$",
+            "real, inverted, same size, at $C$"
+          ],
+          [
+            "between $C$ and $F$",
+            "real, inverted, larger, beyond $C$"
+          ],
+          [
+            "at $F$",
+            "no image: the rays leave parallel"
+          ],
+          [
+            "inside $F$",
+            "virtual, upright, larger, behind the mirror"
+          ]
+        ],
+        "cap": "A convex mirror always gives a virtual, upright, smaller image, which is why store security mirrors are convex: they show a wide view."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking that covering half of a mirror removes half of the image. Every point of the object sends rays to every part of the mirror, so the uncovered half still forms the whole image, just dimmer. Check: the principal rays are only the easy ones to draw; countless other rays build the same image."
+      },
+      {
+        "t": "ex",
+        "title": "Object beyond C",
+        "q": "An object stands $30\\ \\text{cm}$ from a concave mirror with $f = 10\\ \\text{cm}$. Describe the image.",
+        "steps": [
+          "$C$ is at $2f = 20\\ \\text{cm}$, so the object is beyond $C$.",
+          "The parallel ray reflects through $F$; the ray through $F$ comes back parallel; they cross between $F$ and $C$, below the axis.",
+          "The image is real, inverted and smaller. (The mirror equation, next, puts it at $15\\ \\text{cm}$.)"
+        ],
+        "a": "Real, inverted, smaller, between F and C"
+      },
+      {
+        "t": "ex",
+        "title": "A makeup mirror",
+        "q": "Why does a concave makeup mirror make your face look bigger and upright when you are close to it?",
+        "steps": [
+          "Close to the mirror, your face is inside $F$.",
+          "The reflected rays spread apart, so they never meet in front of the mirror. Traced backward, they meet behind it.",
+          "That gives a virtual, upright, enlarged image."
+        ],
+        "a": "Object inside F: virtual, upright, larger"
+      },
+      {
+        "t": "viz",
+        "name": "ph-rays",
+        "opts": {
+          "element": "convex",
+          "f": -10,
+          "dObj": 20,
+          "hObj": 5
+        },
+        "cap": "A convex mirror: the reflected rays spread out, so the image is always virtual, upright and smaller."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Physics 2e, Section 25.7: Image Formation by Mirrors"
+      },
+      {
+        "name": "OpenStax University Physics Volume 3, Section 2.2: Spherical Mirrors"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,90 @@
+{
+  "id": "micro.externality-policy",
+  "slug": "externality-policy",
+  "ladder": "economics",
+  "course": "micro",
+  "unit": "market-failure",
+  "title": "Correcting Externalities",
+  "short": "A per-unit tax equal to the marginal external cost, a subsidy, tradable permits or direct rules can move output toward the efficient amount.",
+  "trouble": "Students think the efficient amount of pollution is zero. It is where the marginal benefit of cutting pollution equals the marginal cost of cutting it.",
+  "prereqs": [
+    "micro.positive-externalities",
+    "micro.subsidies"
+  ],
+  "xp": 2,
+  "viz": [
+    "ec-externality"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Externalities (<a href=\"/economics/microeconomics/positive-externalities/\">Positive Externalities</a>) leave the market at the wrong quantity. A per-unit tax or subsidy (<a href=\"/economics/microeconomics/subsidies/\">Per-Unit Subsidies</a>) can move it to the right one, and there are other tools too."
+      },
+      {
+        "t": "key",
+        "html": "A <b>Pigouvian tax</b> equal to the marginal external cost <b>at the efficient quantity</b> makes sellers pay for the harm, so the market lands on the efficient quantity. A subsidy equal to the marginal external benefit does the same for positive externalities. Other tools: <b>tradable permits</b> (cap the total and let firms trade the right to pollute) and <b>direct rules</b> (limits or required technology). The efficient amount of pollution is usually <b>not zero</b>: cut pollution until the marginal benefit of cutting equals the marginal cost."
+      },
+      {
+        "t": "why",
+        "html": "A tax of \\$4 per unit on a good that causes \\$4 of harm per unit shifts private supply up to the social cost curve, so the market's own crossing becomes the efficient one. Permits reach a target in a different way: firms that can cut pollution cheaply do more of the cutting and sell their spare permits to firms for which cutting is expensive. Why not cut pollution to zero? The first tons are cheap to remove and do a lot of good; the last tons may require shutting down useful production entirely. Past the point where the next ton's cleanup costs more than the harm it causes, cleaning more makes society worse off."
+      },
+      {
+        "t": "viz",
+        "name": "ec-externality",
+        "opts": {
+          "mode": "abatement"
+        },
+        "cap": "Marginal benefit and marginal cost of cleanup. They cross below 100%: past that point, more cleanup costs more than it's worth (hatched)."
+      },
+      {
+        "t": "ex",
+        "title": "The right tax",
+        "q": "From <a href=\"/economics/microeconomics/negative-externalities/\">Negative Externalities</a>: demand $P = 20 - Q$, private cost $MPC = 2 + Q$ and \\$4 of harm per unit. What tax brings the market to the efficient quantity of 7?",
+        "steps": [
+          "With a tax $t$ on sellers, supply becomes $P = 2 + Q + t$.",
+          "For the market to land at 7: $20 - 7 = 2 + 7 + t$, so $t = \\$4$, the marginal external cost."
+        ],
+        "a": "\\$4 per unit."
+      },
+      {
+        "t": "ex",
+        "title": "How much cleanup?",
+        "q": "The marginal benefit of cutting pollution is $MB = 90 - 0.8x$ and the marginal cost is $MC = 0.7x$ (dollars, with $x$ the percent cut). What is the efficient percent?",
+        "steps": [
+          "Set $MB = MC$: $90 - 0.8x = 0.7x$.",
+          "$90 = 1.5x$, so $x = 60\\%$.",
+          "Cutting more than 60% costs more per percent than the damage it prevents."
+        ],
+        "a": "60%, not 100%."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking the efficient amount of pollution is zero. Zero pollution would mean giving up many useful things whose benefits exceed the harm. The efficient amount is where the marginal benefit of cutting equals the marginal cost of cutting. Check: compare the cost of the last unit of cleanup with the damage it prevents."
+      },
+      {
+        "t": "note",
+        "html": "Economists broadly favor pricing tools (taxes and tradable permits) for reaching a pollution target at the lowest cost. How high to set the price or the cap depends on how much the harm is valued, which involves both science and judgment, and is debated."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, 12.3 Market-Oriented Environmental Tools"
+      },
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, 12.2 Command-and-Control Regulation"
+      },
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, 12.1 The Economics of Pollution"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.01 Principles of Microeconomics (scope and sequence)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

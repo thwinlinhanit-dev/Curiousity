@@ -1,0 +1,103 @@
+{
+  "id": "phys1.angular-momentum-conservation",
+  "slug": "angular-momentum-conservation",
+  "course": "phys1",
+  "courseTitle": "Physics 1: Motion, Forces and Energy",
+  "unit": "rotational-energy",
+  "unitTitle": "Energy and Momentum of Rotating Systems",
+  "title": "Conservation of Angular Momentum",
+  "short": "With no outside torque Iω stays the same, so a skater who pulls in her arms spins faster.",
+  "trouble": "Students think the skater's kinetic energy stays the same when she pulls her arms in; it grows, because she does work.",
+  "prereqs": [
+    "phys1.angular-momentum"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-rotation"
+  ],
+  "figureArchetype": "BodyFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "An <a href=\"/physics/physics-1/angular-momentum/\">angular impulse</a> $\\tau\\Delta t$ changes angular momentum. So when no outside torque acts, angular momentum cannot change at all, which explains spinning skaters, divers, and why planets speed up near the Sun."
+      },
+      {
+        "t": "key",
+        "html": "If the net outside torque on a system is zero, its angular momentum stays the same: $$\\role[rotational inertia before]{mass}{I_1}\\role[spin rate before]{angvel}{\\omega_1} = \\role[rotational inertia after]{mass}{I_2}\\role[spin rate after]{angvel}{\\omega_2}.$$ Pull mass toward the axis (smaller $I$) and the spin speeds up; push it outward and the spin slows."
+      },
+      {
+        "t": "why",
+        "html": "Inside a system, every force has a third-law partner, equal, opposite and along the same line, so their torques cancel. Only outside torques can change the total $L$. A skater on smooth ice feels almost no torque about her vertical axis, so her $L$ is fixed. Her kinetic energy is not: writing $K = \\tfrac{1}{2}I\\omega^2 = \\dfrac{L^2}{2I}$, the same $L$ with a smaller $I$ means a <b>bigger</b> $K$. The extra energy comes from the work her arms do pulling the weights inward, against their tendency to keep moving in a straight line."
+      },
+      {
+        "t": "viz",
+        "name": "ph-rotation",
+        "opts": {
+          "mode": "skater",
+          "omega0": 1.5,
+          "rIn": 0.2,
+          "rOut": 0.8,
+          "task": "Slide the arms in. $L$ (teal) stays put while $\\omega$ and $K$ grow."
+        },
+        "cap": "A skater pulls in two weights: $I$ drops, $\\omega$ rises and $L = I\\omega$ stays the same."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A skater pulls in her arms",
+        "q": "A skater spins at $1.5\\ \\text{rev/s}$ with $I = 4.5\\ \\text{kg·m}^2$. She pulls in her arms, reducing $I$ to $1.5\\ \\text{kg·m}^2$. Find her new spin rate and the change in her kinetic energy.",
+        "steps": [
+          "$\\omega_2 = \\dfrac{I_1}{I_2}\\omega_1 = \\dfrac{4.5}{1.5}(1.5) = 4.5\\ \\text{rev/s}$ (any unit works for this ratio).",
+          "For energy use rad/s: $\\omega_1 = 9.42$ and $\\omega_2 = 28.3\\ \\text{rad/s}$.",
+          "$K_1 = \\tfrac{1}{2}(4.5)(9.42)^2 = 200\\ \\text{J}$; $K_2 = \\tfrac{1}{2}(1.5)(28.3)^2 = 600\\ \\text{J}$. Three times as much: her arms did $400\\ \\text{J}$ of work."
+        ],
+        "a": "$4.5\\ \\text{rev/s}$; $K$ triples"
+      },
+      {
+        "t": "ex",
+        "title": "A disk dropped on a turntable",
+        "q": "A turntable ($I = 0.020\\ \\text{kg·m}^2$) spins freely at $45$ rpm. A disk with $I = 0.010\\ \\text{kg·m}^2$, not spinning, is dropped on it, centered. Find the final rate.",
+        "steps": [
+          "Friction between them is internal: $I_1\\omega_1 = (I_1 + I_2)\\omega_f$.",
+          "$\\omega_f = \\dfrac{0.020}{0.030}(45) = 30$ rpm.",
+          "Like a sticking collision: angular momentum is kept, but kinetic energy drops (to two thirds here)."
+        ],
+        "a": "$30$ rpm"
+      },
+      {
+        "t": "ex",
+        "title": "Jumping on a merry-go-round",
+        "q": "A $30\\ \\text{kg}$ child runs at $3.0\\ \\text{m/s}$ along a line tangent to the edge of a resting merry-go-round (a uniform disk, $120\\ \\text{kg}$, radius $2.0\\ \\text{m}$) and jumps on at the rim. Find $\\omega$ afterward.",
+        "steps": [
+          "Before: $$L = mvr_\\perp = (30)(3.0)(2.0) = 180\\ \\text{kg·m}^2\\text{/s}.$$",
+          "After: $$I = \\tfrac{1}{2}(120)(2.0)^2 + (30)(2.0)^2 = 240 + 120 = 360\\ \\text{kg·m}^2.$$",
+          "$\\omega = \\dfrac{180}{360} = 0.50\\ \\text{rad/s}$."
+        ],
+        "a": "$0.50\\ \\text{rad/s}$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Thinking the skater's kinetic energy stays the same when she pulls her arms in.</b> Angular momentum is what stays the same; kinetic energy grows, because $K = L^2/2I$ and $I$ shrinks. Conservation of one quantity doesn't mean conservation of the other, just as momentum but not kinetic energy survives a sticking collision. Check: pulling arms in takes effort, so energy must be going in."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Physics 2e, Section 10.5 (Angular Momentum and Its Conservation) and 10.6 (Collisions of Extended Bodies in Two Dimensions)"
+      },
+      {
+        "name": "OpenStax University Physics Volume 1, Section 11.3 (Conservation of Angular Momentum)"
+      },
+      {
+        "name": "College Board, AP Physics 1 Course and Exam Description, Unit 6: Energy and Momentum of Rotating Systems"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

@@ -1,0 +1,92 @@
+{
+  "id": "physsci.wave-speed",
+  "slug": "wave-speed",
+  "course": "physsci",
+  "courseTitle": "Physical Science",
+  "unit": "waves",
+  "unitTitle": "Waves, Sound and Light",
+  "title": "The Wave Equation v = fλ",
+  "short": "Wave speed equals frequency times wavelength.",
+  "trouble": "Students think a higher frequency makes a wave travel faster, when the medium sets the speed and the wavelength shrinks instead.",
+  "prereqs": [
+    "physsci.wave-parts",
+    "physsci.speed"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-wave"
+  ],
+  "figureArchetype": "WaveFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In one period $T$, a wave moves forward exactly one wavelength. Speed is distance over time (<a href=\"/physics/physical-science/speed/\">average speed</a>), so the wave's speed is one wavelength per period. Since $\\frac{1}{T} = f$ (from the <a href=\"/physics/physical-science/wave-parts/\">parts of a wave</a>), that gives the most useful equation for waves."
+      },
+      {
+        "t": "key",
+        "html": "$$v = f\\,\\lambda$$ Wave speed (m/s) = frequency (Hz) × wavelength (m). The <b>medium</b> sets the speed; if you change the frequency, the wavelength changes to match."
+      },
+      {
+        "t": "why",
+        "html": "$v = \\dfrac{\\lambda}{T} = \\lambda \\times \\dfrac{1}{T} = f\\,\\lambda$. Think of a line of waves marching past you: if 4 waves pass each second and each is 2 m long, then 8 m of wave passes each second, so $v = 8$ m/s. Shake a rope faster and the waves bunch up (shorter $\\lambda$), but they still travel at the speed the rope allows."
+      },
+      {
+        "t": "viz",
+        "name": "ph-wave",
+        "opts": {
+          "mode": "travel",
+          "f": 0.5,
+          "v": 1,
+          "A": 0.5,
+          "graphs": [
+            "snapshot"
+          ]
+        },
+        "cap": "Slide the frequency up. The waves get shorter, but each crest still moves along at the same speed: the speed belongs to the medium."
+      },
+      {
+        "t": "ex",
+        "title": "Ocean waves",
+        "q": "Ocean waves 12 m long pass a pier at 0.5 Hz. How fast do they travel?",
+        "steps": [
+          "$v = f\\,\\lambda = 0.5\\,\\mathrm{Hz} \\times 12\\,\\mathrm{m} = 6\\,\\mathrm{m/s}$."
+        ],
+        "a": "6 m/s"
+      },
+      {
+        "t": "ex",
+        "title": "A musical note",
+        "q": "Sound travels at 343 m/s in air. Find the wavelength of a 686 Hz note.",
+        "steps": [
+          "Rearrange: $\\lambda = \\dfrac{v}{f}$.",
+          "$\\lambda = \\dfrac{343}{686} = 0.5$ m."
+        ],
+        "a": "0.5 m"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking a higher frequency makes a wave travel faster. In the same medium, every sound travels at about 343 m/s, high notes and low notes alike; otherwise music from far away would arrive scrambled. A higher frequency just means a shorter wavelength. Check: $f \\times \\lambda$ should give the same speed for every wave in that medium."
+      },
+      {
+        "t": "note",
+        "html": "An FM radio station at 100 MHz (100,000,000 Hz) sends radio waves at the speed of light, 300,000,000 m/s, so each wave is $\\dfrac{300{,}000{,}000}{100{,}000{,}000} = 3$ m long."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e, 16.9 Waves"
+      },
+      {
+        "name": "OpenStax, College Physics 2e, 17.2 Speed of Sound, Frequency, and Wavelength"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-PS4-1"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

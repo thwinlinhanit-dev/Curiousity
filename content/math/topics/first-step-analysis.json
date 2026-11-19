@@ -1,0 +1,145 @@
+{
+  "id": "prob.first-step-analysis",
+  "slug": "first-step-analysis",
+  "ladder": "math",
+  "course": "prob",
+  "unit": "markov-chains",
+  "title": "Absorption and First-Step Analysis",
+  "short": "Condition on the first step to get equations for the chance of absorption and the expected time to get there, as in the gambler's ruin.",
+  "trouble": "Students forget to add 1 for the step just taken when writing the equations for expected times.",
+  "prereqs": [
+    "prob.markov-chains",
+    "alg1.systems-elimination"
+  ],
+  "xp": 3,
+  "viz": [
+    "prob-markov"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Some states of a <a href=\"/math/probability/markov-chains/\">Markov chain</a> are traps: once entered, the chain stays forever. A gambler who reaches \\$0 or a target stops playing. Two questions follow: where does the chain end up, and how long does it take? Conditioning on the first step turns each question into a small linear system, solved as in <a href=\"/math/algebra-1/systems-elimination/\">elimination</a>."
+      },
+      {
+        "t": "key",
+        "html": "A state $j$ is <b>absorbing</b> if $P_{jj} = 1$. Let $h_i$ be the chance of ending in a chosen absorbing state starting from $i$, and $m_i$ the expected number of steps to absorption. Then $h = 1$ in the chosen state, $h = 0$ in the other absorbing states, $m = 0$ in all absorbing states, and for every other state $$h_i = \\sum_j P_{ij}h_j, \\qquad m_i = 1 + \\sum_j P_{ij}m_j.$$"
+      },
+      {
+        "t": "why",
+        "html": "Condition on the first step. From $i$ the chain moves to $j$ with probability $P_{ij}$, and by the Markov property it then behaves as if it had started at $j$. So the chance of ending in the target is the weighted average $\\sum_j P_{ij}h_j$ (total probability). For the time, the step just taken counts 1, and then the expected remaining time from $j$ is $m_j$: $m_i = 1 + \\sum_j P_{ij}m_j$. Absorbing states supply the boundary values."
+      },
+      {
+        "t": "viz",
+        "name": "prob-markov",
+        "opts": {
+          "P": [
+            [
+              "1",
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            [
+              "1/2",
+              "0",
+              "1/2",
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "1/2",
+              "0",
+              "1/2",
+              "0"
+            ],
+            [
+              "0",
+              "0",
+              "1/2",
+              "0",
+              "1/2"
+            ],
+            [
+              "0",
+              "0",
+              "0",
+              "0",
+              "1"
+            ]
+          ],
+          "names": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "mode": "absorb",
+          "layout": "line"
+        },
+        "cap": "Gambler's ruin with fair bets between 0 and 4 dollars. The equations from the first step are written out and solved."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Gambler's ruin",
+        "q": "A gambler with \\$$k$ bets \\$1 at a time on fair coin flips until reaching \\$$N$ or \\$0. Find the chance of reaching \\$$N$.",
+        "steps": [
+          "$h_0 = 0$, $h_N = 1$, and for $0 < i < N$: $h_i = \\frac{1}{2}h_{i - 1} + \\frac{1}{2}h_{i + 1}$.",
+          "Rearranged: $h_{i + 1} - h_i = h_i - h_{i - 1}$. The steps are equal, so the $h_i$ rise in a straight line from 0 to 1.",
+          "$h_k = \\frac{k}{N}$; with $k = 1$ and $N = 4$, the chance is $\\frac{1}{4}$."
+        ],
+        "a": "$\\frac{k}{N}$"
+      },
+      {
+        "t": "ex",
+        "title": "How long it lasts",
+        "q": "For the same game, find the expected number of bets.",
+        "steps": [
+          "$m_0 = m_N = 0$ and $m_i = 1 + \\frac{1}{2}m_{i - 1} + \\frac{1}{2}m_{i + 1}$.",
+          "Try $m_i = i(N - i)$: $$1 + \\frac{1}{2}(i - 1)(N - i + 1) + \\frac{1}{2}(i + 1)(N - i - 1) = i(N - i)$$ It fits the equations and the boundary values.",
+          "From \\$1 with $N = 4$: $1 \\cdot 3 = 3$ bets on average. From \\$2: $2 \\cdot 2 = 4$."
+        ],
+        "a": "$k(N - k)$"
+      },
+      {
+        "t": "ex",
+        "title": "Waiting for two heads in a row",
+        "q": "Flip a fair coin until HH appears. Find the expected number of flips.",
+        "steps": [
+          "States: \"start\" and \"just flipped H\". Let $m_0, m_1$ be the expected flips still needed.",
+          "$m_0 = 1 + \\frac{1}{2}m_1 + \\frac{1}{2}m_0$ and $m_1 = 1 + \\frac{1}{2} \\cdot 0 + \\frac{1}{2}m_0$ (a T sends you back to the start).",
+          "The first gives $m_0 = 2 + m_1$; then $m_1 = 1 + \\frac{1}{2}(2 + m_1)$, so $m_1 = 4$ and $m_0 = 6$."
+        ],
+        "a": "6 flips"
+      },
+      {
+        "t": "note",
+        "html": "With an unfair coin, winning with probability $p$, the steps $h_{i + 1} - h_i$ grow by the factor $r = \\frac{1 - p}{p}$ each time, and $h_k = \\frac{1 - r^{k}}{1 - r^{N}}$ (for $p \\ne \\frac{1}{2}$)."
+      },
+      {
+        "t": "mistake",
+        "html": "Forgetting to add 1 for the step just taken when writing the equations for expected times. Without it, $m_i = \\sum P_{ij}m_j$ is solved by $m = 0$ everywhere, which is plainly wrong. Check: absorption probabilities have no \"1 +\" and lie between 0 and 1; expected times have \"1 +\" in every equation of a non-absorbing state."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Grinstead and Snell, Introduction to Probability (2nd revised edition, American Mathematical Society; free from Dartmouth College), chapter 11 (Markov Chains), section 11.2, absorbing Markov chains; chapter 12 (Random Walks), section 12.2, gambler's ruin"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.440, Probability and Random Variables (Spring 2014), lecture notes on Markov chains and first-step analysis"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

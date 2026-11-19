@@ -1,0 +1,98 @@
+{
+  "id": "chem.electron-configuration",
+  "slug": "electron-configuration",
+  "ladder": "chemistry",
+  "course": "chem",
+  "unit": "electrons",
+  "title": "Electron Configurations",
+  "short": "Fill sublevels in order of energy, read straight off the blocks of the periodic table.",
+  "trouble": "Students fill 3d before 4s by following the level numbers instead of the table's blocks, or write superscripts that do not add up to the number of electrons.",
+  "prereqs": [
+    "chem.orbitals-sublevels"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-orbitalbox",
+    "ch-periodic"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "An electron configuration lists how many electrons sit in each sublevel, like $\\mathrm{1s^2\\,2s^2\\,2p^4}$ for oxygen: 2 electrons in 1s, 2 in 2s and 4 in 2p. It uses the sublevels from <a href=\"/chemistry/chemistry/orbitals-sublevels/\">Sublevels and Orbitals</a> and fills them in order of energy."
+      },
+      {
+        "t": "key",
+        "html": "Fill sublevels from lowest energy up: 1s, 2s, 2p, 3s, 3p, <b>4s, 3d</b>, 4p, 5s, 4d, 5p, … The periodic table shows this order: read it row by row, left to right, and each block tells you the sublevel (s block on the left, d block in the middle, p block on the right). The superscripts must add up to the number of electrons."
+      },
+      {
+        "t": "why",
+        "html": "Electrons take the lowest energies available, just as water fills the bottom of a glass first. The order isn't simply by level number because sublevels overlap in energy: 4s is a little lower than 3d for potassium and calcium, so 4s fills first. The periodic table was built from the behavior of the elements, and its shape matches the filling order exactly: rows of 2, 8, 8, 18, 18 come from s (2), s + p (8) and s + d + p (18)."
+      },
+      {
+        "t": "viz",
+        "name": "ch-periodic",
+        "opts": {
+          "mode": "block",
+          "el": "Fe"
+        },
+        "cap": "The blocks of the periodic table. Read across each row to get the filling order: after 4s comes 3d (the transition metals), then 4p."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Sulfur",
+        "q": "Write the electron configuration of sulfur ($Z = 16$).",
+        "steps": [
+          "$\\mathrm{1s^2}$ (2), $\\mathrm{2s^2}$ (4), $\\mathrm{2p^6}$ (10), $\\mathrm{3s^2}$ (12), then 4 more in 3p.",
+          "$\\mathrm{1s^2\\,2s^2\\,2p^6\\,3s^2\\,3p^4}$",
+          "Check: $2 + 2 + 6 + 2 + 4 = 16$."
+        ],
+        "a": "$\\mathrm{1s^2\\,2s^2\\,2p^6\\,3s^2\\,3p^4}$"
+      },
+      {
+        "t": "ex",
+        "title": "Iron, with the noble-gas shortcut",
+        "q": "Write the configuration of iron ($Z = 26$) using the shortcut $\\mathrm{[Ar]}$.",
+        "steps": [
+          "Argon accounts for the first 18 electrons: $\\mathrm{[Ar]}$.",
+          "Next on the table come 4s (2 electrons) and then 3d.",
+          "$26 - 18 - 2 = 6$ left for 3d: $\\mathrm{[Ar]\\,4s^2\\,3d^6}$."
+        ],
+        "a": "$\\mathrm{[Ar]\\,4s^2\\,3d^6}$"
+      },
+      {
+        "t": "viz",
+        "name": "ch-orbitalbox",
+        "opts": {
+          "Z": 26
+        },
+        "cap": "Iron’s orbital diagram: 4s fills before 3d."
+      },
+      {
+        "t": "mistake",
+        "html": "Filling 3d before 4s by following the level numbers, or writing superscripts that don't add up to the number of electrons. Read the order off the periodic table: in row 4, potassium and calcium (4s) come before the transition metals (3d). And always add the superscripts as a final check."
+      },
+      {
+        "t": "note",
+        "html": "A few elements, such as chromium and copper, have measured configurations that differ slightly from this filling order ($\\mathrm{[Ar]\\,4s^1\\,3d^5}$ for chromium). Problems here avoid them; General Chemistry explains why."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 6.4 Electronic Structure of Atoms (Electron Configurations)"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-PS1-1"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

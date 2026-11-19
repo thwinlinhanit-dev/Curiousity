@@ -1,0 +1,95 @@
+{
+  "id": "stat.random-variable-spread",
+  "slug": "random-variable-spread",
+  "ladder": "math",
+  "course": "stat",
+  "unit": "random-variables",
+  "title": "Standard Deviation of a Random Variable",
+  "short": "Measure how much a random variable typically varies from its mean.",
+  "trouble": "",
+  "prereqs": [
+    "stat.expected-value",
+    "stat.standard-deviation"
+  ],
+  "xp": 2,
+  "viz": [
+    "dice"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Two games can have the same <a href=\"/math/probability-and-statistics/expected-value/\">expected value</a> and feel completely different: one pays about the same every time, the other swings wildly. The <a href=\"/math/probability-and-statistics/standard-deviation/\">standard deviation</a> you learned for data has a twin for random variables."
+      },
+      {
+        "t": "key",
+        "html": "The <b>variance</b> of a discrete random variable is $$\\sigma^2 = \\sum (x - \\mu)^2 P(x),$$ and its <b>standard deviation</b> is $\\sigma = \\sqrt{\\sigma^2}$, a typical distance of $X$ from its mean. A shortcut: $\\sigma^2 = E(X^2) - \\mu^2$."
+      },
+      {
+        "t": "why",
+        "html": "It is the data formula with probabilities in place of \"divide by the count\": each squared distance from the mean is weighted by how often it happens in the long run. (No $n - 1$ appears, because here we know the true probabilities and the true mean.) The shortcut comes from expanding $(x - \\mu)^2 = x^2 - 2\\mu x + \\mu^2$ and using $\\sum xP(x) = \\mu$ and $\\sum P(x) = 1$."
+      },
+      {
+        "t": "ex",
+        "title": "A small distribution",
+        "q": "$X$ takes the values 0, 1, 2 with probabilities $0.25, 0.5, 0.25$. Find $\\sigma$.",
+        "steps": [
+          "Mean: $$\\mu = 0(0.25) + 1(0.5) + 2(0.25) = 1$$",
+          "Squared distances: $(0 - 1)^2 = 1$, $(1 - 1)^2 = 0$, $(2 - 1)^2 = 1$.",
+          "Weighted: $$\\sigma^2 = 1(0.25) + 0(0.5) + 1(0.25) = 0.5$$",
+          "$\\sigma = \\sqrt{0.5} \\approx 0.71$."
+        ],
+        "a": "$\\sigma \\approx 0.71$"
+      },
+      {
+        "t": "ex",
+        "title": "One die",
+        "q": "Find the standard deviation of one roll of a fair die.",
+        "steps": [
+          "$\\mu = 3.5$.",
+          "Squared distances: $6.25, 2.25, 0.25, 0.25, 2.25, 6.25$; each has probability $\\frac{1}{6}$.",
+          "$\\sigma^2 = \\frac{17.5}{6} \\approx 2.917$.",
+          "$\\sigma \\approx 1.71$."
+        ],
+        "a": "$\\sigma \\approx 1.71$"
+      },
+      {
+        "t": "ex",
+        "title": "Same mean, different risk",
+        "q": "Game A pays \\$45 or \\$55, each with probability $\\frac12$. Game B pays \\$20 or \\$80, each with probability $\\frac12$. Compare.",
+        "steps": [
+          "Both have mean \\$50.",
+          "A: every payout is 5 from the mean, so $\\sigma_A = 5$. B: every payout is 30 from the mean, so $\\sigma_B = 30$.",
+          "B is much riskier: its outcomes land far from the mean."
+        ],
+        "a": "Same mean; $\\sigma = 5$ versus $\\sigma = 30$."
+      },
+      {
+        "t": "viz",
+        "name": "dice",
+        "opts": {
+          "kind": "dice",
+          "n": 1,
+          "sides": 6,
+          "theory": true
+        },
+        "cap": "One die: values spread from 1 to 6 around the mean 3.5, a typical distance of about 1.7."
+      },
+      {
+        "t": "mistake",
+        "html": "Forgetting to weight by probability (just averaging the squared distances as if every value were equally likely), or forgetting the final square root. Check: σ should look like a typical distance from the mean, in the same units as X."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Introductory Statistics 2e, section 4.2 Mean or Expected Value and Standard Deviation"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

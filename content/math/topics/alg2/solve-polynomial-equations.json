@@ -1,0 +1,102 @@
+{
+  "id": "alg2.solve-polynomial-equations",
+  "slug": "solve-polynomial-equations",
+  "ladder": "math",
+  "course": "alg2",
+  "unit": "polynomials",
+  "title": "Solving Polynomial Equations",
+  "short": "Factor completely and use the zero product property.",
+  "trouble": "Students divide both sides by x and lose the solution x = 0.",
+  "prereqs": [
+    "alg2.rational-root-theorem",
+    "alg2.sum-difference-cubes",
+    "alg2.quadratic-form-factoring"
+  ],
+  "xp": 3,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Solving a polynomial equation pulls together everything in this unit: factor completely, using <a href=\"/math/algebra-2/sum-difference-cubes/\">cubes</a>, <a href=\"/math/algebra-2/quadratic-form-factoring/\">quadratic form</a> and the <a href=\"/math/algebra-2/rational-root-theorem/\">The Rational Root Theorem</a>, then use the zero product property."
+      },
+      {
+        "t": "key",
+        "html": "Move every term to one side so the other side is 0. Factor completely. Set each factor equal to 0 and solve. A degree-$n$ equation has at most $n$ real solutions; complex solutions come from quadratic factors with negative discriminants."
+      },
+      {
+        "t": "why",
+        "html": "The zero product property says a product is 0 only when one of its factors is 0. That only works if one side is 0, which is why you must move everything over first. Factoring breaks one hard equation into several easy ones, and none of the steps throws a solution away."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "f": "x^3 - 4x",
+          "xmin": -4,
+          "xmax": 4,
+          "ymin": -6,
+          "ymax": 6,
+          "roots": true
+        },
+        "cap": "$y = x^3 - 4x$ crosses the $x$-axis three times: at $-2$, $0$ and $2$. Dividing by $x$ would lose the middle one."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Don't divide by $x$",
+        "q": "Solve $x^3 = 4x$.",
+        "steps": [
+          "Move everything to one side: $x^3 - 4x = 0$.",
+          "Factor: $x(x^2 - 4) = x(x - 2)(x + 2) = 0$.",
+          "Each factor gives a solution."
+        ],
+        "a": "$x = 0$, $2$ or $-2$"
+      },
+      {
+        "t": "ex",
+        "title": "Grouping",
+        "q": "Solve $x^3 + 3x^2 - 4x - 12 = 0$.",
+        "steps": [
+          "Group: $x^2(x + 3) - 4(x + 3)$ $= (x + 3)(x^2 - 4)$.",
+          "$(x + 3)(x - 2)(x + 2) = 0$."
+        ],
+        "a": "$x = -3$, $2$ or $-2$"
+      },
+      {
+        "t": "ex",
+        "title": "Complex solutions too",
+        "q": "Find all solutions of $x^3 - 8 = 0$.",
+        "steps": [
+          "Difference of cubes: $(x - 2)(x^2 + 2x + 4) = 0$.",
+          "$x = 2$, or $x^2 + 2x + 4 = 0$, which has discriminant $4 - 16 = -12$.",
+          "The quadratic formula: $$x = \\frac{-2 \\pm \\sqrt{-12}}{2} = \\frac{-2 \\pm 2\\sqrt{3}\\,i}{2} = -1 \\pm \\sqrt{3}\\,i.$$"
+        ],
+        "a": "$2$, $-1 + \\sqrt{3}\\,i$ and $-1 - \\sqrt{3}\\,i$"
+      },
+      {
+        "t": "mistake",
+        "html": "Dividing both sides by $x$ (or by any expression with $x$ in it). From $x^3 = 4x$, dividing by $x$ gives $x^2 = 4$ and loses $x = 0$, because you divided by 0 in that case. Factor instead. A quick count helps: a cubic should give you three solutions, counting complex ones and repeats."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Intermediate Algebra 2e, Section 6.5 Polynomial Equations"
+      },
+      {
+        "name": "Common Core State Standards, A-APR.B.3"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,89 @@
+{
+  "id": "mech.rocket-equation",
+  "slug": "rocket-equation",
+  "ladder": "physics",
+  "course": "mech",
+  "unit": "momentum",
+  "title": "The Rocket Equation",
+  "short": "A rocket gains Δv = v_e ln(m₀/m_f) by throwing mass backward.",
+  "trouble": "Students think a rocket moves by pushing against the air or the ground.",
+  "prereqs": [
+    "mech.system-of-particles",
+    "calc1.exp-log-integrals"
+  ],
+  "xp": 3,
+  "viz": [
+    "ph-collision"
+  ],
+  "figureArchetype": "CollisionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A rocket in empty space has nothing to push against, yet it speeds up. It does it by throwing mass backward, a steady stream of <a href=\"/physics/mechanics/system-of-particles/\">Newton's Second Law for a System</a> in action. Adding up the tiny kicks takes the logarithm from <a href=\"/math/calculus-1/exp-log-integrals/\">Integrals Giving Exponentials and Logarithms</a>. Build one in the <a href=\"/science-lab/rocket/\">Rocket Builder</a> lab."
+      },
+      {
+        "t": "why",
+        "html": "Watch from a frame moving with the rocket at one instant. In a short time the rocket (mass $m$) throws out a little exhaust, of mass $|dm|$, backward at speed $v_e$ relative to itself. Momentum in that frame starts at zero and stays zero, so the rocket gains $dv$ with $$m\\,dv = v_e\\,|dm| = -v_e\\,dm,$$ since the rocket's mass is decreasing ($dm < 0$). Separate and integrate from the starting mass $m_0$ to the final mass $m_f$: $$\\int dv = -v_e\\int_{m_0}^{m_f} \\dfrac{dm}{m} = v_e\\ln\\dfrac{m_0}{m_f}.$$ The push on the rocket is the momentum given to the exhaust each second: $F_{\\text{thrust}} = v_e\\left|\\dfrac{dm}{dt}\\right|$."
+      },
+      {
+        "t": "key",
+        "html": "$$\\role[change in speed]{velocity}{\\Delta v} = \\role[exhaust speed]{velocity}{v_e}\\ln\\dfrac{\\role[starting mass]{mass}{m_0}}{\\role[final mass]{mass}{m_f}}, \\qquad \\role[thrust]{force}{F_{\\text{thrust}}} = \\role[exhaust speed]{velocity}{v_e}\\left|\\dfrac{\\role[tiny mass of fuel]{mass}{dm}}{\\role[tiny time interval]{time}{dt}}\\right|.$$ The speed gained depends only on the exhaust speed and the mass ratio, not on how fast the fuel burns. Because of the logarithm, each extra bit of $\\Delta v$ needs an exponentially larger mass ratio, $m_0/m_f = e^{\\Delta v/v_e}$."
+      },
+      {
+        "t": "viz",
+        "name": "ph-collision",
+        "opts": {
+          "mode": "rocket",
+          "m0": 1000,
+          "mf": 200,
+          "ve": 3000,
+          "task": "Each packet of exhaust gives a kick. The kicks get bigger as the rocket gets lighter."
+        },
+        "cap": "A rocket throwing out packets: $\\Delta v$ builds as $v_e\\ln(m_0/m)$, faster near the end because the same packet pushes a lighter rocket."
+      },
+      {
+        "t": "ex",
+        "title": "Speed gained",
+        "q": "A rocket in deep space is 80% fuel, with exhaust speed $3000\\ \\text{m/s}$. What is its $\\Delta v$ when all the fuel is burned?",
+        "steps": [
+          "$m_0/m_f = 1/0.2 = 5$.",
+          "$\\Delta v = 3000\\ln 5 = 3000(1.609) = 4830\\ \\text{m/s}$."
+        ],
+        "a": "About $4830\\ \\text{m/s}$."
+      },
+      {
+        "t": "ex",
+        "title": "How much fuel?",
+        "q": "A spacecraft with $v_e = 3000\\ \\text{m/s}$ needs $\\Delta v = 6000\\ \\text{m/s}$. What fraction of its starting mass must be fuel?",
+        "steps": [
+          "$m_0/m_f = e^{6000/3000} = e^2 = 7.39$.",
+          "Fuel fraction $= 1 - 1/7.39 = 0.865$, so 86.5% of the starting mass is fuel.",
+          "Doubling the $\\Delta v$ again would need $e^4 \\approx 55$: hence multistage rockets, which drop empty tanks along the way."
+        ],
+        "a": "About 86.5%."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking a rocket moves by pushing against the air or the launch pad. It works best in a vacuum, where there is nothing to push on at all. Check with momentum: the system \"rocket plus exhaust\" has no outside force in deep space, so if the exhaust gains backward momentum, the rocket must gain the same forward momentum. The push comes from the exhaust gas, which the rocket shoves backward and which shoves the rocket forward."
+      },
+      {
+        "t": "note",
+        "html": "Near the ground, gravity also acts, so the rocket must have thrust larger than its weight to lift off, and $F_{\\text{thrust}} - mg = ma$ gives its acceleration. The acceleration grows as fuel burns, since $m$ shrinks while the thrust stays about the same."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 1, 9.7 Rocket Propulsion"
+      },
+      {
+        "name": "MIT OpenCourseWare 8.01 Classical Mechanics (scope and sequence)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

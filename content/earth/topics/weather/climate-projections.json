@@ -1,0 +1,134 @@
+{
+  "id": "weather.climate-projections",
+  "slug": "climate-projections",
+  "ladder": "earth",
+  "course": "weather",
+  "unit": "climate-change",
+  "title": "Climate Models and Projections",
+  "short": "Climate models project long-term averages, not the weather on a date, for different paths of future emissions.",
+  "trouble": "Students reason that if weather can't be forecast two weeks ahead, climate can't be projected decades ahead; climate is the average of weather, set by the energy balance, much as one coin toss is unpredictable but the share of heads in thousands is not.",
+  "prereqs": [
+    "weather.forecast-models",
+    "weather.climate-sensitivity"
+  ],
+  "xp": 2,
+  "viz": [
+    "es-climate-data"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "If <a href=\"/earth-and-space/weather-and-climate/forecast-models/\">weather forecasts</a> lose skill after about ten days, how can scientists say anything about 2100? Because they are answering a different question. Climate projections use the <a href=\"/earth-and-space/weather-and-climate/climate-sensitivity/\">climate sensitivity</a> and the same physics as weather models, but they predict long-term averages."
+      },
+      {
+        "t": "key",
+        "html": "A <b>climate model</b> uses the same laws of physics as a weather model, run on a coarser grid for decades or centuries, with the ocean, ice and land included. It projects the <b>statistics</b> of weather (averages, ranges, extremes) for a given path of future emissions, called a <b>scenario</b>, not the weather on any particular date. Global surface temperature in 2011–2020 was about 1.1 °C above 1850–1900; by 2081–2100 it is projected to be about 1.4 °C above with very low emissions and about 4.4 °C above with very high emissions (best estimates, IPCC 2021)."
+      },
+      {
+        "t": "why",
+        "html": "Weather is chaotic: the exact sequence of storms depends on tiny details of the starting state. Climate is the average of weather, and the average is set by the energy balance, which depends on the forcings, not on the starting details. A coin toss is unpredictable, but the share of heads in 10,000 tosses is not; a die can be loaded so that sixes come up more often, even if no single roll can be predicted. Climate models are tested by running them over the past: they reproduce the measured warming of the last century only when the human forcings are included."
+      },
+      {
+        "t": "viz",
+        "name": "es-climate-data",
+        "opts": {
+          "mode": "series",
+          "preset": "temperature",
+          "window": 10,
+          "trend": true,
+          "range": [
+            1970,
+            2024
+          ],
+          "projections": true
+        },
+        "cap": "Global temperature anomalies (NASA; yearly values entered by hand and rounded) with a 10-year average, and at the right the IPCC's projections for 2081–2100 under five scenarios: dot for the best estimate, bar for the very likely range."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Scenario",
+          "Emissions",
+          "Best estimate (°C)",
+          "Very likely range (°C)"
+        ],
+        "rows": [
+          [
+            "SSP1-1.9",
+            "very low",
+            "1.4",
+            "1.0–1.8"
+          ],
+          [
+            "SSP1-2.6",
+            "low",
+            "1.8",
+            "1.3–2.4"
+          ],
+          [
+            "SSP2-4.5",
+            "intermediate",
+            "2.7",
+            "2.1–3.5"
+          ],
+          [
+            "SSP3-7.0",
+            "high",
+            "3.6",
+            "2.8–4.6"
+          ],
+          [
+            "SSP5-8.5",
+            "very high",
+            "4.4",
+            "3.3–5.7"
+          ]
+        ],
+        "cap": "Projected global warming by 2081–2100 compared with 1850–1900 (IPCC AR6, Table SPM.1)."
+      },
+      {
+        "t": "ex",
+        "title": "Reading the table",
+        "q": "How much more warming does the very-high scenario project by 2081–2100 than the low scenario (SSP1-2.6), using best estimates?",
+        "steps": [
+          "$4.4 - 1.8 = 2.6$ °C more.",
+          "By late century, which path emissions take matters more than any other uncertainty."
+        ],
+        "a": "2.6 °C"
+      },
+      {
+        "t": "ex",
+        "title": "Coins and climate",
+        "q": "A fair coin is tossed 10,000 times. You can't predict any single toss. About how many heads do you expect, and how sure can you be?",
+        "steps": [
+          "Expected: $0.5 \\times 10{,}000 = 5000$ heads.",
+          "Almost every run of 10,000 tosses lands within about 100 of 5000 (within 2 standard deviations, $2\\sqrt{10{,}000 \\times 0.25} = 100$).",
+          "The single toss is like weather; the share of heads is like climate."
+        ],
+        "a": "About 5000, almost surely within 100"
+      },
+      {
+        "t": "mistake",
+        "html": "Reasoning that if weather can't be forecast two weeks ahead, climate can't be projected decades ahead. Climate is the average of weather, set by the energy balance, much as one coin toss is unpredictable but the share of heads in thousands is not. Check what is being predicted: a date's weather, or a long-term average for a given scenario."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "IPCC Sixth Assessment Report, Working Group I (2021): Summary for Policymakers, Table SPM.1 and A.1.2"
+      },
+      {
+        "name": "NASA: GISS Surface Temperature Analysis (GISTEMP)"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-ESS3-5"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,87 @@
+{
+  "id": "chem.sig-fig-calculations",
+  "slug": "sig-fig-calculations",
+  "ladder": "chemistry",
+  "course": "chem",
+  "unit": "matter",
+  "title": "Significant Figures in Calculations",
+  "short": "Products and quotients keep the fewest significant figures; sums and differences keep the fewest decimal places.",
+  "trouble": "Students use the multiplication rule for sums, or round after every step instead of once at the end.",
+  "prereqs": [
+    "chem.significant-figures",
+    "g8.scientific-operations"
+  ],
+  "xp": 2,
+  "viz": [],
+  "figureArchetype": "LessonFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A calculator will happily give you ten digits, but an answer can be no more certain than the measurements that went into it. You know how to count <a href=\"/chemistry/chemistry/significant-figures/\">Measurements and Significant Figures</a> and how to compute with <a href=\"/math/pre-algebra/scientific-operations/\">scientific notation</a>; now combine them."
+      },
+      {
+        "t": "key",
+        "html": "<b>Multiplying or dividing</b>: keep as many significant figures as the measurement with the <b>fewest significant figures</b>. <b>Adding or subtracting</b>: keep as many <b>decimal places</b> as the measurement with the fewest decimal places. Round once, at the end. Counted and defined numbers are exact and never limit the answer."
+      },
+      {
+        "t": "why",
+        "html": "When you add, the uncertain digits line up by place value: $12.52 + 3.1$ is uncertain in the tenths place, because 3.1 tells you nothing about hundredths. So the sum is known only to the tenths: $15.6$. When you multiply, uncertainties scale with the size of the numbers, so what matters is the relative uncertainty, which is set by how many significant figures each factor has. Rounding at every step stacks small rounding errors, so keep extra digits until the end."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Dividing",
+        "q": "A sample has a mass of $45.35\\ \\text{g}$ and a volume of $14\\ \\text{mL}$. Find its density.",
+        "steps": [
+          "Calculator: $45.35 \\div 14 = 3.2392857\\ldots$",
+          "$45.35$ has 4 significant figures; $14$ has 2. Keep 2.",
+          "$3.2\\ \\text{g/mL}$"
+        ],
+        "a": "$3.2\\ \\text{g/mL}$"
+      },
+      {
+        "t": "ex",
+        "title": "Adding",
+        "q": "Add $12.52\\ \\text{g} + 3.1\\ \\text{g} + 0.256\\ \\text{g}$.",
+        "steps": [
+          "Calculator: $15.876$.",
+          "Decimal places: 2, 1 and 3. The fewest is 1 (in 3.1).",
+          "Round to one decimal place: $15.9\\ \\text{g}$."
+        ],
+        "a": "$15.9\\ \\text{g}$"
+      },
+      {
+        "t": "ex",
+        "title": "A two-step problem",
+        "q": "A metal piece of mass $25.47\\ \\text{g}$ raises the water in a cylinder from $20.0\\ \\text{mL}$ to $23.4\\ \\text{mL}$. Find its density.",
+        "steps": [
+          "Subtract first: $23.4 - 20.0 = 3.4\\ \\text{mL}$, one decimal place, so 2 significant figures.",
+          "Divide: $25.47 \\div 3.4 = 7.4911\\ldots$",
+          "Keep 2 significant figures: $7.5\\ \\text{g/mL}$. The subtraction cost a significant figure."
+        ],
+        "a": "$7.5\\ \\text{g/mL}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Using the multiplication rule for sums (counting significant figures instead of decimal places), or rounding after every step. Check: in a sum, line the numbers up by their decimal points; the answer can't go further right than the shortest one."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 1.5 Measurement Uncertainty, Accuracy, and Precision"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, N-Q.A.3"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

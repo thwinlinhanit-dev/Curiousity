@@ -1,0 +1,102 @@
+{
+  "id": "mech.instantaneous-power",
+  "slug": "instantaneous-power",
+  "ladder": "physics",
+  "course": "mech",
+  "unit": "work-energy",
+  "title": "Instantaneous Power",
+  "short": "P = dW/dt = F · v gives the power at each instant.",
+  "trouble": "Students use the average power when the force or speed is changing.",
+  "prereqs": [
+    "mech.work-integral",
+    "phys1.power"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/physics/physics-1/power/\">Power</a> defined power as work per time, $P = W/\\Delta t$, and showed $P = Fv$ for a steady push. With <a href=\"/physics/mechanics/work-integral/\">Work by a Variable Force</a>, power becomes the rate of work at each instant, even when the force and speed change."
+      },
+      {
+        "t": "key",
+        "html": "$$P = \\dfrac{dW}{dt} = \\vec{F}\\cdot\\vec{v}.$$ The power of the <b>net</b> force equals $\\dfrac{dK}{dt}$. Units: watts (J/s). The total work over a time interval is the area under the $P$–$t$ graph, $W = \\int P\\,dt$."
+      },
+      {
+        "t": "why",
+        "html": "In a tiny time $dt$ the object moves $d\\vec{r} = \\vec{v}\\,dt$, so the force does work $dW = \\vec{F}\\cdot d\\vec{r} = \\vec{F}\\cdot\\vec{v}\\,dt$. Divide by $dt$. A force perpendicular to the velocity, like the tension on a ball whirled in a circle at steady speed, delivers zero power: it changes the direction, never the speed."
+      },
+      {
+        "t": "viz",
+        "name": "ph-graph",
+        "opts": {
+          "fn": "1000*x",
+          "domain": [
+            0,
+            10
+          ],
+          "xlab": "t",
+          "ylab": "P",
+          "xunit": "s",
+          "yunit": "W",
+          "tool": "both",
+          "at": 5,
+          "a": 0,
+          "b": 10,
+          "task": "A steady $500\\ \\text{N}$ push accelerates a $250\\ \\text{kg}$ cart from rest. The power grows as the speed does; the area is the work."
+        },
+        "cap": "With a constant force from rest, $v = (F/m)t$, so $P = Fv = \\dfrac{F^2}{m}t$ grows linearly: $1000t$ watts here. The area over 10 s is $50\\ \\text{kJ} = \\tfrac{1}{2}mv^2$."
+      },
+      {
+        "t": "ex",
+        "title": "Cruising against drag",
+        "q": "A car cruises at $25\\ \\text{m/s}$, with air drag and rolling resistance adding up to $500\\ \\text{N}$. What power reaches the wheels?",
+        "steps": [
+          "At steady speed the driving force equals the resistance, $500\\ \\text{N}$, along the velocity.",
+          "$P = Fv = 500(25) = 12\\,500\\ \\text{W} = 12.5\\ \\text{kW}$."
+        ],
+        "a": "$12.5\\ \\text{kW}$."
+      },
+      {
+        "t": "ex",
+        "title": "Constant power from rest",
+        "q": "A $1000\\ \\text{kg}$ car's engine delivers a steady $50\\ \\text{kW}$ starting from rest. Ignoring losses, when does it reach $20\\ \\text{m/s}$?",
+        "steps": [
+          "$\\dfrac{dK}{dt} = P$ is constant, so $K = Pt$.",
+          "$\\tfrac{1}{2}(1000)(20)^2 = 200\\,000\\ \\text{J} = 50\\,000t$, so $t = 4\\ \\text{s}$.",
+          "The force $P/v$ is enormous at first and falls as the car speeds up: the acceleration is not constant."
+        ],
+        "a": "$4\\ \\text{s}$."
+      },
+      {
+        "t": "mistake",
+        "html": "Using the average power when the force or speed is changing. For the cart in the picture, the average power over 10 s is $5\\ \\text{kW}$, but at the end the push delivers $10\\ \\text{kW}$, twice as much. The average $W/\\Delta t$ tells you the total energy per time; the instantaneous $\\vec{F}\\cdot\\vec{v}$ tells you the rate right now. Check: if $v$ changes during the interval, the two will differ."
+      },
+      {
+        "t": "note",
+        "html": "The same idea carries over to turning: a torque $\\tau$ on something spinning at $\\omega$ delivers $P = \\tau\\omega$, which you'll derive in <a href=\"/physics/mechanics/rotational-work-power/\">Work and Power in Rotation</a>. An engine's power rating is a torque times a rotation rate."
+      },
+      {
+        "t": "note",
+        "html": "Drag force grows like $v^2$, so the power to overcome it grows like $v^3$: driving 10% faster takes about $1.1^3 \\approx 1.33$ times the power against drag. That is one reason fuel use rises quickly at highway speeds."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 1, 7.4 Power"
+      },
+      {
+        "name": "MIT OpenCourseWare 8.01 Classical Mechanics (scope and sequence)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

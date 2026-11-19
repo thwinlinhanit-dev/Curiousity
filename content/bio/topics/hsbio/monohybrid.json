@@ -1,0 +1,131 @@
+{
+  "id": "hsbio.monohybrid",
+  "slug": "monohybrid",
+  "ladder": "bio",
+  "course": "hsbio",
+  "unit": "genetics",
+  "title": "Monohybrid Crosses",
+  "short": "For one gene, write each parent's gametes, fill the Punnett square, and read the genotype ratio (1:2:1 for Aa × Aa) and the phenotype ratio (3:1).",
+  "trouble": "Students give the genotype ratio when asked for the phenotype ratio, or count AA and Aa as different phenotypes.",
+  "prereqs": [
+    "hsbio.mendel"
+  ],
+  "xp": 2,
+  "viz": [
+    "bi-punnett"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A <b>monohybrid cross</b> follows one gene. You already know the steps from <a href=\"/biology/high-school-biology/mendel/\">Mendel's Experiments</a>. Here we make them exact, so you can predict any one-gene cross."
+      },
+      {
+        "t": "list",
+        "items": [
+          "Write each parent's genotype (for example Aa).",
+          "Write the gametes: each gamete gets <b>one</b> allele of the gene. Aa makes A and a; AA makes only A.",
+          "Fill the Punnett square: each box joins one gamete from the side with one from the top.",
+          "Count genotypes (AA, Aa, aa), then count phenotypes (what the organism looks like)."
+        ]
+      },
+      {
+        "t": "key",
+        "html": "For Aa × Aa the <b>genotype ratio</b> is 1 AA : 2 Aa : 1 aa, and the <b>phenotype ratio</b> is 3 dominant : 1 recessive, because AA and Aa look the same."
+      },
+      {
+        "t": "why",
+        "html": "Each box of the square is equally likely, because each gamete type is made equally often and gametes join at random. So a box is a probability: in a 4-box square, each box is ¼. Counting boxes is the same as adding probabilities."
+      },
+      {
+        "t": "viz",
+        "name": "bi-punnett",
+        "opts": {
+          "p1": "Bb",
+          "p2": "bb",
+          "mode": "fill",
+          "traits": {
+            "B": "black fur",
+            "b": "brown fur"
+          }
+        },
+        "cap": "Fill each box: one allele from the top, one from the side. Then press Check."
+      },
+      {
+        "t": "ex",
+        "title": "A cross with a heterozygote",
+        "q": "In guinea pigs, black fur (B) is dominant to brown (b). Cross Bb × bb. Give the genotype and phenotype ratios.",
+        "steps": [
+          "Gametes: Bb gives B and b; bb gives only b.",
+          "Boxes: Bb, Bb, bb, bb.",
+          "Genotypes: 2 Bb : 2 bb, which is 1 : 1.",
+          "Phenotypes: 2 black : 2 brown, which is 1 : 1."
+        ],
+        "a": "Genotypes 1 Bb : 1 bb; phenotypes 1 black : 1 brown."
+      },
+      {
+        "t": "ex",
+        "title": "Two ratios from one square",
+        "q": "Cross Tt × Tt (tall is dominant). What fraction are tall, and what fraction are Tt?",
+        "steps": [
+          "Boxes: TT, Tt, Tt, tt.",
+          "Tall: TT and Tt, so 3 of 4 boxes: ¾.",
+          "Tt alone: 2 of 4 boxes: ½."
+        ],
+        "a": "¾ tall; ½ are Tt."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Cross",
+          "Genotype ratio",
+          "Phenotype ratio"
+        ],
+        "rows": [
+          [
+            "AA × aa",
+            "all Aa",
+            "all dominant"
+          ],
+          [
+            "Aa × Aa",
+            "1 AA : 2 Aa : 1 aa",
+            "3 : 1"
+          ],
+          [
+            "Aa × aa",
+            "1 Aa : 1 aa",
+            "1 : 1"
+          ],
+          [
+            "AA × Aa",
+            "1 AA : 1 Aa",
+            "all dominant"
+          ]
+        ],
+        "cap": "The four crosses worth knowing by heart."
+      },
+      {
+        "t": "mistake",
+        "html": "Two slips are common. One is giving the genotype ratio (1:2:1) when the question asks for the phenotype ratio (3:1). The other is counting AA and Aa as different looks. Check: a phenotype ratio for one gene with complete dominance has at most two parts."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Concepts of Biology, 8.2 Laws of Inheritance"
+      },
+      {
+        "name": "OpenStax, Biology 2e, 12.2 Characteristics and Traits"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-LS3-3: Heredity: Inheritance and Variation of Traits"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

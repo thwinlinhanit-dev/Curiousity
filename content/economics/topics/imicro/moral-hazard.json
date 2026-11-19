@@ -1,0 +1,103 @@
+{
+  "id": "imicro.moral-hazard",
+  "slug": "moral-hazard",
+  "ladder": "economics",
+  "course": "imicro",
+  "unit": "failure-information",
+  "title": "Moral Hazard and Incentives",
+  "short": "When actions are hidden after a deal, deductibles, copays and pay tied to results can restore incentives.",
+  "trouble": "Students call any risky behavior moral hazard, rather than behavior that changes because someone else now bears the cost.",
+  "prereqs": [
+    "imicro.insurance"
+  ],
+  "xp": 2,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/economics/intermediate-microeconomics/insurance/\">Insurance</a> protects people from losses, but it can also change what they do. When one side's actions after a deal are hidden, the other side bears costs it can't control."
+      },
+      {
+        "t": "key",
+        "html": "<b>Moral hazard:</b> a person changes her hidden behavior after a deal because someone else now bears part of the cost. Contracts restore incentives by leaving some of the cost with her: <b>deductibles</b>, <b>copays</b> and coinsurance for insurance, and <b>pay tied to results</b> (bonuses, commissions) for work. The price is that she bears some risk again."
+      },
+      {
+        "t": "why",
+        "html": "With full insurance, a careful driver pays the cost of care but the insurer gets all the savings from fewer accidents, so care doesn't pay. If the driver keeps a deductible $D$ per accident, care cuts her expected losses by $(\\pi_H - \\pi_L)D$, where $\\pi_H$ and $\\pi_L$ are the accident chances without and with care. Care is worth it when that saving covers its cost $c$: $$D \\ge \\frac{c}{\\pi_H - \\pi_L}.$$ The same incentive condition sets the smallest bonus that makes hidden effort worthwhile at work."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "fns": [
+            {
+              "f": "0.2*x",
+              "label": "careless",
+              "color": "red"
+            },
+            {
+              "f": "60 + 0.1*x",
+              "label": "careful",
+              "color": "blue"
+            }
+          ],
+          "xmin": 0,
+          "xmax": 1200,
+          "ymin": 0,
+          "ymax": 240,
+          "xlabel": "D",
+          "ylabel": "$ a year",
+          "roots": false,
+          "intersections": true,
+          "zoom": false
+        },
+        "cap": "The driver's expected yearly cost against the deductible $D$. Careless: $0.2D$. Careful: \\$60 of care plus $0.1D$. Below a \\$600 deductible carelessness is cheaper for the driver; above it, care is."
+      },
+      {
+        "t": "ex",
+        "title": "The smallest deductible",
+        "q": "Care costs the equivalent of \\$60 a year and lowers the yearly accident chance from 0.2 to 0.1.",
+        "steps": [
+          "Saving from care: $(0.2 - 0.1)D = 0.1D$.",
+          "Care pays when $0.1D \\ge 60$: $D \\ge 600$."
+        ],
+        "a": "\\$600."
+      },
+      {
+        "t": "ex",
+        "title": "A bonus for hidden effort",
+        "q": "Extra effort costs a salesperson the equivalent of \\$200 and raises her chance of landing a client from 0.4 to 0.8. What bonus for landing the client makes effort worth it?",
+        "steps": [
+          "Effort raises the expected bonus by $(0.8 - 0.4)B = 0.4B$.",
+          "$0.4B \\ge 200$ gives $B \\ge 500$."
+        ],
+        "a": "\\$500."
+      },
+      {
+        "t": "mistake",
+        "html": "Calling any risky behavior moral hazard. A skydiver who loves risk and pays her own costs is not an example: no one else bears the consequences of her choice. Moral hazard needs a deal that shifts costs to someone else and an action that party can't see. Check: who pays for the bad outcome, and could they observe the behavior?"
+      },
+      {
+        "t": "note",
+        "html": "The trade-off is real: deductibles and performance pay improve incentives but make people bear risk they would rather insure, so the best contract balances the two. How large moral hazard effects are in health care and other markets is measured in many studies, with results that vary by setting."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, ch. 16.2 Insurance and Imperfect Information"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.04 Intermediate Microeconomic Theory (course scope and lecture topics)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

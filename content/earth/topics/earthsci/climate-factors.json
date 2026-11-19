@@ -1,0 +1,110 @@
+{
+  "id": "earthsci.climate-factors",
+  "slug": "climate-factors",
+  "ladder": "earth",
+  "course": "earthsci",
+  "unit": "oceans-climate",
+  "title": "What Sets a Place's Climate",
+  "short": "Latitude, elevation, distance from the sea, ocean currents and mountains together set a region's climate.",
+  "trouble": "Students expect places at the same latitude to share a climate, missing the effect of ocean currents, elevation and mountains; London has far milder winters than Calgary, at nearly the same latitude.",
+  "prereqs": [
+    "earthsci.weather-vs-climate",
+    "earthsci.surface-currents"
+  ],
+  "xp": 2,
+  "viz": [
+    "es-climate-data",
+    "es-earth-sun"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Why is Seattle mild and rainy while Chicago, a bit farther south, has bitter winters and hot summers? A place's <a href=\"/earth-and-space/earth-science/weather-vs-climate/\">climate</a> depends on several factors working together."
+      },
+      {
+        "t": "list",
+        "items": [
+          "<b>Latitude</b>: closer to the equator, the Sun is higher and it is warmer.",
+          "<b>Elevation</b>: higher places are cooler, about 6.5 °C for each kilometer up.",
+          "<b>Distance from the ocean</b>: water warms and cools slowly, so coasts have milder winters and cooler summers; inland places have bigger swings.",
+          "<b>Ocean currents</b>: a <a href=\"/earth-and-space/earth-science/surface-currents/\">warm current</a> warms nearby land; a cool current cools it.",
+          "<b>Mountains</b>: air rising over a range drops its rain on the windward side; the far side lies in a dry \"rain shadow.\"",
+          "<b>Prevailing winds</b>: winds blowing off the ocean bring the ocean's mildness and moisture inland."
+        ]
+      },
+      {
+        "t": "key",
+        "html": "Latitude sets the starting point, but elevation, distance from the sea, ocean currents, mountains and winds can change a climate a lot. Places at the same latitude can have very different climates."
+      },
+      {
+        "t": "why",
+        "html": "Water has a high specific heat: it takes a lot of energy to change its temperature. So the ocean warms slowly in summer and cools slowly in winter, and winds off the ocean carry that steadiness to the coast. Far inland, the ground heats and cools quickly, so summers are hotter and winters colder. Mountains add another twist: air forced up their slopes cools, and its vapor condenses into rain, so the air that crosses to the other side is dry."
+      },
+      {
+        "t": "viz",
+        "name": "es-climate-data",
+        "opts": {
+          "mode": "climograph",
+          "city": "seattle"
+        },
+        "cap": "Seattle's mild, wet climate. Compare it with Chicago or Moscow, far from the ocean."
+      },
+      {
+        "t": "viz",
+        "name": "es-earth-sun",
+        "opts": {
+          "mode": "beam",
+          "compare": [
+            10,
+            50
+          ],
+          "date": "03-20"
+        },
+        "cap": "Latitude: the same beam of sunlight spreads over more ground at 50° than at 10°."
+      },
+      {
+        "t": "ex",
+        "title": "Up the mountain",
+        "q": "A town at sea level averages 24 °C in July. About what is the July average in a mountain town at 2,000 m, nearby?",
+        "steps": [
+          "2,000 m is 2 km.",
+          "Cooling: $2 \\times 6.5 = 13$ °C.",
+          "$24 - 13 = 11$ °C."
+        ],
+        "a": "About 11 °C"
+      },
+      {
+        "t": "ex",
+        "title": "Coast or inland?",
+        "q": "Two towns at the same latitude: town A has a 10 °C difference between its warmest and coldest months; town B has 35 °C. Which is on the coast?",
+        "steps": [
+          "The ocean evens out temperatures.",
+          "The smaller swing, 10 °C, belongs to the coastal town."
+        ],
+        "a": "Town A"
+      },
+      {
+        "t": "mistake",
+        "html": "Expecting places at the same latitude to share a climate. London and Calgary are at nearly the same latitude, but London's January average is around 5 °C while Calgary's is below −5 °C. London sits near the ocean, warmed by the North Atlantic Current and by winds off the sea; Calgary is far inland at about 1,000 m. Check every factor, not only latitude."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "National Weather Service, JetStream online weather school: Climate"
+      },
+      {
+        "name": "NOAA, National Centers for Environmental Information: Climate Normals"
+      },
+      {
+        "name": "Next Generation Science Standards, MS-ESS2-6"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

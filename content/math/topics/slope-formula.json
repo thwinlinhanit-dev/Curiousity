@@ -1,0 +1,99 @@
+{
+  "id": "g8.slope-formula",
+  "slug": "slope-formula",
+  "ladder": "math",
+  "course": "g8",
+  "unit": "slope",
+  "title": "The Slope Formula",
+  "short": "m = (y₂ − y₁)/(x₂ − x₁) for any two points.",
+  "trouble": "Students subtract the coordinates in different orders on the top and bottom, which flips the sign.",
+  "prereqs": [
+    "g8.slope-from-graph",
+    "g7.integer-operations"
+  ],
+  "xp": 2,
+  "viz": [
+    "slope"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Counting rise and run works on a grid. With coordinates you can compute them instead, using <a href=\"/math/grade-7/integer-operations/\">signed-number arithmetic</a> in place of counting <a href=\"/math/pre-algebra/slope-from-graph/\">from a graph</a>."
+      },
+      {
+        "t": "why",
+        "html": "The rise from point 1 to point 2 is the change in $y$: $y_2 - y_1$. The run is the change in $x$: $x_2 - x_1$. That gives the formula below. Which point you call “point 1” does not matter: swapping them flips the sign of both the top and the bottom, and the two signs cancel."
+      },
+      {
+        "t": "key",
+        "html": "For any two points $(x_1, y_1)$ and $(x_2, y_2)$ with $x_1 \\ne x_2$: $$m = \\frac{y_2 - y_1}{x_2 - x_1}$$ Subtract in the same order on the top and the bottom."
+      },
+      {
+        "t": "viz",
+        "name": "slope",
+        "opts": {
+          "p1": [
+            -3,
+            4
+          ],
+          "p2": [
+            3,
+            -2
+          ]
+        },
+        "cap": "Move the points and compare the formula with the triangle."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Plug in",
+        "q": "Find the slope through $(2, 1)$ and $(6, 9)$.",
+        "steps": [
+          "$m = \\dfrac{9 - 1}{6 - 2} = \\dfrac{8}{4}$."
+        ],
+        "a": "$2$"
+      },
+      {
+        "t": "ex",
+        "title": "With negatives",
+        "q": "Find the slope through $(-3, 4)$ and $(3, -2)$.",
+        "steps": [
+          "$m = \\dfrac{-2 - 4}{3 - (-3)} = \\dfrac{-6}{6}$.",
+          "$m = -1$."
+        ],
+        "a": "$-1$"
+      },
+      {
+        "t": "ex",
+        "title": "Flat and upright lines",
+        "q": "Find the slopes through $(1, 5)$ and $(7, 5)$, and through $(4, -2)$ and $(4, 3)$.",
+        "steps": [
+          "First pair: $m = \\frac{5 - 5}{7 - 1} = \\frac{0}{6} = 0$. A horizontal line has slope 0.",
+          "Second pair: the run is $4 - 4 = 0$, and dividing by 0 is not possible. A vertical line has no slope; we say its slope is undefined."
+        ],
+        "a": "$0$, and undefined"
+      },
+      {
+        "t": "mistake",
+        "html": "Subtracting in different orders on top and bottom, which flips the sign. For $(2, 1)$ and $(6, 9)$: $\\frac{9 - 1}{2 - 6} = -2$ is wrong. Keep the same order: $\\frac{9 - 1}{6 - 2} = 2$. Check: the line rises from left to right, so the slope must be positive."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Elementary Algebra 2e, Section 4.4: Understand Slope of a Line"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 8, 8.F.B.4"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

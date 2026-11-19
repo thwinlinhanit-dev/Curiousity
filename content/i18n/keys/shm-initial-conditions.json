@@ -1,0 +1,82 @@
+[
+  {
+    "key": "title",
+    "source": "Amplitude and Phase from Starting Conditions"
+  },
+  {
+    "key": "short",
+    "source": "Use x(0) and v(0) to find the amplitude A and the phase φ."
+  },
+  {
+    "key": "trouble",
+    "source": "Students pick the phase without checking the sign of the starting velocity."
+  },
+  {
+    "key": "block.0.html",
+    "source": "<a href=\"/physics/mechanics/shm-equation/\">The Equation of Simple Harmonic Motion</a> found that $x = A\\cos(\\omega t + \\phi)$ solves the spring equation for any $A$ and $\\phi$. The physics picks them: where the mass starts and how fast it is moving. Finding $\\phi$ needs <a href=\"/math/precalculus/inverse-trig/\">Inverse Trig Functions</a>, with care about quadrants."
+  },
+  {
+    "key": "block.1.html",
+    "source": "At $t = 0$: $x_0 = A\\cos\\phi$ and $v_0 = \\dot{x}(0) = -A\\omega\\sin\\phi$. So $\\cos\\phi = \\dfrac{x_0}{A}$ and $\\sin\\phi = -\\dfrac{v_0}{A\\omega}$. Squaring and adding (since $\\cos^2 + \\sin^2 = 1$): $$A = \\sqrt{x_0^2 + \\left(\\dfrac{v_0}{\\omega}\\right)^2}.$$ The ratio gives $\\tan\\phi = -\\dfrac{v_0}{\\omega x_0}$, but a tangent alone can't tell quadrant I from III or II from IV. The signs of $\\cos\\phi$ (same as $x_0$) and $\\sin\\phi$ (opposite to $v_0$) decide."
+  },
+  {
+    "key": "block.2.html",
+    "source": "$$A = \\sqrt{x_0^2 + (v_0/\\omega)^2}, \\qquad \\cos\\phi = \\dfrac{x_0}{A}, \\quad \\sin\\phi = -\\dfrac{v_0}{A\\omega}.$$ Equivalently, $x(t) = x_0\\cos\\omega t + \\dfrac{v_0}{\\omega}\\sin\\omega t$, which needs no phase at all."
+  },
+  {
+    "key": "block.3.cap",
+    "source": "A cosine shifted right: $\\cos(t - 0.93)$ has phase $\\phi = -0.93$ rad, so at $t = 0$ it is below its peak and rising."
+  },
+  {
+    "key": "block.4.q",
+    "source": "A block with $\\omega = 5\\ \\text{rad/s}$ starts at $x_0 = 0.06\\ \\text{m}$ moving at $v_0 = +0.40\\ \\text{m/s}$. Find $A$ and $\\phi$."
+  },
+  {
+    "key": "block.4.title",
+    "source": "Amplitude and phase"
+  },
+  {
+    "key": "block.4.a",
+    "source": "$A = 0.10\\ \\text{m}$; $\\phi = -0.927\\ \\text{rad}$."
+  },
+  {
+    "key": "block.4.step.0",
+    "source": "$v_0/\\omega = 0.08\\ \\text{m}$, so $A = \\sqrt{0.06^2 + 0.08^2} = 0.10\\ \\text{m}$."
+  },
+  {
+    "key": "block.4.step.1",
+    "source": "$\\cos\\phi = 0.06/0.10 = 0.6 > 0$ and $\\sin\\phi = -0.08/0.10 = -0.8 < 0$: quadrant IV."
+  },
+  {
+    "key": "block.4.step.2",
+    "source": "$\\phi = -0.927\\ \\text{rad}$. Check: $x = 0.1\\cos(5t - 0.927)$ starts at $0.06$ and is rising, as given."
+  },
+  {
+    "key": "block.5.q",
+    "source": "Same block, but starting at $x_0 = -0.06\\ \\text{m}$ with $v_0 = +0.40\\ \\text{m/s}$. Find $\\phi$."
+  },
+  {
+    "key": "block.5.title",
+    "source": "Where the calculator goes wrong"
+  },
+  {
+    "key": "block.5.a",
+    "source": "$\\phi = -2.21\\ \\text{rad}$."
+  },
+  {
+    "key": "block.5.step.0",
+    "source": "$A = 0.10\\ \\text{m}$ again. $\\cos\\phi = -0.6 < 0$ and $\\sin\\phi = -0.8 < 0$: quadrant III."
+  },
+  {
+    "key": "block.5.step.1",
+    "source": "A calculator's $\\arctan\\left(\\dfrac{-v_0}{\\omega x_0}\\right) = \\arctan(1.333) = 0.927$ lands in quadrant I, which would put the block at $+0.06$ moving left."
+  },
+  {
+    "key": "block.5.step.2",
+    "source": "Correct: $\\phi = 0.927 - \\pi = -2.21\\ \\text{rad}$."
+  },
+  {
+    "key": "block.7.html",
+    "source": "Picking the phase from $\\tan\\phi$ alone without checking the sign of the starting velocity. Two phases half a turn apart have the same tangent but describe opposite motions. Check by substituting back: $A\\cos\\phi$ must equal $x_0$ and $-A\\omega\\sin\\phi$ must equal $v_0$, signs included."
+  }
+]

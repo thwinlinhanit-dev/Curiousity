@@ -1,0 +1,121 @@
+{
+  "id": "geo.law-of-cosines",
+  "slug": "law-of-cosines",
+  "ladder": "math",
+  "course": "geo",
+  "unit": "trigonometry",
+  "title": "The Law of Cosines",
+  "short": "c² = a² + b² − 2ab cos C extends the Pythagorean theorem.",
+  "trouble": "Students combine a² + b² − 2ab before multiplying by cos C.",
+  "prereqs": [
+    "geo.law-of-sines"
+  ],
+  "xp": 3,
+  "viz": [
+    "angle",
+    "geoboard"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The Law of Sines from <a href=\"/math/geometry/law-of-sines/\">The Law of Sines</a> needs an angle with its opposite side. When you know two sides and the angle between them (SAS), or all three sides (SSS), you need a different tool, and it turns out to be the Pythagorean theorem with a correction term."
+      },
+      {
+        "t": "why",
+        "html": "Place $C$ at the origin with side $b$ along the $x$-axis: $C(0, 0)$, $A(b, 0)$. Point $B$ is $a$ units from $C$ at angle $C$, so $B = (a \\cos C, a \\sin C)$. By the distance formula, $$c^2 = (a \\cos C - b)^2 + (a \\sin C)^2.$$ Expanding, $$c^2 = a^2 \\cos^2 C - 2ab \\cos C + b^2 + a^2 \\sin^2 C.$$ Since $\\cos^2 C + \\sin^2 C = 1$ (the Pythagorean theorem in a right triangle with hypotenuse 1), this becomes $c^2 = a^2 + b^2 - 2ab \\cos C$. When $C = 90^\\circ$, $\\cos C = 0$ and it is exactly $a^2 + b^2 = c^2$."
+      },
+      {
+        "t": "key",
+        "html": "<b>Law of Cosines:</b> $c^2 = a^2 + b^2 - 2ab \\cos C$, where $C$ is the angle between sides $a$ and $b$. Use it for SAS (to find the third side) and for SSS (solved for $\\cos C$, to find an angle)."
+      },
+      {
+        "t": "viz",
+        "name": "geoboard",
+        "cap": "Drag $B$. When the angle at $C$ is $90^\\circ$, $c^2 = a^2 + b^2$ exactly; when it is larger, $c$ grows past that; when smaller, $c$ shrinks.",
+        "opts": {
+          "points": {
+            "C": [
+              1,
+              1
+            ],
+            "A": [
+              9,
+              1
+            ],
+            "B": [
+              3,
+              6
+            ]
+          },
+          "objects": [
+            [
+              "poly",
+              "A",
+              "B",
+              "C"
+            ]
+          ],
+          "show": {
+            "len": true,
+            "ang": true,
+            "area": false
+          },
+          "xmin": 0,
+          "xmax": 10,
+          "ymin": 0,
+          "ymax": 7
+        }
+      },
+      {
+        "t": "ex",
+        "title": "Two sides and the included angle",
+        "q": "In $\\triangle ABC$, $a = 5$, $b = 8$ and $m\\angle C = 60^\\circ$. Find $c$.",
+        "steps": [
+          "$c^2 = 5^2 + 8^2 - 2(5)(8)\\cos 60^\\circ$.",
+          "Multiply first: $2(5)(8)\\cos 60^\\circ = 80 \\cdot \\frac{1}{2} = 40$.",
+          "$c^2 = 25 + 64 - 40 = 49$, so $c = 7$."
+        ],
+        "a": "$c = 7$"
+      },
+      {
+        "t": "ex",
+        "title": "Three sides, find an angle",
+        "q": "A triangle has sides $3$, $5$ and $7$. Find its largest angle.",
+        "steps": [
+          "The largest angle is opposite the longest side, $7$. Solve for its cosine: $\\cos C = \\frac{a^2 + b^2 - c^2}{2ab}$, so $\\cos C = \\frac{9 + 25 - 49}{30} = -\\frac{15}{30} = -\\frac{1}{2}$.",
+          "A negative cosine means an obtuse angle: $C = \\cos^{-1}\\left(-\\frac{1}{2}\\right) = 120^\\circ$."
+        ],
+        "a": "$120^\\circ$"
+      },
+      {
+        "t": "ex",
+        "title": "With a calculator",
+        "q": "Two sides of a triangular lot are $40$ m and $55$ m, meeting at $95^\\circ$. How long is the third side?",
+        "steps": [
+          "$c^2 = 40^2 + 55^2 - 2(40)(55)\\cos 95^\\circ$, which is $1600 + 3025 - 4400(-0.0872)$, or about $4625 + 383.5 = 5008.5$.",
+          "$c \\approx \\sqrt{5008.5} \\approx 70.8$ m."
+        ],
+        "a": "About $70.8$ m"
+      },
+      {
+        "t": "mistake",
+        "html": "Combining $a^2 + b^2 - 2ab$ first and then multiplying by $\\cos C$. Order of operations says multiply $2ab \\cos C$ first, then subtract. In the first example, $(25 + 64 - 80) \\cdot \\frac{1}{2} = 4.5$ is wrong; $25 + 64 - 40 = 49$ is right. Check: the answer should be close to $a^2 + b^2$ when $C$ is near $90^\\circ$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Algebra and Trigonometry 2e, 10.2 Non-right Triangles: Law of Cosines"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, High School Geometry, G-SRT.D.10 and G-SRT.D.11"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

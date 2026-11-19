@@ -1,0 +1,111 @@
+{
+  "id": "calc1.trig-derivatives",
+  "slug": "trig-derivatives",
+  "ladder": "math",
+  "course": "calc1",
+  "unit": "rules",
+  "title": "Derivatives of Trig Functions",
+  "short": "d/dx sin x = cos x and d/dx cos x = −sin x.",
+  "trouble": "Students drop the minus sign on the derivative of cos x.",
+  "prereqs": [
+    "calc1.quotient-rule",
+    "calc1.trig-limits"
+  ],
+  "xp": 2,
+  "viz": [
+    "derivgraph",
+    "unitcircle"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The two <a href=\"/math/calculus-1/trig-limits/\">Special Trigonometric Limits</a> were the hard part. With them, the derivatives of sine and cosine take a few lines, and the <a href=\"/math/calculus-1/quotient-rule/\">The Quotient Rule</a> gives the other four trig functions."
+      },
+      {
+        "t": "key",
+        "html": "$$\\frac{d}{dx}\\sin x = \\cos x, \\qquad \\frac{d}{dx}\\cos x = -\\sin x,$$ $$\\frac{d}{dx}\\tan x = \\sec^2 x, \\quad \\frac{d}{dx}\\sec x = \\sec x\\tan x, \\quad \\frac{d}{dx}\\csc x = -\\csc x\\cot x, \\quad \\frac{d}{dx}\\cot x = -\\csc^2 x.$$ ($x$ in radians.) The \"co\" functions all get a minus sign."
+      },
+      {
+        "t": "why",
+        "html": "Use $\\sin(x + h) = \\sin x\\cos h + \\cos x\\sin h$: $$\\frac{\\sin(x + h) - \\sin x}{h} = \\sin x \\cdot \\frac{\\cos h - 1}{h} + \\cos x \\cdot \\frac{\\sin h}{h}.$$ As $h \\to 0$, the special limits give $\\sin x \\cdot 0 + \\cos x \\cdot 1 = \\cos x$. The same steps with $\\cos(x + h) = \\cos x\\cos h - \\sin x\\sin h$ give $-\\sin x$. For tangent, the quotient rule: $$\\left(\\frac{\\sin x}{\\cos x}\\right)' = \\frac{\\cos^2 x + \\sin^2 x}{\\cos^2 x} = \\frac{1}{\\cos^2 x} = \\sec^2 x$$."
+      },
+      {
+        "t": "viz",
+        "name": "derivgraph",
+        "opts": {
+          "f": "sin(x)",
+          "x": -2,
+          "xmin": -6.3,
+          "xmax": 6.3,
+          "task": "Slide along the sine curve. The slope it reports traces out the cosine curve."
+        },
+        "cap": "The slopes of $y = \\sin x$ form the graph of $y = \\cos x$: steepest upward at $x = 0$ (slope 1), flat at $x = \\frac{\\pi}{2}$ (slope 0)."
+      },
+      {
+        "t": "viz",
+        "name": "unitcircle",
+        "opts": {
+          "angle": 60,
+          "units": "rad",
+          "snap": 15,
+          "graph": "both",
+          "play": true
+        },
+        "cap": "On the unit circle, $\\cos\\theta$ is greatest exactly when $\\sin\\theta$ is rising fastest, and $\\cos$ is falling where $\\sin$ is near its top."
+      },
+      {
+        "t": "ex",
+        "title": "A sum",
+        "q": "Differentiate $3\\sin x - 2\\cos x$.",
+        "steps": [
+          "Differentiate each term: $\\frac{d}{dx}(3\\sin x) = 3\\cos x$ and $\\frac{d}{dx}(-2\\cos x) = -2(-\\sin x)$.",
+          "The two minus signs make a plus."
+        ],
+        "a": "$3\\cos x + 2\\sin x$"
+      },
+      {
+        "t": "ex",
+        "title": "A product",
+        "q": "Differentiate $x^2\\sin x$.",
+        "steps": [
+          "Product rule: $(x^2)'\\sin x + x^2(\\sin x)'$.",
+          "$= 2x\\sin x + x^2\\cos x$."
+        ],
+        "a": "$2x\\sin x + x^2\\cos x$"
+      },
+      {
+        "t": "ex",
+        "title": "A slope at a special angle",
+        "q": "Find the slope of $y = \\sin x + \\cos x$ at $x = \\frac{\\pi}{3}$.",
+        "steps": [
+          "$y' = \\cos x - \\sin x$.",
+          "At $\\frac{\\pi}{3}$: $\\frac{1}{2} - \\frac{\\sqrt{3}}{2}$."
+        ],
+        "a": "$\\frac{1 - \\sqrt{3}}{2} \\approx -0.366$"
+      },
+      {
+        "t": "p",
+        "html": "Why radians? The limit $\\frac{\\sin h}{h} \\to 1$ needs radians. If $x$ were measured in degrees, every derivative would pick up a factor $\\frac{\\pi}{180}$: the slope of $\\sin(x^\\circ)$ is $\\frac{\\pi}{180}\\cos(x^\\circ)$. Calculus uses radians so that this factor is exactly 1."
+      },
+      {
+        "t": "p",
+        "html": "A memory aid for the other four: tangent and secant derivatives are built from tangent and secant ($\\sec^2 x$, $\\sec x\\tan x$); their \"co\" partners are built from cotangent and cosecant, with a minus sign."
+      },
+      {
+        "t": "mistake",
+        "html": "Dropping the minus sign: writing $\\frac{d}{dx}\\cos x = \\sin x$. Look at the graph of $\\cos x$ just to the right of 0: it is falling, so its derivative must be negative there, but $\\sin x$ is positive. Check any trig derivative at one easy point this way."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 1, 3.5 Derivatives of Trigonometric Functions"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

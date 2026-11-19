@@ -1,0 +1,101 @@
+{
+  "id": "phys2.total-internal-reflection",
+  "slug": "total-internal-reflection",
+  "ladder": "physics",
+  "course": "phys2",
+  "unit": "geometric-optics",
+  "title": "Total Internal Reflection",
+  "short": "Going from higher to lower n, light beyond the critical angle, sin θc = n₂/n₁, reflects completely.",
+  "trouble": "Students think total internal reflection can happen as light goes from air into glass.",
+  "prereqs": [
+    "phys2.snells-law"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-refraction"
+  ],
+  "figureArchetype": "OpticsFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/physics/physics-2/snells-law/\">Snell's Law</a> says that light going into a <b>lower</b> index bends away from the normal. Tilt the ray more and more, and the refracted ray swings toward the surface. At one angle it skims right along the surface. Beyond that, there is no refracted ray at all."
+      },
+      {
+        "t": "key",
+        "html": "Going from a higher index $n_1$ to a lower index $n_2$, light at more than the <b>critical angle</b> $$\\sin\\theta_c = \\frac{n_2}{n_1}$$ is totally reflected. It cannot happen going from a lower index into a higher one."
+      },
+      {
+        "t": "why",
+        "html": "At the critical angle the refracted ray runs along the surface, $\\theta_2 = 90^\\circ$. Snell's law gives $n_1\\sin\\theta_c = n_2\\sin 90^\\circ = n_2$. For a bigger angle, Snell's law would need $\\sin\\theta_2 > 1$, which no angle has, so no light gets out: it all reflects. Going into a higher index, $\\sin\\theta_2 = \\frac{n_1}{n_2}\\sin\\theta_1$ is always less than 1, so a refracted ray always exists."
+      },
+      {
+        "t": "viz",
+        "name": "ph-refraction",
+        "opts": {
+          "mode": "ray",
+          "n1": 1.5,
+          "n2": 1,
+          "angle": 35,
+          "show": [
+            "critical"
+          ],
+          "lab": "/science-lab/optics/",
+          "task": "Raise the angle past the critical angle and watch the refracted ray disappear."
+        },
+        "cap": "Glass to air. Past the critical angle, about $42^\\circ$ for glass, all of the light reflects."
+      },
+      {
+        "t": "mistake",
+        "html": "Expecting total internal reflection when light goes from air into glass. Light entering a higher index always bends toward the normal and always gets in (some also reflects). Check the order: total internal reflection needs $n_1 > n_2$, light trying to <b>leave</b> the denser material."
+      },
+      {
+        "t": "ex",
+        "title": "Glass and air",
+        "q": "Find the critical angle for glass ($n = 1.50$) in air.",
+        "steps": [
+          "$\\sin\\theta_c = \\dfrac{n_2}{n_1} = \\dfrac{1.00}{1.50} = 0.667$.",
+          "$\\theta_c = \\sin^{-1}(0.667) = 41.8^\\circ$."
+        ],
+        "a": "$41.8^\\circ$"
+      },
+      {
+        "t": "ex",
+        "title": "Does it escape?",
+        "q": "Light in water ($n = 1.33$) hits the surface at $55^\\circ$ from the normal. Does any of it get out into the air?",
+        "steps": [
+          "Critical angle: $\\sin\\theta_c = \\dfrac{1.00}{1.33} = 0.752$, so $\\theta_c = 48.8^\\circ$.",
+          "$55^\\circ > 48.8^\\circ$, so the light is totally reflected back into the water.",
+          "This is why, looking up from under water, you see the sky only inside a circle overhead."
+        ],
+        "a": "No: it is totally reflected"
+      },
+      {
+        "t": "ex",
+        "title": "Glass under water",
+        "q": "Find the critical angle for light in glass ($n = 1.50$) meeting water ($n = 1.33$).",
+        "steps": [
+          "$\\sin\\theta_c = \\dfrac{1.33}{1.50} = 0.887$.",
+          "$\\theta_c = 62.5^\\circ$. Closer indices give a larger critical angle, so it is harder to trap light."
+        ],
+        "a": "$62.5^\\circ$"
+      },
+      {
+        "t": "note",
+        "html": "Optical fibers trap light by total internal reflection, carrying internet signals across oceans. Diamond's small critical angle, about $24^\\circ$, traps light inside a cut stone until it leaves through the top: that is its sparkle."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Physics 2e, Section 25.4: Total Internal Reflection"
+      },
+      {
+        "name": "OpenStax University Physics Volume 3, Section 1.4: Total Internal Reflection"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

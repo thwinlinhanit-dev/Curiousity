@@ -1,0 +1,102 @@
+{
+  "id": "disc.conditional",
+  "slug": "conditional",
+  "ladder": "math",
+  "course": "disc",
+  "unit": "logic",
+  "title": "The Conditional and the Biconditional",
+  "short": "P → Q is false only when P is true and Q is false; P ↔ Q is true when P and Q have the same truth value.",
+  "trouble": "Students mark P → Q false whenever P is false. A false hypothesis makes the conditional true: a promise whose condition never happened was not broken.",
+  "prereqs": [
+    "disc.truth-tables"
+  ],
+  "xp": 2,
+  "viz": [
+    "disc-truth"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In geometry you met <a href=\"/math/geometry/conditional-statements/\">if-then statements</a> as sentences to rewrite. Now we pin down exactly when \"if $P$, then $Q$\" is true, using a <a href=\"/math/discrete-math/truth-tables/\">truth table</a>. One row surprises almost everyone, and it is worth understanding rather than memorizing."
+      },
+      {
+        "t": "key",
+        "html": "The <b>conditional</b> $P \\to Q$ (\"if $P$, then $Q$\") is false only when $P$ is true and $Q$ is false; in the other three rows it is true. The <b>biconditional</b> $P \\leftrightarrow Q$ (\"$P$ if and only if $Q$\") is true exactly when $P$ and $Q$ have the same truth value."
+      },
+      {
+        "t": "why",
+        "html": "Think of $P \\to Q$ as a promise: \"If you finish your homework, you get a sticker.\" The promise is broken only if you finish and get no sticker. If you do not finish, the promise was never tested, so it was not broken, whatever happens with the sticker. Mathematics needs this too. \"For every integer $n$, if $n > 3$, then $n^{2} > 9$\" is a true theorem. At $n = 1$ the hypothesis $n > 3$ is false. If that row made the conditional false, a true theorem would have a counterexample. A conditional with a false hypothesis is called <b>vacuously true</b>."
+      },
+      {
+        "t": "viz",
+        "name": "disc-truth",
+        "opts": {
+          "expr": "P -> Q",
+          "story": {
+            "P": "you finish your homework",
+            "Q": "you get a sticker"
+          }
+        },
+        "cap": "The only false row is boxed: true hypothesis, false conclusion. The rows marked ° have a false hypothesis, so the promise was never tested."
+      },
+      {
+        "t": "p",
+        "html": "English has many ways to say $P \\to Q$: \"if $P$, then $Q$,\" \"$Q$ if $P$,\" \"$P$ only if $Q$,\" \"$P$ is sufficient for $Q$,\" and \"$Q$ is necessary for $P$.\" In each one, $P$ is the part that guarantees $Q$. \"You can vote only if you are registered\" means: voting guarantees you are registered, that is, vote $\\to$ registered."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Conditionals about numbers",
+        "q": "Decide each: (a) \"If $7$ is even, then $3 > 5$.\" (b) \"If $2 + 2 = 4$, then $9$ is prime.\" (c) \"$4$ is even if and only if $4$ is prime.\"",
+        "steps": [
+          "(a) The hypothesis \"$7$ is even\" is false. A false hypothesis makes the conditional true, even though the conclusion is also false: <b>true</b>.",
+          "(b) The hypothesis is true and the conclusion \"$9$ is prime\" is false ($9 = 3 \\cdot 3$). This is the one false row: <b>false</b>.",
+          "(c) \"$4$ is even\" is true and \"$4$ is prime\" is false. They differ, so the biconditional is <b>false</b>."
+        ],
+        "a": "true, false, false"
+      },
+      {
+        "t": "ex",
+        "title": "Necessary and sufficient",
+        "q": "Let $P$: \"the shape is a square\" and $Q$: \"the shape is a rectangle.\" Write \"Being a rectangle is necessary for being a square\" in symbols, and decide whether $P \\leftrightarrow Q$ is true for all shapes.",
+        "steps": [
+          "A necessary condition must hold whenever the other one does: every square must be a rectangle. So it is $P \\to Q$.",
+          "For $P \\leftrightarrow Q$ we would also need $Q \\to P$: every rectangle is a square.",
+          "A 2-by-5 rectangle is not a square, so $Q \\to P$ fails for it, and $P \\leftrightarrow Q$ is not true for all shapes."
+        ],
+        "a": "$P \\to Q$; no"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Marking $P \\to Q$ false whenever $P$ is false.</b> It feels wrong to call \"if pigs fly, then $1 = 2$\" true, but a conditional only makes a claim about the cases where its hypothesis holds. Check: the conditional is false in exactly one row, true hypothesis with false conclusion. If the hypothesis is false, the conditional is true."
+      },
+      {
+        "t": "viz",
+        "name": "disc-truth",
+        "opts": {
+          "expr": "P <-> Q",
+          "compare": "(P -> Q) & (Q -> P)"
+        },
+        "cap": "The biconditional is the same as two conditionals, one in each direction. The table compares them row by row."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Oscar Levin, Discrete Mathematics: An Open Introduction (3rd ed.), sections \"Mathematical Statements\" (implications) and \"Propositional Logic\""
+      },
+      {
+        "name": "MIT OpenCourseWare 6.042J Mathematics for Computer Science (Lehman, Leighton and Meyer), chapter \"Logical Formulas\""
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

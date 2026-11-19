@@ -1,0 +1,100 @@
+{
+  "id": "micro.budget-constraint",
+  "slug": "budget-constraint",
+  "ladder": "economics",
+  "course": "micro",
+  "unit": "scarcity",
+  "title": "Budget Constraints",
+  "short": "A budget line shows every affordable combination of two goods, and its slope is an opportunity cost.",
+  "trouble": "Students put the wrong intercept on each axis (income divided by the other good's price) or read the slope's ratio upside down.",
+  "prereqs": [
+    "micro.opportunity-cost",
+    "alg1.standard-form"
+  ],
+  "xp": 2,
+  "viz": [
+    "ec-choice"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Opportunity cost (<a href=\"/economics/microeconomics/opportunity-cost/\">Opportunity Cost</a>) is easiest to see with money. If you have a fixed budget and two things to buy, every combination you can afford in full lies on one line, and that line is an equation in <a href=\"/math/algebra-1/standard-form/\">Standard Form and Intercepts</a>."
+      },
+      {
+        "t": "key",
+        "html": "With income $I$ and prices $P_x$ and $P_y$, the bundles that spend the whole budget satisfy $$P_x\\,x + P_y\\,y = I.$$ The intercepts are $I/P_x$ (all on $x$) and $I/P_y$ (all on $y$). With $y$ on the vertical axis the slope is $-P_x/P_y$: each extra unit of $x$ costs $P_x/P_y$ units of $y$. That ratio is the <b>opportunity cost</b> of $x$."
+      },
+      {
+        "t": "why",
+        "html": "Solve the budget equation for $y$: $$y = \\frac{I}{P_y} - \\frac{P_x}{P_y}\\,x.$$ The vertical intercept $I/P_y$ is what you can buy if you spend everything on $y$. Buying one more unit of $x$ uses $P_x$ dollars, and those dollars would have bought $P_x/P_y$ units of $y$. So the slope is a price ratio, and it measures what one good costs in units of the other."
+      },
+      {
+        "t": "viz",
+        "name": "ec-choice",
+        "opts": {
+          "budgetOnly": true,
+          "income": 60,
+          "prices": [
+            6,
+            12
+          ],
+          "goods": [
+            "Burgers",
+            "Movies"
+          ],
+          "bundle": [
+            4,
+            3
+          ]
+        },
+        "cap": "A \\$60 budget with burgers at \\$6 and movies at \\$12. Drag the bundle: on the line you spend exactly \\$60; inside, money is left; outside, the bundle costs too much."
+      },
+      {
+        "t": "ex",
+        "title": "Intercepts and slope",
+        "q": "Lia has \\$60 for burgers (\\$6 each) and movie tickets (\\$12 each). Find both intercepts and the opportunity cost of one burger.",
+        "steps": [
+          "All burgers: $60/6 = 10$ burgers. All movies: $60/12 = 5$ movies.",
+          "The line runs from $(0, 5)$ to $(10, 0)$. Slope $= \\dfrac{0 - 5}{10 - 0} = -\\dfrac{1}{2}$.",
+          "One burger costs \\$6, half the price of a movie, so it costs $\\tfrac{1}{2}$ movie."
+        ],
+        "a": "Intercepts 10 burgers and 5 movies; one burger costs $\\tfrac{1}{2}$ movie."
+      },
+      {
+        "t": "ex",
+        "title": "Can she afford it?",
+        "q": "With the same budget, is 4 burgers and 3 movies affordable? What about 6 burgers and 3 movies?",
+        "steps": [
+          "$4(\\$6) + 3(\\$12) = \\$24 + \\$36 = \\$60$: exactly the budget, a point on the line.",
+          "$6(\\$6) + 3(\\$12) = \\$36 + \\$36 = \\$72 > \\$60$: outside the line, not affordable."
+        ],
+        "a": "The first is affordable (on the line); the second is not."
+      },
+      {
+        "t": "mistake",
+        "html": "Putting the wrong intercept on an axis, such as $I/P_y$ on the $x$-axis, or flipping the ratio and saying a burger costs 2 movies. Check an intercept by multiplying back: 10 burgers $\\times$ \\$6 = \\$60. Check the ratio with common sense: the cheaper good must cost <i>less</i> than one unit of the pricier good."
+      },
+      {
+        "t": "note",
+        "html": "If the price of one good changes, the line pivots around the other good's intercept. If income changes, the whole line shifts in parallel, because the price ratio, and so the slope, stays the same."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, 2.1 How Individuals Make Choices Based on Their Budget Constraint"
+      },
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, Appendix A The Use of Mathematics in Principles of Economics"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.01 Principles of Microeconomics (scope and sequence)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

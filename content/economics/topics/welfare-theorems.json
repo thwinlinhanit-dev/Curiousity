@@ -1,0 +1,102 @@
+{
+  "id": "imicro.welfare-theorems",
+  "slug": "welfare-theorems",
+  "ladder": "economics",
+  "course": "imicro",
+  "unit": "general-equilibrium",
+  "title": "The Welfare Theorems",
+  "short": "Competitive equilibria are Pareto efficient, and with convex preferences any efficient allocation can be reached with lump-sum transfers.",
+  "trouble": "Students read the first welfare theorem as saying markets give fair results, or forget its conditions: no externalities, no market power and full information.",
+  "prereqs": [
+    "imicro.exchange-equilibrium",
+    "micro.efficiency"
+  ],
+  "xp": 2,
+  "viz": [
+    "ec-edgeworth"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Two results connect the <a href=\"/economics/intermediate-microeconomics/exchange-equilibrium/\">Competitive Equilibrium in Exchange</a> to the efficiency idea of <a href=\"/economics/microeconomics/efficiency/\">Allocative and Productive Efficiency</a>. They are the formal core of the case for markets, and also of the case for redistributing through transfers rather than by fixing prices."
+      },
+      {
+        "t": "key",
+        "html": "<b>First welfare theorem:</b> with price-taking behavior, complete markets, no externalities and full information, every competitive equilibrium is Pareto efficient. <b>Second welfare theorem:</b> with convex preferences as well, any Pareto-efficient allocation can be reached as a competitive equilibrium after suitable <b>lump-sum transfers</b> of wealth."
+      },
+      {
+        "t": "why",
+        "html": "In the box: at a competitive equilibrium each person's indifference curve is tangent to the same price line, so $MRS_A = p = MRS_B$, which is the efficiency condition. The general argument: if some other allocation made someone better off and no one worse off, it would have to cost more than her budget for the better-off person and at least as much for everyone else, at the equilibrium prices, so its total value would exceed the value of everything that exists. That is impossible. For the second theorem, pick an efficient point; the common tangent line through it is a price line; move wealth by lump sums so that each person can just afford her part of the point; then at those prices each chooses exactly that part."
+      },
+      {
+        "t": "viz",
+        "name": "ec-edgeworth",
+        "opts": {
+          "total": [
+            30,
+            30
+          ],
+          "endow": [
+            25,
+            5
+          ],
+          "a": [
+            0.5,
+            0.5
+          ],
+          "show": [
+            "contract",
+            "demands"
+          ]
+        },
+        "cap": "The competitive equilibrium from any endowment lands on the contract curve. Moving the endowment (a lump-sum transfer) moves the equilibrium along the curve."
+      },
+      {
+        "t": "ex",
+        "title": "A transfer that picks the outcome",
+        "q": "Both have $U = x^{1/2}y^{1/2}$; there are 100 units of each good; A starts with (30, 40). Which transfer (in units of $y$) makes A end up with (60, 60) in equilibrium?",
+        "steps": [
+          "With identical Cobb-Douglas tastes the contract curve is the diagonal and the equilibrium price is $p = \\dfrac{1/2}{1/2}\\cdot\\dfrac{100}{100} = 1$, whatever the endowments.",
+          "To choose (60, 60) at $p = 1$, A needs wealth 120.",
+          "A's endowment is worth $30 + 40 = 70$, so the transfer is $+50$ units of $y$ from B to A."
+        ],
+        "a": "Transfer 50 units of $y$ to A."
+      },
+      {
+        "t": "ex",
+        "title": "When the first theorem fails",
+        "q": "A factory's smoke harms nearby residents, who are not part of any market for it. Does the competitive equilibrium have to be efficient?",
+        "steps": [
+          "No. The theorem needs no externalities: here the factory's choice affects others without a price.",
+          "The market produces where private benefit equals private cost, ignoring the damage (see <a href=\"/economics/intermediate-microeconomics/externality-optimum/\">The Efficient Amount of an Externality</a>)."
+        ],
+        "a": "No: an externality breaks the theorem's conditions."
+      },
+      {
+        "t": "mistake",
+        "html": "Reading the first welfare theorem as \"markets give fair results,\" or forgetting its conditions. It promises efficiency only, and only with price-taking, complete markets, no externalities and full information. Check: before invoking it, list the conditions and ask whether each holds. Market power, pollution, public goods and hidden information are the usual exceptions, and Unit 10 takes them up."
+      },
+      {
+        "t": "note",
+        "html": "What economists broadly agree on: the theorems are benchmarks that explain why markets often allocate goods well and where they can fail. What they debate: real redistribution can't use true lump-sum transfers (taxes on income or spending change behavior), so separating efficiency from fairness has a cost, and how large that cost is, and how much redistribution is worth it, are open questions."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, ch. 8.4 Efficiency in Perfectly Competitive Markets"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.04 Intermediate Microeconomic Theory (course scope and lecture topics)"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.03 Microeconomic Theory and Public Policy (course scope)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

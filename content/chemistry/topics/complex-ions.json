@@ -1,0 +1,119 @@
+{
+  "id": "gchem2.complex-ions",
+  "slug": "complex-ions",
+  "ladder": "chemistry",
+  "course": "gchem2",
+  "unit": "solubility",
+  "title": "Lewis Acids and Complex Ions",
+  "short": "Metal ions accept electron pairs from ligands, and Kf measures how tightly the complex holds together.",
+  "trouble": "Students think a Lewis acid must contain hydrogen, or that forming a complex ion makes a salt less soluble.",
+  "prereqs": [
+    "gchem2.ksp",
+    "chem.lewis-structures"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-lewis"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A <a href=\"/chemistry/chemistry/lewis-structures/\">lone pair</a> can do more than sit on an atom: it can form a bond to something that has room for it. That broader idea of acids and bases explains why metal ions grab ammonia or cyanide, and why that makes some <a href=\"/chemistry/general-chemistry-2/ksp/\">insoluble salts</a> dissolve."
+      },
+      {
+        "t": "key",
+        "html": "A <b>Lewis base</b> donates an electron pair; a <b>Lewis acid</b> accepts one. Metal ions are Lewis acids. A metal ion bonded to several Lewis bases (ligands) is a <b>complex ion</b>, such as $\\mathrm{[Ag(NH_3)_2]^+}$. Its formation constant $K_f$ measures how tightly it holds together, and forming it can dissolve a salt: $K = K_{sp} \\times K_f$."
+      },
+      {
+        "t": "why",
+        "html": "$\\mathrm{BF_3}$ has only six electrons around boron and an empty orbital, so it accepts the lone pair of $\\mathrm{NH_3}$ with no proton involved. A metal ion's empty orbitals accept lone pairs the same way. When ammonia ties up $\\mathrm{Ag^+}$ as $\\mathrm{[Ag(NH_3)_2]^+}$, free $\\mathrm{Ag^+}$ drops, $Q$ falls below $K_{sp}$ for AgCl, and more AgCl dissolves. Adding the two reactions multiplies their constants."
+      },
+      {
+        "t": "viz",
+        "name": "ch-lewis",
+        "opts": {
+          "mode": "adduct",
+          "pair": "NH3+BF3"
+        },
+        "cap": "Ammonia's lone pair forms a new bond to boron. $\\mathrm{NH_3}$ is the Lewis base and $\\mathrm{BF_3}$ the Lewis acid; no hydrogen ion moves."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Dissolving AgCl in ammonia",
+        "q": "$K_{sp}(\\mathrm{AgCl}) = 1.8 \\times 10^{-10}$ and $K_f(\\mathrm{[Ag(NH_3)_2]^+}) = 1.7 \\times 10^{7}$. Find the molar solubility of AgCl in $1.0\\ \\text{M}$ $\\mathrm{NH_3}$.",
+        "steps": [
+          "Add: $$\\mathrm{AgCl(s)} + \\mathrm{2NH_3} \\rightleftharpoons \\mathrm{[Ag(NH_3)_2]^+} + \\mathrm{Cl^-}$$ $K = (1.8 \\times 10^{-10})(1.7 \\times 10^{7}) = 3.1 \\times 10^{-3}$.",
+          "ICE: $[\\mathrm{[Ag(NH_3)_2]^+}] = [\\mathrm{Cl^-}] = s$, $[\\mathrm{NH_3}] = 1.0 - 2s$. So $\\dfrac{s^2}{(1.0 - 2s)^2} = 3.1 \\times 10^{-3}$.",
+          "Square root: $\\dfrac{s}{1.0 - 2s} = 0.0553$, so $s = \\dfrac{0.0553}{1.111} = 0.050\\ \\text{M}$."
+        ],
+        "a": "$0.050\\ \\text{M}$, nearly 4000 times its solubility in water."
+      },
+      {
+        "t": "ex",
+        "title": "How little free metal ion is left",
+        "q": "A solution has $0.010\\ \\text{M}$ silver, nearly all as $\\mathrm{[Ag(NH_3)_2]^+}$, with $0.98\\ \\text{M}$ free $\\mathrm{NH_3}$. Estimate $[\\mathrm{Ag^+}]$.",
+        "steps": [
+          "$K_f = \\dfrac{[\\mathrm{[Ag(NH_3)_2]^+}]}{[\\mathrm{Ag^+}][\\mathrm{NH_3}]^2}$, so $[\\mathrm{Ag^+}] = \\dfrac{0.010}{(1.7 \\times 10^{7})(0.98)^2}$.",
+          "$[\\mathrm{Ag^+}] = 6.1 \\times 10^{-10}\\ \\text{M}$: almost every silver ion is tied up."
+        ],
+        "a": "$6.1 \\times 10^{-10}\\ \\text{M}$."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Complex ion",
+          "$K_f$"
+        ],
+        "rows": [
+          [
+            "$\\mathrm{[Ag(NH_3)_2]^+}$",
+            "$1.7 \\times 10^{7}$"
+          ],
+          [
+            "$\\mathrm{[Zn(NH_3)_4]^{2+}}$",
+            "$2.9 \\times 10^{9}$"
+          ],
+          [
+            "$\\mathrm{[Cu(NH_3)_4]^{2+}}$",
+            "$1.1 \\times 10^{13}$"
+          ],
+          [
+            "$\\mathrm{[Ag(S_2O_3)_2]^{3-}}$",
+            "$4.7 \\times 10^{13}$"
+          ],
+          [
+            "$\\mathrm{[Ag(CN)_2]^-}$",
+            "$1.0 \\times 10^{21}$"
+          ]
+        ],
+        "cap": "Formation constants at 25 °C (values vary somewhat between tables)."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking a Lewis acid must contain hydrogen, or that forming a complex ion makes a salt less soluble. $\\mathrm{BF_3}$ and $\\mathrm{Ag^+}$ are Lewis acids with no hydrogen at all, and complex formation pulls metal ions out of the solubility equilibrium, so more solid dissolves."
+      },
+      {
+        "t": "note",
+        "html": "Photographic \"fixer\" (sodium thiosulfate) works this way: it dissolves the unexposed silver bromide as $\\mathrm{[Ag(S_2O_3)_2]^{3-}}$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 15.2 Lewis Acids and Bases"
+      },
+      {
+        "name": "OpenStax Chemistry 2e, Appendix K: Formation Constants for Complex Ions"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

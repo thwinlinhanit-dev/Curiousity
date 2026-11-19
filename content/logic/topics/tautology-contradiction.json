@@ -1,0 +1,121 @@
+{
+  "id": "sym.tautology-contradiction",
+  "slug": "tautology-contradiction",
+  "ladder": "logic",
+  "course": "sym",
+  "unit": "truth-tables",
+  "title": "Tautologies, Contradictions and Contingent Statements",
+  "short": "A tautology is true in every row, a self-contradiction false in every row, and a contingent statement true in some rows and false in others.",
+  "trouble": "Learners call a statement a tautology after checking a few rows. Every row must be checked; one F makes it not a tautology.",
+  "prereqs": [
+    "sym.truth-tables"
+  ],
+  "xp": 2,
+  "viz": [
+    "lg-truthtable"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A full truth table (<a href=\"/logic/symbolic-logic/truth-tables/\">Building a Truth Table</a>) shows every row a formula can be in. Looking at the main column, three things can happen, and each has a name."
+      },
+      {
+        "t": "key",
+        "html": "A <b>tautology</b> is true in every row. A <b>self-contradiction</b> is false in every row. A <b>contingent</b> statement is true in at least one row and false in at least one row."
+      },
+      {
+        "t": "why",
+        "html": "Tautologies are true because of their form alone. $p \\lor \\neg p$ is true whatever $p$ says, since one of the two disjuncts must be true. Self-contradictions are false by form alone. Contingent statements depend on the facts: whether $p \\to q$ is true depends on what $p$ and $q$ say about the world. Logic cannot settle a contingent statement; it can only show which rows make it true."
+      },
+      {
+        "t": "viz",
+        "name": "lg-truthtable",
+        "opts": {
+          "formulas": [
+            "((p → q) ∧ p) → q"
+          ],
+          "sub": true
+        },
+        "cap": "A tautology: the main column is T in every row."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A tautology",
+        "q": "Classify $(p \\land q) \\to p$.",
+        "steps": [
+          "The only way to make a conditional F is a T antecedent with an F consequent.",
+          "If $p \\land q$ is T, then $p$ is T, so the consequent cannot be F.",
+          "So no row is F."
+        ],
+        "a": "Tautology"
+      },
+      {
+        "t": "ex",
+        "title": "A self-contradiction",
+        "q": "Classify $(p \\to q) \\land (p \\land \\neg q)$.",
+        "steps": [
+          "$p \\land \\neg q$ is T only in the row $p$ T, $q$ F.",
+          "In that row $p \\to q$ is F, so the conjunction is F.",
+          "In every other row $p \\land \\neg q$ is F, so the conjunction is F."
+        ],
+        "a": "Self-contradiction"
+      },
+      {
+        "t": "ex",
+        "title": "Contingent",
+        "q": "Classify $(p \\lor q) \\to p$.",
+        "steps": [
+          "Row $p$ T, $q$ T: T → T is T.",
+          "Row $p$ F, $q$ T: T → F is F.",
+          "It has a T and an F."
+        ],
+        "a": "Contingent"
+      },
+      {
+        "t": "mistake",
+        "html": "Calling a formula a tautology after checking a few rows. One F anywhere means it is not a tautology, and that row might be the last one you check. Fill the whole column. A shortcut that is safe: to show a formula is <i>not</i> a tautology, one F row is enough; to show it <i>is</i> one, every row must be checked (or you need an argument that no row can be F, as in the first example)."
+      },
+      {
+        "t": "p",
+        "html": "Tautologies matter beyond this lesson. An argument is valid exactly when the conditional \"if all the premises, then the conclusion\" is a tautology, so every valid argument hides a tautology inside it. And a formula is a self-contradiction exactly when its negation is a tautology, so checking one kind is the same work as checking the other."
+      },
+      {
+        "t": "ex",
+        "title": "Tautology from an argument",
+        "q": "Modus ponens has premises $p \\to q$ and $p$ and conclusion $q$. Which formula is a tautology because of that?",
+        "steps": [
+          "Join the premises with $\\land$ and make them the antecedent.",
+          "The conclusion is the consequent."
+        ],
+        "a": "$((p \\to q) \\land p) \\to q$, shown in the table above."
+      },
+      {
+        "t": "list",
+        "items": [
+          "All T: tautology.",
+          "All F: self-contradiction.",
+          "Some of each: contingent.",
+          "The negation of a tautology is a self-contradiction, and the reverse."
+        ]
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Patrick J. Hurley and Lori Watson, A Concise Introduction to Logic, 13th ed., section 6.3, classifying statements"
+      },
+      {
+        "name": "forall x: Calgary, an open introduction to formal logic (P. D. Magnus, Tim Button and others; Open Logic Project), chapter on semantic concepts"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,105 @@
+{
+  "id": "g5.round-decimals",
+  "slug": "round-decimals",
+  "ladder": "math",
+  "course": "g5",
+  "unit": "place-value",
+  "title": "Rounding Decimals",
+  "short": "Round to the nearest whole, tenth or hundredth.",
+  "trouble": "",
+  "prereqs": [
+    "g5.thousandths",
+    "g4.round-any-place"
+  ],
+  "xp": 1,
+  "viz": [
+    "numberline"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You can <a href=\"/math/grade-4/round-any-place/\">round whole numbers to any place</a>. Rounding decimals works the same way: find the two numbers you are between, and pick the closer one."
+      },
+      {
+        "t": "key",
+        "html": "To round to a place, look at the digit just to its right. If it is 5 or more, round up (add 1 to the place you keep). If it is less than 5, keep the digit. Then drop the digits after the place you kept."
+      },
+      {
+        "t": "why",
+        "html": "$3.46$ is between $3.4$ and $3.5$. Halfway between them is $3.45$. Since $3.46$ is past halfway, it is closer to $3.5$. The digit after the tenths place tells you which side of halfway you are on: 5 or more is the upper half."
+      },
+      {
+        "t": "viz",
+        "name": "numberline",
+        "opts": {
+          "min": 3.4,
+          "max": 3.5,
+          "step": 0.05,
+          "sub": 5,
+          "labels": "dec",
+          "points": [
+            {
+              "v": "3.46",
+              "label": "3.46"
+            }
+          ]
+        },
+        "cap": "$3.46$ is between $3.4$ and $3.5$, just past the halfway mark $3.45$, so it rounds to $3.5$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "To the nearest tenth",
+        "q": "Round $7.382$ to the nearest tenth.",
+        "steps": [
+          "The tenths digit is 3. The digit to its right is 8.",
+          "8 is 5 or more, so round up: 3 tenths become 4 tenths.",
+          "Drop the digits after the tenths place."
+        ],
+        "a": "$7.4$"
+      },
+      {
+        "t": "ex",
+        "title": "To the nearest hundredth",
+        "q": "Round $12.964$ to the nearest hundredth.",
+        "steps": [
+          "The hundredths digit is 6. The digit to its right is 4.",
+          "4 is less than 5, so keep the 6."
+        ],
+        "a": "$12.96$"
+      },
+      {
+        "t": "ex",
+        "title": "A 9 that rolls over",
+        "q": "Round $4.97$ to the nearest tenth.",
+        "steps": [
+          "The tenths digit is 9. The next digit, 7, says round up.",
+          "9 tenths + 1 tenth = 10 tenths = 1 whole. So the ones go from 4 to 5 and the tenths digit is 0."
+        ],
+        "a": "$5.0$ (which equals $5$)"
+      },
+      {
+        "t": "mistake",
+        "html": "Rounding twice: $3.449 \\to 3.45 \\to 3.5$. Round only once, from the original number: $3.449$ to the nearest tenth looks at the hundredths digit, 4, so the answer is $3.4$. Check on a number line: $3.449$ is below the halfway mark $3.45$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Prealgebra 2e, 5.1 Decimals (round decimals)"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 5.NBT.A.4: use place value understanding to round decimals to any place"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

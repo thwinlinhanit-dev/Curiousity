@@ -1,0 +1,97 @@
+{
+  "id": "g6.percent-of-a-number",
+  "slug": "percent-of-a-number",
+  "ladder": "math",
+  "course": "g6",
+  "unit": "ratios",
+  "title": "Finding a Percent of a Number",
+  "short": "30% of 80 is 30 hundredths of 80.",
+  "trouble": "",
+  "prereqs": [
+    "g6.percent-meaning"
+  ],
+  "xp": 1,
+  "viz": [
+    "percentbar",
+    "tapediagram"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A percent tells what part of a whole you want, out of 100 (see <a href=\"/math/grade-6/percent-meaning/\">Percent Means per 100</a>). To find 30% of 80, think of 80 split into 100 equal tiny parts and take 30 of them."
+      },
+      {
+        "t": "key",
+        "html": "To find a percent of a number, find 10% (or 1%) of it first, then build up. Or multiply: $p\\%$ of $n$ is $\\frac{p}{100} \\times n$."
+      },
+      {
+        "t": "viz",
+        "name": "percentbar",
+        "opts": {
+          "whole": 80,
+          "pct": 25,
+          "step": 10,
+          "snap": 5,
+          "task": {
+            "pct": 30
+          }
+        },
+        "cap": "The amount 80 on top is 100% below. Move the marker to 30% and read the amount above it."
+      },
+      {
+        "t": "why",
+        "html": "Taking 30 of the 100 tiny parts of 80 is $\\frac{30}{100} \\times 80$. Splitting into 10 equal parts first is a friendlier path to the same place: 10% of 80 is $80 \\div 10 = 8$, and 30% is three of those tenths, $3 \\times 8 = 24$. Both ways give 24, because $\\frac{30}{100} = 3 \\times \\frac{1}{10}$."
+      },
+      {
+        "t": "ex",
+        "title": "Build from 10%",
+        "q": "Find 30% of 80.",
+        "steps": [
+          "10% of 80 is $80 \\div 10 = 8$.",
+          "30% is 3 times as much: $3 \\times 8 = 24$."
+        ],
+        "a": "24"
+      },
+      {
+        "t": "ex",
+        "title": "A tip",
+        "q": "A family leaves a 15% tip on a \\$40 meal. How much is the tip?",
+        "steps": [
+          "10% of \\$40 is \\$4.",
+          "5% is half of 10%: \\$2.",
+          "15% = 10% + 5%: $\\$4 + \\$2 = \\$6$."
+        ],
+        "a": "\\$6"
+      },
+      {
+        "t": "ex",
+        "title": "Use a fraction",
+        "q": "What is 75% of 36?",
+        "steps": [
+          "$75\\% = \\frac{75}{100} = \\frac{3}{4}$.",
+          "$\\frac{1}{4}$ of 36 is 9, so $\\frac{3}{4}$ of 36 is $3 \\times 9 = 27$."
+        ],
+        "a": "27"
+      },
+      {
+        "t": "mistake",
+        "html": "Dividing by the percent: \"30% of 80\" is not $80 \\div 30$. Quick check with size: 30% is less than half, so the answer must be less than half of 80, which is 40. And 100% of a number is the number itself, so 120% of 80 must be more than 80."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Prealgebra 2e, section 6.2 Solve General Applications of Percent"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 6.RP.A.3c: finding a percent of a quantity"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

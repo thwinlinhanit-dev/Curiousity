@@ -1,0 +1,85 @@
+{
+  "id": "rbelec.led-resistor",
+  "slug": "led-resistor",
+  "ladder": "robotics",
+  "course": "rbelec",
+  "unit": "circuits",
+  "title": "The Resistor Every LED Needs",
+  "short": "Pick the series resistor from what is left after the LED's forward voltage: R = (V - Vf)/I.",
+  "trouble": "Students divide the whole supply voltage by the current, forgetting the LED's own voltage drop.",
+  "prereqs": [
+    "rbelec.ohms-law"
+  ],
+  "xp": 2,
+  "viz": [
+    "rb-circuit"
+  ],
+  "figureArchetype": "FieldFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "An LED connected straight to a battery can burn out in a flash. It needs a partner: a resistor in series."
+      },
+      {
+        "t": "key",
+        "html": "An LED drops a nearly fixed voltage, its <b>forward voltage</b> $V_f$ (about 2 V for red, about 3 V for blue or white). The resistor takes the rest. Choose $R = \\dfrac{V_{\\text{supply}} - V_f}{I}$, with $I$ about 10 to 20 mA for a small LED."
+      },
+      {
+        "t": "viz",
+        "name": "rb-circuit",
+        "opts": {
+          "mode": "led",
+          "on": true
+        },
+        "cap": "Change the battery and the resistor. The readout shows the current through the LED."
+      },
+      {
+        "t": "why",
+        "html": "The LED's own resistance changes wildly with voltage, so you cannot set its current by voltage alone. The resistor makes the current steady and safe. The same idea, limiting current, protects microcontroller pins."
+      },
+      {
+        "t": "ex",
+        "title": "Pick a resistor",
+        "q": "A red LED ($V_f = 2\\ \\text{V}$) on a 5 V pin, at 15 mA.",
+        "steps": [
+          "Left for the resistor: $5 - 2 = 3\\ \\text{V}$.",
+          "$R = 3 / 0.015 = 200\\ \\Omega$.",
+          "Pick the next standard value up: $220\\ \\Omega$."
+        ],
+        "a": "220 Ω."
+      },
+      {
+        "t": "ex",
+        "title": "Blue on 3.3 V",
+        "q": "A blue LED ($V_f = 3.0\\ \\text{V}$) on a 3.3 V pin at 10 mA.",
+        "steps": [
+          "$3.3 - 3.0 = 0.3\\ \\text{V}$.",
+          "$R = 0.3/0.010 = 30\\ \\Omega$."
+        ],
+        "a": "About 30 Ω; it will be dim if $V_f$ is a little higher, which is normal for blue on 3.3 V."
+      },
+      {
+        "t": "mistake",
+        "html": "Dividing the whole supply voltage by the current. Subtract the LED's forward voltage first."
+      },
+      {
+        "t": "note",
+        "html": "Microcontroller pins can only supply a small current; check the board's documentation. An Arduino Uno pin is rated for 20 mA continuous, with an absolute maximum of 40 mA; a Raspberry Pi Pico pin is safest at a few milliamps. Use a transistor or driver for anything bigger, like a motor."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Paul Horowitz and Winfield Hill, The Art of Electronics, 3rd ed. (Cambridge University Press, 2015)"
+      },
+      {
+        "name": "Arduino Documentation",
+        "url": "https://docs.arduino.cc/"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,117 @@
+{
+  "id": "apbio.molecular-clock",
+  "slug": "molecular-clock",
+  "ladder": "bio",
+  "course": "apbio",
+  "unit": "selection",
+  "title": "Molecular Clocks",
+  "short": "If differences in a gene build up at a roughly steady rate, the number of differences estimates how long ago two lineages split, once the rate is calibrated with fossils.",
+  "trouble": "Students treat the clock as exact for every gene. Rates differ between genes and lineages, so estimates have wide ranges and need calibration.",
+  "prereqs": [
+    "hsbio.molecular-evidence"
+  ],
+  "xp": 3,
+  "viz": [
+    "bi-tree",
+    "bi-chart"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/biology/high-school-biology/molecular-evidence/\">Evidence: DNA and Proteins</a> you counted differences between species: more differences, more distant relatives. If differences in a gene build up at a roughly steady rate, they can do more than rank relatives. They can estimate <b>when</b> two lineages split. Emile Zuckerkandl and Linus Pauling proposed this \"molecular clock\" in the early 1960s."
+      },
+      {
+        "t": "key",
+        "html": "If a gene changes at a roughly steady rate, then $$\\text{time since the split} = \\frac{\\text{number of differences}}{\\text{rate of differences}}$$ The rate is <b>calibrated</b> with a pair of species whose split is dated by fossils. Estimates carry wide ranges, because rates vary between genes and between lineages."
+      },
+      {
+        "t": "viz",
+        "name": "bi-chart",
+        "opts": {
+          "kind": "scatter",
+          "x": [
+            10,
+            20,
+            30,
+            45,
+            60,
+            80
+          ],
+          "series": [
+            {
+              "name": "Differences in a gene",
+              "values": [
+                9,
+                21,
+                29,
+                46,
+                58,
+                82
+              ]
+            }
+          ],
+          "xlabel": "Time since the split, from fossils (millions of years)",
+          "ylabel": "Differences",
+          "ymin": 0
+        },
+        "cap": "Differences between pairs of species plotted against fossil dates: a rough straight line is what makes a clock (illustrative data)."
+      },
+      {
+        "t": "why",
+        "html": "Why would changes be steady? Many mutations are neutral, changing nothing that matters to survival, and neutral mutations become fixed in a lineage at a rate set by the mutation rate. Since mutations occur at roughly steady rates, neutral differences pile up like ticks of a clock. The clock is rough because some genes are under strong selection (and change slowly), generation times differ, and mutation rates differ between groups."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Calibrate, then estimate",
+        "q": "Fossils show that species A and B split 20 million years ago; a gene differs at 40 sites between them. The same gene differs at 30 sites between A and C. When did A and C split?",
+        "steps": [
+          "Rate: 40 differences / 20 million years = 2 differences per million years.",
+          "Time: 30 / 2 = 15 million years."
+        ],
+        "a": "About 15 million years ago (with a wide range of uncertainty)."
+      },
+      {
+        "t": "ex",
+        "title": "Two genes, two answers",
+        "q": "Using one gene, two lineages split about 12 million years ago; using another, about 18. Is one estimate wrong?",
+        "steps": [
+          "Each gene has its own rate, and each rate was calibrated with uncertain fossil dates.",
+          "Selection, generation time and chance all vary.",
+          "Scientists combine many genes and several fossil calibrations to narrow the range."
+        ],
+        "a": "Not necessarily. Both are estimates; the true date is likely in the range they span, and more data would narrow it."
+      },
+      {
+        "t": "p",
+        "html": "Different clocks suit different questions. A gene that changes slowly, such as one for ribosomal RNA, can still be compared across bacteria, plants and animals that split billions of years ago. A fast-changing stretch of DNA, such as many parts of mitochondrial DNA, is better for splits within the last few million years, because a slow gene would show almost no differences over so short a time."
+      },
+      {
+        "t": "mistake",
+        "html": "Treating the clock as exact for every gene. Rates differ between genes (a gene for a vital enzyme changes slowly) and between lineages, so a clock must be calibrated and its estimates carry ranges. When a problem gives you a rate, use it; when you report, say \"about\"."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Biology 2e, 20.2 Determining Evolutionary Relationships (molecular clocks)"
+      },
+      {
+        "name": "OpenStax, Biology for AP Courses, 20.2 Determining Evolutionary Relationships"
+      },
+      {
+        "name": "UC Berkeley Understanding Evolution: Molecular clocks",
+        "url": "https://evolution.berkeley.edu/molecular-clocks/"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

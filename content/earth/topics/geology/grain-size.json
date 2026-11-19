@@ -1,0 +1,135 @@
+{
+  "id": "geology.grain-size",
+  "slug": "grain-size",
+  "ladder": "earth",
+  "course": "geology",
+  "unit": "sedimentary",
+  "title": "Grain Size and the Wentworth Scale",
+  "short": "Sort sediment by size, from clay under 1/256 mm to boulders over 256 mm, and use the phi scale, φ = −log₂ d.",
+  "trouble": "Students expect phi to grow with grain size; the minus sign gives coarser grains smaller phi values, even negative ones.",
+  "prereqs": [
+    "earthsci.sedimentary-rocks",
+    "alg2.logarithms"
+  ],
+  "xp": 2,
+  "viz": [
+    "es-sediment"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The grains of <a href=\"/earth-and-space/earth-science/sedimentary-rocks/\">sedimentary rocks</a> come in every size, from clay too small to see to boulders bigger than a car. Size matters because it records how much energy moved the grains. Geologists sort sizes into classes on the <b>Wentworth scale</b>, where each class limit doubles or halves: 2 mm, 4 mm, 1/16 mm, and so on. That makes it a natural fit for <a href=\"/math/algebra-2/logarithms/\">logarithms</a>."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Class",
+          "Diameter (mm)",
+          "φ"
+        ],
+        "rows": [
+          [
+            "Boulders",
+            "over 256",
+            "below −8"
+          ],
+          [
+            "Cobbles",
+            "64 to 256",
+            "−6 to −8"
+          ],
+          [
+            "Pebbles",
+            "4 to 64",
+            "−2 to −6"
+          ],
+          [
+            "Granules",
+            "2 to 4",
+            "−1 to −2"
+          ],
+          [
+            "Sand",
+            "1/16 to 2",
+            "4 to −1"
+          ],
+          [
+            "Silt",
+            "1/256 to 1/16",
+            "8 to 4"
+          ],
+          [
+            "Clay",
+            "under 1/256",
+            "above 8"
+          ]
+        ],
+        "cap": "The Wentworth grain-size scale with phi values."
+      },
+      {
+        "t": "why",
+        "html": "Because the class limits are powers of 2, a base-2 logarithm turns them into whole numbers. The <b>phi scale</b> is $\\varphi = -\\log_2 d$, with $d$ in millimeters. A 4 mm pebble is $2^2$ mm, so $\\varphi = -2$; fine sand of $\\tfrac18 = 2^{-3}$ mm has $\\varphi = 3$. The minus sign was chosen so that the sand, silt and clay geologists measure most often get positive numbers. The log also makes it easy to average and compare sizes that differ a thousandfold."
+      },
+      {
+        "t": "key",
+        "html": "$\\varphi = -\\log_2 d$ ($d$ in mm), and $d = 2^{-\\varphi}$. Each step of 1 in phi halves or doubles the size. Coarse grains have small or negative phi; fine grains have large phi."
+      },
+      {
+        "t": "viz",
+        "name": "es-sediment",
+        "opts": {
+          "mode": "hjulstrom",
+          "phi": true,
+          "point": {
+            "d": 0.25,
+            "v": 30
+          }
+        },
+        "cap": "The grain-size axis with phi values shown. Notice that phi increases to the left, toward finer grains."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Size to phi",
+        "q": "What is $\\varphi$ for a grain $\\tfrac{1}{16}$ mm across?",
+        "steps": [
+          "$\\tfrac{1}{16} = 2^{-4}$.",
+          "$\\varphi = -\\log_2 2^{-4} = -(-4) = 4$: the boundary between sand and silt."
+        ],
+        "a": "$\\varphi = 4$."
+      },
+      {
+        "t": "ex",
+        "title": "Phi to size, with a calculator",
+        "q": "What is $\\varphi$ for a grain 0.3 mm across?",
+        "steps": [
+          "$\\log_2 0.3 = \\dfrac{\\ln 0.3}{\\ln 2} = \\dfrac{-1.204}{0.693} = -1.74$.",
+          "$\\varphi = 1.74$: medium sand."
+        ],
+        "a": "$\\varphi \\approx 1.74$."
+      },
+      {
+        "t": "mistake",
+        "html": "It is natural to expect phi to grow with grain size, the way most measurements do. Because of the minus sign, it does the opposite: a boulder has $\\varphi$ around $-9$ and clay around $9$. Check: a 1 mm grain has $\\varphi = 0$; anything bigger is negative."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "MIT OpenCourseWare, 12.110 Sedimentary Geology"
+      },
+      {
+        "name": "MIT OpenCourseWare, 12.001 Introduction to Geology"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

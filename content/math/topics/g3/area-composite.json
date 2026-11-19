@@ -1,0 +1,191 @@
+{
+  "id": "g3.area-composite",
+  "slug": "area-composite",
+  "ladder": "math",
+  "course": "g3",
+  "unit": "area-perimeter",
+  "title": "Area of L-Shaped Figures",
+  "short": "Break a shape into rectangles and add their areas.",
+  "trouble": "Students multiply the two longest sides of an L-shape as if it were a rectangle.",
+  "prereqs": [
+    "g3.area-distributive"
+  ],
+  "xp": 2,
+  "viz": [
+    "areamodel",
+    "geoboard"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Not every shape is a rectangle. An L-shape is made of two rectangles stuck together, so you can <a href=\"/math/grade-3/area-distributive/\">cut it into rectangles</a>, find each area and add."
+      },
+      {
+        "t": "viz",
+        "name": "g3-shape",
+        "opts": {
+          "poly": [
+            [
+              0,
+              0
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              8,
+              2
+            ],
+            [
+              8,
+              6
+            ],
+            [
+              0,
+              6
+            ]
+          ],
+          "sides": [
+            "5 m",
+            "2 m",
+            "3 m",
+            "4 m",
+            "8 m",
+            "6 m"
+          ],
+          "parts": [
+            [
+              0,
+              0,
+              5,
+              6,
+              "blue"
+            ],
+            [
+              5,
+              2,
+              3,
+              4,
+              "gold"
+            ]
+          ],
+          "cuts": [
+            [
+              5,
+              2,
+              5,
+              6
+            ]
+          ],
+          "fill": "none"
+        },
+        "cap": "An L-shape cut into a 5-by-6 rectangle (blue) and a 3-by-4 rectangle (gold)."
+      },
+      {
+        "t": "why",
+        "html": "Area adds up: if a shape is made of two pieces that do not overlap, its area is the area of one piece plus the area of the other. A cut along a side of the corner turns the L into two rectangles, and you know how to find the area of a rectangle."
+      },
+      {
+        "t": "key",
+        "html": "To find the area of an L-shape: cut it into two rectangles, find the side lengths of each, multiply, and add."
+      },
+      {
+        "t": "ex",
+        "title": "Cut and add",
+        "q": "Find the area of the L-shape in the picture.",
+        "steps": [
+          "Blue rectangle: 5 wide and 6 tall: $5 \\times 6 = 30$.",
+          "Gold rectangle: 3 wide and 4 tall: $3 \\times 4 = 12$.",
+          "Add: $30 + 12 = 42$ square meters."
+        ],
+        "a": "42 square meters"
+      },
+      {
+        "t": "ex",
+        "title": "Another way: take away",
+        "q": "Find the same area by thinking of the whole 8-by-6 rectangle with a corner missing.",
+        "steps": [
+          "Whole rectangle: $8 \\times 6 = 48$.",
+          "Missing corner: 3 wide and 2 tall: $3 \\times 2 = 6$.",
+          "$48 - 6 = 42$. Same answer."
+        ],
+        "a": "42 square meters"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Multiplying the two longest sides.</b> $8 \\times 6 = 48$ is the area of a full rectangle, but this shape has a corner cut out. Check: does the shape fill the whole 8-by-6 box? It does not, so its area must be less than 48."
+      },
+      {
+        "t": "viz",
+        "name": "geoboard",
+        "opts": {
+          "points": {
+            "A": [
+              1,
+              1
+            ],
+            "B": [
+              7,
+              1
+            ],
+            "C": [
+              7,
+              4
+            ],
+            "D": [
+              4,
+              4
+            ],
+            "E": [
+              4,
+              6
+            ],
+            "F": [
+              1,
+              6
+            ]
+          },
+          "objects": [
+            [
+              "poly",
+              "A",
+              "B",
+              "C",
+              "D",
+              "E",
+              "F"
+            ]
+          ],
+          "show": {
+            "len": true,
+            "area": true,
+            "ang": false
+          },
+          "xmax": 9,
+          "ymax": 7
+        },
+        "cap": "Drag the corners to make other L-shapes. The board shows each side and the area; check them by cutting into rectangles."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 3, 3.MD.C.7d (find areas of rectilinear figures by decomposing them into non-overlapping rectangles)"
+      },
+      {
+        "name": "OpenStax, Prealgebra 2e, section 9.5, Solve Geometry Applications: Circles and Irregular Figures"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

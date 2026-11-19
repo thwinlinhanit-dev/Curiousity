@@ -1,0 +1,99 @@
+{
+  "id": "calc4.scalar-line-integrals",
+  "slug": "scalar-line-integrals",
+  "ladder": "math",
+  "course": "calc4",
+  "unit": "line-integrals",
+  "title": "Line Integrals of Functions",
+  "short": "∫_C f ds adds f along a curve, weighted by arc length.",
+  "trouble": "Students forget the factor |r′(t)| in ds.",
+  "prereqs": [
+    "calc4.parametrize-curves",
+    "calc3.space-arc-length"
+  ],
+  "xp": 2,
+  "viz": [
+    "lineintegral"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "How much does a curved wire weigh if its density changes along its length? Cut it into small pieces, multiply each piece's length by its density, and add. That sum, in the limit, is a <b>line integral of a function</b> along a curve. It is the <a href=\"/math/calculus-3/space-arc-length/\">arc length</a> integral with a weight $f$ attached."
+      },
+      {
+        "t": "key",
+        "html": "For a smooth curve $C$ given by $\\mathbf{r}(t)$, $a \\le t \\le b$, and a continuous function $f$:\n  $$\\int_C f\\,ds = \\lim \\sum f(P_i^*)\\,\\Delta s_i = \\int_a^b f(\\mathbf{r}(t))\\,|\\mathbf{r}'(t)|\\,dt.$$\n  The value does not depend on the parametrization or on the direction of travel. With $f = 1$ it gives the length of $C$; with a density $\\delta$ it gives the mass of a wire."
+      },
+      {
+        "t": "why",
+        "html": "<b>Why the factor $|\\mathbf{r}'(t)|$:</b> a small step $\\Delta t$ in the parameter moves the point by about $\\mathbf{r}'(t)\\,\\Delta t$, a piece of curve of length $\\Delta s \\approx |\\mathbf{r}'(t)|\\,\\Delta t$. So $f\\,\\Delta s \\approx f(\\mathbf{r}(t))\\,|\\mathbf{r}'(t)|\\,\\Delta t$, and adding these gives the $t$-integral.<br>\n  <b>Why direction does not matter:</b> $\\Delta s$ is a length, always positive. Tracing $C$ backward visits the same pieces with the same lengths, so the sum is unchanged."
+      },
+      {
+        "t": "viz",
+        "name": "param3d",
+        "opts": {
+          "x": "t",
+          "y": "t^2/2",
+          "z": "0",
+          "t0": -2,
+          "t1": 2,
+          "t": 1.5,
+          "tangent": true,
+          "shadow": false,
+          "pitch": 1.2
+        },
+        "cap": "The curve $\\langle t, t^2/2 \\rangle$ with its velocity $\\mathbf{r}'(t) = \\langle 1, t \\rangle$. Near $t = 0$ the arrow is short: a step $dt$ covers little curve. Near the ends it is long. The factor $|\\mathbf{r}'(t)| = \\sqrt{1 + t^2}$ in $ds$ converts steps in $t$ into length."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Along a segment",
+        "q": "Evaluate $\\int_C (x + y)\\,ds$, where $C$ is the segment from $(0, 0)$ to $(3, 4)$.",
+        "steps": [
+          "$\\mathbf{r}(t) = \\langle 3t, 4t \\rangle$, ${}0 \\le t \\le 1$, and $|\\mathbf{r}'(t)| = |\\langle 3, 4 \\rangle| = 5$.",
+          "On $C$, $x + y = 7t$.",
+          "$\\int_0^1 7t \\cdot 5\\,dt = \\frac{35}{2}$."
+        ],
+        "a": "$\\frac{35}{2}$"
+      },
+      {
+        "t": "ex",
+        "title": "Along a quarter circle",
+        "q": "Evaluate $\\int_C xy\\,ds$, where $C$ is the part of $x^2 + y^2 = 4$ in the first quadrant.",
+        "steps": [
+          "$\\mathbf{r}(t) = \\langle 2\\cos t, 2\\sin t \\rangle$, ${}0 \\le t \\le \\frac{\\pi}{2}$, with $|\\mathbf{r}'(t)| = 2$.",
+          "$$\\int_0^{\\pi/2} (4\\cos t\\sin t)(2)\\,dt = 8 \\cdot \\frac{1}{2}\\left[\\sin^2 t\\right]_0^{\\pi/2} = 4.$$"
+        ],
+        "a": "${}4$"
+      },
+      {
+        "t": "ex",
+        "title": "Mass of a helical spring",
+        "q": "A wire has the shape $\\mathbf{r}(t) = \\langle \\cos t, \\sin t, t \\rangle$, ${}0 \\le t \\le 2\\pi$, and density $\\delta = z$. Find its mass.",
+        "steps": [
+          "$|\\mathbf{r}'(t)| = |\\langle -\\sin t, \\cos t, 1 \\rangle| = \\sqrt{2}$.",
+          "Mass $$= \\int_C z\\,ds = \\int_0^{2\\pi} t\\sqrt{2}\\,dt = \\sqrt{2} \\cdot \\frac{(2\\pi)^2}{2} = 2\\sqrt{2}\\,\\pi^2.$$"
+        ],
+        "a": "${}2\\sqrt{2}\\,\\pi^2$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Dropping $|\\mathbf{r}'(t)|$.</b> Writing $ds$ as $dt$ treats every step in $t$ as one unit of length. In the first example that gives $\\int_0^1 7t\\,dt = \\frac{7}{2}$, off by the factor ${}5$, the length of the segment. A quick check: with $f = 1$, your integral should give the length of the curve."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 3, 6.2 Line Integrals"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

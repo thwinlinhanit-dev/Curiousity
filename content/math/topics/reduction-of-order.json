@@ -1,0 +1,106 @@
+{
+  "id": "de.reduction-of-order",
+  "slug": "reduction-of-order",
+  "ladder": "math",
+  "course": "de",
+  "unit": "second-order",
+  "title": "Reduction of Order",
+  "short": "Use one known solution to find another.",
+  "trouble": "",
+  "prereqs": [
+    "de.repeated-roots"
+  ],
+  "xp": 3,
+  "viz": [],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "For a <a href=\"/math/differential-equations/repeated-roots/\">repeated root</a> the second solution $te^{rt}$ seemed to come from nowhere. Reduction of order is the systematic version: if you know one solution $y_1$ of a second-order linear homogeneous equation, it produces a second one, even when the coefficients are not constant."
+      },
+      {
+        "t": "key",
+        "html": "Put $y'' + p(t)y' + q(t)y = 0$ in standard form and set $y = v(t)\\,y_1(t)$. Then $w = v'$ satisfies a first-order equation, and $$y_2 = y_1\\int \\frac{e^{-\\int p\\,dt}}{y_1^{2}}\\,dt.$$"
+      },
+      {
+        "t": "why",
+        "html": "With $y = vy_1$: $y' = v'y_1 + vy_1'$ and $y''$ $= v''y_1 + 2v'y_1' + vy_1''$. Substituting, $$v\\underbrace{(y_1'' + py_1' + qy_1)}_{=\\,0} + v''y_1 + v'(2y_1' + py_1) = 0.$$ The terms with $v$ itself cancel because $y_1$ is a solution. With $w = v'$: $y_1w' + (2y_1' + py_1)w = 0$, which separates: $\\frac{w'}{w} = -\\frac{2y_1'}{y_1} - p$, so $w = \\frac{e^{-\\int p\\,dt}}{y_1^{2}}$. Integrate once more for $v$."
+      },
+      {
+        "t": "ex",
+        "title": "Where $te^{rt}$ comes from",
+        "q": "$y_1 = e^{3t}$ solves $y'' - 6y' + 9y = 0$. Find a second solution.",
+        "steps": [
+          "$p = -6$, so $e^{-\\int p\\,dt} = e^{6t}$.",
+          "$w = v' = \\frac{e^{6t}}{(e^{3t})^{2}} = 1$, so $v = t$."
+        ],
+        "a": "$y_2 = te^{3t}$"
+      },
+      {
+        "t": "ex",
+        "title": "Variable coefficients",
+        "q": "$y_1 = t^{2}$ solves $t^{2}y'' - 3ty' + 4y = 0$ for $t > 0$. Find $y_2$.",
+        "steps": [
+          "Standard form: $y'' - \\frac{3}{t}y' + \\frac{4}{t^{2}}y = 0$, so $p = -\\frac{3}{t}$.",
+          "$e^{-\\int p\\,dt} = e^{3\\ln t} = t^{3}$.",
+          "$v' = \\frac{t^{3}}{t^{4}} = \\frac{1}{t}$, so $v = \\ln t$."
+        ],
+        "a": "$y_2 = t^{2}\\ln t$"
+      },
+      {
+        "t": "ex",
+        "title": "An exponential appears",
+        "q": "$y_1 = t$ solves $(1 - t)y'' + ty' - y = 0$ for $t < 1$. Find $y_2$.",
+        "steps": [
+          "Standard form: $p = \\frac{t}{1 - t} = -1 + \\frac{1}{1 - t}$, so $\\int p\\,dt = -t - \\ln(1 - t)$ and $e^{-\\int p\\,dt} = (1 - t)e^{t}$.",
+          "$v' = \\frac{(1 - t)e^{t}}{t^{2}}$. Since $\\frac{d}{dt}\\left(-\\frac{e^{t}}{t}\\right) = \\frac{(1 - t)e^{t}}{t^{2}}$, we get $v = -\\frac{e^{t}}{t}$.",
+          "$y_2 = vy_1 = -e^{t}$; drop the constant factor."
+        ],
+        "a": "$y_2 = e^{t}$ (check: $(1 - t)e^{t} + te^{t} - e^{t} = 0$)"
+      },
+      {
+        "t": "mistake",
+        "html": "Reading $p$ before dividing by the coefficient of $y''$ (using $-3$ instead of $-\\frac{3}{t}$ in the second example) gives a wrong $w$. Also remember $y_2 = v\\,y_1$, not $v$ alone. Any constant multiple of $y_2$, or $y_2$ plus a multiple of $y_1$, is just as good, so constants of integration can be dropped. Finish by substituting $y_2$ into the equation."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "fns": [
+            {
+              "f": "x^2",
+              "label": "y_1"
+            },
+            {
+              "f": "x^2*ln(x)",
+              "label": "y_2"
+            }
+          ],
+          "xmin": 0,
+          "xmax": 3,
+          "ymin": -1,
+          "ymax": 9,
+          "xlabel": "t"
+        },
+        "cap": "$y_1 = t^{2}$ and $y_2 = t^{2}\\ln t$ from the second example. The factor $v = \\ln t$ bends $y_2$ away from $y_1$, so neither is a multiple of the other."
+      },
+      {
+        "t": "note",
+        "html": "This connects with the <a href=\"/math/differential-equations/wronskian/\">Wronskian</a>. The function $w = v'$ found here is $\\left(\\frac{y_2}{y_1}\\right)' = \\frac{W}{y_1^{2}}$, and $e^{-\\int p\\,dt}$ is exactly Abel's formula for $W$. So reduction of order says: choose the Wronskian you want, then integrate $\\frac{W}{y_1^{2}}$ and multiply by $y_1$. The same substitution $y = vy_1$ also works for the nonhomogeneous equation; then the first-order equation for $w$ gains a right side."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Paul's Online Math Notes, Differential Equations: Reduction of Order"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.03SC Differential Equations (Fall 2011), Unit II: Second Order Constant Coefficient Linear Equations"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

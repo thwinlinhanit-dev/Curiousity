@@ -1,0 +1,68 @@
+{
+  "id": "rbsense.kalman-1d",
+  "slug": "kalman-1d",
+  "ladder": "robotics",
+  "course": "rbsense",
+  "unit": "estimation",
+  "title": "A Kalman Filter in One Dimension",
+  "short": "Gain K = P / (P + R); new estimate = old + K (measurement − old); new P = (1 − K) P.",
+  "trouble": "Students think a Kalman filter just averages; it weighs each source by how much it is trusted.",
+  "prereqs": [
+    "rbsense.noise-averaging",
+    "stat.bayes-rule"
+  ],
+  "xp": 3,
+  "viz": [
+    "rb-kalman"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A Kalman filter sounds hard, but its main idea fits in one line: blend what you predicted with what you measured, trusting each by how good it is."
+      },
+      {
+        "t": "key",
+        "html": "Keep an estimate $x$ and its uncertainty (variance) $P$. A measurement $z$ has variance $R$. The <b>gain</b> is $K = \\dfrac{P}{P + R}$. Update: $x \\leftarrow x + K(z - x)$ and $P \\leftarrow (1 - K)P$. Between measurements, predict the motion and let $P$ grow a little."
+      },
+      {
+        "t": "viz",
+        "name": "rb-kalman",
+        "opts": {
+          "r": 4,
+          "q": 0.5
+        },
+        "cap": "The filter tracks a moving cart from noisy readings. Make the sensor noisier and watch the gain drop."
+      },
+      {
+        "t": "why",
+        "html": "If the prediction is shaky ($P$ big), $K$ is near 1 and the estimate jumps to the measurement. If the sensor is noisy ($R$ big), $K$ is near 0 and the estimate barely moves. The new $P$ is smaller than either: two pieces of evidence beat one. This is Bayes' rule for bell-shaped uncertainty."
+      },
+      {
+        "t": "ex",
+        "title": "One update",
+        "q": "Predict $x = 100$, $P = 4$. Measure $z = 106$, $R = 12$.",
+        "steps": [
+          "$K = 4/16 = 0.25$.",
+          "$x = 100 + 0.25 \\times 6 = 101.5$.",
+          "$P = 0.75 \\times 4 = 3$."
+        ],
+        "a": "Estimate 101.5, variance 3."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking a Kalman filter just averages. It weighs each source by how much it is trusted, and the weights change as it runs."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Sebastian Thrun, Wolfram Burgard and Dieter Fox, Probabilistic Robotics (MIT Press, 2005)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

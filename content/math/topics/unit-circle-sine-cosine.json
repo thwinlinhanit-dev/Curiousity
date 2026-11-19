@@ -1,0 +1,101 @@
+{
+  "id": "pre.unit-circle-sine-cosine",
+  "slug": "unit-circle-sine-cosine",
+  "ladder": "math",
+  "course": "pre",
+  "unit": "angles-unit-circle",
+  "title": "Sine and Cosine on the Unit Circle",
+  "short": "(cos θ, sin θ) is the point at angle θ on the unit circle.",
+  "trouble": "Students swap the coordinates, taking sine as the x-coordinate.",
+  "prereqs": [
+    "pre.degrees-radians"
+  ],
+  "xp": 2,
+  "viz": [
+    "unitcircle"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In geometry, <a href=\"/math/geometry/trig-ratios/\">sine and cosine</a> were ratios of sides in a right triangle, so they only made sense for angles between $0^\\circ$ and $90^\\circ$. Now that angles can be any size, we need a definition that works for $150^\\circ$, $-\\frac{\\pi}{3}$ or $1000^\\circ$. The <b>unit circle</b>, the circle of radius $1$ centered at the origin, gives it."
+      },
+      {
+        "t": "key",
+        "html": "Draw $\\theta$ in standard position. Its terminal side meets the unit circle at one point, and that point is $$(\\role[x-coordinate]{input}{\\cos\\theta}, \\role[y-coordinate]{output}{\\sin\\theta}).$$ Cosine is the $x$-coordinate and sine is the $y$-coordinate."
+      },
+      {
+        "t": "why",
+        "html": "For an acute angle, drop a line from the point $(x, y)$ straight down to the $x$-axis. You get a right triangle with hypotenuse $1$, adjacent side $x$ and opposite side $y$. So the triangle ratios give $\\cos\\theta = \\frac{x}{1} = x$ and $\\sin\\theta = \\frac{y}{1} = y$. The new definition agrees with the old one where the old one works, and it keeps working when the point moves into other quadrants, where $x$ or $y$ can be negative."
+      },
+      {
+        "t": "viz",
+        "name": "unitcircle",
+        "opts": {
+          "angle": 30,
+          "units": "deg",
+          "snap": 5,
+          "graph": "both",
+          "task": "Turn the angle to $180^\\circ$. What are $\\cos 180^\\circ$ and $\\sin 180^\\circ$?",
+          "target": 180,
+          "roleLinks": {
+            "Angle": "angle"
+          }
+        },
+        "cap": "The blue segment is $\\cos\\theta$ (across) and the red segment is $\\sin\\theta$ (up). The graphs on the right trace them as the angle grows."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Reading a point",
+        "q": "The terminal side of $\\theta$ meets the unit circle at $\\left(-\\frac{3}{5}, \\frac{4}{5}\\right)$. Find $\\cos\\theta$ and $\\sin\\theta$.",
+        "steps": [
+          "The point is $(\\cos\\theta, \\sin\\theta)$.",
+          "So $\\cos\\theta = -\\frac{3}{5}$ and $\\sin\\theta = \\frac{4}{5}$. (Check: $\\frac{9}{25} + \\frac{16}{25} = 1$, so the point really is on the unit circle.)"
+        ],
+        "a": "$\\cos\\theta = -\\frac{3}{5}$, $\\sin\\theta = \\frac{4}{5}$"
+      },
+      {
+        "t": "ex",
+        "title": "An angle on an axis",
+        "q": "Find $\\cos\\frac{3\\pi}{2}$ and $\\sin\\frac{3\\pi}{2}$.",
+        "steps": [
+          "$\\frac{3\\pi}{2}$ is three quarters of a turn, pointing straight down.",
+          "It meets the unit circle at $(0, -1)$."
+        ],
+        "a": "$\\cos\\frac{3\\pi}{2} = 0$, $\\sin\\frac{3\\pi}{2} = -1$"
+      },
+      {
+        "t": "ex",
+        "title": "A bigger circle",
+        "q": "The point $(6, -8)$ is on the terminal side of $\\theta$. Find $\\cos\\theta$ and $\\sin\\theta$.",
+        "steps": [
+          "Its distance from the origin is $\\sqrt{36 + 64} = 10$.",
+          "Shrink by $10$ to reach the unit circle: $(0.6, -0.8)$.",
+          "So $\\cos\\theta = \\frac{3}{5}$ and $\\sin\\theta = -\\frac{4}{5}$."
+        ],
+        "a": "$\\cos\\theta = \\frac{3}{5}$, $\\sin\\theta = -\\frac{4}{5}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Swapping the coordinates and taking sine as the $x$-value. Remember the order: $(\\cos, \\sin)$ matches $(x, y)$, the same alphabetical order. Quick check: at $90^\\circ$ the point is $(0, 1)$, the top of the circle, and $\\sin 90^\\circ$ should be $1$ because sine measures height."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Precalculus 2e, Section 5.2 Unit Circle: Sine and Cosine Functions"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, F-TF.A.2"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

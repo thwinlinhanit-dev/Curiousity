@@ -1,0 +1,64 @@
+{
+  "id": "exam.loop-track",
+  "slug": "loop-track",
+  "course": "exam",
+  "courseTitle": "Exam Challenge: Multi-Step Physics Problems",
+  "unit": "mechanics",
+  "unitTitle": "Mechanics",
+  "title": "Around a Loop",
+  "short": "Energy gives the speed at the top of a loop; the circle's force equation gives the push of the track.",
+  "trouble": "Students treat the normal force at the top of a loop as pointing up, or leave out gravity in the centripetal sum.",
+  "prereqs": [
+    "phys1.vertical-circles",
+    "phys1.energy-conservation"
+  ],
+  "xp": 3,
+  "viz": [
+    "exam-loop-track"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A loop puts two ideas together: energy gives the speed at the top, and the circle's force equation from <a href=\"/physics/physics-1/vertical-circles/\">Vertical Circles</a> gives how hard the track pushes. Each problem here is one short scene and a chain of questions. Answer them in order: each later question uses what you found before, so a slip early on carries through. Keep full precision between steps and round only at the end."
+      },
+      {
+        "t": "key",
+        "html": "Energy from the release height to the top of the loop ($2r$ up): $$mgh = mg(2r) + \\tfrac{1}{2}mv^2.$$ At the top both the push $N$ and gravity point down, to the center: $$\\role[normal force]{force}{N} + \\role{mass}{m}\\role[acceleration of gravity]{acceleration}{g} = \\frac{\\role{mass}{m}\\role[speed at the top]{velocity}{v}^2}{\\role[loop radius]{position}{r}}.$$ Just making it round means $N = 0$, which needs $h = \\tfrac{5}{2}r$."
+      },
+      {
+        "t": "viz",
+        "name": "exam-loop-track",
+        "opts": {
+          "h": 1.4,
+          "r": 0.4
+        },
+        "cap": "The object is slowest at the top of the loop. There the track and gravity both pull it toward the center."
+      },
+      {
+        "t": "ex",
+        "title": "A block around a loop",
+        "q": "A $0.2\\ \\text{kg}$ block is released from $1.4\\ \\text{m}$ on a smooth track with a loop of radius $0.4\\ \\text{m}$. Find (1) its speed at the top and (2) the track's push there.",
+        "steps": [
+          "(1) $v = \\sqrt{2(9.8)(1.4 - 0.8)} = 3.43\\ \\text{m/s}$.",
+          "(2) $N = \\dfrac{(0.2)(11.8)}{0.4} - (0.2)(9.8) = 3.92\\ \\text{N}$."
+        ],
+        "a": "$3.43\\ \\text{m/s}$, $3.92\\ \\text{N}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Writing $N - mg = mv^2/r$ at the top, as if the track pushed up. At the top of a loop the track is above the object and pushes down. Check: with $N = 0$ the equation must reduce to $mg = mv^2/r$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e (Rice University), chapters on kinematics, energy and momentum"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

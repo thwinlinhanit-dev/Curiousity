@@ -1,0 +1,126 @@
+{
+  "id": "weather.hurricanes",
+  "slug": "hurricanes",
+  "ladder": "earth",
+  "course": "weather",
+  "unit": "storms",
+  "title": "Hurricanes",
+  "short": "Warm ocean water feeds a hurricane through latent heat; its Saffir–Simpson category rates only its wind.",
+  "trouble": "Students judge a hurricane's danger by its category alone; the category measures only wind, while storm surge and flooding rain cause most hurricane deaths.",
+  "prereqs": [
+    "weather.thunderstorms",
+    "weather.coriolis"
+  ],
+  "xp": 2,
+  "viz": [
+    "es-storms"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A hurricane is a giant engine that runs on <a href=\"/earth-and-space/weather-and-climate/latent-heat/\">latent heat</a>. It is made of <a href=\"/earth-and-space/weather-and-climate/thunderstorms/\">thunderstorms</a> organized into spiral bands around a calm eye, and it spins because of the <a href=\"/earth-and-space/weather-and-climate/coriolis/\">Coriolis effect</a>."
+      },
+      {
+        "t": "key",
+        "html": "Hurricanes form over warm ocean water, about <b>26.5 °C</b> (80 °F) or warmer, at least about 5° from the equator. Warm water evaporates into the air; when the vapor condenses in the storm's towering eyewall clouds, it releases latent heat that warms the core, lowers the pressure and strengthens the winds, which evaporate more water. They spin counterclockwise in the Northern Hemisphere and clockwise in the Southern. The <b>Saffir–Simpson category</b> (1 to 5) rates only the maximum sustained wind."
+      },
+      {
+        "t": "why",
+        "html": "The loop feeds itself: stronger winds over warm water mean more evaporation, which means more latent heat released aloft, a warmer core, lower surface pressure and stronger winds. The storm weakens when it loses its fuel: moving over cooler water or land, or into strong winds aloft that tear its tower apart. It needs the Coriolis effect to start spinning, which is why hurricanes almost never form near the equator, where the Coriolis effect is zero. In the eye, air sinks and warms, so the sky can clear."
+      },
+      {
+        "t": "viz",
+        "name": "es-storms",
+        "opts": {
+          "mode": "hurricane",
+          "wind": 120,
+          "surge": 4
+        },
+        "cap": "A hurricane in cross section and from above: the eye, the eyewall and the rain bands, with its Saffir–Simpson category from the wind. The storm surge, which the category does not count, is shown at the coast."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Category",
+          "Sustained wind (mph)",
+          "About (km/h)",
+          "About (knots)"
+        ],
+        "rows": [
+          [
+            "1",
+            "74–95",
+            "119–153",
+            "64–82"
+          ],
+          [
+            "2",
+            "96–110",
+            "154–177",
+            "83–95"
+          ],
+          [
+            "3 (major)",
+            "111–129",
+            "178–208",
+            "96–112"
+          ],
+          [
+            "4 (major)",
+            "130–156",
+            "209–251",
+            "113–136"
+          ],
+          [
+            "5 (major)",
+            "157 or more",
+            "252 or more",
+            "137 or more"
+          ]
+        ],
+        "cap": "The Saffir–Simpson Hurricane Wind Scale (NOAA National Hurricane Center), for 1-minute sustained winds."
+      },
+      {
+        "t": "ex",
+        "title": "Which category?",
+        "q": "A hurricane's maximum sustained winds are 105 knots. Convert to mph (1 knot ≈ 1.151 mph) and find its category.",
+        "steps": [
+          "$105 \\times 1.151 \\approx 121$ mph.",
+          "121 mph is in 111–129: Category 3, a major hurricane."
+        ],
+        "a": "Category 3"
+      },
+      {
+        "t": "ex",
+        "title": "Which way does it spin?",
+        "q": "A tropical cyclone forms east of Australia. Which way do its winds circle?",
+        "steps": [
+          "It is in the Southern Hemisphere, where air flowing in toward the low turns left.",
+          "Air spiraling into a southern low circles clockwise."
+        ],
+        "a": "Clockwise"
+      },
+      {
+        "t": "mistake",
+        "html": "Judging a hurricane's danger by its category alone. The category measures only the wind. Storm surge (sea water pushed ashore by the wind) and flooding from heavy rain cause most hurricane deaths in the United States, and a slow, \"weak\" Category 1 storm can bring a deadly surge or rainfall. Check the forecasts for surge and rain, not just the category."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "NOAA: National Hurricane Center, Saffir–Simpson Hurricane Wind Scale and Storm Surge Overview"
+      },
+      {
+        "name": "NOAA National Weather Service, JetStream online school for weather: Tropical cyclones"
+      },
+      {
+        "name": "Rappaport (2014), Fatalities in the United States from Atlantic Tropical Cyclones, Bulletin of the American Meteorological Society"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

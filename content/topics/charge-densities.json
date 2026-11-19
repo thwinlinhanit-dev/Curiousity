@@ -1,0 +1,131 @@
+{
+  "id": "em.charge-densities",
+  "slug": "charge-densities",
+  "course": "em",
+  "courseTitle": "Electricity and Magnetism",
+  "unit": "fields-gauss",
+  "unitTitle": "Charges, Fields and Gauss's Law",
+  "title": "Charge Densities",
+  "short": "λ, σ and ρ describe charge spread along a line, over a surface or through a volume, so dq = λ dx.",
+  "trouble": "Students mix up line, surface and volume densities and their units.",
+  "prereqs": [
+    "phys2.charge-conservation",
+    "calc1.definite-integral"
+  ],
+  "xp": 1,
+  "viz": [
+    "ph-efield"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/physics/physics-2/charge-conservation/\">Physics 2</a> charge sat on small objects, and Coulomb's law treated each one as a point. Real charged things are spread out: charge along a wire, over a metal plate, through a block of plastic. To find their fields we will cut them into pieces so small that each piece <i>is</i> a point charge, and then add the pieces with an integral. First we need a way to say how much charge each piece holds."
+      },
+      {
+        "t": "key",
+        "html": "A <b>charge density</b> says how tightly charge is packed:\n        $$\\lambda = \\frac{dq}{d\\ell}\\ \\ (\\text{C/m}), \\qquad \\sigma = \\frac{dq}{dA}\\ \\ (\\text{C/m}^2), \\qquad \\rho = \\frac{dq}{dV}\\ \\ (\\text{C/m}^3).$$\n        A small piece carries $dq = \\lambda\\,d\\ell$, $\\sigma\\,dA$ or $\\rho\\,dV$, and the total is $Q = \\int dq$. When the charge is spread evenly, the density is just total over size: $\\lambda = Q/L$, $\\sigma = Q/A$, $\\rho = Q/V$."
+      },
+      {
+        "t": "why",
+        "html": "Coulomb's law only knows about points. A density lets us give every tiny piece its own charge, so each piece can use the point-charge law. Adding infinitely many tiny pieces is exactly what a <a href=\"/math/calculus-1/definite-integral/\">definite integral</a> does: $Q = \\int \\lambda\\,dx$ is the limit of the sum $\\sum \\lambda(x_i)\\,\\Delta x$. It is the same idea as mass density, where a rope's mass is $\\int (\\text{kg/m})\\,dx$."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Density",
+          "Charge lives…",
+          "Units",
+          "A small piece",
+          "Even spread"
+        ],
+        "rows": [
+          [
+            "$\\lambda$ (lambda)",
+            "along a line: rod, wire, ring",
+            "C/m",
+            "$dq = \\lambda\\,dx$",
+            "$\\lambda = Q/L$"
+          ],
+          [
+            "$\\sigma$ (sigma)",
+            "on a surface: plate, disk, shell",
+            "C/m²",
+            "$dq = \\sigma\\,dA$",
+            "$\\sigma = Q/A$"
+          ],
+          [
+            "$\\rho$ (rho)",
+            "through a volume: ball, block",
+            "C/m³",
+            "$dq = \\rho\\,dV$",
+            "$\\rho = Q/V$"
+          ]
+        ],
+        "cap": "The three densities. Units are the quickest check of which one you have."
+      },
+      {
+        "t": "viz",
+        "name": "ph-efield",
+        "opts": {
+          "mode": "distribution",
+          "dist": {
+            "type": "rod",
+            "Q": 5,
+            "L": 0.3
+          },
+          "dP": 0.1
+        },
+        "cap": "A charged rod cut into pieces $dq = \\lambda\\,dx$. Each piece acts as a point charge and sends its own small field to P (faint arrows). Drag P to see how the total changes; the next topics add these pieces up."
+      },
+      {
+        "t": "p",
+        "html": "Round objects need pieces shaped to match them. For a disk, use thin rings of radius $r$ and width $dr$: $dA = 2\\pi r\\,dr$. For a ball, use thin shells: $dV = 4\\pi r^2\\,dr$. Each ring or shell has one radius, so a density that depends on $r$ is constant across it."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A charged shell",
+        "q": "A thin spherical shell of radius $5.0\\ \\text{cm}$ carries $6.0\\ \\text{nC}$ spread evenly over its surface. Find $\\sigma$.",
+        "steps": [
+          "The charge sits on a surface, so we want $\\sigma$, in C/m².",
+          "The area of a sphere is $A = 4\\pi R^2 = 4\\pi(0.050\\ \\text{m})^2 = 0.0314\\ \\text{m²}$.",
+          "$\\sigma = \\dfrac{Q}{A} = \\dfrac{6.0 \\times 10^{-9}\\ \\text{C}}{0.0314\\ \\text{m}^2} = 1.91 \\times 10^{-7}\\ \\text{C/m²}$, or about $191\\ \\text{nC/m}^2$."
+        ],
+        "a": "$\\sigma \\approx 1.91 \\times 10^{-7}\\ \\text{C/m²}$"
+      },
+      {
+        "t": "ex",
+        "title": "A rod that gets denser",
+        "q": "A rod runs from $x = 0$ to $x = 0.50\\ \\text{m}$ with $\\lambda(x) = bx$, where $b = 40\\ \\text{nC/m}^2$. How much charge does it carry?",
+        "steps": [
+          "The density changes along the rod, so we cannot just multiply. A piece $dx$ at position $x$ carries $dq = bx\\,dx$.",
+          "Add the pieces: $$Q = \\int_0^{0.50} bx\\,dx = \\frac{b}{2}x^2\\Big|_0^{0.50} = \\frac{40}{2}(0.50)^2.$$",
+          "$Q = 5.0\\ \\text{nC}$. Check the units: $(\\text{nC/m}^2)(\\text{m}^2) = \\text{nC}$.",
+          "Sense check: the density runs from $0$ to $20\\ \\text{nC/m}$, an average of $10\\ \\text{nC/m}$ over $0.50\\ \\text{m}$, which is $5.0\\ \\text{nC}$."
+        ],
+        "a": "$Q = 5.0\\ \\text{nC}$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Mixing up the densities.</b> A charged spherical <i>shell</i> has its charge on a surface, so $\\sigma = Q/(4\\pi R^2)$; a uniformly charged <i>ball</i> has it through a volume, so $\\rho = Q/(\\tfrac{4}{3}\\pi R^3)$. Writing $Q/(4\\pi R^2)$ for a ball, or $Q/(\\pi R^2)$ for a sphere's surface, mixes them. Check with units: $\\lambda L$, $\\sigma A$ and $\\rho V$ must each give coulombs, so $\\lambda$ needs C/m, $\\sigma$ C/m² and $\\rho$ C/m³."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 2, 5.5 Calculating Electric Fields of Charge Distributions"
+      },
+      {
+        "name": "MIT OpenCourseWare, 8.02 Physics II: Electricity and Magnetism"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

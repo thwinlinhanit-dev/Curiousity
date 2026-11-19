@@ -1,0 +1,114 @@
+{
+  "id": "g2.two-step-word-problems",
+  "slug": "two-step-word-problems",
+  "ladder": "math",
+  "course": "g2",
+  "unit": "add-sub-100",
+  "title": "Two-Step Word Problems",
+  "short": "Solve stories that need two steps.",
+  "trouble": "Children stop after the first step and give that number as the answer.",
+  "prereqs": [
+    "g2.word-problems-100"
+  ],
+  "xp": 2,
+  "viz": [
+    "tapediagram"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Some stories need two steps. First find a number the story doesn’t tell you. Then use it to answer the question. Each step is a one-step problem like the ones in <a href=\"/math/grade-2/word-problems-100/\">Word Problems within 100</a>."
+      },
+      {
+        "t": "ex",
+        "title": "Shells",
+        "q": "Mia has 24 shells. Leo has 9 more shells than Mia. How many shells do they have together?",
+        "steps": [
+          "Step 1: how many does Leo have? 24 + 9 = 33.",
+          "Step 2: put both together: 24 + 33 = 57."
+        ],
+        "a": "57 shells"
+      },
+      {
+        "t": "viz",
+        "name": "tapediagram",
+        "opts": {
+          "tapes": [
+            {
+              "parts": [
+                24
+              ],
+              "labels": [
+                "24"
+              ],
+              "name": "Mia"
+            },
+            {
+              "parts": [
+                24,
+                9
+              ],
+              "labels": [
+                "24",
+                "9"
+              ],
+              "name": "Leo"
+            }
+          ],
+          "braces": [
+            {
+              "tape": 1,
+              "from": 0,
+              "to": 2,
+              "label": "33",
+              "up": false
+            }
+          ],
+          "steps": [
+            "Step 1: Leo has Mia’s 24 and 9 more: 24 + 9 = 33.",
+            "Step 2: put both tapes together: 24 + 33 = 57."
+          ]
+        },
+        "cap": "Step 1 finds Leo’s 33 shells. Step 2 adds Mia’s 24. Press “Next step”."
+      },
+      {
+        "t": "why",
+        "html": "The question asks about both children, but the story only tells you how many Mia has. You need Leo’s number before you can answer. That hidden middle number is what step 1 finds."
+      },
+      {
+        "t": "ex",
+        "title": "A bus",
+        "q": "A bus has 35 people. At the first stop, 12 people get off and 8 get on. How many people are on the bus now?",
+        "steps": [
+          "Step 1: 12 get off: $35 - 12 = 23$.",
+          "Step 2: 8 get on: $23 + 8 = 31$."
+        ],
+        "a": "31 people"
+      },
+      {
+        "t": "key",
+        "html": "In a two-step problem, find the hidden middle number first, then answer the question that was asked."
+      },
+      {
+        "t": "mistake",
+        "html": "Stopping after step 1. In the shells story, 33 is Leo’s number, not the answer. Check: read the question again. It asks about both children, so the answer must be more than either child’s number."
+      },
+      {
+        "t": "note",
+        "html": "<b>Grown-up tip:</b> Before any math, ask, “What do we need to know first?”"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 2, standard 2.OA.A.1 (use addition and subtraction within 100 to solve one- and two-step word problems)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

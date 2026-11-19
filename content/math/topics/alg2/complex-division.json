@@ -1,0 +1,110 @@
+{
+  "id": "alg2.complex-division",
+  "slug": "complex-division",
+  "ladder": "math",
+  "course": "alg2",
+  "unit": "quadratics-complex",
+  "title": "Dividing Complex Numbers",
+  "short": "Multiply by the conjugate to clear i from the denominator.",
+  "trouble": "",
+  "prereqs": [
+    "alg2.complex-arithmetic"
+  ],
+  "xp": 2,
+  "viz": [
+    "complexplane"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Dividing by a complex number looks awkward: what is $\\frac{1}{2 + i}$ in the form $a + bi$? The tool is something you saw in <a href=\"/math/algebra-2/complex-arithmetic/\">Adding and Multiplying Complex Numbers</a>: a number times its conjugate is real. It is the same trick as rationalizing a denominator with a square root."
+      },
+      {
+        "t": "key",
+        "html": "To divide, multiply the numerator and denominator by the <b>conjugate</b> of the denominator (change the sign of its $i$ part). The denominator becomes the real number $c^2 + d^2$, and then you split the fraction into $a + bi$."
+      },
+      {
+        "t": "why",
+        "html": "Multiplying by $\\frac{c - di}{c - di}$ is multiplying by 1, so the value does not change. The point is the denominator: $(c + di)(c - di) = c^2 - d^2i^2$ $= c^2 + d^2$, a positive real number. Once the denominator is real, dividing is just dividing each part by an ordinary number."
+      },
+      {
+        "t": "viz",
+        "name": "complexplane",
+        "opts": {
+          "z": [
+            3,
+            4
+          ],
+          "w": [
+            1,
+            2
+          ],
+          "op": "div",
+          "ops": [
+            "div",
+            "mul",
+            "conj"
+          ],
+          "snap": 0.5,
+          "range": 6
+        },
+        "cap": "Division undoes multiplication. Drag $z$ and $w$ and compare the quotient with $z$; then switch to \"mul\" to see how multiplying by $w$ undoes it."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A whole-number answer",
+        "q": "Simplify $\\frac{7 + i}{1 - i}$.",
+        "steps": [
+          "Multiply top and bottom by the conjugate $1 + i$.",
+          "Bottom: $(1 - i)(1 + i) = 1 + 1 = 2$.",
+          "Top: $(7 + i)(1 + i) = 7 + 7i + i + i^2$ $= 6 + 8i$.",
+          "Divide each part by 2: $3 + 4i$."
+        ],
+        "a": "$3 + 4i$. Check: $(3 + 4i)(1 - i) = 3 - 3i + 4i + 4$ $= 7 + i$."
+      },
+      {
+        "t": "ex",
+        "title": "Fractions in the answer",
+        "q": "Simplify $\\frac{1}{2 + i}$.",
+        "steps": [
+          "Multiply by $\\frac{2 - i}{2 - i}$: bottom $4 + 1 = 5$, top $2 - i$.",
+          "$\\frac{2 - i}{5} = \\frac{2}{5} - \\frac{1}{5}i$."
+        ],
+        "a": "$\\frac{2}{5} - \\frac{1}{5}i$"
+      },
+      {
+        "t": "ex",
+        "title": "Dividing by a pure imaginary number",
+        "q": "Simplify $\\frac{6 - 4i}{2i}$.",
+        "steps": [
+          "The conjugate of $2i$ is $-2i$, but multiplying by $i$ also works: $$\\frac{(6 - 4i)i}{2i \\cdot i} = \\frac{6i - 4i^2}{2i^2} = \\frac{4 + 6i}{-2}.$$",
+          "Divide each part: $-2 - 3i$."
+        ],
+        "a": "$-2 - 3i$"
+      },
+      {
+        "t": "mistake",
+        "html": "Multiplying only the denominator by the conjugate. That changes the value of the fraction. You must multiply the top and the bottom by the same thing, so you are multiplying by 1. Check any answer by multiplying it back by the denominator."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Algebra 2e, Section 2.4 Complex Numbers"
+      },
+      {
+        "name": "Common Core State Standards, N-CN.A.3"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

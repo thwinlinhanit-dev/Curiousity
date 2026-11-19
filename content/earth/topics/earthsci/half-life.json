@@ -1,0 +1,121 @@
+{
+  "id": "earthsci.half-life",
+  "slug": "half-life",
+  "ladder": "earth",
+  "course": "earthsci",
+  "unit": "earth-history",
+  "title": "Half-Life and Absolute Age",
+  "short": "Radioactive atoms decay at a steady rate, so the fraction left tells a rock's age in years.",
+  "trouble": "Students think all the atoms are gone after two half-lives, but each half-life halves what is left: after two, one quarter remains.",
+  "prereqs": [
+    "earthsci.igneous-rocks",
+    "g6.whole-number-exponents",
+    "g5.multiply-fractions"
+  ],
+  "xp": 2,
+  "viz": [
+    "es-halflife"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Superposition and cross-cutting give the order of events. To find ages in years, geologists use radioactive atoms. Some atoms, like uranium-238 and potassium-40, are unstable: one by one they change (decay) into other atoms. Each kind decays at its own steady rate, set by its <b>half-life</b>, the time for half of the atoms to decay."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Parent atom",
+          "Daughter atom",
+          "Half-life",
+          "Used to date"
+        ],
+        "rows": [
+          [
+            "Carbon-14",
+            "Nitrogen-14",
+            "5,730 years",
+            "Once-living things, up to about 50,000 years old"
+          ],
+          [
+            "Potassium-40",
+            "Argon-40",
+            "1.25 billion years",
+            "Volcanic rock (<a href=\"/earth-and-space/earth-science/igneous-rocks/\">igneous</a>)"
+          ],
+          [
+            "Uranium-238",
+            "Lead-206",
+            "4.47 billion years",
+            "Crystals in igneous rock, up to the age of Earth"
+          ]
+        ],
+        "cap": "Some radioactive clocks. (Newer measurements give carbon-14 about 5,700 years; we use 5,730.)"
+      },
+      {
+        "t": "key",
+        "html": "After each half-life, half of the remaining parent atoms are left: $\\tfrac{1}{2}$, then $\\tfrac{1}{4}$, then $\\tfrac{1}{8}$. After $n$ half-lives the fraction left is $\\left(\\tfrac{1}{2}\\right)^n$, and the age is $n$ × the half-life."
+      },
+      {
+        "t": "why",
+        "html": "Each unstable atom has the same chance of decaying in a given time, no matter how old it is or how many others are around. So in each half-life, half of whatever is left decays. The rate does not change with heat, pressure or chemistry, which makes it a dependable clock. That is <a href=\"/math/grade-5/multiply-fractions/\">multiplying by one half</a> again and again, an <a href=\"/math/grade-6/whole-number-exponents/\">exponent</a>: $\\tfrac{1}{2} \\times \\tfrac{1}{2} \\times \\tfrac{1}{2} = \\left(\\tfrac{1}{2}\\right)^3 = \\tfrac{1}{8}$."
+      },
+      {
+        "t": "viz",
+        "name": "es-halflife",
+        "opts": {
+          "isotope": "C-14",
+          "n": 100,
+          "time": 2
+        },
+        "cap": "Each dot is an atom. Step through half-lives and watch the number of parent atoms halve each time, while daughter atoms pile up."
+      },
+      {
+        "t": "ex",
+        "title": "After three half-lives",
+        "q": "A sample starts with 800 carbon-14 atoms. How many are left after 3 half-lives, and how many years is that?",
+        "steps": [
+          "Halve three times: $800 \\to 400 \\to 200 \\to 100$.",
+          "Or: $800 \\times \\left(\\tfrac{1}{2}\\right)^3 = 800 \\times \\tfrac{1}{8} = 100$.",
+          "Time: $3 \\times 5{,}730 = 17{,}190$ years."
+        ],
+        "a": "100 atoms, after 17,190 years"
+      },
+      {
+        "t": "ex",
+        "title": "Dating a volcanic rock",
+        "q": "A volcanic rock has only $\\tfrac{1}{4}$ of its original potassium-40 left. How old is it?",
+        "steps": [
+          "$\\tfrac{1}{4} = \\left(\\tfrac{1}{2}\\right)^2$, so 2 half-lives have passed.",
+          "Age: $2 \\times 1.25 = 2.5$ billion years."
+        ],
+        "a": "About 2.5 billion years"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking all the atoms are gone after two half-lives (half, then the other half). Each half-life halves what is left, not what you started with: after two half-lives, one quarter remains; after three, one eighth. Check: the amount left never reaches exactly zero in a few steps; it keeps halving."
+      },
+      {
+        "t": "p",
+        "html": "Watch atoms decay one at a time in the <a href=\"/science-lab/atom/\">Atom Lab</a>."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Chemistry 2e, 21.3 Radioactive Decay"
+      },
+      {
+        "name": "U.S. Geological Survey, Geologic Time: Radiometric Time Scale"
+      },
+      {
+        "name": "Next Generation Science Standards, MS-ESS1-4"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

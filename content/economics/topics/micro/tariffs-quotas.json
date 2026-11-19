@@ -1,0 +1,101 @@
+{
+  "id": "micro.tariffs-quotas",
+  "slug": "tariffs-quotas",
+  "ladder": "economics",
+  "course": "micro",
+  "unit": "surplus-policy",
+  "title": "Tariffs and Import Quotas",
+  "short": "A tariff or quota raises the domestic price, helps domestic producers, costs consumers more and creates deadweight loss.",
+  "trouble": "Students think foreign producers pay the tariff, or miss that a quota raises the price like a tariff but lets license holders, not the government, keep the extra money.",
+  "prereqs": [
+    "micro.world-price",
+    "micro.excise-tax"
+  ],
+  "xp": 3,
+  "viz": [
+    "ec-intervention"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A country that imports at the world price (<a href=\"/economics/microeconomics/world-price/\">Trade at the World Price</a>) can restrict trade with a tax on imports, a <b>tariff</b>, or a limit on their quantity, a <b>quota</b>. Both work like the excise tax of <a href=\"/economics/microeconomics/excise-tax/\">Per-Unit Taxes</a>, applied only to imports."
+      },
+      {
+        "t": "key",
+        "html": "A <b>tariff</b> of $t$ per unit raises the domestic price to $P_w + t$. Domestic producers sell more, consumers buy less, imports fall. The government collects $t \\times$ (new imports). Total surplus falls by two deadweight-loss triangles: one from inefficient domestic production, one from consumption given up. A <b>quota</b> that allows the same imports raises the price the same way, but the rectangle goes to whoever holds the import licenses (the <b>quota rent</b>), not the government."
+      },
+      {
+        "t": "why",
+        "html": "With the tariff, a foreign seller needs $P_w + t$ to cover the tax, so that becomes the domestic price. At the higher price, domestic firms expand, even though some of their extra units cost more to make than the world price: that's the production triangle. Buyers cut back on units they valued above the world price: the consumption triangle. A quota creates scarcity of imports directly; the price rises until the quantity demanded minus domestic supply equals the quota."
+      },
+      {
+        "t": "viz",
+        "name": "ec-intervention",
+        "opts": {
+          "demand": {
+            "a": 20,
+            "b": 2
+          },
+          "supply": {
+            "c": -4,
+            "d": 2
+          },
+          "mode": "tariff",
+          "level": 3,
+          "tariff": 1,
+          "money": true
+        },
+        "cap": "A \\$1 tariff on a \\$3 world price. The price rises to \\$4, imports fall from 12 to 8, the government collects \\$8 (gold) and two small triangles are lost."
+      },
+      {
+        "t": "ex",
+        "title": "A \\$1 tariff",
+        "q": "$Q_d = 20 - 2P$, $Q_s = -4 + 2P$, world price \\$3. A \\$1 tariff is imposed. Find imports before and after, the tariff revenue and the deadweight loss.",
+        "steps": [
+          "Before: at \\$3, $Q_d = 14$, $Q_s = 2$, imports 12.",
+          "After: the price is \\$4. $Q_d = 12$, $Q_s = 4$, imports 8.",
+          "Revenue: $\\$1 \\times 8 = \\$8$.",
+          "DWL: $$\\tfrac{1}{2}(1)(4 - 2) + \\tfrac{1}{2}(1)(14 - 12) = \\$1 + \\$1 = \\$2$$"
+        ],
+        "a": "Imports 12 → 8; revenue \\$8; DWL \\$2."
+      },
+      {
+        "t": "ex",
+        "title": "The matching quota",
+        "q": "Instead of the tariff, the country allows only 8 units of imports. What is the domestic price, and who gets the \\$8 rectangle?",
+        "steps": [
+          "Imports equal $Q_d - Q_s = (20 - 2P) - (-4 + 2P) = 24 - 4P$.",
+          "Set $24 - 4P = 8$: $P = \\$4$, the same as with the tariff.",
+          "The gap between \\$4 and the \\$3 world price on 8 imported units, \\$8, goes to license holders."
+        ],
+        "a": "\\$4; the \\$8 goes to whoever holds the import licenses."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking foreign producers pay the tariff. The importer sends the tax to the government, and in this model the domestic price rises by the full tariff, so domestic buyers bear it. Also, missing that a quota raises the price just like a tariff but hands the rectangle to license holders instead of the government. Check: who pays the higher domestic price? Buyers at home."
+      },
+      {
+        "t": "note",
+        "html": "Economists broadly agree that tariffs raise domestic prices and create deadweight losses. Arguments for some protection (national security, young industries, a response to other countries' barriers) are debated, and the answers depend on the case."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, 20.1 Protectionism: An Indirect Subsidy from Consumers to Producers"
+      },
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, 20.3 Arguments in Support of Restricting Imports"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.01 Principles of Microeconomics (scope and sequence)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,117 @@
+{
+  "id": "cplx.laurent-series",
+  "slug": "laurent-series",
+  "ladder": "math",
+  "course": "cplx",
+  "unit": "series",
+  "title": "Laurent Series",
+  "short": "In an annulus, f = Σ cₙ(z − a)ⁿ with negative powers too: 1/(z(z − 1)) has one series on 0 < |z| < 1 and another on |z| > 1.",
+  "trouble": "Students expand 1/(z − 1) in powers of z where |z| > 1. There the geometric series must use powers of 1/z.",
+  "prereqs": [
+    "cplx.complex-taylor",
+    "alg2.infinite-geometric-series"
+  ],
+  "xp": 3,
+  "viz": [
+    "cplx-series"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A Taylor series lives on a disk, and stops at the first singular point. Around a singular point, or in a ring between two of them, we need negative powers too. Expanding with the <a href=\"/math/algebra-2/infinite-geometric-series/\">geometric series</a> in the right variable is almost always the tool, as in the <a href=\"/math/complex-analysis/complex-taylor/\">previous lesson</a>."
+      },
+      {
+        "t": "key",
+        "html": "If $f$ is analytic on an annulus $r < |z - a| < R$, then on that annulus\n      $$f(z) = \\sum_{n = -\\infty}^{\\infty} c_n(z - a)^n, \\qquad c_n = \\frac{1}{2\\pi i}\\oint_C\\frac{f(w)}{(w - a)^{n + 1}}\\,dw,$$\n      for any circle $C$ in the annulus. The series is unique for that annulus, but a different annulus (around the same center) gets a different series. The basic rule: $\\frac{1}{z - c} = -\\frac{1}{c}\\sum_{n \\ge 0}\\left(\\frac{z}{c}\\right)^n$ where $|z| < |c|$, and $\\frac{1}{z - c} = \\frac{1}{z}\\sum_{n \\ge 0}\\left(\\frac{c}{z}\\right)^n$ where $|z| > |c|$."
+      },
+      {
+        "t": "why",
+        "html": "For the two expansions of $\\frac{1}{z - c}$, factor out whichever of $z$ and $c$ is bigger, so the ratio inside the geometric series has modulus less than 1: $\\frac{1}{z - c} = \\frac{-1}{c}\\cdot\\frac{1}{1 - z/c}$ or $\\frac{1}{z}\\cdot\\frac{1}{1 - c/z}$. For a general $f$, Cauchy's formula on the boundary of the annulus splits $f$ into a piece analytic inside the outer circle (a Taylor series in $z - a$) and a piece analytic outside the inner circle (a series in $\\frac{1}{z - a}$)."
+      },
+      {
+        "t": "viz",
+        "name": "cplx-series",
+        "opts": {
+          "f": "1/(z*(z-1))",
+          "mode": "laurent",
+          "ring": 1,
+          "N": 6,
+          "window": {
+            "x": [
+              -2.5,
+              2.5
+            ],
+            "y": [
+              -2,
+              2
+            ]
+          }
+        },
+        "cap": "$\\frac{1}{z(z - 1)}$ has two rings around $0$: $0 < |z| < 1$ and $|z| > 1$. Switch between them: each has its own Laurent series, accurate (dark) only on its own ring."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Two rings, two series",
+        "q": "Expand $f(z) = \\dfrac{1}{z(z - 1)}$ on $0 < |z| < 1$ and on $|z| > 1$.",
+        "steps": [
+          "Partial fractions: $f = \\frac{1}{z - 1} - \\frac{1}{z}$.",
+          "On $0 < |z| < 1$: $\\frac{1}{z - 1} = -\\sum_{n \\ge 0}z^n$, so $f = -\\frac{1}{z} - 1 - z - z^2 - \\cdots$.",
+          "On $|z| > 1$: $\\frac{1}{z - 1} = \\sum_{n \\ge 0}\\frac{1}{z^{n + 1}}$, so $f = \\frac{1}{z^2} + \\frac{1}{z^3} + \\frac{1}{z^4} + \\cdots$ (the $\\frac{1}{z}$ terms cancel)."
+        ],
+        "a": "$-\\frac{1}{z} - 1 - z - \\cdots$ and $\\frac{1}{z^2} + \\frac{1}{z^3} + \\cdots$"
+      },
+      {
+        "t": "ex",
+        "title": "A middle ring",
+        "q": "Find the coefficient of $z^{-1}$ and of $z^{0}$ for $f(z) = \\dfrac{1}{(z - 1)(z - 2)}$ on $1 < |z| < 2$.",
+        "steps": [
+          "$f = \\frac{1}{z - 2} - \\frac{1}{z - 1}$.",
+          "$|z| > 1$: $-\\frac{1}{z - 1} = -\\frac{1}{z} - \\frac{1}{z^2} - \\cdots$. $|z| < 2$: $\\frac{1}{z - 2} = -\\frac{1}{2} - \\frac{z}{4} - \\cdots$.",
+          "Coefficient of $z^{-1}$: $-1$. Coefficient of $z^0$: $-\\frac{1}{2}$."
+        ],
+        "a": "$-1$ and $-\\frac{1}{2}$"
+      },
+      {
+        "t": "ex",
+        "title": "An essential singularity",
+        "q": "Find the Laurent series of $z^2e^{1/z}$ on $|z| > 0$ and its coefficient of $z^{-1}$.",
+        "steps": [
+          "$e^{1/z} = \\sum_{n \\ge 0}\\frac{1}{n!\\,z^n}$, valid for all $z \\ne 0$.",
+          "$z^2e^{1/z} = z^2 + z + \\frac{1}{2} + \\frac{1}{6z} + \\frac{1}{24z^2} + \\cdots$.",
+          "The coefficient of $z^{-1}$ is $\\frac{1}{6}$; infinitely many negative powers appear."
+        ],
+        "a": "$\\frac{1}{6}$"
+      },
+      {
+        "t": "list",
+        "items": [
+          "Split the function into partial fractions $\\frac{A}{z - c}$.",
+          "For each pole $c$, compare $|c|$ with the ring: if the ring lies inside $|z| < |c|$, expand in powers of $\\frac{z}{c}$; if outside, in powers of $\\frac{c}{z}$.",
+          "Add the expansions and collect the coefficient you need."
+        ]
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Using the wrong geometric series for the ring.</b> On $|z| > 1$, writing $\\frac{1}{z - 1} = -\\sum z^n$ is wrong: that series diverges there. The ratio must be small: on $|z| > 1$ use powers of $\\frac{1}{z}$. A quick check: plug in a point of the ring (such as $z = 2$ for $|z| > 1$) and ask whether the terms of your series shrink."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Beck, Marchesi, Pixton and Sabalka, A First Course in Complex Analysis, chapter 8 (Taylor and Laurent Series)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.04, Complex Variables with Applications (Spring 2018), course notes: Taylor and Laurent series"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

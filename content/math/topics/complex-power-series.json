@@ -1,0 +1,106 @@
+{
+  "id": "cplx.complex-power-series",
+  "slug": "complex-power-series",
+  "ladder": "math",
+  "course": "cplx",
+  "unit": "series",
+  "title": "Power Series and Disks of Convergence",
+  "short": "Σ cₙ(z − a)ⁿ converges inside a disk and diverges outside it; find the radius with the ratio or root test.",
+  "trouble": "Students expect the Maclaurin series of 1/(1 + x²) to converge for every real x. Its radius is 1 because of the singularities at ±i.",
+  "prereqs": [
+    "cplx.regions",
+    "calc2.power-series"
+  ],
+  "xp": 2,
+  "viz": [
+    "cplx-series"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/math/calculus-2/power-series/\">Power series</a> in Calculus 2 converged on an interval centered at $a$. With complex $z$, the interval becomes a disk, a <a href=\"/math/complex-analysis/regions/\">region</a> you already know how to read. The complex picture also explains something that the real line keeps hidden: why the radius is what it is."
+      },
+      {
+        "t": "key",
+        "html": "A power series $\\sum_{n \\ge 0} c_n(z - a)^n$ has a <b>radius of convergence</b> $R$ (with $0 \\le R \\le \\infty$): it converges absolutely for $|z - a| < R$ and diverges for $|z - a| > R$ (on the circle itself anything can happen). The ratio test finds it: if $\\left|\\frac{c_{n + 1}}{c_n}\\right| \\to \\lambda$, then $R = \\frac{1}{\\lambda}$ (with $R = \\infty$ when $\\lambda = 0$). Inside its disk the sum is analytic, and it can be differentiated term by term."
+      },
+      {
+        "t": "why",
+        "html": "Compare with a geometric series. If the series converges at some $z_1$, its terms are bounded: $|c_n(z_1 - a)^n| \\le K$. Then for $|z - a| < |z_1 - a|$,\n      $$|c_n(z - a)^n| \\le K\\left|\\frac{z - a}{z_1 - a}\\right|^n,$$\n      a convergent geometric series. So convergence at one point gives convergence on the whole disk through that point, and the set of convergence is a disk (plus perhaps some boundary points). The ratio test is this same comparison done with $\\frac{|c_{n + 1}||z - a|}{|c_n|} \\to \\lambda|z - a| < 1$."
+      },
+      {
+        "t": "viz",
+        "name": "cplx-series",
+        "opts": {
+          "f": "1/(1+z^2)",
+          "N": 8,
+          "real": true,
+          "window": {
+            "x": [
+              -3,
+              3
+            ],
+            "y": [
+              -2,
+              2
+            ]
+          }
+        },
+        "cap": "The Maclaurin series of $\\frac{1}{1 + z^2} = 1 - z^2 + z^4 - \\cdots$: dark where the partial sum is accurate. The disk stops at radius $1$ because of the singular points $\\pm i$. The real graph (below) is perfectly smooth, yet the partial sums fail past $|x| = 1$: the cause is off the real line."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A geometric series",
+        "q": "Find the radius of convergence of $\\displaystyle\\sum_{n \\ge 0}\\frac{z^n}{(3 + 4i)^n}$.",
+        "steps": [
+          "It is geometric with ratio $\\frac{z}{3 + 4i}$, convergent exactly when $\\left|\\frac{z}{3 + 4i}\\right| < 1$.",
+          "That is $|z| < |3 + 4i| = 5$: $R = 5$."
+        ],
+        "a": "$5$"
+      },
+      {
+        "t": "ex",
+        "title": "The ratio test",
+        "q": "Find the radius of convergence of $\\displaystyle\\sum_{n \\ge 1}\\frac{n^2z^n}{2^n}$, and of $\\displaystyle\\sum_{n \\ge 0}\\frac{z^n}{n!}$.",
+        "steps": [
+          "First: $\\left|\\frac{c_{n + 1}}{c_n}\\right| = \\frac{(n + 1)^2}{n^2}\\cdot\\frac{1}{2} \\to \\frac{1}{2}$, so $R = 2$. The polynomial factor $n^2$ does not change the radius.",
+          "Second: $\\frac{n!}{(n + 1)!} = \\frac{1}{n + 1} \\to 0$, so $R = \\infty$: the exponential series converges everywhere."
+        ],
+        "a": "$2$ and $\\infty$"
+      },
+      {
+        "t": "ex",
+        "title": "The radius from the singular points",
+        "q": "What is the radius of convergence of the Maclaurin series of $\\dfrac{1}{z^2 - 2z + 5}$?",
+        "steps": [
+          "The bottom is $0$ at $z = 1 \\pm 2i$ (quadratic formula).",
+          "Both are at distance $|1 \\pm 2i| = \\sqrt{5}$ from the center $0$.",
+          "$R = \\sqrt{5}$. (The next lesson proves that the radius reaches exactly to the nearest singular point.)"
+        ],
+        "a": "$\\sqrt{5}$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Expecting the Maclaurin series of $\\frac{1}{1 + x^2}$ to converge for every real $x$.</b> The function is smooth on the whole real line, so this seems natural. But the series $1 - x^2 + x^4 - \\cdots$ diverges for $|x| \\ge 1$. The reason is complex: at $z = \\pm i$ the function blows up, and the disk of convergence cannot reach past them. To find a radius, look for singular points in the whole complex plane, not only on the real line."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Beck, Marchesi, Pixton and Sabalka, A First Course in Complex Analysis, chapter 7 (Power Series)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.04, Complex Variables with Applications (Spring 2018), course notes: Taylor and Laurent series"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

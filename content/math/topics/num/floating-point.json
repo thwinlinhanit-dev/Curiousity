@@ -1,0 +1,143 @@
+{
+  "id": "num.floating-point",
+  "slug": "floating-point",
+  "ladder": "math",
+  "course": "num",
+  "unit": "error",
+  "title": "Floating-Point Numbers",
+  "short": "A float stores ±1.f × 2ᵉ with a fixed number of bits, so the gaps between floats grow with their size; machine epsilon, 2⁻⁵² ≈ 2.2 × 10⁻¹⁶ in double precision, sets the relative precision.",
+  "trouble": "Students expect 0.1 + 0.2 to equal 0.3 exactly on a computer, or picture floating-point numbers as evenly spaced.",
+  "prereqs": [
+    "num.binary-fractions",
+    "g8.scientific-notation"
+  ],
+  "xp": 2,
+  "viz": [
+    "num-float"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A floating-point number is <a href=\"/math/pre-algebra/scientific-notation/\">scientific notation</a> in base 2 with a fixed number of digits. Because most fractions do not end in binary (see <a href=\"/math/numerical-analysis/binary-fractions/\">Binary Fractions</a>), nearly every real number has to be rounded to fit, and the pattern of that rounding explains a lot of computer arithmetic."
+      },
+      {
+        "t": "p",
+        "html": "A (normalized) float with $p$ fraction bits is $$x = \\pm(1.b_1b_2\\ldots b_p)_2 \\times 2^{e},$$ where the exponent $e$ lies in a fixed range. A <b>double</b> (IEEE 754 double precision) uses 1 sign bit, 11 exponent bits and $p = 52$ fraction bits: 64 bits in all, with 53 significant bits counting the leading 1, which is not stored."
+      },
+      {
+        "t": "key",
+        "html": "Between $2^{e}$ and $2^{e+1}$ the floats are evenly spaced, $2^{e - p}$ apart, and the spacing doubles at each power of 2. <b>Machine epsilon</b> $\\varepsilon = 2^{-p}$ is the gap between $1$ and the next float; for doubles $\\varepsilon = 2^{-52} \\approx 2.2 \\times 10^{-16}$. Rounding to the nearest float has relative error at most $u = \\varepsilon/2$."
+      },
+      {
+        "t": "why",
+        "html": "Inside $[2^{e}, 2^{e+1})$ only the fraction bits change, and the last one is worth $2^{-p} \\times 2^{e}$: that is the gap. For $x$ in that range the gap is at most $2^{-p} \\cdot 2^{e} \\le \\varepsilon|x|$. Rounding to the nearest float moves $x$ by at most half a gap, so $$\\frac{|\\mathrm{fl}(x) - x|}{|x|} \\le \\frac{\\varepsilon}{2} = u.$$ The absolute error grows with $|x|$, but the relative error never exceeds $u$: about 16 significant decimal digits for doubles."
+      },
+      {
+        "t": "viz",
+        "name": "num-float",
+        "opts": {
+          "mode": "toy",
+          "bits": 3,
+          "emin": -2,
+          "emax": 3,
+          "x": 2.7,
+          "task": "Change the fraction bits and the number $x$. Where are the floats crowded, and where are they sparse?"
+        },
+        "cap": "A toy system with 3 fraction bits. The top strip shows every positive float; each colored band is one power-of-2 range, and the gaps double from one band to the next."
+      },
+      {
+        "t": "ex",
+        "title": "Floats in a toy system",
+        "q": "With $p = 3$ fraction bits, list the floats in $[1, 2)$ and find the gap in $[4, 8)$.",
+        "steps": [
+          "In $[1, 2)$: $(1.b_1b_2b_3)_2$ for the 8 choices of bits: $1, 1.125, 1.25, \\ldots, 1.875$, a gap of $2^{-3} = 0.125$.",
+          "In $[4, 8)$ the exponent is $2$, so the gap is $2^{-3} \\times 2^{2} = 0.5$: the floats there are $4, 4.5, 5, \\ldots, 7.5$.",
+          "Machine epsilon for this system is $2^{-3} = 0.125$."
+        ],
+        "a": "gap $0.125$ in $[1, 2)$, gap $0.5$ in $[4, 8)$"
+      },
+      {
+        "t": "ex",
+        "title": "Rounding and its error",
+        "q": "In the same system, round $x = 2.7$ to the nearest float and find the relative error.",
+        "steps": [
+          "$2.7$ is in $[2, 4)$, where the gap is $2^{-3} \\times 2 = 0.25$: the neighbors are $2.5$ and $2.75$.",
+          "$2.75$ is nearer: $\\mathrm{fl}(2.7) = 2.75$, an error of $0.05$.",
+          "Relative error: $\\frac{0.05}{2.7} \\approx 0.0185$, below $u = \\frac{\\varepsilon}{2} = 0.0625$."
+        ],
+        "a": "$2.75$, relative error about $0.0185$"
+      },
+      {
+        "t": "ex",
+        "title": "Why 0.1 + 0.2 is not 0.3",
+        "q": "Explain what a computer does with $0.1 + 0.2$ in double precision.",
+        "steps": [
+          "$0.1$ is stored as $0.100\\,000\\,000\\,000\\,000\\,005\\,55\\ldots$ and $0.2$ as $0.200\\,000\\,000\\,000\\,000\\,011\\,1\\ldots$: each is rounded.",
+          "Their exact sum, $0.300\\,000\\,000\\,000\\,000\\,016\\,6\\ldots$, is rounded again, to the double $0.300\\,000\\,000\\,000\\,000\\,044\\,4\\ldots$",
+          "The double nearest $0.3$ is $0.299\\,999\\,999\\,999\\,999\\,988\\,9\\ldots$, one gap lower. So the test \"0.1 + 0.2 == 0.3\" is false.",
+          "Compare floats with a tolerance instead: $|a - b| \\le 10^{-12}\\max(|a|, |b|)$, say."
+        ],
+        "a": "Each value is rounded to the nearest double, and the roundings do not cancel."
+      },
+      {
+        "t": "viz",
+        "name": "num-float",
+        "opts": {
+          "mode": "double",
+          "x": "0.1",
+          "sum": true
+        },
+        "cap": "The 64 bits of a double, the exact value it stores, and the 0.1 + 0.2 example."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Double precision",
+          "Value"
+        ],
+        "rows": [
+          [
+            "fraction bits $p$",
+            "$52$"
+          ],
+          [
+            "machine epsilon $\\varepsilon = 2^{-52}$",
+            "$\\approx 2.22 \\times 10^{-16}$"
+          ],
+          [
+            "unit roundoff $u = 2^{-53}$",
+            "$\\approx 1.11 \\times 10^{-16}$"
+          ],
+          [
+            "largest double",
+            "$\\approx 1.8 \\times 10^{308}$"
+          ],
+          [
+            "smallest normal double",
+            "$\\approx 2.2 \\times 10^{-308}$"
+          ]
+        ],
+        "cap": "Numbers worth knowing."
+      },
+      {
+        "t": "mistake",
+        "html": "Expecting $0.1 + 0.2$ to equal $0.3$ exactly, or picturing floats as evenly spaced. Floats are dense near $0$ and sparse far out: near $10^{6}$ the gap between doubles is about $10^{-10}$, near $1$ it is about $10^{-16}$. What stays the same is the relative spacing."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Tobin A. Driscoll and Richard J. Braun, Fundamentals of Numerical Computation (University of Delaware, free online edition): chapter \"Introduction\", section \"Floating-point numbers\""
+      },
+      {
+        "name": "MIT OpenCourseWare 18.335J, Introduction to Numerical Methods: lecture notes on floating-point arithmetic"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,112 @@
+{
+  "id": "phys1.center-of-mass-motion",
+  "slug": "center-of-mass-motion",
+  "course": "phys1",
+  "courseTitle": "Physics 1: Motion, Forces and Energy",
+  "unit": "momentum",
+  "unitTitle": "Momentum",
+  "title": "Motion of the Center of Mass",
+  "short": "With no outside force, a system's center of mass keeps moving at a steady velocity.",
+  "trouble": "Students think an explosion changes the path of the center of mass.",
+  "prereqs": [
+    "phys1.momentum-conservation",
+    "phys1.systems-center-of-mass"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-collision"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The <a href=\"/physics/physics-1/systems-center-of-mass/\">center of mass</a> of a system is its mass-weighted average position. It turns out to move in the simplest way possible, and that gives a second view of <a href=\"/physics/physics-1/momentum-conservation/\">momentum conservation</a>."
+      },
+      {
+        "t": "why",
+        "html": "Take two objects. Their center of mass is at $x_{\\text{cm}} = \\dfrac{m_1x_1 + m_2x_2}{m_1 + m_2}$. In a short time each object moves $v\\Delta t$, so the center of mass moves with velocity $$v_{\\text{cm}} = \\frac{m_1v_1 + m_2v_2}{m_1 + m_2} = \\frac{p_{\\text{tot}}}{M}.$$ If the total momentum is constant, so is $v_{\\text{cm}}$. More generally, $\\Sigma F_{\\text{ext}} = M a_{\\text{cm}}$: only outside forces can change how the center of mass moves."
+      },
+      {
+        "t": "key",
+        "html": "The center of mass moves as if all the mass were there and every outside force acted on it. With no net outside force, it moves in a straight line at constant speed (or stays at rest), no matter how the parts collide, push apart or explode."
+      },
+      {
+        "t": "viz",
+        "name": "ph-collision",
+        "opts": {
+          "mode": "1d",
+          "m1": 3,
+          "m2": 1,
+          "v1": 1.2,
+          "v2": -0.8,
+          "e": 0.4,
+          "show": [
+            "cm",
+            "p"
+          ],
+          "hide": [
+            "K"
+          ],
+          "task": "Follow the black triangle: the center of mass glides steadily straight through the collision."
+        },
+        "cap": "The gliders crash and change speed, but their center of mass never notices."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Velocity of the center of mass",
+        "q": "A $3.0\\ \\text{kg}$ glider moves right at $1.2\\ \\text{m/s}$ and a $1.0\\ \\text{kg}$ glider moves left at $0.80\\ \\text{m/s}$. Find $v_{\\text{cm}}$.",
+        "steps": [
+          "$$p_{\\text{tot}} = (3.0)(1.2) + (1.0)(-0.80) = 2.8\\ \\text{kg·m/s}.$$",
+          "$v_{\\text{cm}} = \\dfrac{2.8}{4.0} = 0.70\\ \\text{m/s}$ to the right, before and after they collide."
+        ],
+        "a": "$0.70\\ \\text{m/s}$ right"
+      },
+      {
+        "t": "ex",
+        "title": "Walking on a raft",
+        "q": "A $60\\ \\text{kg}$ person walks $4.0\\ \\text{m}$ along a $140\\ \\text{kg}$ raft floating at rest. How far does the raft move?",
+        "steps": [
+          "Person plus raft start at rest with no outside horizontal force (ignore water drag), so the center of mass stays put: $60\\,\\Delta x_p + 140\\,\\Delta x_r = 0$.",
+          "She moves $4.0\\ \\text{m}$ relative to the raft: $\\Delta x_p = \\Delta x_r + 4.0$.",
+          "$60(\\Delta x_r + 4.0) + 140\\,\\Delta x_r = 0$, so $\\Delta x_r = -\\dfrac{240}{200} = -1.2\\ \\text{m}$: backward $1.2\\ \\text{m}$."
+        ],
+        "a": "$1.2\\ \\text{m}$ backward"
+      },
+      {
+        "t": "ex",
+        "title": "A shell that bursts",
+        "q": "A firework shell would land $100\\ \\text{m}$ from its launch point. At the top it bursts into two equal pieces; one stops and falls straight down. Where does the other land?",
+        "steps": [
+          "The burst is internal, so the center of mass still lands at $100\\ \\text{m}$.",
+          "The top is halfway, so the first piece lands at $50\\ \\text{m}$. Both pieces start falling from the same height with no vertical speed, so they land together.",
+          "$100 = \\dfrac{50 + x_2}{2}$, so $x_2 = 150\\ \\text{m}$."
+        ],
+        "a": "$150\\ \\text{m}$ from the launch point"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Thinking an explosion changes the path of the center of mass.</b> The explosion's forces are internal pairs, so they cancel in $\\Sigma F_{\\text{ext}}$. Only gravity (an outside force) acts before and after, so the center of mass keeps its parabola. Check: the mass-weighted average of the pieces' landing points (if they land at the same time) is where the unexploded shell would have landed."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Physics 2e, Section 8.3 (Conservation of Momentum)"
+      },
+      {
+        "name": "OpenStax University Physics Volume 1, Section 9.6 (Center of Mass)"
+      },
+      {
+        "name": "College Board, AP Physics 1 Course and Exam Description, Unit 4: Linear Momentum"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

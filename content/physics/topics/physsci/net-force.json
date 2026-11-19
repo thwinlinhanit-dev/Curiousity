@@ -1,0 +1,98 @@
+{
+  "id": "physsci.net-force",
+  "slug": "net-force",
+  "ladder": "physics",
+  "course": "physsci",
+  "unit": "forces",
+  "title": "Net Force and Balanced Forces",
+  "short": "Add forces along a line, counting direction, to find the net force.",
+  "trouble": "Students add the sizes of two opposing forces instead of subtracting one from the other.",
+  "prereqs": [
+    "physsci.forces-intro"
+  ],
+  "xp": 1,
+  "viz": [
+    "ph-fbd"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Most objects feel several <a href=\"/physics/physical-science/forces-intro/\">forces</a> at once. What decides how an object moves is their combined effect, the <b>net force</b>. Along a line, you find it the way you add signed numbers."
+      },
+      {
+        "t": "key",
+        "html": "Pick a positive direction. Forces that way are positive; forces the other way are negative. Add them up: the result is the <b>net force</b>, $\\Sigma F$. If it is zero, the forces are <b>balanced</b>."
+      },
+      {
+        "t": "why",
+        "html": "Two forces in the same direction team up, so their sizes add. Two forces in opposite directions fight, so one cancels part of the other: in a tug of war, 300 N to the right against 250 N to the left leaves $300 - 250 = 50$ N to the right. Only the leftover, unbalanced part can change the motion."
+      },
+      {
+        "t": "viz",
+        "name": "ph-fbd",
+        "opts": {
+          "scene": "block",
+          "forces": [
+            {
+              "type": "gravity",
+              "mag": 50
+            },
+            {
+              "type": "normal",
+              "mag": 50
+            },
+            {
+              "type": "applied",
+              "mag": 30
+            },
+            {
+              "type": "friction",
+              "mag": 10
+            }
+          ],
+          "net": true
+        },
+        "cap": "A box pushed with 30 N against 10 N of friction. Up and down cancel (50 N each), so the net force is 20 N to the right."
+      },
+      {
+        "t": "ex",
+        "title": "Same direction",
+        "q": "Two friends push a stalled car forward, one with 400 N and one with 350 N. Find the net force (ignore friction).",
+        "steps": [
+          "Both forces point forward, so add: $400 + 350 = 750$ N."
+        ],
+        "a": "$750$ N forward"
+      },
+      {
+        "t": "ex",
+        "title": "Opposite directions",
+        "q": "In a tug of war, team A pulls left with 620 N and team B pulls right with 580 N. Taking right as positive, find the net force.",
+        "steps": [
+          "Right is positive: $+580$ N. Left is negative: $-620$ N.",
+          "$\\Sigma F = 580 + (-620) = -40$ N.",
+          "The minus sign means the net force points left. Team A slowly wins."
+        ],
+        "a": "$-40$ N, that is, 40 N to the left"
+      },
+      {
+        "t": "mistake",
+        "html": "Adding the sizes of two opposing forces: $620 + 580 = 1{,}200$ N. Opposite forces subtract. Check: the net force can never be bigger than the sum of the sizes, and when forces oppose, it is smaller than the bigger force."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e, 4.3 Newton's Second Law of Motion: Concept of a System"
+      },
+      {
+        "name": "Next Generation Science Standards, MS-PS2-2"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

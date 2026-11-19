@@ -1,0 +1,99 @@
+{
+  "id": "phys1.explosions-recoil",
+  "slug": "explosions-recoil",
+  "ladder": "physics",
+  "course": "phys1",
+  "unit": "momentum",
+  "title": "Explosions and Recoil",
+  "short": "Pieces that start at rest fly apart with equal and opposite momenta.",
+  "trouble": "Students think the lighter piece gets more momentum because it moves faster.",
+  "prereqs": [
+    "phys1.momentum-conservation"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-collision"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "An explosion is a collision run backward. Pieces that start together at rest fly apart, and <a href=\"/physics/physics-1/momentum-conservation/\">conservation of momentum</a> says how their speeds compare."
+      },
+      {
+        "t": "key",
+        "html": "If a system starts at rest and only internal forces push the pieces apart, the total momentum stays zero: $$m_1 v_1 + m_2 v_2 = 0 \\quad\\Rightarrow\\quad v_2 = -\\frac{m_1}{m_2}v_1.$$ The pieces get <b>equal and opposite momenta</b>. The lighter piece moves faster, in proportion to the mass ratio."
+      },
+      {
+        "t": "why",
+        "html": "The push between the pieces is one third-law pair: equal forces, opposite directions, same time. So the impulses are equal and opposite, and each piece leaves with momentum of the same size. Kinetic energy is not conserved here; it starts at zero. It comes from stored energy: a compressed spring, muscles, or the chemical energy of gunpowder or rocket fuel. Because $K = \\dfrac{p^2}{2m}$ and the momenta are equal in size, the lighter piece gets more of that energy."
+      },
+      {
+        "t": "viz",
+        "name": "ph-collision",
+        "opts": {
+          "mode": "explode",
+          "m1": 1,
+          "m2": 3,
+          "v1": -1.5,
+          "lab": "/science-lab/rocket/",
+          "task": "Change the masses. The momentum bars always cancel; the lighter cart always moves faster."
+        },
+        "cap": "Two carts pushed apart by a spring. The momentum bars are equal and opposite, the center of mass stays put, and the lighter cart gets most of the kinetic energy."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Skaters push apart",
+        "q": "A $50\\ \\text{kg}$ skater and a $75\\ \\text{kg}$ skater stand at rest and push off. The lighter one moves west at $3.0\\ \\text{m/s}$. Find the other's velocity (east positive).",
+        "steps": [
+          "$0 = (50)(-3.0) + (75)v_2$.",
+          "$v_2 = \\dfrac{150}{75} = +2.0\\ \\text{m/s}$: east at $2.0\\ \\text{m/s}$.",
+          "Momenta: $-150$ and $+150\\ \\text{kg·m/s}$. Equal in size, opposite in direction."
+        ],
+        "a": "$2.0\\ \\text{m/s}$ east"
+      },
+      {
+        "t": "ex",
+        "title": "Recoil of a cannon",
+        "q": "A $1000\\ \\text{kg}$ cannon on frictionless wheels fires a $10\\ \\text{kg}$ ball forward at $150\\ \\text{m/s}$. Find the cannon's recoil speed and the kinetic energy of each.",
+        "steps": [
+          "$|v_c| = \\dfrac{(10)(150)}{1000} = 1.5\\ \\text{m/s}$ backward.",
+          "$K_{\\text{ball}} = \\tfrac{1}{2}(10)(150)^2 = 112{,}500\\ \\text{J}$; $K_{\\text{cannon}} = \\tfrac{1}{2}(1000)(1.5)^2 = 1125\\ \\text{J}$.",
+          "Same momentum, but the ball gets 100 times the energy, the inverse of the mass ratio."
+        ],
+        "a": "$1.5\\ \\text{m/s}$ backward"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Thinking the lighter piece gets more momentum because it moves faster.</b> Its speed is larger exactly in proportion to its smaller mass, so $mv$ comes out the same for both. It is the <i>kinetic energy</i> that favors the lighter piece. Check: after any push-apart from rest, $m_1|v_1|$ should equal $m_2|v_2|$."
+      },
+      {
+        "t": "note",
+        "html": "A rocket is a nonstop explosion: it throws exhaust backward, and the exhaust's backward momentum is matched by the rocket's forward momentum. No air to push against is needed. See it in the Rocket Builder of the Science Lab."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Physics 2e, Section 8.3 (Conservation of Momentum) and 8.7 (Introduction to Rocket Propulsion)"
+      },
+      {
+        "name": "OpenStax University Physics Volume 1, Section 9.3 (Conservation of Linear Momentum) and 9.7 (Rocket Propulsion)"
+      },
+      {
+        "name": "College Board, AP Physics 1 Course and Exam Description, Unit 4: Linear Momentum"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-PS2-2"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

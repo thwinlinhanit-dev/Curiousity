@@ -1,0 +1,70 @@
+{
+  "id": "rocket.drag",
+  "slug": "drag",
+  "ladder": "physics",
+  "course": "rocket",
+  "unit": "flight",
+  "title": "Drag: A First Look, Then a Numerical Step",
+  "short": "Air pushes back harder the faster you go, about as the square of speed. With drag there is no neat formula, so we step through the flight a little at a time.",
+  "trouble": "Students add the drag force in the wrong direction, or forget that it changes as the speed changes.",
+  "prereqs": [
+    "rocket.coasting-apogee",
+    "phys1.second-law-systems"
+  ],
+  "xp": 3,
+  "viz": [
+    "rocket-drag"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "note",
+        "html": "<b>From the story.</b> Air drags on every rocket, including the ones that flew from Cape Coalwood, so real rockets never quite reach the heights the simple formulas promise. (More in <a href=\"/october-sky/\">October Sky</a>.)"
+      },
+      {
+        "t": "p",
+        "html": "Moving through air costs force. For a rocket the drag is close to $F_D = \\tfrac12\\rho C_D A v^2$: double the speed and drag grows about four times. It always points against the motion: down on the way up, up on the way down."
+      },
+      {
+        "t": "p",
+        "html": "With drag the acceleration depends on the speed, so there is no simple formula for apogee. Instead, take small time steps. This is <b>Euler's method</b>: use the present speed to find the acceleration, then move forward a little."
+      },
+      {
+        "t": "key",
+        "html": "Coasting up: $a = -g - \\dfrac{k v^2}{m}$ with $k = \\tfrac12\\rho C_D A$. One Euler step of size $\\Delta t$: $$h_{n+1} = h_n + v_n\\Delta t, \\qquad v_{n+1} = v_n + a_n\\Delta t.$$ Smaller steps give better answers."
+      },
+      {
+        "t": "viz",
+        "name": "rocket-drag",
+        "cap": "Slide the drag constant. The dashed curve has no drag; the red one is built from Euler steps.",
+        "opts": {
+          "k": 0.0012
+        }
+      },
+      {
+        "t": "ex",
+        "title": "One step",
+        "q": "A $250\\ \\text{g}$ rocket coasts up at $70\\ \\text{m/s}$ with $k = 0.0012\\ \\text{kg/m}$. Take one step of $0.1\\ \\text{s}$.",
+        "steps": [
+          "$a = -9.8 - 0.0012(70)^2/0.25 = -9.8 - 23.5 = -33.3\\ \\text{m/s}^2$.",
+          "$v_1 = 70 - 3.33 = 66.7\\ \\text{m/s}$; $h$ grows by $70(0.1) = 7\\ \\text{m}$."
+        ],
+        "a": "$v_1 \\approx 66.7\\ \\text{m/s}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Adding drag in the wrong direction, or using the starting speed's drag for the whole flight."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, University Physics Volume 1 (Rice University): kinematics, Newton's laws, momentum, gravitation"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

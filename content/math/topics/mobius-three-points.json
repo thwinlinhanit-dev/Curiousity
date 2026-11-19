@@ -1,0 +1,141 @@
+{
+  "id": "cplx.mobius-three-points",
+  "slug": "mobius-three-points",
+  "ladder": "math",
+  "course": "cplx",
+  "unit": "conformal",
+  "title": "A Möbius Map from Three Points",
+  "short": "Exactly one Möbius transformation sends three given points to three given points; find it with the cross-ratio.",
+  "trouble": "Students pair the points in the wrong order, which gives a different map.",
+  "prereqs": [
+    "cplx.mobius"
+  ],
+  "xp": 3,
+  "viz": [
+    "cplx-mapping"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A <a href=\"/math/complex-analysis/mobius/\">Möbius map</a> has four coefficients, but scaling all of them by the same number changes nothing, so it has three degrees of freedom. Choosing where three points go uses them all up: there is exactly one Möbius map for each choice."
+      },
+      {
+        "t": "key",
+        "html": "Given distinct $z_1, z_2, z_3$, the map\n      $$S(z) = \\frac{(z - z_1)(z_2 - z_3)}{(z - z_3)(z_2 - z_1)}$$\n      is the unique Möbius map with $S(z_1) = 0$, $S(z_2) = 1$, $S(z_3) = \\infty$. (If one $z_j$ is $\\infty$, drop the two factors containing it.) To send $z_1, z_2, z_3$ to $w_1, w_2, w_3$, solve\n      $$\\frac{(w - w_1)(w_2 - w_3)}{(w - w_3)(w_2 - w_1)} = \\frac{(z - z_1)(z_2 - z_3)}{(z - z_3)(z_2 - z_1)}$$\n      for $w$. These quotients are <b>cross-ratios</b>, which Möbius maps preserve."
+      },
+      {
+        "t": "why",
+        "html": "Check $S$ directly: the factor $z - z_1$ makes $S(z_1) = 0$, the factor $z - z_3$ in the bottom makes $S(z_3) = \\infty$, and at $z = z_2$ everything cancels to $1$. Uniqueness: if $T$ also sends $z_1, z_2, z_3$ to $0, 1, \\infty$, then $T \\circ S^{-1}$ fixes $0$, $1$ and $\\infty$; fixing $\\infty$ and $0$ forces the form $kz$, and fixing $1$ forces $k = 1$. For general targets, if $S_z$ and $S_w$ send the triples to $0, 1, \\infty$, the map is $S_w^{-1} \\circ S_z$, which is what the cross-ratio equation says."
+      },
+      {
+        "t": "viz",
+        "name": "cplx-mapping",
+        "opts": {
+          "points3": true,
+          "zs": [
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "ws": [
+            0,
+            1,
+            "inf"
+          ],
+          "z0": [
+            0.3,
+            0.4
+          ],
+          "window": {
+            "x": [
+              -2,
+              2
+            ],
+            "y": [
+              -2,
+              2
+            ]
+          },
+          "wwindow": {
+            "x": [
+              -3,
+              3
+            ],
+            "y": [
+              -3,
+              3
+            ]
+          }
+        },
+        "cap": "Drag $z_1, z_2, z_3$: the map sending them to $0, 1, \\infty$ is rebuilt each time, its formula is shown, and the circle through the three points (dashed) always lands on the real axis."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "To $0$, $1$, $infty$",
+        "q": "Find the Möbius map with $T(1) = 0$, $T(i) = 1$, $T(-1) = \\infty$, and compute $T(0)$.",
+        "steps": [
+          "$T(z) = \\frac{(z - 1)(i + 1)}{(z + 1)(i - 1)}$.",
+          "$\\frac{i + 1}{i - 1} = \\frac{(1 + i)(-1 - i)}{2} = \\frac{-2i}{2} = -i$, so $T(z) = -i\\,\\frac{z - 1}{z + 1}$.",
+          "$T(0) = -i \\cdot (-1) = i$."
+        ],
+        "a": "$T(z) = -i\\frac{z - 1}{z + 1}$, $T(0) = i$"
+      },
+      {
+        "t": "ex",
+        "title": "With $infty$ among the points",
+        "q": "Find $T$ with $T(2) = 0$, $T(3) = 1$, $T(\\infty) = \\infty$.",
+        "steps": [
+          "Fixing $\\infty$ means no denominator: $T(z) = Az + B$.",
+          "$T(2) = 0$ and $T(3) = 1$ give $T(z) = z - 2$."
+        ],
+        "a": "$T(z) = z - 2$"
+      },
+      {
+        "t": "ex",
+        "title": "General targets",
+        "q": "Find the Möbius map with $0 \\mapsto 1$, $1 \\mapsto i$, $\\infty \\mapsto -1$, and compute $T(-1)$.",
+        "steps": [
+          "Cross-ratio with $z_3 = \\infty$: the right side is $\\frac{z - 0}{1 - 0} = z$. The left side is $\\frac{(w - 1)(i + 1)}{(w + 1)(i - 1)} = -i\\,\\frac{w - 1}{w + 1}$.",
+          "Solve $-i\\frac{w - 1}{w + 1} = z$: $\\frac{w - 1}{w + 1} = iz$, so $w = \\frac{1 + iz}{1 - iz}$.",
+          "$T(-1) = \\frac{1 - i}{1 + i} = -i$. Check: $T(0) = 1$, $T(1) = \\frac{1 + i}{1 - i} = i$, $T(\\infty) = -1$."
+        ],
+        "a": "$T(-1) = -i$"
+      },
+      {
+        "t": "note",
+        "html": "Three points determine a circle (or a line, if they are collinear). The map $S$ sends that circle onto the extended real line, since it sends the three points to $0$, $1$ and $\\infty$, which lie on it. This is the quickest way to find which region a Möbius map sends onto a half-plane."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Pairing the points in the wrong order.</b> The formula assigns roles: $z_1 \\mapsto 0$, $z_2 \\mapsto 1$, $z_3 \\mapsto \\infty$. Swapping two points gives a different map. In the first example, sending $1, -1, i$ to $0, 1, \\infty$ instead gives $T(0) = \\frac{-1 \\cdot (-1 - i)}{-i \\cdot (-2)} = \\frac{1 + i}{2i}$, not $i$. Check your map on all three given points before using it."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Beck, Marchesi, Pixton and Sabalka, A First Course in Complex Analysis, chapter 3 (Examples of Functions)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.04, Complex Variables with Applications (Spring 2018), course notes: conformal transformations"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

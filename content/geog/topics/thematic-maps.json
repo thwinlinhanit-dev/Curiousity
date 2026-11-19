@@ -1,0 +1,132 @@
+{
+  "id": "humangeo.thematic-maps",
+  "slug": "thematic-maps",
+  "ladder": "geog",
+  "course": "humangeo",
+  "unit": "thinking",
+  "title": "Choosing a Thematic Map",
+  "short": "Choropleth maps shade areas by a rate, dot maps show where things are, graduated symbols show amounts, isolines join equal values, and cartograms resize places by a number.",
+  "trouble": "Students shade a choropleth map by raw totals, which makes big areas look important. Choropleth maps should show rates or percentages, such as people per square kilometer.",
+  "prereqs": [
+    "humangeo.geographic-data",
+    "worldgeo.kinds-of-maps"
+  ],
+  "xp": 2,
+  "viz": [
+    "gg-map",
+    "gg-sort"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/geography/world-geography/kinds-of-maps/\">Kinds of Maps</a> you met reference maps (where things are) and thematic maps (one topic, such as rainfall). Once you have <a href=\"/geography/human-geography/geographic-data/\">geographic data</a>, you have to choose how to map it. The right choice depends on what the data measures."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Map",
+          "How it shows data",
+          "Best for"
+        ],
+        "rows": [
+          [
+            "Choropleth",
+            "Shades whole areas (states, countries) by a value",
+            "Rates and percentages: people per km², percent with internet"
+          ],
+          [
+            "Dot distribution",
+            "One dot stands for a number of things",
+            "Where things are: farms, schools, cases of a disease"
+          ],
+          [
+            "Graduated symbol",
+            "Bigger symbols for bigger amounts",
+            "Totals at points: city populations, port traffic"
+          ],
+          [
+            "Isoline",
+            "Lines join places with equal values",
+            "Smooth surfaces: elevation, temperature, rainfall"
+          ],
+          [
+            "Cartogram",
+            "Resizes each place by a value",
+            "Comparing totals: population, wealth"
+          ]
+        ],
+        "cap": "Five common thematic maps."
+      },
+      {
+        "t": "key",
+        "html": "Choose the map from the data: <b>rates</b> on a choropleth, <b>locations</b> as dots, <b>totals</b> as graduated symbols or a cartogram, <b>continuous values</b> as isolines."
+      },
+      {
+        "t": "viz",
+        "name": "humangeo-choro",
+        "opts": {
+          "by": "total"
+        },
+        "cap": "The same five regions shaded by total people, then by people per km². Switch and compare."
+      },
+      {
+        "t": "why",
+        "html": "On a choropleth map the eye reads area: big, dark regions look important. If you shade by totals, large regions get dark just because they are large and hold more people. A rate divides by area (or by population), which removes that size effect, so the shading compares places fairly."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Matching data to maps",
+        "q": "Choose a map for each: (a) the number of passengers at 30 airports; (b) the percent of adults with a college degree in each state; (c) average January temperature.",
+        "steps": [
+          "(a) Totals at points: graduated symbols.",
+          "(b) A percentage for each area: a choropleth.",
+          "(c) A value that changes smoothly across the land: isolines."
+        ],
+        "a": "(a) graduated symbols, (b) choropleth, (c) isolines."
+      },
+      {
+        "t": "ex",
+        "title": "Fixing a map",
+        "q": "A student shades U.S. states by total number of farms. Texas is darkest. What is the problem and the fix?",
+        "steps": [
+          "Texas is huge, so it has many farms partly because it has so much land.",
+          "Shading by totals makes big states look important.",
+          "Fix: shade by a rate (farms per 1,000 km², or percent of land in farms), or show totals with graduated symbols."
+        ],
+        "a": "Use a rate on the choropleth, or graduated symbols for the totals."
+      },
+      {
+        "t": "mistake",
+        "html": "The most common thematic-map mistake is a choropleth of raw totals. Check: does the legend have \"per\" or \"percent\" in it? If not, and the map shades areas, it probably should use a rate instead."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "College Board, AP Human Geography: course units and topics",
+        "url": "https://apstudents.collegeboard.org/courses/ap-human-geography"
+      },
+      {
+        "name": "Choropleth map (Grokipedia)",
+        "url": "https://grokipedia.com/page/Choropleth_map"
+      },
+      {
+        "name": "Cartogram (Grokipedia)",
+        "url": "https://grokipedia.com/page/Cartogram"
+      },
+      {
+        "name": "Contour line (isolines) (Grokipedia)",
+        "url": "https://grokipedia.com/page/Contour_line"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

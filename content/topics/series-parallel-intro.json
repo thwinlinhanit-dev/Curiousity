@@ -1,0 +1,86 @@
+{
+  "id": "physsci.series-parallel-intro",
+  "slug": "series-parallel-intro",
+  "course": "physsci",
+  "courseTitle": "Physical Science",
+  "unit": "electricity",
+  "unitTitle": "Electricity and Magnetism",
+  "title": "Series and Parallel Circuits",
+  "short": "In series one current flows through everything; in parallel each branch gets the full voltage.",
+  "trouble": "Students think the first bulb in a series circuit is brightest because it gets the current first.",
+  "prereqs": [
+    "physsci.ohms-law"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-circuit"
+  ],
+  "figureArchetype": "CircuitFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "With two or more parts in a <a href=\"/physics/physical-science/circuits-intro/\">circuit</a>, you can connect them in a line (series) or side by side on separate branches (parallel). The two ways behave very differently, and <a href=\"/physics/physical-science/ohms-law/\">Ohm's law</a> explains how."
+      },
+      {
+        "t": "key",
+        "html": "<b>Series:</b> one path, so the same current flows through every part; resistances add, $R = R_1 + R_2$, and the battery's voltage is shared among the parts. <b>Parallel:</b> each branch connects straight across the battery, so each gets the <b>full voltage</b>; the branch currents add up to the total."
+      },
+      {
+        "t": "why",
+        "html": "In series, every charge must pass through every part in turn, so the current can't differ from one part to the next, and each added part makes the path harder. In parallel, each branch is its own loop through the battery. Adding a branch adds another path, so the battery delivers more total current, and removing one branch leaves the others working. That is why homes are wired in parallel."
+      },
+      {
+        "t": "viz",
+        "name": "ph-circuit",
+        "opts": {
+          "circuit": "V(9) series(B1:3, par(B2:3, B3:3))",
+          "edit": true,
+          "show": [
+            "voltage"
+          ]
+        },
+        "cap": "One bulb in series with two in parallel. Bulb B1 carries the whole current, so it glows brightest. Click a bulb to remove it and see what happens to the others."
+      },
+      {
+        "t": "ex",
+        "title": "Series",
+        "q": "A 12 V battery is connected to a 2 Ω and a 4 Ω resistor in series. Find the current and the voltage across each resistor.",
+        "steps": [
+          "Total resistance: $2 + 4 = 6\\,\\Omega$.",
+          "Current: $I = \\dfrac{12}{6} = 2$ A, the same through both.",
+          "Voltages: $2 \\times 2 = 4$ V and $2 \\times 4 = 8$ V. They add to 12 V."
+        ],
+        "a": "2 A; 4 V and 8 V"
+      },
+      {
+        "t": "ex",
+        "title": "Parallel",
+        "q": "The same resistors are connected in parallel to the 12 V battery. Find the current in each and the total current.",
+        "steps": [
+          "Each branch gets the full 12 V.",
+          "$I_1 = \\dfrac{12}{2} = 6$ A; $I_2 = \\dfrac{12}{4} = 3$ A.",
+          "Total from the battery: $6 + 3 = 9$ A."
+        ],
+        "a": "6 A, 3 A; 9 A in total"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking the first bulb in a series circuit is brightest because it gets the current first. The current is the same everywhere in a series loop at the same moment, so identical bulbs in series glow equally. Check: there is nowhere for current to \"leak\" out between the bulbs."
+      },
+      {
+        "t": "p",
+        "html": "Try series and parallel bulbs in the <a href=\"/science-lab/circuits/\">Circuit Builder</a>, or take the series-or-parallel challenge on the <a href=\"/science-lab/circuit-bench/\">Circuit Bench</a>."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Physics 2e, 21.1 Resistors in Series and Parallel"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

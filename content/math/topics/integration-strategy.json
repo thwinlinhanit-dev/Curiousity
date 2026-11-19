@@ -1,0 +1,105 @@
+{
+  "id": "calc2.integration-strategy",
+  "slug": "integration-strategy",
+  "ladder": "math",
+  "course": "calc2",
+  "unit": "techniques",
+  "title": "Choosing a Technique",
+  "short": "Recognize which method fits an integral.",
+  "trouble": "",
+  "prereqs": [
+    "calc2.integration-by-parts",
+    "calc2.trig-substitution",
+    "calc2.partial-fractions"
+  ],
+  "xp": 3,
+  "viz": [],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You now have several techniques: substitution, <a href=\"/math/calculus-2/integration-by-parts/\">parts</a>, <a href=\"/math/calculus-2/trig-integrals/\">trig identities</a>, <a href=\"/math/calculus-2/trig-substitution/\">trig substitution</a> and <a href=\"/math/calculus-2/partial-fractions/\">partial fractions</a>. In practice nobody tells you which one to use. Choosing is a skill of its own, and it improves with mixed practice."
+      },
+      {
+        "t": "why",
+        "html": "Every technique runs a differentiation rule backward, so each one leaves a fingerprint. Substitution undoes the chain rule: look for an inside function whose derivative is also present. Parts undoes the product rule: look for a product of unlike functions. Partial fractions undoes adding fractions: look for a rational function. Trig substitution undoes the Pythagorean identities: look for $a^{2} \\pm x^{2}$ or $x^{2} - a^{2}$ under a root."
+      },
+      {
+        "t": "key",
+        "html": "Ask in this order: (1) Can algebra make it a basic integral? (2) Is part of it the derivative of another part (substitution)? (3) A rational function (divide, then partial fractions)? (4) A product of unlike functions (parts)? (5) Powers of trig functions (identities)? (6) A root of $a^{2} \\pm x^{2}$ or $x^{2} - a^{2}$ (trig substitution)?"
+      },
+      {
+        "t": "table",
+        "head": [
+          "If you see",
+          "Try first"
+        ],
+        "rows": [
+          [
+            "$f(g(x))\\,g'(x)$, like $x e^{x^{2}}$ or $\\frac{\\ln x}{x}$",
+            "substitution"
+          ],
+          [
+            "a power of $x$ times $e^{x}$, $\\sin x$, $\\ln x$ or $\\arctan x$",
+            "parts"
+          ],
+          [
+            "a polynomial over a polynomial",
+            "division, then partial fractions"
+          ],
+          [
+            "$\\sin^{m}x\\cos^{n}x$ or $\\tan^{m}x\\sec^{n}x$",
+            "identities, then substitution"
+          ],
+          [
+            "$\\sqrt{a^{2} - x^{2}}$, $\\sqrt{a^{2} + x^{2}}$, $\\sqrt{x^{2} - a^{2}}$ with no spare $x$",
+            "trig substitution"
+          ]
+        ]
+      },
+      {
+        "t": "ex",
+        "title": "Three look-alikes",
+        "q": "Find $\\int \\frac{x}{x^{2} + 4}dx$, $\\int \\frac{1}{x^{2} + 4}dx$ and $\\int \\frac{x^{2}}{x^{2} + 4}dx$.",
+        "steps": [
+          "First: the top is half the derivative of the bottom. With $u = x^{2} + 4$: $\\frac{1}{2}\\ln(x^{2} + 4) + C$.",
+          "Second: no spare $x$, but it matches the arctangent form: $\\frac{1}{2}\\arctan\\frac{x}{2} + C$.",
+          "Third: same degree on top, so divide: $\\frac{x^{2}}{x^{2} + 4} = 1 - \\frac{4}{x^{2} + 4}$, giving $x - 2\\arctan\\frac{x}{2} + C$."
+        ],
+        "a": "Small changes in the integrand call for different methods."
+      },
+      {
+        "t": "ex",
+        "title": "Two methods in a row",
+        "q": "Find $\\int e^{\\sqrt{x}}\\,dx$.",
+        "steps": [
+          "No technique fits directly, so simplify the inside first: let $w = \\sqrt{x}$, so $x = w^{2}$ and $dx = 2w\\,dw$.",
+          "The integral becomes $\\int 2w e^{w}\\,dw$, a product: use parts with $u = 2w$.",
+          "$$\\begin{aligned} &\\int 2w e^{w}dw \\\\ &= 2w e^{w} - 2e^{w} + C \\\\ &= 2e^{\\sqrt{x}}(\\sqrt{x} - 1) + C. \\end{aligned}$$"
+        ],
+        "a": "$2e^{\\sqrt{x}}(\\sqrt{x} - 1) + C$"
+      },
+      {
+        "t": "mistake",
+        "html": "Reaching for the heaviest tool first. For $\\int \\frac{x}{\\sqrt{x^{2} + 4}}\\,dx$, trig substitution works but takes a page; the substitution $u = x^{2} + 4$ gives $\\sqrt{x^{2} + 4} + C$ in one line. Quick check before any technique: is there an inner function whose derivative (up to a constant) is sitting outside?"
+      },
+      {
+        "t": "note",
+        "html": "Some integrals have no antiderivative made of familiar functions at all: $\\int e^{-x^{2}}dx$, $\\int \\frac{\\sin x}{x}dx$, $\\int \\sqrt{1 + x^{3}}\\,dx$. No technique will crack them. For their definite integrals, use <a href=\"/math/calculus-2/numerical-integration/\">numerical integration</a> or <a href=\"/math/calculus-2/series-applications/\">series</a>."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 2, Section 3.5: Other Strategies for Integration"
+      },
+      {
+        "name": "Paul’s Online Math Notes (Lamar University), Calculus II: Integration Strategy"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

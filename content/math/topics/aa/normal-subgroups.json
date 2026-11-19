@@ -1,0 +1,107 @@
+{
+  "id": "aa.normal-subgroups",
+  "slug": "normal-subgroups",
+  "ladder": "math",
+  "course": "aa",
+  "unit": "homomorphisms",
+  "title": "Normal Subgroups",
+  "short": "N is normal when gNg⁻¹ = N for every g, which is the same as gN = Ng; subgroups of abelian groups and subgroups of index 2 are always normal.",
+  "trouble": "Students think gN = Ng means gn = ng for each n in N, but only the two sets have to match.",
+  "prereqs": [
+    "aa.cosets",
+    "aa.dihedral-groups"
+  ],
+  "xp": 2,
+  "viz": [
+    "aa-cosets"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/math/abstract-algebra/cosets/\">the cosets lesson</a> we saw that left and right cosets can differ. The subgroups for which they never differ are special: they are exactly the ones we can \"divide by\" to build a quotient group."
+      },
+      {
+        "t": "p",
+        "html": "<b>Definition.</b> A subgroup $N$ of $G$ is <b>normal</b>, written $N \\vartriangleleft G$ in many books, if $$gNg^{-1} = N \\quad \\text{for every } g \\in G,$$ where $gNg^{-1} = \\{gng^{-1} : n \\in N\\}$. Equivalent forms: $gN = Ng$ for every $g$; or, the test used in practice, $gng^{-1} \\in N$ for every $g \\in G$ and $n \\in N$."
+      },
+      {
+        "t": "p",
+        "html": "The element $gng^{-1}$ is a <b>conjugate</b> of $n$. Conjugating is \"relabeling\": in $S_{n}$, $\\sigma\\tau\\sigma^{-1}$ is $\\tau$ with every entry $i$ renamed $\\sigma(i)$. So normal subgroups are the ones that look the same however you relabel the group."
+      },
+      {
+        "t": "why",
+        "html": "<b>Three families of normal subgroups.</b><br>(1) Every subgroup of an <b>abelian</b> group: $gng^{-1} = ngg^{-1} = n$.<br>(2) Every subgroup of <b>index 2</b>. There are only two left cosets, $N$ and $G \\setminus N$, and only two right cosets, also $N$ and $G \\setminus N$. So for $g \\in N$, $gN = N = Ng$, and for $g \\notin N$, $gN = G \\setminus N = Ng$.<br>(3) The <b>center</b> $Z(G) = \\{z : zg = gz \\text{ for all } g\\}$, since $gzg^{-1} = z$. $\\square$"
+      },
+      {
+        "t": "viz",
+        "name": "aa-cosets",
+        "opts": {
+          "group": "D4",
+          "h": [
+            "r^2"
+          ],
+          "side": "both",
+          "sel": "s"
+        },
+        "cap": "In $D_{4}$, $N = \\{e, r^{2}\\}$: every left coset is also a right coset (the two panels match), so $N$ is normal. Here $r^{2}$ is the half turn, which commutes with everything."
+      },
+      {
+        "t": "ex",
+        "title": "A normal and a non-normal subgroup of $D_{n}$",
+        "q": "In $D_{n}$ ($n \\ge 3$), is the rotation subgroup $\\langle r \\rangle$ normal? Is $\\langle s \\rangle = \\{e, s\\}$?",
+        "steps": [
+          "$\\langle r \\rangle$ has $n$ of the $2n$ elements, so index $2$: normal.",
+          "For $\\langle s \\rangle$ conjugate $s$ by $r$: $rsr^{-1} = r(sr^{-1}) = r(rs) = r^{2}s$, using $sr^{-1} = rs$.",
+          "$r^{2}s \\ne s$ and $r^{2}s \\ne e$ when $n \\ge 3$, so $rsr^{-1} \\notin \\langle s \\rangle$."
+        ],
+        "a": "$\\langle r \\rangle$ is normal; $\\langle s \\rangle$ is not."
+      },
+      {
+        "t": "ex",
+        "title": "$A_{n}$ is normal in $S_{n}$",
+        "q": "Why is $A_{n}$ normal in $S_{n}$?",
+        "steps": [
+          "It has index $2$ ($|A_{n}| = n!/2$), so it is normal by the theorem.",
+          "Or directly: $\\operatorname{sgn}(\\sigma\\tau\\sigma^{-1}) = \\operatorname{sgn}(\\sigma)\\operatorname{sgn}(\\tau)\\operatorname{sgn}(\\sigma)^{-1} = \\operatorname{sgn}(\\tau)$, so conjugates of even permutations are even."
+        ],
+        "a": "Index 2."
+      },
+      {
+        "t": "ex",
+        "title": "Conjugating a cycle",
+        "q": "In $S_{5}$, compute $\\sigma\\tau\\sigma^{-1}$ for $\\sigma = (1\\;2\\;3)$ and $\\tau = (1\\;4)(2\\;5)$.",
+        "steps": [
+          "Rename each entry $i$ of $\\tau$ as $\\sigma(i)$: $1 \\to 2$, $4 \\to 4$, $2 \\to 3$, $5 \\to 5$.",
+          "$\\sigma\\tau\\sigma^{-1} = (2\\;4)(3\\;5)$, the same cycle type as $\\tau$."
+        ],
+        "a": "$(2\\;4)(3\\;5)$."
+      },
+      {
+        "t": "mistake",
+        "html": "Reading $gN = Ng$ as \"$gn = ng$ for every $n$\". Only the <i>sets</i> must match: $gn$ may equal a different element $n'g$. For instance $A_{3} = \\{e, (1\\;2\\;3), (1\\;3\\;2)\\}$ is normal in $S_{3}$, yet $(1\\;2)(1\\;2\\;3) = (2\\;3)$ while $(1\\;2\\;3)(1\\;2) = (1\\;3)$. A related trap: normality is not transitive. In $D_{4}$, $\\{e, s\\}$ is normal in $\\{e, s, r^{2}, r^{2}s\\}$ (index 2), which is normal in $D_{4}$ (index 2), but $\\{e, s\\}$ is not normal in $D_{4}$."
+      },
+      {
+        "t": "key",
+        "html": "$N$ is normal when $gNg^{-1} = N$ for all $g$, equivalently $gN = Ng$. Test with $gng^{-1} \\in N$. Subgroups of abelian groups, subgroups of index 2, and centers are always normal."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Thomas W. Judson, Abstract Algebra: Theory and Applications (open textbook), chapter 10, Normal Subgroups and Factor Groups (section 10.1)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.703 Modern Algebra (Spring 2013), lecture on normal subgroups"
+      },
+      {
+        "name": "John A. Beachy and William D. Blair, Abstract Algebra, online study guide (Northern Illinois University), section 3.8, Cosets, Normal Subgroups, and Factor Groups"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

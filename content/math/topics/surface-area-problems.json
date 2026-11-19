@@ -1,0 +1,187 @@
+{
+  "id": "g7.surface-area-problems",
+  "slug": "surface-area-problems",
+  "ladder": "math",
+  "course": "g7",
+  "unit": "geometry",
+  "title": "Area and Surface Area Problems",
+  "short": "Find areas and surface areas of composite figures.",
+  "trouble": "",
+  "prereqs": [
+    "g6.nets-surface-area",
+    "g6.area-polygons"
+  ],
+  "xp": 2,
+  "viz": [
+    "nets",
+    "areaformulas"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You can find the area of <a href=\"/math/grade-6/area-polygons/\">composite polygons</a> and the surface area of a solid from its <a href=\"/math/grade-6/nets-surface-area/\">net</a>. This lesson puts both to work on real shapes."
+      },
+      {
+        "t": "key",
+        "html": "<b>Area of a composite figure:</b> split it into rectangles and triangles and add, or start with a big rectangle and subtract the missing piece. <b>Surface area:</b> add the areas of all the faces, which is the area of the net."
+      },
+      {
+        "t": "why",
+        "html": "Area adds up when pieces do not overlap, so any way you cut a figure gives the same total. A solid's faces unfold into a flat net without overlapping, so the surface area is the area of that net."
+      },
+      {
+        "t": "viz",
+        "name": "g7-figure",
+        "opts": {
+          "kind": "2d",
+          "shapes": [
+            {
+              "pts": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  12,
+                  0
+                ],
+                [
+                  12,
+                  6
+                ],
+                [
+                  8,
+                  6
+                ],
+                [
+                  8,
+                  10
+                ],
+                [
+                  0,
+                  10
+                ]
+              ]
+            }
+          ],
+          "dims": [
+            {
+              "a": [
+                0,
+                0
+              ],
+              "b": [
+                12,
+                0
+              ],
+              "text": "12 m"
+            },
+            {
+              "a": [
+                0,
+                10
+              ],
+              "b": [
+                0,
+                0
+              ],
+              "text": "10 m"
+            },
+            {
+              "a": [
+                8,
+                10
+              ],
+              "b": [
+                8,
+                6
+              ],
+              "text": "4 m"
+            },
+            {
+              "a": [
+                8,
+                6
+              ],
+              "b": [
+                12,
+                6
+              ],
+              "text": "4 m"
+            }
+          ]
+        },
+        "cap": "An L-shaped yard: a 12 m by 10 m rectangle with a 4 m by 4 m corner missing."
+      },
+      {
+        "t": "viz",
+        "name": "nets",
+        "opts": {
+          "solid": "prism",
+          "l": 8,
+          "w": 5,
+          "h": 4,
+          "fold": 0.5
+        },
+        "cap": "A box folds out into six rectangles in three matching pairs. Their areas add to the surface area."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "An L-shaped yard",
+        "q": "Find the area of the L-shaped yard above.",
+        "steps": [
+          "Big rectangle: $12 \\times 10 = 120$. Missing corner: $4 \\times 4 = 16$.",
+          "Area: $120 - 16 = 104$ square meters.",
+          "Check by cutting it into two rectangles: $8 \\times 10 = 80$ and $4 \\times 6 = 24$, and $80 + 24 = 104$ ✓."
+        ],
+        "a": "104 square meters"
+      },
+      {
+        "t": "ex",
+        "title": "A box",
+        "q": "Find the surface area of a box 8 cm long, 5 cm wide and 4 cm tall.",
+        "steps": [
+          "Top and bottom: $8 \\times 5 = 40$ each. Front and back: $8 \\times 4 = 32$ each. Sides: $5 \\times 4 = 20$ each.",
+          "Total: $2(40 + 32 + 20) = 2 \\times 92 = 184$ square cm."
+        ],
+        "a": "184 square cm"
+      },
+      {
+        "t": "ex",
+        "title": "A triangular prism",
+        "q": "A tent is a triangular prism. Its ends are right triangles with sides 6 ft, 8 ft and 10 ft (legs 6 and 8), and it is 12 ft long. Find its surface area.",
+        "steps": [
+          "Two triangles: $2 \\times \\frac{1}{2} \\times 6 \\times 8 = 48$.",
+          "Three rectangles, each 12 ft long: $(6 + 8 + 10) \\times 12 = 288$.",
+          "Total: $48 + 288 = 336$ square ft."
+        ],
+        "a": "336 square ft"
+      },
+      {
+        "t": "note",
+        "html": "Surface area and area are measured in square units (square cm, square ft), because they count unit squares. A quick check: does every face of the net appear exactly once in your sum?"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Prealgebra 2e, Section 9.6 Solve Geometry Applications: Volume and Surface Area"
+      },
+      {
+        "name": "OpenStax, Prealgebra 2e, Section 9.4 Use Properties of Rectangles, Triangles, and Trapezoids"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 7.G.B.6"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

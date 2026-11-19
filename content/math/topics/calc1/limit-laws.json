@@ -1,0 +1,100 @@
+{
+  "id": "calc1.limit-laws",
+  "slug": "limit-laws",
+  "ladder": "math",
+  "course": "calc1",
+  "unit": "limits",
+  "title": "Limit Laws",
+  "short": "Limits of sums, products and quotients follow from the limits of the parts.",
+  "trouble": "Students use the quotient law when the denominator's limit is 0.",
+  "prereqs": [
+    "calc1.limit-idea"
+  ],
+  "xp": 1,
+  "viz": [
+    "limit"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Reading limits from tables (<a href=\"/math/calculus-1/limit-idea/\">Limits from Both Sides</a>) works, but it is slow and never fully certain. The limit laws let us compute limits exactly by breaking a function into pieces whose limits we already know."
+      },
+      {
+        "t": "key",
+        "html": "If $\\lim_{x \\to a} f(x) = L$ and $\\lim_{x \\to a} g(x) = M$, then the limit of $f + g$ is $L + M$, of $f - g$ is $L - M$, of $c f$ is $cL$, of $fg$ is $LM$, of $f^n$ is $L^n$, and of $\\dfrac{f}{g}$ is $\\dfrac{L}{M}$ <b>provided $M \\ne 0$</b>."
+      },
+      {
+        "t": "why",
+        "html": "Here is the idea for sums. Suppose $f(x)$ is within $0.01$ of $L$ and $g(x)$ is within $0.01$ of $M$. Then $f(x) + g(x)$ is within $0.01 + 0.01 = 0.02$ of $L + M$. Since we can make both errors as small as we like, we can make the error of the sum as small as we like too. The product and quotient laws follow the same plan with a little more algebra. The quotient law needs $M \\ne 0$ because near $a$ we divide by $g(x)$, which must stay away from 0."
+      },
+      {
+        "t": "h",
+        "text": "Direct substitution"
+      },
+      {
+        "t": "p",
+        "html": "Two simple limits start everything: $\\lim_{x \\to a} c = c$ and $\\lim_{x \\to a} x = a$. Build any polynomial from these with sums and products, and the laws say that $\\lim_{x \\to a} p(x) = p(a)$. For a rational function $\\frac{p(x)}{q(x)}$, the same is true whenever $q(a) \\ne 0$. So for these functions you may simply substitute, once you have checked the denominator."
+      },
+      {
+        "t": "viz",
+        "name": "limit",
+        "opts": {
+          "f": "(x^2+3x)/(x+1)",
+          "a": 2,
+          "h": 0.8,
+          "table": true
+        },
+        "cap": "For $\\frac{x^2+3x}{x+1}$ at $x = 2$ the denominator is $3 \\ne 0$: the limit and the value agree, $\\frac{10}{3}$."
+      },
+      {
+        "t": "ex",
+        "title": "Combining known limits",
+        "q": "Suppose $\\lim_{x \\to 4} f(x) = 3$ and $\\lim_{x \\to 4} g(x) = -2$. Find $\\displaystyle\\lim_{x \\to 4} \\frac{f(x)^2 + g(x)}{x - g(x)}$.",
+        "steps": [
+          "Top: power and sum laws give $3^2 + (-2) = 7$.",
+          "Bottom: $\\lim (x - g(x)) = 4 - (-2) = 6$, which is not 0, so the quotient law applies.",
+          "The limit is $\\frac{7}{6}$."
+        ],
+        "a": "$\\frac{7}{6}$"
+      },
+      {
+        "t": "ex",
+        "title": "Substitution after a check",
+        "q": "Find $\\displaystyle\\lim_{x \\to 2} \\frac{x^2 + 3x}{x + 1}$.",
+        "steps": [
+          "Check the bottom first: $2 + 1 = 3 \\ne 0$.",
+          "So substitute: $\\frac{4 + 6}{3} = \\frac{10}{3}$."
+        ],
+        "a": "$\\frac{10}{3}$"
+      },
+      {
+        "t": "list",
+        "items": [
+          "Can I substitute? Check the bottom first. If its limit is not 0, substitute and you are done.",
+          "Bottom tends to 0 but top does not: expect $\\pm\\infty$ (an infinite limit) or a limit that does not exist.",
+          "Both tend to 0: the form $\\frac{0}{0}$ needs algebra first: factor, rationalize, or use a special limit."
+        ]
+      },
+      {
+        "t": "mistake",
+        "html": "The quotient law is used when the denominator's limit is 0, as in $\\lim_{x \\to 3} \\frac{x^2 - 9}{x - 3}$. Writing $\\frac{\\lim (x^2 - 9)}{\\lim (x - 3)} = \\frac{0}{0}$ is not an answer; the law simply does not apply. Check: before dividing limits, always compute the limit of the bottom. If it is 0, you need another tool (factoring, in the next lesson)."
+      },
+      {
+        "t": "note",
+        "html": "The limit laws also hold for one-sided limits and for limits as $x \\to \\pm\\infty$, as long as the limits involved are finite numbers."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 1, 2.3 The Limit Laws"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

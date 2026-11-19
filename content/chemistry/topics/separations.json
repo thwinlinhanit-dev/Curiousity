@@ -1,0 +1,103 @@
+{
+  "id": "gchem1.separations",
+  "slug": "separations",
+  "ladder": "chemistry",
+  "course": "gchem1",
+  "unit": "liquids-solids",
+  "title": "Separating Mixtures",
+  "short": "Distillation sorts by boiling point, and chromatography sorts by attraction to the paper or column.",
+  "trouble": "Students think the spot that travels farthest in chromatography is the heaviest, instead of the one least attracted to the stationary phase.",
+  "prereqs": [
+    "gchem1.comparing-forces"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-imf"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Forces between molecules (<a href=\"/chemistry/general-chemistry-1/comparing-forces/\">Comparing Intermolecular Forces</a>) don't just set boiling points; they are the handles chemists use to pull mixtures apart. Two classic methods use them in different ways."
+      },
+      {
+        "t": "key",
+        "html": "<b>Distillation</b> separates liquids by boiling point: the vapor is richer in the more volatile component (weaker intermolecular forces), so it comes off first. <b>Chromatography</b> separates by attraction: a <b>mobile phase</b> (a solvent) carries the mixture over a <b>stationary phase</b> (paper or a coated plate or column). Components more attracted to the stationary phase lag behind. On paper or a plate, $$R_f = \\frac{\\text{distance the spot moved}}{\\text{distance the solvent front moved}}.$$"
+      },
+      {
+        "t": "why",
+        "html": "In distillation, heating the mixture sends the molecules that escape most easily into the vapor; condensing that vapor gives a liquid enriched in them, and repeating the step (fractional distillation) refines it further. In chromatography each molecule constantly sticks to the stationary phase and lets go, swept along only while it is dissolved in the moving solvent. A molecule whose forces match the stationary phase spends more time stuck and moves less. On polar paper or silica with a less polar solvent, polar molecules (hydrogen bonding, strong dipoles) cling and move little; nonpolar ones ride the solvent. Mass matters only through the forces it brings, not by itself."
+      },
+      {
+        "t": "viz",
+        "name": "ch-imf",
+        "opts": {
+          "mode": "chromatography",
+          "spots": [
+            {
+              "name": "A",
+              "rf": 0.25
+            },
+            {
+              "name": "B",
+              "rf": 0.62
+            }
+          ],
+          "solvent": "water"
+        },
+        "cap": "Paper chromatography of a two-dye mixture. Spot A, more attracted to the paper, has $R_f = 0.25$; spot B, more at home in the solvent, has $R_f = 0.62$."
+      },
+      {
+        "t": "ex",
+        "title": "Finding Rf",
+        "q": "A solvent front moves $8.0\\ \\text{cm}$ up a plate. A dye spot moves $3.2\\ \\text{cm}$. Find its $R_f$.",
+        "steps": [
+          "$R_f = \\dfrac{3.2\\ \\text{cm}}{8.0\\ \\text{cm}} = 0.40$.",
+          "$R_f$ has no units and is always between 0 and 1."
+        ],
+        "a": "$0.40$"
+      },
+      {
+        "t": "ex",
+        "title": "Which spot is which?",
+        "q": "A polar silica plate is developed with a nonpolar solvent. The mixture contains a polar compound with an –OH group and a nonpolar hydrocarbon. Which travels farther?",
+        "steps": [
+          "The polar compound hydrogen-bonds to the polar silica and spends more time stuck.",
+          "The hydrocarbon has little attraction to silica and moves with the nonpolar solvent."
+        ],
+        "a": "The hydrocarbon (larger $R_f$)."
+      },
+      {
+        "t": "ex",
+        "title": "Distilling a mixture",
+        "q": "A mixture of hexane (bp $69^\\circ\\text{C}$) and octane (bp $126^\\circ\\text{C}$) is fractionally distilled. Which liquid collects first?",
+        "steps": [
+          "Hexane has fewer electrons and weaker dispersion forces, so it is more volatile.",
+          "The first vapor, and the first liquid condensed from it, is mostly hexane."
+        ],
+        "a": "Hexane."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking the spot that travels farthest is the heaviest (or the lightest) component. What decides it is attraction: the component least attracted to the stationary phase travels farthest. Check: ask which component's forces best match the paper or plate; that one has the smallest $R_f$."
+      },
+      {
+        "t": "note",
+        "html": "Some mixtures can't be fully separated by distillation. Ethanol and water form an azeotrope at about 95.6% ethanol by mass that boils as if it were one substance."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 11.4 Colligative Properties (distillation of solutions)"
+      },
+      {
+        "name": "College Board, AP Chemistry Course and Exam Description (effective fall 2024), Unit 3: Properties of Substances and Mixtures"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

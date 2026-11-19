@@ -1,0 +1,99 @@
+{
+  "id": "gchem1.ionic-radii",
+  "slug": "ionic-radii",
+  "ladder": "chemistry",
+  "course": "gchem1",
+  "unit": "trends",
+  "title": "Sizes of Ions",
+  "short": "Cations are smaller than their atoms and anions larger; in an isoelectronic series, more protons make a smaller ion.",
+  "trouble": "Students think the ion with more protons is the bigger one in an isoelectronic series, or that anions are smaller than their atoms.",
+  "prereqs": [
+    "gchem1.effective-nuclear-charge",
+    "chem.ion-charges"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-coulomb"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "When atoms become ions (<a href=\"/chemistry/chemistry/ion-charges/\">Predicting Ion Charges</a>), their sizes change a lot. <a href=\"/chemistry/general-chemistry-1/effective-nuclear-charge/\">Shielding and Effective Nuclear Charge</a> explains which way, and it settles the hardest comparison: ions that have the same number of electrons."
+      },
+      {
+        "t": "key",
+        "html": "<b>Cations are smaller than their atoms</b>: $\\mathrm{Na^+}$ (102 pm) is much smaller than Na (166 pm). <b>Anions are larger than their atoms</b>: $\\mathrm{Cl^-}$ (181 pm) is larger than Cl (102 pm). In an <b>isoelectronic series</b> (same number of electrons), <b>more protons make a smaller ion</b>: $\\mathrm{O^{2-}} > \\mathrm{F^-} > \\mathrm{Na^+} > \\mathrm{Mg^{2+}} > \\mathrm{Al^{3+}}$."
+      },
+      {
+        "t": "why",
+        "html": "A sodium atom that loses its $3s$ electron loses its whole outer shell; what is left is the neon-like core, held by 11 protons, so it is far smaller. A chlorine atom that gains an electron keeps the same 17 protons but now has 18 electrons repelling one another, so the cloud spreads out. In an isoelectronic series, every ion has the same 10 electrons in the same arrangement, $1s^2 2s^2 2p^6$; the only difference is the nuclear charge, from 8 in $\\mathrm{O^{2-}}$ to 13 in $\\mathrm{Al^{3+}}$. More protons pull the same cloud in tighter."
+      },
+      {
+        "t": "viz",
+        "name": "ch-coulomb",
+        "opts": {
+          "mode": "isoelectronic",
+          "list": [
+            "O2-",
+            "F-",
+            "Na+",
+            "Mg2+",
+            "Al3+"
+          ]
+        },
+        "cap": "Five ions with 10 electrons each, drawn to scale. Radii (Shannon, 1976): 140, 133, 102, 72 and 53.5 pm, shrinking as the nuclear charge rises from 8 to 13."
+      },
+      {
+        "t": "ex",
+        "title": "An isoelectronic series",
+        "q": "Rank $\\mathrm{S^{2-}}$, $\\mathrm{Cl^-}$, $\\mathrm{K^+}$ and $\\mathrm{Ca^{2+}}$ from largest to smallest.",
+        "steps": [
+          "Count electrons: S has 16, so $\\mathrm{S^{2-}}$ has 18; $\\mathrm{Cl^-}$ 18; $\\mathrm{K^+}$ 18; $\\mathrm{Ca^{2+}}$ 18. All isoelectronic with argon.",
+          "Protons: S 16, Cl 17, K 19, Ca 20. More protons, smaller ion."
+        ],
+        "a": "$\\mathrm{S^{2-}} > \\mathrm{Cl^-} > \\mathrm{K^+} > \\mathrm{Ca^{2+}}$ (184, 181, 138, 100 pm)."
+      },
+      {
+        "t": "ex",
+        "title": "Two ions of one element",
+        "q": "Which is smaller, $\\mathrm{Fe^{2+}}$ or $\\mathrm{Fe^{3+}}$?",
+        "steps": [
+          "Same nucleus (26 protons). $\\mathrm{Fe^{3+}}$ has one electron fewer.",
+          "Fewer electrons, less repulsion, and the same charge pulling them in: a smaller ion."
+        ],
+        "a": "$\\mathrm{Fe^{3+}}$ (65 pm against 78 pm)."
+      },
+      {
+        "t": "ex",
+        "title": "Down a group",
+        "q": "Rank $\\mathrm{Li^+}$, $\\mathrm{Na^+}$ and $\\mathrm{K^+}$ by size.",
+        "steps": [
+          "Each has one more filled shell than the one before, and the simple $Z_\\text{eff}$ for the outer shell stays about the same.",
+          "More shells, larger ion."
+        ],
+        "a": "$\\mathrm{Li^+} < \\mathrm{Na^+} < \\mathrm{K^+}$ (76, 102, 138 pm)."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking the ion with more protons is bigger in an isoelectronic series (\"aluminum is a bigger atom than oxygen, so $\\mathrm{Al^{3+}}$ is bigger than $\\mathrm{O^{2-}}$\"), or that anions shrink. With the electron count fixed, protons only pull; they add no size. Check: in an isoelectronic series the anions are the big ones and the most highly charged cation is the smallest."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 6.5 Periodic Variations in Element Properties"
+      },
+      {
+        "name": "R. D. Shannon, \"Revised effective ionic radii,\" Acta Crystallographica A32 (1976) 751"
+      },
+      {
+        "name": "College Board, AP Chemistry Course and Exam Description (effective fall 2024), Unit 1: Atomic Structure and Properties"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

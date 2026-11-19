@@ -1,0 +1,119 @@
+{
+  "id": "micro.long-run-costs",
+  "slug": "long-run-costs",
+  "ladder": "economics",
+  "course": "micro",
+  "unit": "costs",
+  "title": "Economies and Diseconomies of Scale",
+  "short": "In the long run every input can change; average cost may fall, stay flat, then rise as the firm grows.",
+  "trouble": "Students confuse diseconomies of scale (a long-run idea about the size of the whole firm) with diminishing marginal returns (a short-run idea about one input).",
+  "prereqs": [
+    "micro.cost-curves"
+  ],
+  "xp": 2,
+  "viz": [
+    "ec-costcurves"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In the long run a firm can change everything, including the size of its plant. The question shifts from \"how much from this factory?\" (<a href=\"/economics/microeconomics/cost-curves/\">How Marginal and Average Costs Relate</a>) to \"how big should the firm be?\""
+      },
+      {
+        "t": "key",
+        "html": "The <b>long-run average total cost</b> (LRATC) curve shows the lowest average cost of each output when all inputs can vary. Where LRATC falls as output grows, there are <b>economies of scale</b>; where it is flat, <b>constant returns to scale</b>; where it rises, <b>diseconomies of scale</b>. The <b>minimum efficient scale</b> is the smallest output at which LRATC reaches its lowest level."
+      },
+      {
+        "t": "why",
+        "html": "Bigger firms can split work into specialized jobs, use large machines that only pay off at high volume, and buy inputs in bulk: average cost falls. Past some size, a firm gets hard to manage: more layers of bosses, slower decisions, workers far from the customers, so average cost can rise. The long-run curve is made from short-run curves: for each output, the firm picks the plant size with the lowest ATC, so LRATC is the lower edge of all the short-run ATC curves."
+      },
+      {
+        "t": "viz",
+        "name": "ec-costcurves",
+        "opts": {
+          "mode": "longrun"
+        },
+        "cap": "Each thin curve is the short-run ATC of one plant size. The long-run curve is their lower envelope: falling (economies of scale), flat, then rising (diseconomies)."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Output",
+          "Long-run total cost",
+          "LRATC"
+        ],
+        "rows": [
+          [
+            "1,000",
+            "\\$10,000",
+            "\\$10"
+          ],
+          [
+            "2,000",
+            "\\$16,000",
+            "\\$8"
+          ],
+          [
+            "3,000",
+            "\\$18,000",
+            "\\$6"
+          ],
+          [
+            "4,000",
+            "\\$24,000",
+            "\\$6"
+          ],
+          [
+            "5,000",
+            "\\$35,000",
+            "\\$7"
+          ]
+        ],
+        "cap": "A firm choosing its size."
+      },
+      {
+        "t": "ex",
+        "title": "Reading scale from a table",
+        "q": "Using the table, where are there economies of scale, constant returns and diseconomies? What is the minimum efficient scale?",
+        "steps": [
+          "LRATC = total cost ÷ output: \\$10, \\$8, \\$6, \\$6, \\$7.",
+          "From 1,000 to 3,000 it falls: economies of scale. From 3,000 to 4,000 it is flat: constant returns. From 4,000 to 5,000 it rises: diseconomies.",
+          "The lowest LRATC, \\$6, is first reached at 3,000: the minimum efficient scale."
+        ],
+        "a": "Economies to 3,000, constant to 4,000, diseconomies after; MES = 3,000."
+      },
+      {
+        "t": "ex",
+        "title": "Why it matters for market structure",
+        "q": "A market buys about 4,000 units a year, and the minimum efficient scale is 3,000. About how many firms can produce at the lowest cost?",
+        "steps": [
+          "Each low-cost firm needs to make at least 3,000.",
+          "$4{,}000 \\div 3{,}000$ is between 1 and 2: there is room for only one firm at minimum cost.",
+          "That is the seed of a natural monopoly (<a href=\"/economics/microeconomics/natural-monopoly/\">Regulating a Natural Monopoly</a>)."
+        ],
+        "a": "Only one."
+      },
+      {
+        "t": "mistake",
+        "html": "Confusing diseconomies of scale with diminishing marginal returns. Diminishing returns is a short-run idea: adding workers to a <i>fixed</i> plant. Diseconomies of scale is a long-run idea: growing the <i>whole</i> firm, plant and all, and finding average cost rising. Check: ask whether any input is held fixed. If yes, it's diminishing returns."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, 7.4 Production in the Long Run"
+      },
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, 7.5 Costs in the Long Run"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.01 Principles of Microeconomics (scope and sequence)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

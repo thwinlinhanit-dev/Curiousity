@@ -1,0 +1,102 @@
+{
+  "id": "gchem1.photons",
+  "slug": "photons",
+  "ladder": "chemistry",
+  "course": "gchem1",
+  "unit": "quantum",
+  "title": "Photons and the Photoelectric Effect",
+  "short": "Light comes in packets of energy E = hν, and only photons above a threshold frequency can free an electron from a metal.",
+  "trouble": "Students think brighter light gives each photon more energy, so a bright red beam should free electrons that a dim violet one can.",
+  "prereqs": [
+    "gchem1.light-waves"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-spectrum"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/chemistry/general-chemistry-1/light-waves/\">Wavelength, Frequency and the Spectrum</a> described light as a wave. Around 1900, two puzzles showed that this is only half the story: the colors glowing from hot objects, and the way light knocks electrons out of metals. Both are explained if light's energy comes in packets, called <b>photons</b>."
+      },
+      {
+        "t": "key",
+        "html": "Each photon carries energy $$E = h\\nu = \\frac{hc}{\\lambda},$$ where $h = 6.626 \\times 10^{-34}\\ \\text{J·s}$ is Planck's constant. Higher frequency (shorter wavelength) means more energy per photon. Brighter light means <b>more photons</b>, not more energetic ones."
+      },
+      {
+        "t": "h",
+        "text": "The photoelectric effect"
+      },
+      {
+        "t": "p",
+        "html": "Shine light on a clean metal and electrons can fly off. The surprising facts: below a certain <b>threshold frequency</b>, no electrons leave, however bright the light. Above it, electrons leave at once, even in dim light, and their maximum kinetic energy grows with the frequency but not with the brightness."
+      },
+      {
+        "t": "why",
+        "html": "In 1905 Einstein explained this with photons. One photon gives all its energy to one electron. The electron needs a minimum energy $\\Phi$ (the <b>work function</b>, set by how tightly the metal holds its electrons) to escape. If $h\\nu < \\Phi$, no single photon is enough, and in ordinary light piling on more photons does not help, because an electron does not save up energy from several photons. If $h\\nu > \\Phi$, the leftover energy becomes motion: $KE_\\text{max} = h\\nu - \\Phi$. Brighter light sends more photons, so more electrons leave, each with the same top speed."
+      },
+      {
+        "t": "viz",
+        "name": "ch-spectrum",
+        "opts": {
+          "mode": "photo",
+          "metal": "Na",
+          "lambda": 600,
+          "task": "Raise the brightness of red light. Then switch to blue light at low brightness."
+        },
+        "cap": "Sodium's work function is $2.46\\ \\text{eV}$ ($3.94 \\times 10^{-19}\\ \\text{J}$), so its threshold is about 504 nm. Bright red light frees nothing; dim blue light frees electrons at once."
+      },
+      {
+        "t": "ex",
+        "title": "Energy of one photon and of a mole of photons",
+        "q": "Find the energy of a photon of $500\\ \\text{nm}$ light, and of a mole of such photons.",
+        "steps": [
+          "$$E = \\dfrac{hc}{\\lambda} = \\dfrac{(6.626 \\times 10^{-34}\\ \\text{J·s})(3.00 \\times 10^{8}\\ \\text{m/s})}{5.00 \\times 10^{-7}\\ \\text{m}} = 3.98 \\times 10^{-19}\\ \\text{J}$$",
+          "Per mole: $$3.98 \\times 10^{-19}\\ \\text{J} \\times 6.022 \\times 10^{23}\\ \\text{mol}^{-1} = 2.39 \\times 10^{5}\\ \\text{J/mol} = 239\\ \\text{kJ/mol}$$",
+          "That is the size of a chemical bond's energy, which is why visible and UV light can drive chemistry."
+        ],
+        "a": "$3.98 \\times 10^{-19}\\ \\text{J}$ per photon; $239\\ \\text{kJ/mol}$."
+      },
+      {
+        "t": "ex",
+        "title": "Will electrons leave?",
+        "q": "Sodium's work function is $3.94 \\times 10^{-19}\\ \\text{J}$. Light of $400\\ \\text{nm}$ shines on it. Do electrons leave, and with what maximum kinetic energy?",
+        "steps": [
+          "Photon energy: $$E = \\dfrac{hc}{\\lambda} = \\dfrac{(6.626 \\times 10^{-34})(3.00 \\times 10^{8})}{4.00 \\times 10^{-7}} = 4.97 \\times 10^{-19}\\ \\text{J}$$",
+          "That is more than $\\Phi$, so yes.",
+          "$$KE_\\text{max} = 4.97 \\times 10^{-19} - 3.94 \\times 10^{-19} = 1.03 \\times 10^{-19}\\ \\text{J}$$"
+        ],
+        "a": "Yes; $1.03 \\times 10^{-19}\\ \\text{J}$."
+      },
+      {
+        "t": "ex",
+        "title": "Counting photons",
+        "q": "A green laser pulse at $532\\ \\text{nm}$ carries $1.00\\ \\text{mJ}$ of energy. How many photons does it hold?",
+        "steps": [
+          "One photon: $$E = \\dfrac{(6.626 \\times 10^{-34})(3.00 \\times 10^{8})}{5.32 \\times 10^{-7}} = 3.74 \\times 10^{-19}\\ \\text{J}$$",
+          "Photons $= \\dfrac{1.00 \\times 10^{-3}\\ \\text{J}}{3.74 \\times 10^{-19}\\ \\text{J}} = 2.68 \\times 10^{15}$."
+        ],
+        "a": "$2.68 \\times 10^{15}$ photons."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking brighter light gives each photon more energy, so a bright red beam should free electrons that a dim violet one can't. Brightness is the number of photons; a red photon has the same small energy in a dim beam or a bright one. Check: compare $h\\nu$ of a single photon with the work function. If one photon falls short, a trillion of them still free nothing."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 6.1 Electromagnetic Energy"
+      },
+      {
+        "name": "College Board, AP Chemistry Course and Exam Description (effective fall 2024), Unit 3: Properties of Substances and Mixtures"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

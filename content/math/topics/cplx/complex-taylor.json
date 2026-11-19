@@ -1,0 +1,119 @@
+{
+  "id": "cplx.complex-taylor",
+  "slug": "complex-taylor",
+  "ladder": "math",
+  "course": "cplx",
+  "unit": "series",
+  "title": "Taylor Series of Analytic Functions",
+  "short": "An analytic function equals its Taylor series on the largest open disk around a that avoids its singularities.",
+  "trouble": "Students reuse a known series without changing the center: about a = i, 1/(1 − z) needs powers of (z − i), and its radius is |1 − i| = √2.",
+  "prereqs": [
+    "cplx.complex-power-series",
+    "cplx.cauchy-derivatives"
+  ],
+  "xp": 3,
+  "viz": [
+    "cplx-series"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In real calculus, a function with derivatives of every order can still fail to equal its Taylor series. Complex analysis has no such gap. <a href=\"/math/complex-analysis/cauchy-derivatives/\">Cauchy's formula</a> turns into a <a href=\"/math/complex-analysis/complex-power-series/\">power series</a> directly, and the disk where it converges is as large as it could possibly be."
+      },
+      {
+        "t": "key",
+        "html": "If $f$ is analytic on the disk $|z - a| < R$, then on that whole disk\n      $$f(z) = \\sum_{n \\ge 0}\\frac{f^{(n)}(a)}{n!}(z - a)^n.$$\n      So the radius of convergence of the Taylor series at $a$ is at least the distance from $a$ to the nearest point where $f$ fails to be analytic (and for functions like rational ones, exactly that distance)."
+      },
+      {
+        "t": "why",
+        "html": "Fix $z$ in the disk and take a circle $C$ around $a$ that encloses $z$. In Cauchy's formula $f(z) = \\frac{1}{2\\pi i}\\oint_C\\frac{f(w)}{w - z}dw$, expand the kernel as a geometric series:\n      $$\\frac{1}{w - z} = \\frac{1}{(w - a) - (z - a)} = \\sum_{n \\ge 0}\\frac{(z - a)^n}{(w - a)^{n + 1}}, \\qquad \\text{valid since } |z - a| < |w - a|.$$\n      Integrate term by term: the coefficient of $(z - a)^n$ is $\\frac{1}{2\\pi i}\\oint_C\\frac{f(w)}{(w - a)^{n + 1}}dw = \\frac{f^{(n)}(a)}{n!}$. The only requirement was a circle inside the domain, so the series works out to the nearest bad point."
+      },
+      {
+        "t": "viz",
+        "name": "cplx-series",
+        "opts": {
+          "f": "1/(1-z)",
+          "a": [
+            0,
+            1
+          ],
+          "N": 6,
+          "window": {
+            "x": [
+              -2.5,
+              3
+            ],
+            "y": [
+              -2,
+              3
+            ]
+          }
+        },
+        "cap": "The Taylor series of $\\frac{1}{1 - z}$ about $a = i$: its disk reaches to the singular point $1$, so the radius is $|1 - i| = \\sqrt{2}$, not $1$. Drag the center and watch the disk follow the distance to $1$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A new center",
+        "q": "Find the Taylor series of $\\dfrac{1}{1 - z}$ about $a = i$ and its radius of convergence.",
+        "steps": [
+          "Write $1 - z = (1 - i) - (z - i)$, so $\\frac{1}{1 - z} = \\frac{1}{1 - i}\\cdot\\frac{1}{1 - \\frac{z - i}{1 - i}}$.",
+          "Geometric series: $\\frac{1}{1 - z} = \\sum_{n \\ge 0}\\frac{(z - i)^n}{(1 - i)^{n + 1}}$, valid for $|z - i| < |1 - i|$.",
+          "Radius $\\sqrt{2}$: the distance from $i$ to the singular point $1$."
+        ],
+        "a": "$\\sum \\frac{(z - i)^n}{(1 - i)^{n + 1}}$, radius $\\sqrt{2}$"
+      },
+      {
+        "t": "ex",
+        "title": "A coefficient",
+        "q": "Find the coefficient of $z^3$ in the Maclaurin series of $e^{(1 + i)z}$.",
+        "steps": [
+          "$e^w = \\sum\\frac{w^n}{n!}$ with $w = (1 + i)z$; the $z^3$ term is $\\frac{(1 + i)^3}{3!}z^3$.",
+          "$(1 + i)^3 = -2 + 2i$, so the coefficient is $\\frac{-2 + 2i}{6} = -\\frac{1}{3} + \\frac{1}{3}i$."
+        ],
+        "a": "$-\\frac{1}{3} + \\frac{1}{3}i$"
+      },
+      {
+        "t": "ex",
+        "title": "Radius from the nearest singular point",
+        "q": "Find the radius of convergence of the Taylor series of $\\dfrac{e^z}{z^2 + 4}$ about $a = 1$.",
+        "steps": [
+          "$e^z$ is entire; the bad points are $\\pm 2i$.",
+          "Distances from $1$: $|2i - 1| = |-2i - 1| = \\sqrt{5}$.",
+          "Radius $\\sqrt{5}$."
+        ],
+        "a": "$\\sqrt{5}$"
+      },
+      {
+        "t": "list",
+        "items": [
+          "$e^z = \\sum \\frac{z^n}{n!}$, $\\sin z = \\sum \\frac{(-1)^nz^{2n + 1}}{(2n + 1)!}$, $\\cos z = \\sum \\frac{(-1)^nz^{2n}}{(2n)!}$: valid for every $z$.",
+          "$\\frac{1}{1 - z} = \\sum z^n$: valid for $|z| < 1$, the distance from $0$ to the pole at $1$.",
+          "Substituting into these (for example $z^2$ or $-z$ for $z$) gives most series you need, valid on the corresponding region."
+        ]
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Reusing a known series without changing the center.</b> $\\frac{1}{1 - z} = \\sum z^n$ is the series about $0$, valid for $|z| < 1$. About $a = i$ you need powers of $z - i$, and the radius changes to $|1 - i| = \\sqrt{2}$. Check: the center of a Taylor series is wherever the powers $(z - a)^n$ vanish, and its radius is the distance from that center to the nearest singular point."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Beck, Marchesi, Pixton and Sabalka, A First Course in Complex Analysis, chapter 8 (Taylor and Laurent Series)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.04, Complex Variables with Applications (Spring 2018), course notes: Taylor and Laurent series"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

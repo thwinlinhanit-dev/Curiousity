@@ -1,0 +1,115 @@
+{
+  "id": "g8.proportional-slope",
+  "slug": "proportional-slope",
+  "ladder": "math",
+  "course": "g8",
+  "unit": "slope",
+  "title": "Unit Rate as Slope",
+  "short": "In y = kx, the unit rate k is the steepness of the line.",
+  "trouble": "",
+  "prereqs": [
+    "g7.proportional-points",
+    "g8.function-representations"
+  ],
+  "xp": 1,
+  "viz": [
+    "slope",
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/math/grade-7/proportional-points/\">what a point on the graph means</a> you saw that the graph of $y = kx$ passes through $(0, 0)$ and $(1, k)$, where $k$ is the unit rate. Now look at how steep that line is."
+      },
+      {
+        "t": "why",
+        "html": "In $y = kx$, every step of 1 to the right adds $k$ to $y$. With $k = 2$ the line climbs 2 for each step; with $k = 5$ it climbs 5. So a bigger unit rate makes a steeper line. The steepness of a line is called its <b>slope</b>, and for $y = kx$ the slope is exactly the unit rate $k$."
+      },
+      {
+        "t": "key",
+        "html": "The graph of a proportional relationship $y = kx$ is a line through the origin, and its slope is the unit rate $k = \\frac{y}{x}$. To compare two proportional relationships, compare their unit rates: the steeper line has the greater rate."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "f": "k*x",
+          "params": {
+            "k": [
+              0.5,
+              5,
+              2,
+              0.5
+            ]
+          },
+          "points": [
+            {
+              "x": 1,
+              "on": 0,
+              "label": "at x = 1"
+            }
+          ],
+          "xmin": 0,
+          "xmax": 6,
+          "ymin": 0,
+          "ymax": 15,
+          "zoom": false
+        },
+        "cap": "Slide $k$. The point above $x = 1$ is at height $k$, and the line gets steeper as $k$ grows."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "From a table",
+        "q": "3 pounds of apples cost \\$7.50 and 6 pounds cost \\$15. What is the unit rate?",
+        "steps": [
+          "$k = \\frac{y}{x} = \\frac{7.50}{3} = 2.5$.",
+          "Check with the other pair: $\\frac{15}{6} = 2.5$."
+        ],
+        "a": "\\$2.50 per pound; the graph of $y = 2.5x$ has slope 2.5"
+      },
+      {
+        "t": "ex",
+        "title": "Compare two forms",
+        "q": "Pump A follows $y = 4x$ (gallons after $x$ minutes). Pump B’s graph passes through $(5, 18)$. Which pump is faster?",
+        "steps": [
+          "Pump A’s unit rate is 4 gallons per minute.",
+          "Pump B’s is $\\frac{18}{5} = 3.6$ gallons per minute.",
+          "4 is greater, so A’s line is steeper."
+        ],
+        "a": "Pump A"
+      },
+      {
+        "t": "ex",
+        "title": "From a graph",
+        "q": "A proportional graph passes through $(4, 6)$. Write its equation.",
+        "steps": [
+          "$k = \\frac{6}{4} = \\frac{3}{2}$."
+        ],
+        "a": "$y = \\frac{3}{2}x$"
+      },
+      {
+        "t": "mistake",
+        "html": "Dividing the wrong way, $\\frac{x}{y}$ instead of $\\frac{y}{x}$. The unit rate is the amount of $y$ for each 1 of $x$. Check: at $x = 1$, $y$ should equal $k$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 8, 8.EE.B.5 (graph proportional relationships, interpreting the unit rate as the slope)"
+      },
+      {
+        "name": "OpenStax Elementary Algebra 2e, Section 4.4: Understand Slope of a Line"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

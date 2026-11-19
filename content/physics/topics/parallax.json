@@ -1,0 +1,90 @@
+{
+  "id": "astro.parallax",
+  "slug": "parallax",
+  "ladder": "physics",
+  "course": "astro",
+  "unit": "stars",
+  "title": "Parallax and the Parsec",
+  "short": "A star's distance in parsecs is 1 divided by its parallax angle in arcseconds.",
+  "trouble": "Students think a larger parallax means a farther star.",
+  "prereqs": [
+    "astro.celestial-coordinates",
+    "astro.kepler-third-law"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-cosmic"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Hold a finger up at arm's length and look at it with one eye, then the other. It jumps against the background. Bring it closer and it jumps more. That shift is <b>parallax</b>, and it is the one direct way to measure the distance to a star: no assumptions about the star, just geometry. The baseline is Earth's own orbit, measured in AU, the unit from <a href=\"/physics/astronomy/kepler-third-law/\">Kepler's third law</a>."
+      },
+      {
+        "t": "why",
+        "html": "Photograph a nearby star in January, then again in July, from the other side of Earth's orbit, $2$ AU away. Against much more distant stars, the nearby one seems to shift. Half of that shift is the <b>parallax angle</b> $p$: the angle the $1$ AU radius of Earth's orbit spans as seen from the star. For such tiny angles, angle $\\approx \\frac{\\text{size}}{\\text{distance}}$ (in radians), so the distance is $d = \\frac{1\\ \\text{AU}}{p}$. Astronomers made this neat by defining a unit to match: one <b>parsec</b> (parallax-second) is the distance at which $1$ AU spans $1$ arcsecond ($\\frac{1}{3600}$ of a degree, about the angle a quarter makes seen from $5$ km away). With $p$ in arcseconds, $d = \\frac{1}{p}$ parsecs. Since $1$ arcsecond is $\\frac{1}{206{,}265}$ radian, $1$ pc $= 206{,}265$ AU $= 3.26$ light-years."
+      },
+      {
+        "t": "key",
+        "html": "$d\\,(\\text{parsecs}) = \\dfrac{1}{p\\,(\\text{arcseconds})}$, and $1$ pc $= 3.26$ ly. A larger parallax means a closer star. Every star's parallax is under $1$ arcsecond."
+      },
+      {
+        "t": "viz",
+        "name": "ph-cosmic",
+        "opts": {
+          "mode": "parallax",
+          "d": 3,
+          "task": "Drag the star's distance. Watch its apparent shift against the background stars shrink as it moves away."
+        },
+        "cap": "A star seen from opposite sides of Earth's orbit. Its shift against far-off stars is twice the parallax angle."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "The nearest star",
+        "q": "Proxima Centauri has a parallax of $0.768$ arcseconds. How far is it, in parsecs and light-years?",
+        "steps": [
+          "$d = \\frac{1}{0.768} = 1.30$ pc.",
+          "$1.30 \\times 3.26 = 4.24$ light-years.",
+          "Even the nearest star's parallax is less than an arcsecond, which is why it took until 1838 (Friedrich Bessel, with the star 61 Cygni) to measure one."
+        ],
+        "a": "$1.30$ pc, or $4.24$ ly."
+      },
+      {
+        "t": "ex",
+        "title": "Milliarcseconds",
+        "q": "The Gaia spacecraft measures a star's parallax as $5$ milliarcseconds. How far away is it?",
+        "steps": [
+          "$5$ mas $= 0.005$ arcseconds.",
+          "$d = \\frac{1}{0.005} = 200$ pc, about $650$ light-years."
+        ],
+        "a": "$200$ pc."
+      },
+      {
+        "t": "mistake",
+        "html": "Because big numbers often go with big distances, it is easy to think a larger parallax means a farther star. It is the reverse: $d = 1/p$, so a big shift means a close star, just as your finger jumps more when it is near your eye. Check: Proxima, the nearest star, has the largest parallax of all, $0.77$ arcseconds."
+      },
+      {
+        "t": "note",
+        "html": "Earth's motion makes all the stars trace tiny yearly ellipses on the sky, aligned with the <a href=\"/physics/astronomy/celestial-coordinates/\">celestial coordinate grid</a>. Gaia has measured parallaxes for over a billion stars, mapping our part of the galaxy in 3-D."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Astronomy 2e, section 19.2, Surveying the Stars"
+      },
+      {
+        "name": "ESA Gaia mission, Data Release 3 summary (parallaxes for about 1.5 billion stars)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

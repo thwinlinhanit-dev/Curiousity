@@ -1,0 +1,107 @@
+{
+  "id": "phys1.torque",
+  "slug": "torque",
+  "ladder": "physics",
+  "course": "phys1",
+  "unit": "rotation",
+  "title": "Torque",
+  "short": "Torque is a force times its lever arm: τ = rF sin θ.",
+  "trouble": "Students think a bigger force always makes a bigger torque, whatever its direction and where it acts.",
+  "prereqs": [
+    "phys1.angular-quantities",
+    "phys1.vector-components",
+    "physsci.levers"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-torque"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A <a href=\"/physics/physical-science/levers/\">lever balances</a> when force times distance from the pivot is the same on both sides. Torque is the general version of that rule. It measures how strongly a force turns something about an axis, and it depends on more than the size of the force. To find it you will use <a href=\"/physics/physics-1/vector-components/\">force components</a>."
+      },
+      {
+        "t": "why",
+        "html": "Push on a door. Push near the hinges and it barely moves; push at the edge and it swings easily. Push straight toward the hinges and nothing happens, however hard you push. Only the part of the force at right angles to the door, $F_\\perp = F\\sin\\theta$, turns it, and its effect grows with the distance $r$ from the hinge. So the turning effect is $\\tau = rF\\sin\\theta$. You can read the same product another way: $r\\sin\\theta$ is the <b>lever arm</b> $r_\\perp$, the perpendicular distance from the axis to the line along which the force acts."
+      },
+      {
+        "t": "key",
+        "html": "$$\\role{torque}{\\tau} = \\role[distance from the axis]{position}{r}\\role{force}{F}\\sin\\role[angle between r and F]{angle}{\\theta} = \\role[distance from the axis]{position}{r}\\role[perpendicular part of the force]{force}{F_\\perp} = \\role[lever arm]{position}{r_\\perp} \\role{force}{F},$$ where $r$ is the distance from the axis to where the force acts and $\\theta$ is the angle between $\\vec{r}$ and $\\vec{F}$. Unit: $\\text{N·m}$. Give torques a sign: counterclockwise positive, clockwise negative, and add them for the net torque."
+      },
+      {
+        "t": "viz",
+        "name": "ph-torque",
+        "opts": {
+          "scene": "wrench",
+          "task": "Set the push angle to $90^\\circ$, then to $0^\\circ$. The same $50\\ \\text{N}$ gives the biggest torque at right angles and none at all along the handle.",
+          "roleLinks": {
+            "Push angle": "angle",
+            "Push strength": "force"
+          }
+        },
+        "cap": "The gold line is the lever arm: the perpendicular distance from the bolt to the line of the force."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A wrench at right angles",
+        "q": "You pull with $80\\ \\text{N}$ at right angles to a wrench, $0.25\\ \\text{m}$ from the bolt. Find the torque.",
+        "steps": [
+          "$\\theta = 90^\\circ$, so $\\sin\\theta = 1$: $\\tau = (0.25\\ \\text{m})(80\\ \\text{N}) = 20\\ \\text{N·m}$."
+        ],
+        "a": "$20\\ \\text{N·m}$"
+      },
+      {
+        "t": "ex",
+        "title": "A door pushed at an angle",
+        "q": "You push a door $0.80\\ \\text{m}$ from its hinges with $40\\ \\text{N}$, at $30^\\circ$ to the surface of the door. Find the torque.",
+        "steps": [
+          "The angle between $\\vec{r}$ (along the door) and $\\vec{F}$ is $30^\\circ$.",
+          "$\\tau = (0.80\\ \\text{m})(40\\ \\text{N})\\sin 30^\\circ = 16\\ \\text{N·m}$, half of what a perpendicular push would give."
+        ],
+        "a": "$16\\ \\text{N·m}$"
+      },
+      {
+        "t": "ex",
+        "title": "Net torque on a beam",
+        "q": "A beam pivots at its middle. $30\\ \\text{N}$ pushes down $1.5\\ \\text{m}$ left of the pivot, and $40\\ \\text{N}$ pushes down $0.5\\ \\text{m}$ right of it. Find the net torque (counterclockwise positive).",
+        "steps": [
+          "Left force turns the beam counterclockwise: $+(1.5)(30) = +45\\ \\text{N·m}$.",
+          "Right force turns it clockwise: $-(0.5)(40) = -20\\ \\text{N·m}$.",
+          "$\\Sigma\\tau = +25\\ \\text{N·m}$: it starts turning counterclockwise even though the smaller force is on that side."
+        ],
+        "a": "$+25\\ \\text{N·m}$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Thinking a bigger force always makes a bigger torque.</b> Torque depends on three things: the force, where it acts and its direction. A $150\\ \\text{N}$ push straight toward the hinges makes no torque, while $40\\ \\text{N}$ at the edge, at right angles, turns the door easily. Check each force's lever arm before comparing."
+      },
+      {
+        "t": "note",
+        "html": "Torque and work share the unit $\\text{N·m}$, but they are different things: torque is a turning effect, work is energy. Physicists write work in joules and torque in $\\text{N·m}$ to keep them apart."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Physics 2e, Section 9.2 (The Second Condition for Equilibrium)"
+      },
+      {
+        "name": "OpenStax University Physics Volume 1, Section 10.6 (Torque)"
+      },
+      {
+        "name": "College Board, AP Physics 1 Course and Exam Description, Unit 5: Torque and Rotational Dynamics"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

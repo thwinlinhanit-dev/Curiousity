@@ -1,0 +1,123 @@
+{
+  "id": "gchem2.calculating-k",
+  "slug": "calculating-k",
+  "ladder": "chemistry",
+  "course": "gchem2",
+  "unit": "equilibrium",
+  "title": "Calculating K with an ICE Table",
+  "short": "Use the change in one amount and the coefficients to find every amount at equilibrium, then K.",
+  "trouble": "Students put the starting concentrations into K, or forget to scale the changes by the coefficients.",
+  "prereqs": [
+    "gchem2.equilibrium-expressions",
+    "chem.mole-ratios"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-equilibrium"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "To find $K$ you need every equilibrium concentration, but experiments usually measure only one. The coefficients of the balanced equation link the others to it, using the same <a href=\"/chemistry/chemistry/mole-ratios/\">mole ratios</a> as in stoichiometry. An ICE table keeps track."
+      },
+      {
+        "t": "key",
+        "html": "Make a table with three rows: <b>I</b>nitial, <b>C</b>hange and <b>E</b>quilibrium. Put the known change for one species in the C row, scale it by the coefficients for every other species (minus for reactants, plus for products), add down the columns, and put the E row into $K$."
+      },
+      {
+        "t": "why",
+        "html": "The amounts react in the ratio of the coefficients, just as they do in a reaction that goes to completion. The only difference is that the reaction stops at equilibrium instead of when a reactant runs out. Concentrations in one container change in the same ratio as moles, so the C row is just a mole ratio."
+      },
+      {
+        "t": "viz",
+        "name": "ch-equilibrium",
+        "opts": {
+          "rxn": "N2+3H2<=>2NH3",
+          "c0": {
+            "N2": 1,
+            "H2": 3
+          },
+          "show": [
+            "ice"
+          ]
+        },
+        "cap": "The ICE table updates as the mixture reacts. The changes for $\\mathrm{N_2}$, $\\mathrm{H_2}$ and $\\mathrm{NH_3}$ are always in the ratio 1 : 3 : 2."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "One measured amount",
+        "q": "A flask starts with $0.400\\ \\text{M}$ $\\mathrm{SO_2}$ and $0.200\\ \\text{M}$ $\\mathrm{O_2}$. At equilibrium, $[\\mathrm{SO_3}] = 0.300\\ \\text{M}$ in $\\mathrm{2SO_2(g) + O_2(g) \\rightleftharpoons 2SO_3(g)}$. Find $K_c$.",
+        "steps": [
+          "I: $\\mathrm{SO_2}$ 0.400, $\\mathrm{O_2}$ 0.200, $\\mathrm{SO_3}$ 0. C: $\\mathrm{SO_3}$ $+0.300$, so $\\mathrm{SO_2}$ $-0.300$ (same coefficient) and $\\mathrm{O_2}$ $-0.150$ (half as much).",
+          "E: $[\\mathrm{SO_2}] = 0.100$, $[\\mathrm{O_2}] = 0.050$, $[\\mathrm{SO_3}] = 0.300\\ \\text{M}$.",
+          "$$K_c = \\dfrac{(0.300)^2}{(0.100)^2(0.050)} = \\dfrac{0.0900}{5.0 \\times 10^{-4}} = 180$$"
+        ],
+        "a": "$K_c = 1.8 \\times 10^{2}$."
+      },
+      {
+        "t": "table",
+        "head": [
+          "",
+          "$\\mathrm{SO_2}$",
+          "$\\mathrm{O_2}$",
+          "$\\mathrm{SO_3}$"
+        ],
+        "rows": [
+          [
+            "I",
+            "0.400",
+            "0.200",
+            "0"
+          ],
+          [
+            "C",
+            "−0.300",
+            "−0.150",
+            "+0.300"
+          ],
+          [
+            "E",
+            "0.100",
+            "0.050",
+            "0.300"
+          ]
+        ],
+        "cap": "The ICE table for the first example (M)."
+      },
+      {
+        "t": "ex",
+        "title": "Equal starting amounts",
+        "q": "$\\mathrm{H_2}$ and $\\mathrm{I_2}$, each $1.00\\ \\text{M}$, react in a sealed flask: $\\mathrm{H_2 + I_2 \\rightleftharpoons 2HI}$. At equilibrium $[\\mathrm{HI}] = 1.57\\ \\text{M}$. Find $K_c$.",
+        "steps": [
+          "HI rose by 1.57, so $\\mathrm{H_2}$ and $\\mathrm{I_2}$ each fell by half of that: $0.785\\ \\text{M}$.",
+          "E: $[\\mathrm{H_2}] = [\\mathrm{I_2}] = 1.00 - 0.785 = 0.215\\ \\text{M}$.",
+          "$K_c = \\dfrac{(1.57)^2}{(0.215)^2} = 53.3$."
+        ],
+        "a": "$K_c = 53.3$."
+      },
+      {
+        "t": "p",
+        "html": "Two habits prevent most errors. First, work in molarities: if you are given moles and a volume, divide before you fill in the table (for a reaction in one container, moles also work in the C row, but $K_c$ needs molarities). Second, make the C row from a single unknown and the coefficients, then check that the E row has no negative entries."
+      },
+      {
+        "t": "mistake",
+        "html": "Putting the starting concentrations into $K$, or using the same change for every species. $K$ needs equilibrium values, and the changes follow the coefficients: when 2 $\\mathrm{SO_3}$ form, only 1 $\\mathrm{O_2}$ is used. Check: the C row should be proportional to the coefficients, with opposite signs on the two sides."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 13.4 Equilibrium Calculations"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

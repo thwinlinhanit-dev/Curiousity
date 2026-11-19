@@ -1,0 +1,83 @@
+{
+  "id": "weather.forecast-models",
+  "slug": "forecast-models",
+  "ladder": "earth",
+  "course": "weather",
+  "unit": "forecasting",
+  "title": "Computer Forecasts and Chaos",
+  "short": "Models step the laws of physics forward on a grid; small errors grow, so forecasters run many versions and look at how far they spread.",
+  "trouble": "Students think a missed forecast means forecasting doesn't work; small errors grow with time, so forecasts are good for a few days and lose skill beyond about a week to ten days.",
+  "prereqs": [
+    "weather.surface-maps"
+  ],
+  "xp": 2,
+  "viz": [
+    "es-chance"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A forecaster reads <a href=\"/earth-and-space/weather-and-climate/surface-maps/\">surface maps</a> and satellite images, but the backbone of every modern forecast is a computer model. Its strengths and limits come from one of the deepest ideas in science: chaos."
+      },
+      {
+        "t": "key",
+        "html": "A <b>numerical weather prediction model</b> divides the atmosphere into a 3-D grid, starts from the observed state, and steps the laws of physics (motion, energy, water and gas laws) forward a few minutes at a time. Because tiny errors in the starting state grow over time (<b>chaos</b>), forecasts lose skill after several days. Forecasters run an <b>ensemble</b>: many runs from slightly different starting states. Where the runs agree, confidence is high; where they spread apart, it is low."
+      },
+      {
+        "t": "why",
+        "html": "In 1963 Edward Lorenz found that a simple model of convection, restarted from numbers rounded in the fourth decimal place, soon gave a completely different \"weather.\" Small differences grew, roughly doubling every so often, until they were as big as the weather itself. The real atmosphere behaves this way: no thermometer network can measure every gust, and even a perfect model would start from a slightly wrong picture. So instead of one forecast, models make many, and the share of runs that do something (say, rain) becomes a probability."
+      },
+      {
+        "t": "viz",
+        "name": "es-chance",
+        "opts": {
+          "mode": "ensemble",
+          "members": 30,
+          "lead": 5
+        },
+        "cap": "An ensemble: 30 runs of a toy chaotic model that start almost the same. They agree for the first days, then fan out. The share of members with rain on a day is the forecast chance of rain."
+      },
+      {
+        "t": "ex",
+        "title": "How many grid points?",
+        "q": "A model covers the contiguous United States, about 8,000,000 km², with grid columns 10 km apart and 50 levels. About how many grid points is that?",
+        "steps": [
+          "Each column covers $10 \\times 10 = 100$ km², so there are $8{,}000{,}000 \\div 100 = 80{,}000$ columns.",
+          "Times 50 levels: $80{,}000 \\times 50 = 4{,}000{,}000$ grid points, each stepped forward thousands of times."
+        ],
+        "a": "About 4 million"
+      },
+      {
+        "t": "ex",
+        "title": "Errors that double",
+        "q": "A forecast starts with a temperature error of 0.1 °C that doubles every 2 days. How big is it after 10 days?",
+        "steps": [
+          "10 days is 5 doublings.",
+          "$0.1 \\times 2^5 = 0.1 \\times 32 = 3.2$ °C, about as big as a real day-to-day change."
+        ],
+        "a": "3.2 °C"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking a missed forecast means forecasting doesn't work. Small errors grow with time, so forecasts are very good a day or two ahead, useful for about a week, and lose most of their skill beyond about 10 days. NOAA puts it this way: a 5-day forecast is right about 90% of the time and a 7-day forecast about 80%, while forecasts of 10 days or more are right only about half the time. Check: compare a 1-day forecast's record with a 10-day forecast's."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "NOAA: SciJinks: How reliable are weather forecasts?"
+      },
+      {
+        "name": "Lorenz (1963), Deterministic Nonperiodic Flow, Journal of the Atmospheric Sciences"
+      },
+      {
+        "name": "NOAA National Weather Service, JetStream online school for weather: Computer models and ensemble forecasting"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

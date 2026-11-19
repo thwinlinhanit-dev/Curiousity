@@ -1,0 +1,82 @@
+{
+  "id": "ra.density",
+  "slug": "density",
+  "ladder": "math",
+  "course": "ra",
+  "unit": "real-numbers",
+  "title": "Density of the Rationals",
+  "short": "Between any two real numbers a < b lies a rational: pick n with 1/n < b − a, and some multiple m/n lands strictly between them.",
+  "trouble": "Students pick n with 1/n ≤ b − a, which can land exactly on b, or forget to check that m/n is strictly bigger than a.",
+  "prereqs": [
+    "ra.completeness"
+  ],
+  "xp": 2,
+  "viz": [],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Between any two different real numbers there are infinitely many rationals, even though the rationals have \"gaps.\" The proof is a short, concrete recipe built on the <a href=\"/math/real-analysis/completeness/\">Archimedean property</a>, and it is a model for many analysis proofs: choose a scale, then count steps."
+      },
+      {
+        "t": "key",
+        "html": "<b>Density of $\\mathbb{Q}$.</b> If $a < b$, there is a rational $\\frac{m}{n}$ with $a < \\frac{m}{n} < b$. Recipe: choose a positive integer $n$ with $\\frac{1}{n} < b - a$; then let $m$ be the smallest integer greater than $na$."
+      },
+      {
+        "t": "why",
+        "html": "Steps of size $\\frac{1}{n}$ are shorter than the gap $b - a$, so they cannot jump over the whole interval $(a, b)$. Precisely: $m$ is the smallest integer with $m > na$, so $m - 1 \\le na$. Dividing by $n$: $a < \\frac{m}{n}$ and $\\frac{m}{n} \\le a + \\frac{1}{n} < a + (b - a) = b$. So $\\frac{m}{n}$ is strictly between $a$ and $b$. The integer $m$ exists because the integers have no gaps: $m = \\lfloor na \\rfloor + 1$."
+      },
+      {
+        "t": "p",
+        "html": "Applying the result again to $\\left(a, \\frac{m}{n}\\right)$ gives another rational, and so on: there are infinitely many. The same idea shows the irrationals are dense too: find a rational $q$ between $\\frac{a}{\\sqrt{2}}$ and $\\frac{b}{\\sqrt{2}}$ with $q \\ne 0$; then $q\\sqrt{2}$ is irrational and lies between $a$ and $b$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Following the recipe",
+        "q": "Find a fraction between $a = 0.31$ and $b = 0.34$ using the recipe.",
+        "steps": [
+          "$b - a = 0.03$, and $\\frac{1}{n} < 0.03$ means $n > 33.\\overline{3}$, so $n = 34$.",
+          "$na = 34 \\cdot 0.31 = 10.54$, so the smallest integer above it is $m = 11$.",
+          "Check: $\\frac{11}{34} \\approx 0.3235$, which is between $0.31$ and $0.34$."
+        ],
+        "a": "$\\frac{11}{34}$"
+      },
+      {
+        "t": "ex",
+        "title": "Next to an irrational",
+        "q": "Use the recipe for $a = \\sqrt{2}$ and $b = 1.42$.",
+        "steps": [
+          "$b - a \\approx 0.00579$, and $\\frac{1}{0.00579} \\approx 172.8$, so $n = 173$.",
+          "$na = 173\\sqrt{2} = \\sqrt{59858}$. Since $244^{2} = 59536$ and $245^{2} = 60025$, $\\lfloor 173\\sqrt{2} \\rfloor = 244$, so $m = 245$.",
+          "$\\frac{245}{173} \\approx 1.41618$, which is indeed between $\\sqrt{2} \\approx 1.41421$ and $1.42$."
+        ],
+        "a": "$\\frac{245}{173}$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Choosing $n$ with $\\frac{1}{n} \\le b - a$, or $m$ with $m \\ge na$.</b> With equality allowed, the fraction can land exactly on $b$ (or on $a$). For $a = 0$ and $b = \\frac{1}{2}$, the choice $n = 2$ gives $\\frac{1}{n} = b - a$ and $m = 1$, so $\\frac{m}{n} = \\frac{1}{2} = b$, not strictly inside. The strict inequalities in the recipe are what make the final check $a < \\frac{m}{n} < b$ work."
+      },
+      {
+        "t": "note",
+        "html": "The recipe is not the only route. The fraction with the smallest denominator between $0.31$ and $0.34$ is $\\frac{1}{3}$; the proof only needs some fraction, and it chooses one that is easy to justify."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Jiří Lebl, Basic Analysis I: Introduction to Real Analysis, section 1.2 (density of the rationals)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.100A Real Analysis, lecture notes on the Archimedean property"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,941 @@
+{
+  "key": "hist",
+  "ladder": "egypt",
+  "title": "History of Ancient Egypt",
+  "short": "History",
+  "after": [
+    "kids"
+  ],
+  "units": [
+    {
+      "key": "land",
+      "title": "The Land and Its Sources",
+      "blurb": "The Nile valley and Delta, the flood, the Two Lands, and the kinds of evidence historians use."
+    },
+    {
+      "key": "chronology",
+      "title": "Building a Chronology",
+      "blurb": "King lists, Manetho's dynasties, regnal years, astronomy and radiocarbon: how the dates are built, and how sure they are."
+    },
+    {
+      "key": "origins",
+      "title": "Before the Pharaohs",
+      "blurb": "Farming villages, the Naqada culture, the first writing and the joining of the Two Lands."
+    },
+    {
+      "key": "old",
+      "title": "The Early Dynastic Period and the Old Kingdom",
+      "blurb": "The first dynasties, the pyramid age, the sun kings and the end of the Old Kingdom (c. 3000–2160 BC)."
+    },
+    {
+      "key": "middle",
+      "title": "The First Intermediate Period and the Middle Kingdom",
+      "blurb": "Rival kings, reunification under Mentuhotep II, and the classic age of the 12th Dynasty (c. 2160–1650 BC)."
+    },
+    {
+      "key": "second",
+      "title": "The Second Intermediate Period",
+      "blurb": "The Hyksos in the Delta, the kingdom of Kush at Kerma, and the Theban war of liberation (c. 1650–1550 BC)."
+    },
+    {
+      "key": "new",
+      "title": "The New Kingdom",
+      "blurb": "Egypt's age of empire, from Ahmose to the last Ramesses (c. 1550–1069 BC)."
+    },
+    {
+      "key": "third",
+      "title": "The Third Intermediate and Late Periods",
+      "blurb": "A divided Egypt, the Kushite kings, the Saite revival, Persian rule and the last native kings (1069–332 BC)."
+    },
+    {
+      "key": "greek",
+      "title": "Ptolemaic, Roman and Byzantine Egypt",
+      "blurb": "Alexander and the Ptolemies, Cleopatra, Roman and Christian Egypt, to the Arab conquest of AD 641."
+    },
+    {
+      "key": "society",
+      "title": "Government, Society and Economy",
+      "blurb": "Kingship, officials, taxes and trade without coins, the people of Egypt, women's rights and the army."
+    },
+    {
+      "key": "foreign",
+      "title": "Egypt and Its Neighbors",
+      "blurb": "Nubia, the Levant and the great powers, and how historians weigh the biblical connections."
+    }
+  ],
+  "topics": [
+    {
+      "id": "hist.geography",
+      "slug": "geography",
+      "course": "hist",
+      "unit": "land",
+      "title": "The Nile Valley and the Delta",
+      "short": "Egypt was the Nile valley, a strip of farmland rarely more than 20 km wide, and the fan-shaped Delta, between deserts.",
+      "prereqs": [],
+      "viz": [
+        "eg-map"
+      ]
+    },
+    {
+      "id": "hist.inundation",
+      "slug": "inundation",
+      "course": "hist",
+      "unit": "land",
+      "title": "The Inundation",
+      "short": "Summer rains in Ethiopia raised the Nile each year, flooding the valley and leaving silt; the height of the flood decided the harvest.",
+      "prereqs": [
+        "hist.geography"
+      ],
+      "viz": [
+        "eg-map"
+      ]
+    },
+    {
+      "id": "hist.two-lands",
+      "slug": "two-lands",
+      "course": "hist",
+      "unit": "land",
+      "title": "The Two Lands and the Nomes",
+      "short": "Egyptians called their country the Two Lands, Upper (south) and Lower (north) Egypt, divided into provinces called nomes.",
+      "prereqs": [
+        "hist.geography"
+      ],
+      "viz": [
+        "eg-map"
+      ]
+    },
+    {
+      "id": "hist.sources",
+      "slug": "sources",
+      "course": "hist",
+      "unit": "land",
+      "title": "Sources for Egyptian History",
+      "short": "Historians use monuments and inscriptions, papyri and ostraca, archaeology, foreign records and later Greek writers, each with its own biases.",
+      "prereqs": [
+        "hist.geography"
+      ],
+      "viz": [
+        "eg-scripts"
+      ]
+    },
+    {
+      "id": "hist.periods",
+      "slug": "periods",
+      "course": "hist",
+      "unit": "chronology",
+      "title": "Kingdoms and Intermediate Periods",
+      "short": "Modern historians divide Egyptian history into kingdoms (times of one strong state) and intermediate periods (times of division).",
+      "prereqs": [],
+      "viz": [
+        "eg-timeline"
+      ]
+    },
+    {
+      "id": "hist.king-lists",
+      "slug": "king-lists",
+      "course": "hist",
+      "unit": "chronology",
+      "title": "King Lists",
+      "short": "Ancient king lists, like the Palermo Stone, the Turin Canon and the lists at Abydos and Saqqara, give kings in order, but leave some out.",
+      "prereqs": [
+        "hist.periods"
+      ],
+      "viz": [
+        "eg-timeline"
+      ]
+    },
+    {
+      "id": "hist.manetho",
+      "slug": "manetho",
+      "course": "hist",
+      "unit": "chronology",
+      "title": "Manetho's Dynasties",
+      "short": "Manetho, an Egyptian priest of the early 3rd century BC, wrote a history in Greek that grouped the kings into the 30 dynasties we still use.",
+      "prereqs": [
+        "hist.king-lists"
+      ],
+      "viz": [
+        "eg-timeline"
+      ]
+    },
+    {
+      "id": "hist.regnal-years",
+      "slug": "regnal-years",
+      "course": "hist",
+      "unit": "chronology",
+      "title": "Dating by Regnal Years",
+      "short": "Egyptians dated events by the year of the king's reign (\"Year 5 of His Majesty\"), so dates have to be added up king by king.",
+      "prereqs": [
+        "hist.king-lists"
+      ],
+      "viz": [
+        "eg-timeline"
+      ]
+    },
+    {
+      "id": "hist.astronomy-dating",
+      "slug": "astronomy-dating",
+      "course": "hist",
+      "unit": "chronology",
+      "title": "Astronomical Dates",
+      "short": "A few texts record the rising of the star Sirius or the phases of the moon, which can tie reigns to absolute dates; scholars still debate how to read them.",
+      "prereqs": [
+        "hist.regnal-years"
+      ],
+      "viz": [
+        "eg-timeline"
+      ]
+    },
+    {
+      "id": "hist.radiocarbon",
+      "slug": "radiocarbon",
+      "course": "hist",
+      "unit": "chronology",
+      "title": "Radiocarbon and Egyptian Dates",
+      "short": "Radiocarbon dating of plant remains from dated contexts largely agrees with the standard chronology and is most useful for the earliest periods.",
+      "prereqs": [
+        "hist.regnal-years"
+      ],
+      "viz": [
+        "eg-timeline"
+      ]
+    },
+    {
+      "id": "hist.how-sure",
+      "slug": "how-sure",
+      "course": "hist",
+      "unit": "chronology",
+      "title": "How Sure Are the Dates?",
+      "short": "Dates are fixed from 664 BC on; before that they are approximate, uncertain by decades in the New Kingdom and by a century or more in the Old Kingdom.",
+      "prereqs": [
+        "hist.astronomy-dating",
+        "hist.radiocarbon"
+      ],
+      "viz": [
+        "eg-timeline"
+      ]
+    },
+    {
+      "id": "hist.naqada",
+      "slug": "naqada",
+      "course": "hist",
+      "unit": "origins",
+      "title": "Before the Kings: Badari and Naqada",
+      "short": "Farming villages appeared along the Nile in the 5th millennium BC; the Naqada culture spread across Egypt and grew into chiefdoms.",
+      "prereqs": [
+        "hist.two-lands"
+      ],
+      "viz": [
+        "eg-timeline",
+        "eg-map"
+      ]
+    },
+    {
+      "id": "hist.first-writing",
+      "slug": "first-writing",
+      "course": "hist",
+      "unit": "origins",
+      "title": "The First Writing",
+      "short": "Small labels from a tomb at Abydos (tomb U-j, c. 3200 BC) carry some of the earliest known Egyptian writing.",
+      "prereqs": [
+        "hist.naqada"
+      ],
+      "viz": [
+        "eg-glyphs",
+        "eg-timeline"
+      ]
+    },
+    {
+      "id": "hist.unification",
+      "slug": "unification",
+      "course": "hist",
+      "unit": "origins",
+      "title": "The Joining of the Two Lands",
+      "short": "Around 3000 BC the Nile valley and the Delta came under one king; the Narmer Palette shows King Narmer in the white crown on one side and the red crown on the other.",
+      "prereqs": [
+        "hist.naqada"
+      ],
+      "viz": [
+        "eg-timeline",
+        "eg-map"
+      ]
+    },
+    {
+      "id": "hist.early-dynastic",
+      "slug": "early-dynastic",
+      "course": "hist",
+      "unit": "old",
+      "title": "The First Dynasties",
+      "short": "Kings of Dynasties 1 and 2 ruled from Memphis, were buried at Abydos, and built the tools of the state: writing, taxes and royal titles.",
+      "prereqs": [
+        "hist.unification"
+      ],
+      "viz": [
+        "eg-timeline",
+        "eg-map"
+      ]
+    },
+    {
+      "id": "hist.djoser",
+      "slug": "djoser",
+      "course": "hist",
+      "unit": "old",
+      "title": "Djoser and the Step Pyramid",
+      "short": "Djoser of the 3rd Dynasty built the first large stone building, the Step Pyramid at Saqqara, credited to his official Imhotep.",
+      "prereqs": [
+        "hist.early-dynastic"
+      ],
+      "viz": [
+        "eg-pyramid",
+        "eg-timeline"
+      ]
+    },
+    {
+      "id": "hist.pyramid-age",
+      "slug": "pyramid-age",
+      "course": "hist",
+      "unit": "old",
+      "title": "Sneferu, Khufu and the True Pyramid",
+      "short": "In the 4th Dynasty, Sneferu built the first true pyramids at Meidum and Dahshur, and Khufu the Great Pyramid at Giza.",
+      "prereqs": [
+        "hist.djoser"
+      ],
+      "viz": [
+        "eg-pyramid",
+        "eg-map",
+        "eg-timeline"
+      ]
+    },
+    {
+      "id": "hist.pyramid-state",
+      "slug": "pyramid-state",
+      "course": "hist",
+      "unit": "old",
+      "title": "The State That Built the Pyramids",
+      "short": "Pyramids needed an organized state: a vizier, scribes, taxes in grain and labor, quarries, boats and a fed, housed workforce.",
+      "prereqs": [
+        "hist.pyramid-age"
+      ],
+      "viz": [
+        "eg-pyramid"
+      ]
+    },
+    {
+      "id": "hist.sun-kings",
+      "slug": "sun-kings",
+      "course": "hist",
+      "unit": "old",
+      "title": "The Sun Kings and the Pyramid Texts",
+      "short": "Kings of the 5th Dynasty built sun temples for Ra, and Unas, the last of them, had the first Pyramid Texts carved in his tomb.",
+      "prereqs": [
+        "hist.pyramid-age"
+      ],
+      "viz": [
+        "eg-timeline",
+        "eg-glyphs"
+      ]
+    },
+    {
+      "id": "hist.sixth-dynasty",
+      "slug": "sixth-dynasty",
+      "course": "hist",
+      "unit": "old",
+      "title": "The 6th Dynasty and the Provinces",
+      "short": "Under the 6th Dynasty, provincial governors grew richer and more independent; officials like Weni and Harkhuf left autobiographies of their careers.",
+      "prereqs": [
+        "hist.sun-kings"
+      ],
+      "viz": [
+        "eg-timeline",
+        "eg-map"
+      ]
+    },
+    {
+      "id": "hist.ok-end",
+      "slug": "ok-end",
+      "course": "hist",
+      "unit": "old",
+      "title": "Why Did the Old Kingdom End?",
+      "short": "Historians debate the causes: a weaker central government, very long reigns, and perhaps low Nile floods and a drier climate.",
+      "prereqs": [
+        "hist.sixth-dynasty"
+      ],
+      "viz": [
+        "eg-timeline"
+      ]
+    },
+    {
+      "id": "hist.fip",
+      "slug": "fip",
+      "course": "hist",
+      "unit": "middle",
+      "title": "The First Intermediate Period",
+      "short": "After the Old Kingdom, rival dynasties ruled from Herakleopolis in the north and Thebes in the south.",
+      "prereqs": [
+        "hist.ok-end"
+      ],
+      "viz": [
+        "eg-timeline",
+        "eg-map"
+      ]
+    },
+    {
+      "id": "hist.mentuhotep",
+      "slug": "mentuhotep",
+      "course": "hist",
+      "unit": "middle",
+      "title": "Mentuhotep II Reunites Egypt",
+      "short": "Mentuhotep II of Thebes defeated the Herakleopolitan kings and reunited Egypt (c. 2055 BC), beginning the Middle Kingdom.",
+      "prereqs": [
+        "hist.fip"
+      ],
+      "viz": [
+        "eg-timeline"
+      ]
+    },
+    {
+      "id": "hist.twelfth-dynasty",
+      "slug": "twelfth-dynasty",
+      "course": "hist",
+      "unit": "middle",
+      "title": "The 12th Dynasty",
+      "short": "Amenemhat I founded the 12th Dynasty and a new capital, Itjtawy; its kings, named Amenemhat and Senusret, ruled about two centuries.",
+      "prereqs": [
+        "hist.mentuhotep"
+      ],
+      "viz": [
+        "eg-timeline",
+        "eg-map"
+      ]
+    },
+    {
+      "id": "hist.senusret3",
+      "slug": "senusret3",
+      "course": "hist",
+      "unit": "middle",
+      "title": "Senusret III and Nubia",
+      "short": "Senusret III built a chain of forts at the Second Cataract, fixed the southern border, and reduced the power of provincial governors.",
+      "prereqs": [
+        "hist.twelfth-dynasty"
+      ],
+      "viz": [
+        "eg-map",
+        "eg-timeline"
+      ]
+    },
+    {
+      "id": "hist.mk-culture",
+      "slug": "mk-culture",
+      "course": "hist",
+      "unit": "middle",
+      "title": "The Classic Age",
+      "short": "The Middle Kingdom was the classic age of Egyptian literature, such as the Tale of Sinuhe and the teaching texts, written in Middle Egyptian.",
+      "prereqs": [
+        "hist.twelfth-dynasty"
+      ],
+      "viz": [
+        "eg-glyphs"
+      ]
+    },
+    {
+      "id": "hist.hyksos",
+      "slug": "hyksos",
+      "course": "hist",
+      "unit": "second",
+      "title": "The Hyksos",
+      "short": "The Hyksos, rulers of western Asian origin, governed the north from Avaris as the 15th Dynasty (c. 1650–1550 BC).",
+      "prereqs": [
+        "hist.mk-culture"
+      ],
+      "viz": [
+        "eg-map",
+        "eg-timeline"
+      ]
+    },
+    {
+      "id": "hist.kerma",
+      "slug": "kerma",
+      "course": "hist",
+      "unit": "second",
+      "title": "The Kingdom of Kush at Kerma",
+      "short": "South of Egypt, the kingdom of Kush, centered at Kerma, grew strong and allied with the Hyksos.",
+      "prereqs": [
+        "hist.hyksos",
+        "hist.senusret3"
+      ],
+      "viz": [
+        "eg-map"
+      ]
+    },
+    {
+      "id": "hist.liberation",
+      "slug": "liberation",
+      "course": "hist",
+      "unit": "second",
+      "title": "The Theban War",
+      "short": "Theban kings Seqenenre Tao and Kamose fought the Hyksos, and Ahmose took Avaris and drove them out (c. 1550 BC).",
+      "prereqs": [
+        "hist.hyksos"
+      ],
+      "viz": [
+        "eg-timeline"
+      ]
+    },
+    {
+      "id": "hist.nk-empire",
+      "slug": "nk-empire",
+      "course": "hist",
+      "unit": "new",
+      "title": "Ahmose and the New Kingdom",
+      "short": "Ahmose founded the 18th Dynasty; his successors pushed into the Levant and Nubia and built Egypt's empire.",
+      "prereqs": [
+        "hist.liberation"
+      ],
+      "viz": [
+        "eg-timeline",
+        "eg-map"
+      ]
+    },
+    {
+      "id": "hist.hatshepsut",
+      "slug": "hatshepsut",
+      "course": "hist",
+      "unit": "new",
+      "title": "Hatshepsut",
+      "short": "Hatshepsut ruled first as regent for Thutmose III and then as king (c. 1473–1458 BC), building at Karnak and Deir el-Bahari.",
+      "prereqs": [
+        "hist.nk-empire"
+      ],
+      "viz": [
+        "eg-timeline",
+        "eg-map"
+      ]
+    },
+    {
+      "id": "hist.thutmose3",
+      "slug": "thutmose3",
+      "course": "hist",
+      "unit": "new",
+      "title": "Thutmose III and Megiddo",
+      "short": "Thutmose III won the battle of Megiddo and led many campaigns into the Levant, making Egypt the leading power of the region.",
+      "prereqs": [
+        "hist.hatshepsut"
+      ],
+      "viz": [
+        "eg-timeline",
+        "eg-map"
+      ]
+    },
+    {
+      "id": "hist.amenhotep3",
+      "slug": "amenhotep3",
+      "course": "hist",
+      "unit": "new",
+      "title": "Amenhotep III and the Amarna Letters",
+      "short": "Amenhotep III ruled a rich and peaceful empire; his letters with the kings of Babylon, Mitanni and others survive in the Amarna archive.",
+      "prereqs": [
+        "hist.thutmose3"
+      ],
+      "viz": [
+        "eg-timeline"
+      ]
+    },
+    {
+      "id": "hist.akhenaten",
+      "slug": "akhenaten",
+      "course": "hist",
+      "unit": "new",
+      "title": "Akhenaten and Amarna",
+      "short": "Akhenaten made the Aten, the sun disk, the center of worship, closed temples of other gods and built a new capital at Amarna.",
+      "prereqs": [
+        "hist.amenhotep3"
+      ],
+      "viz": [
+        "eg-timeline",
+        "eg-map"
+      ]
+    },
+    {
+      "id": "hist.restoration",
+      "slug": "restoration",
+      "course": "hist",
+      "unit": "new",
+      "title": "Tutankhamun and the Restoration",
+      "short": "Tutankhamun, Ay and Horemheb brought back the old gods and left Amarna; later kings erased the Amarna kings from their lists.",
+      "prereqs": [
+        "hist.akhenaten"
+      ],
+      "viz": [
+        "eg-timeline",
+        "eg-cartouche"
+      ]
+    },
+    {
+      "id": "hist.ramesses2",
+      "slug": "ramesses2",
+      "course": "hist",
+      "unit": "new",
+      "title": "Ramesses II",
+      "short": "Ramesses II of the 19th Dynasty reigned 66 years (1279–1213 BC), built more than any other king and moved his capital to Pi-Ramesses.",
+      "prereqs": [
+        "hist.restoration"
+      ],
+      "viz": [
+        "eg-timeline",
+        "eg-map",
+        "eg-cartouche"
+      ]
+    },
+    {
+      "id": "hist.kadesh",
+      "slug": "kadesh",
+      "course": "hist",
+      "unit": "new",
+      "title": "Kadesh and the Peace Treaty",
+      "short": "At Kadesh (c. 1274 BC) Ramesses II fought the Hittites to a draw; years later the two powers signed a peace treaty.",
+      "prereqs": [
+        "hist.ramesses2"
+      ],
+      "viz": [
+        "eg-map",
+        "eg-timeline"
+      ]
+    },
+    {
+      "id": "hist.ramesses3",
+      "slug": "ramesses3",
+      "course": "hist",
+      "unit": "new",
+      "title": "Ramesses III and the Sea Peoples",
+      "short": "Ramesses III fought off the Sea Peoples; in his reign came the first known strike, by the tomb-builders of Deir el-Medina.",
+      "prereqs": [
+        "hist.kadesh"
+      ],
+      "viz": [
+        "eg-timeline",
+        "eg-map"
+      ]
+    },
+    {
+      "id": "hist.nk-end",
+      "slug": "nk-end",
+      "course": "hist",
+      "unit": "new",
+      "title": "The End of the New Kingdom",
+      "short": "Under the later Ramesses, Egypt lost its empire, tombs were robbed, and the high priests of Amun at Thebes grew powerful.",
+      "prereqs": [
+        "hist.ramesses3"
+      ],
+      "viz": [
+        "eg-timeline"
+      ]
+    },
+    {
+      "id": "hist.tip",
+      "slug": "tip",
+      "course": "hist",
+      "unit": "third",
+      "title": "A Divided Egypt",
+      "short": "In the Third Intermediate Period, kings at Tanis and then Libyan dynasties ruled the north while the priests of Amun held Thebes.",
+      "prereqs": [
+        "hist.nk-end"
+      ],
+      "viz": [
+        "eg-timeline",
+        "eg-map"
+      ]
+    },
+    {
+      "id": "hist.kushite",
+      "slug": "kushite",
+      "course": "hist",
+      "unit": "third",
+      "title": "The Kushite Kings",
+      "short": "Kings from Kush, such as Piye and Taharqo, conquered Egypt and ruled it as the 25th Dynasty until the Assyrians drove them out.",
+      "prereqs": [
+        "hist.tip",
+        "hist.kerma"
+      ],
+      "viz": [
+        "eg-map",
+        "eg-timeline"
+      ]
+    },
+    {
+      "id": "hist.saite",
+      "slug": "saite",
+      "course": "hist",
+      "unit": "third",
+      "title": "The Saite Revival",
+      "short": "Psamtek I became king at Sais in 664 BC and had reunited Egypt by 656 BC; the 26th Dynasty copied Old Kingdom art and welcomed Greek traders and soldiers.",
+      "prereqs": [
+        "hist.kushite"
+      ],
+      "viz": [
+        "eg-timeline",
+        "eg-map"
+      ]
+    },
+    {
+      "id": "hist.persians",
+      "slug": "persians",
+      "course": "hist",
+      "unit": "third",
+      "title": "Persian Rule",
+      "short": "In 525 BC Cambyses of Persia conquered Egypt; Persian kings ruled it as the 27th Dynasty until 404 BC.",
+      "prereqs": [
+        "hist.saite"
+      ],
+      "viz": [
+        "eg-timeline"
+      ]
+    },
+    {
+      "id": "hist.last-natives",
+      "slug": "last-natives",
+      "course": "hist",
+      "unit": "third",
+      "title": "The Last Native Kings",
+      "short": "Egyptian kings ruled again from 404 BC until Persia returned in 343 BC; Nectanebo II was the last native pharaoh.",
+      "prereqs": [
+        "hist.persians"
+      ],
+      "viz": [
+        "eg-timeline"
+      ]
+    },
+    {
+      "id": "hist.alexander",
+      "slug": "alexander",
+      "course": "hist",
+      "unit": "greek",
+      "title": "Alexander in Egypt",
+      "short": "Alexander the Great took Egypt from Persia in 332 BC, visited the oracle of Amun at Siwa and founded Alexandria.",
+      "prereqs": [
+        "hist.last-natives"
+      ],
+      "viz": [
+        "eg-map",
+        "eg-timeline"
+      ]
+    },
+    {
+      "id": "hist.ptolemies",
+      "slug": "ptolemies",
+      "course": "hist",
+      "unit": "greek",
+      "title": "The Ptolemies and Alexandria",
+      "short": "Ptolemy I and his heirs ruled from Alexandria, with its Library, Museum and lighthouse, as Greek kings and as pharaohs.",
+      "prereqs": [
+        "hist.alexander"
+      ],
+      "viz": [
+        "eg-map",
+        "eg-timeline"
+      ]
+    },
+    {
+      "id": "hist.cleopatra",
+      "slug": "cleopatra",
+      "course": "hist",
+      "unit": "greek",
+      "title": "Cleopatra VII",
+      "short": "Cleopatra VII, allied with Julius Caesar and then Mark Antony, lost to Octavian at Actium (31 BC); after her death in 30 BC Egypt became Roman.",
+      "prereqs": [
+        "hist.ptolemies"
+      ],
+      "viz": [
+        "eg-timeline",
+        "eg-cartouche"
+      ]
+    },
+    {
+      "id": "hist.roman-egypt",
+      "slug": "roman-egypt",
+      "course": "hist",
+      "unit": "greek",
+      "title": "Roman Egypt",
+      "short": "Rome ruled Egypt as a special province, and its grain fed the city of Rome.",
+      "prereqs": [
+        "hist.cleopatra"
+      ],
+      "viz": [
+        "eg-timeline",
+        "eg-map"
+      ]
+    },
+    {
+      "id": "hist.christian-egypt",
+      "slug": "christian-egypt",
+      "course": "hist",
+      "unit": "greek",
+      "title": "Christian and Byzantine Egypt",
+      "short": "Christianity spread through Egypt; monks like Antony and Pachomius founded monastic life, and Coptic became the Christian Egyptians' written language.",
+      "prereqs": [
+        "hist.roman-egypt"
+      ],
+      "viz": [
+        "eg-timeline",
+        "eg-scripts"
+      ]
+    },
+    {
+      "id": "hist.arab-conquest",
+      "slug": "arab-conquest",
+      "course": "hist",
+      "unit": "greek",
+      "title": "The Arab Conquest",
+      "short": "Arab armies under Amr ibn al-As took the fortress of Babylon in AD 641 and then Alexandria, ending Byzantine rule.",
+      "prereqs": [
+        "hist.christian-egypt"
+      ],
+      "viz": [
+        "eg-timeline",
+        "eg-map"
+      ]
+    },
+    {
+      "id": "hist.kingship",
+      "slug": "kingship",
+      "course": "hist",
+      "unit": "society",
+      "title": "Divine Kingship and the Titulary",
+      "short": "The king was Horus on earth and son of Ra, standing between the gods and the people; his five names expressed this role.",
+      "prereqs": [
+        "hist.periods"
+      ],
+      "viz": [
+        "eg-cartouche",
+        "eg-glyphs"
+      ]
+    },
+    {
+      "id": "hist.administration",
+      "slug": "administration",
+      "course": "hist",
+      "unit": "society",
+      "title": "The Vizier and the Officials",
+      "short": "A vizier ran the government with scribes and officials who counted harvests, collected taxes and kept records.",
+      "prereqs": [
+        "hist.kingship"
+      ],
+      "viz": [
+        "eg-glyphs"
+      ]
+    },
+    {
+      "id": "hist.economy",
+      "slug": "economy",
+      "course": "hist",
+      "unit": "society",
+      "title": "An Economy Without Coins",
+      "short": "Until the Late Period Egyptians did not use coins; they traded goods valued in units of copper (deben) or grain, and wages were paid in bread and beer.",
+      "prereqs": [
+        "hist.administration"
+      ],
+      "viz": [
+        "eg-glyphs"
+      ]
+    },
+    {
+      "id": "hist.people",
+      "slug": "people",
+      "course": "hist",
+      "unit": "society",
+      "title": "The People of Egypt",
+      "short": "Most Egyptians were farmers; above them were craftsmen, scribes, priests and officials; there were servants and some slaves, especially war captives.",
+      "prereqs": [
+        "hist.administration"
+      ],
+      "viz": [
+        "eg-glyphs"
+      ]
+    },
+    {
+      "id": "hist.deir-el-medina",
+      "slug": "deir-el-medina",
+      "course": "hist",
+      "unit": "society",
+      "title": "Deir el-Medina, the Workmen's Village",
+      "short": "The craftsmen who cut and decorated the royal tombs lived at Deir el-Medina; thousands of their notes on pottery and stone survive.",
+      "prereqs": [
+        "hist.people"
+      ],
+      "viz": [
+        "eg-map"
+      ]
+    },
+    {
+      "id": "hist.women",
+      "slug": "women",
+      "course": "hist",
+      "unit": "society",
+      "title": "Women in Ancient Egypt",
+      "short": "Egyptian women could own and sell property, make contracts, go to court and inherit, though few held office.",
+      "prereqs": [
+        "hist.people"
+      ],
+      "viz": [
+        "eg-glyphs"
+      ]
+    },
+    {
+      "id": "hist.army",
+      "slug": "army",
+      "course": "hist",
+      "unit": "society",
+      "title": "The Army",
+      "short": "Egypt's army grew from local levies into a standing army of the New Kingdom, with chariots and foreign troops.",
+      "prereqs": [
+        "hist.nk-empire"
+      ],
+      "viz": [
+        "eg-timeline"
+      ]
+    },
+    {
+      "id": "hist.nubia",
+      "slug": "nubia",
+      "course": "hist",
+      "unit": "foreign",
+      "title": "Egypt and Nubia",
+      "short": "For three thousand years Egypt traded with, fought and ruled parts of Nubia, and Nubian kings once ruled Egypt.",
+      "prereqs": [
+        "hist.kushite"
+      ],
+      "viz": [
+        "eg-map",
+        "eg-timeline"
+      ]
+    },
+    {
+      "id": "hist.levant",
+      "slug": "levant",
+      "course": "hist",
+      "unit": "foreign",
+      "title": "Egypt and the Near East",
+      "short": "Egypt traded with Byblos for cedar, ruled parts of Canaan, and dealt with Mitanni, the Hittites, Assyria, Babylon and Persia.",
+      "prereqs": [
+        "hist.amenhotep3"
+      ],
+      "viz": [
+        "eg-map"
+      ]
+    },
+    {
+      "id": "hist.bible",
+      "slug": "bible",
+      "course": "hist",
+      "unit": "foreign",
+      "title": "Egypt and the Bible: What Scholars Debate",
+      "short": "Historians debate how stories of Joseph and the Exodus relate to Egyptian evidence; many identify Shishak with Shoshenq I, though some doubt it.",
+      "prereqs": [
+        "hist.levant",
+        "hist.tip"
+      ],
+      "viz": [
+        "eg-timeline"
+      ]
+    }
+  ]
+}

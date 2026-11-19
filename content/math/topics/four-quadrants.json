@@ -1,0 +1,147 @@
+{
+  "id": "g6.four-quadrants",
+  "slug": "four-quadrants",
+  "ladder": "math",
+  "course": "g6",
+  "unit": "negatives",
+  "title": "The Four-Quadrant Coordinate Plane",
+  "short": "Plot points with negative coordinates and reflect across the axes.",
+  "trouble": "Students plot (−3, 2) at (2, −3), or think (0, 4) lies on the x-axis.",
+  "prereqs": [
+    "g6.opposites"
+  ],
+  "xp": 1,
+  "viz": [
+    "geoboard"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In Grade 5 you plotted points to the right of and above the origin (see <a href=\"/math/grade-5/coordinate-plane/\">Points on the Coordinate Plane</a>). Now each axis is a full number line, with <a href=\"/math/grade-6/opposites/\">negative numbers</a> too, so the plane has four parts."
+      },
+      {
+        "t": "key",
+        "html": "A point $(x, y)$: start at the origin, move $x$ left or right, then $y$ down or up. The four <b>quadrants</b> are numbered counterclockwise from the top right: I $(+, +)$, II $(-, +)$, III $(-, -)$, IV $(+, -)$."
+      },
+      {
+        "t": "viz",
+        "name": "g6-plane",
+        "opts": {
+          "xmin": -6,
+          "xmax": 6,
+          "ymin": -6,
+          "ymax": 6,
+          "quads": true,
+          "coords": true,
+          "points": [
+            {
+              "x": 3,
+              "y": 2,
+              "label": "A",
+              "color": "red"
+            },
+            {
+              "x": -3,
+              "y": 2,
+              "label": "B",
+              "color": "blue"
+            },
+            {
+              "x": -3,
+              "y": -2,
+              "label": "C",
+              "color": "purple"
+            },
+            {
+              "x": 3,
+              "y": -2,
+              "label": "D",
+              "color": "orange"
+            }
+          ]
+        },
+        "cap": "One point in each quadrant. B is A reflected across the y-axis; D is A reflected across the x-axis."
+      },
+      {
+        "t": "why",
+        "html": "The x-axis is a number line, so negative x means left. The y-axis is a number line standing up, so negative y means down. Reflecting a point across an axis puts it the same distance from that axis on the other side, so one coordinate changes to its opposite: across the x-axis $(x, y) \\to (x, -y)$, across the y-axis $(x, y) \\to (-x, y)$."
+      },
+      {
+        "t": "viz",
+        "name": "geoboard",
+        "opts": {
+          "axes": true,
+          "xmin": -6,
+          "xmax": 6,
+          "ymin": -5,
+          "ymax": 5,
+          "points": {
+            "P": [
+              -3,
+              2
+            ]
+          },
+          "coords": true,
+          "show": {
+            "len": false,
+            "ang": false,
+            "area": false
+          }
+        },
+        "cap": "Drag P around the plane and watch its coordinates change sign from quadrant to quadrant."
+      },
+      {
+        "t": "ex",
+        "title": "Plot and name the quadrant",
+        "q": "Plot $(-3, 2)$. Which quadrant is it in?",
+        "steps": [
+          "Start at the origin. $x = -3$: move 3 left.",
+          "$y = 2$: move 2 up.",
+          "Left and up is Quadrant II."
+        ],
+        "a": "Quadrant II"
+      },
+      {
+        "t": "ex",
+        "title": "Reflect",
+        "q": "Reflect $(4, -1)$ across the y-axis.",
+        "steps": [
+          "Across the y-axis the point moves left or right, so x changes sign.",
+          "$4$ becomes $-4$; $y$ stays $-1$."
+        ],
+        "a": "$(-4, -1)$"
+      },
+      {
+        "t": "ex",
+        "title": "On an axis",
+        "q": "Where is $(0, 4)$?",
+        "steps": [
+          "$x = 0$: no move left or right.",
+          "$y = 4$: 4 up. The point is on the vertical axis."
+        ],
+        "a": "On the y-axis (not in any quadrant)."
+      },
+      {
+        "t": "mistake",
+        "html": "Two mix-ups are common. One is swapping the coordinates and plotting $(-3, 2)$ at $(2, -3)$: x always comes first, like \"walk before you climb\". The other is putting $(0, 4)$ on the x-axis. Quick check: a 0 in the x spot means you never moved sideways, so you are still on the y-axis."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Prealgebra 2e, section 11.1 Use the Rectangular Coordinate System"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 6.NS.C.6b: signs of coordinates and reflections"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 6.NS.C.6c: plotting points in all four quadrants"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

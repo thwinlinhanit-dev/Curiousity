@@ -1,0 +1,95 @@
+{
+  "id": "micro.consumer-producer-surplus",
+  "slug": "consumer-producer-surplus",
+  "ladder": "economics",
+  "course": "micro",
+  "unit": "surplus-policy",
+  "title": "Consumer and Producer Surplus",
+  "short": "Buyers gain the gap between what they would pay and the price; sellers gain the gap between the price and their cost.",
+  "trouble": "Students confuse consumer surplus with total spending (price times quantity), or measure the triangle out to the wrong quantity.",
+  "prereqs": [
+    "micro.market-equilibrium",
+    "g6.area-triangle"
+  ],
+  "xp": 2,
+  "viz": [
+    "ec-market"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "At the market equilibrium (<a href=\"/economics/microeconomics/market-equilibrium/\">Market Equilibrium</a>), most buyers would have paid more than the price, and most sellers would have sold for less. Those gaps are gains from trade, and on a graph they are areas, often triangles (<a href=\"/math/grade-6/area-triangle/\">Area of a Triangle</a>)."
+      },
+      {
+        "t": "key",
+        "html": "<b>Consumer surplus</b> is the total of what buyers were willing to pay minus what they paid: the area <b>below the demand curve and above the price</b>, out to the quantity traded. <b>Producer surplus</b> is the total of the price minus the least each seller would accept: the area <b>above the supply curve and below the price</b>. With straight lines at equilibrium, each is a triangle: $\\tfrac{1}{2} \\times Q^* \\times$ (the height between the price and the curve's intercept)."
+      },
+      {
+        "t": "why",
+        "html": "Line buyers up from the most eager to the least: the height of the demand curve at each quantity is what that buyer would pay for that unit. A buyer who would pay \\$9 and pays \\$6 gains \\$3. Add those gains over every unit bought and you get the area between the demand curve and the price. The supply curve works the same way, because its height at each quantity is the lowest price that would get that unit sold, the seller's marginal cost."
+      },
+      {
+        "t": "viz",
+        "name": "ec-market",
+        "opts": {
+          "demand": {
+            "a": 20,
+            "b": 2
+          },
+          "supply": {
+            "c": -4,
+            "d": 2
+          },
+          "show": [
+            "eq",
+            "cs",
+            "ps"
+          ],
+          "money": true
+        },
+        "cap": "Blue is consumer surplus, orange is producer surplus. Each is a triangle with base 8 (the quantity) and height \\$4."
+      },
+      {
+        "t": "ex",
+        "title": "Counting buyer by buyer",
+        "q": "Five buyers would pay at most \\$10, \\$8, \\$7, \\$5 and \\$3 for one ticket each. The price is \\$6. Find consumer surplus.",
+        "steps": [
+          "Only buyers whose willingness to pay is at least \\$6 buy: the \\$10, \\$8 and \\$7 buyers.",
+          "Their gains: $\\$10 - \\$6 = \\$4$, $\\$8 - \\$6 = \\$2$, $\\$7 - \\$6 = \\$1$.",
+          "Consumer surplus: $\\$4 + \\$2 + \\$1 = \\$7$."
+        ],
+        "a": "\\$7."
+      },
+      {
+        "t": "ex",
+        "title": "Triangles from equations",
+        "q": "$Q_d = 20 - 2P$ and $Q_s = -4 + 2P$, so the equilibrium is \\$6 and 8 units. Find consumer and producer surplus.",
+        "steps": [
+          "Demand meets the price axis at \\$10 (set $Q_d = 0$); supply starts at \\$2 (set $Q_s = 0$).",
+          "$CS = \\tfrac{1}{2} \\times 8 \\times (\\$10 - \\$6) = \\$16$.",
+          "$PS = \\tfrac{1}{2} \\times 8 \\times (\\$6 - \\$2) = \\$16$."
+        ],
+        "a": "$CS = \\$16$ and $PS = \\$16$."
+      },
+      {
+        "t": "mistake",
+        "html": "Confusing consumer surplus with spending. Buyers spend $\\$6 \\times 8 = \\$48$; that's a rectangle under the price, and it is a transfer to sellers, not a gain. Consumer surplus is the triangle <i>above</i> the price. Also measure the triangle out to the quantity actually traded, not to where demand meets the axis. Check: surplus areas sit between a curve and the price line, and stop at the traded quantity."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, 3.5 Demand, Supply, and Efficiency"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.01 Principles of Microeconomics (scope and sequence)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

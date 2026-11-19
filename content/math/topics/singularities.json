@@ -1,0 +1,108 @@
+{
+  "id": "cplx.singularities",
+  "slug": "singularities",
+  "ladder": "math",
+  "course": "cplx",
+  "unit": "series",
+  "title": "Zeros and Isolated Singularities",
+  "short": "Classify an isolated singularity as removable, a pole of order m or essential, from the Laurent series or from limits.",
+  "trouble": "Students call (sin z)/z a pole at 0 (it is removable) or call e^(1/z) a pole (it is essential).",
+  "prereqs": [
+    "cplx.laurent-series"
+  ],
+  "xp": 3,
+  "viz": [
+    "cplx-domaincolor"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A point where $f$ is not analytic, but analytic on a small punctured disk around it, is an <b>isolated singularity</b>. Its <a href=\"/math/complex-analysis/laurent-series/\">Laurent series</a> on that punctured disk sorts it into one of three kinds, and the kind decides how integrals around it behave."
+      },
+      {
+        "t": "key",
+        "html": "Let $f(z) = \\sum c_n(z - a)^n$ on $0 < |z - a| < r$.\n      <br>• <b>Removable:</b> no negative powers. $f$ has a finite limit at $a$ and becomes analytic once $f(a)$ is defined as that limit. Example: $\\frac{\\sin z}{z}$ at $0$.\n      <br>• <b>Pole of order $m$:</b> the negative powers stop at $(z - a)^{-m}$. Equivalently $f = \\frac{g(z)}{(z - a)^m}$ with $g$ analytic and $g(a) \\ne 0$; then $|f| \\to \\infty$. Example: $\\frac{1}{z^2(z - 1)}$ has a pole of order 2 at $0$.\n      <br>• <b>Essential:</b> infinitely many negative powers. Example: $e^{1/z}$ at $0$, which comes arbitrarily close to every complex value near $0$.\n      <br>A <b>zero of order $m$</b> means $f = (z - a)^mg(z)$ with $g(a) \\ne 0$; a zero of order $m$ on the bottom of a quotient gives a pole of order $m$."
+      },
+      {
+        "t": "why",
+        "html": "The three cases cover everything: the negative part of the Laurent series either is empty, stops, or goes on forever. If it stops at $(z - a)^{-m}$, multiplying by $(z - a)^m$ leaves an ordinary power series $g$ with $g(a) = c_{-m} \\ne 0$. For a quotient $\\frac{h}{k}$ where $h(a) \\ne 0$ and $k$ has a zero of order $m$, write $k = (z - a)^m q(z)$ with $q(a) \\ne 0$; then $\\frac{h}{k} = \\frac{h/q}{(z - a)^m}$, a pole of order $m$. If $h$ also vanishes at $a$, subtract its order from $m$."
+      },
+      {
+        "t": "viz",
+        "name": "cplx-domaincolor",
+        "opts": {
+          "f": "exp(1/z)",
+          "window": {
+            "x": [
+              -1,
+              1
+            ],
+            "y": [
+              -1,
+              1
+            ]
+          },
+          "probe": [
+            0.3,
+            0.2
+          ]
+        },
+        "cap": "$e^{1/z}$ near $0$: every color appears in every neighborhood of $0$, in endlessly shrinking loops. A pole would show the colors going around a fixed number of times; this is an essential singularity."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Order of a pole",
+        "q": "Classify the singularity of $\\dfrac{z + 2}{(z - 1)^3(z + 4)}$ at $z = 1$.",
+        "steps": [
+          "Write it as $\\frac{g(z)}{(z - 1)^3}$ with $g(z) = \\frac{z + 2}{z + 4}$.",
+          "$g$ is analytic near $1$ and $g(1) = \\frac{3}{5} \\ne 0$.",
+          "A pole of order $3$."
+        ],
+        "a": "pole of order 3"
+      },
+      {
+        "t": "ex",
+        "title": "Cancelling zeros",
+        "q": "Classify the singularity at $0$ of $\\dfrac{1 - \\cos z}{z^4}$.",
+        "steps": [
+          "$1 - \\cos z = \\frac{z^2}{2} - \\frac{z^4}{24} + \\cdots$, a zero of order $2$.",
+          "So $\\frac{1 - \\cos z}{z^4} = \\frac{1}{2z^2} - \\frac{1}{24} + \\cdots$.",
+          "A pole of order $4 - 2 = 2$."
+        ],
+        "a": "pole of order 2"
+      },
+      {
+        "t": "ex",
+        "title": "Removable",
+        "q": "Classify the singularity of $\\dfrac{\\sin z}{z}$ at $0$.",
+        "steps": [
+          "$\\frac{\\sin z}{z} = 1 - \\frac{z^2}{6} + \\frac{z^4}{120} - \\cdots$: no negative powers.",
+          "Removable, with limit $1$; defining the value at $0$ to be $1$ makes the function entire."
+        ],
+        "a": "removable"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Misreading the kind.</b> $\\frac{\\sin z}{z}$ looks like it has a pole at $0$ because of the $z$ in the denominator, but the top vanishes there too: it is removable. And $e^{1/z}$ is not a pole: along the positive real axis it blows up, but along the negative real axis it tends to $0$, so it is not true that $|f| \\to \\infty$. Check with the Laurent series: count the negative powers."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Beck, Marchesi, Pixton and Sabalka, A First Course in Complex Analysis, chapter 9 (Isolated Singularities and the Residue Theorem)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.04, Complex Variables with Applications (Spring 2018), course notes: Taylor and Laurent series"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

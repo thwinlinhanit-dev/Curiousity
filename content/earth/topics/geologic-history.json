@@ -1,0 +1,146 @@
+{
+  "id": "geology.geologic-history",
+  "slug": "geologic-history",
+  "ladder": "earth",
+  "course": "geology",
+  "unit": "geologic-time",
+  "title": "Reconstructing a Region's History",
+  "short": "Put a cross-section's events in order: deposition, folding, faulting, intrusion, erosion and more deposition.",
+  "trouble": "Students list events in the order of the layers from bottom to top and forget the tilting, faulting and erosion that happened between them.",
+  "prereqs": [
+    "geology.unconformities",
+    "geology.intrusions",
+    "geology.faults",
+    "geology.folds"
+  ],
+  "xp": 3,
+  "viz": [
+    "es-strata"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Now put the principles together. A cross-section is a puzzle with every piece showing: layers, <a href=\"/earth-and-space/geology/folds/\">folds</a>, <a href=\"/earth-and-space/geology/faults/\">faults</a>, <a href=\"/earth-and-space/geology/intrusions/\">intrusions</a> and <a href=\"/earth-and-space/geology/unconformities/\">unconformities</a>. Your job is to list the events in the order they happened."
+      },
+      {
+        "t": "list",
+        "items": [
+          "Start at the bottom: the oldest layers came first (superposition).",
+          "If those layers are tilted or folded, the deformation came after them (original horizontality).",
+          "An erosion surface that cuts across them came after the deformation; the layers resting on it came after the erosion.",
+          "Anything that cuts across rock comes after what it cuts: a dike after the layers it crosses, a fault after every layer it offsets. If a dike stops at an unconformity, it was cut off by the erosion, so it came before it."
+        ]
+      },
+      {
+        "t": "why",
+        "html": "Every rule is a \"this had to exist before that\" statement, and together they put the events in a chain. Order matters for more than tidiness: a fault that cuts every layer could still move; one buried under an unconformity has been quiet for as long as the rocks above it. Geologists reconstruct histories like this to find water, oil and ores, and to judge hazards."
+      },
+      {
+        "t": "key",
+        "html": "Work from the bottom up, then insert deformation, erosion and cutting features in their turn: a feature is younger than everything it cuts or rests on, and older than everything that cuts it or covers it."
+      },
+      {
+        "t": "viz",
+        "name": "es-strata",
+        "opts": {
+          "events": [
+            {
+              "t": "deposit",
+              "rock": "sandstone"
+            },
+            {
+              "t": "deposit",
+              "rock": "shale",
+              "fossil": "trilobite"
+            },
+            {
+              "t": "deposit",
+              "rock": "limestone",
+              "fossil": "brachiopod"
+            },
+            {
+              "t": "deposit",
+              "rock": "siltstone"
+            },
+            {
+              "t": "tilt",
+              "deg": 18
+            },
+            {
+              "t": "intrude",
+              "kind": "dike",
+              "x": 0.5,
+              "w": 0.08
+            },
+            {
+              "t": "erode",
+              "depth": 0.06
+            },
+            {
+              "t": "deposit",
+              "rock": "conglomerate"
+            },
+            {
+              "t": "deposit",
+              "rock": "sandstone"
+            },
+            {
+              "t": "fault",
+              "x": 1.3,
+              "dip": 60,
+              "dipDir": "left",
+              "kind": "normal",
+              "slip": 0.06
+            }
+          ],
+          "replay": true
+        },
+        "cap": "Replay this history: four layers, tilting, a dike, erosion, two new layers, then a fault. Turn on letters and order them yourself before stepping through."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Order the events",
+        "q": "From the bottom: sandstone, shale, limestone, siltstone, all tilted. A dike cuts them and stops at an erosion surface. Conglomerate and sandstone lie flat on the surface. A fault offsets everything. Order the events.",
+        "steps": [
+          "Sandstone, shale, limestone, siltstone were deposited, oldest at the bottom.",
+          "They were tilted; the dike cut them; the erosion surface truncated both.",
+          "Conglomerate, then sandstone, were deposited on the erosion surface.",
+          "The fault offsets every layer, so it came last."
+        ],
+        "a": "Four layers, tilting, dike, erosion, two layers, fault."
+      },
+      {
+        "t": "ex",
+        "title": "Dike or erosion first?",
+        "q": "A dike cuts tilted layers but ends at an unconformity, where flat layers cover it. Which came first, the dike or the erosion?",
+        "steps": [
+          "The dike's top is cut off at the erosion surface, so it was already there when erosion wore the rock down.",
+          "So the dike came first, then the erosion, then the flat layers."
+        ],
+        "a": "The dike."
+      },
+      {
+        "t": "mistake",
+        "html": "It is tempting to list the layers from bottom to top and stop, forgetting the tilting, folding, faulting and erosion between them. Those are events too, often the most important ones. Check your list: does it explain why the lower layers are tilted and the upper ones are not? If not, an event is missing."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "USGS, Geologic Time (general-interest publication)"
+      },
+      {
+        "name": "MIT OpenCourseWare, 12.001 Introduction to Geology"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

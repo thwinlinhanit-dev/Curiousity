@@ -1,0 +1,133 @@
+{
+  "id": "de.linear-first-order",
+  "slug": "linear-first-order",
+  "ladder": "math",
+  "course": "de",
+  "unit": "first-order",
+  "title": "Linear Equations and Integrating Factors",
+  "short": "Multiply by e^(∫p dt) so the left side becomes a product's derivative.",
+  "trouble": "Students use the integrating factor before putting the equation in standard form, or multiply only the left side.",
+  "prereqs": [
+    "de.classify-des",
+    "calc2.separable-equations"
+  ],
+  "xp": 2,
+  "viz": [
+    "slopefield"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/math/calculus-2/separable-equations/\">Separable equations</a> can be solved by moving all the $y$'s to one side. An equation like $y' + 2y = 4$ also separates, but $y' + 2y = e^{t}$ does not. Linear first-order equations need one new idea: multiply by a well-chosen function so that the left side becomes the derivative of a product."
+      },
+      {
+        "t": "key",
+        "html": "Write the equation in <b>standard form</b> $y' + p(t)y = g(t)$. Multiply both sides by the <b>integrating factor</b> $\\mu(t) = e^{\\int p(t)\\,dt}$. The left side becomes $(\\mu y)'$, so $$\\mu y = \\int \\mu g\\,dt + C,$$ $$y = \\frac{1}{\\mu}\\left(\\int \\mu g\\,dt + C\\right).$$"
+      },
+      {
+        "t": "why",
+        "html": "We want $\\mu y' + \\mu p y$ to equal $(\\mu y)' = \\mu y' + \\mu' y$. Comparing the two, we need $\\mu' = p\\mu$, a separable equation whose solution is $\\mu = e^{\\int p\\,dt}$. Any antiderivative of $p$ works, because a different constant only multiplies $\\mu$ by a constant, which cancels at the end."
+      },
+      {
+        "t": "list",
+        "items": [
+          "Divide by the coefficient of $y'$ to reach standard form, and read off $p(t)$.",
+          "Compute $\\mu = e^{\\int p\\,dt}$ (no constant needed).",
+          "Multiply <b>both</b> sides by $\\mu$ and write the left side as $(\\mu y)'$.",
+          "Integrate both sides (with $+C$), divide by $\\mu$, then use the initial condition."
+        ]
+      },
+      {
+        "t": "ex",
+        "title": "Constant coefficients",
+        "q": "Solve $y' + 2y = 4$, $y(0) = 5$.",
+        "steps": [
+          "$p = 2$, so $\\mu = e^{2t}$.",
+          "Multiply: $e^{2t}y' + 2e^{2t}y = (e^{2t}y)'$ $= 4e^{2t}$.",
+          "Integrate: $e^{2t}y = 2e^{2t} + C$, so $y = 2 + Ce^{-2t}$.",
+          "$y(0) = 2 + C = 5$ gives $C = 3$."
+        ],
+        "a": "$y = 2 + 3e^{-2t}$. The 2 is the equilibrium; the $3e^{-2t}$ part dies out."
+      },
+      {
+        "t": "ex",
+        "title": "Not yet in standard form",
+        "q": "Solve $ty' + 2y = 6t$, $y(1) = 4$, for $t > 0$.",
+        "steps": [
+          "Divide by $t$: $y' + \\frac{2}{t}y = 6$, so $p = \\frac{2}{t}$.",
+          "$\\mu = e^{2\\ln t} = t^{2}$.",
+          "Multiply: $(t^{2}y)' = 6t^{2}$, so $t^{2}y = 2t^{3} + C$ and $y = 2t + \\frac{C}{t^{2}}$.",
+          "$y(1) = 2 + C = 4$ gives $C = 2$."
+        ],
+        "a": "$y = 2t + \\frac{2}{t^{2}}$"
+      },
+      {
+        "t": "ex",
+        "title": "When the forcing matches the decay",
+        "q": "Solve $y' - y = e^{t}$, $y(0) = -1$.",
+        "steps": [
+          "$p = -1$, so $\\mu = e^{-t}$.",
+          "Multiply: $(e^{-t}y)' = e^{-t}e^{t} = 1$.",
+          "Integrate: $e^{-t}y = t + C$, so $y = (t + C)e^{t}$.",
+          "$y(0) = C = -1$."
+        ],
+        "a": "$y = (t - 1)e^{t}$. The integral produced a factor $t$, a first sign of resonance."
+      },
+      {
+        "t": "mistake",
+        "html": "Two slips are common. (1) Computing $\\mu$ from the coefficient of $y$ before dividing by the coefficient of $y'$: for $ty' + 2y = 6t$, using $p = 2$ instead of $\\frac{2}{t}$. (2) Multiplying only the left side by $\\mu$. Check your $\\mu$: after multiplying, the left side must be exactly $(\\mu y)'$; expand it and compare."
+      },
+      {
+        "t": "viz",
+        "name": "slopefield",
+        "opts": {
+          "f": "4 - 2*y",
+          "point": [
+            0,
+            5
+          ],
+          "curves": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              -2
+            ]
+          ],
+          "xmin": -1,
+          "xmax": 3,
+          "ymin": -3,
+          "ymax": 6
+        },
+        "cap": "Solutions of $y' = 4 - 2y$. Every curve approaches the equilibrium $y = 2$; the general solution $2 + Ce^{-2t}$ shows why. The blue curve starts at $(0, 5)$."
+      },
+      {
+        "t": "note",
+        "html": "The general solution of a linear equation always has the shape <i>particular solution + $C$ times $e^{-\\int p\\,dt}$</i>. The second part solves $y' + py = 0$. This split returns, in a bigger form, for second-order equations."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 2, 4.5 First-order Linear Equations"
+      },
+      {
+        "name": "Paul's Online Math Notes, Differential Equations: Linear Differential Equations"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.03SC Differential Equations (Fall 2011), Unit I: First Order Differential Equations"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

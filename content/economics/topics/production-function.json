@@ -1,0 +1,141 @@
+{
+  "id": "micro.production-function",
+  "slug": "production-function",
+  "ladder": "economics",
+  "course": "micro",
+  "unit": "costs",
+  "title": "Short-Run Production",
+  "short": "Adding workers to a fixed plant eventually adds less output each time: diminishing marginal returns.",
+  "trouble": "Students confuse diminishing marginal returns (marginal product falling) with negative returns (total product falling), or with diseconomies of scale.",
+  "prereqs": [
+    "micro.marginal-analysis"
+  ],
+  "xp": 2,
+  "viz": [
+    "ec-marginal"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Before costs, there is production: how much output a firm gets from its inputs. The marginal idea from <a href=\"/economics/microeconomics/marginal-analysis/\">Marginal Benefit, Marginal Cost and Sunk Costs</a> applies here too, one worker at a time."
+      },
+      {
+        "t": "key",
+        "html": "In the <b>short run</b> at least one input, such as the size of the plant, is fixed. <b>Total product</b> (TP) is the output. <b>Marginal product</b> of labor is the extra output from one more worker, $MP = \\Delta TP / \\Delta L$. <b>Average product</b> is $AP = TP / L$. The <b>law of diminishing marginal returns</b>: as more workers are added to a fixed plant, eventually each adds less than the one before."
+      },
+      {
+        "t": "why",
+        "html": "With one oven and one cook, a second cook helps a lot: one rolls dough while the other bakes. A third still helps. But the oven doesn't grow. By the sixth cook, people are waiting for oven space, so each new cook adds less. Pile in enough and they get in each other's way; marginal product can even turn negative. The cause is the fixed input: each new worker has less of it to work with."
+      },
+      {
+        "t": "viz",
+        "name": "ec-marginal",
+        "opts": {
+          "mode": "product",
+          "xLabel": "Workers"
+        },
+        "cap": "Marginal product (bars) rises for the first two workers, then falls: diminishing marginal returns begin with the third worker. Total product keeps rising until marginal product turns negative."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Workers",
+          "Total product",
+          "Marginal product",
+          "Average product"
+        ],
+        "rows": [
+          [
+            "0",
+            "0",
+            "",
+            ""
+          ],
+          [
+            "1",
+            "10",
+            "10",
+            "10"
+          ],
+          [
+            "2",
+            "24",
+            "14",
+            "12"
+          ],
+          [
+            "3",
+            "36",
+            "12",
+            "12"
+          ],
+          [
+            "4",
+            "44",
+            "8",
+            "11"
+          ],
+          [
+            "5",
+            "48",
+            "4",
+            "9.6"
+          ],
+          [
+            "6",
+            "48",
+            "0",
+            "8"
+          ],
+          [
+            "7",
+            "44",
+            "−4",
+            "6.3"
+          ]
+        ],
+        "cap": "The production table behind the picture."
+      },
+      {
+        "t": "ex",
+        "title": "Reading the table",
+        "q": "Using the table, find the marginal product of the third worker and the average product of four workers. Where do diminishing marginal returns begin?",
+        "steps": [
+          "$MP$ of worker 3: $36 - 24 = 12$ units.",
+          "$AP$ of 4 workers: $44 \\div 4 = 11$ units per worker.",
+          "MP goes 10, 14, 12, 8, …: it is highest for worker 2 and falls from worker 3 on. Diminishing marginal returns begin with the third worker."
+        ],
+        "a": "12 units; 11 units per worker; from the third worker."
+      },
+      {
+        "t": "ex",
+        "title": "Diminishing is not negative",
+        "q": "Is the firm better off hiring the fifth worker? The sixth? The seventh?",
+        "steps": [
+          "Worker 5 adds 4 units, worker 6 adds 0, worker 7 adds −4.",
+          "Diminishing returns started long before worker 5, yet worker 5 still adds output. Only worker 7 lowers it.",
+          "Whether hiring pays depends on wages and prices too, which comes later (<a href=\"/economics/microeconomics/marginal-revenue-product/\">Marginal Revenue Product and Hiring</a>)."
+        ],
+        "a": "Worker 5 adds output; worker 6 adds nothing; worker 7 reduces it."
+      },
+      {
+        "t": "mistake",
+        "html": "Confusing diminishing marginal returns (marginal product falling) with negative returns (total product falling), or with diseconomies of scale, a long-run idea about the size of the whole firm. Check: diminishing returns means the MP numbers shrink while staying positive; total product still rises."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, 7.2 Production in the Short Run"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.01 Principles of Microeconomics (scope and sequence)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

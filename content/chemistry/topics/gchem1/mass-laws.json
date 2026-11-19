@@ -1,0 +1,122 @@
+{
+  "id": "gchem1.mass-laws",
+  "slug": "mass-laws",
+  "ladder": "chemistry",
+  "course": "gchem1",
+  "unit": "composition",
+  "title": "Definite and Multiple Proportions",
+  "short": "A compound has a fixed mass ratio of elements; when two elements make several compounds, their mass ratios compare as small whole numbers.",
+  "trouble": "Students compare the total masses of oxygen in two compounds instead of the oxygen that combines with a fixed mass of the other element.",
+  "prereqs": [
+    "chem.conservation-of-mass",
+    "chem.atomic-models",
+    "g6.equivalent-ratios"
+  ],
+  "xp": 2,
+  "viz": [
+    "ratiotable"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Long before anyone could see an atom, chemists weighed things. In <a href=\"/chemistry/chemistry/conservation-of-mass/\">Atoms Are Conserved</a> you met the first law that came out of all that weighing: mass is neither made nor lost in a reaction. Two more mass laws, found around 1800, are the evidence that convinced John Dalton that matter comes in atoms (the story in <a href=\"/chemistry/chemistry/atomic-models/\">How We Learned What Atoms Are</a>). Both are about <a href=\"/math/grade-6/equivalent-ratios/\">ratios</a> of masses."
+      },
+      {
+        "t": "key",
+        "html": "<b>Definite proportions:</b> every sample of a pure compound has the same elements in the same ratio by mass, wherever it came from. <b>Multiple proportions:</b> when two elements form more than one compound, the masses of one element that combine with a <i>fixed</i> mass of the other are in a ratio of small whole numbers."
+      },
+      {
+        "t": "why",
+        "html": "Suppose a compound is built from identical units, each holding a fixed number of atoms, and each kind of atom has its own mass. Then a sample is just many copies of one unit, and the mass ratio of the elements is the mass ratio inside one unit, the same for a gram or a ton. Now take two compounds of the same pair, such as $\\mathrm{CO}$ and $\\mathrm{CO_2}$. Fix the amount of carbon, which fixes the number of carbon atoms. One compound has one oxygen atom per carbon and the other has two, so the oxygen masses compare as $1 : 2$. Whole numbers of atoms give whole-number ratios of mass. A continuous \"stuff\" with no atoms would have no reason to do that."
+      },
+      {
+        "t": "viz",
+        "name": "ratiotable",
+        "opts": {
+          "a": 3,
+          "b": 4,
+          "names": [
+            "carbon",
+            "oxygen"
+          ],
+          "units": [
+            "g",
+            "g"
+          ],
+          "max": 6,
+          "pins": [
+            1,
+            2
+          ],
+          "task": {
+            "a": 12
+          }
+        },
+        "cap": "Carbon monoxide always has 3 g of carbon for every 4 g of oxygen (12.01 : 16.00 is very nearly 3 : 4). Scale both together and the ratio stays the same. In carbon dioxide the same 3 g of carbon holds 8 g of oxygen: twice as much."
+      },
+      {
+        "t": "h",
+        "text": "Definite proportions"
+      },
+      {
+        "t": "ex",
+        "title": "Same compound or not?",
+        "q": "Sample A of a compound holds $2.40\\ \\text{g}$ of carbon and $3.20\\ \\text{g}$ of oxygen. Sample B, from another lab, holds $0.90\\ \\text{g}$ of carbon and $1.20\\ \\text{g}$ of oxygen. Could they be the same compound?",
+        "steps": [
+          "Compare oxygen per gram of carbon. A: $\\dfrac{3.20\\ \\text{g O}}{2.40\\ \\text{g C}} = 1.33\\ \\text{g O per g C}$.",
+          "B: $\\dfrac{1.20\\ \\text{g O}}{0.90\\ \\text{g C}} = 1.33\\ \\text{g O per g C}$.",
+          "The ratios match, so they can be the same compound (both are carbon monoxide). Different ratios would prove two different compounds."
+        ],
+        "a": "Yes: both have $1.33\\ \\text{g}$ of oxygen per gram of carbon."
+      },
+      {
+        "t": "ex",
+        "title": "Scaling a sample",
+        "q": "A $12.0\\ \\text{g}$ sample of a pure compound contains $4.80\\ \\text{g}$ of sulfur. How much sulfur is in $30.0\\ \\text{g}$ of the same compound?",
+        "steps": [
+          "The mass fraction of sulfur is fixed: $\\dfrac{4.80\\ \\text{g}}{12.0\\ \\text{g}} = 0.400$.",
+          "$30.0\\ \\text{g} \\times 0.400 = 12.0\\ \\text{g}$ of sulfur."
+        ],
+        "a": "$12.0\\ \\text{g}$ of sulfur."
+      },
+      {
+        "t": "h",
+        "text": "Multiple proportions"
+      },
+      {
+        "t": "ex",
+        "title": "Two oxides of nitrogen",
+        "q": "Compound A: $1.75\\ \\text{g}$ of nitrogen combined with $1.00\\ \\text{g}$ of oxygen. Compound B: $2.80\\ \\text{g}$ of nitrogen combined with $6.40\\ \\text{g}$ of oxygen. Show that they obey the law of multiple proportions.",
+        "steps": [
+          "The samples hold different amounts of nitrogen, so first find the oxygen that goes with the same mass of nitrogen, 1 g.",
+          "A: $\\dfrac{1.00}{1.75} = 0.571\\ \\text{g O per g N}$. B: $\\dfrac{6.40}{2.80} = 2.29\\ \\text{g O per g N}$.",
+          "Ratio: $\\dfrac{2.29}{0.571} = 4.00$, a small whole number. Compound B has four times as many oxygen atoms per nitrogen atom: A is $\\mathrm{N_2O}$ (one O for two N) and B is $\\mathrm{NO_2}$ (four O for two N)."
+        ],
+        "a": "For a fixed mass of nitrogen, the oxygen masses are in the ratio $4 : 1$."
+      },
+      {
+        "t": "mistake",
+        "html": "Comparing the oxygen masses as given: $6.40 / 1.00 = 6.4$, which is not a whole number, so the law seems to fail. It only seems so, because the two samples held different amounts of nitrogen. Always divide each by the mass of the other element first (or scale both samples to the same mass of it). Check: the ratio you get should be a small whole number or a simple fraction such as $3/2$."
+      },
+      {
+        "t": "note",
+        "html": "A ratio such as $1.5$ is still \"small whole numbers\": it is $3 : 2$. For iron, $\\mathrm{FeO}$ has 1 oxygen per iron and $\\mathrm{Fe_2O_3}$ has $1.5$, so for the same mass of iron the oxygen masses are $2 : 3$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 2.1 Early Ideas in Atomic Theory"
+      },
+      {
+        "name": "College Board, AP Chemistry Course and Exam Description (effective fall 2024), Unit 1: Atomic Structure and Properties"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,102 @@
+[
+  {
+    "key": "title",
+    "source": "Electromagnetic Waves from Maxwell's Equations"
+  },
+  {
+    "key": "short",
+    "source": "In empty space the fields travel as a wave at c = 1/√(μ₀ε₀), with E = cB."
+  },
+  {
+    "key": "trouble",
+    "source": "Students think the electric and magnetic fields of light peak at different times."
+  },
+  {
+    "key": "block.0.html",
+    "source": "<a href=\"/physics/electricity-and-magnetism/maxwells-equations/\">Maxwell's equations</a> have a remarkable consequence. In empty space, with no charges and no currents, a changing $\\vec{E}$ makes $\\vec{B}$ and a changing $\\vec{B}$ makes $\\vec{E}$, so a disturbance can carry itself along. Maxwell computed its speed from two numbers measured with charges and magnets on a lab bench, and found the speed of light. You met <a href=\"/physics/physics-2/em-waves/\">electromagnetic waves</a> in Physics 2; here is where they come from."
+  },
+  {
+    "key": "block.1.html",
+    "source": "Take a wave moving along $x$, with $\\vec{E}$ along $y$ and $\\vec{B}$ along $z$. Apply Faraday's law to a thin rectangle in the $xy$-plane and the Ampère–Maxwell law to one in the $xz$-plane. In the limit of tiny rectangles they become, with <a href=\"/math/calculus-3/partial-derivatives/\">partial derivatives</a>,\n        $$\\frac{\\partial E}{\\partial x} = -\\frac{\\partial B}{\\partial t}, \\qquad -\\frac{\\partial B}{\\partial x} = \\mu_0\\varepsilon_0\\frac{\\partial E}{\\partial t}.$$\n        Differentiate the first by $x$ and the second by $t$ and combine: $\\dfrac{\\partial^2E}{\\partial x^2} = \\mu_0\\varepsilon_0\\dfrac{\\partial^2E}{\\partial t^2}$, the wave equation with speed $1/\\sqrt{\\mu_0\\varepsilon_0}$. A wave $E = E_0\\sin(kx - \\omega t)$ in the first equation forces $B = (E_0/c)\\sin(kx - \\omega t)$: in step with $E$, and smaller by $c$."
+  },
+  {
+    "key": "block.2.html",
+    "source": "In empty space electromagnetic waves travel at\n        $$\\role[speed of light]{velocity}{c} = \\frac{1}{\\sqrt{\\role[permeability of free space]{constant}{\\mu_0}\\role[permittivity of free space]{constant}{\\varepsilon_0}}} = 3.00 \\times 10^{8}\\ \\text{m/s},$$\n        with $\\vec{E}$ and $\\vec{B}$ perpendicular to each other and to the direction of travel, <b>in phase</b>, and $E = cB$ at every point. The wave moves in the direction of $\\vec{E}\\times\\vec{B}$."
+  },
+  {
+    "key": "block.3.cap",
+    "source": "An electromagnetic wave: the electric and magnetic fields rise and fall together, at right angles, as the pattern moves along."
+  },
+  {
+    "key": "block.4.cap",
+    "source": "All of these, radio to gamma rays, are the same kind of wave, moving at the same speed $c$ in empty space and differing only in wavelength."
+  },
+  {
+    "key": "block.5.text",
+    "source": "Worked examples"
+  },
+  {
+    "key": "block.6.q",
+    "source": "Compute $1/\\sqrt{\\mu_0\\varepsilon_0}$ with $\\mu_0 = 4\\pi \\times 10^{-7}\\ \\text{T·m/A}$ and $\\varepsilon_0 = 8.854 \\times 10^{-12}\\ \\text{F/m}$."
+  },
+  {
+    "key": "block.6.title",
+    "source": "The speed of light from lab constants"
+  },
+  {
+    "key": "block.6.a",
+    "source": "$c \\approx 3.00 \\times 10^{8}\\ \\text{m/s}$"
+  },
+  {
+    "key": "block.6.step.0",
+    "source": "$\\mu_0\\varepsilon_0 = (4\\pi \\times 10^{-7})(8.854 \\times 10^{-12}) = 1.11 \\times 10^{-17}\\ \\text{s²/m²}$."
+  },
+  {
+    "key": "block.6.step.1",
+    "source": "$c = 1/\\sqrt{1.113 \\times 10^{-17}} = 2.998 \\times 10^{8}\\ \\text{m/s}$: the measured speed of light."
+  },
+  {
+    "key": "block.7.q",
+    "source": "A light wave has an electric field amplitude of $30\\ \\text{V/m}$. Find its magnetic field amplitude."
+  },
+  {
+    "key": "block.7.title",
+    "source": "The magnetic field of a wave"
+  },
+  {
+    "key": "block.7.a",
+    "source": "$B_0 = 100\\ \\text{nT}$"
+  },
+  {
+    "key": "block.7.step.0",
+    "source": "$B_0 = E_0/c = 30/(3.00 \\times 10^{8}) = 1.0 \\times 10^{-7}\\ \\text{T} = 100\\ \\text{nT}$."
+  },
+  {
+    "key": "block.7.step.1",
+    "source": "Small in tesla, but it carries as much energy as the electric field, as you will see next."
+  },
+  {
+    "key": "block.8.q",
+    "source": "A wave travels along $+x$. At some instant $\\vec{E}$ points along $+y$. Which way does $\\vec{B}$ point?"
+  },
+  {
+    "key": "block.8.title",
+    "source": "Finding directions"
+  },
+  {
+    "key": "block.8.a",
+    "source": "$+z$"
+  },
+  {
+    "key": "block.8.step.0",
+    "source": "$\\vec{E}\\times\\vec{B}$ must point along $+x$. Try $\\vec{B}$ along $+z$: $\\hat{\\jmath}\\times\\hat{k} = \\hat{\\imath}$. That works."
+  },
+  {
+    "key": "block.8.step.1",
+    "source": "So $\\vec{B}$ points along $+z$; half a cycle later both fields reverse together."
+  },
+  {
+    "key": "block.9.html",
+    "source": "<b>\"The electric and magnetic fields of light peak at different times, trading energy like an LC circuit.\"</b> In a traveling wave they rise and fall together: $E = cB$ at every instant, as the step above showed. Each field is made by the other's change in <i>space and time</i> together, not by passing energy back and forth. Check: at a crest of $\\vec{E}$, $\\vec{B}$ is at a crest too."
+  }
+]

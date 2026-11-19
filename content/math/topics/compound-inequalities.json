@@ -1,0 +1,135 @@
+{
+  "id": "alg1.compound-inequalities",
+  "slug": "compound-inequalities",
+  "ladder": "math",
+  "course": "alg1",
+  "unit": "inequalities",
+  "title": "Compound Inequalities",
+  "short": "Solve \"and\" and \"or\" inequalities and graph them.",
+  "trouble": "Students write an \"or\" solution like x < −2 or x > 5 as 5 < x < −2.",
+  "prereqs": [
+    "alg1.multi-step-inequalities"
+  ],
+  "xp": 2,
+  "viz": [
+    "numberline"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A compound inequality joins two inequalities with <b>and</b> or <b>or</b>. You solve each piece with the <a href=\"/math/algebra-1/multi-step-inequalities/\">same moves as before</a>; the new part is how the pieces combine."
+      },
+      {
+        "t": "why",
+        "html": "“And” means both statements must be true at once, so the solutions are where the two graphs <em>overlap</em>. A number between $-2$ and $3$ is greater than $-2$ <em>and</em> less than $3$, which is why we write it $-2 < x < 3$, one piece. “Or” means at least one statement is true, so the solutions are <em>everything in either graph</em>. If the pieces point away from each other, the answer stays as two separate rays."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Words",
+          "Means",
+          "Graph",
+          "Written"
+        ],
+        "rows": [
+          [
+            "$x > -2$ and $x \\le 3$",
+            "both at once",
+            "one segment",
+            "$-2 < x \\le 3$"
+          ],
+          [
+            "$x < -2$ or $x > 5$",
+            "either one",
+            "two rays",
+            "$x < -2$ or $x > 5$"
+          ]
+        ],
+        "cap": "The two kinds of compound inequality."
+      },
+      {
+        "t": "viz",
+        "name": "alg1-ineqline",
+        "opts": {
+          "ineq": "-2 <= x < 3",
+          "build": true,
+          "min": -6,
+          "max": 6,
+          "task": "Graph $-2 \\le x < 3$: make each dot open or closed, then shade the part of the line that works."
+        },
+        "cap": "Build the graph yourself: a closed dot means the endpoint is included, an open dot means it is not."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "An “and” in three parts",
+        "q": "Solve $-3 \\le 2x + 1 < 7$.",
+        "steps": [
+          "This says $2x + 1$ is between $-3$ and $7$. Do the same thing to all three parts.",
+          "Subtract $1$: $-4 \\le 2x < 6$.",
+          "Divide by $2$: $-2 \\le x < 3$."
+        ],
+        "a": "$-2 \\le x < 3$: a segment from $-2$ (closed) to $3$ (open)."
+      },
+      {
+        "t": "ex",
+        "title": "An “or”",
+        "q": "Solve $x + 3 < 1$ or $2x - 1 > 9$.",
+        "steps": [
+          "First piece: $x < -2$.",
+          "Second piece: $2x > 10$, so $x > 5$.",
+          "Keep every number in either piece. They do not overlap, so the answer stays as two rays."
+        ],
+        "a": "$x < -2$ or $x > 5$."
+      },
+      {
+        "t": "ex",
+        "title": "Dividing by a negative",
+        "q": "Solve $-5 < 1 - 2x \\le 7$.",
+        "steps": [
+          "Subtract $1$ from all three parts: $-6 < -2x \\le 6$.",
+          "Divide all three parts by $-2$ and flip both signs: $3 > x \\ge -3$.",
+          "Rewrite from smallest to largest: $-3 \\le x < 3$."
+        ],
+        "a": "$-3 \\le x < 3$"
+      },
+      {
+        "t": "viz",
+        "name": "alg1-ineqline",
+        "opts": {
+          "ineq": "x < -2 or x > 5",
+          "check": "x + 3 < 1 or 2x - 1 > 9",
+          "probe": 1,
+          "min": -7,
+          "max": 9
+        },
+        "cap": "The “or” example: two rays. A number like $1$ makes neither piece true, so it is not a solution."
+      },
+      {
+        "t": "mistake",
+        "html": "Writing an “or” answer like $x < -2$ or $x > 5$ as $5 < x < -2$. That chain claims $5 < -2$, so no number satisfies it. A chained inequality always means “and,” with the smaller number on the left. Two rays pointing apart must be written as two pieces joined by “or.”"
+      },
+      {
+        "t": "key",
+        "html": "“And” keeps only the overlap and is written as one chain, smallest number first. “Or” keeps everything in either piece and is written as two inequalities joined by “or.”"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Intermediate Algebra 2e, section 2.6 Solve Compound Inequalities"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, A-REI.B.3"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

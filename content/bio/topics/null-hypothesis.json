@@ -1,0 +1,139 @@
+{
+  "id": "apbio.null-hypothesis",
+  "slug": "null-hypothesis",
+  "ladder": "bio",
+  "course": "apbio",
+  "unit": "practices",
+  "title": "Null and Alternative Hypotheses",
+  "short": "The null hypothesis says there is no effect or no difference; the alternative says there is. A test asks how likely data this extreme would be if the null were true.",
+  "trouble": "Students think failing to reject the null proves it true, or that a significant result proves the alternative. A test weighs evidence against the null; it never proves either.",
+  "prereqs": [
+    "hsbio.hypotheses-experiments"
+  ],
+  "xp": 2,
+  "viz": [
+    "bi-chart"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/biology/high-school-biology/hypotheses-experiments/\">Hypotheses and Controlled Experiments</a> you wrote a hypothesis as a testable prediction. Statistics adds a careful twist: we do not test our idea directly. We test the boring alternative, that nothing is going on, and ask whether the data make it hard to believe."
+      },
+      {
+        "t": "list",
+        "items": [
+          "<b>Null hypothesis ($H_0$)</b>: there is no effect or no difference. \"The fertilizer does not change plant height.\" \"The offspring fit a 3 : 1 ratio.\"",
+          "<b>Alternative hypothesis ($H_a$)</b>: there is an effect or a difference. \"The fertilizer changes plant height.\" \"The offspring do not fit 3 : 1.\""
+        ]
+      },
+      {
+        "t": "key",
+        "html": "A test asks: <b>if the null hypothesis were true, how likely would data this extreme be?</b> That chance is the <b>p-value</b>. Biologists usually reject $H_0$ when $p < 0.05$. A test weighs evidence against the null; it never proves either hypothesis."
+      },
+      {
+        "t": "why",
+        "html": "Why test the null instead of our own idea? Because the null makes an exact prediction we can calculate with: no difference, or exactly a 3 : 1 ratio. \"The fertilizer helps\" does not say how much, so it predicts no single number. Random chance always makes samples differ a little. The test measures whether the difference we saw is bigger than chance alone would usually make."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Result",
+          "What you say",
+          "What you do not say"
+        ],
+        "rows": [
+          [
+            "p < 0.05",
+            "Reject the null. The data are evidence of an effect.",
+            "The alternative is proven."
+          ],
+          [
+            "p ≥ 0.05",
+            "Fail to reject the null. The data do not show a clear effect.",
+            "The null is true. There is no effect."
+          ]
+        ],
+        "cap": "The two outcomes of a test and how to report them."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Writing the hypotheses",
+        "q": "A student thinks that brine shrimp eggs hatch better in warmer water. She hatches eggs at 20 °C and at 28 °C. Write the null and alternative hypotheses.",
+        "steps": [
+          "The null says the treatment does nothing: temperature does not change the hatching rate.",
+          "The alternative says it does: the hatching rate differs between 20 °C and 28 °C.",
+          "Her own idea (\"warmer is better\") is a kind of alternative, but the null is what gets tested."
+        ],
+        "a": "$H_0$: hatching rate is the same at 20 °C and 28 °C. $H_a$: hatching rate differs between them."
+      },
+      {
+        "t": "ex",
+        "title": "Reading a p-value",
+        "q": "The test gives p = 0.21. What should she conclude?",
+        "steps": [
+          "0.21 is larger than 0.05.",
+          "A difference this big would happen by chance about 21% of the time even if temperature had no effect.",
+          "That is too common to rule out chance."
+        ],
+        "a": "Fail to reject the null. The data do not show that temperature matters. They also do not prove it does not; a bigger experiment might show an effect."
+      },
+      {
+        "t": "viz",
+        "name": "bi-chart",
+        "opts": {
+          "kind": "bar",
+          "x": [
+            "20 °C",
+            "28 °C"
+          ],
+          "series": [
+            {
+              "name": "Eggs hatched (%), bars ±2 SE",
+              "values": [
+                62,
+                68
+              ],
+              "err": [
+                7,
+                6
+              ]
+            }
+          ],
+          "ylabel": "Hatched (%)",
+          "ymin": 0,
+          "ymax": 90
+        },
+        "cap": "Data like these give a large p-value: the means differ, but the bars overlap a lot."
+      },
+      {
+        "t": "mistake",
+        "html": "Saying \"we proved the null\" when $p \\ge 0.05$, or \"we proved our hypothesis\" when $p < 0.05$. Science reports evidence, not proof. Even a real effect can hide in a small sample, and about 1 time in 20 a true null will give $p < 0.05$ by chance alone. That is why results are repeated."
+      },
+      {
+        "t": "note",
+        "html": "The 0.05 cutoff is a convention, not a law of nature. Some fields use stricter levels. What matters on the AP exam is to state it and use it the same way every time."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "College Board, AP Biology Course and Exam Description (science practices and the AP Biology Equations and Formulas sheet)"
+      },
+      {
+        "name": "OpenStax, Biology 2e, 1.1 The Science of Biology (hypothesis testing)"
+      },
+      {
+        "name": "OpenStax, Introductory Statistics 2e, 9.1 Null and Alternative Hypotheses"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

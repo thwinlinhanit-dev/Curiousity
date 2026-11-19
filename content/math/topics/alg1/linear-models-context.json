@@ -1,0 +1,94 @@
+{
+  "id": "alg1.linear-models-context",
+  "slug": "linear-models-context",
+  "ladder": "math",
+  "course": "alg1",
+  "unit": "linear-functions",
+  "title": "Linear Models in Context",
+  "short": "Interpret the slope as a rate and the intercept as a starting value.",
+  "trouble": "Students read the y-intercept as a rate, or give the slope without its units.",
+  "prereqs": [
+    "alg1.line-through-two-points",
+    "alg1.units-quantities"
+  ],
+  "xp": 2,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Real situations that change at a constant rate are modeled by lines. You can <a href=\"/math/algebra-1/line-through-two-points/\">build the line from two data points</a>, and you know how to read <a href=\"/math/algebra-1/units-quantities/\">units</a>. The real skill now is reading what the numbers mean."
+      },
+      {
+        "t": "why",
+        "html": "In $y = mx + b$, the slope $m$ is $\\frac{\\text{change in } y}{\\text{change in } x}$, so its units are “$y$-units per $x$-unit”: dollars per hour, gallons per minute. That makes it a rate. The intercept $b$ is the value of $y$ when $x = 0$, so it is the starting amount: a fee before any work, the water already in a tank. Asking “what are the units?” almost always tells you what a number means."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "f": "40x + 60",
+          "trace": {
+            "x": 2
+          },
+          "xmin": -0.5,
+          "xmax": 8,
+          "ymin": -20,
+          "ymax": 400,
+          "xlabel": "hours",
+          "ylabel": "dollars"
+        },
+        "cap": "A plumber's charge $C = 40h + 60$. The line starts at $60$ (the visit fee) and climbs $40$ dollars for each hour. Drag the point to read off charges."
+      },
+      {
+        "t": "key",
+        "html": "Slope = rate of change, with units of output per input. Intercept = starting value, the output when the input is $0$. Use the model to predict ($x$ given) or to solve ($y$ given)."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Build and use a model",
+        "q": "A plumber charges a \\$60 visit fee plus \\$40 per hour. Write a model and find the charge for $3.5$ hours.",
+        "steps": [
+          "Starting value $60$, rate $40$ dollars per hour: $C = 40h + 60$.",
+          "$C = 40(3.5) + 60 = 140 + 60 = 200$."
+        ],
+        "a": "$C = 40h + 60$; \\$200 for $3.5$ hours."
+      },
+      {
+        "t": "ex",
+        "title": "From two data points",
+        "q": "A candle is $26$ cm tall after $2$ hours and $18$ cm tall after $6$ hours. Find and interpret the slope and intercept.",
+        "steps": [
+          "Slope: $\\frac{18 - 26}{6 - 2} = \\frac{-8}{4} = -2$ cm per hour: it burns $2$ cm each hour.",
+          "Back up $2$ hours from $(2, 26)$: $26 + 2 \\cdot 2 = 30$. The candle started $30$ cm tall.",
+          "Model: $H = -2t + 30$. It burns out when $H = 0$: $t = 15$ hours."
+        ],
+        "a": "Slope $-2$ cm per hour; intercept $30$ cm."
+      },
+      {
+        "t": "mistake",
+        "html": "Reading the $y$-intercept as a rate, or giving a slope without units. In $C = 40h + 60$, the $60$ is a one-time fee (dollars), and the $40$ is dollars <em>per hour</em>. Check by asking what happens when $x$ goes up by $1$: only the slope changes $y$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Algebra 2e, section 4.2 Modeling with Linear Functions"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, F-LE.B.5: interpret the parameters in a linear function in terms of a context"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

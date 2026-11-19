@@ -1,0 +1,86 @@
+{
+  "id": "calc1.critical-points-extrema",
+  "slug": "critical-points-extrema",
+  "ladder": "math",
+  "course": "calc1",
+  "unit": "applications",
+  "title": "Critical Points and Absolute Extrema",
+  "short": "Check critical points and endpoints on a closed interval.",
+  "trouble": "Students assume every critical point is a maximum or minimum, or forget the endpoints.",
+  "prereqs": [
+    "calc1.derivative-function",
+    "calc1.chain-rule"
+  ],
+  "xp": 2,
+  "viz": [
+    "derivgraph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Where is a quantity largest or smallest? The graph of <a href=\"/math/calculus-1/derivative-function/\">f'</a> answers this: at a smooth peak or valley the tangent line is flat. Combined with the <a href=\"/math/calculus-1/chain-rule/\">The Chain Rule</a>, we can handle almost any function."
+      },
+      {
+        "t": "key",
+        "html": "A <b>critical number</b> of $f$ is an $x = c$ in the domain where $f'(c) = 0$ or $f'(c)$ does not exist. <b>Closed interval method:</b> a continuous $f$ on $[a, b]$ has an absolute maximum and minimum (Extreme Value Theorem); they occur at critical numbers or at the endpoints. Evaluate $f$ at all of them and compare."
+      },
+      {
+        "t": "why",
+        "html": "<b>Fermat's theorem:</b> if $f$ has a local max at an interior point $c$ and $f'(c)$ exists, then $f'(c) = 0$. Reason: near a max, $f(c + h) - f(c) \\le 0$. For $h > 0$ the difference quotient is $\\le 0$; for $h < 0$ it is $\\ge 0$. Both one-sided limits equal $f'(c)$, so $f'(c) \\le 0$ and $f'(c) \\ge 0$: it must be 0. So interior extremes can only happen at critical numbers, and the only other candidates on $[a, b]$ are the endpoints."
+      },
+      {
+        "t": "viz",
+        "name": "derivgraph",
+        "opts": {
+          "f": "x^3-3x",
+          "x": -1.9,
+          "xmin": -2,
+          "xmax": 3
+        },
+        "cap": "$f(x) = x^3 - 3x$ on $[-2, 3]$: flat tangents at $x = \\pm 1$. The largest value, though, is at the endpoint $x = 3$."
+      },
+      {
+        "t": "ex",
+        "title": "Closed interval method",
+        "q": "Find the absolute max and min of $f(x) = x^3 - 3x$ on $[-2, 3]$.",
+        "steps": [
+          "$f'(x) = 3x^2 - 3 = 3(x - 1)(x + 1)$: critical numbers $\\pm 1$, both inside.",
+          "Evaluate: $f(-2) = -2$, $f(-1) = 2$, $f(1) = -2$, $f(3) = 18$.",
+          "Largest: 18. Smallest: $-2$ (at two places)."
+        ],
+        "a": "Max 18 at $x = 3$; min $-2$ at $x = -2$ and $x = 1$."
+      },
+      {
+        "t": "ex",
+        "title": "Where the derivative fails",
+        "q": "Find the critical numbers of $f(x) = x^{2/3}(x - 5)$.",
+        "steps": [
+          "$f(x) = x^{5/3} - 5x^{2/3}$, so $$f'(x) = \\frac{5}{3}x^{2/3} - \\frac{10}{3}x^{-1/3} = \\frac{5x - 10}{3x^{1/3}}$$.",
+          "$f'(x) = 0$ when $x = 2$.",
+          "$f'(0)$ does not exist (division by 0), but $f(0) = 0$ is defined."
+        ],
+        "a": "Critical numbers: $0$ (a cusp) and $2$."
+      },
+      {
+        "t": "mistake",
+        "html": "Two errors. First, assuming every critical number is a max or min: $f(x) = x^3$ has $f'(0) = 0$, yet the graph keeps rising through 0. Second, forgetting the endpoints, which is exactly where the max of the first example sits. Check: on a closed interval, list critical numbers <em>and</em> endpoints before comparing."
+      },
+      {
+        "t": "note",
+        "html": "A <b>local</b> (relative) max is higher than nearby points; an <b>absolute</b> max is the highest point on the whole interval. An endpoint can be an absolute extreme without the tangent being flat."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 1, 4.3 Maxima and Minima"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

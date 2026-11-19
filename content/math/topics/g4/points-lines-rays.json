@@ -1,0 +1,210 @@
+{
+  "id": "g4.points-lines-rays",
+  "slug": "points-lines-rays",
+  "ladder": "math",
+  "course": "g4",
+  "unit": "geometry",
+  "title": "Points, Lines, Segments and Rays",
+  "short": "Name and draw these basic figures.",
+  "trouble": "",
+  "prereqs": [
+    "g2.shapes-attributes"
+  ],
+  "xp": 1,
+  "viz": [
+    "geoboard"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In Grade 2 you described <a href=\"/math/grade-2/shapes-attributes/\">shapes by their sides and corners</a>. Geometry gives the parts of shapes exact names, starting with points and straight paths."
+      },
+      {
+        "t": "key",
+        "html": "A <b>point</b> is an exact spot, named by a letter. A <b>segment</b> $\\overline{AB}$ is the straight path between two endpoints. A <b>ray</b> $\\overrightarrow{CD}$ starts at an endpoint C and goes on forever through D. A <b>line</b> $\\overleftrightarrow{EF}$ goes on forever in both directions."
+      },
+      {
+        "t": "why",
+        "html": "The arrowheads in a drawing mean \"keeps going.\" A segment has no arrows because it stops at both ends. A ray has one arrow, so its name must say where it starts: $\\overrightarrow{CD}$ starts at C, while $\\overrightarrow{DC}$ would start at D and point the other way. A line has no start, so $\\overleftrightarrow{EF}$ and $\\overleftrightarrow{FE}$ name the same line."
+      },
+      {
+        "t": "viz",
+        "name": "g4-geo",
+        "opts": {
+          "w": 10,
+          "h": 6,
+          "grid": "none",
+          "label": "A segment, a ray and a line",
+          "items": [
+            {
+              "t": "seg",
+              "a": [
+                1,
+                5
+              ],
+              "b": [
+                4,
+                5
+              ],
+              "color": "blue"
+            },
+            {
+              "t": "pt",
+              "at": [
+                1,
+                5
+              ],
+              "name": "A",
+              "pos": "n",
+              "color": "blue"
+            },
+            {
+              "t": "pt",
+              "at": [
+                4,
+                5
+              ],
+              "name": "B",
+              "pos": "n",
+              "color": "blue"
+            },
+            {
+              "t": "text",
+              "at": [
+                5.6,
+                5
+              ],
+              "s": "segment AB: 2 endpoints",
+              "anchor": "start",
+              "size": 15
+            },
+            {
+              "t": "ray",
+              "a": [
+                1,
+                3
+              ],
+              "b": [
+                3.2,
+                3
+              ],
+              "ext": 1,
+              "color": "green"
+            },
+            {
+              "t": "pt",
+              "at": [
+                1,
+                3
+              ],
+              "name": "C",
+              "pos": "n",
+              "color": "green"
+            },
+            {
+              "t": "pt",
+              "at": [
+                3.2,
+                3
+              ],
+              "name": "D",
+              "pos": "n",
+              "color": "green"
+            },
+            {
+              "t": "text",
+              "at": [
+                5.6,
+                3
+              ],
+              "s": "ray CD: 1 endpoint",
+              "anchor": "start",
+              "size": 15
+            },
+            {
+              "t": "line",
+              "a": [
+                1.6,
+                1
+              ],
+              "b": [
+                3.2,
+                1
+              ],
+              "ext": 0.9,
+              "color": "purple",
+              "dots": true
+            },
+            {
+              "t": "pt",
+              "at": [
+                1.6,
+                1
+              ],
+              "name": "E",
+              "pos": "n",
+              "color": "purple"
+            },
+            {
+              "t": "pt",
+              "at": [
+                3.2,
+                1
+              ],
+              "name": "F",
+              "pos": "n",
+              "color": "purple"
+            },
+            {
+              "t": "text",
+              "at": [
+                5.6,
+                1
+              ],
+              "s": "line EF: no endpoints",
+              "anchor": "start",
+              "size": 15
+            }
+          ]
+        },
+        "cap": "A segment stops at both ends, a ray stops at one end, and a line never stops."
+      },
+      {
+        "t": "ex",
+        "title": "Name a ray",
+        "q": "A ray starts at point P and passes through point Q. Name it.",
+        "steps": [
+          "The endpoint comes first: P.",
+          "Then a point it passes through: Q."
+        ],
+        "a": "$\\overrightarrow{PQ}$"
+      },
+      {
+        "t": "ex",
+        "title": "Points on a line",
+        "q": "Points A, B and C lie on a line in that order. Name two different rays that start at B.",
+        "steps": [
+          "From B, one ray goes toward C and the other toward A.",
+          "Each name starts with B."
+        ],
+        "a": "$\\overrightarrow{BC}$ and $\\overrightarrow{BA}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Writing a ray's letters in the wrong order, like $\\overrightarrow{QP}$ for a ray that starts at P. The first letter is always the endpoint. Check: does the arrow in your name point the same way as the arrow in the drawing?"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 4, 4.G.A.1 (draw points, lines, line segments, rays, angles, and perpendicular and parallel lines)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

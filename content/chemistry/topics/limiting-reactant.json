@@ -1,0 +1,86 @@
+{
+  "id": "chem.limiting-reactant",
+  "slug": "limiting-reactant",
+  "ladder": "chemistry",
+  "course": "chem",
+  "unit": "stoichiometry",
+  "title": "Limiting Reactant",
+  "short": "The reactant that runs out first decides how much product can form.",
+  "trouble": "Students pick the reactant with the smaller mass, or the smaller number of moles, without comparing to the coefficient ratio.",
+  "prereqs": [
+    "chem.mass-stoichiometry"
+  ],
+  "xp": 3,
+  "viz": [
+    "ch-limiting"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "So far one reactant was given and the other was \"in plenty\". In a real mixture you have set amounts of both, and they rarely come in the exact ratio of <a href=\"/chemistry/chemistry/mass-stoichiometry/\">the equation</a>. One of them runs out first."
+      },
+      {
+        "t": "key",
+        "html": "The <b>limiting reactant</b> is the one that runs out first; it alone decides how much product forms. To find it, change each amount to moles and divide by its coefficient: the smaller result is limiting. The other reactant is <b>in excess</b>, and some of it is left over."
+      },
+      {
+        "t": "why",
+        "html": "Think of sandwiches that each need 2 slices of bread and 1 slice of cheese. With 10 slices of bread and 6 of cheese, the bread makes $10 \\div 2 = 5$ sandwiches and the cheese could make 6. You run out of bread first, even though you have more bread than cheese. Dividing each amount by what one \"unit\" of the reaction needs is the fair comparison."
+      },
+      {
+        "t": "viz",
+        "name": "ch-limiting",
+        "opts": {
+          "eq": "N2 + 3H2 -> 2NH3",
+          "amounts": {
+            "N2": 3,
+            "H2": 6
+          },
+          "unit": "particles"
+        },
+        "cap": "3 molecules of nitrogen and 6 of hydrogen. Hydrogen is limiting even though there is more of it: each nitrogen needs three hydrogens."
+      },
+      {
+        "t": "ex",
+        "title": "Counting in moles",
+        "q": "$3.0\\ \\text{mol}$ of $\\mathrm{N}_{2}$ is mixed with $6.0\\ \\text{mol}$ of $\\mathrm{H}_{2}$. $$\\mathrm{N}_{2} + 3\\mathrm{H}_{2} \\to 2\\mathrm{NH}_{3}$$ How much ammonia can form, and what is left over?",
+        "steps": [
+          "Divide by the coefficients: $\\mathrm{N}_{2}$ $3.0 \\div 1 = 3.0$; $\\mathrm{H}_{2}$ $6.0 \\div 3 = 2.0$. Hydrogen is limiting.",
+          "Ammonia: $6.0\\ \\text{mol}\\ \\mathrm{H}_{2} \\times \\tfrac{2}{3} = 4.0\\ \\text{mol}\\ \\mathrm{NH}_{3}$.",
+          "Nitrogen used: $6.0 \\times \\tfrac{1}{3} = 2.0\\ \\text{mol}$; left over: $3.0 - 2.0 = 1.0\\ \\text{mol}$."
+        ],
+        "a": "$4.0\\ \\text{mol}$ of $\\mathrm{NH}_{3}$, with $1.0\\ \\text{mol}$ of $\\mathrm{N}_{2}$ left."
+      },
+      {
+        "t": "ex",
+        "title": "Starting from grams",
+        "q": "$10.0\\ \\text{g}$ of $\\mathrm{H}_{2}$ and $64.0\\ \\text{g}$ of $\\mathrm{O}_{2}$ react. $$2\\mathrm{H}_{2} + \\mathrm{O}_{2} \\to 2\\mathrm{H}_{2}\\mathrm{O}$$ How many grams of water form? ($\\mathrm{H}_{2}$ 2.02, $\\mathrm{O}_{2}$ 32.00, $\\mathrm{H}_{2}\\mathrm{O}$ 18.02 g/mol)",
+        "steps": [
+          "Moles: $\\mathrm{H}_{2}$ $10.0 \\div 2.02 = 4.95$; $\\mathrm{O}_{2}$ $64.0 \\div 32.00 = 2.00$.",
+          "Divide by coefficients: $4.95 \\div 2 = 2.48$ and $2.00 \\div 1 = 2.00$. Oxygen is limiting, though its mass is larger.",
+          "Water: $2.00\\ \\text{mol}\\ \\mathrm{O}_{2} \\times \\tfrac{2}{1} = 4.00\\ \\text{mol}$, and $4.00 \\times 18.02 = 72.1\\ \\text{g}$.",
+          "Check: $4.00\\ \\text{mol}$ of $\\mathrm{H}_{2}$ was used, so $0.95\\ \\text{mol}$ ($1.9\\ \\text{g}$) is left; $72.1 + 1.9 = 74.0\\ \\text{g}$, the mass you started with."
+        ],
+        "a": "$72.1\\ \\text{g}$ of water."
+      },
+      {
+        "t": "mistake",
+        "html": "Picking the reactant with the smaller mass, or the smaller number of moles, without looking at the coefficients. In the second example oxygen has the larger mass and the smaller number of moles, and hydrogen has more moles but still is not limiting, because the reaction uses two of them for each $\\mathrm{O}_{2}$. Always compare moles <i>divided by coefficients</i>."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 4.4 Reaction Yields"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-PS1-7"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

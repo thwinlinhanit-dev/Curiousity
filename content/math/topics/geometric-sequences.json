@@ -1,0 +1,98 @@
+{
+  "id": "alg1.geometric-sequences",
+  "slug": "geometric-sequences",
+  "ladder": "math",
+  "course": "alg1",
+  "unit": "exponential",
+  "title": "Geometric Sequences",
+  "short": "Multiply by the same ratio each time; aₙ = a₁·rⁿ⁻¹.",
+  "trouble": "Students use n instead of n − 1 in the exponent, or add the ratio instead of multiplying.",
+  "prereqs": [
+    "alg1.linear-vs-exponential"
+  ],
+  "xp": 2,
+  "viz": [
+    "sequence"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A <b>geometric sequence</b> multiplies by the same number each time: $3, 6, 12, 24, \\ldots$ multiplies by $2$. That number is the <b>common ratio</b> $r$. It is the multiplying cousin of an <a href=\"/math/algebra-1/arithmetic-sequences/\">arithmetic sequence</a>, and, like the <a href=\"/math/algebra-1/linear-vs-exponential/\">exponential functions</a> you just compared with lines, it grows by equal ratios."
+      },
+      {
+        "t": "why",
+        "html": "To reach the $n$th term from the first, you multiply by $r$ once for each step, and there are $n - 1$ steps (from term $1$ to term $2$ is one step). So $a_n = a_1 \\cdot r^{n-1}$. This is an exponential function of the position $n$: it equals $\\frac{a_1}{r} \\cdot r^n$."
+      },
+      {
+        "t": "viz",
+        "name": "sequence",
+        "opts": {
+          "type": "geom",
+          "a1": 3,
+          "r": 2,
+          "N": 7,
+          "sliders": true
+        },
+        "cap": "The terms of $3, 6, 12, \\ldots$ Each dot is $r$ times the one before. Try a ratio between $0$ and $1$, or a negative one."
+      },
+      {
+        "t": "key",
+        "html": "$a_n = a_1 \\cdot r^{n-1}$, where $r = \\frac{a_{n+1}}{a_n}$ is the same for every pair of neighbors."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A far term",
+        "q": "Find the $8$th term of $5, 15, 45, \\ldots$",
+        "steps": [
+          "$a_1 = 5$ and $r = \\frac{15}{5} = 3$.",
+          "$a_8 = 5 \\cdot 3^{7} = 5 \\cdot 2187 = 10935$."
+        ],
+        "a": "$10935$"
+      },
+      {
+        "t": "ex",
+        "title": "Halving",
+        "q": "Write a formula for $64, 32, 16, \\ldots$ and find $a_7$.",
+        "steps": [
+          "$a_1 = 64$ and $r = \\frac{1}{2}$, so $a_n = 64\\left(\\frac{1}{2}\\right)^{n-1}$.",
+          "$a_7 = 64 \\cdot \\frac{1}{64} = 1$."
+        ],
+        "a": "$a_n = 64\\left(\\frac{1}{2}\\right)^{n-1}$; $a_7 = 1$."
+      },
+      {
+        "t": "ex",
+        "title": "Alternating signs",
+        "q": "What is the ratio of $2, -6, 18, -54, \\ldots$?",
+        "steps": [
+          "$\\frac{-6}{2} = -3$, and $\\frac{18}{-6} = -3$."
+        ],
+        "a": "$r = -3$: a negative ratio makes the signs alternate."
+      },
+      {
+        "t": "mistake",
+        "html": "Using $n$ instead of $n - 1$ in the exponent, or adding the ratio instead of multiplying. Check any formula at $n = 1$: $a_1 \\cdot r^{0} = a_1$ gives back the first term, but $a_1 \\cdot r^1$ would give the second. And $3, 6, 12$ is not “add $3$”: $12 - 6 = 6$, but $\\frac{12}{6} = \\frac{6}{3} = 2$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, College Algebra 2e, section 9.3 Geometric Sequences"
+      },
+      {
+        "name": "OpenStax, Intermediate Algebra 2e, section 12.3 Geometric Sequences and Series"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, F-BF.A.2"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

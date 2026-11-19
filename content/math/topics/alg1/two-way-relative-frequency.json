@@ -1,0 +1,111 @@
+{
+  "id": "alg1.two-way-relative-frequency",
+  "slug": "two-way-relative-frequency",
+  "ladder": "math",
+  "course": "alg1",
+  "unit": "data",
+  "title": "Two-Way Tables and Relative Frequency",
+  "short": "Use row and column percents to look for associations.",
+  "trouble": "Students divide by the grand total when a question asks for a conditional percent within one row.",
+  "prereqs": [
+    "g8.two-way-tables"
+  ],
+  "xp": 2,
+  "viz": [],
+  "figureArchetype": "LessonFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You have read <a href=\"/math/pre-algebra/two-way-tables/\">two-way tables</a> of counts. Counts can mislead when the groups have different sizes, so we turn them into <b>relative frequencies</b>, fractions or percents of a whole. The key question is always: <em>percent of what?</em>"
+      },
+      {
+        "t": "table",
+        "head": [
+          "",
+          "Soccer",
+          "Basketball",
+          "Total"
+        ],
+        "rows": [
+          [
+            "9th grade",
+            "$30$",
+            "$10$",
+            "$40$"
+          ],
+          [
+            "10th grade",
+            "$24$",
+            "$36$",
+            "$60$"
+          ],
+          [
+            "Total",
+            "$54$",
+            "$46$",
+            "$100$"
+          ]
+        ],
+        "cap": "Favorite sport of $100$ students."
+      },
+      {
+        "t": "list",
+        "items": [
+          "<b>Joint</b>: a cell over the grand total. $\\frac{30}{100} = 30\\%$ of all students are 9th graders who prefer soccer.",
+          "<b>Marginal</b>: a total over the grand total. $\\frac{40}{100} = 40\\%$ of the students are 9th graders.",
+          "<b>Conditional</b>: a cell over its row or column total. Of the 9th graders, $\\frac{30}{40} = 75\\%$ prefer soccer."
+        ]
+      },
+      {
+        "t": "why",
+        "html": "There are $30$ 9th graders and $24$ 10th graders who prefer soccer, so it may look as if both grades like soccer about equally. But the groups differ in size. Within each grade, $75\\%$ of 9th graders prefer soccer and only $\\frac{24}{60} = 40\\%$ of 10th graders do. Comparing conditional percents puts the groups on the same footing, and a big difference between them is evidence of an <b>association</b> between grade and sport."
+      },
+      {
+        "t": "key",
+        "html": "Name the whole before dividing: “of all students” uses the grand total, “of the 9th graders” uses that row's total, “of the soccer fans” uses that column's total. Compare groups with conditional percents."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A column percent",
+        "q": "Of the students who prefer basketball, what percent are 10th graders?",
+        "steps": [
+          "The whole is the basketball column: $46$ students.",
+          "$\\frac{36}{46} \\approx 0.783$."
+        ],
+        "a": "About $78\\%$."
+      },
+      {
+        "t": "ex",
+        "title": "An association",
+        "q": "Is there an association between grade and preferring soccer?",
+        "steps": [
+          "Row percents: 9th grade $\\frac{30}{40} = 75\\%$; 10th grade $\\frac{24}{60} = 40\\%$.",
+          "A $35$-point difference is large."
+        ],
+        "a": "Yes: 9th graders in this survey are much more likely to prefer soccer."
+      },
+      {
+        "t": "mistake",
+        "html": "Dividing by the grand total when the question asks about one group. “What percent of 9th graders prefer soccer?” is $\\frac{30}{40}$, not $\\frac{30}{100}$. Check by reading the question for the words after “of”: they name the whole."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Introductory Statistics, section 3.4 Contingency Tables"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, S-ID.B.5: summarize categorical data in two-way frequency tables and interpret relative frequencies"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

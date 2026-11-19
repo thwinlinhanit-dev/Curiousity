@@ -1,0 +1,131 @@
+{
+  "id": "chem.imf-properties",
+  "slug": "imf-properties",
+  "ladder": "chemistry",
+  "course": "chem",
+  "unit": "particle-forces",
+  "title": "Predicting Boiling Points",
+  "short": "Stronger forces between molecules mean a higher boiling point and a lower vapor pressure.",
+  "trouble": "Students rank boiling points by polarity alone, missing that large molecules have strong dispersion forces.",
+  "prereqs": [
+    "chem.intermolecular-forces"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-imf"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "To boil, a molecule must escape the attractions of its neighbors. So the forces from <a href=\"/chemistry/chemistry/intermolecular-forces/\">Intermolecular Forces</a> let you predict which liquids boil higher and which evaporate faster."
+      },
+      {
+        "t": "key",
+        "html": "Stronger forces between molecules mean a <b>higher boiling point</b> and a <b>lower vapor pressure</b>. To compare: if the molecules are similar in size, the one with stronger kinds of force wins (hydrogen bonding > dipole–dipole > dispersion only). If the kinds are the same, the larger molecule (more electrons) wins. A big enough nonpolar molecule can beat a small polar one."
+      },
+      {
+        "t": "why",
+        "html": "At a given temperature, molecules have a range of energies, and only those with enough energy to break free of their neighbors escape into the vapor. Strong attractions mean few escape, so the vapor pressure is low and you must heat the liquid further before its vapor pressure reaches the air pressure, which is what boiling is. Size matters because dispersion forces add up over every electron in the molecule: octane ($\\mathrm{C_8H_{18}}$, 66 electrons) is nonpolar yet boils at $126\\ ^\\circ\\text{C}$, above water."
+      },
+      {
+        "t": "viz",
+        "name": "ch-imf",
+        "opts": {
+          "subs": [
+            "C3H8",
+            "C5H12",
+            "C8H18"
+          ],
+          "mode": "compare"
+        },
+        "cap": "Three nonpolar alkanes. The bigger the molecule, the stronger the dispersion forces and the higher the boiling point."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Substance (electrons)",
+          "Strongest force",
+          "Boils at"
+        ],
+        "rows": [
+          [
+            "$\\mathrm{CH_4}$ (10)",
+            "dispersion",
+            "$-162\\ ^\\circ\\text{C}$"
+          ],
+          [
+            "$\\mathrm{NH_3}$ (10)",
+            "hydrogen bonding",
+            "$-33\\ ^\\circ\\text{C}$"
+          ],
+          [
+            "$\\mathrm{H_2O}$ (10)",
+            "hydrogen bonding",
+            "$100\\ ^\\circ\\text{C}$"
+          ],
+          [
+            "$\\mathrm{H_2S}$ (18)",
+            "dipole–dipole",
+            "$-60\\ ^\\circ\\text{C}$"
+          ],
+          [
+            "$\\mathrm{CCl_4}$ (74)",
+            "dispersion",
+            "$77\\ ^\\circ\\text{C}$"
+          ]
+        ],
+        "cap": "Normal boiling points from the NIST Chemistry WebBook."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Hydrogen bonding wins",
+        "q": "Which boils higher, $\\mathrm{H_2O}$ or $\\mathrm{H_2S}$?",
+        "steps": [
+          "Both are small, bent, polar molecules.",
+          "Water hydrogen-bonds (H on O); $\\mathrm{H_2S}$ cannot (S is not N, O or F).",
+          "Water boils higher: $100\\ ^\\circ\\text{C}$ against $-60\\ ^\\circ\\text{C}$."
+        ],
+        "a": "$\\mathrm{H_2O}$"
+      },
+      {
+        "t": "ex",
+        "title": "Size wins",
+        "q": "Which has the higher vapor pressure at room temperature, pentane ($\\mathrm{C_5H_{12}}$) or octane ($\\mathrm{C_8H_{18}}$)?",
+        "steps": [
+          "Both are nonpolar: dispersion forces only.",
+          "Pentane is smaller (42 electrons against 66), so its forces are weaker.",
+          "Weaker forces: more molecules escape, so pentane has the higher vapor pressure (and boils lower, $36\\ ^\\circ\\text{C}$ against $126\\ ^\\circ\\text{C}$)."
+        ],
+        "a": "Pentane"
+      },
+      {
+        "t": "mistake",
+        "html": "Ranking boiling points by polarity alone. Size matters too: nonpolar carbon tetrachloride ($77\\ ^\\circ\\text{C}$) boils far above polar chloromethane ($-24\\ ^\\circ\\text{C}$) because its 74 electrons give strong dispersion forces. Compare the kinds of forces first only when the molecules are similar in size."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 10.1 Intermolecular Forces"
+      },
+      {
+        "name": "OpenStax Chemistry 2e, Section 10.2 Properties of Liquids"
+      },
+      {
+        "name": "NIST Chemistry WebBook (normal boiling and melting points)"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-PS1-3"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

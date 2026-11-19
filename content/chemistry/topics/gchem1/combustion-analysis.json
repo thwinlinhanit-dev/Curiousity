@@ -1,0 +1,128 @@
+{
+  "id": "gchem1.combustion-analysis",
+  "slug": "combustion-analysis",
+  "ladder": "chemistry",
+  "course": "gchem1",
+  "unit": "composition",
+  "title": "Combustion Analysis",
+  "short": "Burn a compound, weigh the CO₂ and H₂O, and work back to its empirical formula.",
+  "trouble": "Students forget that the compound's oxygen must be found by subtracting, since the products also hold oxygen that came from the O₂.",
+  "prereqs": [
+    "chem.empirical-formula",
+    "chem.mass-stoichiometry"
+  ],
+  "xp": 3,
+  "viz": [
+    "ch-convert"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "To find a new compound's formula you need its mass percent of each element, as in <a href=\"/chemistry/chemistry/empirical-formula/\">Empirical Formulas</a>. For compounds of carbon and hydrogen (and often oxygen), the classic way to get those percents is to burn a weighed sample and weigh what comes out, a careful use of <a href=\"/chemistry/chemistry/mass-stoichiometry/\">Mass-to-Mass Stoichiometry</a>."
+      },
+      {
+        "t": "p",
+        "html": "The sample burns in a stream of pure oxygen. Every carbon atom ends up in $\\mathrm{CO_2}$ and every hydrogen atom in $\\mathrm{H_2O}$. The gases pass through two tubes: one soaks up the water and the other the carbon dioxide. Each tube is weighed before and after, and the gains are the masses of $\\mathrm{H_2O}$ and $\\mathrm{CO_2}$ formed."
+      },
+      {
+        "t": "key",
+        "html": "$$m_\\text{C} = m_{\\mathrm{CO_2}} \\times \\frac{12.01}{44.01}, \\qquad m_\\text{H} = m_{\\mathrm{H_2O}} \\times \\frac{2(1.01)}{18.02}, \\qquad m_\\text{O} = m_\\text{sample} - m_\\text{C} - m_\\text{H}.$$ Then change each mass to moles and find the smallest whole-number ratio."
+      },
+      {
+        "t": "why",
+        "html": "Atoms are conserved. All the carbon in the $\\mathrm{CO_2}$ came from the sample, since the oxygen gas has none, and the fraction of $\\mathrm{CO_2}$'s mass that is carbon is $12.01/44.01$. The same goes for hydrogen in water, with 2 H atoms per molecule. Oxygen is different: the products' oxygen came partly from the sample and partly from the $\\mathrm{O_2}$ it burned in, and we cannot tell which atoms came from where. So the sample's oxygen is whatever mass is left over."
+      },
+      {
+        "t": "viz",
+        "name": "ch-convert",
+        "opts": {
+          "mode": "chain",
+          "start": {
+            "v": 1.317,
+            "unit": "g",
+            "sub": "CO2"
+          },
+          "factors": [
+            {
+              "n": [
+                1,
+                "mol",
+                "CO2"
+              ],
+              "d": [
+                44.01,
+                "g",
+                "CO2"
+              ]
+            },
+            {
+              "n": [
+                1,
+                "mol",
+                "C"
+              ],
+              "d": [
+                1,
+                "mol",
+                "CO2"
+              ]
+            }
+          ],
+          "target": "mol C"
+        },
+        "cap": "From grams of $\\mathrm{CO_2}$ to moles of carbon: one carbon atom per $\\mathrm{CO_2}$ molecule. For hydrogen, the second factor is 2 mol H per mol $\\mathrm{H_2O}$."
+      },
+      {
+        "t": "ex",
+        "title": "A hydrocarbon",
+        "q": "Burning $0.440\\ \\text{g}$ of a hydrocarbon (only C and H) gives $1.317\\ \\text{g}$ of $\\mathrm{CO_2}$ and $0.7190\\ \\text{g}$ of $\\mathrm{H_2O}$. Find the empirical formula.",
+        "steps": [
+          "Moles of C: $\\dfrac{1.317}{44.01} = 0.02993\\ \\text{mol CO}_2$, so $0.02993\\ \\text{mol C}$ (mass $0.3594\\ \\text{g}$).",
+          "Moles of H: $\\dfrac{0.7190}{18.02} = 0.03990\\ \\text{mol H}_2\\text{O}$, times 2 is $0.07980\\ \\text{mol H}$ (mass $0.0806\\ \\text{g}$).",
+          "Check: $0.3594 + 0.0806 = 0.440\\ \\text{g}$, the whole sample, so there is no oxygen.",
+          "Ratio: $\\dfrac{0.07980}{0.02993} = 2.67$, so C : H = 1 : 2.67. Multiply by 3: 3 : 8."
+        ],
+        "a": "$\\mathrm{C_3H_8}$"
+      },
+      {
+        "t": "ex",
+        "title": "Oxygen by difference",
+        "q": "A $0.2000\\ \\text{g}$ sample of a compound of C, H and O burns to $0.3995\\ \\text{g}$ of $\\mathrm{CO_2}$ and $0.1636\\ \\text{g}$ of $\\mathrm{H_2O}$. Its molar mass is about $88\\ \\text{g/mol}$. Find the empirical and molecular formulas.",
+        "steps": [
+          "C: $0.3995 \\times \\dfrac{12.01}{44.01} = 0.1090\\ \\text{g}$, which is $0.1090/12.01 = 0.009077\\ \\text{mol}$.",
+          "H: $0.1636 \\times \\dfrac{2.02}{18.02} = 0.01834\\ \\text{g}$, which is $0.01834/1.01 = 0.01816\\ \\text{mol}$.",
+          "O: $0.2000 - 0.1090 - 0.01834 = 0.07264\\ \\text{g}$, which is $0.07264/16.00 = 0.004540\\ \\text{mol}$.",
+          "Divide by the smallest (0.004540): C 2.00, H 4.00, O 1.00. Empirical formula $\\mathrm{C_2H_4O}$, mass $44.06\\ \\text{g/mol}$.",
+          "$88/44.06 = 2$, so the molecular formula is $\\mathrm{C_4H_8O_2}$."
+        ],
+        "a": "Empirical $\\mathrm{C_2H_4O}$; molecular $\\mathrm{C_4H_8O_2}$."
+      },
+      {
+        "t": "mistake",
+        "html": "Taking the sample's oxygen from the products' oxygen. In the second example the $\\mathrm{CO_2}$ and $\\mathrm{H_2O}$ hold $0.4357\\ \\text{g}$ of oxygen in all, six times the $0.0726\\ \\text{g}$ that was really in the sample; most of it came from the $\\mathrm{O_2}$. Find oxygen only by subtraction. Check: if C + H already add up to the sample's mass, the compound has no oxygen."
+      },
+      {
+        "t": "note",
+        "html": "When a ratio comes out near 1.5, 1.33 or 1.25, multiply every number by 2, 3 or 4. Round only when a number is within about 0.1 of a whole number; 2.67 is not \"about 3\"."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 4.5 Quantitative Chemical Analysis"
+      },
+      {
+        "name": "OpenStax Chemistry 2e, 3.2 Determining Empirical and Molecular Formulas"
+      },
+      {
+        "name": "College Board, AP Chemistry Course and Exam Description (effective fall 2024), Unit 1: Atomic Structure and Properties"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

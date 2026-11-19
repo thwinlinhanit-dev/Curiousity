@@ -1,0 +1,101 @@
+{
+  "id": "astro.altitude-latitude",
+  "slug": "altitude-latitude",
+  "ladder": "physics",
+  "course": "astro",
+  "unit": "sky",
+  "title": "Altitude, Azimuth and Your Latitude",
+  "short": "The North Star's altitude equals your latitude, and stars close enough to the pole never set.",
+  "trouble": "Students think the North Star is the brightest star, or that it sits overhead everywhere.",
+  "prereqs": [
+    "astro.celestial-sphere"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-sky"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "On the <a href=\"/physics/astronomy/celestial-sphere/\">celestial sphere</a> we need a way to say where a star is in <em>your</em> sky right now. Two angles do it. <b>Altitude</b> is the angle above the horizon, from $0^\\circ$ on the horizon to $90^\\circ$ at the zenith. <b>Azimuth</b> is the compass direction, measured from north toward the east: north $0^\\circ$, east $90^\\circ$, south $180^\\circ$, west $270^\\circ$."
+      },
+      {
+        "t": "p",
+        "html": "These angles change as the sky turns and from place to place. One of them is special: the altitude of the celestial pole never changes for you, and it tells you exactly where on Earth you are."
+      },
+      {
+        "t": "why",
+        "html": "Stand at the North Pole: the celestial pole is straight overhead, altitude $90^\\circ$, and your latitude is $90^\\circ$. Stand on the equator: the pole sits on the northern horizon, altitude $0^\\circ$, latitude $0^\\circ$. In between, every degree you walk north tilts your horizon by one degree on the curved Earth, so the pole climbs one degree. The two always match: <b>the altitude of the north celestial pole equals your latitude</b>. Polaris is within $1^\\circ$ of the pole, so its altitude gives your latitude, which is how sailors once found theirs."
+      },
+      {
+        "t": "key",
+        "html": "Altitude of the celestial pole = your latitude. Stars closer to the pole than that angle never set (they are <b>circumpolar</b>); stars that close to the opposite pole never rise."
+      },
+      {
+        "t": "viz",
+        "name": "ph-sky",
+        "opts": {
+          "mode": "sphere",
+          "lat": 45,
+          "date": 172,
+          "time": 22,
+          "task": "Drag the latitude slider from $0^\\circ$ to $90^\\circ$ and watch the pole climb. The small white circles are stars near the pole: at which latitudes do they stay above the horizon all day?",
+          "lab": "/science-lab/night-sky/"
+        },
+        "cap": "The north celestial pole stands at an altitude equal to the latitude. The white circles near it are the daily paths of circumpolar stars."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Find your latitude",
+        "q": "In Denver you measure Polaris $40^\\circ$ above the northern horizon. What is your latitude?",
+        "steps": [
+          "The pole's altitude equals the latitude, and Polaris is almost at the pole.",
+          "So the latitude is about $40^\\circ$ N."
+        ],
+        "a": "$40^\\circ$ N."
+      },
+      {
+        "t": "ex",
+        "title": "Which stars never set?",
+        "q": "At latitude $40^\\circ$ N, does a star $30^\\circ$ from the north celestial pole ever set? What about one $50^\\circ$ from the pole?",
+        "steps": [
+          "The pole is $40^\\circ$ above the northern horizon, so a circle around the pole of radius up to $40^\\circ$ stays above the horizon all day.",
+          "The star $30^\\circ$ from the pole circles it at a radius of $30^\\circ$, dipping no lower than $40^\\circ - 30^\\circ = 10^\\circ$ above the horizon. It never sets.",
+          "The star $50^\\circ$ from the pole would dip to $40^\\circ - 50^\\circ = -10^\\circ$: below the horizon. It rises and sets.",
+          "Astronomers give a star's angle north of the celestial equator as its <b>declination</b> $\\delta$, so its distance from the pole is $90^\\circ - \\delta$. Circumpolar at $40^\\circ$ N means $\\delta \\ge 90^\\circ - 40^\\circ = 50^\\circ$."
+        ],
+        "a": "The first never sets (circumpolar); the second rises and sets."
+      },
+      {
+        "t": "p",
+        "html": "The same picture gives a star's highest altitude, when it crosses the meridian: $h_{\\max} = 90^\\circ - |\\text{latitude} - \\delta|$. A star whose declination equals your latitude passes straight overhead."
+      },
+      {
+        "t": "mistake",
+        "html": "Two common mix-ups. First, Polaris is not the brightest star; it is only about the 50th brightest, and Sirius outshines it many times over. It matters because of <em>where</em> it is. Second, Polaris is not overhead everywhere in the Northern Hemisphere. It is overhead only at the North Pole; from Miami (latitude $26^\\circ$) it hangs just $26^\\circ$ up, and south of the equator it is below the horizon. Check yourself: at the equator, what is Polaris's altitude? (Zero: right on the horizon.)"
+      },
+      {
+        "t": "note",
+        "html": "In the <a href=\"/science-lab/night-sky/\">Sky and Solar System</a> lab you can choose your latitude and see how the stars around the pole shift."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Astronomy 2e, section 2.1, The Sky Above"
+      },
+      {
+        "name": "OpenStax, Astronomy 2e, section 4.1, Earth and Sky"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

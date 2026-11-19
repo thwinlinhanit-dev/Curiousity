@@ -1,0 +1,84 @@
+{
+  "id": "chem.ph-poh",
+  "slug": "ph-poh",
+  "ladder": "chemistry",
+  "course": "chem",
+  "unit": "acids-bases",
+  "title": "pH, pOH and the Ions in Water",
+  "short": "In water [H₃O⁺] × [OH⁻] = 1.0 × 10⁻¹⁴ at 25 °C, so pH + pOH = 14.",
+  "trouble": "Students think a basic solution has no H₃O⁺ at all, or that pure water contains no ions.",
+  "prereqs": [
+    "chem.ph-scale",
+    "g8.exponent-product-rule"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-phscale"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The <a href=\"/chemistry/chemistry/ph-scale/\">The pH Scale</a> tracked $\\mathrm{H}_{3}\\mathrm{O}^{+}$. What about $\\mathrm{OH}^{-}$? In water the two are tied together, and multiplying powers of ten (<a href=\"/math/pre-algebra/exponent-product-rule/\">Multiplying Powers</a>) shows how."
+      },
+      {
+        "t": "key",
+        "html": "In every water solution at $25^\\circ\\text{C}$: $$[\\mathrm{H}_{3}\\mathrm{O}^{+}][\\mathrm{OH}^{-}] = 1.0 \\times 10^{-14}$$ Defining pOH like pH (the power of ten of $[\\mathrm{OH}^{-}]$), this means $\\text{pH} + \\text{pOH} = 14$."
+      },
+      {
+        "t": "why",
+        "html": "Water molecules trade protons with each other all the time: $$2\\mathrm{H}_{2}\\mathrm{O} \\rightleftharpoons \\mathrm{H}_{3}\\mathrm{O}^{+} + \\mathrm{OH}^{-}$$ In pure water this gives $1.0 \\times 10^{-7}\\ \\text{M}$ of each ion, and their product is $10^{-7} \\times 10^{-7} = 10^{-14}$. Add an acid and the extra $\\mathrm{H}_{3}\\mathrm{O}^{+}$ reacts with some $\\mathrm{OH}^{-}$, so $\\mathrm{OH}^{-}$ drops until the product is back at $10^{-14}$. Adding a base works the other way. One goes up, the other comes down."
+      },
+      {
+        "t": "viz",
+        "name": "ch-phscale",
+        "opts": {
+          "pH": 9,
+          "show": [
+            "conc",
+            "pOH"
+          ]
+        },
+        "cap": "Both concentrations shown together: as the pointer moves, $[\\mathrm{H}_{3}\\mathrm{O}^{+}]$ and $[\\mathrm{OH}^{-}]$ change in opposite directions, and pH plus pOH always makes 14."
+      },
+      {
+        "t": "ex",
+        "title": "From one ion to the other",
+        "q": "A solution has $[\\mathrm{H}_{3}\\mathrm{O}^{+}] = 1.0 \\times 10^{-3}\\ \\text{M}$. Find $[\\mathrm{OH}^{-}]$ and the pOH.",
+        "steps": [
+          "$$[\\mathrm{OH}^{-}] = \\dfrac{1.0 \\times 10^{-14}}{1.0 \\times 10^{-3}} = 1.0 \\times 10^{-11}\\ \\text{M}$$ (subtract the exponents).",
+          "pH 3, so pOH $= 14 - 3 = 11$."
+        ],
+        "a": "$1.0 \\times 10^{-11}\\ \\text{M}$; pOH 11."
+      },
+      {
+        "t": "ex",
+        "title": "A coefficient other than 1",
+        "q": "A solution has $[\\mathrm{OH}^{-}] = 2.0 \\times 10^{-4}\\ \\text{M}$. What is $[\\mathrm{H}_{3}\\mathrm{O}^{+}]$?",
+        "steps": [
+          "$[\\mathrm{H}_{3}\\mathrm{O}^{+}] = \\dfrac{1.0 \\times 10^{-14}}{2.0 \\times 10^{-4}}$.",
+          "Divide the numbers and subtract the exponents: $0.50 \\times 10^{-10} = 5.0 \\times 10^{-11}\\ \\text{M}$."
+        ],
+        "a": "$5.0 \\times 10^{-11}\\ \\text{M}$: a basic solution."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking a basic solution has no $\\mathrm{H}_{3}\\mathrm{O}^{+}$ at all, or that pure water contains no ions. Every water solution has both ions; their product is fixed at $1.0 \\times 10^{-14}$, so neither can ever reach zero. A basic solution just has more $\\mathrm{OH}^{-}$ than $\\mathrm{H}_{3}\\mathrm{O}^{+}$."
+      },
+      {
+        "t": "note",
+        "html": "The value $1.0 \\times 10^{-14}$ holds at $25^\\circ\\text{C}$. It grows as water warms, so the neutral point shifts a little; <a href=\"/chemistry/general-chemistry-2/strong-acid-ph/\">pH of Strong Acids and Bases</a> works with that."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 14.2 pH and pOH"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

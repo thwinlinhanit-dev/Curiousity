@@ -1,0 +1,81 @@
+{
+  "id": "gchem1.hess-law",
+  "slug": "hess-law",
+  "ladder": "chemistry",
+  "course": "gchem1",
+  "unit": "thermochemistry",
+  "title": "Hess's Law",
+  "short": "Add chemical equations like algebra, and add their ΔH values the same way.",
+  "trouble": "Students reverse or scale an equation but forget to do the same to its ΔH.",
+  "prereqs": [
+    "gchem1.enthalpy-equations"
+  ],
+  "xp": 3,
+  "viz": [
+    "ch-energydiagram"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Some reactions can't be run cleanly in a calorimeter: burning carbon gives a mix of CO and $\\mathrm{CO_2}$, so the heat of making pure CO can't be measured directly. Because enthalpy is a state function, the rules from <a href=\"/chemistry/general-chemistry-1/enthalpy-equations/\">Enthalpy and Thermochemical Equations</a> let us compute it from reactions we can measure."
+      },
+      {
+        "t": "key",
+        "html": "<b>Hess's law:</b> if a reaction is the sum of other reactions, its $\\Delta H$ is the sum of their $\\Delta H$ values. Arrange the given equations so they add up to the target: reverse an equation (and change the sign of its $\\Delta H$) or multiply it (and its $\\Delta H$) as needed. Species that appear on both sides cancel."
+      },
+      {
+        "t": "why",
+        "html": "Enthalpy depends only on the state, not on the route. Going from C and $\\mathrm{O_2}$ to $\\mathrm{CO_2}$ directly, or by way of CO, starts and ends at the same place, so the total enthalpy change is the same. That is just bookkeeping: adding equations adds the enthalpies of everything on each side, so the $\\Delta H$ values add too. Reversing a step undoes it; doubling it does it twice."
+      },
+      {
+        "t": "viz",
+        "name": "ch-energydiagram",
+        "opts": {
+          "mode": "hess"
+        },
+        "cap": "Carbon to carbon dioxide, directly ($-393.5\\ \\text{kJ}$) or through carbon monoxide ($-110.5$ then $-283.0$). Both routes drop the same total."
+      },
+      {
+        "t": "ex",
+        "title": "Making carbon monoxide",
+        "q": "Find $\\Delta H$ for $\\mathrm{C(s)} + \\tfrac{1}{2}\\mathrm{O_2} \\to \\mathrm{CO}$ from (1) $\\mathrm{C} + \\mathrm{O_2} \\to \\mathrm{CO_2}$, $\\Delta H = -393.5\\ \\text{kJ}$ and (2) $\\mathrm{CO} + \\tfrac{1}{2}\\mathrm{O_2} \\to \\mathrm{CO_2}$, $\\Delta H = -283.0\\ \\text{kJ}$.",
+        "steps": [
+          "We need C on the left (equation 1 as written) and CO on the right (equation 2 reversed: $\\mathrm{CO_2} \\to \\mathrm{CO} + \\tfrac{1}{2}\\mathrm{O_2}$, $\\Delta H = +283.0$).",
+          "Add: $\\mathrm{C} + \\mathrm{O_2} + \\mathrm{CO_2} \\to \\mathrm{CO_2} + \\mathrm{CO} + \\tfrac{1}{2}\\mathrm{O_2}$; cancel $\\mathrm{CO_2}$ and $\\tfrac{1}{2}\\mathrm{O_2}$.",
+          "$\\Delta H = -393.5 + 283.0 = -110.5\\ \\text{kJ}$."
+        ],
+        "a": "$-110.5\\ \\text{kJ}$"
+      },
+      {
+        "t": "ex",
+        "title": "Three steps",
+        "q": "Find $\\Delta H$ for $2\\,\\mathrm{C(s)} + \\mathrm{H_2(g)} \\to \\mathrm{C_2H_2(g)}$ from: (1) $\\mathrm{C} + \\mathrm{O_2} \\to \\mathrm{CO_2}$, $-393.5\\ \\text{kJ}$; (2) $\\mathrm{H_2} + \\tfrac{1}{2}\\mathrm{O_2} \\to \\mathrm{H_2O(l)}$, $-285.8\\ \\text{kJ}$; (3) $\\mathrm{C_2H_2} + \\tfrac{5}{2}\\mathrm{O_2} \\to 2\\,\\mathrm{CO_2} + \\mathrm{H_2O(l)}$, $-1299.6\\ \\text{kJ}$.",
+        "steps": [
+          "Need 2 C on the left: equation (1) × 2: $-787.0$.",
+          "Need $\\mathrm{H_2}$ on the left: equation (2) as is: $-285.8$.",
+          "Need $\\mathrm{C_2H_2}$ on the right: equation (3) reversed: $+1299.6$.",
+          "Check that $\\mathrm{CO_2}$, $\\mathrm{H_2O}$ and $\\mathrm{O_2}$ cancel ($\\tfrac{5}{2}\\,\\mathrm{O_2}$ on each side). Sum: $-787.0 - 285.8 + 1299.6 = +226.8\\ \\text{kJ}$."
+        ],
+        "a": "$+226.8\\ \\text{kJ}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Reversing or scaling an equation but forgetting to do the same to its $\\Delta H$. In the first example, adding $-393.5$ and $-283.0$ gives $-676.5$, a wrong answer that came from keeping equation (2)'s sign after reversing it. Check: write the adjusted $\\Delta H$ beside each adjusted equation before adding anything."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 5.3 Enthalpy (Hess's law)"
+      },
+      {
+        "name": "College Board, AP Chemistry Course and Exam Description (effective fall 2024), Unit 6: Thermochemistry"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

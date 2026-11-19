@@ -1,0 +1,100 @@
+{
+  "id": "g5.fraction-side-area",
+  "slug": "fraction-side-area",
+  "ladder": "math",
+  "course": "g5",
+  "unit": "fraction-mult-div",
+  "title": "Area with Fraction Side Lengths",
+  "short": "Tile a rectangle with unit-fraction squares.",
+  "trouble": "",
+  "prereqs": [
+    "g5.multiply-fractions",
+    "g4.area-perimeter-formulas"
+  ],
+  "xp": 2,
+  "viz": [
+    "areamodel"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You know <a href=\"/math/grade-4/area-perimeter-formulas/\">area = length × width</a> for whole numbers, and you can <a href=\"/math/grade-5/multiply-fractions/\">multiply fractions</a>. The formula still works when the sides are fractions, and tiling shows why."
+      },
+      {
+        "t": "key",
+        "html": "The area of a rectangle with fraction side lengths is still length × width. Tiling it with small rectangles that are $\\frac{1}{b}$ by $\\frac{1}{d}$ gives the same answer: count the tiles and multiply by the area of one tile."
+      },
+      {
+        "t": "why",
+        "html": "Cut a unit square into 4 columns and 3 rows. Each tile is $\\frac{1}{4}$ by $\\frac{1}{3}$, and 12 tiles fill the square, so each tile has area $\\frac{1}{12}$. A rectangle $\\frac{3}{4}$ long and $\\frac{2}{3}$ wide holds 3 tiles across and 2 down: $3 \\times 2 = 6$ tiles, an area of $\\frac{6}{12}$. That is exactly $\\frac{3}{4} \\times \\frac{2}{3}$."
+      },
+      {
+        "t": "viz",
+        "name": "g5-fracarea",
+        "opts": {
+          "a": "2/3",
+          "b": "3/4",
+          "tiles": true,
+          "unit": "ft"
+        },
+        "cap": "A rectangle $\\frac{3}{4}$ ft by $\\frac{2}{3}$ ft, tiled inside a 1-foot square: 6 tiles of $\\frac{1}{12}$ square foot."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Count the tiles",
+        "q": "Find the area of a rectangle $\\frac{3}{4}$ ft long and $\\frac{2}{3}$ ft wide.",
+        "steps": [
+          "Tiles $\\frac{1}{4}$ by $\\frac{1}{3}$ fit: 3 along the length and 2 along the width, so 6 tiles.",
+          "12 tiles make 1 square foot, so each is $\\frac{1}{12}$ square foot.",
+          "Area: $\\frac{6}{12} = \\frac{1}{2}$ square foot. Same as $\\frac{3}{4} \\times \\frac{2}{3}$."
+        ],
+        "a": "$\\frac{1}{2}$ square foot"
+      },
+      {
+        "t": "ex",
+        "title": "Sides longer than 1",
+        "q": "Find the area of a rectangle $\\frac{5}{3}$ m by $\\frac{3}{2}$ m.",
+        "steps": [
+          "Multiply: $\\frac{5}{3} \\times \\frac{3}{2} = \\frac{15}{6}$.",
+          "Simplify: $\\frac{15}{6} = \\frac{5}{2} = 2\\frac{1}{2}$.",
+          "Tiling check: tiles $\\frac{1}{3}$ by $\\frac{1}{2}$ have area $\\frac{1}{6}$, and 5 by 3 of them make 15."
+        ],
+        "a": "$2\\frac{1}{2}$ square meters"
+      },
+      {
+        "t": "viz",
+        "name": "g5-fracarea",
+        "opts": {
+          "a": "3/2",
+          "b": "5/3",
+          "tiles": true,
+          "unit": "m"
+        },
+        "cap": "$\\frac{5}{3}$ by $\\frac{3}{2}$ spreads over more than one unit square: 15 tiles of $\\frac{1}{6}$."
+      },
+      {
+        "t": "mistake",
+        "html": "Forgetting that a tile is smaller than a unit square and calling the area &ldquo;6 square feet&rdquo; because there are 6 tiles. Check: the rectangle fits inside one square foot, so its area must be less than 1."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Prealgebra 2e, 9.4 Use Properties of Rectangles, Triangles, and Trapezoids"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 5.NF.B.4b: find the area of a rectangle with fractional side lengths by tiling"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

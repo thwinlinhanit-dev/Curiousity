@@ -1,0 +1,107 @@
+{
+  "id": "imicro.competitive-supply",
+  "slug": "competitive-supply",
+  "ladder": "economics",
+  "course": "imicro",
+  "unit": "competitive-markets",
+  "title": "The Competitive Firm's Supply Curve",
+  "short": "Maximize pq − C(q): set p = MC on the rising part of MC above minimum average variable cost.",
+  "trouble": "Students take the whole MC curve as the supply curve, including its falling part and the part below minimum AVC.",
+  "prereqs": [
+    "imicro.minimum-average-cost",
+    "micro.shutdown-rule"
+  ],
+  "xp": 2,
+  "viz": [
+    "ec-costcurves"
+  ],
+  "figureArchetype": "MotionFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "A competitive firm is a price taker: it can sell as much as it likes at the market price $p$, and nothing above it. <a href=\"/economics/microeconomics/shutdown-rule/\">The Shutdown Rule</a> told it when to stay open; with a cost function and <a href=\"/economics/intermediate-microeconomics/minimum-average-cost/\">Where Average Cost Is Lowest</a> we can derive its whole supply curve."
+      },
+      {
+        "t": "key",
+        "html": "A price taker maximizes $\\pi(q) = pq - C(q)$. It produces where $$p = MC(q)$$ on the rising part of marginal cost, as long as $p$ is at least the minimum of average variable cost. Below that price it produces nothing. Its short-run supply curve is the part of $MC$ above minimum $AVC$."
+      },
+      {
+        "t": "why",
+        "html": "First-order condition: $\\pi'(q) = p - C'(q) = 0$. Second-order condition: $\\pi''(q) = -C''(q) < 0$, so marginal cost must be rising; where MC is falling, $p = MC$ marks a profit <i>minimum</i>. Then compare with shutting down: producing gives $pq - VC(q) - F$, shutting down gives $-F$ (the fixed cost is owed either way in the short run). Producing is better exactly when $pq \\ge VC(q)$, that is, $p \\ge AVC(q)$."
+      },
+      {
+        "t": "viz",
+        "name": "ec-costcurves",
+        "opts": {
+          "cost": {
+            "F": 100,
+            "a": 10,
+            "b": 1,
+            "c": 0.1
+          },
+          "price": 20,
+          "supply": true,
+          "task": "Move the price below \\$7.50 and watch output drop to zero."
+        },
+        "cap": "$C(q) = 100 + 10q - q^2 + 0.1q^3$. The thick part of MC, above minimum AVC (\\$7.50 at $q = 5$), is the supply curve. At \\$20 the firm makes 10 units and just breaks even."
+      },
+      {
+        "t": "ex",
+        "title": "A simple cost function",
+        "q": "$C(q) = 50 + q^2$, and the price is \\$20.",
+        "steps": [
+          "$MC = 2q$, so $p = MC$ gives $q = 10$.",
+          "$AVC = q$ is always below $MC$, so any positive price keeps it producing. Supply: $q = p/2$.",
+          "Profit: $200 - 150 = 50$."
+        ],
+        "a": "$q = 10$."
+      },
+      {
+        "t": "ex",
+        "title": "A cubic cost function",
+        "q": "$C(q) = 100 + 10q - q^2 + 0.1q^3$ at $p = 20$.",
+        "steps": [
+          "$MC = 10 - 2q + 0.3q^2 = 20$, so $0.3q^2 - 2q - 10 = 0$.",
+          "$q = \\dfrac{2 \\pm \\sqrt{4 + 12}}{0.6} = \\dfrac{2 \\pm 4}{0.6}$, so $q = 10$ (the other root is negative).",
+          "Revenue 200, cost $100 + 100 - 100 + 100 = 200$: zero economic profit. \\$20 is the bottom of ATC."
+        ],
+        "a": "$q = 10$, breaking even."
+      },
+      {
+        "t": "ex",
+        "title": "Below the shutdown price",
+        "q": "Same firm, but the price falls to \\$7.",
+        "steps": [
+          "Minimum $AVC = 10 - q + 0.1q^2$ is at $q = 5$: \\$7.50.",
+          "\\$7 is below that, so every unit produced loses money on top of the fixed cost. Output: 0, loss \\$100 (the fixed cost)."
+        ],
+        "a": "It shuts down."
+      },
+      {
+        "t": "p",
+        "html": "Market supply in the short run is the horizontal sum of the firms' supply curves, the same adding-up as <a href=\"/economics/intermediate-microeconomics/market-demand/\">Adding Up to Market Demand</a>: with 50 firms that each supply $q = p/2$, the market supplies $Q = 25p$. Each firm's curve starts at its own shutdown price, so the market curve has a step or kink wherever a group of firms enters."
+      },
+      {
+        "t": "mistake",
+        "html": "Taking the whole MC curve as the supply curve. The falling part of MC is where $p = MC$ gives a profit minimum, and the part below minimum AVC is where the firm would rather shut down. Check: at your quantity, MC must be rising and the price must be at least AVC."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, ch. 8.2 How Perfectly Competitive Firms Make Output Decisions"
+      },
+      {
+        "name": "OpenStax Calculus Volume 1, 4.7 Applied Optimization Problems"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.04 Intermediate Microeconomic Theory (course scope and lecture topics)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

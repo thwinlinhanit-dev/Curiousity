@@ -1,0 +1,105 @@
+{
+  "id": "imicro.bertrand",
+  "slug": "bertrand",
+  "ladder": "economics",
+  "course": "imicro",
+  "unit": "games",
+  "title": "Bertrand Competition",
+  "short": "Two firms selling identical goods and competing on price drive the price down to marginal cost.",
+  "trouble": "Students expect two firms to keep prices well above cost, as in Cournot. With identical goods and price competition, undercutting continues until P = MC.",
+  "prereqs": [
+    "imicro.cournot"
+  ],
+  "xp": 2,
+  "viz": [
+    "linesystem"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/economics/intermediate-microeconomics/cournot/\">Cournot Competition</a> had firms choose quantities. If instead they choose prices, the answer changes dramatically, at least when the products are identical."
+      },
+      {
+        "t": "key",
+        "html": "Two firms selling identical goods with the same constant marginal cost and no capacity limits, choosing prices at the same time, end up with $$p = MC$$ and zero profit (the <b>Bertrand paradox</b>). With different costs $c_1 < c_2$, the low-cost firm prices just below $c_2$ and serves the whole market. With differentiated products, prices stay above cost."
+      },
+      {
+        "t": "why",
+        "html": "Suppose both charge the same price above marginal cost and split the market. Either firm could cut its price by a cent and take the whole market, nearly doubling its profit. So no price above cost is stable. Below cost, a firm loses money on every sale and would rather raise its price. Only $p = MC$ survives. If products differ, a small price cut steals only some customers, and best responses settle above cost: with demand $q_i = A - p_i + e\\,p_j$ (where $0 < e < 1$), firm $i$'s best response is $p_i = \\dfrac{A + c + e\\,p_j}{2}$."
+      },
+      {
+        "t": "viz",
+        "name": "linesystem",
+        "opts": {
+          "lines": [
+            "4x - 90",
+            "22.5 + x/4"
+          ],
+          "xmin": 0,
+          "xmax": 60,
+          "ymin": 0,
+          "ymax": 60,
+          "equal": false,
+          "probe": null
+        },
+        "cap": "Price best responses with differentiated products: $q_i = 35 - p_i + \\tfrac{1}{2}p_j$, $c = 10$. Firm 1's best response $p_1 = 22.5 + p_2/4$ is drawn as $p_2 = 4p_1 - 90$; firm 2's is $p_2 = 22.5 + p_1/4$. They cross at \\$30, well above the \\$10 cost."
+      },
+      {
+        "t": "ex",
+        "title": "Identical goods",
+        "q": "Two firms sell identical cement with $MC = 40$.",
+        "steps": [
+          "At any common price above 40, undercutting by a cent takes the whole market.",
+          "Equilibrium: $p = 40$, zero profit."
+        ],
+        "a": "\\$40."
+      },
+      {
+        "t": "ex",
+        "title": "Different costs",
+        "q": "$Q = 100 - P$, $c_1 = 20$, $c_2 = 30$.",
+        "steps": [
+          "Firm 2 won't sell below 30. Firm 1 can price at \\$29.99, serve the market and earn almost $(30 - 20)(70) = 700$.",
+          "Firm 1's monopoly price would be $(100 + 20)/2 = 60$, above 30, so it doesn't want to go higher than 30 either: it would lose the market to firm 2."
+        ],
+        "a": "Price about \\$30; firm 1 sells about 70."
+      },
+      {
+        "t": "ex",
+        "title": "Differentiated products",
+        "q": "$q_i = 35 - p_i + \\tfrac{1}{2}p_j$, $c = 10$.",
+        "steps": [
+          "Firm $i$ maximizes $(p_i - 10)(35 - p_i + \\tfrac{1}{2}p_j)$: $p_i = \\dfrac{45 + \\tfrac{1}{2}p_j}{2}$.",
+          "Symmetric: $2p = 45 + \\tfrac{1}{2}p$, so $p = 30$."
+        ],
+        "a": "\\$30."
+      },
+      {
+        "t": "mistake",
+        "html": "Expecting two firms to keep prices well above cost, as in Cournot. With identical products, price competition, equal costs and no capacity limits, undercutting continues until $P = MC$. Check which assumption a real market breaks before predicting high prices: products that differ, capacity limits, or repeated play (see <a href=\"/economics/intermediate-microeconomics/repeated-games/\">Repeated Games and Cooperation</a>) can all keep prices up."
+      },
+      {
+        "t": "note",
+        "html": "Capacity matters: if firms first choose how much capacity to build and then compete on price, the outcome can look like Cournot (a result due to David Kreps and José Scheinkman, 1983). Cournot and Bertrand are two ends of a range, and which fits depends on the industry."
+      },
+      {
+        "t": "p",
+        "html": "See both models side by side in <a href=\"/business/game-theory/competition/\">Competition: Cournot, Bertrand and Hotelling</a>."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Principles of Microeconomics 3e, ch. 10.2 Oligopoly"
+      },
+      {
+        "name": "MIT OpenCourseWare 14.12 Economic Applications of Game Theory (course scope)"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

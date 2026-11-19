@@ -1,0 +1,111 @@
+{
+  "id": "em.electric-flux",
+  "slug": "electric-flux",
+  "ladder": "physics",
+  "course": "em",
+  "unit": "fields-gauss",
+  "title": "Electric Flux",
+  "short": "Φ_E = ∫E · dA counts the field passing through a surface, using the surface's normal.",
+  "trouble": "Students use the angle between the field and the surface instead of the angle to its normal.",
+  "prereqs": [
+    "phys2.field-superposition",
+    "phys2.magnetic-flux",
+    "calc1.definite-integral"
+  ],
+  "xp": 2,
+  "viz": [
+    "flux"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In <a href=\"/physics/physics-2/magnetic-flux/\">magnetic flux</a> you counted how much magnetic field passes through a loop: $\\Phi_B = BA\\cos\\theta$. Electric flux is the same idea for $\\vec{E}$. It will be the key to Gauss's law, which turns hard field integrals into one-line answers."
+      },
+      {
+        "t": "key",
+        "html": "Give each small patch of surface a vector $d\\vec{A}$: its area, pointing along the patch's <b>normal</b> (perpendicular to the surface). Then\n        $$\\role[electric flux]{field}{\\Phi_E} = \\int \\role[electric field]{field}{\\vec{E}}\\cdot \\role[tiny patch of area]{position}{d\\vec{A}}.$$\n        For a uniform field and a flat surface, $\\Phi_E = EA\\cos\\theta$, with $\\theta$ the angle between $\\vec{E}$ and the normal. Units: N·m²/C. On a closed surface the normals point <b>outward</b>, so field leaving counts as positive and field entering as negative."
+      },
+      {
+        "t": "why",
+        "html": "Only the part of $\\vec{E}$ that crosses the surface carries anything through it; the part skimming along the surface carries nothing. The dot product $\\vec{E}\\cdot d\\vec{A} = E\\,dA\\cos\\theta$ picks out exactly the crossing part. Think of rain and a window: held flat under the rain it catches the most, tilted it catches less, and held edge-on it catches none."
+      },
+      {
+        "t": "viz",
+        "name": "flux",
+        "opts": {
+          "F": [
+            "0",
+            "0",
+            "1"
+          ],
+          "surface": "disk",
+          "R": 1,
+          "tilt": 30,
+          "normals": true,
+          "presets": false,
+          "surfaces": [
+            "disk",
+            "square"
+          ]
+        },
+        "cap": "A uniform field straight up through a tilted disk. Tilt it: the flux falls as $\\cos\\theta$ of the tilt and reaches zero when the disk stands edge-on to the field."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A tilted square",
+        "q": "A uniform field of $500\\ \\text{N/C}$ passes through a square $20\\ \\text{cm}$ on a side. The field makes a $30^\\circ$ angle with the <i>surface</i> of the square. Find the flux.",
+        "steps": [
+          "The formula needs the angle to the normal. The normal is $90^\\circ$ from the surface, so $\\theta = 90^\\circ - 30^\\circ = 60^\\circ$.",
+          "$A = (0.20\\ \\text{m})^2 = 0.040\\ \\text{m}^2$.",
+          "$\\Phi_E = EA\\cos\\theta = (500)(0.040)\\cos 60^\\circ = 10\\ \\text{N·m}^2/\\text{C}$."
+        ],
+        "a": "$\\Phi_E = 10\\ \\text{N·m}^2/\\text{C}$"
+      },
+      {
+        "t": "ex",
+        "title": "A field that changes across the surface",
+        "q": "A field points along $+z$ with $E_z = cy$, $c = 200\\ \\text{N/(C·m)}$. Find the flux through the rectangle $0 \\le x \\le 0.30\\ \\text{m}$, $0 \\le y \\le 0.20\\ \\text{m}$ in the $xy$-plane.",
+        "steps": [
+          "The field is not uniform, so integrate. Along a thin strip at height $y$ the field is constant, and the strip's area is $dA = (0.30)\\,dy$. The field is along the normal, so $\\cos\\theta = 1$.",
+          "$$\\Phi_E = \\int_0^{0.20} cy\\,(0.30)\\,dy = (0.30)\\,c\\,\\frac{(0.20)^2}{2}$$",
+          "$\\Phi_E = (0.30)(200)(0.020) = 1.2\\ \\text{N·m}^2/\\text{C}$."
+        ],
+        "a": "$\\Phi_E = 1.2\\ \\text{N·m}^2/\\text{C}$"
+      },
+      {
+        "t": "ex",
+        "title": "A closed box in a uniform field",
+        "q": "A uniform field points along $+x$. What is the net flux out of a closed cube with its faces along the axes?",
+        "steps": [
+          "On the face where the field enters, the outward normal points against the field: flux $-EA$.",
+          "On the opposite face the outward normal points along the field: flux $+EA$.",
+          "On the other four faces the field skims the surface: flux $0$. Total: $0$. Every line that goes in comes out."
+        ],
+        "a": "$0$"
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Using the angle to the surface.</b> In the first example, $\\cos 30^\\circ$ would give $17.3\\ \\text{N·m}^2/\\text{C}$ instead of $10$. The formula's $\\theta$ is measured from the <i>normal</i>. A quick check: when the field runs parallel to the surface, nothing passes through, so the flux must be zero; only the angle to the normal (then $90^\\circ$) makes $\\cos\\theta = 0$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 2, 6.1 Electric Flux"
+      },
+      {
+        "name": "MIT OpenCourseWare, 8.02 Physics II: Electricity and Magnetism"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

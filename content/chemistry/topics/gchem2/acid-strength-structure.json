@@ -1,0 +1,93 @@
+{
+  "id": "gchem2.acid-strength-structure",
+  "slug": "acid-strength-structure",
+  "ladder": "chemistry",
+  "course": "gchem2",
+  "unit": "acids-bases",
+  "title": "Molecular Structure and Acid Strength",
+  "short": "Bond strength, bond polarity and resonance in the conjugate base explain which acids are stronger.",
+  "trouble": "Students say HF is the strongest hydrohalic acid because fluorine is the most electronegative, missing the very strong H–F bond.",
+  "prereqs": [
+    "gchem2.ka-kb",
+    "gchem1.resonance",
+    "chem.electronegativity"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-lewis"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Why is HCl strong and HF weak? Why is $\\mathrm{HClO_4}$ strong and HClO weak? The answers come from the bond to the acidic hydrogen and from how well the conjugate base holds its negative charge. You will use <a href=\"/chemistry/chemistry/electronegativity/\">electronegativity</a>, bond strength and <a href=\"/chemistry/general-chemistry-1/resonance/\">resonance</a>, and compare acids by <a href=\"/chemistry/general-chemistry-2/ka-kb/\">Ka</a>."
+      },
+      {
+        "t": "key",
+        "html": "An acid is stronger when the H–A bond is weaker (easier to break) and more polar, and when the anion left behind spreads or stabilizes its negative charge. Down a group, bond strength wins: $\\mathrm{HF \\ll HCl < HBr < HI}$. Across a period, polarity wins: $\\mathrm{CH_4 < NH_3 < H_2O < HF}$. For oxyacids, more O atoms and a more electronegative central atom make a stronger acid."
+      },
+      {
+        "t": "why",
+        "html": "Binary acids: going down Group 17 the halogen grows, the H–X bond gets longer and much weaker (H–F 565, H–Cl 431, H–Br 366, H–I 299 kJ/mol), and the proton leaves more easily. Across a period the atoms are similar in size, so the deciding factor is electronegativity: a more electronegative atom polarizes the bond and holds the negative charge better. Oxyacids all lose a proton from an O–H group. Extra O atoms on the central atom pull electron density away from that O–H bond, and in the anion they share the negative charge by resonance, which steadies it."
+      },
+      {
+        "t": "viz",
+        "name": "ch-lewis",
+        "opts": {
+          "mode": "resonance",
+          "mol": "CH3COO-"
+        },
+        "cap": "Acetate's two resonance forms: the negative charge is shared by both O atoms. Ethoxide, from ethanol, has no such sharing, which is why acetic acid is about $10^{11}$ times stronger than ethanol."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "The chlorine oxyacids",
+        "q": "Rank HClO, $\\mathrm{HClO_2}$, $\\mathrm{HClO_3}$ and $\\mathrm{HClO_4}$ by strength, and explain.",
+        "steps": [
+          "They differ only in the number of O atoms on Cl: 0, 1, 2 and 3 besides the OH.",
+          "Each extra O pulls electron density from the O–H bond and gives the anion one more atom to share the charge. Measured: HClO $K_a = 2.9 \\times 10^{-8}$, $\\mathrm{HClO_2}$ $1.1 \\times 10^{-2}$, and $\\mathrm{HClO_3}$ and $\\mathrm{HClO_4}$ are strong."
+        ],
+        "a": "$\\mathrm{HClO < HClO_2 < HClO_3 < HClO_4}$."
+      },
+      {
+        "t": "ex",
+        "title": "Same shape, different halogen",
+        "q": "Which is the stronger acid, HOCl or HOI?",
+        "steps": [
+          "Both have one O–H with the halogen on the O. Chlorine is more electronegative than iodine.",
+          "Cl pulls more electron density through the O, weakening the O–H bond and steadying $\\mathrm{ClO^-}$. HOCl: $K_a = 2.9 \\times 10^{-8}$; HOI: $2.3 \\times 10^{-11}$."
+        ],
+        "a": "HOCl."
+      },
+      {
+        "t": "ex",
+        "title": "Chlorine atoms on acetic acid",
+        "q": "$\\mathrm{CH_3COOH}$ has $K_a = 1.8 \\times 10^{-5}$ and $\\mathrm{ClCH_2COOH}$ has $K_a = 1.4 \\times 10^{-3}$. Explain the difference.",
+        "steps": [
+          "The Cl atom, though not on the O–H, pulls electron density through the bonds (an inductive effect).",
+          "That helps spread the negative charge of the anion, so the acid gives up its proton more readily: about 80 times stronger."
+        ],
+        "a": "The electronegative Cl stabilizes the conjugate base."
+      },
+      {
+        "t": "mistake",
+        "html": "Saying HF is the strongest hydrohalic acid because F is the most electronegative. Electronegativity decides across a period; down a group the bond strength dominates, and the H–F bond is by far the strongest. Check: HF has $K_a = 6.8 \\times 10^{-4}$, a weak acid, while HCl, HBr and HI are all strong."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 14.3 Relative Strengths of Acids and Bases"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

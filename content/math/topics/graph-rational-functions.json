@@ -1,0 +1,118 @@
+{
+  "id": "alg2.graph-rational-functions",
+  "slug": "graph-rational-functions",
+  "ladder": "math",
+  "course": "alg2",
+  "unit": "rational",
+  "title": "Graphing Rational Functions",
+  "short": "Use asymptotes, intercepts and sign to sketch the graph.",
+  "trouble": "Students think a graph can never cross its horizontal asymptote.",
+  "prereqs": [
+    "alg2.asymptotes-holes",
+    "alg2.polynomial-inequalities"
+  ],
+  "xp": 3,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "To sketch a rational function, combine the <a href=\"/math/algebra-2/asymptotes-holes/\">asymptotes and holes</a> with intercepts and a sign chart, the same tool you used for <a href=\"/math/algebra-2/polynomial-inequalities/\">Polynomial and Rational Inequalities</a>."
+      },
+      {
+        "t": "key",
+        "html": "Steps: factor and note the domain; find holes and vertical asymptotes; find the horizontal asymptote; find the $x$-intercepts (zeros of the simplified numerator) and the $y$-intercept $f(0)$; test the sign in each interval; then draw. A graph never crosses a vertical asymptote, but it <b>can</b> cross a horizontal one. Solve $f(x) = c$, where $y = c$ is the asymptote, to find where."
+      },
+      {
+        "t": "why",
+        "html": "A horizontal asymptote only describes what happens as $x \\to \\pm\\infty$. In the middle of the graph, nothing stops the function from taking that value. A vertical asymptote is different: the function is undefined there, so the graph can't touch it."
+      },
+      {
+        "t": "viz",
+        "name": "alg2-plot",
+        "opts": {
+          "fns": [
+            "(x + 2)(x + 4)/((x - 1)(x + 3))"
+          ],
+          "vlines": [
+            1,
+            -3
+          ],
+          "hlines": [
+            1
+          ],
+          "points": [
+            {
+              "x": -2.75,
+              "y": 1,
+              "label": "crosses y = 1"
+            },
+            {
+              "x": -2,
+              "y": 0
+            },
+            {
+              "x": -4,
+              "y": 0
+            },
+            {
+              "x": 0,
+              "y": -2.6667
+            }
+          ],
+          "xmin": -9,
+          "xmax": 7,
+          "ymin": -8,
+          "ymax": 8,
+          "label": "A rational function crossing its horizontal asymptote"
+        },
+        "cap": "$f(x) = \\frac{(x + 2)(x + 4)}{(x - 1)(x + 3)}$ crosses its horizontal asymptote $y = 1$ at $x = -\\frac{11}{4}$, between its intercepts, before settling toward 1 at the far ends."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "The whole picture",
+        "q": "Describe the graph of $f(x) = \\frac{x^2 + 6x + 8}{x^2 + 2x - 3}$.",
+        "steps": [
+          "Factor: $\\frac{(x + 2)(x + 4)}{(x - 1)(x + 3)}$. Nothing cancels, so there are no holes.",
+          "Vertical asymptotes $x = 1$ and $x = -3$. Equal degrees: horizontal asymptote $y = 1$.",
+          "$x$-intercepts $-2$ and $-4$; $y$-intercept $f(0) = \\frac{8}{-3} = -\\frac{8}{3}$.",
+          "Signs: test $x = -5, -3.5, -2.5, 0, 2$ to get $+, -, +, -, +$."
+        ],
+        "a": "Two vertical asymptotes, horizontal asymptote $y = 1$, intercepts $(-4, 0)$, $(-2, 0)$, $\\left(0, -\\frac{8}{3}\\right)$."
+      },
+      {
+        "t": "ex",
+        "title": "Crossing the horizontal asymptote",
+        "q": "Where does that graph cross $y = 1$?",
+        "steps": [
+          "Solve $\\frac{x^2 + 6x + 8}{x^2 + 2x - 3} = 1$: $x^2 + 6x + 8 = x^2 + 2x - 3$.",
+          "$4x = -11$, so $x = -\\frac{11}{4}$."
+        ],
+        "a": "At $x = -\\frac{11}{4}$"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking a graph can never cross its horizontal asymptote. It can, as the second example shows. The rule that holds is about vertical asymptotes: those are never crossed, because the function is undefined there."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Algebra 2e, Section 5.6 Rational Functions"
+      },
+      {
+        "name": "Common Core State Standards, F-IF.C.7d"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

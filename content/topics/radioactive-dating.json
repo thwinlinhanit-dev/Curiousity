@@ -1,0 +1,98 @@
+{
+  "id": "modern.radioactive-dating",
+  "slug": "radioactive-dating",
+  "course": "modern",
+  "courseTitle": "Waves, Optics and Modern Physics",
+  "unit": "nuclei-particles",
+  "unitTitle": "Nuclei and Particles",
+  "title": "Radioactive Dating",
+  "short": "The fraction of a parent isotope left gives an age: t = (T½/ln 2)·ln(N₀/N).",
+  "trouble": "Students try carbon dating on rocks millions of years old, far beyond its range.",
+  "prereqs": [
+    "modern.decay-law",
+    "alg2.solve-exponential-equations"
+  ],
+  "xp": 2,
+  "viz": [
+    "ph-nucleus"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The <a href=\"/physics/waves-optics-modern-physics/decay-law/\">decay law</a> turns a radioactive isotope into a clock. If you know how much of a parent isotope a sample started with, and how much is left, the exponential gives the time that has passed. Two clocks cover most of history: carbon-14 for things that were alive in the last few tens of thousands of years, and uranium–lead for rocks billions of years old. Try it in the Science Lab's <a href='/science-lab/atom/'>Build an Atom</a>, where half-lives date ancient wood and bone."
+      },
+      {
+        "t": "key",
+        "html": "From $N = N_0e^{-\\lambda t}$, the age is $$t = \\frac{T_{1/2}}{\\ln 2}\\,\\ln\\frac{N_0}{N}.$$ <b>Carbon-14</b> ($T_{1/2} = 5730$ yr): living things keep the same $^{14}$C share as the air; after death it decays, giving ages up to about 50,000 years. <b>Uranium–lead</b> ($^{238}$U → $^{206}$Pb, $T_{1/2} = 4.47 \\times 10^9$ yr): if a mineral started with no lead and kept every atom, $N_0 = N_{\\text{U}} + N_{\\text{Pb}}$, so $$t = \\frac{T_{1/2}}{\\ln 2}\\,\\ln\\left(1 + \\frac{N_{\\text{Pb}}}{N_{\\text{U}}}\\right).$$"
+      },
+      {
+        "t": "why",
+        "html": "Take logarithms of $\\frac{N}{N_0} = e^{-\\lambda t}$ (<a href=\"/math/algebra-2/solve-exponential-equations/\">solving exponential equations</a>): $\\ln\\frac{N_0}{N} = \\lambda t$, and $\\lambda = \\frac{\\ln 2}{T_{1/2}}$. The clock's useful range is set by the half-life. After about 9 half-lives (50,000 years for carbon-14), less than 0.2% of the original remains, too little to measure against background; for a clock to read billions of years, it needs a half-life in the billions. In the uranium–lead method, each decayed uranium atom becomes a lead atom (through a chain of short-lived steps), so the lead counts the decays. Zircon crystals are ideal: they take in uranium but reject lead when they form."
+      },
+      {
+        "t": "viz",
+        "name": "ph-nucleus",
+        "opts": {
+          "mode": "decay",
+          "N0": 400,
+          "halfLife": 2
+        },
+        "cap": "A decaying sample. Read the clock backward: if a quarter of the parent nuclei remain, two half-lives have passed."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Wood from a fire pit",
+        "q": "Charcoal from an ancient fire pit has 35% of the carbon-14 found in living wood. How old is it?",
+        "steps": [
+          "$t = \\frac{5730}{\\ln 2}\\ln\\frac{1}{0.35} = 8267 \\times 1.050$ yr.",
+          "$t = 8680$ yr. (Check: 35% is a little less than half of half, between one and two half-lives.)"
+        ],
+        "a": "About 8,700 years"
+      },
+      {
+        "t": "ex",
+        "title": "From activities",
+        "q": "Carbon from living things decays at about 15.3 decays per minute per gram of carbon. A bone sample gives 4.1 decays per minute per gram. How old is it?",
+        "steps": [
+          "Activity is proportional to the number of $^{14}$C nuclei, so $\\frac{N_0}{N} = \\frac{15.3}{4.1} = 3.73$.",
+          "$t = 8267 \\times \\ln 3.73 = 8267 \\times 1.317 = 10{,}900$ yr."
+        ],
+        "a": "About 10,900 years"
+      },
+      {
+        "t": "ex",
+        "title": "An ancient zircon",
+        "q": "A zircon crystal has 0.50 atoms of $^{206}$Pb for every atom of $^{238}$U. How old is it?",
+        "steps": [
+          "$t = \\frac{4.47 \\times 10^9}{\\ln 2}\\ln(1 + 0.50) = 6.45 \\times 10^9 \\times 0.405$ yr."
+        ],
+        "a": "$2.6 \\times 10^9$ years. (The oldest Earth zircons are about 4.4 billion years old.)"
+      },
+      {
+        "t": "mistake",
+        "html": "Trying carbon dating on rocks millions of years old. Carbon-14's 5730-year half-life is far too short: after a million years, the fraction left is $0.5^{175}$, effectively zero, and the method also needs a sample that was once alive. For rocks, use a long-lived parent such as uranium-238. Check any method: the sample's age should be no more than about 10 half-lives of the clock you use."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax University Physics Volume 3, 10.3 Radioactive Decay"
+      },
+      {
+        "name": "U.S. Geological Survey, Geologic Time: Radiometric Time Scale"
+      },
+      {
+        "name": "National Nuclear Data Center, Brookhaven National Laboratory (NuDat), half-lives"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; link back required"
+}

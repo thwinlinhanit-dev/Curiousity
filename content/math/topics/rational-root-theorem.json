@@ -1,0 +1,90 @@
+{
+  "id": "alg2.rational-root-theorem",
+  "slug": "rational-root-theorem",
+  "ladder": "math",
+  "course": "alg2",
+  "unit": "polynomials",
+  "title": "The Rational Root Theorem",
+  "short": "List the possible rational zeros p/q and test them.",
+  "trouble": "Students swap p and q, dividing factors of the leading coefficient by factors of the constant.",
+  "prereqs": [
+    "alg2.remainder-factor-theorems"
+  ],
+  "xp": 3,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The <a href=\"/math/algebra-2/remainder-factor-theorems/\">factor theorem</a> turns a zero into a factor, but first you need a zero. For a polynomial with whole-number coefficients, the rational root theorem gives a short list of the only fractions worth trying."
+      },
+      {
+        "t": "key",
+        "html": "If $p(x) = a_nx^n + \\dots + a_0$ has integer coefficients and $\\frac{p}{q}$ (in lowest terms) is a zero, then $p$ divides the constant $a_0$ and $q$ divides the leading coefficient $a_n$. So the candidates are $\\pm\\frac{\\text{factor of } a_0}{\\text{factor of } a_n}$. Test them, and divide out each zero you find."
+      },
+      {
+        "t": "why",
+        "html": "Suppose $\\frac{p}{q}$ is a zero of $2x^3 + \\dots + a_0$. Substitute it and multiply through by $q^3$: $$2p^3 + (\\text{terms with } q) + a_0q^3 = 0.$$ Every term except $a_0q^3$ has a factor of $p$, so $p$ divides $a_0q^3$. Since $p$ and $q$ share no factors, $p$ divides $a_0$. Looking at the first term the same way, $q$ divides $2p^3$ and therefore divides 2, the leading coefficient."
+      },
+      {
+        "t": "viz",
+        "name": "alg2-synth",
+        "opts": {
+          "coeffs": [
+            2,
+            -3,
+            -3,
+            2
+          ],
+          "r": 0.5,
+          "start": "all"
+        },
+        "cap": "Testing the candidate $\\frac{1}{2}$ for $2x^3 - 3x^2 - 3x + 2$: the remainder is 0, so $\\frac{1}{2}$ is a zero."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "The list of candidates",
+        "q": "List the possible rational zeros of $p(x) = 2x^3 - 3x^2 - 3x + 2$.",
+        "steps": [
+          "Factors of the constant 2: $1, 2$. Factors of the leading coefficient 2: $1, 2$.",
+          "$\\pm\\frac{1}{1}, \\pm\\frac{2}{1}, \\pm\\frac{1}{2}, \\pm\\frac{2}{2}$."
+        ],
+        "a": "$\\pm 1, \\pm 2, \\pm\\frac{1}{2}$"
+      },
+      {
+        "t": "ex",
+        "title": "Finding all the rational zeros",
+        "q": "Find all rational zeros of the same $p(x)$.",
+        "steps": [
+          "Try $x = 2$: $16 - 12 - 6 + 2 = 0$. So $x - 2$ is a factor.",
+          "Synthetic division by 2 gives $2x^2 + x - 1$.",
+          "Factor: $2x^2 + x - 1 = (2x - 1)(x + 1)$."
+        ],
+        "a": "$2$, $\\frac{1}{2}$ and $-1$"
+      },
+      {
+        "t": "mistake",
+        "html": "Swapping $p$ and $q$: putting factors of the leading coefficient on top. For $2x^3 - 3x^2 - 3x + 9$, $\\frac{9}{2}$ is a candidate but $\\frac{2}{9}$ is not. Remember \"constant over leading.\" Also remember that the list only gives candidates; a candidate is a zero only if it tests to 0."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Algebra 2e, Section 5.5 Zeros of Polynomial Functions"
+      },
+      {
+        "name": "Common Core State Standards, A-APR.B.3"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

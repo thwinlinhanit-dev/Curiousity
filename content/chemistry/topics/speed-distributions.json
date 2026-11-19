@@ -1,0 +1,94 @@
+{
+  "id": "gchem1.speed-distributions",
+  "slug": "speed-distributions",
+  "ladder": "chemistry",
+  "course": "gchem1",
+  "unit": "gases",
+  "title": "The Maxwell–Boltzmann Distribution",
+  "short": "Molecular speeds spread over a curve that flattens and shifts toward faster speeds as the temperature rises.",
+  "trouble": "Students think the peak of the curve gets taller at a higher temperature, when it gets lower and wider.",
+  "prereqs": [
+    "gchem1.molecular-speeds"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-maxwell"
+  ],
+  "figureArchetype": "EnergyFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/chemistry/general-chemistry-1/molecular-speeds/\">Molecular Speeds and Effusion</a> gave one speed for a gas, but the molecules don't all move at that speed. Collisions constantly speed some up and slow others down. James Clerk Maxwell and Ludwig Boltzmann worked out the shape of the resulting spread."
+      },
+      {
+        "t": "key",
+        "html": "The <b>Maxwell–Boltzmann distribution</b> shows the fraction of molecules at each speed. As the temperature rises, the curve's peak moves to <b>higher speeds</b> and gets <b>lower and wider</b>; the area under it stays the same, because it always counts all the molecules. Three marks on it: the most probable speed $u_\\text{mp} = \\sqrt{2RT/\\mathcal{M}}$, the average speed $u_\\text{avg} = \\sqrt{8RT/\\pi\\mathcal{M}}$ and $u_\\text{rms} = \\sqrt{3RT/\\mathcal{M}}$, in the ratio $1 : 1.13 : 1.22$."
+      },
+      {
+        "t": "why",
+        "html": "Very slow and very fast molecules are both rare: few have nearly zero speed, and reaching a high speed takes a run of lucky collisions. So the curve rises, peaks and tails off. Heating gives the molecules more energy on average, so the whole distribution slides to higher speeds. The same number of molecules is now spread over a wider range of speeds, so the curve must flatten to keep the total area fixed. A heavier gas at the same temperature has a narrower curve at lower speeds. The fast tail grows quickly with temperature, which matters for reaction rates (you will use it with the Arrhenius equation in General Chemistry 2)."
+      },
+      {
+        "t": "viz",
+        "name": "ch-maxwell",
+        "opts": {
+          "curves": [
+            {
+              "f": "N2",
+              "T": 300
+            },
+            {
+              "f": "N2",
+              "T": 600
+            }
+          ],
+          "marks": true,
+          "slider": true
+        },
+        "cap": "Nitrogen at 300 K and 600 K. The hotter curve peaks at a higher speed (by $\\sqrt{2}$) and is lower and broader; both enclose the same area."
+      },
+      {
+        "t": "p",
+        "html": "Try it in Gas in a Box: <a href=\"/science-lab/gas/\">turn on the speed histogram</a> and heat the gas."
+      },
+      {
+        "t": "ex",
+        "title": "Three speeds",
+        "q": "Find $u_\\text{mp}$, $u_\\text{avg}$ and $u_\\text{rms}$ for $\\mathrm{O_2}$ ($0.03200\\ \\text{kg/mol}$) at $300\\ \\text{K}$.",
+        "steps": [
+          "$u_\\text{mp} = \\sqrt{\\dfrac{2(8.314)(300)}{0.03200}} = 395\\ \\text{m/s}$.",
+          "$$u_\\text{avg} = \\sqrt{\\dfrac{8(8.314)(300)}{\\pi(0.03200)}} = 446\\ \\text{m/s}$$",
+          "$u_\\text{rms} = \\sqrt{\\dfrac{3(8.314)(300)}{0.03200}} = 484\\ \\text{m/s}$."
+        ],
+        "a": "$395$, $446$ and $484\\ \\text{m/s}$."
+      },
+      {
+        "t": "ex",
+        "title": "Doubling the temperature",
+        "q": "By what factor does the most probable speed change when a gas is heated from $300\\ \\text{K}$ to $600\\ \\text{K}$? What happens to the height of the peak?",
+        "steps": [
+          "$u_\\text{mp} \\propto \\sqrt{T}$: the factor is $\\sqrt{600/300} = \\sqrt{2} = 1.41$.",
+          "The curve spreads over a wider range of speeds while its area stays fixed, so the peak gets lower."
+        ],
+        "a": "$1.41$ times faster; the peak drops."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking the peak of the curve gets taller at a higher temperature, because \"more energy means more molecules at the peak\". The area under the curve is the total number of molecules, which doesn't change. If the curve spreads out, its peak must come down. Check: a hotter curve is shifted right, lower and wider."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, 9.5 The Kinetic-Molecular Theory"
+      },
+      {
+        "name": "College Board, AP Chemistry Course and Exam Description (effective fall 2024), Unit 3: Properties of Substances and Mixtures"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

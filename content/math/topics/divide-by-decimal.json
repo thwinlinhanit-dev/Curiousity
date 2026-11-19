@@ -1,0 +1,113 @@
+{
+  "id": "g5.divide-by-decimal",
+  "slug": "divide-by-decimal",
+  "ladder": "math",
+  "course": "g5",
+  "unit": "decimal-operations",
+  "title": "Dividing by a Decimal",
+  "short": "Multiply both numbers by 10 or 100 so the divisor is whole.",
+  "trouble": "Children shift the decimal point in the divisor but not in the dividend.",
+  "prereqs": [
+    "g5.divide-decimal-by-whole",
+    "g5.multiply-divide-powers-of-ten"
+  ],
+  "xp": 3,
+  "viz": [
+    "placevalue"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You can <a href=\"/math/grade-5/divide-decimal-by-whole/\">divide a decimal by a whole number</a>, and you know that <a href=\"/math/grade-5/multiply-divide-powers-of-ten/\">multiplying by 10 shifts every digit</a>. To divide by a decimal, turn the divisor into a whole number first."
+      },
+      {
+        "t": "key",
+        "html": "Multiply the divisor and the dividend by the same power of 10, enough to make the divisor a whole number. The quotient does not change. Then divide: $4.8 \\div 0.6 = 48 \\div 6 = 8$."
+      },
+      {
+        "t": "why",
+        "html": "Division asks how many times one amount fits in another. If both amounts get 10 times bigger, the answer stays the same: $6 \\div 2 = 3$ and $60 \\div 20 = 3$. In tenths: $4.8 \\div 0.6$ asks how many 6 tenths fit in 48 tenths, which is the same as $48 \\div 6$."
+      },
+      {
+        "t": "viz",
+        "name": "numberline",
+        "opts": {
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "sub": 10,
+          "labels": "dec",
+          "hops": [
+            {
+              "from": 0,
+              "by": 0.6,
+              "n": 8
+            }
+          ],
+          "points": [
+            {
+              "v": "4.8",
+              "label": "4.8"
+            }
+          ]
+        },
+        "cap": "Jumps of $0.6$ from 0 to $4.8$: eight jumps, so $4.8 \\div 0.6 = 8$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A tenths divisor",
+        "q": "Find $4.8 \\div 0.6$.",
+        "steps": [
+          "Multiply both by 10: $48 \\div 6$.",
+          "$48 \\div 6 = 8$.",
+          "Check: $8 \\times 0.6 = 4.8$."
+        ],
+        "a": "$8$"
+      },
+      {
+        "t": "ex",
+        "title": "A decimal answer",
+        "q": "Find $2.56 \\div 0.8$.",
+        "steps": [
+          "Multiply both by 10: $25.6 \\div 8$.",
+          "$25.6 \\div 8 = 3.2$ (256 tenths $\\div 8 = 32$ tenths).",
+          "Check: $3.2 \\times 0.8 = 2.56$."
+        ],
+        "a": "$3.2$"
+      },
+      {
+        "t": "ex",
+        "title": "Write zeros in the dividend",
+        "q": "Find $9 \\div 0.25$.",
+        "steps": [
+          "The divisor has 2 decimal places, so multiply both by 100.",
+          "$9 \\times 100 = 900$ and $0.25 \\times 100 = 25$.",
+          "$900 \\div 25 = 36$."
+        ],
+        "a": "$36$"
+      },
+      {
+        "t": "mistake",
+        "html": "Moving the point in the divisor only: $4.8 \\div 0.6$ becomes $4.8 \\div 6 = 0.8$. Multiplying just one number changes the problem. Check: dividing by a number less than 1 gives an answer bigger than the dividend, and $8 \\times 0.6 = 4.8$ confirms 8."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Prealgebra 2e, 5.2 Decimal Operations (divide by a decimal)"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 5.NBT.B.7: divide decimals to hundredths"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

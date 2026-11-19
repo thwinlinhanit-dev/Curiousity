@@ -1,0 +1,96 @@
+{
+  "id": "stat.sampling-distribution-mean",
+  "slug": "sampling-distribution-mean",
+  "ladder": "math",
+  "course": "stat",
+  "unit": "sampling-distributions",
+  "title": "Sampling Distribution of a Mean and the CLT",
+  "short": "Sample means are close to normal for large n, with spread σ/√n.",
+  "trouble": "Students think the central limit theorem makes the data themselves normal.",
+  "prereqs": [
+    "stat.sampling-distribution-proportion"
+  ],
+  "xp": 3,
+  "viz": [
+    "sampling"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The same idea works for averages. Take many random samples, find each sample's mean $\\bar{x}$, and look at how those means vary. The answer is one of the most important facts in statistics, the central limit theorem, and it parallels the <a href=\"/math/probability-and-statistics/sampling-distribution-proportion/\">sampling distribution of a proportion</a>."
+      },
+      {
+        "t": "key",
+        "html": "For random samples of size $n$ from a population with mean $\\mu$ and SD $\\sigma$:\n$$\\mu_{\\bar{x}} = \\mu, \\qquad \\sigma_{\\bar{x}} = \\dfrac{\\sigma}{\\sqrt{n}}.$$\n<b>Central limit theorem</b>: when $n$ is large, the sampling distribution of $\\bar{x}$ is approximately normal, whatever the shape of the population. (If the population itself is normal, $\\bar{x}$ is normal for every n.)"
+      },
+      {
+        "t": "why",
+        "html": "The sample total is a sum of $n$ independent values, so its mean is $n\\mu$ and, because <a href=\"/math/probability-and-statistics/combining-random-variables/\">variances add</a>, its variance is $n\\sigma^2$. Dividing the total by $n$ gives $\\bar{x}$: mean $\\mu$ and variance $n\\sigma^2/n^2 = \\sigma^2/n$, so SD $\\sigma/\\sqrt{n}$. The normal shape is the deep part: when many independent pieces are averaged, high and low values offset each other, and the lopsidedness of any one value washes out. How large n must be depends on the skew; $n \\ge 30$ is a common rule of thumb for moderately skewed populations."
+      },
+      {
+        "t": "viz",
+        "name": "sampling",
+        "opts": {
+          "pop": "skewed",
+          "n": 2
+        },
+        "cap": "Start with n = 2 and add 1,000 samples: the means are still skewed. Slide n to 30: the means pile into a bell centered on μ, even though the population (top) is strongly skewed."
+      },
+      {
+        "t": "ex",
+        "title": "Center and spread",
+        "q": "Commute times in a city are skewed right with mean 30 minutes and SD 12 minutes. For random samples of 36 workers, describe the sampling distribution of $\\bar{x}$.",
+        "steps": [
+          "Center: $\\mu_{\\bar{x}} = 30$ minutes.",
+          "Spread: $\\sigma_{\\bar{x}} = \\dfrac{12}{\\sqrt{36}} = 2$ minutes.",
+          "Shape: $n = 36$ is fairly large, so by the CLT $\\bar{x}$ is approximately normal."
+        ],
+        "a": "About normal, mean 30, SD 2."
+      },
+      {
+        "t": "ex",
+        "title": "A probability about the mean",
+        "q": "Find the probability that the mean commute of 36 workers is more than 33 minutes. ($P(Z < 1.50) = 0.9332$.)",
+        "steps": [
+          "$z = \\dfrac{33 - 30}{2} = 1.5$.",
+          "$$P(\\bar{x} > 33) = 1 - 0.9332 = 0.0668$$",
+          "We could not do this for a single worker: one commute is skewed, not normal. The CLT applies to the mean."
+        ],
+        "a": "About $0.067$."
+      },
+      {
+        "t": "ex",
+        "title": "Too small a sample",
+        "q": "Could you use the normal model for the mean of just 4 commutes?",
+        "steps": [
+          "With n = 4 from a strongly skewed population, $\\bar{x}$ is still noticeably skewed.",
+          "Its mean (30) and SD ($12/2 = 6$) are still correct, but normal-curve probabilities would be off."
+        ],
+        "a": "No: the shape is not yet close to normal."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking the central limit theorem makes the data normal. A large sample from a skewed population looks skewed, like the population. The theorem is about the distribution of $\\bar{x}$ over many samples. Check: are you describing individual values (population shape) or sample means (approximately normal for large n)?"
+      },
+      {
+        "t": "note",
+        "html": "The <a href=\"/business/econometrics/probability/\">econometrics probability chapter</a> lets you watch averages of lopsided data pile up into a bell, and builds every regression test on this theorem."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Introductory Statistics 2e, section 7.1 The Central Limit Theorem for Sample Means (Averages)"
+      },
+      {
+        "name": "OpenStax, Introductory Statistics 2e, section 7.3 Using the Central Limit Theorem"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

@@ -1,0 +1,119 @@
+{
+  "id": "alg2.nonlinear-systems",
+  "slug": "nonlinear-systems",
+  "ladder": "math",
+  "course": "alg2",
+  "unit": "quadratics-complex",
+  "title": "Nonlinear Systems",
+  "short": "Solve systems with circles, parabolas and lines.",
+  "trouble": "Students lose solutions when they divide by a variable expression.",
+  "prereqs": [
+    "alg1.linear-quadratic-systems",
+    "geo.circle-equation"
+  ],
+  "xp": 3,
+  "viz": [
+    "graph"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "In Algebra 1 you found where a <a href=\"/math/algebra-1/linear-quadratic-systems/\">line meets a parabola</a>. The same method, substitution, finds where any two curves meet, including the <a href=\"/math/geometry/circle-equation/\">circles</a> you met in Geometry."
+      },
+      {
+        "t": "key",
+        "html": "Solve one equation for a variable (or for a chunk like $x^2$) and substitute into the other. Solve the single-variable equation you get, then go back for the other coordinate. Keep every solution, and check each pair in both equations."
+      },
+      {
+        "t": "why",
+        "html": "A solution is a point on both curves, so its coordinates make both equations true at once. Substitution builds that requirement into one equation. The number of solutions matches the picture: a line can miss a circle, touch it once or cross it twice; a circle and a parabola can meet up to four times."
+      },
+      {
+        "t": "viz",
+        "name": "graph",
+        "opts": {
+          "fns": [
+            {
+              "f": "sqrt(25 - x^2)",
+              "color": "blue"
+            },
+            {
+              "f": "-sqrt(25 - x^2)",
+              "color": "blue",
+              "label": "f"
+            },
+            {
+              "f": "x + b",
+              "color": "red",
+              "label": "g"
+            }
+          ],
+          "params": {
+            "b": [
+              -9,
+              9,
+              -1,
+              0.01
+            ]
+          },
+          "xmin": -9,
+          "xmax": 9,
+          "ymin": -7,
+          "ymax": 7,
+          "equal": true,
+          "target": {
+            "param": "b",
+            "value": 7.07,
+            "tol": 0.06
+          },
+          "task": "Increase b until the line just touches the circle (one solution)."
+        },
+        "cap": "The circle $x^2 + y^2 = 25$ and the line $y = x + b$. Slide $b$: the line crosses the circle twice, touches it once, or misses it."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A line and a circle",
+        "q": "Solve $x^2 + y^2 = 25$ and $y = x - 1$.",
+        "steps": [
+          "Substitute: $x^2 + (x - 1)^2 = 25$, so $2x^2 - 2x + 1 = 25$.",
+          "$2x^2 - 2x - 24 = 0$, divide by 2: $x^2 - x - 12 = 0$, so $(x - 4)(x + 3) = 0$.",
+          "$x = 4$ gives $y = 3$; $x = -3$ gives $y = -4$."
+        ],
+        "a": "$(4, 3)$ and $(-3, -4)$"
+      },
+      {
+        "t": "ex",
+        "title": "A circle and a parabola",
+        "q": "Solve $x^2 + y^2 = 25$ and $y = x^2 - 5$.",
+        "steps": [
+          "From the parabola, $x^2 = y + 5$. Substitute the chunk: $y + 5 + y^2 = 25$.",
+          "$y^2 + y - 20 = 0$, so $(y + 5)(y - 4) = 0$.",
+          "$y = 4$: $x^2 = 9$, so $x = 3$ or $x = -3$. $y = -5$: $x^2 = 0$, so $x = 0$."
+        ],
+        "a": "$(3, 4)$, $(-3, 4)$ and $(0, -5)$"
+      },
+      {
+        "t": "mistake",
+        "html": "Losing solutions by dividing by a variable. If you reach $x^2 = 3x$ and divide by $x$, you keep $x = 3$ but lose $x = 0$. Instead, move everything to one side and factor: $x(x - 3) = 0$. The same care applies when $x^2 = 9$: there are two values, $3$ and $-3$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax College Algebra 2e, Section 7.3 Systems of Nonlinear Equations and Inequalities: Two Variables"
+      },
+      {
+        "name": "Common Core State Standards, A-REI.C.7"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

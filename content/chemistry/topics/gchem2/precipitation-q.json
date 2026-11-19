@@ -1,0 +1,116 @@
+{
+  "id": "gchem2.precipitation-q",
+  "slug": "precipitation-q",
+  "ladder": "chemistry",
+  "course": "gchem2",
+  "unit": "solubility",
+  "title": "Will a Precipitate Form?",
+  "short": "Compare Q with Ksp after mixing, remembering that mixing dilutes both solutions.",
+  "trouble": "Students forget that mixing two solutions dilutes both of them.",
+  "prereqs": [
+    "gchem2.ksp",
+    "gchem2.reaction-quotient",
+    "chem.dilution"
+  ],
+  "xp": 3,
+  "viz": [
+    "ch-beaker"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Will a solid form when two solutions are mixed? Compare the <a href=\"/chemistry/general-chemistry-2/reaction-quotient/\">reaction quotient</a> of the ions with <a href=\"/chemistry/general-chemistry-2/ksp/\">Ksp</a>. The one step people skip is <a href=\"/chemistry/chemistry/dilution/\">dilution</a>: after mixing, every ion is in a larger volume."
+      },
+      {
+        "t": "key",
+        "html": "Find each ion's concentration after mixing, $c = \\dfrac{c_0V_0}{V_\\text{total}}$. Compute $Q$ the same way as $K_{sp}$. If $Q > K_{sp}$, a precipitate forms; if $Q < K_{sp}$, it does not; if $Q = K_{sp}$, the solution is just saturated."
+      },
+      {
+        "t": "why",
+        "html": "$Q$ above $K_{sp}$ means more ions are in solution than the equilibrium allows, so some combine into solid until the product drops back to $K_{sp}$. Below $K_{sp}$, the solution is unsaturated and more solid could even dissolve."
+      },
+      {
+        "t": "viz",
+        "name": "ch-beaker",
+        "opts": {
+          "mode": "mix",
+          "a": {
+            "sub": "AgNO3",
+            "M": 0.001,
+            "V": 0.1
+          },
+          "b": {
+            "sub": "NaCl",
+            "M": 0.001,
+            "V": 0.1
+          },
+          "Ksp": 1.8e-10
+        },
+        "cap": "Two dilute solutions mixed in one beaker: the concentrations halve, and Q is compared with Ksp."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "A precipitate forms",
+        "q": "$100\\ \\text{mL}$ of $0.0010\\ \\text{M}$ $\\mathrm{AgNO_3}$ is mixed with $100\\ \\text{mL}$ of $0.0010\\ \\text{M}$ NaCl. Does AgCl ($K_{sp} = 1.8 \\times 10^{-10}$) precipitate?",
+        "steps": [
+          "The total volume is $200\\ \\text{mL}$, so each concentration halves: $[\\mathrm{Ag^+}] = [\\mathrm{Cl^-}] = 5.0 \\times 10^{-4}\\ \\text{M}$.",
+          "$Q = (5.0 \\times 10^{-4})^2 = 2.5 \\times 10^{-7}$.",
+          "$Q > K_{sp}$ by more than a thousandfold: AgCl precipitates."
+        ],
+        "a": "Yes."
+      },
+      {
+        "t": "ex",
+        "title": "No precipitate",
+        "q": "$50.0\\ \\text{mL}$ of $2.0 \\times 10^{-4}\\ \\text{M}$ $\\mathrm{Pb(NO_3)_2}$ is mixed with $50.0\\ \\text{mL}$ of $2.0 \\times 10^{-3}\\ \\text{M}$ KI. Does $\\mathrm{PbI_2}$ ($K_{sp} = 9.8 \\times 10^{-9}$) form?",
+        "steps": [
+          "After mixing (100 mL): $[\\mathrm{Pb^{2+}}] = 1.0 \\times 10^{-4}\\ \\text{M}$, $[\\mathrm{I^-}] = 1.0 \\times 10^{-3}\\ \\text{M}$.",
+          "$$Q = [\\mathrm{Pb^{2+}}][\\mathrm{I^-}]^2 = (1.0 \\times 10^{-4})(1.0 \\times 10^{-3})^2 = 1.0 \\times 10^{-10}$$",
+          "$Q < K_{sp}$: no precipitate."
+        ],
+        "a": "No."
+      },
+      {
+        "t": "ex",
+        "title": "The concentration that starts precipitation",
+        "q": "What $[\\mathrm{SO_4^{2-}}]$ is needed to begin precipitating $\\mathrm{BaSO_4}$ ($K_{sp} = 1.1 \\times 10^{-10}$) from $0.0010\\ \\text{M}$ $\\mathrm{Ba^{2+}}$?",
+        "steps": [
+          "Precipitation starts when $Q = K_{sp}$: $(0.0010)[\\mathrm{SO_4^{2-}}] = 1.1 \\times 10^{-10}$.",
+          "$[\\mathrm{SO_4^{2-}}] = 1.1 \\times 10^{-7}\\ \\text{M}$."
+        ],
+        "a": "$1.1 \\times 10^{-7}\\ \\text{M}$."
+      },
+      {
+        "t": "ex",
+        "title": "Which precipitates first?",
+        "q": "A solution is $0.010\\ \\text{M}$ in both $\\mathrm{Cl^-}$ and $\\mathrm{CrO_4^{2-}}$. Silver nitrate is added slowly. Which forms first, AgCl ($K_{sp} = 1.8 \\times 10^{-10}$) or $\\mathrm{Ag_2CrO_4}$ ($1.1 \\times 10^{-12}$)?",
+        "steps": [
+          "AgCl starts when $[\\mathrm{Ag^+}] = \\dfrac{1.8 \\times 10^{-10}}{0.010} = 1.8 \\times 10^{-8}\\ \\text{M}$.",
+          "$\\mathrm{Ag_2CrO_4}$ starts when $[\\mathrm{Ag^+}]^2(0.010) = 1.1 \\times 10^{-12}$: $[\\mathrm{Ag^+}] = 1.0 \\times 10^{-5}\\ \\text{M}$.",
+          "AgCl needs far less silver, so it forms first. By the time red $\\mathrm{Ag_2CrO_4}$ appears, $[\\mathrm{Cl^-}]$ is down to $1.7 \\times 10^{-5}\\ \\text{M}$: over 99.8% of the chloride has precipitated."
+        ],
+        "a": "AgCl."
+      },
+      {
+        "t": "mistake",
+        "html": "Forgetting that mixing two solutions dilutes both. Using the original concentrations here would make $Q$ four times too big for a 1:1 salt (and eight times for a 1:2 salt with equal volumes). Check: after mixing equal volumes, every concentration is half what it was."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 15.1 Precipitation and Dissolution"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

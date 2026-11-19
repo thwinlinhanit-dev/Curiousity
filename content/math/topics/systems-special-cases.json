@@ -1,0 +1,132 @@
+{
+  "id": "g8.systems-special-cases",
+  "slug": "systems-special-cases",
+  "ladder": "math",
+  "course": "g8",
+  "unit": "systems",
+  "title": "Parallel and Identical Lines",
+  "short": "Spot systems with no solution or infinitely many.",
+  "trouble": "",
+  "prereqs": [
+    "g8.systems-substitution",
+    "g8.solution-count"
+  ],
+  "xp": 2,
+  "viz": [
+    "linesystem"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Two lines don’t always cross. This lesson joins <a href=\"/math/pre-algebra/systems-substitution/\">substitution</a> with what you learned about <a href=\"/math/pre-algebra/solution-count/\">equations with no solution or infinitely many</a>."
+      },
+      {
+        "t": "why",
+        "html": "Two lines in a plane can do only three things: cross once, never meet (parallel: same slope, different $y$-intercepts), or lie on top of each other (the same line). Algebra tells the same story: substitution ends with $x$ = a number, with a false statement, or with a true statement."
+      },
+      {
+        "t": "table",
+        "head": [
+          "The lines",
+          "Slopes and intercepts",
+          "Algebra ends with",
+          "Solutions"
+        ],
+        "rows": [
+          [
+            "cross",
+            "different slopes",
+            "$x$ = a number",
+            "exactly one"
+          ],
+          [
+            "are parallel",
+            "same slope, different $b$",
+            "a false statement, like $-4 = 8$",
+            "none"
+          ],
+          [
+            "are the same line",
+            "same slope, same $b$",
+            "a true statement, like $8 = 8$",
+            "infinitely many"
+          ]
+        ],
+        "cap": "The three possibilities."
+      },
+      {
+        "t": "key",
+        "html": "Write both equations as $y = mx + b$. Different slopes: one solution. Same slope and different intercepts: no solution. Same slope and same intercept: infinitely many solutions (every point on the line)."
+      },
+      {
+        "t": "viz",
+        "name": "linesystem",
+        "opts": {
+          "editable": true,
+          "m": [
+            2,
+            -1
+          ],
+          "b": [
+            -1,
+            3
+          ],
+          "target": "none",
+          "task": "Make this system have <b>no</b> solution."
+        },
+        "cap": "Use the sliders. Then try to make infinitely many solutions."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Parallel lines",
+        "q": "Solve: $y = 3x + 2$ and $6x - 2y = 8$.",
+        "steps": [
+          "Rewrite the second: $-2y = -6x + 8$, so $y = 3x - 4$. Same slope 3, different intercepts: parallel.",
+          "Algebra agrees: $6x - 2(3x + 2) = 8$ gives $-4 = 8$, which is false."
+        ],
+        "a": "no solution"
+      },
+      {
+        "t": "ex",
+        "title": "The same line",
+        "q": "Solve: $y = -x + 4$ and $2x + 2y = 8$.",
+        "steps": [
+          "Rewrite the second: $2y = -2x + 8$, so $y = -x + 4$. It is the same line.",
+          "Every point on it works, such as $(0, 4)$ and $(1, 3)$."
+        ],
+        "a": "infinitely many solutions"
+      },
+      {
+        "t": "ex",
+        "title": "Tell at a glance",
+        "q": "How many solutions do $y = 2x + 1$ and $y = -2x + 1$ have?",
+        "steps": [
+          "The slopes, 2 and $-2$, are different, so the lines cross once (here at $(0, 1)$)."
+        ],
+        "a": "exactly one"
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking “infinitely many solutions” means every pair $(x, y)$ works. Only points on the shared line do: $(0, 0)$ is not a solution of $y = -x + 4$."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Elementary Algebra 2e, Section 5.1: Solve Systems of Equations by Graphing"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, Grade 8, 8.EE.C.8b"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

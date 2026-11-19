@@ -1,0 +1,97 @@
+{
+  "id": "gchem2.coupled-reactions",
+  "slug": "coupled-reactions",
+  "ladder": "chemistry",
+  "course": "gchem2",
+  "unit": "thermodynamics",
+  "title": "Coupled Reactions",
+  "short": "An unfavored reaction can run when it is paired with a strongly favored one, as ATP does in cells.",
+  "trouble": "Students think coupling changes the ΔG of the unfavored step itself, instead of making the total ΔG negative.",
+  "prereqs": [
+    "gchem2.free-energy-k",
+    "gchem1.hess-law"
+  ],
+  "xp": 2,
+  "viz": [
+    "ch-energydiagram"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Living cells build proteins and sugars, and both have positive <a href=\"/chemistry/general-chemistry-2/free-energy-k/\">ΔG</a>. They manage it by pairing each uphill reaction with a strongly downhill one. Free energies add the way enthalpies do in <a href=\"/chemistry/general-chemistry-1/hess-law/\">Hess’s law</a>."
+      },
+      {
+        "t": "key",
+        "html": "When two reactions share an intermediate and run as one combined process, their free energies add: $\\Delta G_\\text{total} = \\Delta G_1 + \\Delta G_2$, and their constants multiply: $K_\\text{total} = K_1K_2$. If the total is negative, the combined process is favored, even though one part alone is not."
+      },
+      {
+        "t": "why",
+        "html": "$G$ is a state function, so the overall change does not depend on the path; adding the equations adds the $\\Delta G$ values. Coupling is not a bookkeeping trick: the two reactions must be physically linked, usually through a shared intermediate. In cells, ATP transfers a phosphate group to the reactant, making an activated intermediate whose next step is downhill."
+      },
+      {
+        "t": "viz",
+        "name": "ch-energydiagram",
+        "opts": {
+          "mode": "coupled",
+          "dG": [
+            14.2,
+            -30.5
+          ],
+          "labels": [
+            "glutamate + NH₄⁺ → glutamine",
+            "ATP → ADP + Pᵢ"
+          ]
+        },
+        "cap": "An uphill step (+14.2 kJ/mol) paired with ATP hydrolysis (−30.5 kJ/mol). The combined process is downhill by 16.3 kJ/mol."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Making glutamine",
+        "q": "Glutamate + $\\mathrm{NH_4^+}$ → glutamine + water has $\\Delta G^{\\circ\\prime} = +14.2\\ \\text{kJ/mol}$. ATP hydrolysis has $\\Delta G^{\\circ\\prime} = -30.5\\ \\text{kJ/mol}$. Find the total and $K$ at $310\\ \\text{K}$ (body temperature).",
+        "steps": [
+          "$\\Delta G_\\text{total} = 14.2 + (-30.5) = -16.3\\ \\text{kJ/mol}$.",
+          "$$K = e^{16\\,300/(8.314 \\times 310)} = e^{6.32} = 5.6 \\times 10^{2}$$",
+          "Alone, the first reaction has $K = e^{-14\\,200/(8.314 \\times 310)} = 4.0 \\times 10^{-3}$: coupling raises $K$ by more than 100 000 times."
+        ],
+        "a": "$-16.3\\ \\text{kJ/mol}$; $K \\approx 560$."
+      },
+      {
+        "t": "ex",
+        "title": "Adding constants",
+        "q": "Reaction 1 has $K_1 = 2.0 \\times 10^{-3}$ and reaction 2 has $K_2 = 5.0 \\times 10^{5}$ at the same temperature. Coupled, they add to the overall process. Find $K$ and the sign of $\\Delta G^\\circ$.",
+        "steps": [
+          "$K = K_1K_2 = (2.0 \\times 10^{-3})(5.0 \\times 10^{5}) = 1.0 \\times 10^{3}$.",
+          "$K > 1$, so $\\Delta G^\\circ < 0$: the coupled process is favored."
+        ],
+        "a": "$K = 1.0 \\times 10^{3}$; $\\Delta G^\\circ$ negative."
+      },
+      {
+        "t": "p",
+        "html": "The $\\circ\\prime$ (degree-prime) marks the biochemists' standard state: pH 7 rather than $1\\ \\text{M}$ $\\mathrm{H_3O^+}$, which suits reactions in cells. Other values you will meet: phosphoenolpyruvate hydrolysis, $-61.9\\ \\text{kJ/mol}$; glucose + phosphate → glucose 6-phosphate, $+13.8\\ \\text{kJ/mol}$. Industry couples reactions too: in smelting, carbon's reaction with oxygen pays for pulling oxygen out of a metal oxide."
+      },
+      {
+        "t": "note",
+        "html": "A typical cell turns over its ATP many times a day, remaking it from ADP and phosphate with energy from food; the ATP is a carrier of free energy, not a store."
+      },
+      {
+        "t": "mistake",
+        "html": "Thinking coupling changes the $\\Delta G$ of the unfavored step itself. That step still has $\\Delta G = +14.2\\ \\text{kJ/mol}$; what changes is that it no longer runs alone. Check: the total is the sum, and each part keeps its own value."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Chemistry 2e, Section 16.4 Free Energy"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

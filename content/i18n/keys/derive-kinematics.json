@@ -1,0 +1,86 @@
+[
+  {
+    "key": "title",
+    "source": "Deriving the Constant-Acceleration Equations"
+  },
+  {
+    "key": "short",
+    "source": "Integrating a constant acceleration twice gives the familiar equations and shows exactly when they apply."
+  },
+  {
+    "key": "trouble",
+    "source": "Students use constant-acceleration equations for an acceleration that changes with time."
+  },
+  {
+    "key": "block.0.html",
+    "source": "<a href=\"/physics/physics-1/kinematic-equations/\">The Constant-Acceleration Equations</a> gave you the constant-acceleration equations as tools. <a href=\"/physics/mechanics/motion-from-acceleration/\">Velocity and Position from Acceleration</a> lets you derive them in a few lines, and the derivation shows exactly when they are allowed."
+  },
+  {
+    "key": "block.1.html",
+    "source": "Set $a$ equal to a constant and integrate. $$v(t) = v_0 + \\int_0^t a\\,dt' = v_0 + at.$$ Integrate again: $$x(t) = x_0 + \\int_0^t (v_0 + at')\\,dt' = x_0 + v_0t + \\tfrac{1}{2}at^2.$$ For the third equation, use the chain rule: $a = \\dfrac{dv}{dt} = \\dfrac{dv}{dx}\\dfrac{dx}{dt} = v\\dfrac{dv}{dx}$. Then $\\int_{v_0}^{v} v\\,dv = \\int_{x_0}^{x} a\\,dx$ gives $\\tfrac{1}{2}v^2 - \\tfrac{1}{2}v_0^2 = a(x - x_0)$, or $$v^2 = v_0^2 + 2a\\,\\Delta x.$$"
+  },
+  {
+    "key": "block.2.html",
+    "source": "$v = v_0 + at$, $x = x_0 + v_0t + \\tfrac{1}{2}at^2$ and $v^2 = v_0^2 + 2a\\Delta x$ hold <b>only when the acceleration is constant</b>, because pulling $a$ out of each integral assumed it never changes. When $a$ depends on time, position or velocity, integrate the real $a$ instead."
+  },
+  {
+    "key": "block.3.cap",
+    "source": "With constant $a = 2\\ \\text{m/s}^2$ and $v_0 = 4\\ \\text{m/s}$, the $v$–$t$ graph is a straight line, and the area under it is $\\Delta x = v_0t + \\tfrac{1}{2}at^2$."
+  },
+  {
+    "key": "block.4.q",
+    "source": "A cart moving at $6\\ \\text{m/s}$ speeds up at a constant $2\\ \\text{m/s}^2$ over $16\\ \\text{m}$. How fast is it moving then?"
+  },
+  {
+    "key": "block.4.title",
+    "source": "Using the equation without time"
+  },
+  {
+    "key": "block.4.a",
+    "source": "$10\\ \\text{m/s}$."
+  },
+  {
+    "key": "block.4.step.0",
+    "source": "The acceleration is constant, so $v^2 = v_0^2 + 2a\\Delta x$ applies."
+  },
+  {
+    "key": "block.4.step.1",
+    "source": "$v^2 = 36 + 2(2)(16) = 100\\ \\text{m}^2/\\text{s}^2$."
+  },
+  {
+    "key": "block.4.step.2",
+    "source": "$v = 10\\ \\text{m/s}$."
+  },
+  {
+    "key": "block.5.q",
+    "source": "A sled starts from rest with $a(t) = 3t$ (m/s², s). How far does it go in 2 s? Compare with $\\tfrac{1}{2}at^2$ using $a(2)$."
+  },
+  {
+    "key": "block.5.title",
+    "source": "When the shortcut fails"
+  },
+  {
+    "key": "block.5.a",
+    "source": "$4\\ \\text{m}$ (the constant-acceleration formula would wrongly give 12 m)."
+  },
+  {
+    "key": "block.5.step.0",
+    "source": "The acceleration grows with time, so integrate: $v(t) = \\tfrac{3}{2}t^2$ and $x(t) = \\tfrac{1}{2}t^3$."
+  },
+  {
+    "key": "block.5.step.1",
+    "source": "$x(2) = \\tfrac{1}{2}(8) = 4\\ \\text{m}$."
+  },
+  {
+    "key": "block.5.step.2",
+    "source": "The shortcut with $a(2) = 6\\ \\text{m/s}^2$ gives $\\tfrac{1}{2}(6)(2)^2 = 12\\ \\text{m}$, three times too far: it pretends the sled had its final acceleration all along."
+  },
+  {
+    "key": "block.6.html",
+    "source": "Using the constant-acceleration equations for a spring, air drag, a rocket burn or any force that changes. They will give a number, but a wrong one. Check before you start: is the net force, and so the acceleration, the same at every moment of the motion? If not, write $a(t)$, $a(x)$ or $a(v)$ and integrate."
+  },
+  {
+    "key": "block.7.html",
+    "source": "One more equation falls out of the area picture: under a straight $v$–$t$ line, the area is a trapezoid, so $\\Delta x = \\tfrac{1}{2}(v_0 + v)t$. The average velocity is the plain average of the starting and final velocities, but only because the graph is a straight line. For a curved $v$–$t$ graph, the average velocity is $\\dfrac{1}{t}\\int_0^t v\\,dt'$ instead."
+  }
+]

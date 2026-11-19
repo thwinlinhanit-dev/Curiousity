@@ -1,0 +1,106 @@
+{
+  "id": "hsbio.dihybrid",
+  "slug": "dihybrid",
+  "ladder": "bio",
+  "course": "hsbio",
+  "unit": "genetics",
+  "title": "Dihybrid Crosses",
+  "short": "For two genes on different chromosomes, AaBb × AaBb gives four gamete types each and a 16-box square with a 9:3:3:1 phenotype ratio.",
+  "trouble": "Students write gametes with two alleles of the same gene (Aa) instead of one allele of each gene (AB, Ab, aB, ab).",
+  "prereqs": [
+    "hsbio.probability-rules",
+    "hsbio.meiosis-variation"
+  ],
+  "xp": 3,
+  "viz": [
+    "bi-punnett"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Mendel also followed two traits at once, such as seed shape (R round, r wrinkled) and seed color (Y yellow, y green). A cross of two RrYy plants is a <b>dihybrid cross</b>. It rests on <a href=\"/biology/high-school-biology/probability-rules/\">the product rule</a> and on <a href=\"/biology/high-school-biology/meiosis-variation/\">independent assortment</a>."
+      },
+      {
+        "t": "key",
+        "html": "A gamete carries <b>one allele of each gene</b>. RrYy makes four kinds of gametes, RY, Ry, rY and ry, in equal numbers. RrYy × RrYy fills a 16-box square with a <b>9 : 3 : 3 : 1</b> phenotype ratio."
+      },
+      {
+        "t": "why",
+        "html": "Because the genes sort independently, each gene gives its usual 3 : 1. Combine them with the product rule: both dominant ¾ × ¾ = 9/16; dominant shape and green ¾ × ¼ = 3/16; wrinkled and yellow ¼ × ¾ = 3/16; both recessive ¼ × ¼ = 1/16. Those are 9 : 3 : 3 : 1."
+      },
+      {
+        "t": "ex",
+        "title": "Writing gametes",
+        "q": "List the gametes of AaBb, and of AABb.",
+        "steps": [
+          "Pair each allele of gene A with each allele of gene B, like FOIL.",
+          "AaBb: A with B, A with b, a with B, a with b.",
+          "AABb: A with B, A with b (both A alleles are the same)."
+        ],
+        "a": "AaBb: AB, Ab, aB, ab. AABb: AB, Ab."
+      },
+      {
+        "t": "viz",
+        "name": "bi-punnett",
+        "opts": {
+          "p1": "AaBb",
+          "p2": "AaBb",
+          "traits": {
+            "A": "round",
+            "a": "wrinkled",
+            "B": "yellow",
+            "b": "green"
+          }
+        },
+        "cap": "The same cross with A for round and B for yellow. The 16 boxes, colored by phenotype: 9 round yellow, 3 round green, 3 wrinkled yellow, 1 wrinkled green."
+      },
+      {
+        "t": "ex",
+        "title": "Counting offspring",
+        "q": "From RrYy × RrYy, 320 seeds are grown. About how many are wrinkled and yellow?",
+        "steps": [
+          "Wrinkled: ¼. Yellow: ¾.",
+          "Wrinkled and yellow: ¼ × ¾ = 3/16.",
+          "3/16 of 320 = 60."
+        ],
+        "a": "About 60."
+      },
+      {
+        "t": "ex",
+        "title": "A test cross with two genes",
+        "q": "RrYy × rryy. What is the phenotype ratio?",
+        "steps": [
+          "RrYy makes RY, Ry, rY, ry, each ¼; rryy makes only ry.",
+          "Offspring: RrYy, Rryy, rrYy, rryy, each ¼."
+        ],
+        "a": "1 : 1 : 1 : 1 (round yellow : round green : wrinkled yellow : wrinkled green)."
+      },
+      {
+        "t": "mistake",
+        "html": "The most common mistake is writing gametes such as Aa or Bb: two alleles of the <b>same</b> gene. Meiosis separates the two alleles of each gene, so a gamete never has both. Check every gamete: it must have exactly one letter for each gene."
+      },
+      {
+        "t": "note",
+        "html": "The 9 : 3 : 3 : 1 rule needs genes on different chromosomes. Genes close together on the same chromosome tend to travel together; that is linkage, a topic for later study."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax, Concepts of Biology, 8.2 Laws of Inheritance (independent assortment)"
+      },
+      {
+        "name": "OpenStax, Biology 2e, 12.3 Laws of Inheritance"
+      },
+      {
+        "name": "Next Generation Science Standards, HS-LS3-3: Heredity: Inheritance and Variation of Traits"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

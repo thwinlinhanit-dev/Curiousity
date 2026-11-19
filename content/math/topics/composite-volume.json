@@ -1,0 +1,113 @@
+{
+  "id": "g5.composite-volume",
+  "slug": "composite-volume",
+  "ladder": "math",
+  "course": "g5",
+  "unit": "volume",
+  "title": "Volume of Combined Prisms",
+  "short": "Split a solid into prisms and add.",
+  "trouble": "Children count the shared part twice when two prisms are joined.",
+  "prereqs": [
+    "g5.volume-base-times-height"
+  ],
+  "xp": 2,
+  "viz": [
+    "volume"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "You can find the <a href=\"/math/grade-5/volume-base-times-height/\">volume of a rectangular prism</a>. Many solids, like steps or an L-shaped building, are two or more prisms joined together."
+      },
+      {
+        "t": "key",
+        "html": "Split the solid into rectangular prisms that do not overlap. Find each volume and add. Volume is additive: the whole holds as many cubes as its parts together."
+      },
+      {
+        "t": "why",
+        "html": "Every unit cube in the solid belongs to exactly one of the parts, so adding the parts counts each cube once. If the parts overlapped, the shared cubes would be counted twice, which is why the split must have no overlap. Sometimes you need to find a missing measure by subtracting, such as the height of the bottom part."
+      },
+      {
+        "t": "viz",
+        "name": "g5-prisms",
+        "opts": {
+          "boxes": [
+            {
+              "at": [
+                0,
+                0,
+                0
+              ],
+              "size": [
+                6,
+                3,
+                2
+              ],
+              "show": "lwh"
+            },
+            {
+              "at": [
+                0,
+                0,
+                2
+              ],
+              "size": [
+                3,
+                3,
+                3
+              ],
+              "show": "Lh"
+            }
+          ],
+          "unit": "cm",
+          "sums": true
+        },
+        "cap": "A step shape: a $6 \\times 3 \\times 2$ prism with a $3 \\times 3 \\times 3$ prism on top. Press &ldquo;Pull apart&rdquo; to see the two parts."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Two stacked prisms",
+        "q": "Find the volume of the step shape above.",
+        "steps": [
+          "Bottom: $6 \\times 3 \\times 2 = 36$ cubic cm.",
+          "Top: $3 \\times 3 \\times 3 = 27$ cubic cm.",
+          "Total: $36 + 27 = 63$ cubic cm."
+        ],
+        "a": "63 cubic centimeters"
+      },
+      {
+        "t": "ex",
+        "title": "Find a missing height first",
+        "q": "A solid is 5 m tall. Its top part is a $2 \\times 4 \\times 3$ prism (3 m tall), sitting on a bottom part that is 6 m long and 4 m wide. Find the volume.",
+        "steps": [
+          "The bottom part's height is $5 - 3 = 2$ m.",
+          "Bottom: $6 \\times 4 \\times 2 = 48$. Top: $2 \\times 4 \\times 3 = 24$.",
+          "Total: $48 + 24 = 72$."
+        ],
+        "a": "72 cubic meters"
+      },
+      {
+        "t": "mistake",
+        "html": "Counting a shared part twice, such as using the full height of 5 m for the bottom prism in the second example. Then the top part's cubes are counted again. Check: make sure no cube belongs to both parts. The heights of the stacked parts must add to the whole height."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Prealgebra 2e, 9.6 Solve Geometry Applications: Volume and Surface Area"
+      },
+      {
+        "name": "Common Core State Standards for Mathematics, 5.MD.C.5c: find volumes of solids made of two non-overlapping right rectangular prisms"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

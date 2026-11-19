@@ -1,0 +1,116 @@
+{
+  "id": "calc1.derivative-at-a-point",
+  "slug": "derivative-at-a-point",
+  "ladder": "math",
+  "course": "calc1",
+  "unit": "derivative",
+  "title": "The Derivative at a Point",
+  "short": "f′(a) is the limit of the difference quotient: the slope of the tangent line.",
+  "trouble": "Students expand f(a + h) as f(a) + h, or plug in h = 0 before simplifying.",
+  "prereqs": [
+    "calc1.instantaneous-rate",
+    "calc1.limits-by-factoring"
+  ],
+  "xp": 2,
+  "viz": [
+    "secant"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "The <a href=\"/math/calculus-1/instantaneous-rate/\">From Average to Instantaneous Rate</a> at a point is important enough to get its own name and symbol. Computing it means evaluating a $\\frac{0}{0}$ limit, so the methods from <a href=\"/math/calculus-1/limits-by-factoring/\">Limits by Factoring and Canceling</a> will do the work."
+      },
+      {
+        "t": "key",
+        "html": "The <b>derivative of $f$ at $a$</b> is $$\\role[slope at a]{rate}{f'(a)} = \\lim_{h \\to 0} \\frac{\\role[change in output]{output}{f(a + h) - f(a)}}{\\role[change in input]{input}{h}},$$ when this limit exists. It is the slope of the tangent line to $y = f(x)$ at $(a, f(a))$ and the instantaneous rate of change of $f$ at $a$. An equivalent form is $f'(a) = \\lim_{x \\to a} \\frac{f(x) - f(a)}{x - a}$."
+      },
+      {
+        "t": "viz",
+        "name": "secant",
+        "opts": {
+          "f": "x^2-2x",
+          "a": 3,
+          "h": 1.5,
+          "tangent": true,
+          "table": true,
+          "roleLinks": {
+            "h": "input"
+          }
+        },
+        "cap": "$f(x) = x^2 - 2x$ at $a = 3$: the secant slopes $4 + h$ approach $f'(3) = 4$."
+      },
+      {
+        "t": "why",
+        "html": "At $h = 0$ the difference quotient is $\\frac{0}{0}$: there is only one point, and one point does not determine a line. So we never set $h = 0$ first. Instead we simplify the quotient algebraically. For polynomials, $f(a + h) - f(a)$ always has a factor of $h$, because it is 0 when $h = 0$. Canceling that $h$ leaves an expression we can evaluate at $h = 0$."
+      },
+      {
+        "t": "h",
+        "text": "The method in four steps"
+      },
+      {
+        "t": "list",
+        "items": [
+          "Write $f(a + h)$ by replacing <em>every</em> $x$ with $a + h$, and expand.",
+          "Subtract $f(a)$; the constant terms cancel.",
+          "Divide by $h$ (every remaining term has a factor of $h$).",
+          "Only now let $h \\to 0$."
+        ]
+      },
+      {
+        "t": "ex",
+        "title": "A quadratic",
+        "q": "Use the definition to find $f'(2)$ for $f(x) = x^2 + 3x$.",
+        "steps": [
+          "$$f(2 + h) = (2 + h)^2 + 3(2 + h) = 4 + 4h + h^2 + 6 + 3h = 10 + 7h + h^2$$.",
+          "$f(2) = 10$, so $f(2 + h) - f(2) = 7h + h^2$.",
+          "Divide by $h$: $7 + h$.",
+          "Let $h \\to 0$: $f'(2) = 7$."
+        ],
+        "a": "$f'(2) = 7$"
+      },
+      {
+        "t": "ex",
+        "title": "A reciprocal",
+        "q": "Find $f'(2)$ for $f(x) = \\frac{1}{x}$.",
+        "steps": [
+          "$\\frac{f(2 + h) - f(2)}{h} = \\frac{1}{h}\\left(\\frac{1}{2 + h} - \\frac{1}{2}\\right)$.",
+          "Combine: $\\frac{1}{2 + h} - \\frac{1}{2} = \\frac{2 - (2 + h)}{2(2 + h)} = \\frac{-h}{2(2 + h)}$.",
+          "Divide by $h$: $\\frac{-1}{2(2 + h)}$.",
+          "Let $h \\to 0$: $-\\frac{1}{4}$."
+        ],
+        "a": "$f'(2) = -\\frac{1}{4}$: the curve falls a quarter unit per unit there."
+      },
+      {
+        "t": "ex",
+        "title": "A square root",
+        "q": "Find $f'(4)$ for $f(x) = \\sqrt{x}$.",
+        "steps": [
+          "The quotient is $\\frac{\\sqrt{4 + h} - 2}{h}$.",
+          "Multiply by the conjugate: $\\frac{(4 + h) - 4}{h(\\sqrt{4 + h} + 2)} = \\frac{1}{\\sqrt{4 + h} + 2}$.",
+          "Let $h \\to 0$: $\\frac{1}{4}$."
+        ],
+        "a": "$f'(4) = \\frac{1}{4}$"
+      },
+      {
+        "t": "note",
+        "html": "The second form, $\\lim_{x \\to a} \\frac{f(x) - f(a)}{x - a}$, is sometimes quicker. For $f(x) = x^2$ at $a = 3$: $\\frac{x^2 - 9}{x - 3} = x + 3 \\to 6$. Both forms describe the same secant slopes; one names the second point $a + h$, the other names it $x$."
+      },
+      {
+        "t": "mistake",
+        "html": "Two classic slips. First, writing $f(a + h)$ as $f(a) + h$. For $f(x) = x^2$, $f(3 + h) = (3 + h)^2 = 9 + 6h + h^2$, not $9 + h$. Second, plugging in $h = 0$ before simplifying, which gives $\\frac{0}{0}$ and nothing else. Check: after you divide by $h$, no $h$ should be left in a denominator for polynomials."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Calculus Volume 1, 3.1 Defining the Derivative"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

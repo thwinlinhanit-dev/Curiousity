@@ -1,0 +1,103 @@
+{
+  "id": "pre.complex-roots",
+  "slug": "complex-roots",
+  "ladder": "math",
+  "course": "pre",
+  "unit": "polar-complex",
+  "title": "nth Roots of Complex Numbers",
+  "short": "A nonzero number has n nth roots spread evenly around a circle.",
+  "trouble": "Students find only one root, forgetting to add multiples of 2π/n.",
+  "prereqs": [
+    "pre.de-moivre"
+  ],
+  "xp": 3,
+  "viz": [
+    "complexplane"
+  ],
+  "figureArchetype": "GeneralFigure",
+  "practice": null,
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "<a href=\"/math/precalculus/de-moivre/\">De Moivre's theorem</a> raises a number to a power by multiplying its angle. Running it backward finds roots, and reveals something surprising: every nonzero complex number has exactly $n$ different $n$th roots."
+      },
+      {
+        "t": "key",
+        "html": "The $n$th roots of $r(\\cos\\theta + i\\sin\\theta)$ are $$\\sqrt[n]{r}\\left(\\cos\\frac{\\theta + 2\\pi k}{n} + i\\sin\\frac{\\theta + 2\\pi k}{n}\\right), \\quad k = 0, 1, \\ldots, n - 1.$$ They lie on a circle of radius $\\sqrt[n]{r}$, spaced $\\frac{2\\pi}{n}$ apart."
+      },
+      {
+        "t": "why",
+        "html": "Suppose $w = s(\\cos\\varphi + i\\sin\\varphi)$ and $w^n = r(\\cos\\theta + i\\sin\\theta)$. De Moivre says $s^n = r$, so $s = \\sqrt[n]{r}$, and $n\\varphi$ must point the same way as $\\theta$: $n\\varphi = \\theta + 2\\pi k$ for some whole number $k$. Dividing by $n$, each $k$ from $0$ to $n - 1$ gives a different angle; at $k = n$ you are back where you started, a full turn later."
+      },
+      {
+        "t": "viz",
+        "name": "complexplane",
+        "opts": {
+          "z": [
+            8,
+            0
+          ],
+          "op": "roots",
+          "ops": [
+            "roots"
+          ],
+          "n": 3,
+          "range": 9,
+          "polar": true
+        },
+        "cap": "The roots of $z$ form a regular polygon. Change $n$ or drag $z$."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "Cube roots of 8",
+        "q": "Find all cube roots of $8$.",
+        "steps": [
+          "$8 = 8(\\cos 0 + i\\sin 0)$. Modulus of each root: $\\sqrt[3]{8} = 2$.",
+          "Angles: $\\frac{0 + 2\\pi k}{3}$ for $k = 0, 1, 2$: $0$, $\\frac{2\\pi}{3}$, $\\frac{4\\pi}{3}$.",
+          "$2(\\cos 0 + i\\sin 0) = 2$; $2\\left(-\\frac{1}{2} + \\frac{\\sqrt{3}}{2}i\\right) = -1 + i\\sqrt{3}$; and its conjugate $-1 - i\\sqrt{3}$."
+        ],
+        "a": "$2$, $-1 + i\\sqrt{3}$, $-1 - i\\sqrt{3}$"
+      },
+      {
+        "t": "ex",
+        "title": "Fourth roots of a negative",
+        "q": "Find the fourth roots of $-16$.",
+        "steps": [
+          "$-16 = 16(\\cos\\pi + i\\sin\\pi)$. Modulus of each root: $\\sqrt[4]{16} = 2$.",
+          "Angles: $\\frac{\\pi + 2\\pi k}{4} = \\frac{\\pi}{4}, \\frac{3\\pi}{4}, \\frac{5\\pi}{4}, \\frac{7\\pi}{4}$.",
+          "$2\\left(\\cos\\frac{\\pi}{4} + i\\sin\\frac{\\pi}{4}\\right) = \\sqrt{2} + \\sqrt{2}\\,i$, and the others are its rotations by quarter turns."
+        ],
+        "a": "$\\pm\\sqrt{2} \\pm \\sqrt{2}\\,i$ (all four sign choices)"
+      },
+      {
+        "t": "ex",
+        "title": "Square roots of $2i$",
+        "q": "Find the square roots of $2i$.",
+        "steps": [
+          "$2i = 2\\left(\\cos\\frac{\\pi}{2} + i\\sin\\frac{\\pi}{2}\\right)$; root modulus $\\sqrt{2}$.",
+          "Angles $\\frac{\\pi}{4}$ and $\\frac{\\pi}{4} + \\pi = \\frac{5\\pi}{4}$.",
+          "Check: $(1 + i)^2 = 1 + 2i + i^2 = 2i$. ✓"
+        ],
+        "a": "$1 + i$ and $-1 - i$"
+      },
+      {
+        "t": "mistake",
+        "html": "Finding only one root, the one with $k = 0$. A cube root problem has three answers, a fourth root problem four. Add $\\frac{2\\pi}{n}$ to the angle again and again until you have $n$ roots evenly spaced around the circle."
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "OpenStax Precalculus 2e, Section 8.5 Polar Form of Complex Numbers"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}

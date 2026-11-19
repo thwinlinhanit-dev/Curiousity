@@ -1,0 +1,144 @@
+{
+  "id": "cplx.trig-hyperbolic",
+  "slug": "trig-hyperbolic",
+  "ladder": "math",
+  "course": "cplx",
+  "unit": "elementary",
+  "title": "Complex Sine and Cosine",
+  "short": "cos z = (e^(iz) + e^(−iz))/2 and sin z = (e^(iz) − e^(−iz))/(2i) are entire and unbounded, so sin z = 2 has solutions.",
+  "trouble": "Students carry |sin z| ≤ 1 over from the real line, but |sin(iy)| = |sinh y| grows without bound.",
+  "prereqs": [
+    "cplx.complex-exponential",
+    "calc2.hyperbolic-functions"
+  ],
+  "xp": 3,
+  "viz": [
+    "cplx-domaincolor"
+  ],
+  "figureArchetype": "MotionFigure",
+  "lesson": {
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Euler's formula gives $\\cos\\theta = \\frac{e^{i\\theta} + e^{-i\\theta}}{2}$ for real $\\theta$. Using the <a href=\"/math/complex-analysis/complex-exponential/\">complex exponential</a>, the same formulas define sine and cosine for every complex $z$. On the imaginary axis they turn into the <a href=\"/math/calculus-2/hyperbolic-functions/\">hyperbolic functions</a>, and that is where the surprises live."
+      },
+      {
+        "t": "key",
+        "html": "$$\\cos z = \\frac{e^{iz} + e^{-iz}}{2}, \\qquad \\sin z = \\frac{e^{iz} - e^{-iz}}{2i}.$$\n      Both are entire, with $(\\sin z)' = \\cos z$ and $(\\cos z)' = -\\sin z$; the usual identities ($\\sin^2 z + \\cos^2 z = 1$, the sum formulas) still hold. On the imaginary axis, $\\cos(iy) = \\cosh y$ and $\\sin(iy) = i\\sinh y$, and in general\n      $$\\sin(x + iy) = \\sin x\\cosh y + i\\cos x\\sinh y, \\qquad |\\sin z|^2 = \\sin^2 x + \\sinh^2 y.$$\n      So $\\sin z$ and $\\cos z$ are <b>unbounded</b>: they take every complex value, including $2$."
+      },
+      {
+        "t": "why",
+        "html": "Put $z = iy$: $\\cos(iy) = \\frac{e^{-y} + e^{y}}{2} = \\cosh y$ and $\\sin(iy) = \\frac{e^{-y} - e^{y}}{2i} = i\\,\\frac{e^y - e^{-y}}{2} = i\\sinh y$. The sum formula $\\sin(x + iy) = \\sin x\\cos(iy) + \\cos x\\sin(iy)$ then gives the rectangular form. For the modulus, $|\\sin z|^2 = \\sin^2 x\\cosh^2 y + \\cos^2 x\\sinh^2 y$; replace $\\cosh^2 y$ by $1 + \\sinh^2 y$ and use $\\sin^2 x + \\cos^2 x = 1$."
+      },
+      {
+        "t": "viz",
+        "name": "cplx-domaincolor",
+        "opts": {
+          "f": "sin(z)",
+          "window": {
+            "x": [
+              -4,
+              4
+            ],
+            "y": [
+              -3,
+              3
+            ]
+          },
+          "overlay": true,
+          "probe": [
+            1.5708,
+            1.3
+          ]
+        },
+        "cap": "$\\sin z$ on a window. On the real axis (blue graph) its size never passes $1$; up the imaginary axis (orange) $|\\sin(iy)| = |\\sinh y|$ grows like $\\frac{1}{2}e^{|y|}$. The zeros sit only at $0, \\pm\\pi, \\ldots$ on the real axis."
+      },
+      {
+        "t": "h",
+        "text": "Worked examples"
+      },
+      {
+        "t": "ex",
+        "title": "On the imaginary axis",
+        "q": "Compute $\\cos(i\\ln 2)$ and $\\sin(i\\ln 2)$.",
+        "steps": [
+          "$\\cos(i\\ln 2) = \\cosh(\\ln 2) = \\frac{e^{\\ln 2} + e^{-\\ln 2}}{2} = \\frac{2 + \\frac{1}{2}}{2} = \\frac{5}{4}$.",
+          "$\\sin(i\\ln 2) = i\\sinh(\\ln 2) = i\\cdot\\frac{2 - \\frac{1}{2}}{2} = \\frac{3}{4}i$.",
+          "Check: $\\sin^2 + \\cos^2 = -\\frac{9}{16} + \\frac{25}{16} = 1$."
+        ],
+        "a": "$\\frac{5}{4}$ and $\\frac{3}{4}i$"
+      },
+      {
+        "t": "ex",
+        "title": "A general point",
+        "q": "Write $\\sin\\left(\\frac{\\pi}{6} + i\\ln 3\\right)$ as $a + bi$.",
+        "steps": [
+          "$\\cosh(\\ln 3) = \\frac{3 + \\frac{1}{3}}{2} = \\frac{5}{3}$ and $\\sinh(\\ln 3) = \\frac{3 - \\frac{1}{3}}{2} = \\frac{4}{3}$.",
+          "$\\sin\\left(\\frac{\\pi}{6} + i\\ln 3\\right) = \\sin\\frac{\\pi}{6}\\cdot\\frac{5}{3} + i\\cos\\frac{\\pi}{6}\\cdot\\frac{4}{3} = \\frac{5}{6} + \\frac{2\\sqrt{3}}{3}i$."
+        ],
+        "a": "$\\frac{5}{6} + \\frac{2\\sqrt{3}}{3}i$"
+      },
+      {
+        "t": "ex",
+        "title": "Solving $cos z = \frac{5}{4}$",
+        "q": "Find all solutions of $\\cos z = \\frac{5}{4}$.",
+        "steps": [
+          "Put $t = e^{iz}$: $\\frac{t + t^{-1}}{2} = \\frac{5}{4}$, so $2t^2 - 5t + 2 = 0$ and $t = 2$ or $t = \\frac{1}{2}$.",
+          "$e^{iz} = 2$ gives $iz = \\ln 2 + 2\\pi ik$, so $z = 2\\pi k - i\\ln 2$; $e^{iz} = \\frac{1}{2}$ gives $z = 2\\pi k + i\\ln 2$.",
+          "All solutions: $z = 2\\pi k \\pm i\\ln 2$. No real solution exists, as expected."
+        ],
+        "a": "$z = 2\\pi k \\pm i\\ln 2$"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Still true for complex $z$",
+          "No longer true"
+        ],
+        "rows": [
+          [
+            "$\\sin^2 z + \\cos^2 z = 1$",
+            "$|\\sin z| \\le 1$ and $|\\cos z| \\le 1$"
+          ],
+          [
+            "the sum and double-angle formulas",
+            "$\\sin z$ and $\\cos z$ are real"
+          ],
+          [
+            "$\\sin z = 0$ only at $z = k\\pi$",
+            "$\\cos z = 3$ has no solution"
+          ],
+          [
+            "period $2\\pi$",
+            "bounded on the plane"
+          ]
+        ],
+        "cap": "Which facts from the real line carry over. The identities survive because they are polynomial identities in $e^{iz}$; the inequalities came from the unit circle and do not."
+      },
+      {
+        "t": "note",
+        "html": "The hyperbolic functions extend the same way, $\\cosh z = \\frac{e^z + e^{-z}}{2}$ and $\\sinh z = \\frac{e^z - e^{-z}}{2}$, and the two families are the same functions turned a quarter turn: $\\cos(iz) = \\cosh z$ and $\\sin(iz) = i\\sinh z$ for every complex $z$. So $\\cosh$ is periodic with period $2\\pi i$, and $\\cosh z = 0$ at $z = \\frac{\\pi i}{2} + k\\pi i$."
+      },
+      {
+        "t": "note",
+        "html": "Because $|\\sin z|$ grows like $\\frac{1}{2}e^{|\\operatorname{Im} z|}$, any estimate that uses $|\\sin z| \\le 1$ off the real axis is wrong, a common source of errors when bounding contour integrals."
+      },
+      {
+        "t": "mistake",
+        "html": "<b>Carrying $|\\sin z| \\le 1$ over from the real line.</b> The bound comes from the unit circle, which only describes real angles. Off the real axis, $|\\sin(x + iy)|^2 = \\sin^2 x + \\sinh^2 y$, and $\\sinh y$ is unbounded: $|\\sin(10i)| = \\sinh 10 \\approx 11{,}013$. Check any claim of boundedness on the imaginary axis first. (Liouville's theorem, later, says a bounded entire function must be constant, so $\\sin z$ could not have been bounded.)"
+      },
+      {
+        "t": "try"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Beck, Marchesi, Pixton and Sabalka, A First Course in Complex Analysis, chapter 3 (Examples of Functions)"
+      },
+      {
+        "name": "MIT OpenCourseWare 18.04, Complex Variables with Applications (Spring 2018), course notes: analytic functions"
+      }
+    ]
+  },
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required"
+}
