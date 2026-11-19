@@ -17,7 +17,7 @@ let n = 0;
 for (const f of fs.readdirSync(SRC).filter((x) => x.endsWith(".yaml"))) {
   let doc;
   try { doc = YAML.parse(fs.readFileSync(path.join(SRC, f), "utf8")); } catch { continue; }
-  if (!doc || doc.draft || !doc.staves) continue; // only fully-notated, public-domain pieces
+  if (!doc || doc.draft || !(doc.staves || doc.tab)) continue; // fully-notated, public-domain pieces: staves (piano) or tab (strings)
   const slug = doc.slug || f.replace(/\.yaml$/, "");
   const song = { ...doc, slug, _source: `data/music/songs/${f}` };
   fs.writeFileSync(path.join(OUT, `${slug}.json`), JSON.stringify(song, null, 2));

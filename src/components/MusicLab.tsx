@@ -46,11 +46,21 @@ export default function MusicLab({ slug, onSelect, compact }: { slug: string; on
 
   useEffect(() => {
     if (!ready || !song || !host.current) return;
-    const TRB = (window as unknown as { TRBMusic?: { player?: { mount: (root: HTMLElement, src: unknown, opts: unknown) => Player } } }).TRBMusic;
-    if (!TRB?.player) { setError("Music kit unavailable"); return; }
+    const TRB = (window as unknown as {
+      TRBMusic?: {
+        player?: { mount: (root: HTMLElement, src: unknown, opts: unknown) => Player };
+        fret?: { player?: { mount: (root: HTMLElement, src: unknown, opts: unknown) => Player } };
+      };
+    }).TRBMusic;
     player.current?.destroy?.();
+    host.current.innerHTML = "";
+    // Tab songs (guitar, ukulele, banjo) play through the fretted-instrument
+    // player; notated piano pieces through the kit score player.
+    const isTab = !song.staves && !!song.tab;
+    const mount = isTab ? TRB?.fret?.player?.mount : TRB?.player?.mount;
+    if (!mount) { setError("Music kit unavailable"); return; }
     try {
-      player.current = TRB.player.mount(host.current, song, { keyboard: true, maxScoreHeight: "520px" });
+      player.current = mount(host.current, song, isTab ? { storageKey: "trb-music-player-v1" } : { keyboard: true, maxScoreHeight: "520px" });
       (window as unknown as { __musicPlayer?: Player }).__musicPlayer = player.current;
     }
     catch (e) { setError(String(e)); }

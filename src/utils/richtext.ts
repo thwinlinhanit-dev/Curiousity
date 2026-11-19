@@ -24,3 +24,19 @@ export function renderMath(html: string): string {
 }
 
 export const textOnly = (html: string): string => sanitize(html).replace(/<[^>]*>/g, "").trim();
+
+// Music curriculum pages (trb/content/music) carry the interactive widgets in
+// data-ml attributes, plus inert <script type="application/json"> data blocks.
+// Everything else a script could be is stripped.
+const LESSON_TAGS = [...ALLOWED_TAGS, "h2", "figure", "figcaption", "kbd", "details", "summary", "hr", "dl", "dt", "dd", "script"];
+const LESSON_ATTR = [...ALLOWED_ATTR, "src", "alt", "loading", "width", "height", "id"];
+export function sanitizeLesson(html: string): string {
+  const clean = DOMPurify.sanitize(html ?? "", {
+    ALLOWED_TAGS: LESSON_TAGS,
+    ALLOWED_ATTR: LESSON_ATTR,
+    ALLOW_DATA_ATTR: true,
+    ADD_ATTR: ["type"],
+  });
+  // drop any script that is not an application/json data block
+  return clean.replace(/<script(?![^>]*type=["']application\/json["'])[^>]*>[\s\S]*?<\/script>/gi, "");
+}

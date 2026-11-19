@@ -25,6 +25,17 @@ const musicKit = path.join(REPO, "static/music/kit");
 if (HAS_REPO && fs.existsSync(musicKit)) {
   const mDst = path.join(DST, "music");
   fs.mkdirSync(mDst, { recursive: true });
+  const lessonFiles = ["core.js", "widgets.js", "lessons.css"];
+  const fretFiles = ["pitch.js", "core.js", "chords.js", "sound.js", "draw.js", "player.js", "fret.css"];
+  const fSrc = path.join(REPO, "static/music/fret");
+  const fDst = path.join(mDst, "fret");
+  fs.mkdirSync(fDst, { recursive: true });
+  for (const f of fretFiles) {
+    if (fs.existsSync(path.join(fSrc, f))) {
+      fs.copyFileSync(path.join(fSrc, f), path.join(fDst, f));
+      console.log("vendor: music/fret/" + f);
+    }
+  }
   for (const f of ["audio.js", "song.js", "staff.js", "keyboard.js", "player.js", "kit.css"]) {
     if (fs.existsSync(path.join(musicKit, f))) {
       fs.copyFileSync(path.join(musicKit, f), path.join(mDst, f));
@@ -37,6 +48,15 @@ if (HAS_REPO && fs.existsSync(musicKit)) {
         fs.writeFileSync(p, s);
       }
       console.log("vendor: music/" + f);
+    }
+  }
+  const lSrc = path.join(REPO, "static/music/lessons");
+  const lDst = path.join(mDst, "lessons");
+  fs.mkdirSync(lDst, { recursive: true });
+  for (const f of lessonFiles) {
+    if (fs.existsSync(path.join(lSrc, f))) {
+      fs.copyFileSync(path.join(lSrc, f), path.join(lDst, f));
+      console.log("vendor: music/lessons/" + f);
     }
   }
 }

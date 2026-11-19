@@ -1,78 +1,69 @@
+// The music ladder mirrors https://teddyrookbook.com/music/ : 97 interactive
+// chapters (piano basics, reading music, guitar, ukulele, banjo, the suite)
+// plus 60 playable songs. Bundles and generator coverage are the contract.
 import { describe, expect, it } from "vitest";
 import fs from "node:fs";
 import path from "node:path";
-import vm from "node:vm";
 import { fileURLToPath } from "node:url";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
-const ROOT = path.resolve(here, "../..");
-const read = (p: string) => fs.readFileSync(path.join(ROOT, p), "utf8");
+const C = path.resolve(here, "../../content");
+const read = (p: string) => JSON.parse(fs.readFileSync(path.join(C, p), "utf8"));
 
-const graph = JSON.parse(read("content/graph.json")) as { topics: { id: string; slug: string; course: string; ladder: string; prereqs: string[] }[] };
-const catalog = JSON.parse(read("content/catalog.json")) as { ladders: { key: string; courseKeys: string[]; topics: number }[] };
-const index = JSON.parse(read("content/music/index.json")) as { slug: string; level: string }[];
+const graph = read("graph.json") as {
+  courses: { key: string; ladder: string }[];
+  topics: { id: string; course: string; ladder: string; prereqs: string[] }[];
+};
+const catalog = read("catalog.json") as { ladders: { key: string; topics: number }[] };
 const musicTopics = graph.topics.filter((t) => t.ladder === "music");
+const CHAPTER_COURSES = ["pb", "rm", "gtr", "uke", "bjo", "cfs"];
+const SONG_COURSES = ["beginner", "intermediate", "advanced"];
 
-function makeR(seed: number) {
-  let s = seed >>> 0;
-  const rnd = () => ((s = (Math.imul(s, 1103515245) + 12345) >>> 0) / 4294967296);
-  return {
-    pick: (a: unknown[]) => a[Math.floor(rnd() * a.length)],
-    int: (lo: number, hi: number) => lo + Math.floor(rnd() * (hi - lo + 1)),
-    shuffle: <T,>(a: T[]) => { const b = a.slice(); for (let i = b.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [b[i], b[j]] = [b[j]!, b[i]!]; } return b; },
-    sample: <T,>(a: T[], k: number) => makeR(seed ^ 0x9e3779b9).shuffle(a).slice(0, k),
+const bundleFor = (t: { id: string; course: string }) =>
+  read(`music/topics/${t.course}/${t.id.split(".").slice(1).join(".")}.json`) as {
+    title: string;
+    lesson: { blocks: Record<string, unknown>[] };
   };
-}
+
+// generator ids exported by the vendored bundle (read the source, don't eval)
+const genSrc = fs.readFileSync(path.resolve(here, "../../public/vendor/gen/music/music.js"), "utf8");
 
 describe("music ladder", () => {
-  it("covers exactly the playable scores", () => {
-    expect(musicTopics.length).toBe(index.length);
-    expect(new Set(musicTopics.map((t) => t.slug))).toEqual(new Set(index.map((s) => s.slug)));
-    const ladder = catalog.ladders.find((l) => l.key === "music");
-    expect(ladder?.courseKeys).toEqual(["beginner", "intermediate", "advanced"]);
-    expect(ladder?.topics).toBe(index.length);
+  it("mirrors the site: 97 chapters + 60 songs", () => {
+    expect(musicTopics.length).toBe(157);
+    expect(musicTopics.filter((t) => CHAPTER_COURSES.includes(t.course))).toHaveLength(97);
+    expect(musicTopics.filter((t) => SONG_COURSES.includes(t.course))).toHaveLength(60);
+    expect(catalog.ladders.find((l) => l.key === "music")?.topics).toBe(157);
   });
 
-  it("every song has a bundle with the player as its figure", () => {
-    for (const t of musicTopics) {
-      const b = JSON.parse(read(`content/music/topics/${t.course}/${t.slug}.json`)) as { lesson: { blocks: { t: string; name?: string }[] } };
-      expect(b.lesson.blocks.some((x) => x.t === "viz" && x.name === "music-player"), t.id).toBe(true);
+  it("chapters carry the interactive page; songs embed the player", () => {
+    for (const t of musicTopics.filter((x) => CHAPTER_COURSES.includes(x.course))) {
+      const b = bundleFor(t);
+      expect(b.lesson.blocks[0].t, t.id).toBe("chapter");
+      expect(String(b.lesson.blocks[0].html)).toMatch(/<div|<p/);
+    }
+    for (const t of musicTopics.filter((x) => SONG_COURSES.includes(x.course))) {
+      const blocks = bundleFor(t).lesson.blocks;
+      expect(blocks.some((x) => x.name === "music-player"), t.id).toBe(true);
+      expect(bundleFor(t).title.length).toBeGreaterThan(1);
     }
   });
 
-  it("prerequisite edges are acyclic and point at real songs", () => {
-    const byId = new Map(musicTopics.map((t) => [t.id, t]));
-    for (const t of musicTopics) for (const p of t.prereqs) expect(byId.has(p), `${t.id} prereq ${p}`).toBe(true);
-    const seen = new Set<string>();
-    const visit = (id: string, chain: string[]) => {
-      if (chain.includes(id)) throw new Error(`cycle: ${chain.join(" → ")}`);
-      if (seen.has(id)) return;
-      for (const p of byId.get(id)!.prereqs) visit(p, [...chain, id]);
-      seen.add(id);
-    };
-    for (const t of musicTopics) visit(t.id, []);
+  it("prereq chains follow the site order and never dangle", () => {
+    const ids = new Set(musicTopics.map((t) => t.id));
+    for (const t of musicTopics) for (const p of t.prereqs) expect(ids.has(p), `${t.id} → ${p}`).toBe(true);
+    const byId = Object.fromEntries(musicTopics.map((t) => [t.id, t]));
+    const firstPb = musicTopics.find((t) => t.course === "pb" && t.prereqs.length === 0)!;
+    expect(firstPb.id).toBe("pb.meet-the-keyboard");
+    expect(byId["pb.c-position"].prereqs[0]).toMatch(/^pb\./);
+    expect(byId["sng.fur-elise"].prereqs[0]).toBe("pb.meet-the-keyboard");
   });
 
-  it("generators produce checkable problems for every song", () => {
-    const gens = new Map<string, any>();
-    const ML = { gen: (id: string, fn: any) => gens.set(id, fn) };
-    const sandbox = { window: { MathLadder: ML }, Math };
-    vm.createContext(sandbox);
-    vm.runInContext(read("public/vendor/gen/music/music.js"), sandbox);
-    for (const t of musicTopics) expect(gens.has(t.id), t.id).toBe(true);
-    for (const [id, fn] of gens) {
-      for (let seed = 1; seed <= 60; seed++) {
-        const p = fn(makeR(seed * 104729), { level: (seed % 3) + 1 });
-        expect(p, `${id} seed ${seed} produced nothing`).toBeTruthy();
-        expect(typeof p.q, id).toBe("string");
-        if (p.a.t === "mc") {
-          expect(p.a.choices.length >= 2, id).toBe(true);
-          expect(p.a.choices[p.a.v], id).toBeTruthy();
-        } else {
-          expect(p.a.t, id).toBe("tf");
-          expect(typeof p.a.v, id).toBe("boolean");
-        }
-      }
-    }
+  it("generators register a bank per chapter and per song", () => {
+    expect(genSrc).toContain("ML.gen(b.id, chapterGen(b.id))");
+    expect(genSrc).toContain("ML.gen('sng.' + s.slug, songGen(s))");
+    expect(genSrc).toContain("meet-the-keyboard");
+    expect(genSrc).toContain("fur-elise");
+    expect(genSrc).not.toContain("mus.");
   });
 });

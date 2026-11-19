@@ -208,3 +208,14 @@ Risks and mitigations:
    (Phase 3)
 4. `npm test`, `npm run build`, and a browser verification pass per phase, committed with the
    change.
+
+## Revision 2026-11-19 (Phase 3, as built)
+
+The music ladder was re-scoped to mirror https://teddyrookbook.com/music/ directly:
+97 interactive chapters (Piano basics 9 · Reading music 12 · Guitar 23 · Ukulele 24 ·
+Banjo 23 · Continued-Fraction Suite 6) ingested from trb/content/music with their
+data-ml widgets intact, rendered by MusicChapter.tsx on top of the vendored Teddy
+Rook lessons engine (public/vendor/music/lessons + fret), plus all 60 playable songs
+(staves pieces through the kit player, tab songs through the fretted-instrument
+player). Practice comes from each chapter's own Remember bank (true/false + MC) and
+from song facts (key, time, tempo, chord sequence, chord spelling). 157 lessons total.

@@ -264,3 +264,21 @@ dialog.review-session { position: fixed; inset: 0; margin: auto; width: min(620p
 .topic-label { display: flex; align-items: baseline; gap: var(--sp-2); min-width: 0; flex: 1 1 auto; flex-wrap: wrap; }
 .topic-list ol li { flex-wrap: nowrap; }
 .topic-list .status-chip { flex: 0 0 auto; }
+
+/* ── Music curriculum chapters (trb/content/music, lessons engine) ───────── */
+.chapter-wrap { max-width: 920px; margin: 0 auto; padding: 0 20px 48px; width: 100%; }
+.chapter-wrap h1 { font-size: var(--fs-3); margin: 2px 0 6px; }
+.ml-chapter { margin-top: 10px; border-radius: var(--radius); overflow: hidden; }
+.ml-chapter {
+  --paper: #faf7f0; --card: #fffdf8; --ink: #202735; --muted: #5b6675; --soft: #efe9dd;
+  --line: #ded6c6; --acc: #2e6fb7; --ok: #2c7a4b; --okbg: #e4f2e9; --bad: #b4483c; --badbg: #f7e6e3;
+  --gold: #a4761a; --focus: #2e6fb7; --score-bg: #fffdf8; --score-ink: #202735; --score-muted: #8a8272;
+  background: var(--paper); color: var(--ink); padding: 16px clamp(14px, 4vw, 36px) 28px;
+}
+[data-theme="dark"] .ml-chapter {
+  --paper: #171c26; --card: #1e2531; --ink: #e8edf5; --muted: #a7b0be; --soft: #232b39;
+  --line: #2c3547; --acc: #7fb2e8; --ok: #6fcf97; --okbg: #16311f; --bad: #ef8a7d; --badbg: #3a1d18;
+  --gold: #e5c07b; --focus: #7fb2e8; --score-bg: #10141c; --score-ink: #e8edf5; --score-muted: #6b7686;
+}
+.ml-chapter h1 { display: none; } /* the app's own h1 sits above */
+.ml-chapter a { color: var(--acc); }

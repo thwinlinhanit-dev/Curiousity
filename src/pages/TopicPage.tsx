@@ -8,6 +8,7 @@ import NarrationBar from "../components/NarrationBar";
 import PracticePanel from "../components/PracticePanel";
 import MarblePanel from "../components/MarblePanel";
 import MusicLab from "../components/MusicLab";
+import MusicChapter from "../components/MusicChapter";
 import LibraryStrip from "../components/LibraryStrip";
 import WorkingReveal from "../components/WorkingReveal";
 import WaveFigure from "../figures/WaveFigure";
@@ -196,6 +197,7 @@ export default function TopicPage({ slug, ladder, course, onBack }: { slug: stri
     return (vizBlock?.opts as VizOpts | undefined) ?? null;
   }, [bundle, figureKind, vizBlock]);
   const hasFigure = figureKind === "lesson" ? true : !!vizBlock && (figureKind !== "motion" || !!opts);
+
   const steps = useMemo(() => (bundle ? buildSteps(bundle.lesson.blocks) : []), [bundle]);
   const model = useMemo(() => (opts ? createMotionModel(opts, state.params) : null), [opts, state.params]);
   const duration = Math.round((model?.T ?? 6) * 100) / 100;
@@ -249,6 +251,42 @@ export default function TopicPage({ slug, ladder, course, onBack }: { slug: stri
     if (!Number.isFinite(value) || expectedApex == null) return;
     patch({ op: "showFeedback", feedback: { kind: "position", learner: value, expected: expectedApex, label: "apex height", unit: "m" } });
   };
+
+  // Music curriculum chapters are full interactive pages from the lessons
+  // engine; they get their own layout instead of the step rail.
+  if (bundle.figureArchetype === "chapter") {
+    const chapter = bundle.lesson.blocks.find((b) => b.t === "chapter");
+    return (
+      <main className="topic-page chapter-page" id="main-content"><a href="#main-content" className="skip-link">{t("skip")}</a>
+        <header className="topic-header">
+          <SiteHeader />
+          <button className="btn-link" onClick={onBack}>{t("lesson.back")}</button>
+          <span style={{ color: "var(--ink-3)" }}> / {courseMeta?.title ?? bundle.courseTitle} / {bundle.unitTitle}</span>
+        </header>
+        <div className="chapter-wrap">
+          <p className="eyebrow">{t("lesson.eyebrow")} · {bundle.id}</p>
+          <h1>{bundle.title}</h1>
+          {(() => { const st = topicStatus(bundle.id); return (
+            <div className="mastery-line" aria-live="polite">
+              <span className={`status-chip status-${st.passed ? "mastered" : st.status === "due" ? "review-due" : st.status === "learning" ? "under-way" : "not-started"}`}>
+                {st.passed ? t("status.mastered") : st.status === "due" ? t("status.reviewDue") : st.status === "learning" ? t("status.underWay") : t("status.notStarted")}
+              </span>
+            </div>
+          ); })()}
+          <p style={{ color: "var(--ink-2)", maxWidth: 720 }}>{bundle.short}</p>
+          <MusicChapter html={String((chapter as { html?: string } | undefined)?.html ?? "")} />
+          <PracticePanel topicId={bundle.id} ladder={ladder} onAnswer={(ok) => { recordAnswer(bundle.id, ok); setTick((n) => n + 1); }} />
+          <details className="sources">
+            <summary>{t("lesson.sources")}</summary>
+            <ul>{bundle.lesson.sources.map((s, i) => <li key={i}>{s.name}</li>)}</ul>
+            <p>Content © Teddy Rook · CC BY-NC 4.0 · link back required. Engine MIT.</p>
+          </details>
+          <LibraryStrip topicId={bundle.id} />
+          <MarblePanel topicId={bundle.id} />
+        </div>
+      </main>
+    );
+  }
 
   return (
     <main className="topic-page" id="main-content"><a href="#main-content" className="skip-link">{t("skip")}</a>
