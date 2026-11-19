@@ -23,7 +23,7 @@ function chordCards(chords: string) {
   return out.slice(0, 40);
 }
 
-export default function MusicLab({ slug, onSelect }: { slug: string; onSelect: (slug: string) => void }) {
+export default function MusicLab({ slug, onSelect, compact }: { slug: string; onSelect: (slug: string) => void; compact?: boolean }) {
   const host = useRef<HTMLDivElement>(null);
   const player = useRef<Player | null>(null);
   const [ready, setReady] = useState(false);
@@ -61,12 +61,14 @@ export default function MusicLab({ slug, onSelect }: { slug: string; onSelect: (
 
   return (
     <div className="music-lab">
+      {!compact && <>
       <h2 style={{ fontFamily: "var(--font-display)", fontSize: "var(--fs-3)", marginTop: "var(--sp-4)" }}>Music lab · playable sheet music</h2>
       <p style={{ color: "var(--ink-2)", maxWidth: 700 }}>
         Public-domain scores from the Teddy Rook corpus. The score scrolls with the music, the keys light up by hand,
         and the Web Audio piano plays it — tempo, hands, count-in, metronome and "wait for me" practice mode are in the player controls.
       </p>
-      <div className="course-bar">
+      </>}
+      {!compact && <div className="course-bar">
         <label>Song
           <select value={slug} onChange={(e) => onSelect(e.target.value)}>
             <option value="">Choose a song…</option>
@@ -74,8 +76,8 @@ export default function MusicLab({ slug, onSelect }: { slug: string; onSelect: (
           </select>
         </label>
         <label>Find<input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search songs…" /></label>
-      </div>
-      {!slug && <div className="music-list">
+      </div>}
+      {!compact && !slug && <div className="music-list">
         {songs.map((s) => <button key={s.slug} className="ladder-chip" onClick={() => onSelect(s.slug)}>
           <b>{s.title}</b><span>{s.composer.slice(0, 34)} · {s.level} · {s.key}</span>
         </button>)}
@@ -92,9 +94,9 @@ export default function MusicLab({ slug, onSelect }: { slug: string; onSelect: (
         <h3>Chord map</h3>
         <div>{chordCards(String(song.chords)).map((c, i) => <div key={i} className="chord-card"><b>{c}</b><span>{CHORD_NOTES[c] ?? "—"}</span></div>)}</div>
       </div>}
-      <p style={{ color: "var(--ink-3)", fontSize: "var(--fs-0)" }}>
+      {!compact && <p style={{ color: "var(--ink-3)", fontSize: "var(--fs-0)" }}>
         Public-domain scores from the corpus, so the notes and audio can be shipped legally.
-      </p>
+      </p>}
     </div>
   );
 }

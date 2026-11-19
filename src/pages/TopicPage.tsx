@@ -7,13 +7,14 @@ import LayerToggles from "../components/LayerToggles";
 import NarrationBar from "../components/NarrationBar";
 import PracticePanel from "../components/PracticePanel";
 import MarblePanel from "../components/MarblePanel";
+import MusicLab from "../components/MusicLab";
 import LibraryStrip from "../components/LibraryStrip";
 import WorkingReveal from "../components/WorkingReveal";
 import WaveFigure from "../figures/WaveFigure";
 import CircuitFigure from "../figures/CircuitFigure";
 import RepoViz from "../components/RepoViz";
 import { useFigureStore } from "../state/figureStore";
-import { recordAnswer, setActiveLadder, topicStatus } from "../state/progress";
+import { recordAnswer, setActiveLadder, topicStatus, getGraph } from "../state/progress";
 import { t, useT } from "../i18n";
 import { renderMath } from "../utils/richtext";
 import SiteHeader from "../components/SiteHeader";
@@ -50,8 +51,9 @@ function vizBlockOf(b: Bundle): Block | null {
 // Capability-based routing: a custom React figure is only chosen when it can
 // actually honour the bundle's opts. Everything else goes to the repo's native
 // viz kit, which receives the opts verbatim (see RepoViz / MathLadder.viz.mount).
-function figureKindOf(name: string | undefined, opts?: Record<string, unknown> | null): "motion" | "wave" | "circuit" | "field" | "optics" | "energy" | "collision" | "function" | "particle" | "data" | "globe" | "lesson" | "repo" {
+function figureKindOf(name: string | undefined, opts?: Record<string, unknown> | null): "motion" | "wave" | "circuit" | "field" | "optics" | "energy" | "collision" | "function" | "particle" | "data" | "globe" | "music" | "lesson" | "repo" {
   if (!name) return "lesson";
+  if (name === "music-player") return "music";
   const mode = String(opts?.mode ?? "");
   if (["ph-motion", "ph-projectile"].includes(name)) return "motion";
   if (name === "ph-wave" && (!mode || ["travel", "pulse", "superpose", "standing-string", "standing-pipe", "beats"].includes(mode))) return "wave";
@@ -312,7 +314,17 @@ export default function TopicPage({ slug, ladder, course, onBack }: { slug: stri
             </div>
           )}
           <div className="figure-card">
-            {figureKind === "lesson" ? <LessonFigure opts={opts as Record<string, unknown>} />
+            {figureKind === "music" ? (
+              <MusicLab
+                compact
+                slug={String((opts as { slug?: string } | null)?.slug ?? "")}
+                onSelect={(s2) => {
+                  const t = getGraph().topics.find((x) => x.ladder === "music" && x.slug === s2);
+                  window.location.href = `${window.location.pathname}?s=music&c=${encodeURIComponent(t?.course ?? course)}&t=${encodeURIComponent(s2)}`;
+                }}
+              />
+            )
+              : figureKind === "lesson" ? <LessonFigure opts={opts as Record<string, unknown>} />
               : vizBlock?.name === "ph-orbit" && orbit3d ? <OrbitMode opts={(opts ?? {}) as Record<string, unknown>} />
                 : figureKind === "motion" && opts ? <MotionFigure opts={opts} />
                 : figureKind === "wave" ? <WaveFigure opts={opts as Record<string, unknown>} />

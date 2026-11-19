@@ -53,6 +53,27 @@ assets are committed, so a clone without the upstream `../trb` repo still builds
 The corpus is ingested from the upstream Teddy Rook data set (`scripts/ingest-*.mjs`).
 Content is CC BY-NC 4.0 — credit and link back required.
 
+## Library ↔ lessons (spec: docs/superpowers/specs/2026-11-19-library-integration-design.md)
+
+Three phases, all committed:
+
+1. **Cross-links** — `npm run content:library` (first half) builds
+   `content/library/links.json`: dataset items ↔ lessons, exact/strong only.
+   Lessons show a "Go deeper" strip; dataset entries show "Lessons this
+   connects to"; `?data=<dataset>&item=<key>` deep-links one entry.
+2. **Library ladder** — 59 drills (`mem.*` memory lists, `el.*` periodic-table
+   facets, `tl.*` timeline ordering) as ordinary lessons on the same progress
+   engine; generators baked into `public/vendor/gen/library/`.
+3. **Music ladder** — the 20 playable scores as a real subject
+   (`?s=music`), courses by level, prereqs from skill tags
+   (`content/music/skill-order.json`), the player embedded as the figure,
+   key/time/tempo/chord practice in `public/vendor/gen/music/`.
+
+```bash
+npm run content:library   # links + library ladder + generators
+npm run content:music     # music ladder + refresh links
+```
+
 ## Cross-curriculum data (Marble Skill Taxonomy)
 
 Matched lessons carry curriculum standards, a "before this" prerequisite chain,

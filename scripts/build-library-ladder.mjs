@@ -35,6 +35,8 @@ function esc(s) { return String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&
 function main() {
   const graph = read("graph.json");
   const catalog = read("catalog.json");
+  graph.courses = graph.courses.filter((c) => c.ladder !== LADDER.key);
+  graph.topics = graph.topics.filter((t) => t.ladder !== LADDER.key);
 
   const taken = new Set(graph.courses.map((c) => c.key));
   for (const c of COURSES) if (taken.has(c.key)) { console.error(`course key ${c.key} already used`); process.exit(1); }

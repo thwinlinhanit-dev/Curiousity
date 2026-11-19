@@ -9,6 +9,7 @@
     "build": "node scripts/publish-content.mjs && node scripts/copy-vendor.mjs && tsc -b && vite build",
     "content:marble": "node scripts/marble-import.mjs && node scripts/marble-map.mjs",
     "content:library": "node scripts/library-map.mjs && node scripts/build-library-ladder.mjs && node scripts/build-library-gen.mjs",
+    "content:music": "node scripts/build-music-ladder.mjs && node scripts/library-map.mjs",
     "preview": "vite preview",
     "test": "vitest run",
     "ingest": "node scripts/ingest-corpus.mjs && node scripts/ingest-datasets.mjs && node scripts/ingest-music.mjs",

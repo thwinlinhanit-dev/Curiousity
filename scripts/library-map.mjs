@@ -113,7 +113,8 @@ const DATASET_RULES = {
   // confident nonsense, so it stays a pure browser.
   papers: { ladders: () => ["civics"], title: (it) => (it.subtitle && it.subtitle !== it.title ? it.subtitle : it.title) },
   // recipes stay a browser: dish names do not correspond to technique lessons.
-  // music becomes its own ladder in Phase 3; resources/credits/garden stay browsers.
+  music: { ladders: () => ["music"], title: (it) => it.title },
+  // resources/credits/garden stay browsers with no rule.
 };
 
 function main() {
@@ -186,13 +187,21 @@ function main() {
 
   stats.linkedTopics = Object.keys(byTopic).length;
   // de-duplicate repeated dataset items pointing at the same topic (e.g. two
-  // arrangements of one song): keep the first per dataset.
-  for (const rows of Object.values(byTopic)) {
+  // arrangements of one song): keep the first per dataset+title, then prune
+  // the byItem side to match so the map stays bidirectional.
+  const alive = new Set();
+  for (const [topicId, rows] of Object.entries(byTopic)) {
     const seen = new Set();
     for (let i = rows.length - 1; i >= 0; i--) {
-      const k = `${rows[i].dataset}|${rows[i].title}`;
-      if (seen.has(k)) rows.splice(i, 1); else seen.add(k);
+      const r = rows[i];
+      const k = `${r.dataset}|${r.title}`;
+      if (seen.has(k)) rows.splice(i, 1);
+      else { seen.add(k); alive.add(`${topicId}|${r.key}`); }
     }
+  }
+  for (const [key, entry] of Object.entries(byItem)) {
+    entry.lessons = entry.lessons.filter((l) => alive.has(`${l.topicId}|${key}`));
+    if (!entry.lessons.length) delete byItem[key];
   }
 
   fs.mkdirSync(OUT, { recursive: true });

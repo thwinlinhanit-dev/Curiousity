@@ -113,8 +113,20 @@ for (const ladder of catalog.ladders) {
   }
   genManifest[key] = gNames; genTotal += gNames.length;
 }
-fs.writeFileSync(path.join(DST, "viz-manifest.json"), JSON.stringify(vizManifest, null, 2));
-fs.writeFileSync(path.join(DST, "gen-manifest.json"), JSON.stringify(genManifest, null, 2));
+// Ladders built by scripts/build-*-gen.mjs have no upstream folder: keep
+// their committed manifest entries instead of wiping them here.
+function mergeManifest(name, fresh) {
+  const p = path.join(DST, name);
+  if (fs.existsSync(p)) {
+    try {
+      const old = JSON.parse(fs.readFileSync(p, "utf8"));
+      for (const [k, v] of Object.entries(old)) if (Array.isArray(v) && v.length && !(fresh[k] && fresh[k].length)) fresh[k] = v;
+    } catch { /* a damaged manifest is simply replaced */ }
+  }
+  return fresh;
+}
+fs.writeFileSync(path.join(DST, "viz-manifest.json"), JSON.stringify(mergeManifest("viz-manifest.json", vizManifest), null, 2));
+fs.writeFileSync(path.join(DST, "gen-manifest.json"), JSON.stringify(mergeManifest("gen-manifest.json", genManifest), null, 2));
 fs.writeFileSync(path.join(DST, "viz-css-manifest.json"), JSON.stringify(vizCssManifest, null, 2));
 console.log(`viz kits: ${vizTotal} across ${Object.keys(vizManifest).length} ladders`);
 console.log(`generators: ${genTotal} across ${Object.keys(genManifest).length} ladders`);
