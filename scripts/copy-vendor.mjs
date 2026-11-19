@@ -147,7 +147,7 @@ function mergeManifest(name, fresh) {
 }
 fs.writeFileSync(path.join(DST, "viz-manifest.json"), JSON.stringify(mergeManifest("viz-manifest.json", vizManifest), null, 2));
 fs.writeFileSync(path.join(DST, "gen-manifest.json"), JSON.stringify(mergeManifest("gen-manifest.json", genManifest), null, 2));
-fs.writeFileSync(path.join(DST, "viz-css-manifest.json"), JSON.stringify(vizCssManifest, null, 2));
+fs.writeFileSync(path.join(DST, "viz-css-manifest.json"), JSON.stringify(mergeManifest("viz-css-manifest.json", vizCssManifest), null, 2));
 console.log(`viz kits: ${vizTotal} across ${Object.keys(vizManifest).length} ladders`);
 console.log(`generators: ${genTotal} across ${Object.keys(genManifest).length} ladders`);
 
