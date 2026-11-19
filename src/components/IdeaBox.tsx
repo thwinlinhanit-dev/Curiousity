@@ -16,8 +16,14 @@ export default function IdeaBox() {
     if (!text.trim()) return;
     const idea = { role, text: text.trim(), at: new Date().toISOString() };
     if (endpoint) {
-      try { await fetch(endpoint, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(idea) }); }
-      catch { /* fall through to local storage */ }
+      try {
+        const token = (import.meta.env.VITE_IDEA_TOKEN as string | undefined) || "";
+        await fetch(endpoint, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", ...(token ? { Authorization: `Bearer ${token}` } : {}) },
+          body: JSON.stringify(idea),
+        });
+      } catch { /* fall through to local storage */ }
     }
     try {
       const all = JSON.parse(localStorage.getItem(KEY) || "[]");

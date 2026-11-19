@@ -92,7 +92,7 @@ export default function BreadboardLab() {
         </span>
       </div>
       <p style={{ color: "var(--ink-3)", fontSize: "var(--fs-0)" }}>
-        Prototype archetype: model-driven dragging with snapping via Dragology, with a keyboard path.
+        Drag a part near a hole to snap it in, or focus a part and use the arrow keys.
       </p>
     </div>
   );

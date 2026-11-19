@@ -93,7 +93,7 @@ export default function MusicLab({ slug, onSelect }: { slug: string; onSelect: (
         <div>{chordCards(String(song.chords)).map((c, i) => <div key={i} className="chord-card"><b>{c}</b><span>{CHORD_NOTES[c] ?? "—"}</span></div>)}</div>
       </div>}
       <p style={{ color: "var(--ink-3)", fontSize: "var(--fs-0)" }}>
-        The two videos you showed use copyrighted pop arrangements; this lab uses public-domain scores from the corpus so the notes and audio can be shipped legally.
+        Public-domain scores from the corpus, so the notes and audio can be shipped legally.
       </p>
     </div>
   );

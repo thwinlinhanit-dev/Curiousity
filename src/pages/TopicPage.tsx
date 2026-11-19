@@ -7,6 +7,7 @@ import LayerToggles from "../components/LayerToggles";
 import NarrationBar from "../components/NarrationBar";
 import PracticePanel from "../components/PracticePanel";
 import MarblePanel from "../components/MarblePanel";
+import LibraryStrip from "../components/LibraryStrip";
 import WorkingReveal from "../components/WorkingReveal";
 import WaveFigure from "../figures/WaveFigure";
 import CircuitFigure from "../figures/CircuitFigure";
@@ -106,13 +107,13 @@ const strip = (s: string) => s.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").tri
 
 // A static preview server may answer a missing .json with the SPA index.html
 // and status 200, so parse before accepting a candidate translation file.
-async function loadJson(urls: string[]): Promise<Record<string, string> | null> {
+async function loadJson<T = Record<string, string>>(urls: string[]): Promise<T | null> {
   for (const url of urls) {
     try {
       const r = await fetch(url);
       if (!r.ok) continue;
       const data = await r.json();
-      if (data && typeof data === "object") return data as Record<string, string>;
+      if (data && typeof data === "object") return data as T;
     } catch { /* try the next candidate */ }
   }
   return null;
@@ -135,9 +136,12 @@ export default function TopicPage({ slug, ladder, course, onBack }: { slug: stri
   useEffect(() => {
     let alive = true;
     setTranslated(false);
-    fetch(`${import.meta.env.BASE_URL}content/${ladder}/topics/${course}/${slug}.json`)
-      .then((r) => { if (r.ok) return r.json(); return fetch(`${import.meta.env.BASE_URL}content/${ladder}/topics/${slug}.json`).then((f) => { if (!f.ok) throw new Error(String(f.status)); return f.json(); }); })
-      .then(async (b: Bundle) => {
+    loadJson<Bundle>([
+      `${import.meta.env.BASE_URL}content/${ladder}/topics/${course}/${slug}.json`,
+      `${import.meta.env.BASE_URL}content/${ladder}/topics/${slug}.json`,
+    ])
+      .then(async (b) => {
+        if (!b || !b.lesson) throw new Error("Topic not found");
         let didTranslate = false;
         if (lang === "es") {
           const tr = await loadJson([
@@ -349,6 +353,7 @@ export default function TopicPage({ slug, ladder, course, onBack }: { slug: stri
             <p>Content © Teddy Rook · CC BY-NC 4.0 · link back required. Engine MIT.</p>
           </details>
 
+          <LibraryStrip topicId={bundle.id} />
           <MarblePanel topicId={bundle.id} />
         </section>
       </div>

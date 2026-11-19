@@ -150,7 +150,7 @@ export default function App() {
   if (datasetId) return (
     <main className="topic-list wide" id="main-content"><a href="#main-content" className="skip-link">{t("skip")}</a><SiteHeader />
       <button className="btn-link" onClick={() => { window.location.href = window.location.pathname; }}>← All topics</button>
-      <DatasetBrowser id={datasetId} />
+      <DatasetBrowser id={datasetId} itemParam={params().get("item")} />
     </main>
   );
   if (slug) return <TopicPage key={`${ladder}/${courseKey}/${slug}`} slug={slug} ladder={ladder} course={courseKey} onBack={() => go(null)} />;

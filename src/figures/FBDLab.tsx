@@ -172,7 +172,7 @@ export default function FBDLab() {
         </span>
       </div>
       <p style={{ color: "var(--ink-3)", fontSize: "var(--fs-0)" }}>
-        Model-driven dragging with Dragology · live force readouts update during the drag · keyboard arrows also move a tip · deterministic checks against the corpus scenario.
+        Drag an arrow tip and watch the force readouts update as you go. You can also focus a tip and use the arrow keys.
       </p>
     </div>
   );
