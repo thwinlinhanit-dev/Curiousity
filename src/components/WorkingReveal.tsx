@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { t, useT } from "../i18n";
+import { renderMath } from "../utils/richtext";
 
 // Step-by-step working reveal (Atlas / Sketchd pattern): one line appears at a time.
 export default function WorkingReveal({ steps, answer }: { steps: string[]; answer?: string }) {
@@ -19,9 +20,9 @@ export default function WorkingReveal({ steps, answer }: { steps: string[]; answ
         <button className="btn-link" onClick={() => setShown((n) => Math.min(steps.length, n + 1))}>{shown < steps.length ? t("lesson.revealNext") : t("lesson.allShown")}</button>
       </div>
       <ol className="working-steps">
-        {steps.slice(0, shown).map((s, i) => <li key={i} className="working-step" dangerouslySetInnerHTML={{ __html: s }} />)}
+        {steps.slice(0, shown).map((s, i) => <li key={i} className="working-step" dangerouslySetInnerHTML={{ __html: renderMath(s) }} />)}
       </ol>
-      {shown >= steps.length && answer && <div className="working-answer" dangerouslySetInnerHTML={{ __html: `<strong>${t("lesson.correctAnswer")}</strong> ${answer}` }} />}
+      {shown >= steps.length && answer && <div className="working-answer" dangerouslySetInnerHTML={{ __html: renderMath(`<strong>${t("lesson.correctAnswer")}</strong> ${answer}`) }} />}
     </div>
   );
 }

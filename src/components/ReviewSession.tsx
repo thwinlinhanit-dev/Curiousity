@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { getEngine, initProgress } from "../state/progress";
 import { loadLadder } from "../viz/loadViz";
 import { t, useT } from "../i18n";
+import { renderMath } from "../utils/richtext";
 
 type Item = { id: string; k: number };
 type Problem = { q: string; a: unknown; unit?: string; steps?: string[] };
@@ -83,7 +84,7 @@ export default function ReviewSession({ ladder = "physics", onClose }: { ladder?
               <p style={{ fontFamily: "var(--font-mono)", fontSize: "var(--fs-0)", color: "var(--ink-3)" }}>
                 {item.id} · {idx + 1}/{items.length} · answer {item.k + 1} of 2
               </p>
-              {problem ? <div ref={qRef} className="practice-q" dangerouslySetInnerHTML={{ __html: problem.q }} /> : <p>Loading problem…</p>}
+              {problem ? <div ref={qRef} className="practice-q" dangerouslySetInnerHTML={{ __html: renderMath(problem.q) }} /> : <p>Loading problem…</p>}
               <div className="practice-answer">
                 <input ref={inputRef} value={answer} onChange={(e) => setAnswer(e.target.value)} onKeyDown={(e) => e.key === "Enter" && check()} aria-label={t("lesson.answer")} placeholder={t("lesson.answer")} />
                 <button className="btn-primary" onClick={check}>{t("lesson.check")}</button>

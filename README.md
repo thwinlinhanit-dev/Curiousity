@@ -21,8 +21,11 @@ first run also covers that step.
 
 ```bash
 npm run build        # type-check + production bundle into dist/
-npm test             # unit tests (figure contract)
+npm test             # unit tests (figure contract, Marble data)
 ```
+
+`build` publishes content and refreshes vendored assets first. The vendored
+assets are committed, so a clone without the upstream `../trb` repo still builds.
 
 ## Project layout
 
@@ -49,3 +52,23 @@ npm test             # unit tests (figure contract)
 
 The corpus is ingested from the upstream Teddy Rook data set (`scripts/ingest-*.mjs`).
 Content is CC BY-NC 4.0 — credit and link back required.
+
+## Cross-curriculum data (Marble Skill Taxonomy)
+
+Matched lessons carry curriculum standards, a "before this" prerequisite chain,
+common misconceptions, authored wrong answers and a grown-up summary. The data
+comes from the [Marble Skill Taxonomy](https://github.com/withmarbleapp/os-taxonomy)
+(ODbL 1.0 database, CC BY-SA 4.0 content).
+
+```bash
+npm run content:marble   # import + match, writes content/marble/
+```
+
+The import is additive and isolated: it writes `content/marble/by-topic/<topicId>.json`
+and never merges upstream records into `content/<ladder>/`, so the app's own corpus
+keeps its licence and ODbL share-alike stays inside that one folder. Attribution is
+shown in the panel and repeated in every payload. Unmatched lessons fetch nothing.
+
+Current coverage: 95 of 5,105 lessons (K–8 maths, science, Earth science, chemistry,
+biology, civics, writing). Raw upstream files are cached in `.cache/marble/` and are
+not committed.

@@ -19,7 +19,29 @@ function copyDir(from, to) {
   }
 }
 
+// Small lookup of course titles, so the UI can name a course immediately
+// instead of waiting for the (≈1.5 MB) skill graph to arrive.
+function buildCourseIndex() {
+  const catalogPath = path.join(contentSrc, "catalog.json");
+  if (!fs.existsSync(catalogPath)) return;
+  const catalog = JSON.parse(fs.readFileSync(catalogPath, "utf8"));
+  const courses = {};
+  for (const ladder of catalog.ladders ?? []) {
+    for (const key of ladder.courseKeys ?? []) {
+      const file = path.join(contentSrc, ladder.key, "courses", `${key}.json`);
+      if (!fs.existsSync(file)) continue;
+      try {
+        const c = JSON.parse(fs.readFileSync(file, "utf8"));
+        courses[key] = { title: c.title ?? key, short: c.short ?? c.title ?? key, ladder: ladder.key };
+      } catch { /* skip an unreadable course file */ }
+    }
+  }
+  fs.writeFileSync(path.join(contentSrc, "courses-index.json"), `${JSON.stringify({ courses }, null, 0)}\n`);
+  console.log(`courses-index: ${Object.keys(courses).length} courses`);
+}
+
 if (fs.existsSync(contentSrc)) {
+  buildCourseIndex();
   copyDir(contentSrc, contentDst);
   console.log("content published to public/content");
 } else {

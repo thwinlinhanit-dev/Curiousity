@@ -45,7 +45,11 @@ export function loadLadder(ladder: string): Promise<void> {
     const cssMap: Record<string, string[]> = cssRes.ok ? await cssRes.json() : {};
     // Load stylesheets first so the SVG is styled from the first paint.
     await Promise.all((cssMap[ladder] ?? []).map((f) => loadStyle(`${base}vendor/viz/${ladder}/${f}`)));
-    for (const name of orderNames(ladder, vizMap[ladder] ?? [])) {
+    // core.js is already loaded statically in index.html as /vendor/core.js.
+    // Re-loading it from a ladder folder creates a fresh registry and wipes
+    // every visual registered so far — notably the math kit, where core.js sits
+    // late in the manifest, after adv.js.
+    for (const name of orderNames(ladder, (vizMap[ladder] ?? []).filter((n) => n !== "core.js"))) {
       try { await loadScript(`${base}vendor/viz/${ladder}/${name}`); } catch { /* skip a broken kit */ }
     }
     for (const name of genMap[ladder] ?? []) {

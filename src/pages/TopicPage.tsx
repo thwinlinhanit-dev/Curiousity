@@ -6,6 +6,7 @@ import PacingBar from "../components/PacingBar";
 import LayerToggles from "../components/LayerToggles";
 import NarrationBar from "../components/NarrationBar";
 import PracticePanel from "../components/PracticePanel";
+import MarblePanel from "../components/MarblePanel";
 import WorkingReveal from "../components/WorkingReveal";
 import WaveFigure from "../figures/WaveFigure";
 import CircuitFigure from "../figures/CircuitFigure";
@@ -13,6 +14,7 @@ import RepoViz from "../components/RepoViz";
 import { useFigureStore } from "../state/figureStore";
 import { recordAnswer, setActiveLadder, topicStatus } from "../state/progress";
 import { t, useT } from "../i18n";
+import { renderMath } from "../utils/richtext";
 import SiteHeader from "../components/SiteHeader";
 import OrbitMode from "../figures/OrbitMode";
 import FieldFigure from "../figures/FieldFigure";
@@ -91,7 +93,10 @@ function buildSteps(blocks: Block[]): LessonStep[] {
   for (const b of blocks) {
     if (b.t === "viz") { prompt = (b.opts?.task as string) || undefined; continue; }
     if (["p", "key", "why", "h", "ex", "mistake", "note", "try"].includes(b.t)) {
-      steps.push({ block: b, prompt }); prompt = undefined;
+      // Many bundles end with an empty "try" block — never show a blank step.
+      if (strip(b.html ?? b.text ?? b.q ?? "")) {
+        steps.push({ block: b, prompt }); prompt = undefined;
+      }
     }
   }
   return steps;
@@ -224,7 +229,7 @@ export default function TopicPage({ slug, ladder, course, onBack }: { slug: stri
         <p style={{ color: "var(--ink-2)" }}>{bundle.short}</p>
         <p className="trouble">{t("lesson.noFigure")}</p>
         <div className="narrative-blocks" ref={narrativeRef}>
-          {bundle.lesson.blocks.map((b, i) => b.t === "h" ? <h2 key={i}>{b.text}</h2> : <p key={i} dangerouslySetInnerHTML={{ __html: b.html ?? b.text ?? "" }} />)}
+          {bundle.lesson.blocks.map((b, i) => b.t === "h" ? <h2 key={i}>{b.text}</h2> : <p key={i} dangerouslySetInnerHTML={{ __html: renderMath(b.html ?? b.text ?? "") }} />)}
         </div>
         <PracticePanel topicId={bundle.id} ladder={ladder} onAnswer={(ok) => { recordAnswer(bundle.id, ok); setTick((n) => n + 1); }} />
         <details className="sources"><summary>{t("lesson.sources")}</summary><ul>{bundle.lesson.sources.map((s, i) => <li key={i}>{s.name}</li>)}</ul></details>
@@ -279,11 +284,11 @@ export default function TopicPage({ slug, ladder, course, onBack }: { slug: stri
                 : step.block.t === "ex" ? (
                   <div>
                     <h3>{step.block.title}</h3>
-                    <p dangerouslySetInnerHTML={{ __html: step.block.q ?? "" }} />
+                    <p dangerouslySetInnerHTML={{ __html: renderMath(step.block.q ?? "") }} />
                     <WorkingReveal steps={step.block.steps ?? []} answer={step.block.a} />
                   </div>
                 )
-                  : <p dangerouslySetInnerHTML={{ __html: step.block.html ?? step.block.text ?? "" }} />
+                  : <p dangerouslySetInnerHTML={{ __html: renderMath(step.block.html ?? step.block.text ?? "") }} />
             )}
           </div>
 
@@ -295,7 +300,7 @@ export default function TopicPage({ slug, ladder, course, onBack }: { slug: stri
         </aside>
 
         <section className="stage" aria-label="Interactive figure">
-          {stagePrompt && <p className="stage-prompt"><span aria-hidden>◉</span> {stagePrompt}</p>}
+          {stagePrompt && <p className="stage-prompt"><span aria-hidden>◉</span> <span dangerouslySetInnerHTML={{ __html: renderMath(stagePrompt) }} /></p>}
           {vizBlock?.name === "ph-orbit" && (
             <div className="orbit-toggle" role="group" aria-label={t("orbit.title")}>
               <button className={!orbit3d ? "chip active" : "chip"} aria-pressed={!orbit3d} onClick={() => setOrbit3d(false)}>{t("orbit.twoD")}</button>
@@ -343,6 +348,8 @@ export default function TopicPage({ slug, ladder, course, onBack }: { slug: stri
             <ul>{bundle.lesson.sources.map((s, i) => <li key={i}>{s.name}</li>)}</ul>
             <p>Content © Teddy Rook · CC BY-NC 4.0 · link back required. Engine MIT.</p>
           </details>
+
+          <MarblePanel topicId={bundle.id} />
         </section>
       </div>
     </main>

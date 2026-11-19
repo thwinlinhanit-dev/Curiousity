@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useFigureStore } from "../state/figureStore";
 import { loadLadder } from "../viz/loadViz";
 import { t, useT } from "../i18n";
+import { renderMath } from "../utils/richtext";
 
 type AnswerSpec = { t: string; v?: unknown; rtol?: number; unit?: string; [k: string]: unknown };
 type Problem = {
@@ -35,6 +36,7 @@ export default function PracticePanel({ topicId, ladder = "physics", fallback, o
   const [usingFallback, setUsingFallback] = useState(false);
   useEffect(() => { loadLadder(ladder).then(() => setReady(true)).catch(() => setReady(true)); }, [ladder]);
   const [answer, setAnswer] = useState("");
+  const [answers, setAnswers] = useState<string[]>([]);
   const [result, setResult] = useState<CheckResult | null>(null);
   const [shownSteps, setShownSteps] = useState(0);
   const qRef = useRef<HTMLDivElement>(null);
@@ -47,11 +49,11 @@ export default function PracticePanel({ topicId, ladder = "physics", fallback, o
     if (!M) return;
     try {
       const p = M.makeProblem(topicId, seed, { level });
-      setProblem(p); setUsingFallback(false); setAnswer(""); setResult(null); setShownSteps(0);
+      setProblem(p); setUsingFallback(false); setAnswer(""); setAnswers([]); setResult(null); setShownSteps(0);
     } catch {
       if (fallback) {
         setProblem({ q: fallback.q, a: { t: "text", v: fallback.a }, steps: fallback.steps } as unknown as Problem);
-        setUsingFallback(true); setAnswer(""); setResult(null); setShownSteps(0);
+        setUsingFallback(true); setAnswer(""); setAnswers([]); setResult(null); setShownSteps(0);
       } else { setProblem(null); setUsingFallback(false); }
     }
   }, [topicId, seed, level, ready, fallback]);
@@ -72,9 +74,22 @@ export default function PracticePanel({ topicId, ladder = "physics", fallback, o
     }
   }, [problem, shownSteps, result]);
 
+  const parts = problem?.a?.t === "multi" ? (problem.a.parts as { label?: string; a: AnswerSpec; unit?: string }[]) : null;
+
   const check = () => {
     const M = ml();
-    if (!problem || !answer.trim()) return;
+    if (!problem) return;
+    if (parts) {
+      if (parts.some((_p, i) => !answers[i]?.trim())) return;
+      const rs = parts.map((p, i) => M!.check(p.a, answers[i], { q: problem.q, unit: p.unit ?? problem.unit }));
+      const ok = rs.every((r) => r.ok);
+      const msg = ok ? "" : rs.map((r, i) => (r.ok ? "" : `${String(parts[i].label ?? `Part ${i + 1}`).replace(/<[^>]*>|\$/g, "").trim()}: ${r.msg ?? ""}`)).filter(Boolean).join(" · ");
+      setResult({ ok, msg, invalid: rs.some((r) => r.invalid) });
+      onAnswer?.(ok);
+      if (ok) setShownSteps(problem.steps?.length ?? 0);
+      return;
+    }
+    if (!answer.trim()) return;
     if (usingFallback) {
       setResult({ ok: true, msg: "Self-check — compare what you wrote with the worked solution below." });
       setShownSteps(problem.steps?.length ?? 0);
@@ -109,7 +124,7 @@ export default function PracticePanel({ topicId, ladder = "physics", fallback, o
       {!ready ? <p style={{ color: "var(--ink-3)" }}>Loading practice…</p>
         : !problem ? <p style={{ color: "var(--ink-3)" }}>{t("lesson.noGenerator")}</p> : (
         <>
-          <div ref={qRef} className="practice-q" dangerouslySetInnerHTML={{ __html: problem.q }} />
+          <div ref={qRef} className="practice-q" dangerouslySetInnerHTML={{ __html: renderMath(problem.q) }} />
           {problem.viz && <div ref={vizRef} className="practice-viz" />}
           {Array.isArray(problem.choices) && problem.choices.length ? (
             <div className="choice-grid">
@@ -121,24 +136,41 @@ export default function PracticePanel({ topicId, ladder = "physics", fallback, o
               })}
             </div>
           ) : null}
-          <div className="practice-answer">
-            <input value={answer} onChange={(e) => setAnswer(e.target.value)} onKeyDown={(e) => e.key === "Enter" && check()} placeholder={problem.unit ? `${t("lesson.answer")} (${problem.unit})` : t("lesson.answer")} aria-label={t("lesson.answer")} />
-            <button className="btn-primary" onClick={check}>{t("lesson.check")}</button>
-            <button className="btn" onClick={next}>{t("lesson.another")}</button>
-          </div>
+          {parts ? (
+            <div className="multi-answer">
+              {parts.map((p, i) => (
+                <label key={i}>
+                  <span dangerouslySetInnerHTML={{ __html: renderMath(p.label ?? `Part ${i + 1}`) }} />
+                  {p.unit ? <em> ({p.unit})</em> : null}
+                  <input value={answers[i] ?? ""} onChange={(e) => setAnswers((prev) => { const a = [...prev]; a[i] = e.target.value; return a; })}
+                    onKeyDown={(e) => e.key === "Enter" && check()} aria-label={`${t("lesson.answer")} ${i + 1}`} />
+                </label>
+              ))}
+              <div className="practice-answer">
+                <button className="btn-primary" onClick={check}>{t("lesson.check")}</button>
+                <button className="btn" onClick={next}>{t("lesson.another")}</button>
+              </div>
+            </div>
+          ) : (
+            <div className="practice-answer">
+              <input value={answer} onChange={(e) => setAnswer(e.target.value)} onKeyDown={(e) => e.key === "Enter" && check()} placeholder={problem.unit ? `${t("lesson.answer")} (${problem.unit})` : t("lesson.answer")} aria-label={t("lesson.answer")} />
+              <button className="btn-primary" onClick={check}>{t("lesson.check")}</button>
+              <button className="btn" onClick={next}>{t("lesson.another")}</button>
+            </div>
+          )}
           {result && (
             <div className={`practice-result ${result.ok ? "ok" : "no"}`} aria-live="polite" ref={resultRef}>
               <p><strong>{result.ok ? t("lesson.correct") : result.invalid ? t("lesson.cantRead") : t("lesson.notQuite")}</strong> {result.msg}</p>
-              {!result.ok && problem.hint && <p style={{ color: "var(--ink-3)" }}>{t("lesson.hint")} <span dangerouslySetInnerHTML={{ __html: problem.hint }} /></p>}
+              {!result.ok && problem.hint && <p style={{ color: "var(--ink-3)" }}>{t("lesson.hint")} <span dangerouslySetInnerHTML={{ __html: renderMath(problem.hint) }} /></p>}
               {!result.ok && (problem.steps?.length ?? 0) > 0 && shownSteps === 0 && (
                 <button className="btn-link" onClick={() => setShownSteps(1)}>{t("lesson.showWorking")}</button>
               )}
               {shownSteps > 0 && (
                 <div className="working-reveal">
                   <ol>
-                    {problem.steps!.slice(0, shownSteps).map((s, i) => <li key={i} dangerouslySetInnerHTML={{ __html: s }} />)}
+                    {problem.steps!.slice(0, shownSteps).map((s, i) => <li key={i} dangerouslySetInnerHTML={{ __html: renderMath(s) }} />)}
                   </ol>
-                  <div ref={solRef} dangerouslySetInnerHTML={{ __html: `<p>Correct answer: ${ml()?.answerShow(problem.a) ?? ""}</p>` }} />
+                  <div ref={solRef} dangerouslySetInnerHTML={{ __html: renderMath(`<p>Correct answer: ${ml()?.answerShow(problem.a) ?? ""}</p>`) }} />
                   {shownSteps < problem.steps!.length && <button className="btn" onClick={() => setShownSteps((n) => n + 1)}>Next step ›</button>}
                 </div>
               )}

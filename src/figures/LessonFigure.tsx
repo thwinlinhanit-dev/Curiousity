@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { renderMath } from "../utils/richtext";
 
 type Block = { t: string; html?: string; text?: string; title?: string; q?: string; steps?: string[]; a?: string; rows?: string[][]; head?: string[]; items?: string[] };
 type Opts = { blocks?: Block[]; title?: string; short?: string; [k: string]: unknown };
@@ -27,16 +28,16 @@ export default function LessonFigure({ opts }: { opts: Opts }) {
               <div className="idea-body">
                 {b.t === "ex" ? (
                   <>
-                    {b.q && <p dangerouslySetInnerHTML={{ __html: b.q }} />}
-                    <ol>{(b.steps ?? []).map((s, j) => <li key={j} dangerouslySetInnerHTML={{ __html: s }} />)}</ol>
-                    {b.a && <p><strong>Answer:</strong> <span dangerouslySetInnerHTML={{ __html: b.a }} /></p>}
+                    {b.q && <p dangerouslySetInnerHTML={{ __html: renderMath(b.q) }} />}
+                    <ol>{(b.steps ?? []).map((s, j) => <li key={j} dangerouslySetInnerHTML={{ __html: renderMath(s) }} />)}</ol>
+                    {b.a && <p><strong>Answer:</strong> <span dangerouslySetInnerHTML={{ __html: renderMath(b.a) }} /></p>}
                   </>
                 ) : b.t === "table" ? (
-                  <table><tbody>{(b.rows ?? []).map((r, j) => <tr key={j}>{r.map((c, k) => <td key={k} dangerouslySetInnerHTML={{ __html: c }} />)}</tr>)}</tbody></table>
+                  <table><tbody>{(b.rows ?? []).map((r, j) => <tr key={j}>{r.map((c, k) => <td key={k} dangerouslySetInnerHTML={{ __html: renderMath(c) }} />)}</tr>)}</tbody></table>
                 ) : b.t === "list" ? (
-                  <ul>{(b.items ?? []).map((x, j) => <li key={j} dangerouslySetInnerHTML={{ __html: x }} />)}</ul>
+                  <ul>{(b.items ?? []).map((x, j) => <li key={j} dangerouslySetInnerHTML={{ __html: renderMath(x) }} />)}</ul>
                 ) : (
-                  <p dangerouslySetInnerHTML={{ __html: b.html ?? b.text ?? "" }} />
+                  <p dangerouslySetInnerHTML={{ __html: renderMath(b.html ?? b.text ?? "") }} />
                 )}
               </div>
             )}

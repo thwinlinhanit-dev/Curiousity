@@ -10,12 +10,19 @@ const REPO = path.resolve(ROOT, "..", "trb");
 const DST = path.resolve(ROOT, "public/vendor");
 const VIZ = path.join(DST, "viz");
 
+// The upstream source repo (`../trb`) is only present in the authoring checkout.
+// public/vendor is committed, so a clean clone or CI checkout builds without it.
+const HAS_REPO = fs.existsSync(REPO);
+if (!HAS_REPO) {
+  console.log(`vendor: ${REPO} not found — keeping the committed public/vendor/ as-is`);
+}
+
 fs.mkdirSync(DST, { recursive: true });
 fs.mkdirSync(VIZ, { recursive: true });
 
 // Music kit: parser, SVG staff renderer, synth, keyboard and player.
 const musicKit = path.join(REPO, "static/music/kit");
-if (fs.existsSync(musicKit)) {
+if (HAS_REPO && fs.existsSync(musicKit)) {
   const mDst = path.join(DST, "music");
   fs.mkdirSync(mDst, { recursive: true });
   for (const f of ["audio.js", "song.js", "staff.js", "keyboard.js", "player.js", "kit.css"]) {
@@ -53,19 +60,22 @@ const files = [
   ["static/physics/viz/physics.css", "physics.css"],
 
 ];
-for (const [src, name] of files) {
-  const dst = path.join(DST, name);
-  fs.mkdirSync(path.dirname(dst), { recursive: true });
-  fs.copyFileSync(path.join(REPO, src), dst);
-  console.log("vendor:", name, fs.statSync(dst).size, "bytes");
+if (HAS_REPO) {
+  for (const [src, name] of files) {
+    const srcPath = path.join(REPO, src);
+    if (!fs.existsSync(srcPath)) { console.warn("vendor: skipped missing", src); continue; }
+    const dst = path.join(DST, name);
+    fs.mkdirSync(path.dirname(dst), { recursive: true });
+    fs.copyFileSync(srcPath, dst);
+    console.log("vendor:", name, fs.statSync(dst).size, "bytes");
+  }
 }
 
 // All ladder visual kits and generators, namespaced by ladder to avoid filename collisions.
 const catalogPath = path.resolve(ROOT, "content/catalog.json");
-const catalog = JSON.parse(fs.existsSync(catalogPath) ? fs.readFileSync(catalogPath, "utf8")
-  : JSON.stringify({ ladders: fs.readdirSync(path.join(REPO, "data"), { withFileTypes: true })
-      .filter((d) => d.isDirectory() && fs.existsSync(path.join(REPO, "data", d.name, "gen")) === false)
-      .map((d) => ({ key: d.name })) }));
+const catalog = fs.existsSync(catalogPath)
+  ? JSON.parse(fs.readFileSync(catalogPath, "utf8"))
+  : { ladders: [] };
 const vizManifest = {}, genManifest = {}, vizCssManifest = {};
 let vizTotal = 0, genTotal = 0;
 for (const ladder of catalog.ladders) {
