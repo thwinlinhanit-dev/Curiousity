@@ -13,6 +13,16 @@ const CHORD_NOTES: Record<string, string> = {
 };
 
 const instrumentOf = (slug: string) => /ukulele/.test(slug) ? "Ukulele" : /banjo|clawhammer|three-finger/.test(slug) ? "Banjo" : /guitar/.test(slug) ? "Guitar" : "Piano";
+// Scores ship as one document; the lab picks the slug it needs out of it.
+let songsDoc: Promise<Record<string, Record<string, unknown>>> | null = null;
+function loadSong(slug: string): Promise<Record<string, unknown> | null> {
+  if (!songsDoc) {
+    songsDoc = fetch(`${import.meta.env.BASE_URL}content/music/songs.json`)
+      .then((r) => (r.ok ? (r.json() as Promise<Record<string, Record<string, unknown>>>) : {}))
+      .catch(() => ({}) as Record<string, Record<string, unknown>>);
+  }
+  return songsDoc.then((d) => d[slug] ?? null);
+}
 
 function chordCards(chords: string) {
   const out: string[] = [];
@@ -40,9 +50,11 @@ export default function MusicLab({ slug, onSelect, compact }: { slug: string; on
     if (!slug) { setSong(null); return; }
     let alive = true;
     setSong(null); setError("");
-    fetch(`${import.meta.env.BASE_URL}content/music/songs/${slug}.json`)
-      .then((r) => r.json()).then((s) => { if (alive) setSong(s); })
-      .catch(() => alive && setError("Song not found"));
+    void loadSong(slug).then((s) => {
+      if (!alive) return;
+      if (s) setSong(s);
+      else setError("Song not found");
+    });
     return () => { alive = false; };
   }, [slug]);
 

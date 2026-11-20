@@ -23,6 +23,7 @@ export default function SchoolApp() {
   const [placeName, setPlaceName] = useState("");
   const [placeAge, setPlaceAge] = useState(9);
   const [showAnswers, setShowAnswers] = useState(false);
+  const [showAllSubjects, setShowAllSubjects] = useState(false);
 
   useEffect(() => {
     load("content/apps/school.json").then(setData).catch(() => undefined);
@@ -107,8 +108,12 @@ export default function SchoolApp() {
                   <button className="btn" onClick={() => useAgeSuggestions(child.id)}>Use age suggestions</button>
                   <button className="btn" onClick={() => save(children.filter((c) => c.id !== child.id))}>Remove</button></div></div>
               <p className="app-muted">Suggested subjects are switched on for this age. Tick or untick anything, then set the minutes below.</p>
+              <label className="app-muted" style={{ display: "inline-flex", gap: "var(--sp-2)", alignItems: "center" }}>
+                <input type="checkbox" checked={showAllSubjects} onChange={(e) => setShowAllSubjects(e.target.checked)} />
+                Show subjects for other ages
+              </label>
               <div className="sc-subjects">
-                {data?.subjects.map((s) => (
+                {data?.subjects.filter((s) => showAllSubjects || defaultOn(s, child.age) || child.on.includes(s.key)).map((s) => (
                   <label key={s.key} className={child.on.includes(s.key) ? "sc-subject on" : "sc-subject"}>
                     <input type="checkbox" checked={child.on.includes(s.key)} onChange={() => toggleSubject(child.id, s.key)} />
                     <span><b>{s.name}</b><small>{band(s.mins, child.age)} min/week · {suggested(s, child.age)?.name ?? ""}</small></span>

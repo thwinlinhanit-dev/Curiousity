@@ -20,10 +20,16 @@ export function renderMath(html: string): string {
   // math span. Turn the escape into an HTML entity so the backslash never
   // reaches the reader.
   const source = String(html ?? "").replace(/\\\$/g, "&#36;");
-  const withMath = source.replace(/\$([^$\n]+)\$/g, (_m, tex: string) => {
-    try { return katex.renderToString(tex, { throwOnError: false, strict: false }); }
-    catch { return `$${tex}$`; }
-  });
+  // Display math first: a corpus explanation often uses $$ … $$ across lines.
+  const withMath = source
+    .replace(/\$\$([\s\S]+?)\$\$/g, (_m, tex: string) => {
+      try { return katex.renderToString(tex.trim(), { displayMode: true, throwOnError: false, strict: false }); }
+      catch { return `$$${tex}$$`; }
+    })
+    .replace(/\$([^$\n]+)\$/g, (_m, tex: string) => {
+      try { return katex.renderToString(tex, { throwOnError: false, strict: false }); }
+      catch { return `$${tex}$`; }
+    });
   return sanitize(withMath);
 }
 

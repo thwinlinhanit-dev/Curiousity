@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sketchd — Visual Evidence Atlas</title>
+<style>
+  :root{--bg:#141517;--card:#1d1f22;--line:#303237;--txt:#ececec;--mut:#9a9da4;--grn:#4ade9f}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.5 Inter,-apple-system,Segoe UI,Roboto,sans-serif}
+  header{padding:40px 6vw 28px;border-bottom:1px solid var(--line)}
+  h1{font:600 42px/1.1 Georgia,serif;margin:0 0 10px}
+  header p{color:var(--mut);max-width:760px;margin:0}
+  .tag{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:3px 12px;color:var(--grn);font-size:12px;margin-bottom:16px}
+  main{padding:32px 6vw 80px;max-width:1400px;margin:auto}
+  .item{margin:0 0 46px;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .item img{width:100%;display:block}
+  .cap{padding:16px 20px 20px;display:grid;grid-template-columns:120px 1fr;gap:12px;align-items:start}
+  .num{color:var(--grn);font:600 13px/1.4 monospace}
+  .cap h2{margin:0 0 5px;font-size:17px;font-weight:600}
+  .cap p{margin:0;color:var(--mut);font-size:14px}
+  .pill{display:inline-block;background:#2a2d31;border-radius:6px;padding:1px 7px;font-size:11px;color:var(--txt);margin-right:6px}
+  footer{border-top:1px solid var(--line);padding:24px 6vw;color:var(--mut);font-size:13px}
+  a{color:var(--grn)}
+</style>
+</head>
+<body>
+<header>
+  <span class="tag">REVERSE-ENGINEERING EVIDENCE</span>
+  <h1>Sketchd — Visual Atlas</h1>
+  <p>19 full-resolution frames extracted from Dev Ed's 13m52s demo of <b>Sketchd</b>, an AI tutor that generates narrated, interactive lessons. Read with <a href="REVERSE_ENGINEERING_REPORT.md">REVERSE_ENGINEERING_REPORT.md</a> for the full analysis and <a href="BUILD_BLUEPRINT.md">BUILD_BLUEPRINT.md</a> to build your own.</p>
+</header>
+<main id="gallery"></main>
+<footer>Source: demo video · extracted with OpenCV · frames downscaled to 1920×1080. All insights are inference unless marked observed.</footer>
+<script>
+const items=[
+["01-home.png","Home / prompt","Single entry box, gradient border, persona switcher (Sketch tutor), Try / Pick-up chips, serif hero, hand-drawn ink illustration."],
+["02-generating.png","Generation state","Topic-themed animated loader ('Setting up the studio') inside the already-finished lesson shell — shell-first streaming."],
+["03-studio-setup.png","Lesson shell","Left narration rail with 'Speaking / Pause' TTS control, center stage, step counter with progress ring, green Continue, follow-up composer."],
+["04-music-studio.png","Embedded DAW lab","Full music studio: transport (bar·beat, tempo, key, time sig), Arrangement / Piano roll / Drum grid / Chord strip / Score / Mixer. Likely a third-party embedded app."],
+["05-keyboard-annotation.png","AI annotation layer","App-generated KEYBOARD overlay highlighting scale steps (T tone / S semitone) on top of the embedded studio — 'highlighting the visuals that matter'."],
+["06-chord-strip.png","Chord strip + step 8","Narration grows with the lesson; generated chord progression (Bm–G–D–A) with preset progression chips; suggested follow-ups above composer."],
+["07-followup-drums.png","Conversation mutates the visual","Follow-up 'can you add drums to this?' → new transcript turn + a new drum track added to the arrangement. The core differentiator."],
+["08-pythagorean-lab.png","Geometry lab","Draggable right triangle, squares with live areas (9 + 16 = 25), angles, and a WORKING / TRIANGLE / ANGLE SUM readout panel."],
+["09-working-panel.png","Show-your-working panel","Readout expands with algebraic derivation (a²+b²=c², √25=5) and triangle metrics — the visual explains itself."],
+["10-sidebar-finding-photos.png","Session history + image search","Left sidebar: TODAY sessions with '2 drawings' counts, active 'Answering…' status, 'Saved to your Sketchd account'. 'Finding photos' loader."],
+["11-bubble-sort-code-lab.png","Code lab","Bubble-sort visualizer with step controls, comparison/swap counters, scrubber, and a linked main.py code tab."],
+["12-mustang-photo-slideshow.png","Annotated photo slideshow","Real web images with year timeline, captions, source credits, and a sketch player ('See whole drawing', 'Narration on') — image search + drawn explanations."],
+["13-breadboard-lab.png","Electronics lab","Breadboard hole grid, 5V supply, draggable Wire / Resistor / LED / Button parts with a status bar."],
+["14-breadboard-feedback.png","Contextual lab feedback","Model-driven step instructions ('place LED in e12', '220-ohm resistor d13–d17') plus live validation feedback ('The loop is open…')."],
+["15-course-catalog.png","Course catalog","Grid by subject with lesson names, breadcrumbs (course · lab type · topic · duration) and Watch buttons. Named lab types: Sketchboard, Maths lab, Physics lab, Code lab, Data lab."],
+["16-progress-tree.png","Progress tree","Organic branching curriculum tree with numbered nodes, per-node progress %, status legend (Not started / Under way / Mastered / Review due), ON HOLD section."],
+["17-projectile-physics-lab.png","Physics lab","Projectile trajectory with velocity vectors, live WORKING math, velocity-vs-time graph, Range/Peak/Flight-time cards, trials table, course-mode Review / Ask / Next lesson."],
+["18-vocabulary-page.png","Page / writing block","Serif document step: vocabulary entries, examples, pronunciation notes — a static-content block type with its own Continue."],
+["19-match-pairs-practice.png","Practice block","Generated 'Match the pairs' quiz with progress bar, two-column tap targets and Check button."]
+];
+document.getElementById('gallery').innerHTML=items.map(([f,t,d],i)=>`
+<figure class="item">
+  <img src="evidence/${f}" alt="${t}" loading="lazy">
+  <figcaption class="cap">
+    <div class="num">FIG ${String(i+1).padStart(2,'0')}<br><span class="pill">evidence</span></div>
+    <div><h2>${t}</h2><p>${d}</p></div>
+  </figcaption>
+</figure>`).join('');
+</script>
+</body>
+</html>

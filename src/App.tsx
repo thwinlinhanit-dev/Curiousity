@@ -2,6 +2,7 @@ import { lazy, Suspense, useEffect, useMemo, useState } from "react";
 import catalog from "../content/catalog.json";
 import marbleIndex from "../content/marble/matched.json";
 import TopicPage from "./pages/TopicPage";
+import PlanPage from "./pages/PlanPage";
 import ProgressPanel from "./components/ProgressPanel";
 import { ensureGraph, getGraph, initProgress, setActiveLadder, topicStatus } from "./state/progress";
 import { getLang, t, useT } from "./i18n";
@@ -19,15 +20,12 @@ import musicIndex from "../content/music/index.json";
 import { APP_DEFS } from "./apps/registry";
 import LabErrorBoundary from "./components/LabErrorBoundary";
 import { plural } from "./utils/plural";
+import { loadCoursePack } from "./state/packs";
+import type { CourseIndex } from "./state/courseTypes";
 
 const BreadboardLab = lazy(() => import("./figures/BreadboardLab"));
 const FBDLab = lazy(() => import("./figures/FBDLab"));
 
-type CourseIndex = {
-  key: string; ladder: string; title: string;
-  units: { key: string; title: string }[];
-  topics: { id: string; slug: string; unit: string; title: string }[];
-};
 type Ladder = typeof catalog.ladders[number];
 
 const DATASETS = [
@@ -40,7 +38,6 @@ const DATASETS = [
 
 // Lessons cross-checked against curriculum standards (Marble Skill Taxonomy).
 const MARBLE_IDS = new Set(marbleIndex.ids);
-const TOTAL_TOPICS = catalog.ladders.reduce((n, l) => n + l.topics, 0);
 const hasStandards = (id: string) => MARBLE_IDS.has(id);
 
 const params = () => new URLSearchParams(window.location.search);
@@ -62,10 +59,13 @@ export default function App() {
   const [ladder, setLadder] = useState(ladderFromUrl);
   const [courseKey, setCourseKey] = useState(() => courseFromUrl(ladderFromUrl()));
   const [course, setCourse] = useState<CourseIndex | null>(null);
+  const [courseError, setCourseError] = useState("");
   const [slug, setSlug] = useState<string | null>(() => params().get("t"));
   const [query, setQuery] = useState("");
   const [stdOnly, setStdOnly] = useState(false);
-  const [globalSearch, setGlobalSearch] = useState("");
+  // ?q= is how an in-lesson corpus link lands here: those links point at the
+  // upstream site's own paths, so they open the app's search with their label.
+  const [globalSearch, setGlobalSearch] = useState(() => params().get("q") ?? "");
   const [mapView, setMapView] = useState(false);
   const [, setTick] = useState(0);
   const [graphReady, setGraphReady] = useState(false);
@@ -73,6 +73,9 @@ export default function App() {
   const datasetId = params().get("data");
   const musicParam = params().get("music");
   const [app, setApp] = useState<string | null>(() => params().get("app"));
+  const planParam = params().get("plan");
+  const roadmapParam = params().get("roadmap");
+  const aboutParam = params().get("about");
   useT();
 
   useEffect(() => {
@@ -100,9 +103,13 @@ export default function App() {
 
   useEffect(() => {
     let alive = true;
-    fetch(`${import.meta.env.BASE_URL}content/${ladder}/courses/${courseKey}.json`)
-      .then((r) => r.json()).then((c: CourseIndex) => { if (alive) setCourse(c); })
-      .catch(() => alive && setCourse(null));
+    // loadCoursePack answers { index: null } when the fetch fails, so a missing
+    // index is an error to show, not a heading stuck on "Loading…" for ever.
+    void loadCoursePack(ladder, courseKey).then((p) => {
+      if (!alive) return;
+      setCourse(p.index);
+      setCourseError(p.index ? "" : t("catalog.loadFailed"));
+    });
     return () => { alive = false; };
   }, [ladder, courseKey]);
 
@@ -160,6 +167,7 @@ export default function App() {
     return [...topics, ...datasets];
   }, [globalSearch, ladder, courseKey, graphReady]);
   const currentLadder = catalog.ladders.find((l) => l.key === ladder) as Ladder;
+  const catalogTopics = useMemo(() => catalog.ladders.reduce((n, l) => n + l.topics, 0), []);
 
   if (app !== null) {
     const atHub = app === "hub" || app === "";
@@ -192,6 +200,9 @@ export default function App() {
       <div className="figure-card" style={{ marginTop: "var(--sp-4)" }}><LabErrorBoundary><Suspense fallback={<p>Loading lab…</p>}><BreadboardLab /></Suspense></LabErrorBoundary></div>
     </main>
   );
+  if (planParam !== null) return <PlanPage onBack={() => { window.location.href = window.location.pathname; }} />;
+  if (roadmapParam !== null) return <PlanPage src="docs/roadmap.md" onBack={() => { window.location.href = window.location.pathname; }} />;
+  if (aboutParam !== null) return <PlanPage src="docs/about.md" onBack={() => { window.location.href = window.location.pathname; }} />;
   if (musicParam !== null) return (
     <main className="topic-list" id="main-content"><a href="#main-content" className="skip-link">{t("skip")}</a><SiteHeader />
       <button className="btn-link" onClick={() => { window.location.href = window.location.pathname; }}>← All topics</button>
@@ -211,18 +222,16 @@ export default function App() {
   return (
     <main className="topic-list" id="main-content"><a href="#main-content" className="skip-link">{t("skip")}</a>
       <SiteHeader />
-      <p className="eyebrow">{t("home.eyebrow")} · CORPUS</p>
+      <p className="eyebrow">{t("home.eyebrow")}</p>
       <h1>{t("home.title")}</h1>
       <p style={{ color: "var(--ink-2)", maxWidth: 620 }}>
-        {catalog.ladders.length} subjects · {TOTAL_TOPICS.toLocaleString()} topics from the Teddy Rook corpus.
-        Figures you can play, pause and take apart — with real generators, answer checking and one shared progress engine.
+        {t("home.intro", { subjects: catalog.ladders.length, topics: catalogTopics })}
       </p>
       <p style={{ color: "var(--ink-3)", fontSize: "var(--fs-0)", maxWidth: 620 }}>
-        {marbleIndex.count} lessons are cross-checked against curriculum standards (NGSS, UK NC, ACARA, Ontario…) —
-        look for the <span className="std-badge">standards</span> tag in a topic list.
+        {t("home.standardsA", { count: marbleIndex.count })} <span className="std-badge">standards</span> {t("home.standardsB")}
       </p>
       <div className="global-search">
-        <input value={globalSearch} onChange={(e) => setGlobalSearch(e.target.value)} placeholder={`Search all ${TOTAL_TOPICS.toLocaleString()} topics and the library…`} aria-label="Search everything" />
+        <input value={globalSearch} onChange={(e) => setGlobalSearch(e.target.value)} placeholder={t("home.search", { topics: catalogTopics })} aria-label="Search everything" />
         {searchResults.length > 0 && <ul>
           {searchResults.map((r, i) => <li key={i}><button onClick={r.go}><b>{r.label}</b><span>{r.sub} · {r.kind}</span></button></li>)}
         </ul>}
@@ -280,10 +289,11 @@ export default function App() {
       </div>
       {mapView && <SkillMap ladder={ladder} courses={currentLadder?.courseKeys.map((k) => ({ key: k, title: courseName(k), short: courseShort(k) })) ?? []} selected={courseKey} onSelect={(c) => { setActiveLadder(ladder, c); go(null, { course: c }); }} />}
 
-      <h2 style={{ fontFamily: "var(--font-display)", fontSize: "var(--fs-3)", marginTop: "var(--sp-5)" }}>{course?.title ?? "Loading…"}</h2>
+      <h2 style={{ fontFamily: "var(--font-display)", fontSize: "var(--fs-3)", marginTop: "var(--sp-5)" }}>{course?.title ?? (courseError ? t("catalog.topics") : "Loading…")}</h2>
+      {courseError && <p role="alert" style={{ color: "var(--danger)", fontSize: "var(--fs-0)" }}>{courseError}</p>}
       {course && topics.length === 0 && (
         <p className="empty-state" role="status">
-          No topics match {query ? `“${query}”` : "this filter"}{stdOnly ? " in the standards-tagged set" : ""}.{" "}
+          {t("catalog.none")}{" "}
           <button className="btn-link" onClick={() => { setQuery(""); setStdOnly(false); }}>Clear filters</button>
         </p>
       )}
@@ -301,6 +311,19 @@ export default function App() {
         })}
       </ol>
       <IdeaBox />
+      <p style={{ marginTop: "var(--sp-4)", marginBottom: 0, fontSize: "var(--fs-0)" }}>
+        <button className="btn-link" onClick={() => { window.location.href = `${window.location.pathname}?plan`; }}>
+          Design plan — how this interface should look next →
+        </button>
+        {" · "}
+        <button className="btn-link" onClick={() => { window.location.href = `${window.location.pathname}?roadmap`; }}>
+          Open-source roadmap and idea book →
+        </button>
+        {" · "}
+        <button className="btn-link" onClick={() => { window.location.href = `${window.location.pathname}?about`; }}>
+          About and licences →
+        </button>
+      </p>
       <footer style={{ marginTop: "var(--sp-6)", borderTop: "1px solid var(--rule)", paddingTop: "var(--sp-3)", color: "var(--ink-3)", fontSize: "var(--fs-0)" }}>{t("footer")}</footer>
     </main>
   );

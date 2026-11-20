@@ -147,22 +147,11 @@ function mergeManifest(name, fresh) {
 }
 fs.writeFileSync(path.join(DST, "viz-manifest.json"), JSON.stringify(mergeManifest("viz-manifest.json", vizManifest), null, 2));
 fs.writeFileSync(path.join(DST, "gen-manifest.json"), JSON.stringify(mergeManifest("gen-manifest.json", genManifest), null, 2));
-fs.writeFileSync(path.join(DST, "viz-css-manifest.json"), JSON.stringify(vizCssManifest, null, 2));
+fs.writeFileSync(path.join(DST, "viz-css-manifest.json"), JSON.stringify(mergeManifest("viz-css-manifest.json", vizCssManifest), null, 2));
 console.log(`viz kits: ${vizTotal} across ${Object.keys(vizManifest).length} ladders`);
 console.log(`generators: ${genTotal} across ${Object.keys(genManifest).length} ladders`);
 
-// Publish ingest output for runtime fetch.
-function copyDir(from, to) {
-  fs.mkdirSync(to, { recursive: true });
-  for (const entry of fs.readdirSync(from, { withFileTypes: true })) {
-    const src = path.join(from, entry.name), dst = path.join(to, entry.name);
-    if (entry.isDirectory()) copyDir(src, dst);
-    else fs.copyFileSync(src, dst);
-  }
-}
-const contentSrc = path.resolve(ROOT, "content");
-const contentDst = path.resolve(ROOT, "public/content");
-if (fs.existsSync(contentSrc)) {
-  copyDir(contentSrc, contentDst);
-  console.log("content published to public/content");
-}
+// Runtime content is published by scripts/publish-content.mjs, which bundles
+// the corpus into a few hundred files. Do not copy content/ wholesale here: a
+// published site is capped at 2,000 files and the raw corpus is 11k+.
+

@@ -34,22 +34,27 @@ export type MarbleData = {
 };
 
 const cache = new Map<string, MarbleData | null>();
-const inflight = new Map<string, Promise<MarbleData | null>>();
+// Every matched lesson ships in one document, so a site with thousands of
+// lessons costs one request and no 404s for the ones with no match.
+let doc: Promise<Record<string, MarbleData>> | null = null;
+
+function loadAll(): Promise<Record<string, MarbleData>> {
+  if (!doc) {
+    doc = fetch(`${import.meta.env.BASE_URL}content/marble/by-topic.json`)
+      .then((r) => (r.ok ? (r.json() as Promise<Record<string, MarbleData>>) : {}))
+      .catch(() => ({}) as Record<string, MarbleData>);
+  }
+  return doc;
+}
 
 export function loadMarble(topicId: string): Promise<MarbleData | null> {
   if (!topicId) return Promise.resolve(null);
   if (cache.has(topicId)) return Promise.resolve(cache.get(topicId) ?? null);
-  const pending = inflight.get(topicId);
-  if (pending) return pending;
-
-  const base = import.meta.env.BASE_URL;
-  const url = `${base}content/marble/by-topic/${encodeURIComponent(topicId)}.json`;
-  const p = fetch(url)
-    .then((r) => (r.ok ? (r.json() as Promise<MarbleData>) : null))
-    .catch(() => null)
-    .then((d) => { cache.set(topicId, d); inflight.delete(topicId); return d; });
-  inflight.set(topicId, p);
-  return p;
+  return loadAll().then((all) => {
+    const hit = all[topicId] ?? null;
+    cache.set(topicId, hit);
+    return hit;
+  });
 }
 
 // "ngss-k5:1-PS4-1" → "NGSS · 1-PS4-1", "uk-nc-2013:Y4.Sci.Snd.1" → "UK · Y4.Sci.Snd.1"
