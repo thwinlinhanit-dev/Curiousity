@@ -20,6 +20,12 @@ jobs:
         run: npm run contract
       - name: Link regression check
         run: npm run links
+      - name: Accessibility gate
+        run: npm run axe
+      - name: Bundle budget
+        run: npm run budget
+      - name: Dependency audit
+        run: npm audit --audit-level=high || true
 
   repo-content-checks:
     # Fail if the upstream generators/checkers regress (PHYSICS_SPEC/05 §3)

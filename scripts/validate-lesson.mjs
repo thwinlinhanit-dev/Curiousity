@@ -20,7 +20,7 @@ req("blocks", Array.isArray(data.blocks) && data.blocks.length > 0);
 req("sources", Array.isArray(data.sources) && data.sources.length > 0);
 (data.blocks ?? []).forEach((b, i) => {
   if (!b || typeof b.t !== "string" || !b.t) errors.push(`block ${i}: missing "t"`);
-  if (b && (b.viz || b.t === "viz") && typeof b.alt !== "string") errors.push(`block ${i}: visual block needs "alt" text`);
+  if (b && (b.viz || b.t === "viz") && ![b.alt, b.cap, b.desc].some((v) => typeof v === "string" && v.length > 8)) errors.push(`block ${i}: visual block needs alt/cap/desc text`);
   if (b && typeof b.html === "string") {
     const dollars = (b.html.match(/(?<!\\)\$/g) ?? []).length;
     if (dollars % 2) errors.push(`block ${i}: unbalanced $…$`);

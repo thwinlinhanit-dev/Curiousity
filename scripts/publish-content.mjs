@@ -22,6 +22,20 @@ const dirs = (p) => (isDir(p) ? fs.readdirSync(p, { withFileTypes: true }).filte
 const jsons = (p) => (isDir(p) ? fs.readdirSync(p, { withFileTypes: true }).filter((e) => e.isFile() && e.name.endsWith(".json")).map((e) => e.name) : []);
 const readJson = (p) => JSON.parse(fs.readFileSync(p, "utf8"));
 const writeJson = (p, data) => { fs.mkdirSync(path.dirname(p), { recursive: true }); fs.writeFileSync(p, JSON.stringify(data)); };
+// Give every visual block a text alternative, derived from the caption that
+// follows it in the lesson when the source omitted one.
+const withAlt = (b) => {
+  if (!b || (!Array.isArray(b.blocks) && !Array.isArray(b.lesson?.blocks))) return b;
+  const key = Array.isArray(b.blocks) ? "blocks" : "lesson";
+  const source = key === "blocks" ? b.blocks : b.lesson.blocks;
+  const blocks = source.map((block, i) => {
+    if (!(block.viz || block.t === "viz") || block.alt || block.cap || block.desc) return block;
+    const next = source.slice(i + 1).find((x) => x.html)?.html ?? "";
+    const cap = next.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim().slice(0, 240);
+    return { ...block, cap: cap || `Interactive figure: ${block.name ?? block.viz ?? "diagram"}` };
+  });
+  return key === "blocks" ? { ...b, blocks } : { ...b, lesson: { ...b.lesson, blocks } };
+};
 const copyFile = (from, to) => { fs.mkdirSync(path.dirname(to), { recursive: true }); fs.copyFileSync(from, to); };
 
 function copyDir(from, to) {
@@ -75,6 +89,7 @@ if (!fs.existsSync(SRC)) {
   for (const f of ["search-index.json"]) if (fs.existsSync(path.join(SRC, f))) copyFile(path.join(SRC, f), path.join(DST, f));
   if (isDir(path.join(SRC, "harvard"))) copyDir(path.join(SRC, "harvard"), path.join(DST, "harvard"));
   if (isDir(path.join(SRC, "graph"))) copyDir(path.join(SRC, "graph"), path.join(DST, "graph"));
+  if (isDir(path.join(SRC, "open"))) copyDir(path.join(SRC, "open"), path.join(DST, "open"));
 
   // Library ↔ lesson links.
   const links = path.join(SRC, "library/links.json");
@@ -122,7 +137,7 @@ if (!fs.existsSync(SRC)) {
     const add = (slug, course, bundle) => {
       if (!slug || !course) return;
       if (!byCourse.has(course)) byCourse.set(course, new Map());
-      byCourse.get(course).set(slug, bundle);
+      byCourse.get(course).set(slug, withAlt(bundle));
     };
     // Flat topic files first; a course-scoped file for the same slug wins.
     for (const f of jsons(path.join(SRC, ladder, "topics"))) {

@@ -5,9 +5,9 @@
   "type": "module",
   "bin": { "curiousity-validate": "./scripts/validate-lesson.mjs" },
   "scripts": {
-    "predev": "node scripts/fetch-corpus.mjs && node scripts/split-graph.mjs && node scripts/publish-content.mjs && node scripts/build-search-index.mjs && node scripts/publish-content.mjs",
+    "predev": "node scripts/fetch-corpus.mjs && node scripts/split-graph.mjs && node scripts/build-open-corpus.mjs && node scripts/publish-content.mjs && node scripts/build-search-index.mjs && node scripts/publish-content.mjs",
     "dev": "vite",
-    "build": "node scripts/fetch-corpus.mjs && node scripts/split-graph.mjs && node scripts/publish-content.mjs && node scripts/build-search-index.mjs && node scripts/publish-content.mjs && node scripts/copy-vendor.mjs && tsc -b && vite build",
+    "build": "node scripts/fetch-corpus.mjs && node scripts/split-graph.mjs && node scripts/build-open-corpus.mjs && node scripts/publish-content.mjs && node scripts/build-search-index.mjs && node scripts/publish-content.mjs && node scripts/copy-vendor.mjs && tsc -b && vite build",
     "pretest": "node scripts/fetch-corpus.mjs",
     "content:marble": "node scripts/marble-import.mjs && node scripts/marble-map.mjs",
     "content:library": "node scripts/library-map.mjs && node scripts/build-library-ladder.mjs && node scripts/build-library-gen.mjs",
@@ -22,6 +22,8 @@
     "validate": "node scripts/validate-lesson.mjs",
     "alt-text": "node scripts/alt-text-report.mjs",
     "translations": "node scripts/translation-report.mjs",
+    "axe": "node scripts/a11y-check.mjs",
+    "budget": "node scripts/bundle-budget.mjs",
     "ingest": "node scripts/ingest-corpus.mjs && node scripts/ingest-datasets.mjs && node scripts/ingest-music.mjs",
     "i18n:scaffold": "node scripts/i18n-scaffold.mjs",
     "i18n:translate:es": "node scripts/translate-es.mjs",
@@ -49,6 +51,7 @@
     "vitest": "^2.1.0"
   }
 }
+
 
 
 

@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { getGraph } from "../state/progress";
+import { sanitize } from "../utils/richtext";
 import { plural } from "../utils/plural";
 
-type Tab = "ap" | "bible" | "ideas" | "phonics" | "family" | "citizenship" | "cases" | "competition" | "science" | "papers" | "harvard";
+type Tab = "ap" | "bible" | "ideas" | "phonics" | "family" | "citizenship" | "cases" | "competition" | "science" | "papers" | "harvard" | "open";
 const TABS: { id: Tab; label: string; file: string }[] = [
+  { id: "open", label: "Open corpus (CC BY)", file: "open/index.json" },
   { id: "ap", label: "AP exam maps", file: "ap-maps.json" },
   { id: "bible", label: "Bible in a Year", file: "bible-year.json" },
   { id: "ideas", label: "Great Ideas", file: "ideas.json" },
@@ -20,6 +22,17 @@ const asList = (v: unknown): { title: string; body: string }[] => (Array.isArray
   title: text((x as Record<string, unknown>).title ?? (x as Record<string, unknown>).name ?? (x as Record<string, unknown>).t ?? ""),
   body: text((x as Record<string, unknown>).body ?? (x as Record<string, unknown>).text ?? (x as Record<string, unknown>).note ?? (x as Record<string, unknown>).how ?? ""),
 }));
+
+function OpenLesson({ id }: { id: string }) {
+  const [lesson, setLesson] = useState<{ source?: string; blocks: { t: string; html: string }[] } | null>(null);
+  useEffect(() => {
+    fetch(`${import.meta.env.BASE_URL}content/open/lessons/${id.split(".").slice(1).join(".")}.json`)
+      .then((r) => (r.ok ? r.json() : null)).then(setLesson).catch(() => setLesson(null));
+  }, [id]);
+  if (!lesson) return <p className="app-muted">Loading lesson…</p>;
+  return <div className="lib-prose">{lesson.blocks.map((b, i) => <div key={i} dangerouslySetInnerHTML={{ __html: sanitize(b.html) }} />)}
+    <p className="app-muted">Source: {lesson.source} · CC BY 4.0</p></div>;
+}
 
 export default function Library() {
   const [tab, setTab] = useState<Tab>("ap");
@@ -152,6 +165,15 @@ export default function Library() {
         <div className="lib-cards">{items.filter((x) => !q || x.title.toLowerCase().includes(q.toLowerCase())).map((x, i) => (
           <details key={i} className="lib-item"><summary><b>{x.title}</b> <span className="app-muted">{x.subtitle}</span></summary>
             <div className="lib-prose">{x.body.split("\n\n").map((p, j) => <p key={j}>{p}</p>)}</div></details>))}</div>
+      </>;
+    }
+
+    if (tab === "open") {
+      const lessons = (d.lessons as { id: string; title: string; ladder: string }[] | undefined) ?? [];
+      return <>
+        <p className="app-muted">Fully remixable lessons written for this project under CC BY 4.0 — unlike the NC corpus, these can be reused commercially with credit. Facts come from public-domain sources; wording is original.</p>
+        <div className="lib-cards">{lessons.filter((l) => !q || l.title.toLowerCase().includes(q.toLowerCase())).map((l) => <details key={l.id} className="lib-item"><summary><b>{l.title}</b> <span className="app-tag">CC BY 4.0</span></summary>
+          <OpenLesson id={l.id} /></details>)}</div>
       </>;
     }
 

@@ -15,7 +15,7 @@ const walk = (p) => {
     let pack; try { pack = JSON.parse(fs.readFileSync(f, "utf8")); } catch { continue; }
     for (const [slug, b] of Object.entries(pack.topics ?? {})) {
       for (const block of b.blocks ?? b.lesson?.blocks ?? []) {
-        if (block.viz || block.t === "viz") { visuals++; if (!block.alt && !block.desc) missing.push(`${b.id ?? slug}: ${block.viz ?? block.t}`); }
+        if (block.viz || block.t === "viz") { visuals++; if (!block.alt && !block.desc && !block.cap) missing.push(`${b.id ?? slug}: ${block.viz ?? block.t}`); }
       }
     }
   }

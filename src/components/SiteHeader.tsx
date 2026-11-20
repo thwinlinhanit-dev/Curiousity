@@ -8,8 +8,10 @@ export default function SiteHeader() {
   const theme = useTheme();
   const [size, setSize] = useState(getTextSize());
   const [sound, setSound] = useState(getAmbience());
+  const [contrast, setHi] = useState(getContrast());
+  const [spacious, setWide] = useState(getSpacious());
 
-  useEffect(() => { applyTextSize(getTextSize()); }, []);
+  useEffect(() => { applyPreferences(); }, []);
 
   return (
     <div className="site-header" role="toolbar" aria-label="Site preferences">
@@ -28,6 +30,10 @@ export default function SiteHeader() {
         aria-label={sound ? "♪ Sound on — stop background music" : "♪ Sound off — play background music"}>
         {sound ? "♪ Sound on" : "♪ Sound off"}
       </button>
+      <button className="btn" onClick={() => setHi(setContrast(!contrast))} aria-pressed={contrast}
+        aria-label={`High contrast: ${contrast ? "on" : "off"}`}>◐ Contrast</button>
+      <button className="btn" onClick={() => setWide(setSpacious(!spacious))} aria-pressed={spacious}
+        aria-label={`Roomy spacing: ${spacious ? "on" : "off"}`}>↔ Spacing</button>
       <button className="btn" onClick={toggleTheme} aria-pressed={theme === "instrument"}
         aria-label={`${theme === "instrument" ? t("theme.dark") : t("theme.light")} — ${theme === "instrument" ? t("theme.toLight") : t("theme.toDark")}`}
         title={theme === "instrument" ? t("theme.toLight") : t("theme.toDark")}>

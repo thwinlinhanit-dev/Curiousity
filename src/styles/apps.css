@@ -77,6 +77,18 @@
 .offline-badge { display: inline-flex; align-items: center; min-height: 44px; font-family: var(--font-mono); font-size: var(--fs-0); color: var(--ink-3); }
 .offline-badge.ok { color: var(--mastered); }
 
+/* Export and worksheets */
+.worksheet { margin-top: var(--sp-4); border: 1px solid var(--rule); padding: var(--sp-4); background: #fff; color: #000; }
+.worksheet ol { counter-reset: none; }
+.worksheet li { margin-bottom: var(--sp-5); break-inside: avoid; }
+.ws-space { border-bottom: 1px solid #999; height: 72px; }
+.ws-key { page-break-before: always; border-top: 2px solid #000; padding-top: var(--sp-3); }
+@media print {
+  .app-view > *:not(.app-panel):not(.app-attribution) { display: none !important; }
+  .app-panel:not(:has(.worksheet)) { display: none !important; }
+  .worksheet { border: 0; }
+}
+
 /* Daily shell */
 .ten-list { padding-left: var(--sp-5); color: var(--ink-3); font-size: var(--fs-0); }
 .ten-list li { padding: 2px 0; }
