@@ -535,7 +535,7 @@ export default function Gallery() {
     <section className="app-section" aria-labelledby="gal-title">
       <p className="eyebrow">MATH GALLERY · INTERACTIVE PICTURES</p>
       <h2 id="gal-title" className="app-heading">Pictures you can play with</h2>
-      <p className="app-lead">Five small deterministic experiments from the live Math Gallery: probability, chaos and number theory drawn in your browser.</p>
+      <p className="app-lead">Small deterministic experiments from the live Math Gallery: probability, chaos and number theory drawn in your browser.</p>
       <div className="app-toolbar" role="group" aria-label="Gallery piece">{PIECES.map((p) => <button key={p.id} className={id === p.id ? "chip active" : "chip"} aria-pressed={id === p.id} onClick={() => setId(p.id)}>{p.icon} {p.name}</button>)}</div>
       <div className="app-panel"><Piece key={id} /></div>
       <p className="app-attribution">Adapted from <a href="https://teddyrookbook.com/math/gallery/" target="_blank" rel="noreferrer">Teddy Rook Book — Math Gallery</a> · CC BY-NC 4.0</p>

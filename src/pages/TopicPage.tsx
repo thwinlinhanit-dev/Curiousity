@@ -332,7 +332,7 @@ export default function TopicPage({ slug, ladder, course, onBack }: { slug: stri
           {bundle.trouble && <p className="trouble"><strong>{t("lesson.commonMistake")}</strong> {bundle.trouble}</p>}
 
           <div className="step-head">
-            <span className="step-counter" aria-label={`Step ${stepIdx + 1} of ${steps.length}`}>
+            <span className="step-counter" role="group" aria-label={`Step ${stepIdx + 1} of ${steps.length}`}>
               {stepIdx + 1}<span> / {steps.length}</span>
               <i style={{ width: `${((stepIdx + 1) / Math.max(1, steps.length)) * 100}%` }} />
             </span>

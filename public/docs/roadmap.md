@@ -1,4 +1,4 @@
-# Curiousity — open-source roadmap and idea book
+# Curiosity — open-source roadmap and idea book
 
 _A free, permanently free, fully open project: every idea here assumes no paywall, no ads, no tracking and no account. Served at `/docs/roadmap.md`, rendered in the app at `?roadmap`._
 

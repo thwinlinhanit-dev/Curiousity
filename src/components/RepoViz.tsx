@@ -17,6 +17,7 @@ export default function RepoViz({ name, ladder = "physics", opts, task }: { name
     host.current.innerHTML = "";
     const el = document.createElement("div");
     el.className = "ml-viz";
+    el.setAttribute("role", "group");
     el.dataset.viz = name;
     el.dataset.opts = JSON.stringify({ ...opts, ...(task ? { task } : {}) });
     host.current.appendChild(el);

@@ -187,7 +187,7 @@ export default function DatasetBrowser({ id, itemParam }: { id: string; itemPara
       <section className="dataset-browser">
         {header}
         {search}
-        <div className="periodic-legend" aria-label="Element categories">
+        <div className="periodic-legend" role="group" aria-label="Element categories">
           {CATEGORIES.map((cat) => <span key={cat} className={`pt-legend ${catClass(cat)}`}>{cat}</span>)}
         </div>
         <div className="periodic-table" role="group" aria-label="Periodic table of the elements">

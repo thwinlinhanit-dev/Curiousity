@@ -72,7 +72,9 @@ if (!fs.existsSync(SRC)) {
 
   // Expansion tools: normalised app data and the daily Harvard readings.
   if (isDir(path.join(SRC, "apps"))) copyDir(path.join(SRC, "apps"), path.join(DST, "apps"));
+  for (const f of ["search-index.json"]) if (fs.existsSync(path.join(SRC, f))) copyFile(path.join(SRC, f), path.join(DST, f));
   if (isDir(path.join(SRC, "harvard"))) copyDir(path.join(SRC, "harvard"), path.join(DST, "harvard"));
+  if (isDir(path.join(SRC, "graph"))) copyDir(path.join(SRC, "graph"), path.join(DST, "graph"));
 
   // Library ↔ lesson links.
   const links = path.join(SRC, "library/links.json");
@@ -111,6 +113,7 @@ if (!fs.existsSync(SRC)) {
   if (Object.keys(es).length) writeJson(path.join(DST, "i18n/es-topics.json"), es);
 
   // One pack per course: its index plus every topic bundle that belongs to it.
+  const packList = [];
   let packs = 0, topics = 0;
   for (const ladder of dirs(SRC)) {
     const courseDir = path.join(SRC, ladder, "courses");
@@ -145,6 +148,7 @@ if (!fs.existsSync(SRC)) {
       const map = byCourse.get(key);
       writeJson(path.join(DST, "pack", ladder, `${key}.json`), { index, topics: map ? Object.fromEntries(map) : {} });
       written.add(key);
+      packList.push({ ladder, course: key, topics: map ? map.size : 0 });
       packs += 1;
       topics += map ? map.size : 0;
     }
@@ -152,10 +156,12 @@ if (!fs.existsSync(SRC)) {
     for (const [key, map] of byCourse) {
       if (written.has(key)) continue;
       writeJson(path.join(DST, "pack", ladder, `${key}.json`), { index: null, topics: Object.fromEntries(map) });
+      packList.push({ ladder, course: key, topics: map.size });
       packs += 1;
       topics += map.size;
     }
   }
+  writeJson(path.join(DST, "pack/index.json"), { packs: packList });
 
   console.log(`content published: ${packs} course packs, ${topics} topics, ${Object.keys(songs).length} songs, ${Object.keys(marble).length} matched lessons`);
 }

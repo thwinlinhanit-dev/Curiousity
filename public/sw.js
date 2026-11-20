@@ -1,5 +1,5 @@
-// Offline cache for Curiousity. Bump CACHE when the build output changes.
-const CACHE = "curiousity-v2";
+// Offline cache for Curiosity. Bump CACHE when the build output changes.
+const CACHE = "curiosity-v3";
 const SHELL = "./";
 const CORE = [SHELL, "./index.html", "./manifest.webmanifest"];
 

@@ -4,6 +4,9 @@ import { loadLadder } from "../viz/loadViz";
 import { t, useT } from "../i18n";
 import { renderMath } from "../utils/richtext";
 import { recordGrade, type Grade } from "../state/learning";
+import { loadMarble, type MarbleData } from "../state/marble";
+
+const norm = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "").trim();
 
 type AnswerSpec = { t: string; v?: unknown; rtol?: number; unit?: string; [k: string]: unknown };
 type Problem = {
@@ -36,10 +39,16 @@ export default function PracticePanel({ topicId, ladder = "physics", fallback, o
   const [ready, setReady] = useState(false);
   const [usingFallback, setUsingFallback] = useState(false);
   useEffect(() => { loadLadder(ladder).then(() => setReady(true)).catch(() => setReady(true)); }, [ladder]);
+  useEffect(() => { let alive = true; setMarble(null); setDiagnosis("");
+    loadMarble(topicId).then((m) => { if (alive) setMarble(m); }).catch(() => undefined);
+    return () => { alive = false; };
+  }, [topicId]);
   const [answer, setAnswer] = useState("");
   const [answers, setAnswers] = useState<string[]>([]);
   const [result, setResult] = useState<CheckResult | null>(null);
   const [shownSteps, setShownSteps] = useState(0);
+  const [marble, setMarble] = useState<MarbleData | null>(null);
+  const [diagnosis, setDiagnosis] = useState("");
   const qRef = useRef<HTMLDivElement>(null);
   const solRef = useRef<HTMLDivElement>(null);
   const resultRef = useRef<HTMLDivElement>(null);
@@ -68,6 +77,7 @@ export default function PracticePanel({ topicId, ladder = "physics", fallback, o
       vizRef.current.innerHTML = "";
       const el = document.createElement("div");
       el.className = "ml-viz";
+      el.setAttribute("role", "group");
       el.dataset.viz = problem.viz.name;
       el.dataset.opts = JSON.stringify({ ...(problem.viz.opts ?? {}), quiet: true, compact: true });
       vizRef.current.appendChild(el);
@@ -76,6 +86,14 @@ export default function PracticePanel({ topicId, ladder = "physics", fallback, o
   }, [problem, shownSteps, result]);
 
   const parts = problem?.a?.t === "multi" ? (problem.a.parts as { label?: string; a: AnswerSpec; unit?: string }[]) : null;
+
+  // When the submitted answer matches an authored wrong answer, show the
+  // diagnosis instead of a generic "Not quite".
+  const diagnose = (given: string) => {
+    const g = norm(given);
+    const hit = marble?.wrongAnswers.find((w) => w.wrong && (norm(w.wrong) === g || (g.length > 2 && g.includes(norm(w.wrong)))));
+    setDiagnosis(hit?.fix ?? "");
+  };
 
   const check = () => {
     const M = ml();
@@ -86,6 +104,7 @@ export default function PracticePanel({ topicId, ladder = "physics", fallback, o
       const ok = rs.every((r) => r.ok);
       const msg = ok ? "" : rs.map((r, i) => (r.ok ? "" : `${String(parts[i].label ?? `Part ${i + 1}`).replace(/<[^>]*>|\$/g, "").trim()}: ${r.msg ?? ""}`)).filter(Boolean).join(" · ");
       setResult({ ok, msg, invalid: rs.some((r) => r.invalid) });
+      if (!ok) diagnose(answers.join(" ")); else setDiagnosis("");
       onAnswer?.(ok);
       setShownSteps(problem.steps?.length ?? 0); // elaborated, task-focused feedback
       return;
@@ -99,6 +118,7 @@ export default function PracticePanel({ topicId, ladder = "physics", fallback, o
     if (!M) return;
     const r = M.check(problem.a, answer, { q: problem.q, unit: problem.unit });
     setResult(r);
+    if (!r.ok) diagnose(answer); else setDiagnosis("");
     onAnswer?.(r.ok);
     setShownSteps(problem.steps?.length ?? 0);
     if (r.ok) {
@@ -162,6 +182,7 @@ export default function PracticePanel({ topicId, ladder = "physics", fallback, o
           {result && (
             <div className={`practice-result ${result.ok ? "ok" : "no"}`} aria-live="polite" ref={resultRef}>
               <p><strong>{result.ok ? t("lesson.correct") : result.invalid ? t("lesson.cantRead") : "Not quite — here's the method."}</strong> {result.msg}</p>
+              {!result.ok && diagnosis && <p className="misconception" role="status"><b>A common trap:</b> <span dangerouslySetInnerHTML={{ __html: renderMath(diagnosis) }} /></p>}
               {!result.ok && problem.hint && <p style={{ color: "var(--ink-3)" }}>{t("lesson.hint")} <span dangerouslySetInnerHTML={{ __html: renderMath(problem.hint) }} /></p>}
               <div className="grade-row" role="group" aria-label="Rate how well you knew this">
                 <span>How well did you know it?</span>

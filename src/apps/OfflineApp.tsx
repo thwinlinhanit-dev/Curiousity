@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { plural } from "../utils/plural";
 
+type BeforeInstall = Event & { prompt: () => Promise<void>; userChoice: Promise<{ outcome: string }> };
+
 const BASE = import.meta.env.BASE_URL;
 const SECTIONS = [
   { id: "shell", name: "App shell", desc: "Styles, scripts and the home view", urls: ["./", "./index.html", "./styles.css"] },
@@ -40,8 +42,22 @@ export default function OfflineApp({ initialTab = "offline" }: { initialTab?: "o
   const [embedKey, setEmbedKey] = useState(EMBEDS[0].key);
   const [param, setParam] = useState(EMBEDS[0].query.split("=")[1] ?? "");
   const [theme, setTheme] = useState("auto");
+  const [installEvent, setInstallEvent] = useState<BeforeInstall | null>(null);
+  const [online, setOnline] = useState(navigator.onLine);
+  const [subject, setSubject] = useState("physics"), [course, setCourse] = useState("");
+  const [packs, setPacks] = useState<{ key: string; name: string; topics: number }[]>([]);
 
   useEffect(() => { try { localStorage.setItem("trb-offline-sections", JSON.stringify(chosen)); } catch { /* private */ } }, [chosen]);
+  useEffect(() => {
+    const onPrompt = (e: Event) => { e.preventDefault(); setInstallEvent(e as BeforeInstall); };
+    const onOnline = () => setOnline(navigator.onLine);
+    window.addEventListener("beforeinstallprompt", onPrompt);
+    window.addEventListener("online", onOnline); window.addEventListener("offline", onOnline);
+    fetch(`${import.meta.env.BASE_URL}content/pack/index.json`).then((r) => r.json())
+      .then((d: { packs?: { ladder: string; course: string; topics: number }[] }) => setPacks((d.packs ?? []).map((p) => ({ key: `${p.ladder}/${p.course}`, name: `${p.ladder} · ${p.course}`, topics: p.topics }))))
+      .catch(() => undefined);
+    return () => { window.removeEventListener("beforeinstallprompt", onPrompt); window.removeEventListener("online", onOnline); window.removeEventListener("offline", onOnline); };
+  }, []);
   const embed = EMBEDS.find((e) => e.key === embedKey)!;
   const snippet = (() => {
     const qs = new URLSearchParams(embed.query);
@@ -90,6 +106,36 @@ export default function OfflineApp({ initialTab = "offline" }: { initialTab?: "o
             <button className="btn" onClick={download}>Download section list</button>
             <span className="app-muted">{plural(chosen.length, "section")} chosen</span></div>
           {status && <p className="app-feedback" role="status">{status}</p>}
+          <div className="app-toolbar">
+            <span className={online ? "offline-badge ok" : "offline-badge"}>{online ? "● online" : "● working offline"}</span>
+            {installEvent && <button className="btn-primary" onClick={async () => { await installEvent.prompt(); const choice = await installEvent.userChoice; setStatus(choice.outcome === "accepted" ? "Installed — open it from your home screen." : "Install cancelled."); setInstallEvent(null); }}>Install app</button>}
+          </div>
+
+          <h4 style={{ fontFamily: "var(--font-display)", marginTop: "var(--sp-5)" }}>Save one subject for offline</h4>
+          <p className="app-muted">A whole subject is one course pack. Pick one and we'll cache the pack, its lessons and the generator kits it needs.</p>
+          <div className="app-toolbar">
+            <label>Subject <select value={subject} onChange={(e) => { setSubject(e.target.value); setCourse(""); }}>
+              {[...new Set(packs.map((p) => p.key.split("/")[0]))].map((s) => <option key={s} value={s}>{s}</option>)}
+            </select></label>
+            <label>Course <select value={course} onChange={(e) => setCourse(e.target.value)}>
+              <option value="">Choose a course…</option>
+              {packs.filter((p) => p.key.startsWith(`${subject}/`)).map((p) => <option key={p.key} value={p.key}>{p.name} ({plural(p.topics ?? 0, "topic")})</option>)}
+            </select></label>
+            <button className="btn-primary" disabled={!course} onClick={async () => {
+              const [ladder, key] = course.split("/");
+              const urls = [
+                `${BASE}content/pack/${ladder}/${key}.json`,
+                `${BASE}content/graph.json`,
+                `${BASE}vendor/gen-manifest.json`,
+                `${BASE}vendor/viz-manifest.json`,
+                `${BASE}vendor/cas.js`, `${BASE}vendor/gen.js`, `${BASE}vendor/engine.js`,
+                `${BASE}vendor/tex.js`, `${BASE}vendor/check.js`, `${BASE}vendor/core.js`,
+              ];
+              const reg = await navigator.serviceWorker?.ready.catch(() => null);
+              if (reg?.active) { reg.active.postMessage({ urls }); setStatus(`${course} saved for offline.`); }
+              else setStatus("Service worker unavailable here — open the built site over HTTPS to cache packs.");
+            }}>Save this course</button>
+          </div>
         </div>
       )}
 

@@ -6,7 +6,7 @@ This project contains several kinds of material under different terms. Each part
 
 | Part | Where it lives | Terms | What that means for you |
 |---|---|---|---|
-| Application code | `src/`, `scripts/`, `public/docs/`, configuration | **Not yet chosen by the maintainer.** The intent is a permissive OSI licence (MIT or Apache-2.0). | Until a `LICENSE` file is added, normal copyright applies: you may read and run the code, but not redistribute or modify it. |
+| Application code | `src/`, `scripts/`, `public/docs/`, configuration | **MIT** — see `LICENSE`. | Free to use, copy, modify and redistribute, including commercially, provided the notice is kept. |
 | Lesson corpus | `content/` (fetched at build time from a pinned commit; not stored in the working tree) | CC BY-NC 4.0, © Teddy Rook | Free to use, share and adapt for **non-commercial** purposes, with credit and a link back. Not for commercial use. |
 | Standards and misconception data | `content/marble/` | ODbL 1.0 (database), CC BY-SA 4.0 (content), © Generative Spark, Inc. (Marble) | Share-alike applies to this folder. Attribution is included in every data payload. The rest of the project is kept separate from it. |
 | Figure kits and maths engine | `public/vendor/` | The Teddy Rook engine. Lesson footers describe it as MIT. | Confirm against the upstream licence file before redistributing. |
@@ -16,7 +16,7 @@ This project contains several kinds of material under different terms. Each part
 
 ## What "open" means here, stated precisely
 
-- **The software** will be free to run, copy and modify once the code licence above is chosen and published.
+- **The software** is MIT-licensed: free to run, copy, modify and redistribute.
 - **The lesson corpus** is free for non-commercial use with credit. It is **not** open content under the Open Definition, because it forbids commercial use.
 - **The project as a whole** should therefore be described as *free and open-source software with a non-commercial corpus*. It should not be described as fully open.
 

@@ -133,7 +133,7 @@ export default function TestPrep() {
                 <li key={i}>
                   <p><span dangerouslySetInnerHTML={{ __html: renderMath(qq.problem.q) }} /></p>
                   <p className={qq.ok ? "app-feedback ok" : "app-feedback no"}>
-                    {qq.ok ? "✓ Correct" : `Your answer: ${qq.given || "—"}. Expected: ${M ? M.answerText(qq.problem.a) : "—"}`}
+                    {qq.ok ? "✓ Correct" : <>Your answer: {qq.given || "—"}. Expected: <span dangerouslySetInnerHTML={{ __html: renderMath(M ? M.answerText(qq.problem.a) : "—") }} /></>}
                   </p>
                   {qq.problem.steps?.length ? <ol className="app-muted">{qq.problem.steps.map((s, j) => <li key={j} dangerouslySetInnerHTML={{ __html: renderMath(s) }} />)}</ol> : null}
                   <p className="app-muted">{textOnly(topic?.title ?? qq.id)} · <a href={href}>Open the lesson →</a></p>

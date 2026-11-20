@@ -60,37 +60,32 @@ export default function ProgressPanel({ ladder = "physics", onGo }: { ladder?: s
         <div><b>{s.xp}</b><span>{t("progress.totalXp")}</span></div>
         <div><b>{streak()}</b><span>{streak() === 1 ? t("progress.dayStreakOne") : t("progress.streak")}</span></div>
         <div><b>{s.due + learn.due}</b><span>{t("progress.due")}</span></div>
-        <div><b>{learn.known}</b><span>topics mastered</span></div>
+        <div><b>{learn.known}</b><span>{t("progress.topicsMastered")}</span></div>
       </div>
 
       <details className="learn-insight">
-        <summary>How your learning is tracked — and why you'll see things again</summary>
-        <p style={{ color: "var(--ink-2)", maxWidth: 680 }}>
-          Every answer updates a private estimate of how well you know that topic (a Bayesian mastery score) and how
-          stable that memory is. You'll see a topic again just before you're likely to forget it — retrieval practice
-          is far stronger than rereading. The intervals are a sensible default, not a scientific law: the gap grows
-          with how long you want to remember it.
-        </p>
+        <summary>{t("progress.how")}</summary>
+        <p style={{ color: "var(--ink-2)", maxWidth: 680 }}>{t("progress.howBody")}</p>
         <div className="app-toolbar">
-          <label>Target memory strength
+          <label>{t("progress.target")}
             <select value={settings.retention} onChange={(e) => setRetention(Number(e.target.value) as Retention)}>
-              <option value={0.85}>Lighter workload (85%)</option>
-              <option value={0.9}>Balanced (90%)</option>
-              <option value={0.95}>Stronger memory (95%)</option>
+              <option value={0.85}>{t("progress.lighter")}</option>
+              <option value={0.9}>{t("progress.balanced")}</option>
+              <option value={0.95}>{t("progress.stronger")}</option>
             </select></label>
-          <label>Free pause days <input type="number" min={0} max={7} value={settings.freezes} onChange={(e) => setFreezes(Number(e.target.value))} /></label>
+          <label>{t("progress.freezes")} <input type="number" min={0} max={7} value={settings.freezes} onChange={(e) => setFreezes(Number(e.target.value))} /></label>
         </div>
-        <p className="app-muted">A missed day uses a free pause instead of resetting your streak. {plural(learn.attempts, "answer")} recorded here.</p>
+        <p className="app-muted">{t("progress.freezeBody")} {plural(learn.attempts, "answer")} recorded here.</p>
       </details>
 
-      <div className="sparkline" aria-label={`Answers per day over the last ${weeks.length} days`}>
+      <div className="sparkline" role="img" aria-label={`Answers per day over the last ${weeks.length} days`}>
         {weeks.map((n, i) => <span key={i} style={{ height: `${Math.max(3, (n / max) * 32)}px` }} title={plural(n, "answer")} />)}
       </div>
 
       {mistakeTopics().length > 0 && (
         <div className="review-queue mistakes">
-          <h2 style={{ fontFamily: "var(--font-display)", fontSize: "var(--fs-2)", margin: "0 0 var(--sp-2)" }}>Mistakes practice</h2>
-          <p className="app-muted">Interleaved practice on topics you've missed — drawn from your own errors.</p>
+          <h2 style={{ fontFamily: "var(--font-display)", fontSize: "var(--fs-2)", margin: "0 0 var(--sp-2)" }}>{t("progress.mistakes")}</h2>
+          <p className="app-muted">{t("progress.mistakesBody")}</p>
           <ul>{mistakeTopics().map((id) => <li key={id}>
             <button className="btn-link" onClick={() => goTopic(id)}>{label(id)}</button>
           </li>)}</ul>
@@ -99,7 +94,7 @@ export default function ProgressPanel({ ladder = "physics", onGo }: { ladder?: s
 
       {dueTopics().length > 0 && !mistakeTopics().length && (
         <div className="review-queue">
-          <h2 style={{ fontFamily: "var(--font-display)", fontSize: "var(--fs-2)", margin: "0 0 var(--sp-2)" }}>Due for a quick retrieval check</h2>
+          <h2 style={{ fontFamily: "var(--font-display)", fontSize: "var(--fs-2)", margin: "0 0 var(--sp-2)" }}>{t("progress.dueQuick")}</h2>
           <ul>{dueTopics().map((id) => <li key={id}><button className="btn-link" onClick={() => goTopic(id)}>{label(id)}</button></li>)}</ul>
         </div>
       )}

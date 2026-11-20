@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getLang, setLang, t, useT } from "../i18n";
 import { toggleTheme, useTheme } from "../state/theme";
-import { applyTextSize, cycleTextSize, getAmbience, getTextSize, setAmbience } from "../state/preferences";
+import { applyPreferences, cycleTextSize, getAmbience, getContrast, getSpacious, getTextSize, setAmbience, setContrast, setSpacious } from "../state/preferences";
 
 export default function SiteHeader() {
   useT();
@@ -24,7 +24,7 @@ export default function SiteHeader() {
         aria-label={`AA ${size === "normal" ? "100%" : size === "large" ? "115%" : "130%"} — change text size`}>
         AA {size === "normal" ? "100%" : size === "large" ? "115%" : "130%"}
       </button>
-      <button className="btn" onClick={() => setSound(setAmbience(!sound))} aria-pressed={sound}
+      <button className="btn btn-sound" onClick={() => setSound(setAmbience(!sound))} aria-pressed={sound}
         aria-label={sound ? "♪ Sound on — stop background music" : "♪ Sound off — play background music"}>
         {sound ? "♪ Sound on" : "♪ Sound off"}
       </button>

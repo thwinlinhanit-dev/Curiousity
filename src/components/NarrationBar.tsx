@@ -27,7 +27,7 @@ export default function NarrationBar({ text, rate }: { text: string; rate: numbe
   const stop = () => { window.speechSynthesis.cancel(); setSpeaking(false); };
 
   return (
-    <div className="narration-bar" aria-label="Narration">
+    <div className="narration-bar" role="group" aria-label="Narration">
       <button className="btn" onClick={speaking ? stop : speak} aria-pressed={speaking}>
         {speaking ? t("lesson.stopNarration") : t("lesson.narrate")}
       </button>

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/thwinlinhanit-dev/Curiousity/schema/lesson.schema.json",
+  "title": "Curiousity lesson bundle",
+  "type": "object",
+  "required": ["id", "title", "course", "ladder", "blocks", "sources"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+[a-z0-9.-]*$" },
+    "slug": { "type": "string" },
+    "title": { "type": "string", "minLength": 3 },
+    "course": { "type": "string", "minLength": 1 },
+    "ladder": { "type": "string", "minLength": 1 },
+    "blocks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["t"],
+        "properties": {
+          "t": { "type": "string", "minLength": 1 },
+          "html": { "type": "string" },
+          "alt": { "type": "string", "description": "Required text alternative for visual blocks" },
+          "viz": { "type": "string" }
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "object" }
+    }
+  }
+}

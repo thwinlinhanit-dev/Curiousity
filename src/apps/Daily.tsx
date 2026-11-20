@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { lastWeeks, overview } from "../state/learning";
+import { getEngine, getGraph } from "../state/progress";
 import { plural } from "../utils/plural";
 
 type Answers = { who: string; ages: string[]; goals: string[]; subjects: string[]; minutes: string };
@@ -118,7 +119,58 @@ function Profiles() {
   </div>;
 }
 
-const TABS = [{ id: "today", label: "Today", comp: Today }, { id: "start", label: "Find what's for you", comp: Quiz }, { id: "profiles", label: "Learners & backups", comp: Profiles }] as const;
+function TenMinutes() {
+  const [items, setItems] = useState<{ id: string; title: string; href: string; kind: string }[]>([]);
+  const [idx, setIdx] = useState(0), [seconds, setSeconds] = useState(600), [running, setRunning] = useState(false), [done, setDone] = useState(false);
+  const start = () => {
+    const E = getEngine(), graph = getGraph();
+    const label = (id: string) => graph.topics.find((t) => t.id === id)?.title ?? id;
+    const href = (id: string) => {
+      const t = graph.topics.find((x) => x.id === id);
+      return t ? `?s=${encodeURIComponent(t.ladder)}&c=${encodeURIComponent(t.course)}&t=${encodeURIComponent(t.slug ?? id.split(".").slice(1).join("."))}` : "/";
+    };
+    const due = (E?.reviewSet() ?? []).slice(0, 3).map((r) => r.id);
+    const next = E?.next()?.id ? [E.next()!.id!] : [];
+    const chain = graph.topics.filter((t) => !due.includes(t.id) && !next.includes(t.id)).slice(0, 2).map((t) => t.id);
+    const ids = [...due, ...chain].filter((v, i, a) => a.indexOf(v) === i).slice(0, 5);
+    setItems(ids.map((id) => ({ id, title: label(id), href: href(id), kind: due.includes(id) ? "review" : "new" })));
+    setIdx(0); setSeconds(600); setRunning(true); setDone(false);
+  };
+  useEffect(() => {
+    if (!running || done) return;
+    const t = setInterval(() => setSeconds((s) => Math.max(0, s - 1)), 1000);
+    return () => clearInterval(t);
+  }, [running, done]);
+  useEffect(() => { if (seconds === 0 && running) setRunning(false); }, [seconds, running]);
+  const finished = () => {
+    setDone(true); setRunning(false);
+    try { localStorage.setItem("trb-ten-minutes", new Date().toISOString().slice(0, 10)); } catch { /* private */ }
+  };
+  return <div className="app-panel">
+    <h3 style={{ marginTop: 0 }}>Today's 10 minutes</h3>
+    <p className="app-muted">Three due reviews and two new topics along your prerequisite chain. One screen, a timer, and a clear end.</p>
+    {items.length === 0 ? <button className="btn-primary" onClick={start}>Start today's ten →</button> : <>
+      <p className="tabular" role="timer" style={{ fontFamily: "var(--font-mono)", fontSize: "var(--fs-3)", color: "var(--signal)" }}>
+        {Math.floor(seconds / 60)}:{String(seconds % 60).padStart(2, "0")}
+      </p>
+      {!done ? <>
+        <p><span className="app-tag">{items[idx]?.kind}</span> <b>{items[idx]?.title}</b></p>
+        <div className="app-toolbar">
+          <button className="btn" onClick={() => { window.location.href = items[idx].href; }}>Open this topic</button>
+          <button className="btn-primary" onClick={() => { if (idx + 1 >= items.length) finished(); else setIdx(idx + 1); }}>{idx + 1 >= items.length ? "Done for today" : "Next →"}</button>
+        </div>
+      </> : <div className="app-feedback ok" role="status"><p>Done for today — {items.length} topics visited. See you tomorrow.</p><button className="btn" onClick={start}>Another round</button></div>}
+      <ol className="ten-list">{items.map((it, i) => <li key={it.id} className={i < idx || done ? "done" : i === idx ? "cur" : ""}>{it.title}</li>)}</ol>
+    </>}
+  </div>;
+}
+
+const TABS = [
+  { id: "today", label: "Today", comp: Today },
+  { id: "ten", label: "10 minutes", comp: TenMinutes },
+  { id: "start", label: "Find what's for you", comp: Quiz },
+  { id: "profiles", label: "Learners & backups", comp: Profiles },
+] as const;
 export default function Daily() {
   const [tab, setTab] = useState<(typeof TABS)[number]["id"]>("today");
   const Comp = TABS.find((t) => t.id === tab)!.comp;

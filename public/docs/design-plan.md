@@ -1,4 +1,4 @@
-# Curiousity — UI/UX deep dive and design plan
+# Curiosity — UI/UX deep dive and design plan
 
 _Audit of the shipped app (preview + `src/styles/tokens.css`, `src/styles/app.css`, component sources), then a plan for a clean, modern, professional interface._
 
@@ -187,7 +187,7 @@ Consequences: the periodic table hides element names below 480px (symbol + Z onl
 
 ```
 ┌───────────────────────────────────────────────┐
-│ ⌂ Curiousity   [Subject ▾]      ⌕ Search  ⋯  │  sticky 56px
+│ ⌂ Curiosity   [Subject ▾]      ⌕ Search  ⋯  │  sticky 56px
 ├───────────────────────────────────────────────┤
 ```
 

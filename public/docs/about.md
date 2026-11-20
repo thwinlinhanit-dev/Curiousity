@@ -1,6 +1,6 @@
-# About Curiousity
+# About Curiosity
 
-Curiousity is a free learning app. It teaches by taking figures apart: lessons with interactive figures, worked examples, practice with answer checking, and spaced review.
+Curiosity is a free learning app. It teaches by taking figures apart: lessons with interactive figures, worked examples, practice with answer checking, and spaced review.
 
 There are no accounts, no ads and no paid tier. Your progress is saved in this browser. Use **Save code** on the home page to copy it and move it to another device.
 
@@ -10,9 +10,9 @@ There are no accounts, no ads and no paid tier. Your progress is saved in this b
 |---|---|
 | Lessons (the corpus) | CC BY-NC 4.0. Free for non-commercial use, with credit. |
 | Standards and misconception data | ODbL 1.0 and CC BY-SA 4.0 |
-| Application code | Being chosen by the maintainer. See the full notes. |
+| Application code | MIT — see the LICENSE file. |
 
-The full terms, including which part each licence covers and the open decisions, are in [LICENSING.md](https://github.com/thwinlinhanit-dev/Curiousity/blob/main/LICENSING.md).
+The full terms, including which part each licence covers and the open decisions, are in [LICENSING.md](https://github.com/thwinlinhanit-dev/Curiosity/blob/main/LICENSING.md).
 
 ## Credits
 

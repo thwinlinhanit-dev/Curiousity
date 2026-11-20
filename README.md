@@ -1,8 +1,13 @@
 # Curiousity — Physics Figures
 
 An interactive STEM learning app that teaches by taking figures apart. Lessons are
-backed by a 20-subject / 5,105-topic content corpus, with real practice generators,
+backed by a 22-subject / 5,321-topic content corpus, with real practice generators,
 answer checking and one shared progress engine (spaced review).
+
+**Free and open-source software (MIT) with a non-commercial, open-licensed corpus
+(CC BY-NC 4.0).** It is not "fully open" content: the lessons forbid commercial
+reuse. See [LICENSING.md](LICENSING.md). Free forever: no accounts, no ads, no
+tracking, no paid tier. Progress stays on your device until you export it.
 
 ## Stack
 
@@ -21,8 +26,14 @@ first run also covers that step.
 
 ```bash
 npm run build        # type-check + production bundle into dist/
-npm test             # unit tests (figure contract, Marble data)
+npm test             # unit tests, content contract, data integrity
+npm run coverage     # generator coverage report -> content/coverage-report.json
+npm run links        # fail if absolute upstream links regress past baseline
 ```
+
+**Generator coverage:** 5,255 of 5,321 topics (98.8%) have a working generator;
+0 throw at level 1. The remaining topics are music scores, which are played in
+the Music Lab rather than generated as problems.
 
 `build` publishes content and refreshes vendored assets first. The vendored
 assets are committed, so a clone without the upstream `../trb` repo still builds.

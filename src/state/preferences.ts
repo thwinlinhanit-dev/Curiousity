@@ -21,6 +21,25 @@ export const applyTextSize = (s: TextSize) => {
   document.documentElement.dataset.text = s;
 };
 
+// Accessibility preferences: high contrast and roomier text spacing.
+export const getContrast = () => { try { return localStorage.getItem("trb-contrast") === "high"; } catch { return false; } };
+export const setContrast = (on: boolean) => {
+  try { localStorage.setItem("trb-contrast", on ? "high" : "normal"); } catch { /* private */ }
+  document.documentElement.dataset.contrast = on ? "high" : "normal";
+  return on;
+};
+export const getSpacious = () => { try { return localStorage.getItem("trb-spacing") === "wide"; } catch { return false; } };
+export const setSpacious = (on: boolean) => {
+  try { localStorage.setItem("trb-spacing", on ? "wide" : "normal"); } catch { /* private */ }
+  document.documentElement.dataset.spacing = on ? "wide" : "normal";
+  return on;
+};
+export const applyPreferences = () => {
+  applyTextSize(getTextSize());
+  document.documentElement.dataset.contrast = getContrast() ? "high" : "normal";
+  document.documentElement.dataset.spacing = getSpacious() ? "wide" : "normal";
+};
+
 type Ambience = { stop: () => void } | null;
 let ambience: Ambience = null;
 
