@@ -27,6 +27,16 @@ npm test             # unit tests (figure contract, Marble data)
 `build` publishes content and refreshes vendored assets first. The vendored
 assets are committed, so a clone without the upstream `../trb` repo still builds.
 
+## The corpus lives outside the tree
+
+`content/` is not committed. A published site is capped at 2,000 files and the
+corpus alone is 11k+ of them, so `scripts/fetch-corpus.mjs` restores it from the
+commit pinned inside that script before dev, test and build — a fresh clone
+needs no extra steps, and an author checkout that still has `content/` is left
+alone. `scripts/publish-content.mjs` then bundles it into `public/content/`:
+one pack per course (`{ index, topics: { <slug>: <bundle> } }`) plus a handful of
+single-file documents, which is what the app fetches at runtime.
+
 ## Project layout
 
 | Path | Purpose |
@@ -93,3 +103,19 @@ shown in the panel and repeated in every payload. Unmatched lessons fetch nothin
 Current coverage: 95 of 5,105 lessons (K–8 maths, science, Earth science, chemistry,
 biology, civics, writing). Raw upstream files are cached in `.cache/marble/` and are
 not committed.
+
+
+## Licences
+
+See [LICENSING.md](LICENSING.md) for the terms of each part: the application code
+(licence still to be chosen), the non-commercial lesson corpus, the Marble data
+under ODbL and CC BY-SA, and the vendored engine. The app's About page is at `?about`.
+
+## Content contract
+
+`npm test` runs a content contract over every topic bundle: JSON parses, id and
+title are present, there is at least one block with text, sources are listed, no
+empty `try` stubs, no unbalanced `$` maths spans, and no leftover `\role{…}`
+markup. In report mode it prints counts and writes `content-contract-report.json`
+without failing. `npm run contract` runs it in strict mode against
+`src/state/content-contract.baseline.json`, where each check's allowance is set.

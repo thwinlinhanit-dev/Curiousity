@@ -13,6 +13,16 @@ tsconfig.tsbuildinfo
 # `npm run predev` / `npm run build` (see scripts/publish-content.mjs)
 public/content/
 
+# corpus: fetched from the pinned commit by scripts/fetch-corpus.mjs. A
+# published site is capped at 2,000 files and the corpus is 11k+ of them, so it
+# is not carried in the working tree.
+content/
+
 # local env
 .env
 .env.local
+
+
+
+# written by the content contract test (src/state/content-contract.test.ts)
+content-contract-report.json

@@ -1,7 +1,29 @@
 import { useState } from "react";
-import { exportSaveCode, importSaveCode, progressSummary } from "../state/progress";
+import { exportSaveCode, getGraph, importSaveCode, progressSummary } from "../state/progress";
 import { t, useT } from "../i18n";
 import ReviewSession from "./ReviewSession";
+
+// The engine reports ids from every ladder, not only the one on screen. Building
+// a slug by stripping the course prefix put, say, chem.si-prefixes under the
+// physics ladder, where it dead-ended on "Topic not found". Resolve each id
+// against the loaded graph and offer its real course, title and ladder.
+function targetOf(id: string, ladder: string) {
+  const hit = getGraph().topics.find((x) => x.id === id);
+  if (hit) {
+    return {
+      slug: hit.slug || hit.id.split(".").slice(1).join("."),
+      ladder: hit.ladder,
+      course: hit.course as string | undefined,
+      label: hit.title,
+    };
+  }
+  return {
+    slug: id.split(".").slice(1).join("."),
+    ladder,
+    course: undefined as string | undefined,
+    label: id.replace(/^[^.]+\./, ""),
+  };
+}
 
 export default function ProgressPanel({ ladder = "physics", onGo }: { ladder?: string; onGo: (slug: string, opts?: { ladder?: string; course?: string }) => void }) {
   useT();
@@ -15,6 +37,12 @@ export default function ProgressPanel({ ladder = "physics", onGo }: { ladder?: s
     return E?.due() ?? [];
   })();
 
+  const next = s.next?.id ? targetOf(s.next.id, ladder) : null;
+  const nextReason = !s.next?.reason ? ""
+    : s.next.reason === "prereq" ? t("progress.reasonPrereq")
+      : s.next.reason === "next" ? t("progress.reasonNext")
+        : String(s.next.reason);
+
   return (
     <section className="progress-panel" aria-label="Your progress">
       <div className="progress-stats">
@@ -27,19 +55,22 @@ export default function ProgressPanel({ ladder = "physics", onGo }: { ladder?: s
       {due.length > 0 && (
         <div className="review-queue">
           <h2 style={{ fontFamily: "var(--font-display)", fontSize: "var(--fs-2)", margin: "0 0 var(--sp-2)" }}>{t("progress.reviewDue")}</h2>
-          <button className="btn-primary" onClick={() => setReviewing(true)}>Start review →</button>
+          <button className="btn-primary" onClick={() => setReviewing(true)}>{t("progress.start")}</button>
           <ul>
-            {due.slice(0, 6).map((id) => (
-              <li key={id}>
-                <button className="btn-link" onClick={() => onGo(id.split(".").slice(1).join("."), { ladder })}>{id.replace("phys1.", "")}</button>
-              </li>
-            ))}
+            {due.slice(0, 6).map((id) => {
+              const r = targetOf(id, ladder);
+              return (
+                <li key={id}>
+                  <button className="btn-link" onClick={() => onGo(r.slug, { ladder: r.ladder, course: r.course })}>{r.label}</button>
+                </li>
+              );
+            })}
           </ul>
         </div>
       )}
 
-      {s.next?.id && (
-        <p className="next-up">{t("progress.nextUp")} <button className="btn-link" onClick={() => onGo(s.next!.id!.split(".").slice(1).join("."), { ladder })}>{s.next.id.replace("phys1.", "")}</button> ({s.next.reason})</p>
+      {next && (
+        <p className="next-up">{t("progress.nextUp")} <button className="btn-link" onClick={() => onGo(next.slug, { ladder: next.ladder, course: next.course })}>{next.label}</button>{nextReason && <> ({nextReason})</>}</p>
       )}
 
       <details className="save-code">

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type MouseEvent } from "react";
 import type { VizOpts } from "../figures/motionModel";
 import { createMotionModel } from "../figures/motionModel";
 import MotionFigure from "../figures/MotionFigure";
@@ -16,6 +16,7 @@ import CircuitFigure from "../figures/CircuitFigure";
 import RepoViz from "../components/RepoViz";
 import { useFigureStore } from "../state/figureStore";
 import { recordAnswer, setActiveLadder, topicStatus, getGraph } from "../state/progress";
+import { loadCoursePack } from "../state/packs";
 import { t, useT } from "../i18n";
 import { renderMath } from "../utils/richtext";
 import SiteHeader from "../components/SiteHeader";
@@ -139,47 +140,50 @@ export default function TopicPage({ slug, ladder, course, onBack }: { slug: stri
   useEffect(() => {
     let alive = true;
     setTranslated(false);
-    loadJson<Bundle>([
-      `${import.meta.env.BASE_URL}content/${ladder}/topics/${course}/${slug}.json`,
-      `${import.meta.env.BASE_URL}content/${ladder}/topics/${slug}.json`,
-    ])
-      .then(async (b) => {
-        if (!b || !b.lesson) throw new Error("Topic not found");
-        let didTranslate = false;
-        if (lang === "es") {
-          const tr = await loadJson([
-            `${import.meta.env.BASE_URL}content/i18n/es/${ladder}/topics/${slug}.json`,
-            `${import.meta.env.BASE_URL}content/i18n/es/topics/${slug}.json`,
-          ]);
-          if (tr && Object.keys(tr).length > 0) {
-            b.title = tr.title ?? b.title; b.short = tr.short ?? b.short; b.trouble = tr.trouble ?? b.trouble;
-            b.lesson.blocks = b.lesson.blocks.map((blk, i) => {
-              const out = { ...blk };
-              for (const k of ["html", "text", "q", "title", "a", "cap"] as const) {
-                const v = tr[`block.${i}.${k}`]; if (v) (out as Record<string, unknown>)[k] = v;
-              }
-              if (Array.isArray(out.steps)) out.steps = out.steps.map((s, j) => tr[`block.${i}.step.${j}`] ?? s);
-              return out;
-            });
-            didTranslate = true;
-          }
+    (async () => {
+      // The course pack carries its own lesson bundles: one request covers the
+      // topic list and every lesson in it, which is what keeps the site small.
+      const pack = await loadCoursePack(ladder, course);
+      const fromPack = (pack.topics[slug] ?? null) as Bundle | null;
+      const b = fromPack ?? await loadJson<Bundle>([
+        `${import.meta.env.BASE_URL}content/${ladder}/topics/${course}/${slug}.json`,
+        `${import.meta.env.BASE_URL}content/${ladder}/topics/${slug}.json`,
+      ]);
+      if (!b || !b.lesson) throw new Error("Topic not found");
+      let didTranslate = false;
+      if (lang === "es") {
+        const all = await loadJson<Record<string, Record<string, string>>>([
+          `${import.meta.env.BASE_URL}content/i18n/es-topics.json`,
+        ]);
+        const tr = all?.[`${ladder}/${slug}`] ?? all?.[slug] ?? null;
+        if (tr && Object.keys(tr).length > 0) {
+          b.title = tr.title ?? b.title; b.short = tr.short ?? b.short; b.trouble = tr.trouble ?? b.trouble;
+          b.lesson.blocks = b.lesson.blocks.map((blk, i) => {
+            const out = { ...blk };
+            for (const k of ["html", "text", "q", "title", "a", "cap"] as const) {
+              const v = tr[`block.${i}.${k}`]; if (v) (out as Record<string, unknown>)[k] = v;
+            }
+            if (Array.isArray(out.steps)) out.steps = out.steps.map((s, j) => tr[`block.${i}.step.${j}`] ?? s);
+            return out;
+          });
+          didTranslate = true;
         }
-        if (!alive) return;
-        setActiveLadder(ladder, b.course);
-        setTranslated(didTranslate);
-        setBundle(b); reset(vizForTopic(b) ?? {}); setAnswer(""); setStepIdx(0);
-      })
-      .catch((e) => alive && setError(String(e)));
+      }
+      if (!alive) return;
+      setActiveLadder(ladder, b.course);
+      setTranslated(didTranslate);
+      setBundle(b); reset(vizForTopic(b) ?? {}); setAnswer(""); setStepIdx(0);
+    })().catch((e) => alive && setError(String(e)));
     return () => { alive = false; };
   }, [slug, ladder, course, reset, attempt, lang]);
 
   useEffect(() => {
     let alive = true;
     setCourseMeta(null);
-    fetch(`${import.meta.env.BASE_URL}content/${ladder}/courses/${course}.json`)
-      .then((r) => (r.ok ? r.json() : Promise.reject(new Error(String(r.status)))))
-      .then((c) => { if (alive) setCourseMeta(c); })
-      .catch(() => { /* keys remain as fallback */ });
+    void loadCoursePack(ladder, course).then((p) => {
+      // Keys remain as fallback when the pack has no index.
+      if (alive) setCourseMeta(p.index);
+    });
     return () => { alive = false; };
   }, [ladder, course]);
 
@@ -210,6 +214,19 @@ export default function TopicPage({ slug, ladder, course, onBack }: { slug: stri
     ? <p className="lang-notice" role="status">{t("lesson.onlyEnglish")}</p>
     : null;
 
+  // Corpus text links point at the upstream site's own paths ("/physics/…"),
+  // which this app does not serve, so clicking one landed on a bare "Not found"
+  // page and lost the lesson. Send the reader to the app's own search instead.
+  const followLessonLink = (e: MouseEvent<HTMLDivElement>) => {
+    const a = (e.target as HTMLElement).closest("a");
+    if (!a) return;
+    const href = a.getAttribute("href") ?? "";
+    if (!href || href.startsWith("#") || href.startsWith("?")) return;
+    e.preventDefault();
+    const q = (a.textContent ?? "").replace(/\s+/g, " ").trim().slice(0, 80);
+    window.location.href = `${window.location.pathname}?q=${encodeURIComponent(q)}`;
+  };
+
   useEffect(() => {
     const w = window as unknown as { MathLadder?: { typeset?: (root: HTMLElement) => void } };
     if (w.MathLadder?.typeset && narrativeRef.current) w.MathLadder.typeset(narrativeRef.current);
@@ -236,7 +253,7 @@ export default function TopicPage({ slug, ladder, course, onBack }: { slug: stri
         {langNotice}
         <p style={{ color: "var(--ink-2)" }}>{bundle.short}</p>
         <p className="trouble">{t("lesson.noFigure")}</p>
-        <div className="narrative-blocks" ref={narrativeRef}>
+        <div className="narrative-blocks" ref={narrativeRef} onClick={followLessonLink}>
           {bundle.lesson.blocks.map((b, i) => b.t === "h" ? <h2 key={i}>{b.text}</h2> : <p key={i} dangerouslySetInnerHTML={{ __html: renderMath(b.html ?? b.text ?? "") }} />)}
         </div>
         <PracticePanel topicId={bundle.id} ladder={ladder} onAnswer={(ok) => { recordAnswer(bundle.id, ok); setTick((n) => n + 1); }} />
@@ -307,7 +324,7 @@ export default function TopicPage({ slug, ladder, course, onBack }: { slug: stri
                 {st.passed ? t("status.mastered") : st.status === "due" ? t("status.reviewDue") : st.status === "learning" ? t("status.underWay") : t("status.notStarted")}
               </span>
               <span style={{ fontFamily: "var(--font-mono)", fontSize: "var(--fs-0)", color: "var(--ink-3)" }}>
-                {t("lesson.correctP")} {st.p}/3 · {t("lesson.streak2")} {st.st}/2 · {t("lesson.reviewSchedule")}
+                {t("lesson.correctP")} {st.p}/3 · {t("lesson.streak2")} {Math.min(st.st, 2)}/2 · {t("lesson.reviewSchedule")}
               </span>
             </div>
           ); })()}
@@ -322,7 +339,7 @@ export default function TopicPage({ slug, ladder, course, onBack }: { slug: stri
             <span className="eyebrow" style={{ margin: 0 }}>{step?.block.t.toUpperCase()}</span>
           </div>
 
-          <div className="narrative-blocks" ref={narrativeRef}>
+          <div className="narrative-blocks" ref={narrativeRef} onClick={followLessonLink}>
             {step && (
               step.block.t === "h" ? <h2>{step.block.text}</h2>
                 : step.block.t === "ex" ? (
