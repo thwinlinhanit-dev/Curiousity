@@ -27,8 +27,8 @@ export default function SiteHeader() {
         AA {size === "normal" ? "100%" : size === "large" ? "115%" : "130%"}
       </button>
       <button className="btn btn-sound" onClick={() => setSound(setAmbience(!sound))} aria-pressed={sound}
-        aria-label={sound ? "♪ Sound on — stop background music" : "♪ Sound off — play background music"}>
-        {sound ? "♪ Sound on" : "♪ Sound off"}
+        aria-label={sound ? "Sound on — stop background music" : "Sound off — play background music"}>
+        <span aria-hidden="true">♪</span><span className="sound-label">{sound ? "Sound on" : "Sound off"}</span>
       </button>
       <button className="btn" onClick={() => setHi(setContrast(!contrast))} aria-pressed={contrast}
         aria-label={`High contrast: ${contrast ? "on" : "off"}`}>◐ Contrast</button>

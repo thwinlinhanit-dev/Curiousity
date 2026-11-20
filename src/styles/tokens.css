@@ -1,73 +1,169 @@
-/* The Lab Notebook — design tokens (PHYSICS_SPEC/04) */
+/* Curiosity — design tokens v2 (docs/design-plan.md §3.1).
+   Semantic names are canonical. The v1 names (--paper, --ink, --signal, --fs-…)
+   stay as aliases so existing components keep working mid-flight.
+   Rules: nothing below 12px · one accent (the thing to press) · three statuses
+   (neutral / caution / positive) · no nested palettes. */
+
+/* One mono, actually loaded: IBM Plex Mono, two weights, self-hosted (~30KB). */
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/ibm-plex-mono-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../assets/fonts/ibm-plex-mono-500.woff2") format("woff2");
+}
+
 :root {
-  --paper: #f5f1e8;
-  --paper-2: #ebe5d8;
-  --ink: #1a1d21;
-  --ink-2: #4a4f55;
-  --ink-3: #5f656b;
-  --rule: #d8d2c4;
-  --signal: #a8321f;
-  --danger: #8e1b12;
-  --danger-on: #ffffff;
-  --on-signal: #ffffff;
+  /* Type — eight steps, nothing smaller. */
+  --text-2xs: 12px;   /* labels, chips, table data         */
+  --text-xs:  13px;   /* meta, captions                    */
+  --text-sm:  14px;   /* secondary UI, buttons             */
+  --text-md:  16px;   /* body default, inputs (no iOS zoom)*/
+  --text-lg:  20px;   /* section headings, stage prompt    */
+  --text-xl:  25px;   /* page titles                       */
+  --text-2xl: 32px;   /* lesson title                      */
+  --text-3xl: 40px;   /* home headline only                */
+
+  /* Legacy scale aliases (v1 components). */
+  --fs-0: var(--text-2xs);
+  --fs-1: var(--text-md);
+  --fs-2: var(--text-lg);
+  --fs-3: var(--text-xl);
+  --fs-4: var(--text-2xl);
+  --fs-5: var(--text-3xl);
+  --text-display: var(--text-3xl);
+
+  /* Spacing — 4pt grid. */
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px;
+  --s-5: 24px; --s-6: 32px; --s-7: 48px;
+  --sp-1: var(--s-1); --sp-2: var(--s-2); --sp-3: var(--s-3); --sp-4: var(--s-4);
+  --sp-5: var(--s-5); --sp-6: var(--s-6); --sp-7: var(--s-7); --sp-8: 64px;
+
+  /* Radius — two, plus pill. */
+  --r-sm: 6px;    /* inputs, buttons, chips */
+  --r-md: 12px;   /* cards, panels          */
+  --r-pill: 999px;
+  --radius: var(--r-sm);
+
+  /* Elevation — two. */
+  --e-0: 1px solid var(--border);
+  --e-1: 0 1px 2px rgb(22 24 28 / .06), 0 4px 12px rgb(22 24 28 / .05);
+
+  /* Motion — fast for state, medium for panels and routes. */
+  --dur-fast: 150ms;
+  --dur-med: 250ms;
+  --ease-out: cubic-bezier(0, 0, .2, 1);
+
+  /* Semantic colour (light) — components never use raw hex.
+     --text-subtle is #646a71 (not the plan's #6b7178) so it keeps ≥4.5:1
+     on the sunk and quiet surfaces too — acceptance criterion 4. */
+  --bg:            #faf8f3;
+  --surface:       #ffffff;
+  --surface-sunk:  #f2eee4;
+  --border:        #e2dccd;
+  --border-strong: #cfc7b4;
+  /* Control borders must read ≥3:1 (WCAG 1.4.11); decorative --border need not. */
+  --border-control: #8a8272;
+  --text:          #16181c;
+  --text-muted:    #565c63;
+  --text-subtle:   #646a71;
+  --accent:        #a8321f;
+  --accent-hover:  #932b1a;
+  --accent-quiet:  #f6e9e5;
+  --on-accent:     #ffffff;
+  --positive:      #2f6b4a;
+  --caution:       #8a6410;
+  --danger:        #8e1b12;
+  --focus:         var(--accent);
+
+  /* v1 colour aliases. */
+  --paper: var(--bg);
+  --paper-2: var(--surface-sunk);
+  --ink: var(--text);
+  --ink-2: var(--text-muted);
+  --ink-3: var(--text-subtle);
+  --rule: var(--border);
+  --signal: var(--accent);
+  --on-signal: var(--on-accent);
+  --danger-on: var(--on-accent);
+  /* Three statuses only: neutral / caution / positive. Review-due is a dot,
+     not a fourth hue. --review and --notstarted survive as DATA colours for
+     figures (force arrows, strobe dots, series) — never for status text. */
+  --mastered: var(--positive);
+  --underway: var(--caution);
+  --review: #6b3fa0;
+  --notstarted: var(--text-subtle);
+  --data-violet: #6b3fa0;
+
+  /* Figure data colours (the physics identity — kept). */
   --velocity: #2e6fb7;
   --accel: #c8472f;
   --displacement: #1a1d21;
-  --mastered: #3e7d5a;
-  --underway: #8a6410;
-  --review: #6b3fa0;
-  --notstarted: #b9b3a6;
 
   --font-display: ui-serif, Georgia, "Times New Roman", serif;
   --font-body: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --font-mono: "IBM Plex Mono", "JetBrains Mono", ui-monospace, monospace;
+  --font-mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Menlo, Consolas, monospace;
 
-  --sp-1: 4px; --sp-2: 8px; --sp-3: 12px; --sp-4: 16px;
-  --sp-5: 24px; --sp-6: 32px; --sp-7: 48px; --sp-8: 64px;
-  --radius: 5px;
-
-  /* Semantic aliases (tokens v2): use these in new screens. */
-  --text-xs: var(--fs-0); --text-sm: var(--fs-1); --text-md: var(--fs-2);
-  --text-lg: var(--fs-3); --text-xl: var(--fs-4); --text-display: var(--fs-5);
   --target-min: 44px;
-  --fs-0: 12px; --fs-1: 15px; --fs-2: 18px;
-  --fs-3: 24px; --fs-4: 34px; --fs-5: 48px;
+  --shell-h: 56px;
 }
 
 /* Reader-controlled text size — scales every type token together. */
 [data-text="large"] {
-  --fs-0: 14px; --fs-1: 17px; --fs-2: 20px;
-  --fs-3: 27px; --fs-4: 38px; --fs-5: 53px;
+  --text-2xs: 14px; --text-xs: 15px; --text-sm: 16px; --text-md: 18px;
+  --text-lg: 23px; --text-xl: 29px; --text-2xl: 37px; --text-3xl: 46px;
 }
 [data-text="xlarge"] {
-  --fs-0: 15px; --fs-1: 19px; --fs-2: 22px;
-  --fs-3: 30px; --fs-4: 42px; --fs-5: 58px;
+  --text-2xs: 15px; --text-xs: 17px; --text-sm: 18px; --text-md: 20px;
+  --text-lg: 26px; --text-xl: 32px; --text-2xl: 42px; --text-3xl: 52px;
 }
 
-/* "The Instrument" — dark slate canvas, cyan velocity, amber acceleration. */
+/* Dark — same roles, re-pointed. */
 [data-theme="dark"] {
-  --paper: #111820;
-  --paper-2: #1b2530;
-  --ink: #eef1f3;
-  --ink-2: #b6c0c9;
-  --ink-3: #9ba8b5;
-  --rule: #2c3845;
-  --signal: #ff7a5c;
-  --danger: #ff6b5b;
-  --danger-on: #1b100c;
-  --on-signal: #1b100c;
+  --bg: #0f141b;
+  --surface: #161d26;
+  --surface-sunk: #1b2330;
+  --border: #2a3441;
+  --border-strong: #3a4657;
+  --border-control: #5d6a80;
+  --text: #eef1f4;
+  --text-muted: #b3bcc6;
+  --text-subtle: #94a0ad;
+  --accent: #ff8a6b;
+  --accent-hover: #ffa184;
+  --accent-quiet: #2a1a16;
+  --on-accent: #1b100c;
+  --positive: #6fd39d;
+  --caution: #e8c464;
+  --danger: #ff7a6a;
+  --focus: var(--accent);
+  --e-1: 0 1px 2px rgb(0 0 0 / .4), 0 4px 12px rgb(0 0 0 / .3);
+
+  --review: #b695f0;
+  --data-violet: #b695f0;
   --velocity: #5ec8e8;
   --accel: #f0a35e;
   --displacement: #eef1f3;
-  --mastered: #6dd3a0;
-  --underway: #e8c464;
-  --review: #b695f0;
-  --notstarted: #5b6875;
 }
 
-/* High contrast and roomy spacing preferences. */
-[data-contrast="high"] { --ink: #000; --ink-2: #111; --ink-3: #222; --rule: #555; --paper: #fff; --paper-2: #f2f2f2; }
-[data-theme="dark"][data-contrast="high"] { --ink: #fff; --ink-2: #f2f2f2; --ink-3: #ddd; --rule: #aaa; --paper: #000; --paper-2: #151515; }
+/* High contrast and roomy spacing preferences (roadmap v1.0 a11y). */
+[data-contrast="high"] {
+  --text: #000; --text-muted: #111; --text-subtle: #222;
+  --border: #555; --border-strong: #333; --border-control: #333;
+  --bg: #fff; --surface: #fff; --surface-sunk: #f2f2f2;
+}
+[data-theme="dark"][data-contrast="high"] {
+  --text: #fff; --text-muted: #f2f2f2; --text-subtle: #ddd;
+  --border: #aaa; --border-strong: #ccc; --border-control: #ccc;
+  --bg: #000; --surface: #000; --surface-sunk: #151515;
+}
 [data-spacing="wide"] p, [data-spacing="wide"] li, [data-spacing="wide"] .narrative-blocks { line-height: 1.9; letter-spacing: .02em; }
 
 /* Respect reduced motion across the whole app. */
@@ -84,23 +180,22 @@
 html, body, #root { height: 100%; }
 body {
   margin: 0;
-  background: var(--paper);
-  color: var(--ink);
+  background: var(--bg);
+  color: var(--text);
   font-family: var(--font-body);
-  font-size: var(--fs-1);
-  line-height: 1.6;
+  font-size: var(--text-md);
+  line-height: 1.65;
 }
 button, input, select, textarea { font: inherit; }
-@media (max-width: 640px) {
-  input, select, textarea { font-size: 16px; }
-}
-:focus-visible { outline: 2px solid var(--signal); outline-offset: 2px; }
+/* Inputs never below 16px: stops iOS zoom-on-focus and keeps text readable. */
+input, select, textarea { font-size: var(--text-md); }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
 .skip-link {
-  position: absolute; left: var(--sp-3); top: -100px; z-index: 100;
-  background: var(--paper); color: var(--signal); border: 1px solid var(--signal);
-  padding: var(--sp-2) var(--sp-3); border-radius: var(--radius); text-decoration: none;
+  position: absolute; left: var(--s-3); top: -100px; z-index: 100;
+  background: var(--surface); color: var(--accent); border: 1px solid var(--accent);
+  padding: var(--s-2) var(--s-3); border-radius: var(--r-sm); text-decoration: none;
 }
-.skip-link:focus { top: var(--sp-2); }
+.skip-link:focus { top: var(--s-2); }
 .theme-switching *, .theme-switching *::before, .theme-switching *::after {
   transition: none !important; animation: none !important;
 }

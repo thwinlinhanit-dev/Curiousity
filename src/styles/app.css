@@ -1,22 +1,50 @@
 @import "./tokens.css";
 
-.btn, .btn-primary, .btn-link, .chip, .segmented button {
-  border: 1px solid var(--rule);
-  background: var(--paper);
-  color: var(--ink);
-  border-radius: var(--radius);
-  padding: var(--sp-2) var(--sp-3);
+/* v2 primitives — Button / Chip / Field (design plan §3.3):
+   44px targets, 14px labels, control borders ≥3:1, one accent CTA per screen. */
+.btn, .btn-primary, .chip, .segmented button {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--s-2);
+  min-height: var(--target-min);
+  border: 1px solid var(--border-control);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 10px;
+  padding: var(--s-2) var(--s-4);
   cursor: pointer;
-  font-size: var(--fs-0);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: background var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
 }
-.btn-primary { background: var(--signal); border-color: var(--signal); color: var(--on-signal); font-weight: 600; }
-.btn-link { border: 0; background: none; padding: 0; color: var(--signal); }
-.chip[aria-pressed="true"], .segmented button.active { border-color: var(--signal); color: var(--signal); background: var(--paper-2); }
+.btn:hover { border-color: var(--text-subtle); background: var(--surface-sunk); }
+.btn-primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); font-weight: 600; }
+.btn-primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+.btn:disabled, .btn-primary:disabled { opacity: .45; cursor: not-allowed; }
+.btn-link {
+  border: 0; background: none; min-height: var(--target-min);
+  padding: var(--s-2); color: var(--accent); font-size: var(--text-sm);
+  font-weight: 500; border-radius: var(--r-sm); justify-content: flex-start;
+}
+.btn-link:hover { text-decoration: underline; background: none; border: 0; }
+.btn-ghost { border-color: transparent; background: none; }
+.btn-ghost:hover { background: var(--surface-sunk); border-color: transparent; }
+.btn-destructive { background: var(--danger); border-color: var(--danger); color: var(--on-accent); }
+.chip { min-height: 32px; padding: var(--s-1) var(--s-3); border-radius: var(--r-pill); font-size: var(--text-xs); }
+@media (pointer: coarse) { .chip { min-height: var(--target-min); } }
+.chip[aria-pressed="true"], .chip.active, .segmented button.active, .segmented button[aria-pressed="true"] {
+  border-color: var(--accent); color: var(--accent); background: var(--accent-quiet);
+}
 .segmented { display: inline-flex; }
 .segmented button { border-radius: 0; }
-.segmented button:first-child { border-radius: var(--radius) 0 0 var(--radius); }
-.segmented button:last-child { border-radius: 0 var(--radius) var(--radius) 0; }
-input[type="text"], input:not([type]) { border: 1px solid var(--rule); border-radius: var(--radius); padding: var(--sp-2); background: var(--paper); color: var(--ink); }
+.segmented button:first-child { border-radius: 10px 0 0 10px; }
+.segmented button:last-child { border-radius: 0 10px 10px 0; }
+input[type="text"], input[type="search"], input[type="number"], input:not([type]), select, textarea {
+  min-height: var(--target-min);
+  border: 1px solid var(--border-control); border-radius: var(--r-sm);
+  padding: var(--s-2) var(--s-3); background: var(--surface); color: var(--text);
+  font-size: var(--text-md);
+}
 
 .topic-header { font-size: var(--fs-0); color: var(--ink-2); margin-bottom: var(--sp-5); }
 .topic-grid { display: grid; grid-template-columns: 320px minmax(0, 1fr); gap: var(--sp-6); align-items: start; }
@@ -29,7 +57,7 @@ input[type="text"], input:not([type]) { border: 1px solid var(--rule); border-ra
 /* minmax(0, …) so a wide figure or control row shrinks with the column instead
    of pushing the whole page sideways on a phone. */
 @media (max-width: 900px) { .topic-grid { grid-template-columns: minmax(0, 1fr); gap: var(--sp-4); } }
-.eyebrow { font-family: var(--font-mono); font-size: var(--fs-0); letter-spacing: .075em; color: var(--signal); margin-bottom: var(--sp-2); }
+.eyebrow { font-family: var(--font-mono); font-size: var(--text-2xs); letter-spacing: .06em; text-transform: uppercase; color: var(--text-subtle); margin-bottom: var(--s-2); }
 .narrative-rail h1 { font-family: var(--font-display); font-size: var(--fs-4); line-height: 1.1; margin: 0 0 var(--sp-3); }
 .narrative-blocks { border-top: 1px solid var(--rule); margin-top: var(--sp-4); padding-top: var(--sp-4); }
 .nblock p { color: var(--ink-2); }
@@ -69,7 +97,7 @@ dialog.review-session { position: fixed; inset: 0; margin: auto; width: min(620p
 .idea-body { padding: var(--sp-3); border-top: 1px solid var(--rule); color: var(--ink-2); }
 .idea-body a, .narrative-blocks a { color: var(--signal); }
 .idea-body a[style], .narrative-blocks a[style] { color: var(--signal) !important; }
-.idea-mistake .idea-label { color: var(--review); }
+.idea-mistake .idea-label { color: var(--caution); }
 
 .music-lab { margin-top: var(--sp-4); }
 .music-player-host { margin-top: var(--sp-4); }
@@ -79,8 +107,8 @@ dialog.review-session { position: fixed; inset: 0; margin: auto; width: min(620p
 .chord-cards h3 { font-family: var(--font-display); font-size: var(--fs-2); margin: 0 0 var(--sp-2); }
 .chord-cards > div { display: flex; flex-wrap: wrap; gap: var(--sp-2); }
 .chord-card { min-width: 90px; border: 1px solid var(--rule); border-radius: var(--radius); padding: var(--sp-2); background: var(--paper-2); text-align: center; }
-.chord-card b { display: block; font-family: var(--font-mono); font-size: 18px; color: var(--signal); }
-.chord-card span { font-family: var(--font-mono); font-size: 12px; color: var(--ink-3); }
+.chord-card b { display: block; font-family: var(--font-mono); font-size: var(--text-lg); font-weight: 500; color: var(--text); }
+.chord-card span { font-family: var(--font-mono); font-size: var(--text-2xs); color: var(--text-subtle); }
 
 .global-search { position: relative; margin-top: var(--sp-4); max-width: 620px; }
 .global-search input { width: 100%; }
@@ -116,8 +144,9 @@ dialog.review-session { position: fixed; inset: 0; margin: auto; width: min(620p
 .ladder-chip.active { border-color: var(--signal); background: var(--paper-2); }
 .ladder-chip.active b { color: var(--signal); }
 
-.lab-card { margin-top: var(--sp-4); border: 1px dashed var(--signal); border-radius: var(--radius); padding: var(--sp-3) var(--sp-4); display: flex; justify-content: space-between; align-items: center; gap: var(--sp-4); background: var(--paper-2); }
-.lab-card p { margin: 2px 0 0; color: var(--ink-3); font-size: var(--fs-0); }
+/* Card, not placeholder: solid border, surface, one elevation (plan §3.3). */
+.lab-card { margin-top: var(--s-4); border: var(--e-0); border-radius: var(--r-md); box-shadow: var(--e-1); padding: var(--s-4); display: flex; justify-content: space-between; align-items: center; gap: var(--s-4); background: var(--surface); flex-wrap: wrap; }
+.lab-card p { margin: 2px 0 0; color: var(--text-muted); font-size: var(--text-sm); }
 .breadboard-lab svg { width: 100%; height: auto; max-width: 760px; }
 .fbd-lab svg { width: 100%; height: auto; max-width: 800px; }
 .fbd-scenes { display: flex; flex-wrap: wrap; gap: var(--sp-2); margin-bottom: var(--sp-3); }
@@ -129,13 +158,13 @@ dialog.review-session { position: fixed; inset: 0; margin: auto; width: min(620p
 @media (max-width: 640px) {
   .site-header { justify-content: flex-start; gap: var(--sp-1); }
   .site-header .pref > span { display: none; }
-  .site-header select { height: 35px; }
+  .site-header select { min-height: 44px; }
   .site-header .btn { padding: 6px 7px; }
-  .site-header .btn-sound { width: 34px; padding-left: 0; padding-right: 0; font-size: 0; }
-  .site-header .btn-sound::before { content: "♪"; font-size: var(--fs-0); }
+  .site-header .btn-sound { width: 44px; padding-left: 0; padding-right: 0; }
+  .site-header .btn-sound .sound-label { display: none; }
 }
 .pref select { border: 1px solid var(--rule); border-radius: var(--radius); padding: 4px 8px; background: var(--paper); color: var(--ink); }
-.site-header .btn[aria-label^="Text size"] span { font-size: .72em; vertical-align: super; }
+.site-header .btn[aria-label^="Text size"] span { font-size: inherit; }
 .site-header .btn[aria-pressed="true"] { border-color: var(--signal); color: var(--signal); }
 .idea-box { margin-top: var(--sp-7); border: 1px solid var(--rule); border-radius: var(--radius); padding: var(--sp-4); background: var(--paper-2); max-width: 620px; }
 .idea-box h2 { font-family: var(--font-display); font-size: var(--fs-3); margin: 0 0 var(--sp-3); }
@@ -167,23 +196,26 @@ dialog.review-session { position: fixed; inset: 0; margin: auto; width: min(620p
 .progress-panel { margin-top: var(--sp-5); border: 1px solid var(--rule); border-radius: var(--radius); padding: var(--sp-4); background: var(--paper-2); }
 .progress-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-3); }
 .progress-stats div { display: flex; flex-direction: column; }
-.progress-stats b { font-family: var(--font-display); font-size: var(--fs-3); color: var(--signal); }
+.progress-stats b { font-family: var(--font-display); font-size: var(--fs-3); color: var(--text); }
 .progress-stats span { font-size: var(--fs-0); color: var(--ink-3); }
 .learn-insight { margin-top: var(--sp-4); border: 1px solid var(--rule); border-radius: var(--radius); padding: var(--sp-2) var(--sp-3); background: var(--paper-2); }
 .learn-insight summary { cursor: pointer; color: var(--signal); font-size: var(--fs-0); font-weight: 600; }
 .sparkline { display: flex; align-items: flex-end; gap: 2px; height: 38px; margin-top: var(--sp-3); }
 .sparkline span { flex: 1; background: var(--signal); opacity: .7; border-radius: 2px 2px 0 0; }
-.review-queue.mistakes { border-left: 3px solid var(--review); padding-left: var(--sp-3); }
+.review-queue.mistakes { border-left: 3px solid var(--caution); padding-left: var(--sp-3); }
 .review-queue { margin-top: var(--sp-4); border-top: 1px solid var(--rule); padding-top: var(--sp-3); }
 .review-queue h3 { font-family: var(--font-display); font-size: var(--fs-2); margin: 0 0 var(--sp-2); }
 .review-queue ul { display: flex; flex-wrap: wrap; gap: var(--sp-2); list-style: none; padding: 0; margin: 0; }
 .next-up { margin-top: var(--sp-3); font-size: var(--fs-0); color: var(--ink-2); }
 .save-code { margin-top: var(--sp-4); font-size: var(--fs-0); color: var(--ink-3); }
 .save-code summary { cursor: pointer; }
-.status-chip { font-family: var(--font-mono); font-size: 12px; letter-spacing: .05em; padding: 1px 7px; border-radius: 999px; border: 1px solid var(--rule); color: var(--ink-3); white-space: nowrap; }
-.status-mastered { color: var(--mastered); border-color: var(--mastered); }
-.status-review-due { color: var(--review); border-color: var(--review); }
-.status-under-way { color: var(--underway); border-color: var(--underway); }
+/* Three statuses, one vocabulary: Not started / In progress / Mastered.
+   Review-due is In progress plus a dot — never a fourth hue. */
+.status-chip { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-body); font-size: var(--text-2xs); font-weight: 500; padding: 2px 10px; border-radius: var(--r-pill); border: 1px solid var(--border-strong); color: var(--text-subtle); background: var(--surface); white-space: nowrap; }
+.status-mastered { color: var(--positive); border-color: color-mix(in srgb, var(--positive) 45%, var(--border)); }
+.status-under-way { color: var(--caution); border-color: color-mix(in srgb, var(--caution) 45%, var(--border)); }
+.status-review-due { color: var(--caution); border-color: color-mix(in srgb, var(--caution) 45%, var(--border)); }
+.status-review-due::before { content: ""; flex: 0 0 auto; width: 6px; height: 6px; border-radius: 50%; background: var(--caution); }
 .topic-list ol li { display: flex; justify-content: space-between; align-items: baseline; gap: var(--sp-2); flex-wrap: wrap; row-gap: 4px; }
 .topic-list ol li button { min-width: 0; overflow-wrap: anywhere; }
 .status-chip { flex-shrink: 0; }
@@ -192,9 +224,9 @@ dialog.review-session { position: fixed; inset: 0; margin: auto; width: min(620p
 
 /* Phase 2 — paced steps, narration, practice */
 .step-head { display: flex; justify-content: space-between; align-items: center; margin-top: var(--sp-5); border-top: 1px solid var(--rule); padding-top: var(--sp-3); }
-.step-counter { position: relative; font-family: var(--font-mono); font-size: var(--fs-2); color: var(--signal); padding-bottom: 6px; }
-.step-counter span { font-size: var(--fs-0); color: var(--ink-3); }
-.step-counter i { position: absolute; left: 0; bottom: 0; height: 2px; background: var(--signal); transition: width .25s ease; }
+.step-counter { position: relative; font-family: var(--font-mono); font-size: var(--text-sm); font-weight: 500; color: var(--text-muted); padding-bottom: 6px; }
+.step-counter span { font-size: var(--text-2xs); color: var(--text-subtle); }
+.step-counter i { position: absolute; left: 0; bottom: 0; height: 2px; background: var(--accent); transition: width var(--dur-med) var(--ease-out); }
 .step-nav { display: flex; gap: var(--sp-2); margin-top: var(--sp-4); }
 .step-nav button:disabled { opacity: .4; cursor: not-allowed; }
 .narration-bar { margin-top: var(--sp-3); display: flex; gap: var(--sp-2); align-items: center; }
@@ -222,9 +254,9 @@ dialog.review-session { position: fixed; inset: 0; margin: auto; width: min(620p
 .practice-result { margin-top: var(--sp-3); padding-top: var(--sp-3); border-top: 1px solid var(--rule); }
 .grade-row { display: flex; flex-wrap: wrap; gap: var(--sp-2); align-items: center; margin: var(--sp-3) 0 var(--sp-2); font-size: var(--fs-0); color: var(--ink-2); }
 .grade-row .chip { font-size: var(--fs-0); }
-.misconception { border-left: 3px solid var(--review); background: var(--paper-2); padding: var(--sp-2) var(--sp-3); color: var(--ink-2); }
-.practice-result.ok p:first-child { color: var(--mastered); }
-.practice-result.no p:first-child { color: var(--signal); }
+.misconception { border-left: 3px solid var(--caution); background: var(--surface-sunk); padding: var(--s-2) var(--s-3); color: var(--text-muted); border-radius: 0 var(--r-sm) var(--r-sm) 0; }
+.practice-result.ok p:first-child { color: var(--positive); }
+.practice-result.no p:first-child { color: var(--danger); }
 .choice-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--sp-2); }
 
 .topic-list { max-width: 760px; margin: 0 auto; padding: var(--sp-7) var(--sp-5); }
@@ -268,7 +300,7 @@ dialog.review-session { position: fixed; inset: 0; margin: auto; width: min(620p
   padding: var(--sp-2); margin: 0 0 var(--sp-3); font-size: var(--fs-0);
   color: var(--ink-2); border-radius: var(--radius);
 }
-.empty-state { border: 1px dashed var(--rule); border-radius: var(--radius); padding: var(--sp-3); color: var(--ink-2); }
+.empty-state { border: var(--e-0); border-radius: var(--r-md); padding: var(--s-4); color: var(--text-muted); background: var(--surface); }
 .empty-state .btn-link { margin-left: 4px; }
 
 /* Periodic table: 18 groups x 7 periods, with the f-block as two footnotes. */
@@ -331,23 +363,77 @@ dialog.review-session { position: fixed; inset: 0; margin: auto; width: min(620p
 .topic-list ol li { flex-wrap: nowrap; }
 .topic-list .status-chip { flex: 0 0 auto; }
 
-/* ── Music curriculum chapters (trb/content/music, lessons engine) ───────── */
+/* ── Music curriculum chapters (trb/content/music, lessons engine) ─────────
+   No nested palette (plan §3.1): the vendored kit's variables are aliased to
+   the app tokens. `html body …` outranks the kit's own `.mus` and
+   `html[data-theme="dark"] .mus` blocks, which load after this file. */
 .chapter-wrap { max-width: 920px; margin: 0 auto; padding: 0 20px 48px; width: 100%; }
-.chapter-wrap h1 { font-size: var(--fs-3); margin: 2px 0 6px; }
-.ml-chapter { margin-top: 10px; border-radius: var(--radius); overflow: hidden; }
+.chapter-wrap h1 { font-size: var(--text-xl); margin: 2px 0 6px; }
 .ml-chapter {
-  --paper: #faf7f0; --card: #fffdf8; --ink: #202735; --muted: #5b6675; --soft: #efe9dd;
-  --line: #ded6c6; --acc: #2e6fb7; --ok: #2c7a4b; --okbg: #e4f2e9; --bad: #b4483c; --badbg: #f7e6e3;
-  --gold: #a4761a; --focus: #2e6fb7; --score-bg: #fffdf8; --score-ink: #202735; --score-muted: #8a8272;
-  background: var(--paper); color: var(--ink); padding: 16px clamp(14px, 4vw, 36px) 28px;
-}
-[data-theme="dark"] .ml-chapter {
-  --paper: #171c26; --card: #1e2531; --ink: #e8edf5; --muted: #a7b0be; --soft: #232b39;
-  --line: #2c3547; --acc: #7fb2e8; --ok: #6fcf97; --okbg: #16311f; --bad: #ef8a7d; --badbg: #3a1d18;
-  --gold: #e5c07b; --focus: #7fb2e8; --score-bg: #10141c; --score-ink: #e8edf5; --score-muted: #6b7686;
+  margin-top: 10px; border: var(--e-0); border-radius: var(--r-md); overflow: hidden;
+  background: var(--bg); color: var(--text);
+  padding: 16px clamp(14px, 4vw, 36px) 28px;
 }
 .ml-chapter h1 { display: none; } /* the app's own h1 sits above */
-.ml-chapter a { color: var(--acc); }
+
+html body .mus, html body .ml-chapter {
+  --g: var(--accent); --g2: var(--accent);
+  --acc: var(--accent); --gold: var(--caution); --gt: var(--caution);
+  --ink: var(--text); --muted: var(--text-muted); --line: var(--border);
+  --card: var(--surface); --paper: var(--bg); --soft: var(--surface-sunk);
+  --focus: var(--accent);
+  --rh: var(--velocity); --rh-soft: color-mix(in srgb, var(--velocity) 15%, var(--surface));
+  --lh: var(--accel); --lh-soft: color-mix(in srgb, var(--accel) 15%, var(--surface));
+  --hl: var(--positive);
+  --score-bg: var(--surface); --score-ink: var(--text);
+  --score-line: var(--text-subtle); --score-muted: var(--text-subtle);
+  --ok: var(--positive); --bad: var(--danger);
+  --okbg: color-mix(in srgb, var(--positive) 12%, var(--surface));
+  --badbg: color-mix(in srgb, var(--danger) 10%, var(--surface));
+  --fret-dot: var(--accent); --fret-dot-ink: var(--on-accent);
+  --fret-root: var(--caution); --fret-scale: var(--velocity);
+  --fret-chord: color-mix(in srgb, var(--positive) 30%, var(--surface));
+}
+/* Same aliases again: this block exists only to outrank the kit's dark rules. */
+html[data-theme="dark"] body .mus, html[data-theme="dark"] body .ml-chapter {
+  --g: var(--accent); --g2: var(--accent);
+  --acc: var(--accent); --gold: var(--caution); --gt: var(--caution);
+  --ink: var(--text); --muted: var(--text-muted); --line: var(--border);
+  --card: var(--surface); --paper: var(--bg); --soft: var(--surface-sunk);
+  --focus: var(--accent);
+  --rh: var(--velocity); --rh-soft: color-mix(in srgb, var(--velocity) 15%, var(--surface));
+  --lh: var(--accel); --lh-soft: color-mix(in srgb, var(--accel) 15%, var(--surface));
+  --hl: var(--positive);
+  --score-bg: var(--surface); --score-ink: var(--text);
+  --score-line: var(--text-subtle); --score-muted: var(--text-subtle);
+  --ok: var(--positive); --bad: var(--danger);
+  --okbg: color-mix(in srgb, var(--positive) 12%, var(--surface));
+  --badbg: color-mix(in srgb, var(--danger) 10%, var(--surface));
+  --fret-dot: var(--accent); --fret-dot-ink: var(--on-accent);
+  --fret-root: var(--caution); --fret-scale: var(--velocity);
+  --fret-chord: color-mix(in srgb, var(--positive) 30%, var(--surface));
+}
+/* Kit rules that hardcode the upstream racing green → the one app accent. */
+html body .mus .mus-btn.pri, html body .mus .ml-a.pri,
+html body .mus .ml-strip ol a[aria-current="page"],
+html body .mus .ml-hub .ml-path .ml-pn,
+html body .mus .mus-seg button[aria-pressed="true"] {
+  background: var(--accent); border-color: var(--accent); color: var(--on-accent);
+}
+html body .mus .mus-btn.pri:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+html body .mus .ml-strip ol a[aria-current="page"] b { background: color-mix(in srgb, var(--on-accent) 18%, transparent); color: var(--on-accent); }
+html body .mus .mus-hero { background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 78%, #000)); color: var(--on-accent); }
+html body .mus .mus-hero p { color: color-mix(in srgb, var(--on-accent) 85%, transparent); }
+html body .mus .mus-hero a, html body .mus .mus-hero .mus-eyebrow { color: var(--on-accent); }
+html body .mus .mus-hero .mus-eyebrow { font-size: var(--text-2xs); }
+/* Kit text below the 12px floor. */
+html body .mus .mus-crumbs, html body .mus .mus-small, html body .mus .ml-quiet { font-size: var(--text-xs); }
+html body .mus .mus-table th { font-size: var(--text-2xs); }
+html body .mus .ml-strip ol a, html body .mus .ml-strip-home { font-size: var(--text-xs); }
+html body .mus .ml-strip ol a b { font-size: var(--text-2xs); }
+html body .mus .ml-cmidt, html body .mus .ml-ckmin, html body .mus .ml-ckacc, html body .mus .ml-ckalt { font-size: 12px; }
+/* Hardcoded gold-brown hand label was dark-on-dark in the Instrument theme. */
+html body .mus .ml-handlab { fill: var(--caution); }
 
 /* ── Design plan (/docs/design-plan.md, rendered at ?plan) ───────────────── */
 .doc { max-width: 720px; margin: 0 auto; }
