@@ -3,6 +3,7 @@ import { useFigureStore } from "../state/figureStore";
 import { loadLadder } from "../viz/loadViz";
 import { t, useT } from "../i18n";
 import { renderMath } from "../utils/richtext";
+import { recordGrade, type Grade } from "../state/learning";
 
 type AnswerSpec = { t: string; v?: unknown; rtol?: number; unit?: string; [k: string]: unknown };
 type Problem = {
@@ -86,7 +87,7 @@ export default function PracticePanel({ topicId, ladder = "physics", fallback, o
       const msg = ok ? "" : rs.map((r, i) => (r.ok ? "" : `${String(parts[i].label ?? `Part ${i + 1}`).replace(/<[^>]*>|\$/g, "").trim()}: ${r.msg ?? ""}`)).filter(Boolean).join(" · ");
       setResult({ ok, msg, invalid: rs.some((r) => r.invalid) });
       onAnswer?.(ok);
-      if (ok) setShownSteps(problem.steps?.length ?? 0);
+      setShownSteps(problem.steps?.length ?? 0); // elaborated, task-focused feedback
       return;
     }
     if (!answer.trim()) return;
@@ -99,8 +100,8 @@ export default function PracticePanel({ topicId, ladder = "physics", fallback, o
     const r = M.check(problem.a, answer, { q: problem.q, unit: problem.unit });
     setResult(r);
     onAnswer?.(r.ok);
+    setShownSteps(problem.steps?.length ?? 0);
     if (r.ok) {
-      setShownSteps(problem.steps?.length ?? 0);
       // spatial feedback: draw the learner's value on the figure when numeric
       const num = Number(answer.replace(/[^\d.\-]/g, ""));
       const expected = Number(M.answerText(problem.a).replace(/[^\d.\-]/g, ""));
@@ -160,11 +161,16 @@ export default function PracticePanel({ topicId, ladder = "physics", fallback, o
           )}
           {result && (
             <div className={`practice-result ${result.ok ? "ok" : "no"}`} aria-live="polite" ref={resultRef}>
-              <p><strong>{result.ok ? t("lesson.correct") : result.invalid ? t("lesson.cantRead") : t("lesson.notQuite")}</strong> {result.msg}</p>
+              <p><strong>{result.ok ? t("lesson.correct") : result.invalid ? t("lesson.cantRead") : "Not quite — here's the method."}</strong> {result.msg}</p>
               {!result.ok && problem.hint && <p style={{ color: "var(--ink-3)" }}>{t("lesson.hint")} <span dangerouslySetInnerHTML={{ __html: renderMath(problem.hint) }} /></p>}
-              {!result.ok && (problem.steps?.length ?? 0) > 0 && shownSteps === 0 && (
-                <button className="btn-link" onClick={() => setShownSteps(1)}>{t("lesson.showWorking")}</button>
-              )}
+              <div className="grade-row" role="group" aria-label="Rate how well you knew this">
+                <span>How well did you know it?</span>
+                {(["again", "hard", "good", "easy"] as Grade[]).map((g) => (
+                  <button key={g} className="chip" onClick={() => { recordGrade(topicId, g, level); next(); }}>
+                    {g === "again" ? "Again" : g === "hard" ? "Hard" : g === "good" ? "Good" : "Easy"}
+                  </button>
+                ))}
+              </div>
               {shownSteps > 0 && (
                 <div className="working-reveal">
                   <ol>

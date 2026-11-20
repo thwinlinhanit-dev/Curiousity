@@ -12,7 +12,7 @@ const en: Record<string, string> = {
   "progress.saveNote": "Progress is saved in this browser (shareable with the Teddy Rook engine).",
   "progress.export": "Export code", "progress.import": "Import", "progress.placeholder": "Paste a save code",
   "progress.exported": "Copy this code.", "progress.loaded": "Progress loaded.", "progress.bad": "That code wasn't recognised. Check the code and try again.",
-  "catalog.course": "Course", "catalog.find": "Find a topic…",
+  "catalog.course": "Course", "catalog.find": "Find a topic…", "catalog.noMatches": "No topics match.",
   "status.notStarted": "not started", "status.underWay": "under way", "status.mastered": "mastered", "status.reviewDue": "review due",
   "footer": "Content © Teddy Rook · CC BY-NC 4.0 · engine MIT · attribute + link back.",
   "lesson.back": "← All topics", "lesson.eyebrow": "LESSON", "lesson.commonMistake": "Common mistake:",
@@ -35,6 +35,13 @@ const en: Record<string, string> = {
   "idea.title": "What should exist next?", "idea.role": "You are", "idea.placeholder": "A topic, an app, a change, anything…",
   "idea.send": "Send", "idea.thanks": "Got it, thank you.", "idea.note": "This lands in this browser only — connect a backend to collect ideas.",
   "orbit.title": "3D orbit", "orbit.twoD": "2D figure", "orbit.threeD": "3D view",
+  "apps.hubTitle": "More ways to use the corpus",
+  "apps.hubLead": "The ladders are the core. These tools wrap around them: a daily habit, a way to plan the school day, and a set of small instruments for exploring how the subjects connect. All free, all local to your browser.",
+  "apps.loading": "Loading tool…", "apps.back": "← All tools", "apps.home": "← Home",
+  "apps.open": "Open →", "apps.group.daily": "Daily & fun", "apps.group.practical": "Practical tools", "apps.group.deep": "Deep dives",
+  "apps.englishOnly": "These tools and the corpus content are in English for now. Navigation and translated lesson pages are in Spanish.",
+  "theme.light": "☀ Light", "theme.dark": "☾ Dark", "theme.toDark": "Switch to the dark Instrument theme", "theme.toLight": "Switch to the light Lab Notebook theme",
+  "progress.dayStreakOne": "day streak",
 };
 
 const es: Record<string, string> = {
@@ -46,7 +53,7 @@ const es: Record<string, string> = {
   "progress.saveNote": "El progreso se guarda en este navegador (compatible con Teddy Rook).",
   "progress.export": "Exportar código", "progress.import": "Importar", "progress.placeholder": "Pega un código de guardado",
   "progress.exported": "Copia este código.", "progress.loaded": "Progreso cargado.", "progress.bad": "No se reconoció ese código. Revísalo e inténtalo de nuevo.",
-  "catalog.course": "Curso", "catalog.find": "Buscar un tema…",
+  "catalog.course": "Curso", "catalog.find": "Buscar un tema…", "catalog.noMatches": "Ningún tema coincide.",
   "status.notStarted": "sin empezar", "status.underWay": "en curso", "status.mastered": "dominado", "status.reviewDue": "repaso pendiente",
   "footer": "Contenido © Teddy Rook · CC BY-NC 4.0 · motor MIT · atribución y enlace.",
   "lesson.back": "← Todos los temas", "lesson.eyebrow": "LECCIÓN", "lesson.commonMistake": "Error común:",
@@ -69,6 +76,13 @@ const es: Record<string, string> = {
   "idea.title": "¿Qué debería existir después?", "idea.role": "Eres", "idea.placeholder": "Un tema, una app, un cambio, lo que sea…",
   "idea.send": "Enviar", "idea.thanks": "Recibido, gracias.", "idea.note": "Esto se guarda solo en este navegador — conecta un backend para recoger ideas.",
   "orbit.title": "Órbita 3D", "orbit.twoD": "Figura 2D", "orbit.threeD": "Vista 3D",
+  "apps.hubTitle": "Más formas de usar el corpus",
+  "apps.hubLead": "Las escaleras son el núcleo. Estas herramientas las rodean: un hábito diario, una forma de planificar el día escolar y pequeños instrumentos para explorar cómo se conectan las materias. Todo gratis y en tu navegador.",
+  "apps.loading": "Cargando herramienta…", "apps.back": "← Todas las herramientas", "apps.home": "← Inicio",
+  "apps.open": "Abrir →", "apps.group.daily": "Diario y diversión", "apps.group.practical": "Herramientas prácticas", "apps.group.deep": "Exploraciones a fondo",
+  "apps.englishOnly": "Estas herramientas y el contenido del corpus están en inglés por ahora. La navegación y las lecciones traducidas están en español.",
+  "theme.light": "☀ Claro", "theme.dark": "☾ Oscuro", "theme.toDark": "Cambiar al tema oscuro Instrument", "theme.toLight": "Cambiar al tema claro Lab Notebook",
+  "progress.dayStreakOne": "día seguido",
 };
 
 const dicts: Record<Lang, Record<string, string>> = { en, es };

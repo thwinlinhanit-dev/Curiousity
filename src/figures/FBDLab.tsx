@@ -131,7 +131,7 @@ export default function FBDLab() {
                 }
               }}
             />
-            <text x={tx + (v.x >= 0 ? 14 : -14)} y={ty - 12} textAnchor={v.x >= 0 ? "start" : "end"} fontSize="11" fontFamily="var(--font-mono)" fill={f.color}>{f.label}</text>
+            <text x={tx + (v.x >= 0 ? 18 : -18)} y={ty - 12} textAnchor="middle" fontSize="11" fontFamily="var(--font-mono)" fill={f.color}>{f.label}</text>
           </g>
         );
       })}

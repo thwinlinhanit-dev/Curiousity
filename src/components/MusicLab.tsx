@@ -12,6 +12,8 @@ const CHORD_NOTES: Record<string, string> = {
   Am7: "A C E G", Em7: "E G B D", Fmaj7: "F A C E", Dm7: "D F A C", Gmaj7: "G B D F#",
 };
 
+const instrumentOf = (slug: string) => /ukulele/.test(slug) ? "Ukulele" : /banjo|clawhammer|three-finger/.test(slug) ? "Banjo" : /guitar/.test(slug) ? "Guitar" : "Piano";
+
 function chordCards(chords: string) {
   const out: string[] = [];
   for (const part of chords.split("|")) {
@@ -82,14 +84,14 @@ export default function MusicLab({ slug, onSelect, compact }: { slug: string; on
         <label>Song
           <select value={slug} onChange={(e) => onSelect(e.target.value)}>
             <option value="">Choose a song…</option>
-            {index.map((s) => <option key={s.slug} value={s.slug}>{s.title} — {s.composer.slice(0, 30)}</option>)}
+            {index.map((s) => <option key={s.slug} value={s.slug}>{s.title} — {instrumentOf(s.slug)} · {s.level} · {s.key}</option>)}
           </select>
         </label>
         <label>Find<input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search songs…" /></label>
       </div>}
       {!compact && !slug && <div className="music-list">
         {songs.map((s) => <button key={s.slug} className="ladder-chip" onClick={() => onSelect(s.slug)}>
-          <b>{s.title}</b><span>{s.composer.slice(0, 34)} · {s.level} · {s.key}</span>
+          <b>{s.title}</b><span>{instrumentOf(s.slug)} · {s.composer.slice(0, 28)} · {s.level} · {s.key}</span>
         </button>)}
       </div>}
       {slug && info && <>

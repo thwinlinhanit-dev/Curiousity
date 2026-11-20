@@ -39,6 +39,11 @@ function makeLab(onMove: (part: Part, delta: number) => void): Draggable<LabStat
             <text x={h.x} y="134" textAnchor="middle" fontSize="10" fontFamily="var(--font-mono)" fill="var(--ink-3)">e{12 + i}</text>
           </g>
         ))}
+        <g id="target-holes" aria-hidden="true">
+          <circle cx={holes[target.led].x} cy="158" r="20" fill="none" stroke="var(--signal)" strokeWidth="2" strokeDasharray="4 3" />
+          <circle cx={holes[target.resistor].x} cy="236" r="20" fill="none" stroke="var(--signal)" strokeWidth="2" strokeDasharray="4 3" />
+          <circle cx={holes[target.wire].x} cy="308" r="20" fill="none" stroke="var(--signal)" strokeWidth="2" strokeDasharray="4 3" />
+        </g>
         <text x="74" y="120" fontSize="11" fontFamily="var(--font-mono)" fill="var(--ink-3)">+ rail</text>
         <text x="74" y="354" fontSize="11" fontFamily="var(--font-mono)" fill="var(--ink-3)">− rail</text>
 
@@ -82,13 +87,13 @@ export default function BreadboardLab() {
 
   return (
     <div className="breadboard-lab">
-      <p className="stage-prompt"><span aria-hidden>◉</span> Drag the LED, resistor and wire onto the highlighted holes, or focus a part and use the arrow keys.</p>
+      <p className="stage-prompt"><span aria-hidden>◉</span> Drag the LED, resistor and wire onto the target holes — LED e15, resistor e17, wire e18 — or focus a part and use the arrow keys.</p>
       <DraggableRenderer draggable={lab()} state={state} onDropState={setState} width={760} height={380} />
       <div className="figure-controls">
         <span>LED e{12 + state.led} · resistor e{12 + state.resistor} · wire e{12 + state.wire}</span>
         <button className="btn" onClick={() => setState({ led: 0, resistor: 1, wire: 2 })}>Reset</button>
         <span aria-live="polite" style={{ color: correct ? "var(--mastered)" : "var(--ink-2)" }}>
-          {correct ? "Loop closed — current can flow." : "The loop is open. Try the target holes."}
+          {correct ? "Loop closed — current can flow." : "The loop is open. Target: LED e15 · resistor e17 · wire e18."}
         </span>
       </div>
       <p style={{ color: "var(--ink-3)", fontSize: "var(--fs-0)" }}>

@@ -4,13 +4,21 @@ import marbleIndex from "../content/marble/matched.json";
 import TopicPage from "./pages/TopicPage";
 import ProgressPanel from "./components/ProgressPanel";
 import { ensureGraph, getGraph, initProgress, setActiveLadder, topicStatus } from "./state/progress";
-import { t, useT } from "./i18n";
+import { getLang, t, useT } from "./i18n";
 import SiteHeader from "./components/SiteHeader";
 import IdeaBox from "./components/IdeaBox";
 import SkillMap from "./components/SkillMap";
 import DatasetBrowser from "./components/DatasetBrowser";
 import MusicLab from "./components/MusicLab";
+import AppHub from "./apps/AppHub";
+import { AppView } from "./apps";
 import { loadLadder } from "./viz/loadViz";
+import { navigate } from "./utils/navigate";
+import Tasl from "./components/Tasl";
+import musicIndex from "../content/music/index.json";
+import { APP_DEFS } from "./apps/registry";
+import LabErrorBoundary from "./components/LabErrorBoundary";
+import { plural } from "./utils/plural";
 
 const BreadboardLab = lazy(() => import("./figures/BreadboardLab"));
 const FBDLab = lazy(() => import("./figures/FBDLab"));
@@ -32,6 +40,7 @@ const DATASETS = [
 
 // Lessons cross-checked against curriculum standards (Marble Skill Taxonomy).
 const MARBLE_IDS = new Set(marbleIndex.ids);
+const TOTAL_TOPICS = catalog.ladders.reduce((n, l) => n + l.topics, 0);
 const hasStandards = (id: string) => MARBLE_IDS.has(id);
 
 const params = () => new URLSearchParams(window.location.search);
@@ -63,26 +72,28 @@ export default function App() {
   const lab = params().get("lab");
   const datasetId = params().get("data");
   const musicParam = params().get("music");
+  const [app, setApp] = useState<string | null>(() => params().get("app"));
   useT();
 
   useEffect(() => {
     let alive = true;
+    let off: (() => void) | undefined;
     void ensureGraph().then(() => {
       if (!alive) return;
       const E = initProgress(ladder, courseKey);
       setGraphReady(true);
       setTick((n) => n + 1);
-      const off = E?.on(() => setTick((n) => n + 1));
-      (window as unknown as { __offProgress?: () => void }).__offProgress = off;
+      off = E?.on(() => setTick((n) => n + 1));
     });
     void loadLadder(ladder);
     const onPop = () => {
       const s = ladderFromUrl();
       setLadder(s); setCourseKey(courseFromUrl(s)); setSlug(params().get("t"));
+      setApp(params().get("app"));
     };
     window.addEventListener("popstate", onPop);
     return () => {
-      (window as unknown as { __offProgress?: () => void }).__offProgress?.();
+      off?.();
       window.removeEventListener("popstate", onPop);
     };
   }, [ladder, courseKey]);
@@ -95,14 +106,37 @@ export default function App() {
     return () => { alive = false; };
   }, [ladder, courseKey]);
 
+  // One descriptive title per route, so tabs, history and bookmarks stay distinct.
+  useEffect(() => {
+    const brand = "Curiosity — learn anything by taking it apart";
+    let title = brand;
+    if (app !== null) {
+      if (app === "hub" || app === "") title = `More ways to use the corpus · Curiosity`;
+      else title = `${APP_DEFS.find((a) => a.id === app)?.title ?? "Tool not found"} · Curiosity`;
+    } else if (lab === "fbd") title = "Free-body diagram lab · Curiosity";
+    else if (lab === "breadboard") title = "Breadboard lab · Curiosity";
+    else if (musicParam !== null) {
+      const song = musicIndex.find((s) => s.slug === musicParam);
+      title = `${song?.title ?? "Music lab"} · Curiosity`;
+    } else if (datasetId) {
+      title = `${DATASETS.find(([k]) => k === datasetId)?.[1] ?? "Library"} · Curiosity`;
+    } else if (slug) {
+      const topic = course?.topics.find((x) => x.slug === slug || x.id.split(".").slice(1).join(".") === slug);
+      title = `${topic?.title ?? slug} · Curiosity`;
+    } else if (course?.title) {
+      title = `${course.title} · ${ladderName(ladder)} · Curiosity`;
+    }
+    document.title = title;
+  }, [app, lab, musicParam, datasetId, slug, course, ladder]);
+
   const go = (next: string | null, opts?: { ladder?: string; course?: string }) => {
     const s = opts?.ladder ?? ladder, c = opts?.course ?? courseKey;
     const p = new URLSearchParams();
     p.set("s", s); p.set("c", c);
     if (next) p.set("t", next);
-    window.history.pushState({}, "", `${window.location.pathname}?${p.toString()}`);
-    setLadder(s); setCourseKey(c); setSlug(next);
-    window.scrollTo(0, 0);
+    navigate(`${window.location.pathname}?${p.toString()}`, () => {
+      setLadder(s); setCourseKey(c); setSlug(next); setApp(null);
+    });
   };
 
   const selectLadder = (key: string) => {
@@ -127,29 +161,48 @@ export default function App() {
   }, [globalSearch, ladder, courseKey, graphReady]);
   const currentLadder = catalog.ladders.find((l) => l.key === ladder) as Ladder;
 
+  if (app !== null) {
+    const atHub = app === "hub" || app === "";
+    const goHome = () => navigate(window.location.pathname, () => setApp(null));
+    const goHub = () => navigate(`${window.location.pathname}?app=hub`, () => setApp("hub"));
+    return (
+    <main className="topic-list wide app-view" id="main-content"><a href="#main-content" className="skip-link">{t("skip")}</a>
+      <SiteHeader />
+      <button className="btn-link app-back" onClick={atHub ? goHome : goHub}>{atHub ? t("apps.home") : t("apps.back")}</button>
+      {getLang() === "es" && app !== "hub" && app !== "" && <p className="lang-notice" role="status">{t("apps.englishOnly")}</p>}
+      {atHub ? <AppHub /> : <AppView id={app} />}
+      <Tasl title="Teddy Rook Book" author="Teddy Rook" url="https://teddyrookbook.com/" note="Adapted into this app; wording and layout changed." />
+      <footer style={{ marginTop: "var(--sp-3)", color: "var(--ink-3)", fontSize: "var(--fs-0)" }}>{t("footer")}</footer>
+    </main>
+    );
+  }
   if (lab === "fbd") return (
     <main className="topic-list" id="main-content"><a href="#main-content" className="skip-link">{t("skip")}</a><SiteHeader />
       <button className="btn-link" onClick={() => { window.location.href = window.location.pathname; }}>← All topics</button>
+      {getLang() === "es" && <p className="lang-notice" role="status">{t("apps.englishOnly")}</p>}
       <h1 style={{ fontFamily: "var(--font-display)", fontSize: "var(--fs-4)" }}>Free-body diagram lab</h1>
-      <div className="figure-card" style={{ marginTop: "var(--sp-4)" }}><Suspense fallback={<p>Loading lab…</p>}><FBDLab /></Suspense></div>
+      <div className="figure-card" style={{ marginTop: "var(--sp-4)" }}><LabErrorBoundary><Suspense fallback={<p>Loading lab…</p>}><FBDLab /></Suspense></LabErrorBoundary></div>
     </main>
   );
   if (lab === "breadboard") return (
     <main className="topic-list" id="main-content"><a href="#main-content" className="skip-link">{t("skip")}</a><SiteHeader />
       <button className="btn-link" onClick={() => { window.location.href = window.location.pathname; }}>← All topics</button>
+      {getLang() === "es" && <p className="lang-notice" role="status">{t("apps.englishOnly")}</p>}
       <h1 style={{ fontFamily: "var(--font-display)", fontSize: "var(--fs-4)" }}>Breadboard Lab · Dragology prototype</h1>
-      <div className="figure-card" style={{ marginTop: "var(--sp-4)" }}><Suspense fallback={<p>Loading lab…</p>}><BreadboardLab /></Suspense></div>
+      <div className="figure-card" style={{ marginTop: "var(--sp-4)" }}><LabErrorBoundary><Suspense fallback={<p>Loading lab…</p>}><BreadboardLab /></Suspense></LabErrorBoundary></div>
     </main>
   );
   if (musicParam !== null) return (
     <main className="topic-list" id="main-content"><a href="#main-content" className="skip-link">{t("skip")}</a><SiteHeader />
       <button className="btn-link" onClick={() => { window.location.href = window.location.pathname; }}>← All topics</button>
+      {getLang() === "es" && <p className="lang-notice" role="status">{t("apps.englishOnly")}</p>}
       <MusicLab slug={musicParam} onSelect={(s) => { window.location.href = `${window.location.pathname}?music=${encodeURIComponent(s)}`; }} />
     </main>
   );
   if (datasetId) return (
     <main className="topic-list wide" id="main-content"><a href="#main-content" className="skip-link">{t("skip")}</a><SiteHeader />
       <button className="btn-link" onClick={() => { window.location.href = window.location.pathname; }}>← All topics</button>
+      {getLang() === "es" && <p className="lang-notice" role="status">{t("apps.englishOnly")}</p>}
       <DatasetBrowser id={datasetId} itemParam={params().get("item")} />
     </main>
   );
@@ -161,7 +214,7 @@ export default function App() {
       <p className="eyebrow">{t("home.eyebrow")} · CORPUS</p>
       <h1>{t("home.title")}</h1>
       <p style={{ color: "var(--ink-2)", maxWidth: 620 }}>
-        {catalog.ladders.length} subjects · {catalog.ladders.reduce((n, l) => n + l.topics, 0)} topics from the Teddy Rook corpus.
+        {catalog.ladders.length} subjects · {TOTAL_TOPICS.toLocaleString()} topics from the Teddy Rook corpus.
         Figures you can play, pause and take apart — with real generators, answer checking and one shared progress engine.
       </p>
       <p style={{ color: "var(--ink-3)", fontSize: "var(--fs-0)", maxWidth: 620 }}>
@@ -169,13 +222,17 @@ export default function App() {
         look for the <span className="std-badge">standards</span> tag in a topic list.
       </p>
       <div className="global-search">
-        <input value={globalSearch} onChange={(e) => setGlobalSearch(e.target.value)} placeholder="Search all 5,105 topics and the library…" aria-label="Search everything" />
+        <input value={globalSearch} onChange={(e) => setGlobalSearch(e.target.value)} placeholder={`Search all ${TOTAL_TOPICS.toLocaleString()} topics and the library…`} aria-label="Search everything" />
         {searchResults.length > 0 && <ul>
           {searchResults.map((r, i) => <li key={i}><button onClick={r.go}><b>{r.label}</b><span>{r.sub} · {r.kind}</span></button></li>)}
         </ul>}
       </div>
       <ProgressPanel ladder={ladder} onGo={(s, opts) => go(s, opts)} />
 
+      <div className="lab-card">
+        <div><strong>More ways to learn</strong><p>Daily puzzles, planning tools, games and cross-subject explorations built on the same corpus.</p></div>
+        <button className="btn-primary" onClick={() => { window.history.pushState({}, "", `${window.location.pathname}?app=hub`); window.dispatchEvent(new PopStateEvent("popstate")); }}>Open the tool hub →</button>
+      </div>
       <div className="lab-card"><div><strong>Lab prototype · Free-body diagrams</strong><p>Five corpus scenarios with draggable force arrows.</p></div>
         <button className="btn-primary" onClick={() => { window.location.href = `${window.location.pathname}?lab=fbd`; }}>Open lab →</button></div>
       <div className="lab-card"><div><strong>Lab prototype · Breadboard</strong><p>Model-driven dragging with snapping.</p></div>
@@ -183,7 +240,7 @@ export default function App() {
 
       <h2 style={{ fontFamily: "var(--font-display)", fontSize: "var(--fs-3)", marginTop: "var(--sp-6)" }}>Library & datasets</h2>
       <div className="lab-card">
-        <div><strong>Music lab · playable sheet music</strong><p>20 public-domain songs: synced score, lit keyboard, Web Audio piano, wait-for-me mode.</p></div>
+        <div><strong>Music lab · playable sheet music</strong><p>{musicIndex.length} public-domain songs: synced score, lit keyboard, Web Audio piano, wait-for-me mode.</p></div>
         <button className="btn-primary" onClick={() => { window.location.href = `${window.location.pathname}?music=`; }}>Open music lab →</button>
       </div>
       <div className="ladder-grid">
@@ -198,7 +255,7 @@ export default function App() {
       <div className="ladder-grid">
         {catalog.ladders.map((l) => (
           <button key={l.key} className={l.key === ladder ? "ladder-chip active" : "ladder-chip"} onClick={() => selectLadder(l.key)}>
-            <b>{l.short}</b><span>{l.topics} topics · {l.courses} courses</span>
+            <b>{l.short}</b><span>{plural(l.topics, "topic")} · {plural(l.courses, "course")}</span>
           </button>
         ))}
       </div>
@@ -224,6 +281,12 @@ export default function App() {
       {mapView && <SkillMap ladder={ladder} courses={currentLadder?.courseKeys.map((k) => ({ key: k, title: courseName(k), short: courseShort(k) })) ?? []} selected={courseKey} onSelect={(c) => { setActiveLadder(ladder, c); go(null, { course: c }); }} />}
 
       <h2 style={{ fontFamily: "var(--font-display)", fontSize: "var(--fs-3)", marginTop: "var(--sp-5)" }}>{course?.title ?? "Loading…"}</h2>
+      {course && topics.length === 0 && (
+        <p className="empty-state" role="status">
+          No topics match {query ? `“${query}”` : "this filter"}{stdOnly ? " in the standards-tagged set" : ""}.{" "}
+          <button className="btn-link" onClick={() => { setQuery(""); setStdOnly(false); }}>Clear filters</button>
+        </p>
+      )}
       <ol>
         {topics.map((topic, i) => {
           const st = topicStatus(topic.id);

@@ -2,12 +2,19 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import "katex/dist/katex.min.css";
 import "./styles/app.css";
+import "./styles/apps.css";
 import App from "./App";
-import { loadViz } from "./viz/loadViz";
 
-// Preload the repo's visual kits so pure physics models (PM.*) and all visual
-// registrations are available to both custom figures and the universal wrapper.
-void loadViz();
+// Visual kits are loaded on demand by App (selected ladder) and PracticePanel,
+// so the physics bundles are not fetched on tool-hub or offline routes.
+
+// Offline support: a service worker caches the shell and any sections the
+// learner explicitly saves in the Offline tool. Never registered in dev.
+if (import.meta.env.PROD && "serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register(`${import.meta.env.BASE_URL}sw.js`).catch(() => undefined);
+  });
+}
 
 // Optional a11y audit: open with ?audit=1 and read window.__axeResults.
 if (new URLSearchParams(window.location.search).has("audit")) {

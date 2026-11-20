@@ -54,7 +54,8 @@ const license = "CC BY-NC 4.0 — Teddy Rook; credit + link back required";
   const items = [];
   for (const f of files) {
     const d = readJson(path.join(REPO, "data/meals/recipes", f));
-    for (const r of d.recipes ?? []) items.push({ title: r.name, subtitle: `${r.meal || "recipe"} · ${r.serving_size || ""}`, body: r.summary || "", meta: { id: r.id, tags: r.tags, times: r.times, ingredients: r.ingredients } });
+    for (const r of d.recipes ?? []) items.push({ title: r.name, subtitle: `${r.meal || "recipe"} · ${r.serving_size || ""}`, body: r.summary || "",
+      meta: { id: r.id, tags: r.tags, times: r.times, ingredients: r.ingredients, steps: r.steps ?? [], equipment: r.equipment ?? [], safety: r.safety ?? [], allergens: r.allergens ?? [], diet: r.diet ?? [], swaps: r.swaps ?? [], guides: r.guides ?? [], servings: r.serving_size ?? "" } });
   }
   const main = readJson(path.join(REPO, "data/meals/recipes.json"));
   for (const r of main.recipes ?? []) items.push({ title: r.name, subtitle: `${r.meal || "recipe"}`, body: r.summary || "", meta: r });
@@ -111,7 +112,9 @@ const license = "CC BY-NC 4.0 — Teddy Rook; credit + link back required";
     if (!exists(dir)) continue;
     for (const f of fs.readdirSync(dir).filter((x) => x.endsWith(".json"))) {
       const p = readJson(path.join(dir, f));
-      items.push({ title: p.title || p.name || f, subtitle: prefix, body: String(p.text || p.body || "").slice(0, 500), meta: { ...p, text: undefined } });
+      const paragraphs = Array.isArray(p.p) ? p.p : [];
+      items.push({ title: p.title || p.name || `No. ${p.n ?? f}`, subtitle: prefix,
+        body: paragraphs.join("\n\n") || String(p.text || p.body || ""), meta: { n: p.n, sal: p.sal, sig: p.sig, notes: p.notes, words: p.words, paragraphs } });
     }
   }
   put("papers", { title: "Founding papers", subtitle: `${items.length} papers`, description: "The Federalist, Anti-Federalist writings and the ratification debate.", source: "data/papers/", license, items });
@@ -142,11 +145,11 @@ const license = "CC BY-NC 4.0 — Teddy Rook; credit + link back required";
 // Reference datasets (Tier C)
 const refs = [
   ["timeline", "Timeline", "data/timeline.yaml", (d) => (d.events ?? []).map((e) => ({ title: e.title || e.name, subtitle: `${e.year || e.date || ""}`, body: (e.text || e.summary || "").slice(0, 400), meta: e }))],
-  ["infographics", "Infographics", "data/infographics.yaml", (d) => (Array.isArray(d) ? d : (d.items ?? [])).map((e) => ({ title: e.title || e.name, subtitle: e.category || "", body: (e.summary || e.text || "").slice(0, 300), meta: e }))],
-  ["resources", "Resources", "data/resources.yaml", (d) => (Array.isArray(d) ? d : (d.groups ?? d.items ?? [])).flatMap((g) => (g.items ?? [g]).map((e) => ({ title: e.title || e.name, subtitle: g.title || g.name || "", body: (e.text || e.description || "").slice(0, 300), meta: e })))],
-  ["videos", "Videos", "data/videos.yaml", (d) => (Array.isArray(d) ? d : (d.videos ?? d.items ?? [])).map((e) => ({ title: e.title || e.name, subtitle: e.channel || "", body: (e.description || "").slice(0, 300), meta: e }))],
+  ["infographics", "Infographics", "data/infographics.yaml", (d) => (Array.isArray(d) ? d : (d.items ?? [])).map((e) => ({ title: e.title || e.name, subtitle: e.category || "", body: e.description || e.summary || e.text || "", meta: e }))],
+  ["resources", "Resources", "data/resources.yaml", (d) => (Array.isArray(d) ? d : (d.groups ?? d.items ?? [])).flatMap((g) => (g.items ?? [g]).map((e) => ({ title: e.title || e.name, subtitle: g.title || g.name || "", body: e.note || e.text || e.description || "", meta: e })))],
+  ["videos", "Videos", "data/videos.yaml", (d) => Object.entries(d).map(([id, e]) => ({ title: e.title || e.name || id, subtitle: e.topic || e.date || "", body: e.description || (e.chapters ?? []).map((c) => c.title || c).join(" · "), meta: { ...e, youtube: id } }))],
   ["credits", "Credits & licences", "data/credits.yaml", (d) => [...(d.site ?? []), ...(d.sections ?? []), ...(d.more ?? [])].flatMap((g) => (g.items ?? []).map((e) => ({ title: e.name || e.title, subtitle: e.licence || e.license || "", body: e.what || "", meta: e })))],
-  ["asl", "Sign language", "data/asl.yaml", (d) => (d.paths ?? d.items ?? []).map((e) => ({ title: e.title || e.name, subtitle: e.kind || "", body: (e.text || "").slice(0, 300), meta: e }))],
+  ["asl", "Sign language", "data/asl.yaml", (d) => (d.path ?? d.paths ?? d.items ?? []).map((e) => ({ title: e.title || e.name, subtitle: e.kind || "", body: (e.text || e.summary || "").slice(0, 400), meta: e }))],
 ];
 for (const [key, name, rel, fn] of refs) {
   const p = path.join(REPO, rel);

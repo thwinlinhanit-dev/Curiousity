@@ -79,31 +79,42 @@ export function setActiveLadder(ladder: string, course?: string): void {
   initProgress(ladder, course);
 }
 
+// Reads must never change the engine's global active ladder. initProgress()
+// calls setLadder() (a global mutation in the vendor engine), so only calls
+// that really need a ladder switch may use it.
+function readEngine(): Engine | null {
+  const E = engine();
+  if (E) applyGraph();
+  return E;
+}
+
 export function recordAnswer(topicId: string, ok: boolean): AnswerResult | null {
-  const E = initProgress();
+  // A write: scope the engine to the topic's own ladder before answering.
+  const ladder = graphData.topics.find((t) => t.id === topicId)?.ladder ?? "physics";
+  const E = initProgress(ladder);
   if (!E) return null;
   return E.learnAnswer(topicId, ok);
 }
 
 export function topicStatus(id: string): { status: string; p: number; st: number; need: number; passed: boolean; due: number } {
-  const E = initProgress();
+  const E = readEngine();
   if (!E) return { status: "new", p: 0, st: 0, need: 3, passed: false, due: 0 };
   const c = E.climb(id);
   return { status: E.status(id), p: c.p, st: c.st, need: c.need, passed: c.passed, due: E.rec(id).due };
 }
 
 export function progressSummary() {
-  const E = initProgress();
+  const E = readEngine();
   if (!E) return { xp: 0, today: 0, streak: 0, due: 0, next: null as null | { type: string; id?: string; reason?: string | null }, goal: 40 };
   return { xp: E.totalXP(), today: E.xpToday(), streak: E.streak(), due: E.dueCount(), next: E.next(), goal: E.goal() };
 }
 
 export async function exportSaveCode(): Promise<string> {
-  const E = initProgress();
+  const E = readEngine();
   return E ? await E.exportCode() : "";
 }
 export async function importSaveCode(code: string): Promise<{ ok: boolean; msg?: string }> {
-  const E = initProgress();
+  const E = readEngine();
   if (!E) return { ok: false, msg: "Engine unavailable." };
   const r = await E.readCode(code);
   if (r.ok && r.state) E.replace(r.state);

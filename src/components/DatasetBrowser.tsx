@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { sanitize } from "../utils/richtext";
 import { itemKey, lessonsForItem } from "../state/library";
+import { plural } from "../utils/plural";
 
 type Item = { title: string; subtitle?: string; body?: string; meta?: Record<string, unknown>; items?: Item[] };
 type Dataset = { title: string; subtitle: string; description: string; source: string; license: string; items: Item[] };
@@ -240,7 +241,7 @@ export default function DatasetBrowser({ id, itemParam }: { id: string; itemPara
           </li>
         ))}
       </ul>
-      {items.length > 400 && <p style={{ color: "var(--ink-3)", fontSize: "var(--fs-0)" }}>Showing first 400 of {items.length} items.</p>}
+      {items.length > 400 && <p style={{ color: "var(--ink-3)", fontSize: "var(--fs-0)" }}>Showing first 400 of {plural(items.length, "item")}.</p>}
     </section>
   );
 }

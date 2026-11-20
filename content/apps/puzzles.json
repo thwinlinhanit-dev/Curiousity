@@ -1,0 +1,35 @@
+{
+  "title": "Brain Puzzles",
+  "source": "Teddy Rook Book — Brain Puzzles",
+  "source_url": "https://teddyrookbook.com/puzzles/",
+  "license": "CC BY-NC 4.0 — Teddy Rook; credit + link back required",
+  "note": "Twenty puzzle families are implemented here, with deterministic generators, sheet codes and answer keys.",
+  "groups": [
+    { "key": "numbers", "name": "Numbers", "blurb": "Patterns, sums and old ways of writing numbers." },
+    { "key": "logic", "name": "Logic", "blurb": "Grids and riddles with exactly one answer you can reason your way to." },
+    { "key": "words", "name": "Words", "blurb": "Spelling, meaning and how words connect." },
+    { "key": "codes", "name": "Codes", "blurb": "Binary, hex, ciphers and Morse code." }
+  ],
+  "families": [
+    { "key": "sequences", "name": "Number Sequences", "group": "numbers", "card": "Find the next number in the pattern.", "how": ["Look at how each number changes to become the next one.", "Check your rule on every number in the row, not just the first two.", "Write the next number in the empty box."] },
+    { "key": "magic", "name": "Magic Squares", "group": "numbers", "card": "Every row, column and diagonal adds to the same number.", "how": ["Each number in the list is used exactly once.", "Find a line with only one empty square and subtract.", "Keep going — each number you place opens up another line."] },
+    { "key": "roman", "name": "Roman Numerals", "group": "numbers", "card": "Write numbers the Roman way, and read them back.", "how": ["I = 1, V = 5, X = 10, L = 50, C = 100, D = 500, M = 1000.", "A smaller numeral before a larger one subtracts: IV = 4, IX = 9.", "Otherwise add from left to right."] },
+    { "key": "balance", "name": "Balance Scales", "group": "logic", "card": "Every scale balances. What does each shape weigh?", "how": ["Both sides of a balanced scale weigh the same.", "Start with a scale where you can swap something you know for something you don't.", "Check your answer on every scale."] },
+    { "key": "anagrams", "name": "Word Anagrams", "group": "words", "card": "Unscramble the letters using the clue.", "how": ["Read the clue first — it names the word's meaning.", "Look for common letter pairs and endings.", "Say the letters aloud in different orders."] },
+    { "key": "codes", "name": "Binary & Hex", "group": "codes", "card": "Change numbers between decimal, binary and hex.", "how": ["Binary uses place values 1, 2, 4, 8, 16…", "Hex uses 0–9 then A=10, B=11, …, F=15.", "Divide by the base and keep the remainders."] },
+    { "key": "crosssum", "name": "Cross-Sum Grids", "group": "numbers", "card": "Fill the grid so every row and column reaches its sum.", "how": ["Use each digit once where required.", "Start with a row that has few empty squares.", "Check your finished rows against the clues."] },
+    { "key": "sudoku", "name": "Latin Squares", "group": "numbers", "card": "Each digit appears once in every row and column.", "how": ["Look for a row with one missing digit.", "Use the column to rule out choices.", "A 3×3 square uses 1–3; a 4×4 uses 1–4."] },
+    { "key": "nonogram", "name": "Nonograms", "group": "logic", "card": "Shade the squares from the row and column clues.", "how": ["A clue like 2.1 means a run of two, then one.", "Long runs must fit inside the grid with a gap.", "Mark squares you know are empty too."] },
+    { "key": "logicgrid", "name": "Logic Grids", "group": "logic", "card": "Match each person to their pet using the clues.", "how": ["Turn each clue into a cross or a tick.", "One match rules out the rest of its row and column.", "Keep going until only one possibility remains."] },
+    { "key": "caesar", "name": "Caesar Ciphers", "group": "codes", "card": "Decode a word shifted along the alphabet.", "how": ["Shift every letter back by the given amount.", "Wrap past A back to Z.", "Check that the result is a real word."] },
+    { "key": "morse", "name": "Morse Code", "group": "codes", "card": "Change letters to dots and dashes, or back.", "how": ["A dot is a short signal, a dash is long.", "Letters are separated by a space.", "Use the chart on the sheet to check."] },
+    { "key": "wordladder", "name": "Word Ladders", "group": "words", "card": "Change one letter at a time from one word to another.", "how": ["Each step must be a real word.", "Change only one letter per step.", "Short words are a good place to begin."] },
+    { "key": "matchsticks", "name": "Matchstick Sums", "group": "numbers", "card": "Move one stick to make the sum correct.", "how": ["A stick can move between digits or symbols.", "Check the whole equation after the move.", "Sometimes the answer, not the sum, needs changing."] },
+    { "key": "cages", "name": "Cage Sums", "group": "numbers", "card": "Fill each cage so its digits add to the total.", "how": ["Each cage total is printed beside the row.", "Use each digit once where the instructions say so.", "Check a whole cage before moving on."] },
+    { "key": "classics", "name": "Famous Sequences", "group": "numbers", "card": "Name the next number in a famous sequence.", "how": ["Primes, squares, cubes and Fibonacci appear often.", "Check the gaps between terms.", "Say the rule out loud before answering."] },
+    { "key": "ladders", "name": "Number Ladders", "group": "numbers", "card": "Apply the same operation at each rung.", "how": ["Start at the bottom and climb.", "Apply the rule to the previous rung, not the start.", "Check your answer against the rungs after the gap."] },
+    { "key": "wordsense", "name": "Word Sense", "group": "words", "card": "Match each meaning to the right word.", "how": ["Read the meaning first.", "Look for familiar roots.", "Eliminate words that clearly mean something else."] },
+    { "key": "bases", "name": "Number Bases", "group": "codes", "card": "Write a decimal number in binary, octal or hex.", "how": ["Divide repeatedly by the target base.", "Read the remainders from last to first.", "Hex uses A–F for 10–15."] },
+    { "key": "mazes", "name": "Maze Counting", "group": "logic", "card": "Count the squares on the shortest route through a maze.", "how": ["Start at the top-left open square.", "Walls are marked █; open squares are ·.", "Count every square you pass through, including the start."] }
+  ]
+}

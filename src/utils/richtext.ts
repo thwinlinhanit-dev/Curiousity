@@ -16,7 +16,11 @@ export function sanitize(html: string): string {
 }
 
 export function renderMath(html: string): string {
-  const withMath = String(html ?? "").replace(/\$([^$\n]+)\$/g, (_m, tex: string) => {
+  // Corpus currency is stored as \$ so KaTeX will not treat two prices as a
+  // math span. Turn the escape into an HTML entity so the backslash never
+  // reaches the reader.
+  const source = String(html ?? "").replace(/\\\$/g, "&#36;");
+  const withMath = source.replace(/\$([^$\n]+)\$/g, (_m, tex: string) => {
     try { return katex.renderToString(tex, { throwOnError: false, strict: false }); }
     catch { return `$${tex}$`; }
   });
@@ -28,15 +32,24 @@ export const textOnly = (html: string): string => sanitize(html).replace(/<[^>]*
 // Music curriculum pages (trb/content/music) carry the interactive widgets in
 // data-ml attributes, plus inert <script type="application/json"> data blocks.
 // Everything else a script could be is stripped.
-const LESSON_TAGS = [...ALLOWED_TAGS, "h2", "figure", "figcaption", "kbd", "details", "summary", "hr", "dl", "dt", "dd", "script"];
+const LESSON_TAGS = [...ALLOWED_TAGS, "h2", "figure", "figcaption", "kbd", "details", "summary", "hr", "dl", "dt", "dd"];
 const LESSON_ATTR = [...ALLOWED_ATTR, "src", "alt", "loading", "width", "height", "id"];
 export function sanitizeLesson(html: string): string {
-  const clean = DOMPurify.sanitize(html ?? "", {
+  // Never let a <script> tag reach DOMPurify. Music lessons carry inert JSON
+  // data blocks that their widgets read, so lift those payloads out first,
+  // sanitise the markup, then rebuild only inert application/json scripts.
+  const payloads: string[] = [];
+  const prepared = String(html ?? "").replace(
+    /<script[^>]*type=["']application\/json["'][^>]*>([\s\S]*?)<\/script>/gi,
+    (_all, body: string) => `<div data-json-index="${payloads.push(body) - 1}"></div>`,
+  );
+  const clean = DOMPurify.sanitize(prepared, {
     ALLOWED_TAGS: LESSON_TAGS,
     ALLOWED_ATTR: LESSON_ATTR,
     ALLOW_DATA_ATTR: true,
-    ADD_ATTR: ["type"],
   });
-  // drop any script that is not an application/json data block
-  return clean.replace(/<script(?![^>]*type=["']application\/json["'])[^>]*>[\s\S]*?<\/script>/gi, "");
+  return clean.replace(/<div data-json-index="(\d+)"><\/div>/g, (_all, i: string) => {
+    const payload = payloads[Number(i)] ?? "";
+    return `<script type="application/json">${payload.replace(/</g, "\\u003c")}</script>`;
+  });
 }
