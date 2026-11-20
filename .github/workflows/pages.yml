@@ -30,7 +30,7 @@ jobs:
       # publish-content + copy-vendor run inside `build`; the vendor checkout
       # (`../trb`) is absent here, which is fine: public/vendor is committed.
       - run: npm run build
-      - uses: actions/configure-pages@v5
+      - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
