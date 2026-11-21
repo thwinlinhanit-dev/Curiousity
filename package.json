@@ -24,6 +24,7 @@
     "translations": "node scripts/translation-report.mjs",
     "axe": "node scripts/a11y-check.mjs",
     "budget": "node scripts/bundle-budget.mjs",
+    "screenshots": "playwright test",
     "ingest": "node scripts/ingest-corpus.mjs && node scripts/ingest-datasets.mjs && node scripts/ingest-music.mjs",
     "i18n:scaffold": "node scripts/i18n-scaffold.mjs",
     "i18n:translate:es": "node scripts/translate-es.mjs",
@@ -41,6 +42,7 @@
     "zustand": "^5.0.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.55.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "@types/three": "^0.187.0",
@@ -51,6 +53,7 @@
     "vitest": "^2.1.0"
   }
 }
+
 
 
 

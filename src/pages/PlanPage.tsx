@@ -1,5 +1,5 @@
 import { useEffect, useState, type ReactNode } from "react";
-import SiteHeader from "../components/SiteHeader";
+import { ErrorState, Skeleton } from "../components/ui";
 
 // The UI/UX plan ships as a plain markdown document at /docs/design-plan.md and
 // is rendered here, so the plan and the app can be read side by side.
@@ -122,9 +122,10 @@ function block(b: Block, key: number): ReactNode {
   }
 }
 
-export default function PlanPage({ onBack, src = "docs/design-plan.md" }: { onBack: () => void; src?: string }) {
+export default function PlanPage({ src = "docs/design-plan.md" }: { src?: string }) {
   const [blocks, setBlocks] = useState<Block[] | null>(null);
   const [error, setError] = useState("");
+  const [attempt, setAttempt] = useState(0);
 
   useEffect(() => {
     let alive = true;
@@ -135,24 +136,17 @@ export default function PlanPage({ onBack, src = "docs/design-plan.md" }: { onBa
       .then((text) => { if (alive) setBlocks(parse(text)); })
       .catch((e) => { if (alive) setError(String(e)); });
     return () => { alive = false; };
-  }, [src]);
+  }, [src, attempt]);
 
   return (
-    <main className="topic-page" id="main-content">
-      <a href="#main-content" className="skip-link">Skip to content</a>
-      <header className="topic-header">
-        <SiteHeader />
-        <button className="btn-link" onClick={onBack}>← All topics</button>
-      </header>
+    <div className="screen screen-narrow">
       <article className="doc">
         {error && (
-          <p role="alert" style={{ color: "var(--danger)" }}>
-            Couldn’t load this page ({error}).
-          </p>
+          <ErrorState body={`Couldn’t load this page (${error}).`} onRetry={() => setAttempt((n) => n + 1)} />
         )}
-        {!blocks && !error && <p style={{ color: "var(--ink-3)" }}>Loading…</p>}
+        {!blocks && !error && <Skeleton rows={6} />}
         {blocks?.map((b, i) => block(b, i))}
       </article>
-    </main>
+    </div>
   );
 }

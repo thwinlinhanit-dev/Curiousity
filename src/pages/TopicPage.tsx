@@ -19,7 +19,7 @@ import { recordAnswer, setActiveLadder, topicStatus, getGraph } from "../state/p
 import { loadCoursePack } from "../state/packs";
 import { t, useT } from "../i18n";
 import { renderMath } from "../utils/richtext";
-import SiteHeader from "../components/SiteHeader";
+import { Skeleton } from "../components/ui";
 import OrbitMode from "../figures/OrbitMode";
 import FieldFigure from "../figures/FieldFigure";
 import OpticsFigure from "../figures/OpticsFigure";
@@ -234,21 +234,21 @@ export default function TopicPage({ slug, ladder, course, onBack }: { slug: stri
   }, [bundle, stepIdx]);
 
   if (error) return (
-    <main className="topic-page" id="main-content"><a href="#main-content" className="skip-link">{t("skip")}</a>
-      <header className="topic-header"><SiteHeader /><button className="btn-link" onClick={onBack}>{t("lesson.back")}</button></header>
+    <div className="topic-page">
+      <header className="topic-header"><button className="btn-link" onClick={onBack}>{t("lesson.back")}</button></header>
       <p style={{ color: "var(--danger)" }} role="alert">{t("lesson.loadError")} <span style={{ color: "var(--ink-3)", fontFamily: "var(--font-mono)" }}>({error})</span></p>
       <div className="step-nav">
         <button className="btn-primary" onClick={() => { setError(""); setAttempt((n) => n + 1); }}>{t("lesson.tryAgain")}</button>
         <button className="btn" onClick={onBack}>{t("lesson.back")}</button>
       </div>
-    </main>
+    </div>
   );
-  if (!bundle) return <main className="topic-page" id="main-content"><a href="#main-content" className="skip-link">{t("skip")}</a><p>Loading…</p></main>;
+  if (!bundle) return <div className="topic-page"><Skeleton rows={5} /></div>;
 
   if (!hasFigure) {
     return (
-      <main className="topic-page" id="main-content"><a href="#main-content" className="skip-link">{t("skip")}</a>
-        <header className="topic-header"><SiteHeader /><button className="btn-link" onClick={onBack}>{t("lesson.back")}</button></header>
+      <div className="topic-page">
+        <header className="topic-header"><button className="btn-link" onClick={onBack}>{t("lesson.back")}</button></header>
         <h1>{bundle.title}</h1>
         {langNotice}
         <p style={{ color: "var(--ink-2)" }}>{bundle.short}</p>
@@ -258,7 +258,7 @@ export default function TopicPage({ slug, ladder, course, onBack }: { slug: stri
         </div>
         <PracticePanel topicId={bundle.id} ladder={ladder} onAnswer={(ok) => { recordAnswer(bundle.id, ok); setTick((n) => n + 1); }} />
         <details className="sources"><summary>{t("lesson.sources")}</summary><ul>{bundle.lesson.sources.map((s, i) => <li key={i}>{s.name}</li>)}</ul></details>
-      </main>
+      </div>
     );
   }
 
@@ -274,9 +274,8 @@ export default function TopicPage({ slug, ladder, course, onBack }: { slug: stri
   if (bundle.figureArchetype === "chapter") {
     const chapter = bundle.lesson.blocks.find((b) => b.t === "chapter");
     return (
-      <main className="topic-page chapter-page" id="main-content"><a href="#main-content" className="skip-link">{t("skip")}</a>
+      <div className="topic-page chapter-page">
         <header className="topic-header">
-          <SiteHeader />
           <button className="btn-link" onClick={onBack}>{t("lesson.back")}</button>
           <span style={{ color: "var(--ink-3)" }}> / {courseMeta?.title ?? bundle.courseTitle} / {bundle.unitTitle}</span>
         </header>
@@ -301,14 +300,13 @@ export default function TopicPage({ slug, ladder, course, onBack }: { slug: stri
           <LibraryStrip topicId={bundle.id} />
           <MarblePanel topicId={bundle.id} />
         </div>
-      </main>
+      </div>
     );
   }
 
   return (
-    <main className="topic-page" id="main-content"><a href="#main-content" className="skip-link">{t("skip")}</a>
+    <div className="topic-page">
       <header className="topic-header">
-        <SiteHeader />
         <button className="btn-link" onClick={onBack}>{t("lesson.back")}</button>
         <span style={{ color: "var(--ink-3)" }}> / {courseMeta?.title ?? bundle.courseTitle ?? bundle.course} / {courseMeta?.units.find((u) => u.key === bundle.unit)?.title ?? bundle.unitTitle ?? bundle.unit}</span>
       </header>
@@ -424,6 +422,6 @@ export default function TopicPage({ slug, ladder, course, onBack }: { slug: stri
           <MarblePanel topicId={bundle.id} />
         </section>
       </div>
-    </main>
+    </div>
   );
 }

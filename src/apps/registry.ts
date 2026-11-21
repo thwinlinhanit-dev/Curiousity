@@ -36,6 +36,7 @@ export const APP_DEFS: AppDef[] = [
   { id: "memory", icon: "🧠", title: "Memory studio", desc: "43 challenge lists with spaced cards, pairs and a memory palace.", group: "Daily & fun" },
   { id: "courses", icon: "🎼", title: "Music courses", desc: "Piano, guitar, ukulele, banjo and reading music, chapter by chapter.", group: "Practical tools" },
   { id: "export", icon: "📦", title: "Export & worksheets", desc: "Own your progress JSON, course packs and printable worksheets with answer keys.", group: "Practical tools" },
+  { id: "translate", icon: "🌍", title: "Translation review", desc: "Review the machine-translated Spanish lessons and export approved versions.", group: "Practical tools" },
 ];
 
 export const APP_GROUPS: AppGroup[] = ["Daily & fun", "Practical tools", "Deep dives"];

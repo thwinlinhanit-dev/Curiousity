@@ -8,7 +8,7 @@ const css = ["tokens.css", "app.css", "apps.css"].map((f) => fs.readFileSync(pat
 const problems = [];
 const small = css.match(/font-size:\s*(\d+)px/g) ?? [];
 for (const s of small) { const n = Number(s.match(/\d+/)[0]); if (n < 12) problems.push(`font-size below 12px: ${s}`); }
-for (const f of ["src/App.tsx", "src/pages/TopicPage.tsx"]) {
+for (const f of ["src/components/AppShell.tsx"]) {
   const src = fs.readFileSync(path.join(root, f), "utf8");
   if (!src.includes('className="skip-link"')) problems.push(`${f}: missing skip link`);
 }

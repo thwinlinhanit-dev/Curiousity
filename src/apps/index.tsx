@@ -24,12 +24,13 @@ const Scripts = lazy(() => import("./Scripts"));
 const MemoryStudio = lazy(() => import("./MemoryStudio"));
 const MusicCourses = lazy(() => import("./MusicCourses"));
 const Export = lazy(() => import("./Export"));
+const Translate = lazy(() => import("./Translate"));
 
 const loaders: Record<string, LazyExoticComponent<ComponentType<any>>> = {
   word: DailyWord, connections: Connections, puzzles: PuzzleApp, games: Games,
   debate: DebateTools, meals: MealPlanner, testprep: TestPrep, life: LifeSkills,
   paths: ReadingPaths, "music-tools": MusicTools, school: SchoolApp,
-  languages: LanguageLab, offline: OfflineApp, markets: OfflineApp, library: Library, sims: ScienceSims, gallery: Gallery, "music-extras": MusicExtras, daily: Daily, scripts: Scripts, memory: MemoryStudio, courses: MusicCourses, export: Export,
+  languages: LanguageLab, offline: OfflineApp, markets: OfflineApp, library: Library, sims: ScienceSims, gallery: Gallery, "music-extras": MusicExtras, daily: Daily, scripts: Scripts, memory: MemoryStudio, courses: MusicCourses, export: Export, translate: Translate,
 };
 
 export function AppView({ id }: { id: string }) {

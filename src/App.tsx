@@ -1,354 +1,177 @@
-import { lazy, Suspense, useEffect, useMemo, useState } from "react";
+import { lazy, Suspense, useEffect, useState, type ReactNode } from "react";
 import catalog from "../content/catalog.json";
-import marbleIndex from "../content/marble/matched.json";
 import TopicPage from "./pages/TopicPage";
 import PlanPage from "./pages/PlanPage";
-import ProgressPanel from "./components/ProgressPanel";
-import { ensureGraph, getGraph, initProgress, setActiveLadder, topicStatus } from "./state/progress";
-import { getLang, t, useT } from "./i18n";
-import SiteHeader from "./components/SiteHeader";
-import IdeaBox from "./components/IdeaBox";
-import SkillMap from "./components/SkillMap";
+import Home from "./pages/Home";
+import SubjectPage from "./pages/SubjectPage";
+import LibraryIndex from "./pages/LibraryIndex";
+import LabsIndex from "./pages/LabsIndex";
+import AppShell from "./components/AppShell";
 import DatasetBrowser from "./components/DatasetBrowser";
 import MusicLab from "./components/MusicLab";
 import AppHub from "./apps/AppHub";
 import { AppView } from "./apps";
+import { ensureGraph, initProgress, resetGraph, setActiveLadder } from "./state/progress";
 import { loadLadder } from "./viz/loadViz";
-import { navigate } from "./utils/navigate";
-import Tasl from "./components/Tasl";
+import { getLang, t, useT } from "./i18n";
+import { navigateTo, routeParams } from "./utils/route";
+import { DATASETS } from "./state/datasets";
 import musicIndex from "../content/music/index.json";
 import { APP_DEFS } from "./apps/registry";
 import LabErrorBoundary from "./components/LabErrorBoundary";
-import { plural } from "./utils/plural";
-import { loadCoursePack } from "./state/packs";
-import type { CourseIndex } from "./state/courseTypes";
+import Tasl from "./components/Tasl";
+import { Skeleton } from "./components/ui";
 
 const BreadboardLab = lazy(() => import("./figures/BreadboardLab"));
 const FBDLab = lazy(() => import("./figures/FBDLab"));
 
-type Ladder = typeof catalog.ladders[number];
-
-const DATASETS = [
-  ["science-lab", "Science Lab"], ["elements", "Periodic table"], ["memory", "Memory lists"],
-  ["recipes", "Recipes"], ["music", "Music"], ["trades", "Trades"], ["debate", "Debate"],
-  ["greatbooks", "Great Books"], ["papers", "Founding papers"], ["harvard", "Harvard Classics"],
-  ["garden", "Food garden"],
-  ["timeline", "Timeline"], ["infographics", "Infographics"], ["resources", "Resources"], ["credits", "Credits & licences"],
-];
-
-// Lessons cross-checked against curriculum standards (Marble Skill Taxonomy).
-const MARBLE_IDS = new Set(marbleIndex.ids);
-const hasStandards = (id: string) => MARBLE_IDS.has(id);
-
-const params = () => new URLSearchParams(window.location.search);
-// Human-readable names for the raw keys the corpus uses internally.
 const ladderName = (key: string) => catalog.ladders.find((l) => l.key === key)?.short ?? key;
-const courseName = (key: string) => getGraph().courses.find((c) => c.key === key)?.title ?? key;
-const courseShort = (key: string) => {
-  const c = getGraph().courses.find((x) => x.key === key);
-  return c?.short ?? c?.title ?? key;
-};
-const ladderFromUrl = () => params().get("s") || "physics";
-const courseFromUrl = (ladder: string) => {
-  const c = params().get("c");
-  const l = catalog.ladders.find((x) => x.key === ladder);
-  return c && l?.courseKeys.includes(c) ? c : l?.courseKeys[0] || "phys1";
-};
+const firstCourse = (ladder: string) => catalog.ladders.find((l) => l.key === ladder)?.courseKeys[0];
 
+// The router (plan §4): one screen, one job. Every route renders inside the
+// same AppShell — brand, subject switcher, search, overflow, nothing else.
 export default function App() {
-  const [ladder, setLadder] = useState(ladderFromUrl);
-  const [courseKey, setCourseKey] = useState(() => courseFromUrl(ladderFromUrl()));
-  const [course, setCourse] = useState<CourseIndex | null>(null);
-  const [courseError, setCourseError] = useState("");
-  const [slug, setSlug] = useState<string | null>(() => params().get("t"));
-  const [query, setQuery] = useState("");
-  const [stdOnly, setStdOnly] = useState(false);
-  // ?q= is how an in-lesson corpus link lands here: those links point at the
-  // upstream site's own paths, so they open the app's search with their label.
-  const [globalSearch, setGlobalSearch] = useState(() => params().get("q") ?? "");
-  const [mapView, setMapView] = useState(false);
+  useT();
+  const [route, setRoute] = useState(() => routeParams());
   const [, setTick] = useState(0);
   const [graphReady, setGraphReady] = useState(false);
-  const lab = params().get("lab");
-  const datasetId = params().get("data");
-  const musicParam = params().get("music");
-  const [app, setApp] = useState<string | null>(() => params().get("app"));
-  const planParam = params().get("plan");
-  const roadmapParam = params().get("roadmap");
-  const aboutParam = params().get("about");
-  useT();
+  const [graphError, setGraphError] = useState("");
+  const [graphAttempt, setGraphAttempt] = useState(0);
 
+  const s = route.get("s");
+  const c = route.get("c");
+  const slug = route.get("t");
+  const app = route.get("app");
+  const lab = route.get("lab");
+  const datasetId = route.get("data");
+  const musicParam = route.get("music");
+  const libraryParam = route.get("library");
+  const labsParam = route.get("labs");
+  const planParam = route.get("plan");
+  const roadmapParam = route.get("roadmap");
+  const aboutParam = route.get("about");
+
+  useEffect(() => {
+    const onPop = () => setRoute(routeParams());
+    window.addEventListener("popstate", onPop);
+    return () => window.removeEventListener("popstate", onPop);
+  }, []);
+
+  // Graph + progress engine: loaded once, retried on demand.
   useEffect(() => {
     let alive = true;
     let off: (() => void) | undefined;
+    setGraphError("");
     void ensureGraph().then(() => {
       if (!alive) return;
-      const E = initProgress(ladder, courseKey);
+      const E = initProgress(s || "physics", c ?? undefined);
       setGraphReady(true);
       setTick((n) => n + 1);
       off = E?.on(() => setTick((n) => n + 1));
+    }).catch(() => {
+      if (alive) { setGraphReady(false); setGraphError(t("catalog.loadFailed")); }
     });
-    void loadLadder(ladder);
-    const onPop = () => {
-      const s = ladderFromUrl();
-      setLadder(s); setCourseKey(courseFromUrl(s)); setSlug(params().get("t"));
-      setApp(params().get("app"));
-    };
-    window.addEventListener("popstate", onPop);
-    return () => {
-      off?.();
-      window.removeEventListener("popstate", onPop);
-    };
-  }, [ladder, courseKey]);
+    return () => { alive = false; off?.(); };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [graphAttempt]);
 
+  // Keep the engine and the visual kit scoped to the subject on screen.
   useEffect(() => {
-    let alive = true;
-    // loadCoursePack answers { index: null } when the fetch fails, so a missing
-    // index is an error to show, not a heading stuck on "Loading…" for ever.
-    void loadCoursePack(ladder, courseKey).then((p) => {
-      if (!alive) return;
-      setCourse(p.index);
-      setCourseError(p.index ? "" : t("catalog.loadFailed"));
-    });
-    return () => { alive = false; };
-  }, [ladder, courseKey]);
+    if (!graphReady || !s) return;
+    setActiveLadder(s, c ?? undefined);
+    void loadLadder(s);
+  }, [s, c, graphReady]);
 
-  // One descriptive title per route, so tabs, history and bookmarks stay distinct.
+  // One descriptive title per route.
   useEffect(() => {
     const brand = "Curiosity — learn anything by taking it apart";
     let title = brand;
     if (app !== null) {
-      if (app === "hub" || app === "") title = `More ways to use the corpus · Curiosity`;
-      else title = `${APP_DEFS.find((a) => a.id === app)?.title ?? "Tool not found"} · Curiosity`;
+      title = app === "hub" || app === "" ? `More tools · Curiosity` : `${APP_DEFS.find((a) => a.id === app)?.title ?? "Tool not found"} · Curiosity`;
     } else if (lab === "fbd") title = "Free-body diagram lab · Curiosity";
     else if (lab === "breadboard") title = "Breadboard lab · Curiosity";
     else if (musicParam !== null) {
-      const song = musicIndex.find((s) => s.slug === musicParam);
+      const song = musicIndex.find((x) => x.slug === musicParam);
       title = `${song?.title ?? "Music lab"} · Curiosity`;
-    } else if (datasetId) {
-      title = `${DATASETS.find(([k]) => k === datasetId)?.[1] ?? "Library"} · Curiosity`;
-    } else if (slug) {
-      const topic = course?.topics.find((x) => x.slug === slug || x.id.split(".").slice(1).join(".") === slug);
-      title = `${topic?.title ?? slug} · Curiosity`;
-    } else if (params().get("c") && course?.title) {
-      title = `${course.title} · ${ladderName(ladder)} · Curiosity`;
-    }
+    } else if (datasetId) title = `${DATASETS.find(([k]) => k === datasetId)?.[1] ?? "Library"} · Curiosity`;
+    else if (libraryParam !== null) title = "Library · Curiosity";
+    else if (labsParam !== null) title = "Labs · Curiosity";
+    else if (planParam !== null) title = "Design plan · Curiosity";
+    else if (roadmapParam !== null) title = "Roadmap · Curiosity";
+    else if (aboutParam !== null) title = "About & licences · Curiosity";
+    else if (slug) title = `${slug.replace(/-/g, " ")} · ${ladderName(s ?? "")} · Curiosity`;
+    else if (s) title = `${ladderName(s)} · Curiosity`;
     document.title = title;
-  }, [app, lab, musicParam, datasetId, slug, course, ladder]);
+  }, [app, lab, musicParam, datasetId, libraryParam, labsParam, planParam, roadmapParam, aboutParam, slug, s]);
 
-  const go = (next: string | null, opts?: { ladder?: string; course?: string }) => {
-    const s = opts?.ladder ?? ladder, c = opts?.course ?? courseKey;
-    const p = new URLSearchParams();
-    p.set("s", s); p.set("c", c);
-    if (next) p.set("t", next);
-    navigate(`${window.location.pathname}?${p.toString()}`, () => {
-      setLadder(s); setCourseKey(c); setSlug(next); setApp(null);
-    });
-  };
+  const retryGraph = () => { resetGraph(); setGraphAttempt((n) => n + 1); };
+  const langNotice = getLang() === "es" ? <p className="lang-notice" role="status">{t("apps.englishOnly")}</p> : null;
 
-  const selectLadder = (key: string) => {
-    const c = courseFromUrl(key);
-    setActiveLadder(key, c);
-    void loadLadder(key);
-    go(null, { ladder: key, course: c });
-  };
-
-  const topics = useMemo(() => (course?.topics ?? [])
-    .filter((x) => x.title.toLowerCase().includes(query.toLowerCase()))
-    .filter((x) => (stdOnly ? hasStandards(x.id) : true)), [course, query, stdOnly]);
-  const courseStandards = useMemo(() => (course?.topics ?? []).filter((x) => hasStandards(x.id)).length, [course]);
-  const [searchDoc, setSearchDoc] = useState<{ entries: { id: string; title: string; ladder: string; course: string; slug: string; excerpt: string }[] } | null>(null);
-  useEffect(() => {
-    if (globalSearch.trim().length < 2 || searchDoc) return;
-    fetch(`${import.meta.env.BASE_URL}content/search-index.json`).then((r) => (r.ok ? r.json() : null))
-      .then(setSearchDoc).catch(() => undefined);
-  }, [globalSearch, searchDoc]);
-  const searchResults = useMemo(() => {
-    const q = globalSearch.trim().toLowerCase();
-    if (q.length < 2) return [];
-    const topics = getGraph().topics.filter((x) => x.title.toLowerCase().includes(q)).slice(0, 12)
-      .map((x) => ({ kind: "topic" as const, label: x.title, sub: `${ladderName(x.ladder)} · ${courseName(x.course)}`, go: () => go(x.slug || x.id.split(".").slice(1).join("."), { ladder: x.ladder, course: x.course }) }));
-    const textHits = (searchDoc?.entries ?? []).filter((x) => !topics.some((t) => t.label === x.title) && (x.excerpt.toLowerCase().includes(q) || x.title.toLowerCase().includes(q))).slice(0, 5)
-      .map((x) => ({ kind: "text" as const, label: x.title, sub: `${x.excerpt.slice(0, 70)}… · ${ladderName(x.ladder)}`, go: () => go(x.slug, { ladder: x.ladder, course: x.course }) }));
-    const datasets = DATASETS.filter(([, label]) => label.toLowerCase().includes(q)).slice(0, 5)
-      .map(([k, label]) => ({ kind: "dataset" as const, label, sub: "library", go: () => { window.location.href = `${window.location.pathname}?data=${k}`; } }));
-    return [...topics, ...textHits, ...datasets];
-  }, [globalSearch, ladder, courseKey, graphReady, searchDoc]);
-  const currentLadder = catalog.ladders.find((l) => l.key === ladder) as Ladder;
-  const catalogTopics = useMemo(() => catalog.ladders.reduce((n, l) => n + l.topics, 0), []);
-
+  let screen: ReactNode;
   if (app !== null) {
     const atHub = app === "hub" || app === "";
-    const goHome = () => navigate(window.location.pathname, () => setApp(null));
-    const goHub = () => navigate(`${window.location.pathname}?app=hub`, () => setApp("hub"));
-    return (
-    <main className="topic-list wide app-view" id="main-content"><a href="#main-content" className="skip-link">{t("skip")}</a>
-      <SiteHeader />
-      <button className="btn-link app-back" onClick={atHub ? goHome : goHub}>{atHub ? t("apps.home") : t("apps.back")}</button>
-      {!atHub && <h1 className="sr-only">{APP_DEFS.find((a) => a.id === app)?.title ?? "Tool not found"}</h1>}
-      {getLang() === "es" && <p className="lang-notice" role="status">{t("apps.englishOnly")}</p>}
-      {atHub ? <AppHub /> : <AppView id={app} />}
-      <Tasl title="Teddy Rook Book" author="Teddy Rook" url="https://teddyrookbook.com/" note="Adapted into this app; wording and layout changed." />
-      <footer style={{ marginTop: "var(--sp-3)", color: "var(--ink-3)", fontSize: "var(--fs-0)" }}>{t("footer")}</footer>
-    </main>
+    screen = (
+      <div className="screen app-view">
+        <button className="btn-link" onClick={() => navigateTo(atHub ? {} : { app: "hub" })}>
+          {atHub ? t("apps.home") : t("apps.back")}
+        </button>
+        {!atHub && <h1 className="sr-only">{APP_DEFS.find((a) => a.id === app)?.title ?? "Tool not found"}</h1>}
+        {langNotice}
+        {atHub ? <AppHub /> : <AppView id={app} />}
+        <Tasl title="Teddy Rook Book" author="Teddy Rook" url="https://teddyrookbook.com/" note="Adapted into this app; wording and layout changed." />
+      </div>
     );
+  } else if (lab === "fbd" || lab === "breadboard") {
+    const Lab = lab === "fbd" ? FBDLab : BreadboardLab;
+    screen = (
+      <div className="screen">
+        <p className="eyebrow">{t("home.explore")}</p>
+        <h1>{lab === "fbd" ? t("labs.fbd") : t("labs.bread")}</h1>
+        {langNotice}
+        <div className="figure-card" style={{ marginTop: "var(--s-4)" }}>
+          <LabErrorBoundary>
+            <Suspense fallback={<Skeleton rows={4} label={t("apps.loading")} />}><Lab /></Suspense>
+          </LabErrorBoundary>
+        </div>
+      </div>
+    );
+  } else if (planParam !== null) {
+    screen = <PlanPage />;
+  } else if (roadmapParam !== null) {
+    screen = <PlanPage src="docs/roadmap.md" />;
+  } else if (aboutParam !== null) {
+    screen = <PlanPage src="docs/about.md" />;
+  } else if (musicParam !== null) {
+    screen = (
+      <div className="screen">
+        <h1 className="sr-only">{t("home.musicShort")}</h1>
+        {langNotice}
+        <MusicLab slug={musicParam} onSelect={(x) => navigateTo({ music: x })} />
+      </div>
+    );
+  } else if (datasetId) {
+    screen = (
+      <div className="screen">
+        <h1 className="sr-only">{DATASETS.find(([k]) => k === datasetId)?.[1] ?? "Library"}</h1>
+        {langNotice}
+        <DatasetBrowser id={datasetId} itemParam={route.get("item")} />
+      </div>
+    );
+  } else if (libraryParam !== null) {
+    screen = <LibraryIndex />;
+  } else if (labsParam !== null) {
+    screen = <LabsIndex />;
+  } else if (slug && s) {
+    const course = c || firstCourse(s) || "phys1";
+    screen = (
+      <TopicPage key={`${s}/${course}/${slug}`} slug={slug} ladder={s} course={course}
+        onBack={() => navigateTo({ s, c: course })} />
+    );
+  } else if (s) {
+    screen = <SubjectPage ladder={s} graphReady={graphReady} graphError={graphError} onRetryGraph={retryGraph} />;
+  } else {
+    screen = <Home graphReady={graphReady} graphError={graphError} onRetryGraph={retryGraph} />;
   }
-  if (lab === "fbd") return (
-    <main className="topic-list" id="main-content"><a href="#main-content" className="skip-link">{t("skip")}</a><SiteHeader />
-      <button className="btn-link" onClick={() => { window.location.href = window.location.pathname; }}>← All topics</button>
-      {getLang() === "es" && <p className="lang-notice" role="status">{t("apps.englishOnly")}</p>}
-      <h1 style={{ fontFamily: "var(--font-display)", fontSize: "var(--fs-4)" }}>Free-body diagram lab</h1>
-      <div className="figure-card" style={{ marginTop: "var(--sp-4)" }}><LabErrorBoundary><Suspense fallback={<p>Loading lab…</p>}><FBDLab /></Suspense></LabErrorBoundary></div>
-    </main>
-  );
-  if (lab === "breadboard") return (
-    <main className="topic-list" id="main-content"><a href="#main-content" className="skip-link">{t("skip")}</a><SiteHeader />
-      <button className="btn-link" onClick={() => { window.location.href = window.location.pathname; }}>← All topics</button>
-      {getLang() === "es" && <p className="lang-notice" role="status">{t("apps.englishOnly")}</p>}
-      <h1 style={{ fontFamily: "var(--font-display)", fontSize: "var(--fs-4)" }}>Breadboard Lab · Dragology prototype</h1>
-      <div className="figure-card" style={{ marginTop: "var(--sp-4)" }}><LabErrorBoundary><Suspense fallback={<p>Loading lab…</p>}><BreadboardLab /></Suspense></LabErrorBoundary></div>
-    </main>
-  );
-  if (planParam !== null) return <PlanPage onBack={() => { window.location.href = window.location.pathname; }} />;
-  if (roadmapParam !== null) return <PlanPage src="docs/roadmap.md" onBack={() => { window.location.href = window.location.pathname; }} />;
-  if (aboutParam !== null) return <PlanPage src="docs/about.md" onBack={() => { window.location.href = window.location.pathname; }} />;
-  if (musicParam !== null) return (
-    <main className="topic-list" id="main-content"><a href="#main-content" className="skip-link">{t("skip")}</a><SiteHeader />
-      <button className="btn-link" onClick={() => { window.location.href = window.location.pathname; }}>← All topics</button>
-      <h1 className="sr-only">{t("home.musicTitle")}</h1>
-      {getLang() === "es" && <p className="lang-notice" role="status">{t("apps.englishOnly")}</p>}
-      <MusicLab slug={musicParam} onSelect={(s) => { window.location.href = `${window.location.pathname}?music=${encodeURIComponent(s)}`; }} />
-    </main>
-  );
-  if (datasetId) return (
-    <main className="topic-list wide" id="main-content"><a href="#main-content" className="skip-link">{t("skip")}</a><SiteHeader />
-      <button className="btn-link" onClick={() => { window.location.href = window.location.pathname; }}>← All topics</button>
-      <h1 className="sr-only">{DATASETS.find(([k]) => k === datasetId)?.[1] ?? "Library"}</h1>
-      {getLang() === "es" && <p className="lang-notice" role="status">{t("apps.englishOnly")}</p>}
-      <DatasetBrowser id={datasetId} itemParam={params().get("item")} />
-    </main>
-  );
-  if (slug) return <TopicPage key={`${ladder}/${courseKey}/${slug}`} slug={slug} ladder={ladder} course={courseKey} onBack={() => go(null)} />;
 
-  return (
-    <main className="topic-list" id="main-content"><a href="#main-content" className="skip-link">{t("skip")}</a>
-      <SiteHeader />
-      <p className="eyebrow">{t("home.eyebrow")}</p>
-      <h1>{t("home.title")}</h1>
-      <p style={{ color: "var(--ink-2)", maxWidth: 620 }}>
-        {t("home.intro", { subjects: catalog.ladders.length, topics: catalogTopics })}
-      </p>
-      <p style={{ color: "var(--ink-3)", fontSize: "var(--fs-0)", maxWidth: 620 }}>
-        {t("home.standardsA", { count: marbleIndex.count })} <span className="std-badge">standards</span> {t("home.standardsB")}
-      </p>
-      <div className="global-search">
-        <input value={globalSearch} onChange={(e) => setGlobalSearch(e.target.value)} placeholder={t("home.search", { topics: catalogTopics })} aria-label="Search everything" />
-        {searchResults.length > 0 && <ul>
-          {searchResults.map((r, i) => <li key={i}><button onClick={r.go}><b>{r.label}</b><span>{r.sub} · {r.kind}</span></button></li>)}
-        </ul>}
-      </div>
-      <nav className="home-tabs" aria-label="Home sections">
-        <a href="#continue">{t("home.continue")}</a>
-        <a href="#subjects">{t("home.subjects")}</a>
-        <a href="#explore">{t("home.explore")}</a>
-      </nav>
-
-      <section id="continue" className="home-section">
-      <ProgressPanel ladder={ladder} onGo={(s, opts) => go(s, opts)} />
-      </section>
-
-      <section id="explore" className="home-section">
-      <div className="lab-card">
-        <div><strong>{t("home.moreWays")}</strong><p>{t("home.moreWaysBody")}</p></div>
-        <button className="btn-primary" onClick={() => { window.history.pushState({}, "", `${window.location.pathname}?app=hub`); window.dispatchEvent(new PopStateEvent("popstate")); }}>{t("home.openHub")}</button>
-      </div>
-      <div className="lab-card"><div><strong>{t("home.fbdTitle")}</strong><p>{t("home.fbdBody")}</p></div>
-        <button className="btn-primary" onClick={() => { window.location.href = `${window.location.pathname}?lab=fbd`; }}>{t("home.openLab")}</button></div>
-      <div className="lab-card"><div><strong>{t("home.breadboardTitle")}</strong><p>{t("home.breadboardBody")}</p></div>
-        <button className="btn-primary" onClick={() => { window.location.href = `${window.location.pathname}?lab=breadboard`; }}>{t("home.openLab")}</button></div>
-
-      <h2 style={{ fontFamily: "var(--font-display)", fontSize: "var(--fs-3)", marginTop: "var(--sp-6)" }}>{t("home.library")}</h2>
-      <div className="lab-card">
-        <div><strong>{t("home.musicTitle")}</strong><p>{t("home.musicBody", { n: musicIndex.length })}</p></div>
-        <button className="btn-primary" onClick={() => { window.location.href = `${window.location.pathname}?music=`; }}>{t("home.openMusic")}</button>
-      </div>
-      <div className="ladder-grid">
-        {DATASETS.map(([key, label]) => (
-          <button key={key} className="ladder-chip" onClick={() => { window.location.href = `${window.location.pathname}?data=${key}`; }}>
-            <b>{label}</b><span>{t("home.openBrowser")}</span>
-          </button>
-        ))}
-      </div>
-
-      </section>
-
-      <section id="subjects" className="home-section">
-      <h2 style={{ fontFamily: "var(--font-display)", fontSize: "var(--fs-3)", marginTop: "var(--sp-6)" }}>{t("home.subjects")}</h2>
-      <div className="ladder-grid">
-        {catalog.ladders.map((l) => (
-          <button key={l.key} className={l.key === ladder ? "ladder-chip active" : "ladder-chip"} onClick={() => selectLadder(l.key)}>
-            <b>{l.short}</b><span>{plural(l.topics, "topic")} · {plural(l.courses, "course")}</span>
-          </button>
-        ))}
-      </div>
-
-      <div className="course-bar">
-        <label>{t("catalog.course")}
-          <select value={courseKey} onChange={(e) => { const c = e.target.value; setActiveLadder(ladder, c); go(null, { course: c }); }}>
-            {currentLadder?.courseKeys.map((k) => <option key={k} value={k}>{courseName(k)}</option>)}
-          </select>
-        </label>
-        <label>{t("catalog.find")}<input value={query} onChange={(e) => setQuery(e.target.value)} placeholder={t("catalog.find")} /></label>
-      </div>
-
-      <div className="view-toggle" role="group" aria-label="View">
-        <button className={!mapView ? "chip active" : "chip"} aria-pressed={!mapView} onClick={() => setMapView(false)}>List</button>
-        <button className={mapView ? "chip active" : "chip"} aria-pressed={mapView} onClick={() => setMapView(true)}>Skill map</button>
-        {courseStandards > 0 && (
-          <button className={stdOnly ? "chip active" : "chip"} aria-pressed={stdOnly} onClick={() => setStdOnly((v) => !v)}>
-            Standards only ({courseStandards})
-          </button>
-        )}
-      </div>
-      {mapView && <SkillMap ladder={ladder} courses={currentLadder?.courseKeys.map((k) => ({ key: k, title: courseName(k), short: courseShort(k) })) ?? []} selected={courseKey} onSelect={(c) => { setActiveLadder(ladder, c); go(null, { course: c }); }} />}
-
-      <h2 style={{ fontFamily: "var(--font-display)", fontSize: "var(--fs-3)", marginTop: "var(--sp-5)" }}>{course?.title ?? (courseError ? t("catalog.topics") : "Loading…")}</h2>
-      {courseError && <p role="alert" style={{ color: "var(--danger)", fontSize: "var(--fs-0)" }}>{courseError}</p>}
-      {course && topics.length === 0 && (
-        <p className="empty-state" role="status">
-          {t("catalog.none")}{" "}
-          <button className="btn-link" onClick={() => { setQuery(""); setStdOnly(false); }}>{t("catalog.clear")}</button>
-        </p>
-      )}
-      <ol>
-        {topics.map((topic, i) => {
-          const st = topicStatus(topic.id);
-          const label = st.passed ? t("status.mastered") : st.status === "due" ? t("status.reviewDue") : st.status === "learning" ? t("status.underWay") : t("status.notStarted");
-          return <li key={topic.id}>
-            <span className="topic-label">
-              <button onClick={() => go(topic.slug)}>{(course?.topics.findIndex((t) => t.id === topic.id) ?? i) + 1}. {topic.title}</button>
-              {hasStandards(topic.id) && <span className="std-badge" title="Cross-checked against curriculum standards">standards</span>}
-            </span>
-            <span className={`status-chip status-${label.replace(/ /g, "-")}`}>{label}</span>
-          </li>;
-        })}
-      </ol>
-      </section>
-      <IdeaBox />
-      <p style={{ marginTop: "var(--sp-4)", marginBottom: 0, fontSize: "var(--fs-0)" }}>
-        <button className="btn-link" onClick={() => { window.location.href = `${window.location.pathname}?plan`; }}>
-          Design plan — how this interface should look next →
-        </button>
-        {" · "}
-        <button className="btn-link" onClick={() => { window.location.href = `${window.location.pathname}?roadmap`; }}>
-          Open-source roadmap and idea book →
-        </button>
-        {" · "}
-        <button className="btn-link" onClick={() => { window.location.href = `${window.location.pathname}?about`; }}>
-          About and licences →
-        </button>
-      </p>
-      <footer style={{ marginTop: "var(--sp-6)", borderTop: "1px solid var(--rule)", paddingTop: "var(--sp-3)", color: "var(--ink-3)", fontSize: "var(--fs-0)" }}>{t("footer")}</footer>
-    </main>
-  );
+  return <AppShell>{screen}</AppShell>;
 }

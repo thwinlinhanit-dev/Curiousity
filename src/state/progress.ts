@@ -1,6 +1,7 @@
 // Typed wrapper around the repo's standalone progress engine (ML.engine,
 // static/math/core/engine.js). Exact rules: mastery = 3 right with last 2
 // consecutive; reviews at 1/3/7/16/35/75/150 days; shared key trb-math-v1.
+import catalog from "../../content/catalog.json";
 type GraphData = { courses: { key: string; ladder: string; title?: string; short?: string; slug?: string }[]; topics: { id: string; slug?: string; course: string; ladder: string; title: string }[] };
 let graphData: GraphData = { courses: [], topics: [] };
 let graphPromise: Promise<GraphData> | null = null;
@@ -15,6 +16,8 @@ export async function ensureGraph(): Promise<void> {
   applyGraph();
 }
 export function getGraph(): GraphData { return graphData; }
+// A failed graph fetch caches a rejected promise; retry needs a clean slate.
+export function resetGraph(): void { graphPromise = null; graphData = { courses: [], topics: [] }; initialized = false; }
 
 type Rec = { s: 0 | 1 | 2; p: number; st: number; n: number; c: number; iv: number; due: number; last: number; lap: number };
 type AnswerResult = { xp: number; passed?: boolean; extra?: boolean; p?: number; st?: number; need?: number; done?: boolean; step?: number; due?: number };
@@ -121,3 +124,33 @@ export async function importSaveCode(code: string): Promise<{ ok: boolean; msg?:
   return { ok: r.ok, msg: r.msg };
 }
 export { engine as getEngine };
+
+// Subject-level progress for the home tiles and subject header. Reads only —
+// never switches the engine's active ladder.
+export function ladderProgress(ladder: string): { total: number; mastered: number; inProgress: number } {
+  const E = readEngine();
+  const topics = graphData.topics.filter((x) => x.ladder === ladder);
+  let mastered = 0, inProgress = 0;
+  if (E) for (const x of topics) {
+    if (E.isPassed(x.id)) mastered++;
+    else { const r = E.rec(x.id); if (r.n > 0 || r.p > 0) inProgress++; }
+  }
+  return { total: topics.length, mastered, inProgress };
+}
+
+// The first not-yet-mastered lesson in curriculum order — the subject page's
+// Continue target. Course order comes from the catalogue (the graph is not
+// sorted pedagogically); falls back to the first lesson when no engine.
+export function nextInLadder(ladder: string): { id: string; slug: string; course: string; title: string } | null {
+  const E = readEngine();
+  const order = catalog.ladders.find((l) => l.key === ladder)?.courseKeys ?? [];
+  const topics = graphData.topics
+    .filter((x) => x.ladder === ladder)
+    .sort((a, b) => order.indexOf(a.course) - order.indexOf(b.course));
+  for (const x of topics) {
+    if (!E || !E.isPassed(x.id)) {
+      return { id: x.id, slug: x.slug || x.id.split(".").slice(1).join("."), course: x.course, title: x.title };
+    }
+  }
+  return null;
+}

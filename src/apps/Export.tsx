@@ -18,6 +18,37 @@ const download = (name: string, data: unknown) => {
   const a = document.createElement("a"); a.href = url; a.download = name; a.click();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 };
+const downloadText = (name: string, text: string, type = "text/plain") => {
+  const url = URL.createObjectURL(new Blob([text], { type }));
+  const a = document.createElement("a"); a.href = url; a.download = name; a.click();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+};
+const scormManifest = (title: string) => `<?xml version="1.0" encoding="UTF-8"?>
+<manifest identifier="curiousity" version="1.2" xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2"
+ xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <metadata><schema>ADL SCORM</schema><schemaversion>1.2</schemaversion></metadata>
+ <organizations default="curiousity-org"><organization identifier="curiousity-org">
+  <title>${title}</title><item identifier="sco-1" identifierref="sco-1-res"><title>${title}</title></item>
+ </organization></organizations>
+ <resources>
+  <resource identifier="sco-1-res" type="webcontent" adlcp:scormtype="sco" href="sco.html"><file href="sco.html"/></resource>
+ </resources>
+</manifest>`;
+const scormSco = (title: string) => `<!doctype html><html lang="en"><meta charset="utf-8"><title>${title}</title>
+<p>This SCO links to the lesson. Progress is exported from Curiousity with the xAPI statements file.</p>
+<a href="https://teddyrookbook.com/">Open the lesson</a></html>`;
+const xapiStatements = (data: Record<string, unknown>) => {
+  const lines: string[] = [];
+  const learning = (data["trb-learning-v1"] ?? {}) as { entries?: Record<string, { n: number; correct: number; p: number; grades: string[] }> };
+  const actor = { objectType: "Agent", name: "Curiousity learner", mbox: "learner@example.invalid" };
+  for (const [id, rec] of Object.entries(learning.entries ?? {})) {
+    lines.push(JSON.stringify({ actor, verb: { id: "http://adlnet.gov/expapi/verbs/experienced", display: { "en-US": "experienced" } },
+      object: { id: `https://curiousity.app/lesson/${id}`, objectType: "Activity", definition: { name: { "en-US": id } } },
+      result: { score: { raw: rec.correct, max: rec.n, scaled: rec.n ? rec.correct / rec.n : 0 }, extensions: { "https://curiousity.app/xapi/mastery": rec.p } },
+      timestamp: new Date().toISOString() }));
+  }
+  return lines.join("\n");
+};
 
 export default function Export() {
   const [packs, setPacks] = useState<PackEntry[]>([]);
@@ -77,6 +108,16 @@ export default function Export() {
           const r = await fetch(`${import.meta.env.BASE_URL}content/pack/${ladder}/${key}.json`);
           download(`${ladder}-${key}-pack.json`, await r.json());
         }}>Download course pack</button>
+      </div>
+    </div>
+
+    <div className="app-panel">
+      <h3 style={{ marginTop: 0 }}>LMS export (SCORM 1.2 / xAPI-light)</h3>
+      <p className="app-muted">Downloads a minimal SCORM manifest, an SCO page and xAPI statements built from your local progress. Package the three files into a zip for your LMS; no data is uploaded here.</p>
+      <div className="app-toolbar">
+        <button className="btn" onClick={() => downloadText("imsmanifest.xml", scormManifest("Curiousity lesson"), "application/xml")}>Download imsmanifest.xml</button>
+        <button className="btn" onClick={() => downloadText("sco.html", scormSco("Curiousity lesson"), "text/html")}>Download sco.html</button>
+        <button className="btn" onClick={() => downloadText("xapi-statements.jsonl", xapiStatements(collect()), "application/json")}>Download xAPI statements</button>
       </div>
     </div>
 

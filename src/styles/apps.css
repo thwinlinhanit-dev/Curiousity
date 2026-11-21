@@ -77,6 +77,14 @@
 .offline-badge { display: inline-flex; align-items: center; min-height: 44px; font-family: var(--font-mono); font-size: var(--fs-0); color: var(--ink-3); }
 .offline-badge.ok { color: var(--mastered); }
 
+/* Translation review */
+.trans-layout { display: grid; grid-template-columns: minmax(160px, 0.5fr) minmax(320px, 1.5fr); gap: var(--sp-4); align-items: start; }
+.trans-list { list-style: none; padding: 0; margin: 0; max-height: 600px; overflow: auto; }
+.trans-list li { margin-bottom: 4px; }
+.trans-field { display: block; margin: var(--sp-3) 0; font-size: var(--fs-0); color: var(--ink-2); }
+.trans-field textarea { display: block; width: 100%; min-height: 90px; margin-top: 4px; border: 1px solid var(--rule); border-radius: var(--radius); padding: var(--sp-2); background: var(--paper); color: var(--ink); font: inherit; }
+@media (max-width: 900px) { .trans-layout { grid-template-columns: 1fr; } }
+
 /* Export and worksheets */
 .worksheet { margin-top: var(--sp-4); border: 1px solid var(--rule); padding: var(--sp-4); background: #fff; color: #000; }
 .worksheet ol { counter-reset: none; }
